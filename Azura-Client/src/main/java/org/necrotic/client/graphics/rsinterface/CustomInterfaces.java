@@ -113,7 +113,7 @@ public class CustomInterfaces extends RSInterface {
 		addHoverButton(30902, 1318, 0, 151, 29, "Enter lottery", -1, 30903, 1);
 		addHoveredButton(30903, 1319, 1, 151, 29, 30904);
 
-		addButton1(30905, 1016, 1017, "close");
+		addButton1(30905, 1016, 1017, "Close");
 
 
 		addText(30906, "Avalon Grand Lottery", TDA, 2, 0xFF981F, true, true);
