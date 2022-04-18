@@ -4,6 +4,7 @@ import com.ruse.GameSettings;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.util.Misc;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.combat.CombatBuilder;
@@ -78,7 +79,7 @@ public class GlobalBoss3 {
 
     }
     public static String timeLeft() {
-        int ticks = 6000 - (tick % 18000);
+        int ticks = 6000 - (tick % 6000);
         ticks /= 100;
         ticks *= 60;
 
@@ -93,11 +94,11 @@ public class GlobalBoss3 {
         return m;
     }
 
-    public static void sequence() {
+    public static void spawn() {
         tick++;
 
         // Spawn every 3 hours
-        if (tick % 18000 == 0) {
+        if (tick % 6000 == 0) {
 
             // Only if its dead
             if(currentBoss == null || currentBoss.isDying() || !currentBoss.isRegistered()) {
@@ -114,7 +115,7 @@ public class GlobalBoss3 {
                 currentBoss = npc;
                 World.register(npc);
 
-                String message = "Whoever dares to challenge Avalon The Great, face him now at ::global";
+                String message = "Whoever dares to challenge Naraku, face him now at ::naraku";
                     if (boss == 9017)
                     message = "A vicious melting golem has spawned at ::global";
 
@@ -124,6 +125,7 @@ public class GlobalBoss3 {
                     }
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
+                DiscordMessager.sendNarakuLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;

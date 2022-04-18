@@ -70,11 +70,7 @@ public enum DailyTaskData {
 	NEX(14, -26164, 19114, "Nex", "[HARD] Kill 125 Nex Guard before the next day!", "Nex\\ncan be found\\nat Teleports",
 			125, new Position(3658, 3495, 0), DailyTaskDifficulty.HARD, 13447, "Nex", 15000),
 
-	ETERNAL_DRAGON(15, -26163, 19114, "Eternal Dragon", "[HARD] Kill 125 Eternal dragon before the next day!",
-			"Eternal dragon\\ncan be found\\nat Teleports", 125, new Position(2079, 3229, 0), DailyTaskDifficulty.HARD,
-			4972, "Eternal dragon", 15000),
-
-	KINGS(16, -26162, 19114, "Troll King", "[HARD] Kill 200 Troll King before the next day!",
+	KINGS(15, -26162, 19114, "Troll King", "[HARD] Kill 200 Troll King before the next day!",
 			"Troll King\\ncan be found\\nat Teleports", 200, new Position(1625, 5601, 0), DailyTaskDifficulty.HARD,
 			13635, "Troll King", 15000),;
 

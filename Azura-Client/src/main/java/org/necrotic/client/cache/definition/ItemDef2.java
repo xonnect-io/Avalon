@@ -2430,31 +2430,39 @@ public class ItemDef2 {
 				
 				//	itemDef.rdc2 = 2353627;
 				break;
-			/*case 1153:
-				itemDef.name = "Starter full helm";
-				itemDef.modelID = 80047;
-				itemDef.maleEquip1 = 80048;
-				itemDef.femaleEquip1 = 80048;
-				itemDef.stackable = false;
-				itemDef.rdc2 = 77643;
+			case 1153:
+				itemDef.copyItem(4708);
+				itemDef.name = "Starter helm";
+				itemDef.modelZoom = 1000;
+				itemDef.modelID = 100129;
+				itemDef.maleEquip1 = 100130;
+				itemDef.femaleEquip1 = 100130;
+				itemDef.newModelColor = new int[]{51};
+				itemDef.editedModelColor = new int[]{52};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 1115:
-				itemDef.name = "Starter platebody";
-				itemDef.modelID = 80051;
-				itemDef.maleEquip1 = 80052;
-				itemDef.femaleEquip1 = 80052;
-				itemDef.stackable = false;
-				itemDef.rdc2 = 77643;//568322
+				itemDef.copyItem(4712);
+				itemDef.name = "Starter body";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 100131;
+				itemDef.maleEquip1 = 100132;
+				itemDef.femaleEquip1 = 100132;
+				itemDef.newModelColor = new int[]{51};
+				itemDef.editedModelColor = new int[]{52};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 1067:
-				itemDef.name = "Starter platelegs";
-				itemDef.modelID = 80049;
-				itemDef.maleEquip1 = 80050;
-				itemDef.femaleEquip1 = 80050;
-				itemDef.stackable = false;
-				itemDef.rdc2 = 77643;
+				itemDef.copyItem(4714);
+				itemDef.name = "Starter legs";
+				itemDef.modelZoom = 1800;
+				itemDef.modelID = 100133;
+				itemDef.maleEquip1 = 100134;
+				itemDef.newModelColor = new int[]{51};
+				itemDef.editedModelColor = new int[]{52};
+				itemDef.femaleEquip1 = 100134;	
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
-*/
 			case 8323:
 				itemDef.name = "T4 Magic helm";
 				itemDef.modelID = 65456;
@@ -2510,41 +2518,52 @@ public class ItemDef2 {
 				itemDef.editedModelColor = new int[]{79};
 				break;
 				
-				
-				case 8326:
-				itemDef.copyItem(4708);
-				itemDef.name = "Starter helm";
-				itemDef.modelZoom = 1000;
-				itemDef.modelID = 100129;
-				itemDef.maleEquip1 = 100130;
-				itemDef.femaleEquip1 = 100130;
-				itemDef.newModelColor = new int[]{51};
-				itemDef.editedModelColor = new int[]{52};
+			case 8326:
+				itemDef.name = "T4 Melee helm";
+				itemDef.modelID = 99971;
+				itemDef.maleEquip1 = 99972;
+				itemDef.femaleEquip1 = 17220;
+				trinity = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = trinity.modelOffsetX;
+				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
+				itemDef.modelOffsetY = trinity.modelOffsetY;
+				itemDef.modelZoom = trinity.modelZoom;
+				itemDef.rotationY = trinity.rotationY;
+				itemDef.rotationX = trinity.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
 				break;
 				
-				case 8327:
-				itemDef.copyItem(4712);
-				itemDef.name = "Starter body";
-				itemDef.modelZoom = 1500;
-				itemDef.modelID = 100131;
-				itemDef.maleEquip1 = 100132;
-				itemDef.femaleEquip1 = 100132;
-				itemDef.newModelColor = new int[]{51};
-				itemDef.editedModelColor = new int[]{52};
+			case 8327:
+				itemDef.name = "T4 Melee body";
+				itemDef.modelID = 99973;
+				itemDef.maleEquip1 = 99974;
+				itemDef.femaleEquip1 = 99974;
+				trinity = ItemDefinition.get(4894);
+				itemDef.modelOffsetX = trinity.modelOffsetX;
+				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
+				itemDef.modelOffsetY = trinity.modelOffsetY;
+				itemDef.modelZoom = trinity.modelZoom;
+				itemDef.rotationY = trinity.rotationY;
+				itemDef.rotationX = trinity.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
 				break;
-				
+			
 			case 8328:
-				itemDef.copyItem(4714);
-				itemDef.name = "Starter legs";
-				itemDef.modelZoom = 1800;
-				itemDef.modelID = 100133;
-				itemDef.maleEquip1 = 100134;
-				itemDef.newModelColor = new int[]{51};
-				itemDef.editedModelColor = new int[]{52};
-				itemDef.femaleEquip1 = 100134;	
+				itemDef.name = "T4 Melee legs";
+				itemDef.modelID = 99975;
+				itemDef.maleEquip1 = 99976;
+				itemDef.femaleEquip1 = 99976;
+				trinity = ItemDefinition.get(4900);
+				itemDef.modelOffsetX = trinity.modelOffsetX;
+				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
+				itemDef.modelOffsetY = trinity.modelOffsetY;
+				itemDef.modelZoom = trinity.modelZoom;
+				itemDef.rotationY = trinity.rotationY;
+				itemDef.rotationX = trinity.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
 				break;
 				
 				case 23184:
@@ -4295,6 +4314,22 @@ public class ItemDef2 {
 				itemDef.editedModelColor = new int[]{81};
 				itemDef.modelID = 65284;
 				break;
+			case 22123:
+				itemDef.name = "Slayer Box (u)";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemdefyogipic = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic.modelZoom;
+				// itemDef.modelID = itemDef2.modelID;
+				itemDef.rotationY = itemdefyogipic.rotationY;
+				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.newModelColor = new int[]{63};
+				itemDef.editedModelColor = new int[]{71};
+				itemDef.modelID = 65284;
+				break;
 			case 19624:
 				itemDef.name = "<col=c497fc>Boss Event Box";
 				itemDef.actions = new String[5];
@@ -4921,6 +4956,50 @@ public class ItemDef2 {
 			case 3849:
 				itemDef.name = "Slayer reward chest";
 				break;
+			case 22214:
+				ItemDefinition itemdefyogipic1 = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = itemdefyogipic1.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1.modelZoom;
+				itemDef.rotationY = itemdefyogipic1.rotationY;
+				itemDef.rotationX = itemdefyogipic1.rotationX;
+				itemDef.newModelColor = new int[]{63};
+				itemDef.editedModelColor = new int[]{62};
+				itemDef.modelID = 65284;
+				itemDef.name = "PvM Box (t2)";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				break;
+
+				
+			case 21220:
+				itemDef.name = "Pvm ticket pack (1k)";
+				itemDef.stackable = false;
+				itemDef.actions = new String[] { "Open", null, "Open-all", null, "Drop" };
+				ItemDefinition itemdefyogipic11 = ItemDefinition.get(15262);
+				itemDef.modelID = 15446;
+				itemDef.modelOffsetX = itemdefyogipic11.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic11.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic11.modelZoom;
+				itemDef.rotationY = itemdefyogipic11.rotationY;
+				itemDef.rotationX = itemdefyogipic11.rotationX;
+				itemDef.modelZoom = 500;
+				itemDef.rdc2 = 931853584;
+				break;
+			case 22219:
+				itemDef.name = "PVM ticket pack (10k)";
+				itemDef.stackable = false;
+				itemDef.actions = new String[] { "Open", null, "Open-all", null, "Drop" };
+				ItemDefinition itemdefyogipic111 = ItemDefinition.get(15262);
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelZoom = 2000;
+				itemDef.rdc2 = 931853582;
+				break;
 			case 21060:
 				itemDef.name = "Slayer dualsaber";
 				itemDef.modelID = 64295;
@@ -4934,9 +5013,7 @@ public class ItemDef2 {
 				itemDef.rotationX = def.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				
 				itemDef.rdc2 = 295925;
-
 				break;
 			case 21061:
 				itemDef.name = "dualsaber";
@@ -4971,12 +5048,12 @@ public class ItemDef2 {
 				break;
 			case 15005:
 				itemDef.name = "Gladiator full helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64101;
 				itemDef.maleEquip1 = 64102;
 				itemDef.femaleEquip1 = 64102;
@@ -4991,12 +5068,12 @@ public class ItemDef2 {
 				break;
 			case 15006:
 				itemDef.name = "Gladiator fighterbody";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64103;
 				itemDef.maleEquip1 = 64104;
 				itemDef.femaleEquip1 = 64104;
@@ -5011,12 +5088,12 @@ public class ItemDef2 {
 				break;
 			case 15007:
 				itemDef.name = "Gladiator fighterlegs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64105;
 				itemDef.maleEquip1 = 64106;
 				itemDef.femaleEquip1 = 64106;
@@ -5031,12 +5108,12 @@ public class ItemDef2 {
 				break;
 			case 15008:
 				itemDef.name = "Gladiator kiteshield";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64107;
 				itemDef.maleEquip1 = 64108;
 				itemDef.femaleEquip1 = 64108;
@@ -5052,12 +5129,12 @@ public class ItemDef2 {
 
 			case 15200:
 				itemDef.name = "Gladiator gloves";
-				itemdefyogipic = ItemDefinition.get(7461);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64111;
 				itemDef.maleEquip1 = 64112;
 				itemDef.femaleEquip1 = 64112;
@@ -5072,12 +5149,12 @@ public class ItemDef2 {
 				break;
 			case 15201:
 				itemDef.name = "Gladiator boots";
-				itemdefyogipic = ItemDefinition.get(7114);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64113;
 				itemDef.maleEquip1 = 64113;
 				itemDef.femaleEquip1 = 64113;
@@ -5092,12 +5169,12 @@ public class ItemDef2 {
 				break;
 			case 15100:
 				itemDef.name = "Gladiator cape";
-				itemdefyogipic = ItemDefinition.get(6570);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(6570);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64109;
 				itemDef.maleEquip1 = 64110;
 				itemDef.femaleEquip1 = 64110;
@@ -5112,12 +5189,12 @@ public class ItemDef2 {
 				break;
 			case 21036:
 				itemDef.name = "Exorcism helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64269;
 				itemDef.maleEquip1 = 64270;
 				itemDef.femaleEquip1 = 64270;
@@ -5132,12 +5209,12 @@ public class ItemDef2 {
 				break;
 			case 21037:
 				itemDef.name = "Exorcism body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64271;
 				itemDef.maleEquip1 = 64272;
 				itemDef.femaleEquip1 = 64272;
@@ -5152,12 +5229,12 @@ public class ItemDef2 {
 				break;
 			case 21038:
 				itemDef.name = "Exorcism legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64273;
 				itemDef.maleEquip1 = 64274;
 				itemDef.femaleEquip1 = 64274;
@@ -5172,12 +5249,12 @@ public class ItemDef2 {
 				break;
 			case 21039:
 				itemDef.name = "Exorcism cape";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 2000;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64275;
 				itemDef.maleEquip1 = 64276;
 				itemDef.femaleEquip1 = 64276;
@@ -5193,12 +5270,12 @@ public class ItemDef2 {
 
 			case 21040:
 				itemDef.name = "Exorcism gloves";
-				itemdefyogipic = ItemDefinition.get(7461);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 1200;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64277;
 				itemDef.maleEquip1 = 64278;
 				itemDef.femaleEquip1 = 64278;
@@ -5213,12 +5290,12 @@ public class ItemDef2 {
 				break;
 			case 21041:
 				itemDef.name = "Exorcism boots";
-				itemdefyogipic = ItemDefinition.get(7114);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64279;
 				itemDef.maleEquip1 = 64279;
 				itemDef.femaleEquip1 = 64279;
@@ -5234,12 +5311,12 @@ public class ItemDef2 {
 
 			case 21042:
 				itemDef.name = "Blacksir helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64269;
 				itemDef.maleEquip1 = 64270;
 				itemDef.femaleEquip1 = 64270;
@@ -5255,12 +5332,12 @@ public class ItemDef2 {
 				break;
 			case 21043:
 				itemDef.name = "Blacksir body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64271;
 				itemDef.maleEquip1 = 64272;
 				itemDef.femaleEquip1 = 64272;
@@ -5276,12 +5353,12 @@ public class ItemDef2 {
 				break;
 			case 21044:
 				itemDef.name = "Blacksir legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64273;
 				itemDef.maleEquip1 = 64274;
 				itemDef.femaleEquip1 = 64274;
@@ -5297,12 +5374,12 @@ public class ItemDef2 {
 				break;
 			case 21045:
 				itemDef.name = "Blacksir cape";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 2000;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64275;
 				itemDef.maleEquip1 = 64276;
 				itemDef.femaleEquip1 = 64276;
@@ -5319,12 +5396,12 @@ public class ItemDef2 {
 
 			case 21046:
 				itemDef.name = "Blacksir gloves";
-				itemdefyogipic = ItemDefinition.get(7461);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 1200;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64277;
 				itemDef.maleEquip1 = 64278;
 				itemDef.femaleEquip1 = 64278;
@@ -5340,12 +5417,12 @@ public class ItemDef2 {
 				break;
 			case 21047:
 				itemDef.name = "Blacksir boots";
-				itemdefyogipic = ItemDefinition.get(7114);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64279;
 				itemDef.maleEquip1 = 64279;
 				itemDef.femaleEquip1 = 64279;
@@ -5361,12 +5438,12 @@ public class ItemDef2 {
 				break;
 			case 19984:
 				itemDef.name = "LegendarySlayer helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64194;
 				itemDef.maleEquip1 = 64195;
 				itemDef.femaleEquip1 = 64195;
@@ -5382,12 +5459,12 @@ public class ItemDef2 {
 				break;
 			case 19985:
 				itemDef.name = "LegendarySlayer body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64196;
 				itemDef.maleEquip1 = 64197;
 				itemDef.femaleEquip1 = 64197;
@@ -5403,12 +5480,12 @@ public class ItemDef2 {
 				break;
 			case 19986:
 				itemDef.name = "LegendarySlayer legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64198;
 				itemDef.maleEquip1 = 64199;
 				itemDef.femaleEquip1 = 64199;
@@ -5424,12 +5501,12 @@ public class ItemDef2 {
 				break;
 			case 19987:
 				itemDef.name = "L.S spirit shield";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64200;
 				itemDef.maleEquip1 = 64201;
 				itemDef.femaleEquip1 = 64201;
@@ -5446,12 +5523,12 @@ public class ItemDef2 {
 
 			case 19988:
 				itemDef.name = "LegendarySlayer gloves";
-				itemdefyogipic = ItemDefinition.get(7461);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64202;
 				itemDef.maleEquip1 = 64203;
 				itemDef.femaleEquip1 = 64203;
@@ -5467,12 +5544,12 @@ public class ItemDef2 {
 				break;
 			case 19989:
 				itemDef.name = "LegendarySlayer boots";
-				itemdefyogipic = ItemDefinition.get(7114);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64204;
 				itemDef.maleEquip1 = 64204;
 				itemDef.femaleEquip1 = 64204;
@@ -5488,12 +5565,12 @@ public class ItemDef2 {
 				break;
 			case 19991:
 				itemDef.name = "L.S amulet";
-				itemdefyogipic = ItemDefinition.get(295);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(295);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64205;
 				itemDef.maleEquip1 = 64206;
 				itemDef.femaleEquip1 = 64206;
@@ -5509,12 +5586,12 @@ public class ItemDef2 {
 				break;
 			case 19992:
 				itemDef.name = "L.S ring";
-				itemdefyogipic = ItemDefinition.get(1635);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1635);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64207;
 				itemDef.maleEquip1 = 64208;
 				itemDef.femaleEquip1 = 64208;
@@ -5530,12 +5607,12 @@ public class ItemDef2 {
 				break;
 			case 19993:
 				itemDef.name = "LegendarySlayer scimitar";
-				itemdefyogipic = ItemDefinition.get(4587);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64209;
 				itemDef.maleEquip1 = 64210;
 				itemDef.femaleEquip1 = 64210;
@@ -5551,12 +5628,12 @@ public class ItemDef2 {
 				break;
 			case 19994:
 				itemDef.name = "LegendarySlayer cape";
-				itemdefyogipic = ItemDefinition.get(2413);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(2413);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64211;
 				itemDef.maleEquip1 = 64212;
 				itemDef.femaleEquip1 = 64212;
@@ -5572,12 +5649,12 @@ public class ItemDef2 {
 				break;
 			case 20400:
 				itemDef.name = "@cya@Enraged Cape";
-				itemdefyogipic = ItemDefinition.get(2413);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(2413);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64211;
 				itemDef.maleEquip1 = 64212;
 				itemDef.femaleEquip1 = 64212;
@@ -5592,12 +5669,12 @@ public class ItemDef2 {
 				break;
 			case 19998:
 				itemDef.name = "ExoticSlayer Rapier";
-				itemdefyogipic = ItemDefinition.get(4587);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64213;
 				itemDef.maleEquip1 = 64214;
 				itemDef.femaleEquip1 = 64214;
@@ -5613,12 +5690,12 @@ public class ItemDef2 {
 				break;
 			case 21010:
 				itemDef.name = "Owl mage helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 850;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64215;
 				itemDef.maleEquip1 = 64216;
 				itemDef.femaleEquip1 = 64216;
@@ -5634,12 +5711,12 @@ public class ItemDef2 {
 				break;
 			case 21011:
 				itemDef.name = "Owl mage body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
 				itemDef.modelOffsetY = 10;
 				itemDef.modelZoom = 1300;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64217;
 				itemDef.maleEquip1 = 64218;
 				itemDef.femaleEquip1 = 64218;
@@ -5655,12 +5732,12 @@ public class ItemDef2 {
 				break;
 			case 21012:
 				itemDef.name = "Owl mage legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
 				itemDef.modelOffsetY = 10;
 				itemDef.modelZoom = 2000;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64219;
 				itemDef.maleEquip1 = 64220;
 				itemDef.femaleEquip1 = 64220;
@@ -5694,12 +5771,12 @@ public class ItemDef2 {
 				break;
 			case 21015:
 				itemDef.name = "Turtle helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64227;
 				itemDef.maleEquip1 = 64228;
 				itemDef.femaleEquip1 = 64228;
@@ -5716,12 +5793,12 @@ public class ItemDef2 {
 				break;
 			case 21016:
 				itemDef.name = "Turtle body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64229;
 				itemDef.maleEquip1 = 64230;
 				itemDef.femaleEquip1 = 64230;
@@ -5738,12 +5815,12 @@ public class ItemDef2 {
 				break;
 			case 21017:
 				itemDef.name = "Turtle legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64231;
 				itemDef.maleEquip1 = 64232;
 				itemDef.femaleEquip1 = 64232;
@@ -5797,12 +5874,12 @@ public class ItemDef2 {
 				break;
 			case 21020:
 				itemDef.name = "Rusted G. helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64237;
 				itemDef.maleEquip1 = 64238;
 				itemDef.femaleEquip1 = 64238;
@@ -5818,12 +5895,12 @@ public class ItemDef2 {
 				break;
 			case 21021:
 				itemDef.name = "Rusted G. body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64239;
 				itemDef.maleEquip1 = 64240;
 				itemDef.femaleEquip1 = 64240;
@@ -5838,12 +5915,12 @@ public class ItemDef2 {
 				break;
 			case 21022:
 				itemDef.name = "Rusted G. legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64241;
 				itemDef.maleEquip1 = 64242;
 				itemDef.femaleEquip1 = 64242;
@@ -5897,12 +5974,12 @@ public class ItemDef2 {
 			//cyan 444444
 			case 20086:
 				itemDef.name = "Cursed helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64194;
 				itemDef.maleEquip1 = 64195;
 				itemDef.femaleEquip1 = 64195;
@@ -5918,12 +5995,12 @@ public class ItemDef2 {
 				break;
 			case 20087:
 				itemDef.name = "Cursed body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64196;
 				itemDef.maleEquip1 = 64197;
 				itemDef.femaleEquip1 = 64197;
@@ -5939,12 +6016,12 @@ public class ItemDef2 {
 				break;
 			case 20088:
 				itemDef.name = "Cursed legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64198;
 				itemDef.maleEquip1 = 64199;
 				itemDef.femaleEquip1 = 64199;
@@ -5960,12 +6037,12 @@ public class ItemDef2 {
 				break;
 			case 20090:
 				itemDef.name = "Cursed spirit shield";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64200;
 				itemDef.maleEquip1 = 64201;
 				itemDef.femaleEquip1 = 64201;
@@ -5982,12 +6059,12 @@ public class ItemDef2 {
 
 			case 20091:
 				itemDef.name = "Cursed gloves";
-				itemdefyogipic = ItemDefinition.get(7461);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64202;
 				itemDef.maleEquip1 = 64203;
 				itemDef.femaleEquip1 = 64203;
@@ -6003,12 +6080,12 @@ public class ItemDef2 {
 				break;
 			case 20089:
 				itemDef.name = "Cursed boots";
-				itemdefyogipic = ItemDefinition.get(7114);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64204;
 				itemDef.maleEquip1 = 64204;
 				itemDef.femaleEquip1 = 64204;
@@ -6024,12 +6101,12 @@ public class ItemDef2 {
 				break;
 			case 20092:
 				itemDef.name = "Cursed amulet";
-				itemdefyogipic = ItemDefinition.get(295);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(295);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64205;
 				itemDef.maleEquip1 = 64206;
 				itemDef.femaleEquip1 = 64206;
@@ -6045,12 +6122,12 @@ public class ItemDef2 {
 				break;
 			case 20093:
 				itemDef.name = "Cursed ring";
-				itemdefyogipic = ItemDefinition.get(1635);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1635);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64207;
 				itemDef.maleEquip1 = 64208;
 				itemDef.femaleEquip1 = 64208;
@@ -6066,12 +6143,12 @@ public class ItemDef2 {
 				break;
 			case 20098:
 				itemDef.name = "Cursed scimitar";
-				itemdefyogipic = ItemDefinition.get(4587);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64209;
 				itemDef.maleEquip1 = 64210;
 				itemDef.femaleEquip1 = 64210;
@@ -6087,12 +6164,12 @@ public class ItemDef2 {
 				break;
 			case 20099:
 				itemDef.name = "Cursed cape";
-				itemdefyogipic = ItemDefinition.get(2413);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(2413);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64211;
 				itemDef.maleEquip1 = 64212;
 				itemDef.femaleEquip1 = 64212;
@@ -6108,12 +6185,12 @@ public class ItemDef2 {
 				break;
 			case 20100:
 				itemDef.name = "Cursed rapier";
-				itemdefyogipic = ItemDefinition.get(4587);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64213;
 				itemDef.maleEquip1 = 64214;
 				itemDef.femaleEquip1 = 64214;
@@ -6129,12 +6206,12 @@ public class ItemDef2 {
 				break;
 			case 21062:
 				itemDef.name = "Ruthless helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64194;
 				itemDef.maleEquip1 = 64195;
 				itemDef.femaleEquip1 = 64195;
@@ -6150,12 +6227,12 @@ public class ItemDef2 {
 				break;
 			case 21063:
 				itemDef.name = "Ruthless body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64196;
 				itemDef.maleEquip1 = 64197;
 				itemDef.femaleEquip1 = 64197;
@@ -6171,12 +6248,12 @@ public class ItemDef2 {
 				break;
 			case 21064:
 				itemDef.name = "Ruthless legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64198;
 				itemDef.maleEquip1 = 64199;
 				itemDef.femaleEquip1 = 64199;
@@ -6192,12 +6269,12 @@ public class ItemDef2 {
 				break;
 			case 21065:
 				itemDef.name = "Ruthless spirit shield";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64200;
 				itemDef.maleEquip1 = 64201;
 				itemDef.femaleEquip1 = 64201;
@@ -6214,12 +6291,12 @@ public class ItemDef2 {
 
 			case 21066:
 				itemDef.name = "Ruthless gloves";
-				itemdefyogipic = ItemDefinition.get(7461);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64202;
 				itemDef.maleEquip1 = 64203;
 				itemDef.femaleEquip1 = 64203;
@@ -6235,12 +6312,12 @@ public class ItemDef2 {
 				break;
 			case 21067:
 				itemDef.name = "Ruthless boots";
-				itemdefyogipic = ItemDefinition.get(7114);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64204;
 				itemDef.maleEquip1 = 64204;
 				itemDef.femaleEquip1 = 64204;
@@ -6256,12 +6333,12 @@ public class ItemDef2 {
 				break;
 			case 21068:
 				itemDef.name = "Ruthless amulet";
-				itemdefyogipic = ItemDefinition.get(295);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(295);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64205;
 				itemDef.maleEquip1 = 64206;
 				itemDef.femaleEquip1 = 64206;
@@ -6277,12 +6354,12 @@ public class ItemDef2 {
 				break;
 			case 21069:
 				itemDef.name = "Ruthless ring";
-				itemdefyogipic = ItemDefinition.get(1635);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1635);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64207;
 				itemDef.maleEquip1 = 64208;
 				itemDef.femaleEquip1 = 64208;
@@ -6298,12 +6375,12 @@ public class ItemDef2 {
 				break;
 			case 21070:
 				itemDef.name = "Ruthless scimitar";
-				itemdefyogipic = ItemDefinition.get(4587);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64209;
 				itemDef.maleEquip1 = 64210;
 				itemDef.femaleEquip1 = 64210;
@@ -6319,12 +6396,12 @@ public class ItemDef2 {
 				break;
 			case 21071:
 				itemDef.name = "Ruthless cape";
-				itemdefyogipic = ItemDefinition.get(2413);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
+				itemdefyogipic111 = ItemDefinition.get(2413);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
 				itemDef.modelOffsetY = -50;
 				itemDef.modelZoom = 2300;
 				itemDef.rotationY = 200;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64211;
 				itemDef.maleEquip1 = 64212;
 				itemDef.femaleEquip1 = 64212;
@@ -6340,12 +6417,12 @@ public class ItemDef2 {
 				break;
 			case 21072:
 				itemDef.name = "Ruthless rapier";
-				itemdefyogipic = ItemDefinition.get(4587);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64213;
 				itemDef.maleEquip1 = 64214;
 				itemDef.femaleEquip1 = 64214;
@@ -6361,15 +6438,15 @@ public class ItemDef2 {
 				break;
 			case 21073:
 				itemDef.name = "Ruthless Scimitar";
-				itemdefyogipic = ItemDefinition.get(4587);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.maleEquip1 = itemdefyogipic.maleEquip1;
-				itemDef.femaleEquip1 = itemdefyogipic.femaleEquip1;
+				itemdefyogipic111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic111.femaleEquip1;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
 				itemDef.stackable = false;
@@ -6382,15 +6459,15 @@ public class ItemDef2 {
 
 			case 21075:
 				itemDef.name = "Slayer helmet [Level 1]";
-				itemdefyogipic = ItemDefinition.get(13263);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.maleEquip1 = itemdefyogipic.maleEquip1;
-				itemDef.femaleEquip1 = itemdefyogipic.femaleEquip1;
+				itemdefyogipic111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic111.femaleEquip1;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
 				itemDef.stackable = false;
@@ -6399,15 +6476,15 @@ public class ItemDef2 {
 				break;
 			case 21076:
 				itemDef.name = "Slayer helmet [Level 2]";
-				itemdefyogipic = ItemDefinition.get(13263);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.maleEquip1 = itemdefyogipic.maleEquip1;
-				itemDef.femaleEquip1 = itemdefyogipic.femaleEquip1;
+				itemdefyogipic111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic111.femaleEquip1;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
 				itemDef.stackable = false;
@@ -6416,15 +6493,15 @@ public class ItemDef2 {
 				break;
 			case 21077:
 				itemDef.name = "Slayer helmet [level 3]";
-				itemdefyogipic = ItemDefinition.get(13263);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.maleEquip1 = itemdefyogipic.maleEquip1;
-				itemDef.femaleEquip1 = itemdefyogipic.femaleEquip1;
+				itemdefyogipic111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic111.femaleEquip1;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
 				itemDef.stackable = false;
@@ -6434,15 +6511,15 @@ public class ItemDef2 {
 
 			case 21078:
 				itemDef.name = "Slayer helmet [Level 4]";
-				itemdefyogipic = ItemDefinition.get(13263);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.maleEquip1 = itemdefyogipic.maleEquip1;
-				itemDef.femaleEquip1 = itemdefyogipic.femaleEquip1;
+				itemdefyogipic111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic111.femaleEquip1;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
 				itemDef.stackable = false;
@@ -6451,15 +6528,15 @@ public class ItemDef2 {
 				break;
 			case 21079:
 				itemDef.name = "Slayer helmet [MAX]";
-				itemdefyogipic = ItemDefinition.get(13263);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.maleEquip1 = itemdefyogipic.maleEquip1;
-				itemDef.femaleEquip1 = itemdefyogipic.femaleEquip1;
+				itemdefyogipic111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic111.femaleEquip1;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
@@ -6468,12 +6545,12 @@ public class ItemDef2 {
 				break;
 			case 15230:
 				itemDef.name = "Zeus full helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64165;
 				itemDef.maleEquip1 = 64166;
 				itemDef.femaleEquip1 = 64166;
@@ -6490,12 +6567,12 @@ public class ItemDef2 {
 				break;
 			case 15231:
 				itemDef.name = "Zeus body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64167;
 				itemDef.maleEquip1 = 64168;
 				itemDef.femaleEquip1 = 64168;
@@ -6512,12 +6589,12 @@ public class ItemDef2 {
 				break;
 			case 15232:
 				itemDef.name = "Zeus legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64169;
 				itemDef.maleEquip1 = 64170;
 				itemDef.femaleEquip1 = 64170;
@@ -6554,12 +6631,12 @@ public class ItemDef2 {
 				break;
 			case 15234:
 				itemDef.name = "Zeus shield";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64173;
 				itemDef.maleEquip1 = 64174;
 				itemDef.femaleEquip1 = 64174;
@@ -6596,12 +6673,12 @@ public class ItemDef2 {
 				break;
 			case 21049:
 				itemDef.name = "Fiya Shield+";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64282;
 				itemDef.maleEquip1 = 64283;
 				itemDef.femaleEquip1 = 64283;
@@ -6618,12 +6695,12 @@ public class ItemDef2 {
 				break;
 			case 21031:
 				itemDef.name = "Hades full helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64259;
 				itemDef.maleEquip1 = 64260;
 				itemDef.femaleEquip1 = 64260;
@@ -6639,12 +6716,12 @@ public class ItemDef2 {
 				break;
 			case 21032:
 				itemDef.name = "Hades body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64261;
 				itemDef.maleEquip1 = 64262;
 				itemDef.femaleEquip1 = 64262;
@@ -6660,12 +6737,12 @@ public class ItemDef2 {
 				break;
 			case 21033:
 				itemDef.name = "Hades legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64263;
 				itemDef.maleEquip1 = 64264;
 				itemDef.femaleEquip1 = 64264;
@@ -6700,12 +6777,12 @@ public class ItemDef2 {
 				break;
 			case 21035:
 				itemDef.name = "Hades shield";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64267;
 				itemDef.maleEquip1 = 64268;
 				itemDef.femaleEquip1 = 64268;
@@ -6721,12 +6798,12 @@ public class ItemDef2 {
 				break;
 			case 15235:
 				itemDef.name = "Electric gloves";
-				itemdefyogipic = ItemDefinition.get(7461);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 1100;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64175;
 				itemDef.maleEquip1 = 64176;
 				itemDef.femaleEquip1 = 64176;
@@ -6741,12 +6818,12 @@ public class ItemDef2 {
 				break;
 			case 15236:
 				itemDef.name = "Electric boots";
-				itemdefyogipic = ItemDefinition.get(7114);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64177;
 				itemDef.maleEquip1 = 64178;
 				itemDef.femaleEquip1 = 64178;
@@ -6761,12 +6838,12 @@ public class ItemDef2 {
 				break;
 			case 11305:
 				itemDef.name = "Earthquake full helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64151;
 				itemDef.maleEquip1 = 64152;
 				itemDef.femaleEquip1 = 64152;
@@ -6782,12 +6859,12 @@ public class ItemDef2 {
 				break;
 			case 11306:
 				itemDef.name = "Earthquake platebody";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64153;
 				itemDef.maleEquip1 = 64154;
 				itemDef.femaleEquip1 = 64154;
@@ -6804,12 +6881,12 @@ public class ItemDef2 {
 
 			case 11307:
 				itemDef.name = "Earthquake platelegs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64155;
 				itemDef.maleEquip1 = 64156;
 				itemDef.femaleEquip1 = 64156;
@@ -6841,12 +6918,12 @@ public class ItemDef2 {
 				break;
 			case 11300:
 				itemDef.name = "Defender full helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64141;
 				itemDef.maleEquip1 = 64142;
 				itemDef.femaleEquip1 = 64142;
@@ -6863,12 +6940,12 @@ public class ItemDef2 {
 				break;
 			case 11301:
 				itemDef.name = "Defender fighterbody";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64143;
 				itemDef.maleEquip1 = 64144;
 				itemDef.femaleEquip1 = 64144;
@@ -6885,12 +6962,12 @@ public class ItemDef2 {
 				break;
 			case 11302:
 				itemDef.name = "Defender fighterlegs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64145;
 				itemDef.maleEquip1 = 64146;
 				itemDef.femaleEquip1 = 64146;
@@ -6907,12 +6984,12 @@ public class ItemDef2 {
 				break;
 			case 11303:
 				itemDef.name = "Defender kiteshield";
-				itemdefyogipic = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64147;
 				itemDef.maleEquip1 = 64148;
 				itemDef.femaleEquip1 = 64148;
@@ -6929,12 +7006,12 @@ public class ItemDef2 {
 				break;
 			case 11304:
 				itemDef.name = "Defender cape";
-				itemdefyogipic = ItemDefinition.get(2413);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(2413);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64149;
 				itemDef.maleEquip1 = 64150;
 				itemDef.femaleEquip1 = 64150;
@@ -7062,9 +7139,9 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, null, "Summon", "Upgrade-pet", "Drop"};
 				break;
 			case 5563:
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 1000;
 				itemDef.rotationY = 10;
 				itemDef.rotationX = 10;
@@ -7081,13 +7158,13 @@ public class ItemDef2 {
 				break;
 
 			case 14817:
-				itemdefyogipic = ItemDefinition.get(14819);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
+				itemdefyogipic111 = ItemDefinition.get(14819);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
 				itemDef.name = "x2 Invention XP Certificate";
 				itemDef.rdc2 = 2592;
 				break;
@@ -7097,21 +7174,21 @@ public class ItemDef2 {
 				break;
 			case 28:
 				itemDef.name = "Slayer chest key";
-				itemdefyogipic = ItemDefinition.get(989);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(989);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 760;
-				itemDef.rotationY = itemdefyogipic.rotationY;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
 				itemDef.rotationX = 800;
 				itemDef.modelID = 64299;
 				itemDef.stackable = false;
 				break;
 			case 29:
 				itemDef.name = "Locked slayer chest";
-				itemdefyogipic = ItemDefinition.get(405);
+				itemdefyogipic111 = ItemDefinition.get(405);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
 				itemDef.modelID = 64300;
@@ -7123,20 +7200,20 @@ public class ItemDef2 {
 				itemDef.name = "<img=15>VIP Slayer Gem";
 				itemDef.actions = new String[]{"Teleport to task", null, "Teleport to VIP", null, "Drop"};
 				itemDef.rdc2 = 37483;
-				itemdefyogipic = ItemDefinition.get(4155);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
+				itemdefyogipic111 = ItemDefinition.get(4155);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
 				break;
 			case 14827:
 				itemDef.name = "American pernix hood";
-				itemdefyogipic = ItemDefinition.get(4882);
+				itemdefyogipic111 = ItemDefinition.get(4882);
 				itemDef.modelOffsetX = 1;
 				itemDef.modelOffsetY = 200;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
 				itemDef.rotationY = 260;
 				itemDef.rotationX = 20;
 				itemDef.modelID = 64159;
@@ -7153,12 +7230,12 @@ public class ItemDef2 {
 				break;
 			case 14818:
 				itemDef.name = "American pernix body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 1350;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64161;
 				itemDef.maleEquip1 = 64162;
 				itemDef.femaleEquip1 = 64162;
@@ -7186,12 +7263,12 @@ public class ItemDef2 {
 				break;
 			case 14820:
 				itemDef.name = "American pernix legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
 				itemDef.modelOffsetY = 7;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64163;
 				itemDef.maleEquip1 = 64164;
 				itemDef.femaleEquip1 = 64164;
@@ -7206,12 +7283,12 @@ public class ItemDef2 {
 				break;
 			case 21050:
 				itemDef.name = "Slayermaster hood";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64284;
 				itemDef.maleEquip1 = 64285;
 				itemDef.femaleEquip1 = 64285;
@@ -7226,12 +7303,12 @@ public class ItemDef2 {
 				break;
 			case 21051:
 				itemDef.name = "Slayermaster body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64286;
 				itemDef.maleEquip1 = 64287;
 				itemDef.femaleEquip1 = 64287;
@@ -7246,12 +7323,12 @@ public class ItemDef2 {
 				break;
 			case 21052:
 				itemDef.name = "Slayermaster legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64288;
 				itemDef.maleEquip1 = 64289;
 				itemDef.femaleEquip1 = 64289;
@@ -7266,12 +7343,12 @@ public class ItemDef2 {
 				break;
 			case 21025:
 				itemDef.name = "Samurai head";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64247;
 				itemDef.maleEquip1 = 64248;
 				itemDef.femaleEquip1 = 64248;
@@ -7286,12 +7363,12 @@ public class ItemDef2 {
 				break;
 			case 21026:
 				itemDef.name = "Samurai body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64249;
 				itemDef.maleEquip1 = 64250;
 				itemDef.femaleEquip1 = 64250;
@@ -7306,12 +7383,12 @@ public class ItemDef2 {
 				break;
 			case 21027:
 				itemDef.name = "Samurai legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64251;
 				itemDef.maleEquip1 = 64252;
 				itemDef.femaleEquip1 = 64252;
@@ -7326,12 +7403,12 @@ public class ItemDef2 {
 				break;
 			case 21028:
 				itemDef.name = "eSamurai head";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64253;
 				itemDef.maleEquip1 = 64254;
 				itemDef.femaleEquip1 = 64254;
@@ -7347,12 +7424,12 @@ public class ItemDef2 {
 				break;
 			case 21029:
 				itemDef.name = "eSamurai body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64255;
 				itemDef.maleEquip1 = 64256;
 				itemDef.femaleEquip1 = 64256;
@@ -7368,12 +7445,12 @@ public class ItemDef2 {
 				break;
 			case 21030:
 				itemDef.name = "eSamurai legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64257;
 				itemDef.maleEquip1 = 64258;
 				itemDef.femaleEquip1 = 64258;
@@ -7389,12 +7466,12 @@ public class ItemDef2 {
 				break;
 			case 11009:
 				itemDef.name = "Hotshot helm";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64186;
 				itemDef.maleEquip1 = 64187;
 				itemDef.femaleEquip1 = 64187;
@@ -7409,12 +7486,12 @@ public class ItemDef2 {
 				break;
 			case 11010:
 				itemDef.name = "Hotshot body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64188;
 				itemDef.maleEquip1 = 64189;
 				itemDef.femaleEquip1 = 64189;
@@ -7429,12 +7506,12 @@ public class ItemDef2 {
 				break;
 			case 11011:
 				itemDef.name = "Hotshot legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64190;
 				itemDef.maleEquip1 = 64191;
 				itemDef.femaleEquip1 = 64191;
@@ -7449,12 +7526,12 @@ public class ItemDef2 {
 				break;
 			case 11012:
 				itemDef.name = "Hotshot wings";
-				itemdefyogipic = ItemDefinition.get(2413);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(2413);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64192;
 				itemDef.maleEquip1 = 64193;
 				itemDef.femaleEquip1 = 64193;
@@ -7469,12 +7546,12 @@ public class ItemDef2 {
 				break;
 			case 11001:
 				itemDef.name = "Hiddenvally coif";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64179;
 				itemDef.maleEquip1 = 64180;
 				itemDef.femaleEquip1 = 64180;
@@ -7489,12 +7566,12 @@ public class ItemDef2 {
 				break;
 			case 11002:
 				itemDef.name = "Hiddenvally leatherbody";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64181;
 				itemDef.maleEquip1 = 64182;
 				itemDef.femaleEquip1 = 64182;
@@ -7514,12 +7591,12 @@ public class ItemDef2 {
 				break;
 			case 11003:
 				itemDef.name = "Hiddenvally leatherchaps";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64183;
 				itemDef.maleEquip1 = 64184;
 				itemDef.femaleEquip1 = 64184;
@@ -7534,12 +7611,12 @@ public class ItemDef2 {
 				break;
 			case 11006:
 				itemDef.name = "Forbidden coif";
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64179;
 				itemDef.maleEquip1 = 64180;
 				itemDef.femaleEquip1 = 64180;
@@ -7555,12 +7632,12 @@ public class ItemDef2 {
 				break;
 			case 11007:
 				itemDef.name = "Forbidden leatherbody";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64181;
 				itemDef.maleEquip1 = 64182;
 				itemDef.femaleEquip1 = 64182;
@@ -7576,12 +7653,12 @@ public class ItemDef2 {
 				break;
 			case 11008:
 				itemDef.name = "Forbidden leatherchaps";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64183;
 				itemDef.maleEquip1 = 64184;
 				itemDef.femaleEquip1 = 64184;
@@ -7596,9 +7673,9 @@ public class ItemDef2 {
 				itemDef.rdc2 = 29592;
 				break;
 			case 11314:
-				itemdefyogipic = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 1000;
 				itemDef.rotationY = 10;
 				itemDef.rotationX = 10;
@@ -7617,50 +7694,50 @@ public class ItemDef2 {
 				break;
 			case 21201:
 				itemDef.name = "Betrayed key [<col=92d49a>Uncommon@lre@]";
-				itemdefyogipic = ItemDefinition.get(8868);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(8868);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 4710;
 				break;
 			case 21202:
 				itemDef.name = "Betrayed key [<col=789eea>Rare@lre@]";
-				itemdefyogipic = ItemDefinition.get(8868);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(8868);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 888888;
 				break;
 			case 21203:
 				itemDef.name = "Betrayed key [<col=c378ea>Legendary@lre@]";
-				itemdefyogipic = ItemDefinition.get(8868);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(8868);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 111111;
 				break;
 			case 21204:
 				itemDef.name = "Betrayed key [<col=eae678>Exotic@lre@]";
-				itemdefyogipic = ItemDefinition.get(8868);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(8868);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 88757;
 				break;
 			case 9662:
@@ -7670,50 +7747,50 @@ public class ItemDef2 {
 				break;
 			case 21205:
 				itemDef.name = "Damned key [<col=92d49a>Uncommon@lre@]";
-				itemdefyogipic = ItemDefinition.get(9662);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(9662);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 4710;
 				break;
 			case 21206:
 				itemDef.name = "Damned key [<col=789eea>Rare@lre@]";
-				itemdefyogipic = ItemDefinition.get(9662);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(9662);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 888888;
 				break;
 			case 21207:
 				itemDef.name = "Damned key [<col=c378ea>Legendary@lre@]";
-				itemdefyogipic = ItemDefinition.get(9662);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(9662);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 111111;
 				break;
 			case 21208:
 				itemDef.name = "Damned key [<col=eae678>Exotic@lre@]";
-				itemdefyogipic = ItemDefinition.get(9662);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(9662);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 88757;
 				break;
 			case 14471:
@@ -7723,50 +7800,50 @@ public class ItemDef2 {
 				break;
 			case 21209:
 				itemDef.name = "Hidden key [<col=92d49a>Uncommon@lre@]";
-				itemdefyogipic = ItemDefinition.get(14471);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(14471);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 1896;
 				break;
 			case 21210:
 				itemDef.name = "Hidden key [<col=789eea>Rare@lre@]";
-				itemdefyogipic = ItemDefinition.get(14471);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(14471);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 888888;
 				break;
 			case 21211:
 				itemDef.name = "Hidden key [<col=c378ea>Legendary@lre@]";
-				itemdefyogipic = ItemDefinition.get(14471);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(14471);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 111111;
 				break;
 			case 21212:
 				itemDef.name = "Hidden key [<col=eae678>Exotic@lre@]";
-				itemdefyogipic = ItemDefinition.get(14471);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(14471);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 88757;
 				break;
 			case 3468:
@@ -7776,62 +7853,62 @@ public class ItemDef2 {
 				break;
 			case 21213:
 				itemDef.name = "Cursed key [<col=92d49a>Uncommon@lre@]";
-				itemdefyogipic = ItemDefinition.get(3468);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(3468);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 5364;
 				break;
 			case 21214:
 				itemDef.name = "Cursed key [<col=789eea>Rare@lre@]";
-				itemdefyogipic = ItemDefinition.get(3468);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(3468);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 888888;
 				break;
 			case 21215:
 				itemDef.name = "Cursed key [<col=c378ea>Legendary@lre@]";
-				itemdefyogipic = ItemDefinition.get(3468);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(3468);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 7326;
 				break;
 			case 21216:
 				itemDef.name = "Cursed key [<col=eae678>Exotic@lre@]";
-				itemdefyogipic = ItemDefinition.get(3468);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(3468);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 88757;
 				break;
 			case 21217:
 				itemDef.name = "Slayer xp lamp ";
-				itemdefyogipic = ItemDefinition.get(19750);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(19750);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 36262;
 				break;
 			case 15403:
@@ -7844,26 +7921,26 @@ public class ItemDef2 {
 				break;
 			case 21219:
 				itemDef.name = "Slayer xp lamp ";
-				itemdefyogipic = ItemDefinition.get(19750);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(19750);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 750;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 36262;
 				break;
 			case 21218:
 				itemDef.name = "Invention xp lamp ";
-				itemdefyogipic = ItemDefinition.get(19750);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.actions = itemdefyogipic.actions;
+				itemdefyogipic111 = ItemDefinition.get(19750);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
+				itemDef.modelID = itemdefyogipic111.modelID;
+				itemDef.actions = itemdefyogipic111.actions;
 				itemDef.rdc2 = 3344;
 				break;
 			case 21260:
@@ -7967,7 +8044,7 @@ public class ItemDef2 {
 				break;
 			case 18599:
 				itemDef.name = "Pink Bikini head";
-				itemdefyogipic = ItemDefinition.get(4882);
+				itemdefyogipic111 = ItemDefinition.get(4882);
 				itemDef.modelOffsetX = 1;
 				itemDef.modelOffsetY = -60;
 				itemDef.modelZoom = 1000;
@@ -7986,12 +8063,12 @@ public class ItemDef2 {
 				break;
 			case 18600:
 				itemDef.name = "Bikini body";
-				itemdefyogipic = ItemDefinition.get(5575);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 1600;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64319;
 				itemDef.maleEquip1 = 64320;
 				itemDef.femaleEquip1 = 64320;
@@ -8005,12 +8082,12 @@ public class ItemDef2 {
 				break;
 			case 18601:
 				itemDef.name = "Bikini legs";
-				itemdefyogipic = ItemDefinition.get(5576);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
+				itemdefyogipic111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
 				itemDef.modelOffsetY = 20;
 				itemDef.modelZoom = 2000;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64321;
 				itemDef.maleEquip1 = 64322;
 				itemDef.femaleEquip1 = 64322;
@@ -8024,12 +8101,12 @@ public class ItemDef2 {
 				break;
 			case 18602:
 				itemDef.name = "Bikini hands";
-				itemdefyogipic = ItemDefinition.get(7461);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64323;
 				itemDef.maleEquip1 = 64324;
 				itemDef.femaleEquip1 = 64324;
@@ -8043,12 +8120,12 @@ public class ItemDef2 {
 				break;
 			case 18603:
 				itemDef.name = "Bikini feet";
-				itemdefyogipic = ItemDefinition.get(7114);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64325;
 				itemDef.maleEquip1 = 64325;
 				itemDef.femaleEquip1 = 64325;
@@ -8243,12 +8320,12 @@ public class ItemDef2 {
 				break;
 			case 8273:
 				itemDef.name = "Execution gloves";
-				itemdefyogipic = ItemDefinition.get(7461);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemdefyogipic111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
 				itemDef.modelZoom = 1200;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64277;
 				itemDef.maleEquip1 = 64278;
 				itemDef.femaleEquip1 = 64278;
@@ -8263,12 +8340,12 @@ public class ItemDef2 {
 				break;
 			case 8274:
 				itemDef.name = "Execution boots";
-				itemdefyogipic = ItemDefinition.get(7114);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemdefyogipic111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic111.modelZoom;
+				itemDef.rotationY = itemdefyogipic111.rotationY;
+				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelID = 64279;
 				itemDef.maleEquip1 = 64279;
 				itemDef.femaleEquip1 = 64279;

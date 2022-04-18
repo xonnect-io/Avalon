@@ -3,6 +3,7 @@ package com.ruse.world.content;
 import com.ruse.GameSettings;
 import com.ruse.motivote3.doMotivote;
 import com.ruse.util.Misc;
+import com.ruse.util.StringUtils;
 import com.ruse.world.World;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
@@ -24,26 +25,25 @@ public class PlayerPanel {
                 "Server Time: @whi@" + Misc.getCurrentServerTime(),
                 //
                 "Events",
-                "Current Event: @whi@" +
+                "Server Perk:  @whi@" +
                         ( ServerPerks.getInstance().getActivePerk() != null ?
-                        ServerPerks.getInstance().getActivePerk().getName() :
-                "N/A"),
+                        ServerPerks.getInstance().getActivePerk().getName() :"N/A"),
+                "Bonus Skill: @whi@" + StringUtils.capitalizeFirst(DoubleXPSkillEvent.currentSkill.toString()),
                 (WellOfGoodwill.isActive() ? "Well of Goodwill: @whi@On" : "Well of Goodwill: @whi@Off"),
-                "Bonus Xp: @whi@" + Misc.format(player.getMinutesBonusExp()) + " minutes left",
+                "Globals",
                 "Gogeta: @whi@" + GogetaSystem.getLeft() + " @whi@kills left.",
                 (VoteBossDrop.currentSpawn == null
                         ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/50 please vote!"
                         : "Vote Boss: @whi@::Vboss"),
-                "Earthquake: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
-                "Dragon King: @whi@" + GlobalBoss1.timeLeft(),
+                "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
+                "Dragon King: @whi@" + GlobalBoss4.timeLeft(),
                 "Nightmare boss: @whi@" + GlobalBoss2.timeLeft(),
                 "Naraku boss: @whi@" + GlobalBoss3.timeLeft(),
-                "Useful links",
-                "@whi@Open @yel@Homepage",
-                "@whi@Open @yel@Forums",
-                "@whi@Open @yel@Vote",
-                "@whi@Open @yel@Store",
-                "@whi@Open @yel@Discord",
+                "Donation boss: @whi@" + DonationBossSystem.amntDonated + "/500 donated",
+                "",
+                "",
+                "",
+                "",
         };
 
         for (int i = 0; i < Messages.length; i++) {
@@ -66,17 +66,33 @@ public class PlayerPanel {
                 "Double drop bonus: @whi@" + CustomDropUtils.getDoubleDropChance(player, player.getSlayer().getSlayerTask().getNpcId()) + "%",
                 //"Triple drop bonus: @whi@" + CustomDropUtils.getTripleDropChance(player) + "%",
                 //"Exp Lock: " + (player.experienceLocked() ? "Locked" : "@gre@Unlocked") + "",
-                //"Voting x2 DR Boost: @whi@" + player.getMinutesVotingDR() + "min",
-                //"Voting x2 DMG Boost: @whi@" + player.getMinutesVotingDMG() + "min",
+                (player.getMinutesVotingDR() <= 0 ? "Voting 100% DR Boost: @whi@VOTE FIRST" :"Voting x2 DR Boost: @whi@" + player.getMinutesVotingDR() + "min"),
+                (player.getMinutesVotingDMG() <= 0 ? "Voting 100% DMG Boost: @whi@ VOTE FIRST" :"Voting x2 DMG Boost: @whi@" + player.getMinutesVotingDMG() + "min"),
+
+
+                //
+                "Slayer Information",
+                "Master: @whi@" + Misc
+                        .formatText(player.getSlayer().getSlayerMaster().toString().toLowerCase().replaceAll("_", " ")),
+                (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK
+                        ? "Task: @whi@" + player.getSlayer().getSlayerTask().getName()
+                        : "Task: @whi@" + player.getSlayer().getSlayerTask().getName()
+                        + "s"),
+                "Amount: @whi@" + player.getSlayer().getAmountToSlay(),
+                "Streak: @whi@" + player.getSlayer().getTaskStreak(),
+                "Slayer Multiplier: @whi@ " + player.getPointsHandler().getSlayerRate() + "%",
+                // (player.getSlayer().getDuoPartner() != null
+                //        ? "Duo Partner: @whi@" + player.getSlayer().getDuoPartner()
+                //      : "Duo Partner: @whi@N/A"),
 
                 //
                 "Points & Statistics",
                 "NPC kill Count: @whi@ " + player.getPointsHandler().getNPCKILLCount(),
-                //"Boss Points: @whi@ " + player.getPointsHandler().getBossPoints(),
+                "Boss Points: @whi@ " + player.getPointsHandler().getBossPoints(),
                 "Donator Points: @whi@" + player.getPointsHandler().getDonatorPoints(),
                 "Voting Points: @whi@ " + player.getPointsHandler().getVotingPoints(),
-                //"Slayer Points: @whi@" + player.getPointsHandler().getSlayerPoints(),
-                //"Loyalty Points: @whi@" + (int) player.getPointsHandler().getLoyaltyPoints(),
+                "Slayer Points: @whi@" + player.getPointsHandler().getSlayerPoints(),
+                "Loyalty Points: @whi@" + (int) player.getPointsHandler().getLoyaltyPoints(),
               //  "Prestige Points: @whi@" + player.getPointsHandler().getPrestigePoints(),
               //  "Total Prestige: @whi@" + player.getPointsHandler().getTotalPrestiges(),
               //  "Event Points: @whi@ " + player.getPointsHandler().getEventPoints(),
@@ -86,19 +102,6 @@ public class PlayerPanel {
                // "Barrows Points: @whi@" + player.getPointsHandler().getBarrowsPoints(),
                // "Pk Points: @whi@" + player.getPointsHandler().getPkPoints(),
 
-                "Slayer Information",
-                "Master: @whi@" + Misc
-                        .formatText(player.getSlayer().getSlayerMaster().toString().toLowerCase().replaceAll("_", " ")),
-                (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK
-                        ? "Task: " + player.getSlayer().getSlayerTask().getName()
-                        : "Task: @whi@" + player.getSlayer().getSlayerTask().getName()
-                        + "s"),
-                "Amount: @whi@" + player.getSlayer().getAmountToSlay(),
-                "Streak: @whi@" + player.getSlayer().getTaskStreak(),
-                "Slayer Multiplier: @whi@ " + player.getPointsHandler().getSlayerRate() + "%",
-               // (player.getSlayer().getDuoPartner() != null
-                //        ? "Duo Partner: @whi@" + player.getSlayer().getDuoPartner()
-                  //      : "Duo Partner: @whi@N/A"),
         };
 
         for (int i = 0; i < Messages.length; i++) {

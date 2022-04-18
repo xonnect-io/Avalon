@@ -17,9 +17,9 @@ public final class ItemDefinition {
 	public int rdc = 0;
 	public int rdc2 = 0;
 	public int rdc3 = 0;
-	private static final int[] BLACK_FIX = {13101, 13672, 13675, 6568, 10636, 12158, 12159, 12160, 12161, 12162, 12163, 12164, 12165, 12166, 12167, 12168, 12527, 18017, 18018, 18019, 18020, 3140, 13481, 14479, 14481, 19337, 19342};
+	private static final int[] BLACK_FIX = {5073, 13101, 13672, 13675, 6568, 10636, 12158, 12159, 12160, 12161, 12162, 12163, 12164, 12165, 12166, 12167, 12168, 12527, 18017, 18018, 18019, 18020, 3140, 13481, 14479, 14481, 19337, 19342};
 	private static ByteBuffer buffer;
-	boolean animateInventory = false; //Use selectively, not on everything
+	boolean animateInventory = true; //Use selectively, not on everything
 	private Object lentID;
 	public static boolean isMembers = true;
 	public static List mruNodes1 = new List(100);
@@ -237,6 +237,7 @@ public final class ItemDefinition {
 				model.setTexture(75);
 				break;
 			case 7927:
+				model.setTexture(56);
 			case 20438:
 			case 757:
 				model.setTexture(57);
@@ -608,7 +609,7 @@ public final class ItemDefinition {
 				itemDef.name = "Impspawn bow";
 				break;
 			case 7927:
-				itemDef.name = "Cyantrix ring";
+				itemDef.name = "Energy ring";
 				break;
 			case 19887:
 				itemDef.name = "Impspawn necklace";
@@ -2140,31 +2141,25 @@ public final class ItemDefinition {
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
 				itemDef.modelZoom = 1600;
-				// itemDef.modelID = itemDef2.modelID;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				//	itemDef.modifiedModelColors = new int[] { 63 };
-				//	itemDef.originalModelColors = new int[] { 62 };
 				itemDef.modelID = 64099;
 				break;
+				
 			case 20488:
-				itemDef.name = "<col=2299099><shad=12992>OVERPOWERED CHEST<shad-1>";
+				itemDef.name = "<col=2299099><shad=12992>OP CHEST<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
 				itemDef.modelOffsetX = 20;
 				itemDef.rotationZ = 50;
 				itemDef.modelOffsetY = -50;
-				itemDef.modelZoom = 2555;
-				// itemDef.modelID =8itemDef2.modelID;
+				itemDef.modelZoom = 2775;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.newModelColor = new int[]{62, 60};
 				itemDef.editedModelColor = new int[]{78, 57};
-
 				itemDef.modelID = 64050;
-				;
-				//	itemDef.rdc2 = 88898;
 				break;
 			case 20489:
 				itemDef.name = "<col=C02FFE><shad=0>$10 Launch Chest<shad-1>";
@@ -2178,7 +2173,6 @@ public final class ItemDefinition {
 				itemDef.rotationX = 90;
 				itemDef.modelID = 64300;
 				itemDef.rdc2 = 12111;
-
 				break;
 
 			case 15002:
@@ -2279,7 +2273,7 @@ public final class ItemDefinition {
 				itemDef.rdc2 = 32521;
 				break;
 			case 19114:
-				itemDef.name = "Weapon Box";
+				itemDef.name = "Grand Mystery Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
@@ -6769,7 +6763,7 @@ public final class ItemDefinition {
 
 				break;
 			case 19931:
-				itemDef.name = "Cyan black Torva helm";
+				itemDef.name = "Energy Torva helm";
 				itemDef.modelID = 65159;
 				itemDef.maleEquip1 = 65160;
 				itemDef.femaleEquip1 = 65160;
@@ -6782,12 +6776,9 @@ public final class ItemDefinition {
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				
-				// itemDef.applyTexturing(model, id);
-				// itemDef.rdc2 = 8822;
 				break;
 			case 19933:
-				itemDef.name = "Cyan black Torva body";
+				itemDef.name = "Energy Torva body";
 				itemDef.modelID = 65161;
 				itemDef.maleEquip1 = 65162;
 				itemDef.femaleEquip1 = 65162;
@@ -6803,7 +6794,7 @@ public final class ItemDefinition {
 				
 				break;
 			case 19934:
-				itemDef.name = "Cyan black Torva legs";
+				itemDef.name = "Energy Torva legs";
 				itemDef.modelID = 65163;
 				itemDef.maleEquip1 = 65164;
 				itemDef.femaleEquip1 = 65164;

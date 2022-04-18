@@ -11,11 +11,8 @@ import com.ruse.model.movement.MovementQueue;
 import com.ruse.model.movement.PathFinder;
 import com.ruse.util.Misc;
 import com.ruse.world.clip.region.RegionClipping;
-import com.ruse.world.content.AfkSystem;
-import com.ruse.world.content.BonusManager;
-import com.ruse.world.content.ItemDegrading;
+import com.ruse.world.content.*;
 import com.ruse.world.content.ItemDegrading.DegradingItem;
-import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.Kraken.KrakenInstance;
 import com.ruse.world.content.combat.effect.CombatPoisonEffect;
 import com.ruse.world.content.combat.effect.CombatPoisonEffect.PoisonType;
@@ -1253,6 +1250,14 @@ public final class CombatFactory {
                                     + AfkSystem.thievedCount + "@bla@ ores.");
                     ((Player) entity).getPacketSender()
                             .sendMessage("Everyone should @red@afk @bla@ to contribute towards the Boss.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            } else if (npc.getId() == 3830) { // Voting
+                if (DonationBossSystem.amntDonated < 500) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("Players need to reach a total of 500 Donated. Currently at @red@"
+                                    + DonationBossSystem.amntDonated + "/500");
                     entity.getCombatBuilder().reset(true);
                     return false;
                 }

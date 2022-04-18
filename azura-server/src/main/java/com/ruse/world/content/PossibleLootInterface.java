@@ -57,9 +57,9 @@ public class PossibleLootInterface {
 
     public enum LootData {
         SLAYER_CASKET(2734, SlayerCasket.loot),
-        HALLS_OF_VALOR("          Halls of Valor", 23094, HallsOfValor.loot),
+        HALLS_OF_VALOR("          Isles of Avalon", 23094, HallsOfValor.loot),
         TREASURE_HUNTER("          Treasure Hunter", 23049, TreasureHunter.loot),
-        VOID_OF_DARKNESS("          Vengeance of Deception", 23033, VoidOfDarkness.loot),
+        VOID_OF_DARKNESS("          Void of Deception", 23033, VoidOfDarkness.loot),
         KEEPERS_OF_LIGHT("          Keepers of Light", 23135, KeepersOfLight.loot),
         VAULT_OF_WAR("          Vault of War", 23102, VaultOfWar.loot),
 

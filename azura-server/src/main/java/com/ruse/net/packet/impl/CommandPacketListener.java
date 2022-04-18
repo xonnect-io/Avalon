@@ -193,7 +193,7 @@ public class CommandPacketListener implements PacketListener {
             return;
         }
 
-        if (command[0].equalsIgnoreCase("goku")) {
+        if (command[0].equalsIgnoreCase("gogeta")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
@@ -203,7 +203,7 @@ public class CommandPacketListener implements PacketListener {
 
         }
 
-        if (command[0].equalsIgnoreCase("gokukills")) {
+        if (command[0].equalsIgnoreCase("gogetakills")) {
             player.sendMessage("@blu@Current goku count: @red@" + GogetaSystem.npckills);
         }
        /* if (player.getAmountDonated() >= 10) {
@@ -798,11 +798,20 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(2980, 2771, 0);
+            Position position = new Position(2848, 4577, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
 
         }
+        if (command[0].equalsIgnoreCase("donoboss") || command[0].equalsIgnoreCase("donationboss")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position position = new Position(3491, 2767, 0);
+            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
 
+        }
         if (command[0].equalsIgnoreCase("afk")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
@@ -964,6 +973,21 @@ public class CommandPacketListener implements PacketListener {
     }
 
     private static void memberCommands(final Player player, String[] command, String wholeCommand) {
+
+
+        if (command[0].equalsIgnoreCase("tribal") || command[0].equalsIgnoreCase("goblin")
+                || command[0].equalsIgnoreCase("afkboss")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position[] locations = new Position[]{new Position(2013, 4505, 0)};
+            Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
+            TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the afk boss!");
+        }
+
 
         if (wholeCommand.toLowerCase().startsWith("yell")) {
             if (PlayerPunishment.muted(player.getUsername()) || PlayerPunishment.IPMuted(player.getHostAddress())) {
@@ -1871,11 +1895,17 @@ public class CommandPacketListener implements PacketListener {
             }
         }
 
-        if (command[0].equalsIgnoreCase("spawngoku")) {
+        if (command[0].equalsIgnoreCase("spawngogeta")) {
             GogetaSystem.commandSpawnBoss();
         }
         if (command[0].equalsIgnoreCase("spawnafk")) {
-            AfkSystem.commandSpawnBoss();
+            AfkSystem.executeSpawn();
+        }
+        if (command[0].equals("spawnvoteboss")) {
+            VoteBossDrop.handleSpawn();
+        }
+        if (command[0].equals("spawndonoboss")) {
+            DonationBossSystem.forceSpawn();
         }
         if (command[0].equalsIgnoreCase("delete")) {
             int id = Integer.parseInt(command[1]);
@@ -3149,10 +3179,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("worldnpcs")) {
             player.sendMessage("There are currently " + World.getNpcs().size() + " npcs in the world");
         }
-        if (command[0].equals("v1")) {
-            NpcDefinition.parseNpcs().load();
-            //World.sendMessage("<img=11>@gr2@Another 20 voters have been rewarded! Vote now using the ::vote command!");
-        }
+
         if (command[0].equals("takeitem")) {
             int item = Integer.parseInt(command[1]);
             int amount = Integer.parseInt(command[2]);

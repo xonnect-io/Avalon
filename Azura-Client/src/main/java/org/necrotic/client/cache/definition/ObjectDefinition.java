@@ -286,7 +286,7 @@ public final class ObjectDefinition {
 			definition.length = 1;
 			definition.width = 1;
 			definition.objectModelIDs = new int[]{100201};
-			definition.name = "Halls of Valor Chest";
+			definition.name = "Isles of Avalon Chest";
 			definition.actions = new String[]{"Open", null, null, null, null};
 		}
 		if (definition.type == 41207) {

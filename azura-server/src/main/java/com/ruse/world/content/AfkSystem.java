@@ -21,13 +21,14 @@ public class AfkSystem {
 		if(thievedCount < 80000) {
 			return;
 		}
-		World.sendMessage("@blu@<img=368>SubZero<img=368>@red@ has awoken! teleport to ::SubZero to fight him");
+		DiscordMessager.sendAFKBossLog("Tribal goblin has awoken! Hop online and teleport to ::afkboss to fight him");
+		World.sendMessage("@blu@Tribal goblin@red@ has awoken! teleport to ::afkboss to fight him");
 		thievedCount = 0;
 	}
 
-	public static void commandSpawnBoss() {
+	public static void executeSpawn() {
 		AfkSystem.thievedCount += 80000;
-		World.sendMessage("@blu@<img=368>SubZero<img=368>@red@ has awoken! teleport to ::SubZero to fight him");
-		thievedCount = 0;
+		DiscordMessager.sendAFKBossLog("Tribal goblin has awoken! Hop online and teleport to ::afkboss to fight him");
+		World.sendMessage("@blu@Tribal goblin@red@ has awoken! teleport to ::afkboss to fight him");
 	}
 }

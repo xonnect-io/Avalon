@@ -33,9 +33,9 @@ public class VaultOfWar {
     public static final int[] T_GLOVES = new int[] { 23099, 23100, 23101, 23102};
     private static final int[] COMBAT_GLOVES = new int[] { 23096, 23097, 23098};
     private static final int MERCENARY_GLOVE = 23095;
-    public static final int AVATAR_ID = 9839;
+    public static final int AVATAR_ID = 0;
     public static final int GLOVES_NPC = 1208;
-    public static final int TOKEN_NPC = 9841;
+    public static final int TOKEN_NPC = 0;
 
     public static final Position TELEPORT_AREA = new Position(1776,5335,0);
 

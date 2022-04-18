@@ -152,7 +152,12 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				break;
 			case 12810:
-				definition.name = "Infernal demon";
+				definition.npcModels = new int[]{15435};
+				definition.name = "Plutonic demon";
+				definition.standAnimation = get(1).standAnimation;
+				definition.walkAnimation = get(1).walkAnimation;
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
 				break;
 			case 9000:
 				definition.npcModels = get(12810).npcModels;
@@ -3835,14 +3840,20 @@ public final class MobDefinition {
 				definition.rdc2 = 2424;
 				break;
 			case 3779:
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.name = "EarthQuake";
-				definition.npcModels = new int[] {64100};
-				definition.combatLevel = 785;
+				MobDefinition slayer18 = get(4275);
+				definition.name = "Tribal goblin";
+				definition.combatLevel = 40;
+				definition.scaleXZ = 390;
+				definition.scaleY = 390;
 				definition.npcSizeInSquares = 4;
-				definition.combatLevel = 456;
-				definition.standAnimation = 808;
-				definition.walkAnimation = 819;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.description = slayer18.description;
+				definition.drawYellowDotOnMap = true;
+				definition.npcModels = slayer18.npcModels.clone();
+				definition.standAnimation = slayer18.standAnimation;
+				definition.walkAnimation = slayer18.walkAnimation;
+				definition.degreesToTurn = 32;
+				definition.rdc2 = 32562;
 				break;
 			case 3830:
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -5240,7 +5251,6 @@ public final class MobDefinition {
 			case 6839:
 			case 8575:
 			case 7345:
-			case 6799:
 			case 7335:
 			case 7347:
 			case 6800:
@@ -5953,9 +5963,9 @@ public final class MobDefinition {
 				MobDefinition slayer8 = get(4275);
 				definition.name = "Tribal goblin";
 				definition.combatLevel = 40;
-				definition.scaleXZ = 90;
-				definition.scaleY = 90;
-				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 390;
+				definition.scaleY = 390;
+				definition.npcSizeInSquares = 4;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = slayer8.description;
 				definition.drawYellowDotOnMap = true;
@@ -6227,6 +6237,78 @@ public final class MobDefinition {
 				definition.degreesToTurn = 32;
 				//	definition.rdc2 = 111;
 				break;
+			case 6871:
+				MobDefinition b171251 = get(6830);
+				definition.name = "Spirit wolf";
+				definition.combatLevel = 40;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.npcSizeInSquares = 1;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.description = b171251.description;
+				definition.drawYellowDotOnMap = true;
+				definition.npcModels = b171251.npcModels.clone();
+				definition.standAnimation = b171251.standAnimation;
+				definition.walkAnimation = b171251.walkAnimation;
+				definition.degreesToTurn = 32;
+					definition.rdc2 = 1321088;
+				break;
+			case 6870:
+				definition.name = "Toxic Wolpertinger";
+				definition.combatLevel = 40;
+				definition.scaleXZ = 300;
+				definition.scaleY = 300;
+				definition.npcSizeInSquares = 1;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.degreesToTurn = 32;
+				definition.rdc2 = 1321088;
+				break;
+			case 6792:
+				definition.name = "Elysian ghost";
+				definition.combatLevel = 40;
+				definition.scaleXZ = 255;
+				definition.scaleY = 255;
+				definition.npcSizeInSquares = 1;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.degreesToTurn = 32;
+				definition.rdc2 = 1121088;
+				break;
+
+			case 6799:
+				MobDefinition b17265 = get(6792);
+				definition.name = "Arcane ghost";
+				definition.combatLevel = 40;
+				definition.scaleXZ = 255;
+				definition.scaleY = 255;
+				definition.npcSizeInSquares = 1;
+				definition.npcModels = b17265.npcModels.clone();
+				definition.standAnimation = b17265.standAnimation;
+				definition.walkAnimation = b17265.walkAnimation;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.degreesToTurn = 32;
+				definition.rdc2 = 1611088;
+				break;
+				
+			case 6798:
+				MobDefinition b172655 = get(6792);
+				definition.name = "Spectral ghost";
+				definition.combatLevel = 40;
+				definition.scaleXZ = 255;
+				definition.scaleY = 255;
+				definition.npcSizeInSquares = 1;
+				definition.npcModels = b172655.npcModels.clone();
+				definition.standAnimation = b172655.standAnimation;
+				definition.walkAnimation = b172655.walkAnimation;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.degreesToTurn = 32;
+				definition.rdc2 = 22088;
+				break;
+				
+				
 			case 1726:
 				MobDefinition b1726 = get(6833);
 				definition.name = "Crying turnip";
@@ -6248,8 +6330,8 @@ public final class MobDefinition {
 				MobDefinition b1727 = get(7377);
 				definition.name = "Symbiote";
 				definition.combatLevel = 40;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = b1727.description;
@@ -6258,7 +6340,7 @@ public final class MobDefinition {
 				definition.standAnimation = b1727.standAnimation;
 				definition.walkAnimation = b1727.walkAnimation;
 				definition.degreesToTurn = 32;
-				definition.rdc2 = 273523;
+				definition.rdc2 = 271523;
 				break;
 
 			case 1729:
@@ -6321,11 +6403,12 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = b1732.description;
 				definition.drawYellowDotOnMap = true;
-				definition.npcModels = b1732.npcModels.clone();
+				definition.npcModels = new int[] {31126};
 				definition.standAnimation = b1732.standAnimation;
 				definition.walkAnimation = b1732.walkAnimation;
 				definition.degreesToTurn = 32;
 				definition.rdc2 = 9;
+				definition.headIcon = -1;
 				break;
 			case 1734:
 				MobDefinition b69334 = get(7363);
@@ -6342,8 +6425,9 @@ public final class MobDefinition {
 				definition.walkAnimation = b69334.walkAnimation;
 				definition.degreesToTurn = 32;
 				definition.rdc2 = 152;
+				definition.headIcon = -1;
 				break;
-
+				//111158 for protection
 			case 1735:
 				MobDefinition b1734 = get(6809);
 				definition.name = "Sea creature";

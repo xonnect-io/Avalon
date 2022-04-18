@@ -4,6 +4,7 @@ import com.ruse.GameSettings;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.util.Misc;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.combat.CombatBuilder;
@@ -78,7 +79,7 @@ public class GlobalBoss2 {
 
     }
     public static String timeLeft() {
-        int ticks = 6000 - (tick % 6000);
+        int ticks = 18000 - (tick % 18000);
         ticks /= 100;
         ticks *= 60;
 
@@ -93,11 +94,11 @@ public class GlobalBoss2 {
         return m;
     }
 
-    public static void sequence() {
+    public static void execute() {
         tick++;
 
         // Spawn every 3 hours
-        if (tick % 6000 == 0) {
+        if (tick % 18000 == 0) {
 
             // Only if its dead
             if(currentBoss == null || currentBoss.isDying() || !currentBoss.isRegistered()) {
@@ -115,8 +116,6 @@ public class GlobalBoss2 {
                 World.register(npc);
 
                 String message = "The Vicious Nightmare boss has spawned at ::nightmare";
-                    if (boss == 9017)
-                    message = "The Vicious Nightmare boss has spawned at ::nightmare";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
@@ -124,6 +123,7 @@ public class GlobalBoss2 {
                     }
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
+                DiscordMessager.sendNightmareBossLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;

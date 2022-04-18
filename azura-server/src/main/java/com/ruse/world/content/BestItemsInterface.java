@@ -106,15 +106,15 @@ public class BestItemsInterface {
             add(21612);//Custom Extreme boots
             add(734);//Demon big maul
             add(17708);//Joyxox Sword
-            add(7543);//Perfect cell Rifle
-            add(7544);//Perfect Cell Teddybear
-            add(7545);//Perfect Cell apparatus
-            add(9478);//Super buu helm
+            add(7543);//Raditz Rifle
+            add(7544);//Raditz Teddybear
+            add(7545);//Raditz apparatus
+            add(9478);//Goku helm
             add(9479);//Super 	 body
-            add(9480);//Super buu legs
-            add(9481);//Perfect cell helm
-            add(9482);//Perfect cell body
-            add(9483);//Perfect cell legs
+            add(9480);//Goku legs
+            add(9481);//Raditz helm
+            add(9482);//Raditz body
+            add(9483);//Raditz legs
             add(11763);//Freiza helm
             add(11764);//Freiza body
             add(11765);//Freiza legs
@@ -124,9 +124,9 @@ public class BestItemsInterface {
             add(13324);//Goku body
             add(13325);//Goku legs
             add(14066);//Crystalized wings
-            add(15278);//Super Buu Pet
-            add(15832);//Super buu ward
-            add(16265);//Super buu boots
+            add(15278);//Goku Pet
+            add(15832);//Goku ward
+            add(16265);//Goku boots
             add(17702);//Freiza claws
             add(18838);//Dollar Chain
             add(22079);//ankoue maul

@@ -10,6 +10,7 @@ public class GameSettings {
 
     public static final int GAME_VERSION = 3;
     public static final int GAME_PORT = 9420;
+    public static boolean MYSQL_ENABLED = true;
     public static boolean LOCALHOST = false;
     public static boolean BOGO = false;
     public static boolean B2GO = false;
@@ -154,7 +155,7 @@ public class GameSettings {
     /**
      * The default position
      */
-    public static final Position DEFAULT_POSITION = new Position(2655, 4019, 0);//3093, 3506
+    public static final Position DEFAULT_POSITION = new Position(2585, 2521, 0);//3093, 3506
     public static final Position STARTER = new Position(3037, 10288, 0);//3093, 3506
     public static final Position CORP_CORDS = new Position(2900, 4384);
     public static final Position HOME_CORDS = new Position(2585, 2521, 0);//3093, 3506

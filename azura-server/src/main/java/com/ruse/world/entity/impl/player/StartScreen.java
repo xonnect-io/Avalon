@@ -149,7 +149,7 @@ public class StartScreen {
 
     public enum GameModes {
         NORMAL("Normal", 52761, 116005, 1, 0,
-                new Item[]{new Item(8326, 1), new Item(8327, 1), new Item(8328, 1),
+                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
                         new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
                         new Item(6570, 1), new Item(23089, 1), new Item(23091, 1),
                         new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),
@@ -161,7 +161,7 @@ public class StartScreen {
 
 
         IRONMAN("Ironman", 52762, 116006, 1, 1,
-                new Item[]{new Item(8326, 1), new Item(8327, 1), new Item(8328, 1),
+                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
                         new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
                         new Item(6570, 1), new Item(23089, 1), new Item(23091, 1),
                         new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),
@@ -175,7 +175,7 @@ public class StartScreen {
 
 
         ULTIMATE_IRONMAN("Ultimate Iron", 52763, 116007, 1, 2,
-                new Item[]{new Item(8326, 1), new Item(8327, 1), new Item(8328, 1),
+                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
                         new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
                         new Item(6570, 1), new Item(23089, 1), new Item(23091, 1),
                         new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),
@@ -188,7 +188,7 @@ public class StartScreen {
 
 
         GROUP_IRON("Group Ironman", 52778, 116008, 1, 4,
-                new Item[]{new Item(8326, 1), new Item(8327, 1), new Item(8328, 1),
+                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
                         new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
                         new Item(15432, 1), new Item(23089, 1), new Item(23091, 1),
                         new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),
@@ -203,7 +203,7 @@ public class StartScreen {
 
 
         VETERAN_MODE("Veteran", 52774, 116009, 1, 3,
-                new Item[]{new Item(8326, 1), new Item(8327, 1), new Item(8328, 1),
+                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
                         new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
                         new Item(6570, 1), new Item(23089, 1), new Item(23091, 1),
                         new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),

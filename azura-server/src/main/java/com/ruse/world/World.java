@@ -11,10 +11,10 @@ import com.ruse.util.CharacterBackup;
 import com.ruse.util.NameUtils;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.content.GlobalBoss2;
+import com.ruse.world.content.GlobalBoss4;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.StaffList;
 import com.ruse.world.content.GlobalBoss1;
-import com.ruse.world.content.GlobalBoss2;
 import com.ruse.world.content.GlobalBoss3;
 import com.ruse.world.content.minigames.impl.FightPit;
 import com.ruse.world.content.minigames.impl.KeepersOfLight;
@@ -274,12 +274,11 @@ public class World {
             lastTime = System.currentTimeMillis();
         }
         FightPit.sequence();
-
-        GlobalBoss1.sequence();
-        GlobalBoss2.sequence();
-        GlobalBoss3.sequence();
-        KeepersOfLight.sequence();
         PestControl.sequence();
+        GlobalBoss4.sequence();
+        GlobalBoss3.spawn();
+        GlobalBoss2.execute();
+        KeepersOfLight.sequence();
         ShootingStar.sequence();
         EvilTree.sequence();
        // Bot.updatePlayers();

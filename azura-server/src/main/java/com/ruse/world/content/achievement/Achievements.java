@@ -141,8 +141,8 @@ public class Achievements {
         REACH_1500_TOTAL_LEVEL(18, 529, AchievementDifficulty.EASY, "Reach 1500 total level", 1, new String[][]{}, new Item(ItemDefinition.COIN_ID, 50_000_000)),
         COLLECT_T2_GLOVES(19, 738, AchievementDifficulty.EASY, "Collect t2 gloves from Vault of war", 1, new String[][]{}, new Item(ItemDefinition.COIN_ID, 10_000_000)),
         COMPLETE_5_KEEPERS_OF_LIGHT(20, 738, AchievementDifficulty.EASY, "Complete 5 Keepers of the Light runs", 5, new String[][]{}, new Item(ItemDefinition.COIN_ID, 10_000_000)),
-        OPEN_5_CHESTS_IN_VOID_OF_DARKNESS(21, 738, AchievementDifficulty.EASY, "Open 5 chests in Vengeance of Deception", 5, new String[][]{}, new Item(ItemDefinition.COIN_ID, 10_000_000)),
-        OPEN_5_CHESTS_IN_HALLS_OF_VALOR(22, 738, AchievementDifficulty.EASY, "Open 5 chests in Halls of Valor", 5, new String[][]{}, new Item(ItemDefinition.COIN_ID, 10_000_000)),
+        OPEN_5_CHESTS_IN_VOID_OF_DARKNESS(21, 738, AchievementDifficulty.EASY, "Open 5 chests in Void of Deception", 5, new String[][]{}, new Item(ItemDefinition.COIN_ID, 10_000_000)),
+        OPEN_5_CHESTS_IN_HALLS_OF_VALOR(22, 738, AchievementDifficulty.EASY, "Open 5 chests in Isles of Avalon", 5, new String[][]{}, new Item(ItemDefinition.COIN_ID, 10_000_000)),
         OPEN_5_CHESTS_IN_TREASURE_HUNTER(23, 738, AchievementDifficulty.EASY, "Open 5 chests in Treasure hunter", 5, new String[][]{}, new Item(ItemDefinition.COIN_ID, 10_000_000)),
         //COMPLETE_15_RAIDS(32, 625, AchievementDifficulty.EASY, "Complete 15 raids", 15, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100000)),
 
@@ -167,8 +167,8 @@ public class Achievements {
         REACH_2000_TOTAL_LEVEL(17, 529, AchievementDifficulty.MEDIUM, "Reach 2000 total level", 1, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100_000_000)),
         COLLECT_T4_GLOVES(18, 738, AchievementDifficulty.MEDIUM, "Collect t4 gloves from Vault of war", 1, new String[][]{}, new Item(ItemDefinition.COIN_ID, 20_000_000)),
         COMPLETE_15_KEEPERS_OF_LIGHT(19, 738, AchievementDifficulty.MEDIUM, "Complete 15 Keepers of the Light runs", 15, new String[][]{}, new Item(ItemDefinition.COIN_ID, 20_000_000)),
-        OPEN_25_CHESTS_IN_VOID_OF_DARKNESS(20, 738, AchievementDifficulty.MEDIUM, "Open 25 chests in Vengeance of Deception", 25, new String[][]{}, new Item(ItemDefinition.COIN_ID, 20_000_000)),
-        OPEN_25_CHESTS_IN_HALLS_OF_VALOR(21, 738, AchievementDifficulty.MEDIUM, "Open 25 chests in Halls of Valor", 25, new String[][]{}, new Item(ItemDefinition.COIN_ID, 20_000_000)),
+        OPEN_25_CHESTS_IN_VOID_OF_DARKNESS(20, 738, AchievementDifficulty.MEDIUM, "Open 25 chests in Void of Deception", 25, new String[][]{}, new Item(ItemDefinition.COIN_ID, 20_000_000)),
+        OPEN_25_CHESTS_IN_HALLS_OF_VALOR(21, 738, AchievementDifficulty.MEDIUM, "Open 25 chests in Isles of Avalon", 25, new String[][]{}, new Item(ItemDefinition.COIN_ID, 20_000_000)),
         OPEN_25_CHESTS_IN_TREASURE_HUNTER(22, 738, AchievementDifficulty.MEDIUM, "Open 25 chests in Treasure hunter", 25, new String[][]{}, new Item(ItemDefinition.COIN_ID, 20_000_000)),
         //COMPLETE_50_RAIDS(32, 625, AchievementDifficulty.MEDIUM, "Complete 50 raids", 50, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100000)),
 
@@ -193,8 +193,8 @@ public class Achievements {
         MAX_OUT_ALL_SKILLS(18, 529, AchievementDifficulty.HARD, "Max out all skills", 1, new String[][]{}, new Item(ItemDefinition.COIN_ID, 250_000_000)),
         COLLECT_MERCENARY_GLOVES(19, 738, AchievementDifficulty.HARD, "Collect Mercenary gloves from Vault of war", 1, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100_000_000)),
         COMPLETE_50_KEEPERS_OF_LIGHT(20, 738, AchievementDifficulty.HARD, "Complete 50 Keepers of the Light runs", 50, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100_000_000)),
-        OPEN_200_CHESTS_IN_VOID_OF_DARKNESS(21, 738, AchievementDifficulty.HARD, "Open 200 chests in Vengeance of Deception", 200, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100_000_000)),
-        OPEN_200_CHESTS_IN_HALLS_OF_VALOR(22, 738, AchievementDifficulty.HARD, "Open 200 chests in Halls of Valor", 200, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100_000_000)),
+        OPEN_200_CHESTS_IN_VOID_OF_DARKNESS(21, 738, AchievementDifficulty.HARD, "Open 200 chests in Void of Deception", 200, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100_000_000)),
+        OPEN_200_CHESTS_IN_HALLS_OF_VALOR(22, 738, AchievementDifficulty.HARD, "Open 200 chests in Isles of Avalon", 200, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100_000_000)),
         OPEN_200_CHESTS_IN_TREASURE_HUNTER(23, 738, AchievementDifficulty.HARD, "Open 200 chests in Treasure hunter", 200, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100_000_000)),
         //COMPLETE_100_RAIDS(32, 625, AchievementDifficulty.HARD, "Complete 100 raids", 100, new String[][]{}, new Item(ItemDefinition.COIN_ID, 100000)),
         ;

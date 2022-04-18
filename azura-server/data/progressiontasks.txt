@@ -6,7 +6,7 @@ Demon Crusher,Kill 50 Ice Demons, Kill 100 Ice Demon, Kill 100 assigned tasks,10
 Hidden Valley,Kill 200 Predator,Kill 200 Cyantrix ,Kill 100 Bulwark,200,200,100
 Venoms Bite,Kill 200 Lords,Finish 5 slayer tasks,Claim 5 Zara xp lamps,200,5,5
 Teleporter,Teleport to 10 tasks,Kill 300 Ice Demon,Finish 10 slayer tasks,10,300,10
-Dragon Balls,Kill 5 Frieza,Kill 5 Perfect Cell,Kill 5 Super buu,5,5,5
+Dragon Balls,Kill 5 Frieza,Kill 5 Raditz,Kill 5 Goku,5,5,5
 Upgradable,Upgrade any item,Dissolve any item,Finish 25 Slayer tasks,1,1,25
 Spree Master,Get 10 slayer spree,Kill 400 Dragons,Kill 500 Beasts,10,400,500
 Permanent,Finish 50 Slayer Tasks,Vote once,Kill 1K King,50,1,1000

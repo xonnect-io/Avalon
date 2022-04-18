@@ -5,6 +5,8 @@ import com.ruse.model.PlayerRights;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
+import com.ruse.world.content.DonationBossSystem;
+import com.ruse.world.content.GogetaSystem;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -12,10 +14,11 @@ import java.sql.*;
 
 public class Donation implements Runnable {
 
-    public static final String HOST = "104.161.43.58";
-    public static final String USER = "wvrrwzni_master";
-    public static final String PASS = "85EDE6Hyn9nHpT4HaAD8";
-    public static final String DATABASE = "wvrrwzni_store";
+
+    public static final String HOST = "avalon317.com";
+    public static final String USER = "u189330247_Store";
+    public static final String PASS = "8ytqy63zYrAUGWz";
+    public static final String DATABASE = "u189330247_Store";
 
     private Player player;
     private Connection conn;
@@ -64,7 +67,7 @@ public class Donation implements Runnable {
 
     public void run() {
         try {
-            if (!connect(HOST, "wvrrwzni_store", "wvrrwzni_master", "85EDE6Hyn9nHpT4HaAD8")) {
+            if (!connect(HOST, "u189330247_Store", "u189330247_Store", "8ytqy63zYrAUGWz")) {
                 return;
             }
             System.out.println("connected to store database");
@@ -100,19 +103,19 @@ public class Donation implements Runnable {
 			PlayerPanel.refreshPanel(player);
  */
 
-                    case 10:
-                            player.getInventory().add(23057, quantity);
+                    case 1:
+                            player.getInventory().add(6769, quantity);
                             id = 23057;
                         break;
-                    case 1024:
+                    case 2:
                             player.getInventory().add(23058, quantity);
                             id = 23058;
                         break;
-                    case 1025:
+                    case 3:
                             player.getInventory().add(23059, quantity);
                             id = 23059;
                         break;
-                    case 1026:
+                    case 1023:
                             player.getInventory().add(23060, quantity);
                             id = 23060;
                         break;
@@ -124,6 +127,7 @@ public class Donation implements Runnable {
                 PlayerLogs.logPlayerDonations(player.getUsername(), "Donated: $" + paid
                         + ", Item: " + ItemDefinition.forId(id).getName() + ", Amount: " + item_number + ", ID: " + id + ", item_number: " + item_number);
 
+                DonationBossSystem.amntDonated+= paid;
                 player.sendMessage("Thanks for donating!");
 
                 if (paid >= 5) {

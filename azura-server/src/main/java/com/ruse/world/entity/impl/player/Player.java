@@ -2980,6 +2980,14 @@ public class Player extends Character {
         this.minutesBonusExp = (add ? this.minutesBonusExp + minutesBonusExp : minutesBonusExp);
     }
 
+    public void setInactive(boolean inActive) {
+        this.inActive = inActive;
+    }
+
+    public boolean isInActive() {
+        return inActive;
+    }
+
     public int getMinutesVotingDR() {
         return minutesVotingDR;
     }
@@ -2994,14 +3002,6 @@ public class Player extends Character {
 
     public void setMinutesVotingDMG(int minutesVotingDMG, boolean add) {
         this.minutesVotingDMG = (add ? this.minutesVotingDMG + minutesVotingDMG : minutesVotingDMG);
-    }
-
-    public void setInactive(boolean inActive) {
-        this.inActive = inActive;
-    }
-
-    public boolean isInActive() {
-        return inActive;
     }
 
     public int getSelectedGeItem() {

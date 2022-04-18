@@ -22,7 +22,7 @@ public class StarterTasks {
 				"Redeem the scroll", "And claim it"),
 		REACH_1000_TOTAL("Reach 1000 Killcount", 53211, "", new int[] { 0, 1000 },
 				"Reach a total of 1000 npc kill count", "you can check your killcount by", "typing ::kills", ""),
-		KILL_ETERNAL("Defeat Eternal", 53212, "", null, "Defeat Eternal dragon @ ::eternal", "", "", "");
+		KILL_DRAGON_KING("Defeat Dragon King", 53212, "", null, "Defeat Dragon king @ ::eternal", "", "", "");
 
 
 		StarterTaskData(String taskName, int interFaceId, String requirements, int[] progressData,

@@ -22,10 +22,10 @@ public enum DailyTask {
             "",
             "Complete %d easy slayer tasks.", TaskTimeType.DAILY, false),
     HALLS_OF_VALOR(
-            "Halls of Valor",
+            "Isles of Avalon",
             5, 5,
             "",
-            "Unlock %d halls of valor chests.", TaskTimeType.DAILY, false),
+            "Unlock %d isles of avalon chests.", TaskTimeType.DAILY, false),
     KEEPERS_OF_LIGHT(
             "Keepers of Light",
             5, 5,
@@ -42,10 +42,10 @@ public enum DailyTask {
             "",
             "Unlock %d treasure hunter chests.", TaskTimeType.DAILY, false),
     VOID_OF_DARKNESS(
-            "Vengeance of Deception",
+            "Void of Deception",
             5, 5,
             "",
-            "Unlock %d void of darkness chests.", TaskTimeType.DAILY, false),
+            "Unlock %d void of deception chests.", TaskTimeType.DAILY, false),
     BOSSES(
             "Bosses",
             15, 30,

@@ -1879,24 +1879,13 @@ public class CustomInterfaces extends RSInterface {
 		c = 0;
 		x = -5;
 		y = 3;
-		info.totalChildren(21);
+		info.totalChildren(23);
 
 		addText(id, "Main", tda, 2, 0xFF981F, true, true);
 		info.child(c++, id++, 85 + x, 0 + y);
 		y += 20;
 
-		for (int i = 0; i < 7; i++) {
-			addText(id, "id: " + id, tda, 0, 0xFF981F, false, true);
-			info.child(c++, id++, 10 + x, 0 + y);
-			y += 17;
-		}
-
-		y += 5;
-		addText(id, "Points", tda, 2, 0xFF981F, true, true);
-		info.child(c++, id++, 85 + x, 0 + y);
-		y += 20;
-
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 9; i++) {
 			addText(id, "id: " + id, tda, 0, 0xFF981F, false, true);
 			info.child(c++, id++, 10 + x, 0 + y);
 			y += 17;
@@ -1907,11 +1896,22 @@ public class CustomInterfaces extends RSInterface {
 		info.child(c++, id++, 85 + x, 0 + y);
 		y += 20;
 
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 5; i++) {
 			addText(id, "", tda, 0, 0xFF981F, false, true);
 			info.child(c++, id++, 10 + x, 0 + y);
 			y += 17;
 		}
+		y += 5;
+		addText(id, "Points", tda, 2, 0xFF981F, true, true);
+		info.child(c++, id++, 85 + x, 0 + y);
+		y += 20;
+
+		for (int i = 0; i < 6; i++) {
+			addText(id, "id: " + id, tda, 0, 0xFF981F, false, true);
+			info.child(c++, id++, 10 + x, 0 + y);
+			y += 17;
+		}
+
 	}
 
 	public static void panelInterface() {
@@ -1954,10 +1954,19 @@ public class CustomInterfaces extends RSInterface {
 			info.child(c++, id++, 10 + x, 0 + y);
 			y += 17;
 		}
-
-
 		y += 5;
 		addText(id, "Events", tda, 2, 0xFF981F, true, true);
+		info.child(c++, id++, 85 + x, 0 + y);
+		y += 20;
+		for (int i = 0; i < 3; i++) {
+			//teleportText(id, "", "Select", fonts, 0, 0xFF9900, false, true, 154, 17);
+			addText(id, "id: " + id, tda, 0, 0xFF981F, false, true);
+			info.child(c++, id++, 10 + x, 0 + y);
+			y += 17;
+		}
+
+		y += 5;
+		addText(id, "Globals", tda, 2, 0xFF981F, true, true);
 		info.child(c++, id++, 85 + x, 0 + y);
 		y += 20;
 
@@ -1968,16 +1977,7 @@ public class CustomInterfaces extends RSInterface {
 		}
 
 
-		y += 5;
-		addText(id, "Useful Links", tda, 2, 0xFF981F, true, true);
-		info.child(c++, id++, 85 + x, 0 + y);
-		y += 20;
-		for (int i = 0; i < 3; i++) {
-			teleportText(id, "", "Select", fonts, 0, 0xFF9900, false, true, 154, 17);
-			//   addText(id, "id: " + id, tda, 0, 0xFF981F, false, true);
-			info.child(c++, id++, 10 + x, 0 + y);
-			y += 17;
-		}
+
 
 
 		interID = 111100;
@@ -2013,7 +2013,7 @@ public class CustomInterfaces extends RSInterface {
 		addSpriteLoader(id, 1568);
 		list.child(c++, id++, 100 + x, 10 + y);
 		addText(id, "", tda, 2, 0xFF981F, true, true);
-		addSpriteLoader(id, 1567);
+		addSpriteLoader(id, 1570);
 		list.child(c++, id++, 130 + x, 10 + y);
 		addText(id, "", tda, 2, 0xFF981F, true, true);
 		//addSpriteLoader(id, 1570);
@@ -2784,9 +2784,9 @@ public class CustomInterfaces extends RSInterface {
 			itemGroup(34010 + i, 1, 1, 1, 1, false, false);
 			interfaceCache[34010 + i].inv[0] = 14485;
 			interfaceCache[34010 + i].invStackSizes[0] = 1;
-			addText(34100 + i, "Name", tda, 1, ColorConstants.ORANGE, true, true);
-			addText(34200 + i, "Amount", tda, 1, 15781715, true, true);
-			addText(34300 + i, "Rarity", tda, 1, 15781715, true, true);
+			addText(34100 + i, "Name", tda, 0, ColorConstants.ORANGE, true, true);
+			addText(34200 + i, "Amount", tda, 0, ColorConstants.WHITE, true, true);
+			addText(34300 + i, "Rarity", tda, 0, ColorConstants.WHITE, true, true);
 			addText(34400 + i, "Value", tda, 0, 0xffffff, true, true);
 			int yy = (i * 37);
 			main.child(80+i, 34010+i, 3, 3+yy);
@@ -3827,7 +3827,7 @@ public class CustomInterfaces extends RSInterface {
 		addPixels(childId++, 0xFFFFFF, 122, 3, 180, true);
 		addPixels(childId++, 0xFFFFFF, 3, 96, 180, true);
 
-		addText(childId++, "Vengeance of Deception", ColorConstants.ORANGE, true, true, -1, TDA, 2);
+		addText(childId++, "Void of Deception", ColorConstants.ORANGE, true, true, -1, TDA, 2);
 		addText(childId++, "NPC Name", ColorConstants.LIME_GREEN, true, true, -1, TDA, 0);
 		addText(childId++, "NPC Name", ColorConstants.LIME_GREEN, true, true, -1, TDA, 0);
 		addText(childId++, "NPC Name", ColorConstants.LIME_GREEN, true, true, -1, TDA, 0);

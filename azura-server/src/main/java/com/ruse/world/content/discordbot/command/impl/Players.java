@@ -5,6 +5,7 @@ import com.ruse.world.World;
 import com.ruse.world.content.GlobalBoss1;
 import com.ruse.world.content.GlobalBoss2;
 import com.ruse.world.content.GlobalBoss3;
+import com.ruse.world.content.GlobalBoss4;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -27,6 +28,7 @@ public class Players  extends ListenerAdapter {
         eb.addField("Global boss status:", GlobalBoss1.currentBoss != null ? "   Alive ": "   Dead", true);
         eb.addField("Global boss status:", GlobalBoss2.currentBoss != null ? "   Alive ": "   Dead", true);
         eb.addField("Global boss status:", GlobalBoss3.currentBoss != null ? "   Alive ": "   Dead", true);
+        eb.addField("Global boss status:", GlobalBoss4.currentBoss != null ? "   Alive ": "   Dead", true);
         eb.addField("X2 Drop rate:", GameSettings.DOUBLEDR ? "On " :"Off", true);
 
         eb.setThumbnail(e.getJDA().getSelfUser().getAvatarUrl());

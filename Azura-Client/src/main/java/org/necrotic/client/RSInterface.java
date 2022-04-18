@@ -3495,50 +3495,78 @@ public class RSInterface {
 	}
 
 
+	
 	private static void customCombiner(TextDrawingArea[] tda) {
 		final int STARTING_POINT = 30330;
 		RSInterface main = addInterface(STARTING_POINT);
-		addSpriteLoader(STARTING_POINT + 1, 1397);
-		addHoverButtonWSpriteLoader(STARTING_POINT + 2, 1398, 127, 34, "Invent", -1, STARTING_POINT + 3, 1);
-		addHoveredImageWSpriteLoader(STARTING_POINT + 3, 1399, 127, 34, STARTING_POINT + 4);
-		addText(STARTING_POINT + 5, "Invent", tda, 2, ColorConstants.ORANGE);
+		addSpriteLoader(STARTING_POINT + 1, 1645);
+		addHoverButtonWSpriteLoader(STARTING_POINT + 2, 1646, 127, 34, "Invent", -1, STARTING_POINT + 3, 1);
+		addHoveredImageWSpriteLoader(STARTING_POINT + 3, 1647, 127, 34, STARTING_POINT + 4);
+		addText(STARTING_POINT + 5, "Upgrade", tda, 2, ColorConstants.ORANGE);
 		addToItemGroup(STARTING_POINT + 6, 1, 1, 1, 1, true, new String[]{null, null, null, null, null});
 		addText(STARTING_POINT + 7, "", tda, 2, ColorConstants.ORANGE);
-		addText(STARTING_POINT + 8, "Ingredients required to make Invention", tda, 1, ColorConstants.ORANGE);
-		addText(STARTING_POINT + 9, "Invention", tda, 2, ColorConstants.ORANGE);
-		addToItemGroup(STARTING_POINT + 10, 6, 4, 7, 7, true, new String[]{null, null, null, null, null});
+		addText(STARTING_POINT + 8, "Ingredients required", tda, 1, ColorConstants.ORANGE);
+		addText(STARTING_POINT + 9, "Product", tda, 1, ColorConstants.ORANGE);
+		addToItemGroup(STARTING_POINT + 10, 4, 3, 7, 7, true, new String[]{null, null, null, null, null});
 		addCloseButtonSmall(STARTING_POINT + 11, STARTING_POINT + 12, STARTING_POINT + 13);
-		addText(STARTING_POINT + 14, "Advanced Invention Interface", tda, 2, ColorConstants.ORANGE);
-		addText(STARTING_POINT + 15, "Select the item you want to sacrifice", tda, 0, ColorConstants.ORANGE);
-		addText(STARTING_POINT + 16, "selection must be in inventory", tda, 0, ColorConstants.WHITE);
-		addText(STARTING_POINT + 17, "Success rate for Advanced Invention is 100%", tda, 0, ColorConstants.WHITE);
-		main.totalChildren(16);
+		addText(STARTING_POINT + 14, "", tda, 2, ColorConstants.ORANGE);
+		addText(STARTING_POINT + 15, "Items to create", tda, 1, ColorConstants.ORANGE);
+		addText(STARTING_POINT + 16, "Success rate @gre@100%", tda, 1, ColorConstants.WHITE);
+		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 37, 1648, "Select Tier 1", 68, 20);
+		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 38, 1648, "Select Tier 2", 68, 20);
+		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 39, 1648, "Select Tier 3", 68, 20);
+		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 40, 1648, "Select Tier 4", 68, 20);
+		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 41, 1648, "Select Tier 5", 68, 20);
+		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 42, 1648, "Select Tier 6", 68, 20);
+		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 43, 1648, "Select Lvl 120", 68, 20);
+		RSInterface.addText(STARTING_POINT + 44, "Tier 1", tda, 1, 0xFFA500);
+		RSInterface.addText(STARTING_POINT + 45, "Tier 2", tda, 1, 0xFFA500);
+		RSInterface.addText(STARTING_POINT + 46, "Tier 3", tda, 1, 0xFFA500);
+		RSInterface.addText(STARTING_POINT + 47, "Tier 4", tda, 1, 0xFFA500);
+		RSInterface.addText(STARTING_POINT + 48, "Tier 5", tda, 1, 0xFFA500);
+		RSInterface.addText(STARTING_POINT + 49, "Tier 6", tda, 1, 0xFFA500);
+		RSInterface.addText(STARTING_POINT + 50, "Lvl 120", tda, 1, 0xFFA500);
+		main.totalChildren(29);
 		main.child(0, STARTING_POINT + 1, 10, 10);
-		main.child(1, STARTING_POINT + 2, 280, 273);
-		main.child(2, STARTING_POINT + 3, 280, 273);
-		main.child(3, STARTING_POINT + 5, 319, 282);
-		main.child(4, STARTING_POINT + 6, 324, 210);
-		main.child(5, STARTING_POINT + 20, 0, 71);
+		main.child(1, STARTING_POINT + 2, 336, 276);
+		main.child(2, STARTING_POINT + 3, 336, 276);
+		main.child(3, STARTING_POINT + 5, 369, 284);
+		main.child(4, STARTING_POINT + 6, 382, 231);
+		main.child(5, STARTING_POINT + 20, 0, 87);
 		main.child(6, STARTING_POINT + 7, 40, 20);
-		main.child(7, STARTING_POINT + 8, 230, 56);
-		main.child(8, STARTING_POINT + 9, 311, 178);
-		main.child(9, STARTING_POINT + 10, 228, 74);
-		main.child(10, STARTING_POINT + 11, 465, 19);
-		main.child(11, STARTING_POINT + 12, 465, 19);
+		main.child(7, STARTING_POINT + 8, 345, 68);
+		main.child(8, STARTING_POINT + 9, 379, 211);
+		main.child(9, STARTING_POINT + 10, 324, 90);
+		main.child(10, STARTING_POINT + 11, 492, 10);
+		main.child(11, STARTING_POINT + 12, 492, 10);
 		main.child(12, STARTING_POINT + 14, 150, 20);
-		main.child(13, STARTING_POINT + 15, 20, 35 + 10);
-		main.child(14, STARTING_POINT + 16, 27, 43 + 13);
-		main.child(15, STARTING_POINT + 17, 222, 150);
+		main.child(13, STARTING_POINT + 15, 130, 68);
+		main.child(14, STARTING_POINT + 16, 348, 191);
+		main.child(15, STARTING_POINT + 37, 20, 34);// 00 hover
+		main.child(16, STARTING_POINT + 38, 88, 34);//01 hover
+		main.child(17, STARTING_POINT + 39, 88+68, 34);//02 hover
+		main.child(18, STARTING_POINT + 40, 156+68, 34);//03 hover
+		main.child(19, STARTING_POINT + 41, 224+68, 34);// 04 hover
+		main.child(20, STARTING_POINT + 42, 292+68, 34);// 05 hover
+		main.child(21, STARTING_POINT + 43, 428, 34);// 06 hover
+		main.child(22, STARTING_POINT + 44, 26, 39);// 00 text
+		main.child(23, STARTING_POINT + 45, 92, 39);// 01 text
+		main.child(24, STARTING_POINT + 46, 162, 39);// 02 text
+		main.child(25, STARTING_POINT + 47, 230, 39);//03 text
+		main.child(26, STARTING_POINT + 48, 298, 39);// 04 text
+		main.child(27, STARTING_POINT + 49, 366, 39);// 05 text
+		main.child(28, STARTING_POINT + 50, 434, 39);// 06 text
 		RSInterface scroll = addInterface(STARTING_POINT + 20);
-		scroll.width = 165;
-		scroll.height = 232;
+		scroll.width = 289;
+		scroll.height = 215;
 		scroll.scrollMax = 300;
 
 		scroll.totalChildren(1);
-		scroll.child(0, STARTING_POINT + 21, 25, 0);
+		scroll.child(0, STARTING_POINT + 21, 40, 5);
 
-		addToItemGroup(STARTING_POINT + 21, 4, 7, 5, 7, true, new String[]{"Select", null, null, null, null});
+		addToItemGroup(STARTING_POINT + 21, 6, 12, 10, 10, true, new String[]{"Select", null, null, null, null});
 	}
+    
 
 	protected static void combiner(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(19700);

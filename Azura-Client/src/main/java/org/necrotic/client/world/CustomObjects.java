@@ -103,10 +103,12 @@ public class CustomObjects {
 
 			{11356, 1764, 5331, 0, 3},//portal at V.O.W
 			{41207, 2015, 5024, 0, 0},//th chest
+
+            {41200, 1971, 5020, 0, 0},//vod coffin
+            {41201, 1954, 5031, 0, 0},//vod coffin
+            {41202, 1936, 5022, 0, 0},//vod coffin
 			{41203, 1954, 5006, 0, 2},//vod chest
-			{41200, 1971, 5020, 0, 0},//vod coffin
-			{41201, 1954, 5031, 0, 0},//vod coffin
-			{41202, 1936, 5022, 0, 0},//vod coffin
+			
 
 			{41206, 2074, 4423, 0, 1}, // HoV Portal At Home
 

@@ -7,6 +7,7 @@ import com.ruse.model.Animation;
 import com.ruse.model.DamageDealer;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.definitions.NPCDrops;
+import com.ruse.motivote3.doMotivote;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
@@ -204,6 +205,10 @@ public class NPCDeathTask extends Task {
                             AfkBossDrop.handleDrop(npc);
                             AfkSystem.thievedCount -= 80000;
                         }
+                        if (npc.getId() == 8013) {
+                            VoteBossDrop.handleDrop(npc);
+                            doMotivote.setVoteCount(0);
+                        }
                         if (npc.getId() == SkeletalHorror.NPC_ID) {
                             SkeletalHorror.wyrmAlive = false;
                         }
@@ -217,7 +222,7 @@ public class NPCDeathTask extends Task {
                             StarterTasks.doProgress(killer, StarterTaskData.KILL_100_STARTER);
                         }
                         if (npc.getId() == 4972) { // done
-                            StarterTasks.doProgress(killer, StarterTaskData.KILL_ETERNAL);
+                            StarterTasks.doProgress(killer, StarterTaskData.KILL_DRAGON_KING);
                         }
 
                         if (!(npc.getId() == 1)) {
@@ -225,7 +230,8 @@ public class NPCDeathTask extends Task {
                         }
                         /** PARSE DROPS **/
                         if (npc.getId() == 3830) {
-                            SkeletalHorror.handleDrop(npc);
+                            DonationBossDrop.handleDrop(npc);
+                            DonationBossSystem.amntDonated = 0;
                         }
 
 
@@ -237,6 +243,7 @@ public class NPCDeathTask extends Task {
 
                         }
                         if (npc.getId() == 4972) {
+                            GlobalBoss4.handleDrop(npc);
                             GlobalBoss1.handleDrop(npc);
                         }
                         if (npc.getId() == 9017) {

@@ -32,7 +32,7 @@ public class HallsOfValor {
     };
     
     public static final Position TELEPORT_AREA = new Position(2195, 5037, 0);
-    public static final Position TELEPORT_OUT = new Position(2072, 4426);
+    public static final Position TELEPORT_OUT = new Position(2585, 2521);
 
     public static final Item KEY_REWARD = new Item(23086);
     public static final int CHEST_ID = 41206;
@@ -67,7 +67,7 @@ public class HallsOfValor {
             Achievements.doProgress(player, Achievements.Achievement.OPEN_200_CHESTS_IN_HALLS_OF_VALOR);
             DailyTask.HALLS_OF_VALOR.tryProgress(player);
         } else {
-            player.getPacketSender().sendMessage("You do not have the Halls of Valor Key!");
+            player.getPacketSender().sendMessage("You do not have the Isles Key!");
         }
     }
 

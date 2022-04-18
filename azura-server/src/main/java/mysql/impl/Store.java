@@ -18,10 +18,11 @@ import com.ruse.world.entity.impl.player.Player;
  */
 public class Store implements Runnable {
 
-	public static final String HOST = "necrotic.org"; // website ip address
-	public static final String USER = "necrotic_store_u";
-	public static final String PASS = "wKeYwBadsasv69Zl8LLs!";
-	public static final String DATABASE = "necroadsastic_store_u";
+
+	public static final String HOST = "avalon317.com";
+	public static final String USER = "u189330247_Store";
+	public static final String PASS = "8ytqy63zYrAUGWz";
+	public static final String DATABASE = "u189330247_Store";
 
 	private Player player;
 	private Connection conn;
@@ -29,10 +30,9 @@ public class Store implements Runnable {
 
 	/**
 	 * The constructor
-	 * 
-	 * @param player
+	 *
 	 */
-	public Store(Player player) {
+	public Store() {
 		this.player = player;
 	}
 

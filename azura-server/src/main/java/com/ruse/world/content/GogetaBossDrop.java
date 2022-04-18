@@ -90,7 +90,7 @@ public class GogetaBossDrop {
 				player.getInventory().add(common, 5);
 			}
 			if (chance <= 95) {
-				player.getInventory().add(10506, 10_000);
+				player.getInventory().add(12855, 10_000);
 				player.getInventory().add(5022, 1_000);
 				player.getInventory().add(989, 2);
 				player.getInventory().add(2025, 3);
@@ -99,7 +99,7 @@ public class GogetaBossDrop {
 			}
 			if (chance >= 96 && chance <= 98) {
 				player.getInventory().add(uncommon, 1);
-				player.getInventory().add(10506, 10_000);
+				player.getInventory().add(12855, 10_000);
 				player.getInventory().add(5022, 1_000);
 				player.getInventory().add(989, 2);
 				player.getInventory().add(2025, 3);
@@ -111,7 +111,7 @@ public class GogetaBossDrop {
 			}	
 			if (chance == 99) {
 				player.getInventory().add(rare, 1);
-				player.getInventory().add(10506, 10_000);
+				player.getInventory().add(12855, 10_000);
 				player.getInventory().add(5022, 1_000);
 				player.getInventory().add(989, 2);
 				player.getInventory().add(2025, 3);
@@ -126,7 +126,7 @@ public class GogetaBossDrop {
 				}
 			if (chance == 100) {
 				player.getInventory().add(superrare, 1);
-				player.getInventory().add(10506, 10_000);
+				player.getInventory().add(12855, 10_000);
 				player.getInventory().add(5022, 1_000);
 				player.getInventory().add(989, 2);
 				player.getInventory().add(2025, 3);

@@ -18895,31 +18895,31 @@ name: Exquisite clothes
 finish
 
 Item Id: 5068
-name: Joker helm
+name: Inuyasha helm
 finish
 
 Item Id: 5069
-name: Joker body
+name: Inuyasha body
 finish
 
 Item Id: 5070
-name: Joker legs
+name: Inuyasha legs
 finish
 
 Item Id: 5071
-name: Joker gloves
+name: Inuyasha gloves
 finish
 
 Item Id: 5072
-name: Joker boots
+name: Inuyasha boots
 finish
 
 Item Id: 5073
-name: Joker Rpg
+name: Inuyasha Sword
 finish
 
 Item Id: 5074
-name: Joker pet
+name: Inuyasha pet
 finish
 
 Item Id: 5075
@@ -23779,7 +23779,7 @@ name: Catspeak amulet (e)
 finish
 
 Item Id: 6545
-name: Perfect cell pet
+name: Raditz pet
 finish
 
 Item Id: 6546
@@ -27531,15 +27531,15 @@ name: Cake of guidance
 finish
 
 Item Id: 7543
-name: Perfect cell Rifle
+name: Raditz Rifle
 finish
 
 Item Id: 7544
-name: Perfect Cell Teddybear
+name: Raditz Teddybear
 finish
 
 Item Id: 7545
-name: Perfect Cell apparatus
+name: Raditz apparatus
 finish
 
 Item Id: 7546
@@ -29039,7 +29039,7 @@ name: Al kharid flyer
 finish
 
 Item Id: 7927
-name: Cyantrix ring
+name: Energy ring
 finish
 
 Item Id: 7928
@@ -33943,27 +33943,27 @@ name: Aluft aloft box
 finish
 
 Item Id: 9478
-name: Super buu helm
+name: Goku helm
 finish
 
 Item Id: 9479
-name: Super 	 body
+name: Goku body
 finish
 
 Item Id: 9480
-name: Super buu legs
+name: Goku legs
 finish
 
 Item Id: 9481
-name: Perfect cell helm
+name: Raditz helm
 finish
 
 Item Id: 9482
-name: Perfect cell body
+name: Raditz body
 finish
 
 Item Id: 9483
-name: Perfect cell legs
+name: Raditz legs
 finish
 
 Item Id: 9484
@@ -41967,23 +41967,23 @@ name: x file cape
 finish
 
 Item Id: 11763
-name: Freiza helm
+name: Trump helm
 finish
 
 Item Id: 11764
-name: Freiza body
+name: Trump body
 finish
 
 Item Id: 11765
-name: Freiza legs
+name: Trump legs
 finish
 
 Item Id: 11766
-name: Freiza gloves
+name: Trump gloves
 finish
 
 Item Id: 11767
-name: Freiza boots
+name: Trump boots
 finish
 
 Item Id: 11768
@@ -55127,7 +55127,7 @@ name: Drugged meat
 finish
 
 Item Id: 15278
-name: Super Buu Pet
+name: Goku Pet
 finish
 
 Item Id: 15279
@@ -57243,7 +57243,7 @@ name: Protector's ward (b)
 finish
 
 Item Id: 15832
-name: Super buu ward
+name: Goku ward
 finish
 
 Item Id: 15833
@@ -58911,7 +58911,7 @@ name: Katagon spear (p+) (b)
 finish
 
 Item Id: 16249
-name: Super buu Staff
+name: Goku Staff
 finish
 
 Item Id: 16250
@@ -58975,7 +58975,7 @@ name: Marmaros boots (b)
 finish
 
 Item Id: 16265
-name: Super buu boots
+name: Goku boots
 finish
 
 Item Id: 16266
@@ -64015,11 +64015,11 @@ name: Wrath Hammer Offhand
 finish
 
 Item Id: 17702
-name: Freiza claws
+name: Trump claws
 finish
 
 Item Id: 17703
-name: Freiza claws
+name: Trump claws
 finish
 
 Item Id: 17704
@@ -72291,7 +72291,7 @@ name: jack helm
 finish
 
 Item Id: 19931
-name: Cyan black Torva helm
+name: Energy Torva helm
 finish
 
 Item Id: 19932
@@ -72299,11 +72299,11 @@ name: Green blossom seed
 finish
 
 Item Id: 19933
-name: Cyan black Torva body
+name: Energy Torva body
 finish
 
 Item Id: 19934
-name: Cyan black Torva legs
+name: Energy Torva legs
 finish
 
 Item Id: 19937
@@ -77359,15 +77359,15 @@ name: Slayer xp lamp
 finish
 
 Item Id: 21220
-name: Samba headdress
+name: Pvm ticket pack (1k)
 finish
 
 Item Id: 21221
-name: Samba headdress
+name: Cash box
 finish
 
 Item Id: 21222
-name: Samba headdress
+name: Cash box (t2)
 finish
 
 Item Id: 21223
@@ -80783,7 +80783,7 @@ name: Staff of light
 finish
 
 Item Id: 22214
-name: Gnome scarf
+name: PvM Box (t2)
 finish
 
 Item Id: 22215
@@ -80803,7 +80803,7 @@ name: Gnome scarf
 finish
 
 Item Id: 22219
-name: Lunar helm
+name: PVM ticket pack (10k)
 finish
 
 Item Id: 22220
@@ -81551,7 +81551,7 @@ name: Nymora Pet
 finish
 
 Item Id: 23086
-name: Halls of Valor Key
+name: Isles Key
 finish
 
 Item Id: 23087

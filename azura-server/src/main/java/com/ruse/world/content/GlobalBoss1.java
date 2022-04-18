@@ -4,6 +4,7 @@ import com.ruse.GameSettings;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.util.Misc;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.combat.CombatBuilder;
@@ -23,7 +24,7 @@ public class GlobalBoss1 {
     // before the world is created and it wont spawn on server boot for 3 hrs
     public static int tick = -20;
 
-    public static Position SPAWN_POINT = new Position(2143, 5016,0);
+    public static Position SPAWN_POINT = new Position(2140, 5016,0);
 
     public static int[] BOSS_IDS = {
             4972
@@ -60,7 +61,7 @@ public class GlobalBoss1 {
         for (Iterator<Map.Entry<Player, Integer>> iterator = result.iterator(); iterator.hasNext(); ) {
             Map.Entry<Player, Integer> entry = iterator.next();
             Player killer = entry.getKey();
-            
+
             Achievements.doProgress(killer, Achievements.Achievement.KILL_45_GLOBAL_BOSSES);
             DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 
@@ -78,12 +79,12 @@ public class GlobalBoss1 {
 
     }
     public static String timeLeft() {
-        int ticks = 18000 - (tick % 18000);
+        int ticks = 6000 - (tick % 6000);
         ticks /= 100;
         ticks *= 60;
 
         long ms = ticks ;
-       String  m = String.format("%dh %dm", TimeUnit.SECONDS.toHours(ms),
+        String  m = String.format("%dh %dm", TimeUnit.SECONDS.toHours(ms),
                 TimeUnit.SECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.SECONDS.toHours(ms)),
                 TimeUnit.SECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.SECONDS.toMinutes(ms)));
 
@@ -93,11 +94,11 @@ public class GlobalBoss1 {
         return m;
     }
 
-    public static void sequence() {
+    public static void executespawn() {
         tick++;
 
         // Spawn every 3 hours
-        if (tick % 18000 == 0) {
+        if (tick % 6000 == 0) {
 
             // Only if its dead
             if(currentBoss == null || currentBoss.isDying() || !currentBoss.isRegistered()) {
@@ -114,14 +115,7 @@ public class GlobalBoss1 {
                 currentBoss = npc;
                 World.register(npc);
 
-                String message = "Whoever dares to challenge Avalon The Great, face him now at ::global";
-
-                if (boss == 9014)
-                    message = "Whoever dares to challenge Avalon The Great, face him now at ::global";
-               else if (boss == 9017)
-                    message = "A vicious melting golem has spawned at ::global";
-                else if (boss == 3305)
-                    message = "A wild panther has spawned at ::global";
+                String message = "The Vicious Nightmare boss has spawned at ::nightmare";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
@@ -129,6 +123,7 @@ public class GlobalBoss1 {
                     }
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
+                DiscordMessager.sendDragonKingLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;

@@ -625,7 +625,7 @@ public class Misc {
             original *= 2;
         }
         if (player.getMinutesBonusExp() >= 0) {
-            original *= 2;
+            original *= 1.3;
         }
         return original;
     }

@@ -33,7 +33,6 @@ import com.ruse.world.content.skill.impl.hunter.*;
 import com.ruse.world.content.skill.impl.hunter.Trap.TrapState;
 import com.ruse.world.content.skill.impl.old_dungeoneering.ItemBinding;
 import com.ruse.world.content.skill.impl.prayer.Prayer;
-import com.ruse.world.content.skill.impl.runecrafting.Runecrafting;
 import com.ruse.world.content.skill.impl.runecrafting.RunecraftingPouches;
 import com.ruse.world.content.skill.impl.runecrafting.RunecraftingPouches.RunecraftingPouch;
 import com.ruse.world.content.skill.impl.slayer.SlayerDialogues;
@@ -191,7 +190,6 @@ public class ItemActionPacketListener implements PacketListener {
 
 
         switch (itemId) {
-
             case 9719:
                 player.sendMessage("You must bring this to your slayer master to cancel your task.");
                 break;
@@ -418,8 +416,52 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.OFF_BOX);
                 player.getCasketOpening().openInterface();
                 break;
-            case 19114:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.WEAPON_BOX);
+
+            case 19116:
+                int[] commonsuper1 = new int[] {12855, 989, 4888, 18332, 14377,13902,13899 ,11730};
+                int[] uncommonsuper1 = new int[] {13922,13952,13940,13910,13946,13934,13916,13949,13937,14915,14919,14924};
+                int[] raresuper1 = new int[] {16140,2021,12860,12565,12634,22077,19136,6936,14008,14009,14010,455};
+                player.getMysteryBoxOpener().display(19116, "Super Box", commonsuper1, uncommonsuper1, raresuper1);
+                break;
+
+            case 19115:
+                int[] commonextreme = new int[] { 15442, 15443, 15444, 18351, 18349, 18353, 6500, 13740 };
+                int[] uncommonsuper11 = new int[] {20535,19136,6936,666,15424,674};
+                int[] raresuper11extreme = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808,20549,20173,8809,10946,};
+                player.getMysteryBoxOpener().display(19115, "Extreme Box", commonextreme, uncommonsuper11, raresuper11extreme);
+                break;
+
+            case 19114:// grandmbox
+                int[] commongrand = new int[] { 13740, 15290};
+                int[] uncommongrand = new int[] {20549, 20173, 8809,8834,8835,8860,8861,8862,15830,3318,15418};
+                int[] raresgrand = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092,10946,10942,6769 };
+                player.getMysteryBoxOpener().display(19114, "Grand Box", commongrand, uncommongrand, raresgrand);
+                break;
+            case 20488:// grandmbox
+                int[] commonOP = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808,20549,20173,8809,10946,10946,10946 };
+                int[] uncommonOP = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092,10946,6769 };
+                int[] raresOP = new int[] {18753,18749,18631,18752,18748,18637,18751,18638,18623,18750,18636,18629,19886,4446,10942 };
+                player.getMysteryBoxOpener().display(20488, "OP Chest", commonOP, uncommonOP, raresOP);
+                break;
+            case 15003:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SILVER);
+                player.getCasketOpening().openInterface();
+                break;
+            case 15002:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RUBY);
+                player.getCasketOpening().openInterface();
+                break;
+            case 20489:
+                int[] commonLaunch = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808, 20549, 20173, 8809,
+                        10946, 6769,15290};
+                int[] uncommonLaunch = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325, 22084, 22083, 22092,
+                        10942,15289};
+                int[] raresLaunch = new int[] {18753, 18749, 18631, 18752, 18748, 18637, 18751, 18638, 18623, 18750, 18636,
+                        18629, 4446, 19886, 10934,15288};
+                player.getMysteryBoxOpener().display(20489, "$10 Launch Chest", commonLaunch, uncommonLaunch, raresLaunch);
+                break;
+            case 23086:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.HOV_BOX);
                 player.getCasketOpening().openInterface();
                 break;
             case 11858:
@@ -602,18 +644,67 @@ public class ItemActionPacketListener implements PacketListener {
 
                 player.getInventory().delete(19768, 1);
                 break;
-           /* case 17544:
-                player.getInventory().delete(17544, 1);
-                player.getInventory().add(ItemDefinition.MILL_ID, 30000);
-                player.sendMessage("<shad=1>@yel@You swapped your Supreme potion to 30K Tokens!");
+            case 7956:
+                int[] commonpvm = new int[] {4716, 4720, 4718, 4722, 4708, 4712, 4714, 4710, 4732, 4736, 4738, 4734, 4753, 4757, 4759, 4755,
+                        4745, 4749, 4751, 4747, 290};
+                int[] uncommonpvm = new int[] {11852, 11854, 11856, 11846, 11848, 19670};
+                int[] rarepvm = new int[] {4151,11235,15486,13262,18353,11732,6585,6737,7462};
+                player.getMysteryBoxOpener().display(7956, "Pvm box", commonpvm, uncommonpvm, rarepvm);
                 break;
-            case 17546:
-                player.getInventory().delete(17546, 1);
-                player.getInventory().add(ItemDefinition.MILL_ID, 125000);
-                player.sendMessage("<shad=1>@yel@You swapped your God potion to 125K Tokens!");
-                break;*/
+            case 10025:
+                int[] commonpro = new int[] {671, 4411, 14415,14395,14405,672,673,//link
+                        677,678,679,22075,19471,19470,19469,//warriors
+                        666,15424,674,22078,4369,15877,16269,15943,//cthulu demon
+                        675,702,700,701,17708,//master chief
+                        5095,19140,19139,19138,//cosmos
+                        15922,16021,15933,//king
+                        17600,19944,703,704,705,19946,19946,//avatar
+                };
+                int[] uncommonpro = new int[] {
+                        17714,17686,15924,16023,15935,15888,15818,12994,16272,8809,8806,8807,8808,//lucien
+                        12284,15005,15006,15007,15008,15100,15200,15201,20549,8800,8801,8802,//hercules
+                        17712,17638,17640,15593,16140,2021,12860,12565,20173,8803,8804,8805,8812,//angel
+                };
+                int[] rarepro = new int[] {20542,13300,13301,13304,18683,15511,13306,18817,13302,13305,//satan
+                        15230,15231,15232,15233,15234,17662,15235,15236,21031,21032,21033,21034,21035, //zeus
+                        13640,15448,21934,19918,19913,13964,3107,15401
+                };
+
+                player.getMysteryBoxOpener().display(10025, "Progressive Box", commonpro, uncommonpro, rarepro);
+                break;
             case 455:
                 player.getScratchCard().open();
+                break;
+            case 22215:
+                int amount3 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(22215, amount3).add(5022, 5_000 * amount3);
+                break;
+
+            case 22219:
+                int amount4 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(22219, amount4).add(5022, 10_000 * amount4);
+                break;
+            case 22214: //Pvm box t2
+                int[] pvmcommon = new int[] {11852,11854,11856,11846,11848 };
+                int[] pvmuncommon = new int[] {4151,11235,15486,13262,18353,11732,6585,6737,7462 };
+                int[] pvmrare = new int[] {18686,18799,5095,13996,18834,19140,13913,18801,19139,13919,18800,19138 };
+                player.getMysteryBoxOpener().display(22214, "PVM Box (t2)", pvmcommon, pvmuncommon, pvmrare);
+                break;
+            case 7120:// slayer box
+                int[] commonSlayer = new int[] {671, 4411,14415,14395,14405,672,673,22075,677,678,679,19471,19470,19469,666,15424,674,22078,4369,15877,16269,15943,675,700,702,701,17708,5095,19140,19139,19138,15922,16021,15933,17600,19944};
+                int[] uncommonSlayer = new int[] {17714,17686,15924,16023,15935,15888,15818,12994,16272,8809,8806,8807,8808,12284,15005,15006,15007,15008,15100,15200,15201,20549,8800,8801,8802,17712,17638,17640,15593,16140,2021,12860,12565,20173,8803,8804,8805,8812 };
+                int[] rareSlayer = new int[] {20542,13300,13301,13304,18683,15511,13306,18817,13302,13305,15230,15231,15232,15233,15234,17662,15235,15236,21031,21032,21033,21034,21035,13640,15448,21934,19918,19913,13964,3107,15401 };
+                player.getMysteryBoxOpener().display(7120, "Slayer Box", commonSlayer, uncommonSlayer, rareSlayer);
+                break;
+            case 22123:// slayer box
+                int[] commonSlayerU = new int[] {15289,19114,19115,19116,22003};
+                int[] uncommonSlayerU = new int[] {15288,15358,15359,8323,8324,8325,8326,8327,8328,8330,8331,8332,22092,22084,22083};
+                int[] rareSlayerU = new int[] {18750,18753,18752,18751,18636,18749,18748,18638,18629,18631,18637,18623,19886,4446,10946,1486,10947,3737,3738,3739};
+                player.getMysteryBoxOpener().display(22123, "Slayer Box (u)", commonSlayerU, uncommonSlayerU, rareSlayerU);
+                break;
+            case 21220:
+                int amount5 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(21220, amount5).add(5022, 1_000 * amount5);
                 break;
             case 22121:
                 if (player.getLocation() != Location.HOME_BANK) {
@@ -623,9 +714,8 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 player.getScratchcard().open();
                 player.getInventory().delete(22121, 1);
-
-
                 break;
+
             case 4278:
                 if (player.getLocation() == Location.JAIL) {
                     player.sendMessage("<shad=1>@cya@You can't start an instance while your in jail.");
@@ -886,7 +976,7 @@ public class ItemActionPacketListener implements PacketListener {
                 int amt = 1;
                 int minutesEXP = 15 * amt;
                 int minutesDR = 5 * amt;
-                // int minutesDMG = 2 * amt;
+                 int minutesDMG = 5 * amt;
 
                 player.getInventory().delete(23020, amt);
                 player.getInventory().add(ItemDefinition.COIN_ID, 500_000 * amt);
@@ -894,11 +984,11 @@ public class ItemActionPacketListener implements PacketListener {
                         .sendMessage("@blu@You are rewarded " + (amt * 1) + " vote "
                                 + (amt > 1 ? "points, " : "point, ") + (500_000 * amt) + " Avalon coins");
                 player.getPacketSender()
-                        .sendMessage("@blu@You received " + minutesEXP + " minutes of Bonus Xp, " + minutesDR + " minutes of x2 DR");
+                        .sendMessage("@blu@You received " + minutesDMG + " minutes of 100% Bonus DMG , and " + minutesDR + " minutes of 100% Bonus DR");
                 player.getPointsHandler().incrementVotingPoints(amt * 1);
-                BonusExperienceTask.addBonusXp(player, minutesEXP);
+               // BonusExperienceTask.addBonusXp(player, minutesEXP);
                 VotingDRBoostTask.addBonusDR(player, minutesDR);
-                //VotingDMGBoostTask.addBonusDMG(player, minutesDMG);
+                VotingDMGBoostTask.addBonusDMG(player, minutesDMG);
                 StarterTasks.finishTask(player, StarterTaskData.REDEEM_A_VOTE_SCROLL);
 
                 Achievements.doProgress(player, Achievements.Achievement.VOTE_10_TIMES, amt);
@@ -1176,360 +1266,11 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(loot.getId(), loot.getMin() + Misc.getRandom(loot.getMax() - loot.getMin()));
                 break;
             case 6199:
-                player.getNewSpinner().openBox(6199);
+                int[] common = new int[] {12855,1149,1249,3204,1305,1215,1377,1434,7158,989,536};
+                int[] uncommon = new int[] {6739, 11728, 15259, 6570,3320,3318,4888,18332,14377};
+                int[] rare = new int[] {18686,18799,5095,13996,18834,19140,13913,18801,19139,13919,18800,19138,14915,14919,14924};
+                player.getMysteryBoxOpener().display(6199, "Mystery Box", common, uncommon, rare);
                 break;
-            /*case 6199:
-
-                player.getMysteryBoxOpener().display(6199, "Mystery Box", MBox.common, MBox.uncommon, MBox.rare);
-                break;
-            case 18768:
-                player.getMysteryBoxOpener().display(18768, "Dragonball Box", DragonballBox.common1, DragonballBox.uncommon1, DragonballBox.rare1);
-                break;
-            case 10025:
-                player.getMysteryBoxOpener().display(10025, "Progressive Box", ProgressiveBox.commonpro, ProgressiveBox.uncommonpro, ProgressiveBox.rarepro);
-                break;
-            case 7120:
-                player.getMysteryBoxOpener().display(7120, "Slayer Box", SlayerBox.commonpro2, SlayerBox.uncommonpro2, SlayerBox.rarepro2);
-                break;*/
-            /*
-             * int progress[][] = { { 671, 16337, 4411, 14415, 14395, 14405, 672, 673,
-             * 19887, 681,676,18363,677,678,679,22075,19471,19470,19469,4393, 734, 666,
-             * 15424, 674, 22078, 4369, 15877, 16269, 15943, 675, 702, 700, 701, 17708,
-             * 17602, 19153, 19142, 19141, 5095, 19140, 19139, 19138, 2572, 15922, 16021,
-             * 15933, 18350, 18358,18354,14910,14915,14911,14912,14914,14913}, { 671, 16337,
-             * 4411, 14415, 14395, 14405, 672, 673, 19887,
-             * 681,676,18363,677,678,679,22075,19471,19470,19469,4393, 734, 666, 15424, 674,
-             * 22078, 4369, 15877, 16269, 15943, 675, 702, 700, 701, 17708, 17602, 19153,
-             * 19142, 19141, 5095, 19140, 19139, 19138, 2572, 15922, 16021, 15933, 18350,
-             * 18358,18354, 18352,18360, 17600, 19944, 703, 704, 705, 19946, 19945, 17712,
-             * 17638,17640,15593,16140,2021,12860,12565,10835}, { 671, 16337, 4411, 14415,
-             * 14395, 14405, 672, 673, 19887,
-             * 681,676,18363,677,678,679,22075,19471,19470,19469,4393, 734, 666, 15424, 674,
-             * 22078, 4369, 15877, 16269, 15943, 675, 702, 700, 701, 17708, 17602, 19153,
-             * 19142, 19141, 5095, 19140, 19139, 19138, 2572, 15922, 16021, 15933, 18350,
-             * 18358,18354, 18352,18360, 17600, 19944, 703, 704, 705, 19946, 19945, 17712,
-             * 17638,17640,15593,16140,2021,12860,12565,10835} }; double nugemprofess =
-             * Math.random(); /** Chances 50% chance of Common Items - cheap gear, high-end
-             * consumables 40% chance of Uncommon Items - various high-end coin-bought gear
-             * 10% chance of Rare Items - Highest-end coin-bought gear, some
-             * voting-point/pk-point equipment
-             *
-             * int rewardprogress = nugemprofess >= 0.5 ? 0 : nugemprofess >= 0.20 ? 1 : 2;
-             * rewardPos = Misc.getRandom(progress[rewardprogress].length - 1);
-             * player.getInventory().delete(10025, 1);
-             * player.getInventory().add(progress[rewardprogress][rewardPos],
-             * 1).refreshItems(); break;
-             */
-          /*  case 6198:
-
-                double petNumGen = Math.random();
-                *//**
-             * Chances 54% chance of Uncommon Items - various high-end coin-bought gear 30%
-             * chance of Rare Items - Highest-end coin-bought gear, Some poor
-             * voting-point/pk-point equipment 11% chance of Epic Items -Better
-             * voting-point/pk-point equipment 5% chance of Legendary Items - Only top-notch
-             * voting-point/pk-point equipment
-             *//*
-                int petRewardGrade = petNumGen >= 0.46 ? 0 : petNumGen >= 0.16 ? 1 : petNumGen >= 0.05 ? 2 : 3;
-                int petRewardPos = Misc.getRandom(DRPetBox.petRewards[petRewardGrade].length - 1);
-                player.getInventory().delete(6198, 1);
-                player.getPacketSender().sendMessage("@blu@Enjoy your pet do ::droprate to check your drop rates.");
-                player.getInventory().add(DRPetBox.petRewards[petRewardGrade][petRewardPos], 1).refreshItems();
-                break;
-            case 19624:
-
-
-                double bossEventNumGen = Math.random();
-                *//**
-             * Chances 54% chance of Uncommon Items - various high-end coin-bought gear 30%
-             * chance of Rare Items - Highest-end coin-bought gear, Some poor
-             * voting-point/pk-point equipment 11% chance of Epic Items -Better
-             * voting-point/pk-point equipment 5% chance of Legendary Items - Only top-notch
-             * voting-point/pk-point equipment
-             *//*
-                int bossEventRewardGrade = bossEventNumGen >= 0.46 ? 0
-                        : bossEventNumGen >= 0.16 ? 1 : bossEventNumGen >= 0.05 ? 2 : 3;
-                int bossEventRewardPos = Misc.getRandom(BossEventBox.bossEventMbox[bossEventRewardGrade].length - 1);
-                player.getInventory().delete(19624, 1);
-                player.getInventory().add(ItemDefinition.COIN_ID, 20000000);
-                player.getPacketSender().sendMessage("<col=3d1c3e>[Boss event box] you have been rewarded!");
-
-                player.getInventory().add(BossEventBox.bossEventMbox[bossEventRewardGrade][bossEventRewardPos], 1).refreshItems();
-
-                break;
-            case PVMBox.ITEM_ID:
-                player.getMysteryBoxOpener().display(PVMBox.ITEM_ID, "Pvm box", PVMBox.commonpvm, PVMBox.uncommonpvm, PVMBox.rarepvm);
-                break;*/
-
-            /*
-             * int lootRewards[][] = { { 4716, 4720, 4718, 4722, 4708, 4712, 4714, 4710,
-             * 4732, 4736, 4738, 4734, 4753, 4757, 4759, 4755, 4745, 4749, 4751, 4747, 290,
-             * 6199 }, // Uncommon, 0 { 18740, 23020, 4153, 1215, 4151, 18684, 18686, 3140,
-             * 15332 }, // Rare, 1 { 11852, 11854, 11856, 11846, 11848, 6199, 23020 }, //
-             * Epic, 2 { 4882, 4894, 4900, 4888, 20460, 20456, 18747 } // Legendary, 3 };
-             * double lootNumGen = Math.random(); /** Chances 54% chance of Uncommon Items -
-             * various high-end coin-bought gear 30% chance of Rare Items - Highest-end
-             * coin-bought gear, Some poor voting-point/pk-point equipment 11% chance of
-             * Epic Items -Better voting-point/pk-point equipment 5% chance of Legendary
-             * Items - Only top-notch voting-point/pk-point equipment
-             *
-             * int lootRewardGrade = lootNumGen >= 0.46 ? 0 : lootNumGen >= 0.16 ? 1 :
-             * lootNumGen >= 0.05 ? 2 : 3; int lootRewardPos =
-             * Misc.getRandom(lootRewards[lootRewardGrade].length - 1);
-             * player.getInventory().delete(7956, 1);
-             * player.getPacketSender().sendMessage("looted.");
-             * player.getInventory().add(lootRewards[lootRewardGrade][lootRewardPos],
-             * 1).refreshItems(); break;
-             */
-          /*  case 10027:
-
-                double slayerlootnumgen = Math.random();
-                *//**
-             * Chances 54% chance of Uncommon Items - various high-end coin-bought gear 30%
-             * chance of Rare Items - Highest-end coin-bought gear, Some poor
-             * voting-point/pk-point equipment 11% chance of Epic Items -Better
-             * voting-point/pk-point equipment 5% chance of Legendary Items - Only top-notch
-             * voting-point/pk-point equipment
-             *//*
-                int slayerrewargrad = slayerlootnumgen >= 0.46 ? 0
-                        : slayerlootnumgen >= 0.16 ? 1 : slayerlootnumgen >= 0.05 ? 2 : 3;
-                int slayerRewardpos = Misc.getRandom(SlayerRewardBox.slayerlootReward[slayerrewargrad].length - 1);
-                player.getInventory().delete(10027, 1);
-
-
-                player.getInventory().add(SlayerRewardBox.slayerlootReward[slayerrewargrad][slayerRewardpos], 1).refreshItems();
-                break;
-            case 20083:
-                int[][] hween = {{22041, 19132, 18405, 18406, 18407}, // Uncommon, 0
-                        {22041, 19132, 18405, 18406, 18407}, // Rare, 1
-                        {22041, 19132, 18405, 18406, 18407}, // Epic, 2
-                        {22041, 19132, 18405, 18406, 18407} // Legendary, 3
-                };
-                double hweenGen = Math.random();
-                *//**
-             * Chances 54% chance of Uncommon Items - various high-end coin-bought gear 30%
-             * chance of Rare Items - Highest-end coin-bought gear, Some poor
-             * voting-point/pk-point equipment 11% chance of Epic Items -Better
-             * voting-point/pk-point equipment 5% chance of Legendary Items - Only top-notch
-             * voting-point/pk-point equipment
-             *//*
-                int hweenRewardg = hweenGen >= 0.46 ? 0 : hweenGen >= 0.16 ? 1 : hweenGen >= 0.05 ? 2 : 3;
-                int hweenrewardgread = Misc.getRandom(hween[hweenRewardg].length - 1);
-                player.getInventory().delete(20083, 1);
-                World.sendMessage("<img=5>@blu@[Halloween cracker]<img=5>@red@ " + player.getUsername()
-                        + " Has just opened a halloween box! ");
-
-                // player.getPacketSender().sendMessage("looted.");
-                player.getInventory().add(hween[hweenRewardg][hweenrewardgread], 1).refreshItems();
-                break;
-            case 4570:
-                int[][] cmascrack = {{1050, 10284, 18411, 18413, 18414, 18412, 18410}, // Uncommon, 0
-                        {1050, 10284, 18411, 18413, 18414, 18412, 18410}, // Rare, 1
-                        {1050, 10284, 18411, 18413, 18414, 18412, 18410}, // Epic, 2
-                        {1050, 10284, 18411, 18413, 18414, 18412, 18410} // Legendary, 3
-                };
-                double camaksGen2 = Math.random();
-                *//**
-             * Chances 54% chance of Uncommon Items - various high-end coin-bought gear 30%
-             * chance of Rare Items - Highest-end coin-bought gear, Some poor
-             * voting-point/pk-point equipment 11% chance of Epic Items -Better
-             * voting-point/pk-point equipment 5% chance of Legendary Items - Only top-notch
-             * voting-point/pk-point equipment
-             *//*
-                int cmasrward = camaksGen2 >= 0.46 ? 0 : camaksGen2 >= 0.16 ? 1 : camaksGen2 >= 0.05 ? 2 : 3;
-                int refeigenerator = Misc.getRandom(cmascrack[cmasrward].length - 1);
-                player.getInventory().delete(4570, 1);
-                World.sendMessage("<img=21>@blu@[Chrismas cracker]<img=5>@red@ " + player.getUsername()
-                        + " Has just opened a halloween box! ");
-
-                // player.getPacketSender().sendMessage("looted.");
-                player.getInventory().add(cmascrack[cmasrward][refeigenerator], 1).refreshItems();
-                break;
-            case 6183:
-                int[][] hween1 = {{8857, 8858, 8859, 16835}, // Uncommon, 0
-                        {8857, 8858, 8859, 16835}, // Rare, 1
-                        {8857, 8858, 8859, 16835}, // Epic, 2
-                        {8857, 8858, 8859, 16835} // Legendary, 3
-                };
-                double hweenGen1 = Math.random();
-                *//**
-             * Chances 54% chance of Uncommon Items - various high-end coin-bought gear 30%
-             * chance of Rare Items - Highest-end coin-bought gear, Some poor
-             * voting-point/pk-point equipment 11% chance of Epic Items -Better
-             * voting-point/pk-point equipment 5% chance of Legendary Items - Only top-notch
-             * voting-point/pk-point equipment
-             *//*
-                int hweenRewardg1 = hweenGen1 >= 0.46 ? 0 : hweenGen1 >= 0.16 ? 1 : hweenGen1 >= 0.05 ? 2 : 3;
-                int hweenrewardgread1 = Misc.getRandom(hween1[hweenRewardg1].length - 1);
-                player.getInventory().delete(6183, 1);
-                World.sendMessage("<img=5>@blu@[Halloween Box]<img=5>@red@ " + player.getUsername()
-                        + " Has just opened a halloween box! ");
-
-                // player.getPacketSender().sendMessage("looted.");
-                player.getInventory().add(hween1[hweenRewardg1][hweenrewardgread1], 1).refreshItems();
-                break;
-            case 6855:
-                int[][] xmaswni = {{13025, 13027, 13023, 22043, 13029, 13031}, // Uncommon, 0
-                        {13025, 13027, 13023, 22043, 13029, 13031}, // Rare, 1
-                        {13025, 13027, 13023, 22043, 13029, 13031}, // Epic, 2
-                        {13025, 13027, 13023, 22043, 13029, 13031} // Legendary, 3
-                };
-                double xmasgen = Math.random();
-                *//**
-             * Chances 54% chance of Uncommon Items - various high-end coin-bought gear 30%
-             * chance of Rare Items - Highest-end coin-bought gear, Some poor
-             * voting-point/pk-point equipment 11% chance of Epic Items -Better
-             * voting-point/pk-point equipment 5% chance of Legendary Items - Only top-notch
-             * voting-point/pk-point equipment
-             *//*
-                int xmasreward = xmasgen >= 0.46 ? 0 : xmasgen >= 0.16 ? 1 : xmasgen >= 0.05 ? 2 : 3;
-                int xmadretin = Misc.getRandom(xmaswni[xmasreward].length - 1);
-                player.getInventory().delete(6855, 1);
-                World.sendMessage("<img=17>@blu@[Christmas Mystery Box]<img=17>@red@ " + player.getUsername()
-                        + " Has just opened a Christmas box! ");
-
-                // player.getPacketSender().sendMessage("looted.");
-                player.getInventory().add(xmaswni[xmasreward][xmadretin], 1).refreshItems();
-                break;*/
-            /*case 15501:
-                int[] commonsuper = new int[]{11946, 11848, 11850, 11852, 11854, 11856, 18686, 18799, 5095, 10025};
-                int[] uncommonsuper = new int[]{19116, 21218, 17714, 17686, 15924, 16023, 15935, 15888, 15818, 12994,};
-                int[] raresuper = new int[]{8801, 8802, 8803, 8804, 8805, 8806, 8807, 8808, 3907, 10946, 6769, 20489};
-                player.getMysteryBoxOpener().display(15501, "Vote Mysterybox", commonsuper, uncommonsuper, raresuper);
-                break;
-            case 11946:
-                player.getInventory().delete(11946, 1);
-                player.getInventory().add(6137, 1);
-                player.getInventory().add(6139, 1);
-                player.getInventory().add(6141, 1);
-                player.getInventory().add(6147, 1);
-                player.getInventory().add(6153, 1);
-                player.sendMessage("You have opened a skeletal set!");
-                break;*/
-            /*
-             * int superiorRewards[][] = { { 11133, 15126, 10828, 3751, 3753, 10589, 10564,
-             * 6809, 4587, 1249, 3204, 1305, 1377, 1434, 6528, 7158, 4153, 6, 8, 10, 12,
-             * 4675, 6914, 6889 }, // Uncommon, 0 { 6739, 15259, 15332, 2579, 6920, 6922,
-             * 15241, 11882, 11884, 11906, 20084 }, // Rare, 1 { 6570, 15018, 15019, 15020,
-             * 15220, 11730, 18349, 18353, 13896, 18357, 13899, 10551, 3322, 4151, 2577 },
-             * // Epic, 2 { 11235, 17273, 14484, 18685, 11696, 11698, 11700, 13262, 15486,
-             * 19336, 18358, 19337, 19338, 19339, 19340, 14009, 14010, 14008, 22034, 18799 }
-             * // Legendary, 3 }; double superiorNumGen = Math.random(); /** Chances 54%
-             * chance of Uncommon Items - various high-end coin-bought gear 30% chance of
-             * Rare Items - Highest-end coin-bought gear, Some poor voting-point/pk-point
-             * equipment 11% chance of Epic Items -Better voting-point/pk-point equipment 5%
-             * chance of Legendary Items - Only top-notch voting-point/pk-point equipment
-             *
-             * int superiorRewardGrade = superiorNumGen >= 0.46 ? 0 : superiorNumGen >= 0.16
-             * ? 1 : superiorNumGen >= 0.05 ? 2 : 3; int superiorRewardPos =
-             * Misc.getRandom(superiorRewards[superiorRewardGrade].length - 1);
-             * player.getInventory().delete(15501, 1);
-             * player.getInventory().add(superiorRewards[superiorRewardGrade][
-             * superiorRewardPos], 1).refreshItems(); break;
-             */
-         /*   case 19116:
-                int[] commonsuper1 = new int[]{ItemDefinition.MILL_ID, 989, 4888, 18332, 14377, 13902, 13899, 11730};
-                int[] uncommonsuper1 = new int[]{13922, 13952, 13940, 13910, 13946, 13934, 13916, 13949, 13937, 14915,
-                        14919, 14924};
-                int[] raresuper1 = new int[]{16140, 2021, 12860, 12565, 12634, 22077, 19136, 6936, 14008, 14009, 14010,
-                        455};
-                player.getMysteryBoxOpener().display(19116, "Super Box", commonsuper1, uncommonsuper1, raresuper1);
-                break;
-
-
-            case 19115:
-                int[] commonextreme = new int[]{12601, 12603, 12605, 15442, 15443, 15444, 20000, 20001, 20002, 18351,
-                        18349, 18353, 6500, 13744, 13738, 13742, 13740, 6570, 19111, 13752, 13746, 13750, 19135, 14484};
-                int[] uncommonsuper11 = new int[]{22077, 19136, 6936, 1038, 1040, 1042, 1044, 1046, 1048, 666, 15424,
-                        674};
-                int[] raresuper11extreme = new int[]{8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808, 20549, 20173,
-                        8809, 10946, 10946, 10946};
-                player.getMysteryBoxOpener().display(19115, "Extreme Box", commonextreme, uncommonsuper11,
-                        raresuper11extreme);
-                break;*/
-            /*
-             * int extremeRewards[][] = { { 150195020, 15220, 12601, 12603, 12605, 2572,
-             * 15441, 15442, 15443, 15444, 20000, 20001, 20002, 15018, 12931, 18351, 18349,
-             * 18353, 18335, 18357, 6500, 18719 }, // Uncommon, 0 { 6739, 13744, 13738,
-             * 13742, 13740, 6570, 19111, 11702, 13752, 13746, 13750, 19135, 14484 }, //
-             * Rare, // 1 { 11235, 17273, 14484, 11696, 11698, 11700, 13262, 15486, 19336,
-             * 19337, 19338, 19339, 19340, 14009, 14010, 14008, 6769 }, // Epic, 2 { 1055,
-             * 1053, 1507, 1050, 10284, 962, 1042, 1046, 1044, 1040, 1038, 11858, 11860,
-             * 11862, 19580, 10935, 6769 } // Legendary, 3 }; double extremeNumGen =
-             * Math.random(); /** Chances 54% chance of Uncommon Items - various high-end
-             * coin-bought gear 30% chance of Rare Items - Highest-end coin-bought gear,
-             * Some poor voting-point/pk-point equipment 11% chance of Epic Items -Better
-             * voting-point/pk-point equipment 5% chance of Legendary Items - Only top-notch
-             * voting-point/pk-point equipment
-             *
-             * int extremeRewardGrade = extremeNumGen >= 0.46 ? 0 : extremeNumGen >= 0.16 ?
-             * 1 : extremeNumGen >= 0.05 ? 2 : 3; int extremeRewardPos =
-             * Misc.getRandom(extremeRewards[extremeRewardGrade].length - 1);
-             * player.getInventory().delete(19115, 1);
-             * player.getInventory().add(extremeRewards[extremeRewardGrade][extremeRewardPos
-             * ], 1).refreshItems(); int extremeRewardGrade1 = extremeNumGen >= 0.46 ? 0 :
-             * extremeNumGen >= 0.16 ? 1 : extremeNumGen >= 0.05 ? 2 : 3; int
-             * extremeRewardPos1 = Misc.getRandom(extremeRewards[extremeRewardGrade1].length
-             * - 1); player.getInventory().add(extremeRewards[extremeRewardGrade1][
-             * extremeRewardPos1], 1).refreshItems(); break;
-             */
-          /*  case 19114:// grandmbox
-                int[] commongrand = new int[]{13736, 13744, 13742, 13740, 6293, 18754, 11694, 11696, 11698, 11700, 1038,
-                        1040, 1042, 1044, 1046, 1048};
-                int[] uncommongrand = new int[]{20549, 20173, 8809, 8834, 8835, 8860, 8861, 8862, 15830, 3318, 15418};
-                int[] raresgrand = new int[]{8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325, 22084, 22083, 22092,
-                        10946, 10942, 6769};
-                player.getMysteryBoxOpener().display(19114, "Grand Box", commongrand, uncommongrand, raresgrand);
-                break;
-            case 20488:// grandmbox
-                int[] commonOP = new int[]{8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808, 20549, 20173, 8809,
-                        10946, 10946, 10946};
-                int[] uncommonOP = new int[]{8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325, 22084, 22083, 22092,
-                        10946, 10942};
-                int[] raresOP = new int[]{18753, 18749, 18631, 18752, 18748, 18637, 18751, 18631, 18623, 18750, 18636,
-                        18629, 19886, 4446, 6769, 10942};
-                player.getMysteryBoxOpener().display(20488, "OP Chest", commonOP, uncommonOP, raresOP);
-                break;
-            case 20489:// grandmbox
-                int[] commonOP2 = new int[]{8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325, 22084, 22083, 22092,
-                        10946, 10942, 15288};
-                int[] uncommonOP2 = new int[]{18753, 18749, 18631, 18752, 18748, 18637, 18751, 18638, 18623, 18750, 18636,
-                        18629, 4446, 6769, 10942};
-                int[] raresOP2 = new int[]{8253, 19886, 8087, 8088, 8089, 10947, 12608, 10934, 3578};
-
-                player.getMysteryBoxOpener().display(20489, "@mag@Launch Casket", commonOP2, uncommonOP2, raresOP2);
-                break;
-            case 18404:
-                int[] commonraidd = new int[]{8800, 8801, 8802, 8803, 8804, 8805, 8806, 8807, 8808, 22077, 19136, 6936, 15289, 15290};
-                int[] uncommonraidd = new int[]{8326, 8327, 8328, 8330, 8331, 8332, 8323, 8324, 8325, 10025, 19116, 19115, 19114, 20488, 15288};
-                int[] rareraidd = new int[]{5012, 12535, 17011, 4446, 19886, 1486, 17700, 20488, 20489, 10025, 455, 10946, 18419, 18418, 18416, 15288, 15289, 6500, 18719, 7587, 12608};
-                player.getMysteryBoxOpener().display(18404, "@whi@Raids [2] Box", commonraidd, uncommonraidd, rareraidd);// raid
-                break;*/
-            /*
-             * int grandRewards[][] = { { 6739, 13744, 13738, 13742, 13740, 6570, 19111,
-             * 11702, 13752, 13746, 13750, 19136, 14484 }, // common // 1 { 11235, 17273,
-             * 14484, 11696, 11698, 11700, 13262, 15486, 19336, 19337, 19338, 19339, 19340,
-             * 14009, 14010, 14008, 6769 }, // Epic, 2 { 1055, 1053, 1507, 1050, 10284, 962,
-             * 1042, 1046, 1044, 1040, 1038, 11858, 11860, 11862, 19580, 10935, 6769 }, //
-             * Legendary, 3 { 19886, 5023, 5497, 19812, 19843, 14769, 6199, 6199, 4178,
-             * 20534, 19116, 19115, 19114, 19119, 6769, 22078, 4409, 19753, 18349, 15501 }
-             * // rare, 4 }; double grandNumGen = Math.random(); /** Chances 54% chance of
-             * Uncommon Items - various high-end coin-bought gear 30% chance of Rare Items -
-             * Highest-end coin-bought gear, Some poor voting-point/pk-point equipment 11%
-             * chance of Epic Items -Better voting-point/pk-point equipment 5% chance of
-             * Legendary Items - Only top-notch voting-point/pk-point equipment
-             *
-             * int grandRewardGrade = grandNumGen >= 0.46 ? 0 : grandNumGen >= 0.16 ? 1 :
-             * grandNumGen >= 0.05 ? 2 : 3; int grandRewardPos =
-             * Misc.getRandom(grandRewards[grandRewardGrade].length - 1);
-             * player.getInventory().delete(19114, 1);
-             * player.getInventory().add(grandRewards[grandRewardGrade][grandRewardPos],
-             * 1).refreshItems(); int grandRewardGrade1 = grandNumGen >= 0.46 ? 0 :
-             * grandNumGen >= 0.16 ? 1 : grandNumGen >= 0.05 ? 2 : 3; int grandRewardPos1 =
-             * Misc.getRandom(grandRewards[grandRewardGrade1].length - 1);
-             * player.getInventory().add(grandRewards[grandRewardGrade1][grandRewardPos1],
-             * 1).refreshItems(); break;
-             */
 
             case 15682:
                 if (!player.getInventory().contains(15682)) {
@@ -2232,8 +1973,8 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 int amt = player.getInventory().getAmount(23020);
                 int minutesEXP = 30 * amt;
-                int minutesDR = 3 * amt;
-                //int minutesDMG = 2 * amt;
+                int minutesDR = 5 * amt;
+                int minutesDMG = 5 * amt;
 
                 player.getInventory().delete(23020, amt);
                 player.getInventory().add(ItemDefinition.COIN_ID, 500000  * amt);
@@ -2241,11 +1982,11 @@ public class ItemActionPacketListener implements PacketListener {
                         .sendMessage("@blu@You are rewarded " + (amt * 1) + " vote "
                                 + (amt > 1 ? "points, " : "point, ") + (1000 * amt) + " Avalon tokens, and " + (1000 * amt) + " PVM Tickets!");
                 player.getPacketSender()
-                        .sendMessage("@blu@You received " + minutesEXP + " minutes of Bonus Xp, " + minutesDR + " minutes of x2 DR");
+                        .sendMessage("@blu@You received " + minutesDMG + " minutes of 100% Bonus DMG, and " + minutesDR + "minutes of 100% Bonus DR");
                 player.getPointsHandler().incrementVotingPoints(amt * 1);
-                BonusExperienceTask.addBonusXp(player, minutesEXP);
+              //  BonusExperienceTask.addBonusXp(player, minutesEXP);
                 VotingDRBoostTask.addBonusDR(player, minutesDR);
-                // VotingDMGBoostTask.addBonusDMG(player, minutesDMG);
+                 VotingDMGBoostTask.addBonusDMG(player, minutesDMG);
                 StarterTasks.finishTask(player, StarterTaskData.REDEEM_A_VOTE_SCROLL);
 
                 Achievements.doProgress(player, Achievements.Achievement.VOTE_10_TIMES, amt);

@@ -45,7 +45,7 @@ final class GameShell extends JFrame {
 
 	public void setClientIcon() {
 		try {
-			URL url = new URL("https://imgur.com/ZsKK02T.png");
+			URL url = new URL("https://imgur.com/ZCZxXDg.png");
 			Toolkit kit = Toolkit.getDefaultToolkit();
 			Image img = kit.createImage(url);
 			setIconImage(img);

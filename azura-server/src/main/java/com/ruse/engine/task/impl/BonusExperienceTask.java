@@ -24,15 +24,12 @@ public class BonusExperienceTask extends Task {
 		player.setMinutesBonusExp(-1, true);
 		int newMinutes = player.getMinutesBonusExp();
 		if (newMinutes < 0) {
-			player.getPacketSender().sendMessage("<img=5> <col=330099>Your bonus experience has run out.");
+			player.getPacketSender().sendMessage("<img=5><col=330099>Your bonus experience has run out.");
 			player.setMinutesBonusExp(-1, false);
 			stop();
-		} else if (msg == 2 && newMinutes < 10) {
-			player.getPacketSender().sendMessage("<img=5> <col=330099>You have "
-					+ Misc.format(player.getMinutesBonusExp()) + " minutes of bonus experience left.");
-		} else if (msg == 4) {
-			player.getPacketSender().sendMessage("<img=5> <col=330099>You have "
-					+ Misc.format(player.getMinutesBonusExp()) + " minutes of bonus experience left.");
+		} else if(msg == 10) {
+			player.getPacketSender().sendMessage("<img=5><col=330099>You have " + player.getMinutesBonusExp()
+					+ " minutes of bonus experience left.");
 			msg = 0;
 		}
 		msg++;
@@ -43,7 +40,7 @@ public class BonusExperienceTask extends Task {
 		p.setMinutesBonusExp(startEvent ? (minutes + 1) : minutes, true);
 		p.getPacketSender().sendMessage("<img=5> <col=330099>You have " + Misc.format(p.getMinutesBonusExp())
 				+ " minutes of bonus experience left.");
-		p.getPacketSender().sendString(48402, "" + p.getMinutesBonusExp() + " minutes"); // kk itll work now.
+		p.getPacketSender().sendString(48402, "" + p.getMinutesBonusExp() + " minutes");
 		if (startEvent) {
 			TaskManager.submit(new BonusExperienceTask(p));
 		}

@@ -203,10 +203,9 @@ public class PlayerHandler {
         if (player.hasStaffOfLightEffect()) {
             TaskManager.submit(new StaffOfLightSpecialAttackTask(player));
         }
-        if (player.getMinutesBonusExp() > 0) {
+        if (player.getMinutesBonusExp() >= 0) {
             TaskManager.submit(new BonusExperienceTask(player));
         }
-
         if (player.getMinutesVotingDR() > 0) {
             TaskManager.submit(new VotingDRBoostTask(player));
         }

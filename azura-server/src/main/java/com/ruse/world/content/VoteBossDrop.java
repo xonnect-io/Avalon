@@ -3,6 +3,7 @@ package com.ruse.world.content;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.motivote3.doMotivote;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.content.combat.CombatBuilder.CombatDamageCache;
 import com.ruse.world.content.combat.CombatFactory;
@@ -22,13 +23,13 @@ public class VoteBossDrop {
 			System.out.println("Already spawned.");
 			return;
 		}
-		
-		doMotivote.setVoteCount(doMotivote.getVoteCount() - 50);
-		currentSpawn = new NPC(8013, new Position(2980, 2778, 0));
+
+		currentSpawn = new NPC(8013, new Position(2848, 4577, 0));
 
 		World.register(currentSpawn);
 		World.sendMessage(
 				"<img=28><shad=f9f6f6>Vote boss has spawned at ::voteboss kill it now for amazing rewards!<shad=-1>");
+		DiscordMessager.sendVoteBossLog("Vote boss has spawned at ::voteboss kill it now for amazing rewards!");
 	}
 
 	public static void handleForcedSpawn() {
@@ -38,11 +39,12 @@ public class VoteBossDrop {
 		}
 
 		//doMotivote.setVoteCount(doMotivote.getVoteCount() - 50);
-		currentSpawn = new NPC(8013, new Position(2980, 2778, 0));
+		currentSpawn = new NPC(8013, new Position(2848, 4577, 0));
 
 		World.register(currentSpawn);
 		World.sendMessage(
 				"<img=28><shad=f9f6f6>Vote boss has spawned at ::voteboss kill it now for amazing rewards!<shad=-1>");
+		DiscordMessager.sendVoteBossLog("Vote boss has spawned at ::voteboss kill it now for amazing rewards!");
 	}
 	
 	public static void handleDrop(NPC npc) {

@@ -269,7 +269,7 @@ public class TeleportInterface {
     public static void handleMinigameTeleport(Player player, Minigames minigameData) {
         player.setPreviousTeleport(minigameData);
 
-        if (minigameData == Minigames.HOV) {
+        if (minigameData == Minigames.IOA) {
             player.hov.initArea();
             player.hov.start();
             player.getPacketSender().sendInterfaceRemoval();
@@ -286,12 +286,8 @@ public class TeleportInterface {
             player.getPacketSender().sendInterfaceRemoval();
             return;
         }
-        if (minigameData == Minigames.DUNG && player.getNPCKILLCount() < 5000) {
-            player.sendMessage("You need at least 5,000 total npc kill count to teleport to raids!");
-            return;
-        }
-        TeleportHandler.teleportPlayer(player, new Position(minigameData.teleportCords[0],
-                minigameData.teleportCords[1], minigameData.teleportCords[2]), player.getSpellbook().getTeleportType());
+            TeleportHandler.teleportPlayer(player, new Position(minigameData.teleportCords[0],
+                    minigameData.teleportCords[1], minigameData.teleportCords[2]), player.getSpellbook().getTeleportType());
     }
 
     public static void sendBossData(Player player, Bosses data) {
@@ -506,8 +502,6 @@ public class TeleportInterface {
         PELICAN("Pelican bird", 1709, new int[]{2147, 4950, 0}, 1000),
         TURTLE("Runite turtle", 1745, new int[]{2129, 4977, 0}, 800),
         SABRE("Sabretooth", 1731, new int[]{2129, 4977, 0}, 800),
-        MINOTAUR("Armoured minotaur", 1719, new int[]{2126, 4953, 0}, 800),
-
         DEMON("Native demon", 1715, new int[]{1633, 4844, 0}, 1200),
         GRAAHK("Wild graahk", 1734, new int[]{1669, 4843, 0}, 800),
         LEOPARD("Leopard", 1733, new int[]{1686, 4843, 0}, 800),
@@ -542,14 +536,18 @@ public class TeleportInterface {
         TRUMP("Donald Trump", 250, new int[]{3040, 2846, 0}, 780),
         RADITZ("Raditz", 449, new int[]{2911, 3991, 0}, 780),
         GOKU("Goku", 452, new int[]{3358, 9307, 0}, 780),
-        BLUE_EYES_WHITE_DRAGON("Blue-eyes Dragon", 505, new int[]{2847, 2846, 0}, 2000),
-        RED_EYES_BLACK_DRAGON("Red-eyes Dragon", 2949, new int[]{2847, 2846, 0}, 2000),
         BOTANIC("Botanic Queen", 2342, new int[]{2586, 9449, 0}, 1000),
+        RED_EYES_BLACK_DRAGON("Red-eyes Dragon", 2949, new int[]{2847, 2846, 0}, 2000),
+        BLUE_EYES_WHITE_DRAGON("Blue-eyes Dragon", 505, new int[]{2847, 2846, 0}, 2000),
         INYUASHA("Inyuasha", 185, new int[]{2328, 5409, 0}, 750),
         TOLROKOTH("Tolrokoth", 6430, new int[]{1887, 5468, 0}, 1500),
-        SUPREME("Enraged Supreme", 440, new int[]{1887, 5468, 0}, 1200),
-        MUTATED_HOUND("Mutated Hound", 9839, new int[]{1776, 5335, 0}, 1250),
-/*
+        SUPREME("Enraged Supreme", 440, new int[]{2781, 4576, 0}, 1200),
+        MUTATED_HOUND("Mutated Hound", 9839, new int[]{3421, 4777, 0}, 1250),
+
+        INFERNAL_DEMON("Plutonic Demon", 12810, new int[]{2728, 4505, 0}, 1150),
+
+
+        /*
         CRYSTAL_QUEEN("Crystal queen", 6430, new int[]{1887, 5468, 0}, 1100),
         LUCIFER("Lucifer", 9012, new int[]{2335, 3998, 0}, 1000),
         MEGA_AVATAR("Mega avatar", 4540, new int[]{1884, 5334, 0}, 1600),
@@ -560,9 +558,6 @@ public class TeleportInterface {
         FRACTITE_DEMON("Fractite demon", 12843, new int[]{2785, 4525, 0}, 1000),
         INFERNAL_DEMON("Infernal demon", 12810, new int[]{2712, 4508, 0}, 1500),
 */
-        GLOBAL_BOSSES("Global bosses", 4972, new int[]{2139, 5019, 0}, 2000),
-
-
         ;
 
         private final int npcId;
@@ -599,8 +594,8 @@ public class TeleportInterface {
     public enum Minigames implements Teleport {
         STARTER_ZONE("Starter Zone", 9001, new int[]{1, 1, 0}, 600),
         DUNG("Legends Raids", 585, new int[]{2553, 3718, 0}, DungeoneeringParty.loot, 1450),
-        HOV("Halls of Valor", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1400),
-        VOD("Vengeance of Deception", 9028, new int[]{1954, 5010, 0}, VoidOfDarkness.loot, 600),
+        IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1400),
+        VOD("Void of Deception", 9028, new int[]{1954, 5010, 0}, VoidOfDarkness.loot, 600),
         TH("Treasure Hunter", 9816, new int[]{2015, 5022, 0}, TreasureHunter.loot, 3000),
         KOL("Keepers of Light", 9835, new int[]{2322, 5028, 0}, KeepersOfLight.loot, 1200),
         ;
@@ -635,9 +630,9 @@ public class TeleportInterface {
 
 //flesh scorpian id 1717
     public enum Dungeons implements Teleport {
-        EASY_DUNGEON("Cursed Dungeon", 1708, new int[]{1887, 5221, 0}, 600),
-        MEDIUM_DUNGEON("Damned Dungeon", 1708, new int[]{2334, 5222, 0}, 600),
-        HARD_DUNGEON("Gemstone Dungeon", 1708, new int[]{2081, 5532, 0}, 600),
+        EASY_DUNGEON("Dreaded Dungeon", 1727, new int[]{1887, 5221, 0}, 600),
+        MEDIUM_DUNGEON("Violent Tunnels", 1741, new int[]{2334, 5222, 0}, 600),
+        HARD_DUNGEON("Deserted Labyrinth", 6792, new int[]{2081, 5532, 0}, 600),
        /* EASY_DUNGEON("Easy Dungeon", 1705, new int[]{1905, 4870, 0}, 700),
         EASY_DUNGEON_1("Easy Dungeon 2", 1724, new int[]{2016, 4767, 0}, 700),
         MEDIUM_DUNGEON("Medium Dungeon", 1742, new int[]{2227, 4946, 0}, 1200),

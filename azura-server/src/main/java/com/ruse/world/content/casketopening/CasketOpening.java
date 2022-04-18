@@ -5,10 +5,9 @@ import com.ruse.engine.task.TaskManager;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.casketopening.impl.DefBox;
-import com.ruse.world.content.casketopening.impl.OffBox;
-import com.ruse.world.content.casketopening.impl.RareBox;
-import com.ruse.world.content.casketopening.impl.WepBox;
+import com.ruse.world.content.boxes.Ruby;
+import com.ruse.world.content.boxes.Silver;
+import com.ruse.world.content.casketopening.impl.*;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -295,6 +294,9 @@ public class CasketOpening {
         DEF_BOX(23172, DefBox.loot),
         OFF_BOX(23173, OffBox.loot),
         WEAPON_BOX(19114, WepBox.loot),
+        HOV_BOX(23086, HOVBox.loot),
+        SILVER(15003, Silver.rewards),
+        RUBY(15002, Ruby.rewards)
         ;
         private int itemID;
         private Box[] loot;

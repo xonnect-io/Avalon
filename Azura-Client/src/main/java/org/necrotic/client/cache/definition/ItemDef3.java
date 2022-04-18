@@ -713,13 +713,15 @@ public class ItemDef3 {
 				break;
 
 			case 23086:
-				itemDef.copyItem(1);
-				itemDef.name = "Halls of Valor Key";
-				itemDef.actions = new String[]{null, null, null, null, "Drop"};
-				itemDef.modelID = 100202;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 520;
-				itemDef.modelZoom = 800;
+				itemDef.copyItem(3849);
+				itemDef.name = "Valor Chest";
+				itemDef.actions = new String[]{"Open", null, null, null, "Drop"};
+				itemDef.modelID = 100201;
+				itemDef.modelOffsetX = itemDef.modelOffsetX;
+				itemDef.modelOffsetY = itemDef.modelOffsetY;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = itemDef.rotationY;
+				itemDef.rotationX = itemDef.rotationX;
 				break;
 
 			case 23087:
@@ -1880,6 +1882,39 @@ public class ItemDef3 {
 				itemdefedit = ItemDefinition.get(13281);
 				itemDef.actions = itemdefedit.actions;
 				break;
+				
+			case 21221:
+				ItemDefinition itemdefyogipic100 = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = itemdefyogipic100.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic100.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic100.modelZoom;
+				itemDef.rotationY = itemdefyogipic100.rotationY;
+				itemDef.rotationX = itemdefyogipic100.rotationX;
+				itemDef.name = "Cash box";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 65284;
+				itemDef.newModelColor = new int[]{63};
+				itemDef.editedModelColor = new int[]{64};
+				itemDef.animateInventory = true;
+				break;
+				
+			case 21222:		
+				ItemDefinition itemdefyogipic1001 = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = itemdefyogipic1001.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1001.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1001.modelZoom;
+				itemDef.rotationY = itemdefyogipic1001.rotationY;
+				itemDef.rotationX = itemdefyogipic1001.rotationX;
+				itemDef.name = "Cash box (t2)";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 65284;
+				itemDef.newModelColor = new int[]{63};
+				itemDef.editedModelColor = new int[]{88};
+				itemDef.animateInventory = true;
+				break;
+				
 			case 11421:
 				itemDef.name = "Belligerent helm";
 				itemDef.modelID = 96321;
@@ -2543,14 +2578,14 @@ public class ItemDef3 {
 				itemDef.rdc2 = 664466;
 				break;
 			case 5074:
-				ItemDefinition jokerpet = ItemDefinition.get(12479);
-				itemDef.modelID = 64508;
-				itemDef.modelOffsetX = jokerpet.modelOffsetX;
+				ItemDefinition inuyashapet = ItemDefinition.get(12479);
+				itemDef.modelID = 15194;
+				itemDef.modelOffsetX = inuyashapet.modelOffsetX;
 				//itemDef.modelOffsetX = itemdefedit1.modelOffsetX;
-				itemDef.modelOffsetY = jokerpet.modelOffsetY;
+				itemDef.modelOffsetY = inuyashapet.modelOffsetY;
 				itemDef.modelZoom = 2000;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
-				itemDef.name = "Joker pet";
+				itemDef.name = "Inuyasha pet";
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				//	itemDef.rdc2 = 664466;
@@ -4051,115 +4086,96 @@ public class ItemDef3 {
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
 				break;
+				
 			case 5068:
-				itemDef.name = "Joker helm";
-				itemDef.modelID = 64497;
-				itemDef.maleEquip1 = 64498;
-				itemDef.femaleEquip1 = 64498;
-				itemdefedit = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				//itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.copyItem(6585);
+				itemDef.name = "Inuyasha helm";
+				itemDef.modelID = 15194;
+				itemDef.maleEquip1 = 15194;
+				itemDef.femaleEquip1 = 15194;
+                itemDef.modelZoom = 1780;
+                itemDef.rotationX = 0;
+                itemDef.rotationY = 0;
+                itemDef.modelOffsetY = 50;
+                itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				
-
-
 				break;
 
 			case 5069:
-				itemDef.name = "Joker body";
-				itemDef.modelID = 64499;
-				itemDef.maleEquip1 = 64500;
-				itemDef.femaleEquip1 = 64500;
-				itemdefedit = ItemDefinition.get(4894);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				//itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.name = "Inuyasha body";
+				itemDef.modelID = 15195;
+				itemDef.maleEquip1 = 15195;
+				itemDef.femaleEquip1 = 15195;
+                itemDef.modelZoom = 1380;
+                itemDef.rotationX = 50;
+                itemDef.rotationY = 0;
+                itemDef.modelOffsetY = 45;
+                itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				
-
 				break;
 
 			case 5070:
-				itemDef.name = "Joker legs";
-				itemDef.modelID = 64501;
-				itemDef.maleEquip1 = 64502;
-				itemDef.femaleEquip1 = 64502;
-				itemdefedit = ItemDefinition.get(4900);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.name = "Inuyasha legs";
+				itemDef.modelID = 15196;
+				itemDef.maleEquip1 = 15196;
+				itemDef.femaleEquip1 = 15196;
+                itemDef.modelZoom = 1410;
+                itemDef.rotationX = 0;
+                itemDef.rotationY = 20;
+                itemDef.modelOffsetY = 10;
+                itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				
 				break;
-
 
 			case 5071:
-				itemDef.name = "Joker gloves";
-				itemDef.modelID = 64503;
-				itemDef.maleEquip1 = 64504;
-				itemDef.femaleEquip1 = 64504;
-				itemdefedit = ItemDefinition.get(7462);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-//	itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.name = "Inuyasha gloves";
+				itemDef = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemDef.modelOffsetX;
+				itemDef.modelOffsetY = itemDef.modelOffsetY;
+				itemDef.modelZoom = itemDef.modelZoom;
+				itemDef.rotationY = itemDef.rotationY;
+				itemDef.rotationX = itemDef.rotationX;
+				itemDef.modelID = 64129;
+				itemDef.maleEquip1 = 15198;
+				itemDef.femaleEquip1 = 15198;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 40; // the texture that it currently has
-				itemDef.editedModelColor[0] = 65;
 				itemDef.stackable = false;
-				
 				break;
+				
 			case 5072:
-				itemDef.name = "Joker boots";
-				itemDef.modelID = 64505;
-				itemDef.maleEquip1 = 64505;
-				itemDef.femaleEquip1 = 64505;
-				itemdefedit = ItemDefinition.get(11732);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.name = "Inuyasha boots";
+				itemDef.modelID = 15197;
+				itemDef.maleEquip1 = 15197;
+				itemDef.femaleEquip1 = 15197;
+                itemDef.modelZoom = 800;
+                itemDef.rotationX = 50;
+                itemDef.rotationY = 0;
+                itemDef.modelOffsetY = 0;
+                itemDef.modelOffsetX = 1;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				
-
 				break;
-			case 5073:
-				itemDef.name = "Joker Rpg";
-				itemdefedit = ItemDefinition.get(1419);
-				// itemDef.modelID = itemDef2.modelID;
-				itemDef.modelID = 64506;
-				itemDef.femaleEquip1 = 64507;
-				itemDef.maleEquip1 = 64507;
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = 1000;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
+			case 5073:
+				itemDef.name = "Inuyasha Blade";
+				itemDef.modelID = 15199;
+				itemDef.femaleEquip1 = 15199;
+				itemDef.maleEquip1 = 15199;
+                itemDef.modelZoom = 1800;
+                itemDef.rotationX = 235;
+                itemDef.rotationY = 652;
+                itemDef.modelOffsetY = 25;
+                itemDef.modelOffsetX = 60;
 				itemDef.stackable = false;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
 				itemDef.rdc2 = 2412432;
 				break;
+				
 			case 14060:
 				itemDef.name = "Crystalized helm";
 				itemDef.modelID = 64513;

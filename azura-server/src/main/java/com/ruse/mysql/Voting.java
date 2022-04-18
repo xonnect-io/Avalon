@@ -1,21 +1,26 @@
-package com.ruse.mysql;
+package com.ruse.mysql; // dont forget to change packaging ^-^
 
+import com.azul.crs.client.Client;
 import com.ruse.GameSettings;
-import com.ruse.model.Item;
-import com.ruse.util.Misc;
+import com.ruse.motivote3.doMotivote;
 import com.ruse.world.World;
+import com.ruse.world.content.PlayerLogs;
+import com.ruse.world.content.VoteBossDrop;
 import com.ruse.world.entity.impl.player.Player;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class Voting implements Runnable {
 
-	private static int voteCount = 0;
-	public static final String HOST = "necrotic.org";
-	public static final String USER = "voting_user";
-	public static final String PASS = "whatnibbahoemadedispassw1rd32";
-	public static final String DATABASE = "necrotic_voting";
+	public static final String HOST = "";
+	public static final String USER = "";
+	public static final String PASS = "";
+	public static final String DATABASE = "";
 
 	private Player player;
 	private Connection conn;
@@ -28,62 +33,62 @@ public class Voting implements Runnable {
 	@Override
 	public void run() {
 		try {
-			if (Misc.checkForOwner()) {
-				return;
-			}
 			if (!connect(HOST, DATABASE, USER, PASS)) {
-				// // System.out.println("The connection to the voting database has failed!");
-				// World.sendStaffMessage("<img=4> <shad=0>@red@[MAJOR] @bla@Connection to the
-				// voting database has failed!");
 				return;
 			}
 
-			boolean message = true;
-			boolean found = false;
 			String name = player.getUsername().replaceAll(" ", "_");
-			ResultSet rs = executeQuery(
-					"SELECT * FROM fx_votes WHERE username='" + name + "' AND claimed=0 AND callback_date IS NOT NULL");
+			ResultSet rs = executeQuery("SELECT * FROM votes WHERE username='"+name+"' AND claimed=0 AND voted_on != -1");
 
+
+			int points = 0;
 			while (rs.next()) {
-				// String timestamp = rs.getTimestamp("callback_date").toString();
-				// String ipAddress = rs.getString("ip_address");
-				// int siteId = rs.getInt("site_id");
+				String ipAddress = rs.getString("ip_address");
+				int siteId = rs.getInt("site_id");
 
-				if(GameSettings.DOUBLE_VOTE) {
-					player.getInventory().add(new Item(23020, 2), true);
-				} else {
-					player.getInventory().add(new Item(23020, 1), true);
-				}
-				if (!found) {
-					found = true;
-				}
-				if (message) {
-					player.getPacketSender()
-							.sendMessage("<img=5><shad=0><col=bb43df>Thank you for voting and supporting Necrotic!");
-					// System.out.println(player.getUsername() + " has just voted.");
-					message = false;
-				}
-				player.getLastVoteClaim().reset();
-				voteCount++;
-				if (voteCount >= GameSettings.Vote_Announcer) {
-					World.sendMessage(
-							"<img=5><shad=0><col=bb43df> 10 more players have just voted! Use ::vote for rewards! Thanks, <col="
-									+ player.getYellHex() + ">" + player.getUsername() + "<col=bb43df>!");
-					voteCount = 0;
-				}
+				// Regular 1 vote
+				points++;
 
-				// // System.out.println("[FoxVote] Vote claimed by "+name+". (sid: "+siteId+", ip:
-				// "+ipAddress+", time: "+timestamp+")");
-
+				System.out.println("[Vote] Vote claimed by "+name+". (sid: "+siteId+", ip: "+ipAddress+")");
 				rs.updateInt("claimed", 1); // do not delete otherwise they can reclaim!
 				rs.updateRow();
 			}
-
-			if (!found) {
-				player.getPacketSender()
-						.sendMessage("Found no pending vote rewards. Try again, or wait a few minutes.");
+			if (points >= 2){
+				points += (points / 2);
 			}
 
+			// Log the actual votes
+			PlayerLogs.logPlayerVotes(player.getUsername(), "Player claimed votes: " + points + ", IP: " + player.getHostAddress());
+
+
+			// Double vote pet
+			if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+					&& player.getSummoning().getFamiliar().getSummonNpc().getId() == 8802) {
+				points *= 2;
+				player.getPacketSender()
+						.sendMessage("<shad=1>@yel@You get an extra vote scroll because of your pet!");
+			}
+			// ::voteon command
+			if(GameSettings.DOUBLE_VOTE) {
+				points *= 2;
+			}
+
+			if (points > 0) {
+				player.getInventory().add(23020, points);
+				player.getPacketSender().sendMessage("Thank you for voting!");
+				player.getDailyRewards().handleVote();
+
+				player.lastVoteTime = System.currentTimeMillis();
+
+				player.setVoteCount(doMotivote.getVoteCount() + 1);
+
+				if (doMotivote.getVoteCount() >= 50) {
+					VoteBossDrop.handleSpawn();
+				}
+				World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points
+						+ " Vote scrolls! ::vote now to support the server.");
+
+			}
 			destroy();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -92,10 +97,10 @@ public class Voting implements Runnable {
 
 	public boolean connect(String host, String database, String user, String pass) {
 		try {
-			this.conn = DriverManager.getConnection("jdbc:mysql://" + host + ":3306/" + database, user, pass);
+			this.conn = DriverManager.getConnection("jdbc:mysql://"+host+":3306/"+database, user, pass);
 			return true;
 		} catch (SQLException e) {
-			// System.out.println("Failing connecting to database!");
+			System.out.println("Failing connecting to database!");
 			return false;
 		}
 	}
@@ -108,7 +113,7 @@ public class Voting implements Runnable {
 				stmt.close();
 				stmt = null;
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}

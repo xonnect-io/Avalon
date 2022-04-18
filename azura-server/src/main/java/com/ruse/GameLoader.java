@@ -82,10 +82,11 @@ public final class GameLoader {
 	}
 
 	private void executeServiceLoad() {
-		/*
-		 * if (GameSettings.MYSQL_ENABLED) { serviceLoader.execute(() ->
-		 * MySQLController.init()); }
-		 */
+	/*
+		  if (GameSettings.MYSQL_ENABLED) {
+			  serviceLoader.execute(MySQLController::init);
+		  }
+	*/
 
 		serviceLoader.execute(PassRewards::init);
 
@@ -104,7 +105,7 @@ public final class GameLoader {
 		serviceLoader.execute(Lottery::init);
 		serviceLoader.execute(GrandExchangeOffers::init);
 		serviceLoader.execute(Scoreboards::init);
-
+		serviceLoader.execute(() -> DoubleXPSkillEvent.pickNext());
 		serviceLoader.execute(WellOfGoodwill::init);
 		serviceLoader.execute(ClanChatManager::init);
 		serviceLoader.execute(CombatPoisonData::init);

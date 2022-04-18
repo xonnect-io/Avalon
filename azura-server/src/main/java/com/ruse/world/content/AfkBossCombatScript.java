@@ -25,8 +25,8 @@ public class AfkBossCombatScript implements CombatStrategy {
 	/**
 	 * Attacking melee
 	 */
-	private static final Animation MELEE = new Animation(430);
-	private static final Animation MELEE1 = new Animation(434);
+	private static final Animation MELEE = new Animation(6185);
+	private static final Animation MELEE1 = new Animation(6185);
 		/**
 	 * Attacking mage
 	 */

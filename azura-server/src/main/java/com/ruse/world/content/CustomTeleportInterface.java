@@ -335,8 +335,8 @@ public class CustomTeleportInterface {
     public enum Bosses {
 
         ABBADON(ID_START, 1000, 252, "Frieza", "Melee", "Range/Melee", new Position(2516, 3042, 0), Locations.Location.EXODENLOC, 6),
-        INFERNAL_GROUDON(ID_START + 1, 1000, 449, "Perfect Cell", "Range", "Melee", new Position(3000, 2511, 0), Locations.Location.EXODENLOC, 6),
-        BAPHOMET(ID_START + 2, 1100, 452, "Super Buu", "Magic", "Range", new Position(3342, 3022, 0), Locations.Location.EXODENLOC, 6),
+        INFERNAL_GROUDON(ID_START + 1, 1000, 449, "Raditz", "Range", "Melee", new Position(3000, 2511, 0), Locations.Location.EXODENLOC, 6),
+        BAPHOMET(ID_START + 2, 1100, 452, "Goku", "Magic", "Range", new Position(3342, 3022, 0), Locations.Location.EXODENLOC, 6),
         BROLY(ID_START + 3, 3500, 2949, "Scarlet Falcon", "Melee", "Magic", new Position(3869, 2776, 0), Locations.Location.EXODENLOC, 7),
         GOKU(ID_START + 4, 4200, 2950, "Herbal Rogue", "Range", "Magic", new Position(3044, 2969, 0), Locations.Location.EXODENLOC, 7),
         DARTH_VADER(ID_START + 5, 3700, 3831, "Azure Beast", "Magic", "Range", new Position(2924, 2842, 0), Locations.Location.EXODENLOC, 7),
@@ -427,7 +427,7 @@ public class CustomTeleportInterface {
         SLAYER(ID_START + 4, 1000, 8011, "Events Minigame", "Melee/Magic/Range", "Melee/Range", new Position(2732, 3465, 0), Locations.Location.EXODENLOC, 3),
         PEST_CONTROLL(ID_START + 5, 1000, 131, "Penguin Minigame", "Melee", "Magic/Range", new Position(3039, 9545, 0), Locations.Location.PEST_CONTROL_GAME, 3),
         DICEZONE(ID_START + 6, 2500, 1850, "Dice Zone", "N/A", "N/A", new Position(2623, 4010, 0), Locations.Location.EXODENLOC),
-        VOID_OF_DARKNESS(ID_START + 7, 1000, 9030, "Vengeance of Deception", "Melee/Magic/Range", "Melee/Range",VoidOfDarkness.TELEPORT_AREA, Locations.Location.VOID_OF_DARKNESS, 10);
+        VOID_OF_DARKNESS(ID_START + 7, 1000, 9030, "Void of Deception", "Melee/Magic/Range", "Melee/Range",VoidOfDarkness.TELEPORT_AREA, Locations.Location.VOID_OF_DARKNESS, 10);
         //  BRUTAL_HANK(ID_START + 7, 1000, 8009, "Brutal Hulk", "Magic/Melee", "Range/Magic", new Position(2858, 2710, 0), Locations.Location.EXODENLOC, 13),
         //   FRIEZA(ID_START + 8, 1000, 2132, "Dragonball [Frieza]", "Melee", "Range", new Position(2523, 2703, 0), Locations.Location.EXODENLOC, 13);
 

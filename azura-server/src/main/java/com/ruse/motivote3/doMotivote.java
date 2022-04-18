@@ -20,10 +20,6 @@ public class doMotivote implements Runnable {
 
 	private final static MotivoteRS motivote = new MotivoteRS("necrotic", "005be5asdasd117b6d0005ed7e88e09deaa630"); // enter
 																												// your
-																												// motivote
-																												// details
-																												// here
-
 	private static int voteCount = 0;
 	private static final ExecutorService SERVICE = Executors.newCachedThreadPool();
 
@@ -86,4 +82,9 @@ public class doMotivote implements Runnable {
 		doMotivote.voteCount = voteCount;
 	}
 
+	public void terminate() {
+	}
+
+	public void start() {
+	}
 }

@@ -144,7 +144,6 @@ public class CombatStrategies {
 		STRATEGIES.put(2, new Tekton());
 
 		STRATEGIES.put(2342, new HerbalRogue());
-		STRATEGIES.put(3830, new OptimusPrime());
 		STRATEGIES.put(1120,new Vasa());
 		STRATEGIES.put(NazastaroolCombatStrategy.NAZASTAROOL, new NazastaroolCombatStrategy());
 		STRATEGIES.put(DrakeCombatStrategy.DRAKE, new DrakeCombatStrategy());
@@ -157,7 +156,7 @@ public class CombatStrategies {
 		STRATEGIES.put(1234, new CrazyWitch());
 		STRATEGIES.put(438, new DarkSupremeCombatScript());
 		STRATEGIES.put(440, new LightSupremeCombatScript());
-		STRATEGIES.put(12810, new InfernalDemon());
+		//STRATEGIES.put(12810, new InfernalDemon());
 		STRATEGIES.put(12843, new FractiteDemon());
 
 		STRATEGIES.put(9014, new SolakTheGreat());

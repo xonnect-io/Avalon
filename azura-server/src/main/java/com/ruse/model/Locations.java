@@ -753,7 +753,7 @@ public class Locations {
 		},
 		MEMBER_ZONE(new int[] { 3415, 3435 }, new int[] { 2900, 2926 }, false, true, true, false, false, true) {
 		},
-		HOME_BANK(new int[] { 2635, 2675 }, new int[] { 3965, 4031 }, false, true, true, false, true, true) {
+		HOME_BANK(new int[] { 2579, 2591}, new int[] { 2515, 2527 }, false, true, true, false, true, true) {
 			@Override
 			public void enter(Player player) {
 				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
@@ -1783,7 +1783,7 @@ for (Item item : player.getInventory().getItems()) {
 		SKILLING_ISLAND(new int[] { 2765,2852 }, new int[] { 2569,2677 }, true, true, true, false, true, false) {
 		},
 		//// xyyx
-		EARTHQUAKE(new int[] { 2883, 2942 }, new int[] { 5441, 5498 }, true, true, true, false, false, false) {
+		TRIBAL_GOBLIN(new int[] { 2883, 2942 }, new int[] { 5441, 5498 }, true, true, true, false, false, false) {
 		},
 		EXODENLOC(new int[] { 2816, 2879 }, new int[] { 2816, 2879 }, true, true, true, false, false, false) {
 		},

@@ -361,6 +361,10 @@ public class SkillManager {
         }
 
         experience = BrawlingGloves.getExperienceIncrease(player, skill.ordinal(), experience);
+        if (skill.toString().equalsIgnoreCase(DoubleXPSkillEvent.currentSkill.toString())) {
+            experience *= 2;
+            System.out.println("XP DOUBLED!");
+        }
 
         experience *= Difficulty.getDifficultyModifier(player, skill);
 
