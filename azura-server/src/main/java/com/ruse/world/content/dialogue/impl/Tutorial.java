@@ -442,7 +442,7 @@ public class Tutorial {
 
 				@Override
 				public void specialAction() {
-					p.moveTo(GameSettings.MEMBER_ZONE);
+					p.moveTo(GameSettings.SAPPHIRE_ZONE);
 				}
 
 				@Override
@@ -478,7 +478,7 @@ public class Tutorial {
 
 				@Override
 				public void specialAction() {
-					p.moveTo(GameSettings.MEMBER_ZONE);
+					p.moveTo(GameSettings.SAPPHIRE_ZONE);
 				}
 
 				@Override

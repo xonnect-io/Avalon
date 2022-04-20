@@ -165,9 +165,9 @@ public class GameSettings {
     public static final Position KFC_CORDS = new Position(2606, 4774, 4);
     public static final Position TRADE_CORDS = new Position(3164, 3485, 0);
     public static final Position CHILL_CORDS = new Position(3816, 2829, 0);
-    public static final Position MEMBER_ZONE = new Position(2851, 3348);
+    public static final Position SAPPHIRE_ZONE = new Position(2907, 5357);
     public static final Position SUPER_ZONE = new Position(1664, 5695);
-    public static final Position EXTREME_ZONE = new Position(2791, 3096);
+    public static final Position RUBY_ZONE = new Position(2207, 4240);
     public static final Position SUPER_ZONE_NPC = new Position(2827, 2866, 8);
     public static final Position EXTREME_ZONE_NPC = new Position(2827, 2866, 12);
     public static final Position DEVILSPAWN = new Position(2958, 9487, 0);

@@ -91,14 +91,8 @@ public final class ItemDefinition {
 			case 21013:
 				model.setTexture(55, 4018);
 				break;
-			case 4882:
 			case 4888:
-			case 4894:
-			case 4900:
 			case 18747:
-			case 20460:
-			case 20456:
-
 				model.setTexture(71);
 				break;
 			case 17702:
@@ -110,9 +104,6 @@ public final class ItemDefinition {
 			case 11181:
 				model.setTexture(56);
 				break;
-			case 17043:
-			case 17175:
-			case 17321:
 			case 15026:
 			case 18332:
 			case 10696:
@@ -127,12 +118,7 @@ public final class ItemDefinition {
 			case 9929:
 				model.setTexture(88);
 				break;
-			case 14733:
-			case 14732:
-			case 14734:
 			case 14377:
-			case 12864:
-			case 10865:
 				model.setTexture(69);
 			case 14053:
 			case 14055:
@@ -1888,39 +1874,62 @@ public final class ItemDefinition {
 				itemDef.name = "Ingredients book";
 				break;
 			case 4882:
-
-				itemDef.name = "Amonite helm";
-				// itemDef.rdc2 = 57306150;
-				
+				itemDef.name = "Volcanic helm";
+				itemDef.modelOffsetX = -0;
+				itemDef.modelOffsetY = -0;
+				itemDef.modelID = 99971;
+				itemDef.maleEquip1 = 99972;
+				itemDef.femaleEquip1 = 99972;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.stackable = false;
 				break;
 			case 4888:
-				itemDef.name = "Amonite axe";
+				itemDef.name = "Volcanic axe";
 				
 				// itemDef.rdc2 = 57306150;
 				break;
 			case 4894:
-				itemDef.name = "Amonite platebody";
-				
-				// itemDef.rdc2 = 57306150;
+				itemDef.name = "Volcanic platebody";
+				itemDef.modelID = 99973;
+				itemDef.maleEquip1 = 99974;
+				itemDef.femaleEquip1 = 99974;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.stackable = false;
 				break;
+				
 			case 4900:
-				itemDef.name = "Amonite platelegs";
-				
-				// itemDef.rdc2 = 57306150;
+				itemDef.name = "Volcanic platelegs";
+				itemDef.modelID = 99975;
+				itemDef.maleEquip1 = 99976;
+				itemDef.femaleEquip1 = 99976;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.stackable = false;
 				break;
+				
 			case 18747:
-				itemDef.name = "Amonite shield";
+				itemDef.name = "Volcanic shield";
 				
 				// itemDef.rdc2 = 57306150;
 				break;
 			case 20460:
-				itemDef.name = "Amonite glove";
-				
-				// itemDef.rdc2 = 57306150;
+				itemDef.name = "Volcanic gloves";
+				itemDef.modelID = 99977;
+				itemDef.maleEquip1 = 99978;
+				itemDef.femaleEquip1 = 99978;
+				// itemDef.rdc2 = 57306150;		
+				itemDef.modelZoom = 1000;
 				break;
 			case 20456:
-				itemDef.name = "Amonite boots";
-				
+				itemDef.name = "Volcanic boots";
+				itemDef.modelID = 99979;
+				itemDef.maleEquip1 = 99979;
+				itemDef.femaleEquip1 = 99979;
 				// itemDef.rdc2 = 57306150;
 				break;
 			case 15707:
@@ -5473,10 +5482,10 @@ public final class ItemDefinition {
 				
 				break;
 			case 19811:
-				itemDef.name = "Dragonslayer helm";
-				itemDef.modelID = 65237;
-				itemDef.maleEquip1 = 65238;
-				itemDef.femaleEquip1 = 65238;
+				itemDef.name = "Cowboy hat";
+				itemDef.modelID = 15454;
+				itemDef.maleEquip1 = 15455;
+				itemDef.femaleEquip1 = 15455;
 				itemDef21 = ItemDefinition.get(4882);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
@@ -5490,10 +5499,10 @@ public final class ItemDefinition {
 
 				break;
 			case 19473:
-				itemDef.name = "Dragonslayer body";
-				itemDef.modelID = 65239;
-				itemDef.maleEquip1 = 65240;
-				itemDef.femaleEquip1 = 65240;
+				itemDef.name = "Cowboy body";
+				itemDef.modelID = 15451;
+				itemDef.maleEquip1 = 15452;
+				itemDef.femaleEquip1 = 15452;
 				itemDef21 = ItemDefinition.get(4894);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
@@ -5503,15 +5512,23 @@ public final class ItemDefinition {
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				
-
-
 				break;
+				
+			case 11235:
+				itemDef.name = "Cowboy revolver";
+				itemDef.modelZoom = 700;
+				itemDef.modelID = 15458;
+				itemDef.maleEquip1 = 15459;
+				itemDef.femaleEquip1 = 15459;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+				
 			case 19472:
-				itemDef.name = "Dragonslayer legs";
-				itemDef.modelID = 65241;
-				itemDef.maleEquip1 = 65242;
-				itemDef.femaleEquip1 = 65242;
+				itemDef.name = "Cowboy legs";
+				itemDef.modelID = 15456;
+				itemDef.maleEquip1 = 15457;
+				itemDef.femaleEquip1 = 15457;
 				itemDef21 = ItemDefinition.get(4900);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
@@ -6225,6 +6242,110 @@ public final class ItemDefinition {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 				
+			case 23197:
+				itemDef.copyItem(4710);
+				itemDef.name = "Sapphire Blade";
+				itemDef.modelZoom = 2000;
+				itemDef.rotationX = 1024;
+				itemDef.rotationY = 525;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelID = 15461;
+				itemDef.maleEquip1 = 15462;
+				itemDef.femaleEquip1 = 15462;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+				
+			case 23198:
+				itemDef.copyItem(4710);
+				itemDef.name = "Emerald Blade";
+				itemDef.modelZoom = 2000;
+				itemDef.rotationX = 1024;
+				itemDef.rotationY = 525;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelID = 15463;
+				itemDef.maleEquip1 = 15464;
+				itemDef.femaleEquip1 = 15464;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+				
+			case 23199:
+				itemDef.copyItem(4710);
+				itemDef.name = "Ruby Blade";
+				itemDef.modelZoom = 2000;
+				itemDef.rotationX = 1024;
+				itemDef.rotationY = 525;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelID = 15465;
+				itemDef.maleEquip1 = 15466;
+				itemDef.femaleEquip1 = 15466;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+				
+			case 23200:
+				itemDef.copyItem(4710);
+				itemDef.name = "Ruby Blade";
+				itemDef.modelZoom = 2000;
+				itemDef.rotationX = 1024;
+				itemDef.rotationY = 525;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelID = 15465;
+				itemDef.maleEquip1 = 15466;
+				itemDef.femaleEquip1 = 15466;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+				
+			case 23201:
+				itemDef.copyItem(4710);
+				itemDef.name = "Diamond Blade";
+				itemDef.modelZoom = 2000;
+				itemDef.rotationX = 1024;
+				itemDef.rotationY = 525;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelID = 15467;
+				itemDef.maleEquip1 = 15468;
+				itemDef.femaleEquip1 = 15468;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+				
+			case 23202:
+				itemDef.copyItem(4710);
+				itemDef.name = "Onyx Blade";
+				itemDef.modelZoom = 2000;
+				itemDef.rotationX = 1024;
+				itemDef.rotationY = 525;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelID = 15469;
+				itemDef.maleEquip1 = 15470;
+				itemDef.femaleEquip1 = 15470;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+				
+			case 23203:
+				itemDef.copyItem(4710);
+				itemDef.name = "Zenyte Blade";
+				itemDef.modelZoom = 2000;
+				itemDef.rotationX = 1024;
+				itemDef.rotationY = 525;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelID = 15482;
+				itemDef.maleEquip1 = 15484;
+				itemDef.femaleEquip1 = 15484;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
 			case 20438:
 				itemDef.name = "Eternal shield";
 				

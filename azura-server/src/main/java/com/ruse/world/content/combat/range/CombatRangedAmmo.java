@@ -85,13 +85,13 @@ public class CombatRangedAmmo {
 				RangedWeaponType.BSOAT),
 		AOEWEAPONS(new int[] {3738 }, new AmmunitionData[] { AmmunitionData.AOE_AMMO },
 				RangedWeaponType.BSOAT),
-		MINIGUN(new int[] { 19137, 19136, 19843, 9941, 5012, 18636,8088,5073,8411,5011,22113,5010,8001,21606,15785,14919, 8253,22089,7543,9929,14056, 20173, 671, 16879,18332, 22083 },
+		MINIGUN(new int[] { 11235,19137, 19136, 19843, 9941, 5012, 18636,8088,5073,8411,5011,22113,5010,8001,21606,15785,14919, 8253,22089,7543,9929,14056, 20173, 671, 16879,18332, 22083 },
 				new AmmunitionData[] { AmmunitionData.CANNON_AMMO }, RangedWeaponType.BSOAT),
 
 		PIPE(new int[] {20553 },
 				new AmmunitionData[] { AmmunitionData.DRAGON_DART }, RangedWeaponType.BSOAT),
 
-		DARK_BOW(new int[] { 11235, 13405, 15701, 15702, 15703, 15704 },
+		DARK_BOW(new int[] { 13405, 15701, 15702, 15703, 15704 },
 				new AmmunitionData[] { AmmunitionData.BRONZE_ARROW, AmmunitionData.IRON_ARROW,
 						AmmunitionData.STEEL_ARROW, AmmunitionData.MITHRIL_ARROW, AmmunitionData.ADAMANT_ARROW,
 						AmmunitionData.RUNE_ARROW, AmmunitionData.DRAGON_ARROW },

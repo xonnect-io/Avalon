@@ -16507,11 +16507,11 @@ name: Camo wings
 finish
 
 Item Id: 4389
-name: Dragonslayer wings
+name: Cowboy wings
 finish
 
 Item Id: 4390
-name: Dragonslayer wings
+name: Cowboy wings
 finish
 
 Item Id: 4391
@@ -18155,7 +18155,7 @@ name: Dharok's helm 75
 finish
 
 Item Id: 4882
-name: Amonite helm
+name: Volcanic helm
 finish
 
 Item Id: 4883
@@ -18179,7 +18179,7 @@ name: Dharok's greataxe 75
 finish
 
 Item Id: 4888
-name: Amonite axe
+name: Volcanic axe
 finish
 
 Item Id: 4889
@@ -18203,7 +18203,7 @@ name: Dharok's platebody 75
 finish
 
 Item Id: 4894
-name: Amonite platebody
+name: Volcanic platebody
 finish
 
 Item Id: 4895
@@ -18227,7 +18227,7 @@ name: Dharok's platelegs 75
 finish
 
 Item Id: 4900
-name: Amonite platelegs
+name: Volcanic platelegs
 finish
 
 Item Id: 4901
@@ -39203,7 +39203,7 @@ name: Builder's trousers
 finish
 
 Item Id: 10865
-name: Sorcery boots
+name: Chilling boots
 finish
 
 Item Id: 10866
@@ -40479,7 +40479,7 @@ name: Dragon dart (p++)
 finish
 
 Item Id: 11235
-name: Dark bow
+name: Cowboys Revolver
 finish
 
 Item Id: 11236
@@ -46287,7 +46287,7 @@ name: Air runecrafting gloves
 finish
 
 Item Id: 12864
-name: Sorcery gloves
+name: Chilling gloves
 finish
 
 Item Id: 12865
@@ -51863,11 +51863,11 @@ name: Helm (class 5)
 finish
 
 Item Id: 14377
-name: Sorcery Staff
+name: Chilling Staff
 finish
 
 Item Id: 14378
-name: Sorcery Staff
+name: Volcanic Staff
 finish
 
 Item Id: 14379
@@ -53019,15 +53019,15 @@ name: Elite black full helm
 finish
 
 Item Id: 14732
-name: Sorcery robe top
+name: Chilling body
 finish
 
 Item Id: 14733
-name: Sorcery hat
+name: Chilling helmet
 finish
 
 Item Id: 14734
-name: Sorcery robe bottom
+name: Chilling bottoms
 finish
 
 Item Id: 14735
@@ -67567,7 +67567,7 @@ name: Zamorak halo
 finish
 
 Item Id: 18747
-name: Amonite shield
+name: Volcanic shield
 finish
 
 Item Id: 18748
@@ -70467,11 +70467,11 @@ name: Inferior helm
 finish
 
 Item Id: 19472
-name: Dragonslayer legs
+name: Cowboy legs
 finish
 
 Item Id: 19473
-name: Dragonslayer body
+name: Cowboy body
 finish
 
 Item Id: 19474
@@ -71823,7 +71823,7 @@ name: Supreme spirit shield
 finish
 
 Item Id: 19811
-name: Dragonslayer helm
+name: Cowboy hat
 finish
 
 Item Id: 19812
@@ -74383,11 +74383,11 @@ name: Cosmic boots
 finish
 
 Item Id: 20456
-name: Amonite boots
+name: Volcanic boots
 finish
 
 Item Id: 20457
-name: Amonite boots
+name: Volcanic boots
 finish
 
 Item Id: 20458
@@ -74399,11 +74399,11 @@ name: Elemental gloves
 finish
 
 Item Id: 20460
-name: Amonite glove
+name: Volcanic glove
 finish
 
 Item Id: 20461
-name: Amonite glove
+name: Volcanic glove
 finish
 
 Item Id: 20462

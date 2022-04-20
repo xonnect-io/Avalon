@@ -230,6 +230,15 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 1835:
                         ShopManager.getShops().get(151).open(player);
                         break;
+                    case 304:
+                        if (player.getLocation() == Location.SAPPHIRE_ZONE) {
+                            ShopManager.getShops().get(131).open(player);
+                        } else
+                        if (player.getLocation() == Location.EMERALD_ZONE) {
+                            ShopManager.getShops().get(132).open(player);
+                        } else
+                            npc.forceChat("Silly noob, you are not at a donator zone");
+                        break;
                     case 436:
                         ShopManager.getShops().get(103).open(player);
                         npc.forceChat("Get back to afking you lazy cat");

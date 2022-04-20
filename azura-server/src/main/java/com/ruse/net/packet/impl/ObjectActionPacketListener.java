@@ -178,14 +178,8 @@ public class ObjectActionPacketListener implements PacketListener {
                         switch (id) {
 
 
-                            case 10800:
+                            case 22099:
                                 Stalls.stealFromAFKStall(player, id, 1);
-                                break;
-                            case 10799:
-                                Stalls.stealFromAFKStall(player, id, 2);
-                                break;
-                            case 10802:
-                                Stalls.stealFromAFKStall(player, id, 3);
                                 break;
                             case 13291:
                             case 41204:
@@ -986,10 +980,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.moveTo(new Position(2447, 4956, player.getPosition().getZ()));
                                 break;
                             case 7316:
-                                player.moveTo(new Position(2471, 4956, player.getPosition().getZ()));
+                                player.moveTo(new Position(2909, 5351, player.getPosition().getZ()));
                                 break;
                             case 7318:
-                                player.moveTo(new Position(2464, 4963, player.getPosition().getZ()));
+                                player.moveTo(new Position(2912, 5337, player.getPosition().getZ()));
                                 break;
                             // case 7319:
                             // player.moveTo(new Position(2467, 4940, player.getPosition().getZ()));

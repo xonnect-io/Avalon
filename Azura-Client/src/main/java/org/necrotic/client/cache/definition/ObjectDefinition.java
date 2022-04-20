@@ -209,6 +209,12 @@ public final class ObjectDefinition {
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
 
+		if (definition.type == 22099) {
+			definition.objectModelIDs = new int[]{15498};
+			definition.name = "AFK Sapphire Crystal";
+			definition.actions = new String[]{"Mine", null, null, null, null};
+		}
+
 
 		if (definition.type == 2469) {
 			definition.actions = new String[]{"Advance", "Back", null, null, null};

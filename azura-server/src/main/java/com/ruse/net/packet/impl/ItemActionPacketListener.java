@@ -5,6 +5,7 @@ import com.ruse.engine.task.impl.*;
 import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.container.impl.Bank;
+import com.ruse.model.container.impl.Shop;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.net.packet.Packet;
 import com.ruse.net.packet.PacketListener;
@@ -607,6 +608,13 @@ public class ItemActionPacketListener implements PacketListener {
             case 15288:
                 player.getInventory().delete(15288, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 100000);
                 break;
+            case 21221:
+                player.getInventory().delete(21221, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 100 + Misc.getRandom(500));
+                break;
+            case 21222:
+                player.getInventory().delete(21222, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 500 +  Misc.getRandom(2500));
+                break;
+
             case 14822:
                 player.getPacketSender().sendMessage("You are now licenced with VIP slayer");
                 player.getPacketSender().sendMessage("Here is your Slayer pass to our exclusive VIP SLAYER ZONE.");

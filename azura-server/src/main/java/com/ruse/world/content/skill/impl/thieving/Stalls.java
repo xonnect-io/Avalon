@@ -13,6 +13,7 @@ import com.ruse.world.content.AfkSystem;
 import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.CasketOpening;
+import com.ruse.world.content.skill.impl.mining.MiningData;
 import com.ruse.world.entity.impl.player.Player;
 
 public class Stalls {
@@ -150,25 +151,31 @@ public class Stalls {
                     this.stop();
                     return;
                 }
-                player.performAnimation(new Animation(881));
-                Box[] loot = loot1;
-                if (tier == 1) {
-                    player.setAfkStallCount1(player.getAfkStallCount1() + 1);
-                } else if (tier == 2) {
-                    loot = loot2;
-                    player.setAfkStallCount2(player.getAfkStallCount2() + 1);
-                } else if (tier == 3) {
-                    loot = loot3;
-                    player.setAfkStallCount3(player.getAfkStallCount3() + 1);
-                } else if (tier == 4) {
-                    loot = loot4;
-                 }
 
-                Box reward = CasketOpening.getLoot(loot);
-                player.getInventory().add(reward.getId(), reward.getMin() + Misc.getRandom(reward.getMax() - reward.getMin()));
-				AfkSystem.thievedCount++;
-                player.getInventory().refreshItems();
-                player.getClickDelay().reset();
+                if (MiningData.isHoldingPickaxe(player)) {
+                    player.performAnimation(new Animation(12003));
+                    Box[] loot = loot1;
+                    if (tier == 1) {
+                        player.setAfkStallCount1(player.getAfkStallCount1() + 1);
+                    } else if (tier == 2) {
+                        loot = loot2;
+                        player.setAfkStallCount2(player.getAfkStallCount2() + 1);
+                    } else if (tier == 3) {
+                        loot = loot3;
+                        player.setAfkStallCount3(player.getAfkStallCount3() + 1);
+                    } else if (tier == 4) {
+                        loot = loot4;
+                    }
+
+                    Box reward = CasketOpening.getLoot(loot);
+                    player.getInventory().add(reward.getId(), reward.getMin() + Misc.getRandom(reward.getMax() - reward.getMin()));
+                    AfkSystem.thievedCount++;
+                    player.getInventory().refreshItems();
+                    player.getClickDelay().reset();
+                    return;
+                } else
+                    this.stop();
+                    player.getPacketSender().sendMessage("You don't have a pickaxe to mine this rock with.");
             }
 
             @Override

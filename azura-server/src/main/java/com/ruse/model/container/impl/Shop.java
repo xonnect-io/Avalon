@@ -71,6 +71,12 @@ public class Shop extends ItemContainer {
      */
     private static final int EASTER_STORE_1 = 150;
     private static final int EASTER_STORE_2 = 151;
+    private static final int SAPPHIRE_STORE = 131;
+    private static final int EMERALD_STORE = 132;
+    private static final int RUBY_STORE = 133;
+    private static final int DIAMOND_STORE = 134;
+    private static final int ONYX_STORE = 135;
+    private static final int ZENYTE_STORE = 136;
     private static final int DUNGEONEERING_STORE_NEW = 152;
     private static final int KOL_STORE = 207;
     private static final int VOTE_STORE = 90;
@@ -259,7 +265,7 @@ public class Shop extends ItemContainer {
                     && id != 33 && id != 39 && id != 11 && id != 34 && id != 14 && id != 13 && id != 18 && id != 15
                     && id != 21 && id != 44
                     && id != 22 && id != 42 && id != 35 && id != 32 && id != 23 && id != 38 && id != 91 && id != 92 && id != 0
-                    && id != 93 && id != 94 && id != 95 && id != 96 && id != 97 && id != 98 && id != 30 && id != 117 && id != EASTER_STORE_1 && id != EASTER_STORE_2 && id != DUNGEONEERING_STORE_NEW) { // 22 + 23 ==
+                    && id != 93 && id != 94 && id != 95 && id != 96 && id != 97 && id != 98 && id != 30 && id != 117 && id != EASTER_STORE_1 && id != SAPPHIRE_STORE  && id != EMERALD_STORE  && id != RUBY_STORE  && id != ONYX_STORE  && id != DIAMOND_STORE   && id != ZENYTE_STORE && id != EASTER_STORE_2 && id != DUNGEONEERING_STORE_NEW) { // 22 + 23 ==
                 // pikkupstix's
                 // materials,
                 // 38 =
@@ -381,6 +387,7 @@ public class Shop extends ItemContainer {
                     || id == TRAIN_MELEE
                     || id == TRAIN_RANGED
                     || id == TRAIN_MAGIC || id == KOL_STORE
+                    || id == SAPPHIRE_STORE || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE
                     || id == EASTER_STORE_1 || id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW
                     || id == ENERGY_FRAGMENT_STORE || id == AGILITY_TICKET_STORE
                     || id == GRAVEYARD_STORE || id == BARROWS_STORE || id == MEMBERS_STORE_I || id == MEMBERS_STORE_II
@@ -659,6 +666,7 @@ public class Shop extends ItemContainer {
                         || id == AFK
                         || id == TRAIN_MELEE
                         || id == TRAIN_RANGED
+                        || id == SAPPHIRE_STORE || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE
                         || id == EASTER_STORE_1 || id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW || id == KOL_STORE
                         || id == TRAIN_MAGIC
                         || id == STARDUST_EXCHANGE_STORE
@@ -1489,6 +1497,36 @@ public class Shop extends ItemContainer {
                     case 23006:
                     case 23007:
                         return new Object[]{1000, "Easter ticket"};
+                }
+            } else if (shop == SAPPHIRE_STORE) {
+                switch (item) {
+                    case 23197:
+                        return new Object[]{1000, "Sapphire fragments"};
+                }
+            } else if (shop == EMERALD_STORE) {
+                switch (item) {
+                    case 23198:
+                        return new Object[]{1000, "Emerald fragments"};
+                }
+            } else if (shop == RUBY_STORE) {
+                switch (item) {
+                    case 23199:
+                        return new Object[]{1000, "Ruby fragments"};
+                }
+            } else if (shop == DIAMOND_STORE) {
+                switch (item) {
+                    case 23200:
+                        return new Object[]{1000, "Diamond fragments"};
+                }
+            } else if (shop == ONYX_STORE) {
+                switch (item) {
+                    case 23201:
+                        return new Object[]{1000, "Onyx fragments"};
+                }
+            } else if (shop == ZENYTE_STORE) {
+                switch (item) {
+                    case 23201:
+                        return new Object[]{1000, "Zenyte fragments"};
                 }
             } else if (shop == EASTER_STORE_2) {
                 switch (item) {

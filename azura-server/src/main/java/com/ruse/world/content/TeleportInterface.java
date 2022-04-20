@@ -472,7 +472,7 @@ public class TeleportInterface {
         LAVA_HOUND("Lava hounds", 9838, new int[]{3424, 4126, 0}, 600),
         SYM("Stinky Blobb", 1718, new int[]{2196, 5083, 0}, 550),//replace 1727 with 1718 in world npc
         BAT("Bloodsuckers", 9836, new int[]{2388, 5019, 0}, 1500),
-        CAVE_GIANT("Cave giants", 117, new int[]{2721, 4446, 0}, 900),
+        COWBOY("Cowboys", 117, new int[]{2721, 4446, 0}, 500),
         CASH_DRAGON("Cash dragons", 500, new int[]{2911, 3613, 0}, 1500),
         DEMON_GODDESS("Demon Goddesses", 501, new int[]{2784, 4445, 0}, 725),
         ENERGY_SKELETON("Energy Skeletons", 503, new int[]{2088, 3995, 0}, 700),
@@ -537,7 +537,7 @@ public class TeleportInterface {
         RADITZ("Raditz", 449, new int[]{2911, 3991, 0}, 780),
         GOKU("Goku", 452, new int[]{3358, 9307, 0}, 780),
         BOTANIC("Botanic Queen", 2342, new int[]{2586, 9449, 0}, 1000),
-        RED_EYES_BLACK_DRAGON("Red-eyes Dragon", 2949, new int[]{2847, 2846, 0}, 2000),
+        RED_EYES_BLACK_DRAGON("Red-eyes Dragon", 2949, new int[]{3039, 3995, 0}, 2000),
         BLUE_EYES_WHITE_DRAGON("Blue-eyes Dragon", 505, new int[]{2847, 2846, 0}, 2000),
         INYUASHA("Inyuasha", 185, new int[]{2328, 5409, 0}, 750),
         TOLROKOTH("Tolrokoth", 6430, new int[]{1887, 5468, 0}, 1500),

@@ -5799,7 +5799,72 @@
     ],
     "currency": 23003
   },
-
+  {
+    "id": 131,
+    "name": "Sapphire Donator Store",
+    "items": [
+      {
+        "id": 23197,
+        "amount": 2000000000
+      }
+    ],
+    "currency": 23204
+  },
+  {
+    "id": 132,
+    "name": "Emerald Donator Store",
+    "items": [
+      {
+        "id": 23198,
+        "amount": 2000000000
+      }
+    ],
+    "currency": 23205
+  },
+  {
+    "id": 133,
+    "name": "Ruby Donator Store",
+    "items": [
+      {
+        "id": 23199,
+        "amount": 2000000000
+      }
+    ],
+    "currency": 23206
+  },
+  {
+    "id": 134,
+    "name": "Diamond Donator Store",
+    "items": [
+      {
+        "id": 23200,
+        "amount": 2000000000
+      }
+    ],
+    "currency": 23207
+  },
+  {
+    "id": 135,
+    "name": "Onyx Donator Store",
+    "items": [
+      {
+        "id": 23201,
+        "amount": 2000000000
+      }
+    ],
+    "currency": 23208
+  },
+  {
+    "id": 136,
+    "name": "Zenyte Donator Store",
+    "items": [
+      {
+        "id": 23202,
+        "amount": 2000000000
+      }
+    ],
+    "currency": 23209
+  },
   {
     "id": 151,
     "name": "Sell Easter Tickets",

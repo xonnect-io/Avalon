@@ -788,6 +788,25 @@ public class Locations {
 				}
 			}
 		},
+		SAPPHIRE_ZONE(new int[] { 2882, 2938 }, new int[] { 5320, 5380 }, false, true, true, false, true, true) {
+
+			@Override
+			public void enter(Player player) {
+				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
+						.getMaxLevel(Skill.CONSTITUTION)) {
+					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
+							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					player.getPacketSender()
+							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+				}
+				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+						.getMaxLevel(Skill.PRAYER)) {
+					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+							player.getSkillManager().getMaxLevel(Skill.PRAYER));
+					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+				}
+			}
+		},
 		NEW_MEMBER_ZONE(new int[] { 2792, 2877 }, new int[] { 3319, 3396 }, false, true, true, false, true, true) {
 			@Override
 			public void process(Player player) {
@@ -913,9 +932,6 @@ public class Locations {
 
 		},
 		RUBY_ZONE(new int[] { 2503, 2557 }, new int[] { 2684, 2750 }, false, true, true, false, true, false) {
-
-		},
-		SAPPHIRE_ZONE(new int[] { 2496, 2556 }, new int[] { 2753, 2813 }, false, true, true, false, true, false) {
 
 		},
 		EMERALD_ZONE(new int[] { 2561, 2622 }, new int[] { 2752, 2810 }, false, true, true, false, true, false) {

@@ -206,9 +206,8 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("gogetakills")) {
             player.sendMessage("@blu@Current goku count: @red@" + GogetaSystem.npckills);
         }
-       /* if (player.getAmountDonated() >= 10) {
-            if (command[0].equalsIgnoreCase("dzone") || command[0].equalsIgnoreCase("sapphire")
-                    || command[0].equalsIgnoreCase("memberzone") || command[0].equalsIgnoreCase("mzone")) {
+        if (player.getAmountDonated() >= 10) {
+            if (command[0].equalsIgnoreCase("szone") || command[0].equalsIgnoreCase("sapphire")) {
                 if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                         || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS
                         || player.getLocation() == Location.DUNGEONEERING
@@ -217,7 +216,7 @@ public class CommandPacketListener implements PacketListener {
                     return;
                 }
 
-                TeleportHandler.teleportPlayer(player, GameSettings.MEMBER_ZONE, TeleportType.NORMAL);
+                TeleportHandler.teleportPlayer(player, GameSettings.SAPPHIRE_ZONE, TeleportType.NORMAL);
                 player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
             }
         }
@@ -237,11 +236,20 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("<shad=1>@red@Type ::supernpcs to teleport to the npc's!");
             }
         }
+        if (player.getAmountDonated() >= 250 || player.getRights().isStaff()) {
+            if (command[0].equalsIgnoreCase("rzone") || command[0].equalsIgnoreCase("ruby")
+                    || command[0].equalsIgnoreCase("rubyzone") || command[0].equalsIgnoreCase("rz")) {
+                if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                        || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS
+                        || player.getLocation() == Location.DUNGEONEERING
+                        || player.getLocation() == Location.DUEL_ARENA) {
+                    player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                    return;
+                }
 
-        if (command[0].equals("zenyte") || command[0].equalsIgnoreCase("zenytezone")) {
-            if (player.getAmountDonated() >= 5000 || player.getRights().isStaff()) {
-                TeleportHandler.teleportPlayer(player, new Position(2778, 4834),
-                        player.getSpellbook().getTeleportType());
+                TeleportHandler.teleportPlayer(player, GameSettings.RUBY_ZONE, TeleportType.NORMAL);
+                player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
+
             }
         }
 
@@ -281,58 +289,15 @@ public class CommandPacketListener implements PacketListener {
                         player.getSpellbook().getTeleportType());
             }
         }
-        if (player.getAmountDonated() >= 250 || player.getRights().isStaff()) {
-            if (command[0].equalsIgnoreCase("rzone") || command[0].equalsIgnoreCase("ruby")
-                    || command[0].equalsIgnoreCase("rubyzone") || command[0].equalsIgnoreCase("rz")) {
-                if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                        || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS
-                        || player.getLocation() == Location.DUNGEONEERING
-                        || player.getLocation() == Location.DUEL_ARENA) {
-                    player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                    return;
-                }
-
-                TeleportHandler.teleportPlayer(player, GameSettings.EXTREME_ZONE, TeleportType.NORMAL);
-                player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
-                player.getPacketSender().sendMessage("<shad=1>@red@Type ::extremenpcs to teleport to the npc's!");
-
+        if (command[0].equals("zenyte") || command[0].equalsIgnoreCase("zenytezone")) {
+            if (player.getAmountDonated() >= 5000 || player.getRights().isStaff()) {
+                TeleportHandler.teleportPlayer(player, new Position(2778, 4834),
+                        player.getSpellbook().getTeleportType());
             }
         }
-        if (player.getAmountDonated() >= 250 || player.getRights().isStaff()) {
-            if (command[0].equalsIgnoreCase("ezonenpcs") || command[0].equalsIgnoreCase("ez")
-                    || command[0].equalsIgnoreCase("ezonenpc") || command[0].equalsIgnoreCase("enpc")
-                    || command[0].equalsIgnoreCase("enpcs") || command[0].equalsIgnoreCase("extremenpcs")
-                    || command[0].equalsIgnoreCase("extremenpc")) {
-                if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                        || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS
-                        || player.getLocation() == Location.DUNGEONEERING
-                        || player.getLocation() == Location.DUEL_ARENA) {
-                    player.getPacketSender().sendMessage("You cannot do this at the moment.");
 
-                    return;
-                }
 
-                TeleportHandler.teleportPlayer(player, GameSettings.EXTREME_ZONE_NPC, TeleportType.NORMAL);
-                player.getPacketSender().sendMessage("<shad=1>@or2@Teleporting Ezone NPC'S!");
-            }
-        }
-        if (player.getAmountDonated() >= 50 || player.getRights().isStaff()) {
-            if (command[0].equalsIgnoreCase("szonenpcs") || command[0].equalsIgnoreCase("szonenpc")
-                    || command[0].equalsIgnoreCase("snpc") || command[0].equalsIgnoreCase("supernpcs")
-                    || command[0].equalsIgnoreCase("supernpc") || command[0].equalsIgnoreCase("snpcs")) {
-                if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                        || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS
-                        || player.getLocation() == Location.DUNGEONEERING
-                        || player.getLocation() == Location.DUEL_ARENA) {
-                    player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                    return;
-                }
 
-                TeleportHandler.teleportPlayer(player, GameSettings.SUPER_ZONE_NPC, TeleportType.NORMAL);
-                player.getPacketSender().sendMessage("<shad=1>@or2@Teleporting Szone NPC'S!");
-            }
-        }
-        */
        /* if (command[0].equalsIgnoreCase("answer")) {
             String answer = wholeCommand.substring(7);
             TriviaSystem.answer(player, answer);
@@ -3212,6 +3177,24 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("UUID & Mac bans reloaded!");
         }
 
+        if (command[0].equals("saphirestore")) {
+            ShopManager.getShops().get(131).open(player);
+        }
+        if (command[0].equals("emeraldstore")) {
+            ShopManager.getShops().get(132).open(player);
+        }
+        if (command[0].equals("rubystore")) {
+            ShopManager.getShops().get(133).open(player);
+        }
+        if (command[0].equals("diamondstore")) {
+            ShopManager.getShops().get(134).open(player);
+        }
+        if (command[0].equals("onyxstore")) {
+            ShopManager.getShops().get(135).open(player);
+        }
+        if (command[0].equals("zenytestore")) {
+            ShopManager.getShops().get(136).open(player);
+        }
         if (command[0].equals("reloadipbans")) {
             PlayerPunishment.reloadIPBans();
             player.getPacketSender().sendConsoleMessage("IP bans reloaded!");

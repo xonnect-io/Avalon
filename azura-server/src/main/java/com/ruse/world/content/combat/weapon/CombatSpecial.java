@@ -552,7 +552,7 @@ public enum CombatSpecial {
 			return new CombatContainer(player, target, 1, CombatType.RANGED, true);
 		}
 	},
-	DARK_BOW(new int[] { 11235 }, 55, 1.45, 1.22, CombatType.RANGED, WeaponInterface.LONGBOW) {
+	DARK_BOW(new int[] { }, 55, 1.45, 1.22, CombatType.RANGED, WeaponInterface.LONGBOW) {
 		@Override
 		public CombatContainer container(Player player, Character target) {
 			player.performAnimation(new Animation(426));
@@ -576,7 +576,7 @@ public enum CombatSpecial {
 			return new CombatContainer(player, target, 2, CombatType.RANGED, true);
 		}
 	},
-	HAND_CANNON(new int[] { 15241, 19843,18636,8088,8411,5012,5011,22113,5010,22089,8001,21606,9929,14056,8253, 13956, 19135 }, 45, 1.45, 1.15, CombatType.RANGED, WeaponInterface.SHORTBOW) {
+	HAND_CANNON(new int[] { 15241,11235, 19843,18636,8088,8411,5012,5011,22113,5010,22089,8001,21606,9929,14056,8253, 13956, 19135 }, 45, 1.45, 1.15, CombatType.RANGED, WeaponInterface.SHORTBOW) {
 
 		@Override
 		public CombatContainer container(Player player, Character target) {

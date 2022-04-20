@@ -274,7 +274,7 @@ public class DialogueOptions {
                                 .sendMessage("To become a member, use the command ::store and browse our store.");
                         return;
                     }
-                    TeleportHandler.teleportPlayer(player, GameSettings.MEMBER_ZONE,
+                    TeleportHandler.teleportPlayer(player, GameSettings.SAPPHIRE_ZONE,
                             player.getSpellbook().getTeleportType());
                     break;
             }

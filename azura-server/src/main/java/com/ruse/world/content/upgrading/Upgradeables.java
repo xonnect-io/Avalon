@@ -37,7 +37,7 @@ public enum Upgradeables {
 
     HAT(ARMOUR, new Item(1038, 1), new Item(1050, 1), 104000, 50),
     RING(ACCESSORY, new Item(1040, 1), new Item(1050, 1), 15000000, 25),
-    IDD(MISC, new Item(1042, 1), new Item(1050, 1), 250000000, 100),
+    CASH_BOX(MISC, new Item(21221, 1), new Item(21222, 1), 500, 55),
 
     ;
 

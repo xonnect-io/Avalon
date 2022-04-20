@@ -4113,7 +4113,7 @@ public final class MobDefinition {
 				
 				case 117:
 				definition.setDefault();
-				definition.name = "Cave Giant";
+				definition.name = "Cowboy";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
 				definition.npcSizeInSquares = 3;
@@ -4121,7 +4121,7 @@ public final class MobDefinition {
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.scaleXZ = 150;
 				definition.scaleY = 150;
-				definition.npcModels = new int[]{15041};
+				definition.npcModels = new int[]{15460};
 				break;
 				
 				case 500:
@@ -4523,6 +4523,9 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.rdc2 = 87654;
+				break;
+			case 304:
+				definition.name = "Fragment shop";
 				break;
 			case 2050:
 				definition.name = "Ezone skeleton";
