@@ -13,8 +13,12 @@ import com.ruse.world.content.AfkSystem;
 import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.CasketOpening;
+import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
 import com.ruse.world.content.skill.impl.mining.MiningData;
 import com.ruse.world.entity.impl.player.Player;
+
+import static mysql.impl.Donation.EMERALD_DONATION_AMOUNT;
+import static mysql.impl.Donation.SAPPHIRE_DONATION_AMOUNT;
 
 public class Stalls {
 
@@ -26,6 +30,7 @@ public class Stalls {
             new Box(ItemDefinition.MILL_ID, 1, 2, 100),  //Orbs
             new Box(ItemDefinition.MILL_ID, 2, 4, 60),  //Orbs
             new Box(6199, 1, 0.4D),  //mystery box
+            new Box(23204, 1, 3D),  //sapphire fragment
             new Box(7956, 1, 0.3D),  //Pvm box
             new Box(19116, 0.05D), //Super mbox
     };
@@ -37,6 +42,7 @@ public class Stalls {
             new Box(ItemDefinition.MILL_ID, 2, 4, 100),  //Orbs
             new Box(ItemDefinition.MILL_ID, 4, 8, 60),  //Orbs
             new Box(6199, 3, 0.3D),  //mystery box
+            new Box(23205, 1, 3D),  //emerald fragment
             new Box(7956, 3, 0.2D),  //Pvm box
             new Box(19115, 0.05D), //Ext mbox
     };
@@ -48,6 +54,7 @@ public class Stalls {
             new Box(ItemDefinition.MILL_ID, 4, 8, 100),  //Orbs
             new Box(ItemDefinition.MILL_ID, 8, 16, 60),  //Orbs
             new Box(6199, 7, 0.3D),  //mystery box
+            new Box(23206, 1, 3D),  //ruby fragment
             new Box(7956, 7, 0.2D),  //Pvm box
             new Box(19114, 0.05D), //Grand mbox
             new Box(10946, 0.01D), //$1 scroll
@@ -60,11 +67,37 @@ public class Stalls {
             new Box(ItemDefinition.MILL_ID, 8, 16, 100),  //Orbs
             new Box(ItemDefinition.MILL_ID, 16, 32, 60),  //Orbs
             new Box(6199, 7, 0.9D),  //mystery box
+            new Box(23207, 1, 3D),  //diamond fragment
             new Box(7956, 7, 0.6D),  //Pvm box
             new Box(19114, 0.15D), //Grand mbox
             new Box(10946, 0.03D), //$1 scroll
     };
-
+    public static Box[] loot5 = new Box[]{
+            new Box(5022, 8, 16, 100),  //Pvm tickets
+            new Box(5022, 24, 32, 75),  //Pvm tickets
+            new Box(5020, 8, 16, 100),  //Afk tickets
+            new Box(5020, 24, 32, 70),  //Afk tickets
+            new Box(ItemDefinition.MILL_ID, 8, 16, 100),  //Orbs
+            new Box(ItemDefinition.MILL_ID, 16, 32, 60),  //Orbs
+            new Box(6199, 7, 0.9D),  //mystery box
+            new Box(23208, 1, 3D),  //onyx fragment
+            new Box(7956, 7, 0.6D),  //Pvm box
+            new Box(19114, 0.15D), //Grand mbox
+            new Box(10946, 0.03D), //$1 scroll
+    };
+    public static Box[] loot6 = new Box[]{
+            new Box(5022, 8, 16, 100),  //Pvm tickets
+            new Box(5022, 24, 32, 75),  //Pvm tickets
+            new Box(5020, 8, 16, 100),  //Afk tickets
+            new Box(5020, 24, 32, 70),  //Afk tickets
+            new Box(ItemDefinition.MILL_ID, 8, 16, 100),  //Orbs
+            new Box(ItemDefinition.MILL_ID, 16, 32, 60),  //Orbs
+            new Box(6199, 7, 0.9D),  //mystery box
+            new Box(23209, 1, 3D),  //zenyte fragment
+            new Box(7956, 7, 0.6D),  //Pvm box
+            new Box(19114, 0.15D), //Grand mbox
+            new Box(10946, 0.03D), //$1 scroll
+    };
     public static void stealFromStall(Player player, GameObject  gameObject, int lvlreq, int xp, Item reward, String message) {
         if (player.getInventory().getFreeSlots() < 1) {
             player.getPacketSender().sendMessage("You need some more inventory space to do this.");
@@ -115,15 +148,7 @@ public class Stalls {
             player.getPacketSender().sendMessage("You cannot do that right now.");
             return;
         }
-        if (tier == 2 && (player.getAfkStallCount1() < 20000)) {
-            player.sendMessage("@red@You need to have stole from the Afk stall (1)" + "("
-                    + player.getAfkStallCount1() + "/20,000) times");
-            return;
-        } else if (tier == 3 && (player.getAfkStallCount2() < 50000)) {
-            player.sendMessage("@red@You need to have stole from the Afk stall (2)" + "("
-                    + player.getAfkStallCount2() + "/50,000) times");
-            return;
-        }
+
 
         int accounts = 1;
         for (Player p : World.getPlayers()) {
@@ -138,7 +163,7 @@ public class Stalls {
             }
         }
         if (accounts > 2){
-            player.getPacketSender().sendMessage("You already have two accounts stealing from the AFK Zone.");
+            player.getPacketSender().sendMessage("You already have two accounts mining afk.");
             return;
         }
 
@@ -152,19 +177,28 @@ public class Stalls {
                     return;
                 }
 
-                if (MiningData.isHoldingPickaxe(player)) {
+                final int pickaxe = MiningData.getPickaxe(player);
+
+                if (MiningData.isHoldingPickaxe(player) || (player.getInventory().contains(pickaxe))) {
                     player.performAnimation(new Animation(12003));
                     Box[] loot = loot1;
                     if (tier == 1) {
-                        player.setAfkStallCount1(player.getAfkStallCount1() + 1);
+                        player.setAfkSapphire(player.getAfkSapphire() + 1);
                     } else if (tier == 2) {
                         loot = loot2;
-                        player.setAfkStallCount2(player.getAfkStallCount2() + 1);
+                        player.setAfkEmerald(player.getAfkEmerald() + 1);
                     } else if (tier == 3) {
                         loot = loot3;
-                        player.setAfkStallCount3(player.getAfkStallCount3() + 1);
+                        player.setAfkbRuby(player.getAfkbRuby() + 1);
                     } else if (tier == 4) {
                         loot = loot4;
+                        player.setAfkDiamond(player.getAfkDiamond() + 1);
+                    } else if (tier == 5) {
+                        loot = loot5;
+                        player.setAfkOnyx(player.getAfkOnyx() + 1);
+                    } else if (tier == 6) {
+                        loot = loot6;
+                        player.setAfkZenyte(player.getAfkZenyte() + 1);
                     }
 
                     Box reward = CasketOpening.getLoot(loot);

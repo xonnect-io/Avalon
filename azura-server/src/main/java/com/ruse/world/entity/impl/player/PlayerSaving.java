@@ -315,10 +315,12 @@ public class PlayerSaving {
 			// builder.toJsonTre1e(player.getBank(0).getValidItems()));
 
 
-			object.addProperty("afkstall1", player.getAfkStallCount1());
-			object.addProperty("afkstall2", player.getAfkStallCount2());
-			object.addProperty("afkstall3", player.getAfkStallCount3());
-
+			object.addProperty("afk-sapphire", player.getAfkSapphire());
+			object.addProperty("afk-emerald", player.getAfkEmerald());
+			object.addProperty("afk-ruby", player.getAfkbRuby());
+			object.addProperty("afk-diamond", player.getAfkDiamond());
+			object.addProperty("afk-onyx", player.getAfkOnyx());
+			object.addProperty("afk-zenyte", player.getAfkZenyte());
 
 			object.add("achievements-points", builder.toJsonTree(player.getAchievements().getPoints()));
 			object.add("achievements-amount", builder.toJsonTree(player.getAchievements().getAmountRemaining()));

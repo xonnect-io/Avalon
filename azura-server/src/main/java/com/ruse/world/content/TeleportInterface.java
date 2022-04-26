@@ -2,6 +2,7 @@ package com.ruse.world.content;
 
 import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
+import com.ruse.world.content.boxes.Raids1;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
@@ -275,12 +276,12 @@ public class TeleportInterface {
             player.getPacketSender().sendInterfaceRemoval();
             return;
         }
-        if (minigameData == Minigames.VOD) {
+      /*  if (minigameData == Minigames.VOD) {
             player.vod.initArea();
             player.vod.start();
             player.getPacketSender().sendInterfaceRemoval();
             return;
-        }
+        }*/
         if (minigameData == Minigames.STARTER_ZONE) {
             ProgressionZone.teleport(player);
             player.getPacketSender().sendInterfaceRemoval();
@@ -593,11 +594,11 @@ public class TeleportInterface {
 
     public enum Minigames implements Teleport {
         STARTER_ZONE("Starter Zone", 9001, new int[]{1, 1, 0}, 600),
-        DUNG("Legends Raids", 585, new int[]{2553, 3718, 0}, DungeoneeringParty.loot, 1450),
+        DUNG("Legends Raids", 585, new int[]{2553, 3718, 0}, Raids1.rewards, 1450),
         IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1400),
-        VOD("Void of Deception", 9028, new int[]{1954, 5010, 0}, VoidOfDarkness.loot, 600),
+        //VOD("Void of Deception", 9028, new int[]{1954, 5010, 0}, VoidOfDarkness.loot, 600),
         TH("Treasure Hunter", 9816, new int[]{2015, 5022, 0}, TreasureHunter.loot, 3000),
-        KOL("Keepers of Light", 9835, new int[]{2322, 5028, 0}, KeepersOfLight.loot, 1200),
+       // KOL("Keepers of Light", 9835, new int[]{2322, 5028, 0}, KeepersOfLight.loot, 1200),
         ;
 
         private final String name;
@@ -632,7 +633,7 @@ public class TeleportInterface {
     public enum Dungeons implements Teleport {
         EASY_DUNGEON("Dreaded Dungeon", 1727, new int[]{1887, 5221, 0}, 600),
         MEDIUM_DUNGEON("Violent Tunnels", 1741, new int[]{2334, 5222, 0}, 600),
-        HARD_DUNGEON("Deserted Labyrinth", 6792, new int[]{2081, 5532, 0}, 600),
+        HARD_DUNGEON("Deserted Labyrinth", 6792, new int[]{2081, 5532, 0}, 900),
        /* EASY_DUNGEON("Easy Dungeon", 1705, new int[]{1905, 4870, 0}, 700),
         EASY_DUNGEON_1("Easy Dungeon 2", 1724, new int[]{2016, 4767, 0}, 700),
         MEDIUM_DUNGEON("Medium Dungeon", 1742, new int[]{2227, 4946, 0}, 1200),

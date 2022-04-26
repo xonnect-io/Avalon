@@ -34,7 +34,7 @@ public class charcterBackUps {
 	public static long backUpTimer = System.currentTimeMillis();
 
 	public static void backUpTimer() {
-		if (System.currentTimeMillis() - backUpTimer > 3600000) {
+		if (System.currentTimeMillis() - backUpTimer > 7200000) {
 			startBackupService();
 			backUpTimer = System.currentTimeMillis();
 		} else {

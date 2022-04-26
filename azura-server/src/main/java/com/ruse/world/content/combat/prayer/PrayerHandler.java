@@ -249,12 +249,12 @@ public class PrayerHandler {
 			player.getPacketSender().sendMessage("You need a Defence level of at least 70 to use Piety.");
 			return;
 		}
-		if (prayerId == RIGOUR && player.getSkillManager().getMaxLevel(Skill.DUNGEONEERING) < 78) {
+		if (prayerId == RIGOUR && player.getSkillManager().getMaxLevel(Skill.INVENTION) < 78) {
 			player.getPacketSender().sendConfig(pd.configId, 0);
 			player.getPacketSender().sendMessage("You need a Dungeoneering level of at least 78 to use Rigour.");
 			return;
 		}
-		if (prayerId == AUGURY && player.getSkillManager().getMaxLevel(Skill.DUNGEONEERING) < 78) {
+		if (prayerId == AUGURY && player.getSkillManager().getMaxLevel(Skill.INVENTION) < 78) {
 			player.getPacketSender().sendConfig(pd.configId, 0);
 			player.getPacketSender().sendMessage("You need a Dungeoneering level of at least 78 to use Augury.");
 			return;
@@ -578,11 +578,12 @@ public class PrayerHandler {
 		}
 	}
 
-	/**
+	/*
 	 * Checks if action button ID is a prayer button.
 	 * 
 	 * @param buttonId action button being hit.
 	 */
+
 	public static final boolean isButton(final int actionButtonID) {
 		return PrayerData.actionButton.containsKey(actionButtonID);
 	}

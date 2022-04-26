@@ -1504,102 +1504,80 @@ public class CustomInterfaces extends RSInterface {
 
 	public static void upgradeInterface(TextDrawingArea[] tda) {
 		RSInterface tab = addInterface(62200);
-
 		addSpriteLoader(62201, 1244);
-		addText(62211, "How to get Upgrade Tokens?", tda, 1, 0xFFA500, true, true);
+		RSInterface.addText(62211, "How to get Upgrade Tokens?", tda, 1, 0xFFA500);
+	
+		addButtonWSpriteLoader(62202, 1245, "Upgrade x1", 241, 30);
 
-		addButtonWSpriteLoader(62202, 1245, "Upgrade X1", 241, 30);
-		addButtonWSpriteLoader(62247, 1245, "Upgrade All", 241, 30);
-
-		hoverButton(62202, 1457, 1458, "Upgrade x1", 2, 0xff8624, "Upgrade x1");
-		hoverButton(62247, 1457, 1458, "Upgrade All", 2, 0xff8624, "Upgrade All");
-
-		addButtonWSpriteLoader(62241, 1344, "Select 0", 87, 33);
-		addButtonWSpriteLoader(62235, 1344, "Select 1", 87, 32);
-		addButtonWSpriteLoader(62236, 1344, "Select 2", 87, 32);
-		addButtonWSpriteLoader(62240, 1344, "Select 3", 87, 32);
-		addButtonWSpriteLoader(62243, 1344, "Select 4", 87, 32);
-		addButtonWSpriteLoader(62244, 1345, "Select MAX", 50, 32);
-
-		addConfigButtonWSpriteLoader(62241, 62200, 1506, 1507, 79, 20, "Select", 0, 5, 1355);
-		addConfigButtonWSpriteLoader(62235, 62200, 1506, 1507, 79, 20, "Select", 1, 5, 1355);
-		addConfigButtonWSpriteLoader(62236, 62200, 1506, 1507, 79, 20, "Select", 2, 5, 1355);
-		addConfigButtonWSpriteLoader(62240, 62200, 1506, 1507, 79, 20, "Select", 3, 5, 1355);
-		addConfigButtonWSpriteLoader(62243, 62200, 1506, 1507, 79, 20, "Select", 4, 5, 1355);
-		addConfigButtonWSpriteLoader(62244, 62200, 1506, 1507, 79, 20, "Select", 5, 5, 1355);
-
-
-		addText(62204, "", tda, 2, 0xFFA500);
-		addText(62205, "Select the item you want to upgrade", tda, 1, 0xFFA500, true, true);
-		addText(62206, "", tda, 2, 0xFFA500);
-		addText(62248, "", tda, 2, 0xFFA500);
-		addText(62203, "Product", tda, 2, 0xFFA500, true, true);
-		addText(62231, "Tokens required:", tda, 1, 0x3bce76, true, true);
-		addText(62234, "Success rate: ", tda, 1, 0x3bce76, true, true);
-		addText(62232, "The item must be in your inventory", tda, 0, 0xe6e5e6, true, true);
-		addText(62233, "Upgrade orbs is obtained from dissolving items, PvM drops.", tda, 0, 0xe6e5e6, true, true);
-		addText(62242, "Tier 1", tda, 1, 0xFFA500);
-		addText(62237, "Tier 2", tda, 1, 0xFFA500);
-		addText(62238, "Tier 3", tda, 1, 0xFFA500);
-		addText(62239, "Tier 4", tda, 1, 0xFFA500);
-		addText(62245, "Tier 5", tda, 1, 0xFFA500);
-		addText(62246, "Enchant", tda, 1, 0xFFA500);
-		addToItemGroup(62209, 6, 10, 8, 5, true, new String[]{"Select", null, null, null, null});
-
-		addToItemGroup(62210, 3, 10, 17, 3, true, new String[]{"Select", null, null, null, null}); // try now.
-
+		addButtonWSpriteLoader(62252, 1245, "Upgrade All", 241, 30);
+		addButtonWSpriteLoader(62241, 1645, "Select Tier 1", 68, 20);
+		addButtonWSpriteLoader(62235, 1645, "Select Tier 2", 68, 20);
+		addButtonWSpriteLoader(62236, 1645, "Select Tier 3", 68, 20);
+		addButtonWSpriteLoader(62240, 1645, "Select Tier 4", 68, 20);
+		addButtonWSpriteLoader(62243, 1645, "Select Tier 5", 68, 20);
+		addButtonWSpriteLoader(62244, 1645, "Select Tier 6", 68, 20);
+		addButtonWSpriteLoader(62251, 1645, "Select Lvl 120", 68, 20);
+		RSInterface.addText(62204, "", tda, 2, 0xFFA500);
+		RSInterface.addText(62205, "Select the item you want to upgrade", tda, 1, 0xFFA500);
+		RSInterface.addText(62206, "Upgrade x1", tda, 2, ColorConstants.ORANGE2, true, true);
+		RSInterface.addText(62253, "Upgrade All", tda, 2, ColorConstants.ORANGE2, true, true);
+		RSInterface.addText(62203, "Product", tda, 2, 0xFFA500);
+		RSInterface.addText(62231, "Tokens required:", tda, 1, 0x3bce76, true, false);
+		RSInterface.addText(62234, "Success rate:", tda, 1, 0x3bce76, true, false);
+		RSInterface.addText(62232, "The item must be in your inventory", tda, 0	, 0xe6e5e6);
+		RSInterface.addText(62233, "Upgrade Tokens are obtained from dissolving extra items, PvM drops.", tda, 0, 0xe6e5e6);
+		RSInterface.addText(62242, "Tier 1", tda, 1, 0xFFA500);
+		RSInterface.addText(62237, "Tier 2", tda, 1, 0xFFA500);
+		RSInterface.addText(62238, "Tier 3", tda, 1, 0xFFA500);
+		RSInterface.addText(62239, "Tier 4", tda, 1, 0xFFA500);
+		RSInterface.addText(62245, "Tier 5", tda, 1, 0xFFA500);
+		RSInterface.addText(62246, "Tier 6", tda, 1, 0xFFA500);
+		RSInterface.addText(62250, "Lvl 120", tda, 1, 0xFFA500);
+		addToItemGroup(62209, 6, 6, 10, 5, true, new String[] { "Select", null, null, null, null }); 
+		
+		addToItemGroup(62210, 1, 10, 17, 3, true, new String[] { "Select", null, null, null, null }); // try now.
+			
 		addButtonWSpriteLoader(62230, 1238, "Close Interface");
-
-		tab.totalChildren(28);
-		int x = 10, y = 10;
-		tab.child(0, 62201, 10, 10); // sprite bg
-
-		tab.child(3, 62204, 215, 18); // empty
-
-		tab.child(2, 62203, 373 + 29, 70); // reward if successful
-
-		tab.child(4, 62205, 141 + 18, 66); //select the item you want to upgrade
-		tab.child(11, 62232, 141 + 18, 79);//the item must be in ur inventory
-
-		tab.child(1, 62202, 314 + 29, 206);//upgrade x1
-		tab.child(5, 62206, 360, 229);//upgrade x1 text
-
-		tab.child(6, 62208, 32, 92); // items
-		tab.child(7, 62210, 355 + 29, 111); // reward item
-		tab.child(9, 62230, 480, 13);
-
-		tab.child(10, 62231, 373 + 29, 170);//dust requred
-		tab.child(13, 62234, 373 + 29, 185);//upgrade %
-
-		tab.child(8, 62211, 259, 284);//how to get pixue
-		tab.child(12, 62233, 259, 298);//pixue dust is obtained from
-
-
-		tab.child(14, 62241, 21, 35);// 00 hover
-		tab.child(15, 62235, 100, 35);//01 hover
-		tab.child(16, 62236, 179, 35);//02 hover
-		tab.child(17, 62240, 258, 35);//03 hover
-		tab.child(18, 62243, 337, 35);// 04 hover
-		tab.child(19, 62244, 416, 35);// MAX hover
-
-		tab.child(20, 62242, 28, 39);// 00 text
-		tab.child(21, 62237, 107, 39);// 01 text
-		tab.child(22, 62238, 186, 39);// 02 text
-		tab.child(23, 62239, 265, 39);//03 text
-		tab.child(24, 62245, 344, 39);// 04 text
-		tab.child(25, 62246, 423, 39);// max text
-
-		tab.child(26, 62247, 343, 237); // upgrade all
-		tab.child(27, 62248, 360, 259); // upgrade all text
-
+	
+		tab.totalChildren(30);
+		tab.child(0, 62201, 10, 10);
+		tab.child(1, 62202, 326, 205);
+		tab.child(28, 62252, 326, 237);
+		tab.child(29, 62253, 400, 243);
+		tab.child(2, 62203, 375, 72);
+		tab.child(3, 62204, 215, 18);
+		tab.child(4, 62205, 60, 67);//select the item you want to upgrade
+		tab.child(5, 62206, 400, 213);
+		tab.child(6, 62208, 39, 92);
+		tab.child(7, 62210, 383, 112);
+		tab.child(8, 62211, 180, 283);//how to get pixue	
+		tab.child(9, 62230, 492, 10);
+		tab.child(10, 62231, 403, 170);//dust requred
+		tab.child(11, 62232, 75, 80);//the item must be in ur inventory
+		tab.child(12, 62233, 92, 298);//pixue dust is obtained from
+		tab.child(13, 62234, 403, 184);//upgrade %
+		tab.child(14, 62241, 20, 34);// 00 hover
+		tab.child(15, 62235, 88, 34);//01 hover
+		tab.child(16, 62236, 88+68, 34);//02 hover
+		tab.child(17, 62240, 156+68, 34);//03 hover
+		tab.child(18, 62243, 224+68, 34);// 04 hover
+		tab.child(19, 62244, 292+68, 34);// 05 hover
+		tab.child(20, 62242, 26, 39);// 00 text
+		tab.child(21, 62237, 92, 39);// 01 text
+		tab.child(22, 62238, 162, 39);// 02 text
+		tab.child(23, 62239, 230, 39);//03 text
+		tab.child(24, 62245, 298, 39);// 04 text
+		tab.child(25, 62246, 366, 39);// 05 text
+		tab.child(26, 62251, 428, 34);// 06 hover
+		tab.child(27, 62250, 434, 39);// 06 text
 		RSInterface scrollInterface = addTabInterface(62208);
 		scrollInterface.parentID = 62200;
-		scrollInterface.width = 273 - 16;
+		scrollInterface.width = 250;
 		scrollInterface.height = 170;
 		scrollInterface.scrollMax = 1000;
 		scrollInterface.totalChildren(1);
-		scrollInterface.child(0, 62209, 5, 5);
-
+		scrollInterface.child(0, 62209, 5, 10);
+		
 	}
 
 	private static void equipmentScreenInterface() {
@@ -2861,97 +2839,66 @@ public class CustomInterfaces extends RSInterface {
 		skill.totalChildren(1);
 		skill.child(0, 28100, 72, 237);
 		int[] logoutID = {2450, 2451, 2452};
-		int[] logoutID2 = {2458};
-		for (int i : logoutID) {
-			RSInterface Logout = interfaceCache[i];
-			Logout.disabledColor = 0xFF981F;
-			Logout.contentType = 0;
-		}
-		for (int i : logoutID2) {
+		int[] logoutID2 = {2458 };
+		for (int i: logoutID) {
 			RSInterface Logout = interfaceCache[i];
 			Logout.contentType = 0;
 		}
-		int[] buttons = {8654, 8655, 8656, 8657, 8658, 8659, 8660,
-				8861, 8662, 8663, 8664, 8665, 8666,
-				8667, 8668, 8669, 8670, 8671, 8672,
-				12162, 13928, 28177, 28178, };
+		for (int i: logoutID2) {
+			RSInterface Logout = interfaceCache[i];
+			Logout.contentType = 0;
+		}
+		int[] buttons = { 8654, 8655, 8656, 8657, 8658, 8659, 8660, 8861, 8662, 8663, 8664, 8665, 8666, 8667, 8668, 8669, 8670, 8671, 8672, 12162, 13928, 28177, 28178, 28179, 28180 };
+		int[] hovers = { 4040, 4076, 4112, 4046, 4082, 4118, 4052, 4088, 4124, 4058, 4094, 4130, 4064, 4100, 4136, 4070, 4106, 4142, 4160, 2832, 13917, 28173, 28174, 28175, 28176 };
+		int[][] text = { { 4004, 4005 }, { 4016, 4017 }, { 4028, 4029 },
+				{ 4006, 4007 }, { 4018, 4019 }, { 4030, 4031 }, { 4008, 4009 },
+				{ 4020, 4021 }, { 4032, 4033 }, { 4010, 4011 }, { 4022, 4023 },
+				{ 4034, 4035 }, { 4012, 4013 }, { 4024, 4025 }, { 4036, 4037 },
+				{ 4014, 4015 }, { 4026, 4027 }, { 4038, 4039 }, { 4152, 4153 },
+				{ 12166, 12167 }, { 13926, 13927 }, { 28165, 28169 },
+				{ 28166, 28170 }, { 28167, 28171 }, { 28168, 28172 } };
 
-		int[] hovers = {4040, 4076, 4112, 4046, 4082, 4118,
-				4052, 4088, 4124, 4058, 4094, 4130,
-				4064, 4100, 4136, 4070, 4106, 4142,
-				4160, 2832, 13917, 28173, 28174,};
+		int[] icons = { 3965, 3966, 3967, 3968, 3969, 3970, 3971, 3972, 3973,
+				3974, 3975, 3976, 3977, 3978, 3979, 3980, 3981, 3982, 4151,
+				12165, 13925, 28181, 28182, 28183, 28184 };
 
-		int[][] text = {{4004, 4005}, {4016, 4017}, {4028, 4029},
-				{4006, 4007}, {4018, 4019}, {4030, 4031},
-				{4008, 4009}, {4020, 4021}, {4032, 4033},
-				{4010, 4011}, {4022, 4023}, {4034, 4035},
-				{4012, 4013}, {4024, 4025}, {4036, 4037},
-				{4014, 4015}, {4026, 4027}, {4038, 4039},
-				{4152, 4153}, {12166, 12167}, {13926, 13927},
-				{28165, 28169}, {28166, 28170}, };
-
-		int[] icons = {3965, 3966, 3967, 3968, 3969, 3970,
-				3971, 3972, 3973, 3974, 3975, 3976,
-				3977, 3978, 3979, 3980, 3981, 3982,
-				4151, 12165, 13925, 28181, 28182
-		};
-
-		int[] positions = new int[]{0, 32, 64,
-				96, 128, 160,
-				192, 224, 256,
-				288, 320, 352,
-				384,448,480};
-
-		int[][] buttonCoords = {
-				{3 - 1, positions[0] + 5}, {65, positions[0] + 5}, {127 + 1, positions[0] + 5},
-				{3 - 1, positions[1] + 5}, {65, positions[1] + 5}, {127 + 1, positions[1] + 5},
-				{3 - 1, positions[2] + 5}, {65, positions[2] + 5}, {127 + 1, positions[2] + 5},
-				{3 - 1, positions[3] + 5}, {65, positions[3] + 5}, {127 + 1, positions[3] + 5},
-				{3 - 1, positions[4] + 5}, {65, positions[4] + 5}, {127 + 1, positions[4] + 5},
-				{3 - 1, positions[5] + 5}, {65, positions[5] + 5}, {127 + 1, positions[5] + 5},
-				{3 - 1, positions[6] + 5}, {65, positions[6] + 5}, {127 + 1, positions[6] + 5},
-				{3 - 1, positions[7] + 5}, {65, positions[7] + 5}};
-
-		int[][] iconCoords = {
-				{6 - 1, positions[0] + 10}, {68, positions[0] + 12}, {131 + 1, positions[0] + 10},
-				{8 - 1, positions[1] + 10}, {68, positions[1] + 9}, {130 + 1, positions[1] + 12},
-				{8 - 1, positions[2] + 12}, {68, positions[2] + 10}, {131 + 1, positions[2] + 9},
-				{6 - 1, positions[3] + 11}, {68, positions[3] + 14}, {132 + 1, positions[3] + 9},
-				{6 - 1, positions[4] + 9}, {69, positions[4] + 11}, {130 + 1, positions[4] + 9},
-				{6 - 1, positions[5] + 10}, {68, positions[5] + 10}, {132 + 1, positions[5] + 9},
-				{6 - 1, positions[6] + 8}, {68, positions[6] + 9}, {130 + 1, positions[6] + 10},
-				{6 - 1, positions[7] + 10}, {68, positions[7] + 10}};
-
-		int[][] textCoords = {
-				{29 + 4, positions[0] + 9, 44 + 2, positions[0] + 22}, {91 + 5, positions[0] + 9, 106 + 3, positions[0] + 22}, {153 + 6, positions[0] + 9, 168 + 4, positions[0] + 22},
-				{29 + 4, positions[1] + 9, 44 + 2, positions[1] + 22}, {91 + 5, positions[1] + 9, 106 + 3, positions[1] + 22}, {153 + 6, positions[1] + 9, 168 + 4, positions[1] + 22},
-				{29 + 4, positions[2] + 9, 44 + 2, positions[2] + 22}, {91 + 5, positions[2] + 9, 106 + 3, positions[2] + 22}, {153 + 6, positions[2] + 9, 168 + 4, positions[2] + 22},
-				{29 + 4, positions[3] + 9, 44 + 2, positions[3] + 22}, {91 + 5, positions[3] + 9, 106 + 3, positions[3] + 22}, {153 + 6, positions[3] + 9, 168 + 4, positions[3] + 22},
-				{29 + 4, positions[4] + 9, 44 + 2, positions[4] + 22}, {91 + 5, positions[4] + 9, 106 + 3, positions[4] + 22}, {153 + 6, positions[4] + 9, 168 + 4, positions[4] + 22},
-				{29 + 4, positions[5] + 9, 44 + 2, positions[5] + 22}, {91 + 5, positions[5] + 9, 106 + 3, positions[5] + 22}, {153 + 6, positions[5] + 9, 168 + 4, positions[5] + 22},
-				{29 + 4, positions[6] + 9, 44 + 2, positions[6] + 22}, {91 + 5, positions[6] + 9, 106 + 3, positions[6] + 22}, {153 + 6, positions[6] + 9, 168 + 4, positions[6] + 22},
-				{29 + 4, positions[7] + 9, 44 + 2, positions[7] + 22}, {91 + 5, positions[7] + 9, 106 + 3, positions[7] + 22}, };
-
-		int[][] newText = {{28165, 28166, 28167, 28168}, {28169, 28170, 28171, 28172}};
-
-		int[] spriteIds = {625, 636, 639,
-				645, 624, 644,
-				629, 635, 633,
-				641, 647, 627,
-				640, 628, 632,
-				638, 634, 648,
-				642, 643, 631,
-				377, 637};
+		int[][] buttonCoords = { { 3, 5 }, { 65, 5 }, { 127, 5 }, { 3, 33 },
+				{ 65, 33 }, { 127, 33 }, { 3, 61 }, { 65, 61 }, { 127, 61 },
+				{ 3, 89 }, { 65, 89 }, { 127, 89 }, { 3, 117 }, { 65, 117 },
+				{ 127, 117 }, { 3, 145 }, { 65, 145 }, { 127, 145 },
+				{ 3, 173 }, { 65, 173 }, { 127, 173 }, { 3, 201 }, { 65, 201 },
+				{ 127, 201 }, { 3, 229 } };
+		int[][] iconCoords = { { 5, 7 }, { 68, 8 }, { 130, 7 }, { 8, 35 },
+				{ 67, 34 }, { 130, 37 }, { 8, 65 }, { 66, 64 }, { 130, 62 },
+				{ 6, 92 }, { 67, 97 }, { 132, 91 }, { 5, 119 }, { 69, 121 },
+				{ 129, 119 }, { 5, 148 }, { 68, 147 }, { 131, 147 },
+				{ 5, 174 }, { 68, 174 }, { 129, 175 }, { 5, 203 }, { 68, 202 },
+				{ 130, 203 }, { 5, 231 } };
+		int[][] textCoords = { { 29, 7, 44, 19 }, { 91, 7, 106, 19 },
+				{ 153, 7, 168, 19 }, { 29, 35, 44, 47 }, { 91, 35, 106, 47 },
+				{ 153, 35, 168, 47 }, { 29, 63, 44, 75 }, { 91, 63, 106, 75 },
+				{ 153, 63, 168, 75 }, { 29, 91, 44, 103 },
+				{ 91, 91, 106, 103 }, { 153, 91, 168, 103 },
+				{ 29, 119, 44, 131 }, { 91, 119, 106, 131 },
+				{ 153, 119, 168, 131 }, { 29, 147, 44, 159 },
+				{ 91, 147, 106, 159 }, { 153, 147, 168, 159 },
+				{ 29, 175, 44, 187 }, { 91, 175, 106, 187 },
+				{ 153, 175, 168, 187 }, { 29, 203, 44, 215 },
+				{ 91, 203, 106, 215 }, { 153, 203, 168, 215 },
+				{ 29, 231, 44, 243 } };
+		int[][] newText = { { 28165, 28166, 28167, 28168 },
+				{ 28169, 28170, 28171, 28172 } };
+		int[] spriteIds = { 625, 636, 639, 645, 624, 644, 629, 635, 633, 641, 647, 627, 640, 628, 632, 638, 634, 648, 642, 643, 631, 626, 637, 646, 630};
 		int frame = 0;
 
 		for (int i = 0; i < hovers.length; i++) {
 			addSkillButton(buttons[i], Skills.SKILL_NAMES[i]);
 			createSkillHover(hovers[i], 205 + i);
 
-			addHoverButtonWSpriteLoader(79924 + i, 370, 60, 27, "Set Level Goal", 1321, -1, 1);
-			addHoverButtonWSpriteLoader(79949 + i, 370, 60, 27, "Set Exp Goal", 1322, -1, 1);
-			addHoverButtonWSpriteLoader(79974 + i, 370, 60, 27, "Clear Goal", 1323, -1, 1);
-			addHoverButtonWSpriteLoader(80000 + i, 370, 60, 27, "Prestige", 5000 + i, -1, 1);
+			addHoverButtonWSpriteLoader(79924 + i, 622, 60, 27, "Set Level Goal", 1321, -1, 1);
+			addHoverButtonWSpriteLoader(79949 + i, 622, 60, 27, "Set Exp Goal", 1322, -1, 1);
+			addHoverButtonWSpriteLoader(79974 + i, 622, 60, 27, "Clear Goal", 1323, -1, 1);
+			addHoverButtonWSpriteLoader(80000 + i, 622, 60, 27, "Prestige", 5000+i, -1, 1);
 			/*
 			addHoverButton(79924 + i, getSprite("Interfaces/Skilltab/Button"), 0, 60, 27, "Set Level Goal", 1321, -1, 1);
 			addHoverButton(79949 + i, getSprite("Interfaces/Skilltab/Button"), 0, 60, 27, "Set Exp Goal", 1322, -1, 1);
@@ -2971,42 +2918,38 @@ public class CustomInterfaces extends RSInterface {
 		skill.totalChildren(icons.length + (text.length * 2) + hovers.length + buttons.length * 5 + 1);
 
 
+
 		RSInterface totalLevel = addInterface(3984);
-		addSpriteLoader(31196, 649);
+		addSpriteLoader(31196, 43);
 		createHover(31192, 231, 120);
-		addText(31199, "Total level:", 0xFFEE33, true, true, 52, tda, 0);
-		addText(31200, "2475", 0xFFEE33, true, true, 52, tda, 0);
+		addText(31199, "Total Level:", 0xFFEE33, false, true, 52, tda, 0);
+		addText(31200, "2475", 0xFFEE33, false, true, 52, tda, 0);
 
 		totalLevel.totalChildren(4);
-		totalLevel.child(0, 31196, 127, 227);
-		totalLevel.child(1, 31199, 158, 233);
-		totalLevel.child(2, 31200, 158, 243);
+		totalLevel.child(0, 31196, 65, 229);
+		totalLevel.child(1, 31199, 106, 231);
+		totalLevel.child(2, 31200, 117, 243);
 		totalLevel.child(3, 31192, 38, 230);
-		skill.child(frame, 3984, 0, 0);
+		skill.child(frame, 3984, 0, 0); 
 		frame++;
 		for (int i = 0; i < buttons.length; i++) {
-			skill.child(frame++, 80000 + i, buttonCoords[i][0] - 1, buttonCoords[i][1] - 2);
-			skill.child(frame++, 79974 + i, buttonCoords[i][0] - 1, buttonCoords[i][1] - 2);
-			skill.child(frame++, 79949 + i, buttonCoords[i][0] - 1, buttonCoords[i][1] - 2);
-			skill.child(frame++, 79924 + i, buttonCoords[i][0] - 1, buttonCoords[i][1] - 2);
-			skill.child(frame, buttons[i], buttonCoords[i][0] - 1, buttonCoords[i][1] - 2);
-			frame++;
+			skill.child(frame++, 80000 + i, buttonCoords[i][0], buttonCoords[i][1]);
+			skill.child(frame++, 79974 + i, buttonCoords[i][0], buttonCoords[i][1]);
+			skill.child(frame++, 79949 + i, buttonCoords[i][0], buttonCoords[i][1]);
+			skill.child(frame++, 79924 + i, buttonCoords[i][0], buttonCoords[i][1]);
+			skill.child(frame, buttons[i], buttonCoords[i][0], buttonCoords[i][1]); frame++;
 		}
 		for (int i = 0; i < icons.length; i++) {
-			skill.child(frame, icons[i], iconCoords[i][0] - 1, iconCoords[i][1] - 2);
-			frame++;
+			skill.child(frame, icons[i], iconCoords[i][0], iconCoords[i][1]); frame++;
 		}
 		for (int i = 0; i < text.length; i++) {
-			skill.child(frame, text[i][0], textCoords[i][0] - 1, textCoords[i][1] - 2);
-			frame++;
+			skill.child(frame, text[i][0], textCoords[i][0], textCoords[i][1]); frame++;
 		}
 		for (int i = 0; i < text.length; i++) {
-			skill.child(frame, text[i][1], textCoords[i][2] - 1, textCoords[i][3] - 2);
-			frame++;
+			skill.child(frame, text[i][1], textCoords[i][2], textCoords[i][3]); frame++;
 		}
 		for (int i = 0; i < hovers.length; i++) {
-			skill.child(frame, hovers[i], buttonCoords[i][0] - 1, buttonCoords[i][1] - 2);
-			frame++;
+			skill.child(frame, hovers[i], buttonCoords[i][0], buttonCoords[i][1]); frame++;
 		}
 	}
 
@@ -3746,7 +3689,7 @@ public class CustomInterfaces extends RSInterface {
 		addButtonWSpriteLoader(38037, 675, "Choose Firemaking", 46, 44);
 		addButtonWSpriteLoader(38040, 675, "Choose Herblore", 46, 44);
 		addButtonWSpriteLoader(38043, 675, "Choose Slayer", 46, 44);
-		addButtonWSpriteLoader(38046, 675, "Choose Dungeoneering", 46, 44);
+		addButtonWSpriteLoader(38046, 675, "Choose Invention", 46, 44);
 		addButtonWSpriteLoader(38049, 675, "Choose Defence", 46, 44);
 		addButtonWSpriteLoader(38052, 675, "Choose Prayer", 46, 44);
 		addButtonWSpriteLoader(38043, 675, "Choose Slayer", 46, 44);
@@ -7454,86 +7397,6 @@ int x = 10;
 		}
 	}
 
-
-	static void upgradeInterface() {//this one
-		int interID = 121000;
-		RSInterface tab = addInterface(interID);
-		int id = interID + 1;
-		int c = 0;
-		int x = 45;
-		int y = 45;
-		tab.totalChildren(21);
-
-		addSpriteLoader(id, 1582);
-		tab.child(c++, id++, 0 + x, 0 + y);
-
-		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
-		tab.child(c++, id++, 394 + x, 9 + y);
-		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
-		tab.child(c++, id++, 394 + x, 9 + y);
-		id++;
-
-		addConfigButtonWSpriteLoader(id, interID, 1555, 1554, 99, 20, "Select", 0, 5, 5334);
-		tab.child(c++, id++, 10 + x, 39 + y);
-		addConfigButtonWSpriteLoader(id, interID, 1555, 1554, 99, 20, "Select", 1, 5, 5334);
-		tab.child(c++, id++, 110 + x, 39 + y);
-		addConfigButtonWSpriteLoader(id, interID, 1555, 1554, 99, 20, "Select", 2, 5, 5334);
-		tab.child(c++, id++, 210 + x, 39 + y);
-		addConfigButtonWSpriteLoader(id, interID, 1555, 1554, 99, 20, "Select", 3, 5, 5334);
-		tab.child(c++, id++, 310 + x, 39 + y);
-
-		addSpriteLoader(id, 1556);
-		tab.child(c++, id++, 14 + x, 42 + y);
-		addSpriteLoader(id, 1557);
-		tab.child(c++, id++, 114 + x, 41 + y);
-		addSpriteLoader(id, 1558);
-		tab.child(c++, id++, 216 + x, 42 + y);
-		addSpriteLoader(id, 1559);
-		tab.child(c++, id++, 314 + x, 41 + y);
-
-		addText(id, "Weaponry", tda, 0, ColorConstants.ORANGE, false, true);
-		tab.child(c++, id++, 32 + x, 44 + y);
-		addText(id, "Armoury", tda, 0, ColorConstants.ORANGE, false, true);
-		tab.child(c++, id++, 132 + x, 44 + y);
-		addText(id, "Accessories", tda, 0, ColorConstants.ORANGE, false, true);
-		tab.child(c++, id++, 232 + x, 44 + y);
-		addText(id, "Miscellaneous", tda, 0, ColorConstants.ORANGE, false, true);
-		tab.child(c++, id++, 332 + x, 44 + y);
-
-		dropGroup(id, 1, 1, 1, 1);
-		tab.child(c++, id++, 335 + x, 101 + y);
-
-		addText(id, "Tokens required: ", tda, 0, ColorConstants.ORANGE, false, true);
-		tab.child(c++, id++, 295 + x, 158 + y);
-		addText(id, "Success rate: ", tda, 0, ColorConstants.ORANGE, false, true);
-		tab.child(c++, id++, 295 + x, 181 + y);
-
-		hoverButton(id, 1536, 1537, "Upgrade-All", 0, 0xff8624, "Upgrade-All");
-		tab.child(c++, id++, 312 + x, 208 + y);
-
-		hoverButton(id, 1536, 1537, "Upgrade", 0, 0xff8624, "Upgrade");
-		tab.child(c++, id++, 312 + x, 208 + y);
-
-		tab.child(c++, 121100, 12 + x, 98 + y);
-
-		interID = 121100;
-
-		RSInterface scroll = addInterface(interID);
-
-		scroll.totalChildren(1);
-		scroll.width = 273 - 16;
-		scroll.height = 138;
-		scroll.scrollMax = 500;
-		y = 0;
-		c = 0;
-		id = interID + 1;
-		x = 0;
-		// addToItemGroup(62209, 9, 10, 9, 7, true, new String[]{"Value", "Buy 1", "Buy 5", "Buy 10", "Buy X"});
-		scroll.child(c++, 62209, 6 + x, 4 + y);
-
-	}
-
-
 	static void teleportInterface() {
 		int interID = 122000;
 		RSInterface tab = addInterface(interID);
@@ -7781,7 +7644,6 @@ int x = 10;
 		donatorShop();
 		petShop();
 		raidsInterface();
-		upgradeInterface();
 		teleportInterface();
 		minigameInterface();
 		vodOverlay(tda);

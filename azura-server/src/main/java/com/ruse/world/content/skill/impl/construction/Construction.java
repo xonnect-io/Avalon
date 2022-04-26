@@ -803,7 +803,7 @@ public class Construction {
 
 		if (p.getRights() == PlayerRights.DEVELOPER)
 			return null;
-		if (p.getSkillManager().getCurrentLevel(Skill.DUNGEONEERING) < f.getLevel()) {
+		if (p.getSkillManager().getCurrentLevel(Skill.INVENTION) < f.getLevel()) {
 			return "You need a Construction level of at least " + f.getLevel() + " to build this.";
 		}
 		for (int i1 = 0; i1 < f.getRequiredItems().length; i1++) {
@@ -858,7 +858,7 @@ public class Construction {
 				}
 			}
 		}
-		p.getSkillManager().addExperience(Skill.DUNGEONEERING, f.getXP());
+		p.getSkillManager().addExperience(Skill.INVENTION, f.getXP());
 		return true;
 	}
 
@@ -1422,7 +1422,7 @@ public class Construction {
 			}
 			if (p.getDialogueActionId() == 444) {
 				Butlers b = Butlers.forId(((NPC) p.getInteractingEntity()).getId());
-				if (p.getSkillManager().getCurrentLevel(Skill.DUNGEONEERING) < b.getConsLevel()) {
+				if (p.getSkillManager().getCurrentLevel(Skill.INVENTION) < b.getConsLevel()) {
 					DialogueManager.start(p,
 							ConstructionDialogues.hireServantDeclineDialogue(p, b.getNpcId(), "lvlreq"));
 					return true;

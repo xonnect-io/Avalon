@@ -583,9 +583,9 @@ public class MemberScrolls {
 			PlayerLogs.log(player.getUsername(),
 					"Has just redeemed a " + ItemDefinition.forId(item).getName() + " successfully!");
 
-			int funds = item == 10946 ? 1 : item == 23057 ? 10
-					: item == 23058 ? 25
-					: item == 23059 ? 100 : item == 23060 ? 250 : -1;
+			int funds = item == 10946 ? 1
+					: item == 6769 ? 5
+					: item == 10942 ? 10 : item == 10934 ? 25 : item == 10935 ? 50 : 100;
 
 			int amount = claimAll ? player.getInventory().getAmount(item) : 1;
 			if (claimAll) {

@@ -210,12 +210,33 @@ public final class ObjectDefinition {
 		}
 
 		if (definition.type == 22099) {
-			definition.objectModelIDs = new int[]{15498};
-			definition.name = "AFK Sapphire Crystal";
+			definition.objectModelIDs = new int[]{15573};
+			definition.name = "AFK Sapphire";
+			definition.actions = new String[]{"Mine", null, null, null, null};
+		}
+		
+		if (definition.type == 22098) {
+			definition.objectModelIDs = new int[]{15574};
+			definition.name = "AFK Emerald";
+			definition.actions = new String[]{"Mine", null, null, null, null};
+		}
+		if (definition.type == 22097) {
+			definition.objectModelIDs = new int[]{15577};
+			definition.name = "AFK Ruby";
+			definition.actions = new String[]{"Mine", null, null, null, null};
+		}
+		if (definition.type == 8455) {
+			definition.objectModelIDs = new int[]{15580};
+			definition.name = "AFK Diamond";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
 
-
+		if (definition.type == 8456) {
+			definition.objectModelIDs = new int[]{15578};
+			definition.name = "AFK Onyx";
+			definition.actions = new String[]{"Mine", null, null, null, null};
+		}
+		
 		if (definition.type == 2469) {
 			definition.actions = new String[]{"Advance", "Back", null, null, null};
 		}
@@ -231,12 +252,14 @@ public final class ObjectDefinition {
 			definition.actions[0] = "Open Perks";
 			definition.objectModelIDs = new int[]{100055};
 		}
+		
 		if (definition.type == 13291) {
 			definition.name = "Upgrade Chest";
 			definition.originalModelColors = new int[]{5055, 5088, 5055};
 			definition.modifiedModelColors = new int[]{51111, 8128, 7093};
 			definition.actions = new String[]{"Upgrade", null, null, null, null};
 		}
+		
 		if (definition.type == 22823) {
 			definition.name = "Upgrade Machine";
 			definition.actions = new String[]{"Upgrade", null, null, null, null};

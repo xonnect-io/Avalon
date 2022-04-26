@@ -319,7 +319,7 @@ public class EquipPacketListener implements PacketListener {
                      */
                     if (item != null && id == item.getId()) {
                         for (Skill skill : Skill.values()) {
-                            if (skill == Skill.DUNGEONEERING)
+                            if (skill == Skill.INVENTION)
                                 continue;
                             if (item.getDefinition().getRequirement()[skill.ordinal()] > player.getSkillManager()
                                     .getMaxLevel(skill)) {

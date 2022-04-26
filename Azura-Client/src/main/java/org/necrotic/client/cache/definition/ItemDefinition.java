@@ -61,8 +61,7 @@ public final class ItemDefinition {
 			case 7543:
 			case 7544:
 			case 7545:
-
-				model.setTexture(92);
+				model.setTexture(81);
 				break;
 			case 16249:
 			case 15832:
@@ -211,6 +210,10 @@ public final class ItemDefinition {
 			case 14924:
 			case 14925:
 				model.setTexture(51);
+				break;
+				
+			case 23225:
+				model.setTexture(53);
 				break;
 			case 14916:
 			case 14917:
@@ -494,6 +497,7 @@ public final class ItemDefinition {
 				itemDef.modelZoom = 1000;
 				itemDef.actions = new String[]{"Activate", null, null, null, "Drop"};
 				break;
+				
 			case 1563:
 			case 1564:
 			case 1562:
@@ -613,7 +617,7 @@ public final class ItemDefinition {
 				itemDef.modelID = 33009;
 				break;
 			case 18365:
-				itemDef.name = "@yel@Starter Sword";
+				itemDef.name = "Starter Sword";
 				itemDef.modelID = 90111;
 				itemDef.maleEquip1 = 90112;
 				itemDef.femaleEquip1 = 90112;
@@ -1884,13 +1888,15 @@ public final class ItemDefinition {
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
 				itemDef.stackable = false;
+				itemDef.modelZoom = 750;
 				break;
 			case 4888:
 				itemDef.name = "Volcanic axe";
 				
 				// itemDef.rdc2 = 57306150;
 				break;
-			case 4894:
+			case 4894:		
+				itemDef.modelZoom = 1450;
 				itemDef.name = "Volcanic platebody";
 				itemDef.modelID = 99973;
 				itemDef.maleEquip1 = 99974;
@@ -1901,7 +1907,8 @@ public final class ItemDefinition {
 				itemDef.stackable = false;
 				break;
 				
-			case 4900:
+			case 4900:		
+				itemDef.modelZoom = 1650;
 				itemDef.name = "Volcanic platelegs";
 				itemDef.modelID = 99975;
 				itemDef.maleEquip1 = 99976;
@@ -1962,7 +1969,7 @@ public final class ItemDefinition {
 				// itemDef.rdc2 = 16368;//this is for you dope :)
 				break;
 			case 6769:
-				itemDef.name = "@gre@$5 Bond";
+				itemDef.name = "$5 Bond";
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop";
 				itemDef.actions[0] = "Claim";
@@ -1985,7 +1992,7 @@ public final class ItemDefinition {
 				itemDef.modelZoom = 2400;
 				break;
 			case 10934:
-				itemDef.name = "@yel@$25 Bond";
+				itemDef.name = "$25 Bond";
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop";
 				itemDef.actions[0] = "Claim";
@@ -2052,7 +2059,7 @@ public final class ItemDefinition {
 			/*case 995:
 				itemDef.name = "Coins";
 				itemDef.actions = new String[5];
-				*//*itemDef.actions[3] = "@gre@Convert to 1-bill";
+				*//*itemDef.actions[3] = "Convert to 1-bill";
 				//itemDef.actions[2] = "Convert to 1-mill";
 				itemDef.actions[0] = "Add to pouch";
 				itemDef.modelID = 100284;
@@ -2128,7 +2135,7 @@ public final class ItemDefinition {
 				itemDef.stackable = true;
 				break;
 			case 10949:
-				itemDef.name = "@whi@Light Attachment";
+				itemDef.name = "Light Attachment";
 
 				itemDef21 = ItemDefinition.get(12159);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
@@ -2298,7 +2305,7 @@ public final class ItemDefinition {
 				itemDef.modelID = 65284;
 				break;
 			case 19117:
-				itemDef.name = "@whi@Execution Box";
+				itemDef.name = "Execution Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
@@ -2314,7 +2321,7 @@ public final class ItemDefinition {
 				itemDef.modelID = 65284;
 				break;
 			case 18404:
-				itemDef.name = "@whi@Raids[2] Box";
+				itemDef.name = "Legends Raids Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
@@ -2858,7 +2865,7 @@ public final class ItemDefinition {
 			case 14018:
 				itemDef.modelID = 6277;
 
-				itemDef.name = "@whi@<shad=255>Tornado Katana<shad=-1>";
+				itemDef.name = "<shad=255>Tornado Katana<shad=-1>";
 				itemDef.modelZoom = 2025;
 				itemDef.rotationY = 593;
 				itemDef.rotationX = 2040;
@@ -3395,7 +3402,7 @@ public final class ItemDefinition {
 				break;
 
 			case 22052:
-				itemDef.name = "@bla@[@yel@Prestige cape@bla@]@whi@";
+				itemDef.name = "Prestige cape";
 				itemDef.modelID = 56785;
 				itemDef.maleEquip1 = 55904;
 				itemDef.femaleEquip1 = 56557;
@@ -4999,7 +5006,7 @@ public final class ItemDefinition {
 				break;
 
 			case 11795:
-				itemDef.name = "@whi@<shad=355>Chest Key<shad=-1>";
+				itemDef.name = "Chest Key";
 				itemDef.rdc2 = 1261;
 				break;
 			case 18405:
@@ -5483,64 +5490,47 @@ public final class ItemDefinition {
 				break;
 			case 19811:
 				itemDef.name = "Cowboy hat";
-				itemDef.modelID = 15454;
-				itemDef.maleEquip1 = 15455;
-				itemDef.femaleEquip1 = 15455;
-				itemDef21 = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.modelID = 15581;
+				itemDef.maleEquip1 = 15583;
+				itemDef.femaleEquip1 = 15583;
+				itemDef.rotationZ = 0;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 380;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 800;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				
 
 				break;
 			case 19473:
+				itemDef.copyItem(4714);
 				itemDef.name = "Cowboy body";
-				itemDef.modelID = 15451;
-				itemDef.maleEquip1 = 15452;
-				itemDef.femaleEquip1 = 15452;
-				itemDef21 = ItemDefinition.get(4894);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.stackable = false;
-				break;
-				
-			case 11235:
-				itemDef.name = "Cowboy revolver";
-				itemDef.modelZoom = 700;
-				itemDef.modelID = 15458;
-				itemDef.maleEquip1 = 15459;
-				itemDef.femaleEquip1 = 15459;
+				itemDef.modelID = 15584;
+				itemDef.maleEquip1 = 15585;
+				itemDef.femaleEquip1 = 15585;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 1500;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
 			case 19472:
 				itemDef.name = "Cowboy legs";
-				itemDef.modelID = 15456;
-				itemDef.maleEquip1 = 15457;
-				itemDef.femaleEquip1 = 15457;
-				itemDef21 = ItemDefinition.get(4900);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.modelID = 15660;
+				itemDef.maleEquip1 = 15660;
+				itemDef.femaleEquip1 = 15660;
+				itemDef.rotationZ = 0;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 260;
+				itemDef.modelZoom = 1600;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				
-
 				break;
+				
 			case 19946:
 				itemDef.name = "<col=a69eb6>Avatar titan gloves";
 				itemDef.modelID = 65101;
@@ -6561,7 +6551,7 @@ public final class ItemDefinition {
 				itemDef.modelID = 65294;
 				itemDef.maleEquip1 = 65295;
 				itemDef.femaleEquip1 = 65295;
-				itemDef21 = ItemDefinition.get(4755);
+				itemDef21 = ItemDefinition.get(19146);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -6583,7 +6573,7 @@ public final class ItemDefinition {
 				itemDef.modelID = 65294;
 				itemDef.maleEquip1 = 65295;
 				itemDef.femaleEquip1 = 65295;
-				itemDef21 = ItemDefinition.get(4755);
+				itemDef21 = ItemDefinition.get(19146);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -6606,7 +6596,7 @@ public final class ItemDefinition {
 				itemDef.modelID = 65294;
 				itemDef.maleEquip1 = 65295;
 				itemDef.femaleEquip1 = 65295;
-				itemDef21 = ItemDefinition.get(4755);
+				itemDef21 = ItemDefinition.get(19146);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -6616,6 +6606,7 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop";
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 62; // the texture that it currently has
@@ -6647,7 +6638,7 @@ public final class ItemDefinition {
 				itemDef.modelID = 65294;
 				itemDef.maleEquip1 = 65295;
 				itemDef.femaleEquip1 = 65295;
-				itemDef21 = ItemDefinition.get(4755);
+				itemDef21 = ItemDefinition.get(19146);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -6891,8 +6882,8 @@ public final class ItemDefinition {
 				itemDef21 = ItemDefinition.get(4882);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelOffsetY = -5;
+				itemDef.modelZoom = 900;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
@@ -9025,7 +9016,7 @@ public final class ItemDefinition {
 		}
 		if (customId == 12284) { // Darkcrab
 			itemDef.name = "Scythe of hercules";
-			ItemDefinition itemDef2 = ItemDefinition.get(1419);
+			ItemDefinition itemDef2 = ItemDefinition.get(1333);
 			// itemDef.modelID = itemDef2.modelID;
 			itemDef.modelID = 65320;
 			itemDef.femaleEquip1 = 65321;
@@ -9076,13 +9067,11 @@ public final class ItemDefinition {
 			itemDef.rotationY = itemDef2.rotationY;
 			itemDef.rotationX = itemDef2.rotationX;
 			itemDef.stackable = false;
-			
-
-			//	itemDef.rdc2 = 272356;
+			itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 		}
 		if (customId == 20555) { // Darkcrab
 			itemDef.name = "Scythe of vitur";
-			ItemDefinition itemDef2 = ItemDefinition.get(1419);
+			ItemDefinition itemDef2 = ItemDefinition.get(1333);
 			// itemDef.modelID = itemDef2.modelID;
 			itemDef.modelID = 65320;
 			itemDef.femaleEquip1 = 65321;
@@ -9267,7 +9256,7 @@ public final class ItemDefinition {
 			itemDef.rotationY = itemDef2.rotationY;
 			itemDef.rotationX = itemDef2.rotationX;
 			itemDef.stackable = false;
-			
+			itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 
 		}
 		if (customId == 22081) { // weapon

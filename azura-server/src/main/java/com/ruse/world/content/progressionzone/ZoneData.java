@@ -15,7 +15,7 @@ public class ZoneData {
         LUIGI(9003, 30, new Item[]{new Item(14924), new Item(14919), new Item(14915)}),
         SQUIRTLE(9004, 50, new Item[]{new Item(ItemDefinition.MILL_ID, 1000),  new Item(2734, 1),  new Item(19114, 5)}),
         MEWTWO(9005, 75, new Item[]{new Item(23044),  new Item(ItemDefinition.MILL_ID, 5000),  new Item(2734, 5)}),
-        //BOWSER(9006, 150, new Item[]{new Item(ItemDefinition.COIN_ID, 10000000)})
+        BOWSER(9006, 150, new Item[]{new Item(ItemDefinition.COIN_ID, 10000000)})
         ;
 
         @Getter
@@ -45,7 +45,7 @@ public class ZoneData {
         }
 
         public Position getCoords() {
-            return new Position(2849, 4569, ordinal() * 4);
+            return new Position(2783, 9495 + (ordinal() * 23), 0);
         }
     }
 

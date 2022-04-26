@@ -78,6 +78,10 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				player.getUpgradeInterface().handleItemAction(slot);
 				break;
 
+			case 30351:
+				player.getCustomCombiner().handleSelection(item);
+				break;
+
 			case 32621:
 				player.getPlayerOwnedShopManager().handleBuy(slot, id, -1);
 				break;

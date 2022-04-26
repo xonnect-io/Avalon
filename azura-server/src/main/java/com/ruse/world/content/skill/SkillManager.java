@@ -293,7 +293,7 @@ public class SkillManager {
         if (skill.equals(Skill.SLAYER)) {
             experience = experience / 4; // reduced by 3 times.
         }
-        if (skill.equals(Skill.DUNGEONEERING)) {
+        if (skill.equals(Skill.INVENTION)) {
             experience = experience * 2; // reduced by 3 times.
         }
 
@@ -443,7 +443,7 @@ public class SkillManager {
             player.getPacketSender()
                     .sendMessage("You've just advanced " + skillName + " level! You have reached level " + newLevel);
 
-            if (skill.equals(Skill.DUNGEONEERING)) {
+            if (skill.equals(Skill.INVENTION)) {
                 player.performGraphic(new Graphic(312));
                 player.getPacketSender().sendInterfaceRemoval();
             }

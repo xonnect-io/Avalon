@@ -106,6 +106,7 @@ public class ItemDef3 {
 			itemDef.actions = new String[]{null, null, null, null, "Drop"};
 			itemDef.stackable = true;
 			break;
+			
 			//EASTER
 			case 23000:
 				itemDef.copyItem(6585);
@@ -560,7 +561,123 @@ public class ItemDef3 {
 				itemDef.name = "$250 Bond";
 				itemDef.modelID = 100151;
 				break;
+				
+			case 23210:
+				itemDef.copyItem(4708);
+				itemDef.name = "test helm";
+				itemDef.modelZoom = 900;
+				itemDef.modelID = 15581;
+				itemDef.maleEquip1 = 15583;
+				itemDef.femaleEquip1 = 15583;
+				break;
+			case 23211:
+				itemDef.copyItem(4714);
+				itemDef.name = "test body";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 15584;
+				itemDef.maleEquip1 = 15585;
+				itemDef.femaleEquip1 = 15585;
+				break;
+			case 23212:
+				itemDef.copyItem(4712);
+				itemDef.name = "test legs";
+				itemDef.modelZoom = 1700;
+				itemDef.modelID = 15660;
+				itemDef.maleEquip1 = 15660;
+				itemDef.femaleEquip1 = 15660;
+				break;
+			case 23213:
+				itemDef.copyItem(4708);
+				itemDef.name = "test gloves";
+				itemDef.modelID = 15661;
+				itemDef.maleEquip1 = 15662;
+				itemDef.femaleEquip1 = 15662;
+				itemDef.modelZoom = 700;
+				break;
+			case 23214:
+				itemDef.copyItem(4708);
+				itemDef.name = "test boots";
+				itemDef.modelID = 15663;
+				itemDef.maleEquip1 = 15663;
+				itemDef.femaleEquip1 = 15663;
+				itemDef.modelZoom = 700;
+				break;
 
+			case 23216:
+				itemDef.copyItem(4714);
+				itemDef.name = "Kyojuru body";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 15676;
+				itemDef.maleEquip1 = 15685;
+				itemDef.femaleEquip1 = 15685;
+				break;
+			case 23217:
+				itemDef.copyItem(4712);
+				itemDef.name = "Kyojuru legs";
+				itemDef.modelZoom = 1700;
+				itemDef.modelID = 15677;
+				itemDef.maleEquip1 = 15678;
+				itemDef.femaleEquip1 = 15678;
+				break;
+			case 23218:
+				itemDef.copyItem(4708);
+				itemDef.name = "Kyojuru gloves";
+				itemDef.modelID = 15679;
+				itemDef.maleEquip1 = 15680;
+				itemDef.femaleEquip1 = 15680;
+				itemDef.modelZoom = 700;
+				break;
+			case 23219:
+				itemDef.copyItem(4708);
+				itemDef.name = "Kyojuru boots";
+				itemDef.modelID = 15681;
+				itemDef.maleEquip1 = 15681;
+				itemDef.femaleEquip1 = 15681;
+				itemDef.modelZoom = 700;
+				break;
+				
+			case 23220:
+				itemDef.copyItem(4708);
+				itemDef.name = "Tanjiro helm";
+				itemDef.modelZoom = 900;
+				itemDef.modelID = 15688;
+				itemDef.maleEquip1 = 15690;
+				itemDef.femaleEquip1 = 15690;
+				break;
+			case 23221:
+				itemDef.copyItem(4714);
+				itemDef.name = "Tanjiro body";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 15676;
+				itemDef.maleEquip1 = 15691;
+				itemDef.femaleEquip1 = 15691;
+				break;
+			case 23222:
+				itemDef.copyItem(4712);
+				itemDef.name = "Tanjiro legs";
+				itemDef.modelZoom = 1700;
+				itemDef.modelID = 15693;
+				itemDef.maleEquip1 = 15694;
+				itemDef.femaleEquip1 = 15694;
+				break;
+			case 23223:
+				itemDef.copyItem(4708);
+				itemDef.name = "Tanjiro gloves";
+				itemDef.modelID = 15695;
+				itemDef.maleEquip1 = 15696;
+				itemDef.femaleEquip1 = 15696;
+				itemDef.modelZoom = 700;
+				break;
+			case 23224:
+				itemDef.copyItem(4708);
+				itemDef.name = "Tanjiro boots";
+				itemDef.modelID = 15697;
+				itemDef.maleEquip1 = 15698;
+				itemDef.femaleEquip1 = 15698;
+				itemDef.modelZoom = 700;
+				break;
+				
+				
 			case 23061:
 				itemDef.copyItem(4708);
 				itemDef.name = "Nymora helm";
@@ -577,6 +694,8 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 100157;
 				itemDef.femaleEquip1 = 100157;
 				break;
+
+				
 			case 23063:
 				itemDef.copyItem(4712);
 				itemDef.name = "Nymora legs";
@@ -1692,7 +1811,7 @@ public class ItemDef3 {
 				
 				break;
 			case 13591:
-				itemDef.name = "@yel@Raids [1] Key";
+				itemDef.name = "Raids [1] Key";
 				itemDef.stackable = true;
 				itemDef.actions = new String[]{null, null, null, null, null};
 				break;
@@ -1701,6 +1820,8 @@ public class ItemDef3 {
 				break;
 			case 17175:
 				itemDef.name = "Leafy body";
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
 				itemDef.modelID = 96122;
 				itemDef.maleEquip1 = 96123;
 				itemDef.femaleEquip1 = 96123;
@@ -1734,10 +1855,12 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 99930;
 				itemDef.femaleEquip1 = 99930;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				
 				break;
 			case 14732:
 				itemDef.name = "Chilling Body";
+				itemDef.modelOffsetX = -0;
+				itemDef.modelOffsetY = -0;
+				itemDef.modelZoom = 1400;
 				itemDef.modelID = 99931;
 				itemDef.maleEquip1 = 99932;
 				itemDef.femaleEquip1 = 99932;
@@ -1748,6 +1871,9 @@ public class ItemDef3 {
 				itemDef.modelID = 99933;
 				itemDef.maleEquip1 = 99934;
 				itemDef.femaleEquip1 = 99934;
+				itemDef.modelOffsetX = -0;
+				itemDef.modelOffsetY = -0;
+				itemDef.modelZoom = 1550;
 				itemDef.name = "Chilling legs";
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				
@@ -1921,7 +2047,7 @@ public class ItemDef3 {
 				itemDef.rotationX = 948;
 				break;
 			case 20591:
-				itemDef.name = "@gre@Rage Cape";
+				itemDef.name = "Rage Cape";
 				itemDef.modelID = 65333;
 				itemDef.maleEquip1 = 65334;
 				itemDef.femaleEquip1 = 65334;
@@ -2204,7 +2330,7 @@ public class ItemDef3 {
 				itemDef.modelID = 64360;
 				itemDef.maleEquip1 = 64361;
 				itemDef.femaleEquip1 = 64361;
-				itemdefedit = ItemDefinition.get(1385);
+				itemdefedit = ItemDefinition.get(19146);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
 				itemDef.modelZoom = 2000;
@@ -3077,7 +3203,7 @@ public class ItemDef3 {
 				itemdefedit = ItemDefinition.get(4882);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
+				itemDef.modelZoom = 900;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
@@ -3159,12 +3285,12 @@ public class ItemDef3 {
 				itemDef.modelID = 15180;
 				itemDef.maleEquip1 = 15181;
 				itemDef.femaleEquip1 = 15181;
-				itemdefedit = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.rotationZ = 0;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 380;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 500;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
@@ -3177,7 +3303,7 @@ public class ItemDef3 {
 				itemdefedit = ItemDefinition.get(4894);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
+				itemDef.modelZoom = 900;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
@@ -3193,7 +3319,7 @@ public class ItemDef3 {
 				itemdefedit = ItemDefinition.get(4900);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
+				itemDef.modelZoom = 1100;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
@@ -3205,12 +3331,12 @@ public class ItemDef3 {
 				itemDef.modelID = 15171;
 				itemDef.maleEquip1 = 15172;
 				itemDef.femaleEquip1 = 15172;
-				itemdefedit = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.rotationZ = 0;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 380;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 1200;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
@@ -3318,6 +3444,7 @@ public class ItemDef3 {
 				itemDef.rotationY = 200;
 				itemDef.rotationX = itemdefedit1.rotationX;
 				itemDef.stackable = false;
+				itemDef.rdc2 = 2233311;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 				
@@ -3342,11 +3469,11 @@ public class ItemDef3 {
 				itemDef.modelID = 64487;
 				itemDef.femaleEquip1 = 64488;
 				itemDef.maleEquip1 = 64488;
-				itemDef.modelOffsetX = itemdefedit1.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit1.modelOffsetY;
-				itemDef.modelZoom = itemdefedit1.modelZoom;
-				itemDef.rotationY = itemdefedit1.rotationY;
-				itemDef.rotationX = itemdefedit1.rotationX;
+				itemDef.rotationY = 200;
+				itemDef.rotationX = 1500;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 2000;
 				itemDef.stackable = false;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.newModelColor = new int[]{40};
@@ -3359,11 +3486,11 @@ public class ItemDef3 {
 				itemDef.modelID = 64485;
 				itemDef.femaleEquip1 = 64486;
 				itemDef.maleEquip1 = 64486;
-				itemDef.modelOffsetX = itemdefedit1.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit1.modelOffsetY;
-				itemDef.modelZoom = itemdefedit1.modelZoom;
-				itemDef.rotationY = itemdefedit1.rotationY;
-				itemDef.rotationX = itemdefedit1.rotationX;
+				itemDef.rotationY = 300;
+				itemDef.rotationX = 600;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 2000;
 				itemDef.stackable = false;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.newModelColor = new int[]{40};
@@ -3633,24 +3760,24 @@ public class ItemDef3 {
 				
 			case 3720:
 				itemDef.name = "Scarlet helm";
-				itemDef.modelID = 64407;
-				itemDef.maleEquip1 = 64408;
-				itemDef.femaleEquip1 = 64408;
-				itemdefedit = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.modelID = 15664;
+				itemDef.maleEquip1 = 15665;
+				itemDef.femaleEquip1 = 15665;
+				itemDef.rotationZ = 0;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 380;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 800;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
 			case 3721:
 				itemDef.name = "Scarlet body";
-				itemDef.modelID = 64409;
-				itemDef.maleEquip1 = 64410;
-				itemDef.femaleEquip1 = 64410;
+				itemDef.modelID = 15667;
+				itemDef.maleEquip1 = 15669;
+				itemDef.femaleEquip1 = 15669;
 				itemdefedit = ItemDefinition.get(4894);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
@@ -3663,9 +3790,9 @@ public class ItemDef3 {
 				
 			case 3722:
 				itemDef.name = "Scarlet legs";
-				itemDef.modelID = 64411;
-				itemDef.maleEquip1 = 64412;
-				itemDef.femaleEquip1 = 64412;
+				itemDef.modelID = 15668;
+				itemDef.maleEquip1 = 15670;
+				itemDef.femaleEquip1 = 15670;
 				itemdefedit = ItemDefinition.get(4900);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
@@ -3723,9 +3850,9 @@ public class ItemDef3 {
 				
 			case 3723:
 				itemDef.name = "Herbal helm";
-				itemDef.modelID = 64413;
-				itemDef.maleEquip1 = 64414;
-				itemDef.femaleEquip1 = 64414;
+				itemDef.modelID = 65266;
+				itemDef.maleEquip1 = 65267;
+				itemDef.femaleEquip1 = 65267;
 				itemdefedit = ItemDefinition.get(4882);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
@@ -3738,9 +3865,9 @@ public class ItemDef3 {
 				
 			case 3724:
 				itemDef.name = "Herbal body";
-				itemDef.modelID = 64415;
-				itemDef.maleEquip1 = 64416;
-				itemDef.femaleEquip1 = 64416;
+				itemDef.modelID = 65268;
+				itemDef.maleEquip1 = 65269;
+				itemDef.femaleEquip1 = 65269;
 				itemdefedit = ItemDefinition.get(4894);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
@@ -3753,9 +3880,9 @@ public class ItemDef3 {
 				
 			case 3725:
 				itemDef.name = "Herbal legs";
-				itemDef.modelID = 64417;
-				itemDef.maleEquip1 = 64418;
-				itemDef.femaleEquip1 = 64418;
+				itemDef.modelID = 65270;
+				itemDef.maleEquip1 = 65271;
+				itemDef.femaleEquip1 = 65271;
 				itemdefedit = ItemDefinition.get(4900);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
@@ -4104,10 +4231,10 @@ public class ItemDef3 {
 				itemDef.modelID = 15194;
 				itemDef.maleEquip1 = 15194;
 				itemDef.femaleEquip1 = 15194;
-                itemDef.modelZoom = 1780;
+                itemDef.modelZoom = 1680;
                 itemDef.rotationX = 0;
                 itemDef.rotationY = 0;
-                itemDef.modelOffsetY = 50;
+                itemDef.modelOffsetY = 65;
                 itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
@@ -4132,7 +4259,7 @@ public class ItemDef3 {
 				itemDef.modelID = 15196;
 				itemDef.maleEquip1 = 15196;
 				itemDef.femaleEquip1 = 15196;
-                itemDef.modelZoom = 1410;
+                itemDef.modelZoom = 1560;
                 itemDef.rotationX = 0;
                 itemDef.rotationY = 20;
                 itemDef.modelOffsetY = 10;
@@ -4195,9 +4322,9 @@ public class ItemDef3 {
 				itemdefedit = ItemDefinition.get(4882);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = 1000;
+				itemDef.modelZoom = 1250;
 				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = 200;
+				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				
@@ -4213,7 +4340,7 @@ public class ItemDef3 {
 				itemdefedit = ItemDefinition.get(4894);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
+				itemDef.modelZoom = 1700;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
@@ -4230,7 +4357,7 @@ public class ItemDef3 {
 				itemdefedit = ItemDefinition.get(4900);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
+				itemDef.modelZoom = 1650;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
@@ -4240,16 +4367,16 @@ public class ItemDef3 {
 
 
 			case 14063:
+				itemdefedit = ItemDefinition.get(7461);
 				itemDef.name = "Crystalized gloves";
 				itemDef.modelID = 64519;
 				itemDef.maleEquip1 = 64520;
 				itemDef.femaleEquip1 = 64520;
-				itemdefedit = ItemDefinition.get(20458);
-				itemDef.modelOffsetX = 30;
+				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = 400;
-				itemDef.rotationY = 240;
-				itemDef.rotationX = 20;
+				itemDef.modelZoom = 1700;
+				itemDef.rotationY = itemdefedit.rotationY;
+				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.editedModelColor = new int[1];
 				itemDef.newModelColor = new int[1];
@@ -4264,12 +4391,12 @@ public class ItemDef3 {
 				itemDef.modelID = 64521;
 				itemDef.maleEquip1 = 64521;
 				itemDef.femaleEquip1 = 64521;
-				itemdefedit = ItemDefinition.get(11732);
-				itemDef.modelOffsetX = 10;
-				itemDef.modelOffsetY = -15;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = 1;
-				itemDef.rotationX = 2000;
+                itemDef.modelZoom = 750;
+                itemDef.rotationX = 100;
+                itemDef.rotationY = 20;
+                itemDef.rotationZ = 50;
+                itemDef.modelOffsetY = -2;
+                itemDef.modelOffsetX = -3;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				
@@ -4277,13 +4404,13 @@ public class ItemDef3 {
 				break;
 			case 14065:
 				itemDef.name = "Crystalized sword";
-				itemdefedit = ItemDefinition.get(1419);
+				itemdefedit = ItemDefinition.get(1333);
 				itemDef.modelID = 64522;
 				itemDef.femaleEquip1 = 64523;
 				itemDef.maleEquip1 = 64523;
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = 1000;
+				itemDef.modelZoom = 1340;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.stackable = false;
@@ -4300,7 +4427,7 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 64525;
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = 2000;
+				itemDef.modelZoom = 2250;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.stackable = false;
@@ -4395,7 +4522,7 @@ public class ItemDef3 {
 				
 			case 9059:
 				itemDef.name = "Creeper sword";
-				itemdefedit = ItemDefinition.get(1419);
+				itemdefedit = ItemDefinition.get(1333);
 				itemDef.modelID = 64522;
 				itemDef.femaleEquip1 = 64523;
 				itemDef.maleEquip1 = 64523;
@@ -4430,13 +4557,14 @@ public class ItemDef3 {
 				break;
 				
 			case 14067:
-				ItemDefinition Crystalqueenpet = ItemDefinition.get(12479);
-				itemDef.modelID = 64512;
-				itemDef.modelOffsetX = Crystalqueenpet.modelOffsetX;
-				itemDef.modelOffsetY = Crystalqueenpet.modelOffsetY;
-				itemDef.modelZoom = 2500;
+				itemDef.modelID = 15193;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 4500;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 0;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
-				itemDef.name = "Crystal queen pet";
+				itemDef.name = "Tolrokoth pet";
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;

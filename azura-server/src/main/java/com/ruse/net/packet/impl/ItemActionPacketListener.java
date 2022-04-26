@@ -196,7 +196,7 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 12855:
-                player.getUpgradeInterface().openInterface(Upgradeables.UpgradeType.WEAPON);
+                player.getUpgradeInterface().openInterface(Upgradeables.UpgradeType.TIER_1);
                 break;
             case 23177:
                 player.getInventory().delete(23177, 1);
@@ -452,6 +452,14 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RUBY);
                 player.getCasketOpening().openInterface();
                 break;
+            case 15004:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.DIAMOND);
+                player.getCasketOpening().openInterface();
+                break;
+            case 18404:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RAIDS);
+                player.getCasketOpening().openInterface();
+                break;
             case 20489:
                 int[] commonLaunch = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808, 20549, 20173, 8809,
                         10946, 6769,15290};
@@ -582,11 +590,33 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
+            case 23225:
+                if (!drinkInfinityRage(player, slot, 23225))
+                    return;
+
+                player.getPacketSender().sendInterfaceRemoval();
+                player.getCombatBuilder().incrementAttackTimer(1).cooldown(false);
+                player.getCombatBuilder().setDistanceSession(null);
+                player.setCastSpell(null);
+                player.getFoodTimer().reset();
+                player.getPotionTimer().reset();
+                player.setOverloadPotionTimer(100000);
+                if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
+                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 10000);
+                    player.getSkillManager().setCurrentLevel(Skill.ATTACK, 1000);
+                    player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 1000);
+                    player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 1000);
+                    player.getSkillManager().setCurrentLevel(Skill.RANGED, 1000);
+                    player.getSkillManager().setCurrentLevel(Skill.MAGIC, 1000);
+                    player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 10000);
+                }
+                Sounds.sendSound(player, Sound.DRINK_POTION);
+                break;
             case 21218:
                 player.getInventory().delete(21218, 1);
-                int num1 = 60000 / Difficulty.getDifficultyModifier(player, Skill.DUNGEONEERING);
-                player.getSkillManager().addExperience(Skill.DUNGEONEERING, num1);
-                player.getPacketSender().sendMessage("You've Been rewarded with some Dungeoneering XP.");
+                int num1 = 60000 / Difficulty.getDifficultyModifier(player, Skill.INVENTION);
+                player.getSkillManager().addExperience(Skill.INVENTION, num1);
+                player.getPacketSender().sendMessage("You've Been rewarded with some Invention XP.");
 
                 break;
             case 21219:
@@ -1406,7 +1436,7 @@ public class ItemActionPacketListener implements PacketListener {
         if (PetUpgrading.upgradeable(player, itemId)) {
             return;
         }
-
+        player.getDissolving().handle(itemId);
         switch (itemId) {
             case 13591:
                 player.getPacketSender().sendMessage("You rub the enchanted key to teleport to chest area.");
@@ -1675,7 +1705,7 @@ public class ItemActionPacketListener implements PacketListener {
 
         if (MemberScrolls.handleScroll(player, itemId, true))
             return;
-
+        player.getDissolving().handle(itemId);
         switch (itemId) {
 
             case 4278:

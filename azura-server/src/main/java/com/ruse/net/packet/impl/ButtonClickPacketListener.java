@@ -156,6 +156,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("Level-up notifications toggled: "+(player.levelNotifications ? "on" : "off")+".");
                 break;
             case -18527:
+            case 111214:
                 player.getPacketSender().sendString(1, GameSettings.StoreUrl);
             break;
 
@@ -203,7 +204,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 25408:
                 player.getScratchcard().claimPrize();
                 break;
-
+            case 1716:
             case 106009:
                 if (!player.isBanking() || player.getInterfaceId() != 106000)
                     return;
@@ -234,9 +235,8 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 break;
             case 111703:
-                if (player.getSkillManager().getMaxLevel(Skill.SLAYER) < 98 && player.getSkillManager().getMaxLevel(Skill.DUNGEONEERING) < 79) {
-                    player.getPacketSender().sendMessage("<shad=1>@or2@You must be 99+ Slayer to do Raids [2].");
-                    player.getPacketSender().sendMessage("You must be 80+ Dungeoneering to do Raids [2].");
+                if (player.getSkillManager().getMaxLevel(Skill.SLAYER) < 98) {
+                    player.getPacketSender().sendMessage("<shad=1>@or2@You must be 99+ Slayer to do Legend Raids.");
                     return;
                 }
 
@@ -277,16 +277,11 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendString(1, GameSettings.DomainUrl);
                 break;
             case 111212:
+            case 111215:
                 player.getPacketSender().sendString(1, GameSettings.DiscordUrl);
                 break;
             case 111213:
                 player.getPacketSender().sendString(1, GameSettings.VoteUrl);
-                break;
-            case 111214:
-                player.getPacketSender().sendString(1, GameSettings.StoreUrl);
-                break;
-            case 111215:
-                player.getPacketSender().sendString(1, GameSettings.DiscordUrl);
                 break;
             case 111716:
             case 111719:
@@ -578,13 +573,6 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case -13233:
                 player.getPacketSender().sendInterfaceRemoval();
-                break;
-
-
-            case -3292:
-
-                DialogueManager.start(player, 217);
-                player.setDialogueActionId(217);
                 break;
 
             case -27454:
@@ -1427,6 +1415,11 @@ public class ButtonClickPacketListener implements PacketListener {
                     World.removePlayer(player);
                 }
                 break;
+
+            case 30332:
+                player.getCustomCombiner().combine();
+                break;
+
             // case 10003:
             case 29138:
             case 29038:

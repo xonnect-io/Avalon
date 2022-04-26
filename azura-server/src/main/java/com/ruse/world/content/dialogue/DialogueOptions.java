@@ -739,7 +739,7 @@ public class DialogueOptions {
                                 && player.getSkillManager().getExperience(Skill.COOKING) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.CRAFTING) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.DEFENCE) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.DUNGEONEERING) >= 200000000
+                                && player.getSkillManager().getExperience(Skill.INVENTION) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.FARMING) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.FIREMAKING) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.FISHING) >= 200000000

@@ -7,7 +7,7 @@ public final class Skills {
 			"Attack", "Constitution", "Mining", "Strength", "Agility",
 			"Smithing", "Defence", "Herblore", "Fishing", "Ranged", "Thieving",
 			"Cooking", "Prayer", "Crafting", "Firemaking", "Magic", "Fletching", "Woodcutting",
-			"Runecrafting", "Slayer", "Farming", "Dungeoneering", "Hunter", "Summoning",
+			"Runecrafting", "Slayer", "Farming", "Invention", "Hunter", "Summoning",
 			"PVP"
 	};
 
@@ -49,7 +49,7 @@ public final class Skills {
 				"Attack", "Constitution", "Mining", "Strength", "Agility",
 				"Smithing", "Defence", "Herblore", "Fishing", "Ranged", "Thieving",
 				"Cooking", "Prayer", "Crafting", "Firemaking", "Magic", "Fletching", "Woodcutting",
-				"Runecrafting", "Slayer", "Farming", "Dungeoneering", "Hunter", "Summoning",
+				"Runecrafting", "Slayer", "Farming", "Invention", "Hunter", "Summoning",
 				"PVP"
 		};
 		for (int i = 0; i < names.length; i++) {

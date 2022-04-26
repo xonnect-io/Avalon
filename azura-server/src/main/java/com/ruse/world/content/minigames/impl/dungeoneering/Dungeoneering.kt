@@ -102,7 +102,6 @@ class Dungeoneering(val group: DungeoneeringParty) {
             val tokens = exp / 250
 
             DailyTask.DUNGEONEERING.tryProgress(it)
-            it.skillManager.addExperience(Skill.DUNGEONEERING, exp)
             if (!it.inventory.isFull) {
                 it.inventory.add(TOKENS, tokens)
             } else {

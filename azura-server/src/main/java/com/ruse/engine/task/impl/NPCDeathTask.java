@@ -234,7 +234,24 @@ public class NPCDeathTask extends Task {
                             DonationBossSystem.amntDonated = 0;
                         }
 
-
+                        if (killer.getLocation() == Location.SAPPHIRE_ZONE) {
+                            killer.getInventory().add(23204, 1);
+                        }
+                        if (killer.getLocation() == Location.EMERALD_ZONE) {
+                            killer.getInventory().add(23205, 1);
+                        }
+                        if (killer.getLocation() == Location.RUBY_ZONE) {
+                            killer.getInventory().add(23206, 1);
+                        }
+                        if (killer.getLocation() == Location.DIAMOND_ZONE) {
+                            killer.getInventory().add(23207, 1);
+                        }
+                        if (killer.getLocation() == Location.ONYX_ZONE) {
+                            killer.getInventory().add(23208, 1);
+                        }
+                        if (killer.getLocation() == Location.ZENYTE_ZONE) {
+                            killer.getInventory().add(23209, 1);
+                        }
                         /** PARSE DROPS **/
 
                         if (npc.getId() == 8013) {// resets the vote count to 0 on votizo

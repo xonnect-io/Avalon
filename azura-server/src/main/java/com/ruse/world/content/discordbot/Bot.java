@@ -16,12 +16,12 @@ import javax.security.auth.login.LoginException;
  */
 public class Bot {
 
-    private static String TOKEN = "OTI4MzYzMzUyNDc0OTE5MDEz.YdXrvw.OvuV2d33mIk6FpC_SIvXinipKKs";
+    private static String TOKEN = "OTI4MzYzMzUyNDc0OTE5MDEz.YdXrvw.S4o6g5paDBimF8uzQs6R34jdPhI";
     public static String PREFIX = "::";
-    public static String OWNER_ROLE = "707331223382523932";
-    public static String DEVELOPER_ROLE = "800841632823377931";
-    public static String ADMIN_ROLE = "800841633188937739";
-    public static String GLOBAL_MOD_ROLE = "802140111332311042";
+    public static String OWNER_ROLE = "928081454926274571";
+    public static String DEVELOPER_ROLE = "928081544617291797";
+    public static String ADMIN_ROLE = "928104093313011752";
+    public static String GLOBAL_MOD_ROLE = "928104093313011752";
 
     private static int TIMER = 60;
 

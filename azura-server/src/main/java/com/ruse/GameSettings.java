@@ -156,7 +156,7 @@ public class GameSettings {
      * The default position
      */
     public static final Position DEFAULT_POSITION = new Position(2585, 2521, 0);//3093, 3506
-    public static final Position STARTER = new Position(3037, 10288, 0);//3093, 3506
+    public static final Position STARTER = new Position(2783, 9495, 0);//3093, 3506
     public static final Position CORP_CORDS = new Position(2900, 4384);
     public static final Position HOME_CORDS = new Position(2585, 2521, 0);//3093, 3506
     public static final Position OLDHOME_CORDS = new Position(2654, 3998, 0);

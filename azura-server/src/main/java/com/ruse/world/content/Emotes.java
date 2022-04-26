@@ -82,7 +82,7 @@ public class Emotes {
 				if (data != Skillcape_Data.QUEST_POINT) {
 					Skill skill = Skill.forId(data.ordinal());
 					if (data == Skillcape_Data.DUNGEONEERING_MASTER)
-						skill = Skill.DUNGEONEERING;
+						skill = Skill.INVENTION;
 					int level = SkillManager.getMaxAchievingLevel(skill);
 					if (player.getSkillManager().getMaxLevel(skill) < level) {
 						player.getPacketSender()

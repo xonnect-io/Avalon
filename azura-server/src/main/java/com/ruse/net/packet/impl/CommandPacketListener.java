@@ -783,7 +783,12 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(3037, 4062, 0);
+
+            if (player.getAmountDonated() < 10) {
+                player.getPacketSender().sendMessage("You need to claim $10 in bonds@blu@ (Sapphire donator)@bla@ to unlock the afk zone!");
+                return;
+            }
+            Position position = new Position(2905, 5344, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
             player.getPacketSender().sendMessage("<shad=1>@gre@Welcome to the afk zone!");
 

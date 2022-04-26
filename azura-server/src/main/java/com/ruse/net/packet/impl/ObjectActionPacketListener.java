@@ -181,6 +181,18 @@ public class ObjectActionPacketListener implements PacketListener {
                             case 22099:
                                 Stalls.stealFromAFKStall(player, id, 1);
                                 break;
+                            case 22098:
+                                Stalls.stealFromAFKStall(player, id, 2);
+                                break;
+                            case 22097:
+                                Stalls.stealFromAFKStall(player, id, 3);
+                                break;
+                            case 8455:
+                                Stalls.stealFromAFKStall(player, id, 4);
+                                break;
+                            case 8456:
+                                Stalls.stealFromAFKStall(player, id, 5);
+                                break;
                             case 13291:
                             case 41204:
                                 player.setOpenedTeleports(true);
@@ -235,14 +247,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getPacketSender().sendMessage("You have been rejuvinated.");
                                 player.performGraphic(new Graphic(1310));
                                 break;
-                           /* case 166: // Zones gates
-                            case 167:
-                            case 2913:
-                            case 2914:
-                            case 2912:*/
-                            case 2469:
-                                ProgressionZone.handleGates(player, gameObject, false);
-                                break;
+
                             case 7289:
                                 if (player.getLocation() == Location.ZOMBIE) {
                                     if (player.getZombieParty() != null) {
@@ -269,15 +274,6 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                 }
                                 break;
-                           /* case 52601:
-                                Stalls.stealFromAFKStall(player, id, 1);
-                                break;
-                            case 53654:
-                                Stalls.stealFromAFKStall(player, id, 2);
-                                break;
-                            case 30035:
-                                Stalls.stealFromAFKStall(player, id, 3);
-                                break;*/
                             case 16047:
                                 player.getPacketSender().sendMessage(
                                         "In order to unlock cradle of cursed you must use a @blu@Cursed@bla@ key on it.");
@@ -2151,9 +2147,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 CurseHandler.startDrain(player);
                                 PrayerHandler.startDrain(player);
                                 break;
-                            case 2469:
-                                ProgressionZone.handleGates(player, gameObject, true);
-                                break;
+
                             case 12100:
                                 Smelting.openInterface(player);
                                 break;
@@ -2198,15 +2192,6 @@ public class ObjectActionPacketListener implements PacketListener {
 
 
                                 break;
-                            /*case 2562:
-                                if (player.getAmountDonated() <= 5000) {
-                                    player.sendMessage("You need $5k+ total claim to use this!");
-                                    return;
-                                }
-                                if (player.getAmountDonated() >= 5000) {
-                                    Stalls.stealFromAFKStall(player, id, 4);
-                                }
-                                break;*/
                             case 39644:
                             case -25892:
                             case 39643:

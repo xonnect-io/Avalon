@@ -30,23 +30,67 @@ public class UpgradeInterface {
     public boolean handleButton(int buttonId) {
 
         switch (buttonId) {
-            case 121020:
+            case -3284:
                 handleUpgrade(true);
                 return true;
-            case 121021:
+            case -3334:
                 handleUpgrade(false);
                 return true;
-            case 121005:
-                openInterface(Upgradeables.UpgradeType.WEAPON);
+            case -3295:
+                openInterface(Upgradeables.UpgradeType.TIER_1);
                 return true;
-            case 121006:
-                openInterface(Upgradeables.UpgradeType.ARMOUR);
+            case -3301:
+                if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 15) {
+                player.getPacketSender()
+                        .sendMessage("You need a Invention Level of atleast @blu@15 Invention@bla@ to view this Tier.");
+                return false;
+            }
+                openInterface(Upgradeables.UpgradeType.TIER_2);
                 return true;
-            case 121007:
-                openInterface(Upgradeables.UpgradeType.ACCESSORY);
+            case -3300:
+            case 30367:
+                if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 35) {
+                    player.getPacketSender()
+                            .sendMessage("You need a Invention Level of atleast @blu@35 Invention@bla@ to view this Tier.");
+                    return false;
+                }
+                openInterface(Upgradeables.UpgradeType.TIER_3);
                 return true;
-            case 121008:
-                openInterface(Upgradeables.UpgradeType.MISC);
+            case -3296:
+            case 30368:
+                if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 55) {
+                player.getPacketSender()
+                        .sendMessage("You need a Invention Level of atleast @blu@55 Invention@bla@ to view this Tier.");
+                return false;
+            }
+                openInterface(Upgradeables.UpgradeType.TIER_4);
+                return true;
+            case -3293:
+            case 30369:
+                if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 80) {
+                player.getPacketSender()
+                        .sendMessage("You need a Invention Level of atleast @blu@80 Invention@bla@ to view this Tier.");
+                return false;
+            }
+                openInterface(Upgradeables.UpgradeType.TIER_5);
+                return true;
+            case -3292:
+            case 30370:
+                if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 90) {
+                player.getPacketSender()
+                        .sendMessage("You need a Invention Level of atleast @blu@90 Invention@bla@ to view this Tier.");
+                return false;
+            }
+                openInterface(Upgradeables.UpgradeType.TIER_6);
+                return true;
+            case -3285:
+            case 30371:
+                if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 119) {
+                    player.getPacketSender()
+                            .sendMessage("You need a Invention Level of atleast @blu@120 Invention@bla@ to view this Tier.");
+                    return false;
+                }
+                player.getCustomCombiner().open();
                 return true;
         }
 
@@ -100,7 +144,7 @@ public class UpgradeInterface {
                               
                                 boolean random =  Misc.getRandomDouble(99) < getBoost(val.getSuccessRate());
                                 if (random) {
-                                    player.getSkillManager().addExperience(Skill.DUNGEONEERING, 1000);
+                                    player.getSkillManager().addExperience(Skill.INVENTION, 1000);
                                     success++;
                                     if (noted) {
                                         player.getBank(Bank.getTabForItem(player, val.getReward().getId())).add(val.getReward(), false);
@@ -157,7 +201,7 @@ public class UpgradeInterface {
                                 } else if (tick == 2) {
                                     boolean success =  Misc.getRandomDouble(99) < getBoost(val.getSuccessRate());
                                     if (success) {
-                                        player.getSkillManager().addExperience(Skill.DUNGEONEERING, 1000);
+                                        player.getSkillManager().addExperience(Skill.INVENTION, 1000);
                                         player.getPacketSender().sendMessage("You successfully upgraded your item!");
                                         player.getInventory().add(val.getReward());
                                         if (val.isRare()) {
@@ -272,9 +316,9 @@ public class UpgradeInterface {
 
         selectedUpgrade = upgrade;
 
-        player.getPacketSender().sendItemOnInterface(121017, upgrade.getReward());
-        player.getPacketSender().sendString(121018, "Tokens req: @whi@" + Misc.formatNumber(upgrade.getCost()));
-        player.getPacketSender().sendString(121019, "Success rate: @whi@" + upgrade.getSuccessRate() + "%");
+        player.getPacketSender().sendItemOnInterface(62210, upgrade.getReward());
+        player.getPacketSender().sendString(62231, "Tokens req: @whi@" + Misc.formatNumber(upgrade.getCost()));
+        player.getPacketSender().sendString(62234, "Success rate: @whi@" + upgrade.getSuccessRate() + "%");
 
     }
 
@@ -283,9 +327,9 @@ public class UpgradeInterface {
 
         selectedUpgrade = null;
 
-        player.getPacketSender().sendItemOnInterface(121017, -1, 1);
-        player.getPacketSender().sendString(121018, "Tokens req: @whi@---");
-        player.getPacketSender().sendString(121019, "Success rate: @whi@---");
+        player.getPacketSender().sendItemOnInterface(62210, -1, 1);
+        player.getPacketSender().sendString(62231, "Tokens req: @whi@---");
+        player.getPacketSender().sendString(62234, "Success rate: @whi@---");
 
         upgradeablesArrayList = Upgradeables.getForType(type);
         for (int i = 0; i < 50; i++) {
@@ -297,7 +341,7 @@ public class UpgradeInterface {
             }
         }
 
-        player.getPacketSender().sendInterface(121000);
+        player.getPacketSender().sendInterface(62200);
 
     }
 

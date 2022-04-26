@@ -26,18 +26,10 @@ public class ProgressionZone {
         TeleportHandler.teleportPlayer(player, getCurrentZone(player).getCoords(), TeleportType.NORMAL);
         player.sendMessage("You have been teleported to the " + getCurrentZone(player).getName() + " Zone.");
 
-        player.sendMessage("@blu@Once you completed the zone, you can use the portal to advance to the next zone.");
+        player.sendMessage("@blu@Once you completed the zone, you will be teleported to the next phase!");
     }
     public static void teleport(Player player, boolean alternate) {
 
-        Position pos = getCurrentZone(player).getCoords().copy();
-        if (alternate){
-            pos = getCurrentZone(player).getCoords().copy().setZ( getCurrentZone(player).getCoords().getZ() + 20);
-        }
-        TeleportHandler.teleportPlayer(player, pos, TeleportType.NORMAL);
-        player.sendMessage("You have been teleported to the " + getCurrentZone(player).getName() + " Zone.");
-
-        player.sendMessage("@blu@Once you completed the zone, you can use the portal to advance to the next zone.");
     }
 
     public static void handleKill(Player player, int npcId) {
@@ -58,6 +50,10 @@ public class ProgressionZone {
                 && player.getZonesComplete()[monster.ordinal()] == false) {
             handleReward(player);
             player.getZonesComplete()[monster.ordinal()] = true;
+            Position pos = getCurrentZone(player).getCoords().copy();
+            TeleportHandler.teleportPlayer(player, pos, TeleportType.NORMAL);
+            player.sendMessage("@blu@You completed the zone, and start to feel a wild rush of energy.");
+            player.sendMessage("@red@You have been teleported to the " + getCurrentZone(player).getName() + " Zone.");
         }
         updateInterface(player);
     }
@@ -97,43 +93,11 @@ public class ProgressionZone {
         for (Item item : monster.getRewards()) {
             if (!player.getInventory().isFull()) {
                 player.getInventory().add(item);
+
             } else {
                 player.depositItemBank(item);
             }
         }
     }
 
-
-    public static void handleGates(Player player, GameObject gameObject, boolean back) {
-        ZoneData.Monsters monster = getCurrentZone(player);
-
-        int ordinal = gameObject.getPosition().getZ() / 4;
-
-        if (gameObject.getPosition().getZ() >= 20){
-            player.sendMessage("You can only do this in the default zone. To progress type ::train2");
-            return;
-        }
-
-        if (player.getPosition().getZ() == gameObject.getPosition().getZ() && back) {
-            if (ordinal == 0) {
-                player.sendMessage("@mag@You are already at the lowest zone!");
-            } else {
-                player.moveTo(new Position(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ() - 4));
-                player.sendMessage("@mag@You move to the previous zone!");
-            }
-            return;
-        }
-        if (ordinal +1 == ZoneData.Monsters.values().length) {
-            player.sendMessage("@mag@You are at the highest zone.");
-            return;
-        }
-        if (player.getZonesComplete()[ordinal]) {
-            if (player.getPosition().getZ() == gameObject.getPosition().getZ()) {
-                player.moveTo(new Position(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ() + 4));
-                player.sendMessage("@mag@You move to the next zone!");
-            }
-        } else {
-            player.sendMessage("@mag@You need to kill x" + monster.getAmountToKill() + " " + monster.getName() + "'s to pass.");
-        }
-    }
 }

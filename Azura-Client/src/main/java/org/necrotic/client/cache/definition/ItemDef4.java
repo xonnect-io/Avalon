@@ -672,7 +672,7 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 22106:
-				itemDef.name = "@whi@Lucifer's Attachment";
+				itemDef.name = "Lucifer's Attachment";
 				itemDef21 = ItemDefinition.get(12159);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
@@ -766,24 +766,28 @@ public class ItemDef4 {
 				break;
 			case 22113:
 				itemDef.name = "<shad=1>@bla@Dark Twisted Bow";
-				ItemDefinition tbow1 = ItemDefinition.get(1419);
+				ItemDefinition tbow111 = ItemDefinition.get(11235);
 				itemDef.modelID = 65324;
 				itemDef.femaleEquip1 = 65325;
 				itemDef.maleEquip1 = 65325;
-				itemDef.actions = tbow1.actions;
-				itemDef.modelOffsetX = tbow1.modelOffsetX;
-				itemDef.modelOffsetY = tbow1.modelOffsetY;
-				itemDef.modelZoom = tbow1.modelZoom;
-				itemDef.rotationY = tbow1.rotationY;
-				itemDef.rotationX = tbow1.rotationX;
+				itemDef.actions = tbow111.actions;
+				itemDef.modelOffsetX = tbow111.modelOffsetX;
+				itemDef.modelOffsetY = tbow111.modelOffsetY;
+				itemDef.modelZoom = 2200;
+				itemDef.rotationY = tbow111.rotationY;
+				itemDef.rotationX = tbow111.rotationX;
 				itemDef.stackable = false;
 				itemDef.rdc2 = 25;
 				break;
 			case 22114:
 				itemDef.name = "<shad=1>@bla@Dark Sanguinesti Staff";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
+				ItemDefinition sang = ItemDefinition.get(19146);
+				itemDef.actions = sang.actions;
+				itemDef.modelOffsetX = sang.modelOffsetX;
+				itemDef.modelOffsetY = sang.modelOffsetY;
+				itemDef.modelZoom = sang.modelZoom;
+				itemDef.rotationY = sang.rotationY;
+				itemDef.rotationX = sang.rotationX;
 				itemDef.modelID = 99513;
 				itemDef.maleEquip1 = 99506;
 				itemDef.femaleEquip1 = 99506;
@@ -791,14 +795,14 @@ public class ItemDef4 {
 				break;
 			case 22115:
 				itemDef.name = "<shad=1>@bla@Dark Scythe Of Vitur";
-				ItemDefinition vitur22 = ItemDefinition.get(1419);
+				ItemDefinition vitur22 = ItemDefinition.get(12537);
 				itemDef.modelID = 65320;
 				itemDef.femaleEquip1 = 65321;
 				itemDef.maleEquip1 = 65321;
 				itemDef.actions = vitur22.actions;
 				itemDef.modelOffsetX = vitur22.modelOffsetX;
 				itemDef.modelOffsetY = vitur22.modelOffsetY;
-				itemDef.modelZoom = 3800;
+				itemDef.modelZoom = vitur22.modelZoom;
 				itemDef.rotationY = vitur22.rotationY;
 				itemDef.rotationX = vitur22.rotationX;
 				itemDef.stackable = false;

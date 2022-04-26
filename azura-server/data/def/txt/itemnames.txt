@@ -32339,11 +32339,11 @@ name: Elite legs (melee)
 finish
 
 Item Id: 8834
-name: Predator Reaper
+name: Diabolical Reaper
 finish
 
 Item Id: 8835
-name: Predator Offhand
+name: Diabolical Offhand
 finish
 
 Item Id: 8836
@@ -32423,15 +32423,15 @@ name: Nebula legs
 finish
 
 Item Id: 8860
-name: Predator helm
+name: Diabolical helm
 finish
 
 Item Id: 8861
-name: Predator body
+name: Diabolical body
 finish
 
 Item Id: 8862
-name: Predator legs
+name: Diabolical legs
 finish
 
 Item Id: 8863
@@ -57235,7 +57235,7 @@ name: Absorption boots (b)
 finish
 
 Item Id: 15830
-name: Predator boots
+name: Diabolical boots
 finish
 
 Item Id: 15831

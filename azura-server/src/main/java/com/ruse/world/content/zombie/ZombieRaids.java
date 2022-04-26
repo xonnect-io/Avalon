@@ -78,7 +78,7 @@ public class ZombieRaids {
         }
         party.setDeathCount(0);
         party.setKills(0);
-        party.sendMessage("@red@Welcome to Raids [2]");
+        party.sendMessage("@red@Welcome to the League of Legends Raids");
         party.setCurrentPhase(1);
         party.setHeight(height);
         party.startRaid();
@@ -240,7 +240,7 @@ public class ZombieRaids {
 
                         if (tick == 4) {
                             if (wave == 1)
-                                party.sendMessage("@red@The Raids [2] have started!");
+                                party.sendMessage("@red@The League of Legends Raids have started!");
                             else if (wave == 2)
                                 party.sendMessage("@red@The second wave has started!");
                             else if (wave == 3)
@@ -292,7 +292,7 @@ public class ZombieRaids {
 
             @Override
             public void execute() {
-                party.sendMessage("@red@Your party has defeated the Raids [2]");
+                party.sendMessage("@red@Your party has defeated the League of Legends Raids!");
 
                 for (Player player : party.getPlayers()) {
                     Box[] loot = ZombieRaidLoot.LOOT;
@@ -303,14 +303,14 @@ public class ZombieRaids {
 
                     if (drop.isAnnounce()) {
                         String message = "@blu@News: @red@" + player.getUsername() + " @blu@has just received @red@"
-                                + ItemDefinition.forId(drop.getId()).getName() + "@blu@ from @red@Raids [2]";
+                                + ItemDefinition.forId(drop.getId()).getName() + "@blu@ from @red@League of Legends Raids";
                         World.sendMessage1(message);
                     }
 
                     double amt = drop.getMin() + Misc.getRandom(drop.getMax() - drop.getMin());
 
                     player.getInventory().add(new Item(drop.getId(), (int) amt));
-                    player.sendMessage("<shad=1>@yel@You have receieved X" + (int) amt + " "+ ItemDefinition.forId(drop.getId()).getName() + " from this raid!" );
+                    player.sendMessage("<shad=1>@yel@You have receieved X" + (int) amt + " "+ ItemDefinition.forId(drop.getId()).getName() + " for your participation!" );
                 }
                 party.sendMessage("@red@Use the portal south to leave the island.");
 

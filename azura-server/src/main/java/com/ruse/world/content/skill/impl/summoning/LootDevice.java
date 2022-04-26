@@ -30,7 +30,7 @@ public class LootDevice {
 		switch (player.getSummoning().getCharmImpConfig(index)) {
 		case 0:
 			if (!player.getInventory().contains(itemId) && (player.getInventory().getFreeSlots() == 0)) {
-				if (player.getSkillManager().skillCape(Skill.DUNGEONEERING)) {
+				if (player.getSkillManager().skillCape(Skill.INVENTION)) {
 					player.getPacketSender()
 							.sendMessage("Your inventory is full, the cape is unable to pick up any gold");
 				} else {
@@ -44,7 +44,7 @@ public class LootDevice {
 			}
 		case 1:
 			if (!player.getInventory().contains(itemId) && (player.getInventory().getFreeSlots() == 0)) {
-				if (player.getSkillManager().skillCape(Skill.DUNGEONEERING)) {
+				if (player.getSkillManager().skillCape(Skill.INVENTION)) {
 					player.getPacketSender()
 							.sendMessage("Your inventory is full, the cape is unable to pick up any gold");
 				} else {
@@ -62,7 +62,7 @@ public class LootDevice {
 
 	private static boolean sendToInvo(Player player, int itemId, int amount) {
 		if (!player.getInventory().contains(itemId) && player.getInventory().getFreeSlots() == 0) {
-			if (player.getSkillManager().skillCape(Skill.DUNGEONEERING)) {
+			if (player.getSkillManager().skillCape(Skill.INVENTION)) {
 				player.getPacketSender().sendMessage("Your inventory is full, the Cape is unable to pick up any gold!");
 			} else {
 				player.getPacketSender()
@@ -101,7 +101,7 @@ public class LootDevice {
 		}
 		switch (config) {
 		case 0:
-			if (player.getSkillManager().skillCape(Skill.DUNGEONEERING)) {
+			if (player.getSkillManager().skillCape(Skill.INVENTION)) {
 				player.getPacketSender().sendMessage("Your cape found <col=ff0000>" + amount + "</col> " + itemName
 						+ " and placed it in your inventory.");
 			} else {
@@ -110,7 +110,7 @@ public class LootDevice {
 			}
 			break;
 		case 1:
-			if (player.getSkillManager().skillCape(Skill.DUNGEONEERING)) {
+			if (player.getSkillManager().skillCape(Skill.INVENTION)) {
 				player.getPacketSender().sendMessage("Your cape found <col=ff0000>" + amount + "</col> " + itemName
 						+ " and turned it into Summoning exp");
 			} else {
@@ -127,7 +127,7 @@ public class LootDevice {
 			int charm = getCharmForIndex(i);
 			switch (state) {
 			case 0:
-				if (player.getSkillManager().skillCape(Skill.DUNGEONEERING)) {
+				if (player.getSkillManager().skillCape(Skill.INVENTION)) {
 					player.getPacketSender().sendMessage("<img=5> <col=996633>Your cape will place all "
 							+ ItemDefinition.forId(charm).getName() + "s it finds in your inventory.");
 				} else {
@@ -136,7 +136,7 @@ public class LootDevice {
 				}
 				break;
 			case 1:
-				if (player.getSkillManager().skillCape(Skill.DUNGEONEERING)) {
+				if (player.getSkillManager().skillCape(Skill.INVENTION)) {
 					player.getPacketSender().sendMessage("<img=5> <col=996633>Your cape is turning all "
 							+ ItemDefinition.forId(charm).getName() + "s it finds into Summoning exp.");
 				} else {

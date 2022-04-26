@@ -18,6 +18,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import static com.ruse.net.packet.impl.ItemActionPacketListener.drinkSuperOverload;
+
 /**
  * Consumables are items that players can use to restore stats/points. Examples
  * of Consumable items: Food, Potions
@@ -1893,7 +1895,8 @@ public class Consumables {
         return true;
     }
 
-    public static boolean drinkSuperOverload(final Player player, int slot, int replacePotion) {
+
+    public static boolean drinkRagePotion(final Player player, int slot, int replacePotion) {
         if (player.getLocation() == Location.WILDERNESS || player.getLocation() == Location.DUEL_ARENA) {
             player.getPacketSender().sendMessage("You cannot use this potion here.");
             return false;
@@ -1909,10 +1912,11 @@ public class Consumables {
         player.performAnimation(new Animation(829));
         player.getInventory().getItems()[slot] = new Item(replacePotion, 1);
         player.getInventory().refreshItems();
-        player.setOverloadPotionTimer(600);
+        player.setOverloadPotionTimer(900);
         TaskManager.submit(new SuperOverloadPotionTask(player));
         return true;
     }
+
 
     public static boolean drinkRestore(final Player player, int slot, int replacePotion) {
         if (player.getLocation() == Location.WILDERNESS || player.getLocation() == Location.DUEL_ARENA) {

@@ -1013,13 +1013,18 @@ public class PlayerLoading {
                 player.setPreviousTeleports(builder.fromJson(reader.get("p-tps").getAsJsonArray(), int[].class));
             }
 
-            if (reader.has("afkstall1"))
-                player.setAfkStallCount1(reader.get("afkstall1").getAsInt());
-            if (reader.has("afkstall2"))
-                player.setAfkStallCount2(reader.get("afkstall2").getAsInt());
-            if (reader.has("afkstall3"))
-                player.setAfkStallCount3(reader.get("afkstall3").getAsInt());
-
+            if (reader.has("afk-sapphire"))
+                player.setAfkSapphire(reader.get("afk-sapphire").getAsInt());
+            if (reader.has("afk-emerald"))
+                player.setAfkEmerald(reader.get("afk-emerald").getAsInt());
+            if (reader.has("afk-ruby"))
+                player.setAfkbRuby(reader.get("afk-ruby").getAsInt());
+            if (reader.has("afk-diamond"))
+                player.setAfkDiamond(reader.get("afk-diamond").getAsInt());
+            if (reader.has("afk-onyx"))
+                player.setAfkOnyx(reader.get("afk-onyx").getAsInt());
+            if (reader.has("afk-zenyte"))
+                player.setAfkZenyte(reader.get("afk-zenyte").getAsInt());
 
             if (reader.has("achievements-points")) {
                 int points = reader.get("achievements-points").getAsInt();

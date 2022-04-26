@@ -139246,6 +139246,28 @@
     "defenceRange": 300,
     "defenceMage": 300
   },
+    {
+    "id": 6792,
+    "name": "Elysian ghost",
+    "examine": "Elysian ghost",
+    "combat": 500,
+    "size": 3,
+    "attackable": true,
+    "aggressive": false,
+    "retreats": true,
+    "poisonous": true,
+    "respawn": 3,
+    "maxHit": 10,
+    "hitpoints": 1000000,
+    "attackSpeed": 3,
+    "attackAnim": -1,
+    "defenceAnim": 1834,
+    "deathAnim": -1,
+    "attackBonus": 90,
+    "defenceMelee": 90,
+    "defenceRange": 90,
+    "defenceMage": 90
+  },
   {
     "id": 8000,
     "name": "Galvek",

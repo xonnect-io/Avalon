@@ -163,7 +163,7 @@ public final class MobDefinition {
 				definition.npcModels = get(12810).npcModels;
 				definition.combatLevel = 0;
 				definition.name = "Boss Slayer Master";
-				definition.actions = new String[]{"Talk-To", null, "Get-Task", "Open-Shop", null};
+				definition.actions = new String[]{"Talk-To", null, "Get-Task", "Trade", null};
 				definition.standAnimation = get(12810).standAnimation;
 				definition.walkAnimation = get(12810).walkAnimation;
 				definition.npcSizeInSquares = 1;
@@ -1772,32 +1772,40 @@ public final class MobDefinition {
 					definition.actions = new String[]{"Store", null, null, null, null};
 				}
 				break;
+				
 			case 13465:
 				definition.combatLevel = 91;
 				break;
+				
 			case 13469:
 				definition.combatLevel = 128;
 				break;
+				
 			case 13474:
 				definition.combatLevel = 173;
 				break;
+				
 			case 13478:
 				definition.combatLevel = 224;
 				break;
+				
 			case 13479:
 				definition.combatLevel = 301;
 				break;
+				
 			case 519:
 				definition.actions = new String[]{"Talk-to", null, null, null, null, null, null};
-				break;//for the coorinations
+				break;
+				
 			case 2938:
 				definition.name = "Daily Rewards";
 				break;
+				
 			case 4601:
 				definition.name = "Loyalty Program";
 				definition.actions = new String[]{"Talk-to", null, "Loyalty Shop", null, "Loyalty Titles"};
-
 				break;
+				
 			case 605:
 				definition.name = "<img=28>Vote Manager";
 				definition.actions = new String[]{"View Shop", null, null, null, null};
@@ -1821,8 +1829,7 @@ public final class MobDefinition {
 				break;
 			case 3777:
 				definition.name = "<img=19>Donator Store";
-
-				definition.actions = new String[]{null, null, "@cya@View Donator Shop", null, "@red@View Donation Deals", null, null};
+				definition.actions = new String[]{null, null, "@cya@View Donator Shop", null, null, null, null};
 				definition.combatLevel = 0;
 				definition.walkAnimation = 1660;
 				definition.standAnimation = 5761;//5316
@@ -2332,7 +2339,7 @@ public final class MobDefinition {
 
 			case 925:
 				definition.name = "<img=15>Slayer GrandMaster";
-				definition.actions = new String[]{"Talk-to", null, "Get-task", "<col=c0c56d>Slayer Ticket shop", "<col=c0c56d>Slayer Points Shop"};
+				definition.actions = new String[]{"Talk-to", null, "Get-task", "Trade", null};
 				definition.npcModels = new int[]{57778};
 				definition.dialogueModels = null;
 				definition.scaleXZ = 180;
@@ -4121,7 +4128,7 @@ public final class MobDefinition {
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.scaleXZ = 150;
 				definition.scaleY = 150;
-				definition.npcModels = new int[]{15460};
+				definition.npcModels = new int[]{15583,15585,15660,15662,15663};
 				break;
 				
 				case 500:
@@ -4200,15 +4207,15 @@ public final class MobDefinition {
 				break;
 				
 			case 6431:
-				definition.name = "Crystal Queen pet";
+				definition.name = "Tolrokoth pet";
 				definition.actions = null;
 				definition.combatLevel = 456;
 				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 70;
-				definition.scaleY = 70;
+				definition.scaleXZ = 50;
+				definition.scaleY = 50;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
-				definition.npcModels = new int[]{64512};
+				definition.npcModels = new int[]{15193};
 				break;
 				
 			case 184:

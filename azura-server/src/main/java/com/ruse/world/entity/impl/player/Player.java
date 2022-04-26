@@ -131,6 +131,12 @@ public class Player extends Character {
     public boolean canMysteryBox;
     public boolean switchedPrayerBooks;
 
+    private Dissolving dissolving = new Dissolving(this);
+
+    public Dissolving getDissolving() {
+        return dissolving;
+    }
+
     private MysteryBoxManager newSpinner = new MysteryBoxManager(this);
 
     public MysteryBoxManager getNewSpinner() {
@@ -457,9 +463,12 @@ public class Player extends Character {
     private int zombieRaidsKC;
     private ZombieParty zombieParty;
     private boolean insideRaids;
-    private int afkStallCount1;
-    private int afkStallCount2;
-    private int afkStallCount3;
+    private int afkSapphire;
+    private int afkEmerald;
+    private int afkbRuby;
+    private int afkDiamond;
+    private int afkOnyx;
+    private int afkZenyte;
     @Getter
     @Setter
     private int godModeTimer;
@@ -752,30 +761,41 @@ public class Player extends Character {
         return achievementHandler;
     }
 
-    public int getAfkStallCount1() {
-        return afkStallCount1;
+    public int getAfkSapphire() {
+        return afkSapphire;
+    }
+    public void setAfkSapphire(int afkSapphire) {
+        this.afkSapphire = afkSapphire;
     }
 
-    public void setAfkStallCount1(int afkStallCount1) {
-        this.afkStallCount1 = afkStallCount1;
+    public int getAfkEmerald() { return afkEmerald; }
+    public void setAfkEmerald(int afkEmerald) {
+        this.afkEmerald = afkEmerald;
     }
 
-    public int getAfkStallCount2() {
-        return afkStallCount2;
+    public int getAfkbRuby() {
+        return afkbRuby;
+    }
+    public void setAfkbRuby(int afkbRuby) {
+        this.afkbRuby = afkbRuby;
     }
 
-    public void setAfkStallCount2(int afkStallCount2) {
-        this.afkStallCount2 = afkStallCount2;
+    public int getAfkDiamond() { return afkDiamond;
+    }
+    public void setAfkDiamond(int afkDiamond) {
+        this.afkDiamond = afkDiamond;
     }
 
-    public int getAfkStallCount3() {
-        return afkStallCount3;
+    public int getAfkOnyx() { return afkOnyx;
+    }
+    public void setAfkOnyx(int afkOnyx) { this.afkOnyx = afkOnyx;
     }
 
-    public void setAfkStallCount3(int afkStallCount3) {
-        this.afkStallCount3 = afkStallCount3;
+    public int getAfkZenyte() { return afkZenyte;
     }
-
+    public void setAfkZenyte(int afkZenyte) {
+        this.afkZenyte = afkZenyte;
+    }
 
     public GoodieBag getGoodieBag() {
         return goodieBag;
@@ -1585,6 +1605,12 @@ public class Player extends Character {
             return;
         }
         PlayerSaving.save(this);
+    }
+
+    private CustomCombiner customCombiner = new CustomCombiner(this);
+
+    public CustomCombiner getCustomCombiner() {
+        return customCombiner;
     }
 
     /*

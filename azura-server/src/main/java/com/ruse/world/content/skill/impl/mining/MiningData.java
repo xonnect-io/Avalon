@@ -74,7 +74,7 @@ public class MiningData {
 				50, 80, 447, 6, 11),
 		Adamantite(new int[] { 11941, 11939, 29233, 29235 }, 70, 95, 449, 7, 14),
 		Runite(new int[] { 14859, 4860, 2106, 2107,33079 }, 85, 125, 451, 7, 45),
-		AFKMINE(new int[] { 21149,711,712, 713 }, 1, 1, 17634, 5, -1), 
+		AFKMINE(new int[] { 21149,711, 713 }, 1, 1, 17634, 5, -1),
 		CRASHED_STAR(new int[] { 38660 }, 80, 52, 13727, 7, -1);
 
 		private int objid[];

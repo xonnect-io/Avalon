@@ -5,6 +5,8 @@ import com.ruse.engine.task.TaskManager;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
+import com.ruse.world.content.boxes.Diamond;
+import com.ruse.world.content.boxes.Raids1;
 import com.ruse.world.content.boxes.Ruby;
 import com.ruse.world.content.boxes.Silver;
 import com.ruse.world.content.casketopening.impl.*;
@@ -296,7 +298,9 @@ public class CasketOpening {
         WEAPON_BOX(19114, WepBox.loot),
         HOV_BOX(23086, HOVBox.loot),
         SILVER(15003, Silver.rewards),
-        RUBY(15002, Ruby.rewards)
+        RUBY(15002, Ruby.rewards),
+        DIAMOND(15004, Diamond.rewards),
+        RAIDS(18404, Raids1.rewards)
         ;
         private int itemID;
         private Box[] loot;

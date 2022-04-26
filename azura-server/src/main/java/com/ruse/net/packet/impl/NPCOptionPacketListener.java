@@ -237,6 +237,18 @@ public class NPCOptionPacketListener implements PacketListener {
                         if (player.getLocation() == Location.EMERALD_ZONE) {
                             ShopManager.getShops().get(132).open(player);
                         } else
+                            if (player.getLocation() == Location.RUBY_ZONE) {
+                            ShopManager.getShops().get(133).open(player);
+                        } else
+                            if (player.getLocation() == Location.DIAMOND_ZONE) {
+                             ShopManager.getShops().get(134).open(player);
+                        } else
+                            if (player.getLocation() == Location.ONYX_ZONE) {
+                            ShopManager.getShops().get(135).open(player);
+                       } else
+                            if (player.getLocation() == Location.ZENYTE_ZONE) {
+                                ShopManager.getShops().get(136).open(player);
+                            }
                             npc.forceChat("Silly noob, you are not at a donator zone");
                         break;
                     case 436:
@@ -742,7 +754,7 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
-        if (interact.getId() == 12810) {
+        if (interact.getId() == 12810 || interact.getId() == 6792) {
             if (player.getSlayer().getSlayerTask().getNpcId() != interact.getId()) {
                 player.sendMessage("This can only be attacked whilst he his your assigned boss slayer task.");
                 return;
@@ -941,7 +953,7 @@ public class NPCOptionPacketListener implements PacketListener {
                                 .sendMessage("<shad=1>@gre@You currently have " + player.getPointsHandler().getDonatorPoints()
                                         + " Donator points.")
                                 .sendMessage("<shad=1>@gre@You can get more points by donating at ::donate");
-                        ShopManager.getShops().get(80).open(player);
+                        ShopManager.getShops().get(24).open(player);
                         break;
                     case 550:
                         ShopManager.getShops().get(2).open(player);
@@ -1267,6 +1279,12 @@ public class NPCOptionPacketListener implements PacketListener {
                         } else
                             player.getPacketSender().sendMessage("Your stats do not need to be restored at the moment.");
                         break;
+                    case 925:
+                        player.getPacketSender().sendMessage("")
+                                .sendMessage("<shad=1>@red@You currently have " + player.getPointsHandler().getSlayerPoints()
+                                        + " Slayer points.");
+                        ShopManager.getShops().get(471).open(player);
+                        break;
                     case 705:
                         ShopManager.getShops().get(5).open(player);
                         break;
@@ -1334,11 +1352,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 946:
                         ShopManager.getShops().get(82).open(player);
                         break;
-                    case 3777:
 
-                        player.sendMessage("<shad=1>@yel@<img=14>Please check out the donation deals in our ::Discord - #Donation-deals");
-                        player.sendMessage("<shad=1>@yel@<img=14>Please check out the donation deals in our ::Discord - #Donation-deals");
-                        break;
                     case 705:
                         ShopManager.getShops().get(7).open(player);
                         break;

@@ -139,7 +139,7 @@ public class OLDHighscoresHandler implements Runnable {
 		/**
 		 * Represents construction xp
 		 */
-		long constructionXp = player.getSkillManager().getExperience(Skill.DUNGEONEERING);
+		long constructionXp = player.getSkillManager().getExperience(Skill.INVENTION);
 		/**
 		 * Creates new instance of jdbc driver if that driver exists
 		 */

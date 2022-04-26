@@ -16505,9 +16505,9 @@ public class Client extends GameRenderer {
             for (int i = 0; i < accountHovers.length; i++) {
                 if (accountHovers[i] || accountDeletion[i]) {
                     Account account = accountManager.getAccounts()[i];
-                    if (account == null) {
-                        continue;
-                    }
+                    if (account == null || account.getUsername() == null) {
+                    	   continue;
+                    	}
                     if (accountDeletion[i]) {
                         accountManager.removeAccount(account, true);
                         resave = true;
@@ -16524,9 +16524,9 @@ public class Client extends GameRenderer {
 
             if (resave) {
                 for (Account account : accountManager.getAccounts()) {
-                    if (account == null) {
-                        continue;
-                    }
+                	if (account == null || account.getUsername() == null) {
+                		   continue;
+                		}
                     accountManager.removeAccount(account, false);
                     accountManager.addAccount(new Account(account.getUsername(), account.getPassword(),
                             account.getGender(), account.getHelmet(), account.getIDKHead(), account.getJaw()), false);
@@ -16561,9 +16561,9 @@ public class Client extends GameRenderer {
             for (int i = 0; i < accountHovers.length; i++) {
                 if (accountHovers[i]) {
                     Account account = accountManager.getAccounts()[i];
-                    if (account == null) {
-                        continue;
-                    } else if (accountHovers[i]) {
+                    if (account == null || account.getUsername() == null) {
+                    	   continue;
+                    	} else if (accountHovers[i]) {
                         myUsername = account.getUsername();
                         password = account.getPassword();
                         login(password, false, myUsername, this);
@@ -17972,9 +17972,9 @@ public class Client extends GameRenderer {
 
             boolean updated = false;
             for (Account account : accountManager.getAccounts()) {
-                if (account == null) {
-                    continue;
-                }
+            	if (account == null || account.getUsername() == null) {
+            		   continue;
+            		}
                 if (account.getUsername().equalsIgnoreCase(myUsername)) {
                     account.setIDKHead(myPlayer.equipment[0] < 1164 ? myAppearance[0] == 0 ? myHeadAndJaw[0] : myAppearance[0] : 0);
 

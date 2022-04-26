@@ -243,8 +243,8 @@ public class BestItemsInterface {
             add(19959);//Tetsu helm
             add(22070);//Shadowspike long
             add(4558);//Riddler's Offhand
-            add(8834);//Predator Reaper
-            add(8835);//Predator Offhand
+            add(8834);//Diabolical Reaper
+            add(8835);//Diabolical Offhand
             add(11798);//Dinh's bulwark
             add(13760);//Elder Maul
             add(18823);//Collector ring II
