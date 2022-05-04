@@ -3,6 +3,7 @@ package com.ruse.world.content.progressionzone;
 import com.ruse.model.Item;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
 import lombok.Getter;
 
@@ -10,12 +11,12 @@ public class ZoneData {
 
     public enum Monsters {
 
-        SONIC(9001, 10, new Item[]{new Item(19944), new Item(19945), new Item(19946)}),
-        PATRICK(9002, 20, new Item[]{new Item(703), new Item(704), new Item(705)}),
-        LUIGI(9003, 30, new Item[]{new Item(14924), new Item(14919), new Item(14915)}),
-        SQUIRTLE(9004, 50, new Item[]{new Item(ItemDefinition.MILL_ID, 1000),  new Item(2734, 1),  new Item(19114, 5)}),
-        MEWTWO(9005, 75, new Item[]{new Item(23044),  new Item(ItemDefinition.MILL_ID, 5000),  new Item(2734, 5)}),
-        BOWSER(9006, 150, new Item[]{new Item(ItemDefinition.COIN_ID, 10000000)})
+        PHASE_1(9001, 10, new Item[]{new Item(22077), new Item(19136), new Item(6936,1)}),
+        PHASE_2(9002, 20, new Item[]{new Item(12855,5000), new Item(7956, 3), new Item(19116, 2)}),
+        PHASE_3(9003, 30, new Item[]{new Item(19115,3), new Item(10025, 3), new Item(19114, 3)}),
+        PHASE_4(9004, 50, new Item[]{new Item(6833,1),  new Item(14018, 1),  new Item(989, 50)}),
+        PHASE_5(9005, 75, new Item[]{new Item(15288),  new Item(5022, 50000),  new Item(14639, 100)}),
+        PHASE_6(9006, 150, new Item[]{new Item(8334, 1),new Item(19892, 1),new Item(8335, 1)})
         ;
 
         @Getter
@@ -41,7 +42,7 @@ public class ZoneData {
         }
 
         public String getName() {
-            return Misc.ucFirst(name().toLowerCase());
+            return NpcDefinition.forId(npcId).getName();
         }
 
         public Position getCoords() {

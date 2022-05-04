@@ -145,9 +145,7 @@ public class ObjectActionPacketListener implements PacketListener {
                             player.vod.handleObject(gameObject);
                             return;
                         }
-                        if (gameObject.getId() == HallsOfValor.CHEST_ID) {
-                            HallsOfValor.handleObject(player);
-                        }
+
                         if (Barrows.handleObject(player, gameObject)) {
                             return;
                         }
@@ -702,7 +700,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 break;
                             case 3378:
-                                int[] commonsuper = new int[]{11846, 11848, 11850, 11852, 11854, 11856, 18686, 18799, 5095, 13996, 13913, 13919};
+                                int[] commonsuper = new int[]{14525, 11858, 11850, 19582, 18686, 18799, 5095, 13996, 13913, 13919};
                                 int[] uncommonsuper = new int[]{6927, 6928, 6929, 6930, 6931, 6932, 6933, 6935, 6936, 22077, 19136, 6936};
                                 int[] raresuper = new int[]{13640, 19468, 19166, 19165, 19812, 20554, 19115, 20488,
                                         10946, 6769, 15288, 15290};

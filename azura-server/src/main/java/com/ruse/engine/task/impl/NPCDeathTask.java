@@ -261,7 +261,9 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == 4972) {
                             GlobalBoss4.handleDrop(npc);
-                            GlobalBoss1.handleDrop(npc);
+                        }
+                        if (npc.getId() == 587) {
+                            GlobalBoss5.handleDrop(npc);
                         }
                         if (npc.getId() == 9017) {
                             GlobalBoss2.handleDrop(npc);
@@ -271,6 +273,9 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == MerkSpawn.NPC_ID) {
                             MerkSpawn.handleDrop(npc);
+                        }
+                        if (npc.getId() == 187) {
+                            HellraiserBossDrop.handleDrop(npc);
                         }
                         if (npc.getId() == 7553) {
                             TheGeneral.giveLoot(killer, npc);
@@ -302,9 +307,9 @@ public class NPCDeathTask extends Task {
                         if (NPCDrops.multiKillNpcs.contains(npc.getId())) {
                             NPCDrops.dropItemsMultiKill(npc);
                         } else {
-                            GogetaSystem.npckills++;
-                            GogetaSystem.spawnBoss();
-                            GogetaSystem.callBoss();
+                            HellraiserSystem.npckills++;
+                            HellraiserSystem.spawnBoss();
+                            HellraiserSystem.callBoss();
                             killer.getPointsHandler().incrementNPCKILLCount(1);
                             if (!npc.isEventBoss()) {
                                 NPCDrops.handleDrops(killer, npc, 1);
@@ -315,7 +320,7 @@ public class NPCDeathTask extends Task {
                         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null
                                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
                             killer.getPointsHandler().incrementNPCKILLCount(1);
-                            GogetaSystem.npckills++;
+                            HellraiserSystem.npckills++;
                         }
 
                         if (npc instanceof GlobalBoss) {

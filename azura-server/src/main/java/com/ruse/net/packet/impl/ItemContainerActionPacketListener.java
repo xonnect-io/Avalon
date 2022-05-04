@@ -78,7 +78,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				player.getUpgradeInterface().handleItemAction(slot);
 				break;
 
-			case 30351:
+			case 30851:
 				player.getCustomCombiner().handleSelection(item);
 				break;
 

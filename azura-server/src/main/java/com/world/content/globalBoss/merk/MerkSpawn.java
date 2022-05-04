@@ -22,7 +22,7 @@ public class MerkSpawn extends NPC {
 
     private static long massMessageTimer = 0;
 
-    public static int[] COMMONLOOT = {11846,11848,11850,11852,11854,11856};
+    public static int[] COMMONLOOT = {14525,11858,11850,19582,};
     public static int[] RARELOOT = {3907,8803,8804,8805,20173,8806,8807,8808,8809};
     public static int[] SUPERRARELOOT = {19115,19116,19114,15288,15289,15290};
     public static int[] LEGENDARYLOOT = {10946,19114,20488,11310};

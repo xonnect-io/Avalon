@@ -146,7 +146,7 @@ public class CrystalChest {
 			new Item(11710, 1), // set 14 Godsword shard 1
 			new Item(11712, 1), // set 15 Godsword shard 2
 			new Item(11714, 1), // set 16 Godsword shard 3
-			new Item(11732, 1), // set 17 Dragon Boots
+			new Item(15031, 1), // set 17 Dragon Boots
 			new Item(15332, 1), // set 23 Overload
 			
 			new Item(6918, 1), // set 24 Infinity Armor 1
@@ -192,7 +192,7 @@ public class CrystalChest {
 			new Item(18354, 1), //
 			new Item(4882, 1), new Item(4888, 1), new Item(4894, 1), new Item(4900, 1), new Item(18747, 1),
 			new Item(20456, 1), new Item(20460, 1), new Item(14732, 1), new Item(14733, 1), new Item(14734, 1),
-			new Item(17043, 1), new Item(17175, 1), new Item(17321, 1), new Item(11732, 1), new Item(16043, 1),
+			new Item(17043, 1), new Item(17175, 1), new Item(17321, 1), new Item(15031, 1), new Item(16043, 1),
 			new Item(6199, 1), new Item(7956, 1), new Item(290, 1), new Item(20535, 1), new Item(19116, 1),
 			new Item(15682, 1),
 

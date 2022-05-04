@@ -49,13 +49,8 @@ public class ItemForging {
             }
             p.getInventory().add(data.product, true);
             final String itemName = Misc.formatText(ItemDefinition.forId(data.product.getId()).getName().toLowerCase());
-            p.getPacketSender().sendMessage("<shad=1>@or2@You've made@mag@ " + Misc.anOrA(itemName) + " " + itemName + ".");
-
-            if (data.isAnnounce()) {
-                String msg = "<img=5><shad>@blu@Forging:@red@ " + p.getUsername() + " has created "  + Misc.anOrA(itemName) + " " + itemName + "!";
-                World.sendMessage(msg);
-            }
-
+            String msg = "<img=5><shad>@blu@News:@red@ " + p.getUsername() + " has created "  + Misc.anOrA(itemName) + " " + itemName + "!";
+            World.sendMessage(msg);
             p.getClickDelay().reset();
             if (data.skillRequirement[2]  != -1){
                 p.getSkillManager().addExperience(skill, data.skillRequirement[2]);// data.skillRequirement[2]);
@@ -73,32 +68,29 @@ public class ItemForging {
      */
     @Getter
     private enum ItemForgeData {
-        MASTER_MAX_CAPE(new Item[]{new Item(23158), new Item(23159), new Item(23160)}, new Item(23176), new int[]{1, -1, 0}, true),
+   /*     MASTER_MAX_CAPE(new Item[]{new Item(23158), new Item(23159), new Item(23160)}, new Item(23176), new int[]{1, -1, 0}, true),
 
         MAGIC_MAX_CAPE(new Item[]{new Item(23148), new Item(14019)}, new Item(23158), new int[]{1, -1, 0}, true),
         MELEE_MAX_CAPE(new Item[]{new Item(23147), new Item(14019)}, new Item(23159), new int[]{1, -1, 0}, true),
         RANGED_MAX_CAPE(new Item[]{new Item(23149), new Item(14019)}, new Item(23160), new int[]{1, -1, 0}, true),
 
-     /*   BUNNY_HAT_GREEN(new Item[]{new Item(23013), new Item(23009)}, new Item(23014), new int[]{0, 0, 0}),
+        BUNNY_HAT_GREEN(new Item[]{new Item(23013), new Item(23009)}, new Item(23014), new int[]{0, 0, 0}),
         BUNNY_HAT_GOLD(new Item[]{new Item(23013), new Item(23010)}, new Item(23015), new int[]{0, 0, 0}),
         BUNNY_HAT_BLUE(new Item[]{new Item(23013), new Item(23011)}, new Item(23016), new int[]{0, 0, 0}),
         BUNNY_HAT_RED(new Item[]{new Item(23013), new Item(23012)}, new Item(23017), new int[]{0, 0, 0}),
 
         EASTER_PENDANT(new Item[]{new Item(13558), new Item(18888)}, new Item(23000), new int[]{0, 0, 0}),
         ABYSSAL_TENTACLE(new Item[]{new Item(4151), new Item(22007)}, new Item(22008), new int[]{21, 0, 0}),
-
+*/
         Collector_ammy(new Item[]{new Item(19888), new Item(9084)}, new Item(18888), new int[]{21, 0, 0}),
         Collector_ring(new Item[]{new Item(18823), new Item(9084)}, new Item(18818), new int[]{21, 0, 0}),
 
         ENRAGEDCAPE(new Item[]{new Item(20591), new Item(9083)}, new Item(20400), new int[]{21, 0, 0}),
-        TBOW(new Item[]{new Item(5012), new Item(10949, 3)}, new Item(5011), new int[]{21, 0, 0}),
-        SCYTHE(new Item[]{new Item(12535), new Item(10949, 3)}, new Item(12537), new int[]{21, 0, 0}),
-        SANG(new Item[]{new Item(17011), new Item(10949, 3)}, new Item(17013), new int[]{21, 0, 0}),
 
         MEGA1(new Item[]{new Item(18883), new Item(9080, 1), new Item(9081, 1), new Item(9082, 1)}, new Item(18885), new int[]{21, 0, 0}),
         MEGA2(new Item[]{new Item(18881), new Item(9080, 1), new Item(9081, 1), new Item(9082, 1)}, new Item(18887), new int[]{21, 0, 0}),
         MEGA3(new Item[]{new Item(19810), new Item(9080, 1), new Item(9081, 1), new Item(9082, 1)}, new Item(18889), new int[]{21, 0, 0}),
-*/
+
         ;
 
         private Item[] requiredItems;

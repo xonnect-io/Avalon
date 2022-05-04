@@ -16507,11 +16507,11 @@ name: Camo wings
 finish
 
 Item Id: 4389
-name: Cowboy wings
+name: Zeldris wings
 finish
 
 Item Id: 4390
-name: Cowboy wings
+name: Zeldris wings
 finish
 
 Item Id: 4391
@@ -40479,7 +40479,7 @@ name: Dragon dart (p++)
 finish
 
 Item Id: 11235
-name: Cowboys Revolver
+name: Dark bow
 finish
 
 Item Id: 11236
@@ -70467,11 +70467,11 @@ name: Inferior helm
 finish
 
 Item Id: 19472
-name: Cowboy legs
+name: Zeldris legs
 finish
 
 Item Id: 19473
-name: Cowboy body
+name: Zeldris body
 finish
 
 Item Id: 19474
@@ -71823,7 +71823,7 @@ name: Supreme spirit shield
 finish
 
 Item Id: 19811
-name: Cowboy hat
+name: Zeldris hat
 finish
 
 Item Id: 19812

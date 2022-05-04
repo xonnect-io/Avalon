@@ -8681,9 +8681,9 @@ public class Client extends GameRenderer {
         if (loadingImages[0]!=null)
         graphics.drawImage(loadingImages[0], 0, 0, null);
         if (loadingPercentage > 0) {
-            int scaleX = (loadingPercentage * 790 / 560) * 4;
-            if (scaleX > 559) {
-                scaleX = 559;
+            int scaleX = (loadingPercentage * 790 / 589) * 4;
+            if (scaleX > 569) {
+                scaleX = 569;
             }
             int addedX = 20;
 
@@ -8836,9 +8836,9 @@ public class Client extends GameRenderer {
                 // spritesMap.get(1177].drawAdvancedSprite(310, 115);
 
                 if (loginHover) {
-                    spritesMap.get(464).drawAdvancedSprite(280, 313);//LOGINEDIT
+                    spritesMap.get(464).drawAdvancedSprite(302, 293);//LOGINEDIT
                 } else {
-                    spritesMap.get(463).drawAdvancedSprite(280, 313);//LOGINEDIT
+                    spritesMap.get(463).drawAdvancedSprite(302, 293);//LOGINEDIT
                 }
 
                 if (!showTwoFactorAuth) {

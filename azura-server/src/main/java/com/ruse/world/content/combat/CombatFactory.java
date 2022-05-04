@@ -121,7 +121,7 @@ public final class CombatFactory {
      */
     public static boolean fullDharoks(Character entity) {
         return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals("Dharok the Wretched")
-                : ((Player) entity).getEquipment().containsAll(4716, 4720, 4722, 4718);
+                : ((Player) entity).getEquipment().containsAll(10350, 10348, 10346, 4718);
     }
 
     /**
@@ -132,7 +132,7 @@ public final class CombatFactory {
      */
     public static boolean fullKarils(Character entity) {
         return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals("Karil the Tainted")
-                : ((Player) entity).getEquipment().containsAll(4732, 4736, 4738, 4734);
+                : ((Player) entity).getEquipment().containsAll(16054, 17193, 17339, 4734);
     }
 
     /**
@@ -143,7 +143,7 @@ public final class CombatFactory {
      */
     public static boolean fullAhrims(Character entity) {
         return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals("Ahrim the Blighted")
-                : ((Player) entity).getEquipment().containsAll(4708, 4712, 4714, 4710);
+                : ((Player) entity).getEquipment().containsAll(14499, 14497, 14501, 4710);
     }
 
     /**

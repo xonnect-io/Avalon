@@ -14,7 +14,7 @@ public final class Rasterizer extends DrawingArea {
 	
 	///re-texture items DOPE
 	public static float[] depthBuffer;
-	private static final int TEXTURE_AMOUNT = 98;
+	private static final int TEXTURE_AMOUNT = 136;
 	public static Background aBackgroundArray1474s[] = new Background[TEXTURE_AMOUNT];
 	public static boolean restrict_edges;
 	public static int[] SINE;

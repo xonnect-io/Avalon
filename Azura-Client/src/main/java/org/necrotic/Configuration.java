@@ -25,8 +25,8 @@ public class Configuration {
 	public static final boolean STOP_CACHE_UPDATES = false;
 	public static final boolean DROPBOX_MODE = false;
 	public final static String CLIENT_NAME = "Avalon";
-	public final static String CACHE_DIRECTORY_NAME = "Avalon";
-	public static final String SETTINGS_DIRECTORY_NAME = "Lunite_settings";
+	public final static String CACHE_DIRECTORY_NAME = ".Avalon";
+	public static final String SETTINGS_DIRECTORY_NAME = ".Avalon_data";
 	public final static boolean JAGCACHED_ENABLED = false;
 	public final static String JAGCACHED_HOST = "";
 	public final static int SERVER_PORT = 9420;
@@ -40,7 +40,7 @@ public class Configuration {
 	public static final boolean CTRL_HOVER_HINT = true;
 	public static final boolean USING_INTELLIJ = true;
 	
-	public static boolean SAVE_ACCOUNTS = false;
+	public static boolean SAVE_ACCOUNTS = true;
 	public static boolean DISPLAY_HP_ABOVE_HEAD = false;
 	public static boolean DISPLAY_USERNAMES_ABOVE_HEAD = false;
 	public static boolean TWEENING_ENABLED = true;
@@ -53,9 +53,9 @@ public class Configuration {
 	public static boolean HIGHLIGHT_USERNAME = true;
 	public static boolean NEW_CURSORS = false;
 	public static boolean NEW_FUNCTION_KEYS = true;
-	public static boolean PARTICLES_ENABLED = false;
+	public static boolean PARTICLES_ENABLED = true;
 	public static boolean FOG_ENABLED = false;
-	public static boolean GROUND_TEXT = true;
+	public static boolean GROUND_TEXT = false;
 	public static boolean HIGH_DETAIL = true;
 //	public static boolean hdTexturing = true;
 	public static boolean hdMinimap = false;
@@ -64,6 +64,6 @@ public class Configuration {
 	public static boolean TOGGLE_FOV = true;
 	public static boolean DEPTH_BUFFER = false;
 	public final static String SERVER_HOST() {
-		return localHost ? "127.0.0.1" : "147.135.65.179";//104.161.43.45 - 147.135.65.179
+		return localHost ? "127.0.0.1" : "147.135.65.179";
 	}
 }

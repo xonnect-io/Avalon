@@ -31,16 +31,20 @@ public class PlayerPanel {
                 "Bonus Skill: @whi@" + StringUtils.capitalizeFirst(DoubleXPSkillEvent.currentSkill.toString()),
                 (WellOfGoodwill.isActive() ? "Well of Goodwill: @whi@On" : "Well of Goodwill: @whi@Off"),
                 "Globals",
-                "Gogeta: @whi@" + GogetaSystem.getLeft() + " @whi@kills left.",
+                "Gogeta: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",
                 (VoteBossDrop.currentSpawn == null
                         ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/50 please vote!"
                         : "Vote Boss: @whi@::Vboss"),
-                "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
-                "Dragon King: @whi@" + GlobalBoss4.timeLeft(),
-                "Nightmare boss: @whi@" + GlobalBoss2.timeLeft(),
-                "Naraku boss: @whi@" + GlobalBoss3.timeLeft(),
                 "Donation boss: @whi@" + DonationBossSystem.amntDonated + "/500 donated",
-                "",
+                "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
+                (GlobalBoss4.currentBoss == null
+                ? "Dragon King: @whi@" + GlobalBoss4.timeLeft() : "Dragon King: @gre@Alive"),
+                (GlobalBoss2.currentBoss == null
+                ? "Nightmare boss: @whi@" + GlobalBoss2.timeLeft() : "Nightmare boss : @gre@Alive"),
+                (GlobalBoss3.currentBoss == null
+                ? "Naraku boss: @whi@" + GlobalBoss3.timeLeft() : "Naraku boss : @gre@Alive"),
+                (GlobalBoss5.currentBoss == null
+                ? "Ironman boss: @whi@" + GlobalBoss5.timeLeft(): "Ironman boss : @gre@Alive"),
                 "",
                 "",
                 "",

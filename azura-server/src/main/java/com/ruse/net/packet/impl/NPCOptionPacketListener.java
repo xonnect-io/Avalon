@@ -114,6 +114,9 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 9022:
                         ServerPerks.getInstance().open(player);
                         break;
+                    case 820:
+                        ShopManager.getShops().get(123).open(player);
+                        break;
                     case GroupConfig.NPC_ID:
                         if (player.getGameMode() == GameMode.GROUP_IRONMAN) {
                             if (GroupManager.isInGroup(player)) {

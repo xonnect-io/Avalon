@@ -38,8 +38,8 @@ public class CustomCombiner {
         EXECUTION_TBOW(new Item(8411,-1),new Item(5012, 1), new Item(8411, 3), new Item(8088, 3), new Item(10947, 3), new Item(12855, 7_500_000)),
         EXECUTION_VITUR(new Item(8410,-1),new Item(12535, 1), new Item(8410, 3), new Item(8087, 3), new Item(10947, 3), new Item(12855, 7_500_000)),
         STAFF_OF_EXECUTION(new Item(8412,-1),new Item(17011, 1), new Item(8412, 3), new Item(8089, 3), new Item(10947, 3), new Item(12855, 7_500_000)),
-        LIGHT_EXECUTION_TBOW(new Item(5012,-1),new Item(5011, 1),new Item(5012, 1), new Item(10949, 3)), 
-        LIGHT_EXECUTION_VITUR(new Item(12535,-1),new Item(12537, 1),new Item(12535, 1), new Item(10949, 3)), 
+        LIGHT_EXECUTION_TBOW(new Item(5012,-1),new Item(5011, 1),new Item(5012, 1), new Item(10949, 3)),
+        LIGHT_EXECUTION_VITUR(new Item(12535,-1),new Item(12537, 1),new Item(12535, 1), new Item(10949, 3)),
         LIGHT_STAFF_OF_EXECUTION(new Item(17011,-1),new Item(17013, 1),new Item(17011, 1), new Item(10949, 3)),
         DARK_EXECUTION_TBOW(new Item(5011,-1),new Item(22113, 1),new Item(5011, 1), new Item(22112, 5), new Item(5022, 10_000_000), new Item(12855, 20_000_000)),
         DARK_EXECUTION_VITUR(new Item(12535,-1),new Item(22115, 1),new Item(12535, 1), new Item(22112, 5), new Item(5022, 10_000_000), new Item(12855, 20_000_000)),
@@ -83,14 +83,14 @@ public class CustomCombiner {
     private final CustomCombinerData[] VALUES = CustomCombinerData.values();
 
     public void open() {
-        player.getPacketSender().sendInterface(30330);
+        player.getPacketSender().sendInterface(30830);
         updateInterface();
     }
 
     private void updateInterface() {
         int index = 0;
         for (CustomCombinerData data : VALUES) {
-            player.getPacketSender().sendItemOnInterface(30351, data.reward.getId(), index, data.reward.getAmount());
+            player.getPacketSender().sendItemOnInterface(30851, data.reward.getId(), index, data.reward.getAmount());
             index++;
         }
     }
@@ -100,9 +100,9 @@ public class CustomCombiner {
 
         for(CustomCombinerData data : VALUES) {
             if(data.reward.getId() == selectedItem.getId()) {
-                player.getPacketSender().resetItemsOnInterface(30340, 17);
-                player.getPacketSender().sendCombinerItemsOnInterface(30340, data.requirements);
-                player.getPacketSender().sendItemOnInterface(30336, data.reward.getId(), 0, data.reward.getAmount());
+                player.getPacketSender().resetItemsOnInterface(30840, 17);
+                player.getPacketSender().sendCombinerItemsOnInterface(30840, data.requirements);
+                player.getPacketSender().sendItemOnInterface(30836, data.reward.getId(), 0, data.reward.getAmount());
                 break;
             }
         }

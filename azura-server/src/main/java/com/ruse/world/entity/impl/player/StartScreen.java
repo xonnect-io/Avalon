@@ -149,11 +149,12 @@ public class StartScreen {
 
     public enum GameModes {
         NORMAL("Normal", 52761, 116005, 1, 0,
-                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
-                        new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
-                        new Item(6570, 1), new Item(23089, 1), new Item(23091, 1),
-                        new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),
-                        new Item(3025, 100), new Item(17818, 100), new Item(995, 1_000_000)
+                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 1153, 1),
+                        new Item(1115, 1), new Item(1067, 1) , new Item(17817, 500),
+                        new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
+                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
+                        new Item(459, 1),  new Item(290, 2),  new Item(6199, 4),
+                        new Item(15031, 1), new Item(6570, 1)
                 },
                 "In this game mode",
                 "Play the game without any restrictions.",
@@ -161,11 +162,12 @@ public class StartScreen {
 
 
         IRONMAN("Ironman", 52762, 116006, 1, 1,
-                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
-                        new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
-                        new Item(6570, 1), new Item(23089, 1), new Item(23091, 1),
-                        new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),
-                        new Item(3025, 100), new Item(17818, 100), new Item(995, 1_000_000)
+                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 16691, 1),
+                        new Item(17239, 1), new Item(16669, 1) , new Item(17817, 500),
+                        new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
+                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
+                        new Item(459, 1),  new Item(6199, 4),
+                        new Item(630, 1), new Item(18740, 1)
                 },
                 "Ironman mode is a very intense gamemode",
                 "You are not allowed to trade or stake",
@@ -175,11 +177,12 @@ public class StartScreen {
 
 
         ULTIMATE_IRONMAN("Ultimate Iron", 52763, 116007, 1, 2,
-                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
-                        new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
-                        new Item(6570, 1), new Item(23089, 1), new Item(23091, 1),
-                        new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),
-                        new Item(3025, 100), new Item(17818, 100), new Item(995, 1_000_000)
+                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 4977, 1),
+                        new Item(4989, 1), new Item(4995, 1) , new Item(17817, 500),
+                        new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
+                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
+                        new Item(459, 1),  new Item(6199, 4),
+                        new Item(630, 1), new Item(18740, 1)
                 },
                 "Ultimate ironman is harder than ironman",
                 "@red@Same as ironman mode, but you can't banks",
@@ -188,11 +191,12 @@ public class StartScreen {
 
 
         GROUP_IRON("Group Ironman", 52778, 116008, 1, 4,
-                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
-                        new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
-                        new Item(15432, 1), new Item(23089, 1), new Item(23091, 1),
-                        new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),
-                        new Item(3025, 100), new Item(17818, 100), new Item(995, 1_000_000)
+                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 13700, 1),
+                        new Item(13701, 1), new Item(13702, 1) , new Item(17817, 500),
+                        new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
+                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
+                        new Item(459, 1),  new Item(6199, 4),
+                        new Item(630, 1), new Item(18740, 1)
                 },
                 "Group Ironman mode is a very fun gamemode",
                 "Same rules as ironman mode",
@@ -203,11 +207,12 @@ public class StartScreen {
 
 
         VETERAN_MODE("Veteran", 52774, 116009, 1, 3,
-                new Item[]{new Item(1153, 1), new Item(1115, 1), new Item(1067, 1),
-                        new Item(19939, 1), new Item(19938, 1), new Item(19914, 1),
-                        new Item(6570, 1), new Item(23089, 1), new Item(23091, 1),
-                        new Item(4178, 1), new Item(16995, 1), new Item(20553, 1),
-                        new Item(3025, 100), new Item(17818, 100), new Item(995, 1_000_000)
+                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 1153, 1),
+                        new Item(1115, 1), new Item(1067, 1) , new Item(17817, 500),
+                        new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
+                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
+                        new Item(459, 1),  new Item(290, 2),  new Item(6199, 4),
+                        new Item(15031, 1), new Item(6570, 1)
                 },
                 "This is probably the hardest game mode",
                 "@red@The EXP rate in this mode is the hardest",

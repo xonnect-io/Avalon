@@ -57,9 +57,9 @@ public class DesolaceFormulas {
             }
             double strengthBonus = plr.getBonusManager().getOtherBonus()[0];
             base = (13 + effective + (strengthBonus / 8) + ((effective * strengthBonus) / 65)) / 11;
-            if (plr.getEquipment().getItems()[3].getId() == 4718 && plr.getEquipment().getItems()[0].getId() == 4716
-                    && plr.getEquipment().getItems()[4].getId() == 4720
-                    && plr.getEquipment().getItems()[7].getId() == 4722)
+            if (plr.getEquipment().getItems()[3].getId() == 4718 && plr.getEquipment().getItems()[0].getId() == 10350
+                    && plr.getEquipment().getItems()[4].getId() == 10348
+                    && plr.getEquipment().getItems()[7].getId() == 10346)
                 base += ((plr.getSkillManager().getMaxLevel(Skill.CONSTITUTION) - plr.getConstitution()) * .045) + 1;
             if (specialBonus > 1)
                 base = (base * specialBonus);

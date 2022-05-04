@@ -3496,7 +3496,7 @@ public class RSInterface {
 
 
 	private static void customCombiner(TextDrawingArea[] tda) {
-		final int STARTING_POINT = 30330;
+		final int STARTING_POINT = 30830;
 		RSInterface main = addInterface(STARTING_POINT);
 		addSpriteLoader(STARTING_POINT + 1, 1397);
 		addHoverButtonWSpriteLoader(STARTING_POINT + 2, 1398, 127, 34, "Invent", -1, STARTING_POINT + 3, 1);

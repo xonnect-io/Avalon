@@ -73,7 +73,6 @@ public class TreasureHunter {
      */
     public static void handleRewards(Player player) {
         //Guaranteed Cash Drop
-        player.getInventory().add(ItemDefinition.COIN_ID, 50000);
 
         Box box = BoxLoot.getLoot(loot);
         player.getInventory().add(box.getId(), box.getAmount());
@@ -87,12 +86,21 @@ public class TreasureHunter {
 
 
     public static Box[] loot = { //
-            new Box(995, 0, 95000, 100D),
-            new Box(23126, 1, 0.4D, true),
-            new Box(23123, 1, 0.4D, true),
-            new Box(23120, 1, 0.4D, true),
-            new Box(23048, 1, 0.285D, true),
-            new Box(23049, 1, 0.2D, true),
+            new Box(12855, 10000, 20000, 50D),
+            new Box(5022, 1500, 7000, 50D),
+            new Box(15290, 1, 7, 15D),
+            new Box(10025, 1, 4, 15D),
+            new Box(7956, 1, 3, 20),
+            new Box(19116, 1, 1, 10),
+            new Box(19115, 1, 1, 5),
+            new Box(20488, 1, 1, 5),
+            new Box(23044, 1, 1, 15),
+            new Box(6769, 1, 1D, true),
+            new Box(23161, 1, 1D, true),
+            new Box(23162, 1, 1D, true),
+            new Box(23163, 1, 1D, true),
+            new Box(23164, 1, 1D, true),
+            new Box(22110, 1, 0.01D, true),
     };
 
 }

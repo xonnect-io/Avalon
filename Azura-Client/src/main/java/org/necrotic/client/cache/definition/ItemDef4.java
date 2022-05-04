@@ -32,7 +32,7 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef2.rotationX;
 				itemDef.modelID = itemDef2.modelID;
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.actions[0] = "Claim";
 
 				itemDef.rdc2 = 3262;
@@ -48,7 +48,7 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef2.rotationX;
 				itemDef.modelID = itemDef2.modelID;
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc2 = 24292;
 				break;
 			case 9081:
@@ -62,7 +62,7 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef2.rotationX;
 				itemDef.modelID = itemDef2.modelID;
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc2 = 99282;
 				break;
 			case 9082:
@@ -76,7 +76,7 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef2.rotationX;
 				itemDef.modelID = itemDef2.modelID;
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc2 = 28522;
 				break;
 			case 9083:
@@ -90,7 +90,7 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef2.rotationX;
 				itemDef.modelID = itemDef2.modelID;
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc2 = 215;
 				break;
 			case 9084:
@@ -104,7 +104,7 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef2.rotationX;
 				itemDef.modelID = itemDef2.modelID;
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc2 = 39922;
 				break;
 			case 9085:
@@ -118,7 +118,7 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef2.rotationX;
 				itemDef.modelID = itemDef2.modelID;
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.actions[0] = "Claim";
 
 				itemDef.rdc2 = 2395328;
@@ -152,7 +152,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
@@ -172,7 +172,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				// itemDef.rdc2 = 23945;
 				//itemDef.rdc2 = 34737;
@@ -194,7 +194,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
@@ -214,7 +214,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 
 
@@ -232,7 +232,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 
 				break;
@@ -248,7 +248,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 
 				break;
@@ -264,7 +264,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 
 				itemDef.rdc2 = 29525;
@@ -282,7 +282,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 8657;
 				break;
@@ -298,7 +298,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 7467;
 				break;
@@ -314,7 +314,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 
 
@@ -332,7 +332,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 
 				break;
@@ -348,7 +348,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17606:
@@ -362,7 +362,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17626:
@@ -377,7 +377,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 3399200;
 
@@ -395,7 +395,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 9999;
 				break;
@@ -411,7 +411,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 3399200;
 				break;
@@ -426,7 +426,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17648:
@@ -440,7 +440,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17650:
@@ -454,7 +454,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 
@@ -469,7 +469,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 
@@ -485,7 +485,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 
@@ -500,7 +500,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 
@@ -515,7 +515,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 
@@ -530,7 +530,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				
 				break;
@@ -545,7 +545,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 2052905;
 				break;
@@ -560,7 +560,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17666:
@@ -574,7 +574,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17668:
@@ -588,7 +588,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22100:
@@ -601,7 +601,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 694;
 				itemDef.modelOffsetX = 7;
 				itemDef.modelOffsetY = -7;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22101:
@@ -614,7 +614,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1138;
 				itemDef.rotationY = 0;
 				itemDef.rotationX = 0;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22102:
@@ -627,7 +627,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1800;
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 7;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22103:
@@ -654,7 +654,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1648;
 				itemDef.modelOffsetX = 7;
 				itemDef.modelOffsetY = 25;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22105:
@@ -668,7 +668,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22106:
@@ -722,8 +722,8 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = 1000;
-				itemDef.newModelColor = new int[]{57};
-				itemDef.editedModelColor = new int[]{52};
+				itemDef.newModelColor = new int[]{55};
+				itemDef.editedModelColor = new int[]{131};
 				break;
 			case 22110:
 				itemDef.name = "@red@Owner's Attachment";
@@ -735,7 +735,7 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef2.rotationX;
 				itemDef.modelID = itemDef2.modelID;
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc2 = 53921;
 				itemDef.stackable = true;
 				break;
@@ -746,9 +746,9 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 100_009;
 				itemDef.rotationX = 1000;
 				itemDef.modelZoom = 2000;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.newModelColor = new int[]{57};
-				itemDef.editedModelColor = new int[]{52};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.newModelColor = new int[]{55};
+				itemDef.editedModelColor = new int[]{131};
 				break;
 			case 22112:
 				itemDef.name = "<shad=1>@bla@Dark Attachment";
@@ -781,13 +781,12 @@ public class ItemDef4 {
 				break;
 			case 22114:
 				itemDef.name = "<shad=1>@bla@Dark Sanguinesti Staff";
-				ItemDefinition sang = ItemDefinition.get(19146);
-				itemDef.actions = sang.actions;
-				itemDef.modelOffsetX = sang.modelOffsetX;
-				itemDef.modelOffsetY = sang.modelOffsetY;
-				itemDef.modelZoom = sang.modelZoom;
-				itemDef.rotationY = sang.rotationY;
-				itemDef.rotationX = sang.rotationX;
+				itemDef.modelOffsetX = -2;
+				itemDef.modelOffsetY = 2;
+				itemDef.modelZoom = 2113;
+				itemDef.rotationY = 568;
+				itemDef.rotationX = 1527;
+				itemDef.rotationZ = 0;
 				itemDef.modelID = 99513;
 				itemDef.maleEquip1 = 99506;
 				itemDef.femaleEquip1 = 99506;
@@ -805,6 +804,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = vitur22.modelZoom;
 				itemDef.rotationY = vitur22.rotationY;
 				itemDef.rotationX = vitur22.rotationX;
+				itemDef.rotationZ = vitur22.rotationZ;
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{40};
 				itemDef.editedModelColor = new int[]{57};
@@ -831,7 +831,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = def.modelZoom;
 				itemDef.rotationY = def.rotationY;
 				itemDef.rotationX = def.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22118:
@@ -841,7 +841,7 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 100_020;
 				itemDef.rotationX = 1000;
 				itemDef.modelZoom = 2000;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 22119:
 				itemDef.name = "Ultimate Ironman's Aura";
@@ -850,7 +850,7 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 100_022;
 				itemDef.rotationX = 1000;
 				itemDef.modelZoom = 2000;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 22120:
 				itemDef.name = "Ironman's Aura";
@@ -859,7 +859,7 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 100_024;
 				itemDef.rotationX = 1000;
 				itemDef.modelZoom = 2000;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 		}
 		return itemDef;

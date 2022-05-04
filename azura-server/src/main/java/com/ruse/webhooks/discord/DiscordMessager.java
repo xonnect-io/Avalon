@@ -35,6 +35,7 @@ public class DiscordMessager extends JSONObject {
 	private static String afkbosshook = "https://discord.com/api/webhooks/963120700829339668/qsukZA_-iaHXfKT7RrAMS_uhUvaSa3vEojXGgHItWBq6gHs2I7jFXXHT9iStO3H82p4l";
 	private static String gogetabosshook = "https://discord.com/api/webhooks/963121044669988904/2iGUZVXajUNFgxEQzRWGRuaIuU378c2JQqaUbAndZxk4ctrlepSM8MMXkxXNwZtvHT9R";
 	private static String donationbosshook = "https://discord.com/api/webhooks/964275725811216436/76LexWSyaeqVPZQeOztYbZOb8ooloMwMGt5AZQsMvMAtLZfzQPhTqoyGGfyuz2mEVGdY";
+	private static String ironbosshook = "https://discord.com/api/webhooks/969977018336804884/Bthzq3XSSpcYU0WAipZ7DAmsG_dE6UAB62prw5adRxZ41lgnviIxqZQVrWdE_t7R8ssa";
 
 	public static void test(String msg) {
 		try {
@@ -77,6 +78,44 @@ public class DiscordMessager extends JSONObject {
 			}
 
 			String webhook = donationbosshook;
+
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+			// client
+
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Necrotic - RSPS") // The title of the embed
+					// element
+					.withURL("http://necrotic.org/") // The URL of the embed element
+					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
+					.withDescription(
+							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
+					// description
+					// of
+					// the
+					// embed
+					// object
+					.build(); // Build the embed element
+
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
+					// message
+					// .withEmbed(embed) // Add our embed object
+					.withUsername("Announcement Bot") // Override the username of the bot
+					.build(); // Build the message
+
+			client.sendPayload(message);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void sendIronBossLog(String msg) {
+		try {
+
+			if (Misc.checkForOwner() || !active) {
+				return;
+			}
+
+			String webhook = ironbosshook;
 
 			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
 			// client

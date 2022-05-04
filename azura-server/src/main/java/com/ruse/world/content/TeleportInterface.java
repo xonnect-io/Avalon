@@ -3,6 +3,7 @@ package com.ruse.world.content;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.world.content.boxes.Raids1;
+import com.ruse.world.content.boxes.Starter;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
@@ -473,7 +474,7 @@ public class TeleportInterface {
         LAVA_HOUND("Lava hounds", 9838, new int[]{3424, 4126, 0}, 600),
         SYM("Stinky Blobb", 1718, new int[]{2196, 5083, 0}, 550),//replace 1727 with 1718 in world npc
         BAT("Bloodsuckers", 9836, new int[]{2388, 5019, 0}, 1500),
-        COWBOY("Cowboys", 117, new int[]{2721, 4446, 0}, 500),
+        ZELDRIS("Zeldris", 117, new int[]{2721, 4446, 0}, 500),
         CASH_DRAGON("Cash dragons", 500, new int[]{2911, 3613, 0}, 1500),
         DEMON_GODDESS("Demon Goddesses", 501, new int[]{2784, 4445, 0}, 725),
         ENERGY_SKELETON("Energy Skeletons", 503, new int[]{2088, 3995, 0}, 700),
@@ -593,7 +594,7 @@ public class TeleportInterface {
 
 
     public enum Minigames implements Teleport {
-        STARTER_ZONE("Starter Zone", 9001, new int[]{1, 1, 0}, 600),
+        STARTER_ZONE("Starter Zone", 9001, new int[]{1, 1, 0}, Starter.rewards, 600),
         DUNG("Legends Raids", 585, new int[]{2553, 3718, 0}, Raids1.rewards, 1450),
         IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1400),
         //VOD("Void of Deception", 9028, new int[]{1954, 5010, 0}, VoidOfDarkness.loot, 600),

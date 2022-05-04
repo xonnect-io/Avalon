@@ -1,6 +1,6 @@
 package com.ruse.world.content.combat.strategy;
 
-import com.ruse.world.content.GogetaBossCombatScript;
+import com.ruse.world.content.HellraiserBossCombatScript;
 import com.ruse.world.content.combat.strategy.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringBossNpc;
 import com.zaros.world.entity.actor.combat.strategy.impl.dung.DungeoneeringBossCombat;
@@ -62,7 +62,7 @@ public class CombatStrategies {
 		STRATEGIES.put(252, new FriezaCombatScript());
 		STRATEGIES.put(449, new FriezaCombatScript());
 		STRATEGIES.put(452, new FriezaCombatScript());
-		STRATEGIES.put(187, new GogetaBossCombatScript());
+		STRATEGIES.put(187, new HellraiserBossCombatScript());
 		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_NOHEADICON, DungeoneeringBossCombat.INSTANCE);
 		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_MAGE, DungeoneeringBossCombat.INSTANCE);
 		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_RANGE, DungeoneeringBossCombat.INSTANCE);

@@ -7,12 +7,10 @@ public class FPK {
 
 	public static Box[] LOOT = {
 
-			new Box(11846, 1, 100), // ORBS
-			new Box(11848, 1, 30), // ORBS
+			new Box(14525, 1, 100), // ORBS
+			new Box(11858, 1, 30), // ORBS
 			new Box(11850, 1, 20), // ORBS
-			new Box(11852, 1, 10),// ORBS
-			new Box(11854, 1, 5), // ORBS PACK (5K)
-			new Box(11856, 1, 5), // ORBS PACK (5K)
+			new Box(19582, 1, 10),// ORBS
 			new Box(3907, 1, 10), //SUPER BOX
 			new Box(8803, 1, 5), //EXTREME BOX
 			new Box(8804, 1, 1), //GRAND BOX

@@ -1416,7 +1416,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 break;
 
-            case 30332:
+            case 30832:
                 player.getCustomCombiner().combine();
                 break;
 

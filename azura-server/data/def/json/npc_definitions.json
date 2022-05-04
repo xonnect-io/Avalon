@@ -12965,25 +12965,25 @@
   },
   {
     "id": 587,
-    "name": "Jatix",
-    "examine": "He runs the Herblore shop.",
+    "name": "Ironman boss",
+    "examine": "Ironman boss",
     "combat": 0,
     "size": 1,
-    "attackable": false,
+    "attackable": true,
     "aggressive": false,
     "retreats": false,
     "poisonous": false,
-    "respawn": 10,
-    "maxHit": 0,
-    "hitpoints": 0,
-    "attackSpeed": 0,
-    "attackAnim": 0,
-    "defenceAnim": 0,
-    "deathAnim": 0,
-    "attackBonus": 0,
-    "defenceMelee": 0,
-    "defenceRange": 0,
-    "defenceMage": 0
+    "respawn": -1,
+    "maxHit": 320,
+    "hitpoints": 20000000,
+    "attackSpeed": 7,
+    "attackAnim": 1341,
+    "defenceAnim": 1340,
+    "deathAnim": 1342,
+    "attackBonus": 900,
+    "defenceMelee": 1000,
+    "defenceRange": 1000,
+    "defenceMage": 1000
   },
   {
     "id": 588,
@@ -139913,7 +139913,7 @@
 
   {
     "id": 9001,
-    "name": "Sonic",
+    "name": "Phase 1",
     "examine": "A zone monster.",
     "combat": 10,
     "size": 1,
@@ -139935,7 +139935,7 @@
   },
   {
     "id": 9002,
-    "name": "Patrick",
+    "name": "Phase 2",
     "examine": "A zone monster.",
     "combat": 50,
     "size": 1,
@@ -139957,7 +139957,7 @@
   },
   {
     "id": 9003,
-    "name": "Luigi",
+    "name": "Phase 3",
     "examine": "A zone monster.",
     "combat": 100,
     "size": 1,
@@ -139979,7 +139979,7 @@
   },
   {
     "id": 9004,
-    "name": "Squirtle",
+    "name": "Phase 4",
     "examine": "A zone monster.",
     "combat": 150,
     "size": 2,
@@ -140001,7 +140001,7 @@
   },
   {
     "id": 9005,
-    "name": "Mewtwo",
+    "name": "Phase 5",
     "examine": "A zone monster.",
     "combat": 225,
     "size": 2,
@@ -140023,7 +140023,7 @@
   },
   {
     "id": 9006,
-    "name": "Bowser",
+    "name": "Phase 6",
     "examine": "A zone monster.",
     "combat": 300,
     "size": 2,

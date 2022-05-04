@@ -9,18 +9,18 @@ public class RegularMysteryBox implements MysteryBox {
 
     private ArrayList<Item> common_items = new ArrayList<Item>() {
         {
-            add(new Item(4708, 1));
+            add(new Item(14499, 1));
             add(new Item(4710, 1));
-            add(new Item(4712, 1));
-            add(new Item(4714, 1));
-            add(new Item(4716, 1));
+            add(new Item(14497, 1));
+            add(new Item(14501, 1));
+            add(new Item(10350, 1));
             add(new Item(4718, 1));
-            add(new Item(4720, 1));
-            add(new Item(4722, 1));
-            add(new Item(4732, 1));
+            add(new Item(10348, 1));
+            add(new Item(10346, 1));
+            add(new Item(16054, 1));
             add(new Item(4734, 1));
-            add(new Item(4736, 1));
-            add(new Item(4738, 1));
+            add(new Item(17193, 1));
+            add(new Item(17339, 1));
             add(new Item(4153, 1));
             add(new Item(6914, 1));
             add(new Item(6916, 1));

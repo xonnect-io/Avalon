@@ -71,6 +71,7 @@ public class Shop extends ItemContainer {
      */
     private static final int EASTER_STORE_1 = 150;
     private static final int EASTER_STORE_2 = 151;
+    private static final int GLOBAL_BOSS = 123;
     private static final int SAPPHIRE_STORE = 131;
     private static final int EMERALD_STORE = 132;
     private static final int RUBY_STORE = 133;
@@ -265,7 +266,7 @@ public class Shop extends ItemContainer {
                     && id != 33 && id != 39 && id != 11 && id != 34 && id != 14 && id != 13 && id != 18 && id != 15
                     && id != 21 && id != 44
                     && id != 22 && id != 42 && id != 35 && id != 32 && id != 23 && id != 38 && id != 91 && id != 92 && id != 0
-                    && id != 93 && id != 94 && id != 95 && id != 96 && id != 97 && id != 98 && id != 30 && id != 117 && id != EASTER_STORE_1 && id != SAPPHIRE_STORE  && id != EMERALD_STORE  && id != RUBY_STORE  && id != ONYX_STORE  && id != DIAMOND_STORE   && id != ZENYTE_STORE && id != EASTER_STORE_2 && id != DUNGEONEERING_STORE_NEW) { // 22 + 23 ==
+                    && id != 93 && id != 94 && id != 95 && id != 96 && id != 97 && id != 98 && id != 30 && id != 117 && id != EASTER_STORE_1 && id != SAPPHIRE_STORE  && id != GLOBAL_BOSS  && id != EMERALD_STORE  && id != RUBY_STORE  && id != ONYX_STORE  && id != DIAMOND_STORE   && id != ZENYTE_STORE && id != EASTER_STORE_2 && id != DUNGEONEERING_STORE_NEW) { // 22 + 23 ==
                 // pikkupstix's
                 // materials,
                 // 38 =
@@ -387,7 +388,7 @@ public class Shop extends ItemContainer {
                     || id == TRAIN_MELEE
                     || id == TRAIN_RANGED
                     || id == TRAIN_MAGIC || id == KOL_STORE
-                    || id == SAPPHIRE_STORE || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE
+                    || id == SAPPHIRE_STORE || id == GLOBAL_BOSS || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE
                     || id == EASTER_STORE_1 || id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW
                     || id == ENERGY_FRAGMENT_STORE || id == AGILITY_TICKET_STORE
                     || id == GRAVEYARD_STORE || id == BARROWS_STORE || id == MEMBERS_STORE_I || id == MEMBERS_STORE_II
@@ -666,7 +667,7 @@ public class Shop extends ItemContainer {
                         || id == AFK
                         || id == TRAIN_MELEE
                         || id == TRAIN_RANGED
-                        || id == SAPPHIRE_STORE || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE
+                        || id == SAPPHIRE_STORE || id == GLOBAL_BOSS || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE
                         || id == EASTER_STORE_1 || id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW || id == KOL_STORE
                         || id == TRAIN_MAGIC
                         || id == STARDUST_EXCHANGE_STORE
@@ -1503,6 +1504,34 @@ public class Shop extends ItemContainer {
                     case 23007:
                         return new Object[]{1000, "Easter ticket"};
                 }
+            } else if (shop == GLOBAL_BOSS) {
+                switch (item) {
+                    case 15290:
+                    case 19116:
+                        return new Object[] { 2, "Global Boss Tokens" };
+
+                    case 19115:
+                        return new Object[] { 4, "Global Boss Tokens" };
+                    case 19114:
+                        return new Object[] { 6, "Global Boss Tokens" };
+                    case 20488:
+                        return new Object[] { 10, "Global Boss Tokens" };
+                    case 20489:
+                        return new Object[] { 100, "Global Boss Tokens" };
+                    case 4446:
+                    case 19886:
+                        return new Object[] { 250, "Global Boss Tokens" };
+                    case 15358:
+                    case 15359:
+                        return new Object[] { 200, "Global Boss Tokens" };
+                    case 1486:
+                        return new Object[] { 500, "Global Boss Tokens" };
+                    case 10947:
+                        return new Object[] { 750, "Global Boss Tokens" };
+                    case 9084:
+                    case 10946:
+                        return new Object[] { 1000, "Global Boss Tokens" };
+                }
             } else if (shop == SAPPHIRE_STORE) {
                 switch (item) {
                     case 23197:
@@ -1722,10 +1751,10 @@ public class Shop extends ItemContainer {
 
                         return new Object[]{25, "Warrior tickets"};
                     case 4151:
-                    case 4716:
-                    case 4720:
-                    case 4722:
-                    case 13262:
+                    case 10350:
+                    case 10348:
+                    case 10346:
+                    case 12933:
                     case 18353:
                         return new Object[]{55, "Warrior tickets"};
                     case 14910:
@@ -1759,10 +1788,10 @@ public class Shop extends ItemContainer {
 
                         return new Object[]{25, "Archer tickets"};
                     case 11235:
-                    case 4732:
-                    case 4736:
-                    case 4738:
-                    case 11732:
+                    case 16054:
+                    case 17193:
+                    case 17339:
+                    case 15031:
                     case 6585:
                         return new Object[]{55, "Archer tickets"};
                     case 14916:
@@ -1798,9 +1827,9 @@ public class Shop extends ItemContainer {
 
                         return new Object[]{25, "Wizard tickets"};
                     case 15486:
-                    case 4708:
-                    case 4712:
-                    case 4714:
+                    case 14499:
+                    case 14497:
+                    case 14501:
                     case 6737:
                     case 7462:
                         return new Object[]{55, "Wizard tickets"};
@@ -2032,15 +2061,15 @@ public class Shop extends ItemContainer {
                 }
             } else if (shop == BARROWS_STORE) {
                 switch (item) {
-                    case 4716:
+                    case 10350:
                     case 4718:
-                    case 4720:
-                    case 4722:
+                    case 10348:
+                    case 10346:
                         return new Object[]{110, "Barrows points"};
                     case 4753:
-                    case 4732:
+                    case 16054:
                     case 4724:
-                    case 4708:
+                    case 14499:
                         return new Object[]{80, "Barrows points"};
                     case 4755:
                     case 4747:
@@ -2052,13 +2081,13 @@ public class Shop extends ItemContainer {
                     case 4757:
                     case 4749:
                     case 4728:
-                    case 4736:
-                    case 4712:
+                    case 17193:
+                    case 14497:
                     case 4759:
                     case 4751:
                     case 4730:
-                    case 4738:
-                    case 4714:
+                    case 17339:
+                    case 14501:
                         return new Object[]{100, "Barrows points"};
                 }
             } else if (shop == MEMBERS_STORE_I) {

@@ -80,9 +80,9 @@ public final class MobDefinition {
 				definition.actions = new String[]{"Get-Task", null, "Claim-Reward", "Cancel-Task", null};
 				break;
 			case 9001:
-				definition.name = "Sonic";
+				definition.name = "Phase [1]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{99012};
+				definition.npcModels = new int[]{16079,16080,16203,16224,16225};
 				definition.npcSizeInSquares = 1;
 				definition.combatLevel = 10;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
@@ -92,33 +92,33 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				break;
 			case 9002:
-				definition.name = "Patrick";
+				definition.name = "Phase [2]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{99002};
+				definition.npcModels = new int[]{16073};
 				definition.npcSizeInSquares = 1;
 				definition.combatLevel = 50;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 400;
-				definition.scaleY = 400;
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
 				definition.drawYellowDotOnMap = true;
 				break;
 			case 9003:
-				definition.name = "Luigi";
+				definition.name = "Phase [3]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{99008};
+				definition.npcModels = new int[]{16226};
 				definition.npcSizeInSquares = 1;
 				definition.combatLevel = 100;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 160;
-				definition.scaleY = 160;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
 				definition.drawYellowDotOnMap = true;
 				break;
 			case 9004:
-				definition.name = "Squirtle";
+				definition.name = "Phase [4]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{99009};
+				definition.npcModels = new int[]{16228,16229,16236,16240,16241};
 				definition.npcSizeInSquares = 2;
 				definition.combatLevel = 150;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
@@ -128,21 +128,21 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				break;
 			case 9005:
-				definition.name = "Mewtwo";
+				definition.name = "Phase [5]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{99007};
+				definition.npcModels = new int[]{16243,16247,16251,16255,16259,16263};
 				definition.npcSizeInSquares = 2;
 				definition.combatLevel = 225;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 80;
-				definition.scaleY = 80;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
 				definition.drawYellowDotOnMap = true;
 				break;
 			case 9006:
-				definition.name = "Bowser";
+				definition.name = "Phase [6]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{99000};
+				definition.npcModels = new int[]{16266,16267,16268,16270,16271};
 				definition.npcSizeInSquares = 2;
 				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
@@ -267,6 +267,11 @@ public final class MobDefinition {
 				definition.walkAnimation = 1339;
 				break;
 
+			case 820:
+				definition.name = "Global Boss Store";
+				definition.actions = new String[] {"Trade", null, null, null, null};
+				definition.combatLevel = 0;
+				break;
 			case 1880:
 				definition.name = "@or2@YouTube Soldier";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -3100,20 +3105,11 @@ public final class MobDefinition {
 			case 302:
 				definition.name = "<col=f8ac00>double killcount pet";
 				definition.npcSizeInSquares = 1;
-				definition.standAnimation = 808;
-				definition.walkAnimation = 819;
+				definition.standAnimation = 5070;
+				definition.walkAnimation = 5070;
 				definition.scaleXZ = 170;
 				definition.scaleY = 170;
-				definition.npcModels = new int[9];
-				definition.npcModels[0] = 64124; //HEAD
-				definition.npcModels[1] = 0; //JAW
-				definition.npcModels[2] = 64126; //BODY
-				definition.npcModels[3] = 0; //CAPE
-				definition.npcModels[4] = 64130; //GLOVES
-				definition.npcModels[5] = 0; ////shield
-				definition.npcModels[6] = 0; //WEP
-				definition.npcModels[7] = 64128; //LEG
-				definition.npcModels[8] = 64131; //BOOT
+				definition.npcModels = new int[]{16072};
 				definition.scaleXZ = 90;
 				definition.scaleY = 90;
 				definition.actions = new String[5];
@@ -3502,9 +3498,10 @@ public final class MobDefinition {
 				break;
 
 			case 1614:
-				definition.name = "Imps";
+				definition.name = "Dawn Imps";
 				definition.scaleXZ = 190;
 				definition.scaleY = 190;
+				definition.rdc2 = 357782;
 				break;
 
 			case 8011:
@@ -4120,7 +4117,7 @@ public final class MobDefinition {
 				
 				case 117:
 				definition.setDefault();
-				definition.name = "Cowboy";
+				definition.name = "Zeldris";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
 				definition.npcSizeInSquares = 3;
@@ -4171,7 +4168,7 @@ public final class MobDefinition {
 				break;
 
 				case 187:
-				definition.name = "SS4 Gogeta";
+				definition.name = "Hellraiser";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
 				definition.npcSizeInSquares = 1;
@@ -4179,7 +4176,7 @@ public final class MobDefinition {
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 170;
 				definition.scaleY = 170;
-				definition.npcModels = new int[]{15108};
+				definition.npcModels = new int[]{16050,16052,16054,16056,16057,16058,16059};
 				break;
 
 				case 185:

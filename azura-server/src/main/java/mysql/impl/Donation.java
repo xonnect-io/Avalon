@@ -6,7 +6,6 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.DonationBossSystem;
-import com.ruse.world.content.GogetaSystem;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.entity.impl.player.Player;
 

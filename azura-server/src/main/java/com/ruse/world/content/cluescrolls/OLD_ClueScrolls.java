@@ -118,12 +118,12 @@ public enum OLD_ClueScrolls {
 			new Item(2581, 1), new Item(14000, 1), new Item(14001, 1), new Item(14002, 1), new Item(14003, 1),
 			new Item(2577, 1), // robin hoods
 			new Item(19336, 1), new Item(19337, 1), new Item(19338, 1), new Item(19339, 1), new Item(19340, 1),
-			new Item(13262, 1), new Item(20084, 1), // dragon items, golden maul
-			new Item(4708, 1), new Item(4712, 1), new Item(4714, 1), new Item(4710), // ahrims
-			new Item(4716, 1), new Item(4720, 1), new Item(4722, 1), new Item(4718, 1), // dharoks
+			new Item(12933, 1), new Item(20084, 1), // dragon items, golden maul
+			new Item(14499, 1), new Item(14497, 1), new Item(14501, 1), new Item(4710), // ahrims
+			new Item(10350, 1), new Item(10348, 1), new Item(10346, 1), new Item(4718, 1), // dharoks
 			new Item(4724, 1), new Item(4728, 1), new Item(4730, 1), new Item(4726, 1), // guthans
 			new Item(4745, 1), new Item(4749, 1), new Item(4751, 1), new Item(4747, 1), // torags
-			new Item(4732, 1), new Item(4734, 1), new Item(4736, 1), new Item(4738, 1), new Item(4740, 1000), // karil's
+			new Item(16054, 1), new Item(4734, 1), new Item(17193, 1), new Item(17339, 1), new Item(4740, 1000), // karil's
 			new Item(4753, 1), new Item(4757, 1), new Item(4759, 1), new Item(4755, 1), // verac's
 			new Item(2595, 1), new Item(2591, 1), new Item(2593, 1), new Item(2597, 1), new Item(3473, 1), // black (g)
 			new Item(3488, 1), new Item(3486, 1), new Item(3481, 1), new Item(3483, 1), new Item(3485, 1), // gilded

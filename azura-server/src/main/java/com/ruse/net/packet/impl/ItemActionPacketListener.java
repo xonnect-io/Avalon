@@ -28,6 +28,7 @@ import com.ruse.world.content.holidayevents.easter2017;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
 import com.ruse.world.content.instanceMananger.InstanceManager;
+import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.content.skill.impl.herblore.Herblore;
 import com.ruse.world.content.skill.impl.herblore.ingredientsBook;
 import com.ruse.world.content.skill.impl.hunter.*;
@@ -151,7 +152,7 @@ public class ItemActionPacketListener implements PacketListener {
             player.sendMessage("Please choose to keep or gamble your item before doing this!");
             return;
         }
-        if (player.getInventory().containsAny(11846, 11848, 11850, 11852, 11854, 11856) && !player.getInventory().containsAny(11846, 11848, 11850, 11852, 11854, 11856)) {
+        if (player.getInventory().containsAny(11846, 11848, 11850, 11852, 11854, 11856, 14525, 19582, 11858) && !player.getInventory().containsAny(11846, 11848, 11850, 11852, 11854, 11856, 14525, 19582, 11858)) {
             if (!player.getClickDelay().elapsed(250) || !player.getInventory().contains(itemId))
                 return;
             if (player.busy()) {
@@ -159,7 +160,9 @@ public class ItemActionPacketListener implements PacketListener {
                 return;
             }
 
-            int[] items = itemId == 11858 ? new int[]{10350, 10348, 10346, 10352}
+            int[] items = itemId == 11858 ? new int[]{4151, 10350, 10348, 10346}
+                    : itemId == 19582 ? new int[]{11235, 16054, 17193, 17339}
+                    : itemId == 14525 ? new int[]{15486, 14499, 14497, 14501}
                     : itemId == 19580 ? new int[]{19308, 19311, 19314, 19317, 19320}
                     : itemId == 11860 ? new int[]{10334, 10330, 10332, 10336}
                     : itemId == 11862 ? new int[]{10342, 10338, 10340, 10344}
@@ -470,8 +473,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getMysteryBoxOpener().display(20489, "$10 Launch Chest", commonLaunch, uncommonLaunch, raresLaunch);
                 break;
             case 23086:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.HOV_BOX);
-                player.getCasketOpening().openInterface();
+                HallsOfValor.handleReward(player);
                 break;
             case 11858:
             case 11860:
@@ -481,8 +483,9 @@ public class ItemActionPacketListener implements PacketListener {
             case 11850:
             case 11854:
             case 11852:
-            case 11846:
+            case 14525:
             case 19580:
+            case 19582:
                 if (!player.getClickDelay().elapsed(250) || !player.getInventory().contains(itemId))
                     return;
                 if (player.busy()) {
@@ -490,7 +493,9 @@ public class ItemActionPacketListener implements PacketListener {
                     return;
                 }
 
-                int[] items = itemId == 11858 ? new int[]{10350, 10348, 10346, 10352}
+                int[] items = itemId == 11858 ? new int[]{4151, 10350, 10348, 10346}
+                        : itemId == 19582 ? new int[]{11235, 16054, 17193, 17339}
+                        : itemId == 14525 ? new int[]{15486, 14499, 14497, 14501}
                         : itemId == 19580 ? new int[]{19308, 19311, 19314, 19317, 19320}
                         : itemId == 11860 ? new int[]{10334, 10330, 10332, 10336}
                         : itemId == 11862 ? new int[]{10342, 10338, 10340, 10344}
@@ -683,10 +688,10 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(19768, 1);
                 break;
             case 7956:
-                int[] commonpvm = new int[] {4716, 4720, 4718, 4722, 4708, 4712, 4714, 4710, 4732, 4736, 4738, 4734, 4753, 4757, 4759, 4755,
+                int[] commonpvm = new int[] {10350, 10348, 4718, 10346, 14499, 14497, 14501, 4710, 16054, 17193, 17339, 4734, 4753, 4757, 4759, 4755,
                         4745, 4749, 4751, 4747, 290};
-                int[] uncommonpvm = new int[] {11852, 11854, 11856, 11846, 11848, 19670};
-                int[] rarepvm = new int[] {4151,11235,15486,13262,18353,11732,6585,6737,7462};
+                int[] uncommonpvm = new int[] {19582, 14525, 11858, 19670};
+                int[] rarepvm = new int[] {4151,11235,15486,12933,18353,15031,6585,6737,7462};
                 player.getMysteryBoxOpener().display(7956, "Pvm box", commonpvm, uncommonpvm, rarepvm);
                 break;
             case 10025:
@@ -723,8 +728,8 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(22219, amount4).add(5022, 10_000 * amount4);
                 break;
             case 22214: //Pvm box t2
-                int[] pvmcommon = new int[] {11852,11854,11856,11846,11848 };
-                int[] pvmuncommon = new int[] {4151,11235,15486,13262,18353,11732,6585,6737,7462 };
+                int[] pvmcommon = new int[] {19582,14525,11858 };
+                int[] pvmuncommon = new int[] {4151,11235,15486,12933,18353,15031,6585,6737,7462 };
                 int[] pvmrare = new int[] {18686,18799,5095,13996,18834,19140,13913,18801,19139,13919,18800,19138 };
                 player.getMysteryBoxOpener().display(22214, "PVM Box (t2)", pvmcommon, pvmuncommon, pvmrare);
                 break;
@@ -1846,6 +1851,9 @@ public class ItemActionPacketListener implements PacketListener {
             case 11852:
             case 11854:
             case 11856:
+            case 11858:
+            case 19582:
+            case 14525:
                 if (!player.getClickDelay().elapsed(250) || !player.getInventory().contains(itemId))
                     return;
                 if (player.busy()) {
@@ -1863,7 +1871,9 @@ public class ItemActionPacketListener implements PacketListener {
                     return;
                 }
 
-                int[] items = itemId == 11858 ? new int[]{10350, 10348, 10346, 10352}
+                int[] items = itemId == 11858 ? new int[]{4151, 10350, 10348, 10346}
+                        : itemId == 19582 ? new int[]{11235, 16054, 17193, 17339}
+                        : itemId == 14525 ? new int[]{15486, 14499, 14497, 14501}
                         : itemId == 19580 ? new int[]{19308, 19311, 19314, 19317, 19320}
                         : itemId == 11860 ? new int[]{10334, 10330, 10332, 10336}
                         : itemId == 11862 ? new int[]{10342, 10338, 10340, 10344}

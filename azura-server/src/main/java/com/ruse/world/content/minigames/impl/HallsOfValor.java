@@ -18,7 +18,8 @@ import com.ruse.world.entity.impl.player.Player;
 public class HallsOfValor {
 
     public static Box[] loot = { //
-            new Box(995, 1000, 100000, 100D),
+            new Box(12855, 2_500, 10_000, 33D),
+            new Box(5022, 1_000, 3_000, 33D),
             new Box(23165, 1, 0.285D, true),
             new Box(23166, 1, 0.36D, true),
             new Box(23167, 1, 0.33D, true),
@@ -35,7 +36,6 @@ public class HallsOfValor {
     public static final Position TELEPORT_OUT = new Position(2585, 2521);
 
     public static final Item KEY_REWARD = new Item(23086);
-    public static final int CHEST_ID = 41206;
     public static final Position[] NPC_SPAWNS = {
             new Position(2217, 5032, 0),
             new Position(2197, 5016, 0),
@@ -56,12 +56,11 @@ public class HallsOfValor {
         this.player = player;
     }
 
-    public static void handleObject(Player player) {
+    public static void handleReward(Player player) {
         if (player.getInventory().contains(KEY_REWARD.getId())) {
             Box box = BoxLoot.getLoot(loot);
             player.getInventory().delete(KEY_REWARD.getId(), 1);
             player.getInventory().add(box.getId(), box.getAmount());
-
             Achievements.doProgress(player, Achievements.Achievement.OPEN_5_CHESTS_IN_HALLS_OF_VALOR);
             Achievements.doProgress(player, Achievements.Achievement.OPEN_25_CHESTS_IN_HALLS_OF_VALOR);
             Achievements.doProgress(player, Achievements.Achievement.OPEN_200_CHESTS_IN_HALLS_OF_VALOR);
@@ -117,7 +116,7 @@ public class HallsOfValor {
                 player.getRegionInstance().getNpcsList().remove(n);
             }
             player.setHovKilled(player.getHovKilled() + 1);
-            player.sendMessage("current KC " + player.getMinigameAttributes().getHallsOfValorAttributes().getKillcount());
+            player.sendMessage("@red@Current KC:@blu@ " + player.getMinigameAttributes().getHallsOfValorAttributes().getKillcount());
             if (player.getMinigameAttributes().getHallsOfValorAttributes().getKillcount() > 4) {
                 resetBarrows(player);
                 player.getInventory().add(KEY_REWARD);
