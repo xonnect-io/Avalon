@@ -4174,8 +4174,8 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
-				definition.scaleXZ = 170;
-				definition.scaleY = 170;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
 				definition.npcModels = new int[]{16050,16052,16054,16056,16057,16058,16059};
 				break;
 

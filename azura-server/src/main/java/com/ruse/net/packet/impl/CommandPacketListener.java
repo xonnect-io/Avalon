@@ -125,17 +125,15 @@ public class CommandPacketListener implements PacketListener {
             return;
         }
 
-        if (command[0].equalsIgnoreCase("gogeta")) {
+        if (command[0].equalsIgnoreCase("hellraiser")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(3358, 9307, 0);
+            Position position = new Position(3109, 5530, 0);
+            player.sendMessage("@blu@Current Hellraiser count: @red@" + HellraiserSystem.npckills);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
 
-        }
-        if (command[0].equalsIgnoreCase("gogetakills")) {
-            player.sendMessage("@blu@Current goku count: @red@" + HellraiserSystem.npckills);
         }
 
         if (player.getAmountDonated() >= 10) {
@@ -517,7 +515,7 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("vote")) {
             player.getPacketSender().sendString(1, GameSettings.VoteUrl);// "http://Ruseps.com/vote/?user="+player.getUsername());
-            player.getPacketSender().sendMessage("When you vote do ::claimvote to redeem votes");
+            player.getPacketSender().sendMessage("When you vote, do ::claimvote to redeem votes");
         }
         if (command[0].equalsIgnoreCase("pricelist")) {
             player.getPacketSender().sendString(1, GameSettings.PriceList);// "http://Ruseps.com/vote/?user="+player.getUsername());
@@ -537,13 +535,6 @@ public class CommandPacketListener implements PacketListener {
                 player.setToggledGlobalMessages(false);
             }
         }
-        if (command[0].equalsIgnoreCase("moneymaking")) {
-            player.getPacketSender().sendMessage("Type ::discord and go to the Guides Section!");
-        }
-      /*  if (command[0].equalsIgnoreCase("well")) {
-            player.setDialogueActionId(215);
-            DialogueManager.start(player, 215);
-        }*/
 
         if (command[0].equalsIgnoreCase("pos") && player.getLocation() != Location.HOME_BANK
                 && player.getAmountDonated() < Donation.EMERALD_DONATION_AMOUNT) {
@@ -621,7 +612,18 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, new Position(2139, 5019, 0), player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the dragon kings lair!");
         }
-        if (command[0].equalsIgnoreCase("nightmare")) {
+
+        if (command[0].equalsIgnoreCase("naraku") || command[0].equalsIgnoreCase("narak")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            TeleportHandler.teleportPlayer(player, new Position(3420, 9563, 0), player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to Naraku Global boss");
+        }
+
+        if (command[0].equalsIgnoreCase("nm")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -726,18 +728,7 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
             player.getPacketSender().sendMessage("Teleporting you to our shops!");
         }
-      /*  if ((command[0].equalsIgnoreCase("oldshop") && !player.getRights().OwnerDeveloperOnly())
-                || command[0].equalsIgnoreCase("oldshops")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            Position position = new Position(3690, 2977, 0);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-            player.getPacketSender().sendMessage("Teleporting you to our shops!");
-        }*/
-       /* if (command[0].equalsIgnoreCase("chill")) {
+        if (command[0].equalsIgnoreCase("chill")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -746,7 +737,8 @@ public class CommandPacketListener implements PacketListener {
             Position position = GameSettings.CHILL_CORDS;
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
             player.getPacketSender().sendMessage("Teleporting you to <col=#002AF8>Chill!");
-        }*/
+        }
+
         if (command[0].equalsIgnoreCase("help")) {
             if (player.getLastYell().elapsed(30000)) {
                 if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
@@ -771,12 +763,14 @@ public class CommandPacketListener implements PacketListener {
                                 "<col=663300>If it's an emergency, please private message a staff member directly instead.");
             }
         }
+
         if (command[0].equalsIgnoreCase("empty")) {
             //   DialogueManager.editOptions(523, 1, "Are you sure you would like to empty your items?");
             player.setDialogueActionId(523);
             DialogueManager.start(player, 523);
             return;
         }
+
         if (command[0].equalsIgnoreCase("players")) {
             int players = World.getPlayers().size() + GameSettings.players;
             player.getPacketSender().sendMessage(
@@ -835,12 +829,7 @@ public class CommandPacketListener implements PacketListener {
             }
             return;
         }
-        if (command[0].equalsIgnoreCase("[cn]")) {
-            if (player.getInterfaceId() == 40172) {
-                ClanChatManager.setName(player, wholeCommand.substring(wholeCommand.indexOf(" ") + 1));
-            }
-        }
-       /* if (GameSettings.BETA_ENABLED) {
+        if (GameSettings.BETA_ENABLED) {
             if (command[0].equalsIgnoreCase("ownerup")) {
                 player.setRights(PlayerRights.DEVELOPER);
                 player.getPacketSender().sendRights();
@@ -851,7 +840,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendRights();
                 PlayerPanel.refreshPanel(player);
             }
-        }*/
+        }
     }
 
 
@@ -1802,7 +1791,7 @@ public class CommandPacketListener implements PacketListener {
             }
         }
 
-        if (command[0].equalsIgnoreCase("spawngogeta")) {
+        if (command[0].equalsIgnoreCase("spawnhellraiser")) {
             HellraiserSystem.commandSpawnBoss();
         }
         if (command[0].equalsIgnoreCase("spawnafk")) {
@@ -1810,9 +1799,6 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equals("spawnvoteboss")) {
             VoteBossDrop.handleSpawn();
-        }
-        if (command[0].equals("spawndonoboss")) {
-            DonationBossSystem.forceSpawn();
         }
         if (command[0].equalsIgnoreCase("delete")) {
             int id = Integer.parseInt(command[1]);

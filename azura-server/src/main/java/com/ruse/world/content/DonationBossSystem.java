@@ -6,16 +6,25 @@ import com.ruse.world.World;
 import com.ruse.world.entity.impl.npc.NPC;
 
 public class DonationBossSystem {
+
 	public static int getLeft() {
 		return totalCount - amntDonated;
 		}
+
 	public static final int totalCount = 500;
 	public static int amntDonated = 0;
-	
+	public static NPC currentSpawn;
+
 	public static void forceSpawn() {
+
+		if (currentSpawn != null){
+			System.out.println("Already spawned.");
+			return;
+		}
+		currentSpawn = new NPC(3830, new Position(3491, 2779));
+
 		String message = "The Donation boss has spawned, Visit ::donoboss to fight him!";
-		NPC npc = new NPC(3830, new Position(3491, 2779));
-		World.register(npc);
+		World.register(currentSpawn);
 		World.sendMessage(message);
 		DiscordMessager.sendDonationBossLog("The Donation boss has spawned, Visit ::donoboss to fight him!");
 		GameSettings.broadcastMessage = message;
@@ -25,8 +34,15 @@ public class DonationBossSystem {
 
 	public static void spawnBoss() {
 		if(amntDonated < 500) {
+			System.out.println("$500 donation limit has not been reached.");
 			return;
 		}
+
+		if (currentSpawn != null){
+			System.out.println("Already spawned.");
+			return;
+		}
+
 		String message = "The Donation boss has spawned, Visit ::donoboss to fight him!";
 		NPC npc = new NPC(3830, new Position(3491, 2779));
 		World.register(npc);
@@ -35,6 +51,10 @@ public class DonationBossSystem {
 		DiscordMessager.sendDonationBossLog("The Donation boss has spawned, Visit ::donoboss to fight him!");
 		GameSettings.broadcastTime = 100;
 		amntDonated = 0;
+	}
+
+	public static int getAmntDonated() {
+		return amntDonated;
 	}
 
 	public static void callBoss() {

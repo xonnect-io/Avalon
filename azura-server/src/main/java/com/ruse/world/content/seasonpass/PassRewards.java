@@ -8,11 +8,11 @@ import com.ruse.model.Item;
 
 public class PassRewards {
 
-	public static final String INFO_FILE_PATH = "./data/saves/seasonpass/info.txt";
-	public static final String REWARDS_FILE_PATH = "./data/saves/seasonpass/memberRewards.txt";
-	public static final String DEFAULT_REWARDS_FILE_PATH = "./data/saves/seasonpass/defaultRewards.txt";
-	public static Item[] defaultRewards;
-	public static Item[] memberRewards;
+	public static final String INFO_FILE_PATH = "./data/saves/seasonpass/seasonInformation.txt";
+	public static final String REWARDS_FILE_PATH = "./data/saves/seasonpass/goldRewards.txt";
+	public static final String DEFAULT_REWARDS_FILE_PATH = "./data/saves/seasonpass/silverRewards.txt";
+	public static Item[] silverRewards;
+	public static Item[] goldRewards;
 	public static int SEASON;
 	public static int SEASONEND;
 
@@ -36,7 +36,7 @@ public class PassRewards {
 	}
 
 	public static void loadDefaultRewards() {
-		defaultRewards = new Item[50];
+		silverRewards = new Item[50];
 		try {
 			BufferedReader r = new BufferedReader(new FileReader(DEFAULT_REWARDS_FILE_PATH));
 			int index = 0;
@@ -49,7 +49,7 @@ public class PassRewards {
 				}
 				String[] code = line.split(" : ");
 
-				defaultRewards[index] = new Item(Integer.parseInt(code[0]), Integer.parseInt(code[1]));
+				silverRewards[index] = new Item(Integer.parseInt(code[0]), Integer.parseInt(code[1]));
 				index++;
 			}
 			r.close();
@@ -59,7 +59,7 @@ public class PassRewards {
 	}
 
 	public static void loadMemberRewards() {
-		memberRewards = new Item[50];
+		goldRewards = new Item[50];
 		try {
 			BufferedReader r = new BufferedReader(new FileReader(REWARDS_FILE_PATH));
 			int index = 0;
@@ -72,7 +72,7 @@ public class PassRewards {
 				}
 				String[] code = line.split(" : ");
 
-				memberRewards[index] = new Item(Integer.parseInt(code[0]), Integer.parseInt(code[1]));
+				goldRewards[index] = new Item(Integer.parseInt(code[0]), Integer.parseInt(code[1]));
 				index++;
 			}
 			r.close();

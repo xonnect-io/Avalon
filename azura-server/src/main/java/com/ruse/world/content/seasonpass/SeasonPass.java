@@ -8,6 +8,8 @@ public class SeasonPass {
 	private Player player;
 	private int tier;
 	private int xp;
+	private int SEASON = 1;
+	private int SEASON_ENDS = 1;
 	private boolean member;
 
 	public SeasonPass(Player player) {
@@ -21,14 +23,14 @@ public class SeasonPass {
 		player.getPacketSender().sendString(105009, "SEASON " + getTier());
 		player.getPacketSender().sendString(105010, "Season Ends: " + getTier() + " days");
 
-		System.out.println("l: " + PassRewards.memberRewards[1].getId());
+		System.out.println("l: " + PassRewards.goldRewards[1].getId());
 		int index = 0;
 		int interfaceId = 105105;
-		for (int i = 0; i < PassRewards.defaultRewards.length; i++) {
-			player.getPacketSender().sendItemOnInterface(interfaceId++, PassRewards.defaultRewards[index].getId(),
-					PassRewards.defaultRewards[index].getAmount());
-			player.getPacketSender().sendItemOnInterface(interfaceId++, PassRewards.memberRewards[index].getId(),
-					PassRewards.memberRewards[index].getAmount());
+		for (int i = 0; i < PassRewards.silverRewards.length; i++) {
+			player.getPacketSender().sendItemOnInterface(interfaceId++, PassRewards.silverRewards[index].getId(),
+					PassRewards.silverRewards[index].getAmount());
+			player.getPacketSender().sendItemOnInterface(interfaceId++, PassRewards.goldRewards[index].getId(),
+					PassRewards.goldRewards[index].getAmount());
 
 			player.getPacketSender().sendConfig(interfaceId++, 1714 + index);
 			player.getPacketSender().sendConfig(interfaceId++, 1814 + index);

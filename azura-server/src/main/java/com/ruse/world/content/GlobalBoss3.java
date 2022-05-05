@@ -24,7 +24,7 @@ public class GlobalBoss3 {
     // before the world is created and it wont spawn on server boot for 3 hrs
     public static int tick = -20;
 
-    public static Position SPAWN_POINT = new Position(2143, 5016,0);
+    public static Position SPAWN_POINT = new Position(3428, 9566,0);
 
     public static int[] BOSS_IDS = {
             3305

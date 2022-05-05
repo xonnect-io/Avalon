@@ -553,19 +553,6 @@ public class SkillManager {
     }
 
     public SkillManager resetSkill(Skill skill, boolean prestige) {
-        if (player.getEquipment().getFreeSlots() != player.getEquipment().capacity()) {
-            player.getPacketSender().sendMessage("Please unequip all your items first.");
-            return this;
-        }
-        if (player.getLocation() == Location.WILDERNESS || player.getCombatBuilder().isBeingAttacked()) {
-            player.getPacketSender().sendMessage("You cannot do this at the moment");
-            return this;
-        }
-        if (prestige && player.getSkillManager().getMaxLevel(skill) < getMaxAchievingLevel(skill)) {
-            player.getPacketSender().sendMessage(
-                    "You must have reached the maximum level in a skill to prestige in it. @blu@(Level 120)");
-            return this;
-        }
         if (prestige) {
             int pts = getPrestigePoints(player, skill);
             player.getPointsHandler().setPrestigePoints(pts, true);
@@ -585,7 +572,6 @@ public class SkillManager {
         BonusManager.update(player);
         WeaponInterfaces.assign(player, player.getEquipment().get(Equipment.WEAPON_SLOT));
         WeaponAnimations.update(player);
-        player.getPacketSender().sendMessage("You have reset your " + skill.getFormatName() + " level.");
         return this;
     }
 

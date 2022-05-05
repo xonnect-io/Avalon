@@ -47,7 +47,7 @@ public class Configuration {
 	public static boolean NEW_HITMARKS = true;
 	public static boolean CONSTITUTION_ENABLED = false;
 	public static boolean NEW_HEALTH_BARS = true;
-	public static boolean MONEY_POUCH_ENABLED = true;
+	public static boolean MONEY_POUCH_ENABLED = false;
 	public static boolean SMILIES_ENABLED = false;
 	public static boolean NOTIFICATIONS_ENABLED = false;
 	public static boolean HIGHLIGHT_USERNAME = true;
@@ -55,8 +55,8 @@ public class Configuration {
 	public static boolean NEW_FUNCTION_KEYS = true;
 	public static boolean PARTICLES_ENABLED = true;
 	public static boolean FOG_ENABLED = false;
-	public static boolean GROUND_TEXT = false;
-	public static boolean HIGH_DETAIL = true;
+	public static boolean GROUND_TEXT = true;
+	public static boolean HIGH_DETAIL = false;
 //	public static boolean hdTexturing = true;
 	public static boolean hdMinimap = false;
 	public static boolean hdShading = false;

@@ -118,6 +118,7 @@ public class Donation implements Runnable {
                         + ", Item: " + ItemDefinition.forId(id).getName() + ", Amount: " + item_number + ", ID: " + id + ", item_number: " + item_number);
 
                 DonationBossSystem.amntDonated+= paid;
+                DonationBossSystem.spawnBoss();
                 player.sendMessage("Thanks for donating!");
 
                 if (paid >= 5) {

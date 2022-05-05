@@ -31,20 +31,22 @@ public class PlayerPanel {
                 "Bonus Skill: @whi@" + StringUtils.capitalizeFirst(DoubleXPSkillEvent.currentSkill.toString()),
                 (WellOfGoodwill.isActive() ? "Well of Goodwill: @whi@On" : "Well of Goodwill: @whi@Off"),
                 "Globals",
-                "Gogeta: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",
+                "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
+                "Hellraiser: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",
+                (DonationBossSystem.currentSpawn == null
+                ? "Donation boss: @whi@" + DonationBossSystem.getAmntDonated() + "/500 donated"
+                : "Donation boss:@whi@ Alive ::donoboss"),
                 (VoteBossDrop.currentSpawn == null
                         ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/50 please vote!"
-                        : "Vote Boss: @whi@::Vboss"),
-                "Donation boss: @whi@" + DonationBossSystem.amntDonated + "/500 donated",
-                "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
+                        : "Vote Boss:@whi@ Alive ::Vboss"),
                 (GlobalBoss4.currentBoss == null
-                ? "Dragon King: @whi@" + GlobalBoss4.timeLeft() : "Dragon King: @gre@Alive"),
+                ? "Dragon King: @whi@" + GlobalBoss4.timeLeft() : "Dragon King: @whi@Alive ::dk"),
                 (GlobalBoss2.currentBoss == null
-                ? "Nightmare boss: @whi@" + GlobalBoss2.timeLeft() : "Nightmare boss : @gre@Alive"),
+                ? "Nightmare boss: @whi@" + GlobalBoss2.timeLeft() : "Nightmare boss : @whi@Alive ::nm"),
                 (GlobalBoss3.currentBoss == null
-                ? "Naraku boss: @whi@" + GlobalBoss3.timeLeft() : "Naraku boss : @gre@Alive"),
+                ? "Naraku boss: @whi@" + GlobalBoss3.timeLeft() : "Naraku boss : @whi@Alive ::naraku"),
                 (GlobalBoss5.currentBoss == null
-                ? "Ironman boss: @whi@" + GlobalBoss5.timeLeft(): "Ironman boss : @gre@Alive"),
+                ? "Ironman boss: @whi@" + GlobalBoss5.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
                 "",
                 "",
                 "",

@@ -840,15 +840,9 @@ public class Locations {
 		},
 		VARROCK(new int[] { 3167, 3272 }, new int[] { 3263, 3504 }, false, true, true, true, true, true) {
 		},
-		/*
-		 * BANK(new int[]{3090, 3099, 3089, 3090, 3248, 3258, 3179, 3191, 2944, 2948,
-		 * 2942, 2948, 2944, 2950, 3008, 3019, 3017, 3022, 3203, 3213, 3212, 3215, 3215,
-		 * 3220, 3220, 3227, 3227, 3230, 3226, 3228, 3227, 3229}, new int[]{3487, 3500,
-		 * 3492, 3498, 3413, 3428, 3432, 3448, 3365, 3374, 3367, 3374, 3365, 3370, 3352,
-		 * 3359, 3352, 3357, 3200, 3237, 3200, 3235, 3202, 3235, 3202, 3229, 3208, 3226,
-		 * 3230, 3211, 3208, 3226}, false, true, true, false, false, true) { },
-		 */
-		// xyyx
+		NARAKU(new int[] { 3412, 3433 }, new int[] { 9555, 9580 }, true, true, true, false, false, false) {
+		},
+
 		SKELETAL(new int[] { 3323, 3357 }, new int[] { 3162, 3188 }, true, true, true, false, false, false) {
 		},
 
@@ -1454,7 +1448,7 @@ for (Item item : player.getInventory().getItems()) {
 			}
 
 		},
-		GRAVEYARD(new int[] { 3485, 3517 }, new int[] { 3559, 3580 }, true, true, false, true, false, false) {
+		GRAVEYARD(new int[] { 2560, 2599 }, new int[] { 4490, 4530 }, true, true, false, true, false, false) {
 			@Override
 			public boolean canTeleport(Player player) {
 				if (player.getMinigameAttributes().getGraveyardAttributes().hasEntered()) {

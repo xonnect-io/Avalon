@@ -427,11 +427,10 @@ public class PlayerHandler {
             player.getPacketSender().sendMessage("Your Dungeon has been disbanded.");
             player.setInDung(false);
         }
-        if (player.getLocation() == Location.GRAVEYARD && player.getPosition().getY() > 3566) {
+        if (player.getLocation() == Location.GRAVEYARD) {
             PlayerLogs.log(player.getUsername(), "logged in inside the graveyard arena, moved their ass out.");
-            player.moveTo(new Position(3503, 3565, 0));
-            player.setPositionToFace(new Position(3503, 3566));
-            player.getPacketSender().sendMessage("You logged off inside the graveyard arena. Moved you to lobby area.");
+            player.moveTo(GameSettings.DEFAULT_POSITION);
+            player.getPacketSender().sendMessage("You logged off inside the graveyard arena. You were moved home.");
         }
         if (player.getPosition().getX() == 3004 && player.getPosition().getY() >= 3938
                 && player.getPosition().getY() <= 3949) {

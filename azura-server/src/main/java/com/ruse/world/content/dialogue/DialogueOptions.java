@@ -41,6 +41,8 @@ import com.ruse.world.entity.impl.npc.NpcAggression;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Donation;
 
+import static com.ruse.model.Skill.*;
+
 public class DialogueOptions {
 
     // Last id used = 88
@@ -149,10 +151,10 @@ public class DialogueOptions {
                     break;
                 case 15:
                     player.getPacketSender().sendInterfaceRemoval();
-                    int total = player.getSkillManager().getMaxLevel(Skill.ATTACK)
-                            + player.getSkillManager().getMaxLevel(Skill.STRENGTH);
-                    boolean has99 = player.getSkillManager().getMaxLevel(Skill.ATTACK) >= 99
-                            || player.getSkillManager().getMaxLevel(Skill.STRENGTH) >= 99;
+                    int total = player.getSkillManager().getMaxLevel(ATTACK)
+                            + player.getSkillManager().getMaxLevel(STRENGTH);
+                    boolean has99 = player.getSkillManager().getMaxLevel(ATTACK) >= 99
+                            || player.getSkillManager().getMaxLevel(STRENGTH) >= 99;
                     if (total < 130 && !has99) {
                         player.getPacketSender().sendMessage("");
                         player.getPacketSender().sendMessage("You do not meet the requirements of a Warrior.");
@@ -734,11 +736,11 @@ public class DialogueOptions {
                     player.getPacketSender().sendInterfaceRemoval();
                     for (AchievementDataOLD d : AchievementDataOLD.values()) {
                         if (!((player.getSkillManager().getExperience(Skill.AGILITY) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.ATTACK) >= 200000000
+                                && player.getSkillManager().getExperience(ATTACK) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.CONSTITUTION) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.COOKING) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.CRAFTING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.DEFENCE) >= 200000000
+                                && player.getSkillManager().getExperience(DEFENCE) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.INVENTION) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.FARMING) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.FIREMAKING) >= 200000000
@@ -753,7 +755,7 @@ public class DialogueOptions {
                                 && player.getSkillManager().getExperience(Skill.RUNECRAFTING) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.SLAYER) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.SMITHING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.STRENGTH) >= 200000000
+                                && player.getSkillManager().getExperience(STRENGTH) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.THIEVING) >= 200000000
                                 && player.getSkillManager().getExperience(Skill.WOODCUTTING) >= 200000000))) {
                             player.getPacketSender().sendMessage(
@@ -1248,29 +1250,7 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
-                case 8005:
-                    player.getPacketSender().sendInterfaceRemoval();
-                    if (!player.getSkillManager().maxed()) {
-                        DialogueManager.sendStatement(player, "You must be maxed in all skills to do this.");
-                        return;
-                    }
-                    /*if (!player.getAchievements().hasCompletedAll()){
-                                              DialogueManager.sendStatement(player, "You must complete all achievements to do this.");
-                        return;
-                    }*/
-                    if (player.getInventory().contains(ItemDefinition.COIN_ID, 120_000_000)) {
-                        player.getInventory().delete(ItemDefinition.COIN_ID, 120_000_000);
-                    } else if (player.getInventory().contains(ItemDefinition.MILL_ID, 120000)) {
-                        player.getInventory().delete(ItemDefinition.MILL_ID, 120000);
-                    } else {
-                        DialogueManager.sendStatement(player, "You need 120m coins to do this.");
-                        return;
-                    }
 
-                    player.getInventory().add(14019, 1);
-                    player.getPacketSender().sendMessage("You've purchased a Max cape.");
-
-                    break;
                 case 568:
                     ShopManager.getShops().get(207).open(player);
                     break;
@@ -1676,7 +1656,6 @@ public class DialogueOptions {
                 case 668://no
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
-                case 8005:
                 case 568:
                 case 9928:
                 case 666:
@@ -1799,6 +1778,23 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+                case 8005:
+                    player.getPacketSender().sendInterfaceRemoval();
+                    if (!player.getSkillManager().maxed()) {
+                        DialogueManager.sendStatement(player, "You must be maxed in all skills to do this.");
+                        return;
+                    }
+                    if (player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 5_000_000)) {
+                        player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 5_000_000);
+                    } else {
+                        DialogueManager.sendStatement(player, "You need 5m upgrade tokens to do this.");
+                        return;
+                    }
+
+                    player.getInventory().add(14019, 1);
+                    player.getPacketSender().sendMessage("You've purchased a Max cape.");
+                    break;
+
                 case 9906:
                     if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER)
                             && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
@@ -1979,6 +1975,49 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+                case 8005:
+                    player.getPacketSender().sendInterfaceRemoval();
+                    if (!player.getSkillManager().maxed()) {
+                        DialogueManager.sendStatement(player, "You must be maxed in all skills to do this.");
+                        return;
+                    }
+                    if (player.getEquipment().getFreeSlots() != player.getEquipment().capacity()) {
+                        player.getPacketSender().sendMessage("Please unequip all your items first.");
+                        return ;
+                    }
+                    if (player.getLocation() == Location.WILDERNESS || player.getCombatBuilder().isBeingAttacked()) {
+                        player.getPacketSender().sendMessage("You cannot do this at the moment");
+                        return ;
+                    }
+                    player.getSkillManager().resetSkill(ATTACK, false);
+                    player.getSkillManager().resetSkill(DEFENCE, false);
+                    player.getSkillManager().resetSkill(STRENGTH, false);
+                    player.getSkillManager().resetSkill(CONSTITUTION, false);
+                    player.getSkillManager().resetSkill(RANGED, false);
+                    player.getSkillManager().resetSkill(PRAYER, false);
+                    player.getSkillManager().resetSkill(MAGIC, false);
+                    player.getSkillManager().resetSkill(COOKING, false);
+                    player.getSkillManager().resetSkill(WOODCUTTING, false);
+                    player.getSkillManager().resetSkill(FLETCHING, false);
+                    player.getSkillManager().resetSkill(FISHING, false);
+                    player.getSkillManager().resetSkill(FIREMAKING, false);
+                    player.getSkillManager().resetSkill(CRAFTING, false);
+                    player.getSkillManager().resetSkill(SMITHING, false);
+                    player.getSkillManager().resetSkill(MINING, false);
+                    player.getSkillManager().resetSkill(HERBLORE, false);
+                    player.getSkillManager().resetSkill(AGILITY, false);
+                    player.getSkillManager().resetSkill(THIEVING, false);
+                    player.getSkillManager().resetSkill(SLAYER, false);
+                    player.getSkillManager().resetSkill(FARMING, false);
+                    player.getSkillManager().resetSkill(RUNECRAFTING, false);
+                    player.getSkillManager().resetSkill(INVENTION, false);
+                    player.getSkillManager().resetSkill(HUNTER, false);
+                    player.getSkillManager().resetSkill(SUMMONING, false);
+                    player.getPointsHandler().setPrestigePoints(1, true);
+                    player.getPointsHandler().incrementTotalPrestiges(1);
+                    player.getPacketSender().sendMessage("You have prestiged your account, your total prestige is now " + player.getTotalPrestiges());
+                    break;
+
                 case 9906:
                     if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER)
                             && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
@@ -2238,6 +2277,7 @@ public class DialogueOptions {
                 case 196:
                 case 197:
                 case 65:
+                case 8005:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 41:

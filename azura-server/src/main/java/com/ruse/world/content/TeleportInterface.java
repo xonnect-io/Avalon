@@ -5,6 +5,7 @@ import com.ruse.model.definitions.NPCDrops;
 import com.ruse.world.content.boxes.Raids1;
 import com.ruse.world.content.boxes.Starter;
 import com.ruse.world.content.casketopening.Box;
+import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
@@ -277,6 +278,11 @@ public class TeleportInterface {
             player.getPacketSender().sendInterfaceRemoval();
             return;
         }
+        if (minigameData == Minigames.PURGE) {
+            DialogueManager.start(player, 95);
+            player.setDialogueActionId(57);
+            return;
+        }
       /*  if (minigameData == Minigames.VOD) {
             player.vod.initArea();
             player.vod.start();
@@ -478,6 +484,7 @@ public class TeleportInterface {
         CASH_DRAGON("Cash dragons", 500, new int[]{2911, 3613, 0}, 1500),
         DEMON_GODDESS("Demon Goddesses", 501, new int[]{2784, 4445, 0}, 725),
         ENERGY_SKELETON("Energy Skeletons", 503, new int[]{2088, 3995, 0}, 700),
+        TUROTH("Turoth", 1627, new int[]{2088, 3995, 0}, 400),
         /*VAMP("Vampyre hands", 1703, new int[]{1815, 4909, 0}, 700),
         JELLY("Jellyfish", 1721, new int[]{1848, 4896, 0}, 800),
         JELLO("Jello", 1729, new int[]{1878, 4908, 0}, 800),
@@ -595,6 +602,7 @@ public class TeleportInterface {
 
     public enum Minigames implements Teleport {
         STARTER_ZONE("Starter Zone", 9001, new int[]{1, 1, 0}, Starter.rewards, 600),
+        PURGE("The Purge", 9816, new int[]{2580, 4509, 0}, TreasureHunter.loot, 3000),
         DUNG("Legends Raids", 585, new int[]{2553, 3718, 0}, Raids1.rewards, 1450),
         IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1400),
         //VOD("Void of Deception", 9028, new int[]{1954, 5010, 0}, VoidOfDarkness.loot, 600),
