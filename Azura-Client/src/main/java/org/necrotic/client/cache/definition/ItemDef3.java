@@ -999,6 +999,20 @@ public class ItemDef3 {
 				itemDef.rotationX = itemDef.rotationX;
 				break;
 
+			case 23237:
+				itemDef.copyItem(3849);
+				itemDef.name = "Unknown Chest";
+				itemDef.actions = new String[]{"Open", null, null, null, "Drop"};
+				itemDef.modelID = 100201;
+				itemDef.modelOffsetX = itemDef.modelOffsetX;
+				itemDef.modelOffsetY = itemDef.modelOffsetY;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = itemDef.rotationY;
+				itemDef.rotationX = itemDef.rotationX;
+				itemDef.rdc2 = 195533;
+				break;
+				
+				
 			case 23087:
 				itemDef.copyItem(6585);
 				itemDef.name = "Collectors necklace";
@@ -4908,16 +4922,16 @@ public class ItemDef3 {
 //	itemDef.modelRotationX = 948;
 				break;
 			case 8828:
-				itemDef.copyItem(4882);
 				itemDef.name = "Elite helm (melee)";
-				itemDef.modelOffsetX = 1;
-				itemDef.modelOffsetY = -60;
-				itemDef.modelZoom = 1000;
-				itemDef.rotationY = 230;
-				itemDef.rotationX = 200;
-				itemDef.modelID = 64114;
-				itemDef.maleEquip1 = 64115;
-				itemDef.femaleEquip1 = 64115;
+				itemdefedit = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 80;
+				itemDef.modelZoom = 913;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 0;
+				itemDef.modelID = 16373;
+				itemDef.maleEquip1 = 16373;
+				itemDef.femaleEquip1 = 16373;
 				itemDef.groundActions = new String[5];
 				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;
@@ -4928,12 +4942,17 @@ public class ItemDef3 {
 				itemDef.stackable = false;
 				break;
 			case 8829:
-				itemDef.copyItem(5575);
+				itemdefedit = ItemDefinition.get(4894);
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 50;
+				itemDef.modelZoom = 1580;
+				itemDef.rotationY = 20;
+				itemDef.rotationX = 0;
 				itemDef.name = "Elite body (melee)";
-				itemDef.modelZoom = 1600;
-				itemDef.modelID = 64116;
-				itemDef.maleEquip1 = 64117;
-				itemDef.femaleEquip1 = 64117;
+				itemDef.modelZoom = 1400;
+				itemDef.modelID = 16374;
+				itemDef.maleEquip1 = 16374;
+				itemDef.femaleEquip1 = 16374;
 				itemDef.groundActions = new String[5];
 				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;
@@ -4945,13 +4964,15 @@ public class ItemDef3 {
 				break;
 
 			case 8833:
-				itemDef.copyItem(5576);
 				itemDef.name = "Elite legs (melee)";
-				itemDef.modelOffsetY = 20;
-				itemDef.modelZoom = 2000;
-				itemDef.modelID = 64118;
-				itemDef.maleEquip1 = 64119;
-				itemDef.femaleEquip1 = 64119;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 5;
+				itemDef.modelZoom = 1757;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 2040;
+				itemDef.modelID = 16375;
+				itemDef.maleEquip1 = 16375;
+				itemDef.femaleEquip1 = 16375;
 				itemDef.groundActions = new String[5];
 				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;
@@ -4962,47 +4983,72 @@ public class ItemDef3 {
 				break;
 				
 			case 15642:
-				itemDef.copyItem(4882);
 				itemDef.name = "Elite helm (ranged)";
-				itemDef.modelID = 16023;
-				itemDef.maleEquip1 = 16024;
-				itemDef.femaleEquip1 = 16024;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemdefedit = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 80;
+				itemDef.modelZoom = 773;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 0;
+				itemDef.modelID = 16377;
+				itemDef.maleEquip1 = 16377;
+				itemDef.femaleEquip1 = 16377;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{64};
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
 				break;
 				
 			case 15643:
-				itemDef.copyItem(4894);
+				itemdefedit = ItemDefinition.get(4894);
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 50;
+				itemDef.modelZoom = 1580;
+				itemDef.rotationY = 20;
+				itemDef.rotationX = 0;
 				itemDef.name = "Elite body (ranged)";
-				itemDef.modelID = 16025;
-				itemDef.maleEquip1 = 16032;
-				itemDef.femaleEquip1 = 16032;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.modelZoom = 1400;
+				itemDef.modelID = 16376;
+				itemDef.maleEquip1 = 16376;
+				itemDef.femaleEquip1 = 16376;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{64};
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
 				break;
 
 			case 15644:
-				itemDef.copyItem(4900);
 				itemDef.name = "Elite legs (ranged)";
-				itemDef.modelID = 16037;
-				itemDef.maleEquip1 = 16037;
-				itemDef.femaleEquip1 = 16037;
-				itemDef.rotationY = 140;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 5;
+				itemDef.modelZoom = 1757;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 2040;
+				itemDef.modelID = 16390;
+				itemDef.maleEquip1 = 16390;
+				itemDef.femaleEquip1 = 16390;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{64};
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
 				
 			case 15645:
 				itemDef.name = "Elite helm (mage)";
-				itemDef.modelID = 16046;
-				itemDef.maleEquip1 = 16046;
-				itemDef.femaleEquip1 = 16046;
+				itemDef.modelID = 16396;
+				itemDef.maleEquip1 = 16396;
+				itemDef.femaleEquip1 = 16396;
 				itemdefedit = ItemDefinition.get(4882);
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 80;
@@ -5015,13 +5061,13 @@ public class ItemDef3 {
 				
 			case 15646:
 				itemDef.name = "Elite body (mage)";
-				itemDef.modelID = 16047;
-				itemDef.maleEquip1 = 16047;
-				itemDef.femaleEquip1 = 16047;
+				itemDef.modelID = 16399;
+				itemDef.maleEquip1 = 16399;
+				itemDef.femaleEquip1 = 16399;
 				itemdefedit = ItemDefinition.get(4894);
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 50;
-				itemDef.modelZoom = 1580;
+				itemDef.modelZoom = 1400;
 				itemDef.rotationY = 20;
 				itemDef.rotationX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
@@ -5030,9 +5076,9 @@ public class ItemDef3 {
 
 			case 15647:
 				itemDef.name = "Elite legs (mage)";
-				itemDef.modelID = 16048;
-				itemDef.maleEquip1 = 16048;
-				itemDef.femaleEquip1 = 16048;
+				itemDef.modelID = 16404;
+				itemDef.maleEquip1 = 16404;
+				itemDef.femaleEquip1 = 16404;
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 5;
 				itemDef.modelZoom = 1757;
@@ -5041,7 +5087,52 @@ public class ItemDef3 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
-				
+			case 6927:
+				//itemDef.rdc2 = 23339;
+				itemDef.name = "Paladins helmet";
+				ItemDefinition itemGWD3113 = ItemDefinition.get(4882);
+				itemDef.modelID = 16913;
+				itemDef.femaleEquip1 = 16913;
+				itemDef.maleEquip1 = 16913;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 200;
+				itemDef.modelZoom = 513;
+				itemDef.rotationY = 180;
+				itemDef.rotationX = 0;
+				itemDef.actions = itemGWD3113.actions;
+				itemDef.stackable = false;
+				break;
+			case 6928:
+				itemDef.name = "Paladins chainbody";
+				ItemDefinition itemGWD31133 = ItemDefinition.get(4894);
+				itemDef.modelID = 17006;
+				itemDef.femaleEquip1 = 17006;
+				itemDef.maleEquip1 = 17006;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 50;
+				itemDef.modelZoom = 1680;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 0;
+				itemDef.actions = itemGWD31133.actions;	
+				itemDef.stackable = false;
+				break;
+			case 6929:
+				ItemDefinition itemGWD311dd3 = ItemDefinition.get(5576);
+				itemDef.name = "Paladins plateskirt";		
+				itemDef.modelID = 17027;
+				itemDef.femaleEquip1 = 17027;
+				itemDef.maleEquip1 = 17027;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 1870;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 40;
+				itemDef.actions = itemGWD311dd3.actions;
+				itemDef.stackable = false;
+				break;
 			case 14176:
 				itemDef.name = "Dragon King helmet";
 				itemDef.modelID = 16061;

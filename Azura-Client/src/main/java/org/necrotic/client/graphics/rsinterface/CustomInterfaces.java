@@ -2709,7 +2709,6 @@ public class CustomInterfaces extends RSInterface {
 		addText(35013, "Amount", tda, 1, 15781715, false, true);
 		addText(35014, "Chance", tda, 1, 15781715, false, true);
 
-
 		int x = 7, y = 7;
 		tab.totalChildren(13);
 		tab.child(0, 33001, 0+x, 0+y);
@@ -2722,7 +2721,7 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(7, 34000, 174+x, 57+y);
 		tab.child(8, 33007, 6+x, 88+y);
 		tab.child(9, 35011, 81+x, 71+y);
-		tab.child(10, 35012, 251+x, 40+y);
+		tab.child(10, 35012, 220+x, 40+y);
 		tab.child(11, 35013, 346+x, 40+y);
 		tab.child(12, 35014, 410+x, 40+y);
 
@@ -2743,7 +2742,30 @@ public class CustomInterfaces extends RSInterface {
 			results.child(j + 60, 33108 + j, 75, 5 + (j*24));
 			index+=3;
 		}
-
+		
+		/*addTextInput(33006, 134, 19, 0, "Search for an NPC", tab, new InterfaceTextInput() {
+		@Override
+		public void handleInput() {
+			int amount = 0;
+			results.scrollMax = 0;
+			for (int b = 0; b < 100; b++) {
+				interfaceCache[33008 + b].message = "";
+			}
+			if (!interfaceCache[33006].inputText.equals("")) {
+				for (int b = 0; b < MobDefinition.maximum; b++) {
+					//MobDefinition e = MobDefinition.get(b);
+					if (MobDefinition.get(b) != null && MobDefinition.get(b).name != null && MobDefinition.get(b).name.toLowerCase().contains(interfaceCache[33006].inputText.toLowerCase())) {
+						interfaceCache[33008 + amount].message = "@yel@"+MobDefinition.get(b).name;
+						amount++;
+						results.scrollMax += 14;
+						if (amount == 100)
+							break;
+					}
+				}
+			}
+		}
+	});*/
+		
 		RSInterface main = addInterface(34000);
 		main.totalChildren(720);
 		main.width = 298;
@@ -2752,8 +2774,8 @@ public class CustomInterfaces extends RSInterface {
 		addSprite(34001, 1210); //changeid
 		addSprite(34002, 1211); //changeid
 		for(int i = 0; i < 40; i++) {
-			main.child(i, 34001, 0, (i * 74));
-			main.child(i + 40, 34002, 0, 37 + (i * 74));
+			main.child(i, 34001, 0, (i * 64));
+			main.child(i + 40, 34002, 0, 32 + (i * 64));
 		}
 		addText(34003, "", tda, 0, 0xff9040, true, true);
 		addText(34004, "", tda, 0, 0xff9040, true, true);
@@ -2762,13 +2784,13 @@ public class CustomInterfaces extends RSInterface {
 			itemGroup(34010 + i, 1, 1, 1, 1, false, false);
 			interfaceCache[34010 + i].inv[0] = 14485;
 			interfaceCache[34010 + i].invStackSizes[0] = 1;
-			addText(34100 + i, "Name", tda, 0, ColorConstants.ORANGE, true, true);
+			addText(34100 + i, "Name", tda, 0, ColorConstants.ORANGE, false, true);
 			addText(34200 + i, "Amount", tda, 0, ColorConstants.WHITE, true, true);
 			addText(34300 + i, "Rarity", tda, 0, ColorConstants.WHITE, true, true);
 			addText(34400 + i, "Value", tda, 0, 0xffffff, true, true);
-			int yy = (i * 37);
+			int yy = (i * 32);
 			main.child(80+i, 34010+i, 3, 3+yy);
-			main.child(160+i, 34100+i, 107, 10+yy);
+			main.child(160+i, 34100+i, 45, 10+yy);
 			main.child(240+i, 34003, 175, 2+yy);
 			main.child(320+i, 34004, 234, 2+yy);
 			main.child(400+i, 34005, 293, 2+yy);
@@ -2777,30 +2799,7 @@ public class CustomInterfaces extends RSInterface {
 			main.child(640+i, 34400+i, 345, 14+yy);
 		}
 
-		addText(33006, "Search by NPC", tda, 2, ColorConstants.ORANGE, true, true);
 
-		/*addTextInput(33006, 134, 19, 0, "Search for an NPC", tab, new InterfaceTextInput() {
-			@Override
-			public void handleInput() {
-				int amount = 0;
-				results.scrollMax = 0;
-				for (int b = 0; b < 100; b++) {
-					interfaceCache[33008 + b].message = "";
-				}
-				if (!interfaceCache[33006].inputText.equals("")) {
-					for (int b = 0; b < MobDefinition.maximum; b++) {
-						//MobDefinition e = MobDefinition.get(b);
-						if (MobDefinition.get(b) != null && MobDefinition.get(b).name != null && MobDefinition.get(b).name.toLowerCase().contains(interfaceCache[33006].inputText.toLowerCase())) {
-							interfaceCache[33008 + amount].message = "@yel@"+MobDefinition.get(b).name;
-							amount++;
-							results.scrollMax += 14;
-							if (amount == 100)
-								break;
-						}
-					}
-				}
-			}
-		});*/
 	}
 
 	private void equipmentTab() {
@@ -3306,51 +3305,6 @@ public class CustomInterfaces extends RSInterface {
 		}
 	}
 
-	private void godWars() {
-		RSInterface rsinterface = addTabInterface(16210);
-		addText(16211, " Your killcount", tda, 0, 0xff9040, true, true);
-		addText(16212, "Armadyl kills", tda, 0, 0xff9040, true, true);
-		addText(16213, "Bandos kills", tda, 0, 0xff9040, true, true);
-		addText(16214, "     Saradomin kills", tda, 0, 0xff9040, true, true);
-		addText(16215, "  Zamorak kills", tda, 0, 0xff9040, true, true);
-		addText(16220, "Zaros kills", tda, 0, 0xff9040, true, true);
-		addText(16216, "0", tda, 0, 0x66FFFF, true, true);//armadyl
-		addText(16217, "0", tda, 0, 0x66FFFF, true, true);//bandos
-		addText(16218, "0", tda, 0, 0x66FFFF, true, true);//saradomin
-		addText(16219, "0", tda, 0, 0x66FFFF, true, true);//zamorak
-		addText(16221, "0", tda, 0, 0x66FFFF, true, true);//zaros
-		rsinterface.scrollMax = 0;
-		rsinterface.children = new int[9];
-		rsinterface.childX = new int[9];
-		rsinterface.childY = new int[9];
-		rsinterface.children[0] = 16211;
-		rsinterface.childX[0] = -52 + 375 + 30;
-		rsinterface.childY[0] = 12;
-		rsinterface.children[1] = 16212;
-		rsinterface.childX[1] = -52 + 375 + 30;
-		rsinterface.childY[1] = 30;
-		rsinterface.children[2] = 16213;
-		rsinterface.childX[2] = -52 + 375 + 30;
-		rsinterface.childY[2] = 44;
-		rsinterface.children[3] = 16214;
-		rsinterface.childX[3] = -52 + 375 + 30;
-		rsinterface.childY[3] = 58;
-		rsinterface.children[4] = 16215;
-		rsinterface.childX[4] = -52 + 375 + 30;
-		rsinterface.childY[4] = 73;
-		rsinterface.children[5] = 16216;
-		rsinterface.childX[5] = -52 + 460 + 60;
-		rsinterface.childY[5] = 31;
-		rsinterface.children[6] = 16217;
-		rsinterface.childX[6] = -52 + 460 + 60;
-		rsinterface.childY[6] = 45;
-		rsinterface.children[7] = 16218;
-		rsinterface.childX[7] = -52 + 460 + 60;
-		rsinterface.childY[7] = 59;
-		rsinterface.children[8] = 16219;
-		rsinterface.childX[8] = -52 + 460 + 60;
-		rsinterface.childY[8] = 74;
-	}
 
 	private void editClan() {
 		RSInterface tab = addTabInterface(40172);
@@ -7593,7 +7547,6 @@ int x = 10;
 		opacityInterface();
 		staffTabInterface(tda);
 		levelUpInterfaces();
-		godWars();
 		optionTab();
 		//settingsInterface();
 		bountyInterface();

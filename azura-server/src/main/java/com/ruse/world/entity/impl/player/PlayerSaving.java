@@ -130,7 +130,9 @@ public class PlayerSaving {
 			object.add("tasks-progress", builder.toJsonTree(player.getStarterTaskAttributes().getProgress()));
 			object.addProperty("total-prestiges", new Integer(player.getPointsHandler().getTotalPrestiges()));
 			object.addProperty("slayer-spree", new Integer(player.getPointsHandler().getSlayerSpree()));
-
+			object.addProperty("minigame1-killcount", new Integer(player.getPointsHandler().getMG1Count()));
+			object.addProperty("minigame2-killcount", new Integer(player.getPointsHandler().getMG2Count()));
+			object.addProperty("minigame3-killcount", new Integer(player.getPointsHandler().getMG3Count()));
 			object.addProperty("npc-killcount", new Integer(player.getPointsHandler().getNPCKILLCount()));
 			object.addProperty("spawn-killcount", new Integer(player.getPointsHandler().getSPAWNKILLCount()));
 			object.addProperty("lord-killcount", new Integer(player.getPointsHandler().getLORDKILLCount()));

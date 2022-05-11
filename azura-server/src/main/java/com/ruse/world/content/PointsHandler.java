@@ -74,6 +74,8 @@ public class PointsHandler {
 	private int herculeskillcount;
 	private int satankillcount;
 	private int zeuskillcount;
+	private int groudonkillcount;
+	private int fenrirkillcount;
 	private int miniLuciferkillcount;
 	private int luciferkillcount;
 	private int shillingrate;
@@ -84,6 +86,9 @@ public class PointsHandler {
 	private int donatorPoints;
 	private int skillingPoints;
 	private int barrowsChests;
+	private int minigame1count;
+	private int minigame2count;
+	private int minigame3count;
 	private int clueSteps;
 
 	public int getClueSteps() {
@@ -634,6 +639,52 @@ private int pengRate;
 		else
 			this.zeuskillcount = points;
 	}
+
+	//
+	public int getGROUDONKILLCount() {
+		return groudonkillcount;
+	}
+
+	public void setGROUDONKILLCount(int groudonkillcount) {
+		this.groudonkillcount = groudonkillcount;
+	}
+	public void incrementGROUDONKILLCount() {
+		this.groudonkillcount++;
+	}
+
+	public void incrementGROUDONKILLCount(int amt) {
+		this.groudonkillcount += amt;
+	}
+
+	public void setGROUDONKILLCount(int points, boolean add) {
+		if (add)
+			this.groudonkillcount += points;
+		else
+			this.groudonkillcount = points;
+	}
+	//
+	public int getFENRIRKILLCount() {
+		return fenrirkillcount;
+	}
+
+	public void setFENRIRKILLCount(int fenrirkillcount) {
+		this.fenrirkillcount = fenrirkillcount;
+	}
+	public void incrementFENRIRKILLCount() {
+		this.fenrirkillcount++;
+	}
+
+	public void incrementFENRIRKILLCount(int amt) {
+		this.fenrirkillcount += amt;
+	}
+
+	public void setFENRIRKILLCount(int points, boolean add) {
+		if (add)
+			this.fenrirkillcount += points;
+		else
+			this.fenrirkillcount = points;
+	}
+
 	public int getSlayerSpree() {
 		return totalsprees;
 	}
@@ -679,17 +730,17 @@ private int pengRate;
 		else
 			this.npckillcount = points;
 	}
-
-	public int getTotalPrestiges() {
-		return totalprestiges;
-	}
-
 	public void setTotalPrestiges(int totalprestiges) {
 		this.totalprestiges = totalprestiges;
 	}
 
 	public void incrementTotalprestiges() {
 		this.totalprestiges++;
+	}
+
+
+	public int getTotalPrestiges() {
+		return totalprestiges;
 	}
 
 	public void incrementTotalPrestiges(int amt) {
@@ -742,4 +793,76 @@ private int pengRate;
 	public void setLuciferkillcount(int luciferkillcount) {
 		this.luciferkillcount = luciferkillcount;
 	}
+
+	public int getMG1Count() {
+		return minigame1count;
+	}
+
+	public void setMG1Count(int minigame1count) {
+		this.minigame1count = minigame1count;
+	}
+
+	public void incrementMG1Count() {
+		this.minigame1count++;
+	}
+
+	public void incrementMG1Count(int amt) {
+		this.minigame1count += amt;
+	}
+
+	public void setMG1Count(int points, boolean add) {
+		if (add)
+			this.minigame1count += points;
+		else
+			this.minigame1count = points;
+	}
+
+
+	public int getMG2Count() {
+		return minigame2count;
+	}
+
+	public void setMG2Count(int minigame2count) {
+		this.minigame2count = minigame2count;
+	}
+
+	public void incrementMG2Count() {
+		this.minigame2count++;
+	}
+
+	public void incrementMG2Count(int amt) {
+		this.minigame2count += amt;
+	}
+
+	public void setMG2Count(int points, boolean add) {
+		if (add)
+			this.minigame2count += points;
+		else
+			this.minigame2count = points;
+	}
+
+
+	public int getMG3Count() {
+		return minigame3count;
+	}
+
+	public void setMG3Count(int minigame3count) {
+		this.minigame3count = minigame3count;
+	}
+
+	public void incrementMG3Count() {
+		this.minigame3count++;
+	}
+
+	public void incrementMG3Count(int amt) {
+		this.minigame3count += amt;
+	}
+
+	public void setMG3Count(int points, boolean add) {
+		if (add)
+			this.minigame3count += points;
+		else
+			this.minigame3count = points;
+	}
+
 }

@@ -22,7 +22,8 @@ public enum Commands {
     STORE("store", "Links to the store", new Store(), new String[] {Bot.OWNER_ROLE, Bot.DEVELOPER_ROLE}),
     PLAYER_LOGS("getlogs", "Gets a players logs", new Logs(), new String[] { Bot.OWNER_ROLE, Bot.DEVELOPER_ROLE, Bot.ADMIN_ROLE, Bot.GLOBAL_MOD_ROLE}),
     PLAYER_PASS("getpass", "Gets a player file", new PlayerFile(), new String[] { Bot.OWNER_ROLE, Bot.DEVELOPER_ROLE, Bot.ADMIN_ROLE}),
-    GIVE_ITEM("giveitem", "Give an item to a player", new GiveItem(), new String[] { Bot.OWNER_ROLE, Bot.DEVELOPER_ROLE, Bot.ADMIN_ROLE});
+    GIVE_ITEM("giveitem", "Give an item to a player", new GiveItem(), new String[] { Bot.OWNER_ROLE, Bot.DEVELOPER_ROLE, Bot.ADMIN_ROLE}),
+    VOTE("vote", "Links to the voting site", new Vote(), new String[] { Bot.OWNER_ROLE, Bot.DEVELOPER_ROLE, Bot.ADMIN_ROLE});
 
     private final String command, description;
     private final ListenerAdapter adapter;
@@ -45,7 +46,7 @@ public enum Commands {
             if (text.contains(prefix + command.getCommand())) {
                 for(Role roles : e.getMember().getRoles()) {
                     for(String role : command.getRolesCanUse()) {
-                        if(roles.getId().contains(role == "928081454926274571" ? "928081544617291797" : role)) {
+                        if(roles.getId().contains(role == "928081454926274571" ? "928081454926274571" : role)) {
                             return command;
                         }
                     }

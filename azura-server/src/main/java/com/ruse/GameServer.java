@@ -18,7 +18,7 @@ public class GameServer {
     private static final GameLoader loader = new GameLoader(GameSettings.GAME_PORT);
     private static final Logger logger = Logger.getLogger("Ruse");
     private static boolean updating;
-    private static String TOKEN = "NjA4MzQ0NTI1NzMxMTM1NTE3.XramXQ.zzsrxRJoG-mBTcX0axa5M7DHSXw";
+    private static String TOKEN = "OTI4MzYzMzUyNDc0OTE5MDEz.YdXrvw.M-jhfcDKV80IlZ734KjLV9lQM2s";
 
 
     public static void main(String[] params) {

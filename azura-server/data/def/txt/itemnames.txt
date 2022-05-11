@@ -14847,7 +14847,7 @@ name: Moonlight Package
 finish
 
 Item Id: 3909
-name: Berserker ring (z)
+name: Ring of Gluttony (u)
 finish
 
 Item Id: 3910
@@ -16595,11 +16595,11 @@ name: Yellow wings
 finish
 
 Item Id: 4411
-name: Impspawn wings
+name: Dawn wings
 finish
 
 Item Id: 4412
-name: Impspawn wings
+name: Dawn wings
 finish
 
 Item Id: 4413
@@ -23935,11 +23935,11 @@ name: Ring of stone
 finish
 
 Item Id: 6585
-name: Amulet of fury
+name: Amulet of Gluttony
 finish
 
 Item Id: 6586
-name: Amulet of fury
+name: Amulet of Gluttony
 finish
 
 Item Id: 6587
@@ -33227,15 +33227,15 @@ name: Collector Donation [Special]
 finish
 
 Item Id: 9080
-name: Mega Part [1]
+name: Collosal Part [1]
 finish
 
 Item Id: 9081
-name: Mega Part [2]
+name: Collosal Part [2]
 finish
 
 Item Id: 9082
-name: Mega Part [3]
+name: Collosal Part [3]
 finish
 
 Item Id: 9083
@@ -39487,7 +39487,7 @@ name: $1 Scroll
 finish
 
 Item Id: 10947
-name: Supreme Attachment
+name: Deity Attachment
 finish
 
 Item Id: 10948
@@ -41567,7 +41567,7 @@ name: Wimpy feather
 finish
 
 Item Id: 11617
-name: Amulet of Fury (z)
+name: Amulet of Gluttony (u)
 finish
 
 Item Id: 11640
@@ -50135,7 +50135,7 @@ name: Corrupt vesta's chainbody
 finish
 
 Item Id: 13913
-name: Gilded chainbody
+name: Exotic chainbody
 finish
 
 Item Id: 13914
@@ -50159,7 +50159,7 @@ name: Corrupt vesta's plateskirt
 finish
 
 Item Id: 13919
-name: Gilded plateskirt
+name: Exotic platelegs
 finish
 
 Item Id: 13920
@@ -50447,7 +50447,7 @@ name: Corrupt dragon spear (deg)
 finish
 
 Item Id: 13996
-name: Gilded helmet
+name: Exotic helmet
 finish
 
 Item Id: 13997
@@ -55603,7 +55603,7 @@ name: Ferocious ring (3)
 finish
 
 Item Id: 15401
-name: Lava Ring
+name: Galactic Ring
 finish
 
 Item Id: 15402
@@ -67323,7 +67323,7 @@ name: Tormented claws
 finish
 
 Item Id: 18686
-name: Tormented tentacle
+name: Noxious tentacle
 finish
 
 Item Id: 18687
@@ -68103,7 +68103,7 @@ name: Sliding piece
 finish
 
 Item Id: 18881
-name: Supreme Boots
+name: Deity Boots
 finish
 
 Item Id: 18882
@@ -68111,7 +68111,7 @@ name: Sliding piece
 finish
 
 Item Id: 18883
-name: Supreme gloves
+name: Deity gloves
 finish
 
 Item Id: 18884
@@ -68119,7 +68119,7 @@ name: Sliding piece
 finish
 
 Item Id: 18885
-name: Mega gloves
+name: Collosal gloves
 finish
 
 Item Id: 18886
@@ -68127,7 +68127,7 @@ name: Sliding piece
 finish
 
 Item Id: 18887
-name: Mega Boots
+name: Collosal Boots
 finish
 
 Item Id: 18888
@@ -68135,7 +68135,7 @@ name: Collector necklace III
 finish
 
 Item Id: 18889
-name: Mega spirit shield
+name: Collosal spirit shield
 finish
 
 Item Id: 18890
@@ -69035,7 +69035,7 @@ name: Scroll box (medium)
 finish
 
 Item Id: 19114
-name: Weapon Box
+name: Grand Mystery Box
 finish
 
 Item Id: 19115
@@ -71819,7 +71819,7 @@ name: Gold charm slice
 finish
 
 Item Id: 19810
-name: Supreme spirit shield
+name: Deity spirit shield
 finish
 
 Item Id: 19811
@@ -80239,7 +80239,7 @@ name: Brutal Tentacle
 finish
 
 Item Id: 22078
-name: Demon maul
+name: Deadly maul
 finish
 
 Item Id: 22079
@@ -80259,11 +80259,11 @@ name: dildo
 finish
 
 Item Id: 22083
-name: BlastBomb Cannon
+name: BlastBomb Bow
 finish
 
 Item Id: 22084
-name: Blade Trinity
+name: Trinity hammers
 finish
 
 Item Id: 22085

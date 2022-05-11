@@ -1985,10 +1985,15 @@ public class DialogueOptions {
                         player.getPacketSender().sendMessage("Please unequip all your items first.");
                         return ;
                     }
+                    if (player.getPointsHandler().getTotalPrestiges() >= 10) {
+                        player.getPacketSender().sendMessage("@red@You already are max prestige(10). Wait until next season to unlock more.");
+                        return ;
+                    }
                     if (player.getLocation() == Location.WILDERNESS || player.getCombatBuilder().isBeingAttacked()) {
                         player.getPacketSender().sendMessage("You cannot do this at the moment");
                         return ;
                     }
+                    player.getPointsHandler().incrementTotalPrestiges(1);
                     player.getSkillManager().resetSkill(ATTACK, false);
                     player.getSkillManager().resetSkill(DEFENCE, false);
                     player.getSkillManager().resetSkill(STRENGTH, false);
@@ -2014,8 +2019,30 @@ public class DialogueOptions {
                     player.getSkillManager().resetSkill(HUNTER, false);
                     player.getSkillManager().resetSkill(SUMMONING, false);
                     player.getPointsHandler().setPrestigePoints(1, true);
-                    player.getPointsHandler().incrementTotalPrestiges(1);
-                    player.getPacketSender().sendMessage("You have prestiged your account, your total prestige is now " + player.getTotalPrestiges());
+                    player.getPacketSender().sendMessage("You have just prestiged to level " + player.getPointsHandler().getTotalPrestiges()+ "!");
+                    player.getPacketSender().sendMessage(player.getPointsHandler().getTotalPrestiges()+ " Prestige Mboxes have been added to your inventory as a reward.");
+                    World.sendMessage("@blu@<shad=1>[News] @red@"+player.getUsername()+ "@bla@ has just prestiged to level " + player.getPointsHandler().getTotalPrestiges() + "!");
+
+                    if (player.getPointsHandler().getTotalPrestiges() == 1)
+                        player.getInventory().add(23236, 1);
+                    if (player.getPointsHandler().getTotalPrestiges() == 2)
+                        player.getInventory().add(23236, 2);
+                    if (player.getPointsHandler().getTotalPrestiges() == 3)
+                        player.getInventory().add(23236, 3);
+                    if (player.getPointsHandler().getTotalPrestiges() == 4)
+                        player.getInventory().add(23236, 4);
+                    if (player.getPointsHandler().getTotalPrestiges() == 5)
+                        player.getInventory().add(23236, 5);
+                    if (player.getPointsHandler().getTotalPrestiges() == 6)
+                        player.getInventory().add(23236, 6);
+                    if (player.getPointsHandler().getTotalPrestiges() == 7)
+                        player.getInventory().add(23236, 7);
+                    if (player.getPointsHandler().getTotalPrestiges() == 8)
+                        player.getInventory().add(23236, 8);
+                    if (player.getPointsHandler().getTotalPrestiges() == 9)
+                        player.getInventory().add(23236, 9);
+                    if (player.getPointsHandler().getTotalPrestiges() == 10)
+                        player.getInventory().add(23236, 10);
                     break;
 
                 case 9906:

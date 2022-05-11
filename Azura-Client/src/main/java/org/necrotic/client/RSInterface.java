@@ -166,6 +166,59 @@ public class RSInterface {
 
 	public Sprite unrevealedSprite;
 
+	private static void customZones(TextDrawingArea[] font) {
+		int STARTING_POINT = 142250;
+		RSInterface main = addInterface(STARTING_POINT);
+		addSpriteLoader(STARTING_POINT + 1, 1649); // 1229
+		addButton1(STARTING_POINT + 5, 1016, 1017, "Close");
+		addText(STARTING_POINT + 2, "Npc Tier list", font, 2, ColorConstants.RS_ORANGE, true, true);
+		main.totalChildren(4);
+		main.child(0, STARTING_POINT + 1, 120, 10);
+		main.child(1, STARTING_POINT + 2, 260, 17);
+		main.child(2, STARTING_POINT + 5, 384, 13);
+		main.child(3, STARTING_POINT + 15, 80, 39);
+		RSInterface zoneScroll = addInterface(STARTING_POINT + 15);
+		zoneScroll.totalChildren(60);
+		int idStart = STARTING_POINT + 16;
+		int yPos = 0;
+
+		for (int i = 0; i < 15; i++) {
+			addHoverableConfigSprite(idStart + i, 1650, 1651, true, "Select", i, 4000);
+			zoneScroll.child(i, idStart + i, 53, yPos);
+			yPos += 31;
+		}
+
+		String[] TELE_NAMES = {"Dustclaw Teleport - @gre@Lvl 1", "Lord Teleport - @gre@Lvl 1", "Shadow Teleport - @yel@Lvl 2", "Golem Teleport - @yel@Lvl 3", "Shetani Teleport - @or1@Lvl 3",
+				"Ripper Teleport - @or1@Lvl 4", "Avatar Teleport - @or2@Lvl 5", "Wyverns Teleport - @or2@Lvl 6", "Oni Teleport - @red@Lvl 7", "Shenron Teleport - @red@Lvl 8",
+				"Subzero Teleport - @mag@Lvl 9", "Zeus Teleport - @mag@Lvl 10", "Groudon Teleport - @cya@Lvl 11", "Fenrir Teleport - @cya@Lvl 12", "Bork Teleport - @cya@Lvl 13"};
+
+		String[] TELE_REQ = {"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:",
+				"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:",
+				"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:"};
+		String[] TELE_KC = {"50 Npc killcount", "100 Dustclaw kills", "200 Lord kills", "300 Shadow kills", "400 Golem kills",
+				"500 Shetani kills", "1000 Ripper kills", "1200 Titan kills", "1500 Wyvern kills", "2500 Oni kills",
+				"3500 Shenron Kills", "5000 Subzero kills", "15k Zeus kills", "25k Groudon kills", "50k Fenrir kills"};
+		int child = 15;
+		int index = 0;
+		yPos = 5;
+		idStart = STARTING_POINT + 50;
+		for (int j = 0; j < 45; j += 3) {
+			addText(idStart + j, TELE_NAMES[index], font, 1, 15781715, false, true);
+			addText(idStart + j + 1, TELE_REQ[index], font, 0, ColorConstants.CREAM_WHITE, false, true);
+			addText(idStart + j + 2, TELE_KC[index], font, 0, ColorConstants.RS_ORANGE, true, true);
+			zoneScroll.child(child, idStart + j, 62, yPos + 2);
+			zoneScroll.child(child + 1, idStart + j + 1, 228, yPos - 2 );
+			zoneScroll.child(child + 2, idStart + j + 2, 258, yPos + 10);
+			child += 3;
+			yPos += 31;
+			index++;
+		}
+		zoneScroll.width = 303;
+		zoneScroll.height = 272;
+		zoneScroll.scrollMax = 468;
+	}
+
+	
 	private static void customServerPerks(TextDrawingArea[] font) {
 		int STARTING_POINT = 42050;
 		RSInterface main = addInterface(STARTING_POINT);
@@ -177,7 +230,7 @@ public class RSInterface {
 		addHoveredImageWSpriteLoader(STARTING_POINT + 7, 1520, 90, 35, STARTING_POINT + 8);
 		addText(STARTING_POINT + 9, "Contribute!", font, 0, 16746020, true, true);
 		addProgressBar(STARTING_POINT + 10, 165, 40, 75, 16711680, 5492557);
-		addText(STARTING_POINT + 11, "250Q / 250Q", font, 1, 16777215, true, true);
+		addText(STARTING_POINT + 11, "10M / 10M", font, 1, 16777215, true, true);
 		main.totalChildren(10);
 		main.child(0, STARTING_POINT + 1, 155, 10);
 		main.child(1, STARTING_POINT + 2, 254, 20);
@@ -190,22 +243,22 @@ public class RSInterface {
 		main.child(8, STARTING_POINT + 10, 173, 189);
 		main.child(9, STARTING_POINT + 11, 254, 200);
 		RSInterface perkScroll = addInterface(STARTING_POINT + 15);
-		perkScroll.totalChildren(14);
+		perkScroll.totalChildren(17);
 		int idStart = STARTING_POINT + 16;
 		int yPos = 0;
 
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 7; i++) {
 			addHoverableConfigSprite(idStart + i, 1517, 1518, true, "Select", i, 4000);
 			perkScroll.child(i, idStart + i, 53, yPos);
 			yPos += 42;
 		}
 
-		String[] PERK_NAMES = {"X1.5 Damage", "X1.5 DR", "X3 XP", "x1.2 Upgrade Chance"};
-		int child = 6;
+		String[] PERK_NAMES = {"x2 DMG", "x2 DROPS", "x2 EXP", "x2 SLAYER", "x2 RAIDS"};
+		int child = 7;
 		int index = 0;
 		yPos = 5;
 		idStart = STARTING_POINT + 50;
-		for (int j = 0; j < 8; j += 2) {
+		for (int j = 0; j < 10; j += 2) {
 			addText(idStart + j, PERK_NAMES[index], font, 2, 16746020, true, true);
 			addText(idStart + j + 1, "@gre@Perk", font, 1, 32768, false, true);
 			perkScroll.child(child, idStart + j, 125, yPos);
@@ -216,7 +269,7 @@ public class RSInterface {
 		}
 		perkScroll.width = 200;
 		perkScroll.height = 137;
-		perkScroll.scrollMax = 168;
+		perkScroll.scrollMax = 210;
 	}
 
 	public static RSInterface addHoverableConfigSprite(int id, int mainSprite, int hoverSprite, boolean clickable, String tooltip, int configId, int configFrame) {
@@ -269,11 +322,13 @@ public class RSInterface {
 		RSInterface main = addInterface(STARTING_POINT);
 		addSpriteLoader(STARTING_POINT + 1, 1521);
 		addText(STARTING_POINT + 2, "0:00 min", tda, 0, ColorConstants.ORANGE, false, true);
-		addText(STARTING_POINT + 3, "Double Slayer", tda, 0, ColorConstants.SNOW_WHITE, false, true);
-		main.totalChildren(3);
-		main.child(0, STARTING_POINT + 1, 463, 278);
-		main.child(1, STARTING_POINT + 2, 457, 305);
-		main.child(2, STARTING_POINT + 3, 440, 316);
+		addText(STARTING_POINT + 3, "X2 DMG", tda, 0, ColorConstants.SNOW_WHITE, true, true);
+		addTransparentSpriteWSpriteLoader1(STARTING_POINT + 4, 1648, 125);
+		main.totalChildren(4);
+		main.child(0, STARTING_POINT + 4, 456, 254);
+		main.child(1, STARTING_POINT + 1, 465, 258);
+		main.child(2, STARTING_POINT + 2, 465, 285);
+		main.child(3, STARTING_POINT + 3, 480, 296);
 	}
 
 
@@ -3494,7 +3549,43 @@ public class RSInterface {
 		}
 	}
 
+	private static void godWars( TextDrawingArea[] TDA) {
+		
+		int interfaceId = 16210;
+		int children = 0;
+		int totalChildren = 5;
+		RSInterface Interface = RSInterface.addInterface(interfaceId);
+		RSInterface.setChildren(totalChildren, Interface);
 
+		interfaceId++;
+		//children++;
+        addTransparentSpriteWSpriteLoader1(interfaceId, 1647, 150);
+		RSInterface.setBounds(interfaceId, 354, 3, children, Interface);
+		
+		
+		interfaceId++;
+		children++;
+		RSInterface.addText(interfaceId, "The Unknown", TDA, 2,  ColorConstants.ORANGE2, false, true);
+		RSInterface.setBounds(interfaceId, 386, 13, children, Interface);
+
+		interfaceId++;
+		children++;
+		RSInterface.addText(interfaceId, "Unknown Guards", TDA, 1, ColorConstants.ORANGE2, false, false);
+		RSInterface.setBounds(interfaceId, 364, 30, children, Interface);
+		
+		interfaceId++;
+		children++;
+		RSInterface.addText(interfaceId, "Unknown Creature", TDA, 1, ColorConstants.ORANGE2, false, false);
+		RSInterface.setBounds(interfaceId, 364, 47, children, Interface);
+		
+		interfaceId++;
+		children++;
+		RSInterface.addText(interfaceId, "Unknown Ghost", TDA, 1,  ColorConstants.ORANGE2, false, false);
+		RSInterface.setBounds(interfaceId, 364, 64, children, Interface);
+		
+
+	}
+	
 	private static void customCombiner(TextDrawingArea[] tda) {
 		final int STARTING_POINT = 30830;
 		RSInterface main = addInterface(STARTING_POINT);
@@ -5468,7 +5559,7 @@ public class RSInterface {
 		try {
 			teleportInterface(textDrawingAreas);
 			teleportInterface1(textDrawingAreas);
-
+			godWars(textDrawingAreas);
 			taxbagShopInterface(textDrawingAreas);
 			mysteryBoxViewer(textDrawingAreas);
 			effectInterface(textDrawingAreas);
@@ -5484,6 +5575,7 @@ public class RSInterface {
 			scratchCardInterface(textDrawingAreas);
 			mysteryBoxSpinner(textDrawingAreas);
 			customServerPerks(textDrawingAreas);
+			customZones(textDrawingAreas);
 			perkOverlays(textDrawingAreas);
 
 			customInterfaces = new CustomInterfaces(textDrawingAreas);

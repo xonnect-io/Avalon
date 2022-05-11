@@ -426,6 +426,15 @@ public class PlayerLoading {
             if (reader.has("total-prestiges")) {
                 player.getPointsHandler().setTotalPrestiges(reader.get("total-prestiges").getAsInt(), false);
             }
+            if (reader.has("minigame1-killcount")) {
+                player.getPointsHandler().setMG1Count(reader.get("minigame1-killcount").getAsInt(), false);
+            }
+            if (reader.has("minigame2-killcount")) {
+                player.getPointsHandler().setMG2Count(reader.get("minigame2-killcount").getAsInt(), false);
+            }
+            if (reader.has("minigame3-killcount")) {
+                player.getPointsHandler().setMG3Count(reader.get("minigame3-killcount").getAsInt(), false);
+            }
             if (reader.has("slayer-spree")) {
                 player.getPointsHandler().setSlayerSpree(reader.get("slayer-spree").getAsInt(), false);
             }

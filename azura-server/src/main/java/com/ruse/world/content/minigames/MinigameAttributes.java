@@ -83,6 +83,7 @@ public class MinigameAttributes {
 		}
 	}
 
+
 	public class GraveyardAttributes {
 
 		private int wave;

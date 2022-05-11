@@ -5,9 +5,11 @@ public final class ColorConstants {
 	//white colors
 	public static final int WHITE = 0xffffff;
 	public static final int SNOW_WHITE = 0xFFFAFA;
+	public static final int CREAM_WHITE = 0xE8C8A2;
 	//orange colors
-	public static final int RS_ORANGE = 0xFF981F;
-	public static final int ORANGE = 0xFF981F;
+    public static final int LIGHTORANGE = 0xF0AE1B;
+    public static final int ORANGE = 0xFF981F;
+    public static final int RS_ORANGE = 0xff8624;
 	public static final int ORANGE2 = 0xFF981F;
 	public static final int INT2 = 0xFF981F;
 	public static final int ORA = 0xFF981F;

@@ -233,6 +233,24 @@ public class NPCDeathTask extends Task {
                             DonationBossDrop.handleDrop(npc);
                             DonationBossSystem.amntDonated = 0;
                         }
+                        if (npc.getId() == 823) { //unknown Boss room
+                            UnknownBossDrop.handleDrop(npc);
+                            killer.unknownZone.refreshInterface();
+                        }
+                        if (npc.getId() == 827) {// Unknown Room 1
+                            UnknownGuardDrop.handleDrop(npc);
+                            killer.unknownZone.refreshInterface();
+
+                        }
+                        if (npc.getId() == 828) {// Unknown Room 2
+                            UnknownCreatureDrop.handleDrop(npc);
+                            killer.unknownZone.refreshInterface();
+                        }
+
+                        if (npc.getId() == 825) {// Unknown Room 3
+                            UnknownGhostDrop.handleDrop(npc);
+                            killer.unknownZone.refreshInterface();
+                        }
 
                         if (killer.getLocation() == Location.SAPPHIRE_ZONE) {
                             killer.getInventory().add(23204, 1);
@@ -515,6 +533,11 @@ public class NPCDeathTask extends Task {
             killer.getInventory().add(ItemDefinition.MILL_ID, 1);
             killer.getPointsHandler().incrementEventPoints(2);
         }*/
+        int ID_HERE = 1;
+        int ITEM_ID = 91;
+
+        if (npc.getId() == ID_HERE)
+            killer.getInventory().add(ITEM_ID, 1);
 
         if (npc.getId() == 186) {
             int random = RandomUtility.inclusiveRandom(0, 100);

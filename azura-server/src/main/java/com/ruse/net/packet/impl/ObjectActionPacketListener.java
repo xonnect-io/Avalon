@@ -34,6 +34,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.portal.portal;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.randomevents.EvilTree.EvilTreeDef;
+import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.skill.impl.agility.Agility;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.construction.ConstructionActions;
@@ -121,6 +122,11 @@ public class ObjectActionPacketListener implements PacketListener {
                             Woodcutting.cutWood(player, gameObject, false);
                             return;
                         }
+                        if (LootChest.LootChestDef.forId(id) != null) {
+                            LootChest.handleAction(player, gameObject);
+                            return;
+                        }
+
                         if (MiningData.forRock(gameObject.getId()) != null) {
                             Mining.startMining(player, gameObject);
                             return;
@@ -191,7 +197,6 @@ public class ObjectActionPacketListener implements PacketListener {
                             case 8456:
                                 Stalls.stealFromAFKStall(player, id, 5);
                                 break;
-                            case 13291:
                             case 41204:
                                 player.setOpenedTeleports(true);
                                 TeleportInterface.sendMinigameData(player, TeleportInterface.Minigames.values()[0]);

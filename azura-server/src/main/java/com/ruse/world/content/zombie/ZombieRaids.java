@@ -12,6 +12,7 @@ import com.ruse.world.content.boxes.ZombieRaidLoot;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
+import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -56,7 +57,7 @@ public class ZombieRaids {
             member.setRegionInstance(null);
             member.getMovementQueue().reset();
             member.getClickDelay().reset();
-            member.moveTo(new Position(2514, 3732 , height));
+            member.moveTo(new Position(2528, 5217 , height));
             PrayerHandler.deactivateAll(member);
             CurseHandler.deactivateAll(member);
             TaskManager.submit(new Task(2, false) {
@@ -86,7 +87,7 @@ public class ZombieRaids {
     }
 
     public static NPC addNpc(ZombieParty party, int npcId, double mult) {
-        NPC npc = (new NPC(npcId, new Position(2507 + Misc.getRandom(14), 3734 + Misc.getRandom(18), party.getHeight())));
+        NPC npc = (new NPC(npcId, new Position(2515 + Misc.getRandom(22), 5205 + Misc.getRandom(20), party.getHeight())));
         npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         return npc;
@@ -96,7 +97,7 @@ public class ZombieRaids {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 2500;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 8; i++) {
             npcs.add(addNpc(party, ZombieRaidData.firstWaveNpc, mult));
         }
         for (int i = 0; i < (party.getPlayers().size() - 1) * 2; i++) {
@@ -117,7 +118,7 @@ public class ZombieRaids {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 5000;
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
             npcs.add(addNpc(party, ZombieRaidData.secondWaveNpc, mult));
         }
         for (int i = 0; i < (party.getPlayers().size() - 1) * 2; i++) {
@@ -138,7 +139,7 @@ public class ZombieRaids {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 10000;
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             npcs.add(addNpc(party, ZombieRaidData.thirdWaveNpc, mult));
         }
         for (int i = 0; i < (party.getPlayers().size() - 1) * 1; i++) {
@@ -159,7 +160,7 @@ public class ZombieRaids {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 20000;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             npcs.add(addNpc(party, ZombieRaidData.fourthWaveNpc, mult));
         }
         for (int i = 0; i < (party.getPlayers().size() - 1) * 1; i++) {
@@ -181,7 +182,7 @@ public class ZombieRaids {
 
         double mult = 100000;
 
-        NPC npc = new NPC(ZombieRaidData.fifthWaveNpc, new Position(2516, 3747, party.getHeight()));
+        NPC npc = new NPC(ZombieRaidData.fifthWaveNpc, new Position(2527, 5222, party.getHeight()));
         npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npcs.add(npc);
@@ -247,7 +248,8 @@ public class ZombieRaids {
                                 party.sendMessage("@red@The third wave has started!");
                             else if (wave == 4)
                                 party.sendMessage("@red@The fourth wave has started!");
-
+                            else if (wave == 5)
+                                party.sendMessage("@red@Final boss Veigar has appeared! Defeat him to claim your reward!");
                             for (NPC npc : npcs) {
                                 spawnNpc(party, npc);
                             }
@@ -310,9 +312,13 @@ public class ZombieRaids {
                     double amt = drop.getMin() + Misc.getRandom(drop.getMax() - drop.getMin());
 
                     player.getInventory().add(new Item(drop.getId(), (int) amt));
-                    player.sendMessage("<shad=1>@yel@You have receieved X" + (int) amt + " "+ ItemDefinition.forId(drop.getId()).getName() + " for your participation!" );
+                    player.sendMessage("<shad=1>@yel@You have received X" + (int) amt + " "+ ItemDefinition.forId(drop.getId()).getName() + " for your participation!" );
+                    if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_SLAYER) {
+                        player.getInventory().add(new Item(drop.getId(), (int) amt));
+                        player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Slayer Perk is active!");
+                    }
                 }
-                party.sendMessage("@red@Use the portal south to leave the island.");
+                party.sendMessage("@red@Use the portal south to go back to the raid lobby.");
 
                 party.setDeathCount(0);
                 party.setKills(0);

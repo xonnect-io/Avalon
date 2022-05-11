@@ -161,9 +161,7 @@ public class CustomDropUtils {
         if (player.getInventory().contains(4440)) {
             percentBoost *= 1.5;
         }
-        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.DR) {
-            percentBoost *= 1.5;
-        }
+
         if (GameSettings.DOUBLEDR == true) {
             percentBoost *= 2;
         }
@@ -205,6 +203,10 @@ public class CustomDropUtils {
                 || equipment.contains(23093)
                 || equipment.contains(23094)) {// valor rings
 			percentBoost += 10;
+        }
+
+        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DROPS) {
+            percentBoost =+ 100;
         }
 
         if (player.getEquipment().contains(23044)) { //Tier 1 Aura

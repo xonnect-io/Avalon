@@ -110,8 +110,8 @@ public class DesolaceFormulas {
                 
             }
 
-            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.DAMAGE) {
-                base *= 1.5;
+            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
+                base *= 2;
             }
 
             maxHit = (base *= 10);

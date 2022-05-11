@@ -199,7 +199,7 @@ public class CustomTeleportInterface {
         if (selectedTab == 0) {
             Bosses npc = Bosses.values()[selectedIndex];
 
-            if (npc.name.toLowerCase().contains("lucifer")) {
+            if (npc.name.toLowerCase().contains("fallen angel")) {
                 if ((player.isUnlockedLucifers() &&
                         player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.DEVELOPER) {
                     TeleportHandler.teleportPlayer(player, npc.position.copy().setZ(player.getIndex() * 4), player.getSpellbook().getTeleportType());

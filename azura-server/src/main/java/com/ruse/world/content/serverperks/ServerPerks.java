@@ -55,8 +55,8 @@ public class ServerPerks {
             player.sendMessage("@red@A perk is already active");
             return;
         }
-        if (!player.getInventory().contains(ItemDefinition.COIN_ID, amount)) {
-            amount = player.getInventory().getAmount(ItemDefinition.COIN_ID);
+        if (!player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, amount)) {
+            amount = player.getInventory().getAmount(ItemDefinition.UPGRADE_TOKEN_ID);
         }
         int index = player.getPerkIndex();
         Perk perk = PERKS[index];
@@ -64,13 +64,13 @@ public class ServerPerks {
         int necessary = perk.getAmount();
         amount = Math.min(amount, necessary - current);
 
-        player.getInventory().delete(ItemDefinition.COIN_ID, amount);
+        player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, amount);
         int total = contributions.merge(perk, amount, Integer::sum);
         updateInterface(player);
 
         save();
         if (amount >= 1000000) {
-            World.sendMessage("<img=16><shad=1>@or2@[" + player.getUsername() + "] @yel@has just donated @gre@" + amount + " @yel@Coins to the Server Perk!");
+            World.sendMessage("<img=16><shad=1>@or2@[" + player.getUsername() + "] @yel@has just donated @gre@" + amount + " @yel@Upgrade tokens to the Server Perk!");
         }
         if (total >= necessary) {
             start(perk);
@@ -99,7 +99,7 @@ public class ServerPerks {
 
         activePerk = perk;
         updateOverlay();
-        World.sendMessage("<img=16>[WORLD]<img=16> @red@Perk [" + activePerk.getName() + "] has just been activated!");
+        World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has just been activated!");
 
         //reset();
         // Erase file contents
@@ -109,7 +109,8 @@ public class ServerPerks {
     private void end() {
         active = false;
         contributions.put(activePerk, 0);
-        World.sendMessage("<img=16>[WORLD]<img=16> @red@Perk [" + activePerk.getName() + "] has ended");
+        World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has ended!");
+
         activePerk = null;
         resetInterface();
     }
@@ -224,11 +225,11 @@ public class ServerPerks {
     public enum Perk {
         //DOUBLE_BONDS(0, 100000000, 1521), // TO DO
         // NPC_KILLS(2, 25000000, 1523),// DONE
-        DAMAGE("x1.5 Damage", 0, 500000000, 1522),// DONE
-        DR("x1.5 Drop Rate Boost", 1, 500000000, 1521),// DONE
-        XP("x3 EXP Boost", 2, 500000000, 1524),// DONE
-        COMING_SOON("Coming soon", 3, 500000000, 1524),// DONE
-       // UPGRADE("x1.2 Upgrade Chance", 3, 500000000, 1525),// DONE
+        X2_DMG("2X DMG", 0, 20000000, 1523),// DONE
+        X2_DROPS("X2 Drops", 1, 20000000, 1524),// DONE
+        X2_EXP("x2 EXP", 2, 1000000, 529),// DONE
+        X2_SLAYER("X2 Slayer", 3, 5000000, 1522),// DONE
+        X2_RAIDS("x2 Raid Loot", 3, 10000000, 1521),// DONE
 
         ;
 

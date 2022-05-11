@@ -8,9 +8,9 @@ public class ZombieRaidLoot {
 
 	public static Box[] LOOT = {
 
-			new Box(ItemDefinition.UPGRADE_TOKEN_ID, 500, 2500,100), // Upgrade tokens
-			new Box(18404, 1, 1,50), // Raid box
-			new Box(18404, 2, 2,25), // Raid box x 2
+			new Box(ItemDefinition.UPGRADE_TOKEN_ID, 1500, 5000,100), // Upgrade tokens
+			new Box(18404, 1, 1,75), // Raid box
+			new Box(18404, 2, 2,50), // Raid box x 2
 	};
 
 }

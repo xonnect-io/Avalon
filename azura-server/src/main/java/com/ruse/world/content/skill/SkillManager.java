@@ -326,7 +326,7 @@ public class SkillManager {
         experience *= player.getRights().getExperienceGainModifier();
 
 
-        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.XP) {
+        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_EXP) {
             experience *= 3;
         }
         if (WellOfGoodwill.isActive())

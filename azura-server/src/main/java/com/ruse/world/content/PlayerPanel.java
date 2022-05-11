@@ -5,6 +5,7 @@ import com.ruse.motivote3.doMotivote;
 import com.ruse.util.Misc;
 import com.ruse.util.StringUtils;
 import com.ruse.world.World;
+import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
 import com.ruse.world.entity.impl.player.Player;
@@ -29,7 +30,9 @@ public class PlayerPanel {
                         ( ServerPerks.getInstance().getActivePerk() != null ?
                         ServerPerks.getInstance().getActivePerk().getName() :"N/A"),
                 "Bonus Skill: @whi@" + StringUtils.capitalizeFirst(DoubleXPSkillEvent.currentSkill.toString()),
-                (WellOfGoodwill.isActive() ? "Well of Goodwill: @whi@On" : "Well of Goodwill: @whi@Off"),
+                "Loot Chest: " +
+                        (LootChest.getLocation() != null ?
+                        LootChest.getLocation().playerPanelFrame : "@whi@N/A"),
                 "Globals",
                 "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
                 "Hellraiser: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",

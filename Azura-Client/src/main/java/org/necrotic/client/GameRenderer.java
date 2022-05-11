@@ -966,8 +966,9 @@ public class GameRenderer extends Applet implements Runnable, MouseListener, Mou
 		int[] offsetY1 = new int[5];
 		int[] childID1 = new int[5];
 
+		Client.getClient();
 		/* Tab interface scrolling */
-		int tabInterfaceID = Client.getClient().tabInterfaceIDs[Client.tabID];
+		int tabInterfaceID = Client.tabInterfaceIDs[Client.tabID];
 		if (tabInterfaceID == 11000) {
 			tabInterfaceID = 1151;
 		}

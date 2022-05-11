@@ -86,7 +86,7 @@ public class Shop extends ItemContainer {
     private static final int BOSS_SHOP = 102;
     private static final int ENERGY_FRAGMENT_STORE = 33;
     private static final int AGILITY_TICKET_STORE = 39;
-    private static final int GRAVEYARD_STORE = 42;
+    private static final int PYRAMID_OUTBREAK_SHOP = 42;
     private static final int TOKKUL_EXCHANGE_STORE = 43;
     private static final int BOSS_SLAYER_SHOP = 107;
     private static final int SHILLINGS = 99;
@@ -187,7 +187,7 @@ public class Shop extends ItemContainer {
                 || shopId == STARDUST_EXCHANGE_STORE || shopId == SHILLINGS
                 || shopId == VOTE_STORE || shopId == RECIPE_FOR_DISASTER_STORE || shopId == EVENT_SHOP
                 || shopId == BOSS_SHOP || shopId == ENERGY_FRAGMENT_STORE || shopId == AGILITY_TICKET_STORE
-                || shopId == GRAVEYARD_STORE || shopId == TOKKUL_EXCHANGE_STORE || shopId == BOSS_SLAYER_SHOP || shopId == PVM || shopId == AFK
+                || shopId == PYRAMID_OUTBREAK_SHOP || shopId == TOKKUL_EXCHANGE_STORE || shopId == BOSS_SLAYER_SHOP || shopId == PVM || shopId == AFK
                 || shopId == PRESTIGE_STORE || shopId == SLAYER_STORE_EASY || shopId == SLAYER_STORE_MEDIUM || shopId == SLAYER_STORE_HARD || shopId == LOYALTY_POINT_SHOP || shopId == BARROWS_STORE
                 || shopId == MEMBERS_STORE_I || shopId == MEMBERS_STORE_II || shopId == DONATOR_STORE_1
                 || shopId == DONATOR_STORE_2 || shopId == DONATOR_STORE_3 || shopId == DONATOR_STORE_4|| shopId == PET_STORE_1
@@ -391,7 +391,7 @@ public class Shop extends ItemContainer {
                     || id == SAPPHIRE_STORE || id == GLOBAL_BOSS || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE
                     || id == EASTER_STORE_1 || id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW
                     || id == ENERGY_FRAGMENT_STORE || id == AGILITY_TICKET_STORE
-                    || id == GRAVEYARD_STORE || id == BARROWS_STORE || id == MEMBERS_STORE_I || id == MEMBERS_STORE_II
+                    || id == PYRAMID_OUTBREAK_SHOP || id == BARROWS_STORE || id == MEMBERS_STORE_I || id == MEMBERS_STORE_II
                     || id == DONATOR_STORE_1 || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4
                     || id == PET_STORE_1 || id == PET_STORE_2 || id == PET_STORE_3 || id == PET_STORE_4 || id == SELL_FOR_TAXBAGS_SHOP || id == KOL_STORE) {
                 Object[] obj = ShopManager.getCustomShopData(id, item.getId());
@@ -672,7 +672,7 @@ public class Shop extends ItemContainer {
                         || id == TRAIN_MAGIC
                         || id == STARDUST_EXCHANGE_STORE
                         || id == SHILLINGS || id == ENERGY_FRAGMENT_STORE || id == AGILITY_TICKET_STORE
-                        || id == GRAVEYARD_STORE || id == BARROWS_STORE || id == MEMBERS_STORE_I
+                        || id == PYRAMID_OUTBREAK_SHOP || id == BARROWS_STORE || id == MEMBERS_STORE_I
                         || id == MEMBERS_STORE_II || id == DONATOR_STORE_1 || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4
                         || id ==  PET_STORE_1 || id ==  PET_STORE_2 || id ==  PET_STORE_3 || id == PET_STORE_4|| id == SELL_FOR_TAXBAGS_SHOP) {
                     value = (int) ShopManager.getCustomShopData(id, item.getId())[0];
@@ -1458,26 +1458,37 @@ public class Shop extends ItemContainer {
                     case 13675:
                         return new Object[]{1000, "stardust"};
                 }
-            } else if (shop == GRAVEYARD_STORE) {
+            } else if (shop == PYRAMID_OUTBREAK_SHOP) {
                 switch (item) {
-                    case 18337:
-                        return new Object[]{350, "zombie fragments"};
-                    case 10551:
-                        return new Object[]{500, "zombie fragments"};
-                    case 10548:
-                    case 10549:
-                    case 10550:
-                        return new Object[]{200, "zombie fragments"};
-                    case 7592:
-                    case 7593:
-                    case 7594:
-                    case 7595:
-                    case 7596:
-                        return new Object[]{25, "zombie fragments"};
-                    case 15241:
-                        return new Object[]{500, "zombie fragments"};
-                    case 15243:
-                        return new Object[]{2, "zombie fragments"};
+                    case 4151:
+                    case 11235:
+                    case 15486:
+                        return new Object[]{100, "Mummy fragments"};
+                    case 18353:
+                        return new Object[]{125, "Mummy fragments"};
+                    case 7462:
+                    case 15031:
+                    case 6585:
+                    case 7956:
+                        return new Object[]{250, "Mummy fragments"};
+                    case 22077:
+                    case 6927:
+                    case 6928:
+                    case 6929:
+                    case 19136:
+                    case 6930:
+                    case 6931:
+                    case 6932:
+                    case 6936:
+                    case 6933:
+                    case 6934:
+                    case 6935:
+                        return new Object[]{1250, "Mummy fragments"};
+                    case 12634:
+                    case 23045:
+                        return new Object[]{2000, "Mummy fragments"};
+                    case 10946:
+                        return new Object[]{25000, "Mummy fragments"};
                 }
             } else if (shop == BOSS_SLAYER_SHOP) {
                 switch (item) {

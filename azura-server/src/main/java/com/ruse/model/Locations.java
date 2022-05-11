@@ -9,6 +9,7 @@ import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.PlayerPunishment.Jail;
 import com.ruse.world.content.Zulrah;
 import com.ruse.world.content.combat.strategy.impl.Scorpia;
+import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.instanceMananger.InstanceManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
@@ -132,7 +133,65 @@ public class Locations {
 
 		LUCIFER(new int[] { 2301, 2367}, new int[] { 3970, 4024},
 				false, true, true, false, false, true) {},
+		UNKNOWN_MINIGAME(new int[] { 1720, 1790 }, new int[] { 5120, 5220 }, true, true, true, false, false, false){
+			@Override
+			public void enter(Player player) {
+				System.err.println("Called enter");
+				player.unknownZone.openInterface();
+				if (player.getPointsHandler().getMG1Count() >= 25 && player.getPointsHandler().getMG2Count() >= 25 &&
+						player.getPointsHandler().getMG3Count() >= 25) {
+					DialogueManager.start(player, 168);
+					player.setDialogueActionId(168);
+				}
+				player.unknownZone.refreshInterface();
+			}
 
+			@Override
+			public void leave(Player player) {
+				System.err.println("Called exit");
+				player.unknownZone.closeInterface();
+				player.sendParallellInterfaceVisibility(16210, false);
+			}
+		},
+
+		// Location(int[] x, int[] y, boolean multi, boolean summonAllowed, boolean
+		// followingAllowed, boolean cannonAllowed, boolean firemakingAllowed, boolean
+		// aidingAllowed) {
+
+		GRAVEYARD(new int[] { 3468, 3512 }, new int[] { 9228, 9266 }, true, true, false, true, false, false) {
+			@Override
+			public boolean canTeleport(Player player) {
+				if (player.getMinigameAttributes().getGraveyardAttributes().hasEntered()) {
+					player.getPacketSender().sendInterfaceRemoval()
+							.sendMessage("A spell teleports you out of the graveyard.");
+					Graveyard.leave(player);
+					return false;
+				}
+				return true;
+			}
+
+			@Override
+			public boolean handleKilledNPC(Player killer, NPC npc) {
+				return killer.getMinigameAttributes().getGraveyardAttributes().hasEntered()
+						&& Graveyard.handleDeath(killer, npc);
+			}
+
+			@Override
+			public void logout(Player player) {
+				if (player.getMinigameAttributes().getGraveyardAttributes().hasEntered()) {
+					Graveyard.leave(player);
+				}
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				Graveyard.leave(player);
+			}
+
+			@Override
+			public void process(Player player) {
+			}
+		},
 		PROGRESSION_ZONES(new int[] { 2774, 2791}, new int[] { 9487, 9619},
 				false, true, true, false, false, true) {
 			@Override
@@ -152,7 +211,7 @@ public class Locations {
 				player.getPacketSender().sendWalkableInterface(112000, false);
 			}
 		},
-		ZOMBIE(new int[]{2496, 2543}, new int[]{3721, 3771}, true, false, true, false, true, false) {
+		ZOMBIE(new int[]{2510, 2545}, new int[]{5200, 5235}, true, false, true, false, true, false) {
 			@Override
 			public void logout(Player player) {
 
@@ -267,7 +326,7 @@ public class Locations {
 
 		},
 
-		ZOMBIE_LOBBY(new int[]{2546, 2561}, new int[]{3710, 3726}, true, false, true, false, true, false) {
+		ZOMBIE_LOBBY(new int[]{2517, 2535}, new int[]{5284, 5301}, true, false, true, false, true, false) {
 			@Override
 			public void leave(Player player) {
 				player.getPacketSender().sendCameraNeutrality();
@@ -1448,40 +1507,7 @@ for (Item item : player.getInventory().getItems()) {
 			}
 
 		},
-		GRAVEYARD(new int[] { 2560, 2599 }, new int[] { 4490, 4530 }, true, true, false, true, false, false) {
-			@Override
-			public boolean canTeleport(Player player) {
-				if (player.getMinigameAttributes().getGraveyardAttributes().hasEntered()) {
-					player.getPacketSender().sendInterfaceRemoval()
-							.sendMessage("A spell teleports you out of the graveyard.");
-					Graveyard.leave(player);
-					return false;
-				}
-				return true;
-			}
 
-			@Override
-			public boolean handleKilledNPC(Player killer, NPC npc) {
-				return killer.getMinigameAttributes().getGraveyardAttributes().hasEntered()
-						&& Graveyard.handleDeath(killer, npc);
-			}
-
-			@Override
-			public void logout(Player player) {
-				if (player.getMinigameAttributes().getGraveyardAttributes().hasEntered()) {
-					Graveyard.leave(player);
-				}
-			}
-
-			@Override
-			public void onDeath(Player player) {
-				Graveyard.leave(player);
-			}
-
-			@Override
-			public void process(Player player) {
-			}
-		},
 		DUEL_ARENA(new int[] { 3322, 3394, 3311, 3323, 3331, 3391 }, new int[] { 3195, 3291, 3223, 3248, 3242, 3260 },
 				false, false, false, false, false, false) {
 			@Override

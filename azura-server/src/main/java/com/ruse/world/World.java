@@ -11,10 +11,12 @@ import com.ruse.util.CharacterBackup;
 import com.ruse.util.NameUtils;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.content.*;
+import com.ruse.world.content.discordbot.Bot;
 import com.ruse.world.content.minigames.impl.FightPit;
 import com.ruse.world.content.minigames.impl.KeepersOfLight;
 import com.ruse.world.content.minigames.impl.PestControl;
 import com.ruse.world.content.randomevents.EvilTree;
+import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.randomevents.ShootingStar;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.entity.Entity;
@@ -277,11 +279,12 @@ public class World {
         KeepersOfLight.sequence();
         ShootingStar.sequence();
         EvilTree.sequence();
-       // Bot.updatePlayers();
+        LootChest.sequence();
+        Bot.updatePlayers();
         // Abyssector.initialize();
         //Wildywyrm.initialize();
         //SkeletalHorror.initialize();
-        //TriviaSystem.tick();
+        TriviaSystem.tick();
 
         ServerPerks.getInstance().tick();
         CharacterBackup.sequence();

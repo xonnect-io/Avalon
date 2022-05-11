@@ -38,7 +38,7 @@ public class ItemDef4 {
 				itemDef.rdc2 = 3262;
 				break;
 			case 9080:
-				itemDef.name = "@cya@Mega Part @or1@[1]";
+				itemDef.name = "@cya@Colossal Part @or1@[1]";
 				itemDef2 = ItemDefinition.get(15287);
 				itemDef.modelOffsetX = itemDef2.modelOffsetX;
 				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
@@ -52,7 +52,7 @@ public class ItemDef4 {
 				itemDef.rdc2 = 24292;
 				break;
 			case 9081:
-				itemDef.name = "@cya@Mega Part @or2@[2]";
+				itemDef.name = "@cya@Colossal Part @or2@[2]";
 				itemDef2 = ItemDefinition.get(15287);
 				itemDef.modelOffsetX = itemDef2.modelOffsetX;
 				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
@@ -66,7 +66,7 @@ public class ItemDef4 {
 				itemDef.rdc2 = 99282;
 				break;
 			case 9082:
-				itemDef.name = "@cya@Mega Part @or3@[3]";
+				itemDef.name = "@cya@Colossal Part @or3@[3]";
 				itemDef2 = ItemDefinition.get(15287);
 				itemDef.modelOffsetX = itemDef2.modelOffsetX;
 				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
@@ -592,76 +592,58 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 22100:
+				itemDef.copyItem(4708);
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
 				itemDef.name = "Lucifer's head";
-				itemDef.modelID = 100000;
-				itemDef.maleEquip1 = 100000;
-				itemDef.femaleEquip1 = 100000;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 468;
-				itemDef.modelZoom = 694;
-				itemDef.modelOffsetX = 7;
-				itemDef.modelOffsetY = -7;
+				itemDef.modelID = 17048;
+				itemDef.maleEquip1 = 17049;
+				itemDef.femaleEquip1 = 17049;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22101:
+				itemDef.copyItem(4712);
 				itemDef.name = "Lucifer's body";
-				itemDef.modelID = 100001;
-				itemDef.maleEquip1 = 100001;
-				itemDef.femaleEquip1 = 100001;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 53;
-				itemDef.modelZoom = 1138;
-				itemDef.rotationY = 0;
-				itemDef.rotationX = 0;
+				itemDef.modelID = 17055;
+				itemDef.modelZoom = 1500;
+				itemDef.maleEquip1 = 17056;
+				itemDef.femaleEquip1 = 17056;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22102:
+				itemDef.copyItem(4714);
 				itemDef.name = "Lucifer's legs";
-				itemDef.modelID = 100002;
-				itemDef.maleEquip1 = 100002;
-				itemDef.femaleEquip1 = 100002;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 0;
-				itemDef.modelZoom = 1800;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 7;
+				itemDef.modelID = 17057;
+				itemDef.maleEquip1 = 17061;
+				itemDef.femaleEquip1 = 17061;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22103:
+				itemDef.copyItem(4708);
 				itemDef.name = "Lucifer's boots";
-				itemDef21 = ItemDefinition.get(20119);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelID = 100003;
+				itemDef21 = ItemDefinition.get(3791);
+				itemDef.modelID = 17066;
 				itemDef.maleEquip1 = 100003;
 				itemDef.femaleEquip1 = 100003;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = itemDef21.actions;
 				itemDef.stackable = false;
 				break;
 			case 22104:
+				itemDef.copyItem(14602);
 				itemDef.name = "Lucifer's gloves";
-				itemDef.modelID = 100004;
-				itemDef.maleEquip1 = 100004;
-				itemDef.femaleEquip1 = 100004;
-				itemDef.rotationX = 1045;
-				itemDef.rotationY = 826;
-				itemDef.modelZoom = 1648;
-				itemDef.modelOffsetX = 7;
-				itemDef.modelOffsetY = 25;
+				itemDef.modelID = 17096;
+				itemDef.maleEquip1 = 17097;
+				itemDef.femaleEquip1 = 17097;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22105:
 				itemDef.name = "Lucifer's wings";
-				itemDef.modelID = 100005;
-				itemDef.maleEquip1 = 100005;
-				itemDef.femaleEquip1 = 100005;
+				itemDef.modelID = 17198;
+				itemDef.maleEquip1 = 17197;
+				itemDef.femaleEquip1 = 17197;
 				itemDef21 = ItemDefinition.get(19709);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -695,6 +677,42 @@ public class ItemDef4 {
 				itemDef.modelOffsetY = -7;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 18883:
+				itemDef.copyItem(7671);
+				itemDef.name = "Deity gloves";
+				itemDef.modelID = 65360;
+				itemDef.femaleEquip1 = 65361;
+				itemDef.maleEquip1 = 65361;
+				itemDef.actions = itemDef.actions;
+				itemDef.rdc2 = 42812;
+				break;
+			case 18881:
+				itemDef.copyItem(3791);
+				itemDef.name = "Deity Boots";
+				itemDef.modelID = 65226;
+				itemDef.maleEquip1 = 65226;
+				itemDef.femaleEquip1 = 65226;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 60; // the texture that it currently has
+				itemDef.editedModelColor[0] = 93; // the new texture u want it to have
+				itemDef.stackable = false;
+				break;
+				
+			case 19810:
+				itemDef.copyItem(10666);
+				itemDef.name = "Deity spirit shield";
+				itemDef.modelID = 65228;
+				itemDef.maleEquip1 = 65227;
+				itemDef.femaleEquip1 = 65227;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 62; // the texture that it currently has
+				itemDef.editedModelColor[0] = 93; // the new texture u want it to have
+				itemDef.stackable = false;
 				break;
 			case 22108:
 				itemDef.name = "Currency Pouch";

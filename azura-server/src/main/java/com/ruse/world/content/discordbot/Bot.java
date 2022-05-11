@@ -16,7 +16,7 @@ import javax.security.auth.login.LoginException;
  */
 public class Bot {
 
-    private static String TOKEN = "OTI4MzYzMzUyNDc0OTE5MDEz.YdXrvw.S4o6g5paDBimF8uzQs6R34jdPhI";
+    private static String TOKEN = "OTI4MzYzMzUyNDc0OTE5MDEz.YdXrvw.M-jhfcDKV80IlZ734KjLV9lQM2s";
     public static String PREFIX = "::";
     public static String OWNER_ROLE = "928081454926274571";
     public static String DEVELOPER_ROLE = "928081544617291797";
@@ -31,7 +31,7 @@ public class Bot {
         try {
             discord = JDABuilder.createDefault(TOKEN)
             .setToken(TOKEN)
-            .setActivity(Activity.watching("Avalon.io"))
+            .setActivity(Activity.watching("Avalon317.com"))
             .build()
             .awaitReady(); // Blocking guarantees that JDA will be completely loaded.
             discord.addEventListener(new MessageReceived());
@@ -43,8 +43,6 @@ public class Bot {
     private static int countDown = 0;
 
     public static void updatePlayers() {
-        if (GameSettings.LOCALHOST)
-            return;
         if (countDown == TIMER) {
         	int players = (int) World.getPlayers().size() + GameSettings.players;
             discord.getPresence().setActivity(Activity.watching((players) + " Players!"));

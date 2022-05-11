@@ -947,10 +947,10 @@
         "type": "NPC_STATEMENT",
         "anim": "NORMAL",
         "lines": 2,
-        "line1": "Welcome to my Graveyard, adventurer.",
+        "line1": "Welcome to my Pyramid, adventurer.",
 		"line2": "I hope you will enjoy your stay.",
         "next": 91,
-        "npcId": 3101
+        "npcId": 4476
     },
     {
         "id": 91,
@@ -958,7 +958,7 @@
         "anim": "THINKING_STILL",
         "lines": 2,
         "line1": "Thanks!",
-		"line2": "Hmm.. Are those real zombies?",
+		"line2": "Hmm.. Are those real mummies?",
         "next": 92
     },
     {
@@ -967,47 +967,47 @@
         "anim": "NORMAL",
         "lines": 3,
         "line1": "Yes they are, sadly..",
-		"line2": "These pesky zombies always make a mess of my yard.",
-		"line3": "Iuff.",
+		"line2": "These pesky mummies always make a mess.",
+		"line3": "Would you help me clean up a bit?",
         "next": 93,
-        "npcId": 3101
+        "npcId": 4476
     },
 	{
         "id": 93,
         "type": "NPC_STATEMENT",
         "anim": "NORMAL",
         "lines": 4,
-        "line1": "Iuff. I can make you a deal, adventurer.",
-		"line2": "If you help me clear out all the zombies,",
+        "line1": "I can make you a deal, adventurer.",
+		"line2": "If you help me clear out all the mummies,",
 		"line3": "I will reward you with fragments which you",
 		"line4": "can use in my store to unlock great items.",
         "next": 94,
-        "npcId": 3101
+        "npcId": 4476
     },
 	{
         "id": 94,
         "type": "NPC_STATEMENT",
         "anim": "NORMAL",
         "lines": 4,
-        "line1": "I will make sure that each zombie you kill",
+        "line1": "I will make sure that each mummy you kill",
 		"line2": "will drop one of these rare fragments.",
 		"line3": "This way, your effort will not be a waste",
 		"line4": "of time. What do you say, are you in?",
         "next": 95,
-        "npcId": 3101
+        "npcId": 4476
     },
 	{
         "id": 95,
         "type": "STATEMENT",
         "lines": 1,
-        "line1": "Would you like to start the Graveyard minigame?",
+        "line1": "Would you like to start the Pyramid Outbreak minigame?",
         "next": 96
     },
 	{
         "id": 96,
         "type": "OPTION",
         "lines": 2,
-        "line1": "Yes, zombies do not scare me!",
+        "line1": "Yes, I am not afraid!",
 		"line2": "Cancel, abort mission, abort mission!",
         "next": -1
     },
@@ -1020,16 +1020,16 @@
 		"line2": "If you die, you will keep your items.",
 		"line3": "Good luck, adventurer.",
         "next": 98,
-        "npcId": 3101
+        "npcId": 4476
     },
 	{
         "id": 98,
         "type": "NPC_STATEMENT",
         "anim": "NORMAL",
         "lines": 1,
-        "line1": "Iuff.",
+        "line1": "Goodluck, brave adventurer.",
         "next": -1,
-        "npcId": 3101
+        "npcId": 4476
     },
 	{
         "id": 99,

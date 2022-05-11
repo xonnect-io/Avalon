@@ -14,7 +14,7 @@ public class Dissolving {
 	}
 	static int anim = 11904;
 	static int orb = 12855;
-	enum DissolvingData { 
+	public enum DissolvingData {
 		CHAINSAW(22080, new Item[]{new Item(orb, 5250)}, 15500, anim),
 		SKOLLSTAFF(5095, new Item[]{new Item(orb, 80)}, 180, anim),
 		SABER(21057, new Item[]{new Item(orb, 400)}, 1500, anim),

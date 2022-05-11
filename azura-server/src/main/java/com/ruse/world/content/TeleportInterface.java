@@ -1,7 +1,12 @@
 package com.ruse.world.content;
 
+import com.ruse.model.Item;
+import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
+import com.ruse.model.container.impl.Shop;
+import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.definitions.NPCDrops;
+import com.ruse.world.World;
 import com.ruse.world.content.boxes.Raids1;
 import com.ruse.world.content.boxes.Starter;
 import com.ruse.world.content.casketopening.Box;
@@ -10,6 +15,7 @@ import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.transportation.TeleportHandler;
+import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
 public class TeleportInterface {
@@ -234,6 +240,35 @@ public class TeleportInterface {
     }
 
     public static void handleBossTeleport(Player player, Bosses bossData) {
+
+        if (bossData == Bosses.FALLEN_ANGEL) {
+            if ((player.isUnlockedLucifers() &&
+                    player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.DEVELOPER) {
+                TeleportHandler.teleportPlayer(player,
+                        new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
+                        player.getSpellbook().getTeleportType());
+                boolean contains = false;
+                for (NPC others : World.getNpcs()) {
+                    if (others == null) {
+                        continue;
+                    }
+
+                    if (others.getId() == 9012 && others.getPosition().getRegionId() == 7760 &&
+                            others.getPosition().getZ() == (player.getIndex() * 4)) {
+                        contains = true;
+                    }
+                }
+                if (!contains) {
+                    NPC npc_ = new NPC(9012, new Position(1952, 5146, player.getIndex() * 4));
+                    npc_.setSpawnedFor(player);
+                    World.register(npc_);
+                }
+            } else {
+                player.sendMessage("You need to have killed 10k Mini Lucifers to go here.");
+            }
+            return;
+        }
+
         player.setPreviousTeleport(bossData);
         TeleportHandler.teleportPlayer(player,
                 new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
@@ -243,6 +278,31 @@ public class TeleportInterface {
     public static void handleMonsterTeleport(Player player, Monsters monsterData) {
         player.setPreviousTeleport(monsterData);
 
+        if (monsterData == Monsters.FALLEN_WARRIOR) {
+            if (!player.isUnlockedLucifers()) {
+                Item[] requirements = new Item[]{new Item(ItemDefinition.UPGRADE_TOKEN_ID, 25_000_000), new Item(20400, 1),
+                        new Item(18823, 3), new Item(19888, 3)};
+                if (player.getInventory().containsAll(requirements)) {
+                    player.getInventory().deleteItemSet(requirements);
+                    player.setUnlockedLucifers(true);
+                    player.sendMessage("@red@Congratulations, you have unlocked Fallen Angel's zone!");
+                    return;
+                } else {
+                    player.sendMessage("You do not have the requirements to unlock Fallen Angels!");
+                    player.sendMessage("You need an enraged cape + 3 coll rings II, 3 colls necks II to sacrifice!!");
+                    player.sendMessage("@red@Try again with these items in your inventory!");
+                    return;
+                }
+            } else {
+                TeleportHandler.teleportPlayer(player,
+                        new Position(monsterData.teleportCords[0], monsterData.teleportCords[1], monsterData.teleportCords[2]),
+                        player.getSpellbook().getTeleportType());
+            }
+        } else {
+            TeleportHandler.teleportPlayer(player,
+                    new Position(monsterData.teleportCords[0], monsterData.teleportCords[1], monsterData.teleportCords[2]),
+                    player.getSpellbook().getTeleportType());
+        }
         /*if (monsterData == Monsters.STARTER_ZONE) {
             ProgressionZone.teleport(player);
             return;
@@ -276,11 +336,6 @@ public class TeleportInterface {
             player.hov.initArea();
             player.hov.start();
             player.getPacketSender().sendInterfaceRemoval();
-            return;
-        }
-        if (minigameData == Minigames.PURGE) {
-            DialogueManager.start(player, 95);
-            player.setDialogueActionId(57);
             return;
         }
       /*  if (minigameData == Minigames.VOD) {
@@ -484,7 +539,8 @@ public class TeleportInterface {
         CASH_DRAGON("Cash dragons", 500, new int[]{2911, 3613, 0}, 1500),
         DEMON_GODDESS("Demon Goddesses", 501, new int[]{2784, 4445, 0}, 725),
         ENERGY_SKELETON("Energy Skeletons", 503, new int[]{2088, 3995, 0}, 700),
-        TUROTH("Turoth", 1627, new int[]{2088, 3995, 0}, 400),
+        TUROTH("Turoths", 1627, new int[]{2088, 3995, 0}, 400),
+        FALLEN_WARRIOR("Fallen Warrior", 9011, new int[]{1955, 5154, 0}, 500),
         /*VAMP("Vampyre hands", 1703, new int[]{1815, 4909, 0}, 700),
         JELLY("Jellyfish", 1721, new int[]{1848, 4896, 0}, 800),
         JELLO("Jello", 1729, new int[]{1878, 4908, 0}, 800),
@@ -545,16 +601,16 @@ public class TeleportInterface {
         TRUMP("Donald Trump", 250, new int[]{3040, 2846, 0}, 780),
         RADITZ("Raditz", 449, new int[]{2911, 3991, 0}, 780),
         GOKU("Goku", 452, new int[]{3358, 9307, 0}, 780),
-        BOTANIC("Botanic Queen", 2342, new int[]{2586, 9449, 0}, 1000),
-        RED_EYES_BLACK_DRAGON("Red-eyes Dragon", 2949, new int[]{3039, 3995, 0}, 2000),
-        BLUE_EYES_WHITE_DRAGON("Blue-eyes Dragon", 505, new int[]{2847, 2846, 0}, 2000),
+        BOTANIC("Botanic Guardian", 2342, new int[]{2586, 9449, 0}, 1000),
+        ENRAGED_GUARDIAN("Enraged Guardian", 2949, new int[]{3039, 3995, 0}, 1000),
+        ELEMENTAL_GUARDIAN("Elemental Guardian", 505, new int[]{2847, 2846, 0}, 1000),
         INYUASHA("Inyuasha", 185, new int[]{2328, 5409, 0}, 750),
         TOLROKOTH("Tolrokoth", 6430, new int[]{1887, 5468, 0}, 1500),
-        SUPREME("Enraged Supreme", 440, new int[]{2781, 4576, 0}, 1200),
+        DEITY_DEMON("Demons of Deity", 440, new int[]{2781, 4576, 0}, 1000),
         MUTATED_HOUND("Mutated Hound", 9839, new int[]{3421, 4777, 0}, 1250),
-
+        COLLOSAL_AVATAR("Collosal Avatar", 4540, new int[]{2375, 4947, 0}, 1350),
         INFERNAL_DEMON("Plutonic Demon", 12810, new int[]{2728, 4505, 0}, 1150),
-
+        FALLEN_ANGEL("Fallen Angel", 9012, new int[]{2335, 3998, 0}, 1000),
 
         /*
         CRYSTAL_QUEEN("Crystal queen", 6430, new int[]{1887, 5468, 0}, 1100),
@@ -602,9 +658,10 @@ public class TeleportInterface {
 
     public enum Minigames implements Teleport {
         STARTER_ZONE("Starter Zone", 9001, new int[]{1, 1, 0}, Starter.rewards, 600),
-        PURGE("The Purge", 9816, new int[]{2580, 4509, 0}, TreasureHunter.loot, 3000),
-        DUNG("Legends Raids", 585, new int[]{2553, 3718, 0}, Raids1.rewards, 1450),
-        IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1400),
+        OUTBREAK("Pyramid Outbreak", 4476, new int[]{3487, 9235, 0}, Graveyard.loot, 600),
+        UNKNOWN("Unknown Crypt", 823, new int[]{1754, 5133, 0}, 1250),
+        DUNG("Legends Raids", 585, new int[]{2526, 5292, 0}, Raids1.rewards, 1450),
+        IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1200),
         //VOD("Void of Deception", 9028, new int[]{1954, 5010, 0}, VoidOfDarkness.loot, 600),
         TH("Treasure Hunter", 9816, new int[]{2015, 5022, 0}, TreasureHunter.loot, 3000),
        // KOL("Keepers of Light", 9835, new int[]{2322, 5028, 0}, KeepersOfLight.loot, 1200),

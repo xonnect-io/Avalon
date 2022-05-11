@@ -17,7 +17,7 @@ public class Store extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle("Store");
-        eb.setDescription("[Click Here](https://Avalon.io/store) to find the store for Avalon!");
+        eb.setDescription("[Click Here](https://Avalon317.com/store) to find the store for Avalon!");
         eb.setThumbnail(e.getJDA().getSelfUser().getAvatarUrl());
         eb.setColor(new Color(0x296d98));
         e.getChannel().sendMessage(eb.build()).queue();

@@ -22,6 +22,7 @@ import com.ruse.world.content.combat.CombatBuilder.CombatDamageCache;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
+import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.prayer.BonesData;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.GroundItemManager;
@@ -460,7 +461,6 @@ public class NPCDrops {
                     continue;
                 }
             }
-
             if ((player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23090
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23087)
                     || (player.getSummoning() != null && player.getSummoning().getFamiliar() != null

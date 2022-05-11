@@ -254,10 +254,13 @@ public final class ObjectDefinition {
 		}
 		
 		if (definition.type == 13291) {
-			definition.name = "Upgrade Chest";
+			definition.name = "Loot Chest";
 			definition.originalModelColors = new int[]{5055, 5088, 5055};
 			definition.modifiedModelColors = new int[]{51111, 8128, 7093};
-			definition.actions = new String[]{"Upgrade", null, null, null, null};
+			definition.actions = new String[]{"Search", null, null, null, null};
+			definition.offsetX = 0;
+			definition.offsetH = 0;
+			definition.offsetY = 0;
 		}
 		
 		if (definition.type == 22823) {

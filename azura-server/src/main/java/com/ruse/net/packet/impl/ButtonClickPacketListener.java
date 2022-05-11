@@ -607,7 +607,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             // BATTLE BRAWL TELEPORT (NPC TIER LIST)
-            case 28018:// imp
+            case 142266:// IMP
                 if (player.getPointsHandler().getNPCKILLCount() <= 49) {
                     player.getPacketSender().sendMessage("You need 50 npc kill Count. You currently have @red@"
                             + player.getPointsHandler().getNPCKILLCount() + "@bla@ kills.");
@@ -615,139 +615,151 @@ public class ButtonClickPacketListener implements PacketListener {
 
                     return;
                 }
-
                 Position positionspawns = GameSettings.DEVILSPAWN;
                 TeleportHandler.teleportPlayer(player, positionspawns, TeleportType.NORMAL);
-
                 break;
 
-            case 28019:// lord
+            case 142267:// LORD
                 if (player.getPointsHandler().getSPAWNKILLCount() <= 99) {
                     player.getPacketSender().sendMessage("You need 100 Imp kills. You currently have @red@"
                             + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
 
                     return;
                 }
-
                 Position positionlord = GameSettings.LORDS;
                 TeleportHandler.teleportPlayer(player, positionlord, TeleportType.NORMAL);
                 break;
 
-            case 28020:// demon
+            case 142268:// DEMON
                 if (player.getPointsHandler().getLORDKILLCount() <= 199) {
                     player.getPacketSender().sendMessage("You need 200 Lord kills. You currently have @red@"
                             + player.getPointsHandler().getLORDKILLCount() + "@bla@ kills.");
-
                     return;
                 }
-
                 Position position2 = GameSettings.DEMON;
                 TeleportHandler.teleportPlayer(player, position2, TeleportType.NORMAL);
                 break;
-            case 28021:// dragon
+
+            case 142269:// DRAGON
                 if (player.getPointsHandler().getDEMONKILLCount() <= 299) {
                     player.getPacketSender().sendMessage("You need 300 Demon kills. You currently have @red@"
                             + player.getPointsHandler().getDEMONKILLCount() + "@bla@ kills.");
-
                     return;
                 }
-
                 Position position3 = GameSettings.DRAGON;
                 TeleportHandler.teleportPlayer(player, position3, TeleportType.NORMAL);
                 break;
-            case 28022:// beast
+
+            case 142270:// BEAST
                 if (player.getPointsHandler().getDRAGONKILLCount() <= 399) {
                     player.getPacketSender().sendMessage("You need 400 Dragon kills. You currently have @red@"
                             + player.getPointsHandler().getDRAGONKILLCount() + "@bla@ kills.");
-
                     return;
                 }
-
                 Position dragon = GameSettings.BEAST;
                 TeleportHandler.teleportPlayer(player, dragon, TeleportType.NORMAL);
                 break;
-            case 28023:// king
+
+            case 142271:// KING
                 if (player.getPointsHandler().getBEASTKILLCount() <= 499) {
                     player.getPacketSender().sendMessage("You need 500 Beast kills. You currently have @red@"
                             + player.getPointsHandler().getBEASTKILLCount() + "@bla@ kills.");
-
                     return;
                 }
-
                 Position king = GameSettings.KING;
                 TeleportHandler.teleportPlayer(player, king, TeleportType.NORMAL);
                 break;
-            case 28024:// avatar
-                if (player.getPointsHandler().getKINGKILLCount() <= 999) {
-                    player.getPacketSender().sendMessage("You need 1000 King kills. You currently have @red@"
-                            + player.getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
 
+            case 142272:// AVATAR
+                if (player.getPointsHandler().getKINGKILLCount() <= 999) {
+                    player.getPacketSender().sendMessage("You need 1,000 King kills. You currently have @red@"
+                            + player.getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
                     return;
                 }
-
                 Position avatar = new Position(3301, 3289, 0);
                 TeleportHandler.teleportPlayer(player, avatar, TeleportType.NORMAL);
                 break;
-            case 28025:// angel
-                if (player.getPointsHandler().getAVATARKILLCount() <= 1199) {
-                    player.getPacketSender().sendMessage("You need 1200 Avatar kills. You currently have @red@"
-                            + player.getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
 
+            case 142273:// ANGEL
+                if (player.getPointsHandler().getAVATARKILLCount() <= 1199) {
+                    player.getPacketSender().sendMessage("You need 1,200 Avatar kills. You currently have @red@"
+                            + player.getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
                     return;
                 }
                 Position angel = new Position(3322, 3309, 0);
                 TeleportHandler.teleportPlayer(player, angel, TeleportType.NORMAL);
-                //player.getPacketSender().sendMessage("@blu@coming soon");
-
                 break;
-            case 28026:// lucien
-                if (player.getPointsHandler().getANGELKILLCount() <= 1499) {
-                    player.getPacketSender().sendMessage("You need 1500 Angel kills. You currently have @red@"
-                            + player.getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
 
+            case 142274:// LUCIEN
+                if (player.getPointsHandler().getANGELKILLCount() <= 1499) {
+                    player.getPacketSender().sendMessage("You need 1,500 Angel kills. You currently have @red@"
+                            + player.getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
                     return;
                 }
-
                 Position lucien = new Position(2907, 5455, 0);
                 TeleportHandler.teleportPlayer(player, lucien, TeleportType.NORMAL);
-
                 break;
-            case 28027:// hercules
-                if (player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
-                    player.getPacketSender().sendMessage("You need 2500 Lucien kills. You currently have @red@"
-                            + player.getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
 
+            case 142275:// HERCULES
+                if (player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
+                    player.getPacketSender().sendMessage("You need 2,500 Lucien kills. You currently have @red@"
+                            + player.getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
                     return;
                 }
-
                 Position herc = new Position(2931, 5469, 0);
                 TeleportHandler.teleportPlayer(player, herc, TeleportType.NORMAL);
-
                 break;
-            case 28028:// satan
-                if (player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
-                    player.getPacketSender().sendMessage("You need 3500 Hercules kills. You currently have @red@"
-                            + player.getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
 
+            case 142276:// SATAN
+                if (player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
+                    player.getPacketSender().sendMessage("You need 3,500 Hercules kills. You currently have @red@"
+                            + player.getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
                     return;
                 }
-
                 Position sait = new Position(2910, 5491, 0);
                 TeleportHandler.teleportPlayer(player, sait, TeleportType.NORMAL);
-
                 break;
-            case 28029:// zeus
-                if (player.getPointsHandler().getSATANKILLCount() <= 4999) {
-                    player.getPacketSender().sendMessage("You need 5000 Satan kills. You currently have @red@"
-                            + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
 
+            case 142277:// ZEUS
+                if (player.getPointsHandler().getSATANKILLCount() <= 4999) {
+                    player.getPacketSender().sendMessage("You need 5,000 Satan kills. You currently have @red@"
+                            + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
                     return;
                 }
-
                 Position zzeus = new Position(2893, 5469, 0);
                 TeleportHandler.teleportPlayer(player, zzeus, TeleportType.NORMAL);
-
                 break;
+
+            case 142278:// GROUDON
+                if (player.getPointsHandler().getZEUSKILLCount() <= 14999) {
+                    player.getPacketSender().sendMessage("You need 15,000 Satan kills. You currently have @red@"
+                            + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
+                    return;
+                }
+                Position groudon = new Position(2893, 5469, 0);
+                TeleportHandler.teleportPlayer(player, groudon, TeleportType.NORMAL);
+                break;
+
+            case 142279:// FENRIR
+                if (player.getPointsHandler().getGROUDONKILLCount() <= 24999) {
+                    player.getPacketSender().sendMessage("You need 25,000 Groudon kills. You currently have @red@"
+                            + player.getPointsHandler().getGROUDONKILLCount() + "@bla@ kills.");
+                    return;
+                }
+                Position fenrir = new Position(2893, 5469, 0);
+                TeleportHandler.teleportPlayer(player, fenrir, TeleportType.NORMAL);
+                break;
+
+            case 142280:// bork
+                if (player.getPointsHandler().getFENRIRKILLCount() <= 49999) {
+                    player.getPacketSender().sendMessage("You need 50,000 Fenrir kills. You currently have @red@"
+                            + player.getPointsHandler().getFENRIRKILLCount() + "@bla@ kills.");
+                    return;
+                }
+                Position bork = new Position(2893, 5469, 0);
+                TeleportHandler.teleportPlayer(player, bork, TeleportType.NORMAL);
+                break;
+
             case -3306:
             case 30905:
                 player.getPacketSender().sendInterfaceRemoval();

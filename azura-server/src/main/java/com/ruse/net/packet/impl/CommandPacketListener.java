@@ -53,6 +53,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.randomevents.EvilTree;
+import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.randomevents.ShootingStar;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
@@ -100,6 +101,19 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("gamble")) {
             TeleportHandler.teleportPlayer(player, new Position(2463, 5032, 0),
                     player.getSpellbook().getTeleportType());
+        }
+
+        if(command[0].equalsIgnoreCase("answer")) {
+            String answer = wholeCommand.substring(7);
+            TriviaSystem.answer(player, answer);
+        }
+
+        if(command[0].equalsIgnoreCase("question")) {
+            player.forceChat(TriviaSystem.getCurrentQuestion());
+        }
+        if (command[0].equalsIgnoreCase("zones")) {
+            player.getPacketSender().sendInterfaceReset();
+            player.getPacketSender().sendInterface(142250);
         }
 
         if (command[0].equalsIgnoreCase("perks")) {
@@ -2571,6 +2585,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("groupa")) {
             GroupManager.loadGroups();
         }
+
         if (command[0].equalsIgnoreCase("allcc")) {
             for (Player plr : World.getPlayers()) {
                 if (plr != null) {

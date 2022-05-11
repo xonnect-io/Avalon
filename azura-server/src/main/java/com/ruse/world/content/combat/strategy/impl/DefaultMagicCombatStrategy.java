@@ -1,5 +1,6 @@
 package com.ruse.world.content.combat.strategy.impl;
 
+import com.ruse.model.container.impl.Equipment;
 import com.ruse.util.Misc;
 import com.ruse.world.content.AutoCastSpell;
 import com.ruse.world.content.combat.CombatContainer;
@@ -78,6 +79,9 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 
 		if (entity.isPlayer()) {
 			Player player = (Player) entity;
+			// We can't attack without a spell.
+			if (player.getCastSpell() == null)
+				player.setCastSpell(player.getAutocastSpell());
 			player.prepareSpell(player.getCastSpell(), victim);
 			if (player.isSpecialActivated()) {
 				player.setSpecialActivated(false);

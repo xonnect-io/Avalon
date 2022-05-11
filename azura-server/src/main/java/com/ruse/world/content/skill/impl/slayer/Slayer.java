@@ -12,6 +12,7 @@ import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -235,6 +236,9 @@ public class Slayer {
         int per5 = pointsReceived * 3;
         int per10 = pointsReceived * 5;
 
+        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_SLAYER) {
+            pointsReceived *= 2;
+        }
         // Bonus tickets
         if (player.getSlayer().getTaskStreak() % 10 == 0) {
             player.getInventory().addDropIfFull(5023, 100);

@@ -375,7 +375,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 2622:
                         ShopManager.getShops().get(43).open(player);
                         break;
-                    case 3101:
+                    case 4476:
                         DialogueManager.start(player, 90);
                         player.setDialogueActionId(57);
                         break;
@@ -975,7 +975,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         TeleportHandler.teleportPlayer(player, new Position(2911, 4832),
                                 player.getSpellbook().getTeleportType());
                         break;
-                    case 3101:
+                    case 4476:
                         DialogueManager.start(player, 95);
                         player.setDialogueActionId(57);
                         break;
@@ -1240,7 +1240,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 3777:
                         player.getDonatorShop().openInterface(DonatorShop.DonatorShopType.WEAPON);
                         break;
-                    case 3101:
+                    case 4476:
                         ShopManager.getShops().get(42).open(player);
                         break;
                     case 1597:

@@ -44,11 +44,11 @@ public enum SlayerTasks {
 	GOKU(SlayerMaster.BOSS_SLAYER, 452, "Goku can be found by using the Teleport interface.", 350_000,
 			new Position(3357, 9311, 0)),
 	//Med bosses
-	BOTANIC_QUEEN(SlayerMaster.BOSS_SLAYER, 2342, "Botanic Queen can be found by using the Teleport interface.", 400_000,
+	BOTANIC_GUARDIAN(SlayerMaster.BOSS_SLAYER, 2342, "Botanic Guardian can be found by using the Teleport interface.", 400_000,
 			new Position(2586, 9449, 0)),
-	RED_EYES_BLACK_DRAGON(SlayerMaster.BOSS_SLAYER, 2949, "Red-Eyes Black dragon can be found by using the Teleport interface.", 666_666,
+	ENRAGED_GUARDIAN(SlayerMaster.BOSS_SLAYER, 2949, "Enraged Guardian can be found by using the Teleport interface.", 666_666,
 			new Position(2847, 2847, 0)),
-	BLUE_EYES_BLACK_DRAGON(SlayerMaster.BOSS_SLAYER, 505, "Blue-Eyes Black dragon can be found by using the Teleport interface.", 550_000,
+	ELEMENTAL_GUARDIAN(SlayerMaster.BOSS_SLAYER, 505, "Elemental Guardian can be found by using the Teleport interface.", 550_000,
 			new Position(2847, 2850, 0)),
 
 	// Hard bosses
@@ -56,7 +56,7 @@ public enum SlayerTasks {
 			new Position(2328, 5409, 0)),
 	TOLROKOTH(SlayerMaster.BOSS_SLAYER, 6430, "Tolrokoths can be found by using the Teleport interface.", 650_000,
 			new Position(1887, 5468, 0)),
-	ENRAGED_SUPREME(SlayerMaster.BOSS_SLAYER, 440, "Enraged supremes can be found by using the Teleport interface.", 650_000,
+	DEMONS_OF_DEITY(SlayerMaster.BOSS_SLAYER, 440, "Demons of Deity can be found by using the Teleport interface.", 650_000,
 			new Position(2781, 4576, 0)),
 	MUTATED_HOUND(SlayerMaster.BOSS_SLAYER, 9839, "Mutated hounds can be found by using the Teleport interface.", 750_000,
 			new Position(3421, 4777, 0)),
