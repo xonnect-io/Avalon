@@ -86,14 +86,12 @@ public class Slayer {
         }
     }
 
-    public static int SKIP_TOKEN = 9719;
-
     public void resetSlayerTask() {
         SlayerTasks task = getSlayerTask();
         if (task == SlayerTasks.NO_TASK)
             return;
-        if (player.getInventory().getAmount(SKIP_TOKEN) < 1) {
-            player.getPacketSender().sendMessage("You must have a skip scroll to reset a task.");
+        if (player.getPointsHandler().getSlayerPoints() < 5) {
+            player.getPacketSender().sendMessage("You must have at-least 5 slayer points in order to skip a task.");
             return;
         }
         this.slayerTask = SlayerTasks.NO_TASK;
@@ -103,7 +101,7 @@ public class Slayer {
         } else {
             this.taskStreak = 0;
         }
-        player.getInventory().delete(SKIP_TOKEN, 1);
+         player.getPointsHandler().setSlayerPoints(-5, true);
 
         PlayerPanel.refreshPanel(player);
         Player duo = duoPartner == null ? null : World.getPlayerByName(duoPartner);
@@ -153,51 +151,6 @@ public class Slayer {
         if (amountToSlay > 1) {
             amountToSlay--;
         } else {
-            int amountOfTickets = 0;
-            player.getPacketSender().sendMessage("You've completed your Slayer task! Return to a Slayer master for another one.");
-            if (slayerTask.getTaskMaster() == SlayerMaster.EASY_SLAYER) {
-                amountOfTickets += 25;
-                DailyTask.EASY_SLAYER_TASKS.tryProgress(player);
-            } else if (slayerTask.getTaskMaster() == SlayerMaster.MEDIUM_SLAYER) {
-                amountOfTickets += 50;
-                DailyTask.MEDIUM_SLAYER_TASKS.tryProgress(player);
-            } else if (slayerTask.getTaskMaster() == SlayerMaster.HARD_SLAYER) {
-                amountOfTickets += 75;
-                DailyTask.HARD_SLAYER_TASKS.tryProgress(player);
-            } else if (slayerTask.getTaskMaster() == SlayerMaster.BOSS_SLAYER) {
-                amountOfTickets += 75;
-            }
-
-            /**
-             * Donator Rank bonusses
-             */
-            if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
-                amountOfTickets += Misc.getRandom(15, 20);
-            } else if(player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
-                amountOfTickets += Misc.getRandom(12, 15);
-            } else if(player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
-                amountOfTickets += Misc.getRandom(10, 12);
-            } else if(player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
-                amountOfTickets += Misc.getRandom(7, 10);
-            } else if(player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
-                amountOfTickets += Misc.getRandom(3, 7);
-            } else if(player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
-                amountOfTickets += Misc.getRandom(1, 5);
-            }
-
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RED_FENRIR_PET.npcId) {
-                amountOfTickets *= 2;
-            }
-
-            if(GameSettings.DOUBLE_SLAYER) {
-                amountOfTickets *= 2;
-            }
-
-            if(amountOfTickets > 0) {
-                player.sendMessage("You receive " + amountOfTickets + " total slayer tickets.");
-                player.getInventory().addDropIfFull(5023, amountOfTickets);
-            }
 
             taskStreak++;
             player.getPointsHandler().incrementSlayerSpree(1);
@@ -238,17 +191,6 @@ public class Slayer {
 
         if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_SLAYER) {
             pointsReceived *= 2;
-        }
-        // Bonus tickets
-        if (player.getSlayer().getTaskStreak() % 10 == 0) {
-            player.getInventory().addDropIfFull(5023, 100);
-            player.getPacketSender().sendMessage("You received 100 Slayer tickets");
-        } else if (player.getSlayer().getTaskStreak() % 5 == 0) {
-            player.getInventory().addDropIfFull(5023, 50);
-            player.getPacketSender().sendMessage("You received 50 Slayer tickets");
-        } else {
-            player.getInventory().addDropIfFull(5023, 2);
-            player.getPacketSender().sendMessage("You received 2 Slayer tickets.");
         }
 
         PlayerPanel.refreshPanel(player);

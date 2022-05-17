@@ -43,7 +43,7 @@ public class Bot {
     private static int countDown = 0;
 
     public static void updatePlayers() {
-        if (countDown == TIMER) {
+        if (countDown == TIMER && !GameSettings.LOCALHOST) {
         	int players = (int) World.getPlayers().size() + GameSettings.players;
             discord.getPresence().setActivity(Activity.watching((players) + " Players!"));
             countDown = 0;

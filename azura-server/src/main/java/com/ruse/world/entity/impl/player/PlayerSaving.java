@@ -148,7 +148,8 @@ public class PlayerSaving {
 			object.addProperty("zeus-killcount", new Integer(player.getPointsHandler().getZEUSKILLCount()));
 			object.addProperty("mini-lucifer-killcount", player.getPointsHandler().getMiniLuciferkillcount());
 			object.addProperty("lucifer-killcount", player.getPointsHandler().getLuciferkillcount());
-
+			object.addProperty("mini-lucifer", new Boolean(player.getMiniLucifer()));
+			object.addProperty("dark-supreme", new Boolean(player.getDarkSupreme()));
 			object.addProperty("event-points", new Integer(player.getPointsHandler().getEventPoints()));
 			object.addProperty("boss-points", new Integer(player.getPointsHandler().getBossPoints()));
 			object.addProperty("shilling-rate", new Integer(player.getPointsHandler().getSHILLINGRate()));

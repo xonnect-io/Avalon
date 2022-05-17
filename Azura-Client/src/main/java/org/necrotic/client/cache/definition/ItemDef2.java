@@ -683,6 +683,10 @@ public class ItemDef2 {
 			case 15328:
 				itemDef.name = "<shad=1><col=ff0000>Infinity Rage Potion";
 				break;
+			case 23242:
+				itemDef.copyItem(15328);
+				itemDef.name = "Owner Potion";
+				break;
 			case 15330:
 				itemDef.name = "<shad=1><col=ff0000>Infinite Super Overload";
 				itemDef.actions = new String[]{"Drink", null, "Upgrade", null, "Drop"};
@@ -6978,7 +6982,7 @@ public class ItemDef2 {
 				itemDef.modelOffsetY = votingpoting.modelOffsetY;
 				itemDef.modelZoom = 7550;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
-				itemDef.name = "<img=28><col=f8ac00>Double vote pet";
+				itemDef.name = "Double vote pet";
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
@@ -6995,7 +6999,6 @@ public class ItemDef2 {
 				itemDef.actions = itemDef21.actions;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-
 				break;
 			case 20511:
 				ItemDefinition hooker = ItemDefinition.get(12479);
@@ -8070,57 +8073,59 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				break;
 			case 5012:
-				itemDef.name = "Execution Twisted Bow";
-				ItemDefinition tbow = ItemDefinition.get(11235);
-				// itemDef.modelID = itemDef2.modelID;
-				itemDef.modelID = 65324;
-				itemDef.femaleEquip1 = 65325;
-				itemDef.maleEquip1 = 65325;
-				itemDef.actions = tbow.actions;
-				itemDef.modelOffsetX = tbow.modelOffsetX;
-				itemDef.modelOffsetY = tbow.modelOffsetY;
-				itemDef.modelZoom = 2200;
-				itemDef.rotationY = tbow.rotationY;
-				itemDef.rotationX = tbow.rotationX;
-				itemDef.stackable = false;
+				itemDef.copyItem(11235);
+				itemDef.name = "Legends Bow";
+				itemDef.modelID = 17416;
+				itemDef.femaleEquip1 = 17460;
+				itemDef.maleEquip1 = 17460;
+				itemDef.modelOffsetX = 15;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 0;
+				itemDef.rotationZ = 0;
 				break;
 			case 23226:
-				itemDef.name = "Blood Twisted Bow";
-				ItemDefinition tbow1 = ItemDefinition.get(11235);
-				itemDef.modelID = 65324;
-				itemDef.femaleEquip1 = 65325;
-				itemDef.maleEquip1 = 65325;
-				itemDef.actions = tbow1.actions;
-				itemDef.modelOffsetX = tbow1.modelOffsetX;
-				itemDef.modelOffsetY = tbow1.modelOffsetY;
-				itemDef.modelZoom = 2200;
-				itemDef.rotationY = tbow1.rotationY;
-				itemDef.rotationX = tbow1.rotationX;
-				itemDef.stackable = false;
-				itemDef.rdc2 = 685;
+				itemDef.copyItem(11235);
+				itemDef.name = "Legends Blood Bow";
+				itemDef.modelID = 17416;
+				itemDef.femaleEquip1 = 17460;
+				itemDef.maleEquip1 = 17460;
+				itemDef.modelOffsetX = 15;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.rdc2 = 79765;
 				break;
 			case 23227:
 				itemDef.copyItem(22114);
-				itemDef.name = "Blood Sanguinesti Staff";
-				itemDef.modelID = 99513;
-				itemDef.maleEquip1 = 99506;
-				itemDef.femaleEquip1 = 99506;
-				itemDef.rdc2 = 685;
+				itemDef.name = "Legends Blood Staff";
+				itemDef.modelID = 17362;
+				itemDef.maleEquip1 = 17369;
+				itemDef.femaleEquip1 = 17369;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 4;
+				itemDef.modelZoom = 2913;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 1015;
+				itemDef.rotationZ = 0;
+				itemDef.rdc2 = 79765;
 				break;
 			case 5011:
-				itemDef.name = "Light Twisted Bow";
-				ItemDefinition tbow11 = ItemDefinition.get(11235);
-				itemDef.modelID = 65324;
-				itemDef.femaleEquip1 = 65325;
-				itemDef.maleEquip1 = 65325;
-				itemDef.actions = tbow11.actions;
-				itemDef.modelOffsetX = tbow11.modelOffsetX;
-				itemDef.modelOffsetY = tbow11.modelOffsetY;
-				itemDef.modelZoom = 2200;
-				itemDef.rotationY = tbow11.rotationY;
-				itemDef.rotationX = tbow11.rotationX;
-				itemDef.stackable = false;
-				itemDef.rdc2 = 888833;
+				itemDef.copyItem(11235);
+				itemDef.name = "Legends Mythic Bow";
+				itemDef.modelID = 17416;
+				itemDef.femaleEquip1 = 17460;
+				itemDef.maleEquip1 = 17460;
+				itemDef.modelOffsetX = 15;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.rdc2 = 11000000;
 				break;
 			case 5010:
 				itemDef.name = "Crystalized bow";
@@ -8137,60 +8142,56 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				break;
 			case 8136:
-				itemDef.name = "Blood Vitur";
-				ItemDefinition vitruu = ItemDefinition.get(12537);
-				itemDef.modelID = 65320;
-				itemDef.femaleEquip1 = 65321;
-				itemDef.maleEquip1 = 65321;
-				itemDef.actions = vitruu.actions;
-				itemDef.modelOffsetX = vitruu.modelOffsetX;
-				itemDef.modelOffsetY = vitruu.modelOffsetY;
-				itemDef.modelZoom = vitruu.modelZoom;
-				itemDef.rotationY = vitruu.rotationY;
-				itemDef.rotationX = vitruu.rotationX;
-				itemDef.rotationZ = vitruu.rotationZ;
+				itemDef.name = "Legends Blood Sword";
+				ItemDefinition vitur2222 = ItemDefinition.get(12537);
+				itemDef.modelID = 17361;
+				itemDef.femaleEquip1 = 17360;
+				itemDef.maleEquip1 = 17360;
+				itemDef.actions = vitur2222.actions;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 15;
+				itemDef.modelZoom = 1780;
+				itemDef.rotationY = 475;
+				itemDef.rotationX = 983;
+				itemDef.rotationZ = 0;
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{52};
+				itemDef.rdc2 = 79765;
 				break;
 				
 			case 12535:
-				itemDef.name = "Execution Vitur";
+				itemDef.name = "Legends Sword";
 				ItemDefinition vitur22 = ItemDefinition.get(12537);
-				// itemDef.modelID = itemDef2.modelID;
-				itemDef.modelID = 65320;
-				itemDef.femaleEquip1 = 65321;
-				itemDef.maleEquip1 = 65321;
+				itemDef.modelID = 17361;
+				itemDef.femaleEquip1 = 17360;
+				itemDef.maleEquip1 = 17360;
 				itemDef.actions = vitur22.actions;
-				itemDef.modelOffsetX = vitur22.modelOffsetX;
-				//	itemDef.modelOffsetX = vitruu.modelOffsetX;
-				itemDef.modelOffsetY = vitur22.modelOffsetY;
-				itemDef.modelZoom = vitur22.modelZoom;
-				itemDef.rotationY = vitur22.rotationY;
-				itemDef.rotationX = vitur22.rotationX;
-				itemDef.rotationZ = vitur22.rotationZ;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 15;
+				itemDef.modelZoom = 1780;
+				itemDef.rotationY = 475;
+				itemDef.rotationX = 983;
+				itemDef.rotationZ = 0;
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{57};
 				break;
 
 			case 12537:
-				itemDef.name = "Light Scythe Of Vitur";
-				ItemDefinition vitur222 = ItemDefinition.get(1333);
-				itemDef.modelID = 65320;
-				itemDef.femaleEquip1 = 65321;
-				itemDef.maleEquip1 = 65321;
-				itemDef.rotationY = 491;
-				itemDef.rotationX = 900;
-				itemDef.rotationZ = 200;
-				itemDef.actions = vitur222.actions;
-				itemDef.modelOffsetX = -26;
-				itemDef.modelOffsetY = -9;
-				itemDef.modelZoom = 3200;
+				ItemDefinition executionz = ItemDefinition.get(4755);
+				itemDef.maleEquip1 = 65323;
+				itemDef.actions = executionz.actions;
+				itemDef.name = "Legends Mythic Sword";
+				itemDef.modelID = 17361;
+				itemDef.femaleEquip1 = 17360;
+				itemDef.maleEquip1 = 17360;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 15;
+				itemDef.modelZoom = 1780;
+				itemDef.rotationY = 475;
+				itemDef.rotationX = 983;
+				itemDef.rotationZ = 0;
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{76};
+				itemDef.rdc2 = 11000000;
 				break;
+				
 			case 9940:
 				itemDef.name = "Execution chainmace";
 				ItemDefinition execution = ItemDefinition.get(4755);
@@ -8252,19 +8253,31 @@ public class ItemDef2 {
 				break;
 			case 17011:
 				itemDef.copyItem(22114);
-				itemDef.name = "Sanguinesti Execution Staff";
-				itemDef.modelID = 99513;
-				itemDef.maleEquip1 = 99506;
-				itemDef.femaleEquip1 = 99506;
+				itemDef.name = "Legends Staff";
+				itemDef.modelID = 17362;
+				itemDef.maleEquip1 = 17369;
+				itemDef.femaleEquip1 = 17369;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 4;
+				itemDef.modelZoom = 2913;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 1015;
+				itemDef.rotationZ = 0;
 				break;
 
 			case 17013:
 				itemDef.copyItem(22114);
-				itemDef.name = "Light Sanguinesti Staff";
-				itemDef.modelID = 99513;
-				itemDef.maleEquip1 = 99506;
-				itemDef.femaleEquip1 = 99506;
-				itemDef.rdc2 = 888833;
+				itemDef.name = "Legends Mythic Staff";
+				itemDef.modelID = 17362;
+				itemDef.maleEquip1 = 17369;
+				itemDef.femaleEquip1 = 17369;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 4;
+				itemDef.modelZoom = 2913;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 1015;
+				itemDef.rotationZ = 0;
+				itemDef.rdc2 = 11000000;
 				break;
 			case 8273:
 				itemDef.name = "Execution gloves";

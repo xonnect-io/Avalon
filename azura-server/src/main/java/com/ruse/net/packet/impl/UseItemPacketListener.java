@@ -144,8 +144,8 @@ public class UseItemPacketListener implements PacketListener {
                 player.getInventory().deleteItemSet(requirements);
                 if (Misc.exclusiveRandom(1, 100) <= 25) {
                     player.getInventory().add(22107, 1);
-                    player.sendMessage("@red@Congratulations, you've made Lucifer's pet!");
-                    String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Lucifer's pet!";
+                    player.sendMessage("@red@Congratulations, you've made Fallen Angel's pet!");
+                    String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Fallen Angel's pet!";
                     World.sendMessage(msg);
                 }
                 return;
@@ -153,48 +153,48 @@ public class UseItemPacketListener implements PacketListener {
                     && itemUsedWith.getId() == requirements[1].getId()) {
                 player.getInventory().deleteItemSet(requirements);
                 player.getInventory().add(22104, 1);
-                player.sendMessage("@red@Congratulations, you've made Lucifer's gloves!");
-                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Lucifer's gloves!";
+                player.sendMessage("@red@Congratulations, you've made Fallen Angel's gloves!");
+                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Fallen Angel's gloves!";
                 World.sendMessage(msg);
                 return;
             } else if (player.getInventory().containsAll(requirements = new Item[]{new Item(22106, 2), new Item(18887, 1),})
                     && itemUsedWith.getId() == requirements[1].getId()) {
                 player.getInventory().deleteItemSet(requirements);
                 player.getInventory().add(22103, 1);
-                player.sendMessage("@red@Congratulations, you've made Lucifer's boots!");
-                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Lucifer's boots!";
+                player.sendMessage("@red@Congratulations, you've made Fallen Angel's boots!");
+                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Fallen Angel's boots!";
                 World.sendMessage(msg);
                 return;
             } else if (player.getInventory().containsAll(requirements = new Item[]{new Item(22106, 3), new Item(4684, 1),})
                     && itemUsedWith.getId() == requirements[1].getId()) {
                 player.getInventory().deleteItemSet(requirements);
                 player.getInventory().add(22100, 1);
-                player.sendMessage("@red@Congratulations, you've made Lucifer's head!");
-                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Lucifer's head!";
+                player.sendMessage("@red@Congratulations, you've made Fallen Angel's head!");
+                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Fallen Angel's head!";
                 World.sendMessage(msg);
                 return;
             } else if (player.getInventory().containsAll(requirements = new Item[]{new Item(22106, 3), new Item(4685, 1),})
                     && itemUsedWith.getId() == requirements[1].getId()) {
                 player.getInventory().deleteItemSet(requirements);
                 player.getInventory().add(22101, 1);
-                player.sendMessage("@red@Congratulations, you've made Lucifer's body!");
-                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Lucifer's body!";
+                player.sendMessage("@red@Congratulations, you've made Fallen Angel's body!");
+                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Fallen Angel's body!";
                 World.sendMessage(msg);
                 return;
             } else if (player.getInventory().containsAll(requirements = new Item[]{new Item(22106, 3), new Item(4686, 1),})
                     && itemUsedWith.getId() == requirements[1].getId()) {
                 player.getInventory().deleteItemSet(requirements);
                 player.getInventory().add(22102, 1);
-                player.sendMessage("@red@Congratulations, you've made Lucifer's legs!");
-                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Lucifer's legs!";
+                player.sendMessage("@red@Congratulations, you've made Fallen Angel's legs!");
+                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Fallen Angel's legs!";
                 World.sendMessage(msg);
                 return;
             } else if (player.getInventory().containsAll(requirements = new Item[]{new Item(22106, 3), new Item(20400, 1),})
                     && itemUsedWith.getId() == requirements[1].getId()) {
                 player.getInventory().deleteItemSet(requirements);
                 player.getInventory().add(22105, 1);
-                player.sendMessage("@red@Congratulations, you've made Lucifer's wings!");
-                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Lucifer's wings!";
+                player.sendMessage("@red@Congratulations, you've made Fallen Angel's wings!");
+                String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created Fallen Angel's wings!";
                 World.sendMessage(msg);
                 return;
             }
@@ -582,16 +582,6 @@ public class UseItemPacketListener implements PacketListener {
         switch (npc.getId()) {
             case VaultOfWar.GLOVES_NPC:
                 VaultOfWar.useGlovesOnNPC(player, new Item(id));
-                break;
-            case 1597:
-            case 8275:
-            case 9085:
-            case 9000:
-                if(player.getSlayer() != null && player.getInventory().contains(Slayer.SKIP_TOKEN)) {
-                    player.getSlayer().resetSlayerTask();
-                    player.getInventory().delete(Slayer.SKIP_TOKEN, 1);
-                }
-
                 break;
 
         }

@@ -79,12 +79,10 @@ public enum SlayerTasks {
 	ZAMORAK_BIRD(SlayerMaster.MEDIUM_SLAYER, 1725, "Medium Slayer Dungeon", 55000, new Position(2345, 5242)),
 
 	// Hard slayer tasks 125-250k * 2 = 250-500k / task
-	NATIVE_DEMON(SlayerMaster.HARD_SLAYER, 1715, "Hard Slayer Dungeon", 150_000, new Position(1632, 4844)),
-	SEA_CREATURE(SlayerMaster.HARD_SLAYER, 1735, "Hard Slayer Dungeon", 180_000, new Position(1704, 4839)),
-	KREE_DEVIL(SlayerMaster.HARD_SLAYER, 1736, "Hard Slayer Dungeon", 200_000, new Position(1708, 4816)),
-	HYNDRA(SlayerMaster.HARD_SLAYER, 1743, "Hard Slayer Dungeon", 225_000, new Position(1670, 4815)),
-	CHINESE_DRAGON(SlayerMaster.HARD_SLAYER, 1716, "Hard Slayer Dungeon", 250_000, new Position(1641, 4820)),
-	EVIL_CHINCHOMPA(SlayerMaster.HARD_SLAYER, 1723, "Hard Slayer Dungeon", 200_000, new Position(1617, 4823)),
+	GIANT_SPIDERS(SlayerMaster.HARD_SLAYER, 117, "Monster teleports", 150_000, new Position(2721, 4446)),
+	DEMON_GODDESS(SlayerMaster.HARD_SLAYER, 501, "Monster teleports", 180_000, new Position(2784, 4445)),
+	ENERGY_SKELETON(SlayerMaster.HARD_SLAYER, 503, "Monster teleports", 200_000, new Position(2088, 3995)),
+	TUROTHS(SlayerMaster.HARD_SLAYER, 1627, "Monster teleports", 225_000, new Position(3154, 5556)),
 	;
 
 

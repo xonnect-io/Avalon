@@ -7130,27 +7130,28 @@ public class Client extends GameRenderer {
             RSInterface.clearModelCache(aBoolean994, model);
             return;
         }
-        if (j == 1430 && class9.scrollMax > 5) {
-            if (class9.pauseTicks > 0) {
-                class9.pauseTicks--;
-                return;
-            }
-            RSInterface parent = RSInterface.interfaceCache[class9.parentID];
-            if (class9.scrollPosition == -class9.scrollMax) {
-                class9.endReached = true;
-                class9.pauseTicks = 20;
-            }
-            if (class9.endReached) {
-                if (class9.scrollPosition == 0) {
-                    class9.endReached = false;
-                    class9.pauseTicks = 20;
-                }
-                class9.scrollPosition++;
-            } else {
-                class9.scrollPosition--;
-            }
-            parent.childX[0] = class9.scrollPosition;
-        }
+		if (j == 1430 && class9.scrollMax > 5) {
+			if (class9.pauseTicks > 0) {
+				class9.pauseTicks--;
+				return;
+			}
+			RSInterface parent = RSInterface.interfaceCache[class9.parentID];
+			if (class9.scrollPosition == -class9.scrollMax) {
+				class9.endReached = true;
+				class9.pauseTicks = 60;
+			}
+			if (class9.endReached) {
+				if (class9.scrollPosition == 0) {
+					class9.endReached = false;
+					class9.pauseTicks = 90;
+				}
+				class9.scrollPosition++;
+			} else {
+				class9.scrollPosition--;
+			}
+			parent.childY[0] = class9.scrollPosition;
+		}
+
         if (j == 3500) {
             class9.modelRotationY = ItemDefinition.get(class9.mediaID).rotationY;
             class9.modelRotationX = ItemDefinition.get(class9.mediaID).rotationX;

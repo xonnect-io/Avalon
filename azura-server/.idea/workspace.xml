@@ -23,80 +23,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24fd66d0-1f70-4c79-a9c5-44dd675036a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/UnknownBossDrop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/UnknownCreatureDrop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/UnknownGhostDrop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/UnknownGuardDrop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/casketopening/impl/LootChest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/command/impl/Vote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/minigames/impl/UnknownZone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/minigames/impl/UnknownZoneInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/randomevents/LootChest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/engine/task/impl/OwnerPotionTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/aoe/AOEHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/boxes/Onyx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/teleport/NewTeleportInterfaceHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/teleport/TeleportData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/teleport/TeleportType1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/ColorConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/ColorConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/GameRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/GameRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/RSInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/RSInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ItemDef2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ItemDef2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ItemDef3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ItemDef3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ItemDef4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ItemDef4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ItemDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ItemDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/MobDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/MobDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ObjectDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/cache/definition/ObjectDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/graphics/rsinterface/CustomInterfaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Azura-Client/src/main/java/org/necrotic/client/graphics/rsinterface/CustomInterfaces.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ItemDefs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ItemDefs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/clipping/maps/1320.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/clipping/maps/1320.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/clipping/maps/1321.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/clipping/maps/1321.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/clipping/maps/1322.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/clipping/maps/1322.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/clipping/maps/1323.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/clipping/maps/1323.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/clipping/maps/1366.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/clipping/maps/1366.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/clipping/maps/1367.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/clipping/maps/1367.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/clipping/maps/2100.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/clipping/maps/2100.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/clipping/maps/2101.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/clipping/maps/2101.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/clipping/maps/2115.gz" beforeDir="false" afterPath="$PROJECT_DIR$/data/clipping/maps/2115.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/def/json/dialogues.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/def/json/dialogues.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/AOEWeapons.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/AOEWeapons.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/def/itemstats.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/def/itemstats.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/def/json/drops.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/def/json/drops.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/def/json/npc_definitions.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/def/json/npc_definitions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/def/json/world_npcs.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/def/json/world_npcs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/def/json/world_shops.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/def/json/world_shops.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/def/txt/itemnames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/def/txt/itemnames.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/def/txt/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/def/txt/items.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/serverperks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/serverperks.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/engine/task/impl/NPCDeathTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/engine/task/impl/NPCDeathTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/model/Locations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/model/Locations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/model/container/impl/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/model/container/impl/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/GameLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/GameLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/GameSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/GameSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/model/definitions/ItemDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/model/definitions/ItemDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/model/definitions/NPCDrops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/model/definitions/NPCDrops.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/ButtonClickPacketListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/ButtonClickPacketListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/CommandPacketListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/CommandPacketListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/ItemActionPacketListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/ItemActionPacketListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/NPCOptionPacketListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/NPCOptionPacketListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/ObjectActionPacketListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/ObjectActionPacketListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/AutoCastSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/AutoCastSpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/CustomDropUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/CustomDropUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/UseItemPacketListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/net/packet/impl/UseItemPacketListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/AOEHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/AOESystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/aoe/AOESystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/AOEWeaponData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/aoe/AOEWeaponData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/CustomCombiner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/CustomCombiner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/CustomTeleportInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/CustomTeleportInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/Dissolving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/Dissolving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/PlayerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/PlayerPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/PointsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/PointsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/DropsInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/DropsInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/GlobalBoss2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/GlobalBoss2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/GlobalBoss3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/GlobalBoss3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/GlobalBoss4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/GlobalBoss4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/GlobalBoss5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/GlobalBoss5.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/TeleportInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/TeleportInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/TriviaSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/TriviaSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/boxes/ZombieRaidLoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/boxes/ZombieRaidLoot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/combat/DesolaceFormulas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/combat/DesolaceFormulas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/combat/strategy/impl/DefaultMagicCombatStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/combat/strategy/impl/DefaultMagicCombatStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/boxes/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/boxes/Diamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/boxes/Ruby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/boxes/Ruby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/boxes/Silver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/boxes/Silver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/casketopening/CasketOpening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/casketopening/CasketOpening.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/combat/HitQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/combat/HitQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/combat/Maxhits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/combat/Maxhits.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/dialogue/DialogueOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/dialogue/DialogueOptions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/command/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/command/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/command/impl/GiveItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/command/impl/GiveItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/command/impl/Players.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/command/impl/Players.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/command/impl/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/discordbot/command/impl/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/minigames/MinigameAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/minigames/MinigameAttributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/minigames/impl/Graveyard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/minigames/impl/Graveyard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/serverperks/ServerPerks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/serverperks/ServerPerks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/skill/SkillManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/skill/SkillManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/minigames/impl/KeepersOfLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/minigames/impl/KeepersOfLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/randomevents/LootChest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/randomevents/LootChest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/skill/impl/slayer/Slayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/skill/impl/slayer/Slayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/skill/impl/slayer/SlayerDialogues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/skill/impl/slayer/SlayerDialogues.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/skill/impl/slayer/SlayerTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/skill/impl/slayer/SlayerTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/zombie/ZombieRaidData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/zombie/ZombieRaidData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/zombie/ZombieRaids.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/content/zombie/ZombieRaids.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/entity/impl/GlobalItemSpawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/entity/impl/GlobalItemSpawner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/entity/impl/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/entity/impl/player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ruse/world/entity/impl/player/PlayerLoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruse/world/entity/impl/player/PlayerLoading.java" afterDir="false" />
@@ -146,7 +129,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/clipping/maps" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/ruse/world/content" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
@@ -155,18 +138,21 @@
       <recent name="mysql.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\takin\Desktop\Avalon\azura-server\data\clipping\maps" />
       <recent name="C:\Users\takin\Desktop\Avalon\azura-server\src\main\java\com\ruse\world\content" />
+      <recent name="C:\Users\takin\Desktop\Avalon\azura-server\src\main\java\com\ruse\world\content\achievement" />
+      <recent name="C:\Users\takin\Desktop\Avalon\azura-server\data\clipping\maps" />
       <recent name="C:\Users\takin\Desktop\Avalon\azura-server\src\main\java\com\ruse\world\content\minigames\impl" />
       <recent name="C:\Users\takin\Desktop\Avalon\azura-server\src\main\java\mysql\impl" />
-      <recent name="C:\Users\takin\Desktop\Solak\Lunite\azura-server\data\clipping\maps" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.ruse.world.content.aoe" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ruse.world.content.boxes" />
+      <recent name="com.ruse.engine.task.impl" />
       <recent name="com.ruse.world.content" />
       <recent name="com.ruse.world.content.casketopening.impl" />
       <recent name="com.ruse.world.content.randomevents" />
-      <recent name="com.ruse.world.content.discordbot.command.impl" />
-      <recent name="com.ruse.world.content.boxes" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -243,11 +229,20 @@
           <properties class="java.lang.NumberFormatException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArithmeticException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ruse/world/content/progressionzone/ProgressionZone.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/azura_server$GameServer.ic" NAME="GameServer Coverage Results" MODIFIED="1651012962725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/azura_server$GameServer.ic" NAME="GameServer Coverage Results" MODIFIED="1652801719194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ruse.*</FILTER>
     </SUITE>
   </component>

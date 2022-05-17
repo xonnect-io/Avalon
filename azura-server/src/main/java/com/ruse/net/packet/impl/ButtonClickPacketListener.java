@@ -1,11 +1,8 @@
 package com.ruse.net.packet.impl;
 
 import com.ruse.GameSettings;
-import com.ruse.model.GameMode;
+import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
-import com.ruse.model.Position;
-import com.ruse.model.RegionInstance;
-import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Bank;
 import com.ruse.model.container.impl.Bank.BankSearchAttributes;
 import com.ruse.model.container.impl.GroupIronmanBank;
@@ -61,6 +58,7 @@ import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.skill.impl.smithing.SmithingData;
 import com.ruse.world.content.skill.impl.summoning.PouchMaking;
 import com.ruse.world.content.skill.impl.summoning.SummoningTab;
+import com.ruse.world.content.teleport.NewTeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
@@ -109,7 +107,6 @@ public class ButtonClickPacketListener implements PacketListener {
             player.setInputHandling(new ServerPerkContributionInput());
             return;
         }
-
         if (player.getAchievements().handleButtonClick(id)) {
             return;
         }
@@ -136,7 +133,11 @@ public class ButtonClickPacketListener implements PacketListener {
         if (player.getUpgradeInterface().handleButton( id)) {
             return;
         }
-
+        if (NEW_TELEPORT_BUTTONS_TAB.contains(id)) {
+            new NewTeleportInterfaceHandler(player).switchTab(id);
+        }   if (NEW_TELEPORT_BUTTONS.contains(id)) {
+            new NewTeleportInterfaceHandler(player).button(id);
+        }
         if (player.getDonatorShop().handleButton( id)) {
             return;
         }
@@ -203,6 +204,9 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 25408:
                 player.getScratchcard().claimPrize();
+                break;
+            case 28210:
+                new NewTeleportInterfaceHandler(player).teleport();
                 break;
             case 1716:
             case 106009:
@@ -606,73 +610,71 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 break;
 
-            // BATTLE BRAWL TELEPORT (NPC TIER LIST)
-            case 142266:// IMP
-                if (player.getPointsHandler().getNPCKILLCount() <= 49) {
+            case 142266:// Dustclaws
+                if (player.getPointsHandler().getNPCKILLCount() <= 49){
                     player.getPacketSender().sendMessage("You need 50 npc kill Count. You currently have @red@"
                             + player.getPointsHandler().getNPCKILLCount() + "@bla@ kills.");
                     player.getPacketSender().sendMessage("@blu@To get Fast NPC KILLS go to ::Starter");
-
                     return;
                 }
-                Position positionspawns = GameSettings.DEVILSPAWN;
+                Position positionspawns = GameSettings.DUSTCLAW_LOCATION;
                 TeleportHandler.teleportPlayer(player, positionspawns, TeleportType.NORMAL);
                 break;
 
             case 142267:// LORD
                 if (player.getPointsHandler().getSPAWNKILLCount() <= 99) {
-                    player.getPacketSender().sendMessage("You need 100 Imp kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
                             + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
 
                     return;
                 }
-                Position positionlord = GameSettings.LORDS;
+                Position positionlord = GameSettings.LORDS_LOCATION;
                 TeleportHandler.teleportPlayer(player, positionlord, TeleportType.NORMAL);
                 break;
 
-            case 142268:// DEMON
+            case 142268:// Shadow
                 if (player.getPointsHandler().getLORDKILLCount() <= 199) {
                     player.getPacketSender().sendMessage("You need 200 Lord kills. You currently have @red@"
                             + player.getPointsHandler().getLORDKILLCount() + "@bla@ kills.");
                     return;
                 }
-                Position position2 = GameSettings.DEMON;
+                Position position2 = GameSettings.SHADOWS_LOCATION;
                 TeleportHandler.teleportPlayer(player, position2, TeleportType.NORMAL);
                 break;
 
-            case 142269:// DRAGON
+            case 142269:// Golem
                 if (player.getPointsHandler().getDEMONKILLCount() <= 299) {
-                    player.getPacketSender().sendMessage("You need 300 Demon kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 300 Shadow kills. You currently have @red@"
                             + player.getPointsHandler().getDEMONKILLCount() + "@bla@ kills.");
                     return;
                 }
-                Position position3 = GameSettings.DRAGON;
+                Position position3 = GameSettings.GOLEMS_LOCATION;
                 TeleportHandler.teleportPlayer(player, position3, TeleportType.NORMAL);
                 break;
 
-            case 142270:// BEAST
+            case 142270:// Shetani
                 if (player.getPointsHandler().getDRAGONKILLCount() <= 399) {
-                    player.getPacketSender().sendMessage("You need 400 Dragon kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 400 Golem kills. You currently have @red@"
                             + player.getPointsHandler().getDRAGONKILLCount() + "@bla@ kills.");
                     return;
                 }
-                Position dragon = GameSettings.BEAST;
+                Position dragon = GameSettings.SHETANI_LOCATION;
                 TeleportHandler.teleportPlayer(player, dragon, TeleportType.NORMAL);
                 break;
 
-            case 142271:// KING
+            case 142271:// Ripper
                 if (player.getPointsHandler().getBEASTKILLCount() <= 499) {
-                    player.getPacketSender().sendMessage("You need 500 Beast kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 500 Shetani kills. You currently have @red@"
                             + player.getPointsHandler().getBEASTKILLCount() + "@bla@ kills.");
                     return;
                 }
-                Position king = GameSettings.KING;
+                Position king = GameSettings.RIPPER_LOCATION;
                 TeleportHandler.teleportPlayer(player, king, TeleportType.NORMAL);
                 break;
 
             case 142272:// AVATAR
                 if (player.getPointsHandler().getKINGKILLCount() <= 999) {
-                    player.getPacketSender().sendMessage("You need 1,000 King kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 1,000 Ripper kills. You currently have @red@"
                             + player.getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
                     return;
                 }
@@ -680,7 +682,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, avatar, TeleportType.NORMAL);
                 break;
 
-            case 142273:// ANGEL
+            case 142273:// Wyverns
                 if (player.getPointsHandler().getAVATARKILLCount() <= 1199) {
                     player.getPacketSender().sendMessage("You need 1,200 Avatar kills. You currently have @red@"
                             + player.getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
@@ -690,9 +692,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, angel, TeleportType.NORMAL);
                 break;
 
-            case 142274:// LUCIEN
+            case 142274:// Oni
                 if (player.getPointsHandler().getANGELKILLCount() <= 1499) {
-                    player.getPacketSender().sendMessage("You need 1,500 Angel kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 1,500 Wyvern kills. You currently have @red@"
                             + player.getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
                     return;
                 }
@@ -700,9 +702,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, lucien, TeleportType.NORMAL);
                 break;
 
-            case 142275:// HERCULES
+            case 142275:// Shenron
                 if (player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
-                    player.getPacketSender().sendMessage("You need 2,500 Lucien kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 2,500 Oni kills. You currently have @red@"
                             + player.getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
                     return;
                 }
@@ -710,9 +712,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, herc, TeleportType.NORMAL);
                 break;
 
-            case 142276:// SATAN
+            case 142276:// Subzero
                 if (player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
-                    player.getPacketSender().sendMessage("You need 3,500 Hercules kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 3,500 Shenron kills. You currently have @red@"
                             + player.getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
                     return;
                 }
@@ -720,9 +722,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, sait, TeleportType.NORMAL);
                 break;
 
-            case 142277:// ZEUS
+            case 142277:// Zeus
                 if (player.getPointsHandler().getSATANKILLCount() <= 4999) {
-                    player.getPacketSender().sendMessage("You need 5,000 Satan kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 5,000 Subzero kills. You currently have @red@"
                             + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
                     return;
                 }
@@ -730,9 +732,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, zzeus, TeleportType.NORMAL);
                 break;
 
-            case 142278:// GROUDON
+            case 142278:// Ipotane
                 if (player.getPointsHandler().getZEUSKILLCount() <= 14999) {
-                    player.getPacketSender().sendMessage("You need 15,000 Satan kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 15,000 Zeus kills. You currently have @red@"
                             + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
                     return;
                 }
@@ -740,9 +742,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, groudon, TeleportType.NORMAL);
                 break;
 
-            case 142279:// FENRIR
+            case 142279:// Vindicta
                 if (player.getPointsHandler().getGROUDONKILLCount() <= 24999) {
-                    player.getPacketSender().sendMessage("You need 25,000 Groudon kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 25,000 Ipotane kills. You currently have @red@"
                             + player.getPointsHandler().getGROUDONKILLCount() + "@bla@ kills.");
                     return;
                 }
@@ -750,9 +752,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, fenrir, TeleportType.NORMAL);
                 break;
 
-            case 142280:// bork
+            case 142280:// Beast
                 if (player.getPointsHandler().getFENRIRKILLCount() <= 49999) {
-                    player.getPacketSender().sendMessage("You need 50,000 Fenrir kills. You currently have @red@"
+                    player.getPacketSender().sendMessage("You need 50,000 Vindicta kills. You currently have @red@"
                             + player.getPointsHandler().getFENRIRKILLCount() + "@bla@ kills.");
                     return;
                 }
@@ -764,6 +766,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 30905:
                 player.getPacketSender().sendInterfaceRemoval();
                 break;
+
             case -4914:// 1
                 if (player.getInterfaceId() == 60600) {
                     TeleportHandler.teleportPlayer(player, new Position(2695, 3714), TeleportType.NORMAL);// rock crabs
@@ -1297,6 +1300,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case -16938:
             case -17492:
             case 31502:
+            case 142255:
                 player.getPacketSender().sendInterfaceRemoval();
                 //CLOSE INTERFACE
                 break;

@@ -26,7 +26,7 @@ public class SlayerDialogues {
 
 			@Override
 			public DialogueExpression animation() {
-				return DialogueExpression.TALK_SWING;
+				return DialogueExpression.NO_EXPRESSION;
 			}
 
 			@Override
@@ -325,6 +325,32 @@ public class SlayerDialogues {
 				return new String[] { "You currently receive " + pointsReceived + " points per task,",
 						"" + per5 + " bonus points per 5 task-streak and",
 						"" + per10 + " bonus points per 10 task-streak." };
+			}
+
+			@Override
+			public void specialAction() {
+				player.setDialogueActionId(9906);
+			}
+
+		};
+	}
+
+	public static Dialogue chooseDifficulty(final Player player) {
+		return new Dialogue() {
+			@Override
+			public DialogueType type() {
+				return DialogueType.OPTION;
+			}
+
+			@Override
+			public DialogueExpression animation() {
+				return DialogueExpression.NORMAL;
+			}
+
+			@Override
+			public String[] dialogue() {
+				return new String[] { "Easy", "Medium","Hard",
+				};
 			}
 
 			@Override

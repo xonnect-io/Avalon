@@ -117,7 +117,7 @@ public class GlobalBoss5 {
 
 
 
-                String message = "The Ironman boss has risen for revenge! fight him now at ::ironman";
+                String message = "Ironman has appeared ::ironman";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
@@ -125,6 +125,7 @@ public class GlobalBoss5 {
                     }
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
+                if (!GameSettings.LOCALHOST)
                 DiscordMessager.sendIronBossLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;

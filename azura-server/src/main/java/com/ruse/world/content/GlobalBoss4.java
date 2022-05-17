@@ -22,7 +22,7 @@ public class GlobalBoss4 {
 
     // Negative because if you make it zero it will increase
     // before the world is created and it wont spawn on server boot for 3 hrs
-    public static int tick = -20;
+    public static int tick = 0;
 
     public static Position SPAWN_POINT = new Position(2143, 5016,0);
 
@@ -79,7 +79,7 @@ public class GlobalBoss4 {
 
     }
     public static String timeLeft() {
-        int ticks = 15000 - (tick % 15000);
+        int ticks = 6000 - (tick % 6000);
         ticks /= 100;
         ticks *= 60;
 
@@ -98,7 +98,7 @@ public class GlobalBoss4 {
         tick++;
 
         // Spawn every 3 hours
-        if (tick % 15000 == 0) {
+        if (tick % 6000 == 0) {
 
             // Only if its dead
             if(currentBoss == null || currentBoss.isDying() || !currentBoss.isRegistered()) {
@@ -117,7 +117,7 @@ public class GlobalBoss4 {
 
 
 
-                String message = "Dragon King has respawned, Defeat him now at ::dk";
+                String message = "Dragon king has appeared at ::dk";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
@@ -125,6 +125,7 @@ public class GlobalBoss4 {
                     }
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
+                if (!GameSettings.LOCALHOST)
                 DiscordMessager.sendDragonKingLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;

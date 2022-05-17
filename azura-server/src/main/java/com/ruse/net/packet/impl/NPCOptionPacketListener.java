@@ -347,8 +347,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         EnergyHandler.rest(player);
                         break;
                     case 925:
-                        DialogueManager.start(player, 9906);
-                        player.setDialogueActionId(9906);
+                        DialogueManager.start(player, SlayerDialogues.dialogue(player));
                         break;
                     case 534:
                         ShopManager.getShops().get(78).open(player);

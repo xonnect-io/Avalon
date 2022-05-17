@@ -22,7 +22,7 @@ public class GlobalBoss3 {
 
     // Negative because if you make it zero it will increase
     // before the world is created and it wont spawn on server boot for 3 hrs
-    public static int tick = -20;
+    public static int tick = 0;
 
     public static Position SPAWN_POINT = new Position(3428, 9566,0);
 
@@ -79,7 +79,7 @@ public class GlobalBoss3 {
 
     }
     public static String timeLeft() {
-        int ticks = 6000 - (tick % 6000);
+        int ticks = 12000 - (tick % 12000);
         ticks /= 100;
         ticks *= 60;
 
@@ -98,7 +98,7 @@ public class GlobalBoss3 {
         tick++;
 
         // Spawn every 3 hours
-        if (tick % 6000 == 0) {
+        if (tick % 12000 == 0) {
 
             // Only if its dead
             if(currentBoss == null || currentBoss.isDying() || !currentBoss.isRegistered()) {
@@ -115,9 +115,7 @@ public class GlobalBoss3 {
                 currentBoss = npc;
                 World.register(npc);
 
-                String message = "Whoever dares to challenge Naraku, face him now at ::naraku";
-                    if (boss == 9017)
-                    message = "A vicious melting golem has spawned at ::global";
+                String message = "Naraku has appeared at ::naraku";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
@@ -125,6 +123,7 @@ public class GlobalBoss3 {
                     }
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
+                if (!GameSettings.LOCALHOST)
                 DiscordMessager.sendNarakuLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;

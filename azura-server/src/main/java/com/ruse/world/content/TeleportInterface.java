@@ -14,6 +14,7 @@ import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
+import com.ruse.world.content.teleport.NewTeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -36,13 +37,7 @@ public class TeleportInterface {
 
         switch (buttonID) {
             case 1716:
-                if (!player.isOpenedTeleports()) {
-                    player.setOpenedTeleports(true);
-                    TeleportInterface.sendMonsterData(player, TeleportInterface.Monsters.values()[0]);
-                    TeleportInterface.sendMonsterTab(player);
-                } else {
-                    player.getPacketSender().sendInterface(122000);
-                }
+                new NewTeleportInterfaceHandler(player).open();
                 return true;
             case 122005:
             case 11004:
@@ -532,50 +527,15 @@ public class TeleportInterface {
     public enum Monsters implements Teleport {
 
         MINOTAUR("Minotaurs", 1719, new int[]{2527, 2527, 0}, 600),
-        LAVA_HOUND("Lava hounds", 9838, new int[]{3424, 4126, 0}, 600),
+        LAVA_HOUND("Ember Giants", 9838, new int[]{3424, 4126, 0}, 600),
         SYM("Stinky Blobb", 1718, new int[]{2196, 5083, 0}, 550),//replace 1727 with 1718 in world npc
-        BAT("Bloodsuckers", 9836, new int[]{2388, 5019, 0}, 1500),
-        ZELDRIS("Zeldris", 117, new int[]{2721, 4446, 0}, 500),
+        BAT("Bat of light", 9836, new int[]{2388, 5019, 0}, 1500),
+        GIANT_SPIDERS("Giant Spiders", 117, new int[]{2721, 4446, 0}, 720),
         CASH_DRAGON("Cash dragons", 500, new int[]{2911, 3613, 0}, 1500),
         DEMON_GODDESS("Demon Goddesses", 501, new int[]{2784, 4445, 0}, 725),
         ENERGY_SKELETON("Energy Skeletons", 503, new int[]{2088, 3995, 0}, 700),
-        TUROTH("Turoths", 1627, new int[]{2088, 3995, 0}, 400),
+        TUROTH("Turoths", 1627, new int[]{3154, 5556, 0}, 400),
         FALLEN_WARRIOR("Fallen Warrior", 9011, new int[]{1955, 5154, 0}, 500),
-        /*VAMP("Vampyre hands", 1703, new int[]{1815, 4909, 0}, 700),
-        JELLY("Jellyfish", 1721, new int[]{1848, 4896, 0}, 800),
-        JELLO("Jello", 1729, new int[]{1878, 4908, 0}, 800),
-        BUNYIP("Bunyip", 1705, new int[]{1903, 4879, 0}, 800),
-        GARG("Rusted Gargoyle", 1712, new int[]{1904, 4850, 0}, 1500),
-        BUTTERFLY("Flaming butterfly", 1711, new int[]{1880, 4822, 0}, 800),
-        CLOUD("Blast cloud", 1739, new int[]{1846, 4819, 0}, 1200),
-        BLOODVELD("Dark bloodveld", 1710, new int[]{1809, 4834, 0}, 800),
-        LAVANNOTH("Lavannoth", 1702, new int[]{1829, 4863, 0}, 1000),
-        CRAB("Granite crab", 1700, new int[]{1869, 4863, 0}, 800),
-
-        ANT("Ant worker", 1724, new int[]{2005, 4772, 0}, 700),
-        MOSQUITO("Mosquito", 1713, new int[]{2025, 4772, 0}, 800),
-        PLANT("War plant", 1737, new int[]{2026, 4759, 0}, 800),
-        BIRD("Tycoons bird", 1730, new int[]{2004, 4754, 0}, 800),
-
-        UNICORN("Nature unicorn", 1742, new int[]{2212, 4941, 0}, 1200),
-        DRAGON("Bronze dragon", 1706, new int[]{2187, 4943, 0}, 800),
-        Z_BIRD("Zamorak bird", 1725, new int[]{2214, 4960, 0}, 800),
-        GOUL("Ghoulord", 1708, new int[]{2195, 4975, 0}, 800),
-        GROOTER("Grooter", 1744, new int[]{2166, 4946, 0}, 1200),
-        MOSS("Elemental moss", 1740, new int[]{2166, 4946, 0}, 1000),
-        FIRE("Elemental fire", 1741, new int[]{2162, 4972, 0}, 1000),
-        PELICAN("Pelican bird", 1709, new int[]{2147, 4950, 0}, 1000),
-        TURTLE("Runite turtle", 1745, new int[]{2129, 4977, 0}, 800),
-        SABRE("Sabretooth", 1731, new int[]{2129, 4977, 0}, 800),
-        DEMON("Native demon", 1715, new int[]{1633, 4844, 0}, 1200),
-        GRAAHK("Wild graahk", 1734, new int[]{1669, 4843, 0}, 800),
-        LEOPARD("Leopard", 1733, new int[]{1686, 4843, 0}, 800),
-        SEA("Sea creature", 1735, new int[]{1705, 4840, 0}, 800),
-        KREE("Kree devil", 1736, new int[]{1708, 4818, 0}, 900),
-        HYNDRA("Hyndra", 1743, new int[]{1665, 4819, 0}, 800),
-        CHIN("Evil chinchompa", 1723, new int[]{1640, 4819, 0}, 800),
-        CHIN_DRAGON("Chinese dragon", 1716, new int[]{1623, 4816, 0}, 800),
-*/
         ;
 
         private final String name;
@@ -602,19 +562,20 @@ public class TeleportInterface {
         RADITZ("Raditz", 449, new int[]{2911, 3991, 0}, 780),
         GOKU("Goku", 452, new int[]{3358, 9307, 0}, 780),
         BOTANIC("Botanic Guardian", 2342, new int[]{2586, 9449, 0}, 1000),
-        ENRAGED_GUARDIAN("Enraged Guardian", 2949, new int[]{3039, 3995, 0}, 1000),
+        ENRAGED_GUARDIAN("Enraged Guardian", 2949, new int[]{3039, 3995, 0}, 600),
         ELEMENTAL_GUARDIAN("Elemental Guardian", 505, new int[]{2847, 2846, 0}, 1000),
-        INYUASHA("Inyuasha", 185, new int[]{2328, 5409, 0}, 750),
-        TOLROKOTH("Tolrokoth", 6430, new int[]{1887, 5468, 0}, 1500),
+        INYUASHA("Inuyasha", 185, new int[]{2328, 5409, 0}, 750),
+        TOLROKOTH("Tolrokoth", 6430, new int[]{1887, 5468, 0}, 1200),
         DEITY_DEMON("Demons of Deity", 440, new int[]{2781, 4576, 0}, 1000),
         MUTATED_HOUND("Mutated Hound", 9839, new int[]{3421, 4777, 0}, 1250),
         COLLOSAL_AVATAR("Collosal Avatar", 4540, new int[]{2375, 4947, 0}, 1350),
         INFERNAL_DEMON("Plutonic Demon", 12810, new int[]{2728, 4505, 0}, 1150),
         FALLEN_ANGEL("Fallen Angel", 9012, new int[]{2335, 3998, 0}, 1000),
-
+        MIDNIGHT_GOBLIN("Midnight Goblin", 9837, new int[]{2335, 3998, 0}, 1100),
+        BLOOD_MAGE("Blood Mage", 9813, new int[]{2335, 3998, 0}, 520),
         /*
         CRYSTAL_QUEEN("Crystal queen", 6430, new int[]{1887, 5468, 0}, 1100),
-        LUCIFER("Lucifer", 9012, new int[]{2335, 3998, 0}, 1000),
+        LUCIFER("Fallen Angel", 9012, new int[]{2335, 3998, 0}, 1000),
         MEGA_AVATAR("Mega avatar", 4540, new int[]{1884, 5334, 0}, 1600),
 
         CRAZY_WITCH("Crazy witch", 1234, new int[]{2784, 4445, 0}, 1000),

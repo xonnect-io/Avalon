@@ -190,25 +190,25 @@ public class RSInterface {
 
 		String[] TELE_NAMES = {"Dustclaw Teleport - @gre@Lvl 1", "Lord Teleport - @gre@Lvl 1", "Shadow Teleport - @yel@Lvl 2", "Golem Teleport - @yel@Lvl 3", "Shetani Teleport - @or1@Lvl 3",
 				"Ripper Teleport - @or1@Lvl 4", "Avatar Teleport - @or2@Lvl 5", "Wyverns Teleport - @or2@Lvl 6", "Oni Teleport - @red@Lvl 7", "Shenron Teleport - @red@Lvl 8",
-				"Subzero Teleport - @mag@Lvl 9", "Zeus Teleport - @mag@Lvl 10", "Groudon Teleport - @cya@Lvl 11", "Fenrir Teleport - @cya@Lvl 12", "Bork Teleport - @cya@Lvl 13"};
+				"Subzero Teleport - @mag@Lvl 9", "Zeus Teleport - @mag@Lvl 10", "Ipotane Teleport - @cya@Lvl 11", "Vindicta Teleport - @cya@Lvl 12", "Beast Teleport - @cya@Lvl 13"};
 
 		String[] TELE_REQ = {"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:",
 				"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:",
 				"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:"};
 		String[] TELE_KC = {"50 Npc killcount", "100 Dustclaw kills", "200 Lord kills", "300 Shadow kills", "400 Golem kills",
-				"500 Shetani kills", "1000 Ripper kills", "1200 Titan kills", "1500 Wyvern kills", "2500 Oni kills",
-				"3500 Shenron Kills", "5000 Subzero kills", "15k Zeus kills", "25k Groudon kills", "50k Fenrir kills"};
+				"500 Shetani kills", "1k Ripper kills", "1.2k Titan kills", "1.5k Wyvern kills", "2.5k Oni kills",
+				"3.5k Shenron Kills", "5k Subzero kills", "15k Zeus kills", "25k Ipotane kills", "50k Vindicta kills"};
 		int child = 15;
 		int index = 0;
 		yPos = 5;
 		idStart = STARTING_POINT + 50;
 		for (int j = 0; j < 45; j += 3) {
 			addText(idStart + j, TELE_NAMES[index], font, 1, 15781715, false, true);
-			addText(idStart + j + 1, TELE_REQ[index], font, 0, ColorConstants.CREAM_WHITE, false, true);
+			addText(idStart + j + 1, TELE_REQ[index], font, 0, 15781715, false, true);
 			addText(idStart + j + 2, TELE_KC[index], font, 0, ColorConstants.RS_ORANGE, true, true);
 			zoneScroll.child(child, idStart + j, 62, yPos + 2);
-			zoneScroll.child(child + 1, idStart + j + 1, 228, yPos - 2 );
-			zoneScroll.child(child + 2, idStart + j + 2, 258, yPos + 10);
+			zoneScroll.child(child + 1, idStart + j + 1, 225, yPos - 2 );
+			zoneScroll.child(child + 2, idStart + j + 2, 255, yPos + 10);
 			child += 3;
 			yPos += 31;
 			index++;
@@ -860,12 +860,12 @@ public class RSInterface {
 	private static void effectInterface(TextDrawingArea[] tda) {//wtf did u do with it lol and why are there several, it should all be in 1 interface
 		RSInterface main = addInterface(48300);
 		addSpriteLoader(48301, 1386);
-		addText(48302, "000 Minutes", tda, 0, ColorConstants.ORA, false, true);
-		addText(48303, "Super Ovl", tda, 0, ColorConstants.SNOW_WHITE, false, true);
+		addText(48302, "000 Minutes", tda, 0, ColorConstants.ORA, true, true);
+		addText(48303, "Super Ovl", tda, 0, ColorConstants.SNOW_WHITE, true, true);
 		main.totalChildren(3);
-		main.child(0, 48301, 35 + 100 - 8 + 330 + 5, 275 + 8 + 5 - 170);
-		main.child(1, 48302, 11 + 102 + 330 + 5, 305 + 5 + 5 - 170);
-		main.child(2, 48303, 11 + 106 + 330 + 5, 305 - 5 + 5 - 170);
+		main.child(0, 48301, 462, 13);
+		main.child(1, 48302, 478, 51);
+		main.child(2, 48303, 478, 40);
 	}
 
 	private static void effectInterface2(TextDrawingArea[] tda) {
@@ -1954,7 +1954,7 @@ public class RSInterface {
 		RSInterface parent = interfaceCache[tab.parentID];
 		tab.atActionType = 1430;
 		tab.contentType = 1430;
-		tab.scrollMax = ((loot.length * 32) + (loot.length * tab.invSpritePadX)) - parent.width;
+		tab.scrollMax = ((loot.length * 8) + (loot.length * tab.invSpritePadY)) - parent.height;
 		for (int i = 0; i < loot.length; ++i) {
 			tab.inv[i] = loot[i][0] + 1;
 			tab.invStackSizes[i] = loot[i][1];
@@ -3601,7 +3601,7 @@ public class RSInterface {
 		addCloseButtonSmall(STARTING_POINT + 11, STARTING_POINT + 12, STARTING_POINT + 13);
 		addText(STARTING_POINT + 14, "", tda, 2, ColorConstants.ORANGE);
 		addText(STARTING_POINT + 15, "Items to create", tda, 1, ColorConstants.ORANGE);
-		addText(STARTING_POINT + 16, "Success rate @gre@100%", tda, 1, ColorConstants.WHITE);
+		addText(STARTING_POINT + 16, "Success rate: @whi@100%", tda, 1, ColorConstants.WHITE);
 		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 37, 1645, "Select Tier 1", 68, 20);
 		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 38, 1645, "Select Tier 2", 68, 20);
 		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 39, 1645, "Select Tier 3", 68, 20);
@@ -3649,7 +3649,7 @@ public class RSInterface {
 		RSInterface scroll = addInterface(STARTING_POINT + 20);
 		scroll.width = 289;
 		scroll.height = 215;
-		scroll.scrollMax = 300;
+		scroll.scrollMax = 420;
 
 		scroll.totalChildren(1);
 		scroll.child(0, STARTING_POINT + 21, 40, 5);

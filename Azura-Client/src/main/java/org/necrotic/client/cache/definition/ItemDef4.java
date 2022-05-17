@@ -595,16 +595,61 @@ public class ItemDef4 {
 				itemDef.copyItem(4708);
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 0;
-				itemDef.name = "Lucifer's head";
+				itemDef.name = "Fallen Angel's head";
 				itemDef.modelID = 17048;
 				itemDef.maleEquip1 = 17049;
 				itemDef.femaleEquip1 = 17049;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
+			case 14474:
+				itemDef.name = "<shad=1>@bla@Dark Shard";
+				itemDef21 = ItemDefinition.get(17364);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelID = itemDef21.modelID;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = itemDef21.actions;
+				itemDef.actions = new String[5];
+				itemDef.actions[4] = "Drop";
+				itemDef.rdc3 = 1;
+				itemDef.stackable = false;
+				break;
+			case 14472:
+				itemDef.name = "Light Shard";
+				itemDef21 = ItemDefinition.get(17364);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelID = itemDef21.modelID;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = itemDef21.actions;
+				itemDef.actions = new String[5];
+				itemDef.actions[4] = "Drop";
+				itemDef.rdc2 = 1111133;
+				itemDef.stackable = false;
+				break;
+			case 23238:
+				itemDef.name = "Blood Shard";
+				itemDef21 = ItemDefinition.get(17364);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelID = itemDef21.modelID;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = itemDef21.actions;
+				itemDef.actions = new String[5];
+				itemDef.actions[4] = "Drop";
+				itemDef.rdc2 = 800;
+				itemDef.stackable = false;
+				break;
 			case 22101:
 				itemDef.copyItem(4712);
-				itemDef.name = "Lucifer's body";
+				itemDef.name = "Fallen Angel's body";
 				itemDef.modelID = 17055;
 				itemDef.modelZoom = 1500;
 				itemDef.maleEquip1 = 17056;
@@ -614,7 +659,7 @@ public class ItemDef4 {
 				break;
 			case 22102:
 				itemDef.copyItem(4714);
-				itemDef.name = "Lucifer's legs";
+				itemDef.name = "Fallen Angel's legs";
 				itemDef.modelID = 17057;
 				itemDef.maleEquip1 = 17061;
 				itemDef.femaleEquip1 = 17061;
@@ -623,7 +668,7 @@ public class ItemDef4 {
 				break;
 			case 22103:
 				itemDef.copyItem(4708);
-				itemDef.name = "Lucifer's boots";
+				itemDef.name = "Fallen Angel's boots";
 				itemDef21 = ItemDefinition.get(3791);
 				itemDef.modelID = 17066;
 				itemDef.maleEquip1 = 100003;
@@ -632,7 +677,7 @@ public class ItemDef4 {
 				break;
 			case 22104:
 				itemDef.copyItem(14602);
-				itemDef.name = "Lucifer's gloves";
+				itemDef.name = "Fallen Angel's gloves";
 				itemDef.modelID = 17096;
 				itemDef.maleEquip1 = 17097;
 				itemDef.femaleEquip1 = 17097;
@@ -640,21 +685,21 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 22105:
-				itemDef.name = "Lucifer's wings";
+				itemDef.name = "Fallen Angel's wings";
 				itemDef.modelID = 17198;
 				itemDef.maleEquip1 = 17197;
 				itemDef.femaleEquip1 = 17197;
 				itemDef21 = ItemDefinition.get(19709);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelZoom = 2650;
 				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.rotationX = 1000;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 22106:
-				itemDef.name = "Lucifer's Attachment";
+				itemDef.name = "Fallen Angel's Attachment";
 				itemDef21 = ItemDefinition.get(12159);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
@@ -668,13 +713,13 @@ public class ItemDef4 {
 				itemDef.stackable = true;
 				break;
 			case 22107:
-				itemDef.name = "Lucifer's pet";
-				itemDef.modelID = 100000;
+				itemDef.name = "Fallen Angel pet";
+				itemDef.modelID = 17029;
 				itemDef.rotationX = 0;
-				itemDef.rotationY = 468;
-				itemDef.modelZoom = 694;
-				itemDef.modelOffsetX = 7;
-				itemDef.modelOffsetY = -7;
+				itemDef.rotationY = 0;
+				itemDef.modelZoom = 2800;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
@@ -729,7 +774,7 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 22109:
-				itemDef.name = "Upgraded Owner's Cape";
+				itemDef.name = "Owner's Cape (u)";
 				itemDef.modelID = 100_006;
 				itemDef.maleEquip1 = 100_007;
 				itemDef.femaleEquip1 = 100_007;
@@ -741,7 +786,7 @@ public class ItemDef4 {
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = 1000;
 				itemDef.newModelColor = new int[]{55};
-				itemDef.editedModelColor = new int[]{131};
+				itemDef.editedModelColor = new int[]{127};
 				break;
 			case 22110:
 				itemDef.name = "@red@Owner's Attachment";
@@ -768,6 +813,151 @@ public class ItemDef4 {
 				itemDef.newModelColor = new int[]{55};
 				itemDef.editedModelColor = new int[]{131};
 				break;
+
+			case 23241:
+				itemDef.copyItem(22111);
+				itemDef.name = "Owner's Aura (u)";
+				itemDef.modelID = 100_008;
+				itemDef.maleEquip1 = 100_009;
+				itemDef.femaleEquip1 = 100_009;
+				itemDef.newModelColor = new int[]{55};
+				itemDef.editedModelColor = new int[]{127};
+				break;
+
+			case 779:
+				itemDef.name = "Crest part 1";
+				itemDef.rdc3 = 1;
+				itemDef.modelZoom = 1400;
+				itemDef.modelOffsetY = -35;
+				break;
+
+			case 780:
+				itemDef.name = "Crest part 2";
+				itemDef.rdc3 = 1;
+				itemDef.modelZoom = 1300;
+				itemDef.modelOffsetX = 20;
+				itemDef.modelOffsetY = -5;
+				break;
+
+			case 781:
+				itemDef.name = "Crest part 3";
+				itemDef.rdc3 = 1;
+				itemDef.modelZoom = 1400;
+				itemDef.modelOffsetY = 25;
+				break;
+
+			case 782:
+				itemDef.copyItem(12855);
+				itemDef.name = "Empty Crest";
+				itemDef.stackable = false;
+				itemDef.modelID = 17532;
+				itemDef.modelZoom = 1150;
+				break;
+
+			case 23243:
+				itemDef.copyItem(12855);
+				itemDef.modelID = 17521;
+				itemDef.name = "Melee Crest (Dark)";
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1150;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+				
+			case 23244:
+				itemDef.copyItem(12855);
+				itemDef.modelID = 17491;
+				itemDef.name = "Magic Crest (Dark)";
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1150;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+				
+			case 23245:
+				itemDef.copyItem(12855);
+				itemDef.modelID = 17496;
+				itemDef.name = "Ranged Crest (Dark)";
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1150;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+				
+
+			case 23246: //outside 969696 //inside #a19a99 //bottom to top > #a9a5a4,#b0aeae,#c9c1c0,#cbc3c3  ,#d5cfce
+				itemDef.copyItem(12855);
+				itemDef.modelID = 17461;
+				itemDef.name = "Melee Crest (Light)";
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1150;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+				
+			case 23247:
+				itemDef.copyItem(12855);
+				itemDef.modelID = 17527;
+				itemDef.name = "Magic Crest (Light)";
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1150;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+				
+			case 23248:
+				itemDef.copyItem(12855);
+				itemDef.modelID = 17531;
+				itemDef.name = "Ranged Crest (Light)";
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1150;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+				
+			case 23249:
+				itemDef.copyItem(12855);
+				itemDef.modelID = 17521;
+				itemDef.name = "Melee Crest (Blood)";
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1150;
+				itemDef.rdc2 = 700;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+				
+			case 23250:
+				itemDef.copyItem(12855);
+				itemDef.modelID = 17491;
+				itemDef.name = "Magic Crest (Blood)";
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1150;
+				itemDef.rdc2 = 700;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+				
+			case 23251:
+				itemDef.copyItem(12855);
+				itemDef.modelID = 17496;
+				itemDef.name = "Ranged Crest (Blood)";
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1150;
+				itemDef.rdc2 = 700;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+				
+				
 			case 22112:
 				itemDef.name = "<shad=1>@bla@Dark Attachment";
 				itemDef21 = ItemDefinition.get(12159);
@@ -782,51 +972,67 @@ public class ItemDef4 {
 				itemDef.rdc3 = 1;
 				itemDef.stackable = true;
 				break;
+			case 23239:
+				itemDef.name = "Blood Attachment";
+				itemDef21 = ItemDefinition.get(12159);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.rotationZ = itemDef21.rotationZ;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelID = itemDef21.modelID;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = itemDef21.actions;
+				itemDef.rdc3 = 900;
+				itemDef.stackable = true;
+				break;
+				
 			case 22113:
-				itemDef.name = "<shad=1>@bla@Dark Twisted Bow";
-				ItemDefinition tbow111 = ItemDefinition.get(11235);
-				itemDef.modelID = 65324;
-				itemDef.femaleEquip1 = 65325;
-				itemDef.maleEquip1 = 65325;
-				itemDef.actions = tbow111.actions;
-				itemDef.modelOffsetX = tbow111.modelOffsetX;
-				itemDef.modelOffsetY = tbow111.modelOffsetY;
-				itemDef.modelZoom = 2200;
-				itemDef.rotationY = tbow111.rotationY;
-				itemDef.rotationX = tbow111.rotationX;
-				itemDef.stackable = false;
-				itemDef.rdc2 = 25;
-				break;
-			case 22114:
-				itemDef.name = "<shad=1>@bla@Dark Sanguinesti Staff";
-				itemDef.modelOffsetX = -2;
-				itemDef.modelOffsetY = 2;
-				itemDef.modelZoom = 2113;
-				itemDef.rotationY = 568;
-				itemDef.rotationX = 1527;
+				itemDef.copyItem(11235);
+				itemDef.name = "Dark Legends Bow";
+				itemDef.modelID = 17416;
+				itemDef.femaleEquip1 = 17460;
+				itemDef.maleEquip1 = 17460;
+				itemDef.modelOffsetX = 15;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 0;
 				itemDef.rotationZ = 0;
-				itemDef.modelID = 99513;
-				itemDef.maleEquip1 = 99506;
-				itemDef.femaleEquip1 = 99506;
-				itemDef.rdc = 25;
+				itemDef.rdc2 = 00000001;
 				break;
+				
+			case 22114:
+				itemDef.name = "Dark Legends Staff";
+				itemDef.modelID = 17362;
+				itemDef.maleEquip1 = 17369;
+				itemDef.femaleEquip1 = 17369;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 4;
+				itemDef.modelZoom = 2913;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 1015;
+				itemDef.rotationZ = 0;
+				itemDef.rdc2 = 00000001;
+				break;
+				
 			case 22115:
-				itemDef.name = "<shad=1>@bla@Dark Scythe Of Vitur";
-				ItemDefinition vitur22 = ItemDefinition.get(12537);
-				itemDef.modelID = 65320;
-				itemDef.femaleEquip1 = 65321;
-				itemDef.maleEquip1 = 65321;
-				itemDef.actions = vitur22.actions;
-				itemDef.modelOffsetX = vitur22.modelOffsetX;
-				itemDef.modelOffsetY = vitur22.modelOffsetY;
-				itemDef.modelZoom = vitur22.modelZoom;
-				itemDef.rotationY = vitur22.rotationY;
-				itemDef.rotationX = vitur22.rotationX;
-				itemDef.rotationZ = vitur22.rotationZ;
+				itemDef.name = "Dark Legends Sword";
+				ItemDefinition dsword = ItemDefinition.get(12537);
+				itemDef.modelID = 17361;
+				itemDef.femaleEquip1 = 17360;
+				itemDef.maleEquip1 = 17360;
+				itemDef.actions = dsword.actions;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 15;
+				itemDef.modelZoom = 1780;
+				itemDef.rotationY = 475;
+				itemDef.rotationX = 983;
+				itemDef.rotationZ = 0;
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{57};
+				itemDef.rdc2 = 00000001;
 				break;
+				
 			case 22116:
 				itemDef.name = "Iron's pet";
 				itemDef.modelID = 100026;

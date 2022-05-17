@@ -13,8 +13,8 @@ import java.util.List;
 public class DropsInterface {
 
 	public static int INTERFACE_ID = 33000;
-	private static int SEARCHED_STRING = 33006, HEADER = 33005, SEARCHED_BUTTON = -30528, CLOSE_BUTTON = -32534, ITEM_MODEL = 34010,
-			ITEM_NAME = 34100, ITEM_AMOUNT = 34200, ITEM_CHANCE = 34300, ITEM_VALUE = 34400, STRING_AMOUNT = 34003,
+	private static int SEARCHED_STRING = 35010, HEADER = 33005, SEARCHED_BUTTON = -30527, CLOSE_BUTTON = -32534, ITEM_MODEL = 34010,
+			ITEM_NAME = 34100, ITEM_AMOUNT = 34200, ITEM_CHANCE = 34300, ITEM_VALUE = 34400, STRING_AMOUNT = 34003,OVERALL_CHANCE = 34500,
 			STRING_CHANCE = 34004, STRING_VALUE = 34005, NPC_BUTTON_START = -32528, NPC_BUTTON_END = -32480;
 
 	public static boolean SearchedNpcString(int i) {
@@ -40,9 +40,10 @@ public class DropsInterface {
 	}
 
 	public static void buildRightSide(Player player, int npcId) {
-		player.getPacketSender().sendString(HEADER, "Viewing drops for: " + NpcDefinition.forId(npcId).getName()); // Search
+		player.getPacketSender().sendString(SEARCHED_STRING,  NpcDefinition.forId(npcId).getName()); // Search
 		// button
 		player.getPacketSender().sendString(STRING_AMOUNT, "");
+		player.getPacketSender().sendString(OVERALL_CHANCE, "");
 		player.getPacketSender().sendString(STRING_CHANCE, "");
 		player.getPacketSender().sendString(STRING_VALUE, "");
 		int scrollAmount = 0;
@@ -62,6 +63,7 @@ public class DropsInterface {
 				player.getPacketSender().sendString(ITEM_AMOUNT + i, "");
 				player.getPacketSender().sendString(ITEM_CHANCE + i, "");
 				player.getPacketSender().sendString(ITEM_VALUE + i, "");
+				player.getPacketSender().sendString(OVERALL_CHANCE + i, "");
 			} else {
 				Item item = NPCDrops.forId(npcId).getDropList()[i].getItem();
 				if (item.getDefinition() == null) {
@@ -76,8 +78,8 @@ public class DropsInterface {
 				// names
 				player.getPacketSender().sendString(ITEM_AMOUNT + i, (min == amount ? Misc.formatNumber(amount) : ( Misc.formatNumber(min) + "-" + Misc.formatNumber(amount))));
 				player.getPacketSender().sendString(ITEM_CHANCE + i, "1/" + (chance == 0 ? "1" : chance));
-				player.getPacketSender().sendString(ITEM_VALUE + i,
-						Misc.format(amount * item.getDefinition().getValue()) + "");
+				player.getPacketSender().sendString(ITEM_VALUE + i,"Amount:");
+				player.getPacketSender().sendString(OVERALL_CHANCE + i,"Chance:");
 				scrollAmount++;
 			}
 		}
@@ -129,12 +131,14 @@ public class DropsInterface {
 		player.getPacketSender().sendString(STRING_AMOUNT, "");
 		player.getPacketSender().sendString(STRING_CHANCE, "");
 		player.getPacketSender().sendString(STRING_VALUE, "");
+		player.getPacketSender().sendString(OVERALL_CHANCE, "");
 		for (int i = 0; i < 80; i++) {
 			player.getPacketSender().sendItemOnInterface(ITEM_MODEL + i, -1, 0, 1); // remove all item models
 			player.getPacketSender().sendString(ITEM_NAME + i, ""); // remove all item names
 			player.getPacketSender().sendString(ITEM_AMOUNT + i, "");
 			player.getPacketSender().sendString(ITEM_CHANCE + i, "");
 			player.getPacketSender().sendString(ITEM_VALUE + i, "");
+			player.getPacketSender().sendString(OVERALL_CHANCE + i, "");
 		}
 		player.getPacketSender().setScrollMax(34000, 0);
 	}

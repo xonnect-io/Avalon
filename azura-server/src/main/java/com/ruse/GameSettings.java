@@ -11,7 +11,7 @@ public class GameSettings {
     public static final int GAME_VERSION = 3;
     public static final int GAME_PORT = 9420;
     public static boolean MYSQL_ENABLED = true;
-    public static boolean LOCALHOST = false;
+    public static boolean LOCALHOST = true;
     public static boolean BOGO = false;
     public static boolean B2GO = false;
 
@@ -170,14 +170,14 @@ public class GameSettings {
     public static final Position RUBY_ZONE = new Position(2207, 4240);
     public static final Position SUPER_ZONE_NPC = new Position(2827, 2866, 8);
     public static final Position EXTREME_ZONE_NPC = new Position(2827, 2866, 12);
-    public static final Position DEVILSPAWN = new Position(2958, 9487, 0);
-    public static final Position LORDS = new Position(2989, 9483, 0);
-    public static final Position DEMON = new Position(2330, 3888, 0);
-    public static final Position DRAGON = new Position(2377, 3886, 0);
-    public static final Position BEAST = new Position(1698, 5600, 0);
+    public static final Position DUSTCLAW_LOCATION = new Position(2958, 9487, 0);
+    public static final Position LORDS_LOCATION = new Position(2989, 9483, 0);
+    public static final Position SHADOWS_LOCATION = new Position(2330, 3888, 0);
+    public static final Position GOLEMS_LOCATION = new Position(2377, 3886, 0);
+    public static final Position SHETANI_LOCATION = new Position(1698, 5600, 0);
     public static final Position HULK = new Position(3486, 3623, 0);
     public static final Position LEO = new Position(2708, 4752, 0);
-    public static final Position KING = new Position(1625, 5601, 0);
+    public static final Position RIPPER_LOCATION = new Position(1625, 5601, 0);
     public static final Position PREDATOR = new Position(2901, 3617, 0);
     public static final Position BULWARK = new Position(2413, 3523, 0);
     public static final Position TRAIN = new Position(2517, 2521, 0);

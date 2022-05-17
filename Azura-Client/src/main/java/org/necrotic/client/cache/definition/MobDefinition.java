@@ -9,7 +9,7 @@ import org.necrotic.client.io.ByteBuffer;
 import org.necrotic.client.world.Model;
 
 import java.util.HashMap;
-
+//use npc 6208
 public final class MobDefinition {
 	public int rdc = 0;
 	public int rdc2 = 0;
@@ -31,9 +31,6 @@ public final class MobDefinition {
 			case 1086:
 				model.setTexture(51);
 				break;
-			//	case 1614:
-			//model.setTexture(72);
-			//	break;
 		}
 	}
 
@@ -64,18 +61,14 @@ public final class MobDefinition {
 
 			case 3373:
 				definition.npcModels[0] = 6775;
-				//definition.npcModels[1] = 6775;//body
-				//definition.npcModels[2] = 6775;//legs
-				//definition.npcModels[3] = 6775;//gloves
-				//definition.npcModels[4] = 6775;//boots
 				definition.npcModels[5] = 65334;//cape
-				//definition.npcModels[4] = 6775;//boots
-				//definition.npcModels[6] = 65334;//wep
 				break;
+				
 			case 289:
 				definition.name = "Daily Task Manager";
 				definition.actions = new String[]{"Get-Task", null, "Claim-Reward", "Cancel-Task", null};
 				break;
+				
 			case 9001:
 				definition.name = "Phase [1]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -88,6 +81,7 @@ public final class MobDefinition {
 				definition.scaleY = 130;
 				definition.drawYellowDotOnMap = true;
 				break;
+				
 			case 9002:
 				definition.name = "Phase [2]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -100,6 +94,7 @@ public final class MobDefinition {
 				definition.scaleY = 140;
 				definition.drawYellowDotOnMap = true;
 				break;
+				
 			case 9003:
 				definition.name = "Phase [3]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -112,6 +107,7 @@ public final class MobDefinition {
 				definition.scaleY = 180;
 				definition.drawYellowDotOnMap = true;
 				break;
+				
 			case 9004:
 				definition.name = "Phase [4]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -124,6 +120,7 @@ public final class MobDefinition {
 				definition.scaleY = 260;
 				definition.drawYellowDotOnMap = true;
 				break;
+				
 			case 9005:
 				definition.name = "Phase [5]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -136,6 +133,7 @@ public final class MobDefinition {
 				definition.scaleY = 105;
 				definition.drawYellowDotOnMap = true;
 				break;
+				
 			case 9006:
 				definition.name = "Phase [6]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -148,6 +146,7 @@ public final class MobDefinition {
 				definition.scaleY = 100;
 				definition.drawYellowDotOnMap = true;
 				break;
+				
 			case 9007:
 				definition.name = "Dreambody";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -160,6 +159,7 @@ public final class MobDefinition {
 				definition.scaleY = 150;
 				definition.drawYellowDotOnMap = true;
 				break;
+				
 			case 12810:
 				definition.npcModels = new int[]{15435};
 				definition.name = "Plutonic demon";
@@ -1031,19 +1031,20 @@ public final class MobDefinition {
 				definition.scaleXZ = 128;
 				definition.scaleY = 128;
 				break;
+				
 			case 9813:
 				definition.setDefault();
-				definition.name = "Odin";
-				definition.npcModels = new int[]{100199};
-				definition.combatLevel = MobDefinition.get(2292).combatLevel;
-				definition.standAnimation = MobDefinition.get(2292).standAnimation;
-				definition.walkAnimation = MobDefinition.get(2292).walkAnimation;
+				definition.name = "Blood Mage";
+				definition.npcModels = new int[]{17344,17345,17349,17350,17359};
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.drawYellowDotOnMap = true;
 				definition.npcSizeInSquares = 1;
 				definition.scaleXZ = 128;
 				definition.scaleY = 128;
 				break;
+				
 			case 9814:
 				definition.setDefault();
 				definition.name = "Heimdall";
@@ -1278,7 +1279,7 @@ public final class MobDefinition {
 				break;
 			case 9837:
 				definition.setDefault();
-				definition.name = "Goblin of light";
+				definition.name = "Midnight Goblin";
 				definition.npcModels = new int[]{100283};
 				definition.combatLevel = 200;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
@@ -1288,14 +1289,15 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 3;
 				definition.scaleXZ = 32;
 				definition.scaleY = 32;
+				definition.rdc2 = 11001;
 				break;
 			case 9838:
 				definition.setDefault();
-				definition.name = "Lava hound";
-				definition.npcModels = new int[]{100306};
+				definition.name = "Ember Giant";
+				definition.npcModels = new int[]{18036};
 				definition.combatLevel = 200;
-				definition.standAnimation = MobDefinition.get(49).standAnimation;
-				definition.walkAnimation = MobDefinition.get(49).walkAnimation;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.drawYellowDotOnMap = true;
 				definition.npcSizeInSquares = 2;
@@ -3043,7 +3045,7 @@ public final class MobDefinition {
 				definition.scaleY = 120;
 				break;
 			case 9012:
-				definition.name = "Lucifer";
+				definition.name = "Fallen Angel";
 				MobDefinition lucifer = MobDefinition.get(2292);
 				definition.npcModels = new int[]{17029};
 				definition.combatLevel = lucifer.combatLevel;
@@ -3186,12 +3188,11 @@ public final class MobDefinition {
 				definition.description = "GWD.".getBytes();
 				definition.npcModels = new int[]{17218};
 				definition.combatLevel = poke.combatLevel;
-				definition.standAnimation = 808;
-				definition.walkAnimation = 809;
-				definition.scaleXZ = 90;
-				definition.scaleY = 90;
+				definition.standAnimation = poke.standAnimation;
+				definition.walkAnimation = poke.walkAnimation;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.rdc2 = 664466;
 				break;
 
 			case 3312:
@@ -3217,18 +3218,14 @@ public final class MobDefinition {
 				break;
 
 			case 8010:
-				definition.name = "Groudon";
+				definition.name = "Ipotane";
 				definition.description = "Groudon.".getBytes();
-				definition.npcModels = new int[]{65191};
+				definition.npcModels = new int[]{17296};
 				definition.combatLevel = 699;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 130;
 				definition.scaleY = 130;
-				definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				definition.changedModelColours = new int[1]; // same here
-				definition.changedModelColours[0] = 40; // the texture that it currently has
-				definition.originalModelColours[0] = 40; // the new texture u want it to have
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 
@@ -3310,6 +3307,19 @@ public final class MobDefinition {
 				definition.actions = new String[5];
 				definition.actions[0] = null;
 				break;
+
+			case 225:
+				definition.name = "Avalon Beasts";
+				definition.description = "Beast of Avalon.".getBytes();
+				definition.npcModels = new int[]{17339};
+				definition.combatLevel = 200;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 110;
+				definition.scaleY = 110;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				break;
+				
 			case 450:
 				definition.name = "Majin Buu";
 				definition.description = "Buu.".getBytes();
@@ -3875,18 +3885,17 @@ public final class MobDefinition {
 				definition.degreesToTurn = 32;
 				break;
 			case 3830:
-				
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.name = "Avalon Guardian";
-				definition.npcModels = new int[]{16356};
+				definition.npcModels = new int[]{18007};
 				definition.combatLevel = 785;
 				definition.npcSizeInSquares = 4;
-				//definition.rdc2 = 29492;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 390;
 				definition.scaleY = 390;
 				break;
+				
 			case 3831:
 				definition.name = "Azure beast";
 				//definition.description = "MegaBeast".getBytes();
@@ -3903,11 +3912,11 @@ public final class MobDefinition {
 				break;
 			case 2949:
 				definition.name = "Enraged Guardian";
-				definition.npcModels = new int[]{16839};
+				definition.npcModels = new int[]{18014};
 				MobDefinition Herbal1 = get(1);
 				definition.combatLevel = 800;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
+				definition.scaleXZ = 190;
+				definition.scaleY = 170;
 				definition.npcSizeInSquares = 2;
 				definition.description = Herbal1.description;
 				definition.drawYellowDotOnMap = true;
@@ -4114,7 +4123,7 @@ public final class MobDefinition {
 				
 				case 117:
 				definition.setDefault();
-				definition.name = "Zeldris";
+				definition.name = "Giant Spiders";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
 				definition.npcSizeInSquares = 3;
@@ -4122,7 +4131,7 @@ public final class MobDefinition {
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.scaleXZ = 150;
 				definition.scaleY = 150;
-				definition.npcModels = new int[]{15583,15585,15660,15662,15663};
+				definition.npcModels = new int[]{18062};
 				break;
 				
 				case 500:
@@ -4287,7 +4296,7 @@ public final class MobDefinition {
 				definition.scaleY = 100;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
-				definition.npcModels = new int[]{15193};
+				definition.npcModels = new int[]{18037};
 				break;
 				
 			case 6431:
@@ -4519,7 +4528,7 @@ public final class MobDefinition {
 				definition.name = "<shad=f9f6f6>Vote Boss<shad=-1>";
 				MobDefinition votingbosser = MobDefinition.get(2292);
 				definition.description = "GWD.".getBytes();
-				definition.npcModels = new int[]{65172};
+				definition.npcModels = new int[]{18008};
 				definition.combatLevel = votingbosser.combatLevel;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
@@ -6326,74 +6335,85 @@ public final class MobDefinition {
 				//	definition.rdc2 = 111;
 				break;
 			case 6871:
-				MobDefinition b171251 = get(6830);
-				definition.name = "Spirit wolf";
+				MobDefinition sc = get(1);
+				definition.name = "Spirit critter";
 				definition.combatLevel = 40;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.description = b171251.description;
+				definition.description = sc.description;
 				definition.drawYellowDotOnMap = true;
-				definition.npcModels = b171251.npcModels.clone();
-				definition.standAnimation = b171251.standAnimation;
-				definition.walkAnimation = b171251.walkAnimation;
+				definition.npcModels = new int[]{18031};
+				definition.standAnimation = sc.standAnimation;
+				definition.walkAnimation = sc.walkAnimation;
 				definition.degreesToTurn = 32;
-					definition.rdc2 = 1321088;
 				break;
 			case 6870:
-				definition.name = "Toxic Wolpertinger";
+				MobDefinition tc = get(1);
+				definition.name = "Evil Dino";
 				definition.combatLevel = 40;
-				definition.scaleXZ = 300;
-				definition.scaleY = 300;
+				definition.scaleXZ = 50;
+				definition.scaleY = 50;
 				definition.npcSizeInSquares = 1;
+				definition.npcModels = new int[]{18121};
+				definition.standAnimation = tc.standAnimation;
+				definition.walkAnimation = tc.walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.drawYellowDotOnMap = true;
 				definition.degreesToTurn = 32;
-				definition.rdc2 = 1321088;
 				break;
 			case 6792:
-				definition.name = "Elysian ghost";
-				definition.combatLevel = 40;
-				definition.scaleXZ = 255;
-				definition.scaleY = 255;
-				definition.npcSizeInSquares = 1;
+				MobDefinition cs = get(1);
+				definition.name = "Cave Snail";
+				definition.description = "A Cave Snail.".getBytes();
+				definition.npcModels = new int[]{18034}; //65208
+				definition.combatLevel = 333;
+				definition.standAnimation = 12248;
+				definition.walkAnimation = 12246;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.standAnimation = cs.standAnimation;
+				definition.walkAnimation = cs.walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 1;
 				definition.drawYellowDotOnMap = true;
-				definition.degreesToTurn = 32;
-				definition.rdc2 = 1121088;
 				break;
 
+			case 1627:
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				definition.npcSizeInSquares = 2;
+				break;
+				
 			case 6799:
-				MobDefinition b17265 = get(6792);
-				definition.name = "Arcane ghost";
-				definition.combatLevel = 40;
-				definition.scaleXZ = 255;
-				definition.scaleY = 255;
-				definition.npcSizeInSquares = 1;
-				definition.npcModels = b17265.npcModels.clone();
-				definition.standAnimation = b17265.standAnimation;
-				definition.walkAnimation = b17265.walkAnimation;
+				MobDefinition cd = get(1);
+				definition.name = "Cave Drone";
+				definition.description = "A Cave Drone.".getBytes();
+				definition.npcModels = new int[]{18122}; //65208
+				definition.combatLevel = 333;
+				definition.standAnimation = cd.standAnimation;
+				definition.walkAnimation = cd.walkAnimation;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
 				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 1;
 				definition.drawYellowDotOnMap = true;
-				definition.degreesToTurn = 32;
-				definition.rdc2 = 1611088;
 				break;
 				
 			case 6798:
-				MobDefinition b172655 = get(6792);
-				definition.name = "Spectral ghost";
-				definition.combatLevel = 40;
-				definition.scaleXZ = 255;
-				definition.scaleY = 255;
-				definition.npcSizeInSquares = 1;
-				definition.npcModels = b172655.npcModels.clone();
-				definition.standAnimation = b172655.standAnimation;
-				definition.walkAnimation = b172655.walkAnimation;
+				MobDefinition cm = get(1);
+				definition.name = "Cave Mutant";
+				definition.description = "A Cave Mutant.".getBytes();
+				definition.npcModels = new int[]{18123}; //65208
+				definition.combatLevel = 333;
+				definition.standAnimation = cm.standAnimation;
+				definition.walkAnimation = cm.walkAnimation;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
 				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 1;
 				definition.drawYellowDotOnMap = true;
-				definition.degreesToTurn = 32;
-				definition.rdc2 = 22088;
 				break;
 				
 				
@@ -6415,20 +6435,19 @@ public final class MobDefinition {
 				break;
 
 			case 1727:
-				MobDefinition b1727 = get(7377);
+				MobDefinition b1727 = get(1);
 				definition.name = "Symbiote";
 				definition.combatLevel = 40;
-				definition.scaleXZ = 130;
-				definition.scaleY = 130;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = b1727.description;
 				definition.drawYellowDotOnMap = true;
-				definition.npcModels = b1727.npcModels.clone();
+				definition.npcModels = new int[]{18030};
 				definition.standAnimation = b1727.standAnimation;
 				definition.walkAnimation = b1727.walkAnimation;
 				definition.degreesToTurn = 32;
-				definition.rdc2 = 271523;
 				break;
 
 			case 1729:

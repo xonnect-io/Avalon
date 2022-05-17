@@ -2702,15 +2702,16 @@ public class CustomInterfaces extends RSInterface {
 		addHoverButton(33002, 55, 16, 16,"Close", 0, 33003, 1); //changeid
 		addHoveredButton(33003, 90, 16, 16, 33004); //changeid
 		addText(33005, "Loot Viewer", tda, 2, ColorConstants.ORANGE, true, true);
-		addHoverButton(35008, 1410, 159, 29, "Search NPC", -1, 35009, 1);
-		addHoveredButton(35009, 1411, 159, 29, 35010);
-		addText(35011, "Results", tda, 1, ColorConstants.ORANGE, true, true);
-		addText(35012, "Item name", tda, 1, 15781715, false, true);
-		addText(35013, "Amount", tda, 1, 15781715, false, true);
-		addText(35014, "Chance", tda, 1, 15781715, false, true);
+		addHoverButton(35009, "b", 1, 130, 25, "Search NPC", -1, 35010, 1);
+		addHoverButton(35008, "b", 1, 130, 25, "Search NPC", -1, 35009, 1);
+		addText(35010, "Search for an NPC", tda, 0, ColorConstants.WHITE, true, true);
+		addText(35011, "", tda, 1, ColorConstants.YELLOW, true, true);
+		addText(35012, "", tda, 1, 15781715, false, true);
+		addText(35013, "", tda, 1, 15781715, false, true);
+		addText(35014, "", tda, 1, 15781715, false, true);
 
 		int x = 7, y = 7;
-		tab.totalChildren(13);
+		tab.totalChildren(14);
 		tab.child(0, 33001, 0+x, 0+y);
 		tab.child(1, 33002, 474+x, 9+y);
 		tab.child(2, 33003, 474+x, 9+y);
@@ -2718,58 +2719,34 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(4, 35009, 8+x, 37+y);
 		tab.child(5, 33005, 250+x, 10+y);
 		tab.child(6, 33006, 91+x, 43+y);
-		tab.child(7, 34000, 174+x, 57+y);
-		tab.child(8, 33007, 6+x, 88+y);
+		tab.child(7, 34000, 152+x, 32+y);
+		tab.child(8, 33007, 0, 57+y);
 		tab.child(9, 35011, 81+x, 71+y);
 		tab.child(10, 35012, 220+x, 40+y);
 		tab.child(11, 35013, 346+x, 40+y);
 		tab.child(12, 35014, 410+x, 40+y);
-
+		tab.child(13, 35010, 74+x, 42+y);
 
 		final RSInterface results = addInterface(33007);
-		results.width = 144;
-		results.height = 222;
+		results.width = 136;
+		results.height = 261;
 		results.scrollMax = 350;
 
 		results.totalChildren(90);
 		int index = 0;
 		for (int j = 0; j < 30; j++) {
-			addHoverButton(33008 + index, 1529, 136, 23,"Search", 0, 33009 + index, 1); //changeid
-			addHoveredButton(33009 + index, 1530, 136, 23, 33210 + index); //changeid
-			results.child(j, 33008 + index, 6, 1 + (j*24));
-			results.child(j + 30, 33009 + index, 6, 1 + (j*24));
-			addText(33108 + j, "", tda, 1, ColorConstants.ORANGE, true, true);
-			results.child(j + 60, 33108 + j, 75, 5 + (j*24));
+			addHoverButton(33008 + index, -1, 136, 14,"View drops", 0, 33009 + index, 1); //changeid
+			addHoveredButton(33009 + index, -1, 136, 14, 33210 + index); //changeid
+			results.child(j, 33008 + index, 16, 1 + (j*15));
+			results.child(j + 30, 33009 + index, 16, 1 + (j*15));
+			addText(33108 + j, "", tda, 0, ColorConstants.BRIGHT_YELLOW, false, true);
+			results.child(j + 60, 33108 + j, 18, 5 + (j*15));
 			index+=3;
 		}
-		
-		/*addTextInput(33006, 134, 19, 0, "Search for an NPC", tab, new InterfaceTextInput() {
-		@Override
-		public void handleInput() {
-			int amount = 0;
-			results.scrollMax = 0;
-			for (int b = 0; b < 100; b++) {
-				interfaceCache[33008 + b].message = "";
-			}
-			if (!interfaceCache[33006].inputText.equals("")) {
-				for (int b = 0; b < MobDefinition.maximum; b++) {
-					//MobDefinition e = MobDefinition.get(b);
-					if (MobDefinition.get(b) != null && MobDefinition.get(b).name != null && MobDefinition.get(b).name.toLowerCase().contains(interfaceCache[33006].inputText.toLowerCase())) {
-						interfaceCache[33008 + amount].message = "@yel@"+MobDefinition.get(b).name;
-						amount++;
-						results.scrollMax += 14;
-						if (amount == 100)
-							break;
-					}
-				}
-			}
-		}
-	});*/
-		
 		RSInterface main = addInterface(34000);
-		main.totalChildren(720);
-		main.width = 298;
-		main.height = 253;
+		main.totalChildren(800);
+		main.width = 325;
+		main.height = 283;
 		main.scrollMax = 2560;
 		addSprite(34001, 1210); //changeid
 		addSprite(34002, 1211); //changeid
@@ -2784,21 +2761,22 @@ public class CustomInterfaces extends RSInterface {
 			itemGroup(34010 + i, 1, 1, 1, 1, false, false);
 			interfaceCache[34010 + i].inv[0] = 14485;
 			interfaceCache[34010 + i].invStackSizes[0] = 1;
-			addText(34100 + i, "Name", tda, 0, ColorConstants.ORANGE, false, true);
-			addText(34200 + i, "Amount", tda, 0, ColorConstants.WHITE, true, true);
-			addText(34300 + i, "Rarity", tda, 0, ColorConstants.WHITE, true, true);
-			addText(34400 + i, "Value", tda, 0, 0xffffff, true, true);
+			addText(34100 + i, "", tda, 1, ColorConstants.ORANGE, false, true);
+			addText(34200 + i, "", tda, 0, ColorConstants.WHITE, true, true);
+			addText(34300 + i, "", tda, 0, ColorConstants.WHITE, true, true);
+			addText(34400 + i, "", tda, 0, ColorConstants.RS_ORANGE, true, true);
+			addText(34500 + i, "", tda, 0, ColorConstants.RS_ORANGE, true, true);
 			int yy = (i * 32);
 			main.child(80+i, 34010+i, 3, 3+yy);
 			main.child(160+i, 34100+i, 45, 10+yy);
 			main.child(240+i, 34003, 175, 2+yy);
 			main.child(320+i, 34004, 234, 2+yy);
 			main.child(400+i, 34005, 293, 2+yy);
-			main.child(480+i, 34200+i, 192, 10+yy);
-			main.child(560+i, 34300+i, 257, 10+yy);
-			main.child(640+i, 34400+i, 345, 14+yy);
+			main.child(480+i, 34200+i, 222, 16+yy);
+			main.child(560+i, 34300+i, 287, 16+yy);
+			main.child(640+i, 34400+i, 222, 2+yy);
+			main.child(720+i, 34500+i, 287, 2+yy);
 		}
-
 
 	}
 
@@ -6949,6 +6927,112 @@ int x = 10;
 
 	}
 
+	public static void TeleportInterfaceNewest(TextDrawingArea[] tda) {
+		int yOffset = -8;
+
+		RSInterface tab = RSInterface.addInterface(28200);
+		RSInterface scrollInterface = RSInterface.addTabInterface(28230);
+		RSInterface.addSprite(28201, 1655);
+		RSInterface.addHoverButton(28202, 1016, 16, 16, "Close", 250, 28203, 3);
+		RSInterface.addHoveredButton(28203, 1017, 16, 16, 28204);
+		RSInterface.addText(28205, "Teleports", tda, 2, ClientConstants.ORANGE, true, true);
+		
+		String[] bossText = { "Teleports", "", "", "" };
+		for (int i = 0; i < bossText.length; i++) {
+			RSInterface.addText(28206 + i, bossText[i], tda,
+					(bossText[i].equalsIgnoreCase("Teleport Name") 
+							|| bossText[i].equalsIgnoreCase("Boss Information")) ? 2: 2, ClientConstants.ORANGE, true, true);
+		}
+
+		RSInterface.addButton(28210, 1660, 1661, "Teleport");
+		RSInterface.addText(28211, "", tda, 2, ClientConstants.ORANGE, true, true);
+		RSInterface.addText(28212, "Teleport", tda, 2, ClientConstants.ORANGE, true, true);
+		RSInterface.addText(28213, "", tda, 2, ClientConstants.ORANGE, true, true);
+		RSInterface.addNpc(28214, 1250);
+		RSInterface.addText(28208, "Rewards", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(28209, "NPC Display", tda, 2, ClientConstants.ORANGE, true, true);
+		RSInterface.addText(64110, "Description", tda, 2, ClientConstants.ORANGE, true, true);
+		RSInterface.addText(64112, "", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(64113, "", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(64114, "", tda, 1, ClientConstants.ORANGE, false, true);
+
+		String[] names = { "Monsters", "Bosses", "Minigames", "Dungeons", "Cities", "Globals" };
+		for (int i = 0; i < names.length; i++) {
+			RSInterface.addButton(28215 + i, 1658, 1659, names[i]);
+		}
+		String[] text = { "Monsters", "Bosses", "Minigames", "Dungeons", "Cities", "Globals", "" };
+		for (int i = 0; i < text.length; i++) {
+			RSInterface.addText(28221 + i, text[i], tda, 1, 0xFF9900, true, true);
+		}
+		/** This handles the scrollable Items On Interface **/
+		RSInterface items = RSInterface.addInterface(28228);
+		RSInterface.addToItemGroup(28229, 3, 9, 9, 9, false, new String[]{null, null, null, null, null});
+		RSInterface.interfaceCache[28229].parentID = 28228;
+		items.totalChildren(1);
+		items.child(0, 28229, 1, 1);
+		items.width = 312;
+		items.height = 180;
+		
+		RSInterface.setChildren(32, tab);
+		tab.child(0, 28201, 7, 10);
+		tab.child(1, 28202, 479, 13);
+		tab.child(2, 28203, 479, 13);
+		tab.child(3, 28205,  90, 69);
+		tab.child(4, 28230, 27 - 8, 95 + yOffset);
+		tab.child(5, 28206, 260, 15);
+		tab.child(6, 28207, 115, 69);
+		tab.child(7, 28208, 394, 69);
+		tab.child(8, 28209, 260, 69);
+		tab.child(9, 28210, 366, 283);
+		tab.child(10, 28211, 341-150, 287);
+		tab.child(11, 28212, 402 + 22, 290);
+		tab.child(12, 28213, 383 -170+10, 294);
+		tab.child(13, 28214, 200, 128 - 6);
+		tab.child(14, 28215, 18, 32);
+		tab.child(15, 28216, 97, 32);
+		tab.child(16, 28217, 97+79, 32);
+		tab.child(17, 28218, 97+79+79, 32);
+		tab.child(18, 28219, 97+79+79+79, 32);
+		tab.child(19, 28220, 97+79+79+79+79, 32);
+		tab.child(20, 28221, 57, 36);
+		tab.child(21, 28222, 135, 36);
+		tab.child(22, 28223, 214, 36);
+		tab.child(23, 28224, 291, 36);
+		tab.child(24, 28225, 372, 36);
+		tab.child(25, 28226, 446, 36);
+		tab.child(26, 28227, 112, 165);
+		tab.child(27, 28228, 360, 90);
+		tab.child(28, 64110, 260, 244);
+		tab.child(29, 64112, 182, 269);
+		tab.child(30, 64113, 182, 285);
+		tab.child(31, 64114, 182, 340);
+		//Scoll bar size, witdh and scrolling size.
+		scrollInterface.width = 129 + 5;
+		scrollInterface.height = 224;
+		scrollInterface.scrollMax = 400;
+		
+		int npcList = 75;
+		int y1 = 1;
+		int y2 = 6;
+
+		RSInterface.setChildren(npcList * 2, scrollInterface);
+		
+		for (int j = 0; j < npcList; j++) {
+			RSInterface.addButton(28231 + j, 1367, 1368 , "Select");
+			scrollInterface.child(j, 28231 + j, 0, y1);
+			y1 += 25;
+		}
+		
+		for (int i = 0; i < npcList; i++) {
+			RSInterface.addText(28307 + i, "Vorkath " + i, tda, i == 0 ? 1 : 1,
+					i == 0 ? ClientConstants.ORANGE : ClientConstants.ORANGE, false, false, ClientConstants.WHITE,
+					"Select", 150);
+			scrollInterface.child(npcList + i, 28307 + i, 7, y2);
+			y2 += 25;
+
+		}
+	}
+	
 	static void achievements() {
 		int interID = 117000;
 		RSInterface tab = addInterface(interID);
@@ -7479,6 +7563,7 @@ int x = 10;
 		seasonalPass(tda);
 		raids();
 		panelInterface();
+		TeleportInterfaceNewest(tda);
 		panelInterfaceAccountInfo();
 		panelInterfaceInterfaces();
 		possibleLoot();

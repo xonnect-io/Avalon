@@ -10,10 +10,8 @@ import com.ruse.util.JsonLoader;
 import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
-import com.ruse.world.content.CustomDropUtils;
-import com.ruse.world.content.DropLog;
+import com.ruse.world.content.*;
 import com.ruse.world.content.DropLog.DropLogEntry;
-import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
@@ -211,6 +209,16 @@ public class NPCDrops {
         }
     }
 
+    public static void dropPetFragment(Player player, Position pos, NPC npc) {
+            int reward = 19000;
+            int rand = Misc.getRandom(50);
+            if (rand == 1) {
+                    player.getPacketSender().sendMessage("X1 Pet Fragment has been sent to your inventory.");
+                player.getInventory().add(reward, 1);
+                }
+            }
+
+
     public static void handleDrops(Player player, NPC npc) {
         handleDrops(player, npc, 1);
     }
@@ -231,7 +239,7 @@ public class NPCDrops {
         /*if (npc.getDefinition().getCombatLevel() >= 70 && player.getLocation() != Location.GRAVEYARD) {
             dropClue(player, npcPos, npc);
         }*/
-
+        dropPetFragment(player,npcPos,npc);
         HashMap<Double, ArrayList<NpcDropItem>> dropRates = new HashMap<>();
 
         for (NpcDropItem drop : drops) {
@@ -393,13 +401,13 @@ public class NPCDrops {
                     }
                 }
             }
-
+            int kills = KillsTracker.getTotalKillsForNpc(npc.getId(), player);
             if (drop.isAnnounce() || drop.getChance() >= 200) {
                 String itemName = item.getDefinition().getName();
                 String itemMessage = "x" + amount + " " + itemName;
                 String npcName = Misc.formatText(npc.getDefinition().getName());
-                String message = "<img=5><shad>@blu@Drop:@cya@ " + player.getUsername()
-                        + " has received <col=ff4f4f>" + itemMessage + "@cya@ from <col=ff4f4f>" + npcName + "@cya@!";
+                String message = "<img=5><shad><col=ff4f4f>[</col>@cya@DROP<col=ff4f4f>]</col>@cya@ " + player.getUsername()
+                        + " has received <col=ff4f4f>" + itemMessage + "@cya@ from <col=ff4f4f>" + npcName + "@cya@ -" + "<col=ff4f4f> KC: " + kills;
                 World.sendMessage(message);
 
                 if (ccAnnounce) {

@@ -182,6 +182,11 @@ public final class ItemDefinition {
 				model.setTexture(40);
 
 				break;
+			case 23240:
+			case 23242:
+				model.setTexture(52);
+				break;
+
 			case 15449:
 				model.setTexture(64);
 
@@ -2192,7 +2197,7 @@ public final class ItemDefinition {
 				break;
 
 			case 20489:
-				itemDef.name = "<col=C02FFE><shad=0>$10 Launch Chest<shad-1>";
+				itemDef.name = "Launch Casket";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
@@ -2206,7 +2211,7 @@ public final class ItemDefinition {
 				break;
 
 			case 15002:
-				itemDef.name = "@red@<shad=0>Ruby Exclusive Casket<shad-1>";
+				itemDef.name = "Ruby Casket";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
@@ -2217,6 +2222,18 @@ public final class ItemDefinition {
 				itemDef.rotationX = 90;
 				itemDef.modelID = 64300;
 				itemDef.rdc2 = 92111;
+				break;
+			case 14999:
+				itemDef.name = "Onyx Casket";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelZoom = 1600;
+				itemDef.rotationY = 100;
+				itemDef.rotationX = 90;
+				itemDef.modelID = 17821;
 				break;
 			case 15355:
 				itemDef.name = "@gre@<shad=0>Double DR Scroll (1 Hour)<shad-1>";
@@ -2274,7 +2291,7 @@ public final class ItemDefinition {
 				itemDef.rdc2 = 28312;
 				break;
 			case 15004:
-				itemDef.name = "@cya@<shad=0>Diamond Exclusive Casket<shad-1>";
+				itemDef.name = "Diamond Casket";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
@@ -5376,44 +5393,31 @@ public final class ItemDefinition {
 				
 				break;
 			case 19811:
+				itemDef.copyItem(4708);
 				itemDef.name = "Zeldris head";
-				itemDef.modelID = 15581;
-				itemDef.maleEquip1 = 15583;
-				itemDef.femaleEquip1 = 15583;
-				itemDef.rotationZ = 0;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 380;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.modelZoom = 800;
+				itemDef.modelID = 18063;
+				itemDef.maleEquip1 = 18063;
+				itemDef.femaleEquip1 = 18063;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 
 				break;
 			case 19473:
-				itemDef.copyItem(4714);
+				itemDef.copyItem(4712);
 				itemDef.name = "Zeldris body";
-				itemDef.modelID = 15584;
-				itemDef.maleEquip1 = 15585;
-				itemDef.femaleEquip1 = 15585;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.modelZoom = 1500;
+				itemDef.modelID = 18064;
+				itemDef.maleEquip1 = 18064;
+				itemDef.femaleEquip1 = 18064;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 				
 			case 19472:
+				itemDef.copyItem(4712);
 				itemDef.name = "Zeldris legs";
-				itemDef.modelID = 15660;
-				itemDef.maleEquip1 = 15660;
-				itemDef.femaleEquip1 = 15660;
-				itemDef.rotationZ = 0;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 260;
-				itemDef.modelZoom = 1600;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 0;
+				itemDef.modelID = 18065;
+				itemDef.maleEquip1 = 18065;
+				itemDef.femaleEquip1 = 18065;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
@@ -7770,32 +7774,41 @@ public final class ItemDefinition {
 				break;
 			case 23230:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 16069;
-				itemDef.maleEquip1 = 16070;
-				itemDef.femaleEquip1 = 16070;
-				itemDef.modelZoom = 700;
+				itemDef.modelID = 17746;
+				itemDef.maleEquip1 = 17773;
+				itemDef.femaleEquip1 = 17773;
+				itemDef.modelZoom = 478;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 160;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -18;
 				itemDef.name = "Owner Amulet";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
 				break;
 			case 23231:
-				itemDef.copyItem(12855);
-				itemDef.modelID = 16069;
-				itemDef.maleEquip1 = 16070;
-				itemDef.femaleEquip1 = 16070;
-				itemDef.modelZoom = 700;
+				itemDef.modelID = 17600;
+				itemDef.maleEquip1 = 17600;
+				itemDef.femaleEquip1 = 17600;
+				itemDef.modelZoom = 287;
 				itemDef.name = "Owner Ring";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 1765;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
 				break;
+				
 			case 23232:
-				itemDef.copyItem(12855);
-				itemDef.modelID = 16069;
-				itemDef.maleEquip1 = 16070;
-				itemDef.femaleEquip1 = 16070;
-				itemDef.modelZoom = 700;
+				itemDef.copyItem(11126);
+				itemDef.modelID = 17802;
+				itemDef.maleEquip1 = 17802;
+				itemDef.femaleEquip1 = 17802;
 				itemDef.name = "Owner Bracelet";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
@@ -7803,36 +7816,47 @@ public final class ItemDefinition {
 				break;
 			case 23233:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 16069;
-				itemDef.maleEquip1 = 16070;
-				itemDef.femaleEquip1 = 16070;
-				itemDef.modelZoom = 700;
+				itemDef.modelID = 17746;
+				itemDef.maleEquip1 = 17773;
+				itemDef.femaleEquip1 = 17773;
+				itemDef.modelZoom = 478;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 160;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -18;
 				itemDef.name = "Owner Amulet (u)";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
+				itemDef.rdc2 = 1;
 				break;
 			case 23234:
-				itemDef.copyItem(12855);
-				itemDef.modelID = 16069;
-				itemDef.maleEquip1 = 16070;
-				itemDef.femaleEquip1 = 16070;
-				itemDef.modelZoom = 700;
+				itemDef.modelID = 17600; //#393939 //#8c1212
+				itemDef.maleEquip1 = 17600;
+				itemDef.femaleEquip1 = 17600;
+				itemDef.modelZoom = 287;
 				itemDef.name = "Owner Ring (u)";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 1765;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.rdc2 = 1;
 				break;
 			case 23235:
-				itemDef.copyItem(12855);
-				itemDef.modelID = 16069;
-				itemDef.maleEquip1 = 16070;
-				itemDef.femaleEquip1 = 16070;
-				itemDef.modelZoom = 700;
+				itemDef.copyItem(11126);
+				itemDef.modelID = 17802;
+				itemDef.maleEquip1 = 17802;
+				itemDef.femaleEquip1 = 17802;
 				itemDef.name = "Owner Bracelet (u)";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
+				itemDef.rdc2 = 1;
 				break;
 			case 3909:
 				ItemDefinition itemFury1 = ItemDefinition.get(1635);

@@ -941,8 +941,8 @@ public class DialogueOptions {
                     DialogueManager.start(player, 62);
                     break;
                 case 30:
-                    player.getSlayer().assignTask();
-                    // System.out.println("TAsk assigned: - Master: " + player.getSlayer().getSlayerMaster().toString());
+                    player.setDialogueActionId(9906);
+                    DialogueManager.start(player, 9906);
                     break;
                 case 31:
                     DialogueManager.start(player, SlayerDialogues.findAssignment(player));
@@ -1801,7 +1801,7 @@ public class DialogueOptions {
                         SlayerMaster.changeSlayerMaster(player, SlayerMaster.EASY_SLAYER);
                     }
                     if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER))
-                        DialogueManager.start(player, SlayerDialogues.dialogue(player));
+                        player.getSlayer().assignTask();
                     else {
                         SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
                         String yourMastersName = "";
@@ -2051,7 +2051,7 @@ public class DialogueOptions {
                         SlayerMaster.changeSlayerMaster(player, SlayerMaster.MEDIUM_SLAYER);
                     }
                     if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER))
-                        DialogueManager.start(player, SlayerDialogues.dialogue(player));
+                        player.getSlayer().assignTask();
                     else {
                         SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
                         String yourMastersName = "";
@@ -2258,7 +2258,7 @@ public class DialogueOptions {
                         SlayerMaster.changeSlayerMaster(player, SlayerMaster.HARD_SLAYER);
                     }
                     if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER))
-                        DialogueManager.start(player, SlayerDialogues.dialogue(player));
+                        player.getSlayer().assignTask();
                     else {
                         SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
                         String yourMastersName = "";

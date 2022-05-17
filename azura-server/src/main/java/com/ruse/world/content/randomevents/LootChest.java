@@ -164,7 +164,7 @@ public final class LootChest {
 		LAVA_HOUND(new Position(3433, 4126), "Lava hounds zone", "@whi@Lava hounds"),
 		STINKY_BLOB(new Position(2185, 5087), "Stinky Blobs zone", "@whi@Stinky Blobs"),
 		BLOODSUCKERS(new Position(2398, 5012), "Bloodsuckers zone", "@whi@Bloodsuckers"),
-		ZELDRIS(new Position(2721, 4432), "Zeldris zone", "@whi@Zeldris"),
+		GIANT_SPIDER(new Position(2721, 4432), "Spiders zone", "@whi@Spiders"),
 		CASH_DRAGONS(new Position(2910, 3619), "Cash Dragons zone", "@whi@Cash Dragons"),
 		DEMON_GODDESS(new Position(2780, 4458), "Demon Goddess zone", "@whi@Demon Goddess"),
 		ENERGY_SKELETON(new Position(2079, 3995), "Energy Skeletons zone", "@whi@Energy Skeletons"),

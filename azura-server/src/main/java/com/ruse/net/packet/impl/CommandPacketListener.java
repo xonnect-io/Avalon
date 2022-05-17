@@ -53,7 +53,6 @@ import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.randomevents.EvilTree;
-import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.randomevents.ShootingStar;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
@@ -61,6 +60,7 @@ import com.ruse.world.content.skill.SkillManager;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.crafting.Jewelry;
 import com.ruse.world.content.skill.impl.fletching.BoltData;
+import com.ruse.world.content.teleport.NewTeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.GroundItemManager;
@@ -339,6 +339,9 @@ public class CommandPacketListener implements PacketListener {
             new Thread(new FoxVote(player)).start();
         }
 
+        if (command[0].equalsIgnoreCase("teleport")) {
+            new NewTeleportInterfaceHandler(player).open();
+        }
         if (command[0].equalsIgnoreCase("achievements") || command[0].equalsIgnoreCase("dailytasks")
                 || command[0].equalsIgnoreCase("tasks")) {
             player.getAchievements().refreshInterface(player.getAchievements().currentInterface);
@@ -637,7 +640,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Teleporting you to Naraku Global boss");
         }
 
-        if (command[0].equalsIgnoreCase("nm")) {
+        if (command[0].equalsIgnoreCase("nm") || command[0].equalsIgnoreCase("nightmare")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -704,7 +707,7 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
 
         }
-        if (command[0].equalsIgnoreCase("donoboss") || command[0].equalsIgnoreCase("donationboss")) {
+        if (command[0].equalsIgnoreCase("donoboss") || command[0].equalsIgnoreCase("donationboss") || command[0].equalsIgnoreCase("guardian") || command[0].equalsIgnoreCase("dboss")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -1811,6 +1814,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("spawnafk")) {
             AfkSystem.executeSpawn();
         }
+
         if (command[0].equals("spawnvoteboss")) {
             VoteBossDrop.handleSpawn();
         }

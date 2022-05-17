@@ -471,7 +471,7 @@ public class ItemDef3 {
 				itemDef.copyItem(1);
 				itemDef.name = "Aura 1";
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.modelID = 100123;
+				itemDef.modelID = 18068;
 				itemDef.rotationX = 0;
 				itemDef.modelZoom = 2000;
 				break;
@@ -479,31 +479,31 @@ public class ItemDef3 {
 			case 23045:
 				itemDef.copyItem(23044);
 				itemDef.name = "Aura 2";
-				itemDef.modelID = 100124;
+				itemDef.modelID = 18069;
 				break;
 				
 			case 23046:
 				itemDef.copyItem(23044);
 				itemDef.name = "Aura 3";
-				itemDef.modelID = 100125;
+				itemDef.modelID = 18071;
 				break;
 				
 			case 23047:
 				itemDef.copyItem(23044);
 				itemDef.name = "Aura 4";
-				itemDef.modelID = 100126;
+				itemDef.modelID = 18073;
 				break;
 				
 			case 23048:
 				itemDef.copyItem(23044);
 				itemDef.name = "Aura 5";
-				itemDef.modelID = 100127;
+				itemDef.modelID = 18085;
 				break;
 				
 			case 23049:
 				itemDef.copyItem(23044);
 				itemDef.name = "Aura 6";
-				itemDef.modelID = 100128;
+				itemDef.modelID = 18098;
 				break;
 
 			case 23050:
@@ -1953,6 +1953,10 @@ public class ItemDef3 {
 				
 			case 3578:
 				itemDef.name = "<col=FF0000><shad=0>Owner's Cape Goodiebag";
+				break;
+			case 23240:
+				itemDef.copyItem(3578);
+				itemDef.name = "Owner Jewelry Goodiebag";
 				break;
 				
 			case 17175:

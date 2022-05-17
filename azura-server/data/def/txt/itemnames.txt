@@ -16507,11 +16507,11 @@ name: Camo wings
 finish
 
 Item Id: 4389
-name: Zeldris wings
+name: Webby wings
 finish
 
 Item Id: 4390
-name: Zeldris wings
+name: Webby wings
 finish
 
 Item Id: 4391
@@ -70467,11 +70467,11 @@ name: Inferior helm
 finish
 
 Item Id: 19472
-name: Zeldris legs
+name: Webby legs
 finish
 
 Item Id: 19473
-name: Zeldris body
+name: Webby body
 finish
 
 Item Id: 19474
@@ -71823,7 +71823,7 @@ name: Deity spirit shield
 finish
 
 Item Id: 19811
-name: Zeldris hat
+name: Webby helmet
 finish
 
 Item Id: 19812
@@ -80327,35 +80327,35 @@ name: Cheongsam top
 finish
 
 Item Id: 22100
-name: Lucifer's head
+name: Fallen Angel's head
 finish
 
 Item Id: 22101
-name: Lucifer's body
+name: Fallen Angel's body
 finish
 
 Item Id: 22102
-name: Lucifer's legs
+name: Fallen Angel's legs
 finish
 
 Item Id: 22103
-name: Lucifer's boots
+name: Fallen Angel's boots
 finish
 
 Item Id: 22104
-name: Lucifer's gloves
+name: Fallen Angel's gloves
 finish
 
 Item Id: 22105
-name: Lucifer's wings
+name: Fallen Angel's wings
 finish
 
 Item Id: 22106
-name: Lucifer's Attachment
+name: Fallen Angel's Attachment
 finish
 
 Item Id: 22107
-name: Lucifer's pet
+name: Fallen Angel's pet
 finish
 
 Item Id: 22108

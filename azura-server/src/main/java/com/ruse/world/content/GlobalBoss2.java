@@ -22,7 +22,7 @@ public class GlobalBoss2 {
 
     // Negative because if you make it zero it will increase
     // before the world is created and it wont spawn on server boot for 3 hrs
-    public static int tick = -20;
+    public static int tick = 0;
 
     public static Position SPAWN_POINT = new Position(2980, 2776,0);
 
@@ -79,7 +79,7 @@ public class GlobalBoss2 {
 
     }
     public static String timeLeft() {
-        int ticks = 18000 - (tick % 18000);
+        int ticks = 24000 - (tick % 24000);
         ticks /= 100;
         ticks *= 60;
 
@@ -98,7 +98,7 @@ public class GlobalBoss2 {
         tick++;
 
         // Spawn every 3 hours
-        if (tick % 18000 == 0) {
+        if (tick % 24000 == 0) {
 
             // Only if its dead
             if(currentBoss == null || currentBoss.isDying() || !currentBoss.isRegistered()) {
@@ -115,7 +115,7 @@ public class GlobalBoss2 {
                 currentBoss = npc;
                 World.register(npc);
 
-                String message = "The Vicious Nightmare boss has spawned at ::nightmare";
+                String message = "Nightmare has appeared at ::nm";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
@@ -123,6 +123,8 @@ public class GlobalBoss2 {
                     }
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
+
+                if (!GameSettings.LOCALHOST)
                 DiscordMessager.sendNightmareBossLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;

@@ -355,7 +355,7 @@ public class CustomTeleportInterface {
 
         InfernalDemon(ID_START + 12, 3000, 12810, "Infernal Demon", "Magic/Melee", "Range", new Position(2357, 9904, 0), Locations.Location.EXODENLOC, 11),
 
-        Lucifer(ID_START + 13, 1000, 9012, "Lucifer", "Magic/Melee", "Range", new Position(1941, 5152, 0), Locations.Location.EXODENLOC, 12),
+        FALLEN_ANGEL(ID_START + 13, 1000, 9012, "Fallen Angel", "Magic/Melee", "Range", new Position(1941, 5152, 0), Locations.Location.EXODENLOC, 12),
         DARK_SUPREME(ID_START + 14, 900, 438, "Dark Supreme @cya@[NEW]", "Magic/Melee/Range", "All", new Position(3036, 4503, 0), Locations.Location.EXODENLOC, 12);
 
         // Gundam(ID_START + 12, 1000, 2518, "Gundam", "Melee", "Melee/Magic", new Position(2792, 3791, 0), Locations.Location.EXODENLOC, 12);

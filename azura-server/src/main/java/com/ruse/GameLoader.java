@@ -17,6 +17,7 @@ import com.ruse.world.World;
 import com.ruse.world.allornothing.DoubleOrNothing;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.*;
+import com.ruse.world.content.aoe.AOESystem;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.combat.effect.CombatPoisonEffect.CombatPoisonData;
 import com.ruse.world.content.combat.strategy.CombatStrategies;

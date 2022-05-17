@@ -79,6 +79,8 @@ import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Pouch;
 import com.ruse.world.content.skill.impl.summoning.Summoning;
+import com.ruse.world.content.teleport.TeleportData;
+import com.ruse.world.content.teleport.TeleportType1;
 import com.ruse.world.content.upgrading.UpgradeInterface;
 import com.ruse.world.content.zombie.ZombieParty;
 import com.ruse.world.entity.actor.player.controller.ControllerManager;
@@ -1686,7 +1688,59 @@ public class Player extends Character {
         this.serial_number = serial_number;
         return this;
     }
+/*
+Start new teleport
+ */
 
+    public TeleportType1 teleportType;
+
+    public TeleportType1 getTeleportType() {
+        return teleportType;
+    }
+
+    public void setTeleportType(TeleportType1 teleportType) {
+    this.teleportType = teleportType;
+    }
+
+    private boolean miniLucifer;
+    private boolean darkSupreme;
+
+    public void setMiniLucifer(boolean miniLucifer) {
+        this.miniLucifer = miniLucifer;
+    }
+
+    public boolean getMiniLucifer() {
+        return miniLucifer;
+    }
+
+    public void setDarkSupreme(boolean darkSupreme) {
+        this.darkSupreme = darkSupreme;
+    }
+
+    public boolean getDarkSupreme() {
+        return darkSupreme;
+    }
+    public TeleportData teleportData;
+
+    public TeleportData getTeleportData() {
+        return teleportData;
+    }
+
+    public void setTeleportData(TeleportData teleportData) {
+        this.teleportData = teleportData;
+    }
+
+    public TeleportData getCurrentTeleport() {
+        return teleportData;
+    }
+
+    public void setCurrentTeleport(TeleportData teleportData) {
+        this.teleportData = teleportData;
+    }
+
+    /*
+End new teleport
+ */
     public FrameUpdater getFrameUpdater() {
         return this.frameUpdater;
     }
@@ -1711,7 +1765,6 @@ public class Player extends Character {
     public PacketSender getPA() {
         return packetSender;
     }
-
 
     public SkillManager getSkillManager() {
         return skillManager;

@@ -97,8 +97,30 @@ public class ItemActionPacketListener implements PacketListener {
         player.getInventory().getItems()[slot] = new Item(replacePotion, 1);
         player.getInventory().refreshItems();
         player.setOverloadPotionTimer(600);
-        player.setPotionUsed("Inf. Rage");
+        player.setPotionUsed("Rage Mode");
         TaskManager.submit(new InfinityRagePotionTask(player));
+        return true;
+    }
+
+    public static boolean drinkOwnerPot(final Player player, int slot, int replacePotion) {
+        if (player.getLocation() == Location.WILDERNESS || player.getLocation() == Location.DUEL_ARENA) {
+            player.getPacketSender().sendMessage("You cannot use this potion here.");
+            return false;
+        }
+        if (player.getOverloadPotionTimer() > 0 && player.getOverloadPotionTimer() < 750) {
+            player.getPacketSender().sendMessage("You already have the effect of an Overload or Rage/Infinity Overload potion.");
+            return false;
+        }
+        if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < 500) {
+            player.getPacketSender().sendMessage("You need to have at least 500 Hitpoints to drink this potion.");
+            return false;
+        }
+        player.performAnimation(new Animation(829));
+        player.getInventory().getItems()[slot] = new Item(replacePotion, 1);
+        player.getInventory().refreshItems();
+        player.setOverloadPotionTimer(600);
+        player.setPotionUsed("Owner Mode");
+        TaskManager.submit(new OwnerPotionTask(player));
         return true;
     }
 
@@ -447,6 +469,10 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] raresOP = new int[] {18753,18749,18631,18752,18748,18637,18751,18638,18623,18750,18636,18629,19886,4446,10942 };
                 player.getMysteryBoxOpener().display(20488, "OP Chest", commonOP, uncommonOP, raresOP);
                 break;
+            case 14999:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ONYX);
+                player.getCasketOpening().openInterface();
+                break;
             case 15003:
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SILVER);
                 player.getCasketOpening().openInterface();
@@ -607,13 +633,36 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getPotionTimer().reset();
                 player.setOverloadPotionTimer(100000);
                 if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
-                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 10000);
-                    player.getSkillManager().setCurrentLevel(Skill.ATTACK, 1000);
-                    player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 1000);
-                    player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 1000);
-                    player.getSkillManager().setCurrentLevel(Skill.RANGED, 1000);
-                    player.getSkillManager().setCurrentLevel(Skill.MAGIC, 1000);
-                    player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 10000);
+                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 200);
+                    player.getSkillManager().setCurrentLevel(Skill.ATTACK, 200);
+                    player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 200);
+                    player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 200);
+                    player.getSkillManager().setCurrentLevel(Skill.RANGED, 200);
+                    player.getSkillManager().setCurrentLevel(Skill.MAGIC, 200);
+                    player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 1200);
+                }
+                Sounds.sendSound(player, Sound.DRINK_POTION);
+                break;
+
+            case 23242:
+                if (!drinkOwnerPot(player, slot, 23242))
+                    return;
+
+                player.getPacketSender().sendInterfaceRemoval();
+                player.getCombatBuilder().incrementAttackTimer(1).cooldown(false);
+                player.getCombatBuilder().setDistanceSession(null);
+                player.setCastSpell(null);
+                player.getFoodTimer().reset();
+                player.getPotionTimer().reset();
+                player.setOverloadPotionTimer(100000);
+                if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
+                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 240);
+                    player.getSkillManager().setCurrentLevel(Skill.ATTACK, 240);
+                    player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 240);
+                    player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 240);
+                    player.getSkillManager().setCurrentLevel(Skill.RANGED, 240);
+                    player.getSkillManager().setCurrentLevel(Skill.MAGIC, 240);
+                    player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 2400);
                 }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
@@ -690,7 +739,7 @@ public class ItemActionPacketListener implements PacketListener {
             case 7956:
                 int[] commonpvm = new int[] {10350, 10348, 4718, 10346, 14499, 14497, 14501, 4710, 16054, 17193, 17339, 4734, 4753, 4757, 4759, 4755,
                         4745, 4749, 4751, 4747, 290};
-                int[] uncommonpvm = new int[] {19582, 14525, 11858, 19670};
+                int[] uncommonpvm = new int[] {19582, 14525, 11858, 23020};
                 int[] rarepvm = new int[] {4151,11235,15486,12933,18353,15031,6585,6737,7462};
                 player.getMysteryBoxOpener().display(7956, "Pvm box", commonpvm, uncommonpvm, rarepvm);
                 break;
@@ -813,6 +862,13 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getGoodieBag().rewards = new int[]{10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 7995, 10934};
                 player.getGoodieBag().open();
                 break;
+
+            case 23240:
+                player.getGoodieBag().boxId = itemId;
+                player.getGoodieBag().rewards = new int[]{10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 15004, 15003, 15002, 23232, 23231, 7995, 23230};
+                player.getGoodieBag().open();
+                break;
+
 
             case 7510:
                 int plc = player.getConstitution();
@@ -1496,49 +1552,6 @@ public class ItemActionPacketListener implements PacketListener {
             case 4566:
                 player.performAnimation(new Animation(1835));
                 break;
-//
-            //
-            case 13263:
-                if (player.getInventory().contains(13263) && player.getInventory().getAmount(5023) >= 1000) {
-                    player.getInventory().delete(13263, 1).delete(5023, 1000).add(21075, 1);
-                    player.getPacketSender().sendMessage("You have upgraded your slayer helmet");
-                } else {
-                    player.getPacketSender().sendMessage("You need at least 1K Slayer tickets to upgrade your helmet.");
-                }
-                break;
-            case 21075:
-                if (player.getInventory().contains(21075) && player.getInventory().getAmount(5023) >= 3000) {
-                    player.getInventory().delete(21075, 1).delete(5023, 3000).add(21076, 1);
-                    player.getPacketSender().sendMessage("You have upgraded your slayer helmet");
-                } else {
-                    player.getPacketSender().sendMessage("You need at least 3K Slayer tickets to upgrade your helmet.");
-                }
-                break;
-            case 21076:
-                if (player.getInventory().contains(21076) && player.getInventory().getAmount(5023) >= 6000) {
-                    player.getInventory().delete(21076, 1).delete(5023, 6000).add(21077, 1);
-                    player.getPacketSender().sendMessage("You have upgraded your slayer helmet");
-                } else {
-                    player.getPacketSender().sendMessage("You need at least 6K Slayer tickets to upgrade your helmet.");
-                }
-                break;
-            case 21077:
-                if (player.getInventory().contains(21077) && player.getInventory().getAmount(5023) >= 10000) {
-                    player.getInventory().delete(21077, 1).delete(5023, 10000).add(21078, 1);
-                    player.getPacketSender().sendMessage("You have upgraded your slayer helmet");
-                } else {
-                    player.getPacketSender().sendMessage("You need at least 10K Slayer tickets to upgrade your helmet.");
-                }
-                break;
-            case 21078:
-                if (player.getInventory().contains(21077) && player.getInventory().getAmount(5023) >= 20000) {
-                    player.getInventory().delete(21077, 1).delete(5023, 20000).add(21079, 1);
-                    player.getPacketSender().sendMessage("You have upgraded your slayer helmet");
-                } else {
-                    player.getPacketSender().sendMessage("You need at least 20K Slayer tickets to upgrade your helmet.");
-                }
-                break;
-
 
             case 11113:
                 player.getPacketSender().sendMessage("All skill teleports are available in the skills tab.");

@@ -30,10 +30,6 @@ public class GlobalItemSpawner {
         nullCheckAndSpawn(player, new Item(1931, 1), new Position(3209, 3214, 0));
         nullCheckAndSpawn(player, new Item(1935, 1), new Position(3211, 3212, 0));
         nullCheckAndSpawn(player, new Item(558, 1), new Position(3206, 3208, 0));
-        nullCheckAndSpawn(player, new Item(7956, 1), new Position(2570 + Misc.getRandom(30), 2506 + Misc.getRandom(29), 0));
-        nullCheckAndSpawn(player, new Item(7956, 1), new Position(2570 + Misc.getRandom(30), 2506 + Misc.getRandom(29), 0));
-        nullCheckAndSpawn(player, new Item(7956, 1), new Position(2570 + Misc.getRandom(30), 2506 + Misc.getRandom(29), 0));
-        nullCheckAndRespawn(player, new Item(20488, 1), new Position(2570 + Misc.getRandom(30), 2506 + Misc.getRandom(29), 0));
         nullCheckAndSpawn(player, new Item(7509, 1), ROCKCAKE_POSITION);
         timer = System.currentTimeMillis();
     }

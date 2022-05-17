@@ -300,9 +300,9 @@ public class KeepersOfLight {
 
     private static void spawnMainNPCs() {
 
-        BOSSES[0] = spawnPCNPC(9835, new Position(2377, 5036, 0));
-        BOSSES[1] = spawnPCNPC(9836, new Position(2398, 5017, 0));
-        BOSSES[2] = spawnPCNPC(9837, new Position(2385, 5009, 0));
+        BOSSES[0] = spawnPCNPC(1, new Position(2377, 5036, 0));
+        BOSSES[1] = spawnPCNPC(1, new Position(2398, 5017, 0));
+        BOSSES[2] = spawnPCNPC(1, new Position(2385, 5009, 0));
         for (NPC n : BOSSES) {
             n.setConstitution(n.getDefinition().getHitpoints() * (playerMap.size() / 2));
             npcList.add(n);

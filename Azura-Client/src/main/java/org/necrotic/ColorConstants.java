@@ -15,6 +15,7 @@ public final class ColorConstants {
 	public static final int ORA = 0xFF981F;
 	//yellow colors
 	public static final int YELLOW = 0xffd412;
+	public static final int BRIGHT_YELLOW = 0xffdb36;
 	//green colors
 	public static final int LIME = 0x00FF00;
 	public static final int LIME_GREEN = 0x32CD32;

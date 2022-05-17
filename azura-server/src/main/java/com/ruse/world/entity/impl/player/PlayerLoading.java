@@ -140,7 +140,12 @@ public class PlayerLoading {
             if (reader.has("godmodetime")) {
                 player.setGodModeTimer(reader.get("godmodetime").getAsInt());
             }
-
+            if (reader.has("mini-lucifer")) {
+                player.setMiniLucifer(reader.get("mini-lucifer").getAsBoolean());
+            }
+            if (reader.has("dark-supreme")) {
+                player.setDarkSupreme(reader.get("dark-supreme").getAsBoolean());
+            }
             if (reader.has("slayer-rate")) {
                 player.getPointsHandler().setSlayerRate(reader.get("slayer-rate").getAsInt());
             }

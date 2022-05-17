@@ -139,7 +139,7 @@ public class ItemDefinition {
 
 
         try {
-            File file = new File(NAME_DIRECTORY);
+            File file = new File(FILE_DIRECTORY);
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = reader.readLine()) != null) {

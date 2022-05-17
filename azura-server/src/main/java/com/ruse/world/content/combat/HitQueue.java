@@ -10,6 +10,9 @@ import com.ruse.model.container.impl.Equipment;
 import com.ruse.model.definitions.WeaponAnimations;
 import com.ruse.util.Misc;
 import com.ruse.world.content.*;
+import com.ruse.world.content.aoe.AOEHandler;
+import com.ruse.world.content.aoe.AOESystem;
+import com.ruse.world.content.aoe.AOEWeaponData;
 import com.ruse.world.content.combat.strategy.impl.Nex;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -138,10 +141,8 @@ public class HitQueue {
 						if (aoeData != null && aoeData.getRadius() > 0) {
 							AOEHandler.handleAttack(p, victim, aoeData.getMinDamage(), aoeData.getMaxDamage(),
 									aoeData.getRadius(), aoeData.getIcon());
-							//// System.out.println(
-								//	"Attacking with data: " + aoeData.getMinDamage() + " | " + aoeData.getMaxDamage()
-									//		+ " | " + aoeData.getRadius() + " | " + aoeData.getIcon().toString());
 						}
+
 
 					}
 					p.getControllerManager().processOutgoingHit(container);

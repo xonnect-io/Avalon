@@ -37,7 +37,7 @@ public class Maxhits {
 
             // Use our multipliers to adjust the maxhit...
 
-            base = 1.3 + effective / 10 + strengthBonus / 80 + effective * strengthBonus / 640;
+            base = 1.4 + effective / 10 + strengthBonus / 80 + effective * strengthBonus / 640;
 
             // Special effects also affect maxhit
             if (player.isSpecialActivated() && player.getCombatSpecial().getCombatType() == CombatType.MELEE) {
@@ -215,7 +215,7 @@ public class Maxhits {
             // Do calculations of maxhit...
             double effectiveRangeDamage = (int) (rangeLevel * prayerMod * otherBonuses);
 
-            double baseDamage = 1.3 + effectiveRangeDamage / 10 + rangedStrength / 80 + effectiveRangeDamage * rangedStrength / 640;
+            double baseDamage = 1.6 + effectiveRangeDamage / 10 + rangedStrength / 80 + effectiveRangeDamage * rangedStrength / 640;
 
             double specialBonus = 1;
             // Special attacks!
@@ -348,7 +348,7 @@ public class Maxhits {
             double effectiveMagicDamage = (int) (magicLevel * prayerMod * otherBonuses);
 
 
-            double baseDamage = 1.3 + effectiveMagicDamage / 10 + magicStrength / 80 + effectiveMagicDamage * magicStrength / 640;
+            double baseDamage = 2 + effectiveMagicDamage / 10 + magicStrength / 80 + effectiveMagicDamage * magicStrength / 640;
 
             double specialBonus = 1;
             // Special attacks!
