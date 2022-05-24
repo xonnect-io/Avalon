@@ -10,8 +10,7 @@ public enum SlayerMaster {
 	BOSS_SLAYER(90, 9000, new Position(2667, 4015)),
 	EASY_SLAYER(1, 1597, new Position(2853, 9374)),
 	MEDIUM_SLAYER(70, 8275, new Position(2174, 5016)),
-	HARD_SLAYER(80, 9085, new Position(2019, 5009))
-
+	HARD_SLAYER(80, 9085, new Position(2019, 5009)),
 	;
 
 	private SlayerMaster(int slayerReq, int npcId, Position telePosition) {

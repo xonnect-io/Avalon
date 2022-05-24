@@ -148,7 +148,7 @@ public class CombatStrategies {
 		STRATEGIES.put(NazastaroolCombatStrategy.NAZASTAROOL, new NazastaroolCombatStrategy());
 		STRATEGIES.put(DrakeCombatStrategy.DRAKE, new DrakeCombatStrategy());
 
-		STRATEGIES.put(9012, new LuciferCombatScript());
+		STRATEGIES.put(9837, new LuciferCombatScript());
 		STRATEGIES.put(3831, new AzureBeast());
 		STRATEGIES.put(4540, new BandosAvatar());
 		STRATEGIES.put(6430, new CrystalQueen());

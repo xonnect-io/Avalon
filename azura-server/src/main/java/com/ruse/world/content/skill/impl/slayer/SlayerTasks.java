@@ -14,28 +14,6 @@ public enum SlayerTasks {
 
 	NO_TASK(null, -1, null, -1, null),
 
-
-	//boss slayer tasks ///////////
-	// Old bosses
-	/*FRIEZA(SlayerMaster.BOSS_SLAYER, 252, "Frieza can be found by using the Teleport interface", 500,
-			new Position(2516, 3042, 0)),
-	PERFECT_CELL(SlayerMaster.BOSS_SLAYER, 449, "Raditz can be found by using the Teleport interface.", 500,
-			new Position(3000, 2511, 0)),
-	SUPER_BUU(SlayerMaster.BOSS_SLAYER, 452, "Goku can be found by using the Teleport interface.", 500,
-			new Position(3342, 3022, 0)),
-	HERBAL_ROGUE(SlayerMaster.BOSS_SLAYER, 2342, "Herbal Rogue can be found by using the Teleport interface.", 500,
-			new Position(3044, 2969, 0)),
-	AZURE_BEAST(SlayerMaster.BOSS_SLAYER, 3831, "Azure Beast can be found by using the Teleport interface.", 500,
-			new Position(2924, 2842, 0)),
-	Inuyasha(SlayerMaster.BOSS_SLAYER, 185, "Inuyasha can be found by using the Teleport interface.", 500,
-			new Position(1807, 3211, 0)),
-
-	SUPREME_BOSS(SlayerMaster.BOSS_SLAYER, 440, "Supreme Boss can be found by using the Teleport interface.", 600,
-			new Position(2403, 5082, 1000)),
-	VASA_NISTIRIO(SlayerMaster.BOSS_SLAYER, 1120, "Vasa Nistirio can be found by using the Teleport interface.", 600,
-			new Position(2910, 2593, 0)),*/
-
-	// Boss slayer tasks 375-750k * 2 = 750-1500k / task
 	// Easy bosses
 	DONALD_TRUMP(SlayerMaster.BOSS_SLAYER, 250, "Donald Trump can be found by using the Teleport interface.", 350_000,
 			new Position(3040, 2846, 0)),
@@ -68,8 +46,8 @@ public enum SlayerTasks {
 	SYMBIOTE(SlayerMaster.EASY_SLAYER, 1727, "Easy Slayer Dungeon", 17500, new Position(1883, 5222)),
 	ELEMENTAL_MOSS(SlayerMaster.EASY_SLAYER, 1740,"Easy Slayer Dungeon", 17500, new Position(1868, 5231)),
 	LEOPARD(SlayerMaster.HARD_SLAYER, 1733,  "Easy Slayer Dungeon 2", 17500, new Position(1902, 5239)),
-	WOLPERTINGER(SlayerMaster.EASY_SLAYER, 6870, "Easy Slayer Dungeon", 17500, new Position(1895, 5198)),
-	SPIRIT_WOLF(SlayerMaster.EASY_SLAYER, 6871, "Easy Slayer Dungeon", 17500, new Position(1879, 5201)),
+	DINO(SlayerMaster.EASY_SLAYER, 6870, "Easy Slayer Dungeon", 17500, new Position(1895, 5198)),
+	SPIRIT_CRITTER(SlayerMaster.EASY_SLAYER, 6871, "Easy Slayer Dungeon", 17500, new Position(1879, 5201)),
 
 	// Med slayer tasks 50k-125k * 2 = 100-250k / task
 	ELEMENTAL_FIRE(SlayerMaster.MEDIUM_SLAYER, 1741, "Medium Slayer Dungeon", 55000, new Position(2334, 5223)),
@@ -83,6 +61,7 @@ public enum SlayerTasks {
 	DEMON_GODDESS(SlayerMaster.HARD_SLAYER, 501, "Monster teleports", 180_000, new Position(2784, 4445)),
 	ENERGY_SKELETON(SlayerMaster.HARD_SLAYER, 503, "Monster teleports", 200_000, new Position(2088, 3995)),
 	TUROTHS(SlayerMaster.HARD_SLAYER, 1627, "Monster teleports", 225_000, new Position(3154, 5556)),
+
 	;
 
 

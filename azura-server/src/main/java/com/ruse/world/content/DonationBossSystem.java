@@ -11,7 +11,7 @@ public class DonationBossSystem {
 		return totalCount - amntDonated;
 		}
 
-	public static final int totalCount = 500;
+	public static final int totalCount = 100;
 	public static int amntDonated = 0;
 	public static NPC currentSpawn;
 
@@ -29,12 +29,12 @@ public class DonationBossSystem {
 		DiscordMessager.sendDonationBossLog("The Donation boss has spawned, Visit ::donoboss to fight him!");
 		GameSettings.broadcastMessage = message;
 		GameSettings.broadcastTime = 100;
-		amntDonated = 500;
+		amntDonated = 100;
 	}
 
 	public static void spawnBoss() {
-		if(amntDonated < 500) {
-			System.out.println("$500 donation limit has not been reached.");
+		if(amntDonated < 100) {
+			System.out.println("$100 donation limit has not been reached.");
 			return;
 		}
 
@@ -43,7 +43,7 @@ public class DonationBossSystem {
 			return;
 		}
 
-		String message = "The Donation boss has spawned, Visit ::donoboss to fight him!";
+		String message = "The Avalon Guardian has spawned!";
 		NPC npc = new NPC(3830, new Position(3491, 2779));
 		World.register(npc);
 		World.sendMessage(message);
@@ -58,7 +58,7 @@ public class DonationBossSystem {
 	}
 
 	public static void callBoss() {
-		if(amntDonated > 249 && amntDonated < 251) {
+		if(amntDonated == 50) {
 		World.sendMessage("<shad=1>@or2@We are 50% to spawning the Donation boss, Thank you for supporting Avalon");
 			return;
 				}

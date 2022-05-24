@@ -1,12 +1,18 @@
 package com.ruse.world.content.teleport;
 
+import com.ruse.model.Item;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
 import com.ruse.model.Skill;
+import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.world.World;
+import com.ruse.world.content.TeleportInterface;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
+import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
 /**
@@ -15,7 +21,9 @@ import com.ruse.world.entity.impl.player.Player;
  */
 public class NewTeleportInterfaceHandler {
 
-	/** idk why the fuck that was protected lmfao **/
+	/**
+	 * idk why the fuck that was protected lmfao
+	 **/
 	private Player player;
 
 	public NewTeleportInterfaceHandler(Player player) {
@@ -40,38 +48,38 @@ public class NewTeleportInterfaceHandler {
 
 	public void switchTab(int buttonid) {
 		switch (buttonid) {
-		case 28215:
-			player.setTeleportType(TeleportType1.MONSTERS);
-			switchData();
-			player.getPA().sendString(28205, "Monsters");
-			break;
-		case 28216:
-			player.setTeleportType(TeleportType1.BOSSES);
-			switchData();
-			player.getPA().sendString(28205, "Bosses");
-			break;
-		case 28217:
-			player.setTeleportType(TeleportType1.MINIGAMES);
-			switchData();
-			player.getPA().sendString(28205, "Minigames");
-			break;
-		case 28218:
-			player.setTeleportType(TeleportType1.DUNGEONS);
-			switchData();
-			player.getPA().sendString(28205, "Dungeons");
-			break;
-		case 28219:
-			player.setTeleportType(TeleportType1.CITIES);
-			switchData();
-			player.getPA().sendString(28205, "Cities");
-			break;
-		case 28220:
-			player.setTeleportType(TeleportType1.GLOBALS);
-			switchData();
-			player.getPA().sendString(28205, "Globals");
-			break;
-		default:
-			break;
+			case 28215:
+				player.setTeleportType(TeleportType1.MONSTERS);
+				switchData();
+				player.getPA().sendString(28205, "Monsters");
+				break;
+			case 28216:
+				player.setTeleportType(TeleportType1.BOSSES);
+				switchData();
+				player.getPA().sendString(28205, "Bosses");
+				break;
+			case 28217:
+				player.setTeleportType(TeleportType1.MINIGAMES);
+				switchData();
+				player.getPA().sendString(28205, "Minigames");
+				break;
+			case 28218:
+				player.setTeleportType(TeleportType1.DUNGEONS);
+				switchData();
+				player.getPA().sendString(28205, "Dungeons");
+				break;
+			case 28219:
+				player.setTeleportType(TeleportType1.CITIES);
+				switchData();
+				player.getPA().sendString(28205, "Cities");
+				break;
+			case 28220:
+				player.setTeleportType(TeleportType1.GLOBALS);
+				switchData();
+				player.getPA().sendString(28205, "Globals");
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -141,94 +149,121 @@ public class NewTeleportInterfaceHandler {
 	}
 
 	public void teleport() {
-		
-		 if (player.getCurrentTeleport().getNpcId() == 9011) {
-			if(player.getMiniLucifer() == true) {
-			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
-			player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+		if (player.getCurrentTeleport() == null) {
+			player.getPA().sendMessage("Please select a teleport destination first!");
 			return;
-			}  else if (player.getInventory().contains(10506, 10_000_000) &&	player.getInventory().contains(20400, 1) &&
-			player.getInventory().contains(19888, 1) && player.getInventory().contains(18823, 1) && player.getMiniLucifer() != true) {
-			player.getInventory().delete(10506, 10_000_000);
-			player.getInventory().delete(20400,  1);
-			player.getInventory().delete(19888,  1);
-			player.getInventory().delete(18823,  1);
-			player.getPacketSender().sendMessage("@red@You completed the sacrifice and have unlocked Mini Lucifer teleport!");
-			player.setMiniLucifer(true);
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == 9001) {
+			ProgressionZone.teleport(player);
+			player.getPacketSender().sendInterfaceRemoval();
 			return;
-			} else if (player.getMiniLucifer() == false) {
-			player.getPacketSender().sendMessage("You do not have the requirements to unlock Mini Lucifer!");
-			player.getPacketSender().sendMessage("Must Sacrfice 10m Upgrade tokens, Rage wings, Coll Ring II , and Coll neck II");
-			player.getPacketSender().sendMessage("@red@Try again with these items in your inventory!");
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == 9024) {
+			player.hov.initArea();
+			player.hov.start();
+			player.getPacketSender().sendInterfaceRemoval();
 			return;
-			}
-		
-		 }  else 
-			 if (player.getCurrentTeleport().getNpcId() == 438) {
-				if(player.getDarkSupreme() == true) {
+		}
+		if (player.getCurrentTeleport().getNpcId() == 9813) {
+			if (player.getRights() == PlayerRights.DEVELOPER)
+				player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
+			if (player.getPointsHandler().getMIDNIGHTKILLCount() >= 10_000 || player.getRights() == PlayerRights.DEVELOPER) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
-				player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
-				return;
-				}  else if (player.getInventory().contains(5011, 1) &&	player.getInventory().contains(12537, 1) &&
-				player.getInventory().contains(17013, 1) &&  !player.getDarkSupreme()) {
-				player.getInventory().delete(5011,  1);
-				player.getInventory().delete(12537,  1);
-				player.getInventory().delete(17013,  1);
-				player.getPacketSender().sendMessage("@red@You completed the sacrifice and have unlocked Dark Supreme teleport!");
-				player.setDarkSupreme(true);
-				return;
-				} else if (player.getDarkSupreme() == false) {
-				player.getPacketSender().sendMessage("You do not have the requirements to unlock Dark Supreme");
-				player.getPacketSender().sendMessage("Must Sacrfice Light Twisted bow, vitur scythe, and sang. staff!");
-				player.getPacketSender().sendMessage("@red@Try again with these items in your inventory!");
-				return;
-				}
-		 }  else  if (player.getCurrentTeleport().getNpcId() == 9012) {
-				if (player.getPointsHandler().getMiniLuciferkillcount() <= 4999 ) {
-				player.getPacketSender().sendMessage(
-						"You need to have killed 5k Mini Lucifers to go here.");
-				return;
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 			}
-			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
-					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
-			
-		 }  else  if (player.getCurrentTeleport().getNpcId() == 2012) {
-			 
-				if (player.getPointsHandler().getNPCKILLCount() < 20000) {
-				DialogueManager.sendStatement(player, "@red@You  need 20,000 total KC to visit Raids!");
-				return;
+			else
+				player.sendMessage("@red@You need 10k Midnight Goblin kills to go here!");
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == 9011) {
+			if (player.getRights() == PlayerRights.DEVELOPER)
+				player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
+			if (!player.isUnlockedLucifers() || player.getRights() != PlayerRights.DEVELOPER) {
+				Item[] requirements = new Item[]{new Item(ItemDefinition.UPGRADE_TOKEN_ID, 25_000_000), new Item(20400, 1),
+						new Item(18823, 3), new Item(19888, 3)};
+				if (player.getInventory().containsAll(requirements)) {
+					player.getInventory().deleteItemSet(requirements);
+					player.setUnlockedLucifers(true);
+					player.sendMessage("@red@Congratulations, you have unlocked Fallen Angel's zone!");
+					return;
+				} else {
+					player.sendMessage("You do not have the requirements to unlock Fallen Angels!");
+					player.sendMessage("You need an enraged cape + 3 coll rings II, 3 colls necks II to sacrifice!!");
+					player.sendMessage("@red@Try again with these items in your inventory!");
+					return;
 				}
-			if (player.getSkillManager().getCombatLevel() < 100) {
-				player.getPacketSender().sendMessage(
-						"You need a combat level of @blu@126@bla@ and level @blu@50@bla@ on all non-combat skills.@red@no dungeoneering.");
+			} else if (player.isUnlockedLucifers()) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+			}
+
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == 9837) {
+			if (player.getRights() == PlayerRights.DEVELOPER)
+				player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
+			if (!player.isUnlockedDarkSupreme()) {
+				Item[] requirements = new Item[]{ new Item(5011, 1), new Item(12537, 1), new Item(17013, 1)};
+				if (player.getInventory().containsAll(requirements)) {
+					player.getInventory().deleteItemSet(requirements);
+					player.setUnlockedDarkSupreme(true);
+					player.sendMessage("@red@Congratulations, you have unlocked Midnight Goblin's zone!");
+					return;
+				} else  if (player.getRights() == PlayerRights.DEVELOPER) {
+					TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+							player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				}  else
+					player.sendMessage(""); player.sendMessage("You do not have the requirements to unlock Midnight Goblins!");
+					player.sendMessage("You need to sacrifice a Legends Light bow, sword, and staff!");
+					player.sendMessage("@red@Try again with these items in your inventory!");
+					return;
+
+			} else if (player.isUnlockedDarkSupreme()) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
 			}
 
-			for (int i = 7; i < Skill.values().length; i++) {
-						if (i == 21 ||i == 25 || i == 24 || i == 23 || i == 18)
-							continue;
-						if (player.getSkillManager().getMaxLevel(i) < 49) {
-						
-								player.getPacketSender().sendMessage(
-										"@red@You must be at least level 50 in every non-combat skill to do Infernal raids.");
-							return;
-						}
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == 9012) {
+			if (player.getRights() == PlayerRights.DEVELOPER)
+				player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
+			if ((player.isUnlockedLucifers() &&
+					player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.DEVELOPER) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				boolean contains = false;
+				for (NPC others : World.getNpcs()) {
+					if (others == null) {
+						continue;
 					}
-			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
-					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+
+					if (others.getId() == 9012 && others.getPosition().getRegionId() == 7760 &&
+							others.getPosition().getZ() == (player.getIndex() * 4)) {
+						contains = true;
+					}
+				}
+				if (!contains) {
+					NPC npc_ = new NPC(9012, new Position(1952, 5146, player.getIndex() * 4));
+					npc_.setSpawnedFor(player);
+					World.register(npc_);
+				}
+			} else {
+				player.sendMessage("You need to have killed 10k Fallen Warriors to go here.");
+			}
+			return;
 		}
-		else if (player.getCurrentTeleport().getNpcId() == 219) {
-			if (player.getPointsHandler().getZEUSKILLCount() < 20000) {
-				DialogueManager.sendStatement(player, "You need 20,000 Zeus Killcount to access Bleach Raids!");
-							return;
-						}
-			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
-					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
-		}
+
 		if (player.getCurrentTeleport() != null) {
 			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 		} else {
+			if (player.getCurrentTeleport() == null)
 			player.getPA().sendMessage("Please select a teleport destination first!");
 		}
 	}

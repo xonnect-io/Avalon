@@ -37,7 +37,7 @@ public class PlayerPanel {
                 "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
                 "Hellraiser: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",
                 (DonationBossSystem.currentSpawn == null
-                ? "Donation boss: @whi@" + DonationBossSystem.getAmntDonated() + "/500 donated"
+                ? "Donation boss: @whi@" + DonationBossSystem.getAmntDonated() + "/100 donated"
                 : "Donation boss:@whi@ Alive ::donoboss"),
                 (VoteBossDrop.currentSpawn == null
                         ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/50 please vote!"

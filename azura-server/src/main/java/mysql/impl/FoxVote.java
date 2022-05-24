@@ -1,5 +1,6 @@
 package mysql.impl; // dont forget to change packaging ^-^
 
+import com.azul.crs.client.Client;
 import com.ruse.GameSettings;
 import com.ruse.motivote3.doMotivote;
 import com.ruse.world.World;
@@ -15,7 +16,7 @@ import java.sql.Statement;
 
 public class FoxVote implements Runnable {
 
-	public static final String HOST = "avalon317.com";
+	public static final String HOST = "195.179.236.205";
 	public static final String USER = "u189330247_Vote";
 	public static final String PASS = "8ytqy63zYrAUGWz";
 	public static final String DATABASE = "u189330247_Vote";
@@ -35,14 +36,15 @@ public class FoxVote implements Runnable {
 				return;
 			}
 
-			String name = player.getUsername().replaceAll(" ", "_");
-			ResultSet rs = executeQuery("SELECT * FROM votes WHERE username='"+name+"' AND claimed=0 AND voted_on != -1");
+			String name = player.getUsername().replace("_", " ");
+			ResultSet rs = executeQuery("SELECT * FROM fx_votes WHERE username='"+name+"' AND claimed=0 AND callback_date IS NOT NULL");
 
+			int points = 2;
 			while (rs.next()) {
+				String timestamp = rs.getTimestamp("callback_date").toString();
 				String ipAddress = rs.getString("ip_address");
 				int siteId = rs.getInt("site_id");
 
-				int points = 0;
 
 				// Double vote pet
 				if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
@@ -51,27 +53,25 @@ public class FoxVote implements Runnable {
 					player.getPacketSender()
 							.sendMessage("<shad=1>@yel@You get an extra vote scroll because of your pet!");
 				}
-				// ::voteon command
-				if(GameSettings.DOUBLE_VOTE) {
+
+				if (GameSettings.DOUBLE_VOTE) {
 					points *= 2;
 				}
 
-				if (points > 0) {
-					player.getInventory().add(23020, points);
-					player.getPacketSender().sendMessage("Thank you for voting!");
-					player.getDailyRewards().handleVote();
+				player.getInventory().add(23020, points);
+				player.getPacketSender().sendMessage("Thank you for voting!");
+				player.getDailyRewards().handleVote();
+				World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points
+						+ " Vote scrolls! ::vote now to support the server.");
+				player.lastVoteTime = System.currentTimeMillis();
+				player.setVoteCount(doMotivote.getVoteCount() + points);
 
-					player.lastVoteTime = System.currentTimeMillis();
-
-					player.setVoteCount(doMotivote.getVoteCount() + 1);
-
-					if (doMotivote.getVoteCount() >= 50) {
-						VoteBossDrop.handleSpawn();
-					}
-					World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points
-							+ " Vote scrolls! ::vote now to support the server.");
-
+				if (doMotivote.getVoteCount() >= 50) {
+					VoteBossDrop.handleSpawn();
 				}
+
+
+				//	}
 
 				System.out.println("[Vote] Vote claimed by "+name+". (sid: "+siteId+", ip: "+ipAddress+")");
 

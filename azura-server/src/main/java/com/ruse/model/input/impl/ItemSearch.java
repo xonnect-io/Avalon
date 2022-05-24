@@ -140,11 +140,10 @@ public class ItemSearch extends Input {
 		case "dboots":
 		case "d boots":
 			return new Object[] { "dragon boots", 11732 };
-		case "whip":
-		case "abby whip":
-		case "abbysal whip":
-		case "abbyssal whip":
-			return new Object[] { "abyssal whip", 4151 };
+		case "black scythe":
+		case "black":
+		case "scythe":
+			return new Object[] { "black scythe", 4151 };
 		}
 		return new Object[] { searchSyntax, -1 };
 	}

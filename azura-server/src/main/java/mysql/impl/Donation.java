@@ -11,26 +11,24 @@ import com.ruse.world.entity.impl.player.Player;
 
 import java.sql.*;
 
-public class Donation implements Runnable {
+public class Donation extends Database {
 
-
-    public static final String HOST = "avalon317.com";
+    public static final String HOST = "195.179.236.205";
     public static final String USER = "u189330247_Store";
     public static final String PASS = "8ytqy63zYrAUGWz";
     public static final String DATABASE = "u189330247_Store";
 
+
     private Player player;
     private Connection conn;
-    private Statement stmt;
 
-    /**
-     * The constructor
-     *
-     * @param player
-     */
+    private ResultSet rs;
+
     public Donation(Player player) {
+        super(HOST,USER,PASS,DATABASE);
         this.player = player;
     }
+
 
     public static final int SAPPHIRE_DONATION_AMOUNT = 10;
     public static final int EMERALD_DONATION_AMOUNT = 50;
@@ -38,44 +36,34 @@ public class Donation implements Runnable {
     public static final int DIAMOND_DONATION_AMOUNT = 500;
     public static final int ONYX_DONATION_AMOUNT = 2500;
     public static final int ZENYTE_DONATION_AMOUNT = 5000;
+     final String generateQuery() {
+        String name = player.getUsername().replace("_", " ");
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT * FROM payments WHERE player_name='"+name+"' AND status='complete' AND claimed=0");
 
-    public static void checkForRankUpdate(Player player) {
-        if (player.getRights().isStaff()) {
-            return;
-        }
-        PlayerRights rights = null;
-        if (player.getAmountDonated() >= SAPPHIRE_DONATION_AMOUNT)
-            rights = PlayerRights.SAPPHIRE_DONATOR;
-        if (player.getAmountDonated() >= EMERALD_DONATION_AMOUNT)
-            rights = PlayerRights.EMERALD_DONATOR;
-        if (player.getAmountDonated() >= RUBY_DONATION_AMOUNT)
-            rights = PlayerRights.RUBY_DONATOR;
-        if (player.getAmountDonated() >= DIAMOND_DONATION_AMOUNT)
-            rights = PlayerRights.DIAMOND_DONATOR;
-        if (player.getAmountDonated() >= ONYX_DONATION_AMOUNT)
-            rights = PlayerRights.ONYX_DONATOR;
-        if (player.getAmountDonated() >= ZENYTE_DONATION_AMOUNT)
-            rights = PlayerRights.ZENYTE_DONATOR;
-        if (rights != null && rights != player.getRights()) {
-            player.getPacketSender().sendMessage(
-                    "You've become a " + Misc.formatText(rights.toString().toLowerCase()) + "! Congratulations!");
-            player.setRights(rights);
-            player.getPacketSender().sendRights();
-        }
+        return sb.toString();
     }
 
-    public void run() {
+    public void run(){
         try {
-            if (!connect(HOST, "u189330247_Store", "u189330247_Store", "8ytqy63zYrAUGWz")) {
+            if (!init()) {
                 return;
             }
-            System.out.println("connected to store database");
-
+//oh lmfao hahahahahahahahaha
             player.lastDonationClaim = System.currentTimeMillis() + 30000;
             String name = player.getUsername().replace("_", " ");
-            ResultSet rs = executeQuery("SELECT * FROM payments WHERE player_name='"+name+"' AND status='Completed' AND claimed=0");
+            executeQuery("SELECT * FROM payments WHERE player_name='"+name+"' AND status='Complete' AND claimed=0");
+            stmt = prepare(generateQuery());
+      //      stmt.setString(1, player.playerName);
+            stmt.execute();
 
-            while (rs.next()) {
+
+            rs = stmt.executeQuery();
+
+            if(rs.next()) {
+
+            //while (stmt.getMoreResults()) {
+               int id = rs.getInt("id");
                 int item_number = rs.getInt("item_number");
                 double paid = rs.getDouble("paid");
                 int quantity = rs.getInt("quantity");
@@ -90,37 +78,44 @@ public class Donation implements Runnable {
                     quantity *= 2;
                 }
 
-                int id = -1;
+
                 switch (item_number) {
 
                     case 1:
-                            player.getInventory().add(6769, quantity);
-                            id = 23057;
+                        player.getInventory().add(6769, quantity);
                         break;
+
                     case 2:
-                            player.getInventory().add(23058, quantity);
-                            id = 23058;
+                        player.getInventory().add(10942, quantity);
                         break;
+
                     case 3:
-                            player.getInventory().add(23059, quantity);
-                            id = 23059;
+                        player.getInventory().add(10934, quantity);
                         break;
-                    case 1023:
-                            player.getInventory().add(23060, quantity);
-                            id = 23060;
+
+                    case 4:
+                        player.getInventory().add(10935, quantity);
                         break;
+
+                    case 5:
+                        player.getInventory().add(10943, quantity);
+                        break;
+                    case 6:
+                        player.getInventory().add(10943, quantity);
+                        break;
+
                     default:
                         player.sendMessage("No donation was found under your name.");
                         return;
                 }
 
-                PlayerLogs.logPlayerDonations(player.getUsername(), "Donated: $" + paid
-                        + ", Item: " + ItemDefinition.forId(id).getName() + ", Amount: " + item_number + ", ID: " + id + ", item_number: " + item_number);
+//                PlayerLogs.logPlayerDonations(player.getUsername(), "Donated: $" + paid
+//                        + ", Item: " + ItemDefinition.forId(id).getName() + ", Amount: " + item_number + ", ID: " + id + ", item_number: " + item_number);
 
                 DonationBossSystem.amntDonated+= paid;
                 DonationBossSystem.spawnBoss();
                 player.sendMessage("Thanks for donating!");
-
+//why u got 1 eclispe and 1 intellij open lol well i can't get this server to run in eclipes :D ill fix it
                 if (paid >= 5) {
                     World.sendMessage("<img=5><shad=1>@yel@Donation: @blu@" + player.getUsername()
                             + "@or2@ has donated! @red@::Donate@or2@ now to show support for @red@Avalon!");
@@ -157,80 +152,14 @@ public class Donation implements Runnable {
 
                 rs.updateInt("claimed", 1);
                 rs.updateRow();
+
             }
-            destroy();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * @param host     the host ip address or url
-     * @param database the name of the database
-     * @param user     the user attached to the database
-     * @param pass     the users password
-     * @return true if connected
-     */
-    public boolean connect(String host, String database, String user, String pass) {
-        try {
-            this.conn = DriverManager.getConnection("jdbc:mysql://" + host + ":3306/" + database, user, pass);
-            return true;
-        } catch (SQLException e) {
-            System.out.println("Failing connecting to database!");
-            return false;
-        }
-    }
-
-    /**
-     * Disconnects from the MySQL server and destroy the connection
-     * and statement instances
-     */
-    public void destroy() {
-        try {
-            conn.close();
-            conn = null;
-            if (stmt != null) {
-                stmt.close();
-                stmt = null;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Executes an update query on the database
-     *
-     * @param query
-     * @see {@link Statement#executeUpdate}
-     */
-    public int executeUpdate(String query) {
-        try {
-            this.stmt = this.conn.createStatement(1005, 1008);
-            int results = stmt.executeUpdate(query);
-            return results;
+            destroyAll();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        return -1;
+
     }
 
-    /**
-     * Executres a query on the database
-     *
-     * @param query
-     * @return the results, never null
-     * @see {@link Statement#executeQuery(String)}
-     */
-    public ResultSet executeQuery(String query) {
-        try {
-            this.stmt = this.conn.createStatement(1005, 1008);
-            ResultSet results = stmt.executeQuery(query);
-            return results;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        return null;
-    }
 }
 

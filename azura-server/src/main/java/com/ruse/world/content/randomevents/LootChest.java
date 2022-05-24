@@ -11,6 +11,12 @@ import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
+import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.casketopening.Box;
+import com.ruse.world.content.casketopening.BoxLoot;
+import com.ruse.world.content.casketopening.CasketOpening;
+import com.ruse.world.content.dailytasks_new.DailyTask;
+import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.HashMap;
@@ -26,12 +32,11 @@ public final class LootChest {
 	 */
 
 	private static int TIME = 1_000_000;// 1_000_000;
-	private static int tickDelay = 30, maxLoot = 3;
+	private static int tickDelay = 30, maxLoot = 5;
 	private static Stopwatch timer = new Stopwatch().reset();
 	public static SpawnedChest LOOT_CHEST = null;
-	private static LocationData LAST_LOCATION = null;
-	public static int ultraLoots[] = {6769,10946,15288};
-	public static int commonLoots[] = { 12855,20488,19116,19115,19114,10942,15290,15289};
+	private static LocationData PREVIOUS_LOC = null;
+	public static int rewards[] = {21211};
 	private static boolean firstTime = true;
 
 	public static int getRandomItem(int[] array) {
@@ -40,18 +45,21 @@ public final class LootChest {
 
 	public static void handleAction(Player player, GameObject object) {
 
+		int reward = getRandomItem(rewards);
 			player.setEntityInteraction(object);
 				int delay = Misc.getRandom(5);
 				player.setCurrentTask(new Task(1, player, false) {
 					int cycle = 0, reqCycle = delay >= 2 ? delay : Misc.getRandom(1) + 1;
 
+
 					@Override
 					public void execute() {
-						if (!player.getClickDelay().elapsed(60000)) {
-						player.sendMessage("You can only search the loot chest 1 time each minute!");
+						if (player.isChestLooted()) {
+							player.sendMessage("You can only search the loot chest once each respawn!");
 						this.stop();
 						return;
 					}
+
 						if (player.getInventory().getFreeSlots() == 0) {
 							player.performAnimation(new Animation(65535));
 							player.getPacketSender().sendMessage("You don't have enough free inventory space.");
@@ -59,30 +67,21 @@ public final class LootChest {
 							return;
 						}
 
-						if (cycle != reqCycle) {
+						if (cycle != reqCycle || (!player.isChestLooted())) {
 							cycle++;
+							player.setChestLooted(true);
 							player.performAnimation(new Animation(827));
 							LOOT_CHEST.getChestObject().incrementPickAmount();
-							player.getClickDelay().reset();
-							if (LOOT_CHEST.getChestObject().getPickAmount() < 3)
-							World.sendMessage("@blu@[Loot Chest]: @red@A player has found and looted the loot chest. @blu@" +  ( 3 - LOOT_CHEST.getChestObject().getPickAmount()) + "/3@red@ rewards left!");
-							int random = Misc.inclusiveRandom(1, 30);
-							if (random >= 1 && random <= 19) {
-								int commonDrop = getRandomItem(commonLoots);
-								player.getInventory().add(commonDrop, 1);
-								if ( commonDrop == 12855 );
-								player.getInventory().add(12855, Misc.getRandom(25000));
-							} else
-							if (random == 20) {
-								int ultraDrops = getRandomItem(ultraLoots);
-								player.getInventory().add(ultraDrops, 1);
-								World.sendMessage("@blue@[Loot Chest]: @red@" + player.getUsername() + " @blu@has pulled @red@" +
-										ItemDefinition.forId(ultraDrops).getName() + " @blu@from the @red@Loot chest");
-							}
-						} else if (cycle >= reqCycle) {
+							if (LOOT_CHEST.getChestObject().getPickAmount() < 5)
+								World.sendMessage("@blu@[Loot Chest]: @red@A player has found the loot chest. @blu@" + (5 - LOOT_CHEST.getChestObject().getPickAmount()) + "/5@red@ keys left!");
+							LootChest.handleReward(player);
+							this.stop();
+								} else
+									if (cycle >= reqCycle) {
 							cycle = 0;
 							this.stop();
 						}
+
 						Sounds.sendSound(player, Sound.PICKUP_ITEM);
 					}
 				});
@@ -109,6 +108,31 @@ public final class LootChest {
 		}
 	}
 
+	public static Box[] loot = { //
+			new Box(15288, 1, 2, 3),
+			new Box(15290, 2, 5, 25),
+			new Box(15289, 1, 2, 20),
+			new Box(19116, 5, 10, 50),
+			new Box(19115, 3, 7, 50),
+			new Box(19114, 2, 5, 33),
+			new Box(20488, 1, 3, 20),
+			new Box(10946, 1, 1, 1, true),
+			new Box(15003, 1, 1, 1, true),
+			new Box(15002, 1, 1, 0.75, true),
+			new Box(6769, 1, 1, 0.75, true),
+			new Box(14999, 1, 1, 0.25, true),
+			new Box(10942, 1, 1, 0.25, true),
+			new Box(3578, 1, 1, 0.1, true),
+	};
+
+	public static void handleReward(Player player) {
+			Box box = BoxLoot.getLoot(loot);
+			player.getInventory().add(box.getId(), box.getAmount());
+			Achievements.doProgress(player, Achievements.Achievement.OPEN_5_LOOT_CHESTS);
+			Achievements.doProgress(player, Achievements.Achievement.OPEN_25_LOOT_CHESTS);
+			Achievements.doProgress(player, Achievements.Achievement.OPEN_200_LOOT_CHESTS);
+	}
+
 	public static enum LootChestDef {
 
 		LOOT_CHEST("Loot chest", 13291, 20488,maxLoot);
@@ -118,11 +142,11 @@ public final class LootChest {
 		private int reward;
 		private int maximumLootingAmount;
 
-		private LootChestDef(String chestName, int id, int reward, int maxCutAmount) {
+		private LootChestDef(String chestName, int id, int reward, int maxLootAmount) {
 			this.chestName = chestName;
 			this.id = id;
 			this.reward = reward;
-			this.maximumLootingAmount = maxCutAmount;
+			this.maximumLootingAmount = maxLootAmount;
 		}
 
 		public String getChestName() {
@@ -208,28 +232,28 @@ public final class LootChest {
 				}
 				LocationData locationData = getRandom();
 				LootChestDef chest = getRandomChest();
-				if (LAST_LOCATION != null) {
-					if (locationData == LAST_LOCATION) {
+				if (PREVIOUS_LOC != null) {
+					if (locationData == PREVIOUS_LOC) {
 						locationData = getRandom();
 					}
 				}
-				LAST_LOCATION = locationData;
+				PREVIOUS_LOC = locationData;
 				LOOT_CHEST = new SpawnedChest(new GameObject(chest.getId(), locationData.spawnPos), locationData);
 				CustomObjects.spawnGlobalObject(LOOT_CHEST.chestObject);
 				World.sendMessage("@blu@[Event]: @red@A Loot chest has spawned at " + locationData.clue + ".");
 				World.getPlayers().forEach(p -> PlayerPanel.refreshPanel(p));
+
 				timer.reset();
 			}
 		} else {
 			if (LOOT_CHEST.chestObject.getPickAmount() >= maxLoot) {
-				// // System.out.println("HEY WE CUT THE TREE DOWN CXCXCXCXCXXC");
 				despawn(true);
 				timer.reset();
 			}
 		}
 	}
 	public static LocationData getLocation() {
-		return LAST_LOCATION;
+		return PREVIOUS_LOC;
 	}
 	public static void despawn(boolean respawn) {
 		if (respawn) {
@@ -242,14 +266,14 @@ public final class LootChest {
 				if (p == null) {
 					continue;
 				}
-				// p.getPacketSender().sendString(39162, "@or2@Evil Tree: @or2@[ @yel@N/A@or2@
-				// ]");
+
 				if (p.getInteractingObject() != null
 						&& p.getInteractingObject().getId() == LOOT_CHEST.chestObject.getId()) {
-					LAST_LOCATION = null;
+					PREVIOUS_LOC = null;
 					p.performAnimation(new Animation(65535));
 					p.getPacketSender().sendClientRightClickRemoval();
 					p.getSkillManager().stopSkilling();
+					p.setChestLooted(false);
 				}
 			}
 			CustomObjects.deleteGlobalObject(LOOT_CHEST.chestObject);

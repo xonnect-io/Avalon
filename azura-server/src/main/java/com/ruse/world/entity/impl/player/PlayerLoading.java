@@ -419,6 +419,9 @@ public class PlayerLoading {
             if (reader.has("zeus-killcount")) {
                 player.getPointsHandler().setZEUSKILLCount(reader.get("zeus-killcount").getAsInt(), false);
             }
+            if (reader.has("midnight-killcount")) {
+                player.getPointsHandler().setMIDNIGHTKILLCount(reader.get("midnight-killcount").getAsInt(), false);
+            }
             if (reader.has("mini-lucifer-killcount")) {
                 player.getPointsHandler().setMiniLuciferkillcount(reader.get("mini-lucifer-killcount").getAsInt());
             }
@@ -1082,6 +1085,11 @@ public class PlayerLoading {
             if (reader.has("dark-supremes-unlocked")) {
                 player.setUnlockedDarkSupreme(reader.get("dark-supremes-unlocked").getAsBoolean());
             }
+
+            if (reader.has("chest-looted")) {
+                player.setChestLooted(reader.get("chest-looted").getAsBoolean());
+            }
+
 
             if (reader.has("group-ironman-id")) {
                 IronmanGroup group = GroupManager.getGroup((reader.get("group-ironman-id").getAsInt()));

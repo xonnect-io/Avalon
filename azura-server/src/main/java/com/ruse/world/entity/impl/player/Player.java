@@ -3614,7 +3614,7 @@ End new teleport
 
     public void claimDonation(Player player, boolean fromLogin) {
         if (player.lastDonationClaim < System.currentTimeMillis())
-            new Thread(new Donation(player)).start();
+            new  Donation(player).run();
         else if (!fromLogin)
             player.sendMessage("You can only claim donations once every 30seconds!");
     }
@@ -3679,6 +3679,10 @@ End new teleport
 
     @Getter @Setter
     public boolean unlockedLucifers;
+
+
+    @Getter @Setter
+    public boolean chestLooted;
 
     @Getter
     @Setter

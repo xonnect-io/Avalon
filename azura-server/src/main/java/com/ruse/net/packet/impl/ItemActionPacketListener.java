@@ -312,8 +312,6 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getInventory().delete(itemId, 1);
                     ClueScrollReward reward = ClueScrollReward.getWeightedReward(ClueScroll.MEDIUM);
                     player.getInventory().add(reward.getItemId(), Misc.getRandom(reward.getMinAmt(), reward.getMaxAmt()));
-                    player.getCurrentClue().setLastTask(player.getCurrentClue().getCurrentTask());
-                    player.getCurrentClue().setCurrentTask(SlayerTasks.NO_TASK);
 
                 }
                 break;
@@ -1755,7 +1753,7 @@ public class ItemActionPacketListener implements PacketListener {
                     return;
                 }
 
-                new InstanceManager(player).createInstance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
+                new InstanceManager(player).create3X3Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
                 break;
             case 23014:
             case 23015:

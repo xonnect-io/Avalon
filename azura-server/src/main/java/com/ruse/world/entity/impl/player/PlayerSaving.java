@@ -146,6 +146,7 @@ public class PlayerSaving {
 			object.addProperty("hercules-killcount", new Integer(player.getPointsHandler().getHERCULESKILLCount()));
 			object.addProperty("satan-killcount", new Integer(player.getPointsHandler().getSATANKILLCount()));
 			object.addProperty("zeus-killcount", new Integer(player.getPointsHandler().getZEUSKILLCount()));
+			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
 			object.addProperty("mini-lucifer-killcount", player.getPointsHandler().getMiniLuciferkillcount());
 			object.addProperty("lucifer-killcount", player.getPointsHandler().getLuciferkillcount());
 			object.addProperty("mini-lucifer", new Boolean(player.getMiniLucifer()));
@@ -334,7 +335,7 @@ public class PlayerSaving {
 			object.add("zones-complete", builder.toJsonTree(player.getZonesComplete()));
 
 			object.addProperty("gamble-banned", player.isGambleBanned());
-
+			object.addProperty("chest-looted", player.isChestLooted());
 			object.addProperty("lucifers-unlocked", player.isUnlockedLucifers());
 			object.addProperty("dark-supremes-unlocked", player.isUnlockedDarkSupreme());
 			object.add("currency-pouch", builder.toJsonTree(player.getCurrencyPouch()));

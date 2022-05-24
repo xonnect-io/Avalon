@@ -18,6 +18,7 @@ public class ItemDefinition {
     public static final int COIN_ID = 995;
     public static final int MILL_ID = 10835;
     public static final int UPGRADE_TOKEN_ID = 12855;
+    public static final int PVM_TICKETS = 5022;
     //  public static final int MILL_ID = 23151;
 
     /**

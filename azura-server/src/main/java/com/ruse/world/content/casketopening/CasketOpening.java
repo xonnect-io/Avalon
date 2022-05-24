@@ -298,7 +298,7 @@ public class CasketOpening {
         ONYX(14999, Onyx.rewards),
         RUBY(15002, Ruby.rewards),
         DIAMOND(15004, Diamond.rewards),
-        RAIDS(18404, Raids1.rewards)
+        RAIDS(18404, Raids1.rewards),
         ;
         private int itemID;
         private Box[] loot;

@@ -1034,8 +1034,9 @@ public final class MobDefinition {
 				
 			case 9813:
 				definition.setDefault();
-				definition.name = "Blood Mage";
-				definition.npcModels = new int[]{17344,17345,17349,17350,17359};
+				definition.name = "Blood Demon";
+				definition.combatLevel = 666;
+				definition.npcModels = new int[]{18146};
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -1043,6 +1044,21 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				definition.scaleXZ = 128;
 				definition.scaleY = 128;
+				break;
+				
+				
+			case 205:
+				definition.setDefault();
+				definition.name = "Elite Valdis";
+				definition.combatLevel = 420;
+				definition.npcModels = new int[]{18151};
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 205;
+				definition.scaleY = 205;
 				break;
 				
 			case 9814:
@@ -1059,7 +1075,20 @@ public final class MobDefinition {
 				definition.scaleY = 128;
 				break;
 			//HoV NPC End
-
+			case 204:
+				definition.setDefault();
+				definition.name = "Blood Demon pet";
+				definition.npcModels = new int[]{18146};
+				definition.combatLevel = MobDefinition.get(9813).combatLevel;
+				definition.standAnimation = MobDefinition.get(9813).standAnimation;
+				definition.walkAnimation = MobDefinition.get(9813).walkAnimation;
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 64;
+				definition.scaleY = 64;
+				break;
 			case 9830:
 				definition.setDefault();
 				definition.name = "Fenrir pet";
@@ -3115,21 +3144,18 @@ public final class MobDefinition {
 
 				break;
 			case 302:
-				definition.name = "<col=f8ac00>double killcount pet";
+				definition.name = "Hellraiser (x2 KC)";
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = 5070;
 				definition.walkAnimation = 5070;
-				definition.scaleXZ = 170;
-				definition.scaleY = 170;
-				definition.npcModels = new int[]{16072};
-				definition.scaleXZ = 90;
-				definition.scaleY = 90;
+				definition.npcModels = new int[]{16050,16052,16054,16056,16057,16058,16059};
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
 				definition.actions = new String[5];
 				definition.drawYellowDotOnMap = false;
-
 				definition.actions[0] = null;
-
 				break;
+				
 			case 3310:
 				definition.name = "Yoshi";
 				MobDefinition drv = MobDefinition.get(2292);
@@ -3833,30 +3859,8 @@ public final class MobDefinition {
 				definition.scaleXZ = 125;
 				definition.scaleY = 125;
 				definition.npcSizeInSquares = 1;
+				break;
 
-				break;
-			case 3113:
-				definition.name = "Doomega";
-				definition.combatLevel = 492;
-				definition.walkAnimation = 1660;
-				definition.standAnimation = 11973;
-				definition.npcModels = new int[9];
-				definition.npcModels[0] = 55750; //HEAD
-				definition.npcModels[1] = 45194; //JAW
-				definition.npcModels[2] = 55890; //CHEST
-				definition.npcModels[3] = 65067; //CAPE
-				//definition.npcModels[4] = -1; //ARM
-				definition.npcModels[5] = 56304; //HAND//shield
-				definition.npcModels[6] = 65002; //WEP
-				definition.npcModels[7] = 55806; //LEG
-				definition.npcModels[8] = 55682; //BOOT
-				definition.actions = new String[5];
-				definition.actions[0] = null;
-				definition.actions[1] = "Attack";
-				definition.actions[2] = null;
-				definition.actions[3] = null;
-				definition.actions[4] = null;
-				break;
 			case 3003:
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.name = "BabyZilla";
@@ -4872,13 +4876,13 @@ public final class MobDefinition {
 				definition.scaleXZ = 60;
 				break;
 			case 10103:
-
 				definition.npcSizeInSquares = 1;
 				definition.name = "Bulwark";
 				definition.scaleXZ = 70;
 				definition.scaleY = 70;
 				//definition.rdc2 = 60;
 				break;
+				
 			case 58:
 				definition.name = "Super Mini Zulrah";
 				definition.actions = new String[]{null, "Attack", null, null, null};

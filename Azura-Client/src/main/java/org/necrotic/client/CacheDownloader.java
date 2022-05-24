@@ -15,14 +15,14 @@ import java.util.zip.ZipInputStream;
  */
 public class CacheDownloader {
 
-	private static final String CACHE_FILE_NAME = "Avalon.zip"; //The name of the actual .zip file
+	private static final String CACHE_FILE_NAME = ".Avalon.zip"; //The name of the actual .zip file
 
-	private static final String CACHE_URL = "https://www.dropbox.com/s/v0owb8orxlj4c64/Avalon.zip?dl=1";//"https://www.dropbox.com/s/7kmo572yi5lqmw2/Avalon.zip?dl=1";
-	private static final String NEWEST_VERSION_FILE_URL = "https://www.dropbox.com/s/y0lx1anxc2o37za/cache_version.txt?dl=1";
+	private static final String CACHE_URL = "https://www.dropbox.com/s/k1s1smkiykb8elo/.Avalon.zip?dl=1";//"https://www.dropbox.com/s/7kmo572yi5lqmw2/Avalon.zip?dl=1";
+	private static final String NEWEST_VERSION_FILE_URL = "https://www.dropbox.com/s/xjq5otq1ffxppnr/cache_version.txt?dl=1";
 	private static final String CURRENT_VERSION_FILE = "cache_version.txt"; //The location of the local cache_version txt file
 
-	public static final String URL_TO_LOADING_IMAGES = "https://Avalon.io/resources/";
-	public static final String MIRROR_URL_TO_LOADING_IMAGES = "https://Avalon.io/resources/"; //If first link is broken, it will attempt to download from here
+	public static final String URL_TO_LOADING_IMAGES = "https://Avalon317.com/resources/";
+	public static final String MIRROR_URL_TO_LOADING_IMAGES = "https://Avalon317.com/resources/"; //If first link is broken, it will attempt to download from here
 
 	public static boolean UPDATING = true;
 

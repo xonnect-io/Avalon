@@ -866,6 +866,101 @@ public class Locations {
 				}
 			}
 		},
+		EMERALD_ZONE(new int[] { 2580, 2622 }, new int[] { 2760, 2785 }, false, true, true, false, true, false) {
+
+			@Override
+			public void enter(Player player) {
+				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
+						.getMaxLevel(Skill.CONSTITUTION)) {
+					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
+							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					player.getPacketSender()
+							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+				}
+				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+						.getMaxLevel(Skill.PRAYER)) {
+					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+							player.getSkillManager().getMaxLevel(Skill.PRAYER));
+					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+				}
+			}
+		},
+		RUBY_ZONE(new int[] { 2503, 2557 }, new int[] { 2684, 2750 }, false, true, true, false, true, false) {
+
+			@Override
+			public void enter(Player player) {
+				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
+						.getMaxLevel(Skill.CONSTITUTION)) {
+					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
+							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					player.getPacketSender()
+							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+				}
+				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+						.getMaxLevel(Skill.PRAYER)) {
+					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+							player.getSkillManager().getMaxLevel(Skill.PRAYER));
+					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+				}
+			}
+		},
+		DIAMOND_ZONE(new int[] { 2571, 2619 }, new int[] { 2695, 2746 }, false, true, true, false, true, false) {
+
+			@Override
+			public void enter(Player player) {
+				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
+						.getMaxLevel(Skill.CONSTITUTION)) {
+					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
+							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					player.getPacketSender()
+							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+				}
+				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+						.getMaxLevel(Skill.PRAYER)) {
+					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+							player.getSkillManager().getMaxLevel(Skill.PRAYER));
+					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+				}
+			}
+		},
+		ONYX_ZONE(new int[] { 2493, 2564 }, new int[] { 2625, 2680 }, false, true, true, false, true, false) {
+
+			@Override
+			public void enter(Player player) {
+				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
+						.getMaxLevel(Skill.CONSTITUTION)) {
+					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
+							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					player.getPacketSender()
+							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+				}
+				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+						.getMaxLevel(Skill.PRAYER)) {
+					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+							player.getSkillManager().getMaxLevel(Skill.PRAYER));
+					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+				}
+			}
+		},
+		ZENYTE_ZONE(new int[] { 2569, 2620 }, new int[] { 2631, 2687 }, false, true, true, false, true, false) {
+
+			@Override
+			public void enter(Player player) {
+				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
+						.getMaxLevel(Skill.CONSTITUTION)) {
+					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
+							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					player.getPacketSender()
+							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+				}
+				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+						.getMaxLevel(Skill.PRAYER)) {
+					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+							player.getSkillManager().getMaxLevel(Skill.PRAYER));
+					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+				}
+			}
+		},
 		NEW_MEMBER_ZONE(new int[] { 2792, 2877 }, new int[] { 3319, 3396 }, false, true, true, false, true, true) {
 			@Override
 			public void process(Player player) {
@@ -981,21 +1076,7 @@ public class Locations {
 		GLOBAL_BOSS(new int[] { 2128, 2161 }, new int[] { 5004, 5034 }, true, true, true, false, false, false) {
 
 		},
-		DIAMOND_ZONE(new int[] { 2571, 2619 }, new int[] { 2695, 2746 }, false, true, true, false, true, false) {
 
-		},
-		RUBY_ZONE(new int[] { 2503, 2557 }, new int[] { 2684, 2750 }, false, true, true, false, true, false) {
-
-		},
-		EMERALD_ZONE(new int[] { 2561, 2622 }, new int[] { 2752, 2810 }, false, true, true, false, true, false) {
-
-		},
-		ONYX_ZONE(new int[] { 2493, 2564 }, new int[] { 2625, 2680 }, false, true, true, false, true, false) {
-
-		},
-		ZENYTE_ZONE(new int[] { 2569, 2620 }, new int[] { 2631, 2687 }, false, true, true, false, true, false) {
-
-		},
 		VAULT_OF_WAR(new int[] { 1729, 1791 }, new int[] { 5313, 5375 }, false, true, true, false, false, false) {
 			@Override
 			public void logout(Player player) {

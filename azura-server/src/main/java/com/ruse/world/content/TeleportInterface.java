@@ -238,31 +238,31 @@ public class TeleportInterface {
 
         if (bossData == Bosses.FALLEN_ANGEL) {
             if ((player.isUnlockedLucifers() &&
-                    player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.DEVELOPER) {
-                TeleportHandler.teleportPlayer(player,
-                        new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
-                        player.getSpellbook().getTeleportType());
-                boolean contains = false;
-                for (NPC others : World.getNpcs()) {
-                    if (others == null) {
-                        continue;
-                    }
+                player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.DEVELOPER) {
+            TeleportHandler.teleportPlayer(player,
+                    new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
+                    player.getSpellbook().getTeleportType());
+            boolean contains = false;
+            for (NPC others : World.getNpcs()) {
+                if (others == null) {
+                    continue;
+                }
 
-                    if (others.getId() == 9012 && others.getPosition().getRegionId() == 7760 &&
-                            others.getPosition().getZ() == (player.getIndex() * 4)) {
-                        contains = true;
-                    }
+                if (others.getId() == 9012 && others.getPosition().getRegionId() == 7760 &&
+                        others.getPosition().getZ() == (player.getIndex() * 4)) {
+                    contains = true;
                 }
-                if (!contains) {
-                    NPC npc_ = new NPC(9012, new Position(1952, 5146, player.getIndex() * 4));
-                    npc_.setSpawnedFor(player);
-                    World.register(npc_);
-                }
-            } else {
-                player.sendMessage("You need to have killed 10k Mini Lucifers to go here.");
             }
-            return;
+            if (!contains) {
+                NPC npc_ = new NPC(9012, new Position(1952, 5146, player.getIndex() * 4));
+                npc_.setSpawnedFor(player);
+                World.register(npc_);
+            }
+        } else {
+            player.sendMessage("You need to have killed 10k Mini Lucifers to go here.");
         }
+        return;
+    }
 
         player.setPreviousTeleport(bossData);
         TeleportHandler.teleportPlayer(player,

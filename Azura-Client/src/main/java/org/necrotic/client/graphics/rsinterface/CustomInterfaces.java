@@ -2794,12 +2794,12 @@ public class CustomInterfaces extends RSInterface {
 		addButtonWSpriteLoader(15001, 618, "Show Equipment Stats", 41, 40);
 		addButtonWSpriteLoader(15002, 307, null, 41, 40);
 		addButtonWSpriteLoader(15003, 620, "Open Items kept on Death", 41, 40);
-		//addButtonWSpriteLoader(15004, 621, "Toggle Experience", 41, 40);
-		newTab.totalChildren(3);
+		addButtonWSpriteLoader(15004, 1662, "Toggle Cosmetic Overrides", 41, 40);
+		newTab.totalChildren(4);
 		setBounds(15001, 25, 205, 0, newTab);
 		//setBounds(15002, 20, 120, 1, newTab);
 		setBounds(15003, 125, 205, 1, newTab);
-		//setBounds(15004, 999, 205, 3, newTab);
+		setBounds(15004, 157, 5, 3, newTab);
 		setBounds(1644, 0, 0, 2, newTab);
 		//setBounds(1669, 0, 0, 5, newTab);
 	}
@@ -6932,6 +6932,7 @@ int x = 10;
 
 		RSInterface tab = RSInterface.addInterface(28200);
 		RSInterface scrollInterface = RSInterface.addTabInterface(28230);
+		RSInterface rightscroll = RSInterface.addTabInterface(118230);
 		RSInterface.addSprite(28201, 1655);
 		RSInterface.addHoverButton(28202, 1016, 16, 16, "Close", 250, 28203, 3);
 		RSInterface.addHoveredButton(28203, 1017, 16, 16, 28204);
@@ -6964,14 +6965,6 @@ int x = 10;
 		for (int i = 0; i < text.length; i++) {
 			RSInterface.addText(28221 + i, text[i], tda, 1, 0xFF9900, true, true);
 		}
-		/** This handles the scrollable Items On Interface **/
-		RSInterface items = RSInterface.addInterface(28228);
-		RSInterface.addToItemGroup(28229, 3, 9, 9, 9, false, new String[]{null, null, null, null, null});
-		RSInterface.interfaceCache[28229].parentID = 28228;
-		items.totalChildren(1);
-		items.child(0, 28229, 1, 1);
-		items.width = 312;
-		items.height = 180;
 		
 		RSInterface.setChildren(32, tab);
 		tab.child(0, 28201, 7, 10);
@@ -7001,15 +6994,25 @@ int x = 10;
 		tab.child(24, 28225, 372, 36);
 		tab.child(25, 28226, 446, 36);
 		tab.child(26, 28227, 112, 165);
-		tab.child(27, 28228, 360, 90);
-		tab.child(28, 64110, 260, 244);
-		tab.child(29, 64112, 182, 269);
-		tab.child(30, 64113, 182, 285);
-		tab.child(31, 64114, 182, 340);
+		//tab.child(27, 28228, 360, 90);
+		tab.child(27, 64110, 260, 244);
+		tab.child(28, 64112, 182, 269);
+		tab.child(29, 64113, 182, 285);
+		tab.child(30, 64114, 182, 340);
+		tab.child(31, 118230, 360, 95 + yOffset);
 		//Scoll bar size, witdh and scrolling size.
 		scrollInterface.width = 129 + 5;
 		scrollInterface.height = 224;
 		scrollInterface.scrollMax = 400;
+
+
+		/** This handles the scrollable Items On Interface **/
+		RSInterface.addToItemGroup(28229, 3, 9, 5, 5, false, new String[]{null, null, null, null, null});
+		rightscroll.totalChildren(1);
+		rightscroll.child(0, 28229, 1, 1);
+		rightscroll.width = 109 + 5;
+		rightscroll.height = 184;
+		rightscroll.scrollMax = 400;
 		
 		int npcList = 75;
 		int y1 = 1;

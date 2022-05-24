@@ -991,21 +991,6 @@ public class DialogueOptions {
                 case 9:
                     DialogueManager.start(player, 14);
                     break;
-
-                case 30:
-                    if(player.getSlayer().getSlayerMaster().getNpcId() == 1597) {
-                        ShopManager.getShops().get(47).open(player);
-                    }
-                    if(player.getSlayer().getSlayerMaster().getNpcId() == 9085) {
-                        ShopManager.getShops().get(472).open(player);
-                    }
-                    if(player.getSlayer().getSlayerMaster().getNpcId() == 8275) {
-                        ShopManager.getShops().get(471).open(player);
-                    }
-                    if(player.getSlayer().getSlayerMaster().getNpcId() == 9000) {
-                        ShopManager.getShops().get(107).open(player);
-                    }
-                    break;
                 case 14:
                     player.getPacketSender().sendInterfaceRemoval();
                     if (player.getSkillManager().getCurrentLevel(Skill.SLAYER) < 50) {

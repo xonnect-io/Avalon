@@ -604,7 +604,7 @@ public class ItemDef4 {
 				break;
 			case 14474:
 				itemDef.name = "<shad=1>@bla@Dark Shard";
-				itemDef21 = ItemDefinition.get(17364);
+				itemDef21 = ItemDefinition.get(18016);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
 				itemDef.modelZoom = itemDef21.modelZoom;
@@ -619,7 +619,7 @@ public class ItemDef4 {
 				break;
 			case 14472:
 				itemDef.name = "Light Shard";
-				itemDef21 = ItemDefinition.get(17364);
+				itemDef21 = ItemDefinition.get(18016);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
 				itemDef.modelZoom = itemDef21.modelZoom;
@@ -629,12 +629,12 @@ public class ItemDef4 {
 				itemDef.actions = itemDef21.actions;
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop";
-				itemDef.rdc2 = 1111133;
+				itemDef.rdc2 = 88800;
 				itemDef.stackable = false;
 				break;
 			case 23238:
 				itemDef.name = "Blood Shard";
-				itemDef21 = ItemDefinition.get(17364);
+				itemDef21 = ItemDefinition.get(18016);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
 				itemDef.modelZoom = itemDef21.modelZoom;
@@ -644,7 +644,7 @@ public class ItemDef4 {
 				itemDef.actions = itemDef21.actions;
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop";
-				itemDef.rdc2 = 800;
+				itemDef.rdc3 = 800;
 				itemDef.stackable = false;
 				break;
 			case 22101:

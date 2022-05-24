@@ -106,7 +106,7 @@ public class ClueScrollTask {
          * Getting a task
          */
         if (master == SlayerMaster.EASY_SLAYER) {
-            slayerTaskAmount = 10 + Misc.random(15);
+            slayerTaskAmount = 25 + Misc.random(25);
         } else if (master == SlayerMaster.MEDIUM_SLAYER) {
             slayerTaskAmount = 25 + Misc.random(10);
         } else if (master == SlayerMaster.HARD_SLAYER) {

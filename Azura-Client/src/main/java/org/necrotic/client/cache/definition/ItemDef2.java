@@ -7013,6 +7013,19 @@ public class ItemDef2 {
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
+			case 23252:
+				ItemDefinition bloodpet = ItemDefinition.get(12479);
+				itemDef.modelID = 18146;
+				itemDef.modelOffsetX = 2;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = 80;
+				itemDef.rotationY = 204;
+				itemDef.rotationX = 20;
+				itemDef.modelZoom = 3200;
+				itemDef.name = "Blood demon pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
 			case 5504:
 				ItemDefinition charizard = ItemDefinition.get(12479);
 				itemDef.modelID = 64067;
@@ -7608,20 +7621,18 @@ public class ItemDef2 {
 				itemDef.rdc2 = 29592;
 				break;
 			case 11314:
-				itemdefyogipic1111 = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
-				itemDef.modelZoom = 1000;
-				itemDef.rotationY = 10;
-				itemDef.rotationX = 10;
-				itemDef.modelID = 64123;
-				//itemDef.maleWearId = 64124;
-				//itemDef.femaleWearId = 64124;
+				itemDef.modelZoom = 793;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 443;
+				itemDef.modelOffsetX = 3;
+				itemDef.modelOffsetY = 15;
+				itemDef.modelID = 16049;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
-				itemDef.name = "<img=1354><col=f8ac00>Goku Double Killcount Pet<img=1354>";
+				itemDef.name = "Hellraiser pet (x2 KC)";
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
+				
 			case 8868:
 				itemDef.name = "<col=f8ac00>Betrayed key@lre@";
 				itemDef.actions = new String[5];
@@ -7758,7 +7769,7 @@ public class ItemDef2 {
 				itemDef.rdc2 = 888888;
 				break;
 			case 21211:
-				itemDef.name = "Hidden key [<col=c378ea>Legendary@lre@]";
+				itemDef.name = "Loot key";
 				itemdefyogipic1111 = ItemDefinition.get(14471);
 				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
 				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
@@ -8267,7 +8278,7 @@ public class ItemDef2 {
 
 			case 17013:
 				itemDef.copyItem(22114);
-				itemDef.name = "Legends Mythic Staff";
+				itemDef.name = "Legends Light Staff";
 				itemDef.modelID = 17362;
 				itemDef.maleEquip1 = 17369;
 				itemDef.femaleEquip1 = 17369;

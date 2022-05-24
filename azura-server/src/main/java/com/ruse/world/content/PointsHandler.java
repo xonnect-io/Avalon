@@ -78,6 +78,7 @@ public class PointsHandler {
 	private int fenrirkillcount;
 	private int miniLuciferkillcount;
 	private int luciferkillcount;
+	private int midnightgoblinkillcount;
 	private int shillingrate;
 	private int npckillcount;
 	private int totalprestiges;
@@ -638,6 +639,21 @@ private int pengRate;
 			this.zeuskillcount += points;
 		else
 			this.zeuskillcount = points;
+	}
+	public int getMIDNIGHTKILLCount() {
+		return midnightgoblinkillcount;
+	}
+	public void setMIDNIGHTKILLCount(int points, boolean add) {		if (add)
+		this.midnightgoblinkillcount += points;
+	else
+		this.midnightgoblinkillcount = points;
+	}
+	public void incrementMIDNIGHTKILLCount() {
+		this.midnightgoblinkillcount++;
+	}
+
+	public void incrementMIDNIGHTKILLCount(int amt) {
+		this.midnightgoblinkillcount += amt;
 	}
 
 	//

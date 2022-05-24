@@ -7130,7 +7130,7 @@ public class Client extends GameRenderer {
             RSInterface.clearModelCache(aBoolean994, model);
             return;
         }
-		if (j == 1430 && class9.scrollMax > 5) {
+		if (j == 1430 && class9.scrollMax < 5) {
 			if (class9.pauseTicks > 0) {
 				class9.pauseTicks--;
 				return;
@@ -18968,6 +18968,7 @@ public class Client extends GameRenderer {
                         if (entityDef.id == 6537) {
                             spritesMap.get(607).drawSprite(spriteDrawX - 12, spriteDrawY - 30);
                         }
+                        
                         if (entityDef.id == 8000 || entityDef.id == 8002) {
                             spritesMap.get(134).drawSprite(spriteDrawX - 12, spriteDrawY - 30);
                         }
@@ -18975,6 +18976,7 @@ public class Client extends GameRenderer {
                             spritesMap.get(519).drawSprite(spriteDrawX - 12, spriteDrawY - 30);
 
                         }
+                        
                         if (entityDef.id == 1086) {
                             spritesMap.get(638).drawSprite(spriteDrawX - 12, spriteDrawY - 40);
 
@@ -19031,7 +19033,6 @@ public class Client extends GameRenderer {
                             spritesMap.get(1229).drawSprite(spriteDrawX - 12, spriteDrawY - 30);
 
                         }
-
                         if (entityDef.id == 605) {
                             spritesMap.get(866).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
                         }

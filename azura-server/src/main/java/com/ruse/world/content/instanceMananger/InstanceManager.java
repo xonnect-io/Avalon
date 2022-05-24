@@ -20,12 +20,82 @@ public class InstanceManager {
 
 	public int pos = 4;
 
+	boolean smallgrid = true;
 	private static final InstanceData[] values = InstanceData.values();
 
-	public void createInstance(int npcId, RegionInstanceType type) {
-		if (player.getInventory().contains(4278) && player.getInventory().contains(ItemDefinition.MILL_ID, 750)) {
+	public void create3X3Instance(int npcId, RegionInstanceType type) {
+		if (player.getInventory().contains(4278) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 750)) {
 			player.getInventory().delete(4278, 1);
-			player.getInventory().delete(ItemDefinition.MILL_ID, 750);
+			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 750);
+		} else {
+			player.getPA()
+					.sendMessage("You need an instance token, these can be obtained from killing any npc ingame!");
+			player.getPA().sendMessage("You need to have 750+ Avalon tokens in your inventory");
+			return;
+		}
+		if (player.getRegionInstance() != null) {
+			for (NPC n : player.getRegionInstance().getNpcsList()) {
+				if (n != null) {
+					World.deregister(n);
+				}
+			}
+			player.getRegionInstance().getNpcsList().clear();
+		} else {
+			for (NPC n : World.getNpcs()) {
+				if (n != null) {
+					if (n.getPosition().getRegionId() == 11082 && n.getPosition().getZ() == (player.getIndex() * pos)) {
+						World.deregister(n);
+					}
+				}
+			}
+		}
+		player.setRegionInstance(new RegionInstance(player, type));
+		player.lastInstanceNpc = npcId;
+		player.moveTo(new Position(2785, 4771 ,
+				player.getIndex() * 4));
+
+		for (int i = 0; i < 3; i++) {
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+					player.getPosition().getY() - 8 , player.getIndex() * pos));
+			npc_.setSpawnedFor(player);
+			player.getRegionInstance().getNpcsList().add(npc_);
+			World.register(npc_);
+		}
+		for (int i = 0; i < 3; i++) {
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+					player.getPosition().getY() - 6 , player.getIndex() * pos));
+			npc_.setSpawnedFor(player);
+			player.getRegionInstance().getNpcsList().add(npc_);
+			World.register(npc_);
+		}
+		for (int i = 0; i < 3; i++) {
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+					player.getPosition().getY() - 4 , player.getIndex() * pos));
+			npc_.setSpawnedFor(player);
+			player.getRegionInstance().getNpcsList().add(npc_);
+			World.register(npc_);
+		}
+		for (InstanceData data : values) {
+			if (npcId == data.getNpcid() || NpcDefinition.forId(npcId).getName() == data.getName()) {
+				player.setCurrentInstanceAmount(data.getEndamount() + Misc.exclusiveRandom(25, 60));
+				player.setCurrentInstanceNpcId(data.getNpcid());
+				player.setCurrentInstanceNpcName(data.getName());
+				if (data.getNpcid() == 6260) {
+					player.getPA().sendMessage(
+							"We have instanced the home area for you, to leave the instance simply teleport out.");
+				}
+			}
+		}
+		player.getPA().sendMessage("You have instanced yourself " + player.getCurrentInstanceAmount() + " "
+				+ player.getCurrentInstanceNpcName());
+		player.getPA().sendInterfaceRemoval();
+	}
+
+
+	public void create4X4Instance(int npcId, RegionInstanceType type) {
+		if (player.getInventory().contains(4278) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 1500)) {
+			player.getInventory().delete(4278, 1);
+			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 1500);
 		} else {
 			player.getPA()
 					.sendMessage("You need an instance token, these can be obtained from killing any npc ingame!");
@@ -53,29 +123,29 @@ public class InstanceManager {
 		player.moveTo(new Position(2786, 4775 ,
 				player.getIndex() * 4));
 		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 4 + (i * 2),
-					player.getPosition().getY() + 8 , player.getIndex() * pos));
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+					player.getPosition().getY() - 8 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 4 + (i * 2),
-					player.getPosition().getY() + 6 , player.getIndex() * pos));
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+					player.getPosition().getY() - 6 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 4 + (i * 2),
-					player.getPosition().getY() + 4 , player.getIndex() * pos));
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+					player.getPosition().getY() - 4 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 4 + (i * 2),
-					player.getPosition().getY() + 2 , player.getIndex() * pos));
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+					player.getPosition().getY() - 2 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
@@ -95,6 +165,7 @@ public class InstanceManager {
 				+ player.getCurrentInstanceNpcName());
 		player.getPA().sendInterfaceRemoval();
 	}
+
 
 	public void death(Player player, NPC npc, String NpcName) {
 		if (npc.getId() != player.getCurrentInstanceNpcId()) {

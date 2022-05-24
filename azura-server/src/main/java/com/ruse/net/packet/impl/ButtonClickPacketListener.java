@@ -556,7 +556,8 @@ public class ButtonClickPacketListener implements PacketListener {
                             return;
                         }
                     }
-                    new InstanceManager(player).createInstance(player.getData().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
+
+                    new InstanceManager(player).create3X3Instance(player.getData().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
                 } else {
                     player.getPA().sendMessage("Select the boss you'd like to instance.");
                 }

@@ -2986,18 +2986,20 @@ public final class ItemDefinition {
 				itemDef.name = "<col=ff6f6f>Inferno Wings";
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
+
 			case 20549:
-				itemDef.copyItem(22078);
-				itemDef.modelID = 65347;
-				itemDef.maleEquip1 = 65348;
-				itemDef.femaleEquip1 = 65348;
-				itemDef.name = "Shikruu Katana";
-				itemDef.editedModelColor = new int[1]; // same here
-				itemDef.newModelColor = new int[1];
-				itemDef.newModelColor[0] = 63; // the texture that it currently has
-				itemDef.editedModelColor[0] = 123;
-				break;
-				
+					itemDef.copyItem(4710);
+					itemDef.name = "Scythe of demons";
+					itemDef.modelID = 18154;
+					itemDef.femaleEquip1 = 18153;
+					itemDef.maleEquip1 = 18153;
+					itemDef.modelZoom = 4600;
+					itemDef.rotationX = 357;//189
+					itemDef.rotationY = 478;//768
+					itemDef.modelOffsetX = -2;
+					itemDef.modelOffsetY = 15;
+					break;
+					
 			case 20173:
 				itemDef.copyItem(11235);
 				itemDef.modelID = 65343;
@@ -5395,7 +5397,7 @@ public final class ItemDefinition {
 			case 19811:
 				itemDef.copyItem(4708);
 				itemDef.name = "Zeldris head";
-				itemDef.modelID = 18063;
+				itemDef.modelID = 18124;
 				itemDef.maleEquip1 = 18063;
 				itemDef.femaleEquip1 = 18063;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
@@ -5405,7 +5407,7 @@ public final class ItemDefinition {
 			case 19473:
 				itemDef.copyItem(4712);
 				itemDef.name = "Zeldris body";
-				itemDef.modelID = 18064;
+				itemDef.modelID = 18143;
 				itemDef.maleEquip1 = 18064;
 				itemDef.femaleEquip1 = 18064;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
@@ -5415,7 +5417,7 @@ public final class ItemDefinition {
 			case 19472:
 				itemDef.copyItem(4712);
 				itemDef.name = "Zeldris legs";
-				itemDef.modelID = 18065;
+				itemDef.modelID = 18142;
 				itemDef.maleEquip1 = 18065;
 				itemDef.femaleEquip1 = 18065;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
@@ -7477,7 +7479,7 @@ public final class ItemDefinition {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 12630:// super sayian
-				itemDef.name = "@yel@Donator's Aura";
+				itemDef.name = "Donators Aura";
 				itemDef.modelID = 65074;
 				itemDef.maleEquip1 = 65074;
 				itemDef.femaleEquip1 = 65074;
@@ -8423,7 +8425,6 @@ public final class ItemDefinition {
 			case 2743:
 			case 2745:
 			case 2747:
-			case 2773:
 			case 2774:
 			case 2776:
 			case 2778:
@@ -8458,6 +8459,9 @@ public final class ItemDefinition {
 			case 3548:
 			case 3550:
 				itemDef.name = "Clue scroll";
+				break;
+			case 2773:
+				itemDef.name = "Clue scroll (hard)";
 				break;
 			case 15752:
 			case 15751:
@@ -9076,6 +9080,8 @@ public final class ItemDefinition {
 
 			
 		}
+		
+
 		if (customId == 20553) {
 			itemDef.actions = new String[5];
 			itemDef.modelID = 19219;
