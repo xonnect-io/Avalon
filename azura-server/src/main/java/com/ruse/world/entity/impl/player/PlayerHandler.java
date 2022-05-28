@@ -177,6 +177,7 @@ public class PlayerHandler {
             TaskManager.submit(new DoubleDMGTask(player));
         }
 
+
         player.getDonationDeals().shouldReset();
 
         if (player.getSkullTimer() > 0) {

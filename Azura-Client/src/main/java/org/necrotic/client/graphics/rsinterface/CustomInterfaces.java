@@ -2799,7 +2799,7 @@ public class CustomInterfaces extends RSInterface {
 		setBounds(15001, 25, 205, 0, newTab);
 		//setBounds(15002, 20, 120, 1, newTab);
 		setBounds(15003, 125, 205, 1, newTab);
-		setBounds(15004, 157, 5, 3, newTab);
+		setBounds(15004, 75, 205, 3, newTab);
 		setBounds(1644, 0, 0, 2, newTab);
 		//setBounds(1669, 0, 0, 5, newTab);
 	}

@@ -129,6 +129,8 @@ public class Locations {
 				true, true, true, false, false, true) {},
 		PRIME(new int[] { 2437, 2492}, new int[] { 10113, 10171},
 				true, true, true, false, false, true) {},
+		NEPHILIM(new int[] { 2137, 2153}, new int[] { 3291, 3308},
+				true, true, true, false, false, true) {},
 
 
 		LUCIFER(new int[] { 2301, 2367}, new int[] { 3970, 4024},
@@ -211,7 +213,7 @@ public class Locations {
 				player.getPacketSender().sendWalkableInterface(112000, false);
 			}
 		},
-		ZOMBIE(new int[]{2510, 2545}, new int[]{5200, 5235}, true, false, true, false, true, false) {
+		ZOMBIE(new int[]{2239, 2266}, new int[]{4097, 4130}, true, false, true, false, true, false) {
 			@Override
 			public void logout(Player player) {
 
@@ -228,7 +230,7 @@ public class Locations {
 					player.getZombieParty().remove(player, true);
 				}
 
-				player.moveTo(new Position(3832, 2821, 0));
+				player.moveTo(new Position(2222, 4115, 0));
 
 				if (player.getZombieParty() != null)
 					player.getZombieParty().getPlayers()
@@ -262,7 +264,7 @@ public class Locations {
 					player.getZombieParty().getPlayers()
 							.remove(player);*/
 
-				player.moveTo(new Position(2553, 3715, 0));
+				player.moveTo(new Position(2222, 4115, 0));
 
 				player.getMovementQueue().setLockMovement(false);
 
@@ -290,7 +292,7 @@ public class Locations {
 					player.getZombieParty().getPlayers()
 							.remove(player);
 
-				player.moveTo(new Position(2553, 3715, 0));
+				player.moveTo(new Position(2222, 4115, 0));
 
 				player.getMovementQueue().setLockMovement(false);
 			}
@@ -326,7 +328,7 @@ public class Locations {
 
 		},
 
-		ZOMBIE_LOBBY(new int[]{2517, 2535}, new int[]{5284, 5301}, true, false, true, false, true, false) {
+		ZOMBIE_LOBBY(new int[]{2177, 2238}, new int[]{4097, 4130}, true, false, true, false, true, false) {
 			@Override
 			public void leave(Player player) {
 				player.getPacketSender().sendCameraNeutrality();
@@ -386,6 +388,8 @@ public class Locations {
 		// followingAllowed, boolean cannonAllowed, boolean firemakingAllowed, boolean
 		// aidingAllowed) {
 		FREIZA(new int[] { 2433, 2494 }, new int[] { 2817, 2878 }, false, true, true, false, false, false) {
+		},
+		STARTER_BED(new int[] { 2325, 2345 }, new int[] { 4110, 4130}, false, true, true, false, false, false) {
 		},
 		// xyyx
 		AOE(new int[] { 2881, 2949 }, new int[] { 2820, 2877 }, true, true, true, false, false, false) {

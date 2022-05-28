@@ -1404,10 +1404,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendRunStatus();
                 break;
             case 15004:
-                player.setExperienceLocked(!player.experienceLocked());
-                String type = player.experienceLocked() ? "locked" : "unlocked";
-                player.getPacketSender().sendMessage("Your experience is now " + type + ".");
-                PlayerPanel.refreshPanel(player);
+                player.getPacketSender().sendMessage("This feature is currently not available.");
                 break;
             case 27651:
             case 15001:

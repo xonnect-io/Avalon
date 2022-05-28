@@ -5,6 +5,7 @@ import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Animation;
 import com.ruse.model.Position;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
+import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.entity.impl.player.Player;
 
 public class Digging {
@@ -19,6 +20,8 @@ public class Digging {
 			@Override
 			public void execute() {
 				boolean clue = OLD_ClueScrolls.handleClueDig(player);
+				boolean starterRewards = OLD_ClueScrolls.handleStarterCaveDig(player);
+				boolean treasureMap = OLD_ClueScrolls.handleStarterCaveDigTreasure(player);
 				if (player.getRights().OwnerDeveloperOnly()) {
 					player.getPacketSender().sendMessage("[debug] handleClueDig = " + clue);
 				}
@@ -42,6 +45,16 @@ public class Digging {
 					player.getPacketSender().sendMessage("..and break into a crypt!");
 				} else if (clue) {
 					player.getPacketSender().sendMessage("You manage to continue your clue.");
+				} else if (starterRewards && !player.isRewardCollected) {
+					player.getInventory().add(13066, 1);
+					player.setRewardCollected(true);
+					DialogueManager.sendStatement(player, "You manage to dig up a treasure!");
+					player.getPacketSender().sendMessage("You manage to dig up a treasure!");
+				} else if (treasureMap && !player.isTreasureMap1Collected) {
+					player.getInventory().add(4274, 1);
+					player.setTreasureMap1Collected(true);
+					DialogueManager.sendStatement(player, "You found a piece of a map burred in the rubble.");
+					player.getPacketSender().sendMessage("You manage to dig up part of a treasure map!");
 				} else {
 					player.getPacketSender().sendMessage("You find nothing of interest.");
 				}

@@ -502,8 +502,8 @@ public final class ItemDefinition {
 			case 12855:
 				itemDef.copyItem(7478);
 				itemDef.name = "@yel@Upgrade Tokens";
-				itemDef.modelID = 17028;
-				itemDef.modelZoom = 1600;
+				itemDef.modelID = 15002;
+				itemDef.modelZoom = 1200;
 				itemDef.actions = new String[]{"Activate", null, null, null, "Drop"};
 				break;
 				
@@ -2197,19 +2197,29 @@ public final class ItemDefinition {
 				break;
 
 			case 20489:
-				itemDef.name = "Launch Casket";
+				itemDef.name = "Sapphire Casket";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelZoom = 1600;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 64300;
-				itemDef.rdc2 = 12111;
+				itemDef.modelID = 18160;
 				break;
-
+			case 15003:
+				itemDef.name = "Emerald Casket";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelZoom = 1600;
+				itemDef.rotationY = 100;
+				itemDef.rotationX = 90;
+				itemDef.modelID = 18162;
+				break;
 			case 15002:
 				itemDef.name = "Ruby Casket";
 				itemDef.actions = new String[5];
@@ -2217,11 +2227,10 @@ public final class ItemDefinition {
 				itemDef21 = ItemDefinition.get(6199);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelZoom = 1600;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 64300;
-				itemDef.rdc2 = 92111;
+				itemDef.modelID = 18163;
 				break;
 			case 14999:
 				itemDef.name = "Onyx Casket";
@@ -2234,6 +2243,30 @@ public final class ItemDefinition {
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
 				itemDef.modelID = 17821;
+				break;
+			case 15004:
+				itemDef.name = "Diamond Casket";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelZoom = 1600;
+				itemDef.rotationY = 100;
+				itemDef.rotationX = 90;
+				itemDef.modelID = 18216;
+				break;
+			case 23253:
+				itemDef.name = "Zenyte Casket";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelZoom = 1600;
+				itemDef.rotationY = 100;
+				itemDef.rotationX = 90;
+				itemDef.modelID = 18237;
 				break;
 			case 15355:
 				itemDef.name = "@gre@<shad=0>Double DR Scroll (1 Hour)<shad-1>";
@@ -2265,19 +2298,6 @@ public final class ItemDefinition {
 				itemDef.actions[0] = "Activate";
 				itemDef.rdc2 = 12411;
 				break;
-			case 15003:
-				itemDef.name = "<col=C5CEDF><shad=0>Silver Exclusive Casket<shad-1>";
-				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 64300;
-				itemDef.rdc2 = 988331;
-				break;
 			case 6542:
 				itemDef.name = "@bla@<shad=0>Dan's Present<shad-1>";
 				itemDef.actions = new String[5];
@@ -2290,19 +2310,7 @@ public final class ItemDefinition {
 				itemDef.rotationX = 90;
 				itemDef.rdc2 = 28312;
 				break;
-			case 15004:
-				itemDef.name = "Diamond Casket";
-				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 64300;
-				itemDef.rdc2 = 129911;
-				break;
+
 			case 19659:
 				itemDef.copyItem(6199);
 				itemDef.name = "Super Box";

@@ -14706,7 +14706,7 @@ public class Client extends GameRenderer {
             }
             aSocket832 = null;
         }
-        aSocket832 = createFileServerSocket(9420);
+        aSocket832 = createFileServerSocket(43594);
         aSocket832.setSoTimeout(10000);
         java.io.InputStream inputstream = aSocket832.getInputStream();
         OutputStream outputstream = aSocket832.getOutputStream();

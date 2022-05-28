@@ -304,6 +304,18 @@ public enum OLD_ClueScrolls {
 		return false;
 	}
 
+	public static boolean handleStarterCaveDig(Player player) {
+		if ((player.getPosition().getX() == 2334 && player.getPosition().getY() == 4115) && !player.isRewardCollected) {
+			return true;
+		}
+		return false;
+	}
+	public static boolean handleStarterCaveDigTreasure(Player player) {
+		if ((player.getPosition().getX() == 2335 && player.getPosition().getY() == 4119) && !player.isTreasureMap1Collected) {
+			return true;
+		}
+		return false;
+	}
 	public static boolean handleNpcUse(Player player, int npcid) {
 		for (int i = 0; i < OLD_ClueScrolls.values().length; i++) {
 			if (player.getInventory().contains(OLD_ClueScrolls.values()[i].getClueId())

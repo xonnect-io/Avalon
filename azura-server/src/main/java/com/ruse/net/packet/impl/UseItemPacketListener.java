@@ -110,11 +110,22 @@ public class UseItemPacketListener implements PacketListener {
             CurrencyPouch.handleItemOnItem(player, itemUsedWith);
             return;
         }
-        if (usedWith.getId() == TreasureHunter.KEY_1 || usedWith.getId() == TreasureHunter.KEY_2 | usedWith.getId() == TreasureHunter.KEY_3 || usedWith.getId() == TreasureHunter.KEY_4) {
+        if (usedWith.getId() == TreasureHunter.KEY_1 || usedWith.getId() == TreasureHunter.KEY_2 || usedWith.getId() == TreasureHunter.KEY_3 || usedWith.getId() == TreasureHunter.KEY_4) {
             TreasureHunter.combineKeys(player, usedWith, itemUsedWith);
             return;
         }
 
+        if (usedWith.getId() == 4274 || usedWith.getId() == 4275 || usedWith.getId() == 4276) {
+            Item[] requirements = new Item[]{new Item(4274, 1), new Item(4275, 1), new Item(4276, 1)};
+            if (player.getInventory().containsAll(requirements)) {
+                player.getInventory().delete(4274, 1);
+                player.getInventory().delete(4275, 1);
+                player.getInventory().delete(4276, 1);
+                player.getInventory().add(4277, 1);
+                player.sendMessage("You manage to make a map of Avalon! Try trading it to the Lost Survivor!");
+                return;
+            }
+        }
         if (usedWith.getId() == 22110) {
             Item[] requirements = new Item[]{new Item(22110, 1), new Item(7995, 1)};
             if (player.getInventory().containsAll(requirements) && itemUsedWith.getId() == requirements[1].getId()) {

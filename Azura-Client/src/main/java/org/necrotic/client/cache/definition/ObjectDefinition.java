@@ -267,7 +267,10 @@ public final class ObjectDefinition {
 			definition.name = "Upgrade Machine";
 			definition.actions = new String[]{"Upgrade", null, null, null, null};
 		}
-
+		if (definition.type == 362) {
+			definition.name = "Barrel";
+			definition.actions = new String[]{"Inspect", null, null, null, null};
+		}
 		if (definition.type == 41200) {
 			definition.interactive = true;
 			definition.objectModelIDs = new int[]{100081};
@@ -461,9 +464,19 @@ public final class ObjectDefinition {
 			definition.actions[0] = null;
 			definition.actions[1] = null;
 		}
+		if (definition.type == 714) {
+			definition.actions = new String[5];
+			definition.actions[0] = "Investigate";
+			definition.actions[1] = null;
+		}
 		if (definition.type == 13615) {
 			definition.name = "Raids Portal";
 
+		}
+		if (definition.type == 361) {
+			definition.actions = new String[5];
+			definition.actions[0] = null;
+			definition.actions[1] = null;
 		}
 		if (definition.type == 4814) {
 			definition.name = "";

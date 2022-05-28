@@ -4,7 +4,7 @@ import com.ruse.model.Position;
 
 public class ZombieRaidData {
 
-	public static final Position lobbyPosition = new Position(2527, 5292, 0);
+	public static final Position lobbyPosition = new Position(2222, 4115, 0);
 	public static final int firstWaveNpc = 3712;
 	public static final int secondWaveNpc = 586;
 	public static final int thirdWaveNpc = 125; //Protect from melee

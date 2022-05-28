@@ -9,7 +9,7 @@ import java.math.BigInteger;
 public class GameSettings {
 
     public static final int GAME_VERSION = 3;
-    public static final int GAME_PORT = 9420;
+    public static final int GAME_PORT = 43594;
     public static boolean MYSQL_ENABLED = true;
     public static boolean LOCALHOST = true;
     public static boolean BOGO = false;
@@ -37,11 +37,11 @@ public class GameSettings {
     /**
      * WEB URLS
      */
-    public static final String DomainUrl = "https://Avalon.io/";
-    public static final String ForumUrl = "https://Avalon.io/forums";
+    public static final String DomainUrl = "https://Avalon317.com/";
+    public static final String ForumUrl = "https://Avalon317.com/forums";
     public static final String showthreadx = "-x";
     public static final String UpdateUrl = "https://discord.gg/Jv4F7YEK9k";
-    public static final String StoreUrl = "https://Avalon.io/store";
+    public static final String StoreUrl = "https://Avalon317.com/store";
     public static final String sprad = "https://www.youtube.com/channel/UCL5_jd65woKzjKfXhbBIuJQ";
     public static final String morgen = "https://www.youtube.com/channel/UCIFSpy1z7aMWZnQJlDF1Wcg";
     public static final String effigy = "https://www.youtube.com/channel/UCR-GGPuNM7V51JYWVbcDURQ";
@@ -54,12 +54,12 @@ public class GameSettings {
     public static final String Stable = "https://www.youtube.com/channel/UCIFSpy1z7aMWZnQJlDF1Wcg";
     public static final String ZachTX = "https://www.youtube.com/user/SwailyRS/";
     public static final String Khalil = "https://www.youtube.com/channel/UCMc0hysuD8NsUTspX8MwFtw";
-    public static final String VoteUrl = "https://Avalon.io/vote";
+    public static final String VoteUrl = "https://Avalon317.com/vote";
     public static final String PriceList = "https://discord.gg/Jv4F7YEK9k";
-    public static final String HiscoreUrl = "https://Avalon.io/store";
+    public static final String HiscoreUrl = "https://Avalon317.com/store";
     public static final String ReportUrl = "https://discord.gg/Jv4F7YEK9k";
     public static final String RuleUrl = "https://discord.gg/Jv4F7YEK9k";
-    public static final String CommandsUrl =  "https://Avalon.io/";
+    public static final String CommandsUrl =  "https://Avalon317.com/";
     public static final String RankFeaturesUrl = "https://discord.gg/Jv4F7YEK9k";
     public static final String WikiaUrl = "https://discord.gg/Jv4F7YEK9k";
     public static final String IronManModesUrl = "https://discord.gg/Jv4F7YEK9k";
@@ -158,6 +158,7 @@ public class GameSettings {
     public static final Position DEFAULT_POSITION = new Position(2585, 2521, 0);//3093, 3506
     public static final Position STARTER = new Position(2783, 9495, 0);//3093, 3506
     public static final Position CORP_CORDS = new Position(2900, 4384);
+    public static final Position STARTER_BED = new Position(2333, 4119, 0);
     public static final Position HOME_CORDS = new Position(2585, 2521, 0);//3093, 3506
     public static final Position OLDHOME_CORDS = new Position(2654, 3998, 0);
     public static final Position EDGE_CORDS = new Position(3086, 3488, 0);

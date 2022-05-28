@@ -17,15 +17,6 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class DonationBossDrop {
-	
-	public static int[] COMMONLOOT = { 19114,19114,20488,15289};
-
-	public static int[] UNCOMMONLOOT = { 10946};
-	
-	public static int[] RARELOOT = {12608,10946,10946,10946,13323,13324,13325,13326,13327};
-	
-	public static int[] SUPERRARELOOT = {11314,6769,6769,6769};
-
 
 	public static void handleDrop(NPC npc) {
 		if (npc.getCombatBuilder().getDamageMap().size() == 0) {

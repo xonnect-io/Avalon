@@ -703,7 +703,7 @@ public class Player extends Character {
     private AchievementHandler achievementHandler;
 
     public Player(PlayerSession playerIO) {
-        super(GameSettings.DEFAULT_POSITION.copy());
+        super(GameSettings.STARTER_BED.copy());
         this.session = playerIO;
     }
 
@@ -3684,6 +3684,21 @@ End new teleport
     @Getter @Setter
     public boolean chestLooted;
 
+    @Getter @Setter
+    public boolean isFishCollected;
+
+    @Getter @Setter
+    public boolean isRewardCollected;
+
+
+    @Getter @Setter
+    public boolean isTreasureMap1Collected;
+
+    @Getter @Setter
+    public boolean isTreasureMap2Collected;
+
+    @Getter @Setter
+    public boolean isTreasureMap3Collected;
     @Getter
     @Setter
     public boolean unlockedDarkSupreme;

@@ -35,6 +35,7 @@ import com.ruse.world.content.portal.portal;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.randomevents.EvilTree.EvilTreeDef;
 import com.ruse.world.content.randomevents.LootChest;
+import com.ruse.world.content.randomevents.StarterCave;
 import com.ruse.world.content.skill.impl.agility.Agility;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.construction.ConstructionActions;
@@ -183,18 +184,23 @@ public class ObjectActionPacketListener implements PacketListener {
 
 
                             case 22099:
+                                if (player.getRights() == PlayerRights.SAPPHIRE_DONATOR)
                                 Stalls.stealFromAFKStall(player, id, 1);
                                 break;
                             case 22098:
+                                if (player.getRights() == PlayerRights.EMERALD_DONATOR)
                                 Stalls.stealFromAFKStall(player, id, 2);
                                 break;
                             case 22097:
+                                if (player.getRights() == PlayerRights.RUBY_DONATOR)
                                 Stalls.stealFromAFKStall(player, id, 3);
                                 break;
                             case 8455:
+                                if (player.getRights() == PlayerRights.DIAMOND_DONATOR)
                                 Stalls.stealFromAFKStall(player, id, 4);
                                 break;
                             case 8456:
+                                if (player.getRights() == PlayerRights.ONYX_DONATOR)
                                 Stalls.stealFromAFKStall(player, id, 5);
                                 break;
                             case 41204:
@@ -205,6 +211,12 @@ public class ObjectActionPacketListener implements PacketListener {
                             case 41205:
                                 player.sendMessage("Coming soon...");
                                 ///player.getRaidsInterface().openInterface(RaidsInterface.Raids.FURY_RAIDS);
+                                break;
+                            case 3736:
+                                player.moveTo(GameSettings.STARTER);
+                                break;
+                            case 362:
+                                StarterCave.handleAction(player);
                                 break;
 
                             case 10014:
@@ -261,19 +273,25 @@ public class ObjectActionPacketListener implements PacketListener {
                                 break;
 
 
-                            case 16958:
-                                CurseHandler.deactivateAll(player);
+                            case 31435:
 
+                                if (player.getLocation() == Location.ZOMBIE) {
+                                    if (player.getZombieParty() != null) {
+                                        player.setDialogueActionId(71260);
+                                        DialogueManager.start(player, 7126);
+                                    }
+                                }
                                 if (player.getLocation() == Location.ZOMBIE_LOBBY) {
+                                    CurseHandler.deactivateAll(player);
                                     if (player.getZombieParty() != null) {
                                         if (player.getZombieParty().getOwner().equals(player)) {
                                             player.setDialogueActionId(2012);
                                             DialogueManager.start(player, 2012);
                                         } else {
-                                            player.sendMessage("Only the party leader can start the Raids [2]");
+                                            player.sendMessage("Only the party leader can start the Raid.");
                                         }
                                     } else {
-                                        player.sendMessage("You must be in a party to start the Raids [2]");
+                                        player.sendMessage("You must be in a party to start the Raid.");
                                     }
                                 }
                                 break;
@@ -555,6 +573,15 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.getPacketSender().sendMessage("Just some toys.");
                                 }
                                 break;
+                            case 714:
+                                if (!player.isTreasureMap3Collected) {
+                                    player.getInventory().add(4275, 1);
+                                    player.setTreasureMap3Collected(true);
+                                    DialogueManager.sendStatement(player, "You find part of a map that can barely be read.");
+                            } else  if(player.isTreasureMap3Collected) {
+                                    player.getPacketSender().sendMessage("Flames can, at times, get languid when they lack power");
+                            }
+                            break;
                             case 2725:
                                 if (Misc.easter(2017)) {
                                     if (player.getInventory().isFull()) {
@@ -572,7 +599,8 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.getPacketSender().sendMessage("Just regular fireplace things.");
                                 }
                                 break;
-                            case 423:
+
+                        /*    case 423:
                                 if (Misc.easter(2017)) {
                                     if (player.getInventory().isFull()) {
                                         player.getPacketSender()
@@ -588,7 +616,8 @@ public class ObjectActionPacketListener implements PacketListener {
                                 } else {
                                     player.getPacketSender().sendMessage("I don't want to mess around with someone's bed.");
                                 }
-                                break;
+                                break;*/
+
                             case 11339:
                                 if (Misc.easter(2017)) {
                                     if (player.getInventory().isFull()) {
@@ -2076,7 +2105,15 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.getBank(player.getCurrentBankTab()).open();
                                 }
                                 break;
-
+                            case 423:
+                                if (!player.isTreasureMap2Collected) {
+                                    player.getInventory().add(4276, 1);
+                                    player.setTreasureMap2Collected(true);
+                                    DialogueManager.sendStatement(player, "You find part of a map while searching the bed");
+                                } else  if(player.isTreasureMap2Collected) {
+                                    player.getBank(player.getCurrentBankTab()).open();
+                                }
+                                break;
                             case 11666:
                             case 23963:
                                 Smelting.openInterface(player);

@@ -1,6 +1,9 @@
 package com.ruse.net.packet.impl;
 
 import com.ruse.GameSettings;
+import com.ruse.engine.task.TaskManager;
+import com.ruse.engine.task.impl.DoubleDDRTask;
+import com.ruse.engine.task.impl.DoubleDMGTask;
 import com.ruse.engine.task.impl.WalkToTask;
 import com.ruse.engine.task.impl.WalkToTask.FinalizedMovementTask;
 import com.ruse.model.*;
@@ -185,6 +188,24 @@ public class NPCOptionPacketListener implements PacketListener {
                         player.getDailyRewards().processTime();
                         player.getDailyRewards().displayRewards();
                         npc.forceChat("Talk to me to get your Daily Rewards!");
+                        break;
+                    case 613:
+                        if (player.getDoubleDDRTimer() > 0) {
+                            npc.forceChat("Already looking to cheat me out my own game aye? not so fast!");
+                            return;
+                        }
+                        if (player.getInventory().contains(4277)) {
+                            player.getInventory().delete(4277,1);
+                            player.setDoubleDMGTimer(24000);
+                            player.setDoubleDDRTimer(24000);
+                            TaskManager.submit(new DoubleDDRTask(player));
+                            TaskManager.submit(new DoubleDMGTask(player));
+                            player.sendMessage("You trade the map for X2 Dmg and X2 Drops for 4 Hours.");
+                            DialogueManager.sendStatement(player, "Magnificent work, traveller!");
+
+                        } else {
+                        npc.forceChat("You're Awake! Grab a spade and dig for the treasure!");
+                        }
                         break;
                     case 662:
                         GrandLottery.open(player);

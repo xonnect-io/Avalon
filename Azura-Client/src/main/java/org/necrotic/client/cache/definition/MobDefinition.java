@@ -3076,10 +3076,24 @@ public final class MobDefinition {
 			case 9012:
 				definition.name = "Fallen Angel";
 				MobDefinition lucifer = MobDefinition.get(2292);
-				definition.npcModels = new int[]{17029};
+				definition.npcModels = new int[]{17049,17056,17061,17066,17097,17197,};
 				definition.combatLevel = lucifer.combatLevel;
 				definition.standAnimation = lucifer.standAnimation;
 				definition.walkAnimation = lucifer.walkAnimation;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.actions[0] = null;
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 225;
+				definition.scaleY = 225;
+				break;
+			case 9312:
+				definition.name = "Nephilim Warrior";
+				MobDefinition Shinda = MobDefinition.get(2292);
+				definition.npcModels = new int[]{18446,18486,18511,18516,18519,18520,18525,18527,18528};
+				definition.combatLevel = Shinda.combatLevel;
+				definition.standAnimation = Shinda.standAnimation;
+				definition.walkAnimation = Shinda.walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.actions[0] = null;
 				definition.drawYellowDotOnMap = true;
@@ -5085,6 +5099,10 @@ public final class MobDefinition {
 				definition.changedModelColours[2] = 127;
 				definition.description = "A skilling pet from the Herblore skill.".getBytes();
 				break;
+			case 613:
+				definition.name = "Lost Survivor";
+				definition.actions = new String[]{"Talk-to", null, null, null, null};
+				break;
 			case 6307:
 				definition.npcModels = new int[]{4821, 4828, 4833};
 				definition.name = "Monkey guard";
@@ -6111,22 +6129,21 @@ public final class MobDefinition {
 				definition.rdc2 = 857;
 				break;
 			case 1710:
-				definition.name = "Dark bloodveld";
-				MobDefinition slayer110 = MobDefinition.get(1618);
+				definition.name = "Trapper";
+				MobDefinition slayer101 = MobDefinition.get(1618);
 				definition.description = "GWD.".getBytes();
 				//definition.npcModels = new int[] {64064};
 				definition.combatLevel = 40;
-				definition.scaleXZ = 80;
-				definition.scaleY = 80;
+				definition.scaleXZ = 110;
+				definition.scaleY = 110;
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.description = slayer110.description;
+				definition.description = slayer101.description;
 				definition.drawYellowDotOnMap = true;
-				definition.npcModels = slayer110.npcModels.clone();
-				definition.standAnimation = slayer110.standAnimation;
-				definition.walkAnimation = slayer110.walkAnimation;
+				definition.npcModels = new int[]{18333};
+				definition.standAnimation = slayer101.standAnimation;
+				definition.walkAnimation = slayer101.walkAnimation;
 				definition.degreesToTurn = 32;
-				definition.rdc2 = 48754;
 				break;
 
 			case 1711:
@@ -6323,8 +6340,8 @@ public final class MobDefinition {
 				definition.rdc2 = 7454;
 				break;
 			case 1725:
-				MobDefinition b17125 = get(6881);
-				definition.name = "Zamorak bird";
+				MobDefinition b17125 = get(4972);
+				definition.name = "Zamorak bat";
 				definition.combatLevel = 40;
 				definition.scaleXZ = 100;
 				definition.scaleY = 100;
@@ -6332,7 +6349,7 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = b17125.description;
 				definition.drawYellowDotOnMap = true;
-				definition.npcModels = b17125.npcModels.clone();
+				definition.npcModels = new int[]{18295};//64091
 				definition.standAnimation = b17125.standAnimation;
 				definition.walkAnimation = b17125.walkAnimation;
 				definition.degreesToTurn = 32;

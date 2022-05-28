@@ -336,6 +336,11 @@ public class PlayerSaving {
 
 			object.addProperty("gamble-banned", player.isGambleBanned());
 			object.addProperty("chest-looted", player.isChestLooted());
+			object.addProperty("fish-collected", player.isFishCollected());
+			object.addProperty("reward-collected", player.isRewardCollected());
+			object.addProperty("treasure-map-1-collected", player.isTreasureMap1Collected());
+			object.addProperty("treasure-map-2-collected", player.isTreasureMap2Collected());
+			object.addProperty("treasure-map-3-collected", player.isTreasureMap3Collected());
 			object.addProperty("lucifers-unlocked", player.isUnlockedLucifers());
 			object.addProperty("dark-supremes-unlocked", player.isUnlockedDarkSupreme());
 			object.add("currency-pouch", builder.toJsonTree(player.getCurrencyPouch()));

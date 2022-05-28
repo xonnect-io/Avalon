@@ -24,6 +24,8 @@ import com.ruse.world.content.cluescrolls.ClueScrollReward;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.dialogue.impl.AgilityTicketExchange;
+import com.ruse.world.content.dialogue.impl.NephilimTokenExchange;
 import com.ruse.world.content.holidayevents.easter2017;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
@@ -467,6 +469,11 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] raresOP = new int[] {18753,18749,18631,18752,18748,18637,18751,18638,18623,18750,18636,18629,19886,4446,10942 };
                 player.getMysteryBoxOpener().display(20488, "OP Chest", commonOP, uncommonOP, raresOP);
                 break;
+
+            case 23257:
+                DialogueManager.start(player, NephilimTokenExchange.getDialogue(player));
+                break;
+
             case 14999:
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ONYX);
                 player.getCasketOpening().openInterface();
@@ -477,6 +484,10 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
             case 15002:
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RUBY);
+                player.getCasketOpening().openInterface();
+                break;
+            case 23253:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ZENYTE);
                 player.getCasketOpening().openInterface();
                 break;
             case 15004:
@@ -496,6 +507,15 @@ public class ItemActionPacketListener implements PacketListener {
                         18629, 4446, 19886, 10934,15288};
                 player.getMysteryBoxOpener().display(20489, "$10 Launch Chest", commonLaunch, uncommonLaunch, raresLaunch);
                 break;
+            case 13066:
+                player.getPacketSender().sendMessage("");
+                player.getPacketSender().sendMessage("You open the casket..");
+                player.getInventory().add(6199,4);
+                player.getInventory().add(995,50_000_000);
+                player.getInventory().delete(13066, 1);
+                player.getPacketSender().sendMessage("The casket contained 50M Gold Coins and some mystery boxes!");
+                break;
+
             case 23086:
                 HallsOfValor.handleReward(player);
                 break;

@@ -19,7 +19,6 @@ import com.ruse.world.content.clan.ClanChatManager;
 public class StartScreen {
     public static void open(Player player) {
         sendNames(player);
-        //ClanChatManager.join(player, "help");
         player.getPacketSender().sendInterface(116000);
         player.getPacketSender().sendConfig(5331, 0);
         player.selectedGameMode = GameModes.NORMAL;
@@ -52,12 +51,7 @@ public class StartScreen {
         if (buttonId == CONFIRM) {
             if (player.didReceiveStarter() == true) {
                 return true;
-            }//ConnectionHandler.getStarters(player.getHostAddress()) <= GameSettings.MAX_STARTERS_PER_IP
-			/*if(player.selectedGameMode == GameModes.VETERAN_MODE) {
-				player.sendMessage("@bla@This mode is not available at the moment, choose another.");
-				player.sendMessage("@red@This mode is not available at the moment, choose another.");
-				player.sendMessage("@bla@This mode is not available at the moment, choose another.");
-			} else {*/
+            }
             player.getPacketSender().sendInterfaceRemoval();
             player.setReceivedStarter(true);
             handleConfirm(player);
@@ -68,24 +62,17 @@ public class StartScreen {
             player.getAppearance().setCanChangeAppearance(true);
             player.setNewPlayer(false);
             World.sendMessage("<img=18><shad=1><col=ffca3c>[New Arrival] " + player.getUsername() + " has just logged into @cya@Avalon<col=ffca3c> for the first time!");
-            World.sendMessage(
-                    "<img=5> <col=ffca3c><shad=1>Please give " + player.getUsername() + " a super warm welcome <3");
-
+            player.sendMessage(
+                    "You wake up in an unfamiliar place, perhaps searching around would benefit greatly.");
             player.getPacketSender().sendRights();
-
             if (player.getGameMode() == GameMode.GROUP_IRONMAN) {
-                player.moveTo(new Position(3039, 2845, 1));
+                player.moveTo(new Position(2333, 4119, 4));
                 player.setGroupIronmanLocked(true);
                 player.sendMessage("@blu@Speak to the Ironman Manager to create a group or get invited to a group.");
             } else {
-                player.moveTo(GameSettings.STARTER);
+                player.moveTo(GameSettings.STARTER_BED);
             }
-
-            //		Main.jda.getTextChannelById(620644384697745439L).sendMessage("`" + player.getUsername() + " has joined the server for the first time!"+ "`").queue();
-            //DialogueManager.start(player, 81);
             return true;
-            //}
-            //	
         }
         for (GameModes mode : GameModes.values()) {
             if (mode.checkClick == buttonId || mode.textClick == buttonId) {
@@ -149,11 +136,10 @@ public class StartScreen {
 
     public enum GameModes {
         NORMAL("Normal", 52761, 116005, 1, 0,
-                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 1153, 1),
-                        new Item(1115, 1), new Item(1067, 1) , new Item(17817, 500),
+                new Item[]{new Item( 1153, 1), new Item(1115, 1), new Item(1067, 1) ,
                         new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
-                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
-                        new Item(459, 1),  new Item(290, 2),  new Item(6199, 4),
+                        new Item(13281, 1), new Item(20054, 1),  new Item(1478, 1),
+                        new Item(10499, 1), new Item(459, 1),  new Item(290, 2),
                         new Item(15031, 1), new Item(6570, 1)
                 },
                 "In this game mode",
@@ -162,12 +148,12 @@ public class StartScreen {
 
 
         IRONMAN("Ironman", 52762, 116006, 1, 1,
-                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 16691, 1),
-                        new Item(17239, 1), new Item(16669, 1) , new Item(17817, 500),
+                new Item[]{new Item( 16691, 1),
+                        new Item(17239, 1), new Item(16669, 1) ,
                         new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
-                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
-                        new Item(459, 1),  new Item(6199, 4),
-                        new Item(630, 1), new Item(18740, 1)
+                        new Item(13281, 1),new Item(20054, 1),  new Item(1478, 1),
+                        new Item(10499, 1),new Item(459, 1),new Item(630, 1),
+                        new Item(18740, 1)
                 },
                 "Ironman mode is a very intense gamemode",
                 "You are not allowed to trade or stake",
@@ -177,12 +163,11 @@ public class StartScreen {
 
 
         ULTIMATE_IRONMAN("Ultimate Iron", 52763, 116007, 1, 2,
-                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 4977, 1),
-                        new Item(4989, 1), new Item(4995, 1) , new Item(17817, 500),
+                new Item[]{ new Item( 4977, 1), new Item(4989, 1), new Item(4995, 1) ,
                         new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
-                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
-                        new Item(459, 1),  new Item(6199, 4),
-                        new Item(630, 1), new Item(18740, 1)
+                        new Item(13281, 1),  new Item(20054, 1),  new Item(1478, 1),
+                        new Item(10499, 1), new Item(459, 1),new Item(630, 1),
+                        new Item(18740, 1)
                 },
                 "Ultimate ironman is harder than ironman",
                 "@red@Same as ironman mode, but you can't banks",
@@ -191,12 +176,11 @@ public class StartScreen {
 
 
         GROUP_IRON("Group Ironman", 52778, 116008, 1, 4,
-                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 13700, 1),
-                        new Item(13701, 1), new Item(13702, 1) , new Item(17817, 500),
+                new Item[]{ new Item( 13700, 1),new Item(13701, 1), new Item(13702, 1) ,
                         new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
-                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
-                        new Item(459, 1),  new Item(6199, 4),
-                        new Item(630, 1), new Item(18740, 1)
+                        new Item(13281, 1),new Item(20054, 1),  new Item(1478, 1),
+                        new Item(10499, 1), new Item(459, 1), new Item(630, 1),
+                        new Item(18740, 1)
                 },
                 "Group Ironman mode is a very fun gamemode",
                 "Same rules as ironman mode",
@@ -207,11 +191,10 @@ public class StartScreen {
 
 
         VETERAN_MODE("Veteran", 52774, 116009, 1, 3,
-                new Item[]{ new Item(995, 50_000_000),  new Item(13281, 1), new Item( 1153, 1),
-                        new Item(1115, 1), new Item(1067, 1) , new Item(17817, 500),
+                new Item[]{new Item( 1153, 1),new Item(1115, 1), new Item(1067, 1) ,
                         new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
-                        new Item(20054, 1),  new Item(1478, 1),  new Item(10499, 1),
-                        new Item(459, 1),  new Item(290, 2),  new Item(6199, 4),
+                        new Item(13281, 1),  new Item(20054, 1),  new Item(1478, 1),
+                        new Item(10499, 1), new Item(459, 1),  new Item(290, 2),
                         new Item(15031, 1), new Item(6570, 1)
                 },
                 "This is probably the hardest game mode",

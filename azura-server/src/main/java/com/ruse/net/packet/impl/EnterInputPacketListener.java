@@ -1,8 +1,10 @@
 package com.ruse.net.packet.impl;
 
+import com.ruse.model.input.impl.SpawnNephilimBoss;
 import com.ruse.net.packet.Packet;
 import com.ruse.net.packet.PacketListener;
 import com.ruse.util.Misc;
+import com.ruse.world.content.NephilimSpawnSystem;
 import com.ruse.world.entity.impl.player.Player;
 
 /**

@@ -159,6 +159,20 @@ public class ItemDef3 {
 				itemDef.modelOffsetY = 0;
 				break;
 				
+			case 23254:
+				itemDef.copyItem(550);
+				itemDef.name = "X1.5 DR Booster";
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.rdc2 = 15345;
+				break;
+				
+			case 23255:
+				itemDef.copyItem(550);
+				itemDef.name = "X1.5 Damage Booster";
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.rdc3 = 899;
+				break;
+				
 			case 23005:
 				itemDef.copyItem(23004);
 				itemDef.name = "Cyan Easter Egg";
@@ -571,7 +585,7 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 100141;
 				itemDef.femaleEquip1 = 100141;
 				break;
-
+				
 			case 23057:
 				itemDef.copyItem(1);
 				itemDef.name = "$10 Bond";
@@ -579,6 +593,15 @@ public class ItemDef3 {
 				itemDef.modelID = 100148;
 				itemDef.rotationX = 0;
 				itemDef.modelZoom = 2500;
+				break;
+				
+			case 23257:
+				itemDef.copyItem(1);
+				itemDef.name = "Nephilim Token";
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				itemDef.modelID = 18536;
+				itemDef.rotationX = 0;
+				itemDef.modelZoom = 700;
 				break;
 				
 			case 23058:
@@ -682,74 +705,74 @@ public class ItemDef3 {
 				
 			case 23220:
 				itemDef.copyItem(4708);
-				itemDef.name = "Tanjiro helm";
+				itemDef.name = "Nephilim helm";
 				itemDef.modelZoom = 900;
-				itemDef.modelID = 15688;
-				itemDef.maleEquip1 = 15690;
-				itemDef.femaleEquip1 = 15690;
+				itemDef.modelID = 18429;
+				itemDef.maleEquip1 = 18446;
+				itemDef.femaleEquip1 = 18446;
 				break;
 				
 			case 23221:
 				itemDef.copyItem(4714);
-				itemDef.name = "Tanjiro body";
+				itemDef.name = "Nephilim body";
 				itemDef.modelZoom = 1500;
-				itemDef.modelID = 15676;
-				itemDef.maleEquip1 = 15691;
-				itemDef.femaleEquip1 = 15691;
+				itemDef.modelID = 18461;
+				itemDef.maleEquip1 = 18486;
+				itemDef.femaleEquip1 = 18486;
 				break;
 				
 			case 23222:
 				itemDef.copyItem(4712);
-				itemDef.name = "Tanjiro legs";
-				itemDef.modelZoom = 1700;
-				itemDef.modelID = 15693;
-				itemDef.maleEquip1 = 15694;
-				itemDef.femaleEquip1 = 15694;
+				itemDef.name = "Nephilim legs";
+				itemDef.modelZoom = 1300;
+				itemDef.modelID = 18495;
+				itemDef.maleEquip1 = 18511;
+				itemDef.femaleEquip1 = 18511;
 				break;
 				
 			case 23223:
 				itemDef.copyItem(4708);
-				itemDef.name = "Tanjiro gloves";
-				itemDef.modelID = 15695;
-				itemDef.maleEquip1 = 15696;
-				itemDef.femaleEquip1 = 15696;
+				itemDef.name = "Nephilim gloves";
+				itemDef.modelID = 18512;
+				itemDef.maleEquip1 = 18516;
+				itemDef.femaleEquip1 = 18516;
 				itemDef.modelZoom = 700;
 				break;
 				
 			case 23224:
 				itemDef.copyItem(4708);
-				itemDef.name = "Tanjiro boots";
-				itemDef.modelID = 15697;
-				itemDef.maleEquip1 = 15698;
-				itemDef.femaleEquip1 = 15698;
+				itemDef.name = "Nephilim boots";
+				itemDef.modelID = 18519;
+				itemDef.maleEquip1 = 18519;
+				itemDef.femaleEquip1 = 18519;
 				itemDef.modelZoom = 700;
 				break;
 				
-			case 23061:
+			case 23062:
 				itemDef.copyItem(4708);
-				itemDef.name = "Nymora helm";
+				itemDef.name = "Nephilim Staff";
 				itemDef.modelZoom = 900;
-				itemDef.modelID = 100152;
-				itemDef.maleEquip1 = 100153;
-				itemDef.femaleEquip1 = 100153;
+				itemDef.modelID = 18532;
+				itemDef.maleEquip1 = 18531;
+				itemDef.femaleEquip1 = 18531;
 				break;
 				
-			case 23062:
+			case 23061:
 				itemDef.copyItem(4714);
-				itemDef.name = "Nymora body";
+				itemDef.name = "Nephilim bow";
 				itemDef.modelZoom = 1500;
-				itemDef.modelID = 100156;
-				itemDef.maleEquip1 = 100157;
-				itemDef.femaleEquip1 = 100157;
+				itemDef.modelID = 18530;
+				itemDef.maleEquip1 = 18529;
+				itemDef.femaleEquip1 = 18529;
 				break;
 
 			case 23063:
 				itemDef.copyItem(4712);
-				itemDef.name = "Nymora legs";
+				itemDef.name = "Nephilim Sword";
 				itemDef.modelZoom = 1700;
-				itemDef.modelID = 100154;
-				itemDef.maleEquip1 = 100155;
-				itemDef.femaleEquip1 = 100155;
+				itemDef.modelID = 18533;
+				itemDef.maleEquip1 = 18534;
+				itemDef.femaleEquip1 = 18534;
 				break;
 
 			case 23064:
@@ -1588,18 +1611,12 @@ public class ItemDef3 {
 				break;
 
 			case 995:
-				//itemDef.copyItem(995);
-				itemDef.name = "Avalon Coins";
 				itemDef.actions = new String[5];
 				itemDef.actions[2] = "@gre@Convert to Tokens";
-				itemDef.modelID = 100284;
-				itemDef.modelZoom = 1500;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 520;
-				itemDef.stackAmounts = null;
-				itemDef.stackIDs = null;
 				break;
-				
+			case 13066:
+				itemDef.name = "<img=1663> @yel@Treasure Casket <img=1663>          ";
+				break;
 			case 10835:
 				//itemDef.copyItem(995);
 				itemDef.name = "Avalon Tokens";

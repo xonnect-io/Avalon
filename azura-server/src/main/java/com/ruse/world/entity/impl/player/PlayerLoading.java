@@ -1089,8 +1089,23 @@ public class PlayerLoading {
             if (reader.has("chest-looted")) {
                 player.setChestLooted(reader.get("chest-looted").getAsBoolean());
             }
+            if (reader.has("fish-collected")) {
+                player.setFishCollected(reader.get("fish-collected").getAsBoolean());
+            }
+            if (reader.has("treasure-map-1-collected")) {
+                player.setTreasureMap1Collected(reader.get("treasure-map-1-collected").getAsBoolean());
+            }
 
+            if (reader.has("treasure-map-2-collected")) {
+                player.setTreasureMap2Collected(reader.get("treasure-map-2-collected").getAsBoolean());
+            }
 
+            if (reader.has("treasure-map-3-collected")) {
+                player.setTreasureMap3Collected(reader.get("treasure-map-3-collected").getAsBoolean());
+            }
+            if (reader.has("reward-collected")) {
+                player.setRewardCollected(reader.get("reward-collected").getAsBoolean());
+            }
             if (reader.has("group-ironman-id")) {
                 IronmanGroup group = GroupManager.getGroup((reader.get("group-ironman-id").getAsInt()));
                 System.out.println("ID : " + reader.get("group-ironman-id").getAsInt());

@@ -15,7 +15,7 @@ public class HellraiserSystem {
 		NPC npc = new NPC(187, new Position(3100, 5536));
 		World.register(npc);
 		World.sendMessage("Hellraiser has Arrived! fight him now at ::hellraiser");
-		DiscordMessager.sendGogetaBossLog("Hellraiser has appeared ! Join in game and Defeat him before it's too late!");
+		DiscordMessager.sendHellraiserBossLog("Hellraiser has appeared ! Join in game and Defeat him before it's too late!");
 		npckills = 0;
 	}
 	public static void spawnBoss() {
@@ -26,7 +26,7 @@ public class HellraiserSystem {
 		NPC npc = new NPC(187, new Position(3100, 5536));
 		World.register(npc);
 		World.sendMessage("Hellraiser has Arrived! fight him now at ::hellraiser");
-		DiscordMessager.sendGogetaBossLog("Hellraiser has appeared ! Join in game and Defeat him before it's too late!");
+		DiscordMessager.sendHellraiserBossLog("Hellraiser has appeared ! Join in game and Defeat him before it's too late!");
 		npckills = 0;
 	}
 	public static void callBoss() {

@@ -299,6 +299,7 @@ public class CasketOpening {
         RUBY(15002, Ruby.rewards),
         DIAMOND(15004, Diamond.rewards),
         RAIDS(18404, Raids1.rewards),
+        ZENYTE(23253, Zenyte.rewards),
         ;
         private int itemID;
         private Box[] loot;

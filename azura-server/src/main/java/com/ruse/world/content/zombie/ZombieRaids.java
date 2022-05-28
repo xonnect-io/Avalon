@@ -57,7 +57,7 @@ public class ZombieRaids {
             member.setRegionInstance(null);
             member.getMovementQueue().reset();
             member.getClickDelay().reset();
-            member.moveTo(new Position(2528, 5217 , height));
+            member.moveTo(new Position(2253, 4113 , height));
             PrayerHandler.deactivateAll(member);
             CurseHandler.deactivateAll(member);
             TaskManager.submit(new Task(2, false) {
@@ -87,7 +87,7 @@ public class ZombieRaids {
     }
 
     public static NPC addNpc(ZombieParty party, int npcId, double mult) {
-        NPC npc = (new NPC(npcId, new Position(2515 + Misc.getRandom(22), 5205 + Misc.getRandom(20), party.getHeight())));
+        NPC npc = (new NPC(npcId, new Position(2244 + Misc.getRandom(16), 4104 + Misc.getRandom(19), party.getHeight())));
         npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         return npc;
@@ -182,7 +182,7 @@ public class ZombieRaids {
 
         double mult = 100000;
 
-        NPC npc = new NPC(ZombieRaidData.fifthWaveNpc, new Position(2527, 5222, party.getHeight()));
+        NPC npc = new NPC(ZombieRaidData.fifthWaveNpc, new Position(2257, 4115, party.getHeight()));
         npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npcs.add(npc);

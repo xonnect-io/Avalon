@@ -671,8 +671,8 @@ public class ItemDef4 {
 				itemDef.name = "Fallen Angel's boots";
 				itemDef21 = ItemDefinition.get(3791);
 				itemDef.modelID = 17066;
-				itemDef.maleEquip1 = 100003;
-				itemDef.femaleEquip1 = 100003;
+				itemDef.maleEquip1 = 17066;
+				itemDef.femaleEquip1 = 17066;
 				itemDef.stackable = false;
 				break;
 			case 22104:

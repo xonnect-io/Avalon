@@ -535,7 +535,15 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, new Position(2139, 5019, 0), player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the dragon kings lair!");
         }
-
+        if (command[0].equalsIgnoreCase("neph") || command[0].equalsIgnoreCase("nephilim")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            TeleportHandler.teleportPlayer(player, new Position(2144, 3294, 0), player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Nephilim Warrior");
+        }
         if (command[0].equalsIgnoreCase("naraku") || command[0].equalsIgnoreCase("narak")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
