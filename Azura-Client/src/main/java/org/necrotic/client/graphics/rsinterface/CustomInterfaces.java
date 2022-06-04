@@ -2791,16 +2791,16 @@ public class CustomInterfaces extends RSInterface {
 			removeSomething(i);
 		}
 		RSInterface newTab = addTabInterface(15000);
+		addSpriteLoader(15002, 1668);
 		addButtonWSpriteLoader(15001, 618, "Show Equipment Stats", 41, 40);
-		addButtonWSpriteLoader(15002, 307, null, 41, 40);
 		addButtonWSpriteLoader(15003, 620, "Open Items kept on Death", 41, 40);
 		addButtonWSpriteLoader(15004, 1662, "Toggle Cosmetic Overrides", 41, 40);
-		newTab.totalChildren(4);
-		setBounds(15001, 25, 205, 0, newTab);
-		//setBounds(15002, 20, 120, 1, newTab);
-		setBounds(15003, 125, 205, 1, newTab);
+		newTab.totalChildren(5);
+		setBounds(15002, 22, 122, 0, newTab);
+		setBounds(15001, 25, 205, 1, newTab);
+		setBounds(15003, 125, 205, 2, newTab);
 		setBounds(15004, 75, 205, 3, newTab);
-		setBounds(1644, 0, 0, 2, newTab);
+		setBounds(1644, 0, 0, 4, newTab);
 		//setBounds(1669, 0, 0, 5, newTab);
 	}
 
@@ -4121,7 +4121,7 @@ public class CustomInterfaces extends RSInterface {
 		RSInterface newInterface = addTabInterface(11000);
 		RSInterface spellButtons = interfaceCache[1151];
 		RSInterface spellButtons1 = interfaceCache[12424];
-		newInterface.totalChildren(13);
+		newInterface.totalChildren(7);
 		/**
 		 * Modern spellbook
 		 */
@@ -4130,31 +4130,21 @@ public class CustomInterfaces extends RSInterface {
 		newInterface.child(0, 1151, 13, 32);
 
 int x = 10;
-		addHoverButtonWSpriteLoader(11001, 706, 18, 18, "Select", -1, 11002, 1);
-		addTooltip(11002, "Home Teleport\nTeleport to set home location.");
-		newInterface.child(1, 11001, 8 + x, 16);
-		newInterface.child(2, 11002, 10 + x, 39);
-		addHoverButtonWSpriteLoader(11004, 711, 18, 18, "Select", -1, 11005, 1);
-		addTooltip(11005, "Monster Teleport\nOpen options of different \nmonster teleports.");
-		newInterface.child(3, 11004, 34 + x, 16);
-		newInterface.child(4, 11005, 30 + x, 39);
-		addHoverButtonWSpriteLoader(11008, 710, 18, 18, "Select", -1, 11009, 1);
-		addTooltip(11009, "Boss Teleport\nOpen options of different \nboss teleports.");
-		newInterface.child(5, 11008, 60 + x, 16);
-		newInterface.child(6, 11009, 40 + x, 39);
-		addHoverButtonWSpriteLoader(11011, 711, 18, 18, "Select", -1, 11012, 1);
-		addTooltip(11012, "Minigame Teleport\nOpen options of different\nminigame teleports.");
-		newInterface.child(7, 11011, 86 + x, 16);
-		newInterface.child(8, 11012, 23 + x, 39);
-		addHoverButtonWSpriteLoader(11014, 709, 18, 18, "Select", -1, 11015, 1);
-		addTooltip(11015, "Dungeon Teleport\nOpen options of different\ndungeon teleports.");
-		newInterface.child(9, 11014, 112 + x, 16);
-		newInterface.child(10, 11015, 23 + x, 39);
-		addHoverButtonWSpriteLoader(11017, 711, 18, 18, "Select", -1, 11018, 1);
-		addTooltip(11018, "Misc Teleport\nOpen options of different\nmisc teleports.");
-		newInterface.child(11, 11017, 138 + x, 16);
-		newInterface.child(12, 11018, 34 + x, 39);
+addHoverButtonWSpriteLoader(11001, 1369, 65, 28, "Select", -1, 11002, 1);
+addTooltip(11002, "Home Teleport\nTeleport to default home location.");
+addText(11008, "Home", tda, 2, ClientConstants.GOLD, true, true);
+newInterface.child(1, 11001, 7, 16-10);
+newInterface.child(2, 11002, 1, 39);
+newInterface.child(3, 11008, 7+38, 16+6-8);
+addHoverButtonWSpriteLoader(11004, 1369, 65, 28, "Select", -1, 11005, 1);
+addTooltip(11005, "Teleport Interface\nOpen options of different \nteleports.");
+addText(11009, "Teleports", tda, 2, ClientConstants.GOLD, true, true);
 
+newInterface.child(4, 11004, 100, 16-10);
+newInterface.child(5, 11005, 30, 39);
+newInterface.child(6, 11009, 75+63, 16+6-8);
+		
+		
 		interfaceCache[1164] = interfaceCache[1165];
 		interfaceCache[1165] = interfaceCache[1166];
 		interfaceCache[1166] = interfaceCache[1168];
@@ -5171,137 +5161,6 @@ int x = 10;
 		tab.child(29, 950, 140, 213);
 	}
 
-	private void settingsInterface() {
-		RSInterface tab = addTabInterface(24000);
-		addSprite(24001, 571, 571, -1, -1);
-		addText(24002, "Graphics Settings", tda, 2, 0xeb981f, true, true);
-
-		addText(24027, "If the game runs slowly on your computer, try reducing these settings.", tda, 1, 0xeb981f, true, true);
-		addText(24028, "Low Detail", tda, 0, 0xeb981f, false, true);
-		addText(24029, "High Detail", tda, 0, 0xeb981f, false, true);
-		addText(24031, "Fixed", tda, 0, 0xeb981f, false, true);
-		addText(24032, "Resizable", tda, 0, 0xeb981f, false, true);
-		addText(24033, "Fullscreen", tda, 0, 0xeb981f, false, true);
-		addText(24030, "Adjust additional settings below.", tda, 1, 0xeb981f, true, true);
-
-		String[] text = {"New GameFrame", "Names Above Head", "HP Above Head", "New Hitpoints", "New Hitmarks", "New Function Keys", "x10 Damage", "Fog", "Tweening", "Roofs Off", "Toggle FOV", "Push notifications", "Unused", "Unused", "Unused",};
-		for (int i = 0; i < text.length; i++) {
-			addText(24003 + i, text[i], tda, 0, 0xeb981f, true, true);
-		}
-		addHoverButton(24034, 580, 16, 16, "Close", -1, 24035, 3);
-		addHoveredButton(24035, 581, 16, 16, 24036);
-
-		addHoverButton(24018, 486, 50, 39, "Set to Fixed Mode", -1, 24019, 1);
-		addHoveredButton(24019, 487, 50, 39, 24020);
-		addHoverButton(24021, 488, 50, 39, "Set to Resizable Mode", -1, 24022, 1);
-		addHoveredButton(24022, 489, 50, 39, 24023);
-		addHoverButton(24024, 490, 50, 39, "Set to Fullscreen Mode", -1, 24025, 1);
-		addHoveredButton(24025, 491, 50, 39, 24026);
-
-		addCheckmarkHover(24159, 4, 24160, 576, 577, 57, 35, SETTING_CONFIGS[15], 1, "Low Detail", 24161, 577, 577, 24162, "", "", 12, 20);
-		addCheckmarkHover(24163, 4, 24164, 578, 579, 57, 35, SETTING_CONFIGS[16], 1, "High Detail", 24165, 579, 579, 24166, "", "", 12, 20);
-
-		addCheckmarkHover(24099, 4, 24100, 572, 573, 104, 26, SETTING_CONFIGS[0], 1, "Change Gameframe", 24101, 574, 575, 24102, "", "", 12, 20);
-		addCheckmarkHover(24103, 4, 24104, 572, 573, 104, 26, SETTING_CONFIGS[1], 1, "Names above Head", 24105, 574, 575, 24106, "", "", 12, 20);
-		addCheckmarkHover(24107, 4, 24108, 572, 573, 104, 26, SETTING_CONFIGS[2], 1, "Hitpoints above Head", 24109, 574, 575, 24110, "", "", 12, 20);
-		addCheckmarkHover(24111, 4, 24112, 572, 573, 104, 26, SETTING_CONFIGS[3], 1, "New Hitpoints", 24113, 574, 575, 24114, "", "", 12, 20);
-		addCheckmarkHover(24115, 4, 24116, 572, 573, 104, 26, SETTING_CONFIGS[4], 1, "New Hitmarks", 24117, 574, 575, 24118, "", "", 12, 20);
-		addCheckmarkHover(24119, 4, 24120, 572, 573, 104, 26, SETTING_CONFIGS[5], 1, "New Function Keys", 24121, 574, 575, 24122, "", "", 12, 20);
-		addCheckmarkHover(24123, 4, 24124, 572, 573, 104, 26, SETTING_CONFIGS[6], 1, "x10 Hitpoints", 24125, 574, 575, 24126, "", "", 12, 20);
-		addCheckmarkHover(24127, 4, 24128, 572, 573, 104, 26, SETTING_CONFIGS[7], 1, "Fog", 24129, 574, 575, 24130, "", "", 12, 20);
-		addCheckmarkHover(24131, 4, 24132, 572, 573, 104, 26, SETTING_CONFIGS[8], 1, "Tweening", 24133, 574, 575, 24134, "", "", 12, 20);
-		addCheckmarkHover(24135, 4, 24136, 572, 573, 104, 26, SETTING_CONFIGS[9], 1, "Toggle Roofs", 24137, 574, 575, 24138, "", "", 12, 20);
-		addCheckmarkHover(24139, 4, 24140, 572, 573, 104, 26, SETTING_CONFIGS[10], 1, "Toggle FOV", 24141, 574, 575, 24142, "", "", 12, 20);
-		addCheckmarkHover(24143, 4, 24144, 572, 573, 104, 26, SETTING_CONFIGS[11], 1, "Push notifications", 24145, 574, 575, 24146, "", "", 12, 20);
-		addCheckmarkHover(24147, 4, 24148, 572, 573, 104, 26, SETTING_CONFIGS[12], 1, "Option 2", 24149, 574, 575, 24150, "", "", 12, 20);
-		addCheckmarkHover(24151, 4, 24152, 572, 573, 104, 26, SETTING_CONFIGS[13], 1, "Option 3", 24153, 574, 575, 24154, "", "", 12, 20);
-		addCheckmarkHover(24155, 4, 24156, 572, 573, 104, 26, SETTING_CONFIGS[14], 1, "Option 4", 24157, 574, 575, 24158, "", "", 12, 20);
-
-		int x = 97;
-		int y = 143;
-		int configX = 45;
-		int configY = 135;
-		int seperationX = 160;
-		int seperationY = 40;
-		tab.totalChildren(66);
-		tab.child(0, 24001, 0, 0); // background sprite
-		tab.child(1, 24099, configX, configY); // gameframe
-		tab.child(2, 24100, configX, configY); // gameframe
-		tab.child(3, 24103, configX + seperationX, configY); // name above head
-		tab.child(4, 24104, configX + seperationX, configY); // name above head
-		tab.child(5, 24107, configX + seperationX * 2, configY); // hitpoints
-		// above
-		// head
-		tab.child(6, 24108, configX + seperationX * 2, configY); // hitpoints
-		// above
-		// head
-		tab.child(7, 24111, configX, configY + seperationY); // new hitpoints
-		tab.child(8, 24112, configX, configY + seperationY); // new hitpoints
-		tab.child(9, 24115, configX + seperationX, configY + seperationY); // new
-		// hitmarks
-		tab.child(10, 24116, configX + seperationX, configY + seperationY); // new
-		// hitmarks
-		tab.child(11, 24119, configX + seperationX * 2, configY + seperationY); // new
-		// function
-		// keys
-		tab.child(12, 24120, configX + seperationX * 2, configY + seperationY); // new
-		// function
-		// keys
-		tab.child(13, 24123, configX, configY + seperationY * 2); // x10
-		// hitpoints
-		tab.child(14, 24124, configX, configY + seperationY * 2); // x10
-		// hitpoints
-		tab.child(15, 24127, configX + seperationX, configY + seperationY * 2); // fog
-		tab.child(16, 24128, configX + seperationX, configY + seperationY * 2); // fog
-		tab.child(17, 24131, configX + seperationX * 2, configY + seperationY * 2); // tweening
-		tab.child(18, 24132, configX + seperationX * 2, configY + seperationY * 2); // tweening
-		tab.child(19, 24135, configX, configY + seperationY * 3); // toggle
-		// roofs
-		tab.child(20, 24136, configX, configY + seperationY * 3); // toggle
-		// roofs
-		tab.child(21, 24139, configX + seperationX, configY + seperationY * 3); // toggle
-		// fov
-		tab.child(22, 24140, configX + seperationX, configY + seperationY * 3); // toggle
-		// fov
-		tab.child(23, 24143, configX + seperationX * 2, configY + seperationY * 3); // option
-		// 1
-		tab.child(24, 24144, configX + seperationX * 2, configY + seperationY * 3); // option
-		// 1
-		tab.child(25, 24147, configX, configY + seperationY * 4); // option 2
-		tab.child(26, 24148, configX, configY + seperationY * 4); // option 2
-		tab.child(27, 24151, configX + seperationX, configY + seperationY * 4); // option
-		// 3
-		tab.child(28, 24152, configX + seperationX, configY + seperationY * 4); // option
-		// 3
-		tab.child(29, 24155, configX + seperationX * 2, configY + seperationY * 4); // option
-		// 4
-		tab.child(30, 24156, configX + seperationX * 2, configY + seperationY * 4); // option
-		// 4
-		tab.child(31, 24018, 76, 62);
-		tab.child(32, 24019, 76, 62);
-		tab.child(33, 24021, 166, 62);
-		tab.child(34, 24022, 166, 62);
-		tab.child(35, 24024, 261, 62);
-		tab.child(36, 24025, 261, 62);
-		tab.child(37, 24159, 340, 64); // low detail
-		tab.child(38, 24160, 340, 64); // low detail
-		tab.child(39, 24163, 410, 64); // high detail
-		tab.child(40, 24164, 410, 64); // high detail
-		tab.child(41, 24002, 258, 4); // title
-		tab.child(42, 24030, 258, 118); // title2
-		tab.child(43, 24028, 341, 102); // Low detail text
-		tab.child(44, 24029, 411, 102); // High detail text
-		tab.child(45, 24031, 87, 102); // Fixed text
-		tab.child(46, 24032, 167, 102); // Resizable text
-		tab.child(47, 24033, 262, 102); // Fullscreen text
-		tab.child(48, 24027, 258, 24); // text below title
-		tab.child(49, 24034, 492, 3); // Close button
-		tab.child(50, 24035, 492, 3); // Close hover
-
-		for (int i = 0; i < text.length; i++) {
-			tab.child(i + 51, i + 24003, x + i % 3 * seperationX, y + i / 3 * seperationY);
-		}
-	}
 
 	private void lootingBag() {
 		RSInterface rsi = addInterface(16545);
@@ -5982,8 +5841,9 @@ int x = 10;
 		addText(26066, "Toggle fog", 0xe4a146, false, true, 52, 0);
 		addText(26068, "Toggle particles", 0xe4a146, false, true, 52, 0);
 		addText(26071, "Toggle level-up\\nmessages", 0xe4a146, false, true, 52, 0);
+		addText(26083, "Toggle Gameframe", 0xe4a146, false, true, 52, 0);
 		addButton(26070, 4, -1, 484, 485, 15, 15, "Toggle level-up messages", 663, 1);
-
+		addButton(26080, 4, -1, 484, 485, 15, 15, "Toggle Gameframe", 664, 1);
 		/**
 		 * Fixed buttons
 		 */
@@ -6000,7 +5860,7 @@ int x = 10;
 		addHoverButton(26022, 490, 50, 39, "Fullscreen Mode", -1, 26023, 1);
 		addHoveredButton(26023, 491, 50, 39, 26024);
 
-		setChildren(73, rsinterface);
+		setChildren(76, rsinterface);
 		int i = 0;
 		// background
 		setBounds(26001, x + -15, y + -30, i, rsinterface);
@@ -6046,6 +5906,10 @@ int x = 10;
 		i++;
 		setBounds(26070, x + 432, y + 200, i, rsinterface);
 		i++;
+		setBounds(26080, x + 154, y + 222, i, rsinterface);
+		i++;
+		setBounds(26083, x + 9, y + 224, i, rsinterface);
+		i++;
 		// fog
 		setBounds(26067, x + 154, y + 151 + 48, i, rsinterface);
 		i++;
@@ -6081,6 +5945,8 @@ int x = 10;
 		setBounds(26005, x + 7, y + 146 + 24, i, rsinterface);
 		i++;
 		setBounds(26005, x + 7, y + 146 + 48, i, rsinterface);
+		i++;
+		setBounds(26005, x + 7, y + 215, i, rsinterface);
 		i++;
 		// second row horizontal line
 		setBounds(26005, x + 170, y + 161, i, rsinterface);
@@ -7656,6 +7522,7 @@ int x = 10;
 		SlayerDuo(tda);
 		DailyTaskInterface(tda);
 		InstanceManager(tda);
+		InstanceManagerGold(tda);
 		//TeleportInterfaceNewest(tda);
 		WellOfGoodWill(tda);
 		DailyMboxes(tda);

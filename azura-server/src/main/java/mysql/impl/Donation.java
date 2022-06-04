@@ -49,7 +49,6 @@ public class Donation extends Database {
             if (!init()) {
                 return;
             }
-//oh lmfao hahahahahahahahaha
             player.lastDonationClaim = System.currentTimeMillis() + 30000;
             String name = player.getUsername().replace("_", " ");
             executeQuery("SELECT * FROM payments WHERE player_name='"+name+"' AND status='Complete' AND claimed=0");
@@ -112,10 +111,13 @@ public class Donation extends Database {
 //                PlayerLogs.logPlayerDonations(player.getUsername(), "Donated: $" + paid
 //                        + ", Item: " + ItemDefinition.forId(id).getName() + ", Amount: " + item_number + ", ID: " + id + ", item_number: " + item_number);
 
-                DonationBossSystem.amntDonated+= paid;
-                DonationBossSystem.spawnBoss();
+                player.getInventory().add(23174, (int) paid);
                 player.sendMessage("Thanks for donating!");
-//why u got 1 eclispe and 1 intellij open lol well i can't get this server to run in eclipes :D ill fix it
+                player.sendMessage("You are rewarded " + paid + "High-Tier Tickets!");
+                if (paid > 250) {
+                    player.getInventory().add(23174, Misc.getRandom(50));
+                    player.sendMessage("You are rewarded an extra random amount of tickets(1-50) for donating more than $250");
+                }
                 if (paid >= 5) {
                     World.sendMessage("<img=5><shad=1>@yel@Donation: @blu@" + player.getUsername()
                             + "@or2@ has donated! @red@::Donate@or2@ now to show support for @red@Avalon!");

@@ -18,7 +18,7 @@ import java.util.Map.Entry;
 
 public class DonationBossDrop {
 
-	public static void handleDrop(NPC npc) {
+	public static void handleDropReward(NPC npc) {
 		if (npc.getCombatBuilder().getDamageMap().size() == 0) {
 			return;
 		}

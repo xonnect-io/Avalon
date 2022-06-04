@@ -155,11 +155,11 @@ public class GameSettings {
     /**
      * The default position
      */
-    public static final Position DEFAULT_POSITION = new Position(2585, 2521, 0);//3093, 3506
+    public static final Position DEFAULT_POSITION = new Position(2655, 4017, 0);//3093, 3506
     public static final Position STARTER = new Position(2783, 9495, 0);//3093, 3506
     public static final Position CORP_CORDS = new Position(2900, 4384);
     public static final Position STARTER_BED = new Position(2333, 4119, 0);
-    public static final Position HOME_CORDS = new Position(2585, 2521, 0);//3093, 3506
+    public static final Position HOME_CORDS = new Position(2655, 4017, 0);//3093, 3506
     public static final Position OLDHOME_CORDS = new Position(2654, 3998, 0);
     public static final Position EDGE_CORDS = new Position(3086, 3488, 0);
     public static final Position TRIO_CORDS = new Position(3025, 5231, 0);
@@ -169,7 +169,7 @@ public class GameSettings {
     public static final Position SAPPHIRE_ZONE = new Position(2907, 5357);
     public static final Position MEMBER_ZONE = new Position(2851, 3348);
     public static final Position SUPER_ZONE = new Position(1664, 5695);
-    public static final Position RUBY_ZONE = new Position(2207, 4240);
+    public static final Position RUBY_ZONE = new Position(2208, 4257);
     public static final Position SUPER_ZONE_NPC = new Position(2827, 2866, 8);
     public static final Position EXTREME_ZONE_NPC = new Position(2827, 2866, 12);
     public static final Position DUSTCLAW_LOCATION = new Position(2958, 9487, 0);
@@ -305,7 +305,6 @@ public class GameSettings {
             11315, 11314,                                                            // &
             11317,
 
-            22000,22001,22002,22003,22004,22005,22006,// slayer helms, infernal ring, deathtouch darts
 
             // Sigil
             /*

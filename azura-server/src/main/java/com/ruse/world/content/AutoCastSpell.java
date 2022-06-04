@@ -11,7 +11,7 @@ public enum AutoCastSpell {
     STARTER1(13641, CombatSpells.AVERNICBLAST),
     CHILLING(14377, CombatSpells.SORCEBLAST),
     FESTIVE_STAFF(14924, CombatSpells.ICEYBLAST),
-    SKOLL(5095, CombatSpells.SKOLLSTAFF),
+    SHETANI(5095, CombatSpells.SHETANISTAFF),
     VIXIE(6936, CombatSpells.VIXIESTAFF),
     PURP(8809, CombatSpells.PURPSTAFF),
     GIANT(17600, CombatSpells.GIANTSTAFF),

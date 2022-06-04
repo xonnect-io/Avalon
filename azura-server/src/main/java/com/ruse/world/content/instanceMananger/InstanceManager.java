@@ -77,7 +77,7 @@ public class InstanceManager {
 		}
 		for (InstanceData data : values) {
 			if (npcId == data.getNpcid() || NpcDefinition.forId(npcId).getName() == data.getName()) {
-				player.setCurrentInstanceAmount(data.getEndamount() + Misc.exclusiveRandom(25, 60));
+				player.setCurrentInstanceAmount(60);
 				player.setCurrentInstanceNpcId(data.getNpcid());
 				player.setCurrentInstanceNpcName(data.getName());
 				if (data.getNpcid() == 6260) {
@@ -175,8 +175,17 @@ public class InstanceManager {
 			return;
 		}
 		player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
+
+		if (player.getCurrentInstanceAmount() == 110 || player.getCurrentInstanceAmount() == 100 || player.getCurrentInstanceAmount() == 90 ||
+				player.getCurrentInstanceAmount() == 80 || player.getCurrentInstanceAmount() == 70 ||  player.getCurrentInstanceAmount() == 60 ||
+				player.getCurrentInstanceAmount() == 50 || player.getCurrentInstanceAmount() == 40 || player.getCurrentInstanceAmount() == 30 ||
+				player.getCurrentInstanceAmount() == 20 || player.getCurrentInstanceAmount() == 10) {
+			player.getPA().sendMessage("You currently need to kill " + player.getCurrentInstanceAmount() + " " + NpcName);
+		}
 		player.getPA().sendMessage("You currently need to kill " + player.getCurrentInstanceAmount() + " " + NpcName);
+
 		if (player.getCurrentInstanceAmount() <= 0) {
+
 			player.getPA().sendMessage("You have used up the total instance count!");
 			finish();
 			return;

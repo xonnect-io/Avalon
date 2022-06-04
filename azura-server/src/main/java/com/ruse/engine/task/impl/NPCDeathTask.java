@@ -25,6 +25,7 @@ import com.ruse.world.content.globalBoss.GlobalBoss;
 import com.ruse.world.content.globalBoss.GlobalBossHandler;
 import com.ruse.world.content.globalBoss.TheGeneral;
 import com.ruse.world.content.instanceMananger.InstanceManager;
+import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -37,6 +38,8 @@ import com.world.content.globalBoss.merk.MerkSpawn;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
+import static com.ruse.motivote3.doMotivote.setVoteCount;
 
 //import com.ruse.tools.discord.DiscordConstant;
 //import com.ruse.tools.discord.DiscordManager;
@@ -202,16 +205,16 @@ public class NPCDeathTask extends Task {
                         }
 
                         if (npc.getId() == 3779) {
-                            GlobalBossDrops.handleDrop(npc);
+                            AFKBossDrops.handleDrop(npc);
                             AfkSystem.thievedCount -= 80000;
                         }
                         if (npc.getId() == 9312) {
-                            GlobalBossDrops.handleDrop(npc);
+                            NephilimBossDrop.handleDrop(npc);
                             NephilimSpawnSystem.sacrificedCount = 0;
                         }
                         if (npc.getId() == 8013) {
                             VoteBossDrop.handleDrop(npc);
-                            doMotivote.setVoteCount(0);
+                            setVoteCount(0);
                         }
                         if (npc.getId() == SkeletalHorror.NPC_ID) {
                             SkeletalHorror.wyrmAlive = false;
@@ -234,7 +237,7 @@ public class NPCDeathTask extends Task {
                         }
                         /** PARSE DROPS **/
                         if (npc.getId() == 3830) {
-                            DonationBossDrop.handleDrop(npc);
+                            DonationBossDrop.handleDropReward(npc);
                             DonationBossSystem.amntDonated = 0;
                         }
                         if (npc.getId() == 823) { //unknown Boss room
@@ -277,8 +280,12 @@ public class NPCDeathTask extends Task {
                         /** PARSE DROPS **/
 
                         if (npc.getId() == 8013) {// resets the vote count to 0 on votizo
+                            setVoteCount(doMotivote.getVoteCount());
                             VoteBossDrop.handleDrop(npc);
                             World.sendMessage("<shad=f9f6f6>Vote boss has been slain...");
+                            if (System.currentTimeMillis() + 86400000 > killer.lastVoteTime) {
+                                killer.sendMessage("You received Double rewards because you voted in the last 12hrs!");
+                            }
 
                         }
                         if (npc.getId() == 4972) {
@@ -406,8 +413,6 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 1614
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementSPAWNKILLCount(2);
         } else if (npc.getId() == 1614) {// spawn
             killer.getPointsHandler().incrementSPAWNKILLCount(1);
@@ -415,8 +420,6 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 603
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementLORDKILLCount(2);
         } else if (npc.getId() == 603) {
             killer.getPointsHandler().incrementLORDKILLCount(1);
@@ -424,8 +427,6 @@ public class NPCDeathTask extends Task {
 
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 12843
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementDEMONKILLCount(2);
         } else if (npc.getId() == 12843) {// demon
             killer.getPointsHandler().incrementDEMONKILLCount(1);
@@ -433,8 +434,6 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 8008
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementAVATARKILLCount(2);
         } else if (npc.getId() == 8008) {// avatar
             killer.getPointsHandler().incrementAVATARKILLCount(1);
@@ -442,8 +441,6 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 3308
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementANGELKILLCount(2);
         } else if (npc.getId() == 3308) {// angel
             killer.getPointsHandler().incrementANGELKILLCount(1);
@@ -451,8 +448,6 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 3117
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementLUCIENKILLCount(2);
         } else if (npc.getId() == 3117) {// lucien
             killer.getPointsHandler().incrementLUCIENKILLCount(1);
@@ -460,8 +455,6 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 13635
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementKINGKILLCount(2);
         } else if (npc.getId() == 13635) {// king
             killer.getPointsHandler().incrementKINGKILLCount(1);
@@ -469,8 +462,6 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 201
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementHERCULESKILLCount(2);
         } else if (npc.getId() == 201) {// hercules
             killer.getPointsHandler().incrementHERCULESKILLCount(1);
@@ -478,8 +469,6 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 202
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementSATANKILLCount(2);
         } else if (npc.getId() == 202) {// satan
             killer.getPointsHandler().incrementSATANKILLCount(1);
@@ -488,8 +477,6 @@ public class NPCDeathTask extends Task {
 
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 203
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementZEUSKILLCount(2);
         } else if (npc.getId() == 203) {// zeus
             killer.getPointsHandler().incrementZEUSKILLCount(1);
@@ -497,8 +484,6 @@ public class NPCDeathTask extends Task {
 
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 53
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementDRAGONKILLCount(2);
         } else if (npc.getId() == 53) {// dragon
             killer.getPointsHandler().incrementDRAGONKILLCount(1);
@@ -506,8 +491,6 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 8018
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            // well yeah i was just making an example, but im just saying, ur gona have to
-            // add so much stuff for each npc if u dont create a system for it
             killer.getPointsHandler().incrementBEASTKILLCount(2);
         } else if (npc.getId() == 8018) {// beast
             killer.getPointsHandler().incrementBEASTKILLCount(1);
@@ -527,16 +510,6 @@ public class NPCDeathTask extends Task {
             killer.getPointsHandler().incrementLuciferKillCount(1);
         }
 
-        //killer.incrementNPCKILLCount(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.NPC_KILLS ? 2 : 1);
-
-
-       /* if (npc.getId() == 8011) {
-            int[] RewardId1 = new int[]{5022};
-            int pickedFood1 = RewardId1[RandomUtility.exclusiveRandom(0, RewardId1.length)];
-            killer.getInventory().add(pickedFood1, 5);
-            killer.getInventory().add(ItemDefinition.MILL_ID, 1);
-            killer.getPointsHandler().incrementEventPoints(2);
-        }*/
         int ID_HERE = 1;
         int ITEM_ID = 91;
 
@@ -545,10 +518,7 @@ public class NPCDeathTask extends Task {
 
         if (npc.getId() == 186) {
             int random = RandomUtility.inclusiveRandom(0, 100);
-            if (random < killer.getPointsHandler().getGlobalRate()) {// its using shillingrate though gthose go up to
-                // ininfinty
-                // well yeah i was just making an example, but im just saying, ur gona have to
-                // add so much stuff for each npc if u dont create a system for it
+            if (random < killer.getPointsHandler().getGlobalRate()) {
                 killer.getInventory().add(8212, 5);
                 killer.getInventory().add(8213, 1);
                 killer.getPointsHandler().incrementEventPoints(2);

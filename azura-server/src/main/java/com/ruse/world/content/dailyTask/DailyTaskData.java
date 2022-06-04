@@ -39,9 +39,9 @@ public enum DailyTaskData {
 			"Fractite Demon\\ncan be found\\nat Teleports", 250, new Position(3362, 9641, 0),
 			DailyTaskDifficulty.MEDIUM, 12843, "Fractite Demon", 15000),
 
-	BEASTS(7, -26164, 19116, "MageBeast", "[MEDUIM] Kill 250 MageBeast before the next day!",
-			"MageBeast can\\nbe found at\\nTeleports", 250, new Position(1701, 5600, 0), DailyTaskDifficulty.MEDIUM,
-			8018, "MageBeast", 15000),
+	BEASTS(7, -26164, 19116, "Shetani", "[MEDUIM] Kill 250 Shetani before the next day!",
+			"Shetani can\\nbe found at\\nTeleports", 250, new Position(1701, 5600, 0), DailyTaskDifficulty.MEDIUM,
+			8018, "Shetani", 15000),
 
 	GLOWY_DRAGONS(8, -26163, 19116, "Joyx Dragon", "[MEDUIM] Kill 250 Joyx dragon before the next day!",
 			"Joyx dragon can\\nbe found at\\nTeleports", 250, new Position(3420, 3510, 0), DailyTaskDifficulty.MEDIUM,

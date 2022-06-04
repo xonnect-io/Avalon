@@ -34,7 +34,7 @@ public class easter2017 {
 
 		if (player.getEaster2017() >= 7) {
 			index++;
-			player.getPacketSender().sendString(8147 + index, "@cya@I should return to the easter bunny!");
+			player.getPacketSender().sendString(8147 + index, "@red@I should return to the easter bunny!");
 			index++;
 		}
 		if (player.getEaster2017() >= 8) {

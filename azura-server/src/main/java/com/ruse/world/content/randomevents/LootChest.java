@@ -184,25 +184,18 @@ public final class LootChest {
 	}
 
 	public static enum LocationData {
-		MINOTAURS(new Position(2527, 2521), "Minotaurs zone", "@whi@Armoured Minotaurs"),
-		LAVA_HOUND(new Position(3433, 4126), "Lava hounds zone", "@whi@Lava hounds"),
-		STINKY_BLOB(new Position(2185, 5087), "Stinky Blobs zone", "@whi@Stinky Blobs"),
-		BLOODSUCKERS(new Position(2398, 5012), "Bloodsuckers zone", "@whi@Bloodsuckers"),
-		GIANT_SPIDER(new Position(2721, 4432), "Spiders zone", "@whi@Spiders"),
-		CASH_DRAGONS(new Position(2910, 3619), "Cash Dragons zone", "@whi@Cash Dragons"),
-		DEMON_GODDESS(new Position(2780, 4458), "Demon Goddess zone", "@whi@Demon Goddess"),
-		ENERGY_SKELETON(new Position(2079, 3995), "Energy Skeletons zone", "@whi@Energy Skeletons"),
-		TRUMP(new Position(3031, 2854), "Donald Trump zone", "@whi@Donald Trump"),
-		GOKU(new Position(3031, 2854), "Goku zone", "@whi@Goku"),
-		RADITZ(new Position(2910 + Misc.getRandom(7), 3990 + Misc.getRandom(7)), "Raditz zone", "@whi@Raditz"),
-		BOTANIC_QUEEN(new Position(2571, 9435), "Botanic Queen zone", "@whi@Botanic Queen"),
-		REBD(new Position(3029, 4000), "Red-eyes Black Dragon zone", "@whi@Red-eyes Black Dragon"),
-		BEWD(new Position(2847, 2848), "Blue-eyes White Dragon zone", "@whi@Blue-eyes White Dragon"),
-		INUYASHA(new Position(2313 + Misc.getRandom(25), 5389 + Misc.getRandom(30)), "Inuyasha zone", "@whi@Inuyasha"),
-		TOKORTH(new Position(1890, 5478), "Tolrokoth zone", "@whi@Tolrokoth"),
-		ENRAGED_SUPREME(new Position(2769, 4576), "Enraged Supreme zone", "@whi@Enraged Supreme"),
-		MUTATED_HOUND(new Position(2313 + Misc.getRandom(10), 5389 + Misc.getRandom(7)), "Mutated hounds zone", "@whi@Mutated hounds"),
-		DEMONS(new Position(2727, 4517), "Plutonic Demons zone", "@whi@Plutonic Demons");
+		AL_KHARID_NORTH(new Position(2527, 2521), "Al Kharid (North)", "@whi@Al Kharid (North)"),
+		AL_KHARID_EAST(new Position(3316, 3175), "Al Kharid (East)", "@whi@Al Kharid (East)"),
+		AL_KHARID_WEST(new Position(3270, 3167), "Al Kharid (West)", "@whi@Al Kharid (West)"),
+
+		ARDOUGNE_NORTH(new Position(2659, 3322), "Ardougne (North)", "@whi@Ardougne (North)"),
+		ARDOUGNE_EAST(new Position(2673, 3305), "Ardougne (East)", "@whi@Ardougne (East)"),
+		ARDOUGNE_WEST(new Position(2646, 3307), "Ardougne (West)", "@whi@Ardougne (West)"),
+
+		CAMELOT_NORTH(new Position(2758, 3486), "Camelot (North)", "@whi@Camelot (North)"),
+		CAMELOT_EAST(new Position(2774, 3475), "Camelot (East)", "@whi@Camelot (East)"),
+		CAMELOT_WEST(new Position(2739, 3479), "Camelot (West)", "@whi@Camelot (West)"),
+		;
 		private LocationData(Position spawnPos, String clue, String playerPanelFrame) {
 			this.spawnPos = spawnPos;
 			this.clue = clue;

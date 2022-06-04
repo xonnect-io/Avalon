@@ -225,11 +225,12 @@ public class ServerPerks {
     public enum Perk {
         //DOUBLE_BONDS(0, 100000000, 1521), // TO DO
         // NPC_KILLS(2, 25000000, 1523),// DONE
-        X2_DMG("2X DMG", 0, 20000000, 1523),// DONE
-        X2_DROPS("X2 Drops", 1, 20000000, 1524),// DONE
+        X2_DMG("2X DMG", 0, 20_000_000, 1523),// DONE
+        X2_DR("2X DR", 0, 20_000_000, 1524),// DONE
+        X2_DROPS("X2 Drops", 1, 20_000_000, 1525),// DONE
         X2_EXP("x2 EXP", 2, 1000000, 529),// DONE
-        X2_SLAYER("X2 Slayer", 3, 5000000, 1522),// DONE
-        X2_RAIDS("x2 Raid Loot", 3, 10000000, 1521),// DONE
+        X2_SLAYER("X2 Slayer", 3, 10_000_000, 1522),// DONE
+        X2_RAIDS("x2 Raid Loot", 3, 25_000_000, 1521),// DONE
 
         ;
 

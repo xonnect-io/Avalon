@@ -33,7 +33,7 @@ public class EliteDragon implements CombatStrategy {
 		if (Misc.getRandom(5) <= 2) {
 			Player Player = (com.ruse.world.entity.impl.player.Player) victim;
 			CurseHandler.deactivateAll(Player);
-			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@cya@Elite Dragon deactivated your prayer");
+			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@red@The Dragon King deactivated your prayer");
 		}
 		if (Misc.getRandom(10) <= 2) {
 			int itemid = player.getEquipment().forSlot(5).getId();
@@ -44,7 +44,7 @@ public class EliteDragon implements CombatStrategy {
 			player.getInventory().add(itemid, 1);
 			player.getEquipment().delete(itemid, 1, 5);
 
-			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@red@Elite Dragon took your weapon off, wear it again!");
+			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@red@The Dragon King took your weapon off, wear it again!");
 			
 		}
 		if (dragon.isChargingAttack() || dragon.getConstitution() <= 0) {

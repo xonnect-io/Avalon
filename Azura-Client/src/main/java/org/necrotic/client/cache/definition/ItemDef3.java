@@ -295,6 +295,37 @@ public class ItemDef3 {
 				itemDef.rdc2 = 15345;
 				break;
 
+			case 23259:
+				itemDef.copyItem(4882);
+				itemDef.name = "Reaper helm";
+				itemDef.rdc2 = 37664;
+				break;
+				
+			case 23260:
+				itemDef.copyItem(4894);
+				itemDef.name = "Reaper platebody";
+				itemDef.rdc2 = 37664;
+				break;
+				
+			case 23261:
+				itemDef.copyItem(4900);
+				itemDef.name = "Reaper platelegs";
+				itemDef.rdc2 = 37664;
+				break;
+				
+			case 23262:
+				itemDef.copyItem(20460);
+				itemDef.name = "Reaper gloves";
+				itemDef.rdc2 = 37664;
+				break;
+				
+			case 23263:
+				itemDef.copyItem(20456);
+				itemDef.name = "Reaper boots";
+				itemDef.rdc2 = 37664;
+				break;
+				
+				
 			case 23021:
 				itemDef.copyItem(4708);
 				itemDef.name = "Magic helm";
@@ -834,10 +865,18 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 100165;
 				itemDef.femaleEquip1 = 100165;
 				break;
-
+			case 23071:
+				itemDef.copyItem(13263);
+				itemDef.name = "Boss Slayer Helmet [1]";
+				itemDef.modelID = 100170;
+				itemDef.maleEquip1 = 100171;
+				itemDef.femaleEquip1 = 100171;
+				itemDef.equipOptions[1] = "Teleport";
+				break;
+				
 			case 23069:
 				itemDef.copyItem(13263);
-				itemDef.name = "Cactus Slayer helm (T2)";
+				itemDef.name = "Boss Slayer Helmet [2]";
 				itemDef.modelID = 100166;
 				itemDef.maleEquip1 = 100167;
 				itemDef.femaleEquip1 = 100167;
@@ -846,25 +885,26 @@ public class ItemDef3 {
 				
 			case 23070:
 				itemDef.copyItem(13263);
-				itemDef.name = "Deep blue Slayer helm (T3)";
+				itemDef.name = "Boss Slayer Helmet [3]";
 				itemDef.modelID = 100168;
 				itemDef.maleEquip1 = 100169;
 				itemDef.femaleEquip1 = 100169;
 				itemDef.equipOptions[1] = "Teleport";
 				break;
 				
-			case 23071:
+			case 23074:
 				itemDef.copyItem(13263);
-				itemDef.name = "Golden Slayer helm (T1)";
-				itemDef.modelID = 100170;
-				itemDef.maleEquip1 = 100171;
-				itemDef.femaleEquip1 = 100171;
+				itemDef.name = "Boss Slayer Helmet [4]";
+				itemDef.modelID = 100176;
+				itemDef.equipOptions[1] = "Teleport";
+				itemDef.maleEquip1 = 100177;
+				itemDef.femaleEquip1 = 100177;
 				itemDef.equipOptions[1] = "Teleport";
 				break;
 				
 			case 23072:
 				itemDef.copyItem(13263);
-				itemDef.name = "Roseblood Slayer helm (T5)";
+				itemDef.name = "Boss Slayer Helmet [5]";
 				itemDef.modelID = 100172;
 				itemDef.maleEquip1 = 100173;
 				itemDef.femaleEquip1 = 100173;
@@ -873,23 +913,13 @@ public class ItemDef3 {
 				
 			case 23073:
 				itemDef.copyItem(13263);
-				itemDef.name = "Sacred Slayer helm (T6)";
+				itemDef.name = "Boss Slayer Helmet [6]";
 				itemDef.modelID = 100174;
 				itemDef.maleEquip1 = 100175;
 				itemDef.femaleEquip1 = 100175;
 				itemDef.equipOptions[1] = "Teleport";
 				break;
 				
-			case 23074:
-				itemDef.copyItem(13263);
-				itemDef.name = "Sea urchin Slayer helm (T4)";
-				itemDef.modelID = 100176;
-				itemDef.equipOptions[1] = "Teleport";
-				itemDef.maleEquip1 = 100177;
-				itemDef.femaleEquip1 = 100177;
-				itemDef.equipOptions[1] = "Teleport";
-				break;
-
 			case 23075:
 				itemDef.copyItem(13263);
 				itemDef.name = "Vindicta helm";
@@ -1441,7 +1471,7 @@ public class ItemDef3 {
 				
 			case 23133:
 				itemDef.copyItem(669);
-				itemDef.name = "Creator's wings";
+				itemDef.name = "Legends wings";
 				itemDef.modelID = 100270;
 				itemDef.maleEquip1 = 100271;
 				itemDef.femaleEquip1 = 100271;
@@ -1452,52 +1482,7 @@ public class ItemDef3 {
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetY = 25;
 				break;
-
-			case 23134:
-				itemDef.copyItem(4708);
-				itemDef.name = "Monkioh helm";
-				itemDef.modelID = 100279;
-				itemDef.maleEquip1 = 100280;
-				itemDef.femaleEquip1 = 100280;
-				itemDef.modelZoom = 800;
-				break;
 				
-			case 23135:
-				itemDef.copyItem(4712);
-				itemDef.name = "Monkioh body";
-				itemDef.modelID = 100272;
-				itemDef.maleEquip1 = 100273;
-				itemDef.femaleEquip1 = 100273;
-				itemDef.modelZoom = 1500;
-				break;
-				
-			case 23136:
-				itemDef.copyItem(4714);
-				itemDef.name = "Monkioh legs";
-				itemDef.modelID = 100277;
-				itemDef.maleEquip1 = 100278;
-				itemDef.femaleEquip1 = 100278;
-				itemDef.modelZoom = 1800;
-				break;
-				
-			case 23137:
-				itemDef.copyItem(4708);
-				itemDef.name = "Monkioh gloves";
-				itemDef.modelID = 100275;
-				itemDef.maleEquip1 = 100276;
-				itemDef.femaleEquip1 = 100276;
-				itemDef.modelZoom = 700;
-				break;
-				
-			case 23138:
-				itemDef.copyItem(4708);
-				itemDef.name = "Monkioh boots";
-				itemDef.modelID = 100274;
-				itemDef.maleEquip1 = 100274;
-				itemDef.femaleEquip1 = 100274;
-				itemDef.modelZoom = 700;
-				break;
-
 			case 23139:
 				itemDef.copyItem(4708);
 				itemDef.name = "Ruthless helm";
@@ -1616,20 +1601,6 @@ public class ItemDef3 {
 				break;
 			case 13066:
 				itemDef.name = "<img=1663> @yel@Treasure Casket <img=1663>          ";
-				break;
-			case 10835:
-				//itemDef.copyItem(995);
-				itemDef.name = "Avalon Tokens";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = "@gre@Convert to Coins";
-				itemDef.modelID = 100285;
-				itemDef.modelZoom = 1500;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 520;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.stackAmounts = null;
-				itemDef.stackIDs = null;
 				break;
 				
 			case 23150:
@@ -1867,8 +1838,8 @@ public class ItemDef3 {
 				
 			case 23174:
 				itemDef.copyItem(10936);
-				itemDef.name = "10% DR enchantment";
-				itemDef.rdc2 = 456;
+				itemDef.name = "High-tier ticket";
+				itemDef.rdc2 = 28643;
 				itemDef.actions = new String[5];
 				break;
 
@@ -2190,27 +2161,16 @@ public class ItemDef3 {
 				break;
 				
 			case 20591:
+				itemDef.copyItem(4363);
 				itemDef.name = "Rage Cape";
 				itemDef.modelID = 65333;
 				itemDef.maleEquip1 = 65334;
 				itemDef.femaleEquip1 = 65334;
-				itemdefedit = ItemDefinition.get(4367);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.modelID = itemdefedit.modelID;
+				itemDef.modelZoom = 1700;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 29295;
-				itemDef.newModelColor = new int[]{57};
-				itemDef.editedModelColor = new int[]{71};
-				itemDef.modelZoom = 1385;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 24;
-				itemDef.rotationY = 279;
-				itemDef.rotationX = 948;
+				itemDef.rotationX = 200;
 				break;
 				
 			case 11320:
@@ -4557,92 +4517,48 @@ public class ItemDef3 {
 				break;
 				
 			case 9054:
+				itemDef.copyItem(4708);
 				itemDef.name = "Creeper helm";
-				itemDef.modelID = 64513;
-				itemDef.maleEquip1 = 64514;
-				itemDef.femaleEquip1 = 64514;
-				itemdefedit = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = 1000;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = 200;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.stackable = false;
-				itemDef.rdc2 = 5523329;	
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.modelID = 100279;
+				itemDef.maleEquip1 = 100280;
+				itemDef.femaleEquip1 = 100280;
+				itemDef.modelZoom = 800;
 				break;
 
 			case 9055:
+				itemDef.copyItem(4712);
 				itemDef.name = "Creeper body";
-				itemDef.modelID = 64515;
-				itemDef.maleEquip1 = 64516;
-				itemDef.femaleEquip1 = 64516;
-				itemdefedit = ItemDefinition.get(4894);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.stackable = false;
-				itemDef.rdc2 = 5523329;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.modelID = 100272;
+				itemDef.maleEquip1 = 100273;
+				itemDef.femaleEquip1 = 100273;
+				itemDef.modelZoom = 1500;
 				break;
 
 			case 9056:
+				itemDef.copyItem(4714);
 				itemDef.name = "Creeper legs";
-				itemDef.modelID = 64517;
-				itemDef.maleEquip1 = 64518;
-				itemDef.femaleEquip1 = 64518;
-				itemdefedit = ItemDefinition.get(4900);
-				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = itemdefedit.rotationY;
-				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.stackable = false;
-				itemDef.rdc2 = 5523329;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.modelID = 100277;
+				itemDef.maleEquip1 = 100278;
+				itemDef.femaleEquip1 = 100278;
+				itemDef.modelZoom = 1800;
 				break;
 
 			case 9057:
+				itemDef.copyItem(4708);
 				itemDef.name = "Creeper gloves";
-				itemDef.modelID = 64519;
-				itemDef.maleEquip1 = 64520;
-				itemDef.femaleEquip1 = 64520;
-				itemdefedit = ItemDefinition.get(20458);
-				itemDef.modelOffsetX = 30;
-				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = 400;
-				itemDef.rotationY = 240;
-				itemDef.rotationX = 20;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.editedModelColor = new int[1];
-				itemDef.newModelColor = new int[1];
-				itemDef.newModelColor[0] = 40;
-				itemDef.editedModelColor[0] = 65;
-				itemDef.stackable = false;
-				itemDef.rdc2 = 5523329;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.modelID = 100275;
+				itemDef.maleEquip1 = 100276;
+				itemDef.femaleEquip1 = 100276;
+				itemDef.modelZoom = 700;
 				break;
 				
 			case 9058:
+				itemDef.copyItem(4708);
 				itemDef.name = "Creeper boots";
-				itemDef.modelID = 64521;
-				itemDef.maleEquip1 = 64521;
-				itemDef.femaleEquip1 = 64521;
-				itemdefedit = ItemDefinition.get(11732);
-				itemDef.modelOffsetX = 10;
-				itemDef.modelOffsetY = -15;
-				itemDef.modelZoom = itemdefedit.modelZoom;
-				itemDef.rotationY = 1;
-				itemDef.rotationX = 2000;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.stackable = false;
-				itemDef.rdc2 = 5523329;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.modelID = 100274;
+				itemDef.maleEquip1 = 100274;
+				itemDef.femaleEquip1 = 100274;
+				itemDef.modelZoom = 700;
 				break;
 				
 			case 9059:

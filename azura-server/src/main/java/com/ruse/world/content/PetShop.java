@@ -120,13 +120,6 @@ public class PetShop {
 
     @Getter
     public enum PetRestrictions {
-        KILJAEDEN_PET(BossPet.KILJAEDEN_PET, BossPet.MELEE_PET, BossPet.RANGED_PET, BossPet.MAGE_PET),
-        GOLEM_PET(BossPet.GOLEM_PET, BossPet.DEMON_PET),
-        DRAGON_PET(BossPet.DRAGON_PET, BossPet.GOLEM_PET),
-        ORIX_PET(BossPet.ORIX_PET, BossPet.SKREEG_PET),
-        CRYSTAL_ORC_PET(BossPet.CRYSTAL_ORC_PET, BossPet.ORIX_PET),
-        RAMMUS_PET(BossPet.RAMMUS_PET, BossPet.CRYSTAL_ORC_PET),
-        ODIN_PET(BossPet.ODIN_PET, BossPet.KILJAEDEN_PET, BossPet.RAMMUS_PET, BossPet.RED_FENRIR_PET, BossPet.HEIMDALL_PET),
         ;
 
         private BossPet pet;

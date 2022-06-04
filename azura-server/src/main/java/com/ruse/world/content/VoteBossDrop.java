@@ -1,5 +1,6 @@
 package com.ruse.world.content;
 
+import com.ruse.GameSettings;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.motivote3.doMotivote;
@@ -19,17 +20,17 @@ public class VoteBossDrop {
 
 
 	public static void handleSpawn() {
-		if (currentSpawn != null){
-			System.out.println("Already spawned.");
-			return;
+
+		for (Player players : World.getPlayers()) {
+			if (players == null) {
+				continue;
+			}
+			players.getPacketSender().sendBroadCastMessage("Vote boss has spawned at ::Vboss", 100);
 		}
-
-		currentSpawn = new NPC(8013, new Position(2848, 4577, 0));
-
-		World.register(currentSpawn);
+		World.sendBroadcastMessage("@bla@Vote boss has spawned at ::Vboss");
 		World.sendMessage(
-				"<img=28><shad=f9f6f6>Vote boss has spawned at ::voteboss kill it now for amazing rewards!<shad=-1>");
-		DiscordMessager.sendVoteBossLog("Vote boss has spawned at ::voteboss kill it now for amazing rewards!");
+				"<img=28><shad=f9f6f6>Vote boss has spawned at ::Vboss <shad=-1>");
+		DiscordMessager.sendVoteBossLog("Vote boss has spawned at ::Vboss");
 	}
 
 	public static void handleForcedSpawn() {
@@ -80,6 +81,8 @@ public class VoteBossDrop {
 			NPCDrops.handleDrops(killer, npc);
 			iterator.remove();
 		}
+
+
 		currentSpawn = null;
 	}
 

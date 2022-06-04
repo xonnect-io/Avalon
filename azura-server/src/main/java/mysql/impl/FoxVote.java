@@ -58,15 +58,15 @@ public class FoxVote implements Runnable {
 					points *= 2;
 				}
 
+				World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points
+						+ " Vote scrolls! ::vote now to support the server.");
 				player.getInventory().add(23020, points);
 				player.getPacketSender().sendMessage("Thank you for voting!");
 				player.getDailyRewards().handleVote();
-				World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points
-						+ " Vote scrolls! ::vote now to support the server.");
 				player.lastVoteTime = System.currentTimeMillis();
 				player.setVoteCount(doMotivote.getVoteCount() + points);
 
-				if (doMotivote.getVoteCount() >= 50) {
+				if (doMotivote.getVoteCount() >= 60) {
 					VoteBossDrop.handleSpawn();
 				}
 

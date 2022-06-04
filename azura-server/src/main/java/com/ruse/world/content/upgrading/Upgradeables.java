@@ -44,7 +44,7 @@ public enum Upgradeables {
     K_HELMET(TIER_2, new Item(18834, 1), new Item(6930, 1), 250, 50),
     K_CHESTPLATE(TIER_2, new Item(18801, 1), new Item(6931, 1), 250, 50),
     K_CHAINSKIRT(TIER_2, new Item(18800, 1), new Item(6932, 1), 250, 50),
-    SKOLLSTAFF(TIER_2, new Item(5095, 1), new Item(6936, 1), 250, 50),
+    SHETANI_STAFF(TIER_2, new Item(5095, 1), new Item(6936, 1), 250, 50),
     M_HELM(TIER_2, new Item(19140, 1), new Item(6933, 1), 250, 50),
     M_BODY(TIER_2, new Item(19139, 1), new Item(6934, 1), 250, 50),
     M_LEGS(TIER_2, new Item(19138, 1), new Item(6935, 1), 250, 50),

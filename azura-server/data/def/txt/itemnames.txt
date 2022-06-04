@@ -18939,7 +18939,7 @@ name: Bird's egg
 finish
 
 Item Id: 5095
-name: Skoll staff
+name: Shetani staff
 finish
 
 Item Id: 5096
@@ -57603,7 +57603,7 @@ name: Nuetron helmet
 finish
 
 Item Id: 15922
-name: Maleficent helm
+name: Ripper helm
 finish
 
 Item Id: 15923
@@ -57647,7 +57647,7 @@ name: Katagon platelegs (b)
 finish
 
 Item Id: 15933
-name: Maleficent legs
+name: Ripper legs
 finish
 
 Item Id: 15934
@@ -57999,7 +57999,7 @@ name: Katagon platebody (b)
 finish
 
 Item Id: 16021
-name: Maleficent body
+name: Ripper body
 finish
 
 Item Id: 16022
@@ -69131,15 +69131,15 @@ name: Iron minigun
 finish
 
 Item Id: 19138
-name: Magebeast legs
+name: Shetani legs
 finish
 
 Item Id: 19139
-name: Magebeast body
+name: Shetani body
 finish
 
 Item Id: 19140
-name: Magebeast helm
+name: Shetani helm
 finish
 
 Item Id: 19141

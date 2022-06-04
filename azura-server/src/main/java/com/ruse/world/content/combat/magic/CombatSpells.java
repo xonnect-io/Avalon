@@ -528,7 +528,7 @@ ICEYBLAST(new CombatNormalSpell() {
 		public int spellId() {
 			return 1154;
 		}
-	}), SKOLLSTAFF(new CombatNormalSpell() {
+	}), SHETANISTAFF(new CombatNormalSpell() {
 		@Override
 		public Optional<Animation> castAnimation() {
 			return Optional.of(new Animation(1979));

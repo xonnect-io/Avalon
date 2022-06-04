@@ -115,7 +115,7 @@ public class GlobalBoss2 {
                 currentBoss = npc;
                 World.register(npc);
 
-                String message = "Nightmare has appeared at ::nm";
+                String message = "@bla@Nightmare has appeared at ::nm";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
@@ -129,7 +129,6 @@ public class GlobalBoss2 {
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;
-                World.sendMessage(message);
 
             }
         }

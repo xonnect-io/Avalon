@@ -390,9 +390,9 @@ public class SkillManager {
                     experience *= 2;
                 }
             }
-            if (player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
+         /*   if (player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
                 experience *= 2;
-            }
+            }*/
             experience *= DropUtils.getXpBonus(playerFamiliar.getSummonNpc().getId());
             // // System.out.println("Experience here: " + experience);
         }

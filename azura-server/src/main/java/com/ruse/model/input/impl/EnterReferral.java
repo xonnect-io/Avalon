@@ -49,8 +49,10 @@ public class EnterReferral extends Input {
 
     public static boolean referralResponse(Player player, String username) {
         if (Arrays.stream(refs).anyMatch(username::equalsIgnoreCase)) {
-            player.getInventory().add(ItemDefinition.COIN_ID, 5000000);
-            player.getInventory().add(23020, 2);
+            player.getInventory().add(19116, 2);
+            player.getInventory().add(19115, 2);
+            player.getInventory().add(19114, 1);
+            player.getInventory().add(18830, 150);
             player.sendMessage("@red@Congrats! Because you used the code " + username + " You have gotten a reward!");
             return true;
         }

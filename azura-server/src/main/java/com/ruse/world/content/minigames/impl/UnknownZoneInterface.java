@@ -18,7 +18,7 @@ class UnknownZoneInterface {
 		System.err.println("Called hitting it");
 		player.getPacketSender().sendWalkableInterface(INTERFACE_ID, true);
 
-		player.getPacketSender().sendString(title, "The Unknown");
+		player.getPacketSender().sendString(title, "Unknown Crypt");
 
 		player.getPacketSender().sendString(ROOM1, "Unknown Archer: @whi@" + player.getPointsHandler().getMG1Count() + "/25");
 
@@ -36,7 +36,7 @@ class UnknownZoneInterface {
 
 		player.getPacketSender().sendWalkableInterface(INTERFACE_ID, true);
 
-		player.getPacketSender().sendString(title, "The Unknown");
+		player.getPacketSender().sendString(title, "Unknown Crypt");
 
 		player.getPacketSender().sendString(ROOM1, "Unknown Archer: @whi@" + player.getPointsHandler().getMG1Count() + "/25");
 

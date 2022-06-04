@@ -30,21 +30,6 @@ public final class ItemDefinition {
 
 	public static void applyTexturing(Model model, int id) {
 		switch (id) {
-            /*case 22001:
-                model.setTexture(56);
-                break;
-            case 22002:
-                model.setTexture(52);
-                break;
-            case 22003:
-                model.setTexture(51);
-                break;
-            case 22004:
-                model.setTexture(57);
-                break;
-
-*/
-
 			case 299:
 				model.setTexture(87);
 				break;
@@ -56,7 +41,8 @@ public final class ItemDefinition {
 				break;
 
 			case 22005:
-				model.setTexture(52);
+			case 23258:
+				model.setTexture(121);
 				break;
 			case 7543:
 			case 7544:
@@ -124,11 +110,6 @@ public final class ItemDefinition {
 			case 14054:
 				model.setTexture(91);
 				break;
-			case 12630:
-
-				model.setTexture(81);
-				break;
-
 			case 9080:
 				model.setTexture(62);
 				break;
@@ -149,9 +130,6 @@ public final class ItemDefinition {
 			case 18885:
 				model.setTexture(78);
 
-				break;
-			case 12608:
-				model.setTexture(66);
 				break;
 			case 4569:
 				model.setTexture(60);
@@ -252,11 +230,13 @@ public final class ItemDefinition {
 			case 18818:
 			case 16043:
 			case 20118:
+				model.setTexture(63);
+				break;
 			case 12860:
 			case 12565:
 			case 2021:
 			case 16140:
-				model.setTexture(63);
+				model.setTexture(121);
 				break;
 			case 16133:
 			case 15920:
@@ -452,8 +432,13 @@ public final class ItemDefinition {
 				break;
 			case 22005:
 				itemDef.copyItem(18818);
-				itemDef.name = "Infernal ring";
+				itemDef.name = "Plutonic ring";
 				itemDef.actions = new String[]{null, "Wear", null, null, "Destroy"};
+				break;
+			case 23258:
+				itemDef.copyItem(15511);
+				itemDef.name = "Plutonic Amulet";
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 22006: // Deathtouch darts
 				itemDef.copyItem(11230);
@@ -498,11 +483,18 @@ public final class ItemDefinition {
 				itemDef.name = "Instance Token";
 				itemDef.actions = new String[]{"Open", null, "Last instance", null, "Destroy"};
 				break;
+				
+			case 23264:
+				itemDef.copyItem(4278);
+				itemDef.name = "Instance Token (u)";
+				itemDef.rdc3 = 328593;
+				itemDef.stackable = true;
+				break;
 
 			case 12855:
 				itemDef.copyItem(7478);
 				itemDef.name = "@yel@Upgrade Tokens";
-				itemDef.modelID = 15002;
+				itemDef.modelID = 18540;
 				itemDef.modelZoom = 1200;
 				itemDef.actions = new String[]{"Activate", null, null, null, "Drop"};
 				break;
@@ -605,13 +597,13 @@ public final class ItemDefinition {
 			 * case 13095: itemDef.name = "Crip Stick"; break;
 			 */
 			case 16337:
-				itemDef.name = "Impspawn bow";
+				itemDef.name = "Grime bow";
 				break;
 			case 7927:
 				itemDef.name = "Energy ring";
 				break;
 			case 19887:
-				itemDef.name = "Impspawn necklace";
+				itemDef.name = "Grime necklace";
 				break;
 
 			case 12601:
@@ -1863,9 +1855,6 @@ public final class ItemDefinition {
 			case 5010:
 				itemDef.name = "Crystalized bow";
 				break;
-			case 20591:
-				itemDef.name = "Crystalized cape";
-				break;
 			case 15010:
 				itemDef.modelID = 2429;
 				itemDef.name = "Gold Ring";
@@ -2508,6 +2497,40 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				break;
+			case 23270:
+				itemDef.modelID = 65333;
+				itemDef.name = "Celestial Cape";
+				itemDef.description = "A cape worn by those who've achieved greatness.".getBytes();
+				itemDef.modelZoom = 1485;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 24;
+				itemDef.rotationY = 279;
+				itemDef.rotationX = 200;
+				itemDef.maleEquip1 = 65334;
+				itemDef.femaleEquip1 = 65334;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.rdc2 = 31252;
+				break;
+
+			case 23271:// super sayian
+				itemDef.copyItem(12608);
+				itemDef.name = "Celestial Aura";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.newModelColor = new int[]{56};
+				itemDef.editedModelColor = new int[]{130};
+				break;
+				
+			case 23272:// super sayian
+				itemDef.copyItem(7686);
+				itemDef.name = "Assassins Quiver";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				//itemDef.modelZoom = 2200;
+				itemDef.modelID = 18558;
+				break;
+				
 			case 14020:
 				itemDef.name = "Veteran hood";
 				itemDef.description = "A hood worn by Etherear veterans.".getBytes();
@@ -5252,7 +5275,7 @@ public final class ItemDefinition {
 
 				break;
 			case 19140:
-				itemDef.name = "Magebeast helm";
+				itemDef.name = "Shetani helm";
 				itemDef.modelID = 16361;
 				itemDef.maleEquip1 = 16362;
 				itemDef.femaleEquip1 = 16362;
@@ -5270,7 +5293,7 @@ public final class ItemDefinition {
 				break;
 				
 			case 19139:
-				itemDef.name = "Magebeast body";
+				itemDef.name = "Shetani body";
 				itemDef.modelID = 16359;
 				itemDef.maleEquip1 = 16360;
 				itemDef.femaleEquip1 = 16360;
@@ -5288,7 +5311,7 @@ public final class ItemDefinition {
 				break;
 				
 			case 19138:
-				itemDef.name = "Magebeast legs";
+				itemDef.name = "Shetani legs";
 				itemDef.modelID = 16363;
 				itemDef.maleEquip1 = 16364;
 				itemDef.femaleEquip1 = 16364;
@@ -6530,7 +6553,7 @@ public final class ItemDefinition {
 				itemDef.stackable = false;
 				break;
 			case 5095:
-				itemDef.name = "Skoll staff";
+				itemDef.name = "Shetani staff";
 				itemDef.modelID = 16365;
 				itemDef.maleEquip1 = 16366;
 				itemDef.femaleEquip1 = 16366;
@@ -7483,15 +7506,17 @@ public final class ItemDefinition {
 				itemDef.modelID = 65074;
 				itemDef.maleEquip1 = 65074;
 				itemDef.femaleEquip1 = 65074;
-				itemDef.modelZoom = 1500;
+				itemDef.modelZoom = 3500;
+				itemDef.rotationY = 0;
+				itemDef.rotationZ = 0;
+				//itemDef.rotationX = 0;
+				itemDef.newModelColor = new int[]{56};
+				itemDef.editedModelColor = new int[]{51};
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 12630:// super sayian
+				itemDef.copyItem(12608);
 				itemDef.name = "Donators Aura";
-				itemDef.modelID = 65074;
-				itemDef.maleEquip1 = 65074;
-				itemDef.femaleEquip1 = 65074;
-				itemDef.modelZoom = 1500;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 12610:// super sayian
@@ -7643,11 +7668,10 @@ public final class ItemDefinition {
 				itemDef.femaleEquip1 = 65072;
 				break;
 			case 4411:
-				itemDef.name = "Impspawn wings"; //
+				itemDef.name = "Grime wings"; //
 				itemDef.modelID = 65064;
 				itemDef.maleEquip1 = 65065;
 				itemDef.femaleEquip1 = 65065;
-
 				itemDef.rdc2 = 357782;
 
 				break;
@@ -7684,7 +7708,7 @@ public final class ItemDefinition {
 				break;
 
 			case 4369:
-				itemDef.name = "Fractite wings";
+				itemDef.name = "Shadow wings";
 				itemDef.modelID = 65034;
 				itemDef.maleEquip1 = 65035;
 				itemDef.femaleEquip1 = 65035;

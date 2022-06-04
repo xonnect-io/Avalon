@@ -6202,6 +6202,14 @@ public class Client extends GameRenderer {
                     Save.settings(Client.getClient());
                     updateSetting(interfaceId, !Configuration.FOG_ENABLED);
                     break;
+    			case 26080:
+    				GameFrameConstants.gameframeType = GameFrameConstants.gameframeType == GameFrameType.FRAME_525
+    						? GameFrameType.FRAME_554
+    						: GameFrameType.FRAME_525;
+    				pushMessage("Gameframe toggled.", 0, "");
+    				Save.settings(Client.getClient());
+    				updateSetting(interfaceId, GameFrameConstants.gameframeType == GameFrameType.FRAME_525);
+    				break;
                /* case 26069:
                     Configuration.PARTICLES_ENABLED = !Configuration.PARTICLES_ENABLED;
                     pushMessage("Displaying particles turned " + (Configuration.PARTICLES_ENABLED ? "on" : "off") + ".", 0, "");

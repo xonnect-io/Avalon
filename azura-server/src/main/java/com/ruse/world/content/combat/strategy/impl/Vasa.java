@@ -44,7 +44,7 @@ public class Vasa implements CombatStrategy {
 			CurseHandler.deactivateAll(Player);
 			((Player) victim).getPacketSender().sendMessage(
 					"<img=18><shad=1>@red@Vasa Nistirio absorbs his next attack, healing himself a bit.");
-			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@cya@Vasa Nistirio deactivated your prayer");
+			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@red@Vasa Nistirio deactivated your prayer");
 
 		}
 			Vasa.setChargingAttack(true);

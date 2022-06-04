@@ -77,7 +77,7 @@ public class DailyTaskHandler {
 				+ " Has just been rewarded for completing the Daily Tasks");
 		player.getInventory().add(player.getRewardDailyTask(), 1);
 		// player.getInventory().add(player.getDailyTasksTemporary().getRewards(), 1);
-		player.getPA().sendMessage("You have Recieved a reward for completing the daily tasks!");
+		player.getPA().sendMessage("You have received a reward for completing the daily tasks!");
 		if (player != null) {
 			resetTasks();
 		}

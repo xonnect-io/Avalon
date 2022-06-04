@@ -16,7 +16,7 @@ import java.util.zip.ZipOutputStream;
 
 public class CharacterBackup {
 
-    private static final int TIME = 900_000; // 15 minutes
+    private static final int TIME = 14_400_000; // 4 hrs
     public static Stopwatch timer = new Stopwatch().reset();
 
     public static void sequence() {

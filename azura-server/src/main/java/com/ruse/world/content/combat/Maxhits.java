@@ -106,16 +106,18 @@ public class Maxhits {
                 if (((NPC) victim).getId() == player.getSlayer().getSlayerTask().getNpcId()
                         && victim.getConstitution() >= ((NPC) victim).getDefaultConstitution()) {
                     int percent = -1;
-                    if (player.getEquipment().contains(22000)) {
-                        percent = 2;
-                    } else if (player.getEquipment().contains(22001)) {
-                        percent = 4;
-                    } else if (player.getEquipment().contains(22002)) {
-                        percent = 6;
-                    } else if (player.getEquipment().contains(22003)) {
-                        percent = 8;
-                    } else if (player.getEquipment().contains(22004)) {
-                        percent = 10;
+                    if (player.getEquipment().contains(23071)) {
+                        percent = Misc.getRandom(5);
+                    } else if (player.getEquipment().contains(23069)) {
+                        percent = Misc.getRandom(10);
+                    } else if (player.getEquipment().contains(23070)) {
+                        percent = Misc.getRandom(15);
+                    } else if (player.getEquipment().contains(23074)) {
+                        percent = Misc.getRandom(20);
+                    } else if (player.getEquipment().contains(23072)) {
+                        percent = Misc.getRandom(25);
+                    } else if (player.getEquipment().contains(23073)) {
+                        percent = Misc.getRandom(30);
                     }
 
                     if (Misc.random(99) + 1 <= percent) {
@@ -278,16 +280,18 @@ public class Maxhits {
                 if (((NPC) victim).getId() == player.getSlayer().getSlayerTask().getNpcId()
                         && victim.getConstitution() >= ((NPC) victim).getDefaultConstitution()) {
                     int percent = -1;
-                    if (player.getEquipment().contains(22000)) {
-                        percent = 2;
-                    } else if (player.getEquipment().contains(22001)) {
-                        percent = 4;
-                    } else if (player.getEquipment().contains(22002)) {
-                        percent = 6;
-                    } else if (player.getEquipment().contains(22003)) {
-                        percent = 8;
-                    } else if (player.getEquipment().contains(22004)) {
-                        percent = 10;
+                    if (player.getEquipment().contains(23071)) {
+                        percent = Misc.getRandom(5);
+                    } else if (player.getEquipment().contains(23069)) {
+                        percent = Misc.getRandom(10);
+                    } else if (player.getEquipment().contains(23070)) {
+                        percent = Misc.getRandom(15);
+                    } else if (player.getEquipment().contains(23074)) {
+                        percent = Misc.getRandom(20);
+                    } else if (player.getEquipment().contains(23072)) {
+                        percent = Misc.getRandom(25);
+                    } else if (player.getEquipment().contains(23073)) {
+                        percent = Misc.getRandom(30);
                     }
                     if (Misc.random(99) + 1 <= percent) {
                         maxHit = victim.getConstitution();
@@ -417,16 +421,18 @@ public class Maxhits {
                 if (((NPC) victim).getId() == player.getSlayer().getSlayerTask().getNpcId()
                         && victim.getConstitution() >= ((NPC) victim).getDefaultConstitution()) {
                     int percent = -1;
-                    if (player.getEquipment().contains(22000)) {
-                        percent = 2;
-                    } else if (player.getEquipment().contains(22001)) {
-                        percent = 4;
-                    } else if (player.getEquipment().contains(22002)) {
-                        percent = 6;
-                    } else if (player.getEquipment().contains(22003)) {
-                        percent = 8;
-                    } else if (player.getEquipment().contains(22004)) {
-                        percent = 10;
+                    if (player.getEquipment().contains(23071)) {
+                        percent = Misc.getRandom(5);
+                    } else if (player.getEquipment().contains(23069)) {
+                        percent = Misc.getRandom(10);
+                    } else if (player.getEquipment().contains(23070)) {
+                        percent = Misc.getRandom(15);
+                    } else if (player.getEquipment().contains(23074)) {
+                        percent = Misc.getRandom(20);
+                    } else if (player.getEquipment().contains(23072)) {
+                        percent = Misc.getRandom(25);
+                    } else if (player.getEquipment().contains(23073)) {
+                        percent = Misc.getRandom(30);
                     }
                     if (Misc.random(99) + 1 <= percent) {
                         maxHit = victim.getConstitution();

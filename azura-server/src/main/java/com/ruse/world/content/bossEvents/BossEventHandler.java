@@ -129,7 +129,7 @@ public class BossEventHandler {
 					+ " Has just been awared 3rd place for completing the Daily Boss Event Task");
 		}
 		player.getInventory().add(new Item(player.getBossevent().getRewards(), 1));
-		player.getPA().sendMessage("You have Recieved a reward for completing the daily tasks!");
+		player.getPA().sendMessage("You have Received a reward for completing the daily tasks!");
 		if (array.size() == 3) {
 			for (Player players : World.getPlayers()) {
 				if (players != null) {

@@ -459,9 +459,11 @@ public class NPCDrops {
                             }
                         }
                         if (player.dropMessageToggle)
-                            player.sendMessage("You recieved x2 of your drop.");
+                            player.sendMessage("You received x2 of your drop.");
 
                     }
+
+
                     DropLog.submit(player, new DropLogEntry(itemId, item.getAmount(), drop.isAnnounce()));
                     DropLog.submit(player, new DropLogEntry(itemId, item.getAmount(), drop.isAnnounce()));
                     new CollectionEntry(npc.getId(), item.getId(), item.getAmount()).submit(player);
@@ -472,9 +474,7 @@ public class NPCDrops {
             if ((player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23090
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23087)
                     || (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && (!player.isInsideRaids() &&
-                    (player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.HEIMDALL_PET.npcId)
-                    || player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId))) {
+                    && (!player.isInsideRaids()))) {
                 if (player.getGameMode() != GameMode.ULTIMATE_IRONMAN) {
                     player.performGraphic(new Graphic(385));
                     if (player.getInventory().canHold(item)) {

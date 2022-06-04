@@ -9,6 +9,7 @@ import com.ruse.model.Locations.Location;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.model.movement.MovementQueue;
 import com.ruse.model.movement.PathFinder;
+import com.ruse.motivote3.doMotivote;
 import com.ruse.util.Misc;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.*;
@@ -377,7 +378,7 @@ public final class CombatFactory {
 
     public static boolean npcsDeathDartDontWork(NPC npc) {
         int id = npc.getId();
-        return id == 8013 || id == 8009 || id == 3830 || id == 187 || id == 3779 || id == 12239 || id == 7553 || id == 3305 || id == 9017 || id == 4972 || id == 9020;
+        return id == 8013 || id == 8009 || id == 3830 || id == 187 || id == 3779 || id == 12239 || id == 7553 || id == 3305 || id == 9017 || id == 4972 || id == 9020 || id == 9312 || id == 587 ;
 
     }
 
@@ -1221,6 +1222,13 @@ public final class CombatFactory {
                 }
             }*/
 
+            if (Nex.nexMob(npc.getId())) {
+                if (!Nex.checkAttack(((Player) entity), npc.getId())) {
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
             if (npc.getId() == 2001) {
                 if (!Scorpia.attackable()) {
                     ((Player) entity).getPacketSender()
@@ -1228,7 +1236,9 @@ public final class CombatFactory {
                     entity.getCombatBuilder().reset(true);
                     return false;
                 }
-            } else if (npc.getId() == 2891) {
+            }
+
+            else if (npc.getId() == 2891) {
                 for (int i = 0; i < 4; i++) {
                     if (!((KrakenInstance) ((Player) entity).getRegionInstance()).disturbedPool(i)) {
                         ((Player) entity).getPacketSender()
@@ -1238,12 +1248,8 @@ public final class CombatFactory {
                     }
                 }
             }
-            if (Nex.nexMob(npc.getId())) {
-                if (!Nex.checkAttack(((Player) entity), npc.getId())) {
-                    entity.getCombatBuilder().reset(true);
-                    return false;
-                }
-            } else if (npc.getId() == 3779) { // Voting
+
+            else if (npc.getId() == 3779) { // Voting
                 if (AfkSystem.thievedCount < 80000) {
                     ((Player) entity).getPacketSender()
                             .sendMessage("Players need to reach a total of 80,000 AFK Stalls Thieved. Currently at @red@"
@@ -1253,37 +1259,204 @@ public final class CombatFactory {
                     entity.getCombatBuilder().reset(true);
                     return false;
                 }
-            } else if (npc.getId() == 3830) { // Voting
-                if (DonationBossSystem.amntDonated < 500) {
-                    ((Player) entity).getPacketSender()
-                            .sendMessage("Players need to reach a total of 500 Donated. Currently at @red@"
-                                    + DonationBossSystem.amntDonated + "/500");
+            }
+
+            else if (npc.getId() == 1614) {
+                if (player.getPointsHandler().getNPCKILLCount() <= 49){
+                    player.getPacketSender().sendMessage("You need 50 npc kill Count. You currently have @red@"
+                            + player.getPointsHandler().getNPCKILLCount() + "@bla@ kills.");
+                    player.getPacketSender().sendMessage("@blu@To get Fast NPC KILLS go to ::Starter");
                     entity.getCombatBuilder().reset(true);
                     return false;
                 }
-            } else if (npc.getId() == 130) { // wiz
+            }
+
+            else if (npc.getId() == 603) {
+                if (player.getPointsHandler().getSPAWNKILLCount() <= 99) {
+                    player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
+                            + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 12843) { // shadow hunter
+                if (((Player) entity).getPointsHandler().getLORDKILLCount() <= 199) {
+                    ((Player) entity).getPacketSender().sendMessage("You need 200 Lord kills. You currently have @red@"
+                            + ((Player) entity).getPointsHandler().getLORDKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 53) { // golem
+                if (((Player) entity).getPointsHandler().getDEMONKILLCount() <= 299) {
+                    ((Player) entity).getPacketSender().sendMessage("You need 300 Shadow kills. You currently have @red@"
+                            + ((Player) entity).getPointsHandler().getDEMONKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 220) { // spawnn beast
+                if (((Player) entity).getPointsHandler().getDRAGONKILLCount() <= 399) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need 300 Golem kill Count. You currently have @red@"
+                                    + ((Player) entity).getPointsHandler().getDRAGONKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 13635) { // Troll king
+                if (((Player) entity).getPointsHandler().getBEASTKILLCount() <= 499) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need 500 Shetani kill Count. You currently have @red@"
+                                    + ((Player) entity).getPointsHandler().getBEASTKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 8008) {
+                if (((Player) entity).getPointsHandler().getKINGKILLCount() <= 499) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need 500 Ripper kill Count. You currently have @red@"
+                                    + ((Player) entity).getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 3308) { // avatar beast
+                if (((Player) entity).getPointsHandler().getAVATARKILLCount() <= 999) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need 1000 Avatar kill Count. You currently have @red@"
+                                    + ((Player) entity).getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 3117) { // spawnn beast
+                if (((Player) entity).getPointsHandler().getANGELKILLCount() <= 1499) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need 1.5k Wyverns kill Count. You currently have @red@"
+                                    + ((Player) entity).getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 201) { //
+                if (((Player) entity).getPointsHandler().getLUCIENKILLCount() <= 2499) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need 2500 Oni kills. You currently have @red@"
+                                    + ((Player) entity).getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+
+                }
+            }
+
+            else if (npc.getId() == 202) { //
+                if (((Player) entity).getPointsHandler().getHERCULESKILLCount() <= 3499) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need 3500 Shenron kills. You currently have @red@"
+                                    + ((Player) entity).getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+
+                }
+
+            }
+
+            else if (npc.getId() == 203) { //
+                if (((Player) entity).getPointsHandler().getSATANKILLCount() <= 4999) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need 5,000 Subzero kills. You currently have @red@"
+                                    + ((Player) entity).getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+
+                }
+            }
+
+            else if (npc.getId() == 8010) { //
+                if (((Player) entity).getPointsHandler().getZEUSKILLCount() <= 14999) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need 15,000 Zeus kills. You currently have @red@"
+                                    + ((Player) entity).getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+            else if (npc.getId() == 823) { // Voting
+                if (((Player) entity).getPointsHandler().getMG3Count() <= 24) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You still need to kill @red@"
+                                    + (25 - ((Player) entity).getPointsHandler().getMG3Count()) + "@bla@ Unknown ghosts");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+                if (((Player) entity).getPointsHandler().getMG2Count() <= 24) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You still need to kill @red@"
+                                    + (25 - ((Player) entity).getPointsHandler().getMG2Count()) + "@bla@ Unknown creatures");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+                if (((Player) entity).getPointsHandler().getMG1Count() <= 24) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You still need to kill @red@"
+                                    + (25 - ((Player) entity).getPointsHandler().getMG1Count()) + "@bla@ Unknown guards");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+            else if (npc.getId() == 8013) { // Voting
+                if (doMotivote.getVoteCount() < 60) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("Players need to reach a total of 60 votes. We're currently at @red@" + doMotivote.getVoteCount() + " @bla@votes.");
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("Everyone should @red@::vote @bla@ to contribute towards Vote Boss.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 3830) { // Guardian spawn
+                if (GuardianSpawnSystem.highTierCount < 100) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("Players need to sacrifice 100 High tier tickets. Currently at @red@"
+                                    + GuardianSpawnSystem.highTierCount + "/100");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 130) { // wiz
                 if (entity.getCombatBuilder().getStrategy().getCombatType() == CombatType.MELEE) {
                     ((Player) entity).getPacketSender().sendMessage("Kree'arra is resistant to melee attacks.");
                     entity.getCombatBuilder().testReset(true);
                     return false;
                 }
+            }
 
-            } else if (npc.getId() == 8008 && player.getLocation() != Location.DIAMOND_ZONE) {
+            else if (npc.getId() == 8008 && player.getLocation() != Location.DIAMOND_ZONE) {
                 if (!player.getInventory().contains(VaultOfWar.TOKEN_ID)) {
                     ((Player) entity).getPacketSender()
                             .sendMessage("You need tokens to attack the avatars.");
                     entity.getCombatBuilder().reset(true);
                     return false;
-
-
                 }
-            } else if (npc.getId() == 1120) { //
+            }
 
+            else if (npc.getId() == 1120) { //
                 if (!((Player) entity).getEquipment().containsAny(5012, 5011, 5010, 22113)) {
                     ((Player) entity).getPacketSender().sendMessage("<shad=1>@red@Vasa Nistirio has a crystal that can only be broken by a Twisted Bow");
                     entity.getCombatBuilder().reset(true);
                     return false;
-
                 }
             }
 
@@ -1295,6 +1468,7 @@ public final class CombatFactory {
                     return false;
                 }
             }
+
             if (npc.getId() == 4291 && entity.getPosition().getZ() == 2
                     && !((Player) entity).getMinigameAttributes().getWarriorsGuildAttributes().enteredTokenRoom()) {
                 ((Player) entity).getPacketSender().sendMessage("You cannot reach that.");

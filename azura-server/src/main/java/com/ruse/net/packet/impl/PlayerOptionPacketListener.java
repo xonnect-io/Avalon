@@ -92,9 +92,9 @@ public class PlayerOptionPacketListener implements PacketListener {
 		if (player.getLocation() == Location.ZOMBIE_LOBBY) {
 			player.setEntityInteraction(attacked);
 			if (attacked.getIndex() != player.getIndex()) {
-				if (player.getZombieParty() != null && player.getZombieParty().getOwner().equals(player)) {
+				if (player.getRaidsParty() != null && player.getRaidsParty().getOwner().equals(player)) {
 					player.sendMessage("Sent invite to " + attacked.getUsername());
-					player.getZombieParty().invite(attacked);
+					player.getRaidsParty().invite(attacked);
 				} else {
 					player.sendMessage("You must be the leader of a party to do this.");
 				}

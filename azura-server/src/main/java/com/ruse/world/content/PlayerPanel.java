@@ -36,11 +36,8 @@ public class PlayerPanel {
                 "Globals",
                 "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
                 "Hellraiser: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",
-                (DonationBossSystem.currentSpawn == null
-                ? "Donation boss: @whi@" + DonationBossSystem.getAmntDonated() + "/100 donated"
-                : "Donation boss:@whi@ Alive ::donoboss"),
                 (VoteBossDrop.currentSpawn == null
-                        ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/50 please vote!"
+                        ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/60 please vote!"
                         : "Vote Boss:@whi@ Alive ::Vboss"),
                 (GlobalBoss4.currentBoss == null
                 ? "Dragon King: @whi@" + GlobalBoss4.timeLeft() : "Dragon King: @whi@Alive ::dk"),
@@ -50,7 +47,8 @@ public class PlayerPanel {
                 ? "Naraku boss: @whi@" + GlobalBoss3.timeLeft() : "Naraku boss : @whi@Alive ::naraku"),
                 (GlobalBoss5.currentBoss == null
                 ? "Ironman boss: @whi@" + GlobalBoss5.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
-                "",
+                "Avalon Guard: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
+                "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
                 "",
                 "",
         };

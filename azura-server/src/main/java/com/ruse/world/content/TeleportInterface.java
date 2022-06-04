@@ -528,7 +528,7 @@ public class TeleportInterface {
 
         MINOTAUR("Minotaurs", 1719, new int[]{2527, 2527, 0}, 600),
         LAVA_HOUND("Ember Giants", 9838, new int[]{3424, 4126, 0}, 600),
-        SYM("Stinky Blobb", 1718, new int[]{2196, 5083, 0}, 550),//replace 1727 with 1718 in world npc
+        GORGON("Tree Basilisk", 1718, new int[]{2196, 5083, 0}, 550),//replace 1727 with 1718 in world npc
         BAT("Bat of light", 9836, new int[]{2388, 5019, 0}, 1500),
         GIANT_SPIDERS("Giant Spiders", 117, new int[]{2721, 4446, 0}, 720),
         CASH_DRAGON("Cash dragons", 500, new int[]{2911, 3613, 0}, 1500),

@@ -774,7 +774,7 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 22109:
-				itemDef.name = "Owner's Cape (u)";
+				itemDef.name = "Owner Cape (u)";
 				itemDef.modelID = 100_006;
 				itemDef.maleEquip1 = 100_007;
 				itemDef.femaleEquip1 = 100_007;

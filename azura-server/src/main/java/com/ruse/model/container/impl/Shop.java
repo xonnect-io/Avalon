@@ -50,7 +50,8 @@ public class Shop extends ItemContainer {
     /**
      * The shop interface id.
      */
-    public static final int INTERFACE_ID = 3824;
+    public static final int INTERFACE_ID =
+            3824;
     /**
      * The starting interface child id of items.
      */
@@ -78,6 +79,7 @@ public class Shop extends ItemContainer {
     private static final int DIAMOND_STORE = 134;
     private static final int ONYX_STORE = 135;
     private static final int ZENYTE_STORE = 136;
+    private static final int HIGH_TIER_STORE = 137;
     private static final int DUNGEONEERING_STORE_NEW = 152;
     private static final int KOL_STORE = 207;
     private static final int VOTE_STORE = 90;
@@ -266,7 +268,7 @@ public class Shop extends ItemContainer {
                     && id != 33 && id != 39 && id != 11 && id != 34 && id != 14 && id != 13 && id != 18 && id != 15
                     && id != 21 && id != 44
                     && id != 22 && id != 42 && id != 35 && id != 32 && id != 23 && id != 38 && id != 91 && id != 92 && id != 0
-                    && id != 93 && id != 94 && id != 95 && id != 96 && id != 97 && id != 98 && id != 30 && id != 117 && id != EASTER_STORE_1 && id != SAPPHIRE_STORE  && id != GLOBAL_BOSS  && id != EMERALD_STORE  && id != RUBY_STORE  && id != ONYX_STORE  && id != DIAMOND_STORE   && id != ZENYTE_STORE && id != EASTER_STORE_2 && id != DUNGEONEERING_STORE_NEW) { // 22 + 23 ==
+                    && id != 93 && id != 94 && id != 95 && id != 96 && id != 97 && id != 98 && id != 30 && id != 117 && id != EASTER_STORE_1 && id != SAPPHIRE_STORE  && id != GLOBAL_BOSS  && id != EMERALD_STORE  && id != RUBY_STORE  && id != ONYX_STORE  && id != DIAMOND_STORE   && id != ZENYTE_STORE  && id != HIGH_TIER_STORE && id != EASTER_STORE_2 && id != DUNGEONEERING_STORE_NEW) { // 22 + 23 ==
                 // pikkupstix's
                 // materials,
                 // 38 =
@@ -388,7 +390,7 @@ public class Shop extends ItemContainer {
                     || id == TRAIN_MELEE
                     || id == TRAIN_RANGED
                     || id == TRAIN_MAGIC || id == KOL_STORE
-                    || id == SAPPHIRE_STORE || id == GLOBAL_BOSS || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE
+                    || id == SAPPHIRE_STORE || id == GLOBAL_BOSS || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE || id == HIGH_TIER_STORE
                     || id == EASTER_STORE_1 || id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW
                     || id == ENERGY_FRAGMENT_STORE || id == AGILITY_TICKET_STORE
                     || id == PYRAMID_OUTBREAK_SHOP || id == BARROWS_STORE || id == MEMBERS_STORE_I || id == MEMBERS_STORE_II
@@ -667,7 +669,7 @@ public class Shop extends ItemContainer {
                         || id == AFK
                         || id == TRAIN_MELEE
                         || id == TRAIN_RANGED
-                        || id == SAPPHIRE_STORE || id == GLOBAL_BOSS || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE
+                        || id == SAPPHIRE_STORE || id == GLOBAL_BOSS || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE || id == HIGH_TIER_STORE
                         || id == EASTER_STORE_1 || id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW || id == KOL_STORE
                         || id == TRAIN_MAGIC
                         || id == STARDUST_EXCHANGE_STORE
@@ -1492,6 +1494,8 @@ public class Shop extends ItemContainer {
                 }
             } else if (shop == BOSS_SLAYER_SHOP) {
                 switch (item) {
+                    case 22006://add
+                        return new Object[] { 5, "Boss Slayer Points" };
                     case 15358:
                     case 15359:
                     case 20488:
@@ -1501,8 +1505,16 @@ public class Shop extends ItemContainer {
                     case 4446:
                     case 19886:
                         return new Object[] { 250, "Boss Slayer Points" };
+                    case 23071:
+                        return new Object[] { 1000, "Boss Slayer Points" };
                     case 22005:
                     case 22107:
+                    case 23258://add
+                    case 23259://add
+                    case 23260://add
+                    case 23261://add
+                    case 23262://add
+                    case 23263://add
                         return new Object[] { 5000, "Boss Slayer Points" };
                     case 15330:
                         return new Object[] { 2000, "Boss Slayer Points" };
@@ -1572,6 +1584,32 @@ public class Shop extends ItemContainer {
                 switch (item) {
                     case 23201:
                         return new Object[]{1000, "Zenyte fragments"};
+                }
+            } else if (shop == HIGH_TIER_STORE) {
+                switch (item) {
+                    case 9084:
+                    case 9080:
+                    case 9081:
+                    case 9082:
+                        return new Object[]{20, "High-Tier Tickets"};
+                    case 12630:
+                        return new Object[]{75, "High-Tier Tickets"};
+                    case 20591:
+                        return new Object[]{90, "High-Tier Tickets"};
+                    case 9083:
+                        return new Object[]{100, "High-Tier Tickets"};
+                    case 20400:
+                        return new Object[]{200, "High-Tier Tickets"};
+                    case 7995:
+                        return new Object[]{350, "High-Tier Tickets"};
+                    case 23231:
+                    case 23232:
+                    case 23230:
+                    case 22110:
+                        return new Object[]{400, "High-Tier Tickets"};
+                    case 23254:
+                    case 23255:
+                        return new Object[]{725, "High-Tier Tickets"};
                 }
             } else if (shop == EASTER_STORE_2) {
                 switch (item) {

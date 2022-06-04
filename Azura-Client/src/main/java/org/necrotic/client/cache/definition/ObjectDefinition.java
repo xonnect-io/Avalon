@@ -225,6 +225,9 @@ public final class ObjectDefinition {
 			definition.name = "AFK Ruby";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
+		if (definition.type == 4004) {
+			definition.actions = new String[]{"Sacrifice", null, null, null, null};
+		}
 		if (definition.type == 8455) {
 			definition.objectModelIDs = new int[]{15580};
 			definition.name = "AFK Diamond";
@@ -262,10 +265,34 @@ public final class ObjectDefinition {
 			definition.offsetH = 0;
 			definition.offsetY = 0;
 		}
-		
+		if (definition.type == 13634) {
+			definition.name = "Portal";
+			definition.modelSizeH = 200;
+			definition.modelSizeY = 200;
+			definition.modelSizeX = 200;
+			definition.interactive = true;
+			definition.isSolidObject = true;
+			definition.actions = new String[5];
+			definition.actions[0] = "Enter";
+			definition.actions[1] = null;
+			definition.objectModelIDs = new int[]{41319};
+		}
 		if (definition.type == 22823) {
 			definition.name = "Upgrade Machine";
 			definition.actions = new String[]{"Upgrade", null, null, null, null};
+		}
+
+		if (definition.type == 52761) {
+			definition.name = "Barrier";
+			definition.actions = new String[]{"Pass", null, null, null, null};
+		}
+		if (definition.type == 52245) {
+			definition.name = "Barrier";
+			definition.actions = new String[]{"Pass", null, null, null, null};
+		}
+		if (definition.type == 10820) {
+			definition.name = "Barrier";
+			definition.actions = new String[]{"Pass", null, null, null, null};
 		}
 		if (definition.type == 362) {
 			definition.name = "Barrel";
@@ -346,6 +373,8 @@ public final class ObjectDefinition {
 			definition.name = "Player Owned Stores";
 		}
 		if (definition.type == 52601) {
+			definition.setDefaults();
+			definition.isSolidObject = true;
 			definition.interactive = true;
 			definition.name = "AFK Stall (1)";
 			definition.actions = new String[5];
@@ -353,13 +382,19 @@ public final class ObjectDefinition {
 			definition.actions[4] = "Check rewards";
 		}
 		if (definition.type == 53654) {
+			definition.setDefaults();
+			definition.isSolidObject = true;
 			definition.interactive = true;
 			definition.name = "AFK Stall (2)";
 			definition.actions = new String[5];
 			definition.actions[0] = "Steal from";
 			definition.actions[4] = "Check rewards";
+			definition.width = 4;
+			definition.length = 4;
 		}
 		if (definition.type == 30035) {
+			definition.setDefaults();
+			definition.isSolidObject = true;
 			definition.interactive = true;
 			definition.name = "AFK Stall (3)";
 			definition.actions = new String[5];
@@ -778,6 +813,11 @@ public final class ObjectDefinition {
 			definition.interactive = true;
 			definition.objectModelIDs = new int[]{65317};//same
 		}
+		if (definition.type == 57164) {
+			definition.modelSizeX = 120;
+			definition.modelSizeH = 120;
+			definition.modelSizeY = 120;
+		}
 		if (definition.type == 5625) {
 			definition.actions = new String[5];
 			definition.name = "Bong Table";
@@ -915,6 +955,10 @@ public final class ObjectDefinition {
 			definition.actions[0] = "Smith-on";
 		}
 		if (definition.type == 172) {
+			definition.objectModelIDs = new int[]{64300};
+			definition.modelSizeX = 250;
+			definition.modelSizeH = 250;
+			definition.modelSizeY = 250;
 			definition.name = "Crystal Chest";
 			definition.actions = new String[]{"Open", null, null, null, "Check rewards"};
 		}

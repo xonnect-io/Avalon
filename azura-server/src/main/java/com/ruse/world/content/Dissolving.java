@@ -16,7 +16,7 @@ public class Dissolving {
 	static int orb = 12855;
 	public enum DissolvingData {
 		CHAINSAW(22080, new Item[]{new Item(orb, 5250)}, 15500, anim),
-		SKOLLSTAFF(5095, new Item[]{new Item(orb, 80)}, 180, anim),
+		SHETANI_STAFF(5095, new Item[]{new Item(orb, 80)}, 180, anim),
 		SABER(21057, new Item[]{new Item(orb, 400)}, 1500, anim),
 		SUMMONCHARMBOX(20481, new Item[]{new Item(orb, 200)}, 1200, anim),
 		HADESSHIELD(21035, new Item[]{new Item(orb, 6000)}, 16000, anim),

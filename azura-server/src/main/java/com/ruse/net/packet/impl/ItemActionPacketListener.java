@@ -5,7 +5,6 @@ import com.ruse.engine.task.impl.*;
 import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.container.impl.Bank;
-import com.ruse.model.container.impl.Shop;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.net.packet.Packet;
 import com.ruse.net.packet.PacketListener;
@@ -24,12 +23,13 @@ import com.ruse.world.content.cluescrolls.ClueScrollReward;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.dialogue.DialogueManager;
-import com.ruse.world.content.dialogue.impl.AgilityTicketExchange;
 import com.ruse.world.content.dialogue.impl.NephilimTokenExchange;
 import com.ruse.world.content.holidayevents.easter2017;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
 import com.ruse.world.content.instanceMananger.InstanceManager;
+import com.ruse.world.content.instanceManangerGold.GoldInstanceInterfaceHandler;
+import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.content.skill.impl.herblore.Herblore;
 import com.ruse.world.content.skill.impl.herblore.ingredientsBook;
@@ -828,7 +828,7 @@ public class ItemActionPacketListener implements PacketListener {
 
             case 4278:
                 if (player.getLocation() == Location.JAIL) {
-                    player.sendMessage("<shad=1>@cya@You can't start an instance while your in jail.");
+                    player.sendMessage("<shad=1>@red@You can't start an instance while your in jail.");
                     return;
                 }
                 if (player.currentInstanceAmount >= 1) {
@@ -837,7 +837,17 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 new InstanceInterfaceHandler(player).open();
                 break;
-
+            case 23264:
+                if (player.getLocation() == Location.JAIL) {
+                    player.sendMessage("<shad=1>@red@You can't start an instance while your in jail.");
+                    return;
+                }
+                if (player.currentInstanceAmount >= 1) {
+                    player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
+                    return;
+                }
+                new GoldInstanceInterfaceHandler(player).open();
+                break;
             case 2150:
                 player.getInventory().delete(2150, 1);
                 player.getInventory().add(2152, 1);
@@ -1531,6 +1541,62 @@ public class ItemActionPacketListener implements PacketListener {
                 DialogueManager.start(player, 101);
                 player.setDialogueActionId(60);
                 break;
+            case 23071:
+                if (player.getInventory().contains(23071) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 250000 && player.getPointsHandler().getSlayerPoints() > 250) {
+                    player.getInventory().delete(ItemDefinition.MILL_ID, 250000);
+                    player.getPointsHandler().setSlayerPoints(-250, true);
+                    player.getInventory().delete(23071, 1);
+                    player.getInventory().add(23069, 1);
+                    player.sendMessage("Congratulations you have upgraded your helm to t2. ");
+                } else {
+                    player.sendMessage("You need 250k Tokens and 250 Slayer points to upgrade the helm to t2.");
+                }
+                break;
+            case 23069:
+                if (player.getInventory().contains(23069) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 500_000 && player.getPointsHandler().getSlayerPoints() > 500) {
+                    player.getInventory().delete(ItemDefinition.MILL_ID, 500_000);
+                    player.getPointsHandler().setSlayerPoints(-500, true);
+                    player.getInventory().delete(23069, 1);
+                    player.getInventory().add(23070, 1);
+                    player.sendMessage("Congratulations you have upgraded your helm to t3. ");
+                } else {
+                    player.sendMessage("You need 500k Tokens and 500 Slayer points to upgrade the helm to t2.");
+                }
+                break;
+            case 23070:
+                if (player.getInventory().contains(23070) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 2_500_000 && player.getPointsHandler().getSlayerPoints() > 2500) {
+                    player.getInventory().delete(ItemDefinition.MILL_ID, 2_500_000);
+                    player.getPointsHandler().setSlayerPoints(-2500, true);
+                    player.getInventory().delete(23070, 1);
+                    player.getInventory().add(23074, 1);
+                    player.sendMessage("Congratulations you have upgraded your helm to t4. ");
+                } else {
+                    player.sendMessage("You need 2.5m Tokens and 2500 Slayer points to upgrade the helm to t2.");
+                }
+                break;
+            case 23074:
+                if (player.getInventory().contains(23074) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 5_000_000 && player.getPointsHandler().getSlayerPoints() > 5000) {
+                    player.getInventory().delete(ItemDefinition.MILL_ID, 5_000_000);
+                    player.getPointsHandler().setSlayerPoints(-5000, true);
+                    player.getInventory().delete(23074, 1);
+                    player.getInventory().add(23072, 1);
+                    player.sendMessage("Congratulations you have upgraded your helm to t5. ");
+                } else {
+                    player.sendMessage("You need 5m Tokens and 5000 Slayer points to upgrade the helm to t2.");
+                }
+                break;
+            case 23072:
+                if (player.getInventory().contains(23072) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 25_000_000 && player.getPointsHandler().getSlayerPoints() > 5000) {
+                    player.getInventory().delete(ItemDefinition.MILL_ID, 25_000_000);
+                    player.getPointsHandler().setSlayerPoints(-5000, true);
+                    player.getInventory().delete(23072, 1);
+                    player.getInventory().add(23073, 1);
+                    player.sendMessage("Congratulations you have upgraded your helm to t6. ");
+                } else {
+                    player.sendMessage("You need 25m Tokens and 5000 Slayer points to upgrade the helm to t2.");
+                }
+                break;
+
             case 1712: // glory start
             case 1710:
             case 1708:
@@ -1775,6 +1841,37 @@ public class ItemActionPacketListener implements PacketListener {
 
                 new InstanceManager(player).create3X3Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
                 break;
+            case 23264:
+                if (player.getLocation() == Location.JAIL) {
+                    player.sendMessage("<shad=1>@cya@You can't start an instance while your in jail.");
+                    return;
+                }
+
+                if (player.currentInstanceAmount >= 1) {
+                    player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
+                    return;
+                }
+
+                if (player.lastInstanceNpc == -1) {
+                    player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
+                    return;
+                }
+
+                boolean valid = false;
+                for (InstanceData data : InstanceData.values()) {
+                    if (data.getNpcid() == player.lastInstanceNpc) {
+                        valid = true;
+                        break;
+                    }
+                }
+
+                if (!valid) {
+                    player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
+                    return;
+                }
+
+                new GoldInstanceManager(player).create3X3Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
+                break;
             case 23014:
             case 23015:
             case 23016:
@@ -1808,50 +1905,6 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getInventory().delete(19000, amount);
                     player.getInventory().add(ItemDefinition.MILL_ID, amount * 100);
                     player.sendMessage("You have exchanged X" + amount + " Pet fragments for X" + amount * 100 + " Avalon tokens!");
-                }
-                break;*/
-           /* case 22000:
-                if (player.getInventory().contains(22000) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 250000 && player.getInventory().getAmount(5023) >= 250) {
-                    player.getInventory().delete(ItemDefinition.MILL_ID, 250000);
-                    player.getInventory().delete(5023, 250);
-                    player.getInventory().delete(22000, 1);
-                    player.getInventory().add(22001, 1);
-                    player.sendMessage("Congratulations you have upgraded your helm to t2. ");
-                } else {
-                    player.sendMessage("You need 250k Tokens and 250 boss slayer tickets to upgrade the helm to t2.");
-                }
-                break;
-            case 22001:
-                if (player.getInventory().contains(22001) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 500000 && player.getInventory().getAmount(5023) >= 500) {
-                    player.getInventory().delete(ItemDefinition.MILL_ID, 500000);
-                    player.getInventory().delete(5023, 500);
-                    player.getInventory().delete(22001, 1);
-                    player.getInventory().add(22002, 1);
-                    player.sendMessage("Congratulations you have upgraded your helm to t2. ");
-                } else {
-                    player.sendMessage("You need 500k Tokens and 500 boss slayer tickets to upgrade the helm to t3.");
-                }
-                break;
-            case 22002:
-                if (player.getInventory().contains(22002) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 2500000 && player.getInventory().getAmount(5023) >= 2500) {
-                    player.getInventory().delete(ItemDefinition.MILL_ID, 2500000);
-                    player.getInventory().delete(5023, 2500);
-                    player.getInventory().delete(22002, 1);
-                    player.getInventory().add(22003, 1);
-                    player.sendMessage("Congratulations you have upgraded your helm to t4. ");
-                } else {
-                    player.sendMessage("You need 2.5m Tokens and 2500 boss slayer tickets to upgrade the helm to t4.");
-                }
-                break;
-            case 22003:
-                if (player.getInventory().contains(22003) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 5000000 && player.getInventory().getAmount(5023) >= 5000) {
-                    player.getInventory().delete(ItemDefinition.MILL_ID, 5000000);
-                    player.getInventory().delete(5023, 5000);
-                    player.getInventory().delete(22003, 1);
-                    player.getInventory().add(22004, 1);
-                    player.sendMessage("Congratulations you have upgraded your helm to t5. ");
-                } else {
-                    player.sendMessage("You need 5m Tokens and 5000 boss slayer tickets to upgrade the helm to t5.");
                 }
                 break;*/
 

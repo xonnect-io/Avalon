@@ -176,8 +176,8 @@ public final class MobDefinition {
 				definition.standAnimation = get(12810).standAnimation;
 				definition.walkAnimation = get(12810).walkAnimation;
 				definition.npcSizeInSquares = 1;
-				definition.scaleY = 64;
-				definition.scaleXZ = 64;
+				definition.scaleY = 90;
+				definition.scaleXZ = 90;
 				//definition.walkingBackwardsAnimation = 4;
 				//definition.walkLeftAnimation = 4;
 				//definition.walkRightAnimation = 4;
@@ -267,7 +267,7 @@ public final class MobDefinition {
 				break;
 
 			case 587:
-				definition.name = "Gemstone God";
+				definition.name = "Iron";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{95170};
 				definition.npcSizeInSquares = 5;
@@ -639,7 +639,7 @@ public final class MobDefinition {
 				definition.actions[0] = "Open";
 				definition.drawYellowDotOnMap = false;
 				definition.npcSizeInSquares = 1;
-				definition.degreesToTurn = 0;
+				definition.degreesToTurn = 90;
 				definition.npcSizeInSquares = 3;
 				break;
 
@@ -1329,7 +1329,7 @@ public final class MobDefinition {
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 2;
+				definition.npcSizeInSquares = 3;
 				break;
 			case 9839:
 				definition.setDefault();
@@ -1523,7 +1523,11 @@ public final class MobDefinition {
 				definition.scaleY = 128;
 				definition.rdc2 = 91291;
 				break;
-
+			case 5838:
+				definition.combatLevel = 0;
+				definition.name = "High-Tier Exchange";
+				definition.actions = new String[]{"Trade", null, null, null, null};
+				break;
 			case 3001:
 				definition.name = "Gorilla pet";
 				definition.actions = new String[5];
@@ -1849,7 +1853,7 @@ public final class MobDefinition {
 				
 			case 4601:
 				definition.name = "Loyalty Program";
-				definition.actions = new String[]{"Talk-to", null, "Loyalty Shop", null, "Loyalty Titles"};
+				definition.actions = new String[]{"Talk-to", null, "Trade", null, null};
 				break;
 				
 			case 605:
@@ -3047,7 +3051,7 @@ public final class MobDefinition {
 				definition.name = "<col=f8ac00>Double vote pet";
 				MobDefinition darkath = MobDefinition.get(2292);
 				definition.description = "GWD.".getBytes();
-				definition.npcModels = new int[]{64098};
+				definition.npcModels = new int[]{18539};
 				definition.combatLevel = darkath.combatLevel;
 				definition.standAnimation = darkath.standAnimation;
 				definition.walkAnimation = darkath.walkAnimation;
@@ -3102,9 +3106,9 @@ public final class MobDefinition {
 				definition.scaleY = 225;
 				break;
 			case 9013:
-				definition.name = "Lucifer pet";
+				definition.name = "Fallen Angel pet";
 				MobDefinition luciferPet = MobDefinition.get(2292);
-				definition.npcModels = new int[]{100000, 100001, 100002, 100003, 100004, 100005};
+				definition.npcModels = new int[]{17049,17056,17061,17066,17097,17197};
 				definition.combatLevel = luciferPet.combatLevel;
 				definition.standAnimation = luciferPet.standAnimation;
 				definition.walkAnimation = luciferPet.walkAnimation;
@@ -3158,10 +3162,11 @@ public final class MobDefinition {
 
 				break;
 			case 302:
+				MobDefinition x2 = MobDefinition.get(1);
 				definition.name = "Hellraiser (x2 KC)";
 				definition.npcSizeInSquares = 1;
-				definition.standAnimation = 5070;
-				definition.walkAnimation = 5070;
+				definition.standAnimation = x2.standAnimation;
+				definition.walkAnimation = x2.walkAnimation;
 				definition.npcModels = new int[]{16050,16052,16054,16056,16057,16058,16059};
 				definition.scaleXZ = 70;
 				definition.scaleY = 70;
@@ -3351,7 +3356,7 @@ public final class MobDefinition {
 			case 225:
 				definition.name = "Avalon Beasts";
 				definition.description = "Beast of Avalon.".getBytes();
-				definition.npcModels = new int[]{17339};
+				definition.npcModels = new int[]{18539};
 				definition.combatLevel = 200;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
@@ -4432,8 +4437,8 @@ public final class MobDefinition {
 				definition.actions[2] = null;
 				definition.actions[3] = null;
 				definition.actions[4] = null;
-				definition.scaleXZ = 90;
-				definition.scaleY = 90;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
 				break;
 			case 606:
 				definition.name = "<col=7d9781>Shadow Warrior";
@@ -4546,7 +4551,7 @@ public final class MobDefinition {
 				definition.name = "<shad=f9f6f6>Vote Boss<shad=-1>";
 				MobDefinition votingbosser = MobDefinition.get(2292);
 				definition.description = "GWD.".getBytes();
-				definition.npcModels = new int[]{18008};
+				definition.npcModels = new int[]{18539};
 				definition.combatLevel = votingbosser.combatLevel;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
@@ -4555,8 +4560,8 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				//definition.rdc2 = 21415;
 				definition.npcSizeInSquares = 4;
-				definition.scaleXZ = 300;
-				definition.scaleY = 300;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
 				break;
 			case 5000:
 				definition.name = "Moonlight @cya@(Magic)";
@@ -6261,7 +6266,7 @@ public final class MobDefinition {
 
 			case 1718:
 				MobDefinition b1718 = get(6872);
-				definition.name = "Stinky blobb";
+				definition.name = "Tree Gorgon";
 				definition.combatLevel = 40;
 				definition.scaleXZ = 80;
 				definition.scaleY = 80;

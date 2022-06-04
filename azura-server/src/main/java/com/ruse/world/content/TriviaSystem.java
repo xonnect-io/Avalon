@@ -22,7 +22,7 @@ public class TriviaSystem {
 		QUESTION_12("Which dinosaur was larger than the tyrannosaurus", "Spinosaurus"),
 		QUESTION_13("The name of which dinosaur means 'triple horned'", "Triceratops"),
 		QUESTION_14("How long does the exp bonus skill last", "6 hours"),
-		QUESTION_15("What does skoll staff upgrade to", "Brutal staff"),
+		QUESTION_15("What does Shetani staff upgrade to", "Brutal staff"),
 		QUESTION_16("What does pernix T2 upgrade to", "Sorrow"),
 		QUESTION_17("Unscramble these letters 'nigw steikhleid'", "Wing kiteshield"),
 		QUESTION_18("Unscramble these letters 'aevyh niasawch'", "Heavy chainsaw"),
@@ -119,7 +119,7 @@ public class TriviaSystem {
 		if(answer.equalsIgnoreCase(currentQuestion.getAnswer())) {
 			player.getInventory().add(6833, 1);
 			active = false;
-			World.sendMessage("<img=1396>@red@[TRIVIA]<img=1396> @blu@" + player.getUsername() + "@bla@ has recieved a @red@Goodiebag @bla@from Trivia");
+			World.sendMessage("<img=1396>@red@[TRIVIA]<img=1396> @blu@" + player.getUsername() + "@bla@ has received a @red@Goodiebag @bla@from Trivia");
 			World.sendMessage("<img=1396>@red@[TRIVIA]<img=1396> @bla@ The answer for the trivia to the question was @red@" + currentQuestion.answer);
 			currentQuestion = null;
 			World.getPlayers().forEach(PlayerPanel::refreshPanel);//soz ok is there anything else u need or is that all

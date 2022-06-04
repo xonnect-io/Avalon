@@ -59,6 +59,7 @@ import com.ruse.world.content.gamblinginterface.GamblingInterface;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
 import com.ruse.world.content.groupironman.IronmanGroup;
 import com.ruse.world.content.instanceMananger.InstanceData;
+import com.ruse.world.content.instanceManangerGold.GoldInstanceData;
 import com.ruse.world.content.minigames.MinigameAttributes;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.HallsOfValor;
@@ -82,7 +83,7 @@ import com.ruse.world.content.skill.impl.summoning.Summoning;
 import com.ruse.world.content.teleport.TeleportData;
 import com.ruse.world.content.teleport.TeleportType1;
 import com.ruse.world.content.upgrading.UpgradeInterface;
-import com.ruse.world.content.zombie.ZombieParty;
+import com.ruse.world.content.raids.RaidsParty;
 import com.ruse.world.entity.actor.player.controller.ControllerManager;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.mini.MiniPManager;
@@ -419,6 +420,7 @@ public class Player extends Character {
      */
 
     public InstanceData data;
+    public GoldInstanceData dataGold;
     public String currentInstanceNpcName;
     public int currentInstanceNpcId;
     public int currentInstanceAmount;
@@ -459,13 +461,13 @@ public class Player extends Character {
     public long lastHelpRequest;
     //	public GameModes selectedGameMode;
     public GameModes selectedGameMode;
-    public boolean dropMessageToggle = true;
+    public boolean dropMessageToggle = false;
     public boolean hasReferral;
     public long lastDonationClaim;
     private boolean placeholders = true;
     private boolean enteredZombieRaids;
     private int zombieRaidsKC;
-    private ZombieParty zombieParty;
+    private RaidsParty raidsParty;
     private boolean insideRaids;
     private int afkSapphire;
     private int afkEmerald;
@@ -751,12 +753,12 @@ public class Player extends Character {
         this.enteredZombieRaids = enteredZombieRaids;
     }
 
-    public ZombieParty getZombieParty() {
-        return zombieParty;
+    public RaidsParty getRaidsParty() {
+        return raidsParty;
     }
 
-    public void setZombieParty(ZombieParty zombieParty) {
-        this.zombieParty = zombieParty;
+    public void setRaidsParty(RaidsParty raidsParty) {
+        this.raidsParty = raidsParty;
     }
 
     public AchievementHandler getAchievements() {
@@ -977,6 +979,14 @@ public class Player extends Character {
 
     public void setData(InstanceData data) {
         this.data = data;
+    }
+
+    public GoldInstanceData getDataGold() {
+        return dataGold;
+    }
+
+    public void setDataGold(GoldInstanceData dataGold) {
+        this.dataGold = dataGold;
     }
 
     public String getCurrentInstanceNpcName() {

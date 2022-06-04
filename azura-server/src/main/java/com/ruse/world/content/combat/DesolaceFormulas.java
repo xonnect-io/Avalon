@@ -1,6 +1,7 @@
 package com.ruse.world.content.combat;
 
 import com.ruse.model.Graphic;
+import com.ruse.model.PlayerRights;
 import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.model.definitions.ItemDefinition;
@@ -19,6 +20,7 @@ import com.ruse.world.content.skill.impl.summoning.Familiar;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+import mysql.impl.Donation;
 
 public class DesolaceFormulas {
 
@@ -91,18 +93,46 @@ public class DesolaceFormulas {
                     double bonus = DropUtils.getDamageBonus(playerFamiliar.getSummonNpc().getId());
 
                    if(!plr.isInsideRaids()) {
-                       if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.MELEE_PET.npcId) {
-                           bonus += 0.10;
+                       if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == 1801) {
+                           bonus += 0.15;
                        }
-
+                       if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == 9012) {
+                           bonus += 0.25;
+                       }
+                       if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == 9813) {
+                           bonus += 0.30;
+                       }
                        if (plr.isInMinigame()) {
                            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GREEN_FENRIR_PET.npcId) {
                                bonus += 0.10;
                            }
                        }
                    }
-                    if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
-                        bonus += 0.20;
+                    if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+                        bonus += 0.15;
+                    }
+                    if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
+                        bonus += 0.25;
+                    }
+                    if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
+                        bonus += 0.30;
+                    }
+                    if (plr.getInventory().contains(23255)) {
+                        bonus *= 1.5;
+                    }
+
+                    if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+                        bonus += 1.5;
+                    } else if(plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+                        bonus += 1.35;
+                    } else if(plr.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+                        bonus += 1.25;
+                    } else if(plr.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+                        bonus += 1.15;
+                    } else if(plr.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+                        bonus += 1.10;
+                    } else if(plr.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+                        bonus += 1.05;
                     }
 
                     base *= bonus;
@@ -332,19 +362,30 @@ public class DesolaceFormulas {
 
         if (playerFamiliar != null) {
             double bonus = DropUtils.getDamageBonus(playerFamiliar.getSummonNpc().getId());
-
-            if(!plr.isInsideRaids()) {
-                if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RANGED_PET.npcId) {
-                    bonus += 0.10;
-                }
-                if (plr.isInMinigame()) {
-                    if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GREEN_FENRIR_PET.npcId) {
-                        bonus += 0.10;
-                    }
-                }
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+                bonus += 0.15;
             }
-            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
-                bonus += 0.20;
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
+                bonus += 0.25;
+            }
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
+                bonus += 0.30;
+            }
+            if (plr.getInventory().contains(23255)) {
+                bonus *= 1.5;
+            }
+            if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+                bonus += 1.5;
+            } else if(plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+                bonus += 1.35;
+            } else if(plr.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+                bonus += 1.25;
+            } else if(plr.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+                bonus += 1.15;
+            } else if(plr.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+                bonus += 1.10;
+            } else if(plr.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+                bonus += 1.05;
             }
             rangeLevel *= bonus;
         }
@@ -424,7 +465,7 @@ public class DesolaceFormulas {
 
         if (playerFamiliar != null) {
             double bonus = DropUtils.getDamageBonus(playerFamiliar.getSummonNpc().getId());
-            if(!plr.isInsideRaids()) {
+           /* if(!plr.isInsideRaids()) {
                 if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.MAGE_PET.npcId) {
                     bonus += 0.10;
                 }
@@ -433,10 +474,35 @@ public class DesolaceFormulas {
                         bonus += 0.10;
                     }
                 }
+            }*/
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+                bonus += 0.15;
             }
-            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
-                bonus += 0.20;
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
+                bonus += 0.25;
             }
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
+                bonus += 0.30;
+            }
+
+            if (plr.getInventory().contains(23255)) {
+                bonus *= 1.5;
+            }
+
+            if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+                bonus += 1.5;
+            } else if(plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+                bonus += 1.35;
+            } else if(plr.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+                bonus += 1.25;
+            } else if(plr.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+                bonus += 1.15;
+            } else if(plr.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+                bonus += 1.10;
+            } else if(plr.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+                bonus += 1.05;
+            }
+
             magicLevel *= bonus;
         }
         return (int) (magicLevel + (plr.getBonusManager().getAttackBonus()[3] * 2));

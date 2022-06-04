@@ -117,20 +117,17 @@ public class GlobalBoss4 {
 
 
 
-                String message = "Dragon king has appeared at ::dk";
+                String message = "@bla@Dragon king has appeared at ::dk";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
                         continue;
                     }
-                    players.getPacketSender().sendBroadCastMessage(message, 100);
+                    players.getPacketSender().sendBroadCastMessage("Dragon king has appeared at ::dk", 100);
                 }
                 if (!GameSettings.LOCALHOST)
                 DiscordMessager.sendDragonKingLog(message);
                 World.sendBroadcastMessage(message);
-                GameSettings.broadcastMessage = message;
-                GameSettings.broadcastTime = 100;
-                World.sendMessage(message);
 
             }
         }

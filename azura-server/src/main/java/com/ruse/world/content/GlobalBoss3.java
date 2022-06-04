@@ -115,7 +115,7 @@ public class GlobalBoss3 {
                 currentBoss = npc;
                 World.register(npc);
 
-                String message = "Naraku has appeared at ::naraku";
+                String message = "@bla@Naraku has appeared at ::naraku";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
@@ -128,7 +128,6 @@ public class GlobalBoss3 {
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;
-                World.sendMessage(message);
 
             }
         }

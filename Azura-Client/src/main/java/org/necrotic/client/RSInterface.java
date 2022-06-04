@@ -243,22 +243,22 @@ public class RSInterface {
 		main.child(8, STARTING_POINT + 10, 173, 189);
 		main.child(9, STARTING_POINT + 11, 254, 200);
 		RSInterface perkScroll = addInterface(STARTING_POINT + 15);
-		perkScroll.totalChildren(17);
+		perkScroll.totalChildren(20);
 		int idStart = STARTING_POINT + 16;
 		int yPos = 0;
 
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 8; i++) {
 			addHoverableConfigSprite(idStart + i, 1517, 1518, true, "Select", i, 4000);
 			perkScroll.child(i, idStart + i, 53, yPos);
 			yPos += 42;
 		}
 
-		String[] PERK_NAMES = {"x2 DMG", "x2 DROPS", "x2 EXP", "x2 SLAYER", "x2 RAIDS"};
-		int child = 7;
+		String[] PERK_NAMES = {"x2 DMG", "x2 DR", "x2 DROPS", "x2 EXP", "x2 SLAYER", "x2 RAIDS"};
+		int child = 8;
 		int index = 0;
 		yPos = 5;
 		idStart = STARTING_POINT + 50;
-		for (int j = 0; j < 10; j += 2) {
+		for (int j = 0; j < 12; j += 2) {
 			addText(idStart + j, PERK_NAMES[index], font, 2, 16746020, true, true);
 			addText(idStart + j + 1, "@gre@Perk", font, 1, 32768, false, true);
 			perkScroll.child(child, idStart + j, 125, yPos);
@@ -269,7 +269,7 @@ public class RSInterface {
 		}
 		perkScroll.width = 200;
 		perkScroll.height = 137;
-		perkScroll.scrollMax = 210;
+		perkScroll.scrollMax = 250;
 	}
 
 	public static RSInterface addHoverableConfigSprite(int id, int mainSprite, int hoverSprite, boolean clickable, String tooltip, int configId, int configFrame) {
@@ -2036,24 +2036,41 @@ public class RSInterface {
 		RSInterface tab = RSInterface.addInterface(35000);
 		RSInterface scrollTableft = RSInterface.addInterface(35070);
 		RSInterface.addSprite(35001, 1267);
-		RSInterface.addText(35002, "Instance Manager", tda, 2, ClientConstants.GOLD, false, true);
+		RSInterface.addText(35002, "Instance Manager", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(135007, "Monsters", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(135008, "Preview", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(135009, "Spawns: @whi@60", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(135010, "Cost: @whi@750 Upgrade tokens", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(135011, "Upgrade token", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(135015, "3x3 Grid", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(135016, "4x4 Grid", tda, 2, ClientConstants.ORANGE, false, true);
+		addConfigButtonWSpriteLoader(135012, 135014, 1665, 1666, 67, 28, "Select 3x3 Grid", 0, 5, 1085);
+		addConfigButtonWSpriteLoader(135013, 135014, 1665, 1666, 67, 28, "Select 4x4 Grid", 1, 5, 1085);
 		RSInterface.addButton1(35003, 1245, 1246, "Select");
-		RSInterface.drawNpcOnInterface(35004, 100, 1000);
-		RSInterface.addText(35005, "Start Instance", tda, 2, ClientConstants.GOLD, false, true);
-		itemGroup(35006, 0, 8, 8, 5);
+		RSInterface.drawNpcOnInterface(35004, 9838, 1000);
+		RSInterface.addText(35005, "Start Instance", tda, 2, ClientConstants.ORANGE, false, true);
+		addToItemGroup(35006, 1, 1, 1, 1, true, new String[]{null, null, null, null, null});
 
-		RSInterface.setChildren(7, tab);
-		tab.child(0, 35001, 5, 5);
-		tab.child(1, 35002, 221 - 7, 29 - 13);
-		tab.child(2, 35003, 242, 304 - 13);
-		tab.child(3, 35070, 15, 52 - 13);
-		tab.child(4, 35004, 240, 83 + 15);
-		tab.child(5, 35005, 273, 311 - 13);
-		tab.child(6, 35006, 171, 254 - 13);
-
+		RSInterface.setChildren(16, tab);
+		tab.child(0, 35001, 60, 5);
+		tab.child(1, 35002, 176, 29 - 16);
+		tab.child(2, 35003, 245, 304 - 23);
+		tab.child(3, 35070, 73, 52);
+		tab.child(4, 35004, 250, 60);
+		tab.child(5, 35005, 277, 311 - 23);
+		tab.child(6, 35006, 246, 185);
+		tab.child(7, 135007, 123, 35);
+		tab.child(8, 135008, 291, 35);
+		tab.child(9, 135009, 283, 200);
+		tab.child(10, 135010, 250, 223);
+		tab.child(11, 135011, 283, 185);
+		tab.child(12, 135012, 252, 243);
+		tab.child(13, 135013, 323, 243);
+		tab.child(14, 135015, 257, 248);
+		tab.child(15, 135016, 328, 248);
 		// Scoll bar size, witdh and scrolling size.
-		scrollTableft.width = 133 - 15;
-		scrollTableft.height = 281;
+		scrollTableft.width = 143;
+		scrollTableft.height = 255;
 		scrollTableft.scrollMax = 450;
 
 		int npcList = 50;
@@ -2066,6 +2083,62 @@ public class RSInterface {
 
 		for (int i = 0; i < npcList; i++) {
 			scrollTableft.child(i, 35071 + i, 0, y);
+			y += 15;
+		}
+
+	}
+	
+	public static void InstanceManagerGold(TextDrawingArea[] tda) {
+		RSInterface tab = RSInterface.addInterface(75000);
+		RSInterface scrollTableft = RSInterface.addInterface(75070);
+		RSInterface.addSprite(75001, 1267);
+		RSInterface.addText(75002, "Instance Manager", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(75007, "Monsters", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(75008, "Preview", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(75009, "Spawns: @whi@60", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(75010, "Cost: @whi@750 Upgrade tokens", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(75011, "Upgrade token", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(75015, "3x3 Grid", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(75016, "4x4 Grid", tda, 2, ClientConstants.ORANGE, false, true);
+		addConfigButtonWSpriteLoader(75012, 75014, 1665, 1666, 67, 28, "Select 3x3 Grid", 0, 5, 1085);
+		addConfigButtonWSpriteLoader(75013, 75014, 1665, 1666, 67, 28, "Select 4x4 Grid", 1, 5, 1085);
+		RSInterface.addButton1(75003, 1245, 1246, "Select");
+		RSInterface.drawNpcOnInterface(36660, 9838, 1000);
+		RSInterface.addText(75005, "Start Instance", tda, 2, ClientConstants.ORANGE, false, true);
+		addToItemGroup(36665, 1, 1, 1, 1, true, new String[]{null, null, null, null, null});
+
+		RSInterface.setChildren(16, tab);
+		tab.child(0, 75001, 60, 5);
+		tab.child(1, 75002, 176, 29 - 16);
+		tab.child(2, 75003, 245, 304 - 23);
+		tab.child(3, 75070, 73, 52);
+		tab.child(4, 36660, 250, 60);
+		tab.child(5, 75005, 277, 311 - 23);
+		tab.child(6, 36665, 246, 185);
+		tab.child(7, 75007, 123, 35);
+		tab.child(8, 75008, 291, 35);
+		tab.child(9, 75009, 283, 200);
+		tab.child(10, 75010, 250, 223);
+		tab.child(11, 75011, 283, 185);
+		tab.child(12, 75012, 252, 243);
+		tab.child(13, 75013, 323, 243);
+		tab.child(14, 75015, 257, 248);
+		tab.child(15, 75016, 328, 248);
+		// Scoll bar size, witdh and scrolling size.
+		scrollTableft.width = 143;
+		scrollTableft.height = 255;
+		scrollTableft.scrollMax = 450;
+
+		int npcList = 50;
+		int y = 1;
+		for (int i = 0; i < npcList; i++) {
+			RSInterface.addText(125071 + i, "boss", tda, 1, ClientConstants.ORANGE, false, false, ClientConstants.WHITE, "Select", 150);
+
+		}
+		RSInterface.setChildren(npcList, scrollTableft);
+
+		for (int i = 0; i < npcList; i++) {
+			scrollTableft.child(i, 125071 + i, 0, y);
 			y += 15;
 		}
 
@@ -3565,7 +3638,7 @@ public class RSInterface {
 		
 		interfaceId++;
 		children++;
-		RSInterface.addText(interfaceId, "The Unknown", TDA, 2,  ColorConstants.ORANGE2, false, true);
+		RSInterface.addText(interfaceId, "Unknown Crypt", TDA, 2,  ColorConstants.ORANGE2, false, true);
 		RSInterface.setBounds(interfaceId, 386, 13, children, Interface);
 
 		interfaceId++;
@@ -3601,7 +3674,7 @@ public class RSInterface {
 		addCloseButtonSmall(STARTING_POINT + 11, STARTING_POINT + 12, STARTING_POINT + 13);
 		addText(STARTING_POINT + 14, "", tda, 2, ColorConstants.ORANGE);
 		addText(STARTING_POINT + 15, "Items to create", tda, 1, ColorConstants.ORANGE);
-		addText(STARTING_POINT + 16, "Success rate: @whi@100%", tda, 1, ColorConstants.WHITE);
+		addText(122111, "Success rate: @whi@100%", tda, 1, ColorConstants.WHITE);
 		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 37, 1645, "Select Tier 1", 68, 20);
 		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 38, 1645, "Select Tier 2", 68, 20);
 		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 39, 1645, "Select Tier 3", 68, 20);
@@ -3631,7 +3704,7 @@ public class RSInterface {
 		main.child(11, STARTING_POINT + 12, 492, 10);
 		main.child(12, STARTING_POINT + 14, 150, 20);
 		main.child(13, STARTING_POINT + 15, 130, 68);
-		main.child(14, STARTING_POINT + 16, 348, 191);
+		main.child(14, 122111, 348, 191);
 		main.child(15, STARTING_POINT + 37, 20, 34);// 00 hover
 		main.child(16, STARTING_POINT + 38, 88, 34);//01 hover
 		main.child(17, STARTING_POINT + 39, 88+68, 34);//02 hover

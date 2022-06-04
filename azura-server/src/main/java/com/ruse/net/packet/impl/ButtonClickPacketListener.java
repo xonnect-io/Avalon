@@ -37,6 +37,8 @@ import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
 import com.ruse.world.content.instanceMananger.InstanceManager;
+import com.ruse.world.content.instanceManangerGold.GoldInstanceInterfaceHandler;
+import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.loyalty_streak.LoyaltyStreakManager;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.PestControl;
@@ -62,13 +64,15 @@ import com.ruse.world.content.teleport.NewTeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
-import com.ruse.world.content.zombie.ZombieParty;
-import com.ruse.world.content.zombie.ZombieRaidData;
+import com.ruse.world.content.raids.RaidsParty;
+import com.ruse.world.content.raids.ZombieRaidData;
 import com.ruse.world.entity.impl.player.Player;
 import com.ruse.world.entity.impl.player.StartScreen;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static com.ruse.model.Locations.Location.SOD_LOBBY;
 
 /**
  * This packet listener manages a button that the player has clicked upon.
@@ -149,6 +153,7 @@ public class ButtonClickPacketListener implements PacketListener {
         new DailyTaskInterface(player).button(id);
         new DailyTaskInterface(player).tabClicking(id);
         new InstanceInterfaceHandler(player).handleButtons(id);
+        new GoldInstanceInterfaceHandler(player).handleButtons(id);
         new WellForGlobalBossesInterface(player).button(id);
 
         switch (id) {
@@ -244,16 +249,16 @@ public class ButtonClickPacketListener implements PacketListener {
                     return;
                 }
 
-                if (player.getLocation() == Location.ZOMBIE_LOBBY) {
-                    if (player.getZombieParty() != null) {
-                        if (player.getZombieParty().getOwner() != player) {
+                if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == SOD_LOBBY) {
+                    if (player.getRaidsParty() != null) {
+                        if (player.getRaidsParty().getOwner() != player) {
                             player.getPacketSender().sendMessage("Only the party leader can invite other players.");
                         } else {
                             player.setInputHandling(new InviteRaidsPlayer());
                             player.getPacketSender().sendEnterInputPrompt("Invite Player");
                         }
                     } else {
-                        new ZombieParty(player).create();
+                        new RaidsParty(player).create();
                     }
                 } else {
                     player.sendMessage("You must be in a raid to do this.");
@@ -261,15 +266,15 @@ public class ButtonClickPacketListener implements PacketListener {
                 return;
 
             case 111706:
-                if (player.getLocation() == Location.ZOMBIE) {
-                    if (player.getZombieParty() != null) {
-                        player.getZombieParty().remove(player, true);
+                if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.SOD) {
+                    if (player.getRaidsParty() != null) {
+                        player.getRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
                     }
                     player.moveTo(ZombieRaidData.lobbyPosition);
-                } else if (player.getLocation() == Location.ZOMBIE_LOBBY) {
-                    if (player.getZombieParty() != null) {
-                        player.getZombieParty().remove(player, true);
+                } else if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
+                    if (player.getRaidsParty() != null) {
+                        player.getRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
                     }
                 } else {
@@ -299,17 +304,18 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111743:
             case 111746:
             case 111749:
-                if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.ZOMBIE_LOBBY) {
-                    if (player.getZombieParty() != null) {
-                        if (player.equals(player.getZombieParty().getOwner())) {
-                            if (player.getZombieParty().getPlayers()
+                if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD
+                || player.getLocation() == Location.SOD_LOBBY) {
+                    if (player.getRaidsParty() != null) {
+                        if (player.equals(player.getRaidsParty().getOwner())) {
+                            if (player.getRaidsParty().getPlayers()
                                     .size() >= ((id - 111716) / 3) + 1) {
-                                Player playerToKick = player.getZombieParty()
+                                Player playerToKick = player.getRaidsParty()
                                         .getPlayers().get((id - 111716) / 3);
                                 if (playerToKick == player) {
                                     player.sendMessage("You cannot kick yourself!");
                                 } else {
-                                    player.getZombieParty().remove(playerToKick,
+                                    player.getRaidsParty().remove(playerToKick,
                                             true);
 
                                 }
@@ -379,11 +385,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 111601:
-                for (int i = 8145; i < 8196; i++)
+                for (int i = 8145; i < 8186; i++)
                     player.getPacketSender().sendString(i, "");
-
                 player.getPacketSender().sendInterface(8134);
-
                 player.getPacketSender().sendString(8136, "Close window");
                 player.getPacketSender().sendString(8144, "Commands");
                 player.getPacketSender().sendString(8145, "");
@@ -393,44 +397,34 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 player.getPacketSender().sendString(index++, color1 + "Main Commands:");
                 player.getPacketSender().sendString(index++, color + "::home - Teleports you home");
-                player.getPacketSender().sendString(index++, color + "::perks - Opens up the server perks interface");
-                player.getPacketSender().sendString(index++, color + "::gamble - Teleports you to the gambling area");
-                player.getPacketSender().sendString(index++, color + "::train/train2 - Teleports you to the starter areas");
-                player.getPacketSender().sendString(index++, color + "::checkdaily - Checks your daily dask");
+                player.getPacketSender().sendString(index++, color + "::traim - Teleports you to training zone");
+                player.getPacketSender().sendString(index++, color + "::melee - Teleports you to Ember Giants");
+                player.getPacketSender().sendString(index++, color + "::range - Teleports you to Tree Basilisk");
+                player.getPacketSender().sendString(index++, color + "::mage - Teleports you to Bat of Light");
                 player.getPacketSender().sendString(index++, color + "::shops - Teleports you to all shops");
                 player.getPacketSender().sendString(index++, color + "");
                 player.getPacketSender().sendString(index++, color1 + "Interface Commands:");
                 player.getPacketSender().sendString(index++, color + "::kills - opens up your personal kill tracker list");
                 player.getPacketSender().sendString(index++, color + "::pos - opens the player owned shops interface");
-                player.getPacketSender().sendString(index++, color + "::tasks - opens the achievements interface");
-                player.getPacketSender().sendString(index++, color + "::rewards - opens the possible loot interface");
+                player.getPacketSender().sendString(index++, color + "::teleport - opens the monster teleport interface");
+                player.getPacketSender().sendString(index++, color + "::upgrade - opens the upgrade system interface");
                 player.getPacketSender().sendString(index++, color + "::drops - opens the loot viewer interface for npcs");
                 player.getPacketSender().sendString(index++, color + "::collection - opens the collection log interface");
                 player.getPacketSender().sendString(index++, color + "::itemstats - opens up best items interface");
                 player.getPacketSender().sendString(index++, color + "");
                 player.getPacketSender().sendString(index++, color1 + "Other Commands:");
-                player.getPacketSender().sendString(index++, color + "::dr/ddr - shows you your current droprate");
-                player.getPacketSender().sendString(index++, color + "::maxhit - shows you your current droprate");
-                player.getPacketSender().sendString(index++, color + "::changepass - allows you to change your password");
-
-
-                player.getPacketSender().sendString(index++,
-                        color + "::global - teleports to global bosses");
-                player.getPacketSender().sendString(index++,
-                        color + "::bank - opens up your bank ($50 total claimed required)");
-                player.getPacketSender().sendString(index++,
-                        color + "::players - tells you how many players are currently online");
-                player.getPacketSender().sendString(index++, color + "::forums - opens up our forums for Avalon");
-                player.getPacketSender().sendString(index++, color + "::client - downloads our client launcher");
-                player.getPacketSender().sendString(index++, color + "::rules - opens up our rules");
+                player.getPacketSender().sendString(index++, color + "::dr - shows you your current droprate");
+                player.getPacketSender().sendString(index++, color + "::globals - shows you the time remaining on all global bosses");
+                player.getPacketSender().sendString(index++, color + "::bank - opens up your bank ($50 total claimed required)");
+                player.getPacketSender().sendString(index++,  color + "::players - tells you how many players are currently online");
                 player.getPacketSender().sendString(index++, color + "::discord - opens up our discord for Avalon");
                 player.getPacketSender().sendString(index++, color + "::vote - opens up our site for voting");
                 player.getPacketSender().sendString(index++, color + "::voted - claims your votes");
                 player.getPacketSender().sendString(index++, color + "::donate - opens up our donation site");
                 player.getPacketSender().sendString(index++, color + "::donated - claims your donation");
-                player.getPacketSender().sendString(index++, color + "::donationdeals - see if there are any promotions");
-                player.getPacketSender().sendString(index++,
-                        color + "::whatdrops (item name) - tells you what drops the item");
+                player.getPacketSender().sendString(index++, color + "::dissolveall - dissolves all dissolvable items in your inv");
+                player.getPacketSender().sendString(index++,color + "::ckeys - teleports you to the crystal chest");
+                player.getPacketSender().sendString(index++,color + "::whatdrops (item name) - tells you what drops the item");
                 player.getPacketSender().sendString(index++,
                         color + "::dropmessage - removes messages of drops going to your inv/bank");
                 player.getPacketSender().sendString(index++, color + "::help - requests assistance from a staff member");
@@ -539,6 +533,28 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 19654:
                 PollCreation.resetPoll(player);
+                break;
+            case 75003:
+                if (player.getDataGold() != null) {
+                    if (player.getDataGold().getNpcid() == 1265) {
+                        player.sendMessage("Avalon lions can only be killed at ::train");
+                        return;
+                    }
+
+                    if (player.getDataGold().getNpcid() == 1265
+                            || player.getDataGold().getNpcid() == 1023
+                            || player.getDataGold().getNpcid() == 1233
+                            || player.getDataGold().getNpcid() == 1234) {
+                        if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getData().getNpcid(), player) > 500) {
+                            player.sendMessage("This place is for new players with less than 5k npc kills.");
+                            return;
+                        }
+                    }
+
+                    new GoldInstanceManager(player).create3X3Instance(player.getDataGold().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
+                } else {
+                    player.getPA().sendMessage("Select the boss you'd like to instance.");
+                }
                 break;
             case -30533:
                 if (player.getData() != null) {

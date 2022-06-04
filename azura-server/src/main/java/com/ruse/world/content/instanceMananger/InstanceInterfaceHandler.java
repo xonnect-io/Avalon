@@ -6,7 +6,7 @@ public class InstanceInterfaceHandler {
 
 	private Player player;
 
-	private static final InstanceData data[] = InstanceData.values();
+	private static final InstanceData[] data = InstanceData.values();
 
 	public InstanceInterfaceHandler(Player player) {
 		this.player = player;
@@ -15,6 +15,10 @@ public class InstanceInterfaceHandler {
 	public void open() {
 		sendBossNames();
 		player.getPA().sendInterface(35000);
+		player.getPacketSender().sendItemOnInterface(35006, 4278, 0, 1);
+		player.getPacketSender().sendString(135009,"Spawns: @whi@60");
+		player.getPacketSender().sendString(135011,"@yel@Upgrade token");
+
 	}
 
 	public void sendBossNames() {

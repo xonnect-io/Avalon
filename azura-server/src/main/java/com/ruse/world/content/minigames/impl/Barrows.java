@@ -264,7 +264,7 @@ public class Barrows {
 						|| player.getUsername().equalsIgnoreCase("debug")) {
 					player.getInventory().add(7587, 1);
 					World.sendMessage("<img=5><shad=0><col=009966> " + player.getUsername()
-							+ " has just recieved a Coffin of the Damned from the Barrows minigame!");
+							+ " has just received a Coffin of the Damned from the Barrows minigame!");
 				}
 				player.getPacketSender().sendCameraShake(3, 2, 3, 2);
 				player.getPacketSender().sendMessage("The cave begins to collapse!");

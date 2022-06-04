@@ -17,13 +17,13 @@ public class InviteRaidsPlayer extends Input {
 				player.getPacketSender().sendMessage("That player is currently not online.");
 				return;
 			}
-			if (player.getZombieParty().getPlayers().contains(invite)) {
+			if (player.getRaidsParty().getPlayers().contains(invite)) {
 				player.getPacketSender().sendMessage("That player is already in your party.");
 				return;
 			}
 			player.sendMessage("Sent invite to " + plrToInvite);
 
-			player.getZombieParty().invite(invite);
+			player.getRaidsParty().invite(invite);
 
 		}
 	}

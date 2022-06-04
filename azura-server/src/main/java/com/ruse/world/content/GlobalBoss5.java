@@ -22,7 +22,7 @@ public class GlobalBoss5 {
 
     // Negative because if you make it zero it will increase
     // before the world is created and it wont spawn on server boot for 3 hrs
-    public static int tick = -20;
+    public static int tick = 0;
 
     public static Position SPAWN_POINT = new Position(3808, 2848,0);
 
@@ -117,7 +117,7 @@ public class GlobalBoss5 {
 
 
 
-                String message = "Ironman has appeared ::ironman";
+                String message = "@bla@Ironman has appeared ::ironman";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
@@ -130,7 +130,6 @@ public class GlobalBoss5 {
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;
-                World.sendMessage(message);
 
             }
         }

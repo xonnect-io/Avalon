@@ -138,7 +138,7 @@ public class CustomCombiner {
                 player.getPacketSender().resetItemsOnInterface(30840, 17);
                 player.getPacketSender().sendCombinerItemsOnInterface(30840, data.requirements);
                 player.getPacketSender().sendItemOnInterface(30836, data.reward.getId(), 0, data.reward.getAmount());
-                player.getPacketSender().sendString(30846, "Success rate: @whi@" + (data.getSuccessRate() == 100 ? "@gre@ " :  data.getSuccessRate() <= 99 ? "@red@ " : "@whi@ ")  + data.getSuccessRate() + "%" );
+                player.getPacketSender().sendString(122111, "Success rate: @whi@" + (data.getSuccessRate() == 100 ? "@gre@ " :  data.getSuccessRate() <= 99 ? "@red@ " : "@whi@ ")  + data.getSuccessRate() + "%" );
                 break;
             }
         }
@@ -173,7 +173,7 @@ public class CustomCombiner {
         if (player.getEquipment().contains(23133))
             percentBoost += 1;
         //
-
+/*
         if(!player.isInsideRaids()) {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAMMUS_PET.npcId) {
@@ -184,7 +184,7 @@ public class CustomCombiner {
                 && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
             percentBoost += 25;
         }
-
+*/
 
         double multiplier = 1 + (percentBoost / 100D);
 

@@ -258,7 +258,7 @@ public class UpgradeInterface {
         if (player.getEquipment().contains(23133))
             percentBoost += 1;
         //
-
+/*
         if(!player.isInsideRaids()) {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAMMUS_PET.npcId) {
@@ -266,10 +266,10 @@ public class UpgradeInterface {
             }
         }
         if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
+                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON.npcId) {
             percentBoost += 25;
         }
-
+*/
 
         double multiplier = 1 + (percentBoost / 100D);
 

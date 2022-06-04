@@ -56,7 +56,7 @@ public class Configuration {
 	public static boolean PARTICLES_ENABLED = true;
 	public static boolean FOG_ENABLED = false;
 	public static boolean GROUND_TEXT = true;
-	public static boolean HIGH_DETAIL = true;
+	public static boolean HIGH_DETAIL = false;
 //	public static boolean hdTexturing = true;
 	public static boolean hdMinimap = false;
 	public static boolean hdShading = false;

@@ -76,13 +76,6 @@ public class CustomDropUtils {
             percentBoost += 4;
 		//
 
-        if (player.isInMinigame()) {
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GREEN_FENRIR_PET.npcId) {
-                percentBoost += 10;
-            }
-        }
-
         if (npc == player.getSlayer().getSlayerTask().getNpcId()) {
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23071) {
                 percentBoost += 5;
@@ -98,62 +91,84 @@ public class CustomDropUtils {
         }
 
         if (!player.isInsideRaids()) {
-            /*if (npc == player.getSlayer().getSlayerTask().getNpcId()) {
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RED_FENRIR_PET.npcId) {
-                    percentBoost += 25;
-                }
-            }*/
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SKREEG_PET.npcId) {
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.WOLF_PET.npcId) {
+                percentBoost += 1;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GORILLA_PET.npcId) {
+                percentBoost += 3;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.MARIO_PET.npcId) {
+                percentBoost += 5;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DONKEY_KONG_PET.npcId) {
+                percentBoost += 7;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.VEGETA_PET.npcId) {
                 percentBoost += 10;
             }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ORIX_PET.npcId) {
-                percentBoost += 20;
-            }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.CRYSTAL_ORC_PET.npcId) {
-                percentBoost += 25;
-            }
-        } else {
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DEMON_PET.npcId) {
-                percentBoost += 10;
-            }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GOLEM_PET.npcId) {
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.YOSHI_PET.npcId) {
                 percentBoost += 15;
             }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DRAGON_PET.npcId) {
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ZORBAK_PET.npcId) {
                 percentBoost += 25;
             }
-
-
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+                percentBoost += 50;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
+                percentBoost += 60;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FENRIR_PET.npcId) {
+                percentBoost += 50;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GREEN_FENRIR_PET.npcId) {
+                percentBoost += 50;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RED_FENRIR_PET.npcId) {
+                percentBoost += 50;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.HELLRAISER.npcId) {
+                percentBoost += 10;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
+                percentBoost += 70;
+            }
         }
-        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
-            percentBoost += 25;
-        }
 
-        if (player.getInventory().contains(23174)) {
-            percentBoost += 10;
+        if (player.getInventory().contains(23254)) {
+            percentBoost *= 1.5;
         }
-
+        if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DR) {
+            percentBoost *= 2;
+        }
         /**
          * Donator Rank bonusses
          */
         if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
-            percentBoost += 25;
+            percentBoost += 75;
         } else if(player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
-            percentBoost += 20;
+            percentBoost += 45;
         } else if(player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
-            percentBoost += 15;
+            percentBoost += 30;
         } else if(player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
-            percentBoost += 10;
+            percentBoost += 20;
         } else if(player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
-            percentBoost += 7;
+            percentBoost += 15;
         } else if(player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
             percentBoost += 5;
         }
@@ -205,6 +220,9 @@ public class CustomDropUtils {
 			percentBoost += 10;
         }
 
+        if (npc == 8013 && System.currentTimeMillis() + 86400000 > player.lastVoteTime) {
+            percentBoost =+ 100;
+        }
         if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DROPS) {
             percentBoost =+ 100;
         }
@@ -255,17 +273,7 @@ public class CustomDropUtils {
 			percentBoost += 4;
 		//
 
-        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
-            percentBoost += 25;
-        }
 
-        if (player.isInMinigame()) {
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GREEN_FENRIR_PET.npcId) {
-                percentBoost += 10;
-            }
-        }
         if (npc == player.getSlayer().getSlayerTask().getNpcId()) {
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23071) {
                 percentBoost += 5;
@@ -279,40 +287,7 @@ public class CustomDropUtils {
                 percentBoost += 20;
             }
         }
-        if (!player.isInsideRaids()) {
-          /*  if (npc == player.getSlayer().getSlayerTask().getNpcId()) {
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RED_FENRIR_PET.npcId) {
-                    percentBoost += 25;
-                }
-            }*/
 
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SKREEG_PET.npcId) {
-                percentBoost += 10;
-            }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ORIX_PET.npcId) {
-                percentBoost += 20;
-            }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.CRYSTAL_ORC_PET.npcId) {
-                percentBoost += 25;
-            }
-        } else {
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DEMON_PET.npcId) {
-                percentBoost += 10;
-            }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GOLEM_PET.npcId) {
-                percentBoost += 15;
-            }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DRAGON_PET.npcId) {
-                percentBoost += 25;
-            }
-        }
         if (player.getDoubleDDRTimer() > 0) {
             percentBoost += 100;
         }

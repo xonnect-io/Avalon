@@ -39,7 +39,7 @@ public class SpawnNephilimBoss extends EnterAmount {
 			World.register(npc);
 			World.sendMessage("@red@<img=856>[Nephilim Warrior]<img=856> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
 			DiscordMessager.sendNephilimBossLog("The Nephilim Warrior has spawned at ::Nephilim");
-			World.sendMessage(message);
+			World.sendBroadcastMessage("@bla@The Nephilim Warrior has appeared ::Nephilim");
 			GameSettings.broadcastMessage = "The Nephilim Warrior has appeared ::Nephilim";
 			GameSettings.broadcastTime = 100;
 			for (Player players : World.getPlayers()) {

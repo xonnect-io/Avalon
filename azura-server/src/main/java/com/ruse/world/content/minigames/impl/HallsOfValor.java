@@ -33,7 +33,7 @@ public class HallsOfValor {
     };
     
     public static final Position TELEPORT_AREA = new Position(2195, 5037, 0);
-    public static final Position TELEPORT_OUT = new Position(2585, 2521);
+    public static final Position TELEPORT_OUT = new Position(2655, 4017);
 
     public static final Item KEY_REWARD = new Item(23086);
     public static final Position[] NPC_SPAWNS = {
