@@ -20,7 +20,7 @@ public class Configuration {
 	public static final boolean IS_RUNNING_WINDOWS = true;
 	
 	public final static int CLIENT_VERSION = 3;
-	public static boolean localHost = true;
+	public static boolean localHost = false;
 	public static final boolean FORCE_CACHE_UPDATE = true;
 	public static final boolean STOP_CACHE_UPDATES = false;
 	public static final boolean DROPBOX_MODE = false;
@@ -64,6 +64,6 @@ public class Configuration {
 	public static boolean TOGGLE_FOV = true;
 	public static boolean DEPTH_BUFFER = false;
 	public final static String SERVER_HOST() {
-		return localHost ? "127.0.0.1" : "147.135.65.179";
+		return localHost ? "127.0.0.1" : "51.81.49.184";
 	}
 }
