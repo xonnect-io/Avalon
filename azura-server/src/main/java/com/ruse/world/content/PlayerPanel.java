@@ -19,7 +19,8 @@ public class PlayerPanel {
     public static void refreshPanel(Player player) {
         int interfaceID = 111201;
         int players = (int) World.getPlayers().size() + GameSettings.players;
-        String[] Messages = new String[]{
+        String[] Messages;
+        Messages = new String[]{
                 //
                 "Main",
                 "Players Online: @whi@" + ((players)),
@@ -33,6 +34,7 @@ public class PlayerPanel {
                 "Loot Chest: " +
                         (LootChest.getLocation() != null ?
                         LootChest.getLocation().playerPanelFrame : "@whi@N/A"),
+                //
                 "Globals",
                 "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
                 "Hellraiser: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",

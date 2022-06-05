@@ -72,8 +72,6 @@ import com.ruse.world.entity.impl.player.StartScreen;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.ruse.model.Locations.Location.SOD_LOBBY;
-
 /**
  * This packet listener manages a button that the player has clicked upon.
  *
@@ -249,7 +247,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     return;
                 }
 
-                if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == SOD_LOBBY) {
+                if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
                     if (player.getRaidsParty() != null) {
                         if (player.getRaidsParty().getOwner() != player) {
                             player.getPacketSender().sendMessage("Only the party leader can invite other players.");
@@ -304,8 +302,8 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111743:
             case 111746:
             case 111749:
-                if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD
-                || player.getLocation() == Location.SOD_LOBBY) {
+                if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.ZOMBIE_LOBBY
+                        || player.getLocation() == Location.SOD || player.getLocation() == Location.SOD_LOBBY) {
                     if (player.getRaidsParty() != null) {
                         if (player.equals(player.getRaidsParty().getOwner())) {
                             if (player.getRaidsParty().getPlayers()

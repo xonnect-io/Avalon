@@ -467,6 +467,8 @@ public class Player extends Character {
     private boolean placeholders = true;
     private boolean enteredZombieRaids;
     private int zombieRaidsKC;
+    private boolean enteredSODRaids;
+    private int sodRaidsKC;
     private RaidsParty raidsParty;
     private boolean insideRaids;
     private int afkSapphire;
@@ -751,6 +753,22 @@ public class Player extends Character {
 
     public void setEnteredZombieRaids(boolean enteredZombieRaids) {
         this.enteredZombieRaids = enteredZombieRaids;
+    }
+
+    public int getSODRaidsKC() {
+        return sodRaidsKC;
+    }
+
+    public void setSODRaidsKC(int sodRaidsKC) {
+        this.sodRaidsKC = sodRaidsKC;
+    }
+
+    public boolean isEnteredSODRaids() {
+        return enteredSODRaids;
+    }
+
+    public void setEnteredSODRaids(boolean enteredSODRaids) {
+        this.enteredSODRaids = enteredSODRaids;
     }
 
     public RaidsParty getRaidsParty() {

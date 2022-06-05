@@ -499,39 +499,6 @@ public class CommandPacketListener implements PacketListener {
             return;
         }
 
-        if (command[0].equalsIgnoreCase("raidparty") || command[0].equalsIgnoreCase("checkparty")) { // test command.
-            player.getPacketSender().sendDungeoneeringTabIcon(true).sendTabInterface(GameSettings.QUESTS_TAB, 111700).sendTab(GameSettings.QUESTS_TAB);
-            DungeoneeringParty.clearInterface(player);
-        }
-        if (command[0].equalsIgnoreCase("requestraid") || command[0].equalsIgnoreCase("invplayer")) { // test command.
-            Player target = World.getPlayerByName(command[1]);
-            player.getMinigameAttributes().getDungeoneeringAttributes().getParty().invite(target);
-        }
-
-        if (command[0].equalsIgnoreCase("createraidparty") || command[0].equalsIgnoreCase("createParty")) {
-            DungeoneeringParty.create(player);
-        }
-
-        if (command[0].equalsIgnoreCase("deleteraidparty") || command[0].equalsIgnoreCase("deleteparty")) {
-            com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering.leave(player, false, true);
-            player.getPacketSender().sendString(29053, "").sendString(29054, "");
-
-            for (int i = 0; i < 10; i++) {
-                player.getPacketSender().sendString(29095 + i, "");
-            }
-        }
-
-        if (wholeCommand.equalsIgnoreCase("startraids") || wholeCommand.equalsIgnoreCase("startraid")
-                || wholeCommand.equalsIgnoreCase("startraids")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering.start(player);
-        }
-
-
         if (command[0].equalsIgnoreCase("donationdeals") || command[0].equalsIgnoreCase("deals")) {
             player.sendMessage(
                     "<shad=1>@yel@<img=14>Please check out the donation deals in our ::Discord - #Donation-deals");

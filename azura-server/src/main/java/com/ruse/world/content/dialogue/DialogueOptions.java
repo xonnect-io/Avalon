@@ -22,6 +22,7 @@ import com.ruse.world.content.dialogue.impl.Mandrith;
 import com.ruse.world.content.dialogue.impl.Tutorial;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.minigames.impl.*;
+import com.ruse.world.content.raids.SODRaids;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.mining.Mining;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -34,8 +35,8 @@ import com.ruse.world.content.transportation.JewelryTeleports;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
-import com.ruse.world.content.zombie.ZombieRaidData;
-import com.ruse.world.content.zombie.ZombieRaids;
+import com.ruse.world.content.raids.ZombieRaidData;
+import com.ruse.world.content.raids.ZombieRaids;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.npc.NpcAggression;
 import com.ruse.world.entity.impl.player.Player;
@@ -1308,7 +1309,7 @@ public class DialogueOptions {
                 case 67:
                     player.getPacketSender().sendInterfaceRemoval();
                     if (player.getLocation() == Location.ZOMBIE_LOBBY
-                            && player.getZombieParty() == null) {
+                            && player.getRaidsParty() == null) {
                         if (player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null) {
                             player.getMinigameAttributes().getZombieAttributes().getPartyInvitation().add(player);
                         }
@@ -1316,16 +1317,21 @@ public class DialogueOptions {
                     }
                     break;
                 case 71260:
-                    player.getZombieParty().remove(player, true);
                     player.getPacketSender().sendInterfaceRemoval();
                     player.moveTo(ZombieRaidData.lobbyPosition);
                     player.setEnteredZombieRaids(false);
-
                     break;
+
                 case 2012:
                     player.getInventory().add(15272, 50);
                     player.getInventory().add(3024, 2);
-                    ZombieRaids.start(player.getZombieParty());
+                    ZombieRaids.start(player.getRaidsParty());
+                    break;
+
+                case 7056:
+                    player.getInventory().add(15272, 50);
+                    player.getInventory().add(3024, 2);
+                    SODRaids.start(player.getRaidsParty());
                     break;
 
                 case 523:

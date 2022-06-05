@@ -14,9 +14,10 @@ import com.ruse.world.content.instanceMananger.InstanceManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
+import com.ruse.world.content.raids.SODRaids;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.transportation.TeleportHandler;
-import com.ruse.world.content.zombie.ZombieRaids;
+import com.ruse.world.content.raids.ZombieRaids;
 import com.ruse.world.entity.Entity;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -226,14 +227,14 @@ public class Locations {
 				if (player.getRegionInstance() != null)
 					player.getRegionInstance().destruct();
 
-				if (player.getZombieParty() != null) {
-					player.getZombieParty().remove(player, true);
+				if (player.getRaidsParty() != null) {
+					player.getRaidsParty().remove(player, true);
 				}
 
 				player.moveTo(new Position(2222, 4115, 0));
 
-				if (player.getZombieParty() != null)
-					player.getZombieParty().getPlayers()
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().getPlayers()
 							.remove(player);
 
 				player.getMovementQueue().setLockMovement(false);
@@ -251,23 +252,21 @@ public class Locations {
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.ZOMBIE, player.getPosition().getZ(), player));
 				}
 
-				if (player.getZombieParty() != null) {
-					if (player.getZombieParty().getOwner().equals(player)) {
+				if (player.getRaidsParty() != null) {
+					if (player.getRaidsParty().getOwner().equals(player)) {
 						World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.ZOMBIE, player.getIndex() * 4, player));
 					}
 				}
 
-				/*if (player.getZombieParty() != null)
-					player.getZombieParty().remove(player, true);
+				/*if (player.getRaidsParty() != null)
+					player.getRaidsParty().remove(player, true);
 
-				if (player.getZombieParty() != null)
-					player.getZombieParty().getPlayers()
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().getPlayers()
 							.remove(player);*/
 
 				player.moveTo(new Position(2222, 4115, 0));
-
 				player.getMovementQueue().setLockMovement(false);
-
 			}
 
 			@Override
@@ -279,17 +278,17 @@ public class Locations {
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.ZOMBIE, player.getPosition().getZ(), player));
 				}
 
-				if (player.getZombieParty() != null) {
-					if (player.getZombieParty().getOwner().equals(player)) {
+				if (player.getRaidsParty() != null) {
+					if (player.getRaidsParty().getOwner().equals(player)) {
 						World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.ZOMBIE, player.getIndex() * 4, player));
 					}
 				}
 
-				if (player.getZombieParty() != null)
-					player.getZombieParty().remove(player, true);
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().remove(player, true);
 
-				if (player.getZombieParty() != null)
-					player.getZombieParty().getPlayers()
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().getPlayers()
 							.remove(player);
 
 				player.moveTo(new Position(2222, 4115, 0));
@@ -311,8 +310,8 @@ public class Locations {
 
 			@Override
 			public void onDeath(Player player) {
-				if (player.getZombieParty() != null) {
-					ZombieRaids.handleDeath(player.getZombieParty(),
+				if (player.getRaidsParty() != null) {
+					ZombieRaids.handleDeath(player.getRaidsParty(),
 							player);
 				}
 				player.getPacketSender().sendCameraNeutrality();
@@ -322,8 +321,8 @@ public class Locations {
 
 			@Override
 			public void process(Player player) {
-				//if (player.getZombieParty() != null)
-					player.getZombieParty().refreshInterface();
+				//if (player.getRaidsParty() != null)
+					player.getRaidsParty().refreshInterface();
 			}
 
 		},
@@ -333,11 +332,11 @@ public class Locations {
 			public void leave(Player player) {
 				player.getPacketSender().sendCameraNeutrality();
 
-				if (player.getZombieParty() != null)
-					player.getZombieParty().remove(player, true);
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().remove(player, true);
 
-				if (player.getZombieParty() != null)
-					player.getZombieParty().getPlayers()
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().getPlayers()
 							.remove(player);
 
 				player.getMovementQueue().setLockMovement(false);
@@ -348,18 +347,23 @@ public class Locations {
 				if (player.getPlayerInteractingOption() != PlayerInteractingOption.INVITE)
 					player.getPacketSender().sendInteractionOption("Invite", 2, false);
 
-				int id = 111716;
-				for (int i = 111716; i < 111737; i++) {
-					player.getPacketSender().sendString(id++, "---");
-					player.getPacketSender().sendString(id++, "--");
-					player.getPacketSender().sendString(id++, "-");
-				}
-				player.getPacketSender().sendString(111709, "Create");
-				player.getPacketSender().sendString(111702, "Raiding Party: @whi@0");
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().refreshInterface();
+				else {
+					int id = 111716;
+					for (int i = 111716; i < 111737; i++) {
+						player.getPacketSender().sendString(id++, "---");
+						player.getPacketSender().sendString(id++, "--");
+						player.getPacketSender().sendString(id++, "-");
+					}
+					player.getPacketSender().sendString(111709, "Create");
+					player.getPacketSender().sendString(111702, "Raiding Party: @whi@0");
 
-				player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111700);
-				player.getPacketSender().sendConfig(6000, 4);
-				player.getPacketSender().sendTab(GameSettings.QUESTS_TAB);
+					player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111700);
+					player.getPacketSender().sendConfig(6000, 4);
+					player.getPacketSender().sendTab(GameSettings.QUESTS_TAB);
+				}
+
 			}
 
 			@Override
@@ -370,8 +374,173 @@ public class Locations {
 
 			@Override
 			public void process(Player player) {
-				if (player.getZombieParty() != null)
-					player.getZombieParty().refreshInterface();
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().refreshInterface();
+				else{
+					int id = 111716;
+					for (int i = 111716; i < 111737; i++) {
+						player.getPacketSender().sendString(id++, "---");
+						player.getPacketSender().sendString(id++, "--");
+						player.getPacketSender().sendString(id++, "-");
+					}
+					player.getPacketSender().sendString(111709, "Create");
+					player.getPacketSender().sendString(111702, "Raiding Party: @whi@0");
+				}
+			}
+		},
+		SOD(new int[]{3392, 3455}, new int[]{3968, 4031}, true, false, true, false, true, false) {
+			@Override
+			public void logout(Player player) {
+
+				if (player.getRegionInstance() != null
+						&& player.getRegionInstance().equals(RegionInstance.RegionInstanceType.SOD)) {
+					player.getRegionInstance().destruct();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SOD, player.getPosition().getZ(), player));
+
+				}
+				if (player.getRegionInstance() != null)
+					player.getRegionInstance().destruct();
+
+				if (player.getRaidsParty() != null) {
+					player.getRaidsParty().remove(player, true);
+				}
+
+				player.moveTo(new Position(1739, 5238, 0));
+
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().getPlayers()
+							.remove(player);
+
+				player.getMovementQueue().setLockMovement(false);
+				player.getPacketSender().sendCameraNeutrality();
+
+			}
+
+			@Override
+			public void leave(Player player) {
+
+				player.getPacketSender().sendCameraNeutrality();
+				if (player.getRegionInstance() != null
+						&& player.getRegionInstance().equals(RegionInstance.RegionInstanceType.SOD)) {
+					player.getRegionInstance().destruct();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SOD, player.getPosition().getZ(), player));
+				}
+
+				if (player.getRaidsParty() != null) {
+					if (player.getRaidsParty().getOwner().equals(player)) {
+						World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SOD, player.getIndex() * 4, player));
+					}
+				}
+				player.moveTo(new Position(1739, 5238, 0));
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public void login(Player player) {
+				player.getPacketSender().sendCameraNeutrality();
+				if (player.getRegionInstance() != null
+						&& player.getRegionInstance().equals(RegionInstance.RegionInstanceType.SOD)) {
+					player.getRegionInstance().destruct();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SOD, player.getPosition().getZ(), player));
+				}
+
+				if (player.getRaidsParty() != null) {
+					if (player.getRaidsParty().getOwner().equals(player)) {
+						World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SOD, player.getIndex() * 4, player));
+					}
+				}
+
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().remove(player, true);
+
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().getPlayers()
+							.remove(player);
+
+				player.moveTo(new Position(1739, 5238, 0));
+
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public boolean canTeleport(Player player) {
+				player.sendMessage("You cannot teleport while in a raid");
+				return false;
+			}
+
+			@Override
+			public void enter(Player player) {
+				player.setRegionInstance(new RegionInstance(player, RegionInstance.RegionInstanceType.SOD));
+				player.getPacketSender().sendInteractionOption("null", 2, true);
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				if (player.getRaidsParty() != null) {
+					SODRaids.handleDeath(player.getRaidsParty(),
+							player);
+				}
+				player.getPacketSender().sendCameraNeutrality();
+				player.setInsideRaids(false);
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public void process(Player player) {
+				//if (player.getRaidsParty() != null)
+				player.getRaidsParty().refreshSODInterface();
+			}
+
+		},
+		SOD_LOBBY(new int[]{1730, 1748}, new int[]{5230, 5248}, true, false, true, false, true, false) {
+			@Override
+			public void leave(Player player) {
+				player.getPacketSender().sendCameraNeutrality();
+
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().remove(player, true);
+
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().getPlayers()
+							.remove(player);
+
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.INVITE)
+					player.getPacketSender().sendInteractionOption("Invite", 2, false);
+
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().refreshInterface();
+				else {
+					int id = 111716;
+					for (int i = 111716; i < 111737; i++) {
+						player.getPacketSender().sendString(id++, "---");
+						player.getPacketSender().sendString(id++, "--");
+						player.getPacketSender().sendString(id++, "-");
+					}
+					player.getPacketSender().sendString(111709, "Create");
+					player.getPacketSender().sendString(111702, "Raiding Party: @whi@0");
+
+					player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111700);
+					player.getPacketSender().sendConfig(6000, 4);
+					player.getPacketSender().sendTab(GameSettings.QUESTS_TAB);
+				}
+
+			}
+
+			@Override
+			public void login(Player player) {
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.INVITE)
+					player.getPacketSender().sendInteractionOption("Invite", 2, false);
+			}
+
+			@Override
+			public void process(Player player) {
+				if (player.getRaidsParty() != null)
+					player.getRaidsParty().refreshInterface();
 				else{
 					int id = 111716;
 					for (int i = 111716; i < 111737; i++) {
@@ -2122,7 +2291,9 @@ for (Item item : player.getInventory().getItems()) {
 			gc.setLocation(newLocation);
 			if (gc.isPlayer()) {
 				if ((prev == Location.ZOMBIE_LOBBY && newLocation == Location.ZOMBIE)
-						|| (prev == Location.ZOMBIE && newLocation == Location.ZOMBIE_LOBBY)) {
+						|| (prev == Location.ZOMBIE && newLocation == Location.ZOMBIE_LOBBY)
+				|| (prev == Location.SOD_LOBBY && newLocation == Location.SOD)
+						|| (prev == Location.SOD && newLocation == Location.SOD_LOBBY)) {
 
 				} else {
 					prev.leave(((Player) gc));

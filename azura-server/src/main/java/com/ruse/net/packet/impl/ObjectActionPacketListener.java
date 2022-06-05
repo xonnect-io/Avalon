@@ -265,26 +265,38 @@ public class ObjectActionPacketListener implements PacketListener {
 
                             case 7289:
                                 if (player.getLocation() == Location.ZOMBIE) {
-                                    if (player.getZombieParty() != null) {
+                                    if (player.getRaidsParty() != null) {
                                         player.setDialogueActionId(71260);
                                         DialogueManager.start(player, 7126);
                                     }
                                 }
                                 break;
-
-
+                            case 13634:
+                                if (player.getLocation() == Location.SOD_LOBBY) {
+                                    CurseHandler.deactivateAll(player);
+                                    if (player.getRaidsParty() != null) {
+                                        if (player.getRaidsParty().getOwner().equals(player)) {
+                                            player.setDialogueActionId(7056);
+                                            DialogueManager.start(player, 7056);
+                                        } else {
+                                            player.sendMessage("Only the party leader can start the Raid.");
+                                        }
+                                    } else {
+                                        player.sendMessage("You must be in a party to start the Raid.");
+                                    }
+                                }
+                                break;
                             case 31435:
-
                                 if (player.getLocation() == Location.ZOMBIE) {
-                                    if (player.getZombieParty() != null) {
+                                    if (player.getRaidsParty() != null) {
                                         player.setDialogueActionId(71260);
                                         DialogueManager.start(player, 7126);
                                     }
                                 }
                                 if (player.getLocation() == Location.ZOMBIE_LOBBY) {
                                     CurseHandler.deactivateAll(player);
-                                    if (player.getZombieParty() != null) {
-                                        if (player.getZombieParty().getOwner().equals(player)) {
+                                    if (player.getRaidsParty() != null) {
+                                        if (player.getRaidsParty().getOwner().equals(player)) {
                                             player.setDialogueActionId(2012);
                                             DialogueManager.start(player, 2012);
                                         } else {

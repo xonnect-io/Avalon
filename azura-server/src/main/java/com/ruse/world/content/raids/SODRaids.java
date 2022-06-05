@@ -8,7 +8,7 @@ import com.ruse.model.Position;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.boxes.ZombieRaidLoot;
+import com.ruse.world.content.boxes.SODRaidLoot;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
@@ -18,7 +18,7 @@ import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
 
-public class ZombieRaids {
+public class SODRaids {
 
     public static void start(RaidsParty party) {
 
@@ -50,14 +50,14 @@ public class ZombieRaids {
 
         party.enteredDungeon(true);
         final int height = p.getIndex() * 4;
-        World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.ZOMBIE, height, null));
+        World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.SOD, height, null));
 
         for (Player member : party.getPlayers()) {
             member.getPacketSender().sendInterfaceRemoval();
             member.setRegionInstance(null);
             member.getMovementQueue().reset();
             member.getClickDelay().reset();
-            member.moveTo(new Position(2253, 4113 , height));
+            member.moveTo(new Position(3445, 3978 , height));
             PrayerHandler.deactivateAll(member);
             CurseHandler.deactivateAll(member);
             TaskManager.submit(new Task(2, false) {
@@ -73,16 +73,15 @@ public class ZombieRaids {
             member.getPacketSender().sendClientRightClickRemoval();
             member.getPacketSender().sendCameraNeutrality();
             member.setInsideRaids(false);
-            member.setEnteredZombieRaids(false);
-            //member.getPacketSender().sendFade(25, 50, 50);
+            member.setEnteredSODRaids(false);
             member.setRaidsParty(party);
         }
         party.setDeathCount(0);
         party.setKills(0);
-        party.sendMessage("@red@Welcome to the League of Legends Raids");
+        party.sendMessage("The Unholy Spirits welcome you to the Souls of Suffering.");
         party.setCurrentPhase(1);
         party.setHeight(height);
-        party.startLegendsRaid();
+        party.startSODRaid();
 
     }
 
@@ -97,17 +96,15 @@ public class ZombieRaids {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 2500;
 
-        for (int i = 0; i < 8; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.firstWaveNpc, mult));
-        }
-        for (int i = 0; i < (party.getPlayers().size() - 1) * 2; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.firstWaveNpc, mult));
-        }
+            NPC npc = new NPC(SODRaidData.firstWaveNpc, new Position(3422, 3978, party.getHeight()));
+            npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
+            npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
+            npcs.add(npc);
         TaskManager.submit(new Task(10, false) {
 
             @Override
             public void execute() {
-                startLegendTask(party, npcs, 1);
+                startSODTask(party, npcs, 1);
                 stop();
             }
         });
@@ -117,18 +114,15 @@ public class ZombieRaids {
 
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 5000;
-
-        for (int i = 0; i < 6; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.secondWaveNpc, mult));
-        }
-        for (int i = 0; i < (party.getPlayers().size() - 1) * 2; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.secondWaveNpc, mult));
-        }
+            NPC npc = new NPC(SODRaidData.secondWaveNpc, new Position(3402, 3986, party.getHeight()));
+            npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
+            npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
+            npcs.add(npc);
         TaskManager.submit(new Task(10, false) {
 
             @Override
             public void execute() {
-                startLegendTask(party, npcs, 2);
+                startSODTask(party, npcs, 2);
                 stop();
             }
         });
@@ -138,18 +132,16 @@ public class ZombieRaids {
 
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 10000;
+            NPC npc = new NPC(SODRaidData.thirdWaveNpc, new Position(3403, 4017, party.getHeight()));
+            npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
+            npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
+            npcs.add(npc);
 
-        for (int i = 0; i < 5; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.thirdWaveNpc, mult));
-        }
-        for (int i = 0; i < (party.getPlayers().size() - 1) * 1; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.thirdWaveNpc, mult));
-        }
         TaskManager.submit(new Task(10, false) {
 
             @Override
             public void execute() {
-                startLegendTask(party, npcs, 3);
+                startSODTask(party, npcs, 3);
                 stop();
             }
         });
@@ -160,17 +152,15 @@ public class ZombieRaids {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 20000;
 
-        for (int i = 0; i < 4; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.fourthWaveNpc, mult));
-        }
-        for (int i = 0; i < (party.getPlayers().size() - 1) * 1; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.fourthWaveNpc, mult));
-        }
+            NPC npc = new NPC(SODRaidData.fourthWaveNpc, new Position(3435, 4017, party.getHeight()));
+            npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
+            npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
+            npcs.add(npc);
         TaskManager.submit(new Task(10, false) {
 
             @Override
             public void execute() {
-                startLegendTask(party, npcs, 4);
+                startSODTask(party, npcs, 4);
                 stop();
             }
         });
@@ -182,7 +172,7 @@ public class ZombieRaids {
 
         double mult = 100000;
 
-        NPC npc = new NPC(ZombieRaidData.fifthWaveNpc, new Position(2257, 4115, party.getHeight()));
+        NPC npc = new NPC(SODRaidData.fifthWaveNpc, new Position(3420, 3998, party.getHeight()));
         npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npcs.add(npc);
@@ -191,13 +181,13 @@ public class ZombieRaids {
 
             @Override
             public void execute() {
-                startLegendTask(party, npcs, 5);
+                startSODTask(party, npcs, 5);
                 stop();
             }
         });
     }
 
-    public static void startLegendTask(RaidsParty party, ArrayList<NPC> npcs, int wave) {
+    public static void startSODTask(RaidsParty party, ArrayList<NPC> npcs, int wave) {
         TaskManager.submit(new Task(1, false) {
 
             @Override
@@ -208,9 +198,9 @@ public class ZombieRaids {
 
                     @Override
                     protected void execute() {
-                        if ((party.getOwner().getLocation() != Locations.Location.ZOMBIE)
+                        if ((party.getOwner().getLocation() != Locations.Location.SOD)
                                 || party.getPlayers().size() <= 0) {
-                            party.sendMessage("@red@Your party has failed to defeat the Raids [2]");
+                            party.sendMessage("@red@Your party has failed to complete the Souls of Suffering Raid!");
                             destroyInstance(party);
                             stop();
                             
@@ -241,7 +231,7 @@ public class ZombieRaids {
 
                         if (tick == 4) {
                             if (wave == 1)
-                                party.sendMessage("@red@The League of Legends Raids have started!");
+                                party.sendMessage("@red@The Souls of Suffering has started!");
                             else if (wave == 2)
                                 party.sendMessage("@red@The second wave has started!");
                             else if (wave == 3)
@@ -249,7 +239,7 @@ public class ZombieRaids {
                             else if (wave == 4)
                                 party.sendMessage("@red@The fourth wave has started!");
                             else if (wave == 5)
-                                party.sendMessage("@red@Final boss Veigar has appeared! Defeat him to claim your reward!");
+                                party.sendMessage("@red@The final wave of suffering has started!");
                             for (NPC npc : npcs) {
                                 spawnNpc(party, npc);
                             }
@@ -294,18 +284,18 @@ public class ZombieRaids {
 
             @Override
             public void execute() {
-                party.sendMessage("@red@Your party has defeated the League of Legends Raids!");
+                party.sendMessage("@red@Your party has defeated the Souls of Suffering!");
 
                 for (Player player : party.getPlayers()) {
-                    Box[] loot = ZombieRaidLoot.LOOT;
+                    Box[] loot = SODRaidLoot.LOOT;
 
-                    player.setZombieRaidsKC(player.getZombieRaidsKC() + 1);
+                    player.setSODRaidsKC(player.getSODRaidsKC() + 1);
 
                     Box drop = getLoot(loot, party.getPlayers().size());
 
                     if (drop.isAnnounce()) {
                         String message = "@blu@News: @red@" + player.getUsername() + " @blu@has just received @red@"
-                                + ItemDefinition.forId(drop.getId()).getName() + "@blu@ from @red@League of Legends Raids";
+                                + ItemDefinition.forId(drop.getId()).getName() + "@blu@ from @red@Souls of Suffering";
                         World.sendMessage1(message);
                     }
 
@@ -350,9 +340,9 @@ public class ZombieRaids {
     public static void destroyInstance(RaidsParty party) {
 
         for (Player member : party.getPlayers()) {
-            member.setEnteredZombieRaids(false);
+            member.setEnteredSODRaids(false);
         }
-        party.moveTo(ZombieRaidData.lobbyPosition);
+        party.moveTo(SODRaidData.lobbyPosition);
         party.enteredDungeon(false);
         party.getPlayers().clear();
 

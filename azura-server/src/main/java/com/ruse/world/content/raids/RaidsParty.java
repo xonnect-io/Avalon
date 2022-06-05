@@ -74,7 +74,7 @@ public class RaidsParty {
             getOwner().getPacketSender().sendMessage("Your party is full.");
             return;
         }
-        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY || p.isTeleporting()) {
+        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY || p.getLocation() != Locations.Location.SOD_LOBBY ||p.isTeleporting()) {
             getOwner().getPacketSender().sendMessage("That player is not in Raids.");
             return;
         }
@@ -87,7 +87,8 @@ public class RaidsParty {
             return;
         }
         if (p.getRights() != PlayerRights.DEVELOPER && System.currentTimeMillis()
-                - getOwner().getMinigameAttributes().getZombieAttributes().getLastInvitation() < 2000) {
+                - getOwner().getMinigameAttributes().getZombieAttributes().getLastInvitation() < 2000 ||  System.currentTimeMillis()
+                - getOwner().getMinigameAttributes().getSODAttributes().getLastInvitation() < 2000 ) {
             getOwner().getPacketSender().sendMessage("You must wait 2 seconds between each party invitation.");
             return;
         }
@@ -106,6 +107,7 @@ public class RaidsParty {
             return;
         }
 
+        getOwner().getMinigameAttributes().getSODAttributes().setLastInvitation(System.currentTimeMillis());
         getOwner().getMinigameAttributes().getZombieAttributes().setLastInvitation(System.currentTimeMillis());
         DialogueManager.start(p, new RaidsPartyInvitation(getOwner(), p));
         getOwner().getPacketSender().sendMessage("An invitation has been sent to " + p.getUsername() + ".");
@@ -120,7 +122,7 @@ public class RaidsParty {
             p.getPacketSender().sendMessage("This party has already entered a dungeon.");
             return;
         }
-        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY || p.isTeleporting()) {
+        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY || p.getLocation() != Locations.Location.SOD_LOBBY ||p.isTeleporting()) {
             return;
         }
 
@@ -183,6 +185,7 @@ public class RaidsParty {
                 if (player.getLocation() == Locations.Location.ZOMBIE || player.getLocation() == Locations.Location.SOD)
                     destruct = false;
             }
+
         } else {
             destruct = false;
         }
@@ -223,7 +226,30 @@ public class RaidsParty {
         owner.setRaidsParty(this);
 
     }
+    public void refreshSODInterface() {
+        for (Player member : getPlayers()) {
+            if (member != null) {
+                member.getPacketSender().sendString(111709, "Invite");
 
+                int start = 111716;
+                for (int i = 0; i < getPlayers().size(); i++) {
+                    member.getPacketSender().sendString(start++, "" + getPlayers().get(i).getUsername());
+                    member.getPacketSender().sendString(start++,
+                            "" + getPlayers().get(i).getSkillManager().getTotalLevel());
+                    member.getPacketSender().sendString(start++,
+                            "" + getPlayers().get(i).getSkillManager().getCombatLevel());
+                }
+
+                for (int i = start; i < 111737; i++) {
+                    member.getPacketSender().sendString(start++, "---");
+                    member.getPacketSender().sendString(start++, "--");
+                    member.getPacketSender().sendString(start++, "-");
+                }
+
+                member.getPacketSender().sendString(111702, "Raiding Party: @whi@" + getPlayers().size());
+            }
+        }
+    }
     public void refreshInterface() {
         for (Player member : getPlayers()) {
             if (member != null) {
@@ -281,9 +307,11 @@ public class RaidsParty {
         return npc_members;
     }
 
-    public void startRaid() {
+    public void startLegendsRaid() {
         ZombieRaids.firstWave(this);
     }
-
+    public void startSODRaid() {
+        SODRaids.firstWave(this);
+    }
 
 }

@@ -25,6 +25,64 @@ public class MinigameAttributes {
 	private final trioAttributes trioAttributes = new trioAttributes();
 	private final ZulrahAttributes zulrahAttributes = new ZulrahAttributes();
 	private final ZombieAttributes zombieAttributes = new ZombieAttributes();
+	private final SODAttributes sodAttributes = new SODAttributes();
+
+	public class SODAttributes {
+		private RaidsParty party;
+		private RaidsParty invitation;
+		private long lastInvitation;
+		private int points;
+		private int deaths;
+
+		public RaidsParty getParty() {
+			return party;
+		}
+
+		public void setParty(RaidsParty raidsParty) {
+			this.party = raidsParty;
+		}
+
+		public long getLastInvitation() {
+			return lastInvitation;
+		}
+
+		public void setLastInvitation(long lastInvitation) {
+			this.lastInvitation = lastInvitation;
+		}
+
+		public RaidsParty getPartyInvitation() {
+			return invitation;
+		}
+
+		public void setPartyInvitation(RaidsParty partyInvitation) {
+			this.invitation = partyInvitation;
+		}
+
+		public void incrementDamageDealt(int damage) {
+			this.points += damage;
+		}
+
+		public void setDamageDealt(int damage) {
+			this.points = damage;
+		}
+
+		public int getDamageDealt() {
+			return this.points;
+		}
+
+		public void setDeaths(int deaths) {
+			this.deaths = deaths;
+		}
+
+		public void incrementDeaths() {
+			this.deaths++;
+		}
+
+		public int getDeaths() {
+			return deaths;
+		}
+	}
+
 
 	public class ZombieAttributes {
 		private RaidsParty party;
@@ -81,6 +139,7 @@ public class MinigameAttributes {
 			return deaths;
 		}
 	}
+
 
 	public class GraveyardAttributes {
 
@@ -519,5 +578,8 @@ public class MinigameAttributes {
 	}
 	public ZombieAttributes getZombieAttributes() {
 		return zombieAttributes;
+	}
+	public SODAttributes getSODAttributes() {
+		return sodAttributes;
 	}
 }
