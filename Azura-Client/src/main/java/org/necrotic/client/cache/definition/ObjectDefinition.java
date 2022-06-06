@@ -208,7 +208,10 @@ public final class ObjectDefinition {
 			definition.name = "AFK Crystal";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
-
+		if (definition.type == 4389) {
+			definition.name = "Celestial Zone";
+			definition.actions = new String[]{"Enter", null, null, null, null};
+		}
 		if (definition.type == 22099) {
 			definition.objectModelIDs = new int[]{15573};
 			definition.name = "AFK Sapphire";

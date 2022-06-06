@@ -45,7 +45,7 @@ public class DiscordPlugin extends Plugin {
             .tab(false)
             .tooltip("Visit Store")
             .icon(icon2)
-            .onClick(() -> LinkBrowser.browse("https://Solak.io/store"))
+            .onClick(() -> LinkBrowser.browse("https://Avalon317.com/store"))
             .build();
         
         clientToolbar.addNavigation(storeButton);

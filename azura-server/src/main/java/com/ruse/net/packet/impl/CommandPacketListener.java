@@ -352,8 +352,10 @@ public class CommandPacketListener implements PacketListener {
             PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[0]);
         }
 
-        if (command[0].equalsIgnoreCase("teleport")) {
-            new NewTeleportInterfaceHandler(player).open();
+        if (command[0].equalsIgnoreCase("teleport") && (!player.isOpenedTeleports())) {
+            player.setOpenedTeleports(true);
+            TeleportInterface.sendMonsterData(player, TeleportInterface.Monsters.values()[0]);
+            TeleportInterface.sendMonsterTab(player);
         }
 
         if (command[0].equalsIgnoreCase("achievements") || command[0].equalsIgnoreCase("dailytasks")

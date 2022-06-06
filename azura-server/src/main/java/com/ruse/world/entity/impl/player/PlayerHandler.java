@@ -231,18 +231,8 @@ public class PlayerHandler {
 
         player.getPacketSender().sendMessage("<shad=1>@bla@Welcome to " + GameSettings.RSPS_NAME + "!");
 
+        player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 75 Donated you will get @red@<shad=1>x1 Owner Cape Goodiebag");
 
-        if (player.experienceLocked())
-            player.getPacketSender().sendMessage(MessageType.SERVER_ALERT,
-                    " @red@Warning: your experience is currently locked.");
-
-        /*
-         * if (!player.getRights().OwnerDeveloperOnly() &&
-         * player.getSkillManager().getExperience(Skill.INVENTION) > 1) {
-         * player.getSkillManager().setExperience(Skill.INVENTION, 0);
-         * player.getSkillManager().setMaxLevel(Skill.INVENTION, 1);
-         * player.getSkillManager().setCurrentLevel(Skill.INVENTION, 1, true); }
-         */
 
         if (GameSettings.BCRYPT_HASH_PASSWORDS && Misc.needsNewSalt(player.getSalt())) {
             player.setSalt(BCrypt.gensalt(GameSettings.BCRYPT_ROUNDS));
@@ -253,8 +243,6 @@ public class PlayerHandler {
         if (Misc.isWeekend()) {
             player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
                     + "] Double EXP has been activated. It stacks with Vote scrolls, Enjoy!");
-            // player.getPacketSender().sendMessage("<img=5> <col=ff00ff>Oh, and this
-            // weekend we're having double vote points as well!");
         }
 
         if (Wildywyrm.wyrmAlive) {

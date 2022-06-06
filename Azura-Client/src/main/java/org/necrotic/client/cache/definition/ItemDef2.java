@@ -8516,10 +8516,19 @@ public class ItemDef2 {
 				break;
 				
 			case 23229:
-				itemDef.copyItem(14861);
+				itemDef.copyItem(19864);
 				itemDef.name = "@yel@Global Boss Token";
 				itemDef.rdc2 = 21708;
 				break;
+				
+
+				
+			case 23273:
+				itemDef.copyItem(14859);
+				itemDef.name = "@cya@Celestial Energy";
+				itemDef.rdc2 = 27333;
+				break;
+				
 			case 23268:
 				itemDef.copyItem(4407);
 				itemDef.name = "Cloak of Summer";

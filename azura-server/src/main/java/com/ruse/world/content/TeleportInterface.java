@@ -6,6 +6,7 @@ import com.ruse.model.Position;
 import com.ruse.model.container.impl.Shop;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.definitions.NPCDrops;
+import com.ruse.motivote3.doMotivote;
 import com.ruse.world.World;
 import com.ruse.world.content.boxes.Raids1;
 import com.ruse.world.content.boxes.Starter;
@@ -15,6 +16,7 @@ import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.teleport.NewTeleportInterfaceHandler;
+import com.ruse.world.content.teleport.TeleportType1;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -36,8 +38,13 @@ public class TeleportInterface {
     public static boolean handleButton(Player player, int buttonID) {
 
         switch (buttonID) {
-            case 1716:
-                new NewTeleportInterfaceHandler(player).open();
+            case 1716:                if (!player.isOpenedTeleports()) {
+                player.setOpenedTeleports(true);
+                TeleportInterface.sendMonsterData(player, TeleportInterface.Monsters.values()[0]);
+                TeleportInterface.sendMonsterTab(player);
+            } else {
+                player.getPacketSender().sendInterface(122000);
+            }
                 return true;
             case 122005:
             case 11004:
@@ -442,7 +449,7 @@ public class TeleportInterface {
     }
 
     public static void sendTitles(Player player) {
-        String[] categories = new String[]{"Monsters", "Bosses", "Minigames", "Dungeons", "Misc"};
+        String[] categories = new String[]{"Monsters", "Bosses", "Minigames", "Dungeons", "Globals"};
         for (int i = 0; i < 5; i++) {
             player.getPacketSender().sendString(122011 + i, (player.getCurrentTeleportTab() == i ? "@whi@" : "") + categories[i]);
         }
@@ -568,11 +575,12 @@ public class TeleportInterface {
         TOLROKOTH("Tolrokoth", 6430, new int[]{1887, 5468, 0}, 1200),
         DEITY_DEMON("Demons of Deity", 440, new int[]{2781, 4576, 0}, 1000),
         MUTATED_HOUND("Mutated Hound", 9839, new int[]{3421, 4777, 0}, 1250),
+        ELITE("Elite Valdis", 205, new int[]{2529, 4573, 0}, 1250),
         COLLOSAL_AVATAR("Collosal Avatar", 4540, new int[]{2375, 4947, 0}, 1350),
         INFERNAL_DEMON("Plutonic Demon", 12810, new int[]{2728, 4505, 0}, 1150),
         FALLEN_ANGEL("Fallen Angel", 9012, new int[]{2335, 3998, 0}, 1000),
         MIDNIGHT_GOBLIN("Midnight Goblin", 9837, new int[]{2335, 3998, 0}, 1100),
-        BLOOD_MAGE("Blood Mage", 9813, new int[]{2335, 3998, 0}, 520),
+        BLOOD_MAGE("Blood Demon", 9813, new int[]{2335, 3998, 0}, 520),
         /*
         CRYSTAL_QUEEN("Crystal queen", 6430, new int[]{1887, 5468, 0}, 1100),
         LUCIFER("Fallen Angel", 9012, new int[]{2335, 3998, 0}, 1000),
@@ -618,7 +626,7 @@ public class TeleportInterface {
 
 
     public enum Minigames implements Teleport {
-        STARTER_ZONE("Starter Zone", 9001, new int[]{1, 1, 0}, Starter.rewards, 600),
+        STARTER_ZONE("Starter Progression", 9001, new int[]{1, 1, 0}, Starter.rewards, 600),
         OUTBREAK("Pyramid Outbreak", 4476, new int[]{3487, 9235, 0}, Graveyard.loot, 600),
         UNKNOWN("Unknown Crypt", 823, new int[]{1754, 5133, 0}, 1250),
         DUNG("Legends Raids", 585, new int[]{2526, 5292, 0}, Raids1.rewards, 1450),
@@ -687,14 +695,15 @@ public class TeleportInterface {
 
     public enum Misc implements Teleport {
 
-        SKILL_ISLAND("Skill Island", 805, new int[]{2817, 2600, 0}, 700),
-        GLOBAL_BOSSES("Global bosses", 4972, new int[]{2139, 5019, 0}, 2000),
-        TELE6("Puro Puro", 6064, new int[]{2589, 4319, 0}, 700),
-        TELE0("Gnome Course", 437, new int[]{2480, 3435, 0}, 700),
-        TELE1("Barbarian Course", 437, new int[]{2552, 3556, 0}, 700),
-        TELE2("Wilderness Course", 437, new int[]{3003, 3934, 0}, 700),
-
-
+        KC_BOSS("Hellraiser", 187, new int[]{3109, 5530, 0}, 1350),
+        AFK_BOSS("Afk boss", 3779, new int[]{2013, 4505, 0}, 1500),
+        TELE6("Vote boss", 8013, new int[]{2848, 4577, 0}, 1600),
+        TELE0("Nightmare", 9017, new int[]{2980, 2771, 0}, 1500),
+        TELE1("Naraku", 3305, new int[]{3420, 9563, 0}, 1350),
+        TELE2("Dragon King", 4972, new int[]{2139, 5019, 0}, 1800),
+        TELE3("Avalon Guardian", 3830, new int[]{3491, 2772, 0}, 1900),
+        TELE4("Iron", 587, new int[]{3808, 2842, 0}, 1500),
+        TELE5("Nephilim Warrior", 9312, new int[]{2013, 4505, 0}, 1100),
         ;
 
         private final String name;

@@ -14,7 +14,7 @@ public class GameSettings {
     public static boolean LOCALHOST = true;
     public static boolean BOGO = false;
     public static boolean B2GO = false;
-
+    public static boolean ELITE_DONO_DEAL = false;
     // Beta variable, allows certain functionality.. DISABLE WHEN LIVE
     public static boolean BETA_ENABLED = false;
 

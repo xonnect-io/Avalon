@@ -7343,7 +7343,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		tab.child(c++, id++, 240 + x, 42 + y);
 		addText(id, "Dungeons", tda, 0, ColorConstants.ORANGE, true, true);
 		tab.child(c++, id++, 332 + x, 42 + y);
-		addText(id, "Misc", tda, 0, ColorConstants.ORANGE, true, true);
+		addText(id, "Globals", tda, 0, ColorConstants.ORANGE, true, true);
 		tab.child(c++, id++, 424 + x, 42 + y);
 		addText(id, "", tda, 0, ColorConstants.ORANGE, true, true);
 		tab.child(c++, id++, 433 + x, 42 + y);
