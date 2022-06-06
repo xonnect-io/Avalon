@@ -235,6 +235,9 @@ public class NPCOptionPacketListener implements PacketListener {
                         ShopManager.getShops().get(104).open(player);
                         npc.forceChat("PvM ticket shop!");
                         break;
+                    case 5838:
+                        ShopManager.getShops().get(137).open(player);
+                        break;
                     case 659:
                         if (GameSettings.newYear2017) {
                             if (player.getNewYear2017() == 0) {
