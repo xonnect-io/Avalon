@@ -125,7 +125,6 @@ public class GlobalBoss2 {
                 }
 
                 if (!GameSettings.LOCALHOST)
-                DiscordMessager.sendNightmareBossLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;

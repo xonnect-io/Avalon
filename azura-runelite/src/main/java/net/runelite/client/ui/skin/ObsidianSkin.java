@@ -59,7 +59,7 @@ public class ObsidianSkin extends SubstanceSkin
 	 */
 	ObsidianSkin()
 	{
-		final ColorSchemes schemes = SubstanceSkin
+		final ColorSchemes schemes = SubstanceSkin//not sure tbh its in runelite but not here thats why it wont load in a jar file 
 			.getColorSchemes(getClass().getResource(NAME + ".colorschemes"));
 		final SubstanceColorScheme activeScheme = schemes.get("RuneLite Active");
 		final SubstanceColorScheme enabledScheme = schemes.get("RuneLite Enabled");

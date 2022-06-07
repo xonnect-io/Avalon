@@ -1266,6 +1266,18 @@ public class DialogueOptions {
                     }
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
+                case 6668://yes
+                    for (int i = 0; i < player.getInventory().capacity(); i++) {
+                        if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
+
+                           player.getDissolving().handle(player.getInventory().get(i).getId());
+
+
+                        }
+                    }
+
+                    player.getPacketSender().sendInterfaceRemoval();
+                    break;
                 case 666:
                     VaultOfWar.forgeGloves(player);
                     break;

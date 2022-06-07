@@ -407,6 +407,7 @@ public class Dissolving {
 		
 		private int id, experience, animation;
 		private Item[] rewards;
+
 	//	private int[][] progressions;
 		
 		public int getId() {
@@ -425,7 +426,17 @@ public class Dissolving {
 		
 		
 	}
-	
+	public int amtafterdissolvingall = 0;
+	public int sumofdissolves(int id) {
+		int amt = 0;
+		for(DissolvingData data : DissolvingData.values()) {
+			if(data.getId() == id) {
+				amt+=data.getRewards()[0].getAmount();
+				break;
+			}
+		}
+return amt;
+	}
 	public void handle(int id) {
 		for(DissolvingData data : DissolvingData.values()) {
 			if(data.getId() == id) {

@@ -51,7 +51,7 @@ public class ObsidianSkin extends SubstanceSkin {
 	/**
 	 * Display name for <code>this</code> skin.
 	 */
-	private static final String NAME = "RuneLite";
+	private static final String NAME = "RuneLite";//where is runelite.colorschemes
 
 	/**
 	 * Creates a new <code>RuneLite</code> skin.

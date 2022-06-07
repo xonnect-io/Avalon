@@ -126,7 +126,6 @@ public class GlobalBoss4 {
                     players.getPacketSender().sendBroadCastMessage("Dragon king has appeared at ::dk", 100);
                 }
                 if (!GameSettings.LOCALHOST)
-                DiscordMessager.sendDragonKingLog(message);
                 World.sendBroadcastMessage(message);
 
             }

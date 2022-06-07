@@ -50,6 +50,35 @@ public class DiscordMessager extends JSONObject {
 		}
 	}
 
+	public static void sendRules(String msg) {
+		try {
+
+			if (Misc.checkForOwner() || !active) {
+				return;
+			}
+
+			String webhook = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+			// client
+
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Toxic Behavior")
+					//.withURL("http://Avalon317.com")
+					.withColor(Color.orange)
+					.withDescription("- Flaming: the act of posting insults, often including profanity or other offensive language, on the internet. Trolling: a malicious online behavior, characterized by aggressive and deliberate provocation of others. Racism: prejudice, discrimination, or antagonism directed against a person or people on the basis of their membership in a particular racial or ethnic group, typically one that is a minority or marginalized. Sexism: prejudice, stereotyping, or discrimination, typically against women, on the basis of sex. Religious Discrimination: the act of making fun of someone for their religious beliefs or lack of. Spamming/Caps: spamming one word or short sentences, using capitol letters excessively, or advertising is strictly forbidden. - You are not allowed to advertise an other RSPS related material. Known links such as YouTube are allowed unless determined by a staff member that your intention is to sway players to another server. Causing drama in any way isnt tolerated. We all hold ourselves to a high standard. If you dont like someone ignore them or block them. Toxicity in any fashion will now be taken with 0 tolerance. Toxicity of any kind will get you an instant mute, no warnings. What constitutes as toxicity will be up to the Staff Team's discretion. Harassment, Targeting, Baiting, Flame etc are all considered as toxic and will abide by rule #2.")
+					.build();
+
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
+					.withEmbed(embed)
+					.withUsername("Globals")
+					.build();
+
+			client.sendPayload(message);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void sendDonationBossLog(String msg) {
 		try {
 
@@ -62,24 +91,16 @@ public class DiscordMessager extends JSONObject {
 			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
 			// client
 
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Avalon - RSPS") // The title of the embed
-					// element
-					.withURL("http://necrotic.org/") // The URL of the embed element
-					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
-					.withDescription(
-							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
-					// description
-					// of
-					// the
-					// embed
-					// object
-					.build(); // Build the embed element
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
+					//.withURL("http://Avalon317.com")
+					.withColor(Color.orange)
+					.withDescription("The Avalon Guardian has spawned at ::guardian")
+					.build();
 
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
-					// message
-					// .withEmbed(embed) // Add our embed object
-					.withUsername("Announcement Bot") // Override the username of the bot
-					.build(); // Build the message
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
+					.withEmbed(embed)
+					.withUsername("Globals")
+					.build();
 
 			client.sendPayload(message);
 
@@ -100,24 +121,16 @@ public class DiscordMessager extends JSONObject {
 			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
 			// client
 
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Necrotic - RSPS") // The title of the embed
-					// element
-					.withURL("http://necrotic.org/") // The URL of the embed element
-					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
-					.withDescription(
-							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
-					// description
-					// of
-					// the
-					// embed
-					// object
-					.build(); // Build the embed element
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
+					//.withURL("http://Avalon317.com")
+					.withColor(Color.red)
+					.withDescription("The Nephilim Warrior has spawned at ::Nephilim")
+					.build();
 
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
-					// message
-					// .withEmbed(embed) // Add our embed object
-					.withUsername("Announcement Bot") // Override the username of the bot
-					.build(); // Build the message
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
+					 .withEmbed(embed)
+					.withUsername("Globals")
+					.build();
 
 			client.sendPayload(message);
 
@@ -125,122 +138,7 @@ public class DiscordMessager extends JSONObject {
 			e.printStackTrace();
 		}
 	}
-
-
-	public static void sendIronBossLog(String msg) {
-		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
-			String webhook = "https://discord.com/api/webhooks/969977018336804884/Bthzq3XSSpcYU0WAipZ7DAmsG_dE6UAB62prw5adRxZ41lgnviIxqZQVrWdE_t7R8ssa";
-
-			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-			// client
-
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Avalon - RSPS") // The title of the embed
-					// element
-					.withURL("http://necrotic.org/") // The URL of the embed element
-					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
-					.withDescription(
-							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
-					// description
-					// of
-					// the
-					// embed
-					// object
-					.build(); // Build the embed element
-
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
-					// message
-					// .withEmbed(embed) // Add our embed object
-					.withUsername("Announcement Bot") // Override the username of the bot
-					.build(); // Build the message
-
-			client.sendPayload(message);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void sendHellraiserBossLog(String msg) {
-		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
-			String webhook = "https://discord.com/api/webhooks/963121044669988904/2iGUZVXajUNFgxEQzRWGRuaIuU378c2JQqaUbAndZxk4ctrlepSM8MMXkxXNwZtvHT9R";
-
-			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-			// client
-
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Necrotic - RSPS") // The title of the embed
-					// element
-					.withURL("http://necrotic.org/") // The URL of the embed element
-					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
-					.withDescription(
-							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
-					// description
-					// of
-					// the
-					// embed
-					// object
-					.build(); // Build the embed element
-
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
-					// message
-					// .withEmbed(embed) // Add our embed object
-					.withUsername("Announcement Bot") // Override the username of the bot
-					.build(); // Build the message
-
-			client.sendPayload(message);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-
-	public static void sendAFKBossLog(String msg) {
-		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
-			String webhook = "https://discord.com/api/webhooks/963120700829339668/qsukZA_-iaHXfKT7RrAMS_uhUvaSa3vEojXGgHItWBq6gHs2I7jFXXHT9iStO3H82p4l";
-
-			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-			// client
-
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Necrotic - RSPS") // The title of the embed
-					// element
-					.withURL("http://necrotic.org/") // The URL of the embed element
-					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
-					.withDescription(
-							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
-					// description
-					// of
-					// the
-					// embed
-					// object
-					.build(); // Build the embed element
-
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
-					// message
-					// .withEmbed(embed) // Add our embed object
-					.withUsername("Announcement Bot") // Override the username of the bot
-					.build(); // Build the message
-
-			client.sendPayload(message);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	
 
 	public static void sendVoteBossLog(String msg) {
 		try {
@@ -251,150 +149,26 @@ public class DiscordMessager extends JSONObject {
 
 			String webhook = "https://discord.com/api/webhooks/963120303133835334/0y0GdPvBsQcMz8P889Z83R74luopoF9G-wPsJam4hEtuWu5FMB2hMJWS4JPcFvldm_7g";
 
-			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-			// client
 
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Necrotic - RSPS") // The title of the embed
-					// element
-					.withURL("http://necrotic.org/") // The URL of the embed element
-					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
-					.withDescription(
-							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
-					// description
-					// of
-					// the
-					// embed
-					// object
-					.build(); // Build the embed element
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build();
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
+					//.withURL("http://Avalon317.com")
+					.withColor(Color.BLUE)
+					.withDescription("Vote boss has spawned at ::Vboss")
+					.build();
 
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
-					// message
-					// .withEmbed(embed) // Add our embed object
-					.withUsername("Announcement Bot") // Override the username of the bot
-					.build(); // Build the message
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
+					.withEmbed(embed)
+					.withUsername("Globals")
+					.build();
 
 			client.sendPayload(message);
+
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
-
-	public static void sendNightmareBossLog(String msg) {
-		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
-			String webhook = "https://discord.com/api/webhooks/963120028465655898/BwVf-RhLNbASaZKs56jrtBMuDDjhNVlad7sV3Ke5EaqWprKCxuysrXnP8dq3Dp23lnjw";
-
-			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-			// client
-
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Necrotic - RSPS") // The title of the embed
-					// element
-					.withURL("http://necrotic.org/") // The URL of the embed element
-					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
-					.withDescription(
-							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
-					// description
-					// of
-					// the
-					// embed
-					// object
-					.build(); // Build the embed element
-
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
-					// message
-					// .withEmbed(embed) // Add our embed object
-					.withUsername("Announcement Bot") // Override the username of the bot
-					.build(); // Build the message
-
-			client.sendPayload(message);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void sendNarakuLog(String msg) {
-		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
-			String webhook = "https://discord.com/api/webhooks/963119856411103312/7g-uqX-FWnEqkDTDyI72587xYk68JAxooyFaF-Y7PLmyGkP9XD_hoTLx3LUVxkXo-27d";
-
-			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-			// client
-
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Necrotic - RSPS") // The title of the embed
-					// element
-					.withURL("http://necrotic.org/") // The URL of the embed element
-					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
-					.withDescription(
-							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
-					// description
-					// of
-					// the
-					// embed
-					// object
-					.build(); // Build the embed element
-
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
-					// message
-					// .withEmbed(embed) // Add our embed object
-					.withUsername("Announcement Bot") // Override the username of the bot
-					.build(); // Build the message
-
-			client.sendPayload(message);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void sendDragonKingLog(String msg) {
-		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
-			String webhook = "https://discord.com/api/webhooks/963118213896495194/jLtj7bIWd5VEYjUfzsi3agCnoGjYA54RWXSaq0NY9dNeq0K0x6FBgHdYzUYTEDT8jt5b";
-
-			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-			// client
-
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Necrotic - RSPS") // The title of the embed
-					// element
-					.withURL("http://necrotic.org/") // The URL of the embed element
-					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
-					.withDescription(
-							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
-					// description
-					// of
-					// the
-					// embed
-					// object
-					.build(); // Build the embed element
-
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
-					// message
-					// .withEmbed(embed) // Add our embed object
-					.withUsername("Announcement Bot") // Override the username of the bot
-					.build(); // Build the message
-
-			client.sendPayload(message);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	public static void sendAnnouncement(String msg) {
 		try {
 

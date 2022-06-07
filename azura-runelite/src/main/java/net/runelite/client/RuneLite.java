@@ -22,73 +22,70 @@ import java.util.Locale;
 @Slf4j
 public final class RuneLite {
 
-    public static final File RUNELITE_DIR = new File(System.getProperty("user.home"), ".azura");
-    public static final File CACHE_DIR = new File(RUNELITE_DIR, "cache");
-    public static final File PLUGINS_DIR = new File(RUNELITE_DIR, "plugins");
-    public static final File PROFILES_DIR = new File(RUNELITE_DIR, "profiles");
-    public static final File SCREENSHOT_DIR = new File(RUNELITE_DIR, "screenshots");
-    public static final File LOGS_DIR = new File(RUNELITE_DIR, "logs");
-    public static final File DEFAULT_SESSION_FILE = new File(RUNELITE_DIR, "session");
-    public static final File DEFAULT_CONFIG_FILE = new File(RUNELITE_DIR, "settings.properties");
+	public static final File RUNELITE_DIR = new File(System.getProperty("user.home"), ".azura");
+	public static final File CACHE_DIR = new File(RUNELITE_DIR, "cache");
+	public static final File PLUGINS_DIR = new File(RUNELITE_DIR, "plugins");
+	public static final File PROFILES_DIR = new File(RUNELITE_DIR, "profiles");
+	public static final File SCREENSHOT_DIR = new File(RUNELITE_DIR, "screenshots");
+	public static final File LOGS_DIR = new File(RUNELITE_DIR, "logs");
+	public static final File DEFAULT_SESSION_FILE = new File(RUNELITE_DIR, "session");
+	public static final File DEFAULT_CONFIG_FILE = new File(RUNELITE_DIR, "settings.properties");
 
-    @Getter
-    private static Injector injector;
+	@Getter
+	private static Injector injector;
 
-    @Inject
-    private PluginManager pluginManager;
+	@Inject
+	private PluginManager pluginManager;
 
-    @Inject
-    private EventBus eventBus;
+	@Inject
+	private EventBus eventBus;
 
-    @Inject
-    private ConfigManager configManager;
+	@Inject
+	private ConfigManager configManager;
 
-    @Inject
-    private ClientUI clientUI;
+	@Inject
+	private ClientUI clientUI;
 
-    @Inject
-    @Nullable
-    private Client client;
+	@Inject
+	@Nullable
+	private Client client;
 
-    public static void main(String[] args) {
-        Locale.setDefault(Locale.ENGLISH);
+	public static void main(String[] args) {//needs specific arguments to run thats why ahhh i don't even know what that is lmao, how can we figure out the specific ones needed?
+		Locale.setDefault(Locale.ENGLISH);
 
-        boolean developerMode = false;
+		boolean developerMode = false;
 
-        Thread.setDefaultUncaughtExceptionHandler((thread, throwable) ->
-        {
-            log.error("Uncaught exception:", throwable);
-            if (throwable instanceof AbstractMethodError) {
-                log.error("Classes are out of date; Build with maven again.");
-            }
-        });
+		Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
+			log.error("Uncaught exception:", throwable);
+			if (throwable instanceof AbstractMethodError) {
+				log.error("Classes are out of date; Build with maven again.");
+			}
+		});
 
-        PROFILES_DIR.mkdirs();
+		PROFILES_DIR.mkdirs();
 
-        try {
-            ClientLoader clientLoader = new ClientLoader();
+		try {
+			ClientLoader clientLoader = new ClientLoader();
 
-            injector = Guice.createInjector(new RuneLiteModule(
-                    clientLoader,
-                    developerMode,
-                    DEFAULT_CONFIG_FILE));
-            injector.getInstance(RuneLite.class).start();
-        } catch (Exception e) {
-            log.error("Failure during startup", e);
-            System.exit(1);
-        }
-    }
+			injector = Guice.createInjector(new RuneLiteModule(clientLoader, developerMode, DEFAULT_CONFIG_FILE));
+			injector.getInstance(RuneLite.class).start();
+		} catch (Exception e) {
+			log.error("Failure during startup", e);
+			System.exit(1);
+		}
+	}
 
-    public void start() throws Exception {
-        injector.injectMembers(client);
-        configManager.load();
-        pluginManager.setOutdated(false);
-        pluginManager.loadCorePlugins();
-        pluginManager.loadDefaultPluginConfiguration(null);
-        clientUI.init();		eventBus.register(clientUI);
-        eventBus.register(pluginManager);
-        eventBus.register(configManager);
-        pluginManager.startPlugins();
-        clientUI.show();
-    }
+	public void start() throws Exception {
+		injector.injectMembers(client);
+		configManager.load();
+		pluginManager.setOutdated(false);
+		pluginManager.loadCorePlugins();
+		pluginManager.loadDefaultPluginConfiguration(null);
+		clientUI.init();
+		eventBus.register(clientUI);
+		eventBus.register(pluginManager);
+		eventBus.register(configManager);
+		pluginManager.startPlugins();
+		clientUI.show();
+	}
 }

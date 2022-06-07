@@ -29,9 +29,10 @@ public class Players  extends ListenerAdapter {
                 : "Donation boss: Alive ::donoboss", true);
         eb.addField("Vote boss status:", VoteBossDrop.currentSpawn == null  ? "Vote Boss: " + doMotivote.getVoteCount() + "/50 please vote!" : "Vote Boss:@whi@ Alive ::Vboss", true);
         eb.addField("X2 Drop rate:", GameSettings.DOUBLEDR ? "On " :"Off", true);
-
         eb.setThumbnail(e.getJDA().getSelfUser().getAvatarUrl());
         eb.setColor(new Color(0x296d98));
         e.getChannel().sendMessage(eb.build()).queue();
     }
+
+    
 }

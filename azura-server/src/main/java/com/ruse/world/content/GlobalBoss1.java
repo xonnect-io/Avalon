@@ -123,7 +123,6 @@ public class GlobalBoss1 {
                     }
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
-                DiscordMessager.sendDragonKingLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;

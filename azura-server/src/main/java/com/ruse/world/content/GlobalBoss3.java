@@ -124,7 +124,6 @@ public class GlobalBoss3 {
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
                 if (!GameSettings.LOCALHOST)
-                DiscordMessager.sendNarakuLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;

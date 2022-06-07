@@ -26,7 +26,7 @@ public class DonationBossSystem {
 		String message = "The Donation boss has spawned, Visit ::donoboss to fight him!";
 		World.register(currentSpawn);
 		World.sendMessage(message);
-		DiscordMessager.sendDonationBossLog("The Donation boss has spawned, Visit ::donoboss to fight him!");
+		DiscordMessager.sendDonationBossLog("");
 		GameSettings.broadcastMessage = message;
 		GameSettings.broadcastTime = 100;
 		amntDonated = 100;
@@ -48,7 +48,7 @@ public class DonationBossSystem {
 		World.register(npc);
 		World.sendMessage(message);
 		GameSettings.broadcastMessage = message;
-		DiscordMessager.sendDonationBossLog("The Donation boss has spawned, Visit ::donoboss to fight him!");
+		DiscordMessager.sendDonationBossLog("");
 		GameSettings.broadcastTime = 100;
 		amntDonated = 0;
 	}

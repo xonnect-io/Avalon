@@ -48,6 +48,7 @@ import com.ruse.world.content.holidayevents.easter2017;
 import com.ruse.world.content.minigames.impl.KeepersOfLight;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
+import com.ruse.world.content.minigames.impl.YesNoDialogue;
 import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
@@ -107,6 +108,20 @@ public class CommandPacketListener implements PacketListener {
             Position pos = new Position(2655, 4017);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");
+        }
+        if (command[0].equalsIgnoreCase("dissolveall")) {
+        int price = 0;
+            for (int i = 0; i < player.getInventory().capacity(); i++) {
+                if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
+
+                   price+= player.getDissolving().sumofdissolves(player.getInventory().get(i).getId());
+
+                }
+                }
+            System.out.println(price+"");
+            player.getDissolving().amtafterdissolvingall = price;
+            DialogueManager.start(player, new YesNoDialogue(player, "Dissolve all items for @blu@"+price+" @bla@Upgrade tokens?", "", 6668));
+
         }
 
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
@@ -425,6 +440,10 @@ public class CommandPacketListener implements PacketListener {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+
+        if (command[0].equalsIgnoreCase("writerules")) {
+            DiscordMessager.sendRules("");
         }
         if (command[0].equalsIgnoreCase("drops") || command[0].equalsIgnoreCase("drop")) {
             player.getPacketSender().sendMessage("Opening drops interface...");

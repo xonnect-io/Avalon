@@ -30,7 +30,7 @@ public class VoteBossDrop {
 		World.sendBroadcastMessage("@bla@Vote boss has spawned at ::Vboss");
 		World.sendMessage(
 				"<img=28><shad=f9f6f6>Vote boss has spawned at ::Vboss <shad=-1>");
-		DiscordMessager.sendVoteBossLog("Vote boss has spawned at ::Vboss");
+		DiscordMessager.sendVoteBossLog("");
 	}
 
 	public static void handleForcedSpawn() {

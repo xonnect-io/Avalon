@@ -43,7 +43,7 @@ public class SpawnGuardianBoss extends EnterAmount {
 			NPC npc = new NPC(3830, new Position(3445, 4113, 1)); //NPC npc = new NPC(3830, new Position(3491, 2782));
 			World.register(npc);
 			World.sendMessage("<col=4141ff><img=856>[Avalon Guardian]<img=856> @or2@" + player.getUsername() + " has contributed " + highTierTickets + " High-Tier Tickets.");
-			//DiscordMessager.sendNephilimBossLog("The Avalon Guardian has spawned at ::guardian");
+			DiscordMessager.sendDonationBossLog("");
 			World.sendBroadcastMessage("@bla@The Avalon Guardian has appeared ::Guardian");
 			GameSettings.broadcastMessage = "The Avalon Guardian has appeared ::guardian";
 			GameSettings.broadcastTime = 100;

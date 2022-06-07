@@ -126,7 +126,6 @@ public class GlobalBoss5 {
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
                 if (!GameSettings.LOCALHOST)
-                DiscordMessager.sendIronBossLog(message);
                 World.sendBroadcastMessage(message);
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;

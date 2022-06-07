@@ -3,12 +3,14 @@ package com.ruse.world.content;
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.world.content.boxes.*;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.impl.DefBox;
 import com.ruse.world.content.casketopening.impl.OffBox;
 import com.ruse.world.content.casketopening.impl.RareBox;
 import com.ruse.world.content.casketopening.impl.SlayerCasket;
 import com.ruse.world.content.minigames.impl.*;
+import com.ruse.world.content.skill.impl.thieving.Stalls;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -44,7 +46,7 @@ public class PossibleLootInterface {
     }
 
     public static boolean handleButton(Player player, int buttonID) {
-        if (buttonID >= 101262 && buttonID <= 101295) {
+        if (buttonID >= 101262 && buttonID <= 101310) {
             int index = (buttonID - 101262) / 2;
 
             if (index <= LootData.values().length)
@@ -56,39 +58,33 @@ public class PossibleLootInterface {
     }
 
     public enum LootData {
-        SLAYER_CASKET(2734, SlayerCasket.loot),
-        HALLS_OF_VALOR("          Isles of Avalon", 23094, HallsOfValor.loot),
-        TREASURE_HUNTER("          Treasure Hunter", 23049, TreasureHunter.loot),
-        VOID_OF_DARKNESS("          Void of Deception", 23033, VoidOfDarkness.loot),
-        KEEPERS_OF_LIGHT("          Keepers of Light", 23135, KeepersOfLight.loot),
-        VAULT_OF_WAR("          Vault of War", 23102, VaultOfWar.loot),
-
-        RARE_BOX(23171, RareBox.loot),
-        OFF_BOX(23173, OffBox.loot),
-        DEF_BOX(23172, DefBox.loot),
-  /* SUPER(19116, Super.common,Super.uncommon,Super.rare),
+        SUPER(19116, Super.common, Super.uncommon,Super.rare),
         EXTREME(19115, Extreme.common,Extreme.uncommon,Extreme.rare),
         GRAND(19114, Grand.common,Grand.uncommon,Grand.rare),
         OPchest(20488, OP.common,OP.uncommon,OP.rare),
         LAUNCH(20489, Launch.common,Launch.uncommon,Launch.rare),
-        SILVER(15003, Ruby.common,Ruby.uncommon,Ruby.rare),
-        RUBY(15002, Silver.common,Silver.uncommon,Silver.rare),
-        DIAMOND(15004, Diamond.common,Diamond.uncommon,Diamond.rare),
-
+        SILVER(15003, Ruby.rewards),
+        RUBY(15002, Silver.rewards),
+        DIAMOND(15004, Diamond.rewards),
+        ONYX(14999, Onyx.rewards),
+        ZENYTE(23253, Zenyte.rewards),
         OCAPE(3578, Ocape.rare),
-        RAIDS_ONE(13591,Raids1.common,Raids1.uncommon,Raids1.rare1),
-        RAIDS_TWO_BOX(18404,Raids2.common,Raids2.uncommon,Raids2.rare),
+        TREASURE_HUNTER("Treasure Hunter",  -1,TreasureHunter.loot),
+        ISLES_OF_AVALON("Isles of Avalon",-1, HallsOfValor.loot),
+        RAIDS(18404, ZombieRaidLoot.LOOT),
         DRAGONBALLBOX(18768,  DragonballBox.common1,  DragonballBox.uncommon1,  DragonballBox.rare1),
         SLAYERBOX( 7120, SlayerBox.commonpro2,  SlayerBox.uncommonpro2,  SlayerBox.rarepro2),
+        SLAYERBOX_U( 22123, UpgradedSlayerBox.commonpro2,  UpgradedSlayerBox.uncommonpro2,  UpgradedSlayerBox.rarepro2),
         PROGRESSIVEBOX(10025,  ProgressiveBox.commonpro,  ProgressiveBox.uncommonpro,  ProgressiveBox.rarepro),
         PVMMBOX(PVMBox.ITEM_ID, PVMBox.commonpvm, PVMBox.uncommonpvm, PVMBox.rarepvm),
-        MBOX(6199,MBox.common,MBox.uncommon,MBox.rare),
-        FPK_SOLDIER(-1, FPK.LOOT, "Youtube Soldier"),
-        RAIDS_TWO(-1, ZombieRaidLoot.LOOT, "Raids [2]"),
-        AFK1(-1, Stalls.loot1, "AFK Stall (1)"),
-        AFK2(-1, Stalls.loot2, "AFK Stall (2)"),
-        AFK3(-1, Stalls.loot3, "AFK Stall (3)"),
-        AFK4(-1, Stalls.loot4, "Zenyte AFK Stall"),*/
+        PVMMBOX_T2(22214, PVMBoxT2.commonpvm, PVMBoxT2.uncommonpvm, PVMBoxT2.rarepvm),
+        MBOX(6199,MBox.common, MBox.uncommon,MBox.rare),
+        AFK_SAPPHIRE("AFK Sapphire",-1, Stalls.loot1),
+        AFK_EMERALD("AFK Emerald",-1, Stalls.loot2),
+        AFK_RUBY("AFK Ruby",-1, Stalls.loot3),
+        AFK_DIAMOND("AFK Diamond",-1, Stalls.loot4),
+        AFK_ONYX("AFK Onyx",-1, Stalls.loot5),
+        AFK_ZENYTE("AFK Zenyte",-1, Stalls.loot6),
         ;
 
         private int itemId;
