@@ -1,17 +1,12 @@
 package mysql.impl; // dont forget to change packaging ^-^
 
-import com.azul.crs.client.Client;
 import com.ruse.GameSettings;
 import com.ruse.motivote3.doMotivote;
 import com.ruse.world.World;
 import com.ruse.world.content.VoteBossDrop;
 import com.ruse.world.entity.impl.player.Player;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 
 public class FoxVote implements Runnable {
