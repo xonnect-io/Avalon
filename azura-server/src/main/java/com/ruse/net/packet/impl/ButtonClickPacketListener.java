@@ -1756,6 +1756,9 @@ public class ButtonClickPacketListener implements PacketListener {
         if (BestItemsInterface.buttonClicked(player, id)) {
             return true;
         }
+        if (BestDRItemsInterface.buttonClicked(player, id)) {
+            return true;
+        }
         if (KillTrackerInterface.handleButton(player, id))
             return true;
         if (Construction.handleButtonClick(id, player)) {

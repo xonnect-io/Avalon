@@ -52,9 +52,6 @@ public class FoxVote implements Runnable {
 				if (GameSettings.DOUBLE_VOTE) {
 					points *= 2;
 				}
-
-				World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points
-						+ " Vote scrolls! ::vote now to support the server.");
 				player.getInventory().add(23020, points);
 				player.getPacketSender().sendMessage("Thank you for voting!");
 				player.getDailyRewards().handleVote();
@@ -73,7 +70,8 @@ public class FoxVote implements Runnable {
 				rs.updateInt("claimed", 1); // do not delete otherwise they can reclaim!
 				rs.updateRow();
 			}
-
+			World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points * 2
+					+ " Vote scrolls! ::vote now to support the server.");
 			destroy();
 		} catch (Exception e) {
 			e.printStackTrace();

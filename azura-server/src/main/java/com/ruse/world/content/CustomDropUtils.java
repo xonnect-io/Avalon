@@ -13,7 +13,6 @@ import mysql.impl.Donation;
 
 public class CustomDropUtils {
 
-
     /**
      * Increases Drop Rate
      *
@@ -316,6 +315,5 @@ public class CustomDropUtils {
 
         return percentBoost;
     }
-
 
 }

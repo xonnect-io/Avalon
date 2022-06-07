@@ -121,6 +121,10 @@ public class CommandPacketListener implements PacketListener {
 
         }
 
+        if (command[0].equalsIgnoreCase("dritems") || command[0].equalsIgnoreCase("bisdr")) {
+            BestDRItemsInterface.openInterface(player, 0);
+        }
+
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
                 || command[0].equalsIgnoreCase("start") || command[0].equalsIgnoreCase(
                 "training")) {

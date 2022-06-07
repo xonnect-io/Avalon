@@ -629,7 +629,7 @@ public class TeleportInterface {
         STARTER_ZONE("Starter Progression", 9001, new int[]{1, 1, 0}, Starter.rewards, 600),
         OUTBREAK("Pyramid Outbreak", 4476, new int[]{3487, 9235, 0}, Graveyard.loot, 600),
         UNKNOWN("Unknown Crypt", 823, new int[]{1754, 5133, 0}, 1250),
-        DUNG("Legends Raids", 585, new int[]{2526, 5292, 0}, Raids1.rewards, 1450),
+        DUNG("Legends Raids", 585, new int[]{2222, 4115, 0}, Raids1.rewards, 1450),
         IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1200),
         //VOD("Void of Deception", 9028, new int[]{1954, 5010, 0}, VoidOfDarkness.loot, 600),
         TH("Treasure Hunter", 9816, new int[]{2015, 5022, 0}, TreasureHunter.loot, 3000),

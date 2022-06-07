@@ -985,7 +985,7 @@ public class Locations {
 		},
 		MEMBER_ZONE(new int[] { 3415, 3435 }, new int[] { 2900, 2926 }, false, true, true, false, false, true) {
 		},
-		HOME_BANK(new int[] { 2579, 2591}, new int[] { 2515, 2527 }, false, true, true, false, true, true) {
+		HOME_BANK(new int[] { 2640, 3960}, new int[] { 2680, 4070 }, false, true, true, false, true, true) {
 			@Override
 			public void enter(Player player) {
 				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()

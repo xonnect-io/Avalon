@@ -755,6 +755,93 @@ public class RSInterface {
 		rsinterface.tooltip = tooltip;
 	}
 
+
+
+	static void drItems(TextDrawingArea[] tda) {
+		int interID = 109300;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 25;
+		int y = 20;
+		tab.totalChildren(24);
+		addSpriteLoader(id, 1425);
+		tab.child(c++, id++, 0 + x, 0 + y);
+		addHoverButtonWSpriteLoader(id, 1238, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 440 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1239, 16, 16, id + 1);
+		tab.child(c++, id++, 440 + x, 3 + y);
+		id++;
+		addText(id, "Highest Bonuses", tda, 2, 16750623, true, true);
+		tab.child(c++, id++, 239 + x, 4 + y);
+		addText(id, "Rank", tda, 1, 16750623, true, true);
+		tab.child(c++, id++, 172 + x, 29 + y);
+		addText(id, "Bonus", tda, 1, 16750623, true, true);
+		tab.child(c++, id++, 227 + x, 29 + y);
+		addText(id, "Item", tda, 1, 16750623, true, true);
+		tab.child(c++, id++, 350 + x, 29 + y);
+		y -= 5;
+		addText(id, "Gear", tda, 2, 16746752, false, true);
+		tab.child(c++, id++, 15 + x, 30 + y);
+		y += 16;
+		int i;
+		for (i = 0; i < 5; i++) {
+			addClickableText(id, "Check something", "Select", tda, 1, 16746752, false, true, 130);
+			tab.child(c++, id++, 20 + x, 30 + y);
+			y += 16;
+		}
+		y += 3;
+		addText(id, "Accessories", tda, 2, 16746752, false, true);
+		tab.child(c++, id++, 15 + x, 30 + y);
+		y += 16;
+		for (i = 0; i < 5; i++) {
+			addClickableText(id, "Check something", "Select", tda, 1, 16746752, false, true, 130);
+			tab.child(c++, id++, 20 + x, 30 + y);
+			y += 16;
+		}
+		y += 3;
+		addText(id, "Misc", tda, 2, 16746752, false, true);
+		tab.child(c++, id++, 15 + x, 30 + y);
+		y += 16;
+		for (i = 0; i < 3; i++) {
+			addClickableText(id, "Check something", "Select", tda, 1, 16746752, false, true, 130);
+			tab.child(c++, id++, 20 + x, 30 + y);
+			y += 16;
+		}
+		y = 20;
+		tab.child(c++, 109350, 152 + x, 47 + y);
+		interID = 109350;
+		RSInterface list = addTabInterface(interID);
+		list.totalChildren(450);
+		list.height = 240;
+		list.width = 286;
+		list.scrollMax = 4000;
+		id = interID + 1;
+		y = 0;
+		c = 0;
+		int j;
+		for (j = 0; j < 50; j++) {
+			addSpriteLoader(id, 1426);
+			list.child(c++, id++, 0, 0 + y);
+			y += 80;
+		}
+		y = 12;
+		for (j = 0; j < 100; j++) {
+			addText(id, "#" + (j + 1), 16751360, true, true, 100, fonts, 1);
+			list.child(c++, id++, 20, y);
+			addText(id, "+4000", 16751360, true, true, 100, fonts, 1);
+			list.child(c++, id++, 75, y);
+			addText(id, "Name", 16751360, false, true, 100, fonts, 1);
+			list.child(c++, id++, 150, y);
+			dropGroup(id, 1, 1, 1, 1);
+			list.child(c++, id++, 108, y - 6);
+			y += 40;
+		}
+	}
+
+
+
+
 	static void bestItems(TextDrawingArea[] tda) {
 		int interID = 100000;
 		RSInterface tab = addInterface(interID);
@@ -5643,6 +5730,7 @@ public class RSInterface {
 			customCollectionLog(textDrawingAreas);
 			customCombiner(textDrawingAreas);
 			bestItems(textDrawingAreas);
+			drItems(textDrawingAreas);
 			itemHoverBox(textDrawingAreas);
 			killTracker(textDrawingAreas);
 			scratchCardInterface(textDrawingAreas);
