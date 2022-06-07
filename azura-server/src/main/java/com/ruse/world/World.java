@@ -177,7 +177,7 @@ public class World {
 
     public static void sendOwnerDevMessage(String message) {
         players.stream().filter(
-                p -> p != null && (p.getRights() == PlayerRights.ADMINISTRATOR || p.getRights() == PlayerRights.DEVELOPER))
+                p -> p != null && (p.getRights() == PlayerRights.ADMINISTRATOR || p.getRights() == PlayerRights.OWNER))
                 .forEach(p -> p.getPacketSender().sendMessage(message));
         DiscordMessager.sendDebugMessage("[Owner/Developer]\n" + message);
     }

@@ -236,7 +236,7 @@ public class EquipPacketListener implements PacketListener {
                 }
                 break;
             case 773:
-                if (!(player.getRights().equals(PlayerRights.ADMINISTRATOR) || player.getRights().equals(PlayerRights.DEVELOPER))) {
+                if (!(player.getRights().equals(PlayerRights.ADMINISTRATOR) || player.getRights().equals(PlayerRights.OWNER))) {
                     player.getPacketSender()
                             .sendMessage("We wants it, we needs it. Must have the precious. They stole it from us.")
                             .sendMessage("Sneaky little hobbitses. Wicked, tricksy, false! The ring has vanished again..");

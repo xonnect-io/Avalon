@@ -45,7 +45,7 @@ public class SuperOverloadPotionTask extends Task {
 			player.getPacketSender().sendMessage("@red@Your Super Overload's effect is about to run out.");
 		if (player.getOverloadPotionTimer() <= 0 || player.getLocation() == Location.DUEL_ARENA
 				|| player.getLocation() == Location.DUNGEONEERING
-				|| player.getLocation() == Location.WILDERNESS && player.getRights() != PlayerRights.DEVELOPER) {
+				|| player.getLocation() == Location.WILDERNESS && player.getRights() != PlayerRights.OWNER) {
 			player.getPacketSender().sendMessage("@red@Your Super Overload's effect has run out.");
 			for (int i = 0; i < 7; i++) {
 				if (i == 3 || i == 5)

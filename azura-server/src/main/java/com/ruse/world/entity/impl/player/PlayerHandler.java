@@ -230,9 +230,8 @@ public class PlayerHandler {
 */
 
         player.getPacketSender().sendMessage("<shad=1>@bla@Welcome to " + GameSettings.RSPS_NAME + "!");
-
+        if (GameSettings.ELITE_DONO_DEAL == true)
         player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 75 Donated you will get @red@<shad=1>x1 Owner Cape Goodiebag");
-
 
         if (GameSettings.BCRYPT_HASH_PASSWORDS && Misc.needsNewSalt(player.getSalt())) {
             player.setSalt(BCrypt.gensalt(GameSettings.BCRYPT_ROUNDS));
@@ -353,8 +352,8 @@ public class PlayerHandler {
         if (player.getRights() == PlayerRights.ZENYTE_DONATOR)
             World.sendMessage(("<shad=0>@or2@<img=1508> [Zenyte Donator] "
                     + player.getUsername() + " has just logged in."));
-        if (player.getRights() == PlayerRights.DEVELOPER && !player.getUsername().equalsIgnoreCase("test")&& !player.getUsername().equalsIgnoreCase("test1"))
-            World.sendMessage(("<shad=0><col=" + player.getYellHex() + "><img=4> Developer "
+        if (player.getRights() == PlayerRights.OWNER)
+            World.sendMessage(("<shad=0><col=" + player.getYellHex() + "><img=4> Owner "
                     + player.getUsername() + " has just logged in."));
 
         if (player.getRights() == PlayerRights.MODERATOR

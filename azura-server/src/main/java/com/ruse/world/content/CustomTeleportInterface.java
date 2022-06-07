@@ -201,7 +201,7 @@ public class CustomTeleportInterface {
 
             if (npc.name.toLowerCase().contains("fallen angel")) {
                 if ((player.isUnlockedLucifers() &&
-                        player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.DEVELOPER) {
+                        player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.OWNER) {
                     TeleportHandler.teleportPlayer(player, npc.position.copy().setZ(player.getIndex() * 4), player.getSpellbook().getTeleportType());
                     boolean contains = false;
                     for (NPC others : World.getNpcs()) {

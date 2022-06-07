@@ -107,7 +107,7 @@ public class ObjectActionPacketListener implements PacketListener {
         gameObject.setSize(size);
         if (player.getMovementQueue().isLockMovement())
             return;
-        if (player.getRights() == PlayerRights.DEVELOPER)
+        if (player.getRights() == PlayerRights.OWNER)
             player.getPacketSender()
                     .sendMessage("First click object id; [id, position] : [" + id + ", " + position.toString() + "]");
         player.setInteractingObject(gameObject)
@@ -2156,7 +2156,7 @@ public class ObjectActionPacketListener implements PacketListener {
             distanceY = -(distanceY);
         int size = distanceX > distanceY ? distanceX : distanceY;
         gameObject.setSize(size);
-        if (player.getRights() == PlayerRights.DEVELOPER)
+        if (player.getRights() == PlayerRights.OWNER)
             player.getPacketSender()
                     .sendMessage("Second click object id; [id, position] : [" + id + ", " + position.toString() + "]");
         player.setInteractingObject(gameObject)
@@ -2697,7 +2697,7 @@ public class ObjectActionPacketListener implements PacketListener {
             distanceY = -(distanceY);
         int size = distanceX > distanceY ? distanceX : distanceY;
         gameObject.setSize(size);
-        if (player.getRights() == PlayerRights.DEVELOPER) {
+        if (player.getRights() == PlayerRights.OWNER) {
             player.getPacketSender()
                     .sendMessage("Third click object id; [id, position] : [" + id + ", " + position.toString() + "]");
         }
@@ -2770,7 +2770,7 @@ public class ObjectActionPacketListener implements PacketListener {
             distanceY = -(distanceY);
         int size = distanceX > distanceY ? distanceX : distanceY;
         gameObject.setSize(size);
-        if (player.getRights() == PlayerRights.DEVELOPER) {
+        if (player.getRights() == PlayerRights.OWNER) {
             player.getPacketSender()
                     .sendMessage("Third click object id; [id, position] : [" + id + ", " + position.toString() + "]");
         }

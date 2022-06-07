@@ -86,7 +86,7 @@ public class RaidsParty {
             getOwner().getPacketSender().sendMessage("That player is currently in another party.");
             return;
         }
-        if (p.getRights() != PlayerRights.DEVELOPER && System.currentTimeMillis()
+        if (p.getRights() != PlayerRights.OWNER && System.currentTimeMillis()
                 - getOwner().getMinigameAttributes().getZombieAttributes().getLastInvitation() < 2000 ||  System.currentTimeMillis()
                 - getOwner().getMinigameAttributes().getSODAttributes().getLastInvitation() < 2000 ) {
             getOwner().getPacketSender().sendMessage("You must wait 2 seconds between each party invitation.");

@@ -99,7 +99,7 @@ public class Lottery {
 			DialogueManager.start(p, 17);
 			return;
 		}
-		if (p.getInventory().getAmount(ItemDefinition.COIN_ID) < PRICE_TO_ENTER || p.getRights() == PlayerRights.DEVELOPER) {
+		if (p.getInventory().getAmount(ItemDefinition.COIN_ID) < PRICE_TO_ENTER || p.getRights() == PlayerRights.OWNER) {
 			p.getPacketSender().sendInterfaceRemoval().sendMessage("")
 					.sendMessage("You do not have enough money in your inventory to enter this week's lottery.")
 					.sendMessage("The lottery for this week costs "

@@ -5498,7 +5498,2161 @@ public class ItemDef4 {
 				itemDef.name = "Tsutsaroth spear";
 				itemDef.rdc2 = 11332;
 				break;
+			case 21069:
+				itemDef.name = "Ruthless ring";
+				ItemDefinition itemdefyogipic1111 = ItemDefinition.get(1635);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64207;
+				itemDef.maleEquip1 = 64208;
+				itemDef.femaleEquip1 = 64208;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.rdc2 = 23662;
+				break;
+			case 21070:
+				itemDef.name = "Ruthless scimitar";
+				itemdefyogipic1111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64209;
+				itemDef.maleEquip1 = 64210;
+				itemDef.femaleEquip1 = 64210;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
 
+				itemDef.rdc2 = 23662;
+				break;
+			case 21071:
+				itemDef.name = "Ruthless cape";
+				itemdefyogipic1111 = ItemDefinition.get(2413);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = -50;
+				itemDef.modelZoom = 2300;
+				itemDef.rotationY = 200;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64211;
+				itemDef.maleEquip1 = 64212;
+				itemDef.femaleEquip1 = 64212;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 23662;
+				break;
+			case 21072:
+				itemDef.name = "Ruthless rapier";
+				itemdefyogipic1111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64213;
+				itemDef.maleEquip1 = 64214;
+				itemDef.femaleEquip1 = 64214;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 77743;
+				break;
+			case 21073:
+				itemDef.name = "Ruthless Scimitar";
+				itemdefyogipic1111 = ItemDefinition.get(4587);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic1111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic1111.femaleEquip1;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 12124;
+				break;
+			case 13263:
+				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
+				break;
+
+			case 21075:
+				itemDef.name = "Slayer helmet [Level 1]";
+				itemdefyogipic1111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic1111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic1111.femaleEquip1;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
+				itemDef.stackable = false;
+				//
+				itemDef.rdc2 = 35363;
+				break;
+			case 21076:
+				itemDef.name = "Slayer helmet [Level 2]";
+				itemdefyogipic1111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic1111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic1111.femaleEquip1;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
+				itemDef.stackable = false;
+				//
+				itemDef.rdc2 = 444444;
+				break;
+			case 21077:
+				itemDef.name = "Slayer helmet [level 3]";
+				itemdefyogipic1111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic1111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic1111.femaleEquip1;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
+				itemDef.stackable = false;
+				//
+				itemDef.rdc2 = 8858;
+				break;
+
+			case 21078:
+				itemDef.name = "Slayer helmet [Level 4]";
+				itemdefyogipic1111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic1111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic1111.femaleEquip1;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, "Wear", null, "Upgrade", "Drop"};
+				itemDef.stackable = false;
+				//
+				itemDef.rdc2 = 8808080;//8808080
+				break;
+			case 21079:
+				itemDef.name = "Slayer helmet [MAX]";
+				itemdefyogipic1111 = ItemDefinition.get(13263);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.maleEquip1 = itemdefyogipic1111.maleEquip1;
+				itemDef.femaleEquip1 = itemdefyogipic1111.femaleEquip1;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+				//
+				itemDef.rdc2 = 74623;
+				break;
+			case 15230:
+				itemDef.name = "Zeus full helm";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 950;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64165;
+				itemDef.maleEquip1 = 64166;
+				itemDef.femaleEquip1 = 64166;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{73};
+				break;
+			case 15231:
+				itemDef.name = "Zeus body";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64167;
+				itemDef.maleEquip1 = 64168;
+				itemDef.femaleEquip1 = 64168;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{73};
+				break;
+			case 15232:
+				itemDef.name = "Zeus legs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64169;
+				itemDef.maleEquip1 = 64170;
+				itemDef.femaleEquip1 = 64170;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{73};
+				break;
+			case 15233:
+				itemDef.name = "Zeus Hammer";
+				itemDef.modelID = 64171;
+				itemDef.maleEquip1 = 64172;
+				itemDef.femaleEquip1 = 64172;
+				itemDef21 = ItemDefinition.get(4755);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{73};
+				break;
+			case 15234:
+				itemDef.name = "Zeus shield";
+				itemdefyogipic1111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64173;
+				itemDef.maleEquip1 = 64174;
+				itemDef.femaleEquip1 = 64174;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{73};
+				break;
+			case 21048:
+				itemDef.name = "Fiya Sword+";
+				itemDef.modelID = 64280;
+				itemDef.maleEquip1 = 64281;
+				itemDef.femaleEquip1 = 64281;
+				itemDef21 = ItemDefinition.get(4755);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{73};
+				break;
+			case 21049:
+				itemDef.name = "Fiya Shield+";
+				itemdefyogipic1111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64282;
+				itemDef.maleEquip1 = 64283;
+				itemDef.femaleEquip1 = 64283;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{73};
+				break;
+			case 21031:
+				itemDef.name = "Hades full helm";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 950;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64259;
+				itemDef.maleEquip1 = 64260;
+				itemDef.femaleEquip1 = 64260;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 2724624;
+				break;
+			case 21032:
+				itemDef.name = "Hades body";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64261;
+				itemDef.maleEquip1 = 64262;
+				itemDef.femaleEquip1 = 64262;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 2724624;
+				break;
+			case 21033:
+				itemDef.name = "Hades legs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64263;
+				itemDef.maleEquip1 = 64264;
+				itemDef.femaleEquip1 = 64264;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.rdc2 = 2724624;
+				break;
+			case 21034:
+				itemDef.name = "Hades Hammer";
+				itemDef.modelID = 64265;
+				itemDef.maleEquip1 = 64266;
+				itemDef.femaleEquip1 = 64266;
+				itemDef21 = ItemDefinition.get(4755);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.rdc2 = 99957;
+				break;
+			case 21035:
+				itemDef.name = "Hades shield";
+				itemdefyogipic1111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64267;
+				itemDef.maleEquip1 = 64268;
+				itemDef.femaleEquip1 = 64268;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.rdc2 = 2724624;
+				break;
+			case 15235:
+				itemDef.name = "Electric gloves";
+				itemdefyogipic1111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 1270;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64175;
+				itemDef.maleEquip1 = 64176;
+				itemDef.femaleEquip1 = 64176;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				break;
+			case 15236:
+				itemDef.name = "Electric boots";
+				itemdefyogipic1111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 1200;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64177;
+				itemDef.maleEquip1 = 64178;
+				itemDef.femaleEquip1 = 64178;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				break;
+			case 11305:
+				itemDef.name = "Earthquake full helm";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64151;
+				itemDef.maleEquip1 = 64152;
+				itemDef.femaleEquip1 = 64152;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 3462;
+				break;
+			case 11306:
+				itemDef.name = "Earthquake platebody";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64153;
+				itemDef.maleEquip1 = 64154;
+				itemDef.femaleEquip1 = 64154;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 3462;
+				break;
+
+			case 11307:
+				itemDef.name = "Earthquake platelegs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64155;
+				itemDef.maleEquip1 = 64156;
+				itemDef.femaleEquip1 = 64156;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 3462;
+				break;
+			case 11308:
+				itemDef.name = "Earthquake battlesword";
+				itemDef.modelID = 64157;
+				itemDef.maleEquip1 = 64158;
+				itemDef.femaleEquip1 = 64158;
+				def = ItemDefinition.get(22034);
+				itemDef.modelOffsetX = def.modelOffsetX;
+				itemDef.modelOffsetY = def.modelOffsetY;
+				itemDef.modelZoom = def.modelZoom;
+				itemDef.rotationY = def.rotationY;
+				itemDef.rotationX = def.rotationX;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+				itemDef.rdc2 = 3462;
+
+				break;
+			case 11300:
+				itemDef.name = "Defender full helm";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64141;
+				itemDef.maleEquip1 = 64142;
+				itemDef.femaleEquip1 = 64142;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{58};
+				break;
+			case 11301:
+				itemDef.name = "Defender fighterbody";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64143;
+				itemDef.maleEquip1 = 64144;
+				itemDef.femaleEquip1 = 64144;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{58};
+				break;
+			case 11302:
+				itemDef.name = "Defender fighterlegs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64145;
+				itemDef.maleEquip1 = 64146;
+				itemDef.femaleEquip1 = 64146;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{58};
+				break;
+			case 11303:
+				itemDef.name = "Defender kiteshield";
+				itemdefyogipic1111 = ItemDefinition.get(1540);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64147;
+				itemDef.maleEquip1 = 64148;
+				itemDef.femaleEquip1 = 64148;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{58};
+				break;
+			case 11304:
+				itemDef.name = "Defender cape";
+				itemdefyogipic1111 = ItemDefinition.get(2413);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64149;
+				itemDef.maleEquip1 = 64150;
+				itemDef.femaleEquip1 = 64150;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{58};
+				break;
+			case 11315:
+				ItemDefinition itemDef2111 = ItemDefinition.get(12479);
+				itemDef.modelID = 64100;
+				itemDef.modelOffsetX = itemDef2111.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = itemDef2111.modelOffsetY;
+				itemDef.modelZoom = 7950;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.name = "<img=1355><col=f8ac00>double afk pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 11316:
+				ItemDefinition votingpoting = ItemDefinition.get(12479);
+				itemDef.modelID = 18539;
+				itemDef.modelOffsetX = votingpoting.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = votingpoting.modelOffsetY;
+				itemDef.modelZoom = 5550;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.name = "Double vote pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 2098:
+				itemDef.name = "Skilling ticket";
+				itemDef.rdc2 = 12511;
+				itemDef.stackable = true;
+				itemDef21 = ItemDefinition.get(18652);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				//	itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelID = itemDef21.modelID;
+				itemDef.actions = itemDef21.actions;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				break;
+			case 20511:
+				ItemDefinition hooker = ItemDefinition.get(12479);
+				itemDef.modelID = 36071;
+				itemDef.modelOffsetX = 2;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = 80;
+				itemDef.rotationY = 204;
+				itemDef.rotationX = 20;
+				itemDef.modelZoom = 2700;
+				itemDef.name = "Hooker pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 23252:
+				ItemDefinition bloodpet = ItemDefinition.get(12479);
+				itemDef.modelID = 18146;
+				itemDef.modelOffsetX = 2;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = 80;
+				itemDef.rotationY = 204;
+				itemDef.rotationX = 20;
+				itemDef.modelZoom = 3200;
+				itemDef.name = "Blood demon pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 5504:
+				ItemDefinition charizard = ItemDefinition.get(12479);
+				itemDef.modelID = 64067;
+				itemDef.modelOffsetX = charizard.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = charizard.modelOffsetY;
+				itemDef.modelZoom = 4000;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.name = "Charizard pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", "Upgrade-pet", "Drop"};
+				break;
+			case 5506:
+				ItemDefinition donkeykong2 = ItemDefinition.get(12479);
+				itemDef.modelID = 64225;
+				itemDef.modelOffsetX = donkeykong2.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = donkeykong2.modelOffsetY;
+				itemDef.modelZoom = 4000;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.name = "Donkeykong pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", "Upgrade-pet", "Drop"};
+				break;
+			case 5507:
+				ItemDefinition sonicw = ItemDefinition.get(12479);
+				itemDef.modelID = 64224;
+				itemDef.modelOffsetX = sonicw.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = sonicw.modelOffsetY;
+				itemDef.modelZoom = 3000;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.name = "Sonic pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", "Upgrade-pet", "Drop"};
+				break;
+			case 5508:
+				ItemDefinition Mario = ItemDefinition.get(12479);
+				itemDef.modelID = 64223;
+				itemDef.modelOffsetX = Mario.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = Mario.modelOffsetY;
+				itemDef.modelZoom = 3000;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.name = "Mario pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", "Upgrade-pet", "Drop"};
+				break;
+			case 5560:
+				ItemDefinition superstar2 = ItemDefinition.get(12479);
+				itemDef.modelID = 64305;
+				itemDef.modelOffsetX = superstar2.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
+				itemDef.modelOffsetY = superstar2.modelOffsetY;
+				itemDef.modelZoom = 2000;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.name = "Super Star pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", "Upgrade-pet", "Drop"};
+				break;
+			case 5563:
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 1000;
+				itemDef.rotationY = 10;
+				itemDef.rotationX = 10;
+				itemDef.modelID = 64306;
+
+				itemDef.name = "Grinch pet @whi@X2 EXP@or1@";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+
+
+			case 14819:
+				itemDef.name = "x2 Slayer XP Certificate";
+				break;
+
+			case 14817:
+				itemdefyogipic1111 = ItemDefinition.get(14819);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.name = "x2 Invention XP Certificate";
+				itemDef.rdc2 = 2592;
+				break;
+			case 14822:
+				itemDef.name = "<img=15>VIP Slayer License";
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				break;
+			case 28:
+				itemDef.name = "Slayer chest key";
+				itemdefyogipic1111 = ItemDefinition.get(989);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 760;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = 800;
+				itemDef.modelID = 64299;
+				itemDef.stackable = false;
+				break;
+			case 29:
+				itemDef.name = "Locked slayer chest";
+				itemdefyogipic1111 = ItemDefinition.get(405);
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = 100;
+				itemDef.rotationX = 90;
+				itemDef.modelID = 64300;
+				itemDef.modelZoom = 1100;
+				itemDef.stackable = false;
+				break;
+
+			case 27:
+				itemDef.name = "<img=15>VIP Slayer Gem";
+				itemDef.actions = new String[]{"Teleport to task", null, "Teleport to VIP", null, "Drop"};
+				itemDef.rdc2 = 37483;
+				itemdefyogipic1111 = ItemDefinition.get(4155);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				break;
+			case 14827:
+				itemDef.name = "American pernix hood";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = 1;
+				itemDef.modelOffsetY = 200;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = 260;
+				itemDef.rotationX = 20;
+				itemDef.modelID = 64159;
+				itemDef.maleEquip1 = 64160;
+				itemDef.femaleEquip1 = 64160;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 14818:
+				itemDef.name = "American pernix body";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 1350;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64161;
+				itemDef.maleEquip1 = 64162;
+				itemDef.femaleEquip1 = 64162;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 15441:
+			case 15442:
+			case 15443:
+			case 15444:
+
+				break;
+			case 13953:
+			case 13954:
+			case 13955:
+			case 13956:
+			case 13957:
+
+				break;
+			case 14820:
+				itemDef.name = "American pernix legs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = 7;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64163;
+				itemDef.maleEquip1 = 64164;
+				itemDef.femaleEquip1 = 64164;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 21050:
+				itemDef.name = "Slayermaster hood";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64284;
+				itemDef.maleEquip1 = 64285;
+				itemDef.femaleEquip1 = 64285;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 21051:
+				itemDef.name = "Slayermaster body";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64286;
+				itemDef.maleEquip1 = 64287;
+				itemDef.femaleEquip1 = 64287;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 21052:
+				itemDef.name = "Slayermaster legs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64288;
+				itemDef.maleEquip1 = 64289;
+				itemDef.femaleEquip1 = 64289;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 21025:
+				itemDef.name = "Samurai head";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64247;
+				itemDef.maleEquip1 = 64248;
+				itemDef.femaleEquip1 = 64248;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 21026:
+				itemDef.name = "Samurai body";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64249;
+				itemDef.maleEquip1 = 64250;
+				itemDef.femaleEquip1 = 64250;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 21027:
+				itemDef.name = "Samurai legs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64251;
+				itemDef.maleEquip1 = 64252;
+				itemDef.femaleEquip1 = 64252;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 21028:
+				itemDef.name = "eSamurai head";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64253;
+				itemDef.maleEquip1 = 64254;
+				itemDef.femaleEquip1 = 64254;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 923295;
+				break;
+			case 21029:
+				itemDef.name = "eSamurai body";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64255;
+				itemDef.maleEquip1 = 64256;
+				itemDef.femaleEquip1 = 64256;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 923295;
+				break;
+			case 21030:
+				itemDef.name = "eSamurai legs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64257;
+				itemDef.maleEquip1 = 64258;
+				itemDef.femaleEquip1 = 64258;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 923295;
+				break;
+			case 11009:
+				itemDef.name = "Hotshot helm";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64186;
+				itemDef.maleEquip1 = 64187;
+				itemDef.femaleEquip1 = 64187;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 11010:
+				itemDef.name = "Hotshot body";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64188;
+				itemDef.maleEquip1 = 64189;
+				itemDef.femaleEquip1 = 64189;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 11011:
+				itemDef.name = "Hotshot legs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64190;
+				itemDef.maleEquip1 = 64191;
+				itemDef.femaleEquip1 = 64191;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 11012:
+				itemDef.name = "Hotshot wings";
+				itemdefyogipic1111 = ItemDefinition.get(2413);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64192;
+				itemDef.maleEquip1 = 64193;
+				itemDef.femaleEquip1 = 64193;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 11001:
+				itemDef.name = "Hiddenvally coif";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64179;
+				itemDef.maleEquip1 = 64180;
+				itemDef.femaleEquip1 = 64180;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 11002:
+				itemDef.name = "Hiddenvally leatherbody";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64181;
+				itemDef.maleEquip1 = 64182;
+				itemDef.femaleEquip1 = 64182;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+
+			case 2575:
+				itemDef.name = "Goku Watch";
+
+				break;
+			case 11003:
+				itemDef.name = "Hiddenvally leatherchaps";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64183;
+				itemDef.maleEquip1 = 64184;
+				itemDef.femaleEquip1 = 64184;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				break;
+			case 11006:
+				itemDef.name = "Forbidden coif";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64179;
+				itemDef.maleEquip1 = 64180;
+				itemDef.femaleEquip1 = 64180;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 29592;
+				break;
+			case 11007:
+				itemDef.name = "Forbidden leatherbody";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64181;
+				itemDef.maleEquip1 = 64182;
+				itemDef.femaleEquip1 = 64182;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 29592;
+				break;
+			case 11008:
+				itemDef.name = "Forbidden leatherchaps";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64183;
+				itemDef.maleEquip1 = 64184;
+				itemDef.femaleEquip1 = 64184;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 29592;
+				break;
+			case 11314:
+				itemDef.modelZoom = 793;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 443;
+				itemDef.modelOffsetX = 3;
+				itemDef.modelOffsetY = 15;
+				itemDef.modelID = 16049;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.name = "Hellraiser pet (x2 KC)";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+
+			case 8868:
+				itemDef.name = "<col=f8ac00>Betrayed key@lre@";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				break;
+			case 21201:
+				itemDef.name = "Betrayed key [<col=92d49a>Uncommon@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(8868);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 4710;
+				break;
+			case 21202:
+				itemDef.name = "Betrayed key [<col=789eea>Rare@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(8868);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 888888;
+				break;
+			case 21203:
+				itemDef.name = "Betrayed key [<col=c378ea>Legendary@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(8868);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 111111;
+				break;
+			case 21204:
+				itemDef.name = "Betrayed key [<col=eae678>Exotic@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(8868);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 88757;
+				break;
+			case 9662:
+				itemDef.name = "<col=f8ac00>Damned key@lre@";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				break;
+			case 21205:
+				itemDef.name = "Damned key [<col=92d49a>Uncommon@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(9662);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 4710;
+				break;
+			case 21206:
+				itemDef.name = "Damned key [<col=789eea>Rare@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(9662);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 888888;
+				break;
+			case 21207:
+				itemDef.name = "Damned key [<col=c378ea>Legendary@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(9662);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 111111;
+				break;
+			case 21208:
+				itemDef.name = "Damned key [<col=eae678>Exotic@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(9662);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 88757;
+				break;
+			case 14471:
+				itemDef.name = "<col=f8ac00>Hidden key@lre@";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				break;
+			case 21209:
+				itemDef.name = "Hidden key [<col=92d49a>Uncommon@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(14471);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 1896;
+				break;
+			case 21210:
+				itemDef.name = "Hidden key [<col=789eea>Rare@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(14471);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 888888;
+				break;
+			case 21211:
+				itemDef.name = "Loot key";
+				itemdefyogipic1111 = ItemDefinition.get(14471);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 111111;
+				break;
+			case 21212:
+				itemDef.name = "Hidden key [<col=eae678>Exotic@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(14471);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 88757;
+				break;
+			case 3468:
+				itemDef.name = "<col=f8ac00>Cursed key@lre@";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				break;
+			case 21213:
+				itemDef.name = "Cursed key [<col=92d49a>Uncommon@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(3468);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 5364;
+				break;
+			case 21214:
+				itemDef.name = "Cursed key [<col=789eea>Rare@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(3468);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 888888;
+				break;
+			case 21215:
+				itemDef.name = "Cursed key [<col=c378ea>Legendary@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(3468);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 7326;
+				break;
+			case 21216:
+				itemDef.name = "Cursed key [<col=eae678>Exotic@lre@]";
+				itemdefyogipic1111 = ItemDefinition.get(3468);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 88757;
+				break;
+			case 21217:
+				itemDef.name = "Slayer xp lamp ";
+				itemdefyogipic1111 = ItemDefinition.get(19750);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 36262;
+				break;
+			case 15403:
+				itemDef.name = "Sharp balmung";
+				itemDef.rdc2 = 9224592;
+				break;
+			case 10887:
+				itemDef.name = "Pirates ancor";
+				itemDef.rdc2 = 9939;
+				break;
+			case 21219:
+				itemDef.name = "Slayer xp lamp ";
+				itemdefyogipic1111 = ItemDefinition.get(19750);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 750;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 36262;
+				break;
+			case 21218:
+				itemDef.name = "Invention xp lamp ";
+				itemdefyogipic1111 = ItemDefinition.get(19750);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.actions = itemdefyogipic1111.actions;
+				itemDef.rdc2 = 3344;
+				break;
+			case 21260:
+				itemDef.name = "offhand glaive";
+				itemDef.modelID = 64301;
+				itemDef.maleEquip1 = 64302;
+				itemDef.femaleEquip1 = 64302;
+				def = ItemDefinition.get(22034);
+				itemDef.modelOffsetX = def.modelOffsetX;
+				itemDef.modelOffsetY = def.modelOffsetY;
+				itemDef.modelZoom = def.modelZoom;
+				itemDef.rotationY = def.rotationY;
+				itemDef.rotationX = def.rotationX;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+
+
+				break;
+			case 20505:
+				itemDef.name = "saggy offhand glaive";
+				itemDef.modelID = 64301;
+				itemDef.maleEquip1 = 64302;
+				itemDef.femaleEquip1 = 64302;
+				def = ItemDefinition.get(22034);
+				itemDef.modelOffsetX = def.modelOffsetX;
+				itemDef.modelOffsetY = def.modelOffsetY;
+				itemDef.modelZoom = def.modelZoom;
+				itemDef.rotationY = def.rotationY;
+				itemDef.rotationX = def.rotationX;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+				//
+
+				break;
+			case 5424:
+				itemDef.name = "madman offhand glaive";
+				itemDef.modelID = 64301;
+				itemDef.maleEquip1 = 64302;
+				itemDef.femaleEquip1 = 64302;
+				def = ItemDefinition.get(22034);
+				itemDef.modelOffsetX = def.modelOffsetX;
+				itemDef.modelOffsetY = def.modelOffsetY;
+				itemDef.modelZoom = def.modelZoom;
+				itemDef.rotationY = def.rotationY;
+				itemDef.rotationX = def.rotationX;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+				//
+
+				break;
+			case 21261:
+				itemDef.name = "offhand glaive";
+				itemDef.modelID = 64301;
+				itemDef.maleEquip1 = 64302;
+				itemDef.femaleEquip1 = 64302;
+				def = ItemDefinition.get(22034);
+				itemDef.modelOffsetX = def.modelOffsetX;
+				itemDef.modelOffsetY = def.modelOffsetY;
+				itemDef.modelZoom = def.modelZoom;
+				itemDef.rotationY = def.rotationY;
+				itemDef.rotationX = def.rotationX;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 464646;
+				break;
+			case 21262:
+				itemDef.name = "offhand glaive";
+				itemDef.modelID = 64301;
+				itemDef.maleEquip1 = 64302;
+				itemDef.femaleEquip1 = 64302;
+				def = ItemDefinition.get(22034);
+				itemDef.modelOffsetX = def.modelOffsetX;
+				itemDef.modelOffsetY = def.modelOffsetY;
+				itemDef.modelZoom = def.modelZoom;
+				itemDef.rotationY = def.rotationY;
+				itemDef.rotationX = def.rotationX;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 85722;
+				break;
+			case 21263:
+				itemDef.name = "offhand glaive";
+				itemDef.modelID = 64301;
+				itemDef.maleEquip1 = 64302;
+				itemDef.femaleEquip1 = 64302;
+				def = ItemDefinition.get(22034);
+				itemDef.modelOffsetX = def.modelOffsetX;
+				itemDef.modelOffsetY = def.modelOffsetY;
+				itemDef.modelZoom = def.modelZoom;
+				itemDef.rotationY = def.rotationY;
+				itemDef.rotationX = def.rotationX;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+
+				itemDef.rdc2 = 43722;
+				break;
+			case 455:
+				itemDef.name = "Scratch Card";
+				break;
+			case 18599:
+				itemDef.name = "Pink Bikini head";
+				itemdefyogipic1111 = ItemDefinition.get(4882);
+				itemDef.modelOffsetX = 1;
+				itemDef.modelOffsetY = -60;
+				itemDef.modelZoom = 1000;
+				itemDef.rotationY = 230;
+				itemDef.rotationX = 200;
+				itemDef.modelID = 64317;
+				itemDef.maleEquip1 = 64318;
+				itemDef.femaleEquip1 = 64318;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				break;
+			case 18600:
+				itemDef.name = "Bikini body";
+				itemdefyogipic1111 = ItemDefinition.get(5575);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 1600;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64319;
+				itemDef.maleEquip1 = 64320;
+				itemDef.femaleEquip1 = 64320;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				break;
+			case 18601:
+				itemDef.name = "Bikini legs";
+				itemdefyogipic1111 = ItemDefinition.get(5576);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = 20;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64321;
+				itemDef.maleEquip1 = 64322;
+				itemDef.femaleEquip1 = 64322;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				break;
+			case 18602:
+				itemDef.name = "Bikini hands";
+				itemdefyogipic1111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64323;
+				itemDef.maleEquip1 = 64324;
+				itemDef.femaleEquip1 = 64324;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				break;
+			case 18603:
+				itemDef.name = "Bikini feet";
+				itemdefyogipic1111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64325;
+				itemDef.maleEquip1 = 64325;
+				itemDef.femaleEquip1 = 64325;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				break;
+			case 5012:
+				itemDef.copyItem(11235);
+				itemDef.name = "Legends Bow";
+				itemDef.modelID = 17416;
+				itemDef.femaleEquip1 = 17460;
+				itemDef.maleEquip1 = 17460;
+				itemDef.modelOffsetX = 15;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 0;
+				itemDef.rotationZ = 0;
+				break;
+			case 23226:
+				itemDef.copyItem(11235);
+				itemDef.name = "Legends Blood Bow";
+				itemDef.modelID = 17416;
+				itemDef.femaleEquip1 = 17460;
+				itemDef.maleEquip1 = 17460;
+				itemDef.modelOffsetX = 15;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.rdc2 = 79765;
+				break;
+			case 23227:
+				itemDef.copyItem(22114);
+				itemDef.name = "Legends Blood Staff";
+				itemDef.modelID = 17362;
+				itemDef.maleEquip1 = 17369;
+				itemDef.femaleEquip1 = 17369;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 4;
+				itemDef.modelZoom = 2913;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 1015;
+				itemDef.rotationZ = 0;
+				itemDef.rdc2 = 79765;
+				break;
+			case 5011:
+				itemDef.copyItem(11235);
+				itemDef.name = "Legends Light Bow";
+				itemDef.modelID = 17416;
+				itemDef.femaleEquip1 = 17460;
+				itemDef.maleEquip1 = 17460;
+				itemDef.modelOffsetX = 15;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.rdc2 = 11000000;
+				break;
+			case 23228:
+				itemDef.copyItem(11235);
+				itemDef.name = "Divine Bow";
+				itemDef.modelID = 18543;
+				itemDef.femaleEquip1 = 18544;
+				itemDef.maleEquip1 = 18544;
+				itemDef.modelOffsetX = 15;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 500;
+				itemDef.rotationX = 120;
+				itemDef.rotationZ = 20;
+				break;
+			case 23267:
+				itemDef.copyItem(11235);
+				itemDef.name = "Daemon Bow";
+				itemDef.modelID = 18545;
+				itemDef.femaleEquip1 = 18551;
+				itemDef.maleEquip1 = 18551;
+				itemDef.modelOffsetX = 15;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 500;
+				itemDef.rotationX = 120;
+				itemDef.rotationZ = 20;
+				break;
+			case 5010:
+				itemDef.name = "Crystalized bow";
+				ItemDefinition tbow3 = ItemDefinition.get(1419);
+				itemDef.modelID = 71222;
+				itemDef.femaleEquip1 = 71223;
+				itemDef.maleEquip1 = 71223;
+				itemDef.actions = tbow3.actions;
+				itemDef.modelOffsetX = tbow3.modelOffsetX;
+				itemDef.modelOffsetY = tbow3.modelOffsetY;
+				itemDef.modelZoom = tbow3.modelZoom;
+				itemDef.rotationY = tbow3.rotationY;
+				itemDef.rotationX = tbow3.rotationX;
+				itemDef.stackable = false;
+				break;
+			case 8136:
+				itemDef.name = "Legends Blood Sword";
+				ItemDefinition vitur2222 = ItemDefinition.get(12537);
+				itemDef.modelID = 17361;
+				itemDef.femaleEquip1 = 17360;
+				itemDef.maleEquip1 = 17360;
+				itemDef.actions = vitur2222.actions;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 15;
+				itemDef.modelZoom = 1780;
+				itemDef.rotationY = 475;
+				itemDef.rotationX = 983;
+				itemDef.rotationZ = 0;
+				itemDef.stackable = false;
+				itemDef.rdc2 = 79765;
+				break;
+
+			case 12535:
+				itemDef.name = "Legends Sword";
+				ItemDefinition vitur22 = ItemDefinition.get(12537);
+				itemDef.modelID = 17361;
+				itemDef.femaleEquip1 = 17360;
+				itemDef.maleEquip1 = 17360;
+				itemDef.actions = vitur22.actions;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 15;
+				itemDef.modelZoom = 1780;
+				itemDef.rotationY = 475;
+				itemDef.rotationX = 983;
+				itemDef.rotationZ = 0;
+				itemDef.stackable = false;
+				break;
+
+			case 12537:
+				ItemDefinition executionz = ItemDefinition.get(4755);
+				itemDef.maleEquip1 = 65323;
+				itemDef.actions = executionz.actions;
+				itemDef.name = "Legends Light Sword";
+				itemDef.modelID = 17361;
+				itemDef.femaleEquip1 = 17360;
+				itemDef.maleEquip1 = 17360;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 15;
+				itemDef.modelZoom = 1780;
+				itemDef.rotationY = 475;
+				itemDef.rotationX = 983;
+				itemDef.rotationZ = 0;
+				itemDef.stackable = false;
+				itemDef.rdc2 = 11000000;
+				break;
+
+			case 9940:
+				itemDef.name = "Execution chainmace";
+				ItemDefinition execution = ItemDefinition.get(4755);
+				// itemDef.modelID = itemDef2.modelID;
+				itemDef.modelID = 65322;
+				itemDef.femaleEquip1 = 65323;
+				itemDef.maleEquip1 = 65323;
+				itemDef.actions = execution.actions;
+
+				itemDef.modelOffsetX = execution.modelOffsetX;
+				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
+				itemDef.modelOffsetY = execution.modelOffsetY;
+				itemDef.modelZoom = execution.modelZoom;
+				itemDef.rotationY = execution.rotationY;
+				itemDef.rotationX = execution.rotationX;
+				itemDef.stackable = false;
+				itemDef.rdc2 = 3645768;//23622
+
+				break;
+			case 9942:
+				itemDef.name = "Execution Staff";
+
+				ItemDefinition execution1 = ItemDefinition.get(21777);
+				// itemDef.modelID = itemDef2.modelID;
+				itemDef.modelID = execution1.modelID;
+				itemDef.femaleEquip1 = execution1.femaleEquip1;
+				itemDef.maleEquip1 = execution1.maleEquip1;
+				itemDef.actions = execution1.actions;
+
+				itemDef.modelOffsetX = execution1.modelOffsetX;
+				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
+				itemDef.modelOffsetY = execution1.modelOffsetY;
+				itemDef.modelZoom = execution1.modelZoom;
+				itemDef.rotationY = execution1.rotationY;
+				itemDef.rotationX = execution1.rotationX;
+				itemDef.stackable = false;
+				itemDef.rdc2 = 85748;//23622
+
+				break;
+			case 9939:
+				itemDef.name = "Legends cape";
+				ItemDefinition execape = ItemDefinition.get(21039);
+				// itemDef.modelID = itemDef2.modelID;
+				itemDef.modelID = execape.modelID;
+				itemDef.femaleEquip1 = execape.femaleEquip1;
+				itemDef.maleEquip1 = execape.maleEquip1;
+				itemDef.actions = execape.actions;
+				itemDef.modelZoom = 3000;
+				itemDef.modelOffsetX = execape.modelOffsetX;
+				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
+				itemDef.modelOffsetY = execape.modelOffsetY;
+				//itemDef.modelZoom = execape.modelZoom;
+				itemDef.rotationY = execape.rotationY;
+				itemDef.rotationX = execape.rotationX;
+				itemDef.stackable = false;
+				itemDef.rdc2 = 565656;//23622
+
+				break;
+			case 17011:
+				itemDef.copyItem(22114);
+				itemDef.name = "Legends Staff";
+				itemDef.modelID = 17362;
+				itemDef.maleEquip1 = 17369;
+				itemDef.femaleEquip1 = 17369;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 4;
+				itemDef.modelZoom = 2913;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 1015;
+				itemDef.rotationZ = 0;
+				break;
+
+			case 17013:
+				itemDef.copyItem(22114);
+				itemDef.name = "Legends Light Staff";
+				itemDef.modelID = 17362;
+				itemDef.maleEquip1 = 17369;
+				itemDef.femaleEquip1 = 17369;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 4;
+				itemDef.modelZoom = 2913;
+				itemDef.rotationY = 565;
+				itemDef.rotationX = 1015;
+				itemDef.rotationZ = 0;
+				itemDef.rdc2 = 11000000;
+				break;
+			case 8273:
+				itemDef.name = "Legends gloves";
+				itemdefyogipic1111 = ItemDefinition.get(7461);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = 1200;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64277;
+				itemDef.maleEquip1 = 64278;
+				itemDef.femaleEquip1 = 64278;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.rdc2 = 565656;
+				break;
+			case 8274:
+				itemDef.name = "Legends boots";
+				itemdefyogipic1111 = ItemDefinition.get(7114);
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelID = 64279;
+				itemDef.maleEquip1 = 64279;
+				itemDef.femaleEquip1 = 64279;
+				itemDef.groundActions = new String[5];
+				itemDef.groundActions[2] = "Take";
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.stackable = false;
+				itemDef.rdc2 = 565656;
+				break;
+			case 9941:
+				itemDef.actions = new String[5];
+				itemDef.modelID = 19219;
+				itemDef.name = "Legends blowpipe";
+				itemDef.modelZoom = 1158;
+				itemDef.rotationX = 189;//189
+				itemDef.rotationY = 768;//768
+				itemDef.modelOffsetX = -7;
+				itemDef.modelOffsetY = 4;
+				itemDef.value = 20000000;
+				itemDef.maleEquip1 = 14403;
+				itemDef.femaleEquip1 = 14403;
+				itemDef.actions[1] = "Wield";
+				// itemDef.actions[2] = "Uncharge";
+				//	itemDef.actions[3] = "Uncharge";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.rdc2 = 666737;//23622
+				break;
+
+			case 4684:
+				itemDef.copyItem(15642);
+				itemDef.name = "Legends helm";
+				itemDef.modelID = 16776;
+				itemDef.maleEquip1 = 16776;
+				itemDef.femaleEquip1 = 16776;
+				itemDef.modelZoom = 800;
+				break;
+
+			case 23229:
+				itemDef.copyItem(19864);
+				itemDef.name = "@yel@Global Boss Token";
+				itemDef.rdc2 = 21708;
+				break;
+
+
+
+			case 23273:
+				itemDef.copyItem(14859);
+				itemDef.name = "@cya@Celestial Energy";
+				itemDef.rdc2 = 27333;
+				break;
+
+			case 23268:
+				itemDef.copyItem(4407);
+				itemDef.name = "Cloak of Summer";
+				itemDef.modelID = 18553;
+				itemDef.maleEquip1 = 18554;
+				itemDef.femaleEquip1 = 18554;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				//itemDef.rdc2 = 23708;
+				itemDef.rotationX = 1220;
+				break;
+			case 23269:
+				itemDef.copyItem(3738);
+				itemDef.name = "Super Soaker";
+				itemDef.modelID = 18555;
+				itemDef.maleEquip1 = 18556;
+				itemDef.femaleEquip1 = 18556;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				//itemDef.rdc2 = 23708;
+				itemDef.modelZoom = 1180;
+				itemDef.rotationX = 0;
+				break;
+			case 4685:
+				itemDef.copyItem(15643);
+				itemDef.name = "Legends body";
+				itemDef.modelID = 16780;
+				itemDef.maleEquip1 = 16780;
+				itemDef.femaleEquip1 = 16780;
+				itemDef.modelZoom = 1500;
+				break;
+
+			case 4686:
+				itemDef.copyItem(15644);
+				itemDef.name = "Legends legs";
+				itemDef.modelID = 16797;
+				itemDef.maleEquip1 = 16797;
+				itemDef.femaleEquip1 = 16797;
+				itemDef.modelZoom = 1800;
+				break;
 		}
 		return itemDef;
 	}

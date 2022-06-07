@@ -12,7 +12,7 @@ public class IdleLogoutPacketListener implements PacketListener {
 	@Override
 	public void handleMessage(Player player, Packet packet) {
 		if (player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR
-			 || player.getRights() == PlayerRights.DEVELOPER)
+			 || player.getRights() == PlayerRights.OWNER)
 			return;
 		/*
 		 * if(player.logout() &&

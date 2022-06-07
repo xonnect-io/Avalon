@@ -3,12 +3,13 @@ package com.ruse.world.content;
 import com.ruse.model.Animation;
 import com.ruse.model.Item;
 import com.ruse.model.Skill;
+import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.world.entity.impl.player.Player;
 
 public class Dissolving {
 	
 	private Player player;
-	
+
 	public Dissolving(Player player) {
 		this.player = player;
 	}
@@ -423,8 +424,9 @@ public class Dissolving {
 			return rewards;
 		}
 
-		
-		
+		public ItemDefinition getDefinition() {
+			return ItemDefinition.forId(id);
+		}
 	}
 	public int amtafterdissolvingall = 0;
 	public int sumofdissolves(int id) {
@@ -444,12 +446,24 @@ return amt;
 				player.getInventory().addItemSet(data.getRewards());
 				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
 				player.performAnimation(new Animation(data.getAnimation()));
-				//player.getProgressionManager().getProgressionTask(9).incrementProgress(1, 1);
+				player.getPacketSender().sendMessage("You dissolved " + ItemDefinition.forId(id).getName() +" for x" + data.getRewards()[0].getAmount() +" Upgrade Tokens" );
 				break;
 			}
 		}
 		
 	}
+	public void handleAll(int id) {
+		for(DissolvingData data : DissolvingData.values()) {
+			if(data.getId() == id) {
+				player.getInventory().delete(id, 1);
+				player.getInventory().addItemSet(data.getRewards());
+				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
+				player.performAnimation(new Animation(-1));
+				player.getPacketSender().sendMessage("You dissolved " + ItemDefinition.forId(id).getName() +" for x" + data.getRewards()[0].getAmount() +" Upgrade Tokens" );
+				break;
+			}
+		}
 
+	}
 }
 

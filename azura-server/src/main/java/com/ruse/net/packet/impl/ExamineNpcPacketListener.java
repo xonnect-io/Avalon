@@ -15,7 +15,7 @@ public class ExamineNpcPacketListener implements PacketListener {
 			return;
 		}
 		NpcDefinition npcDef = NpcDefinition.forId(npc);
-		if(player.getRights() == PlayerRights.DEVELOPER) {
+		if(player.getRights() == PlayerRights.OWNER) {
 			player.getPA().sendMessage("NPC ID: " + npc);
 		}
 		if (npcDef != null) {

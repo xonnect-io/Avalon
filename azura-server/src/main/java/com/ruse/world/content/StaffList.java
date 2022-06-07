@@ -22,7 +22,7 @@ public class StaffList {
 	}
 
 	public static String getPrefix(Player player) {
-		if (player.getRights() == PlayerRights.DEVELOPER) { // 679 main img 0
+		if (player.getRights() == PlayerRights.OWNER) { // 679 main img 0
 			return "<img=4>";
 		}
 		if (player.getRights() == PlayerRights.MODERATOR) {

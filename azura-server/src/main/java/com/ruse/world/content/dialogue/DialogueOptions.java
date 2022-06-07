@@ -64,7 +64,7 @@ public class DialogueOptions {
     public static int SECOND_OPTION_OF_TWO = 2462;
 
     public static void handle(Player player, int id) {
-        if (player.getRights() == PlayerRights.DEVELOPER) {
+        if (player.getRights() == PlayerRights.OWNER) {
             player.getPacketSender()
                     .sendMessage("Dialogue button id: " + id + ", action id: " + player.getDialogueActionId())
                     .sendConsoleMessage("Dialogue button id: " + id + ", action id: " + player.getDialogueActionId());
@@ -1269,13 +1269,9 @@ public class DialogueOptions {
                 case 6668://yes
                     for (int i = 0; i < player.getInventory().capacity(); i++) {
                         if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
-
-                           player.getDissolving().handle(player.getInventory().get(i).getId());
-
-
+                           player.getDissolving().handleAll(player.getInventory().get(i).getId());
                         }
                     }
-
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 666:

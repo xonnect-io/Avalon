@@ -66,7 +66,7 @@ public class NPCOptionPacketListener implements PacketListener {
         if (npc == null)
             return;
         player.setEntityInteraction(npc);
-        if (player.getRights() == PlayerRights.DEVELOPER)
+        if (player.getRights() == PlayerRights.OWNER)
             player.getPacketSender().sendMessage("First click npc id: " + npc.getId());
         if (BossPets.pickup(player, npc)) {
             player.getMovementQueue().reset();
@@ -874,7 +874,7 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         player.setEntityInteraction(npc);
         final int npcId = npc.getId();
-        if (player.getRights() == PlayerRights.DEVELOPER)
+        if (player.getRights() == PlayerRights.OWNER)
             player.getPacketSender().sendMessage("Second click npc id: " + npcId);
         player.setWalkToTask(new WalkToTask(player, npc.getPosition(), npc.getSize(), new FinalizedMovementTask() {
             @Override
@@ -1211,7 +1211,7 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         player.setEntityInteraction(npc).setPositionToFace(npc.getPosition().copy());
         npc.setPositionToFace(player.getPosition());
-        if (player.getRights() == PlayerRights.DEVELOPER)
+        if (player.getRights() == PlayerRights.OWNER)
             player.getPacketSender().sendMessage("Third click npc id: " + npc.getId());
         player.setWalkToTask(new WalkToTask(player, npc.getPosition(), npc.getSize(), new FinalizedMovementTask() {
             @Override
@@ -1359,7 +1359,7 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
         player.setEntityInteraction(npc);
-        if (player.getRights() == PlayerRights.DEVELOPER)
+        if (player.getRights() == PlayerRights.OWNER)
             player.getPacketSender().sendMessage("Fourth click npc id: " + npc.getId());
         player.setWalkToTask(new WalkToTask(player, npc.getPosition(), npc.getSize(), new FinalizedMovementTask() {
             @Override

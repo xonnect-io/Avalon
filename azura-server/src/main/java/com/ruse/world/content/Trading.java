@@ -257,7 +257,7 @@ public class Trading {
 				player.getPacketSender().sendMessage("@red@You can not trade bonds, you can only trade them via player owned shops!");
 				return;
 		}
-		if (player.getRights() != PlayerRights.DEVELOPER || player.getRights() != PlayerRights.ADMINISTRATOR && player2.getRights() != PlayerRights.DEVELOPER
+		if (player.getRights() != PlayerRights.OWNER || player.getRights() != PlayerRights.ADMINISTRATOR && player2.getRights() != PlayerRights.OWNER
 				&& !(itemId == 1419 && player.getRights().isStaff())) {
 			if (!new Item(itemId).tradeable()) {
 				player.getPacketSender().sendMessage("This item is currently untradeable and cannot be traded.");

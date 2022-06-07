@@ -525,6 +525,10 @@ public class GameRenderer extends Applet implements Runnable, MouseListener, Mou
 				sendCommand("zones");
 				keyEvent.consume();
 				return;
+			} else if (keyCode == KeyEvent.VK_D) {
+				sendCommand("dissolveall");
+				keyEvent.consume();
+				return;
 			} else if (keyCode == KeyEvent.VK_P) {
 				sendCommand("pos");
 				keyEvent.consume();
@@ -537,7 +541,11 @@ public class GameRenderer extends Applet implements Runnable, MouseListener, Mou
 				sendCommand("bank");
 				keyEvent.consume();
 				return;
-			}
+			} else if (keyCode == KeyEvent.VK_C) {
+			sendCommand("collectionlog");
+			keyEvent.consume();
+			return;
+		}
 		}
 		if (keyCode == KeyEvent.VK_ESCAPE && Client.openInterfaceID != -1) {
 			Client.instance.closeGameInterfaces();

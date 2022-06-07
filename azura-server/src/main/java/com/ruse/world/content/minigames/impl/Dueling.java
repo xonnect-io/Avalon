@@ -179,7 +179,7 @@ public class Dueling {
 		 * player.getPacketSender().sendMessage("That player is banned from staking!");
 		 * return; }
 		 */
-		if (player.getRights() != PlayerRights.DEVELOPER && playerToDuel.getRights() != PlayerRights.DEVELOPER) {
+		if (player.getRights() != PlayerRights.OWNER && playerToDuel.getRights() != PlayerRights.OWNER) {
 			if (!new Item(itemId).tradeable()) {
 				player.getPacketSender().sendMessage("This item is currently untradeable and cannot be traded.");
 				return;

@@ -45,10 +45,7 @@ import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.holidayevents.easter2017;
-import com.ruse.world.content.minigames.impl.KeepersOfLight;
-import com.ruse.world.content.minigames.impl.TreasureHunter;
-import com.ruse.world.content.minigames.impl.VaultOfWar;
-import com.ruse.world.content.minigames.impl.YesNoDialogue;
+import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
@@ -120,7 +117,7 @@ public class CommandPacketListener implements PacketListener {
                 }
             System.out.println(price+"");
             player.getDissolving().amtafterdissolvingall = price;
-            DialogueManager.start(player, new YesNoDialogue(player, "Dissolve all items for @blu@"+price+" @bla@Upgrade tokens?", "", 6668));
+            DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve all dissolveable items for "+price+" Tokens", "Nevermind", 6668));
 
         }
 
@@ -762,7 +759,7 @@ public class CommandPacketListener implements PacketListener {
         }
         if (GameSettings.BETA_ENABLED) {
             if (command[0].equalsIgnoreCase("ownerup")) {
-                player.setRights(PlayerRights.DEVELOPER);
+                player.setRights(PlayerRights.OWNER);
                 player.getPacketSender().sendRights();
                 PlayerPanel.refreshPanel(player);
             }
@@ -1585,12 +1582,12 @@ public class CommandPacketListener implements PacketListener {
                         + " just tried to check " + playr2.getUsername() + "'s Security Pin.");
                 if (player.getRights().equals(PlayerRights.MODERATOR)
                         && playr2.getRights().equals(PlayerRights.ADMINISTRATOR)
-                        || playr2.getRights().equals(PlayerRights.DEVELOPER)) {
+                        || playr2.getRights().equals(PlayerRights.OWNER)) {
                     player.getPacketSender().sendMessage(
                             playr2.getUsername() + " is a higher rank than you. You can't resolve their Security Pin.");
                     return;
                 } else if (player.getRights().equals(PlayerRights.ADMINISTRATOR)
-                        || playr2.getRights().equals(PlayerRights.DEVELOPER)) {
+                        || playr2.getRights().equals(PlayerRights.OWNER)) {
                     player.getPacketSender().sendMessage(
                             playr2.getUsername() + " is a higher rank than you. You can't resolve their Security Pin.");
                     return;
@@ -1607,12 +1604,12 @@ public class CommandPacketListener implements PacketListener {
                         + " just tried to check " + playr2.getUsername() + "'s IP address.");
                 if (player.getRights().equals(PlayerRights.MODERATOR)
                         && playr2.getRights().equals(PlayerRights.ADMINISTRATOR)
-                        || playr2.getRights().equals(PlayerRights.DEVELOPER)) {
+                        || playr2.getRights().equals(PlayerRights.OWNER)) {
                     player.getPacketSender().sendMessage(
                             playr2.getUsername() + " is a higher rank than you. You can't resolve their IP.");
                     return;
                 } else if (player.getRights().equals(PlayerRights.ADMINISTRATOR)
-                        || playr2.getRights().equals(PlayerRights.DEVELOPER)) {
+                        || playr2.getRights().equals(PlayerRights.OWNER)) {
                     player.getPacketSender().sendMessage(
                             playr2.getUsername() + " is a higher rank than you. You can't resolve their IP.");
                     return;
@@ -3722,7 +3719,7 @@ public class CommandPacketListener implements PacketListener {
                     supportCommands(player, parts, command);
                     globalModCommands(player, parts, command);
                     break;
-                case DEVELOPER:
+                case OWNER:
                     playerCommands(player, parts, command);
                     memberCommands(player, parts, command);
                     helperCommands(player, parts, command);
@@ -3766,7 +3763,7 @@ public class CommandPacketListener implements PacketListener {
         } catch (Exception exception) {
             exception.printStackTrace();
 
-            if (player.getRights() == PlayerRights.DEVELOPER) {
+            if (player.getRights() == PlayerRights.OWNER) {
                 player.getPacketSender().sendMessage("Error executing that command.");
 
             } else {

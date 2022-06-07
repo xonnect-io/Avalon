@@ -88,7 +88,7 @@ public class UseItemPacketListener implements PacketListener {
             return;
         Item usedWith = player.getInventory().getItems()[usedWithSlot];
         Item itemUsedWith = player.getInventory().getItems()[itemUsedSlot];
-        if (player.getRights() == PlayerRights.DEVELOPER) {
+        if (player.getRights() == PlayerRights.OWNER) {
             player.getPacketSender()
                     .sendMessage("ItemOnItem - <shad=000000><col=ffffff>[<col=ff774a>"
                             + ItemDefinition.forId(itemUsedWith.getId()).getName() + ":" + itemUsedWith.getId() + ":"
@@ -358,7 +358,7 @@ public class UseItemPacketListener implements PacketListener {
             return;
         }
         player.setInteractingObject(gameObject);
-        if (player.getRights() == PlayerRights.DEVELOPER) {
+        if (player.getRights() == PlayerRights.OWNER) {
             if (GameObjectDefinition.forId(gameObject.getId()) != null
                     && GameObjectDefinition.forId(gameObject.getId()).getName() != null) {
                 player.getPacketSender()
@@ -550,7 +550,7 @@ public class UseItemPacketListener implements PacketListener {
         if (player.getInventory().getItems()[slot].getId() != id) {
             return;
         }
-        if (player.getRights() == PlayerRights.DEVELOPER) {
+        if (player.getRights() == PlayerRights.OWNER) {
             player.getPacketSender()
                     .sendMessage("ItemOnNPC - <shad=000000><col=ffffff>[<col=ff774a>"
                             + ItemDefinition.forId(id).getName() + ":" + id + " <col=ffffff>was used on <col=4AD2FF>"

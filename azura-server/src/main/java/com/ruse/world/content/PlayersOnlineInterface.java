@@ -169,7 +169,7 @@ public class PlayersOnlineInterface {
 //		case BRONZE_MEMBER:
 //			value = 3;
 //			break;
-		case DEVELOPER:
+		case OWNER:
 			value = 13;
 			break;
 		case DIAMOND_DONATOR:

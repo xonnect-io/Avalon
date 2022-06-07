@@ -245,7 +245,7 @@ public class TeleportInterface {
 
         if (bossData == Bosses.FALLEN_ANGEL) {
             if ((player.isUnlockedLucifers() &&
-                player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.DEVELOPER) {
+                player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.OWNER) {
             TeleportHandler.teleportPlayer(player,
                     new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
                     player.getSpellbook().getTeleportType());

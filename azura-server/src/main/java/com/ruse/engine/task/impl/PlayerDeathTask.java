@@ -106,11 +106,11 @@ public class PlayerDeathTask extends Task {
                         Player killer = damageDealer == null ? null : damageDealer.getPlayer();
 
                         if (player.getRights().equals(PlayerRights.ADMINISTRATOR)
-                                || player.getRights().equals(PlayerRights.DEVELOPER))
+                                || player.getRights().equals(PlayerRights.OWNER))
                             dropItems = false;
                         if (loc == Location.WILDERNESS) {
                             if (killer != null && (killer.getRights().equals(PlayerRights.ADMINISTRATOR)
-                                    || killer.getRights().equals(PlayerRights.DEVELOPER))) // ||
+                                    || killer.getRights().equals(PlayerRights.OWNER))) // ||
                                 // killer.getGameMode().equals(GameMode.IRONMAN)
                                 // ||
                                 // killer.getGameMode().equals(GameMode.ULTIMATE_IRONMAN)))
@@ -118,7 +118,7 @@ public class PlayerDeathTask extends Task {
                         }
                         if (killer != null) {
                             if (killer.getRights().equals(PlayerRights.ADMINISTRATOR)
-                                    || killer.getRights().equals(PlayerRights.DEVELOPER)) {
+                                    || killer.getRights().equals(PlayerRights.OWNER)) {
                                 dropItems = false;
                             }
                         }

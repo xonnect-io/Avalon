@@ -167,9 +167,9 @@ public class NewTeleportInterfaceHandler {
 			return;
 		}
 		if (player.getCurrentTeleport().getNpcId() == 9813) {
-			if (player.getRights() == PlayerRights.DEVELOPER)
+			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
-			if (player.getPointsHandler().getMIDNIGHTKILLCount() >= 10_000 || player.getRights() == PlayerRights.DEVELOPER) {
+			if (player.getPointsHandler().getMIDNIGHTKILLCount() >= 10_000 || player.getRights() == PlayerRights.OWNER) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 			}
@@ -179,9 +179,9 @@ public class NewTeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == 9011) {
-			if (player.getRights() == PlayerRights.DEVELOPER)
+			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
-			if (!player.isUnlockedLucifers() || player.getRights() != PlayerRights.DEVELOPER) {
+			if (!player.isUnlockedLucifers() || player.getRights() != PlayerRights.OWNER) {
 				Item[] requirements = new Item[]{new Item(ItemDefinition.UPGRADE_TOKEN_ID, 25_000_000), new Item(20400, 1),
 						new Item(18823, 3), new Item(19888, 3)};
 				if (player.getInventory().containsAll(requirements)) {
@@ -204,7 +204,7 @@ public class NewTeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == 9837) {
-			if (player.getRights() == PlayerRights.DEVELOPER)
+			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
 			if (!player.isUnlockedDarkSupreme()) {
 				Item[] requirements = new Item[]{ new Item(5011, 1), new Item(12537, 1), new Item(17013, 1)};
@@ -213,7 +213,7 @@ public class NewTeleportInterfaceHandler {
 					player.setUnlockedDarkSupreme(true);
 					player.sendMessage("@red@Congratulations, you have unlocked Midnight Goblin's zone!");
 					return;
-				} else  if (player.getRights() == PlayerRights.DEVELOPER) {
+				} else  if (player.getRights() == PlayerRights.OWNER) {
 					TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 							player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				}  else
@@ -231,10 +231,10 @@ public class NewTeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == 9012) {
-			if (player.getRights() == PlayerRights.DEVELOPER)
+			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
 			if ((player.isUnlockedLucifers() &&
-					player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.DEVELOPER) {
+					player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.OWNER) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				boolean contains = false;
