@@ -5,6 +5,7 @@ import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.util.Misc;
 import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.entity.impl.player.Player;
 
 public class Agility {

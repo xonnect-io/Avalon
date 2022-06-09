@@ -139935,12 +139935,9 @@
     "defenceRange": 70,
     "defenceMage": 0
   },
-
-
-
   {
     "id": 9001,
-    "name": "Phase 1",
+    "name": "Stitch",
     "examine": "A zone monster.",
     "combat": 10,
     "size": 1,
@@ -139962,7 +139959,7 @@
   },
   {
     "id": 9002,
-    "name": "Phase 2",
+    "name": "Patrick",
     "examine": "A zone monster.",
     "combat": 50,
     "size": 1,
@@ -139984,7 +139981,7 @@
   },
   {
     "id": 9003,
-    "name": "Phase 3",
+    "name": "Boos",
     "examine": "A zone monster.",
     "combat": 100,
     "size": 1,
@@ -140006,7 +140003,7 @@
   },
   {
     "id": 9004,
-    "name": "Phase 4",
+    "name": "Elmo",
     "examine": "A zone monster.",
     "combat": 150,
     "size": 2,
@@ -140028,7 +140025,7 @@
   },
   {
     "id": 9005,
-    "name": "Phase 5",
+    "name": "Yoshi",
     "examine": "A zone monster.",
     "combat": 225,
     "size": 2,

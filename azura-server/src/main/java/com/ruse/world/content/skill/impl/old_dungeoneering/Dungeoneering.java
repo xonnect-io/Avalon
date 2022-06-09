@@ -168,7 +168,7 @@ public class Dungeoneering {
 
 		p.getPacketSender().sendInterfaceRemoval();
 		/*
-		 * if(p.getRights() != PlayerRights.DEVELOPER) {
+		 * if(p.getRights() != PlayerRights.OWNER) {
 		 * p.getPacketSender().sendMessage("Dungeoneering isn't out yet."); return; }
 		 */
 

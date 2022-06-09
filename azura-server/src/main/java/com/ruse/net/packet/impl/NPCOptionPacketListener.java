@@ -31,6 +31,7 @@ import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.WarriorsGuild;
 import com.ruse.world.content.minigames.impl.trioMinigame;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
+import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.construction.ConstructionActions;
 import com.ruse.world.content.skill.impl.crafting.Tanning;
@@ -94,7 +95,11 @@ public class NPCOptionPacketListener implements PacketListener {
                 if (ConstructionActions.handleFirstClickNpc(player, npc)) {
                     return;
                 }
+
                 switch (npc.getId()) {
+                    case Genie.genieID:
+                        Genie.handleInteraction(npc, player, 1);
+                        break;
                     case 3373:
                         DialogueManager.start(player, 8005);
                         player.setDialogueActionId(8005);
@@ -833,7 +838,7 @@ public class NPCOptionPacketListener implements PacketListener {
             }
         }
 
-       /* if (player.getRights() != PlayerRights.DEVELOPER) {
+       /* if (player.getRights() != PlayerRights.OWNER) {
             for (NpcRequirements req : NpcRequirements.values()) {
                 if (interact.getId() == req.getNpcId()) {
                     if (req.getKillCount() > 0){
@@ -891,6 +896,11 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 289: //DAILY TASK
                         DailyTasks.claimReward(player);
                         break;
+
+                    case Genie.genieID:
+                        Genie.handleInteraction(npc, player, 2);
+                        break;
+
                     case 568:
                         ShopManager.getShops().get(207).open(player);
 

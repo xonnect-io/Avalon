@@ -1,11 +1,11 @@
 package com.ruse.world.content;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.ruse.model.PlayerRights;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class StaffList {
 
@@ -22,7 +22,7 @@ public class StaffList {
 	}
 
 	public static String getPrefix(Player player) {
-		if (player.getRights() == PlayerRights.OWNER) { // 679 main img 0
+		if (player.getRights() == PlayerRights.OWNER) {
 			return "<img=4>";
 		}
 		if (player.getRights() == PlayerRights.MODERATOR) {
@@ -35,22 +35,6 @@ public class StaffList {
 			return "<img=5>";
 		}
 		return "";
-	}
-
-	public static void delete(Player player) {
-
-		if (staff.contains("<img=4>" + "@gre@" + player.getUsername()))
-			staff.remove("<img=4>" + "@gre@" + player.getUsername());
-
-		if (staff.contains("<img=1>" + "@gre@" + player.getUsername()))
-			staff.remove("<img=1>" + "@gre@" + player.getUsername());
-
-		if (staff.contains("<img=2>" + "@gre@" + player.getUsername()))
-			staff.remove("<img=2>" + "@gre@" + player.getUsername());
-
-		if (staff.contains("<img=5>" + "@gre@" + player.getUsername()))
-			staff.remove("<img=5>" + "@gre@" + player.getUsername());
-
 	}
 
 	public static void handleButton(Player player, int id) {
@@ -73,7 +57,7 @@ public class StaffList {
 		if (name == null)
 			return;
 
-		// System.out.println("name " + name);
+		System.out.println("name " + name);
 
 		name = getName(name);
 		Player p = World.getPlayerByName(name);
@@ -85,7 +69,6 @@ public class StaffList {
 	}
 
 	public static void login(Player player) {
-		delete(player);
 		if (!staff.contains(getPrefix(player) + "@gre@" + player.getUsername()))
 			staff.add(getPrefix(player) + "@gre@" + player.getUsername());
 	}

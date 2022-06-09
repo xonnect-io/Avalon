@@ -13,21 +13,16 @@ import mysql.impl.Donation;
 
 public enum PlayerRights {
 
-	PLAYER(-1, null, 1, 1), // A regular muggle.
-	MODERATOR(-1, "<col=20B2AA><shad=0>", 1, 1), // A moderator who has more privilege than other regular members and
-													// donators.
-	ADMINISTRATOR(-1, "@yel@<shad=0>", 1, 1), // The second-highest-privileged member of the server.
-
-	ONYX_DONATOR(-1, "@bla@<shad=0>", 1, 1), // The highest-privileged member of the server
-	
+	PLAYER(-1, null, 1, 1),
+	MODERATOR(-1, "<col=20B2AA><shad=0>", 1, 1),
+	ADMINISTRATOR(-1, "@yel@<shad=0>", 1, 1),
+	ONYX_DONATOR(-1, "@bla@<shad=0>", 1, 1),
 	OWNER(-1, "<col=0><shad=B40404>", 1, 1),
 	HELPER(-1, "<col=0><shad=FFFFFF>", 1, 1),
-
 	SAPPHIRE_DONATOR(60, "@blu@<shad=0>", 1, 1),
 	EMERALD_DONATOR(45, "@gre@<shad=0>", 1, 1),
 	RUBY_DONATOR(30, "@red@<shad=0>", 1, 1),
 	DIAMOND_DONATOR(15, "@whi@<shad=0>", 1, 1),
-
 	YOUTUBER(-1, "<col=CD201F><shad=ffffff>", 1, 1),
 	CRAP(-1, "<col=0><shad=FFFFFF>", 1, 1),
 	SUPPORT(-1, "<col=FFFFFF><shad=0>", 1, 1),
@@ -60,8 +55,8 @@ public enum PlayerRights {
 			RUBY_DONATOR, DIAMOND_DONATOR, SUPPORT, HELPER, MODERATOR, ADMINISTRATOR, ONYX_DONATOR, ZENYTE_DONATOR, OWNER, YOUTUBER);
 	private static final ImmutableSet<PlayerRights> REGULAR = Sets.immutableEnumSet(PLAYER, HELPER);
 	private static final ImmutableSet<PlayerRights> NOTMEMBER = Sets.immutableEnumSet(PLAYER, SAPPHIRE_DONATOR);
-	private static final ImmutableSet<PlayerRights> DEVELOPERONLY = Sets.immutableEnumSet(OWNER);
-	private static final ImmutableSet<PlayerRights> OWNERDEVELOPERONLY = Sets.immutableEnumSet(OWNER,ADMINISTRATOR);
+	private static final ImmutableSet<PlayerRights> OWNERONLY = Sets.immutableEnumSet(OWNER);
+	private static final ImmutableSet<PlayerRights> OWNERADMINONLY = Sets.immutableEnumSet(OWNER,ADMINISTRATOR);
 	/*
 	 * 
 	 * The yell delay for the rank The amount of seconds the player with the
@@ -139,11 +134,11 @@ public enum PlayerRights {
 	}
 
 	public boolean isDeveloperOnly() {
-		return DEVELOPERONLY.contains(this);
+		return OWNERONLY.contains(this);
 	}
 
 	public boolean OwnerDeveloperOnly() {
-		return OWNERDEVELOPERONLY.contains(this);
+		return OWNERADMINONLY.contains(this);
 	}
 
 	/**

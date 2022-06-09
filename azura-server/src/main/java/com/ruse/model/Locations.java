@@ -1445,7 +1445,7 @@ for (Item item : player.getInventory().getItems()) {
 				if (player.getWildernessLevel() > 35) {
 					if (player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR
 
-							|| player.getRights() == PlayerRights.DEVELOPER) {
+							|| player.getRights() == PlayerRights.OWNER) {
 						player.getPacketSender()
 								.sendMessage("@red@You've teleported out of deep Wilderness, logs have been written.");
 						PlayerLogs.log(player.getUsername(), " teleported out of level " + player.getWildernessLevel()

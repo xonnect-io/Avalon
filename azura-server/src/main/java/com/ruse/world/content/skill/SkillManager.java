@@ -15,6 +15,7 @@ import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
+import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.old_dungeoneering.UltimateIronmanHandler;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
@@ -281,6 +282,9 @@ public class SkillManager {
          * MAX_EXPERIENCE} then stop.
          */
 
+        if (Misc.percentageChance(0.01)) { //Change the value. This is a 10% change of a spawn - Way too high.
+            Genie.spawn(player);
+        }
 
         if (this.skills.experience[skill.ordinal()] >= MAX_EXPERIENCE)
             return this;

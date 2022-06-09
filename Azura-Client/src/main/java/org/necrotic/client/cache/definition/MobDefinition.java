@@ -68,7 +68,10 @@ public final class MobDefinition {
 				definition.name = "Daily Task Manager";
 				definition.actions = new String[]{"Get-Task", null, "Claim-Reward", "Cancel-Task", null};
 				break;
-				
+
+			case 409:
+				definition.actions = new String[]{"Talk-to", "Dismiss", null, null, null};
+				break;
 			case 9001:
 				definition.name = "Phase [1]";
 				definition.actions = new String[]{null, "Attack", null, null, null};

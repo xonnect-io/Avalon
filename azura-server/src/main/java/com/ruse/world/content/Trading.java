@@ -120,7 +120,7 @@ public class Trading {
 		/*
 		 * if(player.getHostAddress().equals(player2.getHostAddress()) &&
 		 * player.getRights() != PlayerRights.OWNER && player.getRights() !=
-		 * PlayerRights.DEVELOPER) { player.getPacketSender().
+		 * PlayerRights.OWNER) { player.getPacketSender().
 		 * sendMessage("Same IP-adress found. You cannot trade yourself from the same IP."
 		 * ); return; }
 		 */

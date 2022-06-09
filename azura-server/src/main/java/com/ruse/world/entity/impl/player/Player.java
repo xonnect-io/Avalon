@@ -69,6 +69,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.newspinner.MysteryBoxManager;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.properscratchcard.Scratchcard;
+import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.scratchcards.ScratchCard;
 import com.ruse.world.content.seasonpass.SeasonPass;
 import com.ruse.world.content.skill.SkillManager;
@@ -134,6 +135,10 @@ public class Player extends Character {
 
     public boolean canMysteryBox;
     public boolean switchedPrayerBooks;
+
+    @Getter
+    @Setter
+    private Genie genie = new Genie(this, false);
 
     private Dissolving dissolving = new Dissolving(this);
 

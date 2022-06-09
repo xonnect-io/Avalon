@@ -190,7 +190,7 @@ public class World {
         TaskManager.submit(new Task(false) {
             @Override
             protected void execute() {
-                players.forEach(StaffList::updateInterface);
+                players.forEach(p -> com.ruse.world.content.StaffList.updateInterface(p));
                 stop();
             }
         });

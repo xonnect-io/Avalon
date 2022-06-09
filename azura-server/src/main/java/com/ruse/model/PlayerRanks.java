@@ -54,15 +54,23 @@ public class PlayerRanks {
 	 * Represents a player's privilege rights.
 	 */
 	public enum PlayerRights {
-		PLAYER(-1, null, 1, 1), OWNER(-1, "<shad=1>@cya@", 1, 1), DEVELOPER(-1, "<shad=B40404>", 1, 1),
-		WEB_DEVELOPER(-1, null, 1, 1), GLOBAL_ADMINISTRATOR(-1, null, 1, 1),
-		ADMINISTRATOR(-1, "<col=FFFF64><shad=0>", 1, 1), FORUM_ADMINISTRATOR(-1, null, 1, 1),
-		GLOBAL_MODERATOR(-1, null, 1, 1), TRIAL_MODERATOR(-1, null, 1, 1), MODERATOR(-1, "<col=20B2AA><shad=0>", 1, 1),
-		FORUM_MODERATOR(-1, null, 1, 1), TRIAL_FORUM_MODERATOR(-1, null, 1, 1), ITEM_MODELLER(-1, null, 1, 1),
-		GFX_ARTIST(-1, null, 1, 1), YOUTUBER(-1, null, 1, 1), EX_STAFF(-1, null, 1, 1);
+		PLAYER(-1, null, 1, 1),
+		OWNER(-1, "<shad=1>@cya@", 1, 1),
+		DEVELOPER(-1, "<shad=B40404>", 1, 1),
+		WEB_DEVELOPER(-1, null, 1, 1),
+		GLOBAL_ADMINISTRATOR(-1, null, 1, 1),
+		ADMINISTRATOR(-1, "<col=FFFF64><shad=0>", 1, 1),
+		FORUM_ADMINISTRATOR(-1, null, 1, 1),
+		GLOBAL_MODERATOR(-1, null, 1, 1),
+		TRIAL_MODERATOR(-1, null, 1, 1),
+		MODERATOR(-1, "<col=20B2AA><shad=0>", 1, 1),
+		FORUM_MODERATOR(-1, null, 1, 1),
+		TRIAL_FORUM_MODERATOR(-1, null, 1, 1),
+		ITEM_MODELLER(-1, null, 1, 1),
+		GFX_ARTIST(-1, null, 1, 1),
+		YOUTUBER(-1, null, 1, 1),
+		EX_STAFF(-1, null, 1, 1);
 
-		private static final ImmutableSet<PlayerRights> STAFF = Sets.immutableEnumSet(DEVELOPER,
-				GLOBAL_ADMINISTRATOR, ADMINISTRATOR, GLOBAL_MODERATOR, MODERATOR);
 
 		/**
 		 * Gets the rank for a certain id.
@@ -103,17 +111,20 @@ public class PlayerRanks {
 		public int getYellDelay() {
 			return yellDelay;
 		}
+		public boolean isStaff() {
+			return STAFF.contains(this);
+		}
+
+		private static final ImmutableSet<PlayerRights> STAFF = Sets.immutableEnumSet(OWNER,
+				GLOBAL_ADMINISTRATOR, ADMINISTRATOR, GLOBAL_MODERATOR, MODERATOR);
 
 		public String getYellPrefix() {
 			return yellHexColorPrefix;
 		}
 
-		public boolean isStaff() {
-			return STAFF.contains(this);
-		}
 
 		public boolean isDeveloper() {
-			return this == PlayerRights.DEVELOPER;
+			return this == PlayerRights.OWNER;
 		}
 
 		public static PlayerRights forName(String s) {

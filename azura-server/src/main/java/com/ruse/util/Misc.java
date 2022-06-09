@@ -153,7 +153,13 @@ public class Misc {
         }
         return new String(buf, 0, buf.length);
     }
+    public static double randomDouble(double i) {
+        return getRandomDouble((int) i);
+    }
 
+    public static boolean percentageChance(double percentage) {
+        return percentage >= randomDouble(100);
+    }
     public static String formatRunescapeStyle(long num) {
         boolean negative = false;
         if (num < 0) {

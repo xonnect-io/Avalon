@@ -1202,7 +1202,7 @@ public final class CombatFactory {
             }
 
             Player player = ((Player) entity);
-            /*if (player.getRights() != PlayerRights.DEVELOPER) {
+            /*if (player.getRights() != PlayerRights.OWNER) {
                 for (NpcRequirements req : NpcRequirements.values()) {
                     if (npc.getId() == req.getNpcId()) {
                         if (req.getKillCount() > 0) {

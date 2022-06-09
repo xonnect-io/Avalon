@@ -349,20 +349,22 @@ public class PlayerHandler {
         if (player.getRights() == PlayerRights.YOUTUBER && player.getAmountDonated() >= 10000)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "><img=10> @red@Media Manager@whi@ "
                     + player.getUsername() + " has just logged in."));
+
         if (player.getRights() == PlayerRights.ZENYTE_DONATOR)
             World.sendMessage(("<shad=0>@or2@<img=1508> [Zenyte Donator] "
                     + player.getUsername() + " has just logged in."));
-        if (player.getRights() == PlayerRights.OWNER)
-            World.sendMessage(("<shad=0><col=" + player.getYellHex() + "><img=4> Owner "
-                    + player.getUsername() + " has just logged in."));
 
-        if (player.getRights() == PlayerRights.MODERATOR
-                || player.getRights() == PlayerRights.ADMINISTRATOR
-                || player.getRights() == PlayerRights.HELPER
-                || player.getRights() == PlayerRights.MODERATOR                ) {
+        if (player.getRights() == PlayerRights.OWNER) {
+            World.sendMessage(("<shad=0><col=" + player.getYellHex()
+                    + "><img=4> Owner " + player.getUsername() + " has just logged in."));
             StaffList.login(player);
-            // GrandExchange.onLogin(player);
         }
+
+        if (player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR
+                || player.getRights() == PlayerRights.HELPER|| player.getRights() == PlayerRights.MODERATOR) {
+            StaffList.login(player);
+        }
+
         StaffList.updateGlobalInterface();
         if (player.getPointsHandler().getAchievementPoints() == 0) {
             AchievementsOLD.setPoints(player);
