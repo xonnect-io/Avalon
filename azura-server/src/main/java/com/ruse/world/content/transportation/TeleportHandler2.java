@@ -59,10 +59,7 @@ public class TeleportHandler2 {
 			player.sendMessage("Use the portal to leave the LMS lobby!");
 			return;
 		}
-		if(player.getLocation() == Location.CONSTRUCTION) {
-			player.getPacketSender().sendMessage("Please use the portal to exit your house");
-			return;
-		}*/
+		*/
 		if(!player.getClickDelay().elapsed(4500) || player.getMovementQueue().isLockMovement())
 			return;
 
@@ -150,11 +147,7 @@ public class TeleportHandler2 {
 			player.sendMessage("Use the portal to leave the ffa lobby!");
 			return;
 		}
-		
-		if(player.getLocation() == Location.CONSTRUCTION) {
-			player.getPacketSender().sendMessage("Please use the portal to exit your house");
-			return;
-		}*/
+		*/
 		if(!player.getClickDelay().elapsed(4500) || player.getMovementQueue().isLockMovement())
 			return;
 		player.getCombatBuilder().reset(true);

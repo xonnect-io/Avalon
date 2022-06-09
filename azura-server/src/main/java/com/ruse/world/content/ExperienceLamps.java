@@ -56,7 +56,7 @@ public class ExperienceLamps {
 			Interface_Buttons interfaceButton = Interface_Buttons.forButton(button);
 			if (interfaceButton == null)
 				return false;
-			if (interfaceButton == Interface_Buttons.CONSTRUCTION) {
+			if (interfaceButton == Interface_Buttons.INVENTION) {
 				player.getPacketSender().sendMessage("That skill is not trainable yet.");
 				return true;
 			}
@@ -102,7 +102,7 @@ public class ExperienceLamps {
 
 		ATTACK(-27529), MAGIC(-27526), MINING(-27523), WOODCUTTING(-27520), AGILITY(-27517), FLETCHING(-27514),
 		THIEVING(-27511), STRENGTH(-27508), RANGED(-27505), SMITHING(-27502), FIREMAKING(-27499), HERBLORE(-27496),
-		SLAYER(-27493), CONSTRUCTION(-27490), DEFENCE(-27487), PRAYER(-27484), FISHING(-27481), CRAFTING(-27478),
+		SLAYER(-27493), INVENTION(-27490), DEFENCE(-27487), PRAYER(-27484), FISHING(-27481), CRAFTING(-27478),
 		FARMING(-27475), HUNTER(-27472), SUMMONING(-27469), CONSTITUTION(-27466), DUNGEONEERING(-27463),
 		COOKING(-27460), RUNECRAFTING(-27457);
 

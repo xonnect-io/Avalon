@@ -70,7 +70,7 @@ public class Hiscores implements Runnable {
 
 			for (int i = 0; i < Skill.values().length; i++) {
 				/*
-				 * if (Skill.values()[i] == Skill.CONSTRUCTION) { stmt2.setInt(6 + i, 1);
+				 * if (Skill.values()[i] == Skill.INVENTION) { stmt2.setInt(6 + i, 1);
 				 * // System.out.println("Construction? Nah fuck off bitch niggas yall got 1xp");
 				 * continue; }
 				 */

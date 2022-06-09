@@ -203,7 +203,7 @@ public class Emotes {
 		THIEVING(new int[] { 9777, 9778, 10650 }, 4965, 826, 16),
 		SLAYER(new int[] { 9786, 9787, 10653 }, 4967, 1656, 8), FARMING(new int[] { 9810, 9811, 10661 }, 4963, -1, 16),
 		RUNECRAFTING(new int[] { 9765, 9766, 10645 }, 4947, 817, 10),
-		CONSTRUCTION(new int[] { 9789, 9790, 10654 }, 4953, 820, 16),
+		INVENTION(new int[] { 9789, 9790, 10654 }, 4953, 820, 16),
 		HUNTER(new int[] { 9948, 9949, 10646 }, 5158, 907, 14),
 		SUMMONING(new int[] { 12169, 12170, 12524 }, 8525, 1515, 10),
 		PVP(new int[] { 18508, 18509 }, -1, -1, 15),
