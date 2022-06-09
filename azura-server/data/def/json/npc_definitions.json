@@ -139937,7 +139937,7 @@
   },
   {
     "id": 9001,
-    "name": "Stitch",
+    "name": "Phase 1",
     "examine": "A zone monster.",
     "combat": 10,
     "size": 1,
@@ -139959,7 +139959,7 @@
   },
   {
     "id": 9002,
-    "name": "Patrick",
+    "name": "Phase 2",
     "examine": "A zone monster.",
     "combat": 50,
     "size": 1,
@@ -139981,7 +139981,7 @@
   },
   {
     "id": 9003,
-    "name": "Boos",
+    "name": "Phase 3",
     "examine": "A zone monster.",
     "combat": 100,
     "size": 1,
@@ -140003,7 +140003,7 @@
   },
   {
     "id": 9004,
-    "name": "Elmo",
+    "name": "Phase 4",
     "examine": "A zone monster.",
     "combat": 150,
     "size": 2,
@@ -140025,7 +140025,7 @@
   },
   {
     "id": 9005,
-    "name": "Yoshi",
+    "name": "Phase 5",
     "examine": "A zone monster.",
     "combat": 225,
     "size": 2,
