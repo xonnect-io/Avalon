@@ -99,7 +99,7 @@ public class PlayerDeathTask extends Task {
                             && loc != Location.FREE_FOR_ALL_ARENA && loc != Location.FREE_FOR_ALL_WAIT
                             && loc != Location.SOULWARS && loc != Location.FIGHT_PITS
                             && loc != Location.FIGHT_PITS_WAIT_ROOM && loc != Location.FIGHT_PITS
-                            && loc != Location.RECIPE_FOR_DISASTER && loc != Location.GRAVEYARD && loc != Location.ZULRAH
+                            && loc != Location.RECIPE_FOR_DISASTER && loc != Location.PYRAMID && loc != Location.ZULRAH
                             && loc != Location.RUNESPAN) {
 
                         DamageDealer damageDealer = player.getCombatBuilder().getTopDamageDealer(true, null);

@@ -3,21 +3,16 @@ package com.ruse.world.content;
 import com.ruse.model.Item;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
-import com.ruse.model.container.impl.Shop;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.definitions.NPCDrops;
-import com.ruse.motivote3.doMotivote;
 import com.ruse.world.World;
 import com.ruse.world.content.boxes.Raids1;
 import com.ruse.world.content.boxes.Starter;
 import com.ruse.world.content.casketopening.Box;
-import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.minigames.impl.*;
-import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
-import com.ruse.world.content.teleport.NewTeleportInterfaceHandler;
-import com.ruse.world.content.teleport.TeleportType1;
 import com.ruse.world.content.transportation.TeleportHandler;
+import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -266,11 +261,53 @@ public class TeleportInterface {
                 World.register(npc_);
             }
         } else {
-            player.sendMessage("You need to have killed 10k Mini Lucifers to go here.");
+            player.sendMessage("You need to have killed 10k Fallen warriors to go here.");
         }
         return;
     }
 
+        if (bossData == Bosses.MIDNIGHT_GOBLIN) {
+            if (player.getRights() == PlayerRights.OWNER)
+                player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
+            if (!player.isUnlockedDarkSupreme()) {
+                Item[] requirements = new Item[]{ new Item(5011, 1), new Item(12537, 1), new Item(17013, 1)};
+                if (player.getInventory().containsAll(requirements)) {
+                    player.getInventory().deleteItemSet(requirements);
+                    player.setUnlockedDarkSupreme(true);
+                    player.sendMessage("@red@Congratulations, you have unlocked Midnight Goblin's zone!");
+                    return;
+                } else  if (player.getRights() == PlayerRights.OWNER) {
+                    TeleportHandler.teleportPlayer(player,
+                            new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
+                            player.getSpellbook().getTeleportType());
+                }  else
+                    player.sendMessage("You do not have the requirements to unlock Midnight Goblins!");
+                player.sendMessage("You need to sacrifice a Legends Light bow, sword, and staff!");
+                player.sendMessage("@red@Try again with these items in your inventory!");
+                return;
+
+            } else if (player.isUnlockedDarkSupreme()) {
+                TeleportHandler.teleportPlayer(player,
+                        new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
+                        player.getSpellbook().getTeleportType());
+                return;
+            }
+
+        }
+
+
+        if (bossData == Bosses.BLOOD_DEMON) {
+            if (player.getRights() == PlayerRights.OWNER)
+                player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
+            if (player.getPointsHandler().getMIDNIGHTKILLCount() >= 10_000 || player.getRights() == PlayerRights.OWNER) {
+                TeleportHandler.teleportPlayer(player,
+                        new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
+                        player.getSpellbook().getTeleportType());
+            }
+            else
+                player.sendMessage("@red@You need 10k Midnight Goblin kills to go here!");
+            return;
+        }
         player.setPreviousTeleport(bossData);
         TeleportHandler.teleportPlayer(player,
                 new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
@@ -282,8 +319,8 @@ public class TeleportInterface {
 
         if (monsterData == Monsters.FALLEN_WARRIOR) {
             if (!player.isUnlockedLucifers()) {
-                Item[] requirements = new Item[]{new Item(ItemDefinition.UPGRADE_TOKEN_ID, 25_000_000), new Item(20400, 1),
-                        new Item(18823, 3), new Item(19888, 3)};
+                Item[] requirements = new Item[]{new Item(ItemDefinition.UPGRADE_TOKEN_ID, 25_000_000), new Item(20591, 1),
+                        new Item(18823, 2), new Item(19888, 2)};
                 if (player.getInventory().containsAll(requirements)) {
                     player.getInventory().deleteItemSet(requirements);
                     player.setUnlockedLucifers(true);
@@ -291,7 +328,7 @@ public class TeleportInterface {
                     return;
                 } else {
                     player.sendMessage("You do not have the requirements to unlock Fallen Angels!");
-                    player.sendMessage("You need an enraged cape + 3 coll rings II, 3 colls necks II to sacrifice!!");
+                    player.sendMessage("Must sacrifice 10m upgrade tokens, a rage cape,2 coll rings II, 2 colls necks II");
                     player.sendMessage("@red@Try again with these items in your inventory!");
                     return;
                 }
@@ -300,7 +337,8 @@ public class TeleportInterface {
                         new Position(monsterData.teleportCords[0], monsterData.teleportCords[1], monsterData.teleportCords[2]),
                         player.getSpellbook().getTeleportType());
             }
-        } else {
+        }
+        else {
             TeleportHandler.teleportPlayer(player,
                     new Position(monsterData.teleportCords[0], monsterData.teleportCords[1], monsterData.teleportCords[2]),
                     player.getSpellbook().getTeleportType());
@@ -534,14 +572,14 @@ public class TeleportInterface {
     public enum Monsters implements Teleport {
 
         MINOTAUR("Minotaurs", 1719, new int[]{2527, 2527, 0}, 600),
-        LAVA_HOUND("Ember Giants", 9838, new int[]{3424, 4126, 0}, 600),
-        GORGON("Tree Basilisk", 1718, new int[]{2196, 5083, 0}, 550),//replace 1727 with 1718 in world npc
+        LAVA_HOUND("Ember Giant", 9838, new int[]{3424, 4126, 0}, 600),
+        GORGON("Tree Gorgon", 1718, new int[]{2196, 5083, 0}, 550),//replace 1727 with 1718 in world npc
         BAT("Bat of light", 9836, new int[]{2388, 5019, 0}, 1500),
-        GIANT_SPIDERS("Giant Spiders", 117, new int[]{2721, 4446, 0}, 720),
-        CASH_DRAGON("Cash dragons", 500, new int[]{2911, 3613, 0}, 1500),
-        DEMON_GODDESS("Demon Goddesses", 501, new int[]{2784, 4445, 0}, 725),
-        ENERGY_SKELETON("Energy Skeletons", 503, new int[]{2088, 3995, 0}, 700),
-        TUROTH("Turoths", 1627, new int[]{3154, 5556, 0}, 400),
+        GIANT_SPIDERS("Giant Spider", 117, new int[]{2721, 4446, 0}, 720),
+        CASH_DRAGON("Cash dragon", 500, new int[]{2911, 3613, 0}, 1500),
+        DEMON_GODDESS("Demon Goddess", 501, new int[]{2784, 4445, 0}, 725),
+        ENERGY_SKELETON("Energy Skeleton", 503, new int[]{2088, 3995, 0}, 700),
+        TUROTH("Turoth", 1627, new int[]{3154, 5556, 0}, 550),
         FALLEN_WARRIOR("Fallen Warrior", 9011, new int[]{1955, 5154, 0}, 500),
         ;
 
@@ -569,18 +607,18 @@ public class TeleportInterface {
         RADITZ("Raditz", 449, new int[]{2911, 3991, 0}, 780),
         GOKU("Goku", 452, new int[]{3358, 9307, 0}, 780),
         BOTANIC("Botanic Guardian", 2342, new int[]{2586, 9449, 0}, 1000),
-        ENRAGED_GUARDIAN("Enraged Guardian", 2949, new int[]{3039, 3995, 0}, 600),
+        ENRAGED_GUARDIAN("Enraged Guardian", 2949, new int[]{3039, 3995, 0}, 1000),
         ELEMENTAL_GUARDIAN("Elemental Guardian", 505, new int[]{2847, 2846, 0}, 1000),
         INYUASHA("Inuyasha", 185, new int[]{2328, 5409, 0}, 750),
         TOLROKOTH("Tolrokoth", 6430, new int[]{1887, 5468, 0}, 1200),
-        DEITY_DEMON("Demons of Deity", 440, new int[]{2781, 4576, 0}, 1000),
+        DEITY_DEMON("Demons of Deity", 440, new int[]{2842, 9387, 0}, 1000),
         MUTATED_HOUND("Mutated Hound", 9839, new int[]{3421, 4777, 0}, 1250),
-        ELITE("Elite Valdis", 205, new int[]{2529, 4573, 0}, 1250),
+        ELITE("Elite Valdis", 205, new int[]{2529, 4573, 0}, 1150),
         COLLOSAL_AVATAR("Collosal Avatar", 4540, new int[]{2375, 4947, 0}, 1350),
         INFERNAL_DEMON("Plutonic Demon", 12810, new int[]{2728, 4505, 0}, 1150),
         FALLEN_ANGEL("Fallen Angel", 9012, new int[]{2335, 3998, 0}, 1000),
-        MIDNIGHT_GOBLIN("Midnight Goblin", 9837, new int[]{2335, 3998, 0}, 1100),
-        BLOOD_MAGE("Blood Demon", 9813, new int[]{2335, 3998, 0}, 520),
+        MIDNIGHT_GOBLIN("Midnight Goblin", 9837, new int[]{2522, 4648, 0}, 1100),
+        BLOOD_DEMON("Blood Demon", 9813, new int[]{3026, 5233, 0}, 750),
         /*
         CRYSTAL_QUEEN("Crystal queen", 6430, new int[]{1887, 5468, 0}, 1100),
         LUCIFER("Fallen Angel", 9012, new int[]{2335, 3998, 0}, 1000),
@@ -627,7 +665,7 @@ public class TeleportInterface {
 
     public enum Minigames implements Teleport {
         STARTER_ZONE("Starter Progression", 9001, new int[]{1, 1, 0}, Starter.rewards, 600),
-        OUTBREAK("Pyramid Outbreak", 4476, new int[]{3487, 9235, 0}, Graveyard.loot, 600),
+        OUTBREAK("Pyramid Outbreak", 4476, new int[]{3487, 9235, 0}, PyramidOutbreak.loot, 600),
         UNKNOWN("Unknown Crypt", 823, new int[]{1754, 5133, 0}, 1250),
         DUNG("Legends Raids", 585, new int[]{2222, 4115, 0}, Raids1.rewards, 1450),
         IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1200),

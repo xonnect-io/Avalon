@@ -185,23 +185,23 @@ public class ObjectActionPacketListener implements PacketListener {
 
                             case 22099:
                                 if (player.getRights() == PlayerRights.SAPPHIRE_DONATOR)
-                                Stalls.stealFromAFKStall(player, id, 1);
+                                    Stalls.stealFromAFKStall(player, id, 1);
                                 break;
                             case 22098:
                                 if (player.getRights() == PlayerRights.EMERALD_DONATOR)
-                                Stalls.stealFromAFKStall(player, id, 2);
+                                    Stalls.stealFromAFKStall(player, id, 2);
                                 break;
                             case 22097:
                                 if (player.getRights() == PlayerRights.RUBY_DONATOR)
-                                Stalls.stealFromAFKStall(player, id, 3);
+                                    Stalls.stealFromAFKStall(player, id, 3);
                                 break;
                             case 8455:
                                 if (player.getRights() == PlayerRights.DIAMOND_DONATOR)
-                                Stalls.stealFromAFKStall(player, id, 4);
+                                    Stalls.stealFromAFKStall(player, id, 4);
                                 break;
                             case 8456:
                                 if (player.getRights() == PlayerRights.ONYX_DONATOR)
-                                Stalls.stealFromAFKStall(player, id, 5);
+                                    Stalls.stealFromAFKStall(player, id, 5);
                                 break;
                             case 41204:
                                 player.setOpenedTeleports(true);
@@ -590,10 +590,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.getInventory().add(4275, 1);
                                     player.setTreasureMap3Collected(true);
                                     DialogueManager.sendStatement(player, "You find part of a map that can barely be read.");
-                            } else  if(player.isTreasureMap3Collected) {
+                                } else if (player.isTreasureMap3Collected) {
                                     player.getPacketSender().sendMessage("Flames can, at times, get languid when they lack power");
-                            }
-                            break;
+                                }
+                                break;
                             case 2725:
                                 if (Misc.easter(2017)) {
                                     if (player.getInventory().isFull()) {
@@ -791,6 +791,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.getPacketSender().sendMessage("you need Key 5 and Key 6 to enter!");
                                 }
                                 break;
+
                             case 7478:
                                 if (!player.getClickDelay().elapsed(1250)) {
                                     // player.getPacketSender().sendMessage("Your hands are getting cold, slow

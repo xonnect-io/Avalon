@@ -3,6 +3,8 @@ package com.ruse.webhooks.discord;
 import java.awt.Color;
 import java.net.URI;
 
+import com.ruse.world.World;
+import com.ruse.world.content.serverperks.ServerPerks;
 import org.json.JSONObject;
 
 import com.ruse.util.Misc;
@@ -50,34 +52,6 @@ public class DiscordMessager extends JSONObject {
 		}
 	}
 
-	public static void sendRules(String msg) {
-		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
-			String webhook = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
-			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-			// client
-
-			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Toxic Behavior")
-					//.withURL("http://Avalon317.com")
-					.withColor(Color.orange)
-					.withDescription("- Flaming: the act of posting insults, often including profanity or other offensive language, on the internet. Trolling: a malicious online behavior, characterized by aggressive and deliberate provocation of others. Racism: prejudice, discrimination, or antagonism directed against a person or people on the basis of their membership in a particular racial or ethnic group, typically one that is a minority or marginalized. Sexism: prejudice, stereotyping, or discrimination, typically against women, on the basis of sex. Religious Discrimination: the act of making fun of someone for their religious beliefs or lack of. Spamming/Caps: spamming one word or short sentences, using capitol letters excessively, or advertising is strictly forbidden. - You are not allowed to advertise an other RSPS related material. Known links such as YouTube are allowed unless determined by a staff member that your intention is to sway players to another server. Causing drama in any way isnt tolerated. We all hold ourselves to a high standard. If you dont like someone ignore them or block them. Toxicity in any fashion will now be taken with 0 tolerance. Toxicity of any kind will get you an instant mute, no warnings. What constitutes as toxicity will be up to the Staff Team's discretion. Harassment, Targeting, Baiting, Flame etc are all considered as toxic and will abide by rule #2.")
-					.build();
-
-			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
-					.withEmbed(embed)
-					.withUsername("Globals")
-					.build();
-
-			client.sendPayload(message);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	public static void sendDonationBossLog(String msg) {
 		try {

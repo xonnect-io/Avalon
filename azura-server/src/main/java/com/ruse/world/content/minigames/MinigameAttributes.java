@@ -558,7 +558,7 @@ public class MinigameAttributes {
 		return nomadAttributes;
 	}
 
-	public GraveyardAttributes getGraveyardAttributes() {
+	public GraveyardAttributes getPyramidAttributes() {
 		return graveyardAttributes;
 	}
 

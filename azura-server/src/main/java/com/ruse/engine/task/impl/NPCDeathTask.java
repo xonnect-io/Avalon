@@ -25,7 +25,7 @@ import com.ruse.world.content.globalBoss.GlobalBoss;
 import com.ruse.world.content.globalBoss.GlobalBossHandler;
 import com.ruse.world.content.globalBoss.TheGeneral;
 import com.ruse.world.content.instanceMananger.InstanceManager;
-import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
+import com.ruse.world.content.minigames.impl.PyramidOutbreak;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -132,7 +132,6 @@ public class NPCDeathTask extends Task {
                     if (npc.getId() == 13447) {
                         Nex.handleDeath();
                     }
-
                     break;
                 case 0:
                     if (killer != null) {
@@ -395,7 +394,7 @@ public class NPCDeathTask extends Task {
         PlayerPanel.refreshPanel(killer);
         // respawn
         if (npc.getDefinition().getRespawnTime() > 0
-                && npc.getLocation() != Location.GRAVEYARD
+                && npc.getLocation() != Location.PYRAMID
                 && npc.getLocation() != Location.DUNGEONEERING
                 && npc.getLocation() != Location.CUSTOM_RAIDS && !npc.isEventBoss()) {
             if (npc.respawn)

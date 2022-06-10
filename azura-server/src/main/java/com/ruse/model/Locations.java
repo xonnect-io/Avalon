@@ -8,6 +8,8 @@ import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.PlayerPunishment.Jail;
 import com.ruse.world.content.Zulrah;
+import com.ruse.world.content.combat.prayer.CurseHandler;
+import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.strategy.impl.Scorpia;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.instanceMananger.InstanceManager;
@@ -161,34 +163,42 @@ public class Locations {
 		// followingAllowed, boolean cannonAllowed, boolean firemakingAllowed, boolean
 		// aidingAllowed) {
 
-		GRAVEYARD(new int[] { 3468, 3512 }, new int[] { 9228, 9266 }, true, true, false, true, false, false) {
+		PYRAMID(new int[] { 3468, 3512 }, new int[] { 9228, 9266 }, true, true, false, true, false, false) {
 			@Override
 			public boolean canTeleport(Player player) {
-				if (player.getMinigameAttributes().getGraveyardAttributes().hasEntered()) {
+				if (player.getMinigameAttributes().getPyramidAttributes().hasEntered()) {
 					player.getPacketSender().sendInterfaceRemoval()
-							.sendMessage("A spell teleports you out of the graveyard.");
-					Graveyard.leave(player);
+							.sendMessage("A spell teleports you out of the Pyramid.");
+					PyramidOutbreak.leave(player);
 					return false;
 				}
 				return true;
 			}
 
 			@Override
+			public void enter(Player player) {
+				CurseHandler.deactivateAll(player);
+				PrayerHandler.deactivateAll(player);
+				player.getPacketSender().sendInterfaceRemoval()
+						.sendMessage("@red@Prayers have been disabled for this minigame");
+			}
+
+			@Override
 			public boolean handleKilledNPC(Player killer, NPC npc) {
-				return killer.getMinigameAttributes().getGraveyardAttributes().hasEntered()
-						&& Graveyard.handleDeath(killer, npc);
+				return killer.getMinigameAttributes().getPyramidAttributes().hasEntered()
+						&& PyramidOutbreak.handleDeath(killer, npc);
 			}
 
 			@Override
 			public void logout(Player player) {
-				if (player.getMinigameAttributes().getGraveyardAttributes().hasEntered()) {
-					Graveyard.leave(player);
+				if (player.getMinigameAttributes().getPyramidAttributes().hasEntered()) {
+					PyramidOutbreak.leave(player);
 				}
 			}
 
 			@Override
 			public void onDeath(Player player) {
-				Graveyard.leave(player);
+				PyramidOutbreak.leave(player);
 			}
 
 			@Override

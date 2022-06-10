@@ -37,7 +37,6 @@ import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
 import com.ruse.world.content.raids.ZombieRaidData;
 import com.ruse.world.content.raids.ZombieRaids;
-import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.npc.NpcAggression;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Donation;
@@ -1574,7 +1573,7 @@ public class DialogueOptions {
                     player.setPlayerLocked(true).setDialogueActionId(45);
                     break;
                 case 57:
-                    Graveyard.start(player);
+                    PyramidOutbreak.start(player);
                     break;
                 case 66:
                     player.getPacketSender().sendInterfaceRemoval();

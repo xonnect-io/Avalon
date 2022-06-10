@@ -10,19 +10,19 @@ import com.ruse.model.RegionInstance.RegionInstanceType;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.casketopening.Box;
+import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.dialogue.DialogueManager;
-import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
-public class Graveyard {
+public class PyramidOutbreak {
 
 	public static void start(Player player) {
 		player.getPacketSender().sendInterfaceRemoval();
 		player.moveTo(new Position(3487, 9260, (player.getIndex() + 1) * 4));
 		player.setRegionInstance(new RegionInstance(player, RegionInstanceType.GRAVEYARD));
 		DialogueManager.start(player, 97);
-		player.getMinigameAttributes().getGraveyardAttributes().setEntered(true).setWave(1).setLevel(0);
+		player.getMinigameAttributes().getPyramidAttributes().setEntered(true).setWave(1).setLevel(0);
 		spawn(player, 1, 0);
 		player.getPacketSender()
 				.sendMessage("<img=5><col=FF0000><shad=0> To leave the purge, simply teleport out.");
@@ -30,16 +30,17 @@ public class Graveyard {
 
 	public static void leave(Player player) {
 		player.getCombatBuilder().reset(true);
-		player.moveTo(GameSettings.DEFAULT_POSITION);
+		player.moveTo(GameSettings.PYRAMID_LOBBY);
 		if (player.getRegionInstance() != null)
 			player.getRegionInstance().destruct();
 		player.restart();
-		player.getMinigameAttributes().getGraveyardAttributes().setEntered(false);
+		player.getMinigameAttributes().getPyramidAttributes().setEntered(false);
 	}
 
 	private final static void spawn(Player player, int wave, int level) {
-		if (level == 10) {
+		if (wave == 10) {
 			leave(player);
+			Box box = BoxLoot.getLoot(loot);
 			player.getPacketSender().sendMessage("You successfully stopped the purge!");
 			return;
 		}
@@ -47,12 +48,12 @@ public class Graveyard {
 			@Override
 			public void execute() {
 				if (player.getRegionInstance() == null || !player.isRegistered()
-						|| player.getLocation() != Location.GRAVEYARD) {
+						|| player.getLocation() != Location.PYRAMID) {
 					stop();
 					return;
 				}
 				final int zombieAmount = (wave * 2);
-				player.getMinigameAttributes().getGraveyardAttributes().setRequiredKills(zombieAmount);
+				player.getMinigameAttributes().getPyramidAttributes().setRequiredKills(zombieAmount);
 				for (int i = 0; i <= zombieAmount; i++) {
 					NPC n = new NPC(getSpawn(level), getSpawnPos(player.getPosition().getZ())).setSpawnedFor(player);
 					World.register(n);
@@ -84,15 +85,18 @@ public class Graveyard {
 				break;
 		}
 		if (amount > 0) {
-			// GroundItemManager.spawnGroundItem(player, new GroundItem(new Item(14667),
-			// npc.getPosition(), player.getUsername(), false, 150, false, -1));
-			player.getInventory().add(14667, 1);
-			if (player.getMinigameAttributes().getGraveyardAttributes().decrementAndGetRequiredKills() <= 0) {
-				if (player.getMinigameAttributes().getGraveyardAttributes().incrementAndGetWave() >= 5) {
-					player.getMinigameAttributes().getGraveyardAttributes().setWave(1).incrementLevel();
+			player.getInventory().add(14667, amount);
+			if (player.getMinigameAttributes().getPyramidAttributes().decrementAndGetRequiredKills() <= 0) {
+				if (player.getMinigameAttributes().getPyramidAttributes().incrementAndGetWave() >= 0 &&
+						player.getMinigameAttributes().getPyramidAttributes().getWave() < 10) {
+					player.getMinigameAttributes().getPyramidAttributes().incrementLevel();
+					player.getPacketSender().sendMessage("You advanced to wave " +
+							player.getMinigameAttributes().getPyramidAttributes().getWave() + ". " +
+							(10 - player.getMinigameAttributes().getPyramidAttributes().getWave()) + " waves left to complete.");
+					System.out.println("WAVE:" + player.getMinigameAttributes().getPyramidAttributes().getWave());
 				}
-				spawn(player, player.getMinigameAttributes().getGraveyardAttributes().getWave(),
-						player.getMinigameAttributes().getGraveyardAttributes().getLevel());
+				spawn(player, player.getMinigameAttributes().getPyramidAttributes().getWave(),
+						player.getMinigameAttributes().getPyramidAttributes().getLevel());
 			}
 
 			return true;
@@ -178,31 +182,31 @@ public class Graveyard {
 
 
 	public static Box[] loot = { //
-			new Box(4151, 1, 1, 1D),
-			new Box(11235, 1, 1, 1D),
-			new Box(15486, 1, 1, 1D),
-			new Box(18353, 1, 1, 1D),
+			new Box(4151, 1, 1, 66D),
+			new Box(11235, 1, 1, 66D),
+			new Box(15486, 1, 1, 66D),
+			new Box(18353, 1, 1, 66D),
 
-			new Box(7462, 1, 1, 1D),
-			new Box(15031, 1, 1, 1D),
-			new Box(6585, 1, 1, 1D),
-			new Box(7956, 1, 1, 1D),
-			new Box(22077, 1, 1, 1D),
-			new Box(6927, 1, 1, 1D),
+			new Box(7462, 1, 1, 66D),
+			new Box(15031, 1, 1, 66D),
+			new Box(6585, 1, 1, 66D),
+			new Box(7956, 1, 1, 66D),
+			new Box(22077, 1, 1, 20D),
+			new Box(6927, 1, 1, 20D),
 
-			new Box(6928, 1, 1, 1D),
-			new Box(6929, 1, 1, 1D),
-			new Box(19136, 1, 1, 1D),
-			new Box(6930, 1, 1, 1D),
-			new Box(6931, 1, 1, 1D),
-			new Box(6932, 1, 1, 1D),
-			new Box(6936, 1, 1, 1D),
-			new Box(6933, 1, 1, 1D),
-			new Box(6934, 1, 1, 1D),
-			new Box(6935, 1, 1, 1D),
+			new Box(6928, 1, 1, 20D),
+			new Box(6929, 1, 1, 20D),
+			new Box(19136, 1, 1, 20D),
+			new Box(6930, 1, 1, 20D),
+			new Box(6931, 1, 1, 20D),
+			new Box(6932, 1, 1, 20D),
+			new Box(6936, 1, 1, 20D),
+			new Box(6933, 1, 1, 20D),
+			new Box(6934, 1, 1, 20D),
+			new Box(6935, 1, 1, 20D),
 			new Box(12634, 1, 1, 1D),
 			new Box(23045, 1, 1, 1D),
-			new Box(10946, 1, 1, 1D),
+			new Box(10946, 1, 1, 0.25D),
 	};
 
 }

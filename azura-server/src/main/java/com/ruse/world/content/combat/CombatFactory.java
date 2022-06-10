@@ -29,7 +29,6 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.combat.weapon.FightStyle;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringBossNpc;
-import com.ruse.world.content.skill.impl.prayer.Prayer;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
@@ -2061,7 +2060,7 @@ public final class CombatFactory {
                 else if ((t2.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 2570
                         || t2.getSkillManager().skillCape(Skill.DEFENCE)) && t2.getLocation() != Location.DUEL_ARENA
                         && t2.getLocation() != Location.WILDERNESS && t2.getLocation() != Location.ZULRAH
-                        && t2.getLocation() != Location.GRAVEYARD && t2.getLocation() != Location.FREE_FOR_ALL_ARENA) {
+                        && t2.getLocation() != Location.PYRAMID && t2.getLocation() != Location.FREE_FOR_ALL_ARENA) {
                     if (t2.getSkillManager().getCurrentLevel(
                             Skill.CONSTITUTION) <= t2.getSkillManager().getMaxLevel(Skill.CONSTITUTION) * .1) {
                         if ((t2.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 2570)) {

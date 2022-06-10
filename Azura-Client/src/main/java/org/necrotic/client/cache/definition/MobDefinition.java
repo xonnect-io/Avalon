@@ -1299,7 +1299,7 @@ public final class MobDefinition {
 				break;
 			case 9836:
 				definition.setDefault();
-				definition.name = "Bloodsucker";
+				definition.name = "Bat of Light";
 				MobDefinition icebeast2s = get(78);
 				definition.npcModels = new int[]{100282};
 				definition.combatLevel = 200;
@@ -4913,7 +4913,7 @@ public final class MobDefinition {
 				break;
 			case 3053:
 				definition.npcModels = new int[]{46058, 46057};
-				definition.name = "Bandos avatar";
+				definition.name = "Collosal avatar";
 				definition.actions = new String[5];
 				definition.actions[0] = null;
 				definition.combatLevel = 299;

@@ -156,6 +156,7 @@ public class GameSettings {
      * The default position
      */
     public static final Position DEFAULT_POSITION = new Position(2655, 4017, 0);//3093, 3506
+    public static final Position PYRAMID_LOBBY = new Position(3488, 9243, 0);//3093, 3506
     public static final Position STARTER = new Position(2783, 9495, 0);//3093, 3506
     public static final Position CORP_CORDS = new Position(2900, 4384);
     public static final Position STARTER_BED = new Position(2333, 4119, 0);

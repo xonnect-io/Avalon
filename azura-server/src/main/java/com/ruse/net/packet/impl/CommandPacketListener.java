@@ -443,9 +443,6 @@ public class CommandPacketListener implements PacketListener {
             }
         }
 
-        if (command[0].equalsIgnoreCase("writerules")) {
-            DiscordMessager.sendRules("");
-        }
         if (command[0].equalsIgnoreCase("drops") || command[0].equalsIgnoreCase("drop")) {
             player.getPacketSender().sendMessage("Opening drops interface...");
             DropsInterface.open(player);

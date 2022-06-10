@@ -1,5 +1,9 @@
 package com.ruse.world.content.serverperks;
 
+import ca.momoperes.canarywebhooks.DiscordMessage;
+import ca.momoperes.canarywebhooks.WebhookClient;
+import ca.momoperes.canarywebhooks.WebhookClientBuilder;
+import ca.momoperes.canarywebhooks.embed.DiscordEmbed;
 import com.ruse.engine.GameEngine;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
@@ -8,12 +12,15 @@ import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
 import lombok.Getter;
 
+import java.awt.*;
 import java.io.*;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class ServerPerks {
@@ -25,7 +32,7 @@ public class ServerPerks {
     public static final int OVERLAY_ID = 42112;
     private final Perk[] PERKS = Perk.values();
     private final Path FILE_PATH = Paths.get("./data/serverperks.txt");
-    private Perk activePerk;
+    private static Perk activePerk;
     private int currentTime = 0;
     private boolean active = false;
 
@@ -43,6 +50,20 @@ public class ServerPerks {
     public Perk getActivePerk() {
         return activePerk;
     }
+
+    public static void discordBroadcast(String msg) {
+        try {
+            String webhook = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
+            WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+            DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("").withColor(Color.orange).withDescription(
+                "***[Perk] "+ activePerk.getName() + " has been activated for 1 hour!***").build();
+            DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)).withEmbed(embed).withUsername("Globals").build();
+            client.sendPayload(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void open(Player player) {
         player.getPacketSender().sendInterface(INTERFACE_ID);
@@ -100,7 +121,7 @@ public class ServerPerks {
         activePerk = perk;
         updateOverlay();
         World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has just been activated!");
-
+        discordBroadcast("");
         //reset();
         // Erase file contents
         deleteTypeFromLog(perk);
@@ -110,7 +131,7 @@ public class ServerPerks {
         active = false;
         contributions.put(activePerk, 0);
         World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has ended!");
-
+        discordBroadcast("");
         activePerk = null;
         resetInterface();
     }

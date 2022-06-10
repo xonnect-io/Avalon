@@ -91,6 +91,13 @@ public class CurseHandler {
 			PrayerHandler.deactivateAll(player);
 			return;
 		}
+		if (player.getLocation() == Location.PYRAMID) {
+			player.getPacketSender().sendMessage("For some reason, your prayers do not have any effect here.");
+			CurseHandler.deactivateAll(player);
+			PrayerHandler.deactivateAll(player);
+			return;
+		}
+
 		if (player.getLocation() == Location.RECIPE_FOR_DISASTER) {
 			player.getPacketSender().sendMessage("For some reason, your prayers do not have any effect here.");
 			CurseHandler.deactivateAll(player);
