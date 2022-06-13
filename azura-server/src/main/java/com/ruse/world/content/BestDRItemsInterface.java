@@ -89,9 +89,9 @@ public class BestDRItemsInterface {
             add(11320);//Max melee helm
             add(11321);//Max melee body
             add(11322);//Max melee legs
-            add(3720);//Scarlet helm
-            add(3721);//Scarlet body
-            add(3722);//Scarlet legs
+            add(3720);//Enraged helm
+            add(3721);//Enraged body
+            add(3722);//Enraged legs
             add(4018);//Extreme Offhand
             add(15115);//Extreme helm
             add(15116);//Extreme body

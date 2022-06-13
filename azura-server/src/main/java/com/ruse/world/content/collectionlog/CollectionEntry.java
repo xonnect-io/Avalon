@@ -19,6 +19,7 @@ public class CollectionEntry {
     	if(player.getCollectionLogData().stream().filter(data -> data.npcId == npcId && data.item == item).findAny().isPresent()) {
     		var edit = player.getCollectionLogData().stream().filter(data -> data.npcId == npcId && data.item == item).findFirst().get();
     		player.getCollectionLogData().stream().filter(data -> data.npcId == npcId && data.item == item).findFirst().get().setAmount(edit.getAmount() + 1);
+
     		return;
     	}
         player.getCollectionLogData().add(this);

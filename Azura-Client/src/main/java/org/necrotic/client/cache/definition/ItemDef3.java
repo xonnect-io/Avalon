@@ -3593,7 +3593,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3737:
-				itemDef.name = "Scarlet AoE Sword";
+				itemDef.name = "Enraged AoE Sword";
 				itemdefedit1 = ItemDefinition.get(4587);
 				itemDef.modelID = 64395;
 				itemDef.femaleEquip1 = 64396;
@@ -3608,7 +3608,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3738:
-				itemDef.name = "Herbal AoE Bow";
+				itemDef.name = "Botanic AoE Bow";
 				itemdefedit1 = ItemDefinition.get(859);
 				itemDef.modelID = 64397;
 				itemDef.femaleEquip1 = 64398;
@@ -3623,7 +3623,7 @@ public class ItemDef3 {
 			
 				break;
 			case 3739:
-				itemDef.name = "Azure AoE Staff";
+				itemDef.name = "Elemental AoE Staff";
 				itemdefedit1 = ItemDefinition.get(4675);
 				itemDef.modelID = 64399;
 				itemDef.femaleEquip1 = 64400;
@@ -3837,7 +3837,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3720:
-				itemDef.name = "Scarlet helm";
+				itemDef.name = "Enraged helm";
 				itemDef.modelID = 15664;
 				itemDef.maleEquip1 = 15665;
 				itemDef.femaleEquip1 = 15665;
@@ -3852,7 +3852,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3721:
-				itemDef.name = "Scarlet body";
+				itemDef.name = "Enraged body";
 				itemDef.modelID = 15667;
 				itemDef.maleEquip1 = 15669;
 				itemDef.femaleEquip1 = 15669;
@@ -3867,7 +3867,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3722:
-				itemDef.name = "Scarlet legs";
+				itemDef.name = "Enraged legs";
 				itemDef.modelID = 15668;
 				itemDef.maleEquip1 = 15670;
 				itemDef.femaleEquip1 = 15670;
@@ -3882,7 +3882,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3726:
-				itemDef.name = "Azure helm";
+				itemDef.name = "Elemental helm";
 				itemDef.modelID = 64419;
 				itemDef.maleEquip1 = 64420;
 				itemDef.femaleEquip1 = 64420;
@@ -3897,7 +3897,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3728:
-				itemDef.name = "Azure body";
+				itemDef.name = "Elemental body";
 				itemDef.modelID = 64421;
 				itemDef.maleEquip1 = 64422;
 				itemDef.femaleEquip1 = 64422;
@@ -3912,7 +3912,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3730:
-				itemDef.name = "Azure legs";
+				itemDef.name = "Elemental legs";
 				itemDef.modelID = 64423;
 				itemDef.maleEquip1 = 64424;
 				itemDef.femaleEquip1 = 64424;
@@ -3927,7 +3927,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3723:
-				itemDef.name = "Herbal helm";
+				itemDef.name = "Botanic helm";
 				itemDef.modelID = 65266;
 				itemDef.maleEquip1 = 65267;
 				itemDef.femaleEquip1 = 65267;
@@ -3942,7 +3942,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3724:
-				itemDef.name = "Herbal body";
+				itemDef.name = "Botanic body";
 				itemDef.modelID = 65268;
 				itemDef.maleEquip1 = 65269;
 				itemDef.femaleEquip1 = 65269;
@@ -3957,7 +3957,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3725:
-				itemDef.name = "Herbal legs";
+				itemDef.name = "Botanic legs";
 				itemDef.modelID = 65270;
 				itemDef.maleEquip1 = 65271;
 				itemDef.femaleEquip1 = 65271;

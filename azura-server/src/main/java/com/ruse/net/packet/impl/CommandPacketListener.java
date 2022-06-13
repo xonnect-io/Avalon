@@ -59,7 +59,7 @@ import com.ruse.world.content.skill.SkillManager;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.crafting.Jewelry;
 import com.ruse.world.content.skill.impl.fletching.BoltData;
-import com.ruse.world.content.teleport.NewTeleportInterfaceHandler;
+import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.GroundItemManager;
@@ -369,9 +369,12 @@ public class CommandPacketListener implements PacketListener {
         }
 
         if (command[0].equalsIgnoreCase("teleport") && (!player.isOpenedTeleports())) {
+            /*
             player.setOpenedTeleports(true);
             TeleportInterface.sendMonsterData(player, TeleportInterface.Monsters.values()[0]);
             TeleportInterface.sendMonsterTab(player);
+             */
+            new TeleportInterfaceHandler(player).open();
         }
 
         if (command[0].equalsIgnoreCase("achievements") || command[0].equalsIgnoreCase("dailytasks")
@@ -1739,14 +1742,60 @@ public class CommandPacketListener implements PacketListener {
             ClanChatManager.sendMessage(player.getCurrentClanChat(), "@bla@[ClanChat] @whi@" + player.getUsername()
                     + " just rolled @bla@" + dice + "@whi@ on the percentile dice.");
         }
-        if (command[0].equalsIgnoreCase("dc")) {
-            String msg = "";
-            for (int i = 1; i < command.length; i++) {
-                msg += command[i] + " ";
-            }
-            DiscordMessager.test(Misc.stripIngameFormat(msg));
-            player.getPacketSender().sendMessage("Sent: " + wholeCommand.substring(command[0].length() + 1));
+
+        if (command[0].equalsIgnoreCase("rule1")) {
+            DiscordMessager.test1("");
+        }if (command[0].equalsIgnoreCase("rule2")) {
+            DiscordMessager.test2("");
+        }if (command[0].equalsIgnoreCase("rule3")) {
+            DiscordMessager.test3("");
+        }if (command[0].equalsIgnoreCase("rule4")) {
+            DiscordMessager.test4("");
+        }if (command[0].equalsIgnoreCase("rule5")) {
+            DiscordMessager.test5("");
+        }if (command[0].equalsIgnoreCase("rule6")) {
+            DiscordMessager.test6("");
+        }if (command[0].equalsIgnoreCase("rule7")) {
+            DiscordMessager.test7("");
+        }if (command[0].equalsIgnoreCase("rule8")) {
+            DiscordMessager.test8("");
+        }if (command[0].equalsIgnoreCase("rule9")) {
+            DiscordMessager.test9("");
+        }if (command[0].equalsIgnoreCase("rule10")) {
+            DiscordMessager.test10("");
+        }if (command[0].equalsIgnoreCase("rule11")) {
+            DiscordMessager.test11("");
+        }if (command[0].equalsIgnoreCase("rule12")) {
+            DiscordMessager.test12("");
+        }if (command[0].equalsIgnoreCase("rule13")) {
+            DiscordMessager.test13("");
+        }if (command[0].equalsIgnoreCase("rule14")) {
+            DiscordMessager.test14("");
+        }if (command[0].equalsIgnoreCase("rule15")) {
+            DiscordMessager.test15("");
+        }if (command[0].equalsIgnoreCase("rule16")) {
+            DiscordMessager.test16("");
+        }if (command[0].equalsIgnoreCase("rule17")) {
+            DiscordMessager.test17("");
+        }if (command[0].equalsIgnoreCase("rule18")) {
+            DiscordMessager.test18("");
+        }if (command[0].equalsIgnoreCase("dbenefits1")) {
+            DiscordMessager.dono1("");
+        }if (command[0].equalsIgnoreCase("dbenefits2")) {
+            DiscordMessager.dono2("");
+        }if (command[0].equalsIgnoreCase("dbenefits3")) {
+            DiscordMessager.dono3("");
+        }if (command[0].equalsIgnoreCase("dbenefits4")) {
+            DiscordMessager.dono4("");
+        }if (command[0].equalsIgnoreCase("dbenefits5")) {
+            DiscordMessager.dono5("");
+        }if (command[0].equalsIgnoreCase("dbenefits6")) {
+            DiscordMessager.dono6("");
+        }if (command[0].equalsIgnoreCase("dbenefits7")) {
+            DiscordMessager.dono7("");
         }
+
+
         if (command[0].equalsIgnoreCase("resetny")) {
             player.setNewYear2017(0);
             player.getPacketSender().sendMessage("Set setNewYear2017 to: " + player.getNewYear2017());

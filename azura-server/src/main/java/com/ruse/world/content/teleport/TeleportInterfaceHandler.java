@@ -3,12 +3,9 @@ package com.ruse.world.content.teleport;
 import com.ruse.model.Item;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
-import com.ruse.model.Skill;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.world.World;
-import com.ruse.world.content.TeleportInterface;
 import com.ruse.world.content.casketopening.Box;
-import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
@@ -19,14 +16,14 @@ import com.ruse.world.entity.impl.player.Player;
  * @author Snz
  * @date 2020
  */
-public class NewTeleportInterfaceHandler {
+public class TeleportInterfaceHandler {
 
 	/**
 	 * idk why the fuck that was protected lmfao
 	 **/
 	private Player player;
 
-	public NewTeleportInterfaceHandler(Player player) {
+	public TeleportInterfaceHandler(Player player) {
 		this.player = player;
 	}
 
@@ -35,46 +32,46 @@ public class NewTeleportInterfaceHandler {
 
 	public void open() {
 		player.getPacketSender().resetItemsOnInterface(28229 + 20, 20);
-		player.setTeleportType(TeleportType1.MONSTERS);
-		switchTab(28215);
+		player.setTeleportType(TeleportCategory.BOSSES);
+		switchTab(28216);
 		player.getPA().sendInterface(28200);
 	}
 
-	public void open(TeleportType1 type) {
+	public void open(TeleportCategory type) {
 		player.setTeleportType(type);
-		switchTab(28215);
+		switchTab(28216);
 		player.getPA().sendInterface(28200);
 	}
 
 	public void switchTab(int buttonid) {
 		switch (buttonid) {
 			case 28215:
-				player.setTeleportType(TeleportType1.MONSTERS);
+				player.setTeleportType(TeleportCategory.MONSTERS);
 				switchData();
 				player.getPA().sendString(28205, "Monsters");
 				break;
 			case 28216:
-				player.setTeleportType(TeleportType1.BOSSES);
+				player.setTeleportType(TeleportCategory.BOSSES);
 				switchData();
 				player.getPA().sendString(28205, "Bosses");
 				break;
 			case 28217:
-				player.setTeleportType(TeleportType1.MINIGAMES);
+				player.setTeleportType(TeleportCategory.MINIGAMES);
 				switchData();
 				player.getPA().sendString(28205, "Minigames");
 				break;
 			case 28218:
-				player.setTeleportType(TeleportType1.DUNGEONS);
+				player.setTeleportType(TeleportCategory.DUNGEONS);
 				switchData();
 				player.getPA().sendString(28205, "Dungeons");
 				break;
 			case 28219:
-				player.setTeleportType(TeleportType1.CITIES);
+				player.setTeleportType(TeleportCategory.CITIES);
 				switchData();
 				player.getPA().sendString(28205, "Cities");
 				break;
 			case 28220:
-				player.setTeleportType(TeleportType1.GLOBALS);
+				player.setTeleportType(TeleportCategory.GLOBALS);
 				switchData();
 				player.getPA().sendString(28205, "Globals");
 				break;

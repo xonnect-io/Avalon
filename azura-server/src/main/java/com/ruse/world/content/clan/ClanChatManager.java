@@ -102,19 +102,10 @@ public class ClanChatManager {
 						clans[reader.get("index").getAsInt()] = clan;
 					}
 				}
-				// int totalRanks = input.readShort();
-				// for (int i = 0; i < totalRanks; i++) {
-				// clan.getRankedNames().put(input.readUTF(), ClanChatRank.forId(input.read()));
-				// }
-				// int totalBans = input.readShort();
-				// for (int i = 0; i < totalBans; i++) {
-				// clan.addBannedName(input.readUTF());
-				// }
 
 			}
 		} catch (IOException exception) {
 			exception.printStackTrace();
-			// ystem.out.println("Is this running?");
 		}
 	}
 

@@ -60,7 +60,7 @@ import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.skill.impl.smithing.SmithingData;
 import com.ruse.world.content.skill.impl.summoning.PouchMaking;
 import com.ruse.world.content.skill.impl.summoning.SummoningTab;
-import com.ruse.world.content.teleport.NewTeleportInterfaceHandler;
+import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
@@ -136,9 +136,9 @@ public class ButtonClickPacketListener implements PacketListener {
             return;
         }
         if (NEW_TELEPORT_BUTTONS_TAB.contains(id)) {
-            new NewTeleportInterfaceHandler(player).switchTab(id);
+            new TeleportInterfaceHandler(player).switchTab(id);
         }   if (NEW_TELEPORT_BUTTONS.contains(id)) {
-            new NewTeleportInterfaceHandler(player).button(id);
+            new TeleportInterfaceHandler(player).button(id);
         }
         if (player.getDonatorShop().handleButton( id)) {
             return;
@@ -209,7 +209,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getScratchcard().claimPrize();
                 break;
             case 28210:
-                new NewTeleportInterfaceHandler(player).teleport();
+                new TeleportInterfaceHandler(player).teleport();
                 break;
             case 1716:
             case 106009:

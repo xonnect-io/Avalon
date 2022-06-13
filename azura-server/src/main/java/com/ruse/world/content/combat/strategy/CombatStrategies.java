@@ -16,9 +16,22 @@ public class CombatStrategies {
 	private static final DefaultRangedCombatStrategy defaultRangedCombatStrategy = new DefaultRangedCombatStrategy();
 	private static final Map<Integer, CombatStrategy> STRATEGIES = new HashMap<Integer, CombatStrategy>();
 	private static final EmptyCombatStrategy emptyCombatStrategy = new EmptyCombatStrategy();
+	public static CombatStrategy getDefaultMeleeStrategy() {
+		return defaultMeleeCombatStrategy;
+	}
+	public static CombatStrategy getDefaultMagicStrategy() {
+		return defaultMagicCombatStrategy;
+	}
+	public static CombatStrategy getDefaultRangedStrategy() {
+		return defaultRangedCombatStrategy;
+	}
+	public static CombatStrategy getEmptyCombatStrategy() {
+		return emptyCombatStrategy;
+	}
 
 	public static void init() {
 		DefaultMagicCombatStrategy defaultMagicStrategy = new DefaultMagicCombatStrategy();
+		DefaultRangedCombatStrategy defaultRangedStrategy = new DefaultRangedCombatStrategy();
 		STRATEGIES.put(13, defaultMagicStrategy);
 		STRATEGIES.put(172, defaultMagicStrategy);
 		STRATEGIES.put(174, defaultMagicStrategy);
@@ -39,7 +52,6 @@ public class CombatStrategies {
 		STRATEGIES.put(109, defaultMagicStrategy);
 		STRATEGIES.put(3580, defaultMagicStrategy);
 		STRATEGIES.put(2007, defaultMagicStrategy);
-		DefaultRangedCombatStrategy defaultRangedStrategy = new DefaultRangedCombatStrategy();
 		STRATEGIES.put(688, defaultRangedStrategy);
 		STRATEGIES.put(2028, defaultRangedStrategy);
 		STRATEGIES.put(6220, defaultRangedStrategy);
@@ -51,7 +63,6 @@ public class CombatStrategies {
 		STRATEGIES.put(9029, defaultMeleeCombatStrategy);
 		STRATEGIES.put(9028, defaultMagicStrategy);
 		STRATEGIES.put(9030, defaultRangedStrategy);
-
 		STRATEGIES.put(7553, new TheGeneral());
 		STRATEGIES.put(9176, new SkeletalHorror());
 		STRATEGIES.put(8000, new Galvek());
@@ -63,14 +74,8 @@ public class CombatStrategies {
 		STRATEGIES.put(449, new FriezaCombatScript());
 		STRATEGIES.put(452, new FriezaCombatScript());
 		STRATEGIES.put(187, new HellraiserBossCombatScript());
-		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_NOHEADICON, DungeoneeringBossCombat.INSTANCE);
-		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_MAGE, DungeoneeringBossCombat.INSTANCE);
-		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_RANGE, DungeoneeringBossCombat.INSTANCE);
-		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_MELEE, DungeoneeringBossCombat.INSTANCE);
-
 		STRATEGIES.put(8349, new TormentedDemon());
 		STRATEGIES.put(3200, new ChaosElemental());
-
 		STRATEGIES.put(8133, new CorporealBeast());
 		STRATEGIES.put(13447, new Nex());
 		STRATEGIES.put(2896, new Spinolyp());
@@ -98,9 +103,7 @@ public class CombatStrategies {
 		// STRATEGIES.put(286, new MutantKFC());
 		Dragon dragonStrategy = new Dragon();
 		STRATEGIES.put(8015, new EliteDragon());
-		STRATEGIES.put(2949, new ScarletFalcon());
 		STRATEGIES.put(4972, new Eternal());
-
 		STRATEGIES.put(50, dragonStrategy);
 		STRATEGIES.put(941, dragonStrategy);
 		STRATEGIES.put(55, dragonStrategy);
@@ -113,17 +116,17 @@ public class CombatStrategies {
 		STRATEGIES.put(1592, dragonStrategy);
 		STRATEGIES.put(5362, dragonStrategy);
 		STRATEGIES.put(5363, dragonStrategy);
-
 		Aviansie aviansieStrategy = new Aviansie();
 		STRATEGIES.put(6246, aviansieStrategy);
 		STRATEGIES.put(6230, aviansieStrategy);
 		STRATEGIES.put(6231, aviansieStrategy);
-
 		KalphiteQueen kalphiteQueenStrategy = new KalphiteQueen();
 		STRATEGIES.put(1158, kalphiteQueenStrategy);
 		STRATEGIES.put(1160, kalphiteQueenStrategy);
-
-
+		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_NOHEADICON, DungeoneeringBossCombat.INSTANCE);
+		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_MAGE, DungeoneeringBossCombat.INSTANCE);
+		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_RANGE, DungeoneeringBossCombat.INSTANCE);
+		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_MELEE, DungeoneeringBossCombat.INSTANCE);
 		Revenant revenantStrategy = new Revenant();
 		STRATEGIES.put(13465, revenantStrategy);
 		STRATEGIES.put(13469, revenantStrategy);
@@ -133,7 +136,6 @@ public class CombatStrategies {
 		STRATEGIES.put(6692, dragonStrategy);
 		STRATEGIES.put(408, dragonStrategy);
 		STRATEGIES.put(401, dragonStrategy);
-
 		STRATEGIES.put(2009, new Callisto());
 		STRATEGIES.put(2000, new Venenatis());
 		STRATEGIES.put(2006, new Vetion());
@@ -142,14 +144,11 @@ public class CombatStrategies {
 		STRATEGIES.put(3975, new MaxHitStone());
 		STRATEGIES.put(8009, new NazastaroolCombatStrategy());
 		STRATEGIES.put(2, new Tekton());
-
 		STRATEGIES.put(2342, new HerbalRogue());
 		STRATEGIES.put(1120,new Vasa());
 		STRATEGIES.put(NazastaroolCombatStrategy.NAZASTAROOL, new NazastaroolCombatStrategy());
 		STRATEGIES.put(DrakeCombatStrategy.DRAKE, new DrakeCombatStrategy());
-
 		STRATEGIES.put(9837, new LuciferCombatScript());
-		STRATEGIES.put(3831, new AzureBeast());
 		STRATEGIES.put(4540, new BandosAvatar());
 		STRATEGIES.put(6430, new CrystalQueen());
 		STRATEGIES.put(585, new Veigar());
@@ -158,11 +157,9 @@ public class CombatStrategies {
 		STRATEGIES.put(440, new LightSupremeCombatScript());
 		//STRATEGIES.put(12810, new InfernalDemon());
 		STRATEGIES.put(12843, new FractiteDemon());
-
 		STRATEGIES.put(9014, new SolakTheGreat());
 		STRATEGIES.put(9017, new GolemOfSolak());
 		STRATEGIES.put(3305, new PantherOfSolak());
-
 		STRATEGIES.put(9020, new ArmouredBunnyCombatScript());
 		//STRATEGIES.put(9014, new SolakTheGreat());
 		//STRATEGIES.put(9017, new SolakTheGreat());
@@ -185,19 +182,4 @@ public class CombatStrategies {
 		return defaultMeleeCombatStrategy;
 	}
 
-	public static CombatStrategy getDefaultMeleeStrategy() {
-		return defaultMeleeCombatStrategy;
-	}
-
-	public static CombatStrategy getDefaultMagicStrategy() {
-		return defaultMagicCombatStrategy;
-	}
-
-	public static CombatStrategy getDefaultRangedStrategy() {
-		return defaultRangedCombatStrategy;
-	}
-
-	public static CombatStrategy getEmptyCombatStrategy() {
-		return emptyCombatStrategy;
-	}
 }

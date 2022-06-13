@@ -55,20 +55,7 @@ import static com.ruse.motivote3.doMotivote.setVoteCount;
 
 public class NPCDeathTask extends Task {
     public static NPC FRIEZA;
-    // this
-    // array
-    // of
-    // npcs
-    // to
-    // change
-    // the
-    // npcs
-    // you
-    // want
-    // to
-    // give
-    // boss
-    // points
+
     /**
      * The npc setting off the death task.
      */

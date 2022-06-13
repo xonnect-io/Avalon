@@ -14227,31 +14227,31 @@ name: Thread
 finish
 
 Item Id: 3720
-name: Scarlet helm
+name: Enraged helm
 finish
 
 Item Id: 3721
-name: Scarlet body
+name: Enraged body
 finish
 
 Item Id: 3722
-name: Scarlet legs
+name: Enraged legs
 finish
 
 Item Id: 3723
-name: Herbal helm
+name: Botanic helm
 finish
 
 Item Id: 3724
-name: Herbal body
+name: Botanic body
 finish
 
 Item Id: 3725
-name: Herbal legs
+name: Botanic legs
 finish
 
 Item Id: 3726
-name: Azure helm
+name: Elemental helm
 finish
 
 Item Id: 3727
@@ -14259,7 +14259,7 @@ name: Empty bucket
 finish
 
 Item Id: 3728
-name: Azure body
+name: Elemental body
 finish
 
 Item Id: 3729
@@ -14267,7 +14267,7 @@ name: Full jug
 finish
 
 Item Id: 3730
-name: Azure legs
+name: Elemental legs
 finish
 
 Item Id: 3731
@@ -14295,15 +14295,15 @@ name: Frozen vase
 finish
 
 Item Id: 3737
-name: Scarlet AoE Sword
+name: Enraged AoE Sword
 finish
 
 Item Id: 3738
-name: Herbal AoE Bow
+name: Botanic AoE Bow
 finish
 
 Item Id: 3739
-name: Azure AoE Staff
+name: Elemental AoE Staff
 finish
 
 Item Id: 3740

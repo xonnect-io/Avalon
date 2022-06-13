@@ -339,7 +339,7 @@ public class CustomTeleportInterface {
         BAPHOMET(ID_START + 2, 1100, 452, "Goku", "Magic", "Range", new Position(3342, 3022, 0), Locations.Location.EXODENLOC, 6),
         BROLY(ID_START + 3, 3500, 2949, "Scarlet Falcon", "Melee", "Magic", new Position(3869, 2776, 0), Locations.Location.EXODENLOC, 7),
         GOKU(ID_START + 4, 4200, 2950, "Herbal Rogue", "Range", "Magic", new Position(3044, 2969, 0), Locations.Location.EXODENLOC, 7),
-        DARTH_VADER(ID_START + 5, 3700, 3831, "Azure Beast", "Magic", "Range", new Position(2924, 2842, 0), Locations.Location.EXODENLOC, 7),
+        DARTH_VADER(ID_START + 5, 3700, 3831, "Elemental Beast", "Magic", "Range", new Position(2924, 2842, 0), Locations.Location.EXODENLOC, 7),
 
         LUCIFER(ID_START + 6, 1000, 185, "Joker", "Melee", "Magic/Range", new Position(1807, 3211, 0), Locations.Location.EXODENLOC, 7),
 

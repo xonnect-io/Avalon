@@ -82,7 +82,7 @@ import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Pouch;
 import com.ruse.world.content.skill.impl.summoning.Summoning;
 import com.ruse.world.content.teleport.TeleportData;
-import com.ruse.world.content.teleport.TeleportType1;
+import com.ruse.world.content.teleport.TeleportCategory;
 import com.ruse.world.content.upgrading.UpgradeInterface;
 import com.ruse.world.content.raids.RaidsParty;
 import com.ruse.world.entity.actor.player.controller.ControllerManager;
@@ -1725,13 +1725,13 @@ public class Player extends Character {
 Start new teleport
  */
 
-    public TeleportType1 teleportType;
+    public TeleportCategory teleportType;
 
-    public TeleportType1 getTeleportType() {
+    public TeleportCategory getTeleportType() {
         return teleportType;
     }
 
-    public void setTeleportType(TeleportType1 teleportType) {
+    public void setTeleportType(TeleportCategory teleportType) {
     this.teleportType = teleportType;
     }
 

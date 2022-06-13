@@ -11,8 +11,8 @@ import com.ruse.world.content.boxes.Starter;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.progressionzone.ProgressionZone;
+import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
-import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -33,13 +33,15 @@ public class TeleportInterface {
     public static boolean handleButton(Player player, int buttonID) {
 
         switch (buttonID) {
-            case 1716:                if (!player.isOpenedTeleports()) {
+            case 1716:
+                /*if (!player.isOpenedTeleports()) {
                 player.setOpenedTeleports(true);
                 TeleportInterface.sendMonsterData(player, TeleportInterface.Monsters.values()[0]);
                 TeleportInterface.sendMonsterTab(player);
             } else {
                 player.getPacketSender().sendInterface(122000);
-            }
+            }*/
+                new TeleportInterfaceHandler(player).open();
                 return true;
             case 122005:
             case 11004:

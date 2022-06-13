@@ -3973,12 +3973,12 @@ public final class MobDefinition {
 			case 2949:
 				definition.name = "Enraged Guardian";
 				definition.npcModels = new int[]{18014};
-				MobDefinition Herbal1 = get(1);
+				MobDefinition Botanic1 = get(1);
 				definition.combatLevel = 800;
 				definition.scaleXZ = 190;
 				definition.scaleY = 170;
 				definition.npcSizeInSquares = 2;
-				definition.description = Herbal1.description;
+				definition.description = Botanic1.description;
 				definition.drawYellowDotOnMap = true;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
@@ -4002,7 +4002,7 @@ public final class MobDefinition {
 				//definition.rdc2 = 29492;
 				break;
 			case 2340:
-				definition.name = "azure minion";
+				definition.name = "Elemental minion";
 				//definition.description = "MegaBeast".getBytes();
 				definition.npcModels = new int[]{65209};
 				definition.combatLevel = 100;
@@ -4017,17 +4017,17 @@ public final class MobDefinition {
 				break;
 			case 2341:
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.name = "scarlet minion";
+				definition.name = "Enraged minion";
 				definition.npcModels = new int[]{64477};
-				MobDefinition Scarlet1 = get(4972);
+				MobDefinition Enraged1 = get(4972);
 				definition.combatLevel = 100;
 				definition.scaleXZ = 35;
 				definition.scaleY = 35;
 				definition.npcSizeInSquares = 1;
-				definition.description = Scarlet1.description;
+				definition.description = Enraged1.description;
 				definition.drawYellowDotOnMap = true;
-				definition.standAnimation = Scarlet1.standAnimation;
-				definition.walkAnimation = Scarlet1.walkAnimation;
+				definition.standAnimation = Enraged1.standAnimation;
+				definition.walkAnimation = Enraged1.walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcSizeInSquares = 1;
 				//definition.rdc2 = 29492;

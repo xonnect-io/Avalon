@@ -3,6 +3,7 @@ package com.ruse.world.content.collectionlog;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
+import com.ruse.world.World;
 import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.TeleportInterface;
 import com.ruse.world.entity.impl.player.Player;
@@ -92,6 +93,7 @@ public class CollectionLogInterface {
                     player.getPacketSender().sendItemOnInterface(30375, npcDrop.getId(), slot++, 0);
                 }
                 total++;
+
             }
         }
         int lines = total / 6;

@@ -5,7 +5,7 @@ package com.ruse.world.content.teleport;
  * @author snz
  */
 
-public enum TeleportType1 {
+public enum TeleportCategory {
 	
 	/** Favorite teleport. */
 	DUNGEONS,

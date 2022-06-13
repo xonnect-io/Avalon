@@ -51748,7 +51748,7 @@
   },
   {
     "id": 2340,
-    "name": "Azure minion",
+    "name": "Elemental minion",
     "examine": "AoE minion",
     "combat": 500,
     "size": 1,
@@ -51770,7 +51770,7 @@
   },
   {
     "id": 2341,
-    "name": "Scarlet minion",
+    "name": "Enraged minion",
     "examine": "AoE minion.",
     "combat": 172,
     "size": 5,
@@ -141654,8 +141654,8 @@
   },
   {
     "id": 6870,
-    "name": "Rabbit",
-    "examine": "A cute bunny rabbit.",
+    "name": "Dino",
+    "examine": "A cute Dinosaur",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -141676,7 +141676,7 @@
   },
    {
     "id": 6871,
-    "name": "Arcane Wolf",
+    "name": "Spirit Critter",
     "examine": "slayer npc.",
     "combat": 26,
     "size": 2,
