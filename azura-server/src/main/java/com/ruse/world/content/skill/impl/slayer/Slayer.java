@@ -167,6 +167,9 @@ public class Slayer {
 
             player.getSkillManager().addExperience(Skill.SLAYER, xp);
 
+            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER))
+                player.getInventory().add(9000, Misc.getRandom(10, 30));
+
             givePoints(player.getSlayer().getLastTask().getTaskMaster());
 
         }

@@ -31,6 +31,8 @@ public class MemberScrolls {
 			rights = PlayerRights.ONYX_DONATOR;
 		if (player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT)
 			rights = PlayerRights.ZENYTE_DONATOR;
+		if (player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT)
+			rights = PlayerRights.TANZANITE_DONATOR;
 		if (rights != null && rights != player.getRights()) {
 			player.getPacketSender().sendMessage(
 					"You've become a " + Misc.formatText(rights.toString().toLowerCase()) + "! Congratulations!");

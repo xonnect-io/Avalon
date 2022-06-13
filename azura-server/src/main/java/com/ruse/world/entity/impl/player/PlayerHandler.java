@@ -280,6 +280,7 @@ public class PlayerHandler {
 
         player.getPacketSender().updateSpecialAttackOrb().sendIronmanMode(player.getGameMode().ordinal());
 
+        System.out.println("PLAYER RIGHTS: " + player.getRights());
         if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() <= Donation.SAPPHIRE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=255><img=5> Helper "
                     + player.getUsername() + " has just logged in!"));
@@ -352,6 +353,10 @@ public class PlayerHandler {
 
         if (player.getRights() == PlayerRights.ZENYTE_DONATOR)
             World.sendMessage(("<shad=0>@or2@<img=1508> [Zenyte Donator] "
+                    + player.getUsername() + " has just logged in."));
+
+        if (player.getRights() == PlayerRights.TANZANITE_DONATOR)
+            World.sendMessage(("<shad=0>@mag@<img=852> [Tanzanite Donator] "
                     + player.getUsername() + " has just logged in."));
 
         if (player.getRights() == PlayerRights.OWNER) {

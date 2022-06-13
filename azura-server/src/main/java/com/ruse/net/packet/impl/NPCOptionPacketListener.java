@@ -122,7 +122,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 9022:
                         ServerPerks.getInstance().open(player);
                         break;
-                    case 820:
+                    case 241:
                         ShopManager.getShops().get(123).open(player);
                         break;
                     case GroupConfig.NPC_ID:
@@ -336,7 +336,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         player.forceChat("Ban emily!");
                         npc.forceChat("Mods! Help! They're harassing me again!");
                         break;
-                    case 3777:
+                    case 741:
                         DialogueManager.start(player, 141);
                         player.setDialogueActionId(88);
                         break;
@@ -608,7 +608,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         }
                         player.getSummoning().store();
                         break;
-                    case 605:
+                    case 2538:
                         player.getPacketSender().sendMessage("")
                                 .sendMessage("You currently have " + player.getPointsHandler().getVotingPoints()
                                         + " Voting points.")
@@ -984,7 +984,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         trioMinigame.handleTokenRemoval(player);
 
                         break;
-                    case 3777:
+                    case 741:
                         player.getPacketSender().sendMessage("")
                                 .sendMessage("<shad=1>@gre@You currently have " + player.getPointsHandler().getDonatorPoints()
                                         + " Donator points.")
@@ -1015,7 +1015,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 7969:
                         ShopManager.getShops().get(28).open(player);
                         break;
-                    case 605:
+                    case 2538:
                         player.getPacketSender().sendMessage("")
                                 .sendMessage("You currently have " + player.getPointsHandler().getVotingPoints()
                                         + " Voting points.")
@@ -1270,7 +1270,7 @@ public class NPCOptionPacketListener implements PacketListener {
                                 "<img=99>You have @red@" + player.getPointsHandler().getBossPoints() + " Boss Points!");
 
                         break;
-                    case 3777:
+                    case 741:
                         player.getDonatorShop().openInterface(DonatorShop.DonatorShopType.WEAPON);
                         break;
                     case 4476:
@@ -1324,7 +1324,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 705:
                         ShopManager.getShops().get(5).open(player);
                         break;
-                    case 605:
+                    case 2538:
                         player.getPacketSender().sendMessage("Coming soon!");
                         // player.getPacketSender().sendMessage("").sendMessage("You currently have
                         // "+player.getPointsHandler().getVotingPoints()+" Voting
@@ -1395,7 +1395,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 2253:
                         ShopManager.getShops().get(8).open(player);
                         break;
-                    case 605:
+                    case 2538:
                         LoyaltyProgramme.open(player);
                         break;
                     case 4601:

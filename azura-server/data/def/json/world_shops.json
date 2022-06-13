@@ -4330,7 +4330,7 @@
         "amount": 2000000000
       }
     ],
-    "currency": 5023
+    "currency": -1
   },
   {
     "id": 471,
@@ -4456,7 +4456,7 @@
         "amount": 2000000000
       }
     ],
-    "currency": 5023
+    "currency": -1
   },
   {
     "id": 78,
@@ -5802,7 +5802,7 @@
   },
   {
     "id": 107,
-    "name": "Boss Slayer Points Store",
+    "name": "Boss Slayer Shop",
     "items": [
       {
         "id": 15358,
@@ -5869,7 +5869,7 @@
         "amount": 2000000000
       }
     ],
-    "currency": -1
+    "currency": 9000
   },
   {
     "id": 110,

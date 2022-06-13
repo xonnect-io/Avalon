@@ -398,6 +398,7 @@ public class ClanChatManager {
 				if (ironimg > 1) {
 					ironSpace = " ";
 				}
+				else player.getRights().ordinal();
 
 				String formatted = String.format("%02d", clan.getName().length() + 1);
 

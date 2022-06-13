@@ -158,7 +158,9 @@ public class CustomDropUtils {
         /**
          * Donator Rank bonusses
          */
-        if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+        if(player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+            percentBoost += 100;
+        } else if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
             percentBoost += 75;
         } else if(player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
             percentBoost += 45;
@@ -294,17 +296,25 @@ public class CustomDropUtils {
         /**
          * Donator Rank bonusses
          */
-        if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+        if (player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+            percentBoost += 30;
+        } else
+             if (player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
             percentBoost += 25;
-        } else if(player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+        } else
+            if (player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
             percentBoost += 20;
-        } else if(player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+        } else
+            if (player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
             percentBoost += 15;
-        } else if(player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+        } else
+            if (player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
             percentBoost += 10;
-        } else if(player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+        } else
+            if (player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
             percentBoost += 7;
-        } else if(player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+        } else
+            if (player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
             percentBoost += 5;
         }
 

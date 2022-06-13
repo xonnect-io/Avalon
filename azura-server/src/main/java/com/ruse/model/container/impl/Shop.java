@@ -687,6 +687,12 @@ public class Shop extends ItemContainer {
             currencyName = (String) obj[1];
             if (id == PKING_REWARDS_STORE) {
                 playerCurrencyAmount = player.getPointsHandler().getPkPoints();
+            } else if (id == SLAYER_STORE_EASY) {
+                    playerCurrencyAmount = player.getPointsHandler().getSlayerPoints();
+            } else if (id == SLAYER_STORE_MEDIUM) {
+                playerCurrencyAmount = player.getPointsHandler().getSlayerPoints();
+            } else if (id == SLAYER_STORE_HARD) {
+                playerCurrencyAmount = player.getPointsHandler().getSlayerPoints();
             } else if (id == VOTE_STORE) {
                 playerCurrencyAmount = player.getPointsHandler().getVotingPoints();
             } else if (id == EVENT_SHOP) {
@@ -1495,18 +1501,18 @@ public class Shop extends ItemContainer {
             } else if (shop == BOSS_SLAYER_SHOP) {
                 switch (item) {
                     case 22006://add
-                        return new Object[] { 5, "Boss Slayer Points" };
+                        return new Object[] { 5, "Boss Slayer tickets" };
                     case 15358:
                     case 15359:
                     case 20488:
-                        return new Object[] { 100, "Boss Slayer Points" };
+                        return new Object[] { 100, "Boss Slayer tickets" };
                     case 23215:
-                        return new Object[] { 25, "Boss Slayer Points" };
+                        return new Object[] { 25, "Boss Slayer tickets" };
                     case 4446:
                     case 19886:
-                        return new Object[] { 250, "Boss Slayer Points" };
+                        return new Object[] { 250, "Boss Slayer tickets" };
                     case 23071:
-                        return new Object[] { 1000, "Boss Slayer Points" };
+                        return new Object[] { 1000, "Boss Slayer tickets" };
                     case 22005:
                     case 22107:
                     case 23258://add
@@ -1515,9 +1521,9 @@ public class Shop extends ItemContainer {
                     case 23261://add
                     case 23262://add
                     case 23263://add
-                        return new Object[] { 5000, "Boss Slayer Points" };
+                        return new Object[] { 5000, "Boss Slayer tickets" };
                     case 15330:
-                        return new Object[] { 2000, "Boss Slayer Points" };
+                        return new Object[] { 2000, "Boss Slayer tickets" };
                 }
             } else if (shop == EASTER_STORE_1) {
                 switch (item) {

@@ -137,6 +137,7 @@ public enum SlayerTasks {
 		 */
 		if (master == SlayerMaster.BOSS_SLAYER) {
 			slayerTaskAmount = 25 + Misc.getRandom(25);
+
 		} else if (master == SlayerMaster.EASY_SLAYER) {
 			slayerTaskAmount = 25 + Misc.random(25);
 		} else if (master == SlayerMaster.MEDIUM_SLAYER) {

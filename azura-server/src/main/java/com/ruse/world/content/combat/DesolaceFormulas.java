@@ -120,16 +120,17 @@ public class DesolaceFormulas {
                     if (plr.getInventory().contains(23255)) {
                         bonus *= 1.5;
                     }
-
-                    if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+                    if(plr.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+                        bonus += 1.75;
+                    } else if (plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
                         bonus += 1.5;
-                    } else if(plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+                    } else if (plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
                         bonus += 1.35;
-                    } else if(plr.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+                    } else if (plr.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
                         bonus += 1.25;
-                    } else if(plr.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+                    } else if (plr.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
                         bonus += 1.15;
-                    } else if(plr.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+                    } else if (plr.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
                         bonus += 1.10;
                     } else if(plr.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
                         bonus += 1.05;
@@ -374,7 +375,9 @@ public class DesolaceFormulas {
             if (plr.getInventory().contains(23255)) {
                 bonus *= 1.5;
             }
-            if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+            if(plr.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+                bonus += 1.75;
+            } else if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
                 bonus += 1.5;
             } else if(plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
                 bonus += 1.35;
@@ -488,8 +491,9 @@ public class DesolaceFormulas {
             if (plr.getInventory().contains(23255)) {
                 bonus *= 1.5;
             }
-
-            if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+            if(plr.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+                bonus += 1.75;
+            } else if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
                 bonus += 1.5;
             } else if(plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
                 bonus += 1.35;

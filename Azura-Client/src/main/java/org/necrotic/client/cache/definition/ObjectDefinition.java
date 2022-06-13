@@ -208,6 +208,10 @@ public final class ObjectDefinition {
 			definition.name = "AFK Crystal";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
+		if (definition.type == 1817) {
+			definition.name = "Lever";
+			definition.actions = new String[]{"Pull", null, null, null, null};
+		}
 		if (definition.type == 4389) {
 			definition.name = "Celestial Zone";
 			definition.actions = new String[]{"Enter", null, null, null, null};

@@ -2458,7 +2458,19 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
         }
     }
-
+    private static void tanzaniteCommands(Player player, String[] command, String wholeCommand) {
+        if (command[0].equalsIgnoreCase("tanzanite")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position[] locations = new Position[]{new Position(2594, 2658, 0)};
+            Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
+            TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
+        }
+    }
     private static void developerCommands(Player player, String[] command, String wholeCommand) {
 
         if (command[0].equalsIgnoreCase("groupa")) {
@@ -3688,17 +3700,32 @@ public class CommandPacketListener implements PacketListener {
         if (player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
             zenyteCommands(player, parts, command);
         }
+        if (player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT) {
+            zenyteCommands(player, parts, command);
+        }
         try {
             switch (player.getRights()) {
-                case PLAYER:
-                    playerCommands(player, parts, command);
-                    break;
+
                 case YOUTUBER:
                     youtuberCommands(player, parts, command);
                     playerCommands(player, parts, command);
                     contributorCommands(player, parts, command);
                     memberCommands(player, parts, command);
                     break;
+
+                case PLAYER:
+                    playerCommands(player, parts, command);
+                    break;
+
+                case SUPPORT:
+                case HELPER:
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    helperCommands(player, parts, command);
+                    supportCommands(player, parts, command);
+                    contributorCommands(player, parts, command);
+                    break;
+
                 case MODERATOR:
                     playerCommands(player, parts, command);
                     memberCommands(player, parts, command);
@@ -3707,7 +3734,7 @@ public class CommandPacketListener implements PacketListener {
                     contributorCommands(player, parts, command);
                     supportCommands(player, parts, command);
                     break;
-                //TODO once rank is added, add GLOBAL_MOD with all mod commands + globalModCommands(player, parts, command);
+
                 case ADMINISTRATOR:
                     playerCommands(player, parts, command);
                     memberCommands(player, parts, command);
@@ -3715,11 +3742,10 @@ public class CommandPacketListener implements PacketListener {
                     moderatorCommands(player, parts, command);
                     contributorCommands(player, parts, command);
                     administratorCommands(player, parts, command);
-                    //ownerCommands(player, parts, command);
-                    //developerCommands(player, parts, command);
                     supportCommands(player, parts, command);
                     globalModCommands(player, parts, command);
                     break;
+
                 case OWNER:
                     playerCommands(player, parts, command);
                     memberCommands(player, parts, command);
@@ -3738,26 +3764,79 @@ public class CommandPacketListener implements PacketListener {
                     diamondCommands(player, parts, command);
                     onyxCommands(player, parts, command);
                     zenyteCommands(player, parts, command);
-                    break;
-                case SUPPORT:
-                case HELPER:
-                    playerCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    helperCommands(player, parts, command);
-                    supportCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
+                    tanzaniteCommands(player, parts, command);
                     break;
 
-                case SAPPHIRE_DONATOR:
-                case EMERALD_DONATOR:
+                case TANZANITE_DONATOR:
+                    playerCommands(player, parts, command);
+                    contributorCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    zenyteCommands(player, parts, command);
+                    tanzaniteCommands(player, parts, command);
+                    break;
+
                 case ZENYTE_DONATOR:
+                    playerCommands(player, parts, command);
+                    contributorCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    zenyteCommands(player, parts, command);
+                    break;
+
                 case ONYX_DONATOR:
+                    playerCommands(player, parts, command);
+                    contributorCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    break;
+
                 case DIAMOND_DONATOR:
+                    playerCommands(player, parts, command);
+                    contributorCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    break;
+
                 case RUBY_DONATOR:
                     playerCommands(player, parts, command);
                     contributorCommands(player, parts, command);
                     memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
                     break;
+
+                case EMERALD_DONATOR:
+                    playerCommands(player, parts, command);
+                    contributorCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    break;
+
+                case SAPPHIRE_DONATOR:
+                    playerCommands(player, parts, command);
+                    contributorCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    break;
+
                 default:
                     break;
             }

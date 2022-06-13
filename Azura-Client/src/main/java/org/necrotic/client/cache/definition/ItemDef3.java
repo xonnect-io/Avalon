@@ -1817,24 +1817,6 @@ public class ItemDef3 {
 				itemDef.name = "Slayer casket";
 				itemDef.rdc2 = 847;
 				break;
-
-			case 23171:
-				itemDef.copyItem(6199);
-				itemDef.name = "Rare box";
-				itemDef.rdc2 = 12000;
-				break;
-				
-			case 23172:
-				itemDef.copyItem(6199);
-				itemDef.name = "Defensive box";
-				itemDef.rdc2 = 15000;
-				break;
-				
-			case 23173:
-				itemDef.copyItem(6199);
-				itemDef.name = "Offensive box";
-				itemDef.rdc2 = 18000;
-				break;
 				
 			case 23174:
 				itemDef.copyItem(10936);
@@ -2645,7 +2627,14 @@ public class ItemDef3 {
 				itemDef.rdc2 = 12512;
 				itemDef.actions = new String[]{"Open", null, null, null, "Drop"};
 				break;
-				
+
+			case 23274:
+				itemDef.copyItem(6833);
+				itemDef.name = "Special goodiebag";
+				itemDef.rdc2 = 32312;
+				itemDef.actions = new String[]{"Open", null, null, null, "Drop"};
+				break;
+
 			case 14921:
 				itemDef.name = "Icey virtus mask";
 				itemdefedit = ItemDefinition.get(14014);

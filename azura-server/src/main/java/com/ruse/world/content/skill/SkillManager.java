@@ -350,17 +350,20 @@ public class SkillManager {
 /**
  * Donator Rank Bonusses
  */
-        if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+        if (player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT ||
+                player.getRights().equals(PlayerRights.YOUTUBER)) {
+            experience *= 1.5;
+        } else if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
             experience *= 1.25;
-        } else if(player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
             experience *= 1.25;
-        } else if(player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
             experience *= 1.20;
-        } else if(player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
             experience *= 1.15;
-        } else if(player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
             experience *= 1.10;
-        } else if(player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
             experience *= 1.05;
         }
 

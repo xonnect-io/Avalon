@@ -279,7 +279,7 @@ public final class MobDefinition {
 				definition.walkAnimation = 1339;
 				break;
 
-			case 820:
+			case 241:
 				definition.name = "Global Boss Store";
 				definition.actions = new String[] {"Trade", null, null, null, null};
 				definition.combatLevel = 0;
@@ -1861,43 +1861,19 @@ public final class MobDefinition {
 				definition.actions = new String[]{"Talk-to", null, "Trade", null, null};
 				break;
 				
-			case 605:
+			case 2538:
 				definition.name = "<img=28>Vote Manager";
 				definition.actions = new String[]{"View Shop", null, null, null, null};
 				definition.combatLevel = 0;
 				definition.walkAnimation = 1660;
-				definition.standAnimation = 11973;
-				definition.npcModels = new int[8];
-				definition.npcModels[0] = 65131; //HEAD
-				//definition.npcModels[1] = 246; //JAW
-				definition.npcModels[1] = 65133; //CHEST
-				definition.npcModels[2] = 9638; //CAPE
-				definition.npcModels[3] = 65137; //HAND
-				definition.npcModels[4] = 65128; ////shield
-				definition.npcModels[5] = 65142; //WEP
-				definition.npcModels[6] = 65135; //LEG
-				definition.npcModels[7] = 65138; //BOOT
-				definition.originalModelColours = new int[1];
-				definition.changedModelColours = new int[1];
-				definition.originalModelColours[0] = 40; // current
-				definition.changedModelColours[0] = 58; // New
+				definition.standAnimation = 5761;
 				break;
-			case 3777:
+			case 741:
 				definition.name = "<img=19>Donator Store";
 				definition.actions = new String[]{null, null, "@cya@View Donator Shop", null, null, null, null};
 				definition.combatLevel = 0;
 				definition.walkAnimation = 1660;
 				definition.standAnimation = 5761;//5316
-				definition.npcModels = new int[9];
-				definition.npcModels[0] = 65131; //HEAD
-				definition.npcModels[1] = 64031; //JAW
-				definition.npcModels[2] = 65133; //CHEST
-				definition.npcModels[3] = 9638; //CAPE
-				definition.npcModels[4] = 65137; //HAND
-				definition.npcModels[5] = 65128; ////shield
-				definition.npcModels[6] = 64488; //WEP
-				definition.npcModels[7] = 65135; //LEG
-				definition.npcModels[8] = 65138; //BOOT
 				definition.originalModelColours = new int[1];
 				definition.changedModelColours = new int[1];
 				definition.originalModelColours[0] = 40; // current

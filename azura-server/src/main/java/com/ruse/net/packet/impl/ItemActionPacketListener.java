@@ -428,21 +428,6 @@ public class ItemActionPacketListener implements PacketListener {
                 player.setDoubleDMGTimer(3000);
                 TaskManager.submit(new DoubleDMGTask(player));
                 break;
-
-
-            case 23171:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RARE_BOX);
-                player.getCasketOpening().openInterface();
-                break;
-            case 23172:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.DEF_BOX);
-                player.getCasketOpening().openInterface();
-                break;
-            case 23173:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.OFF_BOX);
-                player.getCasketOpening().openInterface();
-                break;
-
             case 19116:
                 int[] commonsuper1 = new int[] {12855, 989, 4888, 18332, 14377,13902,13899 ,11730};
                 int[] uncommonsuper1 = new int[] {13922,13952,13940,13910,13946,13934,13916,13949,13937,14915,14919,14924};
@@ -473,31 +458,6 @@ public class ItemActionPacketListener implements PacketListener {
             case 23257:
                 DialogueManager.start(player, NephilimTokenExchange.getDialogue(player));
                 break;
-
-            case 14999:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ONYX);
-                player.getCasketOpening().openInterface();
-                break;
-            case 15003:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SILVER);
-                player.getCasketOpening().openInterface();
-                break;
-            case 15002:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RUBY);
-                player.getCasketOpening().openInterface();
-                break;
-            case 23253:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ZENYTE);
-                player.getCasketOpening().openInterface();
-                break;
-            case 15004:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.DIAMOND);
-                player.getCasketOpening().openInterface();
-                break;
-            case 18404:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RAIDS);
-                player.getCasketOpening().openInterface();
-                break;
             case 20489:
                 int[] commonLaunch = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808, 20549, 20173, 8809,
                         10946, 6769,15290};
@@ -505,8 +465,34 @@ public class ItemActionPacketListener implements PacketListener {
                         10942,15289};
                 int[] raresLaunch = new int[] {18753, 18749, 18631, 18752, 18748, 18637, 18751, 18638, 18623, 18750, 18636,
                         18629, 4446, 19886, 10934,15288};
-                player.getMysteryBoxOpener().display(20489, "$10 Launch Chest", commonLaunch, uncommonLaunch, raresLaunch);
+                player.getMysteryBoxOpener().display(20489, "Sapphire Casket", commonLaunch, uncommonLaunch, raresLaunch);
                 break;
+            case 15003:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.EMERALD_CASKET);
+                player.getCasketOpening().openInterface();
+                break;
+            case 15002:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RUBY_CASKET);
+                player.getCasketOpening().openInterface();
+                break;
+            case 15004:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.DIAMOND_CASKET);
+                player.getCasketOpening().openInterface();
+                break;
+            case 14999:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ONYX_CASKET);
+                player.getCasketOpening().openInterface();
+                break;
+            case 23253:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ZENYTE_CASKET);
+                player.getCasketOpening().openInterface();
+                break;
+
+            case 18404:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RAIDS);
+                player.getCasketOpening().openInterface();
+                break;
+
             case 13066:
                 player.getPacketSender().sendMessage("");
                 player.getPacketSender().sendMessage("You open the casket..");
@@ -567,39 +553,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You open the set and find items inside.");
                 player.getClickDelay().reset();
                 break;
-           /* case 989:
-                if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                        || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                    player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                    return;
-                }
-                Position position = new Position(2644, 4015, 0);
-                TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-                break;*/
-           /* case 5021:
 
-                MoneyPouch.depositTickets(player, player.getInventory().getAmount(5021));
-
-
-               *//* int amount1 = player.getInventory().getAmount(5021);
-                if (amount1 > 2147 || amount1 + player.getInventory().getAmount(ItemDefinition.COIN_ID) > 2147000000) {
-                    long amountLeft;
-                    if (!player.getInventory().contains(ItemDefinition.COIN_ID))
-                        amountLeft = (long) (((long) amount1 * (long) 1000000) - (long) 2147000000);
-                    else
-                        amountLeft = ((long) amount1 * (long) 1000000) - (long) (2147000000 - player.getInventory().getAmount(ItemDefinition.COIN_ID));
-                    player.getInventory().delete(5021, amount1);
-                    player.getInventory().add(ItemDefinition.COIN_ID, 2147000000 - (player.getInventory().getAmount(ItemDefinition.COIN_ID)));
-                    player.setMoneyInPouch(player.getMoneyInPouch() + amountLeft);
-                    player.getPacketSender().sendString(8135, "" + player.getMoneyInPouch());
-                    player.sendMessage("<shad=1>@red@The rest of the cash(" + amountLeft / 1000000
-                            + "M) has been added to your @blu@pouch@red@!");
-                    return;
-                }
-                player.getInventory().delete(5021, amount1);
-                player.getInventory().add(ItemDefinition.COIN_ID, 1000000 * amount1);*//*
-
-                break;*/
             case 15328:
                 if (!drinkInfinityRage(player, slot, 15328))
                     return;
@@ -619,6 +573,7 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
+
             case 15330:
                 if (!drinkSuperOverload(player, slot, 15330))
 
@@ -639,6 +594,7 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
+
             case 23225:
                 if (!drinkInfinityRage(player, slot, 23225))
                     return;
@@ -665,7 +621,6 @@ public class ItemActionPacketListener implements PacketListener {
             case 23242:
                 if (!drinkOwnerPot(player, slot, 23242))
                     return;
-
                 player.getPacketSender().sendInterfaceRemoval();
                 player.getCombatBuilder().incrementAttackTimer(1).cooldown(false);
                 player.getCombatBuilder().setDistanceSession(null);
@@ -684,35 +639,41 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
+
             case 21218:
                 player.getInventory().delete(21218, 1);
                 int num1 = 60000 / Difficulty.getDifficultyModifier(player, Skill.INVENTION);
                 player.getSkillManager().addExperience(Skill.INVENTION, num1);
                 player.getPacketSender().sendMessage("You've Been rewarded with some Invention XP.");
-
                 break;
+
             case 21219:
                 player.getInventory().delete(21219, 1);
                 int num = 90000 / Difficulty.getDifficultyModifier(player, Skill.SLAYER);
                 player.getSkillManager().addExperience(Skill.SLAYER, num);
                 player.getPacketSender().sendMessage("You've Been rewarded with some slayer XP.");
-
                 break;
+
             case 15290:
                 player.getInventory().delete(15290, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 5000);
                 break;
+
             case 19001:
                 player.getInventory().delete(19001, 1).add(19000, 250);
                 break;
+
             case 15289:
                 player.getInventory().delete(15289, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 25000);
                 break;
+
             case 15288:
                 player.getInventory().delete(15288, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 100000);
                 break;
+
             case 21221:
                 player.getInventory().delete(21221, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 100 + Misc.getRandom(500));
                 break;
+
             case 21222:
                 player.getInventory().delete(21222, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 500 +  Misc.getRandom(2500));
                 break;
@@ -723,37 +684,38 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(14822, 1);
                 player.getInventory().add(27, 1);
                 break;
+
             case 27:
                 player.getSlayer().handleSlayerRingTP(itemId);
                 break;
+
             case 14819:
                 if (player.getSlayer().doubleSlayerXP) {
                     player.getPacketSender().sendMessage("You already have Double Slayer Points.");
                     return;
                 }
                 player.getInventory().delete(14819, 1);
-                // player.getPointsHandler().setSlayerPoints(-300, true);
                 player.getSlayer().doubleSlayerXP = true;
                 PlayerPanel.refreshPanel(player);
                 player.getPacketSender().sendMessage("You will now permanently receive double Slayer experience.");
                 break;
+
             case 19775:
                 player.getPointsHandler().incrementGlobalRate(5);
-
                 player.sendMessage("Your Event rate is now: " + player.getPointsHandler().getGlobalRate() + " / 100%");
                 player.getInventory().delete(19775, 1);
                 player.getInventory().add(8212, 50);
                 player.sendMessage("you were rewarded free shards");
                 break;
+
             case 19768:
                 player.getPointsHandler().incrementGlobalRate(10);
                 player.getInventory().add(8212, 100);
-
                 player.sendMessage("Your Event rate is now: " + player.getPointsHandler().getGlobalRate() + " / 100%");
                 player.sendMessage("you were rewarded free shards");
-
                 player.getInventory().delete(19768, 1);
                 break;
+
             case 7956:
                 int[] commonpvm = new int[] {10350, 10348, 4718, 10346, 14499, 14497, 14501, 4710, 16054, 17193, 17339, 4734, 4753, 4757, 4759, 4755,
                         4745, 4749, 4751, 4747, 290};
@@ -761,6 +723,7 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] rarepvm = new int[] {4151,11235,15486,12933,18353,15031,6585,6737,7462};
                 player.getMysteryBoxOpener().display(7956, "Pvm box", commonpvm, uncommonpvm, rarepvm);
                 break;
+
             case 10025:
                 int[] commonpro = new int[] {671, 4411, 14415,14395,14405,672,673,//link
                         677,678,679,22075,19471,19470,19469,//warriors
@@ -853,25 +816,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(2152, 1);
                 player.getPacketSender().sendMessage("You remove the Toad's legs.");
                 break;
-            case 15752:
-                player.getInventory().delete(15752, 1);
-                Position position55 = new Position(2694, 5109, 0);
-                TeleportHandler.teleportPlayer(player, position55, TeleportType.NORMAL);
-                player.getPacketSender().sendMessage("You will now be facing @red@Darth Vader@bla@!");
-                break;
 
-            case 15750:
-                player.getInventory().delete(15750, 1);
-                Position position1 = new Position(2868, 3590, 0);
-                TeleportHandler.teleportPlayer(player, position1, TeleportType.NORMAL);
-                player.getPacketSender().sendMessage("You will now be facing @blu@Luke Skywalker@bla@!");
-                break;
-            case 15751:
-                player.getInventory().delete(15751, 1);
-                Position position2 = new Position(2912, 3611, 0);
-                TeleportHandler.teleportPlayer(player, position2, TeleportType.NORMAL);
-                player.getPacketSender().sendMessage("You will now be facing @gre@Yoda@bla@!");
-                break;
             case 16:
                 player.getInventory().delete(16, 1);
                 Position position3 = new Position(2907, 3289, 0);
@@ -885,6 +830,15 @@ public class ItemActionPacketListener implements PacketListener {
                         18686, 15501, 989, 962, 3318, 3907, 11137, 4151, 12790, 15332, 7956};
                 player.getGoodieBag().open();
                 break;
+
+            case 23274:
+                player.getGoodieBag().boxId = itemId;
+                player.getGoodieBag().rewards = new int[]{23275, 14999, 23002, 10943,15004,12630,10942,9084,22121,9083
+                        ,20591,23253,10934,10935,22121,15002,7995,3578,23240,10934
+                };
+                player.getGoodieBag().open();
+                break;
+
             case 3578:
                 player.getGoodieBag().boxId = itemId;
                 player.getGoodieBag().rewards = new int[]{10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 7995, 10934};
@@ -918,6 +872,7 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("You'll die if you keep eating this putrid rock!");
                 }
                 break;
+
             case 22051:
                 if (!player.busy()) {
                     easter2017.openInterface(player);
@@ -925,6 +880,7 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("You're too busy to do that!");
                 }
                 break;
+
             case 9003:
                 player.getPacketSender().sendMessage(
                         "<img=5> \"Use\" this Tome on any NPC, then select \"View-drops\" to see it's entire drop table.");
@@ -938,7 +894,6 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("You should have at least 4 inventory spaces free.");
                     return;
                 }
-
                 player.getInventory().delete(2946, 1);
                 player.getInventory().add(7329, 1);
                 player.getInventory().add(7330, 1);
@@ -948,6 +903,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("<shad=0>@red@Enjoy your firelighters!");
                 player.getClickDelay().reset();
                 break;
+
             case 15367:
                 if (!player.getClickDelay().elapsed(1000)) {
                     player.getPacketSender().sendMessage("Please wait 1 second before doing that.");
@@ -972,9 +928,9 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("<shad=0>@red@Enjoy your Christmas pack!");
                 World.sendMessage("<img=17>@blu@[Christmas Pack]<img=17>@red@ " + player.getUsername()
                         + " Has just opened a Christmas ingredient pack! ");
-
                 player.getClickDelay().reset();
                 break;
+
             case 3904:
                 if (!player.getClickDelay().elapsed(1000)) {
                     player.getPacketSender().sendMessage("Please wait 1 second before doing that.");
@@ -1106,10 +1062,10 @@ public class ItemActionPacketListener implements PacketListener {
                  int minutesDMG = 5 * amt;
 
                 player.getInventory().delete(23020, amt);
-                player.getInventory().add(ItemDefinition.COIN_ID, 500_000 * amt);
+                player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, 5_000 * amt);
                 player.getPacketSender()
                         .sendMessage("@blu@You are rewarded " + (amt * 1) + " vote "
-                                + (amt > 1 ? "points, " : "point, ") + (500_000 * amt) + " Avalon coins");
+                                + (amt > 1 ? "points, " : "point, ") + (5_000 * amt) + " Upgrade tokens");
                 player.getPacketSender()
                         .sendMessage("@blu@You received " + minutesDMG + " minutes of 100% Bonus DMG , and " + minutesDR + " minutes of 100% Bonus DR");
                 player.getPointsHandler().incrementVotingPoints(amt * 1);
@@ -2109,10 +2065,10 @@ public class ItemActionPacketListener implements PacketListener {
                 int minutesDMG = 5 * amt;
 
                 player.getInventory().delete(23020, amt);
-                player.getInventory().add(ItemDefinition.COIN_ID, 500000  * amt);
+                player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, 5_000  * amt);
                 player.getPacketSender()
                         .sendMessage("@blu@You are rewarded " + (amt * 1) + " vote "
-                                + (amt > 1 ? "points, " : "point, ") + (1000 * amt) + " Avalon tokens, and " + (1000 * amt) + " PVM Tickets!");
+                                + (amt > 1 ? "points, " : "point, ") + (5_000 * amt) + " Upgrade tokens");
                 player.getPacketSender()
                         .sendMessage("@blu@You received " + minutesDMG + " minutes of 100% Bonus DMG, and " + minutesDR + "minutes of 100% Bonus DR");
                 player.getPointsHandler().incrementVotingPoints(amt * 1);

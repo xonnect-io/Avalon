@@ -2117,7 +2117,6 @@ public final class ItemDefinition {
 			case 6199:
 				itemDef.name = "Mystery Box";
 				itemDef.actions = new String[5];
-
 				itemDef.actions[0] = "Open";
 				break;
 
@@ -2207,7 +2206,7 @@ public final class ItemDefinition {
 				itemDef.modelZoom = 1600;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 18162;
+				itemDef.modelID = 18163;
 				break;
 			case 15002:
 				itemDef.name = "Ruby Casket";
@@ -3984,7 +3983,8 @@ public final class ItemDefinition {
 				break;
 			case 5022:
 				itemDef.name = "<col=ff4f4f>PVM ticket";
-				itemDef.rdc2 = 325111;
+				itemDef.rdc2 = 11618;//666455
+				//itemDef.rdc2 = 325111;
 				itemDef.stackable = true;
 				itemDef21 = ItemDefinition.get(18652);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
@@ -3994,7 +3994,6 @@ public final class ItemDefinition {
 				itemDef.modelID = itemDef21.modelID;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-
 				break;
 			case 5023:
 				itemDef.name = "<col=aaaaaa><shad=2>Slayer ticket";
@@ -4010,6 +4009,16 @@ public final class ItemDefinition {
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.newModelColor = new int[]{63};
 				itemDef.editedModelColor = new int[]{67};
+				break;
+			case 9000:
+				itemDef.copyItem(5023);
+				itemDef.rdc2 = 23452;//666455
+				itemDef.name = "<col=aaaaaa><shad=2>Boss Slayer tickets";
+				break;
+			case 23275:
+				itemDef.copyItem(5020);
+				itemDef.rdc3 = 73403;//666455
+				itemDef.name = "Gold Season Pass";
 				break;
 			case 22044:
 				itemDef.modelID = 65270;

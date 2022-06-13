@@ -36,6 +36,7 @@ public class Donation extends Database {
     public static final int DIAMOND_DONATION_AMOUNT = 500;
     public static final int ONYX_DONATION_AMOUNT = 2500;
     public static final int ZENYTE_DONATION_AMOUNT = 5000;
+    public static final int TANZANITE_DONATION_AMOUNT = 10000;
      final String generateQuery() {
         String name = player.getUsername().replace("_", " ");
         StringBuilder sb = new StringBuilder();

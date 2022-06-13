@@ -1209,19 +1209,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 break;
                             case 5960: // Levers
                             case 5959:
-                                if (player.getLocation() == Location.MAGEBANK_SAFE) {
-                                    TeleportHandler.teleportPlayer(player, TeleportLocations.MAGEBANK_WILDY.getPos(),
-                                            TeleportType.LEVER);
-                                } else if (player.getWildernessLevel() >= 53
-                                        && player.getLocation() == Location.WILDERNESS) {
-                                    TeleportHandler.teleportPlayer(player, TeleportLocations.MAGEBANK_SAFE.getPos(),
-                                            TeleportType.LEVER);
-                                } else {
-                                    player.getPacketSender()
-                                            .sendMessage("ERROR: 00512, P: [" + player.getPosition().getX() + ","
-                                                    + player.getPosition().getY() + "," + player.getPosition().getZ()
-                                                    + "] - please report this bug!");
-                                }
+                                player.getPacketSender().sendMessage("@blu@Ez Fix");
                                 break;
                             // player.setDirection(Direction.WEST);
                             // TeleportHandler.teleportPlayer(player, new Position(3090, 3475),

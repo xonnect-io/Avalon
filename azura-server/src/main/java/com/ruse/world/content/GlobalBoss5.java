@@ -126,7 +126,7 @@ public class GlobalBoss5 {
                     players.getPacketSender().sendBroadCastMessage(message, 100);
                 }
                 if (!GameSettings.LOCALHOST)
-                World.sendBroadcastMessage(message);
+                World.sendBroadcastMessage("Ironman has appeared ::ironman");
                 GameSettings.broadcastMessage = message;
                 GameSettings.broadcastTime = 100;
 

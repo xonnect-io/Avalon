@@ -294,12 +294,12 @@ public class CasketOpening {
         OFF_BOX(23173, OffBox.loot),
         WEAPON_BOX(19114, WepBox.loot),
         HOV_BOX(23086, HOVBox.loot),
-        SILVER(15003, Silver.rewards),
-        ONYX(14999, Onyx.rewards),
-        RUBY(15002, Ruby.rewards),
-        DIAMOND(15004, Diamond.rewards),
+        EMERALD_CASKET(15003, Silver.rewards),
+        ONYX_CASKET(14999, Onyx.rewards),
+        RUBY_CASKET(15002, Ruby.rewards),
+        DIAMOND_CASKET(15004, Diamond.rewards),
         RAIDS(18404, Raids1.rewards),
-        ZENYTE(23253, Zenyte.rewards),
+        ZENYTE_CASKET(23253, Zenyte.rewards),
         ;
         private int itemID;
         private Box[] loot;

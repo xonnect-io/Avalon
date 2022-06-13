@@ -83,11 +83,6 @@ public final class GameLoader {
 	}
 
 	private void executeServiceLoad() {
-	/*
-		  if (GameSettings.MYSQL_ENABLED) {
-			  serviceLoader.execute(MySQLController::init);
-		  }
-	*/
 
 		serviceLoader.execute(PassRewards::init);
 

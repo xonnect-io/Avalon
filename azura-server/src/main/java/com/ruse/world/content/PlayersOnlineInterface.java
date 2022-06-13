@@ -192,14 +192,10 @@ public class PlayersOnlineInterface {
 			break;
 		case ONYX_DONATOR:
 		case ZENYTE_DONATOR:
+		case TANZANITE_DONATOR:
 			value = 12;
 			break;
-			//		case PLATINUM_MEMBER:
-//			value = 6;
-//			break;
-//		case SILVER_MEMBER:
-//			value = 4;
-//			break;
+
 		case SUPPORT:
 			value = 9;
 			break;

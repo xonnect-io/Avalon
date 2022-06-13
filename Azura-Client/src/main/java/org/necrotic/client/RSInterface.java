@@ -476,7 +476,6 @@ public class RSInterface {
 	public static void addNewCloseButton(TextDrawingArea[] tda) {
 		hoverButton(14650, tda, 1238, 1239, "Close", 0, 16750623, "");
 	}
-
 	public static void killTracker(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(33300);
 		addSpriteLoader(33301, 1400);
@@ -1083,65 +1082,67 @@ public class RSInterface {
 		main.child(38, 48598, 459, 20);
 	}
 
-	private static void mysteryBoxViewer(TextDrawingArea[] tda) {
+	private static void mysteryBoxViewer(TextDrawingArea[] tda) { // lol nice sprites xD
 		RSInterface main = addInterface(48030);
 		addSpriteLoader(48031, 1383);
-		addText(48032, "Common Rewards (55%)", tda, 0, 0x92d397, true, true);
-		addText(48033, "Uncommon Rewards (35%)", tda, 0, 0xd3c692, true, true);
-		addText(48034, "Very Rare Rewards (5%)", tda, 0, 0xbb92d3, true, true);
-		addText(48035, "Mbox Name", tda, 1, 0xff8624, false, true);
+		addText(48032, "Common (60%)", tda, 1, 0x92d397, true, true);
+		addText(48033, "Uncommon (35%)", tda, 1, 0xd3c692, true, true);
+		addText(48034, "Rare (5%)", tda, 1, 0xbb92d3, true, true);
+		addText(48035, "Mbox Name", tda, 1, 0xff8624, true, true);
 
-		addHoverButtonWSpriteLoader(48036, 1384, 90, 25, "Open", -1, 48037, 1);
-		addHoveredImageWSpriteLoader(48037, 1385, 90, 25, 48038);
+		addHoverButtonWSpriteLoader(48036, 1445, 90, 25, "Open", -1, 48037, 1);
+		addHoveredImageWSpriteLoader(48037, 1446, 132, 31, 48038);
 
-		addHoverButtonWSpriteLoader(48039, 1384, 90, 25, "Open All", -1, 48040, 1);
-		addHoveredImageWSpriteLoader(48040, 1385, 90, 25, 48041);
+		addHoverButtonWSpriteLoader(48039, 1445, 90, 25, "Open All", -1, 48040, 1);
+		addHoveredImageWSpriteLoader(48040, 1446, 132, 31, 48041);
 
-		addText(48042, "Open", tda, 0, 0xff8624, true, true);
-		addText(48043, "Open All", tda, 0, 0xff8624, true, true);
-		addButtonWSpriteLoader(48044, 714, "Close Window", 16, 16);
-
-		//	addText(48044, "Mystery Box Interface", tda, 1, ColorConstants.YELLOW, true, true);
-		addToItemGroup(48045, 1, 1, 1, 1, true, new String[]{null, null, null, null, null});
-		main.totalChildren(16);
-		main.child(0, 48031, 10, 10);
-		main.child(1, 48050, 5, 151);
-		main.child(2, 48060, 162, 151);
-		main.child(3, 48070, 322, 151);
-		main.child(4, 48032, 90, 132);
-		main.child(5, 48033, 250, 132);
-		main.child(6, 48034, 410, 132);
-		main.child(7, 48035, 107, 69);
-		main.child(8, 48036, 286, 65);
-		main.child(9, 48037, 286, 65);
-		main.child(10, 48039, 386, 65);
-		main.child(11, 48040, 386, 65);
-		main.child(12, 48042, 330, 72);
-		main.child(13, 48043, 431, 72);
-		main.child(14, 48044, 263 + 210, 19);
-		main.child(15, 48045, 31, 61);
+		addText(48042, "Open", tda, 2, 0xff8624, true, true);
+		addText(48043, "Open All", tda, 2, 0xff8624, true, true);
+		addText(48044, "Mystery Box Interface", tda, 2, ColorConstants.ORANGE2, true, true);
+		addButtonWSpriteLoader(48046, 714, "Close Window", 16, 16);
+		addToItemGroup(48045, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
+		main.totalChildren(17);
+		main.child(0, 48031, 20, 30);
+		main.child(1, 48050, 6, 120);
+		main.child(2, 48060, 157, 120);
+		main.child(3, 48070, 308, 120);
+		main.child(4, 48032, 100, 105);
+		main.child(5, 48033, 252, 105);
+		main.child(6, 48034, 407, 105);
+		main.child(7, 48035, 122, 67);
+		main.child(8, 48036, 198, 60);
+		main.child(9, 48037, 198, 60);
+		main.child(10, 48039, 342, 60);
+		main.child(11, 48040, 342, 60);
+		main.child(12, 48042, 260, 68);
+		main.child(13, 48043, 402, 68);
+		main.child(14, 48044, 255, 33);
+		main.child(15, 48045, 33, 59);
+		main.child(16, 48046, 473, 30);
 
 		RSInterface commonScroll = addInterface(48050);
-		commonScroll.width = 150;
-		commonScroll.height = 144;
+		commonScroll.width = 153;
+		commonScroll.height = 165;
 		commonScroll.scrollMax = 500;
-		addToItemGroup(48051, 3, 100, 5, 6, true, new String[]{null, null, null, null, null});
+		addToItemGroup(48051, 3, 100, 5, 6, true, new String[] {null, null, null, null, null});
 		commonScroll.totalChildren(1);
-		commonScroll.child(0, 48051, 18, 3);
+		commonScroll.child(0, 48051, 35, 3);
+
 		RSInterface mediumScroll = addInterface(48060);
-		mediumScroll.width = 150;
-		mediumScroll.height = 144;
+		mediumScroll.width = 153;
+		mediumScroll.height = 165;
 		mediumScroll.scrollMax = 500;
+		addToItemGroup(48061, 3, 100, 5, 6, true, new String[] {null, null, null, null, null});
 		mediumScroll.totalChildren(1);
-		mediumScroll.child(0, 48061, 18, 3);
-		addToItemGroup(48061, 3, 50, 5, 6, true, new String[]{null, null, null, null, null});
+		mediumScroll.child(0, 48061, 35, 3);
+
 		RSInterface rareScroll = addInterface(48070);
-		rareScroll.width = 150;
-		rareScroll.height = 144;
+		rareScroll.width = 153;
+		rareScroll.height = 165;
 		rareScroll.scrollMax = 500;
+		addToItemGroup(48071, 3, 100, 5, 6, true, new String[] {null, null, null, null, null});
 		rareScroll.totalChildren(1);
-		rareScroll.child(0, 48071, 18, 3);
-		addToItemGroup(48071, 3, 50, 5, 6, true, new String[]{null, null, null, null, null});
+		rareScroll.child(0, 48071, 35, 3);
 	}
 
 

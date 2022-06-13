@@ -232,13 +232,18 @@ public class UpgradeInterface {
     
     public double getBoost(double chance){
         double percentBoost = 0D;
-        if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+        if (player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT ||
+                player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT ||
+                player.getRights().equals(PlayerRights.YOUTUBER)) {
             percentBoost += 15;
-        } else if(player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+        } else
+            if (player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
             percentBoost += 10;
-        } else if(player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+        } else
+            if (player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
             percentBoost += 7;
-        } else if(player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+        } else
+            if (player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
             percentBoost += 5;
         }
 

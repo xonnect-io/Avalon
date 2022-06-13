@@ -866,7 +866,7 @@ public class Client extends GameRenderer {
         sound = new int[50];
         anInt1211 = 78;
         promptInput = "";
-        modIcons = new Sprite[17];
+        modIcons = new Sprite[18];
         tabID = 3;
         setInputTaken(false);
         mapImagePixelCutRight = new int[152];
@@ -2268,7 +2268,7 @@ public class Client extends GameRenderer {
                     class46 = class46.method580();
                 }
 
-                if (regionBaseX + x == 3090 && regionBaseY + y == 3956) {
+                if (regionBaseX + x == 2659 && regionBaseY + y == 4022) {
                     menuActionName[menuActionRow] = "Pull @cya@Lever";
                     menuActionID[menuActionRow] = 502;
                     menuActionCmd1[menuActionRow] = modelData;
@@ -2705,11 +2705,15 @@ public class Client extends GameRenderer {
         }
 
         if (player.playerRights == 13) {
-            menuTooltip = menuTooltip + "<col=b40404>Extreme@whi@ ";
+            menuTooltip = menuTooltip + "<img=1508><col=20B2AA>Zenyte@whi@ ";
+        }
+
+        if (player.playerRights == 14) {
+            menuTooltip = menuTooltip + "<img=852><col=20B2AA>Tanzanite@whi@ ";
         }
 
         if (player.playerRights == 4) {
-            menuTooltip = "<img=12><col=ff0000>Founder@whi@ ";
+            menuTooltip =  "<img=12>@whi@ ";
 
         }
 
@@ -9307,6 +9311,10 @@ public class Client extends GameRenderer {
                     }
 
                     if (rights == 13) { //Zenyte Donator
+                        rights += 3;
+                    }
+
+                    if (rights == 14) { //Tanzanite Donator
                         rights += 3;
                     }
                     if (rights != 0) {
@@ -16915,6 +16923,7 @@ public class Client extends GameRenderer {
         if (response == 2) {
             finishLogin(client);
             PlayerHandler.load(client);
+            System.out.println("WHAT ARE MY RIGHTS " + myRights);
             return false;
         }
 
@@ -18539,7 +18548,7 @@ public class Client extends GameRenderer {
             }
             modIcons[15] = spritesMap.get(1509);
             modIcons[16] = spritesMap.get(1508);
-
+            modIcons[17] = spritesMap.get(852);
 
             multiOverlay = spritesMap.get(1025);
             XPOverlay = spritesMap.get(1025);
@@ -18997,7 +19006,7 @@ public class Client extends GameRenderer {
                             spritesMap.get(625).drawSprite(spriteDrawX - 12, spriteDrawY - 40);
 
                         }
-                        if (entityDef.id == 3777) {
+                        if (entityDef.id == 741) {
                             spritesMap.get(857).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
 
                         }
@@ -19041,7 +19050,7 @@ public class Client extends GameRenderer {
                             spritesMap.get(1229).drawSprite(spriteDrawX - 12, spriteDrawY - 30);
 
                         }
-                        if (entityDef.id == 605) {
+                        if (entityDef.id == 2538) {
                             spritesMap.get(866).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
                         }
 
@@ -19423,11 +19432,13 @@ public class Client extends GameRenderer {
             return "<img=5>@mag@Support@whi@ ";
         }
 
-        if (player.playerRights == 16) {
-            return "<img=5>@mag@Zenyte Donator@whi@ ";
+        if (player.playerRights == 13) {
+            return "<img=1508>@or2@Zenyte Donator@whi@ ";
         }
 
-
+        if (player.playerRights == 14) {
+            return "<img=852>@mag@Tanzanite Donator@whi@ ";
+        }
         return "";
     }
 

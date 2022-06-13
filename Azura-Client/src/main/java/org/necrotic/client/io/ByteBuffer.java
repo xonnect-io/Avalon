@@ -226,6 +226,8 @@ public final class ByteBuffer extends NodeSub {
 		return value;
 	}
 
+
+
 	public int getSmart() {
 		try {
 			// checks current without modifying position
