@@ -1648,22 +1648,6 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("Can not find player online.");
         }
 
-        // start brandon random debug commands kek
-
-        if (command[0].equalsIgnoreCase("bpcharges")) {
-            player.getPacketSender().sendMessage(player.getBlowpipeCharges() + " charges.");
-        }
-        if (command[0].equalsIgnoreCase("bptest")) {
-            player.getPacketSender().sendMessage("loadPipe is: " + ToxicBlowpipe.loadPipe(player));
-            player.getPacketSender().sendMessage("pipe charges: " + player.getBlowpipeCharges());
-            return;
-        }
-        if (command[0].equalsIgnoreCase("rbp")) {
-            // player.getPacketSender().sendMessage("loadPipe is: " +
-            // ToxicBlowpipe.loadPipe(player, 806, 12926));
-            player.getPacketSender().sendMessage("pipe charges: " + player.setBlowpipeCharges(1));
-            return;
-        }
 
     }
 
@@ -1690,6 +1674,9 @@ public class CommandPacketListener implements PacketListener {
             }
         }
 
+        if (command[0].equalsIgnoreCase("statdump")) {
+            ItemDefinition.dumpItems();
+        }
         if (command[0].equalsIgnoreCase("spawnhellraiser")) {
             HellraiserSystem.commandSpawnBoss();
         }
