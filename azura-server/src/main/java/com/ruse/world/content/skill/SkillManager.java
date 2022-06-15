@@ -282,7 +282,7 @@ public class SkillManager {
          * MAX_EXPERIENCE} then stop.
          */
 
-        if (Misc.percentageChance(0.001)) { //Change the value. This is a 10% change of a spawn - Way too high.
+        if (Misc.percentageChance(0.00001)) { //Change the value. This is a 10% change of a spawn - Way too high.
             Genie.spawn(player);
         }
 

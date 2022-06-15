@@ -158,6 +158,7 @@ public class CombatStrategies {
 		//STRATEGIES.put(12810, new InfernalDemon());
 		STRATEGIES.put(12843, new FractiteDemon());
 		STRATEGIES.put(9014, new SolakTheGreat());
+		STRATEGIES.put(9012, new LuciferCombatScript());
 		STRATEGIES.put(9017, new GolemOfSolak());
 		STRATEGIES.put(3305, new PantherOfSolak());
 		STRATEGIES.put(9020, new ArmouredBunnyCombatScript());

@@ -9,7 +9,8 @@ import com.ruse.world.entity.impl.player.Player;
 
 public class GuardianTokenExchange {
 
-	public static Dialogue performAction(Player player) {
+
+	public static Dialogue getDialogue(Player player) {
 
 		return new Dialogue() {
 

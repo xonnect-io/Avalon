@@ -2602,7 +2602,7 @@ public class ItemDef4 {
 				break;
 			case 19811:
 				itemDef.copyItem(4708);
-				itemDef.name = "Zeldris head";
+				itemDef.name = "Webby head";
 				itemDef.modelID = 18124;
 				itemDef.maleEquip1 = 18063;
 				itemDef.femaleEquip1 = 18063;
@@ -2612,7 +2612,7 @@ public class ItemDef4 {
 				break;
 			case 19473:
 				itemDef.copyItem(4712);
-				itemDef.name = "Zeldris body";
+				itemDef.name = "Webby body";
 				itemDef.modelID = 18143;
 				itemDef.maleEquip1 = 18064;
 				itemDef.femaleEquip1 = 18064;
@@ -2622,7 +2622,7 @@ public class ItemDef4 {
 
 			case 19472:
 				itemDef.copyItem(4712);
-				itemDef.name = "Zeldris legs";
+				itemDef.name = "Webby legs";
 				itemDef.modelID = 18142;
 				itemDef.maleEquip1 = 18065;
 				itemDef.femaleEquip1 = 18065;

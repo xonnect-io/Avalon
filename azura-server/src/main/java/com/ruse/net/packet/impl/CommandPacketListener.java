@@ -125,6 +125,17 @@ public class CommandPacketListener implements PacketListener {
             BestDRItemsInterface.openInterface(player, 0);
         }
 
+        if (command[0].equalsIgnoreCase("globals")) {
+            player.getPacketSender().sendMessage("Tribal Goblin: @red@" + AfkSystem.getLeft() + " Steals left.");
+            player.getPacketSender().sendMessage("Hellraiser: @red@" + HellraiserSystem.getLeft() + " kills left.");
+            player.getPacketSender().sendMessage("Vote Boss: @red@" + doMotivote.getVoteCount() + "/60 please vote!");
+            player.getPacketSender().sendMessage("Dragon King: @red@" + GlobalBoss4.timeLeft());
+            player.getPacketSender().sendMessage("Nightmare boss: @red@" + GlobalBoss2.timeLeft());
+            player.getPacketSender().sendMessage("Naraku boss: boss: @red@" + GlobalBoss3.timeLeft());
+            player.getPacketSender().sendMessage("Ironman boss: boss: boss: @red@" + GlobalBoss5.timeLeft());
+            player.getPacketSender().sendMessage("Avalon Guardian @red@" + GuardianSpawnSystem.getLeft()  + " tickets left");
+            player.getPacketSender().sendMessage("Nephilim @red@" + NephilimSpawnSystem.getLeft()  + " tokens left");
+        }
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
                 || command[0].equalsIgnoreCase("start") || command[0].equalsIgnoreCase(
                 "training")) {
@@ -1647,8 +1658,6 @@ public class CommandPacketListener implements PacketListener {
             } else
                 player.getPacketSender().sendMessage("Can not find player online.");
         }
-
-
     }
 
     private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
@@ -1662,7 +1671,6 @@ public class CommandPacketListener implements PacketListener {
                     Position position = npc.getDefaultPosition();
                     NPCMovementCoordinator.Coordinator coordinator = npc.getMovementCoordinator().getCoordinator();
                     Direction direction = npc.getDirection();
-
                     Gson builder = new GsonBuilder().setPrettyPrinting().create();
                     JsonObject object = new JsonObject();
                     object.addProperty("npc-id", id);
@@ -1677,9 +1685,11 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("statdump")) {
             ItemDefinition.dumpItems();
         }
+
         if (command[0].equalsIgnoreCase("spawnhellraiser")) {
             HellraiserSystem.commandSpawnBoss();
         }
+
         if (command[0].equalsIgnoreCase("spawnafk")) {
             AfkSystem.executeSpawn();
         }
@@ -1687,6 +1697,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equals("addvotes")) {
             player.setVoteCount(doMotivote.getVoteCount() + 20);
         }
+
         if (command[0].equalsIgnoreCase("delete")) {
             int id = Integer.parseInt(command[1]);
             for (NPC npc : World.getNpcs()) {
@@ -1697,6 +1708,7 @@ public class CommandPacketListener implements PacketListener {
                 }
             }
         }
+
         if (command[0].equalsIgnoreCase("add")) {
             int id = Integer.parseInt(command[1]);
             for (NPC npc : NPC.spawnedWorldsNpcs) {
@@ -1708,26 +1720,9 @@ public class CommandPacketListener implements PacketListener {
                 }
             }
         }
+
         if (command[0].equalsIgnoreCase("listuntradeables")) {
             Misc.listUntradeables();
-        }
-        if (command[0].equalsIgnoreCase("roll")) {
-            if (player.getClanChatName() == null) {
-                player.getPacketSender().sendMessage("You need to be in a clanchat channel to roll a dice.");
-                return;
-            } else if (player.getClanChatName().equalsIgnoreCase("help")) {
-                player.getPacketSender().sendMessage("You can't roll a dice in this clanchat channel!");
-                return;
-            } else if (player.getClanChatName().equalsIgnoreCase("necrotic")) {
-                player.getPacketSender().sendMessage("You can't roll a dice in this clanchat channel!");
-                return;
-            }
-            int dice = Integer.parseInt(command[1]);
-            player.getMovementQueue().reset();
-            player.performAnimation(new Animation(11900));
-            player.performGraphic(new Graphic(2075));
-            ClanChatManager.sendMessage(player.getCurrentClanChat(), "@bla@[ClanChat] @whi@" + player.getUsername()
-                    + " just rolled @bla@" + dice + "@whi@ on the percentile dice.");
         }
 
         if (command[0].equalsIgnoreCase("rule1")) {
@@ -1782,7 +1777,6 @@ public class CommandPacketListener implements PacketListener {
             DiscordMessager.dono7("");
         }
 
-
         if (command[0].equalsIgnoreCase("resetny")) {
             player.setNewYear2017(0);
             player.getPacketSender().sendMessage("Set setNewYear2017 to: " + player.getNewYear2017());
@@ -1831,16 +1825,6 @@ public class CommandPacketListener implements PacketListener {
             Item item = new Item(id, amount);
             player.getInventory().add(item, true);
         }
-
-        if (command[0].equalsIgnoreCase("itemall")) {
-            int id = Integer.parseInt(command[1]);
-            int endid = Integer.parseInt(command[2]);
-            for (int i = id; i <= endid; i++) {
-                Item item = new Item(i, 1);
-                player.getInventory().add(item, true);
-            }
-        }
-
 
         if (command[0].equalsIgnoreCase("giveitem")) {
             int id = Integer.parseInt(command[1]);
@@ -1901,6 +1885,7 @@ public class CommandPacketListener implements PacketListener {
                 }
             }
         }
+
         if (command[0].equalsIgnoreCase("giveall")) {
             int id = Integer.parseInt(command[1]);
             int amount = Integer.parseInt(command[2]);
@@ -1912,12 +1897,7 @@ public class CommandPacketListener implements PacketListener {
                 }
             }
         }
-        if (command[0].equalsIgnoreCase("thieving")) {
-            int lvl = Integer.parseInt(command[1]);
-            player.getSkillManager().setMaxLevel(Skill.THIEVING, lvl);
-            player.getSkillManager().setCurrentLevel(Skill.THIEVING, lvl);
-            player.getPacketSender().sendMessage("Set your Thieving level to " + lvl + ".");
-        }
+
         if (command[0].equalsIgnoreCase("master")) {
             for (Skill skill : Skill.values()) {
                 int level = SkillManager.getMaxAchievingLevel(skill);
@@ -1927,6 +1907,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("You are now a master of all skills.");
             player.getUpdateFlag().flag(Flag.APPEARANCE);
         }
+
         if (command[0].equalsIgnoreCase("reset")) {
             for (Skill skill : Skill.values()) {
                 int level = skill.equals(Skill.CONSTITUTION) ? 100 : skill.equals(Skill.PRAYER) ? 10 : 1;
@@ -2099,9 +2080,6 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("jewel")) {
             Jewelry.jewelryInterface(player);
-        }
-        if (command[0].equalsIgnoreCase("jint")) {
-            player.getPacketSender().sendInterface(4161);
         }
         if (command[0].equalsIgnoreCase("sendstring")) {
             player.getPacketSender().sendMessage("::sendstring id text");

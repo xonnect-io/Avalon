@@ -29,7 +29,7 @@ public enum TeleportData {
 			"@or1@Health:@whi@ 500","","", TeleportCategory.MONSTERS, new Position(3424, 4126, 0), 5, false, 9838, -1,
 			new int[][] {{7956, 1}, {989, 1}, {4882, 1}, {4894, 1}, {4900,1 }, {4888, 1}, {20460, 1}, {20456, 1}, {18747, 1}, {6199, 1}, {5022, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}}, 600),
 
-	TREE_BASILISK( 28309, 28309, 28309, 28233,"Tree Basilisk", "Tree Basilisk",
+	TREE_BASILISK( 28309, 28309, 28309, 28233,"Tree Gorgon", "Tree Gorgon",
 			"@or1@Health:@whi@ 500","","",  TeleportCategory.MONSTERS, new Position(2196, 5083, 0), 10, false, 1718, -1,
 			new int[][] {{7956, 1}, {989, 1}, {17043, 1}, {17175, 1},  {17321, 1}, {18332, 1}, {15026, 1}, {10696, 1}, {6199, 1}, {5022, 1}, {-1, 1}, {-1,-1 }, {-1,-1 }, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}}, 550),
 
@@ -66,9 +66,9 @@ public enum TeleportData {
 	 * Bosses
 	 */
 
-	TRUMP( 28307, 28307, 28307, 28231,"Donald Trump", "Donald Trump",
-			"@or1@Health:@whi@ 5,000","","",  TeleportCategory.BOSSES, new Position(3040, 2846, 0), 10, false, 250, -1,
-			new int[][] { {10946, 1}, {6833, 1}, {11763, 1}, {11764, 1},{11765, 1}, {11766, 1}, {11767, 1}, {18686, 1}, {18799,1}, {3318, 1}, {15418, 1}, {6199, 2}, {5022, 9}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},780),
+	HANTO( 28307, 28307, 28307, 28231,"Hanto Warriors", "Hanto Warriors",
+			"@or1@Health:@whi@ 5,000","","",  TeleportCategory.BOSSES, new Position(2849, 4576, 0), 10, false, 250, -1,
+			new int[][] { {10946, 1}, {6833, 1}, {11763, 1}, {11764, 1},{11765, 1}, {11766, 1}, {11767, 1}, {18686, 1}, {18799,1}, {3318, 1}, {15418, 1}, {6199, 2}, {5022, 9}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},880),
 
 	RADITZ( 28308, 28308, 28308, 28232, "Raditz", "Raditz",
 			"@or1@Health:@whi@ 10,000","","",  TeleportCategory.BOSSES, new Position(2911, 3991, 0), 10, false, 449, -1,

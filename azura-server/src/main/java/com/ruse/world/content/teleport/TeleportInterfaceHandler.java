@@ -93,33 +93,6 @@ public class TeleportInterfaceHandler {
 	}
 
 
-	public static void sendDrops(Player player, Box[] drops) {
-		try {
-			if (drops != null) {
-				int length = drops.length;
-				if (length >= 160)
-					length = 160;
-
-				length += 5 - (length % 5);
-				for (int i = 0; i < length + 5; i++) {
-					if (drops.length > i)
-						player.getPacketSender().sendItemOnInterface1(28229, drops[i].getId(), i,
-								drops[i].getAmount());
-					else
-						player.getPacketSender().sendItemOnInterface1(28229, -1, i,
-								0);
-				}
-				int scroll = 7 + (length / 5) * 35;
-				if (scroll <= 43)
-					scroll = 43;
-				player.getPacketSender().setScrollBar(122060, scroll);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
 	public void sendItemsOnInterface(TeleportData data1) {
 		player.getPA().sendScrollableItemsOnInterface(28229, data1.getItems());
 	}

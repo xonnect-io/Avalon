@@ -605,7 +605,7 @@ public class TeleportInterface {
 
 
     public enum Bosses implements Teleport {
-        TRUMP("Donald Trump", 250, new int[]{3040, 2846, 0}, 780),
+        HANTO("Hanto warrior", 250, new int[]{3040, 2846, 0}, 780),
         RADITZ("Raditz", 449, new int[]{2911, 3991, 0}, 780),
         GOKU("Goku", 452, new int[]{3358, 9307, 0}, 780),
         BOTANIC("Botanic Guardian", 2342, new int[]{2586, 9449, 0}, 1000),

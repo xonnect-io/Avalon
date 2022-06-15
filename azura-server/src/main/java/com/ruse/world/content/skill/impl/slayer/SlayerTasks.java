@@ -15,7 +15,7 @@ public enum SlayerTasks {
 	NO_TASK(null, -1, null, -1, null),
 
 	// Easy bosses
-	DONALD_TRUMP(SlayerMaster.BOSS_SLAYER, 250, "Donald Trump can be found by using the Teleport interface.", 350_000,
+	HANTO(SlayerMaster.BOSS_SLAYER, 250, "Hanto warrior can be found by using the Teleport interface.", 350_000,
 			new Position(3040, 2846, 0)),
 	RADITZ(SlayerMaster.BOSS_SLAYER, 449, "Raditz can be found by using the Teleport interface.", 350_000,
 			new Position(2911, 3911, 0)),

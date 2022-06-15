@@ -25,6 +25,8 @@ import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.range.DwarfMultiCannon;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.dialogue.impl.GuardianTokenExchange;
+import com.ruse.world.content.dialogue.impl.NephilimTokenExchange;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.holidayevents.christmas2016;
 import com.ruse.world.content.holidayevents.easter2017data;
@@ -184,25 +186,35 @@ public class ObjectActionPacketListener implements PacketListener {
 
 
                             case 22099:
-                                if (player.getRights() == PlayerRights.SAPPHIRE_DONATOR)
+                                if (player.getRights() == PlayerRights.SAPPHIRE_DONATOR || player.getRights() == PlayerRights.EMERALD_DONATOR
+                                || player.getRights() == PlayerRights.RUBY_DONATOR || player.getRights() == PlayerRights.DIAMOND_DONATOR
+                                || player.getRights() == PlayerRights.ONYX_DONATOR || player.getRights() == PlayerRights.ZENYTE_DONATOR
+                                || player.getRights() == PlayerRights.TANZANITE_DONATOR)
                                     Stalls.stealFromAFKStall(player, id, 1);
                                 break;
                             case 22098:
-                                if (player.getRights() == PlayerRights.EMERALD_DONATOR)
+                                if (player.getRights() == PlayerRights.EMERALD_DONATOR || player.getRights() == PlayerRights.RUBY_DONATOR
+                                    || player.getRights() == PlayerRights.DIAMOND_DONATOR || player.getRights() == PlayerRights.ONYX_DONATOR
+                                    || player.getRights() == PlayerRights.ZENYTE_DONATOR || player.getRights() == PlayerRights.TANZANITE_DONATOR)
                                     Stalls.stealFromAFKStall(player, id, 2);
                                 break;
                             case 22097:
-                                if (player.getRights() == PlayerRights.RUBY_DONATOR)
+                                if (player.getRights() == PlayerRights.RUBY_DONATOR || player.getRights() == PlayerRights.DIAMOND_DONATOR
+                                        || player.getRights() == PlayerRights.ONYX_DONATOR || player.getRights() == PlayerRights.ZENYTE_DONATOR
+                                        || player.getRights() == PlayerRights.TANZANITE_DONATOR)
                                     Stalls.stealFromAFKStall(player, id, 3);
                                 break;
                             case 8455:
-                                if (player.getRights() == PlayerRights.DIAMOND_DONATOR)
+                                if (player.getRights() == PlayerRights.DIAMOND_DONATOR|| player.getRights() == PlayerRights.ONYX_DONATOR
+                                        || player.getRights() == PlayerRights.ZENYTE_DONATOR || player.getRights() == PlayerRights.TANZANITE_DONATOR)
                                     Stalls.stealFromAFKStall(player, id, 4);
                                 break;
                             case 8456:
-                                if (player.getRights() == PlayerRights.ONYX_DONATOR)
+                                if (player.getRights() == PlayerRights.ONYX_DONATOR || player.getRights() == PlayerRights.ZENYTE_DONATOR
+                                        || player.getRights() == PlayerRights.TANZANITE_DONATOR)
                                     Stalls.stealFromAFKStall(player, id, 5);
                                 break;
+
                             case 41204:
                                 player.setOpenedTeleports(true);
                                 TeleportInterface.sendMinigameData(player, TeleportInterface.Minigames.values()[0]);
@@ -285,6 +297,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                         player.sendMessage("You must be in a party to start the Raid.");
                                     }
                                 }
+                                break;
+
+                            case 4004:
+                                DialogueManager.start(player, GuardianTokenExchange.getDialogue(player));
                                 break;
                             case 31435:
                                 if (player.getLocation() == Location.ZOMBIE) {

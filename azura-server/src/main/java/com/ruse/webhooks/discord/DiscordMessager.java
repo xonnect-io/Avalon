@@ -652,10 +652,6 @@ public class DiscordMessager extends JSONObject {
 	public static void sendDonationBossLog(String msg) {
 		try {
 
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
 			String webhook = "https://discord.com/api/webhooks/964275725811216436/76LexWSyaeqVPZQeOztYbZOb8ooloMwMGt5AZQsMvMAtLZfzQPhTqoyGGfyuz2mEVGdY";
 
 			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
@@ -681,11 +677,7 @@ public class DiscordMessager extends JSONObject {
 
 	public static void sendNephilimBossLog(String msg) {
 		try {
-/*
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-*/
+
 			String webhook = "https://discord.com/api/webhooks/979831153437573182/AhW0QaaFyvU7NzpzJ2jut2FxfT8cPz0vVsRxppN4RjwzPkTo26PKrx3wmhPHCliJudbM";
 
 			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
@@ -713,10 +705,6 @@ public class DiscordMessager extends JSONObject {
 	public static void sendVoteBossLog(String msg) {
 		try {
 
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
 			String webhook = "https://discord.com/api/webhooks/963120303133835334/0y0GdPvBsQcMz8P889Z83R74luopoF9G-wPsJam4hEtuWu5FMB2hMJWS4JPcFvldm_7g";
 
 
@@ -741,10 +729,6 @@ public class DiscordMessager extends JSONObject {
 	}
 	public static void sendAnnouncement(String msg) {
 		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
 
 			String webhook = "https://discordapp.com/api/webhooks/264978407408795648/xEBWbkd51PIrM_Bv8xuYCWnTWonLAbVGcz_mNH62m0xfwSFnc62To2u_Q82vcp2G_oEo";
 
@@ -780,10 +764,6 @@ public class DiscordMessager extends JSONObject {
 	public static void sendStaffMessage(String msg) {
 		try {
 
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
 			String webhook = "https://discordapp.com/api/webhooks/264978499528294420/XXkZF8s6k3f5MTgvJ8mAiok3W_ushBbSVaFfbo1UULqvmFtYfw0KNJFSpA85gh3Y7gws";
 
 			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
@@ -818,9 +798,6 @@ public class DiscordMessager extends JSONObject {
 	public static void sendChatMessage(String msg) {
 		try {
 
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
 
 			String webhook = "https://discordapp.com/api/webhooks/299740022821879811/73pNXpfq3kMJSR6UNgMZqyWwPebyaYT4A_WAdwihXJNooKzPwdwgbAs8eDb3S2Jf5HAY";
 
@@ -856,9 +833,6 @@ public class DiscordMessager extends JSONObject {
 	public static void sendClanMessage(String msg) {
 		try {
 
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
 
 			String webhook = "https://discordapp.com/api/webhooks/299784483404644353/3M1Z_qzhen3C9FwDQXJeJ5NTzGTIYGkJBUo4jIucIJogJaLmXC8ukLhbloziNisZmiaN";
 
@@ -894,9 +868,6 @@ public class DiscordMessager extends JSONObject {
 	public static void sendPrivateMessage(String msg) {
 		try {
 
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
 
 			String webhook = "https://discordapp.com/api/webhooks/299735829218066432/TuAXNO5mgU93wRMEjnCsDiUZD3uco0AlrpPMYWt3yXt4px-X9FvbbxDgTERqFWUBA19l";
 
@@ -931,10 +902,6 @@ public class DiscordMessager extends JSONObject {
 
 	public static void sendInGameMessage(String msg) {
 		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
 
 			String webhook = "https://discordapp.com/api/webhooks/264978586488930304/09Ondbuw6zvWtH9dltOZq30nLnRYp-y9xMPkPDa1xs4MyELl3kmftdiUFnyHzsx-ciGt";
 
@@ -975,10 +942,6 @@ public class DiscordMessager extends JSONObject {
 	public static void sendDebugMessage(String msg) {
 		try {
 
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
-
 			String webhook = "https://discordapp.com/api/webhooks/264978075513651221/4Qk7idRA2NbAmno_FOSmN8PH9D3_H4Un09eV3sg9Wx2TPOJjumuIFTi4dOprX_7cWmGa";
 
 			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
@@ -1013,10 +976,6 @@ public class DiscordMessager extends JSONObject {
 
 	public static void sendYellMessage(String msg) {
 		try {
-
-			if (Misc.checkForOwner() || !active) {
-				return;
-			}
 
 			String webhook = "https://discordapp.com/api/webhooks/265081936165339137/NisWUHGJ8gR-tINeMHMBjQ7H-EJ8b6DznSx75f_NokM5DbIUuo7S874Ah9u3r4FRPYEx";
 
@@ -1053,35 +1012,4 @@ public class DiscordMessager extends JSONObject {
 			e.printStackTrace();
 		}
 	}
-
-	/*
-	 * // System.out.println("test"); URL url = new URL(
-	 * "https://discordapp.com/api/webhooks/264884075129470976/NvJNe980SYO3DKjOPxoJRx9ew6Y9T6jYxteG_HOZ9zPNewCUj2vskZZMsjtzBiiOn75J"
-	 * ); HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-	 * conn.setDoOutput(true); conn.setRequestMethod("POST");
-	 * conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-	 * conn.setRequestProperty("Accept", "application/json; charset=UTF-8");
-	 *
-	 * JSONObject discord = new JSONObject();
-	 *
-	 * //ARGS: username, content, avatar_url, tts discord.put("username", "test");
-	 * discord.put("content",
-	 * "@everyone hallo it is me a fRIENDD!@@#!@#!@#!@#!@#!@#!@#!@#!@#");
-	 *
-	 * //discord.put("avatar_url", "http://i.imgur.com/4Da0jRZ.png");
-	 * //discord.put("tts", false);
-	 *
-	 * OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-	 * discord.write(wr); wr.flush();
-	 *
-	 * StringBuilder sb = new StringBuilder(); int HttpResult =
-	 * conn.getResponseCode(); if (HttpResult == HttpURLConnection.HTTP_OK) {
-	 * // System.out.println("HTTP = OK"); BufferedReader br = new BufferedReader( new
-	 * InputStreamReader(conn.getInputStream(), "utf-8")); String line = null; while
-	 * ((line = br.readLine()) != null) { sb.append(line + "\n"); } br.close();
-	 * // System.out.println("" + sb.toString()); } else {
-	 * // System.out.println("HTTP = NOT OK");
-	 * // System.out.println(conn.getResponseMessage()); }
-	 */
-
 }

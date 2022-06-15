@@ -16,12 +16,12 @@ public class SlayerDialogues {
 
 			@Override
 			public DialogueType type() {
-				return DialogueType.STATEMENT;
+				return DialogueType.NPC_STATEMENT;
 			}
 
 			@Override
 			public int npcId() {
-				return player.getSlayer().getSlayerMaster().getNpcId();
+				return 925;
 			}
 
 			@Override

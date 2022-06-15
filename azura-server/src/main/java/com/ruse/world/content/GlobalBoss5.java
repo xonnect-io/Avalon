@@ -127,7 +127,7 @@ public class GlobalBoss5 {
                 }
                 if (!GameSettings.LOCALHOST)
                 World.sendBroadcastMessage("Ironman has appeared ::ironman");
-                GameSettings.broadcastMessage = message;
+                GameSettings.broadcastMessage = ("Ironman has appeared ::ironman");;
                 GameSettings.broadcastTime = 100;
 
             }

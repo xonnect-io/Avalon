@@ -3061,7 +3061,7 @@ public final class MobDefinition {
 			case 9012:
 				definition.name = "Fallen Angel";
 				MobDefinition lucifer = MobDefinition.get(2292);
-				definition.npcModels = new int[]{17049,17056,17061,17066,17097,17197,};
+				definition.npcModels = new int[]{17049,17056,17061,17066,17097,17197,17360};
 				definition.combatLevel = lucifer.combatLevel;
 				definition.standAnimation = lucifer.standAnimation;
 				definition.walkAnimation = lucifer.walkAnimation;
@@ -3069,8 +3069,8 @@ public final class MobDefinition {
 				definition.actions[0] = null;
 				definition.drawYellowDotOnMap = true;
 				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 225;
-				definition.scaleY = 225;
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
 				break;
 			case 9312:
 				definition.name = "Nephilim Warrior";
@@ -3449,9 +3449,9 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 			case 250:
-				definition.name = "Trump";
-				definition.description = "Trump himself.".getBytes();
-				definition.npcModels = new int[]{15161,15164,15167,15169,15170};
+				definition.name = "Hanto warrior";
+				definition.description = "Hanto warriors are part of the samurai clan.".getBytes();
+				definition.npcModels = new int[]{18693,18704,18695,15169,15170};
 				definition.combatLevel = 100;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;

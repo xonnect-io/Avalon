@@ -765,20 +765,6 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
-			case 17702:
-				itemDef.name = "Trump claws";
-				itemDef.modelID = 64046;
-				itemDef.maleEquip1 = 64047;
-				itemDef.femaleEquip1 = 64047;
-				def = ItemDefinition.get(20562);
-				itemDef.modelOffsetX = def.modelOffsetX;
-				itemDef.modelOffsetY = def.modelOffsetY;
-				itemDef.modelZoom = def.modelZoom;
-				itemDef.rotationY = def.rotationY;
-				itemDef.rotationX = def.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.stackable = false;
-				break;
 			case 17704:
 				itemDef.name = "Astrogun (Halo)";
 				itemDef.modelID = 64048;

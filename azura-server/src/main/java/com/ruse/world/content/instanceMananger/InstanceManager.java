@@ -182,7 +182,6 @@ public class InstanceManager {
 				player.getCurrentInstanceAmount() == 20 || player.getCurrentInstanceAmount() == 10) {
 			player.getPA().sendMessage("You currently need to kill " + player.getCurrentInstanceAmount() + " " + NpcName);
 		}
-		player.getPA().sendMessage("You currently need to kill " + player.getCurrentInstanceAmount() + " " + NpcName);
 
 		if (player.getCurrentInstanceAmount() <= 0) {
 
