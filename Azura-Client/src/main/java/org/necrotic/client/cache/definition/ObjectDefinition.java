@@ -232,9 +232,6 @@ public final class ObjectDefinition {
 			definition.name = "AFK Ruby";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
-		if (definition.type == 4004) {
-			definition.actions = new String[]{"Sacrifice", null, null, null, null};
-		}
 		if (definition.type == 8455) {
 			definition.objectModelIDs = new int[]{15580};
 			definition.name = "AFK Diamond";
@@ -246,6 +243,17 @@ public final class ObjectDefinition {
 			definition.name = "AFK Onyx";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
+
+
+		if (definition.type == 22769) {
+			definition.objectModelIDs = new int[]{18796};
+			definition.name = "AFK Tanzanite"; //#7a37b3
+			definition.actions = new String[]{"Mine", null, null, null, null};
+		}
+		if (definition.type == 4004) {
+			definition.actions = new String[]{"Sacrifice", null, null, null, null};
+		}
+
 		
 		if (definition.type == 2469) {
 			definition.actions = new String[]{"Advance", "Back", null, null, null};

@@ -31,6 +31,7 @@ import com.ruse.world.content.KillsTracker.KillsEntry;
 import com.ruse.world.content.LoyaltyProgramme.LoyaltyTitles;
 import com.ruse.world.content.StarterTasks.StarterTaskAttributes;
 import com.ruse.world.content.achievement.AchievementHandler;
+import com.ruse.world.content.bis.BestItems;
 import com.ruse.world.content.bossEvents.BossEventData;
 import com.ruse.world.content.casketopening.CasketOpening;
 import com.ruse.world.content.clan.ClanChat;
@@ -482,6 +483,7 @@ public class Player extends Character {
     private int afkDiamond;
     private int afkOnyx;
     private int afkZenyte;
+    private int afkTanzanite;
     @Getter
     @Setter
     private int godModeTimer;
@@ -825,6 +827,13 @@ public class Player extends Character {
     public void setAfkZenyte(int afkZenyte) {
         this.afkZenyte = afkZenyte;
     }
+
+    public int getAfkTanzanite() { return afkTanzanite;
+    }
+    public void setAfkTanzanite(int afkTanzanite) {
+        this.afkTanzanite = afkTanzanite;
+    }
+
 
     public GoodieBag getGoodieBag() {
         return goodieBag;

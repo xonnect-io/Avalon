@@ -5,7 +5,7 @@ import com.ruse.model.Position;
 import com.ruse.model.input.EnterAmount;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
-import com.ruse.world.content.NephilimSpawnSystem;
+import com.ruse.world.content.globalBosses.NephilimSpawnSystem;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 public class SpawnNephilimBoss extends EnterAmount {

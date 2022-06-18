@@ -21,59 +21,129 @@ public class CustomDropUtils {
      */
     public static int drBonus(Player player, int npc) {
         int percentBoost = 0;
-        if (player.getEquipment().contains(23044)) { //Tier 1 Aura
-            percentBoost += 5;
+        //Auras
+
+        if (player.getEquipment().contains(23271)) { //Celestial Aura
+            percentBoost += 60;
         }
-        if (player.getEquipment().contains(23045)) { //Tier 2 Aura
-            percentBoost += 7;
+        if (player.getEquipment().contains(23241)) { //Owner's Aura (u)
+            percentBoost += 45;
         }
-        if (player.getEquipment().contains(23046)) { //Tier 3 Aura
-            percentBoost += 10;
+        if (player.getEquipment().contains(22111)) { //Owner's Aura (u)
+            percentBoost += 35;
         }
-        if (player.getEquipment().contains(23047)) { //Tier 4 Aura
-            percentBoost += 15;
-        }
-        if (player.getEquipment().contains(23048)) { //Tier 5 Aura
-            percentBoost += 20;
+        if (player.getEquipment().contains(12630)) { //Donator's Aura
+            percentBoost += 25;
         }
         if (player.getEquipment().contains(23049)) { //Tier 6 Aura
             percentBoost += 20;
         }
+        if (player.getEquipment().contains(23048)) { //Tier 5 Aura
+            percentBoost += 16;
+        }
+        if (player.getEquipment().contains(23047)) { //Tier 4 Aura
+            percentBoost += 13;
+        }
+        if (player.getEquipment().contains(15449)) { //Extreme Aura
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(15450)) { //Extreme Aura
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(4373)) { //Elite winged Aura
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23046)) { //Tier 3 Aura
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23045)) { //Tier 2 Aura
+            percentBoost += 6;
+        }
+        if (player.getEquipment().contains(12608)) { //Tier 1 Aura
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(23044)) { //Tier 1 Aura
+            percentBoost += 3;
+        }
 
-        if (player.getEquipment().contains(22100)) {
+        //End Auras
+
+        //Start Rings
+
+        if (player.getEquipment().contains(23280)) { //Celestial ring
+            percentBoost += 75;
+        }
+
+        if (player.getEquipment().contains(23280)) { //Owner ring (u)
+            percentBoost += 60;
+        }
+        if (player.getEquipment().contains(23280)) { //Owner ring
+            percentBoost += 50;
+        }
+        if (player.getEquipment().contains(232588)) { //Plutonic ring
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(18818)) { //Collecter ring III
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(20093)) { //Cursed ring
             percentBoost += 20;
         }
-
-        if (player.getEquipment().contains(23092)
-                || player.getEquipment().contains(23093)
-                || player.getEquipment().contains(23094)) {// valor rings
+        if (player.getEquipment().contains(18823)) { //Collecter ring II
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(8335)) { //Art's ring
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(4446)) { //Collecter ring I
             percentBoost += 10;
         }
-
-        if(player.getLocation() == Locations.Location.SAPPHIRE_ZONE
-                || player.getLocation() == Locations.Location.EMERALD_ZONE
-                || player.getLocation() == Locations.Location.RUBY_ZONE
-                || player.getLocation() == Locations.Location.DIAMOND_ZONE
-                || player.getLocation() == Locations.Location.ZENYTE_ZONE) {
+        if (player.getEquipment().contains(3324)) { //Ring of wealth(i)
             percentBoost += 10;
-
         }
-        // creator set:
-        if (player.getEquipment().contains(23127))
-            percentBoost += 4;
-        if (player.getEquipment().contains(23128))
-            percentBoost += 4;
-        if (player.getEquipment().contains(23129))
-            percentBoost += 4;
-        if (player.getEquipment().contains(23130))
-            percentBoost += 3;
-        if (player.getEquipment().contains(23131))
-            percentBoost += 3;
-        if (player.getEquipment().contains(23132))
-            percentBoost += 3;
-        if (player.getEquipment().contains(23133))
-            percentBoost += 4;
-		//
+        if (player.getEquipment().contains(2572)) { //Ring of wealth(i)
+            percentBoost += 5;
+        }
+        //End rings
+
+        // Start boots
+
+        if (player.getEquipment().contains(23285)) { //Avalon boots
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(23224)) { //Nephilim boots
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(22103)) { //Fallen Angel's boots
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23263)) { //Reapers boots
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23263)) { //Reapers boots
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(18887)) { //Colossal boots
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(18881)) { //Deity boots
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(9058)) { //Creeper boots
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(21612)) { //Custom extreme boots
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(20089)) { //Cursed boots
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(8274)) { //Legends boots
+            percentBoost += 10;
+        }
+        //End boots
+
+
 
         if (npc == player.getSlayer().getSlayerTask().getNpcId()) {
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23071) {

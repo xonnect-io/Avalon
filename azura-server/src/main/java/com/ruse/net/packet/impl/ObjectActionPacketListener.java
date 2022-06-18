@@ -183,38 +183,59 @@ public class ObjectActionPacketListener implements PacketListener {
                             }
                         }
                         switch (id) {
-
-
                             case 22099:
                                 if (player.getRights() == PlayerRights.SAPPHIRE_DONATOR || player.getRights() == PlayerRights.EMERALD_DONATOR
                                 || player.getRights() == PlayerRights.RUBY_DONATOR || player.getRights() == PlayerRights.DIAMOND_DONATOR
                                 || player.getRights() == PlayerRights.ONYX_DONATOR || player.getRights() == PlayerRights.ZENYTE_DONATOR
-                                || player.getRights() == PlayerRights.TANZANITE_DONATOR)
-                                    Stalls.stealFromAFKStall(player, id, 1);
+                                || player.getRights() == PlayerRights.TANZANITE_DONATOR || player.getRights().isStaff())
+                                    Mining.mineAfkRock(player, id, 1);
+                                else
+                                    player.getPacketSender().sendMessage("You need to be a Sapphire Donator to afk this rock. Your current rank is " + player.getRights());
                                 break;
                             case 22098:
                                 if (player.getRights() == PlayerRights.EMERALD_DONATOR || player.getRights() == PlayerRights.RUBY_DONATOR
                                     || player.getRights() == PlayerRights.DIAMOND_DONATOR || player.getRights() == PlayerRights.ONYX_DONATOR
-                                    || player.getRights() == PlayerRights.ZENYTE_DONATOR || player.getRights() == PlayerRights.TANZANITE_DONATOR)
-                                    Stalls.stealFromAFKStall(player, id, 2);
+                                    || player.getRights() == PlayerRights.ZENYTE_DONATOR || player.getRights() == PlayerRights.TANZANITE_DONATOR
+                                        || player.getRights().isStaff())
+                                    Mining.mineAfkRock(player, id, 2);
+                                else
+                                    player.getPacketSender().sendMessage("You need to be a Emerald Donator to afk this rock. Your current rank is " + player.getRights());
                                 break;
                             case 22097:
                                 if (player.getRights() == PlayerRights.RUBY_DONATOR || player.getRights() == PlayerRights.DIAMOND_DONATOR
                                         || player.getRights() == PlayerRights.ONYX_DONATOR || player.getRights() == PlayerRights.ZENYTE_DONATOR
-                                        || player.getRights() == PlayerRights.TANZANITE_DONATOR)
-                                    Stalls.stealFromAFKStall(player, id, 3);
+                                        || player.getRights() == PlayerRights.TANZANITE_DONATOR || player.getRights().isStaff())
+                                    Mining.mineAfkRock(player, id, 3);
+                                else
+                                    player.getPacketSender().sendMessage("You need to be a Ruby Donator to afk this rock. Your current rank is " + player.getRights());
                                 break;
                             case 8455:
                                 if (player.getRights() == PlayerRights.DIAMOND_DONATOR|| player.getRights() == PlayerRights.ONYX_DONATOR
-                                        || player.getRights() == PlayerRights.ZENYTE_DONATOR || player.getRights() == PlayerRights.TANZANITE_DONATOR)
-                                    Stalls.stealFromAFKStall(player, id, 4);
+                                        || player.getRights() == PlayerRights.ZENYTE_DONATOR || player.getRights() == PlayerRights.TANZANITE_DONATOR
+                                        || player.getRights().isStaff())
+                                    Mining.mineAfkRock(player, id, 4);
+                                else
+                                    player.getPacketSender().sendMessage("You need to be a Diamond Donator to afk this rock. Your current rank is " + player.getRights());
                                 break;
                             case 8456:
                                 if (player.getRights() == PlayerRights.ONYX_DONATOR || player.getRights() == PlayerRights.ZENYTE_DONATOR
-                                        || player.getRights() == PlayerRights.TANZANITE_DONATOR)
-                                    Stalls.stealFromAFKStall(player, id, 5);
+                                        || player.getRights() == PlayerRights.TANZANITE_DONATOR || player.getRights().isStaff())
+                                    Mining.mineAfkRock(player, id, 5);
+                                else
+                                    player.getPacketSender().sendMessage("You need to be a Onyx Donator to afk this rock. Your current rank is " + player.getRights());
                                 break;
-
+                            case 8457:
+                                if (player.getRights() == PlayerRights.ZENYTE_DONATOR || player.getRights() == PlayerRights.TANZANITE_DONATOR || player.getRights().isStaff())
+                                    Mining.mineAfkRock(player, id, 6);
+                                else
+                                    player.getPacketSender().sendMessage("You need to be a Zenyte Donator to afk this rock. Your current rank is " + player.getRights());
+                                break;
+                            case 22769:
+                                if (player.getRights() == PlayerRights.TANZANITE_DONATOR || player.getRights().isStaff())
+                                    Mining.mineAfkRock(player, id, 7);
+                                else
+                                    player.getPacketSender().sendMessage("You need to be a Tanzanite Donator to afk this rock. Your current rank is " + player.getRights());
+                                break;
                             case 41204:
                                 player.setOpenedTeleports(true);
                                 TeleportInterface.sendMinigameData(player, TeleportInterface.Minigames.values()[0]);

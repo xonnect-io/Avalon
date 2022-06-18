@@ -28,6 +28,10 @@ import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.*;
 import com.ruse.world.content.PlayerPunishment.Jail;
+import com.ruse.world.content.afk.AfkSystem;
+import com.ruse.world.content.bis.BestDRItemsInterface;
+import com.ruse.world.content.bis.BestItemsInterface;
+import com.ruse.world.content.cardPack.cardPackInterfaceHandler;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
@@ -37,11 +41,11 @@ import com.ruse.world.content.combat.Maxhits;
 import com.ruse.world.content.combat.magic.Autocasting;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
-import com.ruse.world.content.combat.range.ToxicBlowpipe;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dailyTask.DailyTaskHandler;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.holidayevents.easter2017;
@@ -53,6 +57,7 @@ import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.randomevents.EvilTree;
 import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.randomevents.ShootingStar;
+import com.ruse.world.content.seasonpass.SeasonPass;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.SkillManager;
@@ -125,16 +130,23 @@ public class CommandPacketListener implements PacketListener {
             BestDRItemsInterface.openInterface(player, 0);
         }
 
+        if (command[0].equalsIgnoreCase("seasonpass")) {
+           new SeasonPass(player).openInterface();
+        }
+
+        if (command[0].equalsIgnoreCase("cp")) {
+            cardPackInterfaceHandler.openInterface(player);
+        }
         if (command[0].equalsIgnoreCase("globals")) {
-            player.getPacketSender().sendMessage("Tribal Goblin: @red@" + AfkSystem.getLeft() + " Steals left.");
-            player.getPacketSender().sendMessage("Hellraiser: @red@" + HellraiserSystem.getLeft() + " kills left.");
-            player.getPacketSender().sendMessage("Vote Boss: @red@" + doMotivote.getVoteCount() + "/60 please vote!");
-            player.getPacketSender().sendMessage("Dragon King: @red@" + GlobalBoss4.timeLeft());
-            player.getPacketSender().sendMessage("Nightmare boss: @red@" + GlobalBoss2.timeLeft());
-            player.getPacketSender().sendMessage("Naraku boss: boss: @red@" + GlobalBoss3.timeLeft());
-            player.getPacketSender().sendMessage("Ironman boss: boss: boss: @red@" + GlobalBoss5.timeLeft());
-            player.getPacketSender().sendMessage("Avalon Guardian @red@" + GuardianSpawnSystem.getLeft()  + " tickets left");
-            player.getPacketSender().sendMessage("Nephilim @red@" + NephilimSpawnSystem.getLeft()  + " tokens left");
+            player.getPacketSender().sendMessage("@red@<shad=1>Tribal Goblin: @yel@" + AfkSystem.getLeft() + " Steals left.");
+            player.getPacketSender().sendMessage("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft() + " kills left.");
+            player.getPacketSender().sendMessage("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount() + "/60 please vote!");
+            player.getPacketSender().sendMessage("@red@<shad=1>Dragon King: @yel@" + DragonKingBoss.timeLeft());
+            player.getPacketSender().sendMessage("@red@<shad=1>Nightmare boss: @yel@" + NightmareBoss.timeLeft());
+            player.getPacketSender().sendMessage("@red@<shad=1>Naraku boss: boss: @yel@" + NarakuBoss.timeLeft());
+            player.getPacketSender().sendMessage("@red@<shad=1>Ironman boss: boss: boss: @yel@" + IronmanBoss.timeLeft());
+            player.getPacketSender().sendMessage("@red@<shad=1>Avalon Guardian @yel@" + GuardianSpawnSystem.getLeft()  + " tickets left");
+            player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft()  + " tokens left");
         }
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
                 || command[0].equalsIgnoreCase("start") || command[0].equalsIgnoreCase(
@@ -1694,8 +1706,9 @@ public class CommandPacketListener implements PacketListener {
             AfkSystem.executeSpawn();
         }
 
-        if (command[0].equals("addvotes")) {
-            player.setVoteCount(doMotivote.getVoteCount() + 20);
+        if (command[0].equals("spawnvoteboss")) {
+            doMotivote.setVoteCount(60);
+            VoteBossDrop.handleSpawn();
         }
 
         if (command[0].equalsIgnoreCase("delete")) {
@@ -2479,7 +2492,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position[] locations = new Position[]{new Position(2594, 2658, 0)};
+            Position[] locations = new Position[]{new Position(2721, 4842, 0)};
             Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
             TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
@@ -2770,11 +2783,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("a") && player.getUsername().equalsIgnoreCase("test")) {
             GameSettings.players = Integer.parseInt(command[1]);
         }
-        if (command[0].equalsIgnoreCase("spawnvote")) {
-            VoteBossDrop.handleForcedSpawn();
-            player.getPacketSender().sendMessage("Spawning vote boss.");
 
-        }
         if (command[0].equalsIgnoreCase("a1") && player.getUsername().equalsIgnoreCase("test")) {
             player.sendMessage("A: " + GameSettings.players);
         }
@@ -3244,84 +3253,14 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Saved all players.");
 
         }
-        if (command[0].equalsIgnoreCase("test")) {
-            player.getPA().sendNpcIdToDisplayPacket(100, 37416);
-            // GrandExchange.open(player);
-        }
-        if (command[0].equalsIgnoreCase("frame")) {
-            int frame = Integer.parseInt(command[1]);
-            String text = command[2];
-            player.getPacketSender().sendString(frame, text);
-        }
+
         if (command[0].equalsIgnoreCase("npc")) {
             int id = Integer.parseInt(command[1]);
             NPC npc = new NPC(id, new Position(player.getPosition().getX(), player.getPosition().getY(),
                     player.getPosition().getZ()));
             World.register(npc);
-            //npc.setEntityInteraction(player);
-            // npc.getCombatBuilder().attack(player);
-            // player.getPacketSender().sendEntityHint(npc);
-            /*
-             * TaskManager.submit(new Task(5) {
-             *
-             * @Override protected void execute() { npc.moveTo(new
-             * Position(npc.getPosition().getX() + 2, npc.getPosition().getY() + 2));
-             * player.getPacketSender().sendEntityHintRemoval(false); stop(); }
-             *
-             * });
-             */
-            // npc.getMovementCoordinator().setCoordinator(new
-            // Coordinator().setCoordinate(true).setRadius(5));
         }
-        if (command[0].equalsIgnoreCase("np")) {
-            int amt = Integer.parseInt(command[1]);
-            int id = Integer.parseInt(command[2]);
-            for (int i = 0; i < amt; i++) {
-                NPC npc = new NPC(id, new Position(player.getPosition().getX(), player.getPosition().getY(),
-                        player.getPosition().getZ()));
-                World.register(npc);
-                npc.setConstitution(20000);
-                npc.setEntityInteraction(player);
-            }
-        }
-        /*
-         * So... this command actually works, but I'm a dipshit and needs to be done
-         * client sided. lol. also do without fancy list
-         *
-         *
-         * if (command[0].equalsIgnoreCase("dumpmobdef")) { int id =
-         * Integer.parseInt(command[1]); MobDefinition def;
-         *
-         * if (MobDefinition.get(id) != null) { def = MobDefinition.get(id); } else {
-         * player.getPacketSender().sendMessage("The mob definition was null."); return;
-         * }
-         *
-         * ArrayList<String> list = new ArrayList<String>();
-         * list.add("MobDefinition Dump for NPCid: "+id); if (def.name != null) {
-         * list.add("name: "+def.name); } else { list.add("name: null"); }
-         * list.add("combatLevel: "+def.combatLevel);
-         * list.add("degreesToTurn: "+def.degreesToTurn);
-         * list.add("headIcon: "+def.headIcon);
-         * list.add("npcSizeInSquares: "+def.npcSizeInSquares);
-         * list.add("standAnimation: "+def.standAnimation);
-         * list.add("walkAnimation: "+def.walkAnimation);
-         * list.add("walkingBackwardsAnimation: "+def.walkingBackwardsAnimation);
-         * list.add("walkLeftAnimation: "+def.walkLeftAnimation);
-         * list.add("walkRightAnimation: "+def.walkRightAnimation); for (int i = 0; i >
-         * def.actions.length; i++) { if (def.actions[i] != null) {
-         * list.add("actions["+i+"]: "+def.actions[i]); } else {
-         * list.add("actions["+i+"]: null"); } } for (int i = 0; i >
-         * def.childrenIDs.length; i++) {
-         * list.add("childrenIds["+i+"]: "+def.childrenIDs[i]); } if (def.description !=
-         * null) { list.add("description: "+def.description.toString()); }
-         * list.add("disableRightClick: "+def.disableRightClick);
-         * list.add("drawYellowDotOnMap: "+def.drawYellowDotOnMap); for (int i = 0; i >
-         * def.npcModels.length; i++) { list.add("npcModels["+i+"]: "+def.npcModels[i]);
-         * } list.add("visibilityOrRendering: "+def.visibilityOrRendering);
-         *
-         * for (String string : list) { // System.out.println(string); } //
-         * System.out.println("---Dump Complete---"); list.clear(); }
-         */
+
         if (command[0].equalsIgnoreCase("skull")) {
             if (player.getSkullTimer() > 0) {
                 player.setSkullTimer(0);
@@ -3340,7 +3279,7 @@ public class CommandPacketListener implements PacketListener {
             }
 
             while (player.getInventory().getFreeSlots() > 0) { // why 22052? Fuck you. that's why.
-                int it = Misc.inclusiveRandom(1, 22052);
+                int it = Misc.inclusiveRandom(8323, 8332);
                 if (ItemDefinition.forId(it) == null || ItemDefinition.forId(it).getName() == null
                         || ItemDefinition.forId(it).getName().equalsIgnoreCase("null")) {
                     continue;

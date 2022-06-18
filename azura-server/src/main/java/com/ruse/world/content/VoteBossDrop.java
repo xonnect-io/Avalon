@@ -27,26 +27,12 @@ public class VoteBossDrop {
 			}
 			players.getPacketSender().sendBroadCastMessage("Vote boss has spawned at ::Vboss", 100);
 		}
-		World.sendBroadcastMessage("@bla@Vote boss has spawned at ::Vboss");
+		World.sendBroadcastMessage("Vote boss has spawned at ::Vboss");
 		World.sendMessage(
 				"<img=28><shad=f9f6f6>Vote boss has spawned at ::Vboss <shad=-1>");
 		DiscordMessager.sendVoteBossLog("");
 	}
 
-	public static void handleForcedSpawn() {
-		if (currentSpawn != null){
-			System.out.println("Already spawned.");
-			return;
-		}
-
-		//doMotivote.setVoteCount(doMotivote.getVoteCount() - 50);
-		currentSpawn = new NPC(8013, new Position(2848, 4577, 0));
-
-		World.register(currentSpawn);
-		World.sendMessage(
-				"<img=28><shad=f9f6f6>Vote boss has spawned at ::voteboss kill it now for amazing rewards!<shad=-1>");
-		DiscordMessager.sendVoteBossLog("Vote boss has spawned at ::voteboss kill it now for amazing rewards!");
-	}
 	
 	public static void handleDrop(NPC npc) {
 		if (npc.getCombatBuilder().getDamageMap().size() == 0) {

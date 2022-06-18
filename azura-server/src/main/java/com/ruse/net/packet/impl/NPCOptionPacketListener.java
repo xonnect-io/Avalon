@@ -898,7 +898,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
 
                     case Genie.genieID:
-                        Genie.handleInteraction(npc, player, 2);
+                        Genie.despawn(npc);
                         break;
 
                     case 568:

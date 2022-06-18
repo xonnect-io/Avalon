@@ -11,7 +11,8 @@ import com.ruse.motivote3.doMotivote;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
-import com.ruse.world.content.AfkSystem;
+import com.ruse.world.content.afk.AFKBossDrops;
+import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.StarterTasks.StarterTaskData;
 import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.bossEvents.BossEventHandler;
@@ -21,11 +22,8 @@ import com.ruse.world.content.combat.strategy.impl.Nex;
 import com.ruse.world.content.dailyTask.DailyTaskHandler;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.content.eventboss.EventBossDropHandler;
-import com.ruse.world.content.globalBoss.GlobalBoss;
-import com.ruse.world.content.globalBoss.GlobalBossHandler;
-import com.ruse.world.content.globalBoss.TheGeneral;
+import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.instanceMananger.InstanceManager;
-import com.ruse.world.content.minigames.impl.PyramidOutbreak;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -275,16 +273,22 @@ public class NPCDeathTask extends Task {
 
                         }
                         if (npc.getId() == 4972) {
-                            GlobalBoss4.handleDrop(npc);
+                            DragonKingBoss.handleDrop(npc);
                         }
                         if (npc.getId() == 587) {
-                            GlobalBoss5.handleDrop(npc);
+                            IronmanBoss.handleDrop(npc);
+                        }
+                        if (npc.getId() == 9318) {
+                            OnyxPantherBoss.handleDrop(npc);
+                        }
+                        if (npc.getId() == 9319) {
+                            ZenyteGolemBoss.handleDrop(npc);
                         }
                         if (npc.getId() == 9017) {
-                            GlobalBoss2.handleDrop(npc);
+                            NightmareBoss.handleDrop(npc);
                         }
                         if (npc.getId() == 3305) {
-                            GlobalBoss3.handleDrop(npc);
+                            NarakuBoss.handleDrop(npc);
                         }
                         if (npc.getId() == MerkSpawn.NPC_ID) {
                             MerkSpawn.handleDrop(npc);
@@ -292,9 +296,7 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == 187) {
                             HellraiserBossDrop.handleDrop(npc);
                         }
-                        if (npc.getId() == 7553) {
-                            TheGeneral.giveLoot(killer, npc);
-                        }
+
                         if (npc.getId() == Exoden.MINION_NPCID) {
                             Exoden.minions_dead = true;
                             Exoden.minions_spawned = false;

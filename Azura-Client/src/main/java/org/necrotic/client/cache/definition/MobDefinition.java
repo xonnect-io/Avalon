@@ -3128,6 +3128,21 @@ public final class MobDefinition {
 				definition.scaleXZ = 50;
 				definition.scaleY = 50;
 				break;
+
+			case 9319:
+				definition.name = "Zenyte Golem";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 170;
+				definition.scaleY = 170;
+				definition.npcModels = new int[1];
+				definition.npcModels[0] = 100027;
+				definition.drawYellowDotOnMap = true;
+				break;
+
 			case 9017:
 				definition.name = "Nightmare Boss";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -3393,6 +3408,18 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 
+			case 9318:
+				definition.name = "Onyx Panther";
+				definition.description = "Onyx Donator boss.".getBytes();
+				definition.npcModels = new int[]{18788,18790,18789,18792,18795};
+				definition.combatLevel = 300;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 180;
+				definition.scaleY = 180;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				break;
+
 			case 9313:
 				definition.name = "Suffered Soul";
 				definition.description = "Goku.".getBytes();
@@ -3451,7 +3478,7 @@ public final class MobDefinition {
 			case 250:
 				definition.name = "Hanto warrior";
 				definition.description = "Hanto warriors are part of the samurai clan.".getBytes();
-				definition.npcModels = new int[]{18693,18704,18695,15169,15170};
+				definition.npcModels = new int[]{18693,18704,18695,18793,15170}; //18795
 				definition.combatLevel = 100;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
@@ -3939,11 +3966,12 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = GF.description;
 				definition.drawYellowDotOnMap = true;
-				definition.npcModels = new int[]{16595};
+				definition.npcModels = new int[]{18719};
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
 				definition.degreesToTurn = 32;
 				break;
+
 			case 3830:
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.name = "Avalon Guardian";

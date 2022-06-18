@@ -5,6 +5,8 @@ import com.ruse.motivote3.doMotivote;
 import com.ruse.util.Misc;
 import com.ruse.util.StringUtils;
 import com.ruse.world.World;
+import com.ruse.world.content.afk.AfkSystem;
+import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
@@ -41,14 +43,14 @@ public class PlayerPanel {
                 (VoteBossDrop.currentSpawn == null
                         ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/60 please vote!"
                         : "Vote Boss:@whi@ Alive ::Vboss"),
-                (GlobalBoss4.currentBoss == null
-                ? "Dragon King: @whi@" + GlobalBoss4.timeLeft() : "Dragon King: @whi@Alive ::dk"),
-                (GlobalBoss2.currentBoss == null
-                ? "Nightmare boss: @whi@" + GlobalBoss2.timeLeft() : "Nightmare boss : @whi@Alive ::nm"),
-                (GlobalBoss3.currentBoss == null
-                ? "Naraku boss: @whi@" + GlobalBoss3.timeLeft() : "Naraku boss : @whi@Alive ::naraku"),
-                (GlobalBoss5.currentBoss == null
-                ? "Ironman boss: @whi@" + GlobalBoss5.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
+                (DragonKingBoss.currentBoss == null
+                ? "Dragon King: @whi@" + DragonKingBoss.timeLeft() : "Dragon King: @whi@Alive ::dk"),
+                (NightmareBoss.currentBoss == null
+                ? "Nightmare boss: @whi@" + NightmareBoss.timeLeft() : "Nightmare boss : @whi@Alive ::nm"),
+                (NarakuBoss.currentBoss == null
+                ? "Naraku boss: @whi@" + NarakuBoss.timeLeft() : "Naraku boss : @whi@Alive ::naraku"),
+                (IronmanBoss.currentBoss == null
+                ? "Ironman boss: @whi@" + IronmanBoss.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
                 "Avalon Guard: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
                 "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
                 "",

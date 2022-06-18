@@ -2055,21 +2055,21 @@ public class CustomInterfaces extends RSInterface {
 
 		interID = 101250;
 		RSInterface list = addTabInterface(interID);
-		list.totalChildren(60);
+		list.totalChildren(120);
 		list.height = 208;
 		list.width = 144 - 16;
 		list.scrollMax = 480;
 		id = interID + 1;
 		y = 0;
 		c = 0;
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 20; i++) {
 			addSpriteLoader(id, 1426);
 			list.child(c++, id++, 0, 0 + y);
 			y += 80;
 		}
 
 		y = 3;
-		for (int i = 0; i < 25; i++) {
+		for (int i = 0; i < 50; i++) {
 			dropGroup(id, 1, 1, 1, 1);
 			list.child(c++, id++, 1, y);
 			addClickableText(id, "Mystery box", "Select", tda, 1, 0xFF8900, false, true, 130);
@@ -5178,6 +5178,26 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		setBounds(3213, 0, 22, 4, rsi);
 	}
 
+	private void cardPack() {
+		final int STARTING_POINT = 73050;
+		RSInterface rsi = addInterface(STARTING_POINT);
+		RSInterface.addSprite(STARTING_POINT + 1, 1672);
+		addHoverButton(STARTING_POINT + 2, 55, 17, 17, "Close Window", 250, 5380, 3);
+		addHoveredButton(STARTING_POINT + 3, 90, 17, 17, 5379);
+		RSInterface.addText(STARTING_POINT + 4, "Card Pack", 0xff9b00, true, true, -1, tda, 2);
+		RSInterface.addButton(STARTING_POINT + 5, 1660, 1661, "Open Pack");
+		RSInterface.addText(STARTING_POINT + 6, "Open Pack", 0xff9b00, true, true, -1, tda, 2);
+
+		rsi.totalChildren(6);
+
+		setBounds(STARTING_POINT + 1, 125, 30, 0, rsi);
+		setBounds(STARTING_POINT + 2, 355, 33, 1, rsi);
+		setBounds(STARTING_POINT + 3, 355, 33, 2, rsi);
+		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
+		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
+		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
+	}
+
 	private void bountyInterface() {
 		RSInterface rsi = addInterface(42020);
 		RSInterface.addTransparentSprite(42021, 611, 611, 125);
@@ -7504,6 +7524,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		optionTab();
 		//settingsInterface();
 		bountyInterface();
+		cardPack();
 		sidebarInterfaces();
 		pouchCreation();
 		settingsInterface2();

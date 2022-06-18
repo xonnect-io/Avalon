@@ -9,7 +9,7 @@ public class SeasonPass {
 	private int tier;
 	private int xp;
 	private int SEASON = 1;
-	private int SEASON_ENDS = 1;
+	private int SEASON_ENDS = 14;
 	private boolean member;
 
 	public SeasonPass(Player player) {
@@ -20,8 +20,8 @@ public class SeasonPass {
 
 		player.getPacketSender().sendString(105007, "XP: " + getXp() + "/10");
 		player.getPacketSender().sendString(105008, "" + getTier());
-		player.getPacketSender().sendString(105009, "SEASON " + getTier());
-		player.getPacketSender().sendString(105010, "Season Ends: " + getTier() + " days");
+		player.getPacketSender().sendString(105009, "SEASON " + SEASON);
+		player.getPacketSender().sendString(105010, "Season Ends: " + SEASON_ENDS + " days");
 
 		System.out.println("l: " + PassRewards.goldRewards[1].getId());
 		int index = 0;

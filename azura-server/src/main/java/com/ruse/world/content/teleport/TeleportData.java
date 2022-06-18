@@ -4,6 +4,8 @@ import com.ruse.GameSettings;
 import com.ruse.model.Position;
 import com.ruse.motivote3.doMotivote;
 import com.ruse.world.content.*;
+import com.ruse.world.content.afk.AfkSystem;
+import com.ruse.world.content.globalBosses.*;
 
 /**
  * The teleport data.
@@ -198,18 +200,18 @@ public enum TeleportData {
 
 
 	NIGHTMARE(28310, 28310, 28310, 28234, "Nightmare", "Nightmare",
-			"@or1@Health:@whi@ 300,000,000","@or1@To Spawn: @whi@" + (GlobalBoss2.currentBoss == null
-			?  GlobalBoss2.timeLeft() : "@whi@Alive ::nm"),"", TeleportCategory.GLOBALS, new Position(2980, 2771, 0), 79, false, 9017, -1,
+			"@or1@Health:@whi@ 300,000,000","@or1@To Spawn: @whi@" + (NightmareBoss.currentBoss == null
+			?  NightmareBoss.timeLeft() : "@whi@Alive ::nm"),"", TeleportCategory.GLOBALS, new Position(2980, 2771, 0), 79, false, 9017, -1,
 			new int[][] {{23229, 1}, {12855, 5000}, {5022, 1000},{989, 2},{10942, 1},{6769, 1},{10946, 1},{9084, 1},{10947, 1},{15290, 1}, {15289, 1}, {15288, 1}, {20488, 1}, {19114, 5}, {19115, 10}, {19116, 15}, {18719, 1}},1500),
 
 	NARAKU(28311, 28311, 28311, 28235, "Naraku", "Naraku",
-			"@or1@Health:@whi@ 300,000,000","@or1@To Spawn: @whi@" + (GlobalBoss3.currentBoss == null
-			?  GlobalBoss3.timeLeft() : "@whi@Alive ::naraku"),"", TeleportCategory.GLOBALS, new Position(3420, 9563, 0), 79, false, 3305, -1,
+			"@or1@Health:@whi@ 300,000,000","@or1@To Spawn: @whi@" + (NarakuBoss.currentBoss == null
+			?  NarakuBoss.timeLeft() : "@whi@Alive ::naraku"),"", TeleportCategory.GLOBALS, new Position(3420, 9563, 0), 79, false, 3305, -1,
 			new int[][] {{23229, 1}, {12855, 5000}, {5022, 1000},{989, 2},{6769, 1},{10946, 1},{17646, 1},{17648, 1},{17650, 1},{17684, 1}, {17676, 1}, {17672, 1}, {17660, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1350),
 
 	DRAGON_KING(28312, 28312, 28312, 28236, "Dragon King", "Dragon King",
-			"@or1@Health:@whi@ 300,000,000","@or1@To Spawn: @whi@" + (GlobalBoss4.currentBoss == null
-			?  GlobalBoss4.timeLeft() : "@whi@Alive ::dk"),"", TeleportCategory.GLOBALS, new Position(2139, 5019, 0), 79, false, 4972, -1,
+			"@or1@Health:@whi@ 300,000,000","@or1@To Spawn: @whi@" + (DragonKingBoss.currentBoss == null
+			?  DragonKingBoss.timeLeft() : "@whi@Alive ::dk"),"", TeleportCategory.GLOBALS, new Position(2139, 5019, 0), 79, false, 4972, -1,
 			new int[][] {{23229, 1}, {12855, 5000}, {5022, 1000},{989, 2},{20488, 10},{19114, 5},{10942, 1},{6769, 1},{10946, 1},{14176, 1}, {14172, 1}, {14174, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1800),
 
 	DONATION_BOSS(28313, 28313, 28313, 28237, "Avalon Guardian", "Avalon Guardian",
@@ -219,12 +221,22 @@ public enum TeleportData {
 			new int[][] {{23229, 2}, {19114, 2}, {11137, 10},{12855, 10_000},{15289, 1},{15288, 1},{15003, 1},{15002, 1},{10946, 1},{6769, 1}, {10942, 1}, {14999, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1900),
 
 	IRON(28314, 28314, 28314, 28238, "Iron", "Iron",
-			"@or1@Health:@whi@ 150,000,000","@or1@To Spawn: @whi@" + (GlobalBoss5.currentBoss == null
-			?  GlobalBoss5.timeLeft() : "Alive ::iron"),"", TeleportCategory.GLOBALS, new Position(3808, 2842, 0), 79, false, 587, -1,
+			"@or1@Health:@whi@ 150,000,000","@or1@To Spawn: @whi@" + (IronmanBoss.currentBoss == null
+			?  IronmanBoss.timeLeft() : "Alive ::iron"),"", TeleportCategory.GLOBALS, new Position(3808, 2842, 0), 79, false, 587, -1,
 			new int[][] {{12855, 10_000}, {5022, 10_000}, {19000, 10},{15289, 1},{15289, 1},{15288, 1},{15288, 1},{15288, 1},{22116, 1},{22120, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1500),
 
+	ONYX(28315, 28315, 28315, 28239, "Onyx Panther", "Onyx Panther",
+			"@or1@Health:@whi@ 300,000,000","@or1@To Spawn: @whi@" + (OnyxPantherBoss.currentBoss == null
+			?  OnyxPantherBoss.timeLeft() : "Alive ::onyx"),"", TeleportCategory.GLOBALS, new Position(2470, 5427, 0), 79, false, 9318, -1,
+			new int[][] {{12855, 50_000}, {5022, 12_000}, {19000, 25},{19116, 3},{19115, 2},{15290, 1},{15289, 1},{15288, 1},{20488, 1},{20489, 1}, {10949, 1}, {10947, 1}, {18404, 3}, {19001, 1}, {4446, 1}, {19886, 1}, {6769, 1}},750),
 
-	NEPHILIM(28315, 28315, 28315, 28239, "Nephilim Warrior", "Nephilim Warrior",
+	ZENYTE(28316, 28316, 28316, 28240, "Zenyte Golem", "Zenyte Golem",
+			"@or1@Health:@whi@ 500,000,000","@or1@To Spawn: @whi@" + (ZenyteGolemBoss.currentBoss == null
+			?  ZenyteGolemBoss.timeLeft() : "Alive ::zenyte"),"", TeleportCategory.GLOBALS, new Position(2470, 5427, 0), 79, false, 9319, -1,
+			new int[][] {{12855, 99999}, {5022, 25_000}, {19000, 50},{19116, 5},{19115, 3},{19114, 1},{15290, 1},{22117, 1},{10946, 1},{6769, 1}, {10942, 1}, {4446, 1}, {19886, 1}, {10947, 1}, {10949, 1}, {-1, 1}, {-1, 1}},1900),
+
+
+	NEPHILIM(28317, 28317, 28317, 28241, "Nephilim Warrior", "Nephilim Warrior",
 			"@or1@Health:@whi@ 4,000,000,000","@or1@To Spawn: @whi@" + NephilimSpawnSystem.getLeft() + " tokens left","",
 			TeleportCategory.GLOBALS, new Position(2013, 4505, 0), 79, false, 9312, -1,
 			new int[][] {{23229, 3}, {19114, 3}, {11137, 10},{12855, 20_000},{15288, 1},{10946, 1},{6769, 1},{10942, 1},{15002, 1},{15004, 1}, {14999, 1}, {23253, 1}, {23220, 1}, {23221, 1}, {23222, 1}, {23223, 1}, {23224, 1}},1100),

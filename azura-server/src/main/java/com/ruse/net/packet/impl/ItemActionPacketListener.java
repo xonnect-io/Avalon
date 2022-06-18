@@ -445,13 +445,13 @@ public class ItemActionPacketListener implements PacketListener {
             case 19114:// grandmbox
                 int[] commongrand = new int[] { 13740, 15290};
                 int[] uncommongrand = new int[] {20549, 20173, 8809,8834,8835,8860,8861,8862,15830,3318,15418};
-                int[] raresgrand = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092,10946,10942,6769 };
+                int[] raresgrand = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092,10946};
                 player.getMysteryBoxOpener().display(19114, "Grand Box", commongrand, uncommongrand, raresgrand);
                 break;
             case 20488:// grandmbox
-                int[] commonOP = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808,20549,20173,8809,10946,10946,10946 };
-                int[] uncommonOP = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092,10946,6769 };
-                int[] raresOP = new int[] {18753,18749,18631,18752,18748,18637,18751,18638,18623,18750,18636,18629,19886,4446,10942 };
+                int[] commonOP = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808,20549,20173,8809};
+                int[] uncommonOP = new int[] {10946,10946,8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092 };
+                int[] raresOP = new int[] {6769,10942,18753,18749,18631,18752,18748,18637,18751,18638,18623,18750,18636,18629,19886,4446 };
                 player.getMysteryBoxOpener().display(20488, "OP Chest", commonOP, uncommonOP, raresOP);
                 break;
 
@@ -465,7 +465,7 @@ public class ItemActionPacketListener implements PacketListener {
                         10942,15289};
                 int[] raresLaunch = new int[] {18753, 18749, 18631, 18752, 18748, 18637, 18751, 18638, 18623, 18750, 18636,
                         18629, 4446, 19886, 10934,15288};
-                player.getMysteryBoxOpener().display(20489, "Sapphire Casket", commonLaunch, uncommonLaunch, raresLaunch);
+                player.getMysteryBoxOpener().display(20489, "Launch Casket", commonLaunch, uncommonLaunch, raresLaunch);
                 break;
             case 15003:
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.EMERALD_CASKET);

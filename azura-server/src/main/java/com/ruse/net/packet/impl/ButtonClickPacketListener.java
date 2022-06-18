@@ -16,6 +16,8 @@ import com.ruse.world.World;
 import com.ruse.world.allornothing.DoubleOrNothing;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
+import com.ruse.world.content.bis.BestDRItemsInterface;
+import com.ruse.world.content.bis.BestItemsInterface;
 import com.ruse.world.content.bossEvents.BossEventInterfaceHandler;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
@@ -181,6 +183,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 21360:
+            case -17490:
                 player.getPacketSender().sendInterfaceRemoval();
                 break;
 

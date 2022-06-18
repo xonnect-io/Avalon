@@ -62,22 +62,22 @@ public class MysteryBoxOpener {
 		int reward = -1;
 		int chance = RandomUtility.inclusiveRandom(0, 100);
 		String name = ItemDefinition.forId(boxId).getName();
-		if (chance > 95) { // OH LOL oh lol
+
+		if (chance > 95) {
 			reward = rare[RandomUtility.exclusiveRandom(0, rare.length)];
-			if (boxId != 6199 && boxId != 989 && boxId != 7956 && boxId != 10025 && boxId != 19116&& boxId != 19115) {
-				World.sendMessage("<img=16><shad=1>@cya@[" + player.getUsername() + "] @or2@Just obtained a Very Rare reward from a " + name);
+			if ( reward == 10942 || reward == 6769 || reward == 10935 || reward == 10934 || reward == 10943) { // OH LOL oh lol
+				reward = rare[RandomUtility.exclusiveRandom(0, rare.length)];
+				World.sendMessage("@blu@<img=832>News: @red@"+ player.getUsername() + " @blu@has received @red@" + ItemDefinition.forId(reward).getName() + " @blu@from a @red@ " + ItemDefinition.forId(boxId).getName()+ "" );
 			}
 		} else if (chance > 65) {
 			reward = uncommon[RandomUtility.exclusiveRandom(0, uncommon.length)];
-		} else if (chance >= 0) {
+		}
+		else if (chance >= 0) {
 			reward = common[RandomUtility.exclusiveRandom(0, common.length)];
 		}
+
 		player.getInventory().delete(boxId, 1);
 		player.getInventory().add(reward, 1);
-		if (boxId == 11795) {
-			TeleportHandler.teleportPlayer(player, new Position(2579, 2566),
-					player.getSpellbook().getTeleportType());
-		}
 	}
 
 	public void openAll(int boxId) {
@@ -87,11 +87,14 @@ public class MysteryBoxOpener {
 			int reward = -1;
 			int chance = RandomUtility.inclusiveRandom(0, 100);
 			String name = ItemDefinition.forId(boxId).getName();
-			if (chance > 97) { //90% of 100% = 10%
+			if (chance > 95) {
 				reward = rare[RandomUtility.exclusiveRandom(0, rare.length)];
-				if (boxId != 6199 && boxId != 989 && boxId != 7956) {
-					World.sendMessage("<img=16><shad=1>@cya@[" + player.getUsername() + "] @or2@Just obtained a Very Rare reward from a " + name);
+
+				if ( reward == 10942 || reward == 6769 || reward == 10935 || reward == 10934 || reward == 10943) {
+					reward = rare[RandomUtility.exclusiveRandom(0, rare.length)];
+					World.sendMessage("@blu@<img=832>News: @red@"+ player.getUsername() +" @blu@has received @red@" + ItemDefinition.forId(reward).getName() + " @blu@from a @red@ " + ItemDefinition.forId(boxId).getName()+ "" );
 				}
+
 			} else if (chance > 65) { //65% of 100% = 35% (remainder)
 				reward = uncommon[RandomUtility.exclusiveRandom(0, uncommon.length)];
 			} else if (chance >= 0) { //0% of 100% = 55% (remainder)
@@ -116,10 +119,7 @@ public class MysteryBoxOpener {
 		if(!bank) {
 			player.sendMessage("@blu@Your rewards have been added to your bank.");
 		}
-		if (boxId == 11795) {
-			TeleportHandler.teleportPlayer(player, new Position(2579, 2566),
-					player.getSpellbook().getTeleportType());
-		}
+
 	}
 
 }

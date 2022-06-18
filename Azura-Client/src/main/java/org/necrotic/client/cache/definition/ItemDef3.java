@@ -551,6 +551,111 @@ public class ItemDef3 {
 				itemDef.modelID = 18098;
 				break;
 
+			case 23281:
+				itemDef.copyItem(4708);
+				itemDef.name = "Avalon helm";
+				itemDef.modelZoom = 1000;
+				itemDef.modelID = 18720;
+				itemDef.maleEquip1 = 18735;
+				itemDef.femaleEquip1 = 18735;
+				itemDef.rdc2 = 44442;
+				break;
+
+			case 23282:
+				itemDef.copyItem(4712);
+				itemDef.name = "Avalon body";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 18721;
+				itemDef.maleEquip1 = 18722;
+				itemDef.femaleEquip1 = 18722;
+				itemDef.rdc2 = 44442;
+				break;
+
+			case 23283:
+				itemDef.copyItem(4714);
+				itemDef.name = "Avalon legs";
+				itemDef.modelZoom = 1800;
+				itemDef.modelID = 18723;
+				itemDef.maleEquip1 = 18724;
+				itemDef.femaleEquip1 = 18724;
+				itemDef.rdc2 = 44442;
+				break;
+
+			case 23284:
+				itemDef.copyItem(4708);
+				itemDef.name = "Avalon gloves";
+				itemDef.modelID = 18725;
+				itemDef.modelZoom = 1000;
+				itemDef.maleEquip1 = 18731;
+				itemDef.femaleEquip1 = 18731;
+				itemDef.rdc2 = 44442;
+				break;
+
+			case 23285:
+				itemDef.copyItem(4708);
+				itemDef.name = "Avalon boots";
+				itemDef.modelID = 18733;
+				itemDef.maleEquip1 = 18733;
+				itemDef.femaleEquip1 = 18733;
+				itemDef.rdc2 = 44442;
+				break;
+
+
+
+			case 23286:
+				itemDef.copyItem(4708);
+				itemDef.name = "Tanzanite helm";
+				itemDef.modelZoom = 1000;
+				itemDef.modelID = 18801;
+				itemDef.maleEquip1 = 18802;
+				itemDef.femaleEquip1 = 18802;
+				break;
+
+			case 23287:
+				itemDef.copyItem(4712);
+				itemDef.name = "Tanzanite body";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 18805;
+				itemDef.maleEquip1 = 18806;
+				itemDef.femaleEquip1 = 18806;
+				break;
+
+			case 23288:
+				itemDef.copyItem(4714);
+				itemDef.name = "Tanzanite legs";
+				itemDef.modelZoom = 1800;
+				itemDef.modelID = 18803;
+				itemDef.maleEquip1 = 18804;
+				itemDef.femaleEquip1 = 18804;
+				break;
+
+			case 23289:
+				itemDef.copyItem(4708);
+				itemDef.name = "Tanzanite gloves";
+				itemDef.modelID = 18799;
+				itemDef.modelZoom = 1000;
+				itemDef.maleEquip1 = 18800;
+				itemDef.femaleEquip1 = 18800;
+				break;
+
+			case 23290:
+				itemDef.copyItem(4708);
+				itemDef.name = "Tanzanite boots";
+				itemDef.modelID = 18798;
+				itemDef.maleEquip1 = 18798;
+				itemDef.femaleEquip1 = 18798;
+				break;
+
+
+			case 23291:
+				itemDef.copyItem(23133);
+				itemDef.name = "Tanzanite wings";
+				itemDef.modelID = 18807;
+				itemDef.maleEquip1 = 18808;
+				itemDef.femaleEquip1 = 18808;
+				break;
+
+
 			case 23050:
 				itemDef.copyItem(4708);
 				itemDef.name = "Ebony helm";
@@ -1042,7 +1147,7 @@ public class ItemDef3 {
 
 			case 23086:
 				itemDef.copyItem(3849);
-				itemDef.name = "Valor Chest";
+				itemDef.name = "Isles Chest";
 				itemDef.actions = new String[]{"Open", null, null, null, "Drop"};
 				itemDef.modelID = 100201;
 				itemDef.modelOffsetX = itemDef.modelOffsetX;
@@ -2044,9 +2149,9 @@ public class ItemDef3 {
 			case 10946:
 				itemDef.name = "$1 Scroll";
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				itemDef.actions[0] = "Claim";
-				itemDef.actions[2] = "Claim all";
+				itemDef.actions[2] = "Claim-All";
 				itemdefedit = ItemDefinition.get(761);
 				itemDef.modelID = itemdefedit.modelID;
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
@@ -3326,7 +3431,7 @@ public class ItemDef3 {
 				itemdefedit = ItemDefinition.get(4900);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
-				itemDef.modelZoom = itemdefedit.modelZoom;
+				itemDef.modelZoom = itemdefedit.modelZoom; //#564245 #3c4541
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
@@ -3341,9 +3446,9 @@ public class ItemDef3 {
 				itemDef.modelZoom = 1200;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.modelID = 15168;
-				itemDef.maleEquip1 = 15169;
-				itemDef.femaleEquip1 = 15169;
+				itemDef.modelID = 18794;
+				itemDef.maleEquip1 = 18793;
+				itemDef.femaleEquip1 = 18793;
 				itemDef.groundActions = new String[5];
 				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;

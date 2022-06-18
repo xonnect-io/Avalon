@@ -5,8 +5,7 @@ import com.ruse.model.Position;
 import com.ruse.model.input.EnterAmount;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
-import com.ruse.world.content.GuardianSpawnSystem;
-import com.ruse.world.content.GuardianSpawnSystem;
+import com.ruse.world.content.globalBosses.GuardianSpawnSystem;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 

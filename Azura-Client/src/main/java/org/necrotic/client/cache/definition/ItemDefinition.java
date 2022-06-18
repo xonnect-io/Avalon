@@ -1994,8 +1994,9 @@ public final class ItemDefinition {
 			case 6769:
 				itemDef.name = "$5 Bond";
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				itemDef.actions[0] = "Claim";
+				itemDef.actions[2] = "Claim-All";
 				itemDef.modelID = 99900;
 				itemDef.modelZoom = 2400;
 				itemDef21 = ItemDefinition.get(10942);
@@ -2008,8 +2009,9 @@ public final class ItemDefinition {
 			case 10942:
 				itemDef.name = "@red@$10 Bond";
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				itemDef.actions[0] = "Claim";
+				itemDef.actions[2] = "Claim-All";
 				itemDef.modelID = 99901;
 				;
 				itemDef.modelZoom = 2400;
@@ -2017,8 +2019,9 @@ public final class ItemDefinition {
 			case 10934:
 				itemDef.name = "$25 Bond";
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				itemDef.actions[0] = "Claim";
+				itemDef.actions[2] = "Claim-All";
 				itemDef.modelID = 99903;
 				itemDef21 = ItemDefinition.get(10942);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
@@ -2031,8 +2034,9 @@ public final class ItemDefinition {
 			case 10935:
 				itemDef.name = "@blu@$50 Bond";
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				itemDef.actions[0] = "Claim";
+				itemDef.actions[2] = "Claim-All";
 				itemDef.modelID = 99902;
 				itemDef21 = ItemDefinition.get(10942);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
@@ -2045,8 +2049,9 @@ public final class ItemDefinition {
 			case 10943:
 				itemDef.name = "@mag@$100 Bond";
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				itemDef.actions[0] = "Claim";
+				itemDef.actions[2] = "Claim-All";
 				itemDef.modelID = 99902;
 				itemDef.modelZoom = 2300;
 				itemDef.rdc2 = 661177;//661177
@@ -2185,29 +2190,33 @@ public final class ItemDefinition {
 				break;
 
 			case 20489:
-				itemDef.name = "Sapphire Casket";
+				itemDef.name = "Launch Casket";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = 1600;
+				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 18160;
+				itemDef.modelID = 18809;
+				itemDef.rdc2 = 12111;
 				break;
+
 			case 15003:
-				itemDef.name = "Emerald Casket";
+				itemDef.name = "<col=C5CEDF><shad=0>Silver Casket<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = 1600;
+				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 18163;
+				itemDef.modelID = 18809;
+				itemDef.rdc2 = 988331;
 				break;
+
 			case 15002:
 				itemDef.name = "Ruby Casket";
 				itemDef.actions = new String[5];
@@ -2215,11 +2224,13 @@ public final class ItemDefinition {
 				itemDef21 = ItemDefinition.get(6199);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = 1600;
+				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 18163;
+				itemDef.modelID = 18809;
+				itemDef.rdc2 = 92111;
 				break;
+
 			case 14999:
 				itemDef.name = "Onyx Casket";
 				itemDef.actions = new String[5];
@@ -2227,23 +2238,27 @@ public final class ItemDefinition {
 				itemDef21 = ItemDefinition.get(6199);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = 1600;
+				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 17821;
+				itemDef.modelID = 18809;
+				itemDef.rdc2 = 100;
 				break;
+
 			case 15004:
-				itemDef.name = "Diamond Casket";
+				itemDef.name = "@cya@<shad=0>Diamond Exclusive Casket<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = 1600;
+				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 18216;
+				itemDef.modelID = 18809;
+				itemDef.rdc2 = 129911;
 				break;
+
 			case 23253:
 				itemDef.name = "Zenyte Casket";
 				itemDef.actions = new String[5];
@@ -2256,36 +2271,42 @@ public final class ItemDefinition {
 				itemDef.rotationX = 90;
 				itemDef.modelID = 18237;
 				break;
+
 			case 15355:
 				itemDef.name = "@gre@<shad=0>Double DR Scroll (1 Hour)<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Activate";
 				itemDef.rdc2 = 921211;
 				break;
+
 			case 15356:
 				itemDef.name = "@gre@<shad=0>Double DDR Scroll (1 Hour)<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Activate";
 				itemDef.rdc2 = 348132;
 				break;
+
 			case 15357:
 				itemDef.name = "@gre@<shad=0>Double Damage Scroll (1 Hour)<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Activate";
 				itemDef.rdc2 = 23333;
 				break;
+
 			case 15358:
 				itemDef.name = "@gre@<shad=0>Double DR Scroll (30 Minutes)<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Activate";
 				itemDef.rdc2 = 663712;
 				break;
+
 			case 15359:
 				itemDef.name = "@gre@<shad=0>Double Damage Scroll (30 Minutes)<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Activate";
 				itemDef.rdc2 = 12411;
 				break;
+
 			case 6542:
 				itemDef.name = "@bla@<shad=0>Dan's Present<shad-1>";
 				itemDef.actions = new String[5];

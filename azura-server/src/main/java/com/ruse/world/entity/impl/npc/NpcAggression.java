@@ -3,7 +3,7 @@ package com.ruse.world.entity.impl.npc;
 import com.ruse.model.Locations;
 import com.ruse.model.Locations.Location;
 import com.ruse.world.content.combat.CombatFactory;
-import com.ruse.world.content.globalBoss.GlobalBoss;
+import com.ruse.world.content.globalBosses.GlobalBoss;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.entity.impl.player.Player;
 

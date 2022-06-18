@@ -1,6 +1,6 @@
 package com.ruse.world.content.combat.strategy;
 
-import com.ruse.world.content.HellraiserBossCombatScript;
+import com.ruse.world.content.combat.strategy.impl.HellraiserBossCombatScript;
 import com.ruse.world.content.combat.strategy.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringBossNpc;
 import com.zaros.world.entity.actor.combat.strategy.impl.dung.DungeoneeringBossCombat;

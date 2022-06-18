@@ -6,7 +6,7 @@ import com.ruse.model.definitions.WeaponInterfaces.WeaponInterface;
 import com.ruse.world.content.combat.CombatContainer;
 import com.ruse.world.content.combat.CombatType;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
-import com.ruse.world.content.globalBoss.GlobalBoss;
+import com.ruse.world.content.globalBosses.GlobalBoss;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.Dueling.DuelRule;
 import com.ruse.world.entity.impl.Character;

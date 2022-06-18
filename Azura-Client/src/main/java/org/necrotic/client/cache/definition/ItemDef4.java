@@ -2955,6 +2955,60 @@ public class ItemDef4 {
 				itemDef.editedModelColor = new int[]{78};
 				itemDef.modelID = 65285;
 				break;
+
+			case 23280:
+				itemDef.copyItem(19669);
+				itemDef.name = "Celestial ring";
+				itemDef.rdc2 = 28715;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				break;
+
+			case 23276:
+				itemDef.copyItem(23275);
+				itemDef.rotationX = 0;
+				itemDef.name = "Bronze Card Pack";
+				itemDef.actions = new String[5];
+				itemDef.actions[4] = "Drop";
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 18705;
+				itemDef.modelZoom = 900;
+				break;
+
+			case 23277:
+				itemDef.copyItem(23275);
+				itemDef.rotationX = 0;
+				itemDef.name = "Silver Card Pack";
+				itemDef.actions = new String[5];
+				itemDef.actions[4] = "Drop";
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 18716;
+				itemDef.modelZoom = 900;
+				break;
+
+
+			case 23278:
+				itemDef.copyItem(23275);
+				itemDef.rotationX = 0;
+				itemDef.name = "Gold Card Pack";
+				itemDef.actions = new String[5];
+				itemDef.actions[4] = "Drop";
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 18717;
+				itemDef.modelZoom = 900;
+				break;
+
+
+			case 23279:
+				itemDef.copyItem(23275);
+				itemDef.rotationX = 0;
+				itemDef.name = "Diamond Card Pack";
+				itemDef.actions = new String[5];
+				itemDef.actions[4] = "Drop";
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 18718;
+				itemDef.modelZoom = 900;
+				break;
+
 			case 3906:
 				itemDef.name = "Maxiblood Package";
 				itemDef.actions = new String[5];
@@ -3661,15 +3715,7 @@ public class ItemDef4 {
 				break;
 			case 3324:
 				itemDef.name = "Ring of wealth (ii)";
-				itemDef21 = ItemDefinition.get(19669);
-				itemDef.modelID = itemDef21.modelID;
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = itemDef21.actions;
+				itemDef.copyItem(2579);
 				itemDef.rdc2 = 86521;
 				itemDef.stackable = false;
 				break;
