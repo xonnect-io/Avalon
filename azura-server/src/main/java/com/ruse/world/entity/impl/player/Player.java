@@ -31,6 +31,8 @@ import com.ruse.world.content.KillsTracker.KillsEntry;
 import com.ruse.world.content.LoyaltyProgramme.LoyaltyTitles;
 import com.ruse.world.content.StarterTasks.StarterTaskAttributes;
 import com.ruse.world.content.achievement.AchievementHandler;
+import com.ruse.world.content.achievements.AchievementInterface;
+import com.ruse.world.content.achievements.AchievementTracker;
 import com.ruse.world.content.bis.BestItems;
 import com.ruse.world.content.bossEvents.BossEventData;
 import com.ruse.world.content.casketopening.CasketOpening;
@@ -3641,10 +3643,16 @@ End new teleport
         packetSender.sendMessage(string);
     }
 
+    private int bossPoints;
+
     public int getBossPoints() {
-        // TODO Auto-generated method stub
-        return 0;
+        return bossPoints;
     }
+
+    public void setBossPoints(int bossPoints) {
+        this.bossPoints = bossPoints;
+    }
+
 
     public boolean isActive() {
         return true;
@@ -3803,5 +3811,20 @@ End new teleport
         } else {
             return false;
         }
+    }
+    private AchievementInterface achievementInterface;
+
+    public void setAchievementInterface(AchievementInterface achievementInterface) {
+        this.achievementInterface = achievementInterface;
+    }
+
+    public AchievementInterface getAchievementInterface() {
+        return this.achievementInterface;
+    }
+
+    private AchievementTracker achievementTracker = new AchievementTracker(this);
+
+    public AchievementTracker getAchievementTracker() {
+        return this.achievementTracker;
     }
 }

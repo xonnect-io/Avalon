@@ -4,6 +4,7 @@ import com.ruse.GameSettings;
 import com.ruse.motivote3.doMotivote;
 import com.ruse.world.World;
 import com.ruse.world.content.VoteBossDrop;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.sql.*;
@@ -57,7 +58,10 @@ public class FoxVote implements Runnable {
 				player.getDailyRewards().handleVote();
 				player.lastVoteTime = System.currentTimeMillis();
 				player.setVoteCount(doMotivote.getVoteCount() + points);
-
+				player.getAchievementTracker().progress(AchievementData.SUPPORT_AVALON, 1);
+				player.getAchievementTracker().progress(AchievementData.SUPPORTER, 1);
+				player.getAchievementTracker().progress(AchievementData.MEGA_SUPPORTER, 1);
+				player.getAchievementTracker().progress(AchievementData.VETERAN_VOTER, 1);
 				if (doMotivote.getVoteCount() >= 60) {
 					VoteBossDrop.handleSpawn();
 				}

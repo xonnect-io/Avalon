@@ -28,6 +28,7 @@ import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.*;
 import com.ruse.world.content.PlayerPunishment.Jail;
+import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
@@ -321,23 +322,20 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(2071, 4462, 0);
+            Position position = new Position(2653, 4026, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-            player.getPacketSender().sendMessage("Teleporting you to our shops!");
         }
 
-        if (command[0].equalsIgnoreCase("chill")) {
+        if ((command[0].equalsIgnoreCase("market") && !player.getRights().OwnerDeveloperOnly())
+                || command[0].equalsIgnoreCase("marketplace")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = GameSettings.CHILL_CORDS;
+            Position position = new Position(2662, 4044, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-            player.getPacketSender().sendMessage("Teleporting you to <col=#002AF8>Chill!");
         }
-        //End Of Teleports
-
         //Start Of External Links
         if (wholeCommand.equalsIgnoreCase("donate") || wholeCommand.equalsIgnoreCase("store")) {
             player.getPacketSender().sendString(1, GameSettings.StoreUrl);
@@ -353,10 +351,6 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Attempting to open our Discord Server");
         }
 
-        if (wholeCommand.equalsIgnoreCase("forums") || wholeCommand.equalsIgnoreCase("forum")) {
-            player.getPacketSender().sendString(1, GameSettings.ForumUrl);
-            player.getPacketSender().sendMessage("Attempting to open the forums");
-        }
         if (wholeCommand.equalsIgnoreCase("forums") || wholeCommand.equalsIgnoreCase("forum")) {
             player.getPacketSender().sendString(1, GameSettings.ForumUrl);
             player.getPacketSender().sendMessage("Attempting to open the forums");
@@ -399,13 +393,13 @@ public class CommandPacketListener implements PacketListener {
              */
             new TeleportInterfaceHandler(player).open();
         }
-
+/*
         if (command[0].equalsIgnoreCase("achievements") || command[0].equalsIgnoreCase("dailytasks")
                 || command[0].equalsIgnoreCase("tasks")) {
             player.getAchievements().refreshInterface(player.getAchievements().currentInterface);
             player.getPacketSender().sendConfig(6000, 3);
         }
-
+*/
 
         if (command[0].equalsIgnoreCase("collection") || command[0].equalsIgnoreCase("collectionlog")) {
             player.getCollectionLog().open();
@@ -537,6 +531,9 @@ public class CommandPacketListener implements PacketListener {
                 || command[0].equalsIgnoreCase("claim") || command[0].equalsIgnoreCase("donated")) {
             player.claimDonation(player, false);
         }
+
+        if (command[0].equalsIgnoreCase("achievements"))
+        AchievementInterface.open(player);
 
         if (command[0].equalsIgnoreCase("dropmessage")) {
             player.dropMessageToggle = !player.dropMessageToggle;

@@ -1,5 +1,6 @@
 package com.ruse.model.container.impl;
 
+import java.util.Objects;
 import java.util.Optional;
 
 import com.ruse.model.Item;
@@ -141,4 +142,12 @@ public class Inventory extends ItemContainer {
 	}
 
 	public static final int INTERFACE_ID = 3214;
+
+	public void add(Item[] items) {
+		for (Item item : items) {
+			if (Objects.nonNull(item)) {
+				add(item);
+			}
+		}
+	}
 }

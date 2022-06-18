@@ -131,6 +131,10 @@ public class ButtonClickPacketListener implements PacketListener {
             return;
         }
 
+        if (player.getAchievementInterface() != null && player.getAchievementInterface().handleButton(id)) {
+            return;
+        }
+
         if (player.getRaidsInterface().handleButton( id)) {
             return;
         }
@@ -181,6 +185,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 21372:
                 player.getWheelOfFortune().open();
                 break;
+
 
             case 21360:
             case -17490:

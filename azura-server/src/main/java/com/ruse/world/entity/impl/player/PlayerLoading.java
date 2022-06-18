@@ -74,7 +74,19 @@ public class PlayerLoading {
             if (reader.has("total-play-time-ms")) {
                 player.setTotalPlayTime(reader.get("total-play-time-ms").getAsLong());
             }
+            if (reader.has("achievements")) {
+                player.getAchievementTracker().load(reader.get("achievements"));
+            }
 
+            if (reader.has("achievements-completion")) {
+                player.getAchievementAttributes().setCompletion(
+                        builder.fromJson(reader.get("achievements-completion").getAsJsonArray(), boolean[].class));
+            }
+
+            if (reader.has("achievements-progress")) {
+                player.getAchievementAttributes().setProgress(
+                        builder.fromJson(reader.get("achievements-progress").getAsJsonArray(), int[].class));
+            }
             if (reader.has("username")) {
                 player.setUsername(reader.get("username").getAsString());
             }

@@ -729,7 +729,32 @@ public class RSInterface {
 		Tab.message = text;
 		Tab.disabledColor = color;
 	}
+	public int xAdjust, yAdjust;
+	public static void textColor(int id, int color) {
+		RSInterface rsi = interfaceCache[id];
+		rsi.disabledColor = color;
+	}
 
+	public static void addClickableText(int id, String text, String tooltip, TextDrawingArea tda[], int idx, int color,
+										int width, int height, boolean center, boolean shadow, int xAdjust, int yAdjust) {
+		RSInterface Tab = addTabInterface(id);
+		Tab.parentID = id;
+		Tab.id = id;
+		Tab.type = 4;
+		Tab.atActionType = 1;
+		Tab.width = width;
+		Tab.height = height;
+		Tab.contentType = 0;
+		Tab.hoverType = 0;
+		Tab.textShadow = shadow;
+		Tab.centerText = center;
+		Tab.textDrawingAreas = tda[idx];
+		Tab.message = text;
+		Tab.tooltip = tooltip;
+		Tab.xAdjust = xAdjust;
+		Tab.yAdjust = yAdjust;
+		Tab.textColor(id, color);
+	}
 	//add hoverable text method i copy pasted it and removed/renamed heaps of variables so might be it. sec
 	public static void addHoverableText(int id, String text, String tooltip, TextDrawingArea tda[], int idx, boolean center, boolean textShadowed, int width, int disabledColor, int enabledColor) {
 		RSInterface rsinterface = addInterface(id);
@@ -5739,7 +5764,7 @@ public class RSInterface {
 			customServerPerks(textDrawingAreas);
 			customZones(textDrawingAreas);
 			perkOverlays(textDrawingAreas);
-
+			Achievements.unpack(textDrawingAreas);
 			customInterfaces = new CustomInterfaces(textDrawingAreas);
 			customInterfaces.loadCustoms();
 		} catch (Exception e) {
@@ -6683,6 +6708,99 @@ public class RSInterface {
 		Tab.tooltip = tT;
 	}
 
+
+	public static RSInterface addWrappingText(int id, String text, TextDrawingArea tda[],
+											  int idx, int color, boolean center, boolean shadow, int width, int lineHeight) {
+		RSInterface tab = addTabInterface(id);
+		tab.parentID = id;
+		tab.id = id;
+		tab.type = WRAPPED_TEXT;
+		tab.atActionType = 0;
+		tab.width = width;
+		tab.height = lineHeight;
+		tab.contentType = 0;
+		tab.opacity = 0;
+		tab.hoverType = -1;
+		tab.centerText = center;
+		tab.textShadow = shadow;
+		tab.textDrawingAreas = tda[idx];
+		tab.message = getWrappedText(tab.textDrawingAreas, text, tab.width);
+		tab.enabledMessage = "";
+		tab.disabledColor = color;
+		tab.enabledColor = 0;
+		tab.disabledMouseOverColor = 0;
+		tab.enabledMouseOverColor = 0;
+		return tab;
+	}
+
+	public boolean deleteOnDrag2;
+
+	public boolean doubleShadow;
+	public static RSInterface addContainer(int id, int contentType, int width, int height, int xPad, int yPad,
+										   boolean move, String... actions) {
+		RSInterface container = addInterface(id);
+		container.parentID = id;
+		container.type = 2;
+		container.contentType = contentType;
+		container.width = width;
+		container.height = height;
+		container.sprites = new Sprite[20];
+		container.spritesX = new int[20];
+		container.spritesY = new int[20];
+		container.invSpritePadX = xPad;
+		container.invSpritePadY = yPad;
+		container.inv = new int[width * height];
+		container.invStackSizes = new int[width * height];
+		container.actions = actions;
+		container.deleteOnDrag2 = move;
+		return container;
+	}
+	public static final int WRAPPED_TEXT = 20; //type
+
+
+
+	public static String getWrappedText(TextDrawingArea tda, String text, int width) {
+		if (text.contains("\\n") || tda.getTextWidth(text) <= width) {
+			return text;
+		}
+		int spaceWidth = tda.getTextWidth(" ");
+		StringBuilder result = new StringBuilder(text.length());
+		StringBuilder line = new StringBuilder();
+		int lineLength = 0;
+		int curIndex = 0;
+		while (true) {
+			int spaceIndex = text.indexOf(' ', curIndex);
+			int newLength = lineLength;
+			boolean last = false;
+			String curWord;
+			if (spaceIndex < 0) {
+				last = true;
+				curWord = text.substring(curIndex);
+			} else {
+				curWord = text.substring(curIndex, spaceIndex);
+				newLength += spaceWidth;
+			}
+			curIndex = spaceIndex + 1;
+			int w = tda.getTextWidth(curWord);
+			newLength += w;
+			if (newLength > width) {
+				result.append(line);
+				result.append("\\n");
+				line = new StringBuilder(curWord);
+				line.append(' ');
+				lineLength = w;
+			} else {
+				line.append(curWord);
+				line.append(' ');
+				lineLength = newLength;
+			}
+			if (last) {
+				break;
+			}
+		}
+		result.append(line);
+		return result.toString();
+	}
 
 	public static RSInterface copy(int id, int id1) {
 		RSInterface tab = addTabInterface(id);

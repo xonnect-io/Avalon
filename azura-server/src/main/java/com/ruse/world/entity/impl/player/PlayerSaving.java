@@ -49,7 +49,9 @@ public class PlayerSaving {
 			} else {
 				object.addProperty("password", player.getPassword().trim());
 			}
-
+			object.add("achievements-completion",builder.toJsonTree(player.getAchievementAttributes().getCompletion()));
+			object.add("achievements-progress", builder.toJsonTree(player.getAchievementAttributes().getProgress()));
+			object.add("achievements", player.getAchievementTracker().jsonSave());
 			object.addProperty("email", player.getEmailAddress() == null ? "null" : player.getEmailAddress().trim());
 			object.addProperty("staff-rights", player.getRights().name());			
 			object.addProperty("game-mode", player.getGameMode().name());

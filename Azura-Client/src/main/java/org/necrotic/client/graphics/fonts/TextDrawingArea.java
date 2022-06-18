@@ -90,7 +90,40 @@ public final class TextDrawingArea extends DrawingArea {
 			_ex.printStackTrace();
 		}
 	}
+	public void drawCenteredTextDoubleShadow(int colour, int x, String text, int y) {
+		drawRegularTextDoubleShadow(x - getTextWidth(text) / 2, colour, text, y);
+	}
 
+	public void drawRegularTextDoubleShadow(int i, int j, String s, int k) {
+		aBoolean1499 = false;
+		int l = i;
+		if (s == null)
+			return;
+		k -= anInt1497;
+		for (int i1 = 0; i1 < s.length(); i1++)
+			if (s.charAt(i1) == '@' && i1 + 4 < s.length() && s.charAt(i1 + 4) == '@') {
+				int j1 = getColorByName(s.substring(i1 + 1, i1 + 4));
+				if (j1 != -1)
+					j = j1;
+				i1 += 4;
+			} else {
+				char c = s.charAt(i1);
+				if (c != ' ') {
+					method392(aByteArrayArray1491[c], i + anIntArray1494[c] - 1, k + anIntArray1495[c] - 1, anIntArray1492[c], anIntArray1493[c], 0);
+					method392(aByteArrayArray1491[c], i + anIntArray1494[c] + 1, k + anIntArray1495[c] - 1, anIntArray1492[c], anIntArray1493[c], 0);
+					method392(aByteArrayArray1491[c], i + anIntArray1494[c] - 1, k + anIntArray1495[c] + 1, anIntArray1492[c], anIntArray1493[c], 0);
+					method392(aByteArrayArray1491[c], i + anIntArray1494[c] + 1, k + anIntArray1495[c] + 1, anIntArray1492[c], anIntArray1493[c], 0);
+					method392(aByteArrayArray1491[c], i + anIntArray1494[c], k + anIntArray1495[c] + 1, anIntArray1492[c], anIntArray1493[c], 0);
+					method392(aByteArrayArray1491[c], i + anIntArray1494[c] + 1, k + anIntArray1495[c], anIntArray1492[c], anIntArray1493[c], 0);
+					method392(aByteArrayArray1491[c], i + anIntArray1494[c] - 1, k + anIntArray1495[c], anIntArray1492[c], anIntArray1493[c], 0);
+					method392(aByteArrayArray1491[c], i + anIntArray1494[c], k + anIntArray1495[c] - 1, anIntArray1492[c], anIntArray1493[c], 0);
+					method392(aByteArrayArray1491[c], i + anIntArray1494[c], k + anIntArray1495[c], anIntArray1492[c], anIntArray1493[c], j);
+				}
+				i += rsb[c];
+			}
+		if (aBoolean1499)
+			DrawingArea.drawLine(k + (int) ((double) anInt1497 * 0.69999999999999996D), 0x800000, i - l, l);
+	}
 	public static void drawAlphaFilledPixels(int xPos, int yPos, int pixelWidth, int pixelHeight, int color, int alpha) {// method586
 		if (xPos < topX) {
 			pixelWidth -= topX - xPos;
