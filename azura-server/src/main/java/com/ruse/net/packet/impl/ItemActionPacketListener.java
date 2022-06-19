@@ -13,6 +13,7 @@ import com.ruse.world.World;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.StarterTasks.StarterTaskData;
+import com.ruse.world.content.cardPacks.DiamondCardPack;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.casketopening.CasketOpening;
@@ -155,7 +156,10 @@ public class ItemActionPacketListener implements PacketListener {
             Consumables.handlePotion(player, itemId, slot);
             return;
         }
-
+        if (DiamondCardPack.isCard(itemId)) {
+            DiamondCardPack.useCard(player, itemId);
+            return;
+        }
         if (BirdNests.isNest(itemId)) {
             BirdNests.searchNest(player, itemId);
             return;

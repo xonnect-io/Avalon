@@ -966,7 +966,92 @@ public class RSInterface {
 		rsi.inv[0] = 6200;
 		rsi.invStackSizes[0] = 2;
 	}
+	private static void cardPack1(TextDrawingArea[] tda) {
 
+		final int STARTING_POINT = 23180;
+		RSInterface rsi = addInterface(STARTING_POINT);
+		addSprite(STARTING_POINT + 1, 1672);
+		addHoverButton(STARTING_POINT + 2, 55, 17, 17, "Close Window", 250, 5380, 3);
+		addHoveredButton(STARTING_POINT + 3, 90, 17, 17, 5379);
+		addText(STARTING_POINT + 4, "Card Pack", 0xff9b00, true, true, -1, tda, 2);
+		addButton(STARTING_POINT + 5, 1660, 1661, "Open Pack");
+		addText(STARTING_POINT + 6, "Open Pack", 0xff9b00, true, true, -1, tda, 2);
+		rsi.totalChildren(7);
+		setBounds(STARTING_POINT + 1, 125, 30, 0, rsi);
+		setBounds(STARTING_POINT + 2, 355, 33, 1, rsi);
+		setBounds(STARTING_POINT + 3, 355, 33, 2, rsi);
+		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
+		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
+		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
+
+
+
+		addItemOnInterface(23187, 23511, new String[]{null});
+
+
+		setBounds(23187, 170, 85, 6, rsi);
+
+
+
+	}
+	private static void cardPack(TextDrawingArea[] tda) {
+
+		final int STARTING_POINT = 23080;
+		RSInterface rsi = addInterface(STARTING_POINT);
+		addSprite(STARTING_POINT + 1, 1672);
+		addHoverButton(STARTING_POINT + 2, 55, 17, 17, "Close Window", 250, 5380, 3);
+		addHoveredButton(STARTING_POINT + 3, 90, 17, 17, 5379);
+		addText(STARTING_POINT + 4, "Card Pack", 0xff9b00, true, true, -1, tda, 2);
+		addButton(STARTING_POINT + 5, 1660, 1661, "Open Pack");
+		addText(STARTING_POINT + 6, "Open Pack", 0xff9b00, true, true, -1, tda, 2);
+		rsi.totalChildren(18);
+		setBounds(STARTING_POINT + 1, 125, 30, 0, rsi);
+		setBounds(STARTING_POINT + 2, 355, 33, 1, rsi);
+		setBounds(STARTING_POINT + 3, 355, 33, 2, rsi);
+		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
+		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
+		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
+
+
+
+		addItemOnInterface(23087, 23511, new String[]{null});
+		addItemOnInterface(23088, 23511, new String[]{null});
+		addItemOnInterface(23089, 23511, new String[]{null});
+		addItemOnInterface(23090, 23511, new String[]{null});
+		addItemOnInterface(23091, 23511, new String[]{null});
+		addItemOnInterface(23092, 23511, new String[]{null});
+
+
+
+		setBounds(23087, 160, 88, 12, rsi);
+		setBounds(23088, 237, 88, 13, rsi);
+		setBounds(23089, 312, 88, 14, rsi);
+		setBounds(23090, 160, 190, 15, rsi);
+		setBounds(23091, 237, 190, 16, rsi);
+		setBounds(23092, 312, 190, 17, rsi);
+
+		addSprite(23094, 1674);
+		addSprite(23095, 1674);
+		addSprite(23096, 1674);
+		addSprite(23097, 1674);
+		addSprite(23098, 1674);
+		addSprite(23099, 1674);
+
+
+
+
+
+
+		setBounds(23094, 143, 60, 6, rsi);
+		setBounds(23095, 220, 60, 7, rsi);
+		setBounds(23096, 295, 60, 8, rsi);
+		setBounds(23097, 143, 160, 9, rsi);
+		setBounds(23098, 220, 160, 10, rsi);
+		setBounds(23099, 295, 160, 11, rsi);
+
+
+
+	}
 	//they should not be seperate interfaces.
 	private static void effectInterface(TextDrawingArea[] tda) {//wtf did u do with it lol and why are there several, it should all be in 1 interface
 		RSInterface main = addInterface(48300);
@@ -5747,6 +5832,8 @@ public class RSInterface {
 			teleportInterface1(textDrawingAreas);
 			godWars(textDrawingAreas);
 			taxbagShopInterface(textDrawingAreas);
+			cardPack(textDrawingAreas);
+			cardPack1(textDrawingAreas);
 			mysteryBoxViewer(textDrawingAreas);
 			effectInterface(textDrawingAreas);
 			effectInterface2(textDrawingAreas);

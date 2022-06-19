@@ -32,7 +32,7 @@ import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
-import com.ruse.world.content.cardPack.cardPackInterfaceHandler;
+import com.ruse.world.content.cardPacks.cardPackInterfaceHandler;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;

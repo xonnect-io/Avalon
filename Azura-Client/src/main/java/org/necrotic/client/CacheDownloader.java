@@ -30,20 +30,20 @@ public class CacheDownloader {
 		try {
 			double newest = getNewestVersion();
 			double current = getCurrentVersion();
-			if (cacheDownloadRequired(newest, current) || forceUpdateCache()) {
-				if (Configuration.STOP_CACHE_UPDATES) {
-					System.out.println("Stopped a cache update from occuring due to current configuration.");
-				} else {
-					if (forceUpdateCache() == true) {
-						System.out.println("We are localhost, and being forced to update cache.");
-					} else {
-						System.out.println("Updated Avalon Cache. No manual overrides detected, proceeding as normal. Current: " + current + ", Newest: " + newest);
-					}
-					downloadCache();
-					unzipCache();
-					setLatestCacheVersion(newest);
-				}
-			}
+//			if (cacheDownloadRequired(newest, current) || forceUpdateCache()) {
+//				if (Configuration.STOP_CACHE_UPDATES) {
+//					System.out.println("Stopped a cache update from occuring due to current configuration.");
+//				} else {
+//					if (forceUpdateCache() == true) {
+//						System.out.println("We are localhost, and being forced to update cache.");
+//					} else {
+//						System.out.println("Updated Avalon Cache. No manual overrides detected, proceeding as normal. Current: " + current + ", Newest: " + newest);
+//					}
+//					downloadCache();
+//					unzipCache();
+//					setLatestCacheVersion(newest);
+//				}//that lag gets annoying lol
+//			}
 
 			UPDATING = false;
 			return true;

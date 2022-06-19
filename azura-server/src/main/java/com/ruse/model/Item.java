@@ -7,7 +7,7 @@ import com.ruse.world.content.Effigies;
 
 /**
  * Represents an item which is owned by a player.
- * 
+ *
  * @author relex lawl
  */
 
@@ -15,7 +15,7 @@ public class Item {
 
 	/**
 	 * An Item object constructor.
-	 * 
+	 *
 	 * @param id     Item id.
 	 * @param amount Item amount.
 	 */
@@ -23,10 +23,14 @@ public class Item {
 		this.id = id;
 		this.amount = amount;
 	}
-
+	public Item(int id, int amount, String rarity) {
+		this.id = id;
+		this.amount = amount;
+		this.rarityofitem = rarity;
+	}
 	/**
 	 * An Item object constructor.
-	 * 
+	 *
 	 * @param id Item id.
 	 */
 	public Item(int id) {
@@ -38,16 +42,19 @@ public class Item {
 	 */
 	private int id;
 
+	private String rarityofitem;
 	/**
 	 * Gets the item's id.
 	 */
 	public int getId() {
 		return id;
 	}
-
+	public String getRarityofItem() {
+		return rarityofitem;
+	}
 	/**
 	 * Sets the item's id.
-	 * 
+	 *
 	 * @param id New item id.
 	 */
 	public Item setId(int id) {

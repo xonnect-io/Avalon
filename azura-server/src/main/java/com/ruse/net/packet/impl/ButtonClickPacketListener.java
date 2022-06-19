@@ -19,6 +19,7 @@ import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
 import com.ruse.world.content.bossEvents.BossEventInterfaceHandler;
+import com.ruse.world.content.cardPacks.DiamondCardPack;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.clan.Guild;
@@ -395,6 +396,9 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.sendMessage("You must be in a raid to do this.");
                 }
                 return;
+            case 23185://open card pack
+                DiamondCardPack.testcard(player);
+                break;
             /*case 111603:
                 BestItemsInterface.openInterface(player, 0);
                 break;*/
