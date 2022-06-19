@@ -8,6 +8,7 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.PlayerLogs;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Donation;
@@ -48,7 +49,7 @@ public class UpgradeInterface {
                 openInterface(Upgradeables.UpgradeType.TIER_2);
                 return true;
             case -3300:
-            case 30867:
+            case 30868:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 35) {
                     player.getPacketSender()
                             .sendMessage("You need a Invention Level of atleast @blu@35 Invention@bla@ to view this Tier.");
@@ -57,7 +58,7 @@ public class UpgradeInterface {
                 openInterface(Upgradeables.UpgradeType.TIER_3);
                 return true;
             case -3296:
-            case 30868:
+            case 30869:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 55) {
                 player.getPacketSender()
                         .sendMessage("You need a Invention Level of atleast @blu@55 Invention@bla@ to view this Tier.");
@@ -66,7 +67,7 @@ public class UpgradeInterface {
                 openInterface(Upgradeables.UpgradeType.TIER_4);
                 return true;
             case -3293:
-            case 30869:
+            case 30870:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 80) {
                 player.getPacketSender()
                         .sendMessage("You need a Invention Level of atleast @blu@80 Invention@bla@ to view this Tier.");
@@ -75,7 +76,7 @@ public class UpgradeInterface {
                 openInterface(Upgradeables.UpgradeType.TIER_5);
                 return true;
             case -3292:
-            case 30870:
+            case 30871:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 90) {
                 player.getPacketSender()
                         .sendMessage("You need a Invention Level of atleast @blu@90 Invention@bla@ to view this Tier.");
@@ -84,7 +85,7 @@ public class UpgradeInterface {
                 openInterface(Upgradeables.UpgradeType.TIER_6);
                 return true;
             case -3285:
-            case 30871:
+            case 30872:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 119) {
                     player.getPacketSender()
                             .sendMessage("You need a Invention Level of atleast @blu@120 Invention@bla@ to view this Tier.");
@@ -141,9 +142,11 @@ public class UpgradeInterface {
                                 player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID,
                                         val.getCost());
 
+                                player.getAchievementTracker().progress(AchievementData.UPGRADE_A_ITEM, 1);
                               
                                 boolean random =  Misc.getRandomDouble(99) < getBoost(val.getSuccessRate());
                                 if (random) {
+                                    player.getAchievementTracker().progress(AchievementData.UPGRADE_2_TIMES, 1);
                                     player.getSkillManager().addExperience(Skill.INVENTION, 1000);
                                     success++;
                                     if (noted) {
@@ -198,11 +201,13 @@ public class UpgradeInterface {
                             public void run() {
                                 if (tick == 0) {
                                     player.getPacketSender().sendMessage("You try to upgrade....");
+                                    player.getAchievementTracker().progress(AchievementData.UPGRADE_A_ITEM, 1);
                                 } else if (tick == 2) {
                                     boolean success =  Misc.getRandomDouble(99) < getBoost(val.getSuccessRate());
                                     if (success) {
                                         player.getSkillManager().addExperience(Skill.INVENTION, 1000);
                                         player.getPacketSender().sendMessage("You successfully upgraded your item!");
+                                        player.getAchievementTracker().progress(AchievementData.UPGRADE_2_TIMES, 1);
                                         player.getInventory().add(val.getReward());
                                         if (val.isRare()) {
                                             String msg = "@blu@<img=5>Upgrade:<img=5>@red@ " + player.getUsername()

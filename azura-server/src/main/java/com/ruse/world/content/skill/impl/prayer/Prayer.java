@@ -7,7 +7,7 @@ import com.ruse.model.Item;
 import com.ruse.model.Skill;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.entity.impl.player.Player;
 
 /**
@@ -45,9 +45,10 @@ public class Prayer {
 				player.getSkillManager().addExperience(Skill.PRAYER, currentBone.getBuryingXP());
 				Sounds.sendSound(player, Sound.BURY_BONE);
 
-				Achievements.doProgress(player, Achievements.Achievement.BURY_100_BONES);
-				Achievements.doProgress(player, Achievements.Achievement.BURY_250_BONES);
-				Achievements.doProgress(player, Achievements.Achievement.BURY_1000_BONES);
+				player.getAchievementTracker().progress(AchievementData.PRAYER, 1);
+				player.getAchievementTracker().progress(AchievementData.PRAYER_RITUAL, 1);
+				player.getAchievementTracker().progress(AchievementData.PRAYER_DEVOTION, 1);
+				player.getAchievementTracker().progress(AchievementData.BURY_ALOT, 1);
 
 
 				stop();

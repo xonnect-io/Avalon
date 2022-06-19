@@ -6,7 +6,7 @@ import com.ruse.model.Animation;
 import com.ruse.model.Skill;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.input.impl.EnterAmountToCook;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -48,15 +48,11 @@ public class Cooking {
 				} else {
 					player.getInventory().add(fish.getCookedItem(), 1);
 					player.getSkillManager().addExperience(Skill.COOKING, fish.getXp());
-
-					if (fish == CookingData.ROCKTAIL) {
-						Achievements.doProgress(player, Achievements.Achievement.COOK_250_ROCKTAILS);
-					}if (fish == CookingData.SHARK) {
-						Achievements.doProgress(player, Achievements.Achievement.COOK_100_SHARKS);
+					player.getAchievementTracker().progress(AchievementData.COOKING, 1);
+					player.getAchievementTracker().progress(AchievementData.COOK_ALOT, 1);
+					if (fish == CookingData.SHARK) {
 						DailyTask.COOK_SHARKS.tryProgress(player);
 					}
-					Achievements.doProgress(player, Achievements.Achievement.COOK_50_FOOD);
-
 				}
 				amountCooked++;
 				if (amountCooked >= amount)

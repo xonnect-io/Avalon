@@ -74,19 +74,7 @@ public class PlayerLoading {
             if (reader.has("total-play-time-ms")) {
                 player.setTotalPlayTime(reader.get("total-play-time-ms").getAsLong());
             }
-            if (reader.has("achievements")) {
-                player.getAchievementTracker().load(reader.get("achievements"));
-            }
 
-            if (reader.has("achievements-completion")) {
-                player.getAchievementAttributes().setCompletion(
-                        builder.fromJson(reader.get("achievements-completion").getAsJsonArray(), boolean[].class));
-            }
-
-            if (reader.has("achievements-progress")) {
-                player.getAchievementAttributes().setProgress(
-                        builder.fromJson(reader.get("achievements-progress").getAsJsonArray(), int[].class));
-            }
             if (reader.has("username")) {
                 player.setUsername(reader.get("username").getAsString());
             }
@@ -442,6 +430,9 @@ public class PlayerLoading {
             }
             if (reader.has("npc-killcount")) {
                 player.getPointsHandler().setNPCKILLCount(reader.get("npc-killcount").getAsInt(), false);
+            }
+            if (reader.has("unknown-completed")) {
+                player.getPointsHandler().setUnknownCompleted(reader.get("unknown-completed").getAsInt(), false);
             }
             if (reader.has("total-prestiges")) {
                 player.getPointsHandler().setTotalPrestiges(reader.get("total-prestiges").getAsInt(), false);
@@ -1055,25 +1046,6 @@ public class PlayerLoading {
             if (reader.has("afk-zenyte"))
                 player.setAfkZenyte(reader.get("afk-zenyte").getAsInt());
 
-            if (reader.has("achievements-points")) {
-                int points = reader.get("achievements-points").getAsInt();
-                player.getAchievements().setPoints(points);
-            }
-            if (reader.has("achievements-amount")) {
-                int[][] amountRemaining = builder.fromJson(reader.get("achievements-amount").getAsJsonArray(),
-                        int[][].class);
-                player.getAchievements().setAmountRemaining(amountRemaining);
-            }
-            if (reader.has("achievements-completed")) {
-                boolean[][] completed = builder.fromJson(reader.get("achievements-completed").getAsJsonArray(),
-                        boolean[][].class);
-                player.getAchievements().setCompleted(completed);
-            }
-            if (reader.has("achievements-daily")) {
-                player.getAchievements().setDailyTaskDate(reader.get("achievements-daily").getAsLong());
-            }
-
-
             if (reader.has("gwd-killcount")) {
                 player.getMinigameAttributes().getGodwarsDungeonAttributes()
                         .setKillcount(builder.fromJson(reader.get("gwd-killcount"), int[].class));
@@ -1181,6 +1153,21 @@ public class PlayerLoading {
                     player.getObtainedPets().add(l);
                 }
             }
+
+            if (reader.has("achievements")) {
+                player.getAchievementTracker().load(reader.get("achievements"));
+            }
+
+            if (reader.has("achievements-completion")) {
+                player.getAchievementAttributes().setCompletion(
+                        builder.fromJson(reader.get("achievements-completion").getAsJsonArray(), boolean[].class));
+            }
+
+            if (reader.has("achievements-progress")) {
+                player.getAchievementAttributes().setProgress(
+                        builder.fromJson(reader.get("achievements-progress").getAsJsonArray(), int[].class));
+            }
+
             /*
              * File rooms = new File("./data/saves/housing/rooms/" + player.getUsername() +
              * ".ser"); if (rooms.exists()) { FileInputStream fileIn = new

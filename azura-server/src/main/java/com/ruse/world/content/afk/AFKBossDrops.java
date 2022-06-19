@@ -1,7 +1,7 @@
 package com.ruse.world.content.afk;
 
 import com.ruse.model.definitions.NPCDrops;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.CombatBuilder.CombatDamageCache;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.dailytasks_new.DailyTask;
@@ -44,9 +44,9 @@ public class AFKBossDrops {
 			Entry<Player, Integer> entry = iterator.next();
 			Player killer = entry.getKey();
 
-			Achievements.doProgress(killer, Achievements.Achievement.KILL_45_GLOBAL_BOSSES);
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 
+			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
 			NPCDrops.handleDrops(killer, npc);
 			iterator.remove();
 		}

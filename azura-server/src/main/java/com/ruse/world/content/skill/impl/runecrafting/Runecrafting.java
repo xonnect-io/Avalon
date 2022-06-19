@@ -5,6 +5,7 @@ import com.ruse.model.Graphic;
 import com.ruse.model.Position;
 import com.ruse.model.Skill;
 import com.ruse.util.Misc;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.skill.impl.runecrafting.RunecraftingData.RuneData;
 import com.ruse.world.content.skill.impl.runecrafting.RunecraftingData.TalismanData;
 import com.ruse.world.content.transportation.TeleportHandler;
@@ -44,7 +45,8 @@ public class Runecrafting {
 			}
 			player.getInventory().add(rune.getRuneID(), amountToMake);
 			amountMade += amountToMake;
-			
+
+			player.getAchievementTracker().progress(AchievementData.RUNECRAFTING, 1);
 			player.getSkillManager().addExperience(Skill.RUNECRAFTING, rune.getXP());
 		}
 

@@ -13,7 +13,6 @@ import com.ruse.world.World;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.StarterTasks.StarterTaskData;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.casketopening.CasketOpening;
@@ -1074,9 +1073,6 @@ public class ItemActionPacketListener implements PacketListener {
                 VotingDMGBoostTask.addBonusDMG(player, minutesDMG);
                 StarterTasks.finishTask(player, StarterTaskData.REDEEM_A_VOTE_SCROLL);
 
-                Achievements.doProgress(player, Achievements.Achievement.VOTE_10_TIMES, amt);
-                Achievements.doProgress(player, Achievements.Achievement.VOTE_50_TIMES, amt);
-                Achievements.doProgress(player, Achievements.Achievement.VOTE_100_TIMES, amt);
 
                 player.getClickDelay().reset();
                 break;
@@ -2076,10 +2072,6 @@ public class ItemActionPacketListener implements PacketListener {
                 VotingDRBoostTask.addBonusDR(player, minutesDR);
                  VotingDMGBoostTask.addBonusDMG(player, minutesDMG);
                 StarterTasks.finishTask(player, StarterTaskData.REDEEM_A_VOTE_SCROLL);
-
-                Achievements.doProgress(player, Achievements.Achievement.VOTE_10_TIMES, amt);
-                Achievements.doProgress(player, Achievements.Achievement.VOTE_50_TIMES, amt);
-                Achievements.doProgress(player, Achievements.Achievement.VOTE_100_TIMES, amt);
 
                 player.getClickDelay().reset();
                 break;

@@ -9,7 +9,7 @@ import com.ruse.world.World;
 import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.CasketOpening;
@@ -302,14 +302,6 @@ public class Mining {
 								}*/
                                 if (cycle == reqCycle) {
 
-                                    if (o == Ores.Copper) {
-                                        Achievements.doProgress(player, Achievements.Achievement.MINE_15_COPPER);
-                                    } else if (o == Ores.Mithril) {
-                                        Achievements.doProgress(player, Achievements.Achievement.MINE_100_MITHRIL);
-                                    } else if (o == Ores.Runite) {
-                                        Achievements.doProgress(player, Achievements.Achievement.MINE_250_RUNE);
-                                    }
-
                                     if (o == Ores.AFKMINE) {
                                         player.getInventory().add(995, 50 + Misc.getRandom(50));
                                     } else if (o.getItemId() != -1 && o != Ores.AFKMINE) {
@@ -328,6 +320,7 @@ public class Mining {
                                     if (o == Ores.CRASHED_STAR) {
                                         player.getPacketSender().sendMessage("You mine the crashed star..");
                                     } else {
+                                        player.getAchievementTracker().progress(AchievementData.MINING, 1);
                                         player.getPacketSender().sendMessage("You mine some ore.");
                                     }
 

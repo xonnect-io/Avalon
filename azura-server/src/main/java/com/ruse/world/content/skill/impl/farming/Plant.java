@@ -8,7 +8,6 @@ import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.Calendar;
@@ -144,9 +143,6 @@ public class Plant {
 					if (harvested == 3 && player.getInventory().contains(18336) && Misc.getRandom(4) == 0) {
 						player.getPacketSender().sendMessage("You receive a seed back from your Scroll of life.");
 						player.getInventory().add(Plants.values()[plant].seed, 1);
-					}
-					if (id == 219) {
-						Achievements.doProgress(player, Achievements.Achievement.HARVEST_250_TORSTOLS);
 					}
 					harvested++;
 					if (harvested >= (magicSecateurs ? 6 : 3) && Misc.getRandom(magicSecateurs ? 8 : 5) <= 1) {

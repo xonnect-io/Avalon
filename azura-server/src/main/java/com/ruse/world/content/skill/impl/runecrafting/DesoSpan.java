@@ -15,6 +15,7 @@ import com.ruse.model.container.impl.Equipment;
 import com.ruse.model.movement.MovementQueue;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -115,6 +116,7 @@ public class DesoSpan {
 						player.getPacketSender()
 								.sendMessage("You accidently attempt to siphon too much energy, and get hurt.");
 					} else {
+						player.getAchievementTracker().progress(AchievementData.RUNECRAFTING, 1);
 						player.getPacketSender().sendMessage("You siphon some energy.");
 					}
 					if (n.getConstitution() > 0 && player.getConstitution() > 0)

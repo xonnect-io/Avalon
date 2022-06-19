@@ -10,6 +10,7 @@ import com.ruse.world.content.ItemDegrading;
 import com.ruse.world.content.ItemDegrading.DegradingItem;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.skill.impl.mining.MiningData.Ores;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -68,6 +69,7 @@ public class Smelting {
 				if (player.getEquipment().contains(2568)) {
 					ItemDegrading.handleItemDegrading(player, DegradingItem.RING_OF_FORGING);
 				}
+				player.getAchievementTracker().progress(AchievementData.SMITHING, 1);
 				player.getInventory().add(barId, 1);
 				player.getSkillManager().addExperience(Skill.SMITHING, getExperience(barId));
 			} else

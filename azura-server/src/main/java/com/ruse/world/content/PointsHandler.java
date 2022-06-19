@@ -81,6 +81,7 @@ public class PointsHandler {
 	private int midnightgoblinkillcount;
 	private int shillingrate;
 	private int npckillcount;
+	private int unknownCompleted;
 	private int totalprestiges;
 	private int totalsprees;
 	private int achievementPoints;
@@ -745,6 +746,29 @@ private int pengRate;
 			this.npckillcount += points;
 		else
 			this.npckillcount = points;
+	}
+
+	public int getUnknownCompleted() {
+		return unknownCompleted;
+	}
+
+	public void setUnknownCompleted(int unknownCompleted) {
+		this.unknownCompleted = unknownCompleted;
+	}
+
+	public void incrementUnknownCompleted() {
+		this.unknownCompleted++;
+	}
+
+	public void incrementUnknownCompleted(int amt) {
+		this.unknownCompleted += amt;
+	}
+
+	public void setUnknownCompleted(int points, boolean add) {
+		if (add)
+			this.unknownCompleted += points;
+		else
+			this.unknownCompleted = points;
 	}
 	public void setTotalPrestiges(int totalprestiges) {
 		this.totalprestiges = totalprestiges;

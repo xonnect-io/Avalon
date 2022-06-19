@@ -77,7 +77,7 @@ public class AchievementInterface {
 	{
 		int done = player.getAchievementTracker().getProgressFor(achievement);
 		if (done == 0) {
-			return "@red@";
+			return "@or2@";
 		}
 
 		if (done != achievement.progressAmount) {
@@ -85,9 +85,9 @@ public class AchievementInterface {
 		}
 
 		if (player.getAchievementTracker().hasCollected(achievement)) {
-			return "@gre@";
+			return "@cya@";
 		}
-		return "@whi@";
+		return "@gre@";
 	}
 
 	private String getPointsString(NonItemReward[] nonItemRewards) {

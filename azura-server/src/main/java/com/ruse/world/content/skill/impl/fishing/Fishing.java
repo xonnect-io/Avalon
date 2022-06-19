@@ -6,7 +6,7 @@ import com.ruse.model.Animation;
 import com.ruse.model.Skill;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -169,17 +169,16 @@ public class Fishing {
 					String def = ItemDefinition.forId(s.getRawFish()[fishIndex]).getName();
 					if (def.endsWith("s"))
 						def = def.substring(0, def.length() - 1);
+					p.getAchievementTracker().progress(AchievementData.FISHING, 1);
+					p.getAchievementTracker().progress(AchievementData.FISH_ALOT, 1);
 					p.getPacketSender().sendMessage(
 							"You catch " + Misc.anOrA(def) + " " + def.toLowerCase().replace("_", " ") + ".");
 					if (s.getBait() != -1)
 						p.getInventory().delete(s.getBait(), 1);
 					p.getInventory().add(s.getRawFish()[fishIndex], 1);
 					if (s.getRawFish()[fishIndex] == 15270) {
-						Achievements.doProgress(p, Achievements.Achievement.FISH_250_ROCKTAILS, 1);
 					} else if (s.getRawFish()[fishIndex] == 377) {
-						Achievements.doProgress(p, Achievements.Achievement.FISH_50_LOBSTERS, 1);
 					} else if (s.getRawFish()[fishIndex] == 383) {
-						Achievements.doProgress(p, Achievements.Achievement.FISH_100_SHARKS, 1);
 					} else if (s.getRawFish()[fishIndex] == 7944 || s.getRawFish()[fishIndex] == 389) {
 						DailyTask.FISH_MONKFISH.tryProgress(p);
 					}

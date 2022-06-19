@@ -30,7 +30,6 @@ import com.ruse.world.content.DropLog.DropLogEntry;
 import com.ruse.world.content.KillsTracker.KillsEntry;
 import com.ruse.world.content.LoyaltyProgramme.LoyaltyTitles;
 import com.ruse.world.content.StarterTasks.StarterTaskAttributes;
-import com.ruse.world.content.achievement.AchievementHandler;
 import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.achievements.AchievementTracker;
 import com.ruse.world.content.bis.BestItems;
@@ -608,6 +607,7 @@ public class Player extends Character {
     private int fireImmunity, fireDamageModifier;
     private int amountDonated;
     private int npckillcount;
+    private int unknownCompleted;
     private int totalprestiges;
     private int totalsprees;
     private int wildernessLevel;
@@ -713,7 +713,6 @@ public class Player extends Character {
 
     private boolean chargingAttack;
     private final SeasonPass seasonPass = new SeasonPass(this);
-    private AchievementHandler achievementHandler;
 
     public Player(PlayerSession playerIO) {
         super(GameSettings.STARTER_BED.copy());
@@ -788,11 +787,7 @@ public class Player extends Character {
         this.raidsParty = raidsParty;
     }
 
-    public AchievementHandler getAchievements() {
-        if (achievementHandler == null)
-            achievementHandler = new AchievementHandler(this);
-        return achievementHandler;
-    }
+
 
     public int getAfkSapphire() {
         return afkSapphire;

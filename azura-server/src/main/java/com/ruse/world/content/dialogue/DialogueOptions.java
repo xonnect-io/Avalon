@@ -15,6 +15,7 @@ import com.ruse.world.World;
 import com.ruse.world.content.AchievementsOLD.AchievementDataOLD;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Gambling.FlowersData;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.impl.AgilityTicketExchange;
@@ -73,6 +74,8 @@ public class DialogueOptions {
         }
         if (id == FIRST_OPTION_OF_FIVE) {
             switch (player.getDialogueActionId()) {
+
+
                 case 101:
                     player.getPlayerOwnedShopManager().openMain();
                     break;
@@ -902,6 +905,9 @@ public class DialogueOptions {
             // System.out.println("Slayer master: " + player.getSlayer().getSlayerMaster().toString());
             // System.out.println("ID: " + id);
             switch (player.getDialogueActionId()) {
+                case 55:
+                    TeleportHandler.teleportPlayer(player, new Position(2474, 3437, 0), TeleportType.NORMAL);
+                    break;
                 case 9926:
                     player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(8));
                     player.getPacketSender().sendEnterAmountPrompt("How many Green charms would you like to withdraw?");
@@ -2020,6 +2026,9 @@ public class DialogueOptions {
                     player.getPacketSender().sendMessage("You have just prestiged to level " + player.getPointsHandler().getTotalPrestiges()+ "!");
                     player.getPacketSender().sendMessage(player.getPointsHandler().getTotalPrestiges()+ " Prestige Mboxes have been added to your inventory as a reward.");
                     World.sendMessage("@blu@<shad=1>[News] @red@"+player.getUsername()+ "@bla@ has just prestiged to level " + player.getPointsHandler().getTotalPrestiges() + "!");
+
+                    player.getAchievementTracker().progress(AchievementData.PRESTIGE_VETERAN, 1);
+                    player.getAchievementTracker().progress(AchievementData.PRESTIGE_MASTER, 1);
 
                     if (player.getPointsHandler().getTotalPrestiges() == 1)
                         player.getInventory().add(23236, 1);

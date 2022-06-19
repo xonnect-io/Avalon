@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 import com.ruse.model.definitions.NPCDrops;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.CombatBuilder;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.dailytasks_new.DailyTask;
@@ -44,7 +44,7 @@ public class HellraiserBossDrop {
 			Map.Entry<Player, Integer> entry = iterator.next();
 			Player killer = entry.getKey();
 
-			Achievements.doProgress(killer, Achievements.Achievement.KILL_45_GLOBAL_BOSSES);
+			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 			NPCDrops.handleDrops(killer, npc);
 			iterator.remove();

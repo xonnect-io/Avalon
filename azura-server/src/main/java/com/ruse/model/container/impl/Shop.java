@@ -23,7 +23,6 @@ import com.ruse.world.content.DonatorShop;
 import com.ruse.world.content.PetShop;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.PlayerPanel;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.minigames.impl.RecipeForDisaster;
 import com.ruse.world.content.skill.impl.old_dungeoneering.UltimateIronmanHandler;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
@@ -824,8 +823,6 @@ public class Shop extends ItemContainer {
             DiscordMessager.sendDebugMessage(":bangbang: " + player.getUsername() + " has purchased "
                     + item.getDefinition().getName() + " from vote shop.");
         }  else if (id == 201 && item.getId() == 23102) {
-            Achievements.doProgress(player, Achievements.Achievement.COLLECT_T2_GLOVES);
-            Achievements.doProgress(player, Achievements.Achievement.COLLECT_T4_GLOVES);
         } else if (id == 81) {
             if (item.getId() == 9013 || item.getId() == 13150) {
                 if (!player.didFriday13May2016()) {

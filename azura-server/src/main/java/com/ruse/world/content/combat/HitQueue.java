@@ -134,6 +134,34 @@ public class HitQueue {
 							p.getMinigameAttributes().getDungeoneeringAttributes().incrementDamageDealt(damage);
 						}
 						/** ACHIEVEMENTS **/
+						if (container.getCombatType() == CombatType.MELEE) {
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_100K_MELEE_DAMAGE, damage);
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_10M_MELEE_DAMAGE, damage);
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_100M_MELEE_DAMAGE, damage);
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_1B_MELEE_DAMAGE, damage);
+						} else if (container.getCombatType() == CombatType.RANGED) {
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_100K_RANGE_DAMAGE, damage);
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_10M_RANGE_DAMAGE, damage);
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_100M_RANGE_DAMAGE, damage);
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_1B_RANGE_DAMAGE, damage);
+						} else if (container.getCombatType() == CombatType.MAGIC) {
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_100K_MAGIC_DAMAGE, damage);
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_10M_MAGIC_DAMAGE, damage);
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_100M_MAGIC_DAMAGE, damage);
+							p.getAchievementTracker().progress(
+									com.ruse.world.content.achievements.AchievementData.DEAL_1B_MAGIC_DAMAGE, damage);
+						}
 
 						AOEWeaponData aoeData = AOESystem.getSingleton()
 								.getAOEData(p.getEquipment().get(Equipment.WEAPON_SLOT).getId());

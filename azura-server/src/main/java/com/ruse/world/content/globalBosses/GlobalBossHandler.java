@@ -6,7 +6,6 @@ import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.world.World;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.combat.CombatBuilder;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.dailytasks_new.DailyTask;
@@ -103,8 +102,6 @@ public abstract class GlobalBossHandler extends NPC {
 		for (Map.Entry<Player, Integer> entry : result) {
 
 			final Player killer = entry.getKey();
-
-			Achievements.doProgress(killer, Achievements.Achievement.KILL_45_GLOBAL_BOSSES);
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 
 			NPCDrops.handleDrops(killer, npc);

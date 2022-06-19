@@ -8,6 +8,7 @@ import com.ruse.model.Position;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.boxes.ZombieRaidLoot;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.combat.prayer.CurseHandler;
@@ -299,6 +300,7 @@ public class ZombieRaids {
                 for (Player player : party.getPlayers()) {
                     Box[] loot = ZombieRaidLoot.LOOT;
 
+                    player.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     player.setZombieRaidsKC(player.getZombieRaidsKC() + 1);
 
                     Box drop = getLoot(loot, party.getPlayers().size());

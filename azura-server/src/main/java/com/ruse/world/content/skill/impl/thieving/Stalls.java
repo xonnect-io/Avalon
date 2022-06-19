@@ -1,19 +1,10 @@
 package com.ruse.world.content.skill.impl.thieving;
 
-import com.ruse.engine.task.Task;
-import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Animation;
 import com.ruse.model.GameObject;
 import com.ruse.model.Item;
 import com.ruse.model.Skill;
-import com.ruse.model.definitions.ItemDefinition;
-import com.ruse.util.Misc;
-import com.ruse.world.World;
-import com.ruse.world.content.afk.AfkSystem;
-import com.ruse.world.content.achievement.Achievements;
-import com.ruse.world.content.casketopening.Box;
-import com.ruse.world.content.casketopening.CasketOpening;
-import com.ruse.world.content.skill.impl.mining.MiningData;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.entity.impl.player.Player;
 
 public class Stalls {
@@ -36,16 +27,9 @@ public class Stalls {
             return;
         }
 
-        if (gameObject.getId() == 22772)
-            Achievements.doProgress(player, Achievements.Achievement.STEAL_100_LAMP_STALLS);
-
-        if (gameObject.getId() == 22774) {
-            Achievements.doProgress(player, Achievements.Achievement.STEAL_250_ARMOUR_STALLS);
-            Achievements.doProgress(player, Achievements.Achievement.STEAL_750_ARMOUR_STALLS);
-        }
-
         player.performAnimation(new Animation(881));
         player.getPacketSender().sendInterfaceRemoval();
+        player.getAchievementTracker().progress(AchievementData.THIEVING, 1);
         player.getSkillManager().addExperience(Skill.THIEVING, xp);
         player.getClickDelay().reset();
         {

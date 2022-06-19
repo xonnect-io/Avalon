@@ -44,8 +44,8 @@ public class Achievements {
         id += 3;
 
         //collect button
-        addHoverButtonWSpriteLoader(id, 1682, 35, 25, "Collect Reward", 0, id+1, 1);
-        addHoveredImageWSpriteLoader(id+1, 1683, 35, 25, id+2);
+        addHoverButtonWSpriteLoader(id, 1686, 35, 25, "Collect Reward", 0, id+1, 1);
+        addHoveredImageWSpriteLoader(id+1, 1687, 35, 25, id+2);
         rs.child(frame++, id, 444, 139);
         rs.child(frame++, id + 1, 444, 139);
         id += 3;

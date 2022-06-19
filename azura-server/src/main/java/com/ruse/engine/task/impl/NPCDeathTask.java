@@ -11,10 +11,10 @@ import com.ruse.motivote3.doMotivote;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.afk.AFKBossDrops;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.StarterTasks.StarterTaskData;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.bossEvents.BossEventHandler;
 import com.ruse.world.content.combat.strategy.impl.Exoden;
 import com.ruse.world.content.combat.strategy.impl.KalphiteQueen;
@@ -147,18 +147,6 @@ public class NPCDeathTask extends Task {
                             }
                         }
 
-                       /* if (BOSSES.contains(npc.getId())) {
-
-                            killer.getPointsHandler().incrementBossPoints(1);
-                            killer.sendMessage("<img=99>You now have @red@" + killer.getPointsHandler().getBossPoints()
-                                    + " Boss Points!");
-                        }*/
-
-                        Achievements.doProgress(killer, Achievements.Achievement.KILL_5000_NPCS);
-                        Achievements.doProgress(killer, Achievements.Achievement.KILL_10000_NPCS);
-                        Achievements.doProgress(killer, Achievements.Achievement.KILL_25000_NPCS);
-
-
                          if (npc.getId() == 6260) {
                             killer.getAchievementAttributes().setGodKilled(0, true);
                         } else if (npc.getId() == 6222) {
@@ -179,10 +167,7 @@ public class NPCDeathTask extends Task {
                             DailyTask.BOSSES.tryProgress(killer);
                         }
 
-                        for (Achievements.Achievement ach : Achievements.Achievement.values()) {
-                            if (ach.getNpcId() != -1 && ach.getNpcId() == npc.getId())
-                                Achievements.doProgress(killer, ach);
-                        }
+
                         if (npc.getId() == Wildywyrm.NPC_ID) {
                             Wildywyrm.wyrmAlive = false;
                             World.getPlayers().forEach(p -> PlayerPanel.refreshPanel(p));
@@ -227,11 +212,50 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == 823) { //unknown Boss room
                             UnknownBossDrop.handleDrop(npc);
                             killer.unknownZone.refreshInterface();
+                            killer.getPointsHandler().incrementUnknownCompleted(1);
+                            killer.getAchievementTracker().progress(AchievementData.CRYPT_CAMPER, 1);
+                            killer.getPacketSender().sendMessage("@red@ You have completed the Unknown Crypt @blu@" + killer.getPointsHandler().getUnknownCompleted() + " @red@time(s)");
                         }
                         if (npc.getId() == 827) {// Unknown Room 1
                             UnknownGuardDrop.handleDrop(npc);
                             killer.unknownZone.refreshInterface();
 
+                        }
+                        if (npc.getId() == 9837) {
+                            killer.getAchievementTracker().progress(AchievementData.MIDNIGHT_ACHIEVER, 1);
+                        }
+                        if (npc.getId() == 9813) {
+                            killer.getAchievementTracker().progress(AchievementData.BLOOD_MASTER, 1);
+                        }
+                        if (npc.getId() == 1719) {
+                            killer.getAchievementTracker().progress(AchievementData.TRAIN_NPCS, 1);
+                        }
+                        if (npc.getId() == 9838) {
+                            killer.getAchievementTracker().progress(AchievementData.MELEE_NPCS, 1);
+                        }
+                        if (npc.getId() == 1718) {
+                            killer.getAchievementTracker().progress(AchievementData.RANGE_NPCS, 1);
+                        }
+                        if (npc.getId() == 9836) {
+                            killer.getAchievementTracker().progress(AchievementData.MAGIC_NPCS, 1);
+                        }
+                        if (npc.getId() == 117) {
+                            killer.getAchievementTracker().progress(AchievementData.GIANT_SPIDERS, 1);
+                        }
+                        if (npc.getId() == 501) {
+                            killer.getAchievementTracker().progress(AchievementData.DEMON_GODDESS, 1);
+                        }
+                        if (npc.getId() == 503) {
+                            killer.getAchievementTracker().progress(AchievementData.ENERGY_SKELETON, 1);
+                        }
+                        if (npc.getId() == 1627) {
+                            killer.getAchievementTracker().progress(AchievementData.TUROTHS, 1);
+                        }
+                        if (npc.getId() == 4540) {
+                            killer.getAchievementTracker().progress(AchievementData.COLOSSAL_KILLER, 1);
+                        }
+                        if (npc.getId() == 205) {
+                            killer.getAchievementTracker().progress(AchievementData.ELITE_KILLER, 1);
                         }
                         if (npc.getId() == 828) {// Unknown Room 2
                             UnknownCreatureDrop.handleDrop(npc);
@@ -296,7 +320,18 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == 187) {
                             HellraiserBossDrop.handleDrop(npc);
                         }
-
+                        if (npc.getId() == 250) {
+                            killer.getAchievementTracker().progress(AchievementData.HANTO, 1);
+                        }
+                        if (npc.getId() == 449) {
+                            killer.getAchievementTracker().progress(AchievementData.RADITZ, 1);
+                        }
+                        if (npc.getId() == 452) {
+                            killer.getAchievementTracker().progress(AchievementData.GOKU, 1);
+                        }
+                        if (npc.getId() == 185) {
+                            killer.getAchievementTracker().progress(AchievementData.INUYASHA, 1);
+                        }
                         if (npc.getId() == Exoden.MINION_NPCID) {
                             Exoden.minions_dead = true;
                             Exoden.minions_spawned = false;
@@ -327,6 +362,11 @@ public class NPCDeathTask extends Task {
                             HellraiserSystem.npckills++;
                             HellraiserSystem.spawnBoss();
                             HellraiserSystem.callBoss();
+                            killer.getAchievementTracker().progress(AchievementData.REACH_10K_KILLS, 1);
+                            killer.getAchievementTracker().progress(AchievementData.REACH_100K_KILLS, 1);
+                            killer.getAchievementTracker().progress(AchievementData.REACH_500K_KILLS, 1);
+                            killer.getAchievementTracker().progress(AchievementData.ONE_MILLION, 1);
+                            killer.getAchievementTracker().progress(AchievementData.TWO_MILLION, 1);
                             killer.getPointsHandler().incrementNPCKILLCount(1);
                             if (!npc.isEventBoss()) {
                                 NPCDrops.handleDrops(killer, npc, 1);
@@ -337,6 +377,10 @@ public class NPCDeathTask extends Task {
                         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null
                                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
                             killer.getPointsHandler().incrementNPCKILLCount(1);
+                            killer.getAchievementTracker().progress(AchievementData.REACH_10K_KILLS, 1);
+                            killer.getAchievementTracker().progress(AchievementData.REACH_100K_KILLS, 1);
+                            killer.getAchievementTracker().progress(AchievementData.REACH_500K_KILLS, 1);
+                            killer.getAchievementTracker().progress(AchievementData.ONE_MILLION, 1);
                             HellraiserSystem.npckills++;
                         }
 
@@ -401,37 +445,76 @@ public class NPCDeathTask extends Task {
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 1614
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getAchievementTracker().progress(AchievementData.DUSTCLAW, 2);
             killer.getPointsHandler().incrementSPAWNKILLCount(2);
         } else if (npc.getId() == 1614) {// spawn
             killer.getPointsHandler().incrementSPAWNKILLCount(1);
+            killer.getAchievementTracker().progress(AchievementData.DUSTCLAW, 1);
 
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 603
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().incrementLORDKILLCount(2);
+            killer.getAchievementTracker().progress(AchievementData.LORD, 2);
         } else if (npc.getId() == 603) {
             killer.getPointsHandler().incrementLORDKILLCount(1);
+            killer.getAchievementTracker().progress(AchievementData.LORD, 1);
         }
 
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 12843
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().incrementDEMONKILLCount(2);
+            killer.getAchievementTracker().progress(AchievementData.SHADOW, 2);
         } else if (npc.getId() == 12843) {// demon
             killer.getPointsHandler().incrementDEMONKILLCount(1);
+            killer.getAchievementTracker().progress(AchievementData.SHADOW, 1);
+        }
+
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 53
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().incrementDRAGONKILLCount(2);
+            killer.getAchievementTracker().progress(AchievementData.GOLEM, 2);
+        } else if (npc.getId() == 53) {// dragon
+            killer.getPointsHandler().incrementDRAGONKILLCount(1);
+            killer.getAchievementTracker().progress(AchievementData.GOLEM, 1);
 
         }
+
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 8018
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().incrementBEASTKILLCount(2);
+            killer.getAchievementTracker().progress(AchievementData.SHETANI, 2);
+        } else if (npc.getId() == 8018) {// beast
+            killer.getPointsHandler().incrementBEASTKILLCount(1);
+            killer.getAchievementTracker().progress(AchievementData.SHETANI, 1);
+        }
+
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 13635
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().incrementKINGKILLCount(2);
+            killer.getAchievementTracker().progress(AchievementData.RIPPER, 2);
+        } else if (npc.getId() == 13635) {// king
+            killer.getPointsHandler().incrementKINGKILLCount(1);
+            killer.getAchievementTracker().progress(AchievementData.RIPPER, 1);
+
+        }
+
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 8008
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().incrementAVATARKILLCount(2);
+            killer.getAchievementTracker().progress(AchievementData.AVATAR, 1);
         } else if (npc.getId() == 8008) {// avatar
             killer.getPointsHandler().incrementAVATARKILLCount(1);
+            killer.getAchievementTracker().progress(AchievementData.AVATAR, 1);
 
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 3308
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().incrementANGELKILLCount(2);
+            killer.getAchievementTracker().progress(AchievementData.WYVERNS, 1);
         } else if (npc.getId() == 3308) {// angel
             killer.getPointsHandler().incrementANGELKILLCount(1);
+            killer.getAchievementTracker().progress(AchievementData.WYVERNS, 1);
 
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 3117
@@ -441,13 +524,7 @@ public class NPCDeathTask extends Task {
             killer.getPointsHandler().incrementLUCIENKILLCount(1);
 
         }
-        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 13635
-                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            killer.getPointsHandler().incrementKINGKILLCount(2);
-        } else if (npc.getId() == 13635) {// king
-            killer.getPointsHandler().incrementKINGKILLCount(1);
 
-        }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 201
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().incrementHERCULESKILLCount(2);
@@ -470,19 +547,7 @@ public class NPCDeathTask extends Task {
             killer.getPointsHandler().incrementZEUSKILLCount(1);
         }
 
-        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 53
-                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            killer.getPointsHandler().incrementDRAGONKILLCount(2);
-        } else if (npc.getId() == 53) {// dragon
-            killer.getPointsHandler().incrementDRAGONKILLCount(1);
 
-        }
-        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 8018
-                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            killer.getPointsHandler().incrementBEASTKILLCount(2);
-        } else if (npc.getId() == 8018) {// beast
-            killer.getPointsHandler().incrementBEASTKILLCount(1);
-        }
 
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9011
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
@@ -494,8 +559,10 @@ public class NPCDeathTask extends Task {
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9012
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().incrementLuciferKillCount(2);
+            killer.getAchievementTracker().progress(AchievementData.ANGEL_KILLER, 2);
         } else if (npc.getId() == 9012) {// zeus
             killer.getPointsHandler().incrementLuciferKillCount(1);
+            killer.getAchievementTracker().progress(AchievementData.ANGEL_KILLER, 1);
         }
 
         int ID_HERE = 1;

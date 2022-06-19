@@ -2,9 +2,8 @@ package com.ruse.world.content.minigames.impl;
 
 import com.ruse.model.Item;
 import com.ruse.model.Position;
-import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.dailytasks_new.DailyTask;
@@ -61,7 +60,7 @@ public class TreasureHunter {
     public static void useKeyOnChest(Player player, Item item) {
         if (item.getId() == MASTER_KEY.getId() && player.getInventory().contains(MASTER_KEY.getId())) {
             player.getInventory().delete(MASTER_KEY);
-
+            player.getAchievementTracker().progress(AchievementData.TREASURE_HUNTER, 1);
             handleRewards(player);
         }
     }
@@ -77,9 +76,6 @@ public class TreasureHunter {
         Box box = BoxLoot.getLoot(loot);
         player.getInventory().add(box.getId(), box.getAmount());
 
-        Achievements.doProgress(player, Achievements.Achievement.OPEN_5_CHESTS_IN_TREASURE_HUNTER);
-        Achievements.doProgress(player, Achievements.Achievement.OPEN_25_CHESTS_IN_TREASURE_HUNTER);
-        Achievements.doProgress(player, Achievements.Achievement.OPEN_200_CHESTS_IN_TREASURE_HUNTER);
         DailyTask.TREASURE_HUNTER.tryProgress(player);
 
     }

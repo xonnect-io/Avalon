@@ -12,8 +12,7 @@ import com.ruse.model.input.impl.EnterGemAmount;
 import com.ruse.util.Misc;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
-import com.ruse.world.content.achievement.Achievements;
-import com.ruse.world.content.dailytasks_new.DailyTask;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.entity.impl.player.Player;
 
 /**
@@ -280,17 +279,7 @@ public class Fletching {
                     player.getInventory().add(product, shafts ? 15 : 1);
                     player.getSkillManager().addExperience(Skill.FLETCHING, 100);
                 }
-
-
-                if (bow == BowData.OAK_LONGBOW) {
-                    Achievements.doProgress(player, Achievements.Achievement.FLETCH_20_OAK_LONGBOWS);
-                } else if (bow == BowData.YEW_LONGBOW) {
-                    Achievements.doProgress(player, Achievements.Achievement.FLETCH_150_YEW_LONGBOWS);
-                    DailyTask.STRING_YEW_LONGBOWS.tryProgress(player);
-                } else if (bow == BowData.MAGIC_LONGBOW) {
-                    Achievements.doProgress(player, Achievements.Achievement.FLETCH_250_MAGIC_LONGBOWS);
-                }
-
+                player.getAchievementTracker().progress(AchievementData.FLETCHING, 1);
                 player.getSkillManager().addExperience(Skill.FLETCHING, shafts ? 1 : (int) (bow.getXp()));
                 Sounds.sendSound(player, Sound.FLETCH_ITEM);
                 player.getSkillManager().addExperience(Skill.FLETCHING, 100);
@@ -356,6 +345,7 @@ public class Fletching {
                 player.getInventory().delete(gem, 1);
                 player.getInventory().add(gd.getOutcome(), gd.getOutput());
                 player.getPacketSender().sendMessage("You crush the " + ItemDefinition.forId(gem).getName() + ".");
+                player.getAchievementTracker().progress(AchievementData.FLETCHING, 1);
                 player.getSkillManager().addExperience(Skill.FLETCHING, gd.getXp());
                 amountmade++;
                 if (amountmade >= amount)
@@ -410,6 +400,7 @@ public class Fletching {
                 player.getInventory().delete(bd.getBolt(), toMake);
                 player.getInventory().delete(bd.getTip(), toMake);
                 player.getInventory().add(bd.getOutcome(), toMake);
+                player.getAchievementTracker().progress(AchievementData.FLETCHING, 1);
                 player.getSkillManager().addExperience(Skill.FLETCHING, bd.getXp() * toMake);
                 stop();
             }
@@ -455,6 +446,7 @@ public class Fletching {
                         player.getInventory().delete(log, 1);
                         player.getInventory().add(g.Strung(), 1);
                         player.getPacketSender().sendMessage("You attach the Bow string on to the bow.");
+                        player.getAchievementTracker().progress(AchievementData.FLETCHING, 1);
                         player.getSkillManager().addExperience(Skill.FLETCHING, (int) g.getXP());
                         amountMade++;
                         if (amountMade >= amount)
@@ -486,6 +478,7 @@ public class Fletching {
                     player.getInventory().delete(new Item(arr.getItem2()).setAmount(15),
                             player.getInventory().getSlot(arr.getItem2()), true);
                     player.getInventory().add(arr.getOutcome(), 15);
+                    player.getAchievementTracker().progress(AchievementData.FLETCHING, 1);
                     player.getSkillManager().addExperience(Skill.FLETCHING, (int) (arr.getXp()));
                 } else {
                     player.getPacketSender().sendMessage("You must have at least 15 of each supply to make arrows.");

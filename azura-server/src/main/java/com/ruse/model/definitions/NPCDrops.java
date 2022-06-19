@@ -12,7 +12,6 @@ import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
 import com.ruse.world.content.DropLog.DropLogEntry;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
 import com.ruse.world.content.collectionlog.CollectionEntry;
@@ -300,13 +299,6 @@ public class NPCDrops {
                             player.sendMessage("You are now hunting for: @blu@" + ItemDefinition.forId(newId).getName() + ".");
                         }
                     }
-                }
-
-                if (toDrop.getId() == 23100) {
-                    Achievements.doProgress(player, Achievements.Achievement.COLLECT_T2_GLOVES);
-                }
-                if (toDrop.getId() == 23102) {
-                    Achievements.doProgress(player, Achievements.Achievement.COLLECT_T4_GLOVES);
                 }
                 NPCDrops.NpcDropItem newItem = new  NPCDrops.NpcDropItem(toDrop.getId(), new int[] {1}, 0);
                 finalDropList.add(newItem);

@@ -1,13 +1,6 @@
 package com.ruse.world.content;
-
-import com.ruse.model.Item;
-import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
-import com.ruse.util.Misc;
-import com.ruse.world.World;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.combat.CombatBuilder;
-import com.ruse.world.content.combat.CombatBuilder.CombatDamageCache;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -49,7 +42,6 @@ public class DonationBossDrop {
 			Map.Entry<Player, Integer> entry = iterator.next();
 			Player killer = entry.getKey();
 
-			Achievements.doProgress(killer, Achievements.Achievement.KILL_45_GLOBAL_BOSSES);
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 
 			NPCDrops.handleDrops(killer, npc);

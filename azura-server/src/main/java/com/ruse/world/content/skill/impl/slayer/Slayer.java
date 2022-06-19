@@ -1,7 +1,9 @@
 package com.ruse.world.content.skill.impl.slayer;
 
-import com.ruse.GameSettings;
-import com.ruse.model.*;
+import com.ruse.model.Item;
+import com.ruse.model.Locations;
+import com.ruse.model.Position;
+import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Shop.ShopManager;
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
@@ -9,15 +11,12 @@ import com.ruse.world.World;
 import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.NpcRequirements;
 import com.ruse.world.content.PlayerPanel;
-import com.ruse.world.content.achievement.Achievements;
-import com.ruse.world.content.dailytasks_new.DailyTask;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.serverperks.ServerPerks;
-import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
 
 public class Slayer {
 
@@ -125,9 +124,9 @@ public class Slayer {
         if (slayerTask != SlayerTasks.NO_TASK) {
             if (slayerTask.getNpcId() == npc.getId()) {
                 handleSlayerTaskDeath(true);
-                if (Misc.getRandom(50) == 0) {
-                    player.sendMessage("You received a Slayer casket");
-                    player.getInventory().add(2734, 1);
+                if (Misc.getRandom(250) == 0) {
+                    player.sendMessage("You received a Slayer box!");
+                    player.getInventory().add(7120, 1);
                 }
 
                 // custom tickets here?
@@ -155,10 +154,9 @@ public class Slayer {
             taskStreak++;
             player.getPointsHandler().incrementSlayerSpree(1);
 
-            Achievements.doProgress(player, Achievements.Achievement.COMPLETE_20_SLAYER_TASKS);
-            Achievements.doProgress(player, Achievements.Achievement.COMPLETE_50_SLAYER_TASKS);
-            Achievements.doProgress(player, Achievements.Achievement.COMPLETE_150_SLAYER_TASKS);
-
+            player.getAchievementTracker().progress(AchievementData.SLAYER, 1);
+            player.getAchievementTracker().progress(AchievementData.MODERATE_SLAYER, 1);
+            player.getAchievementTracker().progress(AchievementData.RAMBO_SLAYER, 1);
 
             lastTask = slayerTask;
             slayerTask = SlayerTasks.NO_TASK;

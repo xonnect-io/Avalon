@@ -4,6 +4,7 @@ import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.*;
 import com.ruse.util.Misc;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -38,6 +39,7 @@ public enum ObstacleData {
 					setEventRunning(false);
 					player.setCrossedObstacle(0, true).setCrossingObstacle(false).setSkillAnimation(-1);
 					Agility.addExperience(player, 60);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.getUpdateFlag().flag(Flag.APPEARANCE);
 					player.getPacketSender().sendMessage("You manage to safely make your way across the log.");
 				}
@@ -57,6 +59,7 @@ public enum ObstacleData {
 					if (tick == 2) {
 						player.moveTo(new Position(2473, 3423, 1));
 						Agility.addExperience(player, 40);
+						player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					} else if (tick == 3) {
 						player.setCrossedObstacle(1, true).setCrossingObstacle(false);
 						stop();
@@ -76,6 +79,7 @@ public enum ObstacleData {
 				public void execute() {
 					player.moveTo(new Position(2473, 3420, 2));
 					Agility.addExperience(player, 42);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.setCrossedObstacle(2, true).setCrossingObstacle(false);
 					stop();
 				}
@@ -104,6 +108,7 @@ public enum ObstacleData {
 					setEventRunning(false);
 					player.setCrossedObstacle(3, true).setCrossingObstacle(false).setSkillAnimation(-1);
 					Agility.addExperience(player, 25);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.getUpdateFlag().flag(Flag.APPEARANCE);
 					player.getPacketSender().sendMessage("You manage to safely walk across the rope.");
 				}
@@ -120,6 +125,7 @@ public enum ObstacleData {
 				public void execute() {
 					player.moveTo(new Position(player.getPosition().getX(), player.getPosition().getY(), 0));
 					Agility.addExperience(player, 42);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.setCrossedObstacle(4, true).setCrossingObstacle(false);
 					stop();
 				}
@@ -140,6 +146,7 @@ public enum ObstacleData {
 				public void execute() {
 					player.moveTo(new Position(player.getPosition().getX(), player.getPosition().getY() + 2, 0));
 					Agility.addExperience(player, 15);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.setCrossedObstacle(5, true).setCrossingObstacle(false);
 					stop();
 				}
@@ -191,6 +198,7 @@ public enum ObstacleData {
 					}
 					Agility.resetProgress(player);
 					player.getPacketSender().sendMessage("You manage to make your way through the pipe.");
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 				}
 			});
 		}
@@ -240,6 +248,7 @@ public enum ObstacleData {
 					} else {
 						DialogueManager.start(player, DialogueManager.getDialogues().get(56));
 					}
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.getPacketSender().sendMessage("You manage to make your way through the pipe.");
 					Agility.resetProgress(player);
 				}
@@ -284,6 +293,7 @@ public enum ObstacleData {
 					setEventRunning(false);
 					player.setCrossedObstacle(0, success ? true : false).setCrossingObstacle(false);
 					Agility.addExperience(player, 75 * 3);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.getPacketSender().sendMessage("You manage to swing yourself across.");
 				}
 			});
@@ -346,6 +356,7 @@ public enum ObstacleData {
 						Agility.addExperience(player, fail ? 5 * 3 : 60 * 3);
 						player.getUpdateFlag().flag(Flag.APPEARANCE);
 						player.moveTo(new Position(2541, 3546));
+						player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 						player.getPacketSender().sendMessage("You safely make your way across the log.");
 					}
 				}
@@ -362,6 +373,7 @@ public enum ObstacleData {
 				public void execute() {
 					player.moveTo(new Position(2537 + Misc.getRandom(1), 3546 + Misc.getRandom(1), 1));
 					Agility.addExperience(player, 30 * 3);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.setCrossedObstacle(2, true).setSkillAnimation(-1).setCrossingObstacle(false);
 					stop();
 				}
@@ -416,6 +428,7 @@ public enum ObstacleData {
 						player.setCrossedObstacle(3, true).setSkillAnimation(-1).setCrossingObstacle(false);
 						player.getUpdateFlag().flag(Flag.APPEARANCE);
 						Agility.addExperience(player, 40 * 3);
+						player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 						player.getPacketSender().sendMessage("You safely move across the ledge.");
 						stop();
 					}
@@ -469,6 +482,7 @@ public enum ObstacleData {
 						} else {
 							DialogueManager.start(player, 56);
 						}
+						player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 						player.getPacketSender().sendMessage("You manage to jump over the wall.");
 					}
 					stop();
@@ -520,6 +534,7 @@ public enum ObstacleData {
 					setEventRunning(false);
 					player.setCrossingObstacle(false).setSkillAnimation(-1);
 					Agility.addExperience(player, 15);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.getUpdateFlag().flag(Flag.APPEARANCE);
 					Agility.resetProgress(player);
 					player.getPacketSender().sendMessage("You manage to make your way to the other side.");
@@ -555,6 +570,7 @@ public enum ObstacleData {
 					player.getUpdateFlag().flag(Flag.APPEARANCE);
 					Agility.resetProgress(player);
 					player.getPacketSender().sendMessage("You manage to make your way to the other side.");
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 				}
 			});
 		}
@@ -587,6 +603,7 @@ public enum ObstacleData {
 					player.getUpdateFlag().flag(Flag.APPEARANCE);
 					Agility.resetProgress(player);
 					player.getPacketSender().sendMessage("You manage to make your way to the other side.");
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 				}
 			});
 		}
@@ -619,6 +636,7 @@ public enum ObstacleData {
 					Agility.addExperience(player, 175);
 					player.getUpdateFlag().flag(Flag.APPEARANCE);
 					player.getPacketSender().sendMessage("You manage to squeeze through the pipe.");
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 				}
 			});
 		}
@@ -666,6 +684,7 @@ public enum ObstacleData {
 				public void stop() {
 					setEventRunning(false);
 					player.getPacketSender().sendMessage("You manage to swing yourself across.");
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.setCrossedObstacle(3, fail ? false : true).setCrossingObstacle(false);
 					Agility.addExperience(player, fail ? 10 : 250);
 				}
@@ -699,6 +718,7 @@ public enum ObstacleData {
 					setEventRunning(false);
 					player.setCrossedObstacle(4, true).setCrossingObstacle(false);
 					Agility.addExperience(player, 300);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.getPacketSender().sendMessage("You manage to pass the stones.");
 				}
 			});
@@ -734,6 +754,7 @@ public enum ObstacleData {
 					player.setCrossedObstacle(5, fail ? false : true).setCrossingObstacle(false).setSkillAnimation(-1);
 					Agility.addExperience(player, fail ? 10 : 250);
 					player.getUpdateFlag().flag(Flag.APPEARANCE);
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.getPacketSender().sendMessage("You manage to safely make your way over the log.");
 				}
 			});
@@ -765,6 +786,7 @@ public enum ObstacleData {
 					} else {
 						DialogueManager.start(player, 56);
 					}
+					player.getAchievementTracker().progress(AchievementData.AGILITY, 1);
 					player.getPacketSender().sendMessage("You manage to climb up the wall.");
 					Agility.resetProgress(player);
 				}

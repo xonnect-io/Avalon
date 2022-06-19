@@ -11,7 +11,6 @@ import com.ruse.world.World;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.skill.impl.smithing.BarData.Bars;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -170,14 +169,6 @@ public class EquipmentMaking {
 				player.getInventory().delete(bar);
 				player.getInventory().add(itemToSmith);
 				player.getInventory().refreshItems();
-
-				if (itemToSmith.getId() == 1115){
-					Achievements.doProgress(player, Achievements.Achievement.SMITH_30_IRON_PLATEBODIES);
-				}else if (itemToSmith.getId() == 1123){
-					Achievements.doProgress(player, Achievements.Achievement.SMITH_50_ADAMANT_PLATEBODIES);
-				}else if (itemToSmith.getId() == 1127){
-					Achievements.doProgress(player, Achievements.Achievement.SMITH_200_RUNE_PLATEBODIES);
-				}
 
 
 				if (ItemDefinition.forId(itemToSmith.getId()).getName().contains("Bronze")) {

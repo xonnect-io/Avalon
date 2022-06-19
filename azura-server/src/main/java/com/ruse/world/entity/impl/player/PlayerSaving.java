@@ -49,9 +49,7 @@ public class PlayerSaving {
 			} else {
 				object.addProperty("password", player.getPassword().trim());
 			}
-			object.add("achievements-completion",builder.toJsonTree(player.getAchievementAttributes().getCompletion()));
-			object.add("achievements-progress", builder.toJsonTree(player.getAchievementAttributes().getProgress()));
-			object.add("achievements", player.getAchievementTracker().jsonSave());
+
 			object.addProperty("email", player.getEmailAddress() == null ? "null" : player.getEmailAddress().trim());
 			object.addProperty("staff-rights", player.getRights().name());			
 			object.addProperty("game-mode", player.getGameMode().name());
@@ -136,6 +134,7 @@ public class PlayerSaving {
 			object.addProperty("minigame2-killcount", new Integer(player.getPointsHandler().getMG2Count()));
 			object.addProperty("minigame3-killcount", new Integer(player.getPointsHandler().getMG3Count()));
 			object.addProperty("npc-killcount", new Integer(player.getPointsHandler().getNPCKILLCount()));
+			object.addProperty("unknown-completed", new Integer(player.getPointsHandler().getUnknownCompleted()));
 			object.addProperty("spawn-killcount", new Integer(player.getPointsHandler().getSPAWNKILLCount()));
 			object.addProperty("lord-killcount", new Integer(player.getPointsHandler().getLORDKILLCount()));
 			object.addProperty("demon-killcount", new Integer(player.getPointsHandler().getDEMONKILLCount()));
@@ -328,11 +327,6 @@ public class PlayerSaving {
 			object.addProperty("afk-onyx", player.getAfkOnyx());
 			object.addProperty("afk-zenyte", player.getAfkZenyte());
 
-			object.add("achievements-points", builder.toJsonTree(player.getAchievements().getPoints()));
-			object.add("achievements-amount", builder.toJsonTree(player.getAchievements().getAmountRemaining()));
-			object.add("achievements-completed", builder.toJsonTree(player.getAchievements().getCompleted()));
-			object.addProperty("achievements-daily", player.getAchievements().getDailyAchievementsDate());
-
 			object.add("progression-zones", builder.toJsonTree(player.getProgressionZones()));
 			object.add("zones-complete", builder.toJsonTree(player.getZonesComplete()));
 
@@ -362,7 +356,9 @@ public class PlayerSaving {
 			object.add("favorite-teleports", builder.toJsonTree(player.getFavoriteTeleports()));
 
 			object.add("obtained-pets", builder.toJsonTree(player.getObtainedPets()));
-
+			object.add("achievements-completion",builder.toJsonTree(player.getAchievementAttributes().getCompletion()));
+			object.add("achievements-progress", builder.toJsonTree(player.getAchievementAttributes().getProgress()));
+			object.add("achievements", player.getAchievementTracker().jsonSave());
 			writer.write(builder.toJson(object));
 			writer.close();
 

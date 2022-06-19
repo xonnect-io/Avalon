@@ -7,7 +7,7 @@ import com.ruse.model.Item;
 import com.ruse.model.Skill;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.entity.impl.player.Player;
 
 public class Herblore {
@@ -27,17 +27,11 @@ public class Herblore {
 				return false;
 			}
 
-			if (herb == Herbs.GUAM)
-			Achievements.doProgress(player, Achievements.Achievement.CLEAN_20_GUAMS);
-			if (herb == Herbs.AVANTOE)
-				Achievements.doProgress(player, Achievements.Achievement.CLEAN_100_AVANTOES);
-			if (herb == Herbs.TORSTOL)
-				Achievements.doProgress(player, Achievements.Achievement.CLEAN_250_TORSTOLS);
-
 			player.getInventory().delete(herb.getGrimyHerb(), 1);
 			player.getInventory().add(herb.getCleanHerb(), 1);
 			player.getSkillManager().addExperience(Skill.HERBLORE, 30); 
 			player.getSkillManager().addExperience(Skill.HERBLORE, herb.getExp());
+			player.getAchievementTracker().progress(AchievementData.HERBLORE, 1);
 			player.getPacketSender().sendMessage("You clean the dirt off the leaf.");
 			return true;
 		}

@@ -2,8 +2,9 @@ package com.ruse.world.content.randomevents;
 
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
-import com.ruse.model.*;
-import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.model.Animation;
+import com.ruse.model.GameObject;
+import com.ruse.model.Position;
 import com.ruse.util.Misc;
 import com.ruse.util.Stopwatch;
 import com.ruse.world.World;
@@ -11,12 +12,8 @@ import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
-import com.ruse.world.content.casketopening.CasketOpening;
-import com.ruse.world.content.dailytasks_new.DailyTask;
-import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.HashMap;
@@ -128,9 +125,6 @@ public final class LootChest {
 	public static void handleReward(Player player) {
 			Box box = BoxLoot.getLoot(loot);
 			player.getInventory().add(box.getId(), box.getAmount());
-			Achievements.doProgress(player, Achievements.Achievement.OPEN_5_LOOT_CHESTS);
-			Achievements.doProgress(player, Achievements.Achievement.OPEN_25_LOOT_CHESTS);
-			Achievements.doProgress(player, Achievements.Achievement.OPEN_200_LOOT_CHESTS);
 	}
 
 	public static enum LootChestDef {

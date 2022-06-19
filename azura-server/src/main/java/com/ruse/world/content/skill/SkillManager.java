@@ -12,7 +12,7 @@ import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.randomevents.Genie;
@@ -282,9 +282,16 @@ public class SkillManager {
          * MAX_EXPERIENCE} then stop.
          */
 
-        if (Misc.percentageChance(0.00001)) { //Change the value. This is a 10% change of a spawn - Way too high.
+        if (Misc.percentageChance(0.000001)) { //Change the value. This is a 10% change of a spawn - Way too high.
             Genie.spawn(player);
         }
+
+        if (this.skills.experience[skill.ordinal()] >= MAX_EXPERIENCE && skill.equals(Skill.INVENTION))
+            player.getAchievementTracker().progress(AchievementData.TWO_BILLION_INVENTION, 1);
+        if (this.skills.experience[skill.ordinal()] >= MAX_EXPERIENCE && skill.equals(Skill.FARMING))
+            player.getAchievementTracker().progress(AchievementData.TWO_BILLION_FARMING, 1);
+        if (this.skills.experience[skill.ordinal()] >= MAX_EXPERIENCE && skill.equals(Skill.HUNTER))
+            player.getAchievementTracker().progress(AchievementData.TWO_BILLION_HUNTER, 1);
 
         if (this.skills.experience[skill.ordinal()] >= MAX_EXPERIENCE)
             return this;
@@ -455,12 +462,6 @@ public class SkillManager {
                 player.getPacketSender().sendInterfaceRemoval();
             }
 
-            if (getTotalLevel() >= 1500)
-                Achievements.doProgress(player, Achievements.Achievement.REACH_1500_TOTAL_LEVEL);
-            if (getTotalLevel() >= 2000)
-                Achievements.doProgress(player, Achievements.Achievement.REACH_2000_TOTAL_LEVEL);
-
-
             if (skills.maxLevel[skill.ordinal()] == getMaxAchievingLevel(skill)) {
                 player.getPacketSender()
                         .sendMessage("Well done! You've achieved the highest possible level in this skill!");
@@ -469,9 +470,13 @@ public class SkillManager {
                         + " has just achieved the highest possible level in " + skillName + "!");
 
                 if (maxed()) {
-                    Achievements.doProgress(player, Achievements.Achievement.MAX_OUT_ALL_SKILLS);
+                    player.getAchievementTracker().progress(AchievementData.MAX_OUT, 1);
                     World.sendMessage("<shad=15536940><img=5> " + player.getUsername()
                             + " has just achieved the highest possible level in all skills!");
+                }
+                if (fakeMaxed()) {
+                    player.getAchievementTracker().progress(AchievementData.SKILL_GRINDER, 1);
+                    player.getPacketSender().sendMessage("<shad=15536940><img=5> You just achieved level 99 or higher in all skills!");
                 }
 
                 TaskManager.submit(new Task(2, player, true) {
@@ -523,6 +528,17 @@ public class SkillManager {
             if(i == 23)//skip summoning
                 continue;
             if (player.getSkillManager().getMaxLevel(i) < (i == 3 || i == 5 ? 1200 : 120)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean fakeMaxed() {
+        for (int i = 0; i < Skill.values().length; i++) {
+            if(i == 23)//skip summoning
+                continue;
+            if (player.getSkillManager().getMaxLevel(i) < (i == 3 || i == 5 ? 990 : 99)) {
                 return false;
             }
         }

@@ -7,8 +7,6 @@ import com.ruse.model.Skill;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.input.impl.EnterAmountOfGemsToCut;
 import com.ruse.util.Misc;
-import com.ruse.world.content.achievement.Achievements;
-import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.entity.impl.player.Player;
 
 public class Gems {
@@ -108,12 +106,7 @@ public class Gems {
 					player.getInventory().add(data.getCutGem(), 1);
 				}
 
-				if (data == GEM_DATA.DIAMOND) {
-					Achievements.doProgress(player, Achievements.Achievement.CUT_100_DIAMOND_GEMS);
-				}else if (data == GEM_DATA.DRAGONSTONE) {
-					Achievements.doProgress(player, Achievements.Achievement.CUT_150_DRAGONSTONE_GEMS);
-					DailyTask.CUT_DRAGONSTONES.tryProgress(player);
-				}
+
 
 				player.getSkillManager().addExperience(Skill.CRAFTING, data.getXpReward());
 				amountCut++;

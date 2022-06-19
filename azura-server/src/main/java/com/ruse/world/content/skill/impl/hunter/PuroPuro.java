@@ -7,7 +7,6 @@ import com.ruse.engine.task.impl.NPCRespawnTask;
 import com.ruse.model.*;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.npc.NPCMovementCoordinator.Coordinator;
 import com.ruse.world.entity.impl.player.Player;
@@ -163,9 +162,6 @@ public class PuroPuro {
 				player.getSkillManager().addExperience(Skill.HUNTER,
 						(int) (implingData.XPReward * GameSettings.BaseImplingExpMultiplier));
 
-				Achievements.doProgress(player, Achievements.Achievement.CATCH_30_IMPLINGS);
-				Achievements.doProgress(player, Achievements.Achievement.CATCH_100_IMPLINGS);
-				Achievements.doProgress(player, Achievements.Achievement.CATCH_250_IMPLINGS);
 
 			}
 		} else

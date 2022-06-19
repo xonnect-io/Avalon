@@ -19,6 +19,7 @@ import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.*;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.magic.Autocasting;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
@@ -2226,6 +2227,121 @@ public class ObjectActionPacketListener implements PacketListener {
                                 PrayerHandler.startDrain(player);
                                 break;
 
+                            case 4875:
+                                if (!player.getClickDelay().elapsed(2500))
+                                    return;
+                                if (player.getInventory().getFreeSlots() < 1) {
+                                    player.getPacketSender().sendMessage("You don't have enough inventory spaces.");
+                                    return;
+                                }
+                                player.performAnimation(new Animation(881));
+                                player.getPacketSender().sendInterfaceRemoval();
+                                player.getSkillManager().addExperience(Skill.THIEVING, 15);
+                                player.getAchievementTracker().progress(AchievementData.THIEVING, 1);
+                                player.getAchievementTracker().progress(AchievementData.THIEVER, 1);
+                                player.getAchievementTracker().progress(AchievementData.KLEPTOMANIAC, 1);
+                                player.getClickDelay().reset();
+                                player.getInventory().add(18199, 1).add(995, 1000);
+                                player.getPacketSender().sendMessage("You steal a banana");
+
+                                break;
+
+                            case 4874:
+                                if (!player.getClickDelay().elapsed(2500))
+                                    return;
+                                if (player.getSkillManager().getMaxLevel(Skill.THIEVING) < 30) {
+                                    player.getPacketSender().sendMessage(
+                                            "You need a Thieving level of at least 30 to steal from this stall.");
+                                    return;
+                                }
+                                if (player.getInventory().getFreeSlots() < 1) {
+                                    player.getPacketSender().sendMessage("You don't have enough inventory spaces.");
+                                    return;
+                                }
+                                player.performAnimation(new Animation(881));
+                                player.getPacketSender().sendInterfaceRemoval();
+                                player.getSkillManager().addExperience(Skill.THIEVING, 30);
+                                player.getAchievementTracker().progress(AchievementData.THIEVING, 1);
+                                player.getAchievementTracker().progress(AchievementData.THIEVER, 1);
+                                player.getAchievementTracker().progress(AchievementData.KLEPTOMANIAC, 1);
+                                player.getClickDelay().reset();
+                                player.getInventory().add(15009, 1).add(995, 2000);
+                                player.getPacketSender().sendMessage("You steal a golden ring");
+                                // Stalls.stealFromStall(player, 30, 34, 15009, "You steal a golden ring.");
+                                break;
+                            case 4876:
+
+                                if (!player.getClickDelay().elapsed(2500))
+                                    return;
+
+                                if (player.getSkillManager().getMaxLevel(Skill.THIEVING) < 55) {
+                                    player.getPacketSender().sendMessage(
+                                            "You need a Thieving level of at least 55 to steal from this stall.");
+                                    return;
+                                }
+                                if (player.getInventory().getFreeSlots() < 1) {
+                                    player.getPacketSender().sendMessage("You don't have enough inventory spaces.");
+                                    return;
+                                }
+                                player.performAnimation(new Animation(881));
+                                player.getPacketSender().sendInterfaceRemoval();
+                                player.getSkillManager().addExperience(Skill.THIEVING, 55);
+                                player.getAchievementTracker().progress(AchievementData.THIEVING, 1);
+                                player.getAchievementTracker().progress(AchievementData.THIEVER, 1);
+                                player.getAchievementTracker().progress(AchievementData.KLEPTOMANIAC, 1);
+                                player.getClickDelay().reset();
+                                player.getInventory().add(17401, 1).add(995, 3000);
+                                player.getPacketSender().sendMessage("You steal a damaged hammer");
+                                // Stalls.stealFromStall(player, 60, 57, 17401, "You steal a damaged hammer.");
+                                break;
+                            case 4877:
+                                if (!player.getClickDelay().elapsed(2500))
+                                    return;
+
+                                if (player.getSkillManager().getMaxLevel(Skill.THIEVING) < 78) {
+                                    player.getPacketSender().sendMessage(
+                                            "You need a Thieving level of at least 78 to steal from this stall.");
+                                    return;
+                                }
+                                if (player.getInventory().getFreeSlots() < 1) {
+                                    player.getPacketSender().sendMessage("You don't have enough inventory spaces.");
+                                    return;
+                                }
+                                player.performAnimation(new Animation(881));
+                                player.getPacketSender().sendInterfaceRemoval();
+                                player.getSkillManager().addExperience(Skill.THIEVING, 80);
+                                player.getAchievementTracker().progress(AchievementData.THIEVING, 1);
+                                player.getAchievementTracker().progress(AchievementData.THIEVER, 1);
+                                player.getAchievementTracker().progress(AchievementData.KLEPTOMANIAC, 1);
+                                player.getClickDelay().reset();
+                                player.getInventory().add(1389, 1).add(995, 4000);
+                                player.getPacketSender().sendMessage("You steal a staff");
+                                // Stalls.stealFromStall(player, 65, 80, 1389, "You steal a staff.");
+                                break;
+                            case 4878:
+                                if (!player.getClickDelay().elapsed(2500))
+                                    return;
+
+                                if (player.getSkillManager().getMaxLevel(Skill.THIEVING) < 95) {
+                                    player.getPacketSender().sendMessage(
+                                            "You need a Thieving level of at least 95 to steal from this stall.");
+                                    return;
+                                }
+                                if (player.getInventory().getFreeSlots() < 1) {
+                                    player.getPacketSender().sendMessage("You don't have enough inventory spaces.");
+                                    return;
+                                }
+                                player.performAnimation(new Animation(881));
+                                player.getPacketSender().sendInterfaceRemoval();
+                                player.getSkillManager().addExperience(Skill.THIEVING, 100);
+                                player.getAchievementTracker().progress(AchievementData.THIEVING, 1);
+                                player.getAchievementTracker().progress(AchievementData.THIEVER, 1);
+                                player.getAchievementTracker().progress(AchievementData.KLEPTOMANIAC, 1);
+                                player.getClickDelay().reset();
+                                player.getInventory().add(11998, 1).add(995, 5000);
+                                player.getPacketSender().sendMessage("You steal a scimitar");
+                                // Stalls.stealFromStall(player, 80, 101, 11998, "You steal a scimitar.");
+                                break;
                             case 12100:
                                 Smelting.openInterface(player);
                                 break;

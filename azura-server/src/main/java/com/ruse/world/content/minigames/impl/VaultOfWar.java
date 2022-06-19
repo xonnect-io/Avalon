@@ -9,7 +9,6 @@ import com.ruse.model.Position;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -168,7 +167,6 @@ public class VaultOfWar {
                             player.getInventory().add(new Item(MERCENARY_GLOVE, 1));
                             player.sendMessage("You have successfully upgraded the gloves!");
                             World.sendFilteredMessage("@red@" + player.getUsername() + " has successfully upgraded to their mercenary's gloves.");
-                            Achievements.doProgress(player, Achievements.Achievement.COLLECT_MERCENARY_GLOVES);
                         } else {
                             player.performGraphic(new Graphic(749));
                             player.sendMessage("You failed to forge the mercenary's gloves!");

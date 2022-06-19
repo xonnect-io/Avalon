@@ -5,7 +5,7 @@ import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.model.RegionInstance;
 import com.ruse.world.World;
-import com.ruse.world.content.achievement.Achievements;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.dailytasks_new.DailyTask;
@@ -61,9 +61,6 @@ public class HallsOfValor {
             Box box = BoxLoot.getLoot(loot);
             player.getInventory().delete(KEY_REWARD.getId(), 1);
             player.getInventory().add(box.getId(), box.getAmount());
-            Achievements.doProgress(player, Achievements.Achievement.OPEN_5_CHESTS_IN_HALLS_OF_VALOR);
-            Achievements.doProgress(player, Achievements.Achievement.OPEN_25_CHESTS_IN_HALLS_OF_VALOR);
-            Achievements.doProgress(player, Achievements.Achievement.OPEN_200_CHESTS_IN_HALLS_OF_VALOR);
             DailyTask.HALLS_OF_VALOR.tryProgress(player);
         } else {
             player.getPacketSender().sendMessage("You do not have the Isles Key!");
@@ -120,6 +117,7 @@ public class HallsOfValor {
             if (player.getMinigameAttributes().getHallsOfValorAttributes().getKillcount() > 4) {
                 resetBarrows(player);
                 player.getInventory().add(KEY_REWARD);
+                player.getAchievementTracker().progress(AchievementData.CLEAR_THE_ISLES, 1);
                 if (player.getRegionInstance() != null) {
                     player.getRegionInstance().getNpcsList().remove(player);
                 }

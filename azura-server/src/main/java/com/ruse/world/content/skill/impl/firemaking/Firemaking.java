@@ -11,7 +11,6 @@ import com.ruse.util.Misc;
 import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -99,13 +98,7 @@ public class Firemaking {
 					player.getPacketSender().sendMessage("The fire catches and the logs begin to burn.");
 					stop();
 				}
-				if (logData == Logdata.logData.OAK) {
-					Achievements.doProgress(player, Achievements.Achievement.BURN_50_OAK_LOGS, 1);
-				} else if(logData == Logdata.logData.YEW) {
-					Achievements.doProgress(player, Achievements.Achievement.BURN_100_YEW_LOGS, 1);
-				} else if (logData == Logdata.logData.MAGIC) {
-					Achievements.doProgress(player, Achievements.Achievement.BURN_250_MAGIC_LOGS, 1);
-				}
+
 				Sounds.sendSound(player, Sound.LIGHT_FIRE);
 				player.getSkillManager().addExperience(Skill.FIREMAKING, (int) (logData.getXp()));
 

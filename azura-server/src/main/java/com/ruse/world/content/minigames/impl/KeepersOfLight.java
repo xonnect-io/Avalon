@@ -1,11 +1,9 @@
 package com.ruse.world.content.minigames.impl;
 
 import com.ruse.GameSettings;
-import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.world.World;
 import com.ruse.world.content.PlayerPanel;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -271,9 +269,6 @@ public class KeepersOfLight {
                         p.getInventory().add(LIGHT_TICKET, 25 + bonus);
                         p.getPacketSender().sendMessage("You've received " + (25 + bonus) + " Light tickets.");
                     }
-                    Achievements.doProgress(p, Achievements.Achievement.COMPLETE_5_KEEPERS_OF_LIGHT);
-                    Achievements.doProgress(p, Achievements.Achievement.COMPLETE_15_KEEPERS_OF_LIGHT);
-                    Achievements.doProgress(p, Achievements.Achievement.COMPLETE_50_KEEPERS_OF_LIGHT);
                     DailyTask.KEEPERS_OF_LIGHT.tryProgress(p);
 
                     p.restart();

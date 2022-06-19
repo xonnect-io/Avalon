@@ -12,8 +12,7 @@ import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.StarterTasks;
 import com.ruse.world.content.StarterTasks.StarterTaskData;
-import com.ruse.world.content.achievement.Achievements;
-import com.ruse.world.content.dailytasks_new.DailyTask;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.randomevents.EvilTree;
 import com.ruse.world.content.randomevents.EvilTree.EvilTreeDef;
 import com.ruse.world.content.skill.impl.firemaking.Logdata;
@@ -85,6 +84,8 @@ public class Woodcutting {
 										player.getInventory().add(isEvilTree ? t2.getLog() : t.getReward(), 1);
 										treeRespawn(player, object);
 										player.getPacketSender().sendMessage("You've chopped the tree down.");
+										player.getAchievementTracker().progress(AchievementData.WOODCUTTING, 1);
+										player.getAchievementTracker().progress(AchievementData.WOODCUT_ALOT, 1);
 										player.performAnimation(new Animation(65535));
 									} else { // if they didn't cut down the tree
 										cutWood(player, object, true);
@@ -102,13 +103,6 @@ public class Woodcutting {
 															fmLog.getXp());
 													player.getPacketSender().sendMessage(
 															"You chop a log, and your Inferno Adze burns it into ash.");
-													if (fmLog == logData.OAK) {
-														Achievements.doProgress(player, Achievements.Achievement.BURN_50_OAK_LOGS);
-													} else if (fmLog == logData.YEW) {
-														Achievements.doProgress(player, Achievements.Achievement.BURN_100_YEW_LOGS);
-													} else if (fmLog == logData.MAGIC) {
-														Achievements.doProgress(player, Achievements.Achievement.BURN_250_MAGIC_LOGS);
-													}
 												} else { // if the fmLog data is null
 													player.getPacketSender().sendMessage(
 															"<col=b40404>The game thinks you have an adze, but are burning nothing.")
@@ -116,6 +110,7 @@ public class Woodcutting {
 																	"<col=b40404>Please contact Crimson and report this bug.");
 												}
 											} else {
+
 												player.getInventory().add(t.getReward(), 1);
 												player.getPacketSender().sendMessage("You get some logs...");
 
@@ -127,15 +122,6 @@ public class Woodcutting {
 									}
 									Sounds.sendSound(player, Sound.WOODCUT);
 									StarterTasks.doProgress(player, StarterTaskData.CUT_1000_LOGS);
-
-									if (t != null && t == Trees.OAK) {
-										Achievements.doProgress(player, Achievements.Achievement.CHOP_50_OAK_LOGS);
-									} else if( t != null && t == Trees.YEW){
-										Achievements.doProgress(player, Achievements.Achievement.CHOP_100_YEW_LOGS);
-								} else if (t != null && t == Trees.MAGIC) {
-										Achievements.doProgress(player, Achievements.Achievement.CHOP_300_MAGIC_LOGS);
-										DailyTask.CHOP_MAGIC_LOGS.tryProgress(player);
-									}
 
 								}
 							}

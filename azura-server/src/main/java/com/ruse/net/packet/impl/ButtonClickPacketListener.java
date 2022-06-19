@@ -111,9 +111,7 @@ public class ButtonClickPacketListener implements PacketListener {
             player.setInputHandling(new ServerPerkContributionInput());
             return;
         }
-        if (player.getAchievements().handleButtonClick(id)) {
-            return;
-        }
+
         if (checkHandlers(player, id))
             return;
 
@@ -186,6 +184,69 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getWheelOfFortune().open();
                 break;
 
+            case 8662:
+                Position fishingPos = new Position(2786,2598,0);
+                TeleportHandler.teleportPlayer(player, fishingPos, TeleportType.NORMAL);
+                break;
+
+            case 8665:
+
+            case 8668:
+                Position cookingPos = new Position(2817,2598,0);
+                TeleportHandler.teleportPlayer(player, cookingPos, TeleportType.NORMAL);
+                break;
+
+            case 28178:
+                Position huntingPos = new Position(2788,2608,0);
+                TeleportHandler.teleportPlayer(player, huntingPos, TeleportType.NORMAL);
+                break;
+
+            case 8656:
+                Position miningPos = new Position(2803,2611,0);
+                TeleportHandler.teleportPlayer(player, miningPos, TeleportType.NORMAL);
+                break;
+
+            case 8659:
+                Position smithingPos = new Position(2818,2609,0);
+                TeleportHandler.teleportPlayer(player, smithingPos, TeleportType.NORMAL);
+                break;
+
+            case 8671:
+                Position woodcuttingPos = new Position(2802,2665,0);
+                TeleportHandler.teleportPlayer(player, woodcuttingPos, TeleportType.NORMAL);
+                break;
+
+            case 13928:
+                Position farmingPos = new Position(2828,2658,0);
+                TeleportHandler.teleportPlayer(player, farmingPos, TeleportType.NORMAL);
+                break;
+
+            case 12162:
+                Position slayerPos = new Position(2664,4015,0);
+                TeleportHandler.teleportPlayer(player, slayerPos, TeleportType.NORMAL);
+                break;
+
+            case 8672:
+                Position rcPos = new Position(2806,2582,0);
+                TeleportHandler.teleportPlayer(player, rcPos, TeleportType.NORMAL);
+                break;
+
+            case 8664:
+                Position thievingPos = new Position(2823,2601,0);
+                TeleportHandler.teleportPlayer(player, thievingPos, TeleportType.NORMAL);
+                break;
+
+            case 8658:
+            DialogueManager.start(player, 55);
+            player.setDialogueActionId(26);
+            break;
+
+            case 8861:
+            case 8667:
+            case 8670:
+                Position skillingShopsPos = new Position(2818,2592,0);
+                TeleportHandler.teleportPlayer(player, skillingShopsPos, TeleportType.NORMAL);
+                break;
 
             case 21360:
             case -17490:
@@ -334,20 +395,6 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.sendMessage("You must be in a raid to do this.");
                 }
                 return;
-
-            case -29536:
-                player.getAchievements().clickedAchievement = true;
-                player.getAchievements().drawInterface(0);
-                break;
-            case -26365:
-                player.getAchievements().clickedAchievement = true;
-                player.getAchievements().drawInterface(player.getAchievements().currentInterface);
-                break;
-
-            case 111602:
-                player.getAchievements().clickedAchievement = true;
-                player.getAchievements().drawInterface(player.getAchievements().currentInterface);
-                break;
             /*case 111603:
                 BestItemsInterface.openInterface(player, 0);
                 break;*/
@@ -648,7 +695,6 @@ public class ButtonClickPacketListener implements PacketListener {
                 if (player.getPointsHandler().getSPAWNKILLCount() <= 99) {
                     player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
                             + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
-
                     return;
                 }
                 Position positionlord = GameSettings.LORDS_LOCATION;

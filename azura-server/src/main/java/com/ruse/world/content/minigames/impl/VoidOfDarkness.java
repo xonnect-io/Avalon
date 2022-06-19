@@ -6,7 +6,6 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.dailytasks_new.DailyTask;
@@ -200,10 +199,6 @@ public class VoidOfDarkness {
 
         //Reset the Coffin Instance
         resetBarrows(player);
-
-        Achievements.doProgress(player, Achievements.Achievement.OPEN_5_CHESTS_IN_VOID_OF_DARKNESS);
-        Achievements.doProgress(player, Achievements.Achievement.OPEN_25_CHESTS_IN_VOID_OF_DARKNESS);
-        Achievements.doProgress(player, Achievements.Achievement.OPEN_200_CHESTS_IN_VOID_OF_DARKNESS);
         DailyTask.VOID_OF_DARKNESS.tryProgress(player);
 
     }

@@ -7,7 +7,6 @@ import com.ruse.model.Skill;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.input.impl.EnterAmountOfLeatherToCraft;
 import com.ruse.util.Misc;
-import com.ruse.world.content.achievement.Achievements;
 import com.ruse.world.entity.impl.player.Player;
 
 public class LeatherMaking {
@@ -113,9 +112,6 @@ public class LeatherMaking {
 					player.getInventory().delete(l.getLeather(), l.getHideAmount()).add(l.getProduct(), 1);
 					player.getSkillManager().addExperience(Skill.CRAFTING, (int) l.getXP());
 
-					if (l == leatherData.LEATHER_BODY) {
-						Achievements.doProgress(player, Achievements.Achievement.CRAFT_20_LEATHER_BODIES);
-					}
 					player.performAnimation(new Animation(1249));
 					toMake--;
 					if (toMake <= 0) {
