@@ -2,7 +2,6 @@ package com.ruse.world.content;
 
 import com.ruse.GameSettings;
 import com.ruse.model.GameMode;
-import com.ruse.model.Locations;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
@@ -142,6 +141,86 @@ public class CustomDropUtils {
             percentBoost += 10;
         }
         //End boots
+
+        //Start gloves
+        if (player.getEquipment().contains(23292)) { //Celestial bracelet
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(23235)) { //Owner bracelet (u)
+            percentBoost += 60;
+        }
+
+        if (player.getEquipment().contains(23232)) { //Owner bracelet
+            percentBoost += 50;
+        }
+        if (player.getEquipment().contains(23284)) { //Avalon gloves
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(23223)) { //Nephilim gloves
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(23289)) { //Tanzanite gloves
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(22104)) { //Fallen Angel's gloves
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23262)) { //Reaper's gloves
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(18885)) { //Colossal gloves
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(18883)) { //Deity gloves
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(9057)) { //Creeper gloves
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(15118)) { //Extreme gloves
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(21611)) { //Custom Extreme gloves
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(8273)) { //Legends gloves
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(20091)) { //Cursed gloves
+            percentBoost += 10;
+        }
+        //End gloves
+
+        //Start capes
+
+        if (player.getEquipment().contains(23268)) { //Cloak of Summer
+            percentBoost += 80;
+        }
+        if (player.getEquipment().contains(23270)) { //Celestial cape
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(22109)) { //Owner cape (u)
+            percentBoost += 60;
+        }
+        if (player.getEquipment().contains(22105)) { //Fallen Angel's Wings
+            percentBoost += 50;
+        }
+        if (player.getEquipment().contains(7995)) { //Owner cape
+            percentBoost += 50;
+        }
+        if (player.getEquipment().contains(20400)) { //Enraged cape
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(20591)) { //rage cape
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23133)) { //Legends wings
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(20099)) { //Cursed cape
+            percentBoost += 10;
+        }
+        //End capes
 
 
 

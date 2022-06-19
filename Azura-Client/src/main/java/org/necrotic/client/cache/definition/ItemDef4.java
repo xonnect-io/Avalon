@@ -5045,8 +5045,6 @@ public class ItemDef4 {
 				break;
 			case 23231:
 				itemDef.modelID = 17600;
-				itemDef.maleEquip1 = 17600;
-				itemDef.femaleEquip1 = 17600;
 				itemDef.modelZoom = 287;
 				itemDef.name = "Owner Ring";
 				itemDef.actions = new String[5];
@@ -5062,8 +5060,6 @@ public class ItemDef4 {
 			case 23232:
 				itemDef.copyItem(11126);
 				itemDef.modelID = 17802;
-				itemDef.maleEquip1 = 17802;
-				itemDef.femaleEquip1 = 17802;
 				itemDef.name = "Owner Bracelet";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
@@ -5087,9 +5083,7 @@ public class ItemDef4 {
 				itemDef.rdc2 = 1;
 				break;
 			case 23234:
-				itemDef.modelID = 17600; //#393939 //#8c1212
-				itemDef.maleEquip1 = 17600;
-				itemDef.femaleEquip1 = 17600;
+				itemDef.modelID = 17600;
 				itemDef.modelZoom = 287;
 				itemDef.name = "Owner Ring (u)";
 				itemDef.actions = new String[5];
@@ -5105,14 +5099,23 @@ public class ItemDef4 {
 			case 23235:
 				itemDef.copyItem(11126);
 				itemDef.modelID = 17802;
-				itemDef.maleEquip1 = 17802;
-				itemDef.femaleEquip1 = 17802;
 				itemDef.name = "Owner Bracelet (u)";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
 				itemDef.rdc2 = 1;
 				break;
+
+			case 23292:
+				itemDef.copyItem(11126);
+				itemDef.modelID = 18811;
+				itemDef.name = "Celestial Bracelet";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.rdc2 = 1;
+				break;
+
 			case 3909:
 				ItemDefinition itemFury1 = ItemDefinition.get(1635);
 				itemDef.modelOffsetX = itemFury1.modelOffsetX;
