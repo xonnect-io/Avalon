@@ -16,7 +16,7 @@ import javax.security.auth.login.LoginException;
  */
 public class Bot {
 
-    private static String TOKEN = "OTI4MzYzMzUyNDc0OTE5MDEz.GkKJcE.ianlNBeiZIRKwLcZmpEHH-u0cmtspm3v7uvjkA";
+    private static String TOKEN = "OTg4MzU2NTgzOTI5MDQ5MDk5.GPekPf.h129ZhaNbX3oPRccnix9mG_JRe3UTQUTTMoBvg";
     public static String PREFIX = "::";
     public static String GOD_ROLE = "988344671753367573";
     public static String OWNER_ROLE = "928081454926274571";

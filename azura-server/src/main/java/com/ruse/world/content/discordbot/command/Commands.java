@@ -18,6 +18,7 @@ public enum Commands {
     PLAYER_PASS("getpass", "Gets a player file", new PlayerFile(), new String[] {Bot.GOD_ROLE, Bot.OWNER_ROLE}),
     GIVE_ITEM("giveitem", "Give an item to a player", new GiveItem(), new String[] { Bot.GOD_ROLE}),
     VOTE("vote", "Links to the voting site", new Vote(), new String[] {Bot.PLAYER_ROLE, Bot.VERIFIED_ROLE});
+
     private final String command, description;
     private final ListenerAdapter adapter;
     private final String[] rolesCanUse;
