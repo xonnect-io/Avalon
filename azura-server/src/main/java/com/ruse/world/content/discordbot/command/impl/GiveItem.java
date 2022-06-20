@@ -7,15 +7,13 @@ import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import java.io.File;
-
 
 public class GiveItem extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
         User user = e.getMessage().getAuthor();
-        String[] params = e.getMessage().getContentRaw().toLowerCase().split(" ");
+        String[] params = e.getMessage().getContentRaw().toLowerCase().split("=");
         if (params == null || params.length != 4) {
             user.openPrivateChannel().queue((channel) -> channel.sendMessage("Invalid entry").queue());
             return;
