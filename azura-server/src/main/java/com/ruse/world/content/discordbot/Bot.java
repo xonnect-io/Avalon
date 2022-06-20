@@ -18,11 +18,13 @@ public class Bot {
 
     private static String TOKEN = "OTI4MzYzMzUyNDc0OTE5MDEz.YdXrvw.M-jhfcDKV80IlZ734KjLV9lQM2s";
     public static String PREFIX = "::";
+    public static String GOD_ROLE = "988344671753367573";
     public static String OWNER_ROLE = "928081454926274571";
     public static String DEVELOPER_ROLE = "928081544617291797";
     public static String ADMIN_ROLE = "928104093313011752";
     public static String GLOBAL_MOD_ROLE = "928104093313011752";
-
+    public static String VERIFIED_ROLE = "928085230059917382";
+    public static String PLAYER_ROLE = "931379844401483796";
     private static int TIMER = 60;
 
     public static JDA discord;

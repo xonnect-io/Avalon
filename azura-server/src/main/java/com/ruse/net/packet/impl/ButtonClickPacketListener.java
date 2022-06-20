@@ -19,6 +19,7 @@ import com.ruse.world.World;
 import com.ruse.world.allornothing.DoubleOrNothing;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
+import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
 import com.ruse.world.content.bossEvents.BossEventInterfaceHandler;
@@ -306,6 +307,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getCasketOpening().quickSpin();
                 break;
             case 111104:
+                AchievementInterface.open(player);
+                break;
+            case 111105:
                 player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111700).sendTab(GameSettings.QUESTS_TAB);
                 break;
             case 78395:

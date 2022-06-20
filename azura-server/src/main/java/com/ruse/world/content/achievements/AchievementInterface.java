@@ -1,5 +1,6 @@
 package com.ruse.world.content.achievements;
 
+import com.ruse.GameSettings;
 import com.ruse.net.packet.PacketSender;
 import com.ruse.world.entity.impl.player.Player;
 import java.util.Arrays;
@@ -102,6 +103,8 @@ public class AchievementInterface {
         if (id == CLOSE_BUTTON) {
             player.getPacketSender().sendInterfaceRemoval();
             player.setAchievementInterface(null);
+            player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111000);
+            player.getPacketSender().sendConfig(6000, 0);
             return true;
         }
         if (id == COLLECT_BUTTON) {
