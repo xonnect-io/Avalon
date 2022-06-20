@@ -966,8 +966,203 @@ public class RSInterface {
 		rsi.inv[0] = 6200;
 		rsi.invStackSizes[0] = 2;
 	}
-	private static void cardPack1(TextDrawingArea[] tda) {
 
+	private static void goldCardMain(TextDrawingArea[] tda) {
+		final int STARTING_POINT = 23780;
+		RSInterface rsi = addInterface(STARTING_POINT);
+		addSprite(STARTING_POINT + 1, 1672);
+		addHoverButton(STARTING_POINT + 2, 55, 17, 17, "Close Window", 250, 5380, 3);
+		addHoveredButton(STARTING_POINT + 3, 90, 17, 17, 5379);
+		addText(STARTING_POINT + 4, "Card Pack", 0xff9b00, true, true, -1, tda, 2);
+		addButton(STARTING_POINT + 5, 1660, 1661, "Open Pack");
+		addText(STARTING_POINT + 6, "Open Pack", 0xff9b00, true, true, -1, tda, 2);
+		rsi.totalChildren(7);
+		setBounds(STARTING_POINT + 1, 125, 30, 0, rsi);
+		setBounds(STARTING_POINT + 2, 355, 33, 1, rsi);
+		setBounds(STARTING_POINT + 3, 355, 33, 2, rsi);
+		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
+		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
+		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
+		addItemOnInterface(23787, 23611, new String[]{null});
+		setBounds(23787, 170, 85, 6, rsi);
+	}
+
+	private static void goldCardReward(TextDrawingArea[] tda) {
+		final int STARTING_POINT = 23680;
+		RSInterface rsi = addInterface(STARTING_POINT);
+		addSprite(STARTING_POINT + 1, 1672);
+		addHoverButton(STARTING_POINT + 2, 55, 17, 17, "Close Window", 250, 5380, 3);
+		addHoveredButton(STARTING_POINT + 3, 90, 17, 17, 5379);
+		addText(STARTING_POINT + 4, "Card Pack", 0xff9b00, true, true, -1, tda, 2);
+		addButton(STARTING_POINT + 5, 1660, 1661, "Open Pack");
+		addText(STARTING_POINT + 6, "Open Pack", 0xff9b00, true, true, -1, tda, 2);
+		rsi.totalChildren(18);
+		setBounds(STARTING_POINT + 1, 125, 30, 0, rsi);
+		setBounds(STARTING_POINT + 2, 355, 33, 1, rsi);
+		setBounds(STARTING_POINT + 3, 355, 33, 2, rsi);
+		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
+		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
+		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
+		addItemOnInterface(23687, 23511, new String[]{null});
+		addItemOnInterface(23688, 23511, new String[]{null});
+		addItemOnInterface(23689, 23511, new String[]{null});
+		addItemOnInterface(23690, 23511, new String[]{null});
+		addItemOnInterface(23691, 23511, new String[]{null});
+		addItemOnInterface(23692, 23511, new String[]{null});
+		setBounds(23687, 160, 88, 12, rsi);
+		setBounds(23688, 237, 88, 13, rsi);
+		setBounds(23689, 312, 88, 14, rsi);
+		setBounds(23690, 160, 190, 15, rsi);
+		setBounds(23691, 237, 190, 16, rsi);
+		setBounds(23692, 312, 190, 17, rsi);
+		addSprite(23694, 1674);
+		addSprite(23695, 1674);
+		addSprite(23696, 1674);
+		addSprite(23697, 1674);
+		addSprite(23698, 1674);
+		addSprite(23699, 1674);
+		setBounds(23694, 143, 60, 6, rsi);
+		setBounds(23695, 220, 60, 7, rsi);
+		setBounds(23696, 295, 60, 8, rsi);
+		setBounds(23697, 143, 160, 9, rsi);
+		setBounds(23698, 220, 160, 10, rsi);
+		setBounds(23699, 295, 160, 11, rsi);
+
+	}
+
+
+
+	private static void silverCardMain(TextDrawingArea[] tda) {
+		final int STARTING_POINT = 23580;
+		RSInterface rsi = addInterface(STARTING_POINT);
+		addSprite(STARTING_POINT + 1, 1672);
+		addHoverButton(STARTING_POINT + 2, 55, 17, 17, "Close Window", 250, 5380, 3);
+		addHoveredButton(STARTING_POINT + 3, 90, 17, 17, 5379);
+		addText(STARTING_POINT + 4, "Card Pack", 0xff9b00, true, true, -1, tda, 2);
+		addButton(STARTING_POINT + 5, 1660, 1661, "Open Pack");
+		addText(STARTING_POINT + 6, "Open Pack", 0xff9b00, true, true, -1, tda, 2);
+		rsi.totalChildren(7);
+		setBounds(STARTING_POINT + 1, 125, 30, 0, rsi);
+		setBounds(STARTING_POINT + 2, 355, 33, 1, rsi);
+		setBounds(STARTING_POINT + 3, 355, 33, 2, rsi);
+		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
+		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
+		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
+		addItemOnInterface(23587, 23611, new String[]{null});
+		setBounds(23587, 170, 85, 6, rsi);
+	}
+
+	private static void silverCardReward(TextDrawingArea[] tda) {
+		final int STARTING_POINT = 23480;
+		RSInterface rsi = addInterface(STARTING_POINT);
+		addSprite(STARTING_POINT + 1, 1672);
+		addHoverButton(STARTING_POINT + 2, 55, 17, 17, "Close Window", 250, 5380, 3);
+		addHoveredButton(STARTING_POINT + 3, 90, 17, 17, 5379);
+		addText(STARTING_POINT + 4, "Card Pack", 0xff9b00, true, true, -1, tda, 2);
+		addButton(STARTING_POINT + 5, 1660, 1661, "Open Pack");
+		addText(STARTING_POINT + 6, "Open Pack", 0xff9b00, true, true, -1, tda, 2);
+		rsi.totalChildren(18);
+		setBounds(STARTING_POINT + 1, 125, 30, 0, rsi);
+		setBounds(STARTING_POINT + 2, 355, 33, 1, rsi);
+		setBounds(STARTING_POINT + 3, 355, 33, 2, rsi);
+		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
+		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
+		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
+		addItemOnInterface(23487, 23511, new String[]{null});
+		addItemOnInterface(23488, 23511, new String[]{null});
+		addItemOnInterface(23489, 23511, new String[]{null});
+		addItemOnInterface(23490, 23511, new String[]{null});
+		addItemOnInterface(23491, 23511, new String[]{null});
+		addItemOnInterface(23492, 23511, new String[]{null});
+		setBounds(23487, 160, 88, 12, rsi);
+		setBounds(23488, 237, 88, 13, rsi);
+		setBounds(23489, 312, 88, 14, rsi);
+		setBounds(23490, 160, 190, 15, rsi);
+		setBounds(23491, 237, 190, 16, rsi);
+		setBounds(23492, 312, 190, 17, rsi);
+		addSprite(23494, 1674);
+		addSprite(23495, 1674);
+		addSprite(23496, 1674);
+		addSprite(23497, 1674);
+		addSprite(23498, 1674);
+		addSprite(23499, 1674);
+		setBounds(23494, 143, 60, 6, rsi);
+		setBounds(23495, 220, 60, 7, rsi);
+		setBounds(23496, 295, 60, 8, rsi);
+		setBounds(23497, 143, 160, 9, rsi);
+		setBounds(23498, 220, 160, 10, rsi);
+		setBounds(23499, 295, 160, 11, rsi);
+
+	}
+
+
+	private static void bronzeCardMain(TextDrawingArea[] tda) {
+		final int STARTING_POINT = 23380;
+		RSInterface rsi = addInterface(STARTING_POINT);
+		addSprite(STARTING_POINT + 1, 1672);
+		addHoverButton(STARTING_POINT + 2, 55, 17, 17, "Close Window", 250, 5380, 3);
+		addHoveredButton(STARTING_POINT + 3, 90, 17, 17, 5379);
+		addText(STARTING_POINT + 4, "Card Pack", 0xff9b00, true, true, -1, tda, 2);
+		addButton(STARTING_POINT + 5, 1660, 1661, "Open Pack");
+		addText(STARTING_POINT + 6, "Open Pack", 0xff9b00, true, true, -1, tda, 2);
+		rsi.totalChildren(7);
+		setBounds(STARTING_POINT + 1, 125, 30, 0, rsi);
+		setBounds(STARTING_POINT + 2, 355, 33, 1, rsi);
+		setBounds(STARTING_POINT + 3, 355, 33, 2, rsi);
+		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
+		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
+		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
+		addItemOnInterface(23387, 23611, new String[]{null});
+		setBounds(23387, 170, 85, 6, rsi);
+	}
+
+	private static void bronzeCardReward(TextDrawingArea[] tda) {
+		final int STARTING_POINT = 23280;
+		RSInterface rsi = addInterface(STARTING_POINT);
+		addSprite(STARTING_POINT + 1, 1672);
+		addHoverButton(STARTING_POINT + 2, 55, 17, 17, "Close Window", 250, 5380, 3);
+		addHoveredButton(STARTING_POINT + 3, 90, 17, 17, 5379);
+		addText(STARTING_POINT + 4, "Card Pack", 0xff9b00, true, true, -1, tda, 2);
+		addButton(STARTING_POINT + 5, 1660, 1661, "Open Pack");
+		addText(STARTING_POINT + 6, "Open Pack", 0xff9b00, true, true, -1, tda, 2);
+		rsi.totalChildren(18);
+		setBounds(STARTING_POINT + 1, 125, 30, 0, rsi);
+		setBounds(STARTING_POINT + 2, 355, 33, 1, rsi);
+		setBounds(STARTING_POINT + 3, 355, 33, 2, rsi);
+		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
+		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
+		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
+		addItemOnInterface(23287, 23511, new String[]{null});
+		addItemOnInterface(23288, 23511, new String[]{null});
+		addItemOnInterface(23289, 23511, new String[]{null});
+		addItemOnInterface(23290, 23511, new String[]{null});
+		addItemOnInterface(23291, 23511, new String[]{null});
+		addItemOnInterface(23292, 23511, new String[]{null});
+		setBounds(23287, 160, 88, 12, rsi);
+		setBounds(23288, 237, 88, 13, rsi);
+		setBounds(23289, 312, 88, 14, rsi);
+		setBounds(23290, 160, 190, 15, rsi);
+		setBounds(23291, 237, 190, 16, rsi);
+		setBounds(23292, 312, 190, 17, rsi);
+		addSprite(23294, 1674);
+		addSprite(23295, 1674);
+		addSprite(23296, 1674);
+		addSprite(23297, 1674);
+		addSprite(23298, 1674);
+		addSprite(23299, 1674);
+		setBounds(23294, 143, 60, 6, rsi);
+		setBounds(23295, 220, 60, 7, rsi);
+		setBounds(23296, 295, 60, 8, rsi);
+		setBounds(23297, 143, 160, 9, rsi);
+		setBounds(23298, 220, 160, 10, rsi);
+		setBounds(23299, 295, 160, 11, rsi);
+
+	}
+
+
+
+
+	private static void diamondCardMain(TextDrawingArea[] tda) {
 		final int STARTING_POINT = 23180;
 		RSInterface rsi = addInterface(STARTING_POINT);
 		addSprite(STARTING_POINT + 1, 1672);
@@ -983,19 +1178,11 @@ public class RSInterface {
 		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
 		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
 		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
-
-
-
 		addItemOnInterface(23187, 23511, new String[]{null});
-
-
 		setBounds(23187, 170, 85, 6, rsi);
-
-
-
 	}
-	private static void cardPack(TextDrawingArea[] tda) {
 
+	private static void diamondCardReward(TextDrawingArea[] tda) {
 		final int STARTING_POINT = 23080;
 		RSInterface rsi = addInterface(STARTING_POINT);
 		addSprite(STARTING_POINT + 1, 1672);
@@ -1011,47 +1198,33 @@ public class RSInterface {
 		setBounds(STARTING_POINT + 4, 250, 35, 3, rsi);
 		setBounds(STARTING_POINT + 5, 192, 255, 4, rsi);
 		setBounds(STARTING_POINT + 6, 250, 262, 5, rsi);
-
-
-
 		addItemOnInterface(23087, 23511, new String[]{null});
 		addItemOnInterface(23088, 23511, new String[]{null});
 		addItemOnInterface(23089, 23511, new String[]{null});
 		addItemOnInterface(23090, 23511, new String[]{null});
 		addItemOnInterface(23091, 23511, new String[]{null});
 		addItemOnInterface(23092, 23511, new String[]{null});
-
-
-
 		setBounds(23087, 160, 88, 12, rsi);
 		setBounds(23088, 237, 88, 13, rsi);
 		setBounds(23089, 312, 88, 14, rsi);
 		setBounds(23090, 160, 190, 15, rsi);
 		setBounds(23091, 237, 190, 16, rsi);
 		setBounds(23092, 312, 190, 17, rsi);
-
 		addSprite(23094, 1674);
 		addSprite(23095, 1674);
 		addSprite(23096, 1674);
 		addSprite(23097, 1674);
 		addSprite(23098, 1674);
 		addSprite(23099, 1674);
-
-
-
-
-
-
 		setBounds(23094, 143, 60, 6, rsi);
 		setBounds(23095, 220, 60, 7, rsi);
 		setBounds(23096, 295, 60, 8, rsi);
 		setBounds(23097, 143, 160, 9, rsi);
 		setBounds(23098, 220, 160, 10, rsi);
 		setBounds(23099, 295, 160, 11, rsi);
-
-
-
 	}
+
+
 	//they should not be seperate interfaces.
 	private static void effectInterface(TextDrawingArea[] tda) {//wtf did u do with it lol and why are there several, it should all be in 1 interface
 		RSInterface main = addInterface(48300);
@@ -5832,8 +6005,14 @@ public class RSInterface {
 			teleportInterface1(textDrawingAreas);
 			godWars(textDrawingAreas);
 			taxbagShopInterface(textDrawingAreas);
-			cardPack(textDrawingAreas);
-			cardPack1(textDrawingAreas);
+			diamondCardReward(textDrawingAreas);
+			diamondCardMain(textDrawingAreas);
+			goldCardReward(textDrawingAreas);
+			goldCardMain(textDrawingAreas);
+			silverCardReward(textDrawingAreas);
+			silverCardMain(textDrawingAreas);
+			bronzeCardReward(textDrawingAreas);
+			bronzeCardMain(textDrawingAreas);
 			mysteryBoxViewer(textDrawingAreas);
 			effectInterface(textDrawingAreas);
 			effectInterface2(textDrawingAreas);

@@ -29,7 +29,7 @@ public class DiamondCardPack {
         cardbeingused = itemId;
         player.getPacketSender().sendInterface(23180); // Open the interface.
 
-        player.getPacketSender().sendItemOnInterface(23187, itemId, 1);
+        player.getPacketSender().sendItemOnInterface(23187, 23279, 1);
     }
     public static List<Item> silverRewards = Arrays.asList(
             new Item(386, 50,"silver"), // shark

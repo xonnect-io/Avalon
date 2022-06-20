@@ -1,8 +1,11 @@
 package com.ruse.net.packet.impl;
 
 import com.ruse.GameSettings;
-import com.ruse.model.*;
+import com.ruse.model.GameMode;
 import com.ruse.model.Locations.Location;
+import com.ruse.model.Position;
+import com.ruse.model.RegionInstance;
+import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Bank;
 import com.ruse.model.container.impl.Bank.BankSearchAttributes;
 import com.ruse.model.container.impl.GroupIronmanBank;
@@ -19,7 +22,10 @@ import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
 import com.ruse.world.content.bossEvents.BossEventInterfaceHandler;
+import com.ruse.world.content.cardPacks.BronzeCardPack;
 import com.ruse.world.content.cardPacks.DiamondCardPack;
+import com.ruse.world.content.cardPacks.GoldCardPack;
+import com.ruse.world.content.cardPacks.SilverCardPack;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.clan.Guild;
@@ -48,6 +54,8 @@ import com.ruse.world.content.minigames.impl.PestControl;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.polling.PollCreation;
 import com.ruse.world.content.polling.PollManager;
+import com.ruse.world.content.raids.RaidsParty;
+import com.ruse.world.content.raids.ZombieRaidData;
 import com.ruse.world.content.rewardsList.RewardsHandler;
 import com.ruse.world.content.serverperks.ServerPerkContributionInput;
 import com.ruse.world.content.serverperks.ServerPerks;
@@ -67,8 +75,6 @@ import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
-import com.ruse.world.content.raids.RaidsParty;
-import com.ruse.world.content.raids.ZombieRaidData;
 import com.ruse.world.entity.impl.player.Player;
 import com.ruse.world.entity.impl.player.StartScreen;
 
@@ -397,7 +403,20 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 return;
             case 23185://open card pack
+            case 23085://open card pack
                 DiamondCardPack.testcard(player);
+                break;
+            case 23385://open card pack
+            case 23285://open card pack
+                BronzeCardPack.testcard(player);
+                break;
+            case 23585://open card pack
+            case 23485://open card pack
+                SilverCardPack.testcard(player);
+                break;
+            case 23785://open card pack
+            case 23685://open card pack
+                GoldCardPack.testcard(player);
                 break;
             /*case 111603:
                 BestItemsInterface.openInterface(player, 0);

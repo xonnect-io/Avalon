@@ -3,16 +3,12 @@ package com.ruse.world.content;
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
-import com.ruse.world.content.boxes.*;
 import com.ruse.world.content.boxes.WheelOfFortune;
+import com.ruse.world.content.boxes.*;
 import com.ruse.world.content.casketopening.Box;
-import com.ruse.world.content.casketopening.impl.DefBox;
-import com.ruse.world.content.casketopening.impl.OffBox;
-import com.ruse.world.content.casketopening.impl.RareBox;
-import com.ruse.world.content.casketopening.impl.SlayerCasket;
-import com.ruse.world.content.minigames.impl.*;
+import com.ruse.world.content.minigames.impl.HallsOfValor;
+import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.skill.impl.mining.Mining;
-import com.ruse.world.content.skill.impl.thieving.Stalls;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -30,7 +26,7 @@ public class PossibleLootInterface {
         }
         player.getPacketSender().setScrollBar(101250, LootData.values().length * 40);
 
-        int index = 101101;
+        int index = 101051;
         int i = 0;
         for (Item item : data.getLoot()) {
             player.getPacketSender().sendItemOnInterface(index++, item.getId(), item.getAmount());
@@ -39,7 +35,7 @@ public class PossibleLootInterface {
         int rows = (i / 7) + 1;
         if (rows <= 6)
             rows = 6;
-        player.getPacketSender().setScrollBar(101100, 2 + (rows * 35));
+        player.getPacketSender().setScrollBar(101050, 2 + (rows * 35));
 
         for (int z = i; z < (rows * 7 >= 42 ? rows * 7 : 42); z++) {
             player.getPacketSender().sendItemOnInterface(index++, -1, 1);
@@ -74,9 +70,9 @@ public class PossibleLootInterface {
         TREASURE_HUNTER("Treasure Hunter",  -1,TreasureHunter.loot),
         ISLES_OF_AVALON(23086, HallsOfValor.loot),
         RAIDS(18404, ZombieRaidLoot.LOOT),
-        BRONZE_CARD_PACK(23276, ZombieRaidLoot.LOOT),
-        SILVER_CARD_PACK(23277, ZombieRaidLoot.LOOT),
-        GOLD_CARD_PACK(23278, ZombieRaidLoot.LOOT),
+        BRONZE_CARD_PACK(23276, CardPackRewards.bronze),
+        SILVER_CARD_PACK(23277, CardPackRewards.silver),
+        GOLD_CARD_PACK(23278, CardPackRewards.gold),
         DIAMOND_CARD_PACK(23279, ZombieRaidLoot.LOOT),
         DRAGONBALLBOX(18768,  DragonballBox.common1,  DragonballBox.uncommon1,  DragonballBox.rare1),
         SLAYERBOX( 7120, SlayerBox.commonpro2,  SlayerBox.uncommonpro2,  SlayerBox.rarepro2),

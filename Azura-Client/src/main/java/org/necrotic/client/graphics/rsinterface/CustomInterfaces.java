@@ -2028,11 +2028,11 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(c++, id++, 295 + x, 29 + y);
 
 		tab.child(c++, 101250, 11 + x, 47 + y);
-		tab.child(c++, 101100, 162 + x, 47 + y);
+		tab.child(c++, 101050, 162 + x, 47 + y);
 
-		interID = 101100;
+		interID = 101050;
 		RSInterface items = addTabInterface(interID);
-		items.totalChildren(105);
+		items.totalChildren(168);
 		items.height = 208;
 		items.width = 269 - 16;
 		items.scrollMax = 500;
@@ -2041,7 +2041,7 @@ public class CustomInterfaces extends RSInterface {
 		c = 0;
 		x = 1;
 
-		for (int z = 0; z < 15; z++) {
+		for (int z = 0; z < 24; z++) {
 			for (int i = 0; i < 7; i++) {
 				dropGroup(id, 1, 1, 1, 1);
 				items.child(c++, id++, 0 + x, 0 + y);

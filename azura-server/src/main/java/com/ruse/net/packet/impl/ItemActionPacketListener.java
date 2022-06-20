@@ -13,7 +13,10 @@ import com.ruse.world.World;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.StarterTasks.StarterTaskData;
+import com.ruse.world.content.cardPacks.BronzeCardPack;
 import com.ruse.world.content.cardPacks.DiamondCardPack;
+import com.ruse.world.content.cardPacks.GoldCardPack;
+import com.ruse.world.content.cardPacks.SilverCardPack;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.casketopening.CasketOpening;
@@ -44,7 +47,10 @@ import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
 import com.ruse.world.content.skill.impl.summoning.CharmingImp;
 import com.ruse.world.content.skill.impl.summoning.SummoningData;
 import com.ruse.world.content.skill.impl.woodcutting.BirdNests;
-import com.ruse.world.content.transportation.*;
+import com.ruse.world.content.transportation.JewelryTeleporting;
+import com.ruse.world.content.transportation.TeleportHandler;
+import com.ruse.world.content.transportation.TeleportTabs;
+import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.upgrading.Upgradeables;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -160,6 +166,19 @@ public class ItemActionPacketListener implements PacketListener {
             DiamondCardPack.useCard(player, itemId);
             return;
         }
+        if (BronzeCardPack.isCard(itemId)) {
+            BronzeCardPack.openCard(player, itemId);
+            return;
+        }
+        if (SilverCardPack.isCard(itemId)) {
+            SilverCardPack.openCard(player, itemId);
+            return;
+        }
+        if (GoldCardPack.isCard(itemId)) {
+            GoldCardPack.openCard(player, itemId);
+            return;
+        }
+
         if (BirdNests.isNest(itemId)) {
             BirdNests.searchNest(player, itemId);
             return;

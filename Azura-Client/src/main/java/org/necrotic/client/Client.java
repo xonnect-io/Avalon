@@ -7867,7 +7867,7 @@ public class Client extends GameRenderer {
                                     if (childInterface.id == 30375 && itemCollected(childInterface.inv[i3] - 1)) {
                                         childInterface.opacity = 50;
                                     }
-                                    if (childInterface.id == 25412 || childInterface.id == 23187  || childInterface.id == 23511) {
+                                    if (childInterface.id == 25412 || childInterface.id == 23187  || childInterface.id == 23387  || childInterface.id == 23587  || childInterface.id == 23787  || childInterface.id == 23511) {
                                         selectedItem = ItemDefinition.getLargeSprite(j9);
                                     } else {
                                         selectedItem = ItemDefinition.getSprite(j9, childInterface.invStackSizes[i3], l9);

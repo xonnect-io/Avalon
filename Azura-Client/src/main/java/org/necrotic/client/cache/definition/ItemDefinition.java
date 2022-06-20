@@ -5814,28 +5814,17 @@ public final class ItemDefinition {
 		int l3 = Rasterizer.SINE[itemDef.rotationY] * k3 >> 16;
 		int i4 = Rasterizer.COSINE[itemDef.rotationY] * k3 >> 16;
 		model.renderSingle(itemDef.rotationX, itemDef.rotationZ, itemDef.rotationY, itemDef.modelOffsetX, l3 + model.modelHeight / 2 + itemDef.modelOffsetY, i4 + itemDef.modelOffsetY);
-
-//		if (itemDef.certTemplateID != -1) {
-//			int l5 = sprite1.maxWidth;
-//			int j6 = sprite1.maxHeight;
-//			sprite1.maxWidth = 50;
-//			sprite1.maxHeight = 50;
-//			sprite1.drawSprite(0, 0);
-//			sprite1.maxWidth = l5;
-//			sprite1.maxHeight = j6;
-//		}
 		DrawingArea.initDrawingArea(j2, i2, ai1, new float[1024]);
 		DrawingArea.setDrawingArea(j3, k2, l2, i3);
 		Rasterizer.centerX = k1;
 		Rasterizer.centerY = l1;
 		Rasterizer.lineOffsets = ai;
 		Rasterizer.notTextured = true;
-
 		enabledSprite.maxWidth = 150;
 		enabledSprite.maxHeight = 150;
-
 		return enabledSprite;
 	}
+
 	public Model method194(int j) {
 		int k = maleDialogue;
 		int l = anInt166;
