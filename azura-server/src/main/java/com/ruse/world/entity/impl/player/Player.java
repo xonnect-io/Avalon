@@ -56,6 +56,8 @@ import com.ruse.world.content.dailyTask.DailyTaskDifficulty;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.content.dailytasks_new.TaskChallenge;
 import com.ruse.world.content.dialogue.Dialogue;
+import com.ruse.world.content.dissolving.MainDissolving;
+import com.ruse.world.content.dissolving.NephilimDisassemble;
 import com.ruse.world.content.eventboss.EventBossManager;
 import com.ruse.world.content.gamblinginterface.GamblingInterface;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
@@ -71,6 +73,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.newspinner.MysteryBoxManager;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.properscratchcard.Scratchcard;
+import com.ruse.world.content.raids.RaidsParty;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.scratchcards.ScratchCard;
 import com.ruse.world.content.seasonpass.SeasonPass;
@@ -83,10 +86,9 @@ import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Pouch;
 import com.ruse.world.content.skill.impl.summoning.Summoning;
-import com.ruse.world.content.teleport.TeleportData;
 import com.ruse.world.content.teleport.TeleportCategory;
+import com.ruse.world.content.teleport.TeleportData;
 import com.ruse.world.content.upgrading.UpgradeInterface;
-import com.ruse.world.content.raids.RaidsParty;
 import com.ruse.world.entity.actor.player.controller.ControllerManager;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.mini.MiniPManager;
@@ -142,10 +144,16 @@ public class Player extends Character {
     @Setter
     private Genie genie = new Genie(this, false);
 
-    private Dissolving dissolving = new Dissolving(this);
+    private MainDissolving mainDissolving = new MainDissolving(this);
 
-    public Dissolving getDissolving() {
-        return dissolving;
+    public MainDissolving getMainDissolving() {
+        return mainDissolving;
+    }
+
+    private NephilimDisassemble nephilimDissolving = new NephilimDisassemble(this);
+
+    public NephilimDisassemble getNephilimDissolving() {
+        return nephilimDissolving;
     }
 
     private MysteryBoxManager newSpinner = new MysteryBoxManager(this);
@@ -623,6 +631,8 @@ public class Player extends Character {
     private int shadowState;
     private int effigy;
     private int dfsCharges;
+    private int nephilimBonus;
+    private int guardianBonus;
     private int playerViewingIndex;
     private int staffOfLightEffect;
     private int minutesBonusExp = 0;
@@ -715,7 +725,7 @@ public class Player extends Character {
     private final SeasonPass seasonPass = new SeasonPass(this);
 
     public Player(PlayerSession playerIO) {
-        super(GameSettings.STARTER_BED.copy());
+        super(GameSettings.HOME_CORDS.copy());
         this.session = playerIO;
     }
 
@@ -2791,6 +2801,32 @@ End new teleport
 
     public void incrementDfsCharges(int amount) {
         this.dfsCharges += amount;
+    }
+
+
+    public int getGuardianBonus() {
+        return guardianBonus;
+    }
+
+    public void setGuardianBonus(int amount) {
+        this.guardianBonus = amount;
+    }
+
+    public void incrementGuardianBonus(int amount) {
+        this.guardianBonus += amount;
+    }
+
+
+    public int getNephilimBonus() {
+        return nephilimBonus;
+    }
+
+    public void setNephilimBonus(int amount) {
+        this.nephilimBonus = amount;
+    }
+
+    public void incrementNephilimBonus(int amount) {
+        this.nephilimBonus += amount;
     }
 
     public void setNewPlayer(boolean newPlayer) {

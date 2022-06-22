@@ -3,7 +3,6 @@ package com.ruse.world.content.collectionlog;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
-import com.ruse.world.World;
 import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.TeleportInterface;
 import com.ruse.world.entity.impl.player.Player;
@@ -38,10 +37,15 @@ public class CollectionLogInterface {
 
     private void initialiseCurrentlyViewing() {
         currentlyViewing.clear();
-
-		for (TeleportInterface.Bosses data : TeleportInterface.Bosses.values())
-			currentlyViewing.add(data.getNpcId());
-
+        for (TeleportInterface.Monsters data1 : TeleportInterface.Monsters.values()) {
+            currentlyViewing.add(data1.getNpcId());
+        }
+        for (TeleportInterface.Zones data1 : TeleportInterface.Zones.values()) {
+            currentlyViewing.add(data1.getNpcId());
+        }
+		for (TeleportInterface.Bosses data : TeleportInterface.Bosses.values()) {
+            currentlyViewing.add(data.getNpcId());
+        }
 		for (int entry : NPC_LIST) {
             currentlyViewing.add(entry);
         }

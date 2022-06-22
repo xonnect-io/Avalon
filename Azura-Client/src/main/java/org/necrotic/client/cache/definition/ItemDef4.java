@@ -2960,12 +2960,20 @@ public class ItemDef4 {
 				itemDef.copyItem(19669);
 				itemDef.name = "Celestial ring";
 				itemDef.rdc2 = 28715;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+
+			case 23293:
+				itemDef.copyItem(6208);
+				itemDef.name = "Celestial amulet";
+				itemDef.rdc2 = 28715;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 23276:
 				itemDef.copyItem(23275);
 				itemDef.rotationX = 0;
+				itemDef.stackable = false;
 				itemDef.name = "Bronze Card Pack";
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop";
@@ -2977,6 +2985,7 @@ public class ItemDef4 {
 			case 23277:
 				itemDef.copyItem(23275);
 				itemDef.rotationX = 0;
+				itemDef.stackable = false;
 				itemDef.name = "Silver Card Pack";
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop";
@@ -2989,6 +2998,7 @@ public class ItemDef4 {
 			case 23278:
 				itemDef.copyItem(23275);
 				itemDef.rotationX = 0;
+				itemDef.stackable = false;
 				itemDef.name = "Gold Card Pack";
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop";
@@ -3001,6 +3011,7 @@ public class ItemDef4 {
 			case 23279:
 				itemDef.copyItem(23275);
 				itemDef.rotationX = 0;
+				itemDef.stackable = false;
 				itemDef.name = "Diamond Card Pack";
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop";

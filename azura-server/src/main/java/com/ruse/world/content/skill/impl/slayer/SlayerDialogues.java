@@ -143,13 +143,11 @@ public class SlayerDialogues {
 						+ task.getName() + "s.";
 				String line2 = "";
 				if (duoSlayer) {
-					line1 = "" + you + " have been assigned to kill";
-					line2 = "" + amountToKill + " "
+					 line1 = "You have been assigned to kill " + amountToKill + " "
 							+ task.getName() + "s.";
 				}
 				if (player.getSlayer().getLastTask() != SlayerTasks.NO_TASK) {
-					line1 = "" + you + " are doing great! Your new";
-					line2 = "assignment is to kill " + amountToKill + " "
+					line1 = "Your new assignment is to kill " + amountToKill + " "
 							+ task.getName() + "s.";
 				}
 				return new String[] { "" + line1 + "", "" + line2 + "" };

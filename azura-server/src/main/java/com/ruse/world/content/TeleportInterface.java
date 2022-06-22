@@ -596,12 +596,24 @@ public class TeleportInterface {
             this.teleportCords = teleportCords;
             this.adjustedZoom = adjustedZoom;
         }
+        public static boolean contains(int npcID) {
+            for (Monsters d : Monsters.values()) {
+                if (d.getNpcId() == npcID)
+                    return true;
+            }
+            return false;
+        }
 
+        public int getNpcId() {
+            return npcId;
+        }
         @Override
         public String getName() {
             return name;
         }
     }
+
+
 
 
     public enum Bosses implements Teleport {
@@ -768,6 +780,56 @@ public class TeleportInterface {
 
     public interface Teleport {
         String getName();
+    }
+
+
+
+    public enum Zones implements Teleport {
+        DUSTCLAW("Dustclaw", 1614, new int[]{3040, 2846, 0}, 780),
+        LORD("Inferior Elite Lord", 603, new int[]{2911, 3991, 0}, 780),
+        SHADOW("Shadow", 12843, new int[]{3358, 9307, 0}, 780),
+        GOLEM("Golem", 53, new int[]{2586, 9449, 0}, 1000),
+        SHETANI("Shetani", 8018, new int[]{3039, 3995, 0}, 1000),
+        RIPPER("Rippers", 13635, new int[]{2847, 2846, 0}, 1000),
+        AVATAR("Avatar titans", 8008, new int[]{2328, 5409, 0}, 750),
+        WYVERNS("Legendary Wyverns", 3308, new int[]{2328, 5409, 0}, 750),
+        ONI("Oni", 3117, new int[]{2328, 5409, 0}, 750),
+        SHENRON("Shenron", 201, new int[]{2328, 5409, 0}, 750),
+        SUBZERO("Subzero", 202, new int[]{2328, 5409, 0}, 750),
+        ZEUS("Zeus", 203, new int[]{2328, 5409, 0}, 750),
+        IPOTANE("Ipotane", 8010, new int[]{2328, 5409, 0}, 750),
+        VINDICTA("Vindicta", 9807, new int[]{2328, 5409, 0}, 750),
+        BEAST("Beast", 225, new int[]{2328, 5409, 0}, 750),
+        ;
+
+        private final int npcId;
+        private final int[] teleportCords;
+        private final int adjustedZoom;
+        private final String name;
+
+        Zones(String name, int npcId, int[] teleportCords, int adjustedZoom) {
+            this.name = name;
+            this.npcId = npcId;
+            this.teleportCords = teleportCords;
+            this.adjustedZoom = adjustedZoom;
+        }
+
+        public static boolean contains(int npcID) {
+            for (Zones d : Zones.values()) {
+                if (d.getNpcId() == npcID)
+                    return true;
+            }
+            return false;
+        }
+
+        public int getNpcId() {
+            return npcId;
+        }
+
+        @Override
+        public String getName() {
+            return name;
+        }
     }
 
 

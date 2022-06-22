@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Avalon-Client:jar">
-    <output-path>$PROJECT_DIR$/../..</output-path>
+    <output-path>$PROJECT_DIR$/../../AvalonWebpage/public_html/resources</output-path>
     <root id="archive" name="Azura-Client.jar">
       <element id="module-output" name="Azura-Client" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/club/minnced/discord-rpc-release/v3.3.0/discord-rpc-release-v3.3.0.jar" path-in-jar="/" />

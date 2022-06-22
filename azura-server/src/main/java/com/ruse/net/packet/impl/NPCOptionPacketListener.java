@@ -50,7 +50,6 @@ import com.ruse.world.content.skill.impl.summoning.Summoning;
 import com.ruse.world.content.skill.impl.summoning.SummoningData;
 import com.ruse.world.content.skill.impl.thieving.Pickpocket;
 import com.ruse.world.content.skill.impl.thieving.PickpocketData;
-import com.ruse.world.content.skill.impl.thieving.Stalls;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -940,7 +939,7 @@ public class NPCOptionPacketListener implements PacketListener {
 
                         ShopManager.getShops().get(110).open(player);
                         player.getPacketSender().sendString(3903,
-                                "Success rate: @whi@" + player.getPointsHandler().getLoyaltyPoints() + "55%");
+                                "Loyalty Points: @whi@" + player.getPointsHandler().getLoyaltyPoints() + "");
                         player.getPacketSender().sendMessage("").sendMessage(
                                 "You currently have " + player.getPointsHandler().getLoyaltyPoints() + " Loyalty Points.");
                         ;

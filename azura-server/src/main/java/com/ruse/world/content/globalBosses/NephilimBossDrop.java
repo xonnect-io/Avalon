@@ -46,7 +46,7 @@ public class NephilimBossDrop {
 
 			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
-
+			killer.setNephilimBonus(0);
 			NPCDrops.handleDrops(killer, npc);
 			iterator.remove();
 		}

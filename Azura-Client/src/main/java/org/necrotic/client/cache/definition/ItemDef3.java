@@ -842,19 +842,22 @@ public class ItemDef3 {
 			case 23220:
 				itemDef.copyItem(4708);
 				itemDef.name = "Nephilim helm";
-				itemDef.modelZoom = 900;
+				itemDef.modelZoom = 700;
 				itemDef.modelID = 18429;
 				itemDef.maleEquip1 = 18446;
 				itemDef.femaleEquip1 = 18446;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 				
 			case 23221:
 				itemDef.copyItem(4714);
 				itemDef.name = "Nephilim body";
-				itemDef.modelZoom = 1500;
+				itemDef.modelZoom = 1200;
+				itemDef.modelOffsetY = 8;
 				itemDef.modelID = 18461;
 				itemDef.maleEquip1 = 18486;
 				itemDef.femaleEquip1 = 18486;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 				
 			case 23222:
@@ -864,6 +867,7 @@ public class ItemDef3 {
 				itemDef.modelID = 18495;
 				itemDef.maleEquip1 = 18511;
 				itemDef.femaleEquip1 = 18511;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 				
 			case 23223:
@@ -872,7 +876,8 @@ public class ItemDef3 {
 				itemDef.modelID = 18512;
 				itemDef.maleEquip1 = 18516;
 				itemDef.femaleEquip1 = 18516;
-				itemDef.modelZoom = 700;
+				itemDef.modelZoom = 550;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 				
 			case 23224:
@@ -882,15 +887,18 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 18519;
 				itemDef.femaleEquip1 = 18519;
 				itemDef.modelZoom = 700;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 				
 			case 23062:
 				itemDef.copyItem(4708);
 				itemDef.name = "Nephilim Staff";
-				itemDef.modelZoom = 900;
+				itemDef.modelZoom = 950;
 				itemDef.modelID = 18532;
 				itemDef.maleEquip1 = 18531;
 				itemDef.femaleEquip1 = 18531;
+				itemDef.rotationX = 1000;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 				
 			case 23061:
@@ -900,6 +908,7 @@ public class ItemDef3 {
 				itemDef.modelID = 18530;
 				itemDef.maleEquip1 = 18529;
 				itemDef.femaleEquip1 = 18529;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 
 			case 23063:
@@ -909,6 +918,7 @@ public class ItemDef3 {
 				itemDef.modelID = 18533;
 				itemDef.maleEquip1 = 18534;
 				itemDef.femaleEquip1 = 18534;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 
 			case 23064:
@@ -1159,9 +1169,9 @@ public class ItemDef3 {
 
 			case 23237:
 				itemDef.copyItem(3849);
-				itemDef.name = "Unknown Chest";
+				itemDef.name = "Crpytic Chest";
 				itemDef.actions = new String[]{"Open", null, null, null, "Drop"};
-				itemDef.modelID = 100201;
+				itemDef.modelID = 14941;
 				itemDef.modelOffsetX = itemDef.modelOffsetX;
 				itemDef.modelOffsetY = itemDef.modelOffsetY;
 				itemDef.modelZoom = 3000;

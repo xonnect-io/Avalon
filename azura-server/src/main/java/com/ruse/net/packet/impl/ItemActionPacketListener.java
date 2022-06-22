@@ -1500,7 +1500,7 @@ public class ItemActionPacketListener implements PacketListener {
         if (PetUpgrading.upgradeable(player, itemId)) {
             return;
         }
-        player.getDissolving().handle(itemId);
+        player.getMainDissolving().handle(itemId);
         switch (itemId) {
             case 13591:
                 player.getPacketSender().sendMessage("You rub the enchanted key to teleport to chest area.");
@@ -1782,7 +1782,8 @@ public class ItemActionPacketListener implements PacketListener {
 
         if (MemberScrolls.handleScroll(player, itemId, true))
             return;
-        player.getDissolving().handle(itemId);
+        player.getMainDissolving().handle(itemId);
+        player.getNephilimDissolving().handleDialogue(itemId);
         switch (itemId) {
 
             case 4278:

@@ -1595,12 +1595,12 @@ public class RSInterface {
 		addText(52765, "You will be restricted from trading, staking and looting items from killed players.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
 		addText(52766, "You will not get a npc drop if another player has done more damage.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
 		addText(52767, "You will have to rely on your starter, skilling, pvming, and shops.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
-		addText(52768, "This game mode is for players that love a challenge.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
+		addText(52768, "", ColorConstants.ORANGE2, true, true, 52, tda, 0);
 		addHoverButtonWSpriteLoader(52769, 1457, 118, 28, "Confirm selection", -1, 52770, 1);
 		addHoveredImageWSpriteLoader(52770, 1458, 118, 28, 52771);
 		addText(52772, "Confirm", ColorConstants.ORANGE, true, true, 52, tda, 2);
 
-		addText(52798, "This game mode is for players that love a challenge.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
+		addText(52798, "", ColorConstants.ORANGE2, true, true, 52, tda, 0);
 
 		tab.totalChildren(55);
 		int x = 15;
@@ -4045,7 +4045,7 @@ public class RSInterface {
 		addCloseButtonSmall(STARTING_POINT + 11, STARTING_POINT + 12, STARTING_POINT + 13);
 		addText(STARTING_POINT + 14, "", tda, 2, ColorConstants.ORANGE);
 		addText(STARTING_POINT + 15, "Items to create", tda, 1, ColorConstants.ORANGE);
-		addText(122111, "Success rate: @whi@100%", tda, 1, ColorConstants.WHITE);
+		addText(77454, "Success rate: @whi@100%", tda, 1, ColorConstants.WHITE);
 		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 37, 1645, "Select Tier 1", 68, 20);
 		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 38, 1645, "Select Tier 2", 68, 20);
 		RSInterface.addButtonWSpriteLoader(STARTING_POINT + 39, 1645, "Select Tier 3", 68, 20);
@@ -4075,7 +4075,7 @@ public class RSInterface {
 		main.child(11, STARTING_POINT + 12, 492, 10);
 		main.child(12, STARTING_POINT + 14, 150, 20);
 		main.child(13, STARTING_POINT + 15, 130, 68);
-		main.child(14, 122111, 348, 191);
+		main.child(14, 77454, 348, 191);
 		main.child(15, STARTING_POINT + 37, 20, 34);// 00 hover
 		main.child(16, STARTING_POINT + 38, 88, 34);//01 hover
 		main.child(17, STARTING_POINT + 39, 88+68, 34);//02 hover

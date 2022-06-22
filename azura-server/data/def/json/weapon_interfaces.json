@@ -235,6 +235,11 @@
     "interface": "LONGSWORD"
   },
   {
+    "hash": 23063,
+    "item-id": 23063,
+    "interface": "LONGSWORD"
+  },
+  {
     "hash": 20551,
     "item-id": 20551,
     "interface": "LONGSWORD"
@@ -298,6 +303,16 @@
     "hash": 4170,
     "item-id": 4170,
     "interface": "STAFF"
+  },
+  {
+    "hash": 23062,
+    "item-id": 23062,
+    "interface": "STAFF"
+  },
+  {
+    "hash": 23061,
+    "item-id": 23061,
+    "interface": "BOW"
   },
     {
     "hash": 17011,

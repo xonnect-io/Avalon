@@ -43,7 +43,7 @@ public class PossibleLootInterface {
     }
 
     public static boolean handleButton(Player player, int buttonID) {
-        if (buttonID >= 101272 && buttonID <= 101328) {
+        if (buttonID >= 101272 && buttonID <= 101336) {
             int index = (buttonID - 101272) / 2;
 
             if (index <= LootData.values().length)
@@ -73,7 +73,7 @@ public class PossibleLootInterface {
         BRONZE_CARD_PACK(23276, CardPackRewards.bronze),
         SILVER_CARD_PACK(23277, CardPackRewards.silver),
         GOLD_CARD_PACK(23278, CardPackRewards.gold),
-        DIAMOND_CARD_PACK(23279, ZombieRaidLoot.LOOT),
+        DIAMOND_CARD_PACK(23279, CardPackRewards.diamond),
         DRAGONBALLBOX(18768,  DragonballBox.common1,  DragonballBox.uncommon1,  DragonballBox.rare1),
         SLAYERBOX( 7120, SlayerBox.commonpro2,  SlayerBox.uncommonpro2,  SlayerBox.rarepro2),
         SLAYERBOX_U( 22123, UpgradedSlayerBox.commonpro2,  UpgradedSlayerBox.uncommonpro2,  UpgradedSlayerBox.rarepro2),

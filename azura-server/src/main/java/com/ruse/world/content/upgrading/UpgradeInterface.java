@@ -9,7 +9,6 @@ import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.achievements.AchievementData;
-import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Donation;
 
@@ -327,8 +326,8 @@ public class UpgradeInterface {
         selectedUpgrade = upgrade;
 
         player.getPacketSender().sendItemOnInterface(62210, upgrade.getReward());
-        player.getPacketSender().sendString(62231, "Tokens req: @whi@" + Misc.formatNumber(upgrade.getCost()));
-        player.getPacketSender().sendString(62234, "Success rate: @whi@" + upgrade.getSuccessRate() + "%");
+        player.getPacketSender().sendString(72231, "Tokens req: @whi@" + Misc.formatNumber(upgrade.getCost()));
+        player.getPacketSender().sendString(72234, "Success rate: @whi@" + upgrade.getSuccessRate() + "%");
 
     }
 
@@ -338,8 +337,8 @@ public class UpgradeInterface {
         selectedUpgrade = null;
 
         player.getPacketSender().sendItemOnInterface(62210, -1, 1);
-        player.getPacketSender().sendString(62231, "Tokens req: @whi@---");
-        player.getPacketSender().sendString(62234, "Success rate: @whi@---");
+        player.getPacketSender().sendString(72231, "Tokens req: @whi@---");
+        player.getPacketSender().sendString(72234, "Success rate: @whi@---");
 
         upgradeablesArrayList = Upgradeables.getForType(type);
         for (int i = 0; i < 50; i++) {

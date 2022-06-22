@@ -120,15 +120,15 @@ public class PlayerPanel {
         }
 
         interfaceID = 111601;
-        player.getPacketSender().sendString(interfaceID++, "View Commands");
-        player.getPacketSender().sendString(interfaceID++, "View Achievements");
-        player.getPacketSender().sendString(interfaceID++, "View Drop Tables");
-        player.getPacketSender().sendString(interfaceID++, "View Collection Log");
-        player.getPacketSender().sendString(interfaceID++, "View Kill Tracker");
-        player.getPacketSender().sendString(interfaceID++, "View Possible Loot");
-        player.getPacketSender().sendString(interfaceID++, "View Item Stats");
-        player.getPacketSender().sendString(interfaceID++, "Change Password");
-        player.getPacketSender().sendString(interfaceID++, "Edit Pin");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Commands");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Achievements");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Drop Tables");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Collection Log");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Kill Tracker");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Possible Loot");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Item Stats");
+        player.getPacketSender().sendString(interfaceID++, "@yel@Change @yel@Password");
+        player.getPacketSender().sendString(interfaceID++, "@yel@Edit @yel@Pin");
 
 
     }

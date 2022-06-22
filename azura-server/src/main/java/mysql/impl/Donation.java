@@ -1,15 +1,12 @@
 package mysql.impl;
 
 import com.ruse.GameSettings;
-import com.ruse.model.PlayerRights;
-import com.ruse.model.definitions.ItemDefinition;
-import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.DonationBossSystem;
-import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.entity.impl.player.Player;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Donation extends Database {
 
@@ -80,28 +77,90 @@ public class Donation extends Database {
 
 
                 switch (item_number) {
-
+                    //Bronze Card Pack
                     case 1:
+                        player.getInventory().add(23276, quantity);
+                        break;
+                    //Silver Card Pack
+                    case 2:
+                        player.getInventory().add(23277, quantity);
+                        break;
+                    //Gold Card Pack
+                    case 3:
+                        player.getInventory().add(23278, quantity);
+                        break;
+                    //Diamond Card Pack
+                    case 4:
+                        player.getInventory().add(23279, quantity);
+                        break;
+                    //$5 Bond
+                    case 5:
                         player.getInventory().add(6769, quantity);
                         break;
-
-                    case 2:
+                    //$10 Bond
+                    case 6:
                         player.getInventory().add(10942, quantity);
                         break;
-
-                    case 3:
+                    //$25 Bond
+                    case 7:
                         player.getInventory().add(10934, quantity);
                         break;
-
-                    case 4:
+                    //$50 Bond
+                    case 8:
                         player.getInventory().add(10935, quantity);
                         break;
-
-                    case 5:
+                    //$100 Bond
+                    case 9:
                         player.getInventory().add(10943, quantity);
                         break;
-                    case 6:
-                        player.getInventory().add(10943, quantity);
+
+                    //Silver casket
+                    case 10:
+                        player.getInventory().add(15003, quantity);
+                        break;
+                    //Ruby casket
+                    case 11:
+                        player.getInventory().add(15002, quantity);
+                        break;
+                    //Diamond casket
+                    case 12:
+                        player.getInventory().add(15004, quantity);
+                        break;
+                    //Owner cape goodiebag
+                    case 13:
+                        player.getInventory().add(3578, quantity);
+                        break;
+                    //1.5x DR BOOSTER
+                    case 14:
+                        player.getInventory().add(23255, quantity);
+                        break;
+                    //1.5x DMG BOOSTER
+                    case 15:
+                        player.getInventory().add(23254, quantity);
+                        break;
+                    //Onyx casket
+                    case 16:
+                        player.getInventory().add(14999, quantity);
+                        break;
+                    //Gold Season Pass
+                    case 17:
+                        player.getInventory().add(23275, quantity);
+                        break;
+                    //Owner cape goodiebag
+                    case 18:
+                        player.getInventory().add(23240, quantity);
+                        break;
+                    //Zenyte casket
+                    case 19:
+                        player.getInventory().add(23253, quantity);
+                        break;
+                    //PVM Boxes
+                    case 20:
+                        player.getInventory().add(7956, quantity * 20_000);
+                        break;
+                    //Grand mystery box
+                    case 21:
+                        player.getInventory().add(19114, quantity * 400);
                         break;
 
                     default:

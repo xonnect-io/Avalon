@@ -177,13 +177,13 @@ public class Slayer {
 
     @SuppressWarnings("incomplete-switch")
     public void givePoints(SlayerMaster master) {
-        int pointsReceived = 2;
+        int pointsReceived = 3;
         switch (master) {
             case MEDIUM_SLAYER:
-                pointsReceived = 5;
+                pointsReceived = 6;
                 break;
             case HARD_SLAYER:
-                pointsReceived = 7;
+                pointsReceived = 10;
                 break;
 
         }
@@ -194,6 +194,7 @@ public class Slayer {
             pointsReceived *= 2;
         }
 
+        player.getPointsHandler().setSlayerPoints(pointsReceived, true);
         PlayerPanel.refreshPanel(player);
     }
 

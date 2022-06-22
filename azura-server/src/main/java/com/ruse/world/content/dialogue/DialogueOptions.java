@@ -21,9 +21,12 @@ import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.impl.AgilityTicketExchange;
 import com.ruse.world.content.dialogue.impl.Mandrith;
 import com.ruse.world.content.dialogue.impl.Tutorial;
+import com.ruse.world.content.dissolving.NephilimDisassemble;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.raids.SODRaids;
+import com.ruse.world.content.raids.ZombieRaidData;
+import com.ruse.world.content.raids.ZombieRaids;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.mining.Mining;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -36,8 +39,6 @@ import com.ruse.world.content.transportation.JewelryTeleports;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
-import com.ruse.world.content.raids.ZombieRaidData;
-import com.ruse.world.content.raids.ZombieRaids;
 import com.ruse.world.entity.impl.npc.NpcAggression;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Donation;
@@ -1271,10 +1272,24 @@ public class DialogueOptions {
                     }
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
-                case 6668://yes
+                case 6118: //yes
+                    for (NephilimDisassemble.DisassembleData data : NephilimDisassemble.DisassembleData.values()) {
+                        if (player.getInventory().contains(data.getId(), 1)) {
+                            player.getPacketSender().sendInterfaceRemoval();
+                            player.getInventory().delete(data.getId(), 1);
+                            player.getInventory().addItemSet(data.getRewards());
+                            player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
+                            player.performAnimation(new Animation(data.getAnimation()));
+                            player.getPacketSender().sendMessage("You Disassembled the " + ItemDefinition.forId(data.getId()).getName() + " for x" + data.getRewards()[0].getAmount() + " Nephilim Tokens");
+                            break;
+                        }
+                    }
+                    break;
+
+                    case 6668: //yes
                     for (int i = 0; i < player.getInventory().capacity(); i++) {
                         if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
-                           player.getDissolving().handleAll(player.getInventory().get(i).getId());
+                            player.getMainDissolving().handleAll(player.getInventory().get(i).getId());
                         }
                     }
                     player.getPacketSender().sendInterfaceRemoval();

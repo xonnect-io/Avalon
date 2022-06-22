@@ -133,8 +133,25 @@ public class Locations {
 		PRIME(new int[] { 2437, 2492}, new int[] { 10113, 10171},
 				true, true, true, false, false, true) {},
 		NEPHILIM(new int[] { 2137, 2153}, new int[] { 3291, 3308},
-				true, true, true, false, false, true) {},
+				true, true, true, false, false, true) {
 
+			@Override
+			public void enter(Player player) {
+				System.err.println("Called enter");
+				if (player.getNephilimBonus() > 0)
+				player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");			}
+
+		},
+		GUARDIAN(new int[] { 3430, 3460}, new int[] { 4090, 4115},
+				true, true, true, false, false, true) {
+
+			@Override
+			public void enter(Player player) {
+				System.err.println("Called enter");
+				if (player.getGuardianBonus() > 0)
+				player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getGuardianBonus() + "% @blu@Drop rate bonus your next Guardian kill");
+			}
+		},
 
 		LUCIFER(new int[] { 2301, 2367}, new int[] { 3970, 4024},
 				false, true, true, false, false, true) {},

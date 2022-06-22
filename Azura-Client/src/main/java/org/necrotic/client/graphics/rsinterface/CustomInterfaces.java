@@ -1522,8 +1522,8 @@ public class CustomInterfaces extends RSInterface {
 		RSInterface.addText(62206, "Upgrade x1", tda, 2, ColorConstants.ORANGE2, true, true);
 		RSInterface.addText(62253, "Upgrade All", tda, 2, ColorConstants.ORANGE2, true, true);
 		RSInterface.addText(62203, "Product", tda, 2, 0xFFA500);
-		RSInterface.addText(62231, "Tokens required:", tda, 1, 0x3bce76, true, false);
-		RSInterface.addText(62234, "Success rate:", tda, 1, 0x3bce76, true, false);
+		RSInterface.addText(72231, "Tokens required:", tda, 1, 0x3bce76, true, false);
+		RSInterface.addText(72234, "Success rate:", tda, 1, 0x3bce76, true, false);
 		RSInterface.addText(62232, "The item must be in your inventory", tda, 0	, 0xe6e5e6);
 		RSInterface.addText(62233, "Upgrade Tokens are obtained from dissolving extra items, PvM drops.", tda, 0, 0xe6e5e6);
 		RSInterface.addText(62242, "Tier 1", tda, 1, 0xFFA500);
@@ -1552,7 +1552,7 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(7, 62210, 383, 112);
 		tab.child(8, 62211, 180, 283);//how to get pixue	
 		tab.child(9, 62230, 492, 10);
-		tab.child(10, 62231, 403, 170);//dust requred
+		tab.child(10, 72231, 403, 170);//dust requred
 		tab.child(11, 62232, 75, 80);//the item must be in ur inventory
 		tab.child(12, 62233, 92, 298);//pixue dust is obtained from
 		tab.child(13, 62234, 403, 184);//upgrade %

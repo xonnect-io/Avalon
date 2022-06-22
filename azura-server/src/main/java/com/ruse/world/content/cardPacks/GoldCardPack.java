@@ -240,20 +240,20 @@ public class GoldCardPack {
         List <Item> rewardstype;//default
         for(int i = 0; i < 6; i++){
             int chance = Misc.random(100);
-            if(chance >=30 && chance < 60){
-                rewardstype = silverRewards;//30% chance
-
-            }else if(chance >=10 && chance <30){//20% chance
-                rewardstype = goldRewards;
-
-            }else if(chance >=0 && chance < 10){//10% chance
-                rewardstype = diamondRewards;
-
-            }else if(chance == 0){//1% chance
+            if(chance < 3) {//3% chance
                 rewardstype = tanzaniteRewards;
 
+            }else if(chance >=3 && chance < 15) {//12% chance
+                rewardstype = diamondRewards;
+
+            }else if(chance >=15 && chance <38){//23% chance
+                rewardstype = goldRewards;
+
+            }else if(chance >=38 && chance < 70){
+                rewardstype = silverRewards;//30% chance
+
             } else {
-                rewardstype = bronzeRewards;
+                rewardstype = bronzeRewards; //31% chance
             }
 
             reward = getRandomItem(rewardstype);

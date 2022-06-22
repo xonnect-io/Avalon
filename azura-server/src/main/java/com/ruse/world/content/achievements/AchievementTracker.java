@@ -28,7 +28,7 @@ public class AchievementTracker {
         int oldProgress = progress.amountDone;
         int newProgress = progress.addAmount(amount, achievement.progressAmount);
         if (oldProgress != newProgress && newProgress >= achievement.progressAmount) {
-            player.sendMessage("<img=632> You have completed the achievement: " + achievement.toString() + ", Dont forget to claim your reward.");
+            player.sendMessage("@red@<img=832>You have completed the achievement: @blu@" + achievement.toString());
         }
     }
 

@@ -31,85 +31,174 @@ public class DiamondCardPack {
 
         player.getPacketSender().sendItemOnInterface(23187, 23279, 1);
     }
-    public static List<Item> silverRewards = Arrays.asList(
-            new Item(386, 50,"silver"), // shark
-            new Item(892, 50,"silver") // rune arrows
-    );
-    public static List<Item> diamondRewards = Arrays.asList(
-            new Item(8, 1,"diamond"), // cannon stand
-            new Item(11118, 1,"diamond"), // Combat Bracelet
-            new Item(2570, 1,"diamond"), // ring of life
-            new Item(6918, 1,"diamond"), // set 24 Infinity Armor 1
-            new Item(6916, 1,"diamond"), // set 25 Infinity Armor 2
-            new Item(6924, 1,"diamond"), // set 26 Infinity Armor 3
-            new Item(6922, 1,"diamond"), // set 27 Infinity Armor 4
-            new Item(6920, 1,"diamond"), // set 28 Infinity Armor 5
-            new Item(11712, 1,"diamond"), // set 15 Godsword shard 2
-            new Item(7400, 1,"diamond"), // echanted
-            new Item(7399, 1,"diamond"), // echanted
-            new Item(7398, 1,"diamond"), // enchanted
-            new Item(4089, 1,"diamond"), // blue mystic
-            new Item(4091, 1,"diamond"), // blu mystic
-            new Item(4093, 1,"diamond"), // blu mystic
-            new Item(4095, 1,"diamond"), // blu mystic
-            new Item(4097, 1,"diamond"), // blu Mystic
-            new Item(892, 100,"diamond"), // rune arrows
-            new Item(4675, 1,"diamond"), // ancient staff
-            new Item(3025, 25,"diamond") // super restore
+    public static List<Item> bronzeRewards = Arrays.asList(
+            new Item(15359, 3, "bronze"),
+            new Item(15359, 5, "bronze"),
+            new Item(15358, 3, "bronze"),
+            new Item(15358, 5, "bronze"),
+            new Item(19115, 200, "bronze"),
+            new Item(19114, 100, "bronze"),
+            new Item(19114, 50, "bronze"),
+            new Item(23174, 3, "bronze"),
+            new Item(15290, 200, "bronze"),
+            new Item(15290, 250, "bronze"),
+            new Item(15290, 300, "bronze"),
+            new Item(15289, 40, "bronze"),
+            new Item(15289, 50, "bronze"),
+            new Item(15289, 75, "bronze"),
+            new Item(23046, 1, "bronze"),
+            new Item(20488, 15, "bronze"),
+            new Item(20488, 10, "bronze"),
+            new Item(3739, 1, "bronze"),
+            new Item(3738, 1, "bronze"),
+            new Item(3737, 1, "bronze"),
+            new Item(8087, 1, "bronze"),
+            new Item(8088, 1, "bronze"),
+            new Item(8089, 1, "bronze"),
+            new Item(11137, 200, "bronze"),
+            new Item(19888, 1, "bronze"),
+            new Item(18823, 1, "bronze"),
+            new Item(23264, 30, "bronze"),
+            new Item(23264, 50, "bronze")
 
     );
+
+    public static List<Item> silverRewards = Arrays.asList(
+            new Item(21220, 1000,  "silver"),
+            new Item(21220, 750,  "silver"),
+            new Item(23215, 250,  "silver"),
+            new Item(23215, 200,  "silver"),
+            new Item(22219, 75,  "silver"),
+            new Item(22219, 100,  "silver"),
+            new Item(21218, 30,  "silver"),
+            new Item(21218, 25,  "silver"),
+            new Item(22006, 25,  "silver"),
+            new Item(22006, 50,  "silver"),
+            new Item(20489, 10,  "silver"),
+            new Item(10946, 30,  "silver"),
+            new Item(10946, 20, "silver"),
+            new Item(6769, 2, "silver"),
+            new Item(6769, 5, "silver"),
+            new Item(4278, 750, "silver"),
+            new Item(4278, 1000, "silver"),
+            new Item(15359,10, "silver"),
+            new Item(15359,20, "silver"),
+            new Item(15358,10, "silver"),
+            new Item(15358,20, "silver"),
+            new Item(19114,500, "silver"),
+            new Item(19114,250, "silver"),
+            new Item(23174,10, "silver"),
+            new Item(23174,20, "silver"),
+            new Item(15290,1000, "silver"),
+            new Item(15290,1250, "silver"),
+            new Item(15290,1500, "silver"),
+            new Item(15289,160, "silver"),
+            new Item(15289,200, "silver"),
+            new Item(15289,250, "silver"),
+            new Item(23048,1, "silver"),
+            new Item(23049,1, "silver"),
+            new Item(20488,50, "silver"),
+            new Item(20488,75, "silver"),
+            new Item(11137,1000, "silver")
+    );
+
     public static List<Item> goldRewards = Arrays.asList(
 
-            new Item(18350, 1,"gold"), //
-            new Item(18356, 1,"gold"), //
-            new Item(18352, 1,"gold"), //
-            new Item(18354, 1,"gold"), //
-
-            new Item(23020, 1,"gold"), // Vote Scroll
-            new Item(2579, 1,"gold"), // set 41 Ranger Boots
-            new Item(2581, 1,"gold"), // set 42 Robin Hood Hat
-            new Item(19352, 1,"gold") // dragon sq (or) kit
-
-    );    public static List<Item> tanzaniteRewards = Arrays.asList(
-            new Item(6199, 1,"tanzanite"), // Mystery Box
-            new Item(6570, 1,"tanzanite"), // Firecape
-
-            new Item(18350, 1,"tanzanite"), //
-            new Item(18356, 1,"tanzanite"), //
-            new Item(18352, 1,"tanzanite"), //
-            new Item(18354, 1,"tanzanite"), //
-
-            new Item(23020, 1,"tanzanite"), // Vote Scroll
-            new Item(2579, 1,"tanzanite"), // set 41 Ranger Boots
-            new Item(2581, 1,"tanzanite"), // set 42 Robin Hood Hat
-            new Item(19352, 1,"tanzanite") // dragon sq (or) kit
-
+            new Item(23264,150, "gold"),
+            new Item(23264,250, "gold"),
+            new Item(21220,5000, "gold"),
+            new Item(21220,4000, "gold"),
+            new Item(23215,1250, "gold"),
+            new Item(23215,1000, "gold"),
+            new Item(22219,400, "gold"),
+            new Item(22219,500, "gold"),
+            new Item(21218,150, "gold"),
+            new Item(21218,100, "gold"),
+            new Item(22006,125, "gold"),
+            new Item(22006,250, "gold"),
+            new Item(15003,4, "gold"),
+            new Item(15002,2, "gold"),
+            new Item(23002,2, "gold"),
+            new Item(15004,1, "gold"),
+            new Item(10934,1, "gold"),
+            new Item(18818,1, "gold"),
+            new Item(18888,1, "gold"),
+            new Item(18881,1, "gold"),
+            new Item(18883,1, "gold"),
+            new Item(19810,1, "gold"),
+            new Item(10942,1, "gold"),
+            new Item(9084,1, "gold"),
+            new Item(10947,25, "gold"),
+            new Item(3737,1, "gold"),
+            new Item(3738,1, "gold"),
+            new Item(3739,1, "gold")
     );
-    public static List<Item> bronzeRewards = Arrays.asList(
 
-            new Item(2631, 1, "bronze"), // highway mask
-            new Item(2643, 1,"bronze"), // black cavalier
-            new Item(9470, 1,"bronze"), // gnome scarf
-            new Item(10589, 1,"bronze"), // Granite Helm
-            new Item(10564, 1,"bronze"), // Granite Body
-            new Item(6809, 1,"bronze"), // Granite legs
-            new Item(14499, 1,"bronze"), // dagon'hai hat
-            new Item(14497, 1,"bronze"), // dagon'hai robe top
-            new Item(14501, 1,"bronze"), // dagon'hai robe bottom
-            new Item(6, 1,"bronze"), // cannon base
-            new Item(12, 1,"bronze"), // cannon furnace
-            new Item(10, 1,"bronze"), // cannon barrels
-
-            new Item(11710, 1,"bronze"), // set 14 Godsword shard 1
-            new Item(11714, 1,"bronze"), // set 16 Godsword shard 3
-            new Item(11732, 1,"bronze"), // set 17 Dragon Boots
-            new Item(15332, 1,"bronze"), // set 23 Overload
-
-
-            new Item(2453, 25,"bronze") // antifire
-
-
+    public static List<Item> diamondRewards = Arrays.asList(
+            new Item(12630,1, "diamond"),
+            new Item(9083,1, "diamond"),
+            new Item(20591,1, "diamond"),
+            new Item(10949,3, "diamond"),
+            new Item(3578,1, "diamond"),
+            new Item(14999,1, "diamond"),
+            new Item(22121,1, "diamond"),
+            new Item(23240,1, "diamond"),
+            new Item(10943,1, "diamond"),
+            new Item(23002,2, "diamond"),
+            new Item(15004,2, "diamond"),
+            new Item(5012,1, "diamond"),
+            new Item(12535,1, "diamond"),
+            new Item(17011,1, "diamond"),
+            new Item(4685,1, "diamond"),
+            new Item(4686,1, "diamond"),
+            new Item(20489,25, "diamond"),
+            new Item(10946,75, "diamond"),
+            new Item(10946,50, "diamond"),
+            new Item(6769,10, "diamond"),
+            new Item(6769,12, "diamond"),
+            new Item(19114,1500, "diamond"),
+            new Item(23174,30, "diamond"),
+            new Item(20488,200, "diamond"),
+            new Item(23264,750, "diamond"),
+            new Item(23215,2000, "diamond"),
+            new Item(15003,6, "diamond"),
+            new Item(15002,3, "diamond"),
+            new Item(10934,3, "diamond"),
+            new Item(22113,1, "diamond"),
+            new Item(22114,1, "diamond"),
+            new Item(22105,1, "diamond"),
+            new Item(3578,2, "diamond"),
+            new Item(14999,2, "diamond"),
+            new Item(22121,2, "diamond"),
+            new Item(23240,2, "diamond"),
+            new Item(10935,2, "diamond"),
+            new Item(23002,4, "diamond"),
+            new Item(15004,2, "diamond"),
+            new Item(10946,125, "diamond"),
+            new Item(6769,20, "diamond"),
+            new Item(19114,3000, "diamond"),
+            new Item(23174,75, "diamond"),
+            new Item(15002,5, "diamond")
     );
+
+
+    public static List<Item> tanzaniteRewards = Arrays.asList(
+            new Item(10934,7, "tanzanite"),
+            new Item(10943,2, "tanzanite"),
+            new Item(23225,1, "tanzanite"),
+            new Item(23174,100, "tanzanite"),
+            new Item(23239,6, "tanzanite"),
+            new Item(22110,1, "tanzanite"),
+            new Item(7995,1, "tanzanite"),
+            new Item(23253,2, "tanzanite"),
+            new Item(10935,4, "tanzanite"),
+            new Item(3578,4, "tanzanite"),
+            new Item(22121,4, "tanzanite"),
+            new Item(23240,4, "tanzanite"),
+            new Item(23254,1, "tanzanite"),
+            new Item(23255,1, "tanzanite")
+    );
+
     public static int getRarityColor( Item reward){
         int spriteId = 1673;//blank
         switch(reward.getRarityofItem()){
@@ -150,20 +239,20 @@ public class DiamondCardPack {
         List <Item> rewardstype;//default
         for(int i = 0; i < 6; i++){
             int chance = Misc.random(100);
-            if(chance >=30 && chance < 60){
-                rewardstype = silverRewards;//30% chance
+            if(chance >=60 && chance < 90){
+                rewardstype = silverRewards; //30% chance
 
-            }else if(chance >=10 && chance <30){//20% chance
+            }else if(chance >=28 && chance <55){ //27% chance
                 rewardstype = goldRewards;
 
-            }else if(chance >=0 && chance < 10){//10% chance
+            }else if(chance >=10 && chance < 28){ //18% chance
                 rewardstype = diamondRewards;
 
-            }else if(chance == 0){//1% chance
+            }else if(chance < 10){ //10% chance
                 rewardstype = tanzaniteRewards;
 
             } else {
-                rewardstype = bronzeRewards;
+                rewardstype = bronzeRewards; //15% chance
             }
 
             reward = getRandomItem(rewardstype);

@@ -21,7 +21,6 @@ public class CustomDropUtils {
     public static int drBonus(Player player, int npc) {
         int percentBoost = 0;
         //Auras
-
         if (player.getEquipment().contains(23271)) { //Celestial Aura
             percentBoost += 60;
         }
@@ -222,8 +221,351 @@ public class CustomDropUtils {
         }
         //End capes
 
+        //Start amulets
+         if (player.getEquipment().contains(23293)) { //Celestial amulet
+                    percentBoost += 75;
+               }
+        if (player.getEquipment().contains(23293)) { //Owner amulet (u)
+            percentBoost += 60;
+        }
+        if (player.getEquipment().contains(23293)) { //Owner amulet
+            percentBoost += 50;
+        }
+        if (player.getEquipment().contains(23258)) { //Plutonic amulet
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(18888)) { //Collectors amulet III
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(20092)) { //Cursed amulet
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(19888)) { //Collectors amulet II
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(19886)) { //Collectors amulet I
+            percentBoost += 10;
+        }
+        //end amulets
+
+        //start shield
+        if (player.getEquipment().contains(22117)) { //Zenyte shield
+            percentBoost += 35;
+        }
+        if (player.getEquipment().contains(18889)) { //Colossal Spirit shield
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(19810)) { //Deity Spirit shield
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(20090)) { //Cursed Spirit shield
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(4018)) { //Extreme offhand
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(21610)) { //Custom extreme teddybear
+            percentBoost += 10;
+        }
+        //end shield
+
+        //start weapons
+
+        if (player.getEquipment().contains(23228)) { //Divine bow
+            percentBoost += 90;
+        }
+        if (player.getEquipment().contains(23267)) { //Daemon bow
+            percentBoost += 90;
+        }
+        if (player.getEquipment().contains(23227)) { //Blood legends sword
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(8136)) { //Blood legends sword
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(23226)) { //Blood legends bow
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(23062)) { //Nephilim staff
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(23063)) { //Nephilim sword
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(23061)) { //Nephilim bow
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(22114)) { //Dark legends staff
+            percentBoost += 35;
+        }
+        if (player.getEquipment().contains(22115)) { //Dark legends sword
+            percentBoost += 35;
+        }
+        if (player.getEquipment().contains(22113)) { //Dark legends bow
+            percentBoost += 35;
+        }
+        if (player.getEquipment().contains(17013)) { //Light legends staff
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(12537)) { //Light legends sword
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(5011)) { //Light legends bow
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(3260)) { //Supreme blade
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(17011)) { //Legends staff
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(12535)) { //Legends sword
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(5012)) { //Legends bow
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(8410)) { //Elite sword(aoe)
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(8411)) { //Elite bow(aoe)
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(8412)) { //Elite staff(aoe)
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(8253)) { //Elite staff(aoe)
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(20098)) { //Defiled minigun
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(4017)) { //Extreme glaive
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(8087)) { //Dragon rider lance
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(8088)) { //Judicator crossbow
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(8089)) { //Purifier staff
+            percentBoost += 10;
+        }
+        //end weapons
+
+        //start platelegs
+        if (player.getEquipment().contains(23283)) { //Avalon platelegs
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23222)) { //Nephilim platelegs
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23288)) { //Tanzanite platelegs
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(22102)) { //Fallen angel's platelegs
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(23261)) { //Reapers platelegs
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(4686)) { //Legends platelegs
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(9056)) { //Creeper platelegs
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(20088)) { //Cursed platelegs
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(15117)) { //Extreme platelegs
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(21609)) { //Extreme platelegs
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(8833)) { //Elite legs(melee)
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(15644)) { //Elite legs(range)
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(13847)) { //Elite legs(magic)
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(11322)) { //Dragon rider platelegs
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(11342)) { //Judicator platelegs
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(11423)) { //Purifier robe bottoms
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(14912)) { //Demonic torva
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(14918)) { //Nature pernix chaps
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(14923)) { //Icey virtus chaps
+            percentBoost += 5;
+        }
+        //end platelegs
 
 
+        //start platebody
+
+        if (player.getEquipment().contains(23282)) { //Avalon platebody
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23221)) { //Nephilim platebody
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23287)) { //Tanzanite platebody
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(22101)) { //Fallen angel's platebody
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(23260)) { //Reapers platebody
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(4685)) { //Legends platebody
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(9055)) { //Creeper platebody
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(20087)) { //Cursed platebody
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(15116)) { //Extreme platebody
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(21608)) { //Extreme platebody
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(8829)) { //Elite platebody(melee)
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(15643)) { //Elite platebody(range)
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(15646)) { //Elite platebody(magic)
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(11321)) { //Dragon rider platebody
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(11341)) { //Judicator platebody
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(11422)) { //Purifier robe top
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(14911)) { //Demonic torva platebody
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(14917)) { //Nature pernix platebody
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(14922)) { //Icey virtus chaps
+            percentBoost += 5;
+        }
+        //end platebody
+
+        //start helmet
+        if (player.getEquipment().contains(23281)) { //Avalon helmet
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23220)) { //Nephilim helmet
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23286)) { //Tanzanite helmet
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(22100)) { //Fallen angel's helmet
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(23072)) { //Boss slayer helmet [5]
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(23259)) { //Reaper helmet
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(23074)) { //Boss slayer helmet [4]
+            percentBoost += 16;
+        }
+        if (player.getEquipment().contains(4684)) { //Legends helmet
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(9054)) { //Creeper helmet
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(23070)) { //Boss slayer helmet [3]
+            percentBoost += 12;
+        }
+        if (player.getEquipment().contains(20086)) { //Cursed helmet
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(15115)) { //Extreme helmet
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(21607)) { //Custom Extreme helmet
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(8828)) { //Elite helmet(melee)
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(15642)) { //Elite helmet(range)
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(15645)) { //Elite helmet(magic)
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23069)) { //Boss slayer helmet [2]
+            percentBoost += 8;
+        }
+        if (player.getEquipment().contains(18419)) { //Universal partyhat
+            percentBoost += 7;
+        }
+        if (player.getEquipment().contains(18416)) { //Water partyhat
+            percentBoost += 7;
+        }
+        if (player.getEquipment().contains(18418)) { //Velvet partyhat
+            percentBoost += 7;
+        }
+        if (player.getEquipment().contains(18417)) { //Firehell partyhat
+            percentBoost += 7;
+        }
+        if (player.getEquipment().contains(11320)) { //Dragon rider helmet
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(11340)) { //Judicator helmet
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(11421)) { //Purifier hood
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(14910)) { //Demon torva helmet
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(14916)) { //Nature pernix cowl
+            percentBoost += 5;
+        }
+        if (player.getEquipment().contains(14921)) { //Icey Virtus mask
+            percentBoost += 5;
+        }
+        //end helmet
+
+        if (npc == 9312) {
+            percentBoost += player.getNephilimBonus();
+        }
+        if (npc == 3830) {
+            percentBoost += player.getGuardianBonus();
+        }
         if (npc == player.getSlayer().getSlayerTask().getNpcId()) {
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23071) {
                 percentBoost += 5;
@@ -370,7 +712,7 @@ public class CustomDropUtils {
 			percentBoost += 10;
         }
 
-        if (npc == 8013 && System.currentTimeMillis() + 86400000 > player.lastVoteTime) {
+        if (npc == 8013 && System.currentTimeMillis() + 43200000 > player.lastVoteTime) {
             percentBoost =+ 100;
         }
         if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DROPS) {

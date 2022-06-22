@@ -206,8 +206,8 @@ public class NPCDeathTask extends Task {
                         }
                         /** PARSE DROPS **/
                         if (npc.getId() == 3830) {
-                            DonationBossDrop.handleDropReward(npc);
-                            DonationBossSystem.amntDonated = 0;
+                            GuardianBossDrop.handleDropReward(npc);
+                            GuardianSpawnSystem.highTierCount = 0;
                         }
                         if (npc.getId() == 823) { //unknown Boss room
                             UnknownBossDrop.handleDrop(npc);

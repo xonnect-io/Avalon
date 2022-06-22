@@ -4,7 +4,6 @@ import com.ruse.model.Item;
 import com.ruse.model.PlayerRights;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Donation;
 
@@ -138,7 +137,7 @@ public class CustomCombiner {
                 player.getPacketSender().resetItemsOnInterface(30840, 17);
                 player.getPacketSender().sendCombinerItemsOnInterface(30840, data.requirements);
                 player.getPacketSender().sendItemOnInterface(30836, data.reward.getId(), 0, data.reward.getAmount());
-                player.getPacketSender().sendString(122111, "Success rate: @whi@" + (data.getSuccessRate() == 100 ? "@gre@ " :  data.getSuccessRate() <= 99 ? "@red@ " : "@whi@ ")  + data.getSuccessRate() + "%" );
+                player.getPacketSender().sendString(77454, "Success rate: @whi@" + (data.getSuccessRate() == 100 ? "@gre@ " :  data.getSuccessRate() <= 99 ? "@red@ " : "@whi@ ")  + data.getSuccessRate() + "%" );
                 break;
             }
         }

@@ -158,8 +158,8 @@ public final class MobDefinition {
 				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 150;
-				definition.scaleY = 150;
+				definition.scaleXZ = 350;
+				definition.scaleY = 350;
 				definition.drawYellowDotOnMap = true;
 				break;
 				
@@ -285,7 +285,7 @@ public final class MobDefinition {
 				definition.combatLevel = 0;
 				break;
 			case 1880:
-				definition.name = "@or2@YouTube Soldier";
+				definition.name = "@or2@SOD Daemon";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{97666};
 				definition.npcSizeInSquares = 5;
@@ -1345,7 +1345,9 @@ public final class MobDefinition {
 				definition.walkAnimation = MobDefinition.get(138).walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 3;
+				definition.npcSizeInSquares = 4;
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
 				break;
 
 				//
@@ -3083,8 +3085,8 @@ public final class MobDefinition {
 				definition.actions[0] = null;
 				definition.drawYellowDotOnMap = true;
 				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 225;
-				definition.scaleY = 225;
+				definition.scaleXZ = 425;
+				definition.scaleY = 425;
 				break;
 			case 9013:
 				definition.name = "Fallen Angel pet";

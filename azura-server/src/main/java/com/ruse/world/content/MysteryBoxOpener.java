@@ -1,11 +1,10 @@
 package com.ruse.world.content;
 
+import com.ruse.model.GameMode;
 import com.ruse.model.Item;
-import com.ruse.model.Position;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
-import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.HashMap;
@@ -81,6 +80,10 @@ public class MysteryBoxOpener {
 	}
 
 	public void openAll(int boxId) {
+		if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+			player.getPacketSender().sendMessage("You can not do this as an Ultimate Ironman.");
+			return;
+		}
 		int amount = player.getInventory().getAmount(boxId);
 		Map<Integer, Integer> rewards = new HashMap<>();
 		for (int i = 0; i < amount; i++) {

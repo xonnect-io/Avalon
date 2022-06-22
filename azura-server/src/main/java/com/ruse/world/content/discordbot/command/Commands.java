@@ -12,6 +12,8 @@ public enum Commands {
 
     //User commands
     PLAYERS("players", "Displays online player count", new Players(), new String[] {Bot.VERIFIED_ROLE}),
+    GLOBALS("globals", "Displays Global boss timers", new Globals(), new String[] {Bot.VERIFIED_ROLE}),
+    PERKS("perks", "Displays the current active perk", new Perks(), new String[] {Bot.VERIFIED_ROLE}),
     INFO("info", "Displays server sendInformation", new Players(), new String[] {Bot.VERIFIED_ROLE}),
     STORE("store", "Links to the store", new Store(), new String[] { Bot.VERIFIED_ROLE}),
     PLAYER_LOGS("getlogs", "Gets a players logs", new Logs(), new String[] { Bot.GOD_ROLE,Bot.OWNER_ROLE}),

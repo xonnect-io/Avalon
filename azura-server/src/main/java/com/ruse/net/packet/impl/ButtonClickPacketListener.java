@@ -307,6 +307,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getCasketOpening().quickSpin();
                 break;
             case 111104:
+            case 111602:
                 AchievementInterface.open(player);
                 break;
             case 111105:
@@ -1882,7 +1883,7 @@ public class ButtonClickPacketListener implements PacketListener {
             return true;
         }
         
-        if ((player.isPlayerLocked() || player.isGroupIronmanLocked())  && id != 2458 && !(id >= 116005 && id<= 116010) 
+        if ((player.isPlayerLocked() || player.isGroupIronmanLocked())  && id != 2458 && !(id >= 116005 && id<= 116010)
                 && id != -12780 && id != -12779 && id != -12778 && id != -12763 && id != -12760 && id != -12767) {
             return true;
         }
