@@ -2969,7 +2969,22 @@ public class ItemDef4 {
 				itemDef.rdc2 = 28715;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
-
+				case 23294:
+				itemDef.copyItem(18639);
+				itemDef.name = "Celestial scales";
+				itemDef.modelID = 18814;
+				break;
+			case 23295:
+				itemDef.copyItem(18639);
+				itemDef.name = "Celestial rocks";
+				itemDef.modelID = 18878;
+				itemDef.rotationX = 0;
+				itemDef.modelZoom = 1900;
+				break;
+			case 2893:
+				itemDef.modelID = 18871;
+				itemDef.name = "Celestial bar";
+				break;
 			case 23276:
 				itemDef.copyItem(23275);
 				itemDef.rotationX = 0;

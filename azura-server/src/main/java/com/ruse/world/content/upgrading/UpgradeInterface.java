@@ -1,5 +1,6 @@
 package com.ruse.world.content.upgrading;
 
+import com.ruse.model.GameMode;
 import com.ruse.model.Item;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Skill;
@@ -31,6 +32,10 @@ public class UpgradeInterface {
 
         switch (buttonId) {
             case -3284:
+                if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+                    player.getPacketSender().sendMessage("This feature is not currently available for Ultimate Ironman");
+                    return false;
+                }
                 handleUpgrade(true);
                 return true;
             case -3334:
@@ -298,8 +303,7 @@ public class UpgradeInterface {
         }
         if (noted && player.getInventory().contains(data.getRequired().getId() + 1)) {
             int amount = all ? player.getInventory().getAmount(data.getRequired().getId() + 1) : 1;
-            if (!player.getInventory().contains(data.getRequired().getId() + 1, amount) ||
-                    !player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, amount *
+            if (!player.getInventory().contains(data.getRequired().getId() + 1) && !player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, amount *
                             data.getCost())) {
                 player.getPacketSender().sendMessage("You do not have the required items!");
                 return false;
@@ -326,8 +330,8 @@ public class UpgradeInterface {
         selectedUpgrade = upgrade;
 
         player.getPacketSender().sendItemOnInterface(62210, upgrade.getReward());
-        player.getPacketSender().sendString(72231, "Tokens req: @whi@" + Misc.formatNumber(upgrade.getCost()));
-        player.getPacketSender().sendString(72234, "Success rate: @whi@" + upgrade.getSuccessRate() + "%");
+        player.getPacketSender().sendString(62231, "Tokens req: @whi@" + Misc.formatNumber(upgrade.getCost()));
+        player.getPacketSender().sendString(62234, "Success rate: @whi@" + upgrade.getSuccessRate() + "%");
 
     }
 
@@ -337,8 +341,8 @@ public class UpgradeInterface {
         selectedUpgrade = null;
 
         player.getPacketSender().sendItemOnInterface(62210, -1, 1);
-        player.getPacketSender().sendString(72231, "Tokens req: @whi@---");
-        player.getPacketSender().sendString(72234, "Success rate: @whi@---");
+        player.getPacketSender().sendString(62231, "Tokens req: @whi@---");
+        player.getPacketSender().sendString(62234, "Success rate: @whi@---");
 
         upgradeablesArrayList = Upgradeables.getForType(type);
         for (int i = 0; i < 50; i++) {

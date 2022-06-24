@@ -143,6 +143,9 @@ public class PlayerLoading {
             if (reader.has("mini-lucifer")) {
                 player.setMiniLucifer(reader.get("mini-lucifer").getAsBoolean());
             }
+            if (reader.has("celestial-member")) {
+                player.setCelestial(reader.get("celestial-member").getAsBoolean());
+            }
             if (reader.has("dark-supreme")) {
                 player.setDarkSupreme(reader.get("dark-supreme").getAsBoolean());
             }

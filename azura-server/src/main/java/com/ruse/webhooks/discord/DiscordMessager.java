@@ -1,18 +1,14 @@
 package com.ruse.webhooks.discord;
 
-import java.awt.Color;
-import java.net.URI;
-
-import com.ruse.world.World;
-import com.ruse.world.content.serverperks.ServerPerks;
-import org.json.JSONObject;
-
-import com.ruse.util.Misc;
-
 import ca.momoperes.canarywebhooks.DiscordMessage;
 import ca.momoperes.canarywebhooks.WebhookClient;
 import ca.momoperes.canarywebhooks.WebhookClientBuilder;
 import ca.momoperes.canarywebhooks.embed.DiscordEmbed;
+import com.ruse.util.Misc;
+import org.json.JSONObject;
+
+import java.awt.*;
+import java.net.URI;
 
 public class DiscordMessager extends JSONObject {
 
@@ -700,8 +696,32 @@ public class DiscordMessager extends JSONObject {
 			e.printStackTrace();
 		}
 	}
-	
 
+	public static void sendCelestialLog(String msg) {
+		try {
+
+			String webhook = "https://discord.com/api/webhooks/963120303133835334/0y0GdPvBsQcMz8P889Z83R74luopoF9G-wPsJam4hEtuWu5FMB2hMJWS4JPcFvldm_7g";
+
+
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build();
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
+					//.withURL("http://Avalon317.com")
+					.withColor(Color.CYAN)
+					.withDescription("The Celestial Zone Portal has opened for 10 minutes (Celestials only)")
+					.build();
+
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
+					.withEmbed(embed)
+					.withUsername("Globals")
+					.build();
+
+			client.sendPayload(message);
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public static void sendVoteBossLog(String msg) {
 		try {
 

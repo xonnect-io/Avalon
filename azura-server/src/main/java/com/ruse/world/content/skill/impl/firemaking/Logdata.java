@@ -11,8 +11,11 @@ public class Logdata {
 		ACHEY(2862, 1, 40, 30, 2732), OAK(1521, 15, 60, 40, 2732), WILLOW(1519, 30, 90, 45, 2732),
 		TEAK(6333, 35, 105, 45, 2732), ARCTIC_PINE(10810, 42, 125, 45, 2732), MAPLE(1517, 45, 143, 45, 2732),
 		MAHOGANY(22060, 50, 158, 45, 2732), EUCALYPTUS(12581, 58, 194, 45, 2732), YEW(1515, 60, 203, 50, 2732),
-		MAGIC(1513, 75, 304, 50, 2732);
-
+		MAGIC(1513, 75, 304, 50, 2732),
+		CELESTIAL_MUSHROOM(17821, 1, 500, 30, 2732),
+		CELESTIAL_SCALES(23294, 1, 500, 30, 2732),
+		CELESTIAL_ORES(23295, 1, 500, 30, 2732),
+		CELESTIAL_BARS(2893, 1, 500, 30, 2732);
 		private int logId, level, burnTime, xp, gameObject;
 
 		private logData(int logId, int level, int xp, int burnTime, int gameObject) {

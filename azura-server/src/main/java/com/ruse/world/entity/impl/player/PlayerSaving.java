@@ -150,6 +150,7 @@ public class PlayerSaving {
 			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
 			object.addProperty("mini-lucifer-killcount", player.getPointsHandler().getMiniLuciferkillcount());
 			object.addProperty("lucifer-killcount", player.getPointsHandler().getLuciferkillcount());
+			object.addProperty("celestial-member", new Boolean(player.getCelestial()));
 			object.addProperty("mini-lucifer", new Boolean(player.getMiniLucifer()));
 			object.addProperty("dark-supreme", new Boolean(player.getDarkSupreme()));
 			object.addProperty("event-points", new Integer(player.getPointsHandler().getEventPoints()));

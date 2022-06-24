@@ -31,9 +31,7 @@ public class Firemaking {
 		}
 		boolean objectExists = CustomObjects.objectExists(player.getPosition().copy());
 		if (!Dungeoneering.doingOldDungeoneering(player)) {
-			if (objectExists && !addingToFire || player.getPosition().getZ() > 0
-					|| !player.getMovementQueue().canWalk(1, 0) && !player.getMovementQueue().canWalk(-1, 0)
-							&& !player.getMovementQueue().canWalk(0, 1) && !player.getMovementQueue().canWalk(0, -1)) {
+			if (objectExists && !addingToFire || player.getPosition().getZ() > 0) {
 				player.getPacketSender().sendMessage("You can not light a fire here.");
 				return;
 			}
@@ -85,7 +83,37 @@ public class Firemaking {
 				}
 				if (addingToFire) {
 					player.performAnimation(new Animation(827));
-					player.getPacketSender().sendMessage("You add some logs to the fire..");
+					if (logData.getLogId() != 23294 || logData.getLogId() != 23294 || logData.getLogId() != 23294) {
+						player.getPacketSender().sendMessage("You add some logs to the fire..");
+					}
+					if (logData.getLogId() == 23294) {
+						player.getPacketSender().sendMessage("You burn Celestial scales for x15 Celestial Energy");
+						player.getInventory().add(23273, 15);
+					} if (logData.getLogId() == 23294 && player.getEquipment().containsAll(14055,14053,14052,14051,14050,18333)) {
+						player.getPacketSender().sendMessage("You get x2 Extra Celestial Energy from your armors bonus");
+						player.getInventory().add(23273, 2);
+					}
+					if (logData.getLogId() == 17821) {
+						player.getPacketSender().sendMessage("You burn Celestial Mushrooms for x12 Celestial Energy");
+						player.getInventory().add(23273, 12);
+					}if (logData.getLogId() == 17821 && player.getEquipment().containsAll(14055,14053,14052,14051,14050,18333)) {
+						player.getPacketSender().sendMessage("You get x2 Extra Celestial Energy from your armors bonus");
+						player.getInventory().add(23273, 2);
+					}
+					if (logData.getLogId() == 2893) {
+						player.getPacketSender().sendMessage("You burn Celestial Bars for x22 Celestial Energy");
+						player.getInventory().add(23273, 22);
+					} if (logData.getLogId() == 2893 && player.getEquipment().containsAll(14055,14053,14052,14051,14050,18333)) {
+						player.getPacketSender().sendMessage("You get x2 Extra Celestial Energy from your armors bonus");
+						player.getInventory().add(23273, 2);
+					}
+					if (logData.getLogId() == 23295) {
+						player.getPacketSender().sendMessage("You burn Celestial Rocks for x22 Celestial Energy");
+						player.getInventory().add(23273, 22);
+					} if (logData.getLogId() == 23295 && player.getEquipment().containsAll(14055,14053,14052,14051,14050,18333)) {
+						player.getPacketSender().sendMessage("You get x2 Extra Celestial Energy from your armors bonus");
+						player.getInventory().add(23273, 2);
+					}
 				} else {
 					if (!player.getMovementQueue().isMoving()) {
 						player.getMovementQueue().setLockMovement(false);

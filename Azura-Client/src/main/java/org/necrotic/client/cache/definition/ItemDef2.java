@@ -1075,7 +1075,7 @@ public class ItemDef2 {
 			case 15290:
 				itemDef.name = "Upgrade Token pack (5k)";
 				itemDef.stackable = false;
-				itemDef.actions = new String[]{"Open", null, null, null, "Drop"};
+				itemDef.actions = new String[] { "Open", null, "Open-all", null, "Drop" };
 				def = ItemDefinition.get(15262);
 				itemDef.modelID = def.modelID;
 				itemDef.maleEquip1 = def.maleEquip1;
@@ -1091,7 +1091,7 @@ public class ItemDef2 {
 			case 15289:
 				itemDef.name = "Upgrade Token pack (25k)";
 				itemDef.stackable = false;
-				itemDef.actions = new String[]{"Open", null, null, null, "Drop"};
+				itemDef.actions = new String[] { "Open", null, "Open-all", null, "Drop" };
 				def = ItemDefinition.get(15262);
 				itemDef.modelID = def.modelID;
 				itemDef.maleEquip1 = def.maleEquip1;
@@ -1107,7 +1107,7 @@ public class ItemDef2 {
 			case 15288:
 				itemDef.name = "Upgrade Token pack (100k)";
 				itemDef.stackable = false;
-				itemDef.actions = new String[]{"Open", null, null, null, "Drop"};
+				itemDef.actions = new String[] { "Open", null, "Open-all", null, "Drop" };
 				def = ItemDefinition.get(15262);
 				itemDef.modelID = def.modelID;
 				itemDef.maleEquip1 = def.maleEquip1;

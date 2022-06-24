@@ -35,7 +35,7 @@ public class BandosAvatar implements CombatStrategy {
 		if (bandosAvatar.isChargingAttack() || victim.getConstitution() <= 0) {
 			return true;
 		}
-		if (Misc.getRandom(5) <= 2) {
+		if (Misc.getRandom(15) <= 2) {
 			Player player = (com.ruse.world.entity.impl.player.Player) victim;
 			CurseHandler.deactivateAll(player);
 			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@red@Collosal Avatar deactivated your prayer");

@@ -57,7 +57,17 @@ public class Locations {
 	public static int PLAYERS_IN_DUEL_ARENA;
 
 	public enum Location {
+		CELESTIAL_ZONE(new int[] { 4220, 4266 }, new int[] { 5575, 5625 }, false, false, true, false, true, false) {
+			@Override
+			public void logout(Player player) {
+					player.moveTo(GameSettings.HOME_CORDS);
+				}
 
+				@Override
+			public void login(Player player) {
+				player.moveTo(GameSettings.HOME_CORDS);
+				}
+			},
 		AFK(new int[] { 3024, 3056 }, new int[] { 4050, 4082 }, false, false, true, false, false, true) {
 		},
 	/*

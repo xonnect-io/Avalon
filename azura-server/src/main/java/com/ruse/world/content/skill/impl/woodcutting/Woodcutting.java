@@ -13,8 +13,6 @@ import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.StarterTasks;
 import com.ruse.world.content.StarterTasks.StarterTaskData;
 import com.ruse.world.content.achievements.AchievementData;
-import com.ruse.world.content.randomevents.EvilTree;
-import com.ruse.world.content.randomevents.EvilTree.EvilTreeDef;
 import com.ruse.world.content.skill.impl.firemaking.Logdata;
 import com.ruse.world.content.skill.impl.firemaking.Logdata.logData;
 import com.ruse.world.content.skill.impl.woodcutting.WoodcuttingData.Hatchet;
@@ -36,19 +34,10 @@ public class Woodcutting {
 		if (h != null) {
 			if (player.getSkillManager().getCurrentLevel(Skill.WOODCUTTING) >= h.getRequiredLevel()) {
 				final Trees t = Trees.forId(objId);
-				final EvilTreeDef t2 = EvilTreeDef.forId(objId);
-				final boolean isEvilTree = t2 != null;
-
-				if (isEvilTree) {
-					// player.getPacketSender().sendMessage("Evil tree method.");
-					EvilTree.handleCutWood(player, object, h, t2);
-					return;
-				}
-
 				if (t != null) {
 					player.setEntityInteraction(object);
 					if (player.getSkillManager().getCurrentLevel(
-							Skill.WOODCUTTING) >= (isEvilTree ? t2.getWoodcuttingLevel() : t.getReq())) {
+							Skill.WOODCUTTING) >= (t.getReq())) {
 						player.performAnimation(new Animation(h.getAnim()));
 						int delay = Misc.getRandom(t.getTicks() - WoodcuttingData.getChopTimer(player, h)) + 1;
 						player.setCurrentTask(new Task(1, player, false) {
@@ -66,7 +55,7 @@ public class Woodcutting {
 									cycle++;
 									player.performAnimation(new Animation(h.getAnim()));
 								} else if (cycle >= reqCycle) {
-									int xp = isEvilTree ? t2.getWoodcuttingXp() : t.getXp();
+									int xp =  t.getXp();
 									if (lumberJack(player))
 										xp *= 1.5;
 									player.getSkillManager().addExperience(Skill.WOODCUTTING, (int) (xp));
@@ -75,13 +64,13 @@ public class Woodcutting {
 									this.stop();
 									int cutDownRandom = Misc.getRandom(100);
 									// player.getPacketSender().sendMessage("Random: " + cutDownRandom);
-									if (!isEvilTree && (!t.isMulti()
+									if (!t.isMulti()
 											|| (player.getSkillManager().skillCape(Skill.WOODCUTTING)
 											&& cutDownRandom >= 88)
 											|| (!player.getSkillManager().skillCape(Skill.WOODCUTTING)
-											&& cutDownRandom >= 82))) {// 82
+											&& cutDownRandom >= 82)) {// 82
 										// player.getPacketSender().sendMessage("You rolled a: "+cutDownRandom);
-										player.getInventory().add(isEvilTree ? t2.getLog() : t.getReward(), 1);
+										player.getInventory().add(t.getReward(), 1);
 										treeRespawn(player, object);
 										player.getPacketSender().sendMessage("You've chopped the tree down.");
 										player.getAchievementTracker().progress(AchievementData.WOODCUTTING, 1);
@@ -96,8 +85,7 @@ public class Woodcutting {
 										}
 										if (infernoAdze(player)) { // if they do not have an adze equipped
 											if (Misc.getRandom(10) <= 6) {
-												logData fmLog = Logdata.getLogData(player,
-														isEvilTree ? t2.getLog() : t.getReward());
+												logData fmLog = Logdata.getLogData(player, t.getReward());
 												if (fmLog != null) { // if their their logdata is not null...
 													player.getSkillManager().addExperience(Skill.FIREMAKING,
 															fmLog.getXp());

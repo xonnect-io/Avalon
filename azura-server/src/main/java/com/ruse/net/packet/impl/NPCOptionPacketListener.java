@@ -31,6 +31,7 @@ import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.WarriorsGuild;
 import com.ruse.world.content.minigames.impl.trioMinigame;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
+import com.ruse.world.content.Celestial.CelestialDialogues;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.construction.ConstructionActions;
@@ -330,6 +331,9 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 1086:
                         ShopManager.getShops().get(113).open(player);
+                        break;
+                    case 1821:
+                        DialogueManager.start(player, CelestialDialogues.main(player));
                         break;
                     case 736:
                         player.forceChat("Ban emily!");

@@ -22,7 +22,7 @@ public enum IronIcon {
 	/**
 	 * @param spriteId
 	 * @return IronIcon that holds same value as spriteId
-	 * @author Crimson
+	 * @author Avalon
 	 * @since Jul 27, 2017
 	 */
 	public static IronIcon forSprite(int spriteId) {
@@ -37,7 +37,7 @@ public enum IronIcon {
 	/**
 	 * @param rights
 	 * @return IronIcon that holds same value as rights
-	 * @author Crimson
+	 * @author Avalon
 	 * @since Jul 27, 2017
 	 */
 	public static IronIcon forRights(int rights) {
@@ -51,7 +51,7 @@ public enum IronIcon {
 
 	/**
 	 * @return the highest value of rights
-	 * @author Crimson
+	 * @author Avalon
 	 * @since Jul 27, 2017
 	 */
 	public static final int getMaxRights() {

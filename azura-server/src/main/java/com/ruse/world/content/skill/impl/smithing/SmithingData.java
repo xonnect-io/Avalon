@@ -9,11 +9,11 @@ import com.ruse.world.entity.impl.player.Player;
 
 public class SmithingData {
 
-	public static final int[] BARS_SMITH_ORDER = { 2363, 2361, 2359, 2353, 2351, 2349, 2357, 2355 }; // Rune -> Bronze,
+	public static final int[] BARS_SMITH_ORDER = { 2893,2363, 2361, 2359, 2353, 2351, 2349, 2357, 2355 }; // Rune -> Bronze,
 																										// then Gold,
 																										// Silver
-	public static final int[] SMELT_BARS = { 2349, 2351, 2355, 2353, 2357, 2359, 2361, 2363 };
-	public static final int[] SMELT_FRAME = { 2405, 2406, 2407, 2409, 2410, 2411, 2412, 2413 };
+	public static final int[] SMELT_BARS = { 2349, 2351, 2355, 2353, 2357, 2359, 2361, 2363,2893 };
+	public static final int[] SMELT_FRAME = { 2405, 2406, 2407, 2409, 2410, 2411, 2412, 2413,2414 };
 
 	// BarId, Ore1, Ore2, Levelreq, XP
 	public static final int[][] SmeltData = { { 2349, 438, 436, 1, 7 }, // Bronze bar
@@ -24,7 +24,7 @@ public class SmithingData {
 			{ 2359, 447, 453, 50, 50 }, // Mithril bar
 			{ 2361, 449, 453, 70, 38 }, // Adamantite bar
 			{ 2363, 451, 453, 85, 50 }, // Runite bar
-			{ 2363, 451, 453, 85, 50 } // Runite bar
+			{ 2893, 23295, -1, 1, 500 } // Celestial bar
 	};
 
 	/*
@@ -254,6 +254,19 @@ public class SmithingData {
 			player.getPacketSender().sendInterfaceRemoval();
 			return true;
 
+			case 7454:
+				Smelting.smeltBar(player, 23295, 1);
+				player.getPacketSender().sendInterfaceRemoval();
+				return true;
+			case 7453:
+				Smelting.smeltBar(player, 23295, 5);
+				player.getPacketSender().sendInterfaceRemoval();
+				return true;
+			case 7452:
+				Smelting.smeltBar(player, 23295, 10);
+				player.getPacketSender().sendInterfaceRemoval();
+				return true;
+
 		/*
 		 * Handle X
 		 */
@@ -265,12 +278,18 @@ public class SmithingData {
 		case 4158:
 		case 7442:
 		case 7447:
+		case 7451:
+
 			int bar = id == 2414 ? 2349
 					: id == 3988 ? 2351
-							: id == 3992 ? 2355
-									: id == 3996 ? 2353
-											: id == 4000 ? 2357
-													: id == 4158 ? 2359 : id == 7442 ? 2361 : id == 7447 ? 2363 : -1;
+					: id == 3992 ? 2355
+					: id == 3996 ? 2353
+					: id == 4000 ? 2357
+					: id == 4158 ? 2359
+					: id == 7442 ? 2361
+					: id == 7447 ? 2363
+					: id == 7451 ? 2893
+					: -1;
 			if (bar > 0) {
 				player.setInputHandling(new EnterAmountOfBarsToSmelt(bar));
 				player.getPacketSender().sendEnterAmountPrompt(
@@ -298,6 +317,8 @@ public class SmithingData {
 		if (barId == 2361)
 			return 0;
 		if (barId == 2363)
+			return 0;
+		if (barId == 2893)
 			return 0;
 		return 2;
 

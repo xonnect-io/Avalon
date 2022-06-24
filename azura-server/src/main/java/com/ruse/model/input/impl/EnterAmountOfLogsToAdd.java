@@ -24,7 +24,7 @@ public class EnterAmountOfLogsToAdd extends EnterAmount {
 			return;
 		}
 		player.setInputHandling(new EnterAmountOfLogsToAdd());
-		player.getPacketSender().sendEnterAmountPrompt("How many logs would you like to add to the fire?");
+		player.getPacketSender().sendEnterAmountPrompt("How many would you like to add to the fire?");
 	}
 
 }

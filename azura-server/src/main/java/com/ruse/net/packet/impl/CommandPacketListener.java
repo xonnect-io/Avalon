@@ -27,6 +27,7 @@ import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.*;
+import com.ruse.world.content.Celestial.CelestialPortal;
 import com.ruse.world.content.PlayerPunishment.Jail;
 import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.afk.AfkSystem;
@@ -55,9 +56,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
-import com.ruse.world.content.randomevents.EvilTree;
 import com.ruse.world.content.randomevents.LootChest;
-import com.ruse.world.content.randomevents.ShootingStar;
 import com.ruse.world.content.seasonpass.SeasonPass;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
@@ -95,6 +94,7 @@ import java.util.*;
  */
 
 public class CommandPacketListener implements PacketListener {
+
 
     public static int voteCount = 8;
     static HashMap<String, Integer> dissolvables = new HashMap<>();
@@ -632,7 +632,12 @@ public class CommandPacketListener implements PacketListener {
             }
         }
 
-        if (command[0].equalsIgnoreCase("pos") && player.getLocation() != Location.HOME_BANK
+        if (command[0].equalsIgnoreCase("pos") && player.getLocation() == Location.WILDERNESS || player.getLocation() == Location.DUNGEONEERING
+                || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS
+                || player.getLocation() == Location.DUEL_ARENA || player.getLocation() == Location.JAIL) {
+            player.getPacketSender().sendMessage("This feature is currently not available, try teleporting home first!");
+            return;
+        } else if (command[0].equalsIgnoreCase("pos") && player.getLocation() != Location.HOME_BANK
                 && player.getAmountDonated() < Donation.EMERALD_DONATION_AMOUNT) {
             player.sendMessage("You either need $50 total claim or can only use this command at ::Home");
             return;
@@ -643,6 +648,7 @@ public class CommandPacketListener implements PacketListener {
                 && player.getAmountDonated() < Donation.EMERALD_DONATION_AMOUNT) {
             player.getPlayerOwnedShopManager().options();
         }
+
         if (command[0].equalsIgnoreCase("setloginpin")) {
             if (player.getHasPin() == false) {
 
@@ -1134,6 +1140,7 @@ public class CommandPacketListener implements PacketListener {
                             player.getUsername() + " just jailed " + player2.getUsername() + "!");
                     player.getPacketSender().sendMessage("Jailed player: " + player2.getUsername());
                     player2.getPacketSender().sendMessage("You have been jailed by " + player.getUsername() + ".");
+                    player2.getPacketSender().sendMessage("You will have to wait" + timer + " hours to be unjailed.");
                     World.sendStaffMessage("<col=FF0066><img=2> [PUNISHMENTS]<col=6600FF> " + player.getUsername()
                             + " just jailed " + player2.getUsername());
                     player2.performAnimation(new Animation(1994));
@@ -1487,33 +1494,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("rlspawns")) {
             NPC.init();
         }
-        if (command[0].equalsIgnoreCase("easyslayerdung")) {
-            player.moveTo(new Position(1905, 4870));
-        }
-        if (command[0].equalsIgnoreCase("easyslayerdung1")) {
-            player.moveTo(new Position(2016, 4767));
-        }
-        if (command[0].equalsIgnoreCase("medslayerdung")) {
-            player.moveTo(new Position(2227, 4946));
-        }
-        if (command[0].equalsIgnoreCase("hardslayerdung")) {
-            player.moveTo(new Position(1637, 4856));
-        }
-        if (command[0].equalsIgnoreCase("vod")) {
-            player.vod.initArea();
-        }
-        if (command[0].equalsIgnoreCase("th")) {
-            player.moveTo(TreasureHunter.TELEPORT_AREA);
-        }
-        if (command[0].equalsIgnoreCase("kol")) {
-            player.moveTo(KeepersOfLight.BANKING_AREA);
-        }
-        if (command[0].equalsIgnoreCase("hov")) {
-            player.hov.initArea();
-        }
-        if (command[0].equalsIgnoreCase("vow")) {
-            player.moveTo(VaultOfWar.TELEPORT_AREA);
-        }
+
         if (command[0].equalsIgnoreCase("mypos") || command[0].equalsIgnoreCase("coords")
                 || command[0].equalsIgnoreCase("c")) {
             player.getPacketSender().sendMessage(player.getPosition().toString());
@@ -2255,7 +2236,12 @@ public class CommandPacketListener implements PacketListener {
             LootChest.despawn(true);
             player.getPacketSender().sendMessage("Done spawning loot chest shit");
         }
-
+        if (command[0].equalsIgnoreCase("celestialdespawn")) {
+            CelestialPortal.despawn(true);
+        }
+        if (command[0].equalsIgnoreCase("celestialrespawn")) {
+            CelestialPortal.spawn();
+        }
         if (command[0].equalsIgnoreCase("startdoom") || command[0].equalsIgnoreCase("spawndoom")) {
             Doom.spawnWave1(player);
             player.getPacketSender().sendMessage("Done spawning doom shit");
@@ -2434,7 +2420,7 @@ public class CommandPacketListener implements PacketListener {
             }
             if (player.getLocation() == Location.WILDERNESS || player.getLocation() == Location.DUNGEONEERING
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS
-                    || player.getLocation() == Location.DUEL_ARENA) {
+                    || player.getLocation() == Location.DUEL_ARENA || player.getLocation() == Location.JAIL) {
                 player.getPacketSender().sendMessage("You cannot open your bank here.");
                 return;
             }
@@ -3229,14 +3215,6 @@ public class CommandPacketListener implements PacketListener {
             long megabytes = used / 1000000;
             player.getPacketSender().sendMessage("Heap usage: " + Misc.insertCommasToNumber("" + megabytes + "")
                     + " megabytes, or " + Misc.insertCommasToNumber("" + used + "") + " bytes.");
-        }
-        if (command[0].equalsIgnoreCase("star")) {
-            ShootingStar.despawn(true);
-            player.getPacketSender().sendMessage("star method called.");
-        }
-        if (command[0].equalsIgnoreCase("tree")) {
-            EvilTree.despawn(true);
-            player.getPacketSender().sendMessage("evil tree method called.");
         }
         if (command[0].equalsIgnoreCase("dispose")) {
             player.dispose();

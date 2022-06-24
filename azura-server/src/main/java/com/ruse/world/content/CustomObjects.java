@@ -300,6 +300,7 @@ public class CustomObjects {
 			{5222, 2321, 5029, 0, 1},
 
             {26945, 2962, 2518, 0, 1}, // WellOfGoodwill
+            {3769, 2528, 4572, 4, 4}, // Celestial fire
             {30205, 2974, 2506, 0, 1}, // scoreboard
             {25808, 2794, 3094, 0, 1}, // bankbooth
             {409, 2787, 3099, 0, 1}, // scoreboard

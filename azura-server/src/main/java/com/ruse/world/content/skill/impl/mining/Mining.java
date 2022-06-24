@@ -13,7 +13,6 @@ import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.CasketOpening;
-import com.ruse.world.content.randomevents.ShootingStar;
 import com.ruse.world.content.skill.impl.mining.MiningData.Ores;
 import com.ruse.world.content.skill.impl.mining.MiningData.Pickaxe;
 import com.ruse.world.content.skill.impl.smithing.Smelting;
@@ -361,21 +360,6 @@ public class Mining {
                                     if (o.getRespawn() > 0) {
                                         player.performAnimation(new Animation(65535));
                                         oreRespawn(player, oreObject, o);
-                                    } else {
-                                        if (oreObject.getId() == 38660) {
-                                            if (ShootingStar.CRASHED_STAR == null
-                                                    || ShootingStar.CRASHED_STAR.getStarObject()
-                                                    .getPickAmount() >= ShootingStar.MAXIMUM_MINING_AMOUNT) {
-                                                player.getPacketSender().sendClientRightClickRemoval();
-                                                player.getSkillManager().stopSkilling();
-                                                return;
-                                            } else {
-                                                ShootingStar.CRASHED_STAR.getStarObject().incrementPickAmount();
-                                            }
-                                        } else {
-                                            player.performAnimation(new Animation(65535));
-                                        }
-                                        startMining(player, oreObject);
                                     }
                                 }
                             }

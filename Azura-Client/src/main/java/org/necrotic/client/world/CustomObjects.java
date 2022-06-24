@@ -108,7 +108,8 @@ public class CustomObjects {
             {41201, 1954, 5031, 0, 0},//vod coffin
             {41202, 1936, 5022, 0, 0},//vod coffin
 			{41203, 1954, 5006, 0, 2},//vod chest
-			
+
+			{3769, 2528, 4572, 4, 4}, // Celestial fire
 
 			{41206, 2074, 4423, 0, 1}, // HoV Portal At Home
 

@@ -24,7 +24,7 @@ public enum ModIcon {
 	/**
 	 * @param spriteId
 	 * @return ModIcon that holds same value as spriteId
-	 * @author Crimson
+	 * @author Avalon
 	 * @since Jul 27, 2017
 	 */
 	public static ModIcon forSprite(int spriteId) {
@@ -39,7 +39,7 @@ public enum ModIcon {
 	/**
 	 * @param rights
 	 * @return ModIcon that holds same value as rights
-	 * @author Crimson
+	 * @author Avalon
 	 * @since Jul 27, 2017
 	 */
 	public static ModIcon forRights(int rights) {
@@ -53,7 +53,7 @@ public enum ModIcon {
 
 	/**
 	 * @return the highest value of rights
-	 * @author Crimson
+	 * @author Avalon
 	 * @since Jul 27, 2017
 	 */
 	public static final int getMaxRights() {

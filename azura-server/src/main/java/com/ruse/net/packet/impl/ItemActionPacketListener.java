@@ -684,12 +684,20 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(19001, 1).add(19000, 250);
                 break;
 
-            case 15289:
-                player.getInventory().delete(15289, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 25000);
+            case 21220:
+                player.getInventory().delete(21220, 1).add(5022, 1_000);
                 break;
-
+            case 23215:
+                player.getInventory().delete(23215, 1).add(5022, 5_000);
+                break;
+            case 22219:
+                player.getInventory().delete(22219, 1).add(5022, 10000);
+                break;
             case 15288:
                 player.getInventory().delete(15288, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 100000);
+                break;
+            case 15289:
+                player.getInventory().delete(15289, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 25_000);
                 break;
 
             case 21221:
@@ -775,10 +783,6 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(22215, amount3).add(5022, 5_000 * amount3);
                 break;
 
-            case 22219:
-                int amount4 = player.getInventory().getAmount(itemId);
-                player.getInventory().delete(22219, amount4).add(5022, 10_000 * amount4);
-                break;
             case 22214: //Pvm box t2
                 int[] pvmcommon = new int[] {19582,14525,11858 };
                 int[] pvmuncommon = new int[] {4151,11235,15486,12933,18353,15031,6585,6737,7462 };
@@ -796,10 +800,6 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] uncommonSlayerU = new int[] {15288,15358,15359,8323,8324,8325,8326,8327,8328,8330,8331,8332,22092,22084,22083};
                 int[] rareSlayerU = new int[] {18750,18753,18752,18751,18636,18749,18748,18638,18629,18631,18637,18623,19886,4446,10946,1486,10947,3737,3738,3739};
                 player.getMysteryBoxOpener().display(22123, "Slayer Box (u)", commonSlayerU, uncommonSlayerU, rareSlayerU);
-                break;
-            case 21220:
-                int amount5 = player.getInventory().getAmount(itemId);
-                player.getInventory().delete(21220, amount5).add(5022, 1_000 * amount5);
                 break;
             case 22121:
                 if (player.getLocation() != Location.HOME_BANK) {
@@ -1783,8 +1783,41 @@ public class ItemActionPacketListener implements PacketListener {
         if (MemberScrolls.handleScroll(player, itemId, true))
             return;
         player.getMainDissolving().handle(itemId);
-        player.getNephilimDissolving().handleDialogue(itemId);
         switch (itemId) {
+            case 23061:
+            case 23062:
+            case 23063:
+            case 23220:
+            case 23221:
+            case 23222:
+            case 23223:
+            case 23224:
+                player.getNephilimDissolving().handleDialogue(itemId);
+                break;
+            case 22219:
+                int amount5 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(22219, amount5).add(5022, 10_000 * amount5);
+                break;
+            case 21220:
+                int amount6 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(21220, amount6).add(5022, 1_000 * amount6);
+                break;
+            case 23215:
+                int amount11 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(23215, amount11).add(5022, 5_000 * amount11);
+                break;
+            case 15290:
+                final int amount8 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(15290, amount8).add(12855, 5_000 * amount8);
+                break;
+            case 15289:
+                final int amount9 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(15289, amount9).add(12855, 25_000 * amount9);
+                break;
+            case 15288:
+                final int amount10 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(15288, amount10).add(12855, 100_000 * amount10);
+                break;
 
             case 4278:
                 if (player.getLocation() == Location.JAIL) {

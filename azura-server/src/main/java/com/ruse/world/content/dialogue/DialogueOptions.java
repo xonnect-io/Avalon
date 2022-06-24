@@ -27,6 +27,7 @@ import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.raids.SODRaids;
 import com.ruse.world.content.raids.ZombieRaidData;
 import com.ruse.world.content.raids.ZombieRaids;
+import com.ruse.world.content.Celestial.CelestialDialogues;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.mining.Mining;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -906,6 +907,9 @@ public class DialogueOptions {
             // System.out.println("Slayer master: " + player.getSlayer().getSlayerMaster().toString());
             // System.out.println("ID: " + id);
             switch (player.getDialogueActionId()) {
+                case 8221:
+                    DialogueManager.start(player, CelestialDialogues.becomingCelestial(player));
+                    break;
                 case 55:
                     TeleportHandler.teleportPlayer(player, new Position(2474, 3437, 0), TeleportType.NORMAL);
                     break;
@@ -988,6 +992,9 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
+                case 8221:
+                    DialogueManager.start(player, CelestialDialogues.celestialZone(player));
+                    break;
                 case 9926:
                     player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(9));
                     player.getPacketSender().sendEnterAmountPrompt("How many Crimson charms would you like to withdraw?");
@@ -1089,6 +1096,9 @@ public class DialogueOptions {
             }
         } else if (id == THIRD_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
+                case 8221:
+                    DialogueManager.start(player, CelestialDialogues.celestialEnergy(player));
+                    break;
                 case 9926:
                     player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(10));
                     player.getPacketSender().sendEnterAmountPrompt("How many Blue charms would you like to withdraw?");
@@ -1203,6 +1213,7 @@ public class DialogueOptions {
             }
         } else if (id == FOURTH_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
+                case 8221:
                 case 8:
                 case 9:
                 case 17:

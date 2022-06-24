@@ -254,6 +254,15 @@ public final class ObjectDefinition {
 			definition.actions = new String[]{"Sacrifice", null, null, null, null};
 		}
 
+		if (definition.type == 3769) {
+			definition.actions = new String[]{"Burn-Resources", null, null, null, null};
+		}
+		if (definition.type == 12006) {
+			definition.name = "Celestial Mushroom"; //#7a37b3
+			definition.modelSizeY = 85;
+			definition.modelSizeX = 85;
+			definition.actions = new String[]{"Pick", null, null, null, null};
+		}
 		
 		if (definition.type == 2469) {
 			definition.actions = new String[]{"Advance", "Back", null, null, null};
@@ -488,6 +497,12 @@ public final class ObjectDefinition {
 		if (definition.type == 25808) {
 			definition.name = "Bank Booth";
 			definition.objectModelIDs = new int[]{11208};
+			definition.length = 1;
+			definition.width = 1;
+		}
+		if (definition.type == 2110) {
+			definition.name = "Celestial Rock";
+			definition.objectModelIDs = new int[]{18878};
 			definition.length = 1;
 			definition.width = 1;
 		}

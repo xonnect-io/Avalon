@@ -61,7 +61,7 @@ public class PlayerOptionPacketListener implements PacketListener {
 
 		if (attacked.equals(player)) {
 			player.getMovementQueue().reset();
-			World.sendStaffMessage("[BUG TRACKER] Error 959.1 has occured. PLEASE REPORT TO CRIMSON!");
+			World.sendStaffMessage("[BUG TRACKER] Error 959.1 has occured. PLEASE REPORT TO Avalon!");
 			PlayerLogs.log("1 - PVP BUGS",
 					"Error 959.1 PVP bug occured with " + player.getUsername() + " attacking " + attacked.getUsername()
 							+ ". Pos(p): " + player.getPosition().toString() + " Pos(a): "

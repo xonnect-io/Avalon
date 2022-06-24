@@ -10,15 +10,15 @@ import com.ruse.model.Position;
 import com.ruse.util.CharacterBackup;
 import com.ruse.util.NameUtils;
 import com.ruse.webhooks.discord.DiscordMessager;
-import com.ruse.world.content.*;
+import com.ruse.world.content.Celestial.CelestialZoneTask;
+import com.ruse.world.content.PlayerLogs;
+import com.ruse.world.content.TriviaSystem;
 import com.ruse.world.content.discordbot.Bot;
 import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.minigames.impl.FightPit;
 import com.ruse.world.content.minigames.impl.KeepersOfLight;
 import com.ruse.world.content.minigames.impl.PestControl;
-import com.ruse.world.content.randomevents.EvilTree;
 import com.ruse.world.content.randomevents.LootChest;
-import com.ruse.world.content.randomevents.ShootingStar;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.entity.Entity;
 import com.ruse.world.entity.EntityHandler;
@@ -37,8 +37,7 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import org.jetbrains.annotations.NotNull;
-//im sure this will change my buildpaths when i pull on github ye?
-//so my vps might need to be built again, no worries im sure i can figure tht out by now
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
@@ -281,15 +280,13 @@ public class World {
         NarakuBoss.spawn();
         NightmareBoss.execute();
         KeepersOfLight.sequence();
-        ShootingStar.sequence();
-        EvilTree.sequence();
         LootChest.sequence();
+        CelestialZoneTask.startTask();
         Bot.updatePlayers();
         TriviaSystem.tick();
 
         ServerPerks.getInstance().tick();
         CharacterBackup.sequence();
-
         if (PRINT_TIMESTAMPS) {
             if (System.currentTimeMillis() - lastTime > 50)
                 System.out.println("Content tickers took: " + (System.currentTimeMillis() - lastTime) + " ms");

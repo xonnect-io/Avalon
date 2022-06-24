@@ -18,6 +18,7 @@ import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
+import com.ruse.world.content.Celestial.CelestialPortal;
 import com.ruse.world.content.*;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.magic.Autocasting;
@@ -27,7 +28,6 @@ import com.ruse.world.content.combat.range.DwarfMultiCannon;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.impl.GuardianTokenExchange;
-import com.ruse.world.content.dialogue.impl.NephilimTokenExchange;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.holidayevents.christmas2016;
 import com.ruse.world.content.holidayevents.easter2017data;
@@ -35,10 +35,7 @@ import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.Dueling.DuelRule;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.portal.portal;
-import com.ruse.world.content.progressionzone.ProgressionZone;
-import com.ruse.world.content.randomevents.EvilTree.EvilTreeDef;
 import com.ruse.world.content.randomevents.LootChest;
-import com.ruse.world.content.randomevents.StarterCave;
 import com.ruse.world.content.skill.impl.agility.Agility;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.construction.ConstructionActions;
@@ -61,9 +58,7 @@ import com.ruse.world.content.skill.impl.woodcutting.Woodcutting;
 import com.ruse.world.content.skill.impl.woodcutting.WoodcuttingData;
 import com.ruse.world.content.skill.impl.woodcutting.WoodcuttingData.Hatchet;
 import com.ruse.world.content.transportation.TeleportHandler;
-import com.ruse.world.content.transportation.TeleportLocations;
 import com.ruse.world.content.transportation.TeleportType;
-import com.ruse.world.content.upgrading.Upgradeables;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Donation;
 
@@ -122,15 +117,16 @@ public class ObjectActionPacketListener implements PacketListener {
                             Woodcutting.cutWood(player, gameObject, false);
                             return;
                         }
-                        if (EvilTreeDef.forId(id) != null) {
-                            Woodcutting.cutWood(player, gameObject, false);
-                            return;
-                        }
+
                         if (LootChest.LootChestDef.forId(id) != null) {
                             LootChest.handleAction(player, gameObject);
                             return;
                         }
 
+                        if (CelestialPortal.CelestialZoneDef.forId(id) != null) {
+                            CelestialPortal.handleTrueAction(player, gameObject);
+                            return;
+                        }
                         if (MiningData.forRock(gameObject.getId()) != null) {
                             Mining.startMining(player, gameObject);
                             return;
@@ -210,6 +206,32 @@ public class ObjectActionPacketListener implements PacketListener {
                                 else
                                     player.getPacketSender().sendMessage("You need to be a Ruby Donator to afk this rock. Your current rank is " + player.getRights());
                                 break;
+
+                            case 22721:
+                                Smelting.smeltBar(player, 2893, 28);
+                                break;
+
+                            case 12006:
+                                if (!player.getClickDelay().elapsed(1200))
+                                    return;
+                                if (player.getInventory().isFull()) {
+                                    player.getPacketSender().sendMessage("You don't have enough free inventory space.");
+                                    return;
+                                }
+                                String object = "Celestial Mushrooms";
+                                player.performAnimation(new Animation(827));
+                                player.getInventory().add(17821, 1);
+                                player.getPacketSender().sendMessage("You pick some " + object + "..");
+                                gameObject.setPickAmount(gameObject.getPickAmount() + 1);
+                                if (Misc.getRandom(3) == 1 && gameObject.getPickAmount() >= 1
+                                        || gameObject.getPickAmount() >= 6) {
+                                    player.getPacketSender().sendClientRightClickRemoval();
+                                    gameObject.setPickAmount(0);
+                                    CustomObjects.globalObjectRespawnTask(new GameObject(-1, gameObject.getPosition()),
+                                            gameObject, 10);
+                                }
+                                player.getClickDelay().reset();
+                                break;
                             case 8455:
                                 if (player.getRights() == PlayerRights.DIAMOND_DONATOR|| player.getRights() == PlayerRights.ONYX_DONATOR
                                         || player.getRights() == PlayerRights.ZENYTE_DONATOR || player.getRights() == PlayerRights.TANZANITE_DONATOR
@@ -249,10 +271,6 @@ public class ObjectActionPacketListener implements PacketListener {
                             case 3736:
                                 player.moveTo(GameSettings.STARTER);
                                 break;
-                            case 362:
-                                StarterCave.handleAction(player);
-                                break;
-
                             case 10014:
                                 DungeoneeringParty party1 = player.getMinigameAttributes().getDungeoneeringAttributes().getParty();
                                 if (party1 != null) {
@@ -2011,6 +2029,7 @@ public class ObjectActionPacketListener implements PacketListener {
                             case 11405:
                             case 20000:
                             case 20001:
+                            case 3769:
                                 EnterAmountOfLogsToAdd.openInterface(player);
                                 break;
                             case 24343:
@@ -2342,6 +2361,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getPacketSender().sendMessage("You steal a scimitar");
                                 // Stalls.stealFromStall(player, 80, 101, 11998, "You steal a scimitar.");
                                 break;
+
                             case 12100:
                                 Smelting.openInterface(player);
                                 break;
@@ -2648,6 +2668,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 player.getClickDelay().reset();
                                 break;
+
                             case 2644:
                                 Flax.showSpinInterface(player);
                                 break;

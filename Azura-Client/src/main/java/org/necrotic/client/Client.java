@@ -1472,7 +1472,7 @@ public class Client extends GameRenderer {
                     FileUtilities.delete(Signlink.getCacheDirectory());
                 } catch (IOException e) {
                     e.printStackTrace();
-                    showErrorScreen(instance, "A fatal error occured while attempting to fix the previous loading error", "Please screenshot this message and report it to Crimson immediately", e.getMessage());
+                    showErrorScreen(instance, "A fatal error occured while attempting to fix the previous loading error", "Please screenshot this message and report it to Avalon immediately", e.getMessage());
                 }
             }
         });

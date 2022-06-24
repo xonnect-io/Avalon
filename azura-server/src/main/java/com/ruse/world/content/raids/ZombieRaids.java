@@ -2,14 +2,11 @@ package com.ruse.world.content.raids;
 
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
-import com.ruse.model.Item;
 import com.ruse.model.Locations;
 import com.ruse.model.Position;
-import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.achievements.AchievementData;
-import com.ruse.world.content.boxes.ZombieRaidLoot;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
@@ -298,25 +295,13 @@ public class ZombieRaids {
                 party.sendMessage("@red@Your party has defeated the League of Legends Raids!");
 
                 for (Player player : party.getPlayers()) {
-                    Box[] loot = ZombieRaidLoot.LOOT;
+                    player.getInventory().add(18404, 1);
 
                     player.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     player.setZombieRaidsKC(player.getZombieRaidsKC() + 1);
 
-                    Box drop = getLoot(loot, party.getPlayers().size());
-
-                    if (drop.isAnnounce()) {
-                        String message = "@blu@News: @red@" + player.getUsername() + " @blu@has just received @red@"
-                                + ItemDefinition.forId(drop.getId()).getName() + "@blu@ from @red@League of Legends Raids";
-                        World.sendMessage1(message);
-                    }
-
-                    double amt = drop.getMin() + Misc.getRandom(drop.getMax() - drop.getMin());
-
-                    player.getInventory().add(new Item(drop.getId(), (int) amt));
-                    player.sendMessage("<shad=1>@yel@You have received X" + (int) amt + " "+ ItemDefinition.forId(drop.getId()).getName() + " for your participation!" );
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
-                        player.getInventory().add(new Item(drop.getId(), (int) amt));
+                        player.getInventory().add(18404, 1);
                         player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Slayer Perk is active!");
                     }
                 }

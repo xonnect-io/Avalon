@@ -749,6 +749,21 @@ public class Player extends Character {
         this.bot = bot;
     }
 
+
+    public boolean hasCelestial;
+
+    public boolean isCelestial() {
+        return hasCelestial;
+    }
+
+    public void setCelestial(boolean hasCelestial) {
+        this.hasCelestial = hasCelestial;
+    }
+
+    public boolean getCelestial() {
+        return hasCelestial;
+    }
+
     public boolean isInsideRaids() {
         return insideRaids;
     }

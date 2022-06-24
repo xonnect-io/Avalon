@@ -2193,16 +2193,9 @@ public final class MobDefinition {
 				definition.originalModelColours[0] = 52; // the new texture u want it to have
 				break;
 			case 1821:
-				definition.name = "@yel@Brawl Master";
-				definition.description = "Still dedicated to Twinky".getBytes();
-				definition.npcModels = new int[7];
-				definition.npcModels[0] = 65530; //pern mask
-				definition.npcModels[1] = 65275; //pern body
-				definition.npcModels[2] = 65485; //pern legs
-				definition.npcModels[3] = 65105; //max
-				definition.npcModels[4] = 13319; //bgloves
-				definition.npcModels[5] = 53309; //glaivens
-				definition.npcModels[6] = 62750; //bow
+				definition.name = "@cya@Celestial Being";
+				definition.description = "a God from the Celestial Zone".getBytes();
+				definition.npcModels = new int[]{18813};
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
 				definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
@@ -5034,6 +5027,15 @@ public final class MobDefinition {
 				definition.combatLevel = 79;
 				definition.standAnimation = 12248;
 				definition.walkAnimation = 12246;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
+				definition.npcSizeInSquares = 2;
+				break;
+			case 4677:
+				definition.name = "Celestial dragon";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 79;
+				definition.rdc2 = 23315;
 				definition.scaleXZ = 70;
 				definition.scaleY = 70;
 				definition.npcSizeInSquares = 2;
