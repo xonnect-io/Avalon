@@ -11,7 +11,7 @@
 	<artifactId>azura-server</artifactId>
 
 	<properties>
-		<kotlin.version>1.4.30-M1</kotlin.version>
+		<kotlin.version>1.6.21</kotlin.version>
 	</properties>
 
 
