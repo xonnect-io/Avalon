@@ -301,6 +301,14 @@ public final class ObjectDefinition {
 			definition.actions[1] = null;
 			definition.objectModelIDs = new int[]{41319};
 		}
+		if (definition.type == 28213) {
+			definition.name = "Portal";
+			definition.interactive = true;
+			definition.isSolidObject = true;
+			definition.actions = new String[5];
+			definition.actions[0] = "Enter";
+			definition.actions[1] = null;
+		}
 		if (definition.type == 22823) {
 			definition.name = "Upgrade Machine";
 			definition.actions = new String[]{"Upgrade", null, null, null, null};

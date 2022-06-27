@@ -5,7 +5,6 @@ import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.world.World;
-import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
@@ -209,6 +208,17 @@ public class TeleportInterfaceHandler {
 				return;
 			}
 
+		}
+		if (player.getCurrentTeleport().getNpcId() == 9106) {
+			if (player.getRights() == PlayerRights.OWNER)
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if ((player.getZombieRaidsKC() >= 100 || player.getRights() == PlayerRights.OWNER)) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			} else {
+				player.sendMessage("You need to have completed x 100 Legend raids to teleport here!");
+			}
+			return;
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == 9012) {

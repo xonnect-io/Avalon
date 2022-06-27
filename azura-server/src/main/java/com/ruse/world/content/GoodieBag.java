@@ -25,6 +25,10 @@ public class GoodieBag {
         this.rewards = rewards;
     }
 
+    public void GetRewards(int[] rewards) {
+        this.rewards = rewards;
+    }
+
     public void open() {
         player.getPacketSender().sendInterface(49200);
         player.getPacketSender().resetItemsOnInterface(49270, 20);

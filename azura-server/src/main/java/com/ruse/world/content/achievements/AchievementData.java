@@ -190,7 +190,7 @@ public enum AchievementData {
             new Item[] {new Item(12855, 10_000)},
             new LoyaltyPointReward(3000),new VotingPointReward(5)
     ),
-    REACH_100K_KILLS(43, AchievementType.MEDIUM, 10, "Reach 100k Npc Kills","Reach 100k Npc Kills!",
+    REACH_100K_KILLS(43, AchievementType.MEDIUM, 100_000, "Reach 100k Npc Kills","Reach 100k Npc Kills!",
             new Item[] {new Item(15288, 3),new Item(10942, 1),new Item(20488, 5)},
             new LoyaltyPointReward(3000),new VotingPointReward(5)
     ),

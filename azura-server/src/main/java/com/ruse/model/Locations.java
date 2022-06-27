@@ -442,7 +442,7 @@ public class Locations {
 					player.getRaidsParty().remove(player, true);
 				}
 
-				player.moveTo(new Position(1739, 5238, 0));
+				player.moveTo(new Position(3753, 9370, 0));
 
 				if (player.getRaidsParty() != null)
 					player.getRaidsParty().getPlayers()
@@ -468,7 +468,7 @@ public class Locations {
 						World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SOD, player.getIndex() * 4, player));
 					}
 				}
-				player.moveTo(new Position(1739, 5238, 0));
+				player.moveTo(new Position(3753, 9370, 0));
 				player.getMovementQueue().setLockMovement(false);
 			}
 
@@ -494,7 +494,7 @@ public class Locations {
 					player.getRaidsParty().getPlayers()
 							.remove(player);
 
-				player.moveTo(new Position(1739, 5238, 0));
+				player.moveTo(new Position(3753, 9370, 0));
 
 				player.getMovementQueue().setLockMovement(false);
 			}
@@ -529,7 +529,7 @@ public class Locations {
 			}
 
 		},
-		SOD_LOBBY(new int[]{1730, 1748}, new int[]{5230, 5248}, true, false, true, false, true, false) {
+		SOD_LOBBY(new int[]{3742, 3766}, new int[]{9360, 9380}, true, false, true, false, true, false) {
 			@Override
 			public void leave(Player player) {
 				player.getPacketSender().sendCameraNeutrality();

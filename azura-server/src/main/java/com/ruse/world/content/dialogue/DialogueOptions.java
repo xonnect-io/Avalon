@@ -1253,7 +1253,16 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
-
+                case 8102:
+                    if (player.getCelestial() == false && player.getSODRaidsKC() >= 50 && player.getInventory().contains(13379, 2)) {
+                        player.getInventory().delete(13379, 2);
+                        player.setCelestial(true);
+                        player.getPacketSender().sendMessage("<img=832> You have achieved Celestial Status!");
+                        World.sendMessage("<img=832>@red@ " + player.getUsername() + " @blu@achieved Celestial Status!");
+                        TeleportHandler.teleportPlayer(player, new Position(4257, 5598),
+                                player.getSpellbook().getTeleportType());
+                    }
+                break;
                 case 568:
                     ShopManager.getShops().get(207).open(player);
                     break;
@@ -1684,6 +1693,7 @@ public class DialogueOptions {
         } else if (id == SECOND_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
                 case 668://no
+                case 8102:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 568:

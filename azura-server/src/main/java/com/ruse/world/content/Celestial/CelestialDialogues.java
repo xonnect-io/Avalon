@@ -67,8 +67,8 @@ public class CelestialDialogues {
             @Override
             public String[] dialogue() {
                 String line1 = "To become a Celestial you must:";
-                String line2 = "- Be an Assassin Master";
-                String line3 = "- Sacrifice x2 Owner items (Cape, Aura, Bracelet, Ring or Amulet)";
+                String line2 = "- Complete x50 Souls of Suffering Waves";
+                String line3 = "- Sacrifice x2 Owner Fragments";
                 return new String[] { "" + line1 + "", "" + line2 + "", "" + line3 };
             }
 
@@ -223,119 +223,37 @@ public class CelestialDialogues {
             }
         };
     }
+        public static Dialogue sacrifice(final Player player) {
+            return new Dialogue() {
 
-    public static Dialogue totalPointsReceived(final Player player) {
-        return new Dialogue() {
-            @Override
-            public DialogueType type() {
-                return DialogueType.STATEMENT;
-            }
+                @Override
+                public DialogueType type() {
+                    return DialogueType.OPTION;
+                }
 
-            @Override
-            public int npcId() {
-                return player.getSlayer().getSlayerMaster().getNpcId();
-            }
+                @Override
+                public int npcId() {
+                    return -1;
+                }
 
-            @Override
-            public DialogueExpression animation() {
-                return DialogueExpression.NORMAL;
-            }
+                @Override
+                public DialogueExpression animation() {
+                    return DialogueExpression.NORMAL;
+                }
 
-            @Override
-            public String[] dialogue() {
-                int pointsReceived = 4;
-                /*
-                 * if(player.getSlayerMaster() == Slayer) //medium task pointsReceived = 7;
-                 * if(player.getSlayerMaster().getTaskLevel() == 2) //hard/elite tasks
-                 * pointsReceived = 10;
-                 */
-                int per5 = pointsReceived * 3;
-                int per10 = pointsReceived * 5;
-                return new String[] { "You currently receive " + pointsReceived + " points per task,",
-                        "" + per5 + " bonus points per 5 task-streak and",
-                        "" + per10 + " bonus points per 10 task-streak." };
-            }
+                @Override
+                public String[] dialogue() {
+                    String line1 = "Sacrifice x2 Owner fragments";
+                    String line2 = "No, keep my Owner fragments";
+                    return new String[] { "" + line1 + "", "" + line2 + ""};
+                }
 
-            @Override
-            public void specialAction() {
-                player.setDialogueActionId(9906);
-            }
+                @Override
+                public void specialAction() {
+                    player.setDialogueActionId(8102);
+                }
+            };
+        }
 
-        };
-    }
-
-    public static Dialogue chooseDifficulty(final Player player) {
-        return new Dialogue() {
-            @Override
-            public DialogueType type() {
-                return DialogueType.OPTION;
-            }
-
-            @Override
-            public DialogueExpression animation() {
-                return DialogueExpression.NORMAL;
-            }
-
-            @Override
-            public String[] dialogue() {
-                return new String[] { "Easy", "Medium","Hard",
-                };
-            }
-
-            @Override
-            public void specialAction() {
-
-            }
-        };
-    }
-
-    public static Dialogue inviteDuo(final Player player, final Player inviteOwner) {
-        return new Dialogue() {
-            @Override
-            public DialogueType type() {
-                return DialogueType.STATEMENT;
-            }
-
-            @Override
-            public DialogueExpression animation() {
-                return null;
-            }
-
-            @Override
-            public String[] dialogue() {
-                return new String[] { "" + inviteOwner.getUsername() + " has invited you to form a duo Slayer team.", };
-            }
-
-            @Override
-            public Dialogue nextDialogue() {
-                return new Dialogue() {
-
-                    @Override
-                    public DialogueType type() {
-                        return DialogueType.OPTION;
-                    }
-
-                    @Override
-                    public DialogueExpression animation() {
-                        return null;
-                    }
-
-                    @Override
-                    public String[] dialogue() {
-                        return new String[] { "Accept " + inviteOwner.getUsername() + "'s invitation",
-                                "Decline " + inviteOwner.getUsername() + "'s invitation"
-
-                        };
-                    }
-
-                    @Override
-                    public void specialAction() {
-                        player.setDialogueActionId(34);
-                        player.getSlayer().setDuoInvitation(inviteOwner.getUsername());
-                    }
-                };
-            }
-        };
-    }
 }
 

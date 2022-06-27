@@ -359,7 +359,7 @@ public class ItemDef3 {
 				break;
 				
 			case 23025:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Magic boots";
 				itemDef.modelID = 100088;
 				itemDef.maleEquip1 = 100088;
@@ -419,7 +419,7 @@ public class ItemDef3 {
 				break;
 				
 			case 23032:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Melee boots";
 				itemDef.modelID = 100100;
 				itemDef.maleEquip1 = 100100;
@@ -467,7 +467,7 @@ public class ItemDef3 {
 				break;
 				
 			case 23038:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Range boots";
 				itemDef.modelID = 100116;
 				itemDef.maleEquip1 = 100116;
@@ -592,7 +592,7 @@ public class ItemDef3 {
 				break;
 
 			case 23285:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Avalon boots";
 				itemDef.modelID = 18733;
 				itemDef.maleEquip1 = 18733;
@@ -639,12 +639,94 @@ public class ItemDef3 {
 				break;
 
 			case 23290:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Tanzanite boots";
 				itemDef.modelID = 18798;
 				itemDef.maleEquip1 = 18798;
 				itemDef.femaleEquip1 = 18798;
 				break;
+
+			case 23303:
+				itemDef.copyItem(4708);
+				itemDef.name = "Mystic helm";
+				itemDef.modelZoom = 1000;
+				itemDef.modelID = 19420;
+				itemDef.maleEquip1 = 19421;
+				itemDef.femaleEquip1 = 19421;
+				break;
+
+			case 23304:
+				itemDef.copyItem(4712);
+				itemDef.name = "Mystic body";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 19422;
+				itemDef.maleEquip1 = 19423;
+				itemDef.femaleEquip1 = 19423;
+				break;
+
+			case 23305:
+				itemDef.copyItem(4714);
+				itemDef.name = "Mystic legs";
+				itemDef.modelZoom = 1800;
+				itemDef.modelID = 19424;
+				itemDef.maleEquip1 = 19425;
+				itemDef.femaleEquip1 = 19425;
+				break;
+
+			case 23306:
+				itemDef.copyItem(4708);
+				itemDef.name = "Hellish helm";
+				itemDef.modelZoom = 1000;
+				itemDef.modelID = 19426;
+				itemDef.maleEquip1 = 19427;
+				itemDef.femaleEquip1 = 19427;
+				break;
+
+			case 23307:
+				itemDef.copyItem(4712);
+				itemDef.name = "Hellish body";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 19428;
+				itemDef.maleEquip1 = 19429;
+				itemDef.femaleEquip1 = 19429;
+				break;
+
+			case 23308:
+				itemDef.copyItem(4714);
+				itemDef.name = "Hellish legs";
+				itemDef.modelZoom = 1800;
+				itemDef.modelID = 19432;
+				itemDef.maleEquip1 = 19433;
+				itemDef.femaleEquip1 = 19433;
+				break;
+
+			case 23309:
+				itemDef.copyItem(4708);
+				itemDef.name = "Midnight helm";
+				itemDef.modelZoom = 1000;
+				itemDef.modelID = 19434;
+				itemDef.maleEquip1 = 19435;
+				itemDef.femaleEquip1 = 19435;
+				break;
+
+			case 23310:
+				itemDef.copyItem(4712);
+				itemDef.name = "Midnight body";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 19440;
+				itemDef.maleEquip1 = 19441;
+				itemDef.femaleEquip1 = 19441;
+				break;
+
+			case 23311:
+				itemDef.copyItem(4714);
+				itemDef.name = "Midnight legs";
+				itemDef.modelZoom = 1800;
+				itemDef.modelID = 19442;
+				itemDef.maleEquip1 = 19444;
+				itemDef.femaleEquip1 = 19444;
+				break;
+
 
 
 			case 23291:
@@ -693,7 +775,7 @@ public class ItemDef3 {
 				break;
 				
 			case 23054:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Ebony boots";
 				itemDef.modelID = 100137;
 				itemDef.maleEquip1 = 100137;
@@ -881,7 +963,7 @@ public class ItemDef3 {
 				break;
 				
 			case 23224:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Nephilim boots";
 				itemDef.modelID = 18519;
 				itemDef.maleEquip1 = 18519;
@@ -1562,7 +1644,7 @@ public class ItemDef3 {
 				break;
 				
 			case 23131:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Creator's boots";
 				itemDef.modelID = 100261;
 				itemDef.maleEquip1 = 100261;
@@ -1635,7 +1717,7 @@ public class ItemDef3 {
 				break;
 				
 			case 23143:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Ruthless boots";
 				itemDef.modelID = 100286;
 				itemDef.maleEquip1 = 100286;
@@ -2634,7 +2716,7 @@ public class ItemDef3 {
 
 			case 14914:
 				itemDef.name = "Demonic boots";
-				itemdefedit = ItemDefinition.get(20119);
+				itemdefedit = ItemDefinition.get(20456);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
 				itemDef.modelID = itemdefedit.modelID;
@@ -2894,7 +2976,7 @@ public class ItemDef3 {
 				itemDef.modelID = 65200;
 				itemDef.maleEquip1 = 65200;
 				itemDef.femaleEquip1 = 65200;
-				itemdefedit = ItemDefinition.get(3791);
+				itemdefedit = ItemDefinition.get(20456);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
 				itemDef.modelZoom = itemdefedit.modelZoom;
@@ -3151,7 +3233,7 @@ public class ItemDef3 {
 				break;
 				
 			case 14050:
-				itemDef.name = "Alex void helm";
+				itemDef.name = "Dragon Rider helm";
 				itemDef.modelID = 65385;
 				itemDef.maleEquip1 = 65386;
 				itemDef.femaleEquip1 = 65386;
@@ -3168,7 +3250,7 @@ public class ItemDef3 {
 				break;
 				
 			case 14051:
-				itemDef.name = "Alex void body";
+				itemDef.name = "Dragon Rider body";
 				itemDef.modelID = 65387;
 				itemDef.maleEquip1 = 65388;
 				itemDef.femaleEquip1 = 65388;
@@ -3185,7 +3267,7 @@ public class ItemDef3 {
 				break;
 				
 			case 14052:
-				itemDef.name = "Alex Void legs";
+				itemDef.name = "Dragon Rider legs";
 				itemDef.modelID = 65389;
 				itemDef.maleEquip1 = 65390;
 				itemDef.femaleEquip1 = 65390;
@@ -3202,8 +3284,8 @@ public class ItemDef3 {
 				break;
 				
 			case 14053:
-				itemDef.name = "Alex void boots";
-				itemdefedit = ItemDefinition.get(7114);
+				itemDef.name = "Dragon Rider boots";
+				itemdefedit = ItemDefinition.get(20456);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
 				itemDef.modelZoom = itemdefedit.modelZoom;
@@ -3231,7 +3313,7 @@ public class ItemDef3 {
 				break;
 				
 			case 14055:
-				itemDef.name = "Alex void gloves";
+				itemDef.name = "Dragon Rider gloves";
 				itemdefedit = ItemDefinition.get(7461);
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;

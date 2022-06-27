@@ -37,18 +37,19 @@ public final class CelestialPortal {
 	public static int tick = 0;
 
 	public static void handleTrueAction(Player player, GameObject object) {
+
 		if (player.getCelestial() == true) {
 			if (PORTAL != null) {
 				TeleportHandler.teleportPlayer(player, new Position(4257, 5598),
 						player.getSpellbook().getTeleportType());
-			}
-		}
-		if (player.getCelestial() == false) {
-			DialogueManager.sendStatement(player, "You must be a Celestial to do this.");
+			} else
+				DialogueManager.sendStatement(player, "The Celestial Zone is currently closed.");
 		}
 
-		if (PORTAL == null) {
-			DialogueManager.sendStatement(player, "The Celestial Zone is currently closed.");
+		if (player.getCelestial() == false && player.getInventory().contains(13379, 2)) {
+			DialogueManager.start(player, CelestialDialogues.sacrifice(player));
+		}	else if (player.getCelestial() == false) {
+			DialogueManager.sendStatement(player, "You need to first unlock Celestial Status!");
 		}
 	}
 

@@ -1,5 +1,4 @@
 package org.necrotic.client.net;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -27,11 +26,13 @@ public class HttpDownloadUtility {
 					// extracts file name from header field
 					int index = disposition.indexOf("filename=");
 					if (index > 0) {
-						fileName = disposition.substring(index + 10, disposition.length() - 1);
+						fileName = disposition.substring(index + 10,
+								disposition.length() - 1);
 					}
 				} else {
 					// extracts file name from URL
-					fileName = fileURL.substring(fileURL.lastIndexOf("/") + 1, fileURL.length());
+					fileName = fileURL.substring(fileURL.lastIndexOf("/") + 1,
+							fileURL.length());
 				}
 
 				// opens input stream from the HTTP connection
@@ -51,14 +52,16 @@ public class HttpDownloadUtility {
 				inputStream.close();
 
 			} else {
+				System.out.println("Necrotic.org replied HTTP code: " + responseCode+" for file: "+fileURL);
 				return false;
 			}
 			httpConn.disconnect();
 			return true;
-		} catch (Exception e) {
+		} catch(Exception e) {
 			e.printStackTrace();
 			return false;
 		}
 	}
 }
+
 

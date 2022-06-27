@@ -1,44 +1,21 @@
 package crim.snippit;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
 public class hashCharacterJson {
 
 	public static String DIR = "E:/NecroticRepo/Source/data/saves/characters/";
 
 	public static void main(String[] args) {
-		for (int i = 0; i < args.length; i++) {
-			if (args[i].startsWith("dir:")) {
-				DIR = args[i].substring("dir:".length());
-				// System.out.println("Set directory to: " + DIR);
-			}
-		}
-
-		File folder = new File(DIR);
-		File[] files = folder.listFiles();
-
-		if (!folder.exists()) {
-			// System.out.println("Invalid directory specified.");
-			// System.out.println("Set path with arg. dir:%PATH%");
-			// System.out.println("Where %PATH% is your .json character files");
-			return;
-		}
-
-		// System.out.println("We are working in the directory: " + new File(DIR).getAbsolutePath());
-
-		for (int i = 0; i < files.length; i++) {
-			getResult(files[i].getName());
-			// // System.out.println(files[i].getName());
-		}
 	}
 
 	public static boolean validString(String target) {

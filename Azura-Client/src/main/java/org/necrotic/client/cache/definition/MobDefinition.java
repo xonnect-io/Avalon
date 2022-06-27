@@ -149,7 +149,85 @@ public final class MobDefinition {
 				definition.scaleY = 100;
 				definition.drawYellowDotOnMap = true;
 				break;
-				
+
+			case 9106:
+				definition.name = "Cthulu";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19256};
+				definition.npcSizeInSquares = 2;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 9107:
+				definition.name = "Zodia";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19257,19297,19302,19322,19324,19339};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 9108:
+				definition.name = "Gutter";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19370,19372,19398,19403,19404,19410,19411};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 9109:
+				definition.name = "Midnight Sufferer";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19435,19441,19444,100137,18943,100136};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 9110:
+				definition.name = "Souless Sufferer";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19421,19423,19425,100137,100139,100136};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 9111:
+				definition.name = "Hellish Sufferer";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19427,19429,19433,100137,18552,100136};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				definition.drawYellowDotOnMap = true;
+				break;
+
 			case 9007:
 				definition.name = "Dreambody";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -366,6 +444,8 @@ public final class MobDefinition {
 				definition.scaleY = 100;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcSizeInSquares = 1;
+				//definition.rdc2 = 800;
+				definition.rdc2 = 677;
 				break;
 				
 			case 1121:
@@ -2111,6 +2191,7 @@ public final class MobDefinition {
 				definition.walkAnimation = eld.walkAnimation;
 				definition.scaleY = definition.scaleXZ = 140;
 				definition.npcSizeInSquares = 5;
+				//definition.rdc2 = 800;
 				break;
 			case 2008:
 				definition.npcModels = new int[1];

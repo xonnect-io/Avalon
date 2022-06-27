@@ -43,7 +43,6 @@ import com.ruse.world.content.skill.impl.herblore.PotionCombinating;
 import com.ruse.world.content.skill.impl.herblore.WeaponPoison;
 import com.ruse.world.content.skill.impl.prayer.BonesOnAltar;
 import com.ruse.world.content.skill.impl.prayer.Prayer;
-import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.skill.impl.slayer.SlayerDialogues;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
 import com.ruse.world.content.skill.impl.smithing.EquipmentMaking;
@@ -66,6 +65,7 @@ public class UseItemPacketListener implements PacketListener {
     public final static int ITEM_ON_OBJECT = 192;
     public final static int ITEM_ON_GROUND_ITEM = 25;
     public static final int ITEM_ON_PLAYER = 14;
+    public static int[] ownerItems =  {18750,18753,18752,18751,18636,18749,18748,18638,18629,18631,18637,18623,19886,4446,10946,1486,10947,3737,3738,3739};
 
     /**
      * The PacketListener logger to debug sendInformation and print out errors.
@@ -591,13 +591,19 @@ public class UseItemPacketListener implements PacketListener {
             }
         }
         switch (npc.getId()) {
+            case 1821:
+                if (player.getInventory().contains(7995)) {
+                    player.getInventory().delete(7995, 1);
+                    player.setCelestial(true);
+                }
+                break;
+
             case VaultOfWar.GLOVES_NPC:
                 VaultOfWar.useGlovesOnNPC(player, new Item(id));
                 break;
 
         }
         switch (id) {
-
 
             case 9003:
                 if (player.getLastTomed() != npc.getId()) {

@@ -271,10 +271,10 @@ public class CustomDropUtils {
 
         //start weapons
 
-        if (player.getEquipment().contains(23228)) { //Divine bow
+        if (player.getEquipment().contains(23228)) { //Icyenic bow
             percentBoost += 90;
         }
-        if (player.getEquipment().contains(23267)) { //Daemon bow
+        if (player.getEquipment().contains(23267)) { //Infernal Bow
             percentBoost += 90;
         }
         if (player.getEquipment().contains(23227)) { //Blood legends sword

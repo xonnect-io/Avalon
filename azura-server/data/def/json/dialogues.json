@@ -38,6 +38,15 @@
         "npcId": -1
     },
     {
+    "id": 8102,
+    "type": "OPTION",
+    "lines": 2,
+    "line1": "Sacrifice Owner fragments",
+    "line2": "No, keep my owner fragments",
+    "next": -1,
+    "npcId": -1
+},
+    {
         "id": 0,
         "type": "OPTION",
         "lines": 5,

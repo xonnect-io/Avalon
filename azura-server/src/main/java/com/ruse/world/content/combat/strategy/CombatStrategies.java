@@ -41,6 +41,7 @@ public class CombatStrategies {
 		STRATEGIES.put(3491, defaultMagicStrategy);
 		STRATEGIES.put(2882, defaultMagicStrategy);
 		STRATEGIES.put(13451, defaultMagicStrategy);
+		STRATEGIES.put(9109, defaultMagicStrategy);
 		STRATEGIES.put(13452, defaultMagicStrategy);
 		STRATEGIES.put(13453, defaultMagicStrategy);
 		STRATEGIES.put(13454, defaultMagicStrategy);
@@ -53,6 +54,7 @@ public class CombatStrategies {
 		STRATEGIES.put(3580, defaultMagicStrategy);
 		STRATEGIES.put(2007, defaultMagicStrategy);
 		STRATEGIES.put(688, defaultRangedStrategy);
+		STRATEGIES.put(9111, defaultRangedStrategy);
 		STRATEGIES.put(2028, defaultRangedStrategy);
 		STRATEGIES.put(6220, defaultRangedStrategy);
 		STRATEGIES.put(6256, defaultRangedStrategy);

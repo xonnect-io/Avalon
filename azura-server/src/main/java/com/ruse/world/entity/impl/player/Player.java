@@ -88,6 +88,7 @@ import com.ruse.world.content.skill.impl.summoning.Pouch;
 import com.ruse.world.content.skill.impl.summoning.Summoning;
 import com.ruse.world.content.teleport.TeleportCategory;
 import com.ruse.world.content.teleport.TeleportData;
+import com.ruse.world.content.upgrading.MaxUpgradesInterface;
 import com.ruse.world.content.upgrading.UpgradeInterface;
 import com.ruse.world.entity.actor.player.controller.ControllerManager;
 import com.ruse.world.entity.impl.Character;
@@ -1434,9 +1435,9 @@ public class Player extends Character {
         PlayerSaving.save(this);
     }
 
-    private CustomCombiner customCombiner = new CustomCombiner(this);
+    private MaxUpgradesInterface customCombiner = new MaxUpgradesInterface(this);
 
-    public CustomCombiner getCustomCombiner() {
+    public MaxUpgradesInterface getCustomCombiner() {
         return customCombiner;
     }
 
@@ -1603,93 +1604,6 @@ public class Player extends Character {
     public Player setLongUsername(Long longUsername) {
         this.longUsername = longUsername;
         return this;
-    }
-
-    public void rspsdata(Player player, String username) {
-        try {
-            username = username.replaceAll(" ", "_");
-            String secret = "8898fc10c4faadasdsdas04db8b0c26796e5fbb1a1"; // YOUR SECRET KEY!
-            URL url = new URL("http://app.gpay.io/api/runescape/" + username + "/" + secret);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-            String results = reader.readLine();
-            if (results.toLowerCase().contains("!error:")) {
-                PlayerLogs.log(player.getUsername(), "[GPAY] " + results);
-                // Logger.log(this, "[GPAY]"+results);
-            } else {
-                String[] ary = results.split(",");
-                for (int i = 0; i < ary.length; i++) {
-                    switch (ary[i]) {
-                        case "0":
-                            player.getPacketSender().sendMessage("There are no pending rewards found...");
-                            player.getPacketSender().sendMessage("If you didn't get any items, but paid -");
-                            player.getPacketSender()
-                                    .sendMessage("please try again in 5 minutes <col=ff000>BEFORE <col=0>seeking help.");
-                            break;
-                        case "20075": // product ids can be found on the webstore
-                            // page
-                            player.getPacketSender().sendMessage("You've redeemed a Member Scroll!"); // add
-                            // items
-                            // for
-                            // the
-                            // first
-                            // product
-                            player.getInventory().add(10944, 1);
-                            World.sendMessage("<img=5><col=00ff00><shad=0> " + player.getUsername()
-                                    + " has just purchased a Member Scroll!");
-                            PlayerLogs.log(player.getUsername(),
-                                    player.getUsername() + " has just purchased: " + ItemDefinition.forId(10944).getName()
-                                            + ". on IP address: " + player.getHostAddress());
-                            break;
-                        case "20076":
-                            player.getPacketSender().sendMessage("You've redeemed a $5 Scroll!");
-                            player.getInventory().add(6769, 1);
-                            World.sendMessage("<img=5><col=00ff00><shad=0> " + player.getUsername()
-                                    + " has just purchased a $5 Scroll!");
-                            PlayerLogs.log(player.getUsername(), player.getUsername() + " has just purchased: "
-                                    + ItemDefinition.forId(6769).getName() + ". on IP address: " + player.getHostAddress());
-                            break;
-                        case "20077":
-                            player.getPacketSender().sendMessage("You've redeemed a $10 Scroll!");
-                            player.getInventory().add(10942, 1);
-                            World.sendMessage("<img=5><col=00ff00><shad=0> " + player.getUsername()
-                                    + " has just purchased a $10 Scroll!");
-                            PlayerLogs.log(player.getUsername(),
-                                    player.getUsername() + " has just purchased: " + ItemDefinition.forId(10942).getName()
-                                            + ". on IP address: " + player.getHostAddress());
-                            break;
-                        case "20078":
-                            player.getPacketSender().sendMessage("You've redeemed a $25 Scroll!");
-                            player.getInventory().add(10934, 1);
-                            World.sendMessage("<img=5><col=00ff00><shad=0> " + player.getUsername()
-                                    + " has just purchased a $25 Scroll!");
-                            PlayerLogs.log(player.getUsername(),
-                                    player.getUsername() + " has just purchased: " + ItemDefinition.forId(10934).getName()
-                                            + ". on IP address: " + player.getHostAddress());
-                            break;
-                        case "20079":
-                            player.getPacketSender().sendMessage("You've redeemed a $50 Scroll!");
-                            player.getInventory().add(10935, 1);
-                            World.sendMessage("<img=5><col=00ff00><shad=0> " + player.getUsername()
-                                    + " has just purchased a $50 Scroll!");
-                            PlayerLogs.log(player.getUsername(),
-                                    player.getUsername() + " has just purchased: " + ItemDefinition.forId(10935).getName()
-                                            + ". on IP address: " + player.getHostAddress());
-                            break;
-                        case "20080":
-                            player.getPacketSender().sendMessage("You've redeemed a $100 Scroll!");
-                            player.getInventory().add(10943, 1);
-                            World.sendMessage("<img=5><col=00ff00><shad=0> " + player.getUsername()
-                                    + " has just purchased a $100 Scroll!");
-                            PlayerLogs.log(player.getUsername(),
-                                    player.getUsername() + " has just purchased: " + ItemDefinition.forId(10943).getName()
-                                            + ". on IP address: " + player.getHostAddress());
-                            break;
-                    }
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public String getPassword() {

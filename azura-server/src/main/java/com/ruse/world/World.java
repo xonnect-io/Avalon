@@ -403,7 +403,7 @@ public class World {
         for (Player p : players) {
             if (p == null)
                 continue;
-            p.getPacketSender().sendMessage("@dre@Server Message: <col=00ffff>" + message);
+            p.getPacketSender().sendMessage("@dre@Server Message: @bla@" + message);
         }
     }
 }

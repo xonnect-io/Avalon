@@ -116,7 +116,7 @@ public class DragonKingBoss {
 
 
 
-                String message = "@bla@Dragon king has appeared at ::dk";
+                String message = "Dragon king has appeared at ::dk";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {

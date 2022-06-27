@@ -229,9 +229,9 @@ public class SODRaids {
                             stop();
                         }
 
-                        if (tick == 4) {
+                        if (tick == 3) {
                             if (wave == 1)
-                                party.sendMessage("@red@The Souls of Suffering has started!");
+                                party.sendMessage("@red@The first wave has started!");
                             else if (wave == 2)
                                 party.sendMessage("@red@The second wave has started!");
                             else if (wave == 3)
@@ -290,7 +290,7 @@ public class SODRaids {
                     Box[] loot = SODRaidLoot.LOOT;
 
                     player.setSODRaidsKC(player.getSODRaidsKC() + 1);
-
+                    player.setEnteredSODRaids(false);
                     Box drop = getLoot(loot, party.getPlayers().size());
 
                     if (drop.isAnnounce()) {
@@ -308,7 +308,8 @@ public class SODRaids {
                         player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Slayer Perk is active!");
                     }
                 }
-                party.sendMessage("@red@Use the portal south to go back to the raid lobby.");
+
+                party.moveTo(SODRaidData.lobbyPosition);
 
                 party.setDeathCount(0);
                 party.setKills(0);

@@ -2531,13 +2531,13 @@ public final class ItemDefinition {
 				itemDef.groundActions[2] = "Take";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
-				itemDef.rdc2 = 31252;
+				itemDef.rdc2 = 99252;
 				break;
 
 			case 23271:// super sayian
 				itemDef.copyItem(12608);
 				itemDef.name = "Celestial Aura";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.newModelColor = new int[]{56};
 				itemDef.editedModelColor = new int[]{130};
 				break;
@@ -2545,11 +2545,18 @@ public final class ItemDefinition {
 			case 23272:// super sayian
 				itemDef.copyItem(7686);
 				itemDef.name = "Assassins Quiver";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				//itemDef.modelZoom = 2200;
 				itemDef.modelID = 18558;
 				break;
-				
+			case 23300:// super sayian
+				itemDef.copyItem(7686);
+				itemDef.name = "Celestial Quiver";
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				//itemDef.modelZoom = 2200;
+				itemDef.modelID = 18558;
+				itemDef.rdc2 = 99252;
+				break;
 			case 14020:
 				itemDef.name = "Veteran hood";
 				itemDef.description = "A hood worn by Etherear veterans.".getBytes();
@@ -4696,9 +4703,9 @@ public final class ItemDefinition {
 			itemDef.name = "Deadly maul";
 			ItemDefinition itemDef2 = ItemDefinition.get(18353);
 			// itemDef.modelID = itemDef2.modelID;
-			itemDef.modelID = 65014;
-			itemDef.femaleEquip1 = 65015;
-			itemDef.maleEquip1 = 65015;
+			itemDef.modelID = 95001;
+			itemDef.femaleEquip1 = 95000;
+			itemDef.maleEquip1 = 95000;
 			itemDef.modelOffsetX = itemDef2.modelOffsetX;
 			itemDef.rotationZ = itemDef2.rotationZ;
 			itemDef.modelOffsetY = itemDef2.modelOffsetY;

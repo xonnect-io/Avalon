@@ -16,7 +16,6 @@ import com.ruse.net.packet.Packet;
 import com.ruse.net.packet.PacketListener;
 import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
-import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.Celestial.CelestialPortal;
 import com.ruse.world.content.*;
@@ -61,6 +60,8 @@ import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Donation;
+
+import static com.ruse.world.World.getPlayers;
 
 /**
  * This packet listener is called when a player clicked on a game object.
@@ -323,7 +324,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                 }
                                 break;
-                            case 13634:
+                            case 28213:
                                 if (player.getLocation() == Location.SOD_LOBBY) {
                                     CurseHandler.deactivateAll(player);
                                     if (player.getRaidsParty() != null) {
@@ -1868,7 +1869,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                     player.getCombatBuilder().reset(true);
                                     if (player.getDueling().duelingWith > -1) {
-                                        Player duelEnemy = World.getPlayers().get(player.getDueling().duelingWith);
+                                        Player duelEnemy = getPlayers().get(player.getDueling().duelingWith);
                                         if (duelEnemy == null)
                                             return;
                                         duelEnemy.getCombatBuilder().reset(true);

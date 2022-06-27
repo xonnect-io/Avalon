@@ -18,20 +18,6 @@ public class BestItemsInterface {
             add(22071);
             add(22076);
             add(21604);
-            add(17694);
-            add(17694);
-            add(17694);
-            add(17694);
-            add(17694);
-            add(17694);
-            add(17694);
-            add(17694);
-            add(17694);
-            add(17694);
-
-
-            add(17694);
-            add(17696);
             add(21603);
             add(5423);
             add(5432);

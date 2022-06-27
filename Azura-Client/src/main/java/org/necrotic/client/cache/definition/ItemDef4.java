@@ -667,7 +667,7 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 22103:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(20456);
 				itemDef.name = "Fallen Angel's boots";
 				itemDef21 = ItemDefinition.get(3791);
 				itemDef.modelID = 17066;
@@ -2957,17 +2957,34 @@ public class ItemDef4 {
 				break;
 
 			case 23280:
-				itemDef.copyItem(19669);
-				itemDef.name = "Celestial ring";
-				itemDef.rdc2 = 28715;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.modelID = 18910;
+				itemDef.modelZoom = 287;
+				itemDef.name = "Celestial Ring";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 1765;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
 				break;
 
 			case 23293:
-				itemDef.copyItem(6208);
-				itemDef.name = "Celestial amulet";
-				itemDef.rdc2 = 28715;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.copyItem(12855);
+				itemDef.modelID = 18911;
+				itemDef.maleEquip1 = 18912;
+				itemDef.femaleEquip1 = 18912;
+				itemDef.modelZoom = 478;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 160;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -18;
+				itemDef.name = "Celestial Amulet";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				break;
 				case 23294:
 				itemDef.copyItem(18639);
@@ -2980,6 +2997,42 @@ public class ItemDef4 {
 				itemDef.modelID = 18878;
 				itemDef.rotationX = 0;
 				itemDef.modelZoom = 1900;
+				break;
+			case 23296:
+				itemDef.copyItem(3791);
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.modelID = 53835;
+				itemDef.maleEquip1 = 53327;
+				itemDef.femaleEquip1 = 53643;
+				itemDef.name = "Emberkeen boots";
+				itemDef.modelZoom = 900;
+				itemDef.description = "A pair of Emberkeen boots.".getBytes();
+				break;
+			case 23297:
+				itemDef.copyItem(3791);
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.modelID = 18906;
+				itemDef.maleEquip1 = 18906;
+				itemDef.femaleEquip1 = 18906;
+				itemDef.name = "Flarefrost boots";
+				itemDef.modelZoom = 900;
+				itemDef.description = "A pair of Flarefrost boots.".getBytes();
+				break;
+			case 23298:
+				itemDef.copyItem(3791);
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.modelID = 18907;
+				itemDef.maleEquip1 = 18907;
+				itemDef.femaleEquip1 = 18907;
+				itemDef.name = "Hailfire boots";
+				itemDef.modelZoom = 900;
+				itemDef.description = "A pair of Hailfire boots.".getBytes();
 				break;
 			case 2893:
 				itemDef.modelID = 18871;
@@ -5134,12 +5187,18 @@ public class ItemDef4 {
 
 			case 23292:
 				itemDef.copyItem(11126);
-				itemDef.modelID = 18811;
+				itemDef.modelID = 18913;
 				itemDef.name = "Celestial Bracelet";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
-				itemDef.rdc2 = 1;
+				break;
+
+			case 23299:
+				itemDef.copyItem(18829);
+				itemDef.name = "Gemstone Kaseki";
+				itemDef.rotationX = 0;
+				itemDef.rdc2 = 23815;
 				break;
 
 			case 3909:
@@ -7429,7 +7488,7 @@ public class ItemDef4 {
 				break;
 			case 23228:
 				itemDef.copyItem(11235);
-				itemDef.name = "Divine Bow";
+				itemDef.name = "Icyenic Bow";
 				itemDef.modelID = 18543;
 				itemDef.femaleEquip1 = 18544;
 				itemDef.maleEquip1 = 18544;
@@ -7442,10 +7501,10 @@ public class ItemDef4 {
 				break;
 			case 23267:
 				itemDef.copyItem(11235);
-				itemDef.name = "Daemon Bow";
+				itemDef.name = "Infernal Bow";
 				itemDef.modelID = 18545;
-				itemDef.femaleEquip1 = 18551;
-				itemDef.maleEquip1 = 18551;
+				itemDef.femaleEquip1 = 18552;
+				itemDef.maleEquip1 = 18552;
 				itemDef.modelOffsetX = 15;
 				itemDef.modelOffsetY = -15;
 				itemDef.modelZoom = 3000;

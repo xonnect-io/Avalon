@@ -4,14 +4,10 @@ import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Animation;
 import com.ruse.model.Graphic;
-import com.ruse.model.Locations;
-import com.ruse.model.MessageType;
-import com.ruse.model.Position;
 import com.ruse.model.Projectile;
 import com.ruse.util.Misc;
 import com.ruse.world.content.combat.CombatContainer;
 import com.ruse.world.content.combat.CombatType;
-import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -41,15 +37,13 @@ public class Vasa implements CombatStrategy {
 			Vasa.setConstitution(Vasa.getConstitution() + hitAmount);
 			Vasa.getCombatBuilder().setContainer(new CombatContainer(Vasa, victim, 1, 3, CombatType.MAGIC, true));
 			Player Player = (com.ruse.world.entity.impl.player.Player) victim;
-			CurseHandler.deactivateAll(Player);
 			((Player) victim).getPacketSender().sendMessage(
 					"<img=18><shad=1>@red@Vasa Nistirio absorbs his next attack, healing himself a bit.");
-			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@red@Vasa Nistirio deactivated your prayer");
 
 		}
 			Vasa.setChargingAttack(true);
 			Vasa.performAnimation(new Animation(345));
-			Vasa.getCombatBuilder().setContainer(new CombatContainer(Vasa, victim, 1, 3, CombatType.MAGIC, true));
+			Vasa.getCombatBuilder().setContainer(new CombatContainer(Vasa, victim, Misc.getRandom(500), 3, CombatType.MAGIC, true));
 			TaskManager.submit(new Task(1, Vasa, false) {
 				int tick = 0;
 

@@ -374,17 +374,19 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				break;
 			case 17694:
-				itemDef.name = "Victory Hammer";
-				itemDef.modelID = 64042;
-				itemDef.maleEquip1 = 64042;
-				itemDef.femaleEquip1 = 64042;
-				itemDef21 = ItemDefinition.get(1333);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef21 = ItemDefinition.get(18953);
+				itemDef.name = "Icyenic Hammer";
+				itemDef.modelID = 18957;
+				itemDef.maleEquip1 = 19088;
+				itemDef.femaleEquip1 = 19088;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 2496;
+				itemDef.rotationY = 478;
+				itemDef.rotationX = 0;
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 1419:
@@ -402,24 +404,52 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17698:
-				itemDef.name = "Wrath Hammer";
-				itemDef.modelID = 64044;
-				itemDef.maleEquip1 = 64044;
-				itemDef.femaleEquip1 = 64044;
-				itemDef21 = ItemDefinition.get(1333);
-				itemDef.modelOffsetX = 50;
-				itemDef.modelOffsetY = 110;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = 280;
-				itemDef.rotationX = 230;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef21 = ItemDefinition.get(18953);
+				itemDef.name = "Infernal Hammer";
+				itemDef.modelID = 19121;
+				itemDef.maleEquip1 = 19122;
+				itemDef.femaleEquip1 = 19122;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 2496;
+				itemDef.rotationY = 478;
+				itemDef.rotationX = 0;
 				itemDef.stackable = false;
-				
-
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+			case 23301:
+				itemDef.name = "Infernal Staff";
+				itemDef.modelID = 18936;
+				itemDef.maleEquip1 = 18936;
+				itemDef.femaleEquip1 = 18936;
+				itemDef.modelOffsetX = -55;
+				itemDef.modelOffsetY = 140;
+				itemDef.modelZoom = 2339;
+				itemDef.rotationY = 200;
+				itemDef.rotationZ = 0;
+				itemDef.rotationX = 1209;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+			case 23302:
+				itemDef.name = "Icyenic Staff";
+				itemDef.modelID = 18943;
+				itemDef.maleEquip1 = 18943;
+				itemDef.femaleEquip1 = 18943;
+				itemDef.modelOffsetX = -55;
+				itemDef.modelOffsetY = 140;
+				itemDef.modelZoom = 2339;
+				itemDef.rotationY = 200;
+				itemDef.rotationZ = 0;
+				itemDef.rotationX = 1209;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
 				break;
 			case 18753:
 				itemDef.name = "<col=eed81d><shad=9283>Corrupt Maxiblood helm<shad-1>";
