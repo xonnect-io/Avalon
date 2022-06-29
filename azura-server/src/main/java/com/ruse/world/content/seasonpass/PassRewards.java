@@ -1,14 +1,14 @@
 package com.ruse.world.content.seasonpass;
 
+import com.ruse.model.Item;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.ruse.model.Item;
-
 public class PassRewards {
 
-	public static final String INFO_FILE_PATH = "./data/saves/seasonpass/seasonInformation.txt";
+	public static final String INFO_FILE_PATH = "./data/saves/seasonpass/info.txt";
 	public static final String REWARDS_FILE_PATH = "./data/saves/seasonpass/goldRewards.txt";
 	public static final String DEFAULT_REWARDS_FILE_PATH = "./data/saves/seasonpass/silverRewards.txt";
 	public static Item[] silverRewards;

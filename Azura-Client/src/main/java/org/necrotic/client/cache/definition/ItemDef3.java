@@ -727,6 +727,96 @@ public class ItemDef3 {
 				itemDef.femaleEquip1 = 19444;
 				break;
 
+			case 23312:
+				itemDef.copyItem(4708);
+				itemDef.name = "Mystic helm (u)";
+				itemDef.modelZoom = 1000;
+				itemDef.modelID = 19420;
+				itemDef.maleEquip1 = 19421;
+				itemDef.femaleEquip1 = 19421;
+				itemDef.rdc = 11;
+				break;
+
+			case 23313:
+				itemDef.copyItem(4712);
+				itemDef.name = "Mystic body (u)";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 19422;
+				itemDef.maleEquip1 = 19423;
+				itemDef.femaleEquip1 = 19423;
+				itemDef.rdc = 11;
+				break;
+
+			case 23314:
+				itemDef.copyItem(4714);
+				itemDef.name = "Mystic legs (u)";
+				itemDef.modelZoom = 1800;
+				itemDef.modelID = 19424;
+				itemDef.maleEquip1 = 19425;
+				itemDef.femaleEquip1 = 19425;
+				itemDef.rdc = 11;
+				break;
+
+			case 23315:
+				itemDef.copyItem(4708);
+				itemDef.name = "Hellish helm (u)";
+				itemDef.modelZoom = 1000;
+				itemDef.modelID = 19426;
+				itemDef.maleEquip1 = 19427;
+				itemDef.femaleEquip1 = 19427;
+				itemDef.rdc = 11;
+				break;
+
+			case 23316:
+				itemDef.copyItem(4712);
+				itemDef.name = "Hellish body (u)";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 19428;
+				itemDef.maleEquip1 = 19429;
+				itemDef.femaleEquip1 = 19429;
+				itemDef.rdc = 11;
+				break;
+
+			case 23317:
+				itemDef.copyItem(4714);
+				itemDef.name = "Hellish legs (u)";
+				itemDef.modelZoom = 1800;
+				itemDef.modelID = 19432;
+				itemDef.maleEquip1 = 19433;
+				itemDef.femaleEquip1 = 19433;
+				itemDef.rdc = 11;
+				break;
+
+			case 23318:
+				itemDef.copyItem(4708);
+				itemDef.name = "Midnight helm (u)";
+				itemDef.modelZoom = 1000;
+				itemDef.modelID = 19434;
+				itemDef.maleEquip1 = 19435;
+				itemDef.femaleEquip1 = 19435;
+				itemDef.rdc = 11;
+				break;
+
+			case 23319:
+				itemDef.copyItem(4712);
+				itemDef.name = "Midnight body (u)";
+				itemDef.modelZoom = 1500;
+				itemDef.modelID = 19440;
+				itemDef.maleEquip1 = 19441;
+				itemDef.femaleEquip1 = 19441;
+				itemDef.rdc = 11;
+				break;
+
+			case 23320:
+				itemDef.copyItem(4714);
+				itemDef.name = "Midnight legs (u)";
+				itemDef.modelZoom = 1800;
+				itemDef.modelID = 19442;
+				itemDef.maleEquip1 = 19444;
+				itemDef.femaleEquip1 = 19444;
+				itemDef.rdc = 11;
+				break;
+
 
 
 			case 23291:
@@ -2275,7 +2365,7 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 65449;
 				itemDef.femaleEquip1 = 65449;
 				itemdefedit = ItemDefinition.get(2414);
-				itemDef.actions = itemdefedit.actions;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
 				itemDef.modelZoom = itemdefedit.modelZoom;
@@ -2548,7 +2638,7 @@ public class ItemDef3 {
 				break;
 
 			case 8087:
-				itemDef.copyItem(20549);
+				itemDef.copyItem(4675);
 				itemDef.name = "Dragon Rider lance";
 				itemDef.modelID = 15815;
 				itemDef.maleEquip1 = 15831;
@@ -2591,14 +2681,14 @@ public class ItemDef3 {
 				break;
 				
 			case 8089:
-				itemDef.copyItem(18629);
+				itemDef.copyItem(4675);
 				itemDef.name = "Purifier Staff";
 				itemDef.modelID = 15721;
 				itemDef.maleEquip1 = 15722;
+				itemDef.modelZoom = 2500;
 				itemDef.femaleEquip1 = 15722;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.rdc2 = 12345;
 				break;
 				
 			case 19888:

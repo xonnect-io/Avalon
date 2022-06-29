@@ -6214,12 +6214,12 @@ public class Client extends GameRenderer {
     				Save.settings(Client.getClient());
     				updateSetting(interfaceId, GameFrameConstants.gameframeType == GameFrameType.FRAME_525);
     				break;
-               /* case 26069:
+                case 26069:
                     Configuration.PARTICLES_ENABLED = !Configuration.PARTICLES_ENABLED;
                     pushMessage("Displaying particles turned " + (Configuration.PARTICLES_ENABLED ? "on" : "off") + ".", 0, "");
                     Save.settings(Client.getClient());
                     updateSetting(interfaceId, !Configuration.PARTICLES_ENABLED);
-                    break;*/
+                    break;
                 case 26027:
                     Configuration.DISPLAY_USERNAMES_ABOVE_HEAD = !Configuration.DISPLAY_USERNAMES_ABOVE_HEAD;
                     pushMessage("Displaying usernames above head turned " + (Configuration.DISPLAY_USERNAMES_ABOVE_HEAD ? "on" : "off") + ".", 0, "");

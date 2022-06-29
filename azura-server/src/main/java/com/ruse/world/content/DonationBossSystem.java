@@ -26,7 +26,6 @@ public class DonationBossSystem {
 		String message = "The Donation boss has spawned, Visit ::donoboss to fight him!";
 		World.register(currentSpawn);
 		World.sendMessage(message);
-		DiscordMessager.sendDonationBossLog("");
 		GameSettings.broadcastMessage = message;
 		GameSettings.broadcastTime = 100;
 		amntDonated = 100;

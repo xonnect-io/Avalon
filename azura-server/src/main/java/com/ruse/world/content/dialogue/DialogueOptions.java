@@ -14,6 +14,7 @@ import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.AchievementsOLD.AchievementDataOLD;
 import com.ruse.world.content.*;
+import com.ruse.world.content.celestial.CelestialDialogues;
 import com.ruse.world.content.Gambling.FlowersData;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.clan.ClanChatManager;
@@ -22,12 +23,12 @@ import com.ruse.world.content.dialogue.impl.AgilityTicketExchange;
 import com.ruse.world.content.dialogue.impl.Mandrith;
 import com.ruse.world.content.dialogue.impl.Tutorial;
 import com.ruse.world.content.dissolving.NephilimDisassemble;
+import com.ruse.world.content.dissolving.OwnerDisassemble;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.raids.SODRaids;
 import com.ruse.world.content.raids.ZombieRaidData;
 import com.ruse.world.content.raids.ZombieRaids;
-import com.ruse.world.content.Celestial.CelestialDialogues;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.mining.Mining;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -1305,7 +1306,19 @@ public class DialogueOptions {
                         }
                     }
                     break;
-
+                case 6120: //yes
+                    for (OwnerDisassemble.DisassembleData data : OwnerDisassemble.DisassembleData.values()) {
+                        if (player.getInventory().contains(data.getId(), 1)) {
+                            player.getPacketSender().sendInterfaceRemoval();
+                            player.getInventory().delete(data.getId(), 1);
+                            player.getInventory().addItemSet(data.getRewards());
+                            player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
+                            player.performAnimation(new Animation(data.getAnimation()));
+                            player.getPacketSender().sendMessage("You Disassembled the " + ItemDefinition.forId(data.getId()).getName() + " for x" + data.getRewards()[0].getAmount() + " Owner fragments");
+                            break;
+                        }
+                    }
+                    break;
                     case 6668: //yes
                     for (int i = 0; i < player.getInventory().capacity(); i++) {
                         if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
@@ -1694,6 +1707,8 @@ public class DialogueOptions {
             switch (player.getDialogueActionId()) {
                 case 668://no
                 case 8102:
+                case 6118:
+                case 6120:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 568:

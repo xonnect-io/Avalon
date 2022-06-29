@@ -78,7 +78,8 @@ public class ClanChatManager {
 					// // System.out.println("1");
 					JsonParser fileParser = new JsonParser();
 					// // System.out.println("2");
-					JsonObject reader = (JsonObject) fileParser.parse(fileReader);
+					JsonObject reader;
+					reader = (JsonObject) fileParser.parse(fileReader);
 					// // System.out.println("3");
 					if (reader.has("name") && reader.has("owner") && reader.has("index")) {
 						// // System.out.println("checked ifs");

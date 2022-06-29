@@ -1365,6 +1365,58 @@ public class RSInterface {
 		main.child(38, 48598, 459, 20);
 	}
 
+	private static void sufferingChest(TextDrawingArea[] tda) { // lol nice sprites xD
+		RSInterface main = addInterface(48130);
+		addSpriteLoader(48131, 1689);
+		addText(48132, "Rewards", tda, 1, 0xff8624, true, true);
+		addText(48134, "Rare (1/1000)", tda, 1, 0xff8624, true, true);
+		addText(48135, "Mbox Name", tda, 1, 0xff8624, true, true);
+		addClickableText(48133, "Increase chances", "Increase chances", fonts, 0, ColorConstants.BRIGHT_YELLOW, 130, 13);
+		addHoverButtonWSpriteLoader(48136, 5036, 90, 25, "Open", -1, 48137, 1);
+		addHoveredImageWSpriteLoader(48137, 5037, 118, 28, 48138);
+		addHoverButtonWSpriteLoader(48139, 5036, 90, 25, "Open All", -1, 48140, 1);
+		addHoveredImageWSpriteLoader(48140, 5037, 118, 118, 48141);
+		addText(48142, "Open", tda, 2, ColorConstants.ORANGE2, true, true);
+		addText(48143, "Open All", tda, 2, ColorConstants.ORANGE2, true, true);
+		addText(48144, "Souls of Suffering", tda, 2, ColorConstants.ORANGE2, true, true);
+		addButtonWSpriteLoader(48146, 714, "Close Window", 16, 16);
+		addToItemGroup(48145, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
+		main.totalChildren(16);
+		main.child(0, 48131, 40, 30);
+		main.child(1, 48150, 6, 120);
+		main.child(2, 48170, 288, 120);
+		main.child(3, 48132, 170, 103);
+		main.child(4, 48134, 370, 103);
+		main.child(5, 48135, 137, 67);
+		main.child(6, 48136, 201, 61);
+		main.child(7, 48137, 201, 61);
+		main.child(8, 48139, 325, 61);
+		main.child(9, 48140, 325, 61);
+		main.child(10, 48142, 260, 68);
+		main.child(11, 48143, 382, 68);
+		main.child(12, 48144, 255, 33);
+		main.child(13, 48145, 58, 58);
+		main.child(14, 48146, 435, 32);
+		main.child(15, 48133, 325, 271);
+
+		RSInterface commonScroll = addInterface(48150);
+		commonScroll.width = 266;
+		commonScroll.height = 165;
+		commonScroll.scrollMax = 500;
+		addToItemGroup(48151, 6, 100, 5, 6, true, new String[] {null, null, null, null, null});
+		commonScroll.totalChildren(1);
+		commonScroll.child(0, 48151, 50, 3);
+
+
+		RSInterface rareScroll = addInterface(48170);
+		rareScroll.width = 136;
+		rareScroll.height = 145;
+		rareScroll.scrollMax = 500;
+		addToItemGroup(48171, 3, 100, 7, 6, true, new String[] {null, null, null, null, null});
+		rareScroll.totalChildren(1);
+		rareScroll.child(0, 48171, 15, 3);
+	}
+
 	private static void mysteryBoxViewer(TextDrawingArea[] tda) { // lol nice sprites xD
 		RSInterface main = addInterface(48030);
 		addSpriteLoader(48031, 1383);
@@ -1426,115 +1478,6 @@ public class RSInterface {
 		addToItemGroup(48071, 3, 100, 5, 6, true, new String[] {null, null, null, null, null});
 		rareScroll.totalChildren(1);
 		rareScroll.child(0, 48071, 35, 3);
-	}
-
-
-	public static void raidInterface(TextDrawingArea[] tda) {
-		RSInterface main = addInterface(29050);
-		addTransparentSpriteWSpriteLoader1(29051, 1363, 135);
-		addTransparentSpriteWSpriteLoader1(29052, 1364, 135);
-		//addSpriteLoader(29051, 1363);
-		//addSpriteLoader(29052, 1364);
-		addText(29053, "Name's Group", tda, 1, ColorConstants.WHITE, true, false);
-		addText(29054, "Host: name", tda, 1, ColorConstants.WHITE, true, false);
-		addText(29055, "Players", tda, 1, ColorConstants.WHITE, true, false);
-		addText(29056, "::createparty - @whi@To create your own party", tda, 0, ColorConstants.GREEN, true, false);
-		addText(29057, "::deleteparty -  @whi@To delete your party", tda, 0, ColorConstants.ORANGE, true, false);
-		addText(29058, "::requestparty or rightclick -  @whi@to invite players to your party", tda, 0, ColorConstants.ORANGE, true, false);
-		addText(29059, "::startraid -  @whi@to start raid", tda, 0, ColorConstants.YELLOW, true, false);
-		main.totalChildren(19);
-		main.child(0, 29051, 15, 35); // its open somewhere. hmm
-		main.child(1, 29052, 15, 82);
-		main.child(2, 29053, 77, 40);
-		main.child(3, 29054, 77, 62);
-		main.child(4, 29055, 77, 88);//
-		main.child(5, 29056, 300, 220 + 8);//test
-		main.child(6, 29057, 300, 240 + 8);//test
-		main.child(7, 29058, 300, 260 + 8);//test
-		main.child(8, 29059, 300, 280 + 8);//test
-
-		int childStart = 9;
-		int yPos = 111;
-		for (int i = 0; i < 10; i++) {
-			addText(29095 + i, "", tda, 1, ColorConstants.WHITE, true, false);
-			main.child(childStart, 29095 + i, 75, yPos);
-			childStart++;
-			yPos += 20;
-		}
-	}
-
-	public static void raidRewardInterface(TextDrawingArea[] tda) {
-		RSInterface main = addInterface(29130);
-		addSpriteLoader(29131, 1365);
-		addToItemGroup(29132, 1, 1, 25, 5, true, new String[]{null, null, null, null, null});
-		addButtonWSpriteLoader(29133, 714, "Close Window", 16, 16);
-		addToItemGroup(29134, 1, 1, 25, 5, true, new String[]{null, null, null, null, null});
-		addToItemGroup(29135, 1, 1, 25, 5, true, new String[]{null, null, null, null, null});
-		addToItemGroup(29136, 1, 1, 25, 5, true, new String[]{null, null, null, null, null});
-		main.totalChildren(6);
-		main.child(0, 29131, 150, 50);
-		main.child(1, 29132, 285, 100);
-		main.child(2, 29133, 403, 58);
-		main.child(3, 29134, 285 + 30, 100);
-		main.child(4, 29135, 285 + 30 + 30, 100);
-		main.child(5, 29136, 285 + 30 + 30 + 30, 100);
-	}
-
-	public static void bootyTrapDBZInterface(TextDrawingArea[] tda) {
-		RSInterface main = addInterface(28130);
-		addSpriteLoader(28131, 1380);
-		addText(28132, "You have been booty trapped!", tda, 2, ColorConstants.YELLOW, true, false);
-
-		addButtonWSpriteLoader(28133, 714, "Close Window", 16, 16);
-		addText(28134, "DONT LET HIM FIND OUT!", tda, 1, ColorConstants.YELLOW, true, false);
-		addText(28135, "hehe you perv", tda, 1, ColorConstants.YELLOW, true, false);
-		addText(28136, "LOOoooOOLOLOOL!", tda, 1, ColorConstants.YELLOW, true, false);
-		main.totalChildren(6);
-		main.child(0, 28131, 150, 50);
-		main.child(1, 28132, 285, 60);
-		main.child(2, 28133, 403, 58);
-		main.child(3, 28134, 90 + 140, 90);
-		main.child(4, 28135, 200 + 8, 70 + 120);
-		main.child(5, 28136, 200 + 167, 70 + 100);
-
-	}
-
-	public static void bootyTrapDBZInterface2(TextDrawingArea[] tda) {
-		RSInterface main = addInterface(27130);
-		addSpriteLoader(27131, 1381);
-		addText(27132, "Piccolo has died in the battle!", tda, 2, ColorConstants.YELLOW, true, false);
-
-		addButtonWSpriteLoader(27133, 714, "Close Window", 16, 16);
-		addText(27134, "poor man!", tda, 1, ColorConstants.YELLOW, true, false);
-		addText(27135, "blasted to peices", tda, 1, ColorConstants.YELLOW, true, false);
-		addText(27136, "dont let him down!", tda, 1, ColorConstants.YELLOW, true, false);
-		main.totalChildren(6);
-		main.child(0, 27131, 150, 50);
-		main.child(1, 27132, 285, 60);
-		main.child(2, 27133, 403, 58);
-		main.child(3, 27134, 90 + 140, 90);
-		main.child(4, 27135, 200 + 8, 70 + 120);
-		main.child(5, 27136, 200 + 167, 70 + 100);
-
-	}
-
-	public static void bootyTrapDBZInterface3(TextDrawingArea[] tda) {
-		RSInterface main = addInterface(26130);
-		addSpriteLoader(26131, 1382);
-		addText(26132, "BOOO ! you are haunted!", tda, 2, ColorConstants.YELLOW, true, false);
-
-		addButtonWSpriteLoader(26133, 714, "Close Window", 16, 16);
-		addText(26134, "spooky wooowoo!", tda, 1, ColorConstants.YELLOW, true, false);
-		addText(26135, "boOOOo gHoSt", tda, 1, ColorConstants.YELLOW, true, false);
-		addText(26136, "dont be scared!", tda, 1, ColorConstants.YELLOW, true, false);
-		main.totalChildren(6);
-		main.child(0, 26131, 150, 50);
-		main.child(1, 26132, 285, 60);
-		main.child(2, 26133, 403, 58);
-		main.child(3, 26134, 90 + 140, 90);
-		main.child(4, 26135, 200 + 8, 70 + 120);
-		main.child(5, 26136, 200 + 167, 70 + 100);
-
 	}
 
 	public RSFontSystem rsFont;
@@ -6014,6 +5957,7 @@ public class RSInterface {
 			bronzeCardReward(textDrawingAreas);
 			bronzeCardMain(textDrawingAreas);
 			mysteryBoxViewer(textDrawingAreas);
+			sufferingChest(textDrawingAreas);
 			effectInterface(textDrawingAreas);
 			effectInterface2(textDrawingAreas);
 			effectInterface3(textDrawingAreas);

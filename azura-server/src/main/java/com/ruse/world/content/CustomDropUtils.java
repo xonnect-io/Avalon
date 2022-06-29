@@ -364,6 +364,24 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23288)) { //Tanzanite platelegs
             percentBoost += 30;
         }
+        if (player.getEquipment().contains(23314)) { //Mystic platelegs (u)
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23317)) { //Hellish platelegs (u)
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23320)) { //Midnight platelegs (u)
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23305)) { //Mystic platelegs
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23308)) { //Hellish platelegs
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23311)) { //Midnight platelegs
+            percentBoost += 25;
+        }
         if (player.getEquipment().contains(22102)) { //Fallen angel's platelegs
             percentBoost += 20;
         }
@@ -426,6 +444,26 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23287)) { //Tanzanite platebody
             percentBoost += 30;
         }
+
+        if (player.getEquipment().contains(23313)) { //Mystic platebody (u)
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23316)) { //Hellish platebody (u)
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23319)) { //Midnight platebody (u)
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23304)) { //Mystic platebody
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23307)) { //Hellish platebody
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23310)) { //Midnight platebody
+            percentBoost += 25;
+        }
+
         if (player.getEquipment().contains(22101)) { //Fallen angel's platebody
             percentBoost += 20;
         }
@@ -486,6 +524,26 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23286)) { //Tanzanite helmet
             percentBoost += 30;
         }
+
+        if (player.getEquipment().contains(23312)) { //Mystic helmet (u)
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23315)) { //Hellish helmet (u)
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23318)) { //Midnight helmet (u)
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23303)) { //Mystic helmet
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23306)) { //Hellish helmet
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23309)) { //Midnight helmet
+            percentBoost += 25;
+        }
+
         if (player.getEquipment().contains(22100)) { //Fallen angel's helmet
             percentBoost += 20;
         }

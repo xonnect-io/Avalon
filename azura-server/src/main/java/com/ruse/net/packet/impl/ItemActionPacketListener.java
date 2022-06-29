@@ -1794,6 +1794,13 @@ public class ItemActionPacketListener implements PacketListener {
             case 23224:
                 player.getNephilimDissolving().handleDialogue(itemId);
                 break;
+            case 7995:
+            case 22111:
+            case 23230:
+            case 23231:
+            case 23232:
+                player.getOwnerDissolving().handleDialogue(itemId);
+                break;
             case 22219:
                 int amount5 = player.getInventory().getAmount(itemId);
                 player.getInventory().delete(22219, amount5).add(5022, 10_000 * amount5);

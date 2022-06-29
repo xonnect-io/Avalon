@@ -177,6 +177,7 @@ public class ButtonClickPacketListener implements PacketListener {
             break;
 
             case -18522:
+            case -17390:
                 player.getPacketSender().removeInterface();
                 break;
 
@@ -300,12 +301,20 @@ public class ButtonClickPacketListener implements PacketListener {
                 GroupIronmanBank.depositItems(player, player.getEquipment(), false);
                 break;
 
-            case 110007:
-                player.getCasketOpening().spin();
-                break;
+            case -17400:
             case 110008:
                 player.getCasketOpening().quickSpin();
                 break;
+            case -17397:
+                player.getPacketSender().sendMessage("This feature has not yet been coded.");
+                break;
+                case -17403:
+                player.getPacketSender().sendMessage("You can sacrifice Fallen Angel armor pieces to the chest to increase your chances.");
+                break;
+            case 110007:
+                player.getCasketOpening().spin();
+                break;
+
             case 111104:
             case 111602:
                 AchievementInterface.open(player);

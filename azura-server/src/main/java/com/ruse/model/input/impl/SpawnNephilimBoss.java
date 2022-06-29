@@ -30,7 +30,6 @@ public class SpawnNephilimBoss extends EnterAmount {
 		if (NephilimSpawnSystem.sacrificedCount <= 249) {
 			World.sendMessage("@red@<img=856>[Nephilim Warrior]<img=856> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
 			World.sendMessage("@red@<img=856>[Nephilim Warrior]<img=856> @blu@" + NephilimSpawnSystem.getLeft() + " @epi@more Nephilim tokens left for Nephilim Warrior spawn.");
-			//DiscordMessager.sendNephilimBossLog(NephilimSpawnSystem.getLeft() + " more Nephilim tokens left for Nephilim Warrior spawn.");
 			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");
 			return;
 
@@ -41,6 +40,7 @@ public class SpawnNephilimBoss extends EnterAmount {
 			World.sendMessage("@red@<img=856>[Nephilim Warrior]<img=856> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
 			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");
 
+			if (GameSettings.LOCALHOST == false)
 			DiscordMessager.sendNephilimBossLog("");
 			World.sendBroadcastMessage("@bla@The Nephilim Warrior has appeared ::Nephilim");
 			GameSettings.broadcastMessage = "The Nephilim Warrior has appeared ::Nephilim";

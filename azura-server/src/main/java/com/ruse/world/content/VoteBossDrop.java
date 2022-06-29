@@ -1,9 +1,7 @@
 package com.ruse.world.content;
 
 import com.ruse.GameSettings;
-import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
-import com.ruse.motivote3.doMotivote;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.content.combat.CombatBuilder.CombatDamageCache;
@@ -30,6 +28,7 @@ public class VoteBossDrop {
 		World.sendBroadcastMessage("Vote boss has spawned at ::Vboss");
 		World.sendMessage(
 				"<img=28><shad=f9f6f6>Vote boss has spawned at ::Vboss <shad=-1>");
+		if (GameSettings.LOCALHOST == false)
 		DiscordMessager.sendVoteBossLog("");
 	}
 

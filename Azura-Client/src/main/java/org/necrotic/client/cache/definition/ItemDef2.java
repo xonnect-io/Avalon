@@ -1116,7 +1116,7 @@ public class ItemDef2 {
 				//itemDef.actions = itemDef211.actions;
 				itemDef.rotationY = def.rotationY;
 				itemDef.rotationX = def.rotationX;
-				itemDef.rdc2 = 337021;
+				itemDef.rdc2 = 293613;
 				break;
 			case 15289:
 				itemDef.name = "Upgrade Token pack (25k)";
@@ -1132,7 +1132,7 @@ public class ItemDef2 {
 				//itemDef.actions = itemDef211.actions;
 				itemDef.rotationY = def.rotationY;
 				itemDef.rotationX = def.rotationX;
-				itemDef.rdc2 = 713221;
+				itemDef.rdc2 = 283613;
 				break;
 			case 15288:
 				itemDef.name = "Upgrade Token pack (100k)";
@@ -1145,10 +1145,9 @@ public class ItemDef2 {
 				itemDef.modelOffsetX = def.modelOffsetX;
 				itemDef.modelOffsetY = def.modelOffsetY;
 				itemDef.modelZoom = 2000;
-				//itemDef.actions = itemDef211.actions;
 				itemDef.rotationY = def.rotationY;
 				itemDef.rotationX = def.rotationX;
-				itemDef.rdc2 = 676221;
+				itemDef.rdc2 = 223613;
 				break;
 			case 8213:
 				itemDef.name = "Christmas token";
@@ -4470,7 +4469,7 @@ public class ItemDef2 {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{117};
+				itemDef.editedModelColor = new int[]{67};
 				itemDef.modelID = 65284;
 				break;
 			case 7120:
@@ -5043,7 +5042,7 @@ public class ItemDef2 {
 			case 22214:
 				itemDef.copyItem(6199);
 				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{116};
+				itemDef.editedModelColor = new int[]{63};
 				itemDef.name = "PvM Box (t2)";
 				itemDef.modelID = 65284;
 				break;
@@ -5061,7 +5060,7 @@ public class ItemDef2 {
 				itemDef.rotationY = itemdefyogipic11.rotationY;
 				itemDef.rotationX = itemdefyogipic11.rotationX;
 				itemDef.modelZoom = 2000;
-				itemDef.rdc2 = 462241;
+				itemDef.rdc2 = 39477000;
 				break;
 			case 23215:
 				itemDef.name = "PVM ticket pack (5k)";
@@ -5075,7 +5074,7 @@ public class ItemDef2 {
 				itemDef.rotationY = itemdefyogipic111.rotationY;
 				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelZoom = 2000;
-				itemDef.rdc2 = 062241;
+				itemDef.rdc2 = 31155000;
 				break;
 			case 22219:
 				itemDef.name = "PVM ticket pack (10k)";
@@ -5089,7 +5088,7 @@ public class ItemDef2 {
 				itemDef.rotationY = itemdefyogipic1111.rotationY;
 				itemDef.rotationX = itemdefyogipic1111.rotationX;
 				itemDef.modelZoom = 2000;
-				itemDef.rdc2 = 442241;
+				itemDef.rdc2 = 32255111;
 				break;
 			case 21060:
 				itemDef.name = "Slayer dualsaber";

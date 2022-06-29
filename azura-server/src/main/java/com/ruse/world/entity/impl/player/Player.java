@@ -58,6 +58,7 @@ import com.ruse.world.content.dailytasks_new.TaskChallenge;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dissolving.MainDissolving;
 import com.ruse.world.content.dissolving.NephilimDisassemble;
+import com.ruse.world.content.dissolving.OwnerDisassemble;
 import com.ruse.world.content.eventboss.EventBossManager;
 import com.ruse.world.content.gamblinginterface.GamblingInterface;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
@@ -104,10 +105,6 @@ import lombok.Getter;
 import lombok.Setter;
 import mysql.impl.Donation;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -155,6 +152,12 @@ public class Player extends Character {
 
     public NephilimDisassemble getNephilimDissolving() {
         return nephilimDissolving;
+    }
+
+    private OwnerDisassemble ownerDissolving = new OwnerDisassemble(this);
+
+    public OwnerDisassemble getOwnerDissolving() {
+        return ownerDissolving;
     }
 
     private MysteryBoxManager newSpinner = new MysteryBoxManager(this);
@@ -889,6 +892,7 @@ public class Player extends Character {
     public MysteryBoxOpener getMysteryBoxOpener() {
         return mysteryBoxOpener;
     }
+
 
     public Map<Integer, Map<Integer, Integer>> getCollectedItems() {
         return collectedItems;

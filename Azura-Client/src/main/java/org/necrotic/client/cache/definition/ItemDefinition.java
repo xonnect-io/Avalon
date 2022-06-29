@@ -2334,7 +2334,7 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{114};
+				itemDef.editedModelColor = new int[]{66};
 				itemDef.modelID = 65284;
 				break;
 			case 19117:
@@ -2346,14 +2346,21 @@ public final class ItemDefinition {
 				itemDef.editedModelColor = new int[]{87};
 				itemDef.modelID = 65284;
 				break;
-				
+
 			case 20488:
 				itemDef.copyItem(6199);
-				itemDef.name = "<col=2299099><shad=12992>OP Mystery Box<shad-1>";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{119};
-				itemDef.modelID = 65284;
+				itemDef.name = "<col=2299099><shad=12992>OP Chest<shad-1>";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelZoom = 3000;
+				itemDef.rotationX = 120;
+				itemDef.rotationZ = 25;
+				itemDef.modelOffsetY = -50;
+				itemDef.editedModelColor = new int[] { 62 ,60,64};
+				itemDef.newModelColor = new int[] { 100,102,100 };
+				itemDef.modelID = 64050;
 				break;
+
 			case 18404:
 				itemDef.copyItem(6199);
 				itemDef.name = "Legends Raids Box";
@@ -2370,7 +2377,7 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{113};
+				itemDef.editedModelColor = new int[]{64};
 				itemDef.modelID = 65284;
 				break;
 				
@@ -2379,8 +2386,8 @@ public final class ItemDefinition {
 				itemDef.name = "Super Mystery Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{112};
+				itemDef.newModelColor = new int[] { 63 };
+				itemDef.editedModelColor = new int[] { 65 };
 				itemDef.modelID = 65284;
 				break;
 				
@@ -4010,8 +4017,7 @@ public final class ItemDefinition {
 				break;
 			case 5022:
 				itemDef.name = "<col=ff4f4f>PVM ticket";
-				itemDef.rdc2 = 11618;//666455
-				//itemDef.rdc2 = 325111;
+				itemDef.rdc2 = 325111;
 				itemDef.stackable = true;
 				itemDef21 = ItemDefinition.get(18652);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;

@@ -17,9 +17,10 @@ import com.ruse.net.packet.PacketListener;
 import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.clip.region.RegionClipping;
-import com.ruse.world.content.Celestial.CelestialPortal;
+import com.ruse.world.content.celestial.CelestialPortal;
 import com.ruse.world.content.*;
 import com.ruse.world.content.achievements.AchievementData;
+import com.ruse.world.content.casketopening.CasketOpening;
 import com.ruse.world.content.combat.magic.Autocasting;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
@@ -315,7 +316,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getPacketSender().sendMessage("You have been rejuvinated.");
                                 player.performGraphic(new Graphic(1310));
                                 break;
-
+                            case 2141:
+                                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SOSREWARDS);
+                                player.getCasketOpening().openSOSInterface();
+                                break;
                             case 7289:
                                 if (player.getLocation() == Location.ZOMBIE) {
                                     if (player.getRaidsParty() != null) {
@@ -324,7 +328,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                 }
                                 break;
-                            case 28213:
+                            case 10251:
                                 if (player.getLocation() == Location.SOD_LOBBY) {
                                     CurseHandler.deactivateAll(player);
                                     if (player.getRaidsParty() != null) {
@@ -2084,6 +2088,13 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 break;
                             case 411:
+                                if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+                                        .getMaxLevel(Skill.PRAYER)) {
+                                    player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+                                            player.getSkillManager().getMaxLevel(Skill.PRAYER), true);
+                                    player.getPacketSender().sendMessage("You recharge your Prayer points.");
+                                }
+
                                 if (player.getSkillManager().getMaxLevel(Skill.DEFENCE) < 30) {
                                     player.getPacketSender()
                                             .sendMessage("You need a Defence level of at least 30 to use this altar.");
@@ -2091,13 +2102,21 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 player.performAnimation(new Animation(645));
                                 if (player.getPrayerbook() == Prayerbook.NORMAL) {
-                                    player.getPacketSender()
-                                            .sendMessage("You sense a surge of power flow through your body!");
+                                    player.getPacketSender().sendMessage("You sense a surge of power flow through your body!");
                                     player.setPrayerbook(Prayerbook.CURSES);
+                                    CurseHandler.deactivateAll(player);
+                                    PrayerHandler.deactivateAll(player);
+                                } else if (player.getPrayerbook() == Prayerbook.CURSES) {
+                                    player.getPacketSender().sendMessage("You sense a surge of holiness flow through your body!");
+                                    player.setPrayerbook(Prayerbook.HOLY);
+                                    CurseHandler.deactivateAll(player);
+                                    PrayerHandler.deactivateAll(player);
                                 } else {
                                     player.getPacketSender()
                                             .sendMessage("You sense a surge of purity flow through your body!");
                                     player.setPrayerbook(Prayerbook.NORMAL);
+                                    CurseHandler.deactivateAll(player);
+                                    PrayerHandler.deactivateAll(player);
                                 }
                                 player.getPacketSender().sendTabInterface(GameSettings.PRAYER_TAB,
                                         player.getPrayerbook().getInterfaceId());
@@ -2105,6 +2124,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 CurseHandler.deactivateAll(player);
                                 CurseHandler.startDrain(player);
                                 PrayerHandler.startDrain(player);
+                                player.switchedPrayerBooks = true;
                                 break;
                             case 6552:
                                 player.performAnimation(new Animation(645));

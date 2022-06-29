@@ -4,6 +4,7 @@ import ca.momoperes.canarywebhooks.DiscordMessage;
 import ca.momoperes.canarywebhooks.WebhookClient;
 import ca.momoperes.canarywebhooks.WebhookClientBuilder;
 import ca.momoperes.canarywebhooks.embed.DiscordEmbed;
+import com.ruse.GameSettings;
 import com.ruse.engine.GameEngine;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
@@ -18,9 +19,10 @@ import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 public class ServerPerks {
@@ -121,6 +123,8 @@ public class ServerPerks {
         activePerk = perk;
         updateOverlay();
         World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has just been activated!");
+
+        if (GameSettings.LOCALHOST == false)
         discordBroadcast("");
         //reset();
         // Erase file contents

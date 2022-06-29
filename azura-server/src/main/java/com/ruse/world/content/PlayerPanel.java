@@ -7,7 +7,6 @@ import com.ruse.util.StringUtils;
 import com.ruse.world.World;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.globalBosses.*;
-import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
 import com.ruse.world.entity.impl.player.Player;
@@ -33,9 +32,6 @@ public class PlayerPanel {
                         ( ServerPerks.getInstance().getActivePerk() != null ?
                         ServerPerks.getInstance().getActivePerk().getName() :"N/A"),
                 "Bonus Skill: @whi@" + StringUtils.capitalizeFirst(DoubleXPSkillEvent.currentSkill.toString()),
-                "Loot Chest: " +
-                        (LootChest.getLocation() != null ?
-                        LootChest.getLocation().playerPanelFrame : "@whi@N/A"),
                 //
                 "Globals",
                 "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",

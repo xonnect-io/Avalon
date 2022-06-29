@@ -27,7 +27,7 @@ import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.*;
-import com.ruse.world.content.Celestial.CelestialPortal;
+import com.ruse.world.content.celestial.CelestialPortal;
 import com.ruse.world.content.PlayerPunishment.Jail;
 import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.afk.AfkSystem;

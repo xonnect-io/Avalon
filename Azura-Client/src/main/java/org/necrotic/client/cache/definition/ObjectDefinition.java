@@ -289,6 +289,15 @@ public final class ObjectDefinition {
 			definition.offsetH = 0;
 			definition.offsetY = 0;
 		}
+		if (definition.type == 2141) {
+			definition.name = "Suffering Chest";
+			definition.modelSizeH = 300;
+			definition.modelSizeY = 300;
+			definition.modelSizeX = 300;
+			definition.actions = new String[]{"Open", null, null, null, null};
+			definition.objectModelIDs = new int[]{19462}; //19458
+		}
+
 		if (definition.type == 13634) {
 			definition.name = "Portal";
 			definition.modelSizeH = 200;
@@ -301,7 +310,7 @@ public final class ObjectDefinition {
 			definition.actions[1] = null;
 			definition.objectModelIDs = new int[]{41319};
 		}
-		if (definition.type == 28213) {
+		if (definition.type == 10251) {
 			definition.name = "Portal";
 			definition.interactive = true;
 			definition.isSolidObject = true;

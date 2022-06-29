@@ -31,7 +31,7 @@ import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.WarriorsGuild;
 import com.ruse.world.content.minigames.impl.trioMinigame;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
-import com.ruse.world.content.Celestial.CelestialDialogues;
+import com.ruse.world.content.celestial.CelestialDialogues;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.construction.ConstructionActions;

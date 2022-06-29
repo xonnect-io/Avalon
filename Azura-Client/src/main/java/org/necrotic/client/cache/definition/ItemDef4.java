@@ -809,7 +809,7 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 100_009;
 				itemDef.rotationX = 1000;
 				itemDef.modelZoom = 2000;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				itemDef.newModelColor = new int[]{55};
 				itemDef.editedModelColor = new int[]{131};
 				break;
@@ -2217,6 +2217,17 @@ public class ItemDef4 {
 				itemDef.editedModelColor[0] = 56; // the new texture u want it to have
 				itemDef.stackable = false;
 				break;
+
+				case 13379:
+				itemDef.name = "Owner fragments";
+				break;
+			case 23321:
+				itemDef.copyItem(19000);
+				itemDef.name = "Suffered Crystals";
+				itemDef.rdc2 = 325111;
+				itemDef.rotationX = 150;
+				break;
+
 			case 19953:
 				itemDef.name = "<col=a69eb6>Avatar titan platebody";
 				itemDef.modelID = 65097;
@@ -2230,9 +2241,6 @@ public class ItemDef4 {
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-
-				//	itemDef.modifiedModelColors[0] = 52; // the texture that it currently has
-				//	itemDef.originalModelColors[0] = 71; // the new text
 				itemDef.stackable = false;
 
 				break;
@@ -5118,17 +5126,13 @@ public class ItemDef4 {
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = -18;
 				itemDef.name = "Owner Amulet";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 			case 23231:
 				itemDef.modelID = 17600;
 				itemDef.modelZoom = 287;
 				itemDef.name = "Owner Ring";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				itemDef.rotationX = 0;
 				itemDef.rotationY = 1765;
 				itemDef.rotationZ = 0;
@@ -5140,9 +5144,7 @@ public class ItemDef4 {
 				itemDef.copyItem(11126);
 				itemDef.modelID = 17802;
 				itemDef.name = "Owner Bracelet";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 			case 23233:
 				itemDef.copyItem(12855);

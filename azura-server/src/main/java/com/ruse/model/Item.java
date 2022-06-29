@@ -42,6 +42,11 @@ public class Item {
 	 */
 	private int id;
 
+	private int min;
+	private int max;
+	private double rate;
+	private boolean announce;
+
 	private String rarityofitem;
 	/**
 	 * Gets the item's id.
@@ -245,7 +250,29 @@ public class Item {
 		this.rarity = rarity;
 		return this;
 	}
+	public Item(int id, int min, int max, double rate, boolean announce) {
+		this.id = id;
+		this.min = min;
+		this.max = max;
+		this.rate = rate;
+		this.announce = announce;
+	}
 
+	public int getMin() {
+		return min;
+	}
+
+	public void setMin(int min) {
+		this.min = min;
+	}
+
+	public int getMax() {
+		return max;
+	}
+
+	public void setMax(int max) {
+		this.max = max;
+	}
 
 	@Override
 	public String toString() {
