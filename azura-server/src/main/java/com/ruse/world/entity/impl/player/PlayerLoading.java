@@ -142,6 +142,11 @@ public class PlayerLoading {
             }
             if (reader.has("mini-lucifer")) {
                 player.setMiniLucifer(reader.get("mini-lucifer").getAsBoolean());
+            }            if (reader.has("mini-lucifer")) {
+                player.setMiniLucifer(reader.get("mini-lucifer").getAsBoolean());
+            }
+            if (reader.has("assassins-unlocked")) {
+                player.setAssassins(reader.get("assassins-unlocked").getAsBoolean());
             }
             if (reader.has("celestial-member")) {
                 player.setCelestial(reader.get("celestial-member").getAsBoolean());
@@ -424,6 +429,9 @@ public class PlayerLoading {
             }
             if (reader.has("midnight-killcount")) {
                 player.getPointsHandler().setMIDNIGHTKILLCount(reader.get("midnight-killcount").getAsInt(), false);
+            }
+            if (reader.has("ab-killcount")) {
+                player.getPointsHandler().setAvalonBeastKC(reader.get("ab-killcount").getAsInt(), false);
             }
             if (reader.has("mini-lucifer-killcount")) {
                 player.getPointsHandler().setMiniLuciferkillcount(reader.get("mini-lucifer-killcount").getAsInt());
@@ -1068,7 +1076,6 @@ public class PlayerLoading {
             if (reader.has("lucifers-unlocked")) {
                 player.setUnlockedLucifers(reader.get("lucifers-unlocked").getAsBoolean());
             }
-
             if (reader.has("dark-supremes-unlocked")) {
                 player.setUnlockedDarkSupreme(reader.get("dark-supremes-unlocked").getAsBoolean());
             }

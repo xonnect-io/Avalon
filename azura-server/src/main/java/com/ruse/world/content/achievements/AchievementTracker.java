@@ -8,6 +8,12 @@ import com.google.gson.JsonObject;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Project Avalon
+ * Author @Avalon (AlwaysDreaming.ai@gmail.com)
+ * Created on - 6/14/2022
+ */
+
 public class AchievementTracker {
 
     private final Player player;

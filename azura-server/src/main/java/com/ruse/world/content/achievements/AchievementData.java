@@ -6,7 +6,12 @@ import org.apache.commons.lang3.text.WordUtils;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-//  63; keep track of the latest string used (update if you add new achievements)
+
+/*
+ * Project Avalon
+ * Author @Avalon (AlwaysDreaming.ai@gmail.com)
+ * Created on - 6/14/2022
+ */
 
 public enum AchievementData {
 	//Easy

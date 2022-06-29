@@ -1685,7 +1685,19 @@ Start new teleport
     }
 
     private boolean miniLucifer;
+    private boolean assassins;
     private boolean darkSupreme;
+
+
+    public void setAssassins(boolean assassins) {
+        this.assassins = assassins;
+    }
+
+    public boolean getAssassins() {
+        return assassins;
+    }
+
+
 
     public void setMiniLucifer(boolean miniLucifer) {
         this.miniLucifer = miniLucifer;

@@ -1372,10 +1372,10 @@ public class RSInterface {
 		addText(48134, "Rare (1/1000)", tda, 1, 0xff8624, true, true);
 		addText(48135, "Mbox Name", tda, 1, 0xff8624, true, true);
 		addClickableText(48133, "Increase chances", "Increase chances", fonts, 0, ColorConstants.BRIGHT_YELLOW, 130, 13);
-		addHoverButtonWSpriteLoader(48136, 5036, 90, 25, "Open", -1, 48137, 1);
-		addHoveredImageWSpriteLoader(48137, 5037, 118, 28, 48138);
-		addHoverButtonWSpriteLoader(48139, 5036, 90, 25, "Open All", -1, 48140, 1);
-		addHoveredImageWSpriteLoader(48140, 5037, 118, 118, 48141);
+		addHoverButtonWSpriteLoader(48136, 1445, 90, 25, "Open", -1, 48137, 1);
+		addHoveredImageWSpriteLoader(48137, 1446, 118, 28, 48138);
+		addHoverButtonWSpriteLoader(48139, 1445, 90, 25, "Open All", -1, 48140, 1);
+		addHoveredImageWSpriteLoader(48140, 1446, 118, 118, 48141);
 		addText(48142, "Open", tda, 2, ColorConstants.ORANGE2, true, true);
 		addText(48143, "Open All", tda, 2, ColorConstants.ORANGE2, true, true);
 		addText(48144, "Souls of Suffering", tda, 2, ColorConstants.ORANGE2, true, true);
@@ -1415,6 +1415,45 @@ public class RSInterface {
 		addToItemGroup(48171, 3, 100, 7, 6, true, new String[] {null, null, null, null, null});
 		rareScroll.totalChildren(1);
 		rareScroll.child(0, 48171, 15, 3);
+	}
+
+	private static void assassinUnlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(77130);
+		addSpriteLoader(77131, 1701);
+
+		addText(77132, "Magic Guild", tda, 2, 0xff8624, true, true);
+
+		addText(77133, "Information", tda, 2, 0xff8624, true, true);
+		addText(77134, "Requirements", tda, 2, 0xff8624, true, true);
+		addText(77135, "The Guild is a completion Minigame", tda, 1, 0xff8624, false, true);
+		addText(77136, "There is three tiers of the Guild", tda, 1, 0xff8624, false, true);
+		addText(77137, "You need requirements for each tier", tda, 1, 0xff8624, false, true);
+		addText(77138, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
+		addText(77139, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
+		addText(77140, "@red@50k Beast KC", tda, 1, 0xff8624, false, true);
+		addText(77141, "@red@Sacrifice x 1 of EACH Light Weapon", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(77142, 1445, 132, 29, "Sacrifice", -1, 77143, 1);
+		addHoveredImageWSpriteLoader(77143, 1446, 132, 29, 77144);
+
+		addText(77145, "Sacrifice", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(77146, 714, "Close Window", 16, 16);
+
+		main.totalChildren(15);
+		main.child(0, 77131, 125, 35);
+		main.child(1, 77132, 250, 42);
+		main.child(2, 77133, 250, 65);
+		main.child(3, 77134, 250, 175);
+		main.child(4, 77135, 142, 85);
+		main.child(5, 77136, 142, 100);
+		main.child(6, 77137, 142, 115);
+		main.child(7, 77138, 142, 130);
+		main.child(8, 77139, 142, 145);
+		main.child(9, 77140, 142, 197);
+		main.child(10, 77141, 142, 212);
+		main.child(11, 77142, 189, 248);
+		main.child(12, 77143, 189, 248);
+		main.child(13, 77145, 250, 255);
+		main.child(14, 77146, 355, 38);
 	}
 
 	private static void mysteryBoxViewer(TextDrawingArea[] tda) { // lol nice sprites xD
@@ -3940,35 +3979,30 @@ public class RSInterface {
 		
 		int interfaceId = 16210;
 		int children = 0;
-		int totalChildren = 5;
+		int totalChildren = 4;
 		RSInterface Interface = RSInterface.addInterface(interfaceId);
 		RSInterface.setChildren(totalChildren, Interface);
 
 		interfaceId++;
 		//children++;
-        addTransparentSpriteWSpriteLoader1(interfaceId, 1647, 150);
-		RSInterface.setBounds(interfaceId, 354, 3, children, Interface);
+		RSInterface.addTransparentSpriteWSpriteLoader1(interfaceId, 1703, 150);
+		RSInterface.setBounds(interfaceId, 185, 270, children, Interface);
 		
-		
-		interfaceId++;
-		children++;
-		RSInterface.addText(interfaceId, "Unknown Crypt", TDA, 2,  ColorConstants.ORANGE2, false, true);
-		RSInterface.setBounds(interfaceId, 386, 13, children, Interface);
 
 		interfaceId++;
 		children++;
-		RSInterface.addText(interfaceId, "Unknown Guards", TDA, 1, ColorConstants.ORANGE2, false, false);
-		RSInterface.setBounds(interfaceId, 364, 30, children, Interface);
+		RSInterface.addText(interfaceId, "Unknown Guards", TDA, 1, ColorConstants.ORANGE2, false, true);
+		RSInterface.setBounds(interfaceId, 192, 277, children, Interface);
 		
 		interfaceId++;
 		children++;
-		RSInterface.addText(interfaceId, "Unknown Creature", TDA, 1, ColorConstants.ORANGE2, false, false);
-		RSInterface.setBounds(interfaceId, 364, 47, children, Interface);
+		RSInterface.addText(interfaceId, "Unknown Creature", TDA, 1, ColorConstants.ORANGE2, false, true);
+		RSInterface.setBounds(interfaceId, 192, 292, children, Interface);
 		
 		interfaceId++;
 		children++;
-		RSInterface.addText(interfaceId, "Unknown Ghost", TDA, 1,  ColorConstants.ORANGE2, false, false);
-		RSInterface.setBounds(interfaceId, 364, 64, children, Interface);
+		RSInterface.addText(interfaceId, "Unknown Ghost", TDA, 1,  ColorConstants.ORANGE2, false, true);
+		RSInterface.setBounds(interfaceId, 192, 307, children, Interface);
 		
 
 	}
@@ -5958,6 +5992,7 @@ public class RSInterface {
 			bronzeCardMain(textDrawingAreas);
 			mysteryBoxViewer(textDrawingAreas);
 			sufferingChest(textDrawingAreas);
+			assassinUnlock(textDrawingAreas);
 			effectInterface(textDrawingAreas);
 			effectInterface2(textDrawingAreas);
 			effectInterface3(textDrawingAreas);

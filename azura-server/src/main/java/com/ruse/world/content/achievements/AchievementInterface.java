@@ -5,6 +5,12 @@ import com.ruse.net.packet.PacketSender;
 import com.ruse.world.entity.impl.player.Player;
 import java.util.Arrays;
 
+/*
+ * Project Avalon
+ * Author @Avalon (AlwaysDreaming.ai@gmail.com)
+ * Created on - 6/14/2022
+ */
+
 public class AchievementInterface {
     private static final int INTERFACE_ID = 11290;
     private static final int COLLECT_BUTTON = 11299;

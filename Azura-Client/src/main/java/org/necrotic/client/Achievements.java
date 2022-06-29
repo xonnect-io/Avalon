@@ -1,9 +1,14 @@
 package org.necrotic.client;
 
-import org.necrotic.ColorConstants;
 import org.necrotic.client.graphics.fonts.TextDrawingArea;
 
 import static org.necrotic.client.RSInterface.*;
+
+/*
+ * Project Avalon
+ * Author @Avalon (AlwaysDreaming.ai@gmail.com)
+ * Created on - 6/14/2022
+ */
 
 public class Achievements {
     private static final int ORANGE = 0xFF8624;
@@ -17,16 +22,12 @@ public class Achievements {
         RSInterface rs = addInterface(id++);
         rs.totalChildren(25);
 
-        //background
         addSpriteLoader(id, 1679);
         rs.child(frame++, id++, 14, 15);
 
-        //title 1365
         addText(id, "Achievements", fonts, 2, ORANGE, true, true);
         rs.child(frame++, id++, 259, 24);
 
-
-        //title
         addText(id, "Achievements", fonts, 2, ORANGE, true, true);
         rs.child(frame++, id++, 107, 76);
 
@@ -36,32 +37,27 @@ public class Achievements {
         addText(id, "Item Rewards", fonts, 0, ORANGE, true, true);
         rs.child(frame++, id++, 413, 176);
 
-        //Close Button
         addHoverButtonWSpriteLoader(id, 714, 16, 16, "Close Window", 0, id+1, 1);
         addHoveredImageWSpriteLoader(id+1, 715, 16, 16, id+2);
         rs.child(frame++, id, 472, 24);
         rs.child(frame++, id + 1, 472, 24);
         id += 3;
 
-        //collect button
         addHoverButtonWSpriteLoader(id, 1686, 35, 25, "Collect Reward", 0, id+1, 1);
         addHoveredImageWSpriteLoader(id+1, 1687, 35, 25, id+2);
         rs.child(frame++, id, 444, 139);
         rs.child(frame++, id + 1, 444, 139);
         id += 3;
 
-        //achievement title
         addText(id, "Achievement Name", fonts, 2, ORANGE, true, true);
         rs.child(frame++, id++, 340, 58);
-        //achievement title
+
         addText(73049, "Achievement Description", fonts, 1, ORANGE, true, true);
         rs.child(frame++, 73049, 340, 100);
-        //achievement subtitle
+
         addText(id, "Tier", fonts, 1, GREY, true, true);
         rs.child(frame++, id++, 340, 71);
 
-
-        //tabs
         addConfigButtonWSpriteLoader(id, id, 1680, 1681, 42, 20, "Easy", 0, 5, 1086);
         addConfigButtonWSpriteLoader(id + 1, id, 1680, 1681, 42, 20, "Medium", 1, 5, 1086);
         addConfigButtonWSpriteLoader(id + 2, id, 1680, 1681, 42, 20, "Hard", 2, 5, 1086);
@@ -71,7 +67,6 @@ public class Achievements {
         rs.child(frame++, id++, 106, 53);
         rs.child(frame++, id++, 147, 53);
 
-        //tabs text
         addText(id, "Easy", fonts, 1, ORANGE, true, true);
         rs.child(frame++, id++, 44, 56);
         addText(id, "Med", fonts, 1, ORANGE, true, true);
@@ -81,26 +76,19 @@ public class Achievements {
         addText(id, "Expert", fonts, 1, ORANGE, true, true);
         rs.child(frame++, id++, 167, 56);
 
-        //wrappable description
         addWrappingText(id, "A simple description of the achievement. A simple description of the achievement. A simple description of the achievement.", tda, 1, LIGHT_GREY, false, true, 279, 14);
 
         rs.child(frame++, id++, 200, 95);
 
-
-        //wrappable points/exp description
         addText(id,"Points: 100k",  fonts, 0, ORANGE, false, true);
         rs.child(frame++, id++, 198, 194);
 
-        //item container
         addContainer(id, 0, 3, 3, 10, 6, false, new String[] {null, null, null, null, null});
         for (int i = 0; i < 9; i++) {
             interfaceCache[id].inv[i] = i % 2 == 0 ? 4152 : 4154;
             interfaceCache[id].invStackSizes[i] = 1;
         }
         rs.child(frame++, id++, 357, 194);
-
-
-        //progress text
         addText(11316, "45% | 45/100", fonts, 1, 0xffff00, true, true);
         System.out.println("Interface id: " + id);
         rs.child(frame++, 11316, 340, 145);

@@ -148,6 +148,7 @@ public class PlayerSaving {
 			object.addProperty("satan-killcount", new Integer(player.getPointsHandler().getSATANKILLCount()));
 			object.addProperty("zeus-killcount", new Integer(player.getPointsHandler().getZEUSKILLCount()));
 			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
+			object.addProperty("ab-killcount", new Integer(player.getPointsHandler().getAvalonBeastBKC()));
 			object.addProperty("mini-lucifer-killcount", player.getPointsHandler().getMiniLuciferkillcount());
 			object.addProperty("lucifer-killcount", player.getPointsHandler().getLuciferkillcount());
 			object.addProperty("celestial-member", new Boolean(player.getCelestial()));
@@ -339,6 +340,7 @@ public class PlayerSaving {
 			object.addProperty("treasure-map-2-collected", player.isTreasureMap2Collected());
 			object.addProperty("treasure-map-3-collected", player.isTreasureMap3Collected());
 			object.addProperty("lucifers-unlocked", player.isUnlockedLucifers());
+			object.addProperty("assassins-unlocked", player.getAssassins());
 			object.addProperty("dark-supremes-unlocked", player.isUnlockedDarkSupreme());
 			object.add("currency-pouch", builder.toJsonTree(player.getCurrencyPouch()));
 			object.addProperty("lastTGloveIndex", player.lastTGloveIndex);

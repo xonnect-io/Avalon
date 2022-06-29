@@ -76,6 +76,7 @@ public class PointsHandler {
 	private int zeuskillcount;
 	private int groudonkillcount;
 	private int fenrirkillcount;
+	private int avalonBeastKC;
 	private int miniLuciferkillcount;
 	private int luciferkillcount;
 	private int midnightgoblinkillcount;
@@ -655,6 +656,30 @@ private int pengRate;
 
 	public void incrementMIDNIGHTKILLCount(int amt) {
 		this.midnightgoblinkillcount += amt;
+	}
+
+
+	//
+	public int getAvalonBeastBKC() {
+		return avalonBeastKC;
+	}
+
+	public void setAvalonBeastKC(int avalonBeastKC) {
+		this.avalonBeastKC = avalonBeastKC;
+	}
+	public void addAvalonBeastKC() {
+		this.avalonBeastKC++;
+	}
+
+	public void addAvalonBeastKC(int amt) {
+		this.avalonBeastKC += amt;
+	}
+
+	public void setAvalonBeastKC(int points, boolean add) {
+		if (add)
+			this.avalonBeastKC += points;
+		else
+			this.avalonBeastKC = points;
 	}
 
 	//

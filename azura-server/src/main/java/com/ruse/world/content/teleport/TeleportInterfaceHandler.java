@@ -158,6 +158,23 @@ public class TeleportInterfaceHandler {
 			return;
 		}
 
+		if (player.getCurrentTeleport().getNpcId() == 9116) {
+
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+				}
+				if (!player.getAssassins()) {
+					player.getPA().sendInterface(77130);
+					return;
+				} else if (player.getAssassins()) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+				player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return; }
+		}
+
 		if (player.getCurrentTeleport().getNpcId() == 9011) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");

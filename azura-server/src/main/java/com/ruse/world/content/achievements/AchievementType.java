@@ -2,6 +2,12 @@ package com.ruse.world.content.achievements;
 
 import org.apache.commons.lang3.text.WordUtils;
 
+/*
+ * Project Avalon
+ * Author @Avalon (AlwaysDreaming.ai@gmail.com)
+ * Created on - 6/14/2022
+ */
+
 public enum AchievementType {
     EASY,
     MEDIUM,

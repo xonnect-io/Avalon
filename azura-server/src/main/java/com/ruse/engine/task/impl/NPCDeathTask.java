@@ -547,7 +547,12 @@ public class NPCDeathTask extends Task {
             killer.getPointsHandler().incrementZEUSKILLCount(1);
         }
 
-
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 225
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addAvalonBeastKC(2);
+        } else if (npc.getId() == 225) {// zeus
+            killer.getPointsHandler().addAvalonBeastKC(1);
+        }
 
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9011
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {

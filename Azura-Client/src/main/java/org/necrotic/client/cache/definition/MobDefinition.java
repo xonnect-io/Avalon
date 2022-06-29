@@ -228,6 +228,59 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				break;
 
+			case 9115:
+				definition.name = "Hellish Sufferer";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19427,19429,19433,100137,18552,100136};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 9116:
+				definition.name = "Faceless Magician";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19463};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 9117:
+				definition.name = "Lotus Magician";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19483};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 9118:
+				definition.name = "Shadow Magician";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19484};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+
 			case 9007:
 				definition.name = "Dreambody";
 				definition.actions = new String[]{null, "Attack", null, null, null};

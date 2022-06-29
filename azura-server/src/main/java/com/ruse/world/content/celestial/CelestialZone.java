@@ -2,7 +2,7 @@ package com.ruse.world.content.celestial;
 
 /*
  * Project Avalon
- * Author @Avalon (AlwaysDreaming.io@gmail.com)
+ * Author @Avalon (AlwaysDreaming.ai@gmail.com)
  * Created on - 6/23/2022
  */
 

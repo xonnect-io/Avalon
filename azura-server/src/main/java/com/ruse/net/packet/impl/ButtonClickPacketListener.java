@@ -180,6 +180,24 @@ public class ButtonClickPacketListener implements PacketListener {
             case -17390:
                 player.getPacketSender().removeInterface();
                 break;
+            case 77142:
+                if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
+                    player.getPA().sendMessage("You need 50,000 Beast KC before you can sacrifice your light weapons.");
+                    return;
+                }
+                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(5011) && player.getInventory().contains(12537) && player.getInventory().contains(17013)) {
+                    player.getPA().sendMessage("You sacrifice your light weapons and become a Tier 1 Magician in the Guild!");
+                    World.sendMessage( "<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Magician!");
+                    player.setAssassins(true);
+                    player.getInventory().delete(5011,1);
+                    player.getInventory().delete(12537,1);
+                    player.getInventory().delete(17013,1);
+                    Position magicGuild = new Position(2655, 4017);
+                    TeleportHandler.teleportPlayer(player, magicGuild, player.getSpellbook().getTeleportType());
+                    return;
+                }   else
+                    player.getPA().sendMessage("You need to sacrifice x1 of Each Light weapon variant. (Staff, sword, and bow)");
+                     break;
 
             case -18532:
                 player.getNewSpinner().findReward();

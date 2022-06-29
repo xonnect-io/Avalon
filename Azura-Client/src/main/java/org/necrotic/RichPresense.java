@@ -11,7 +11,7 @@ import java.net.URL;
 
 public class RichPresense {
 
-	private final String CLIENT_ID = "863501926120292363";
+	private final String CLIENT_ID = "928363352474919013";
 
 	private DiscordRPC lib;
 	private DiscordRichPresence presence;
@@ -24,33 +24,32 @@ public class RichPresense {
 		presence.startTimestamp = System.currentTimeMillis() / 1000;
 		presence.largeImageKey = "avatar";
 		presence.smallImageKey = "avatar";
-		presence.details = "The #1 Custom RSPS";
-		presence.state = "Play now with 200+ Players!";
+		presence.details = "The #1 Custom RSPS!";
+		presence.state = "Avalon317.com";
 		updatePresence();
 		new Thread(() -> {
 			while (!Thread.currentThread().isInterrupted()) {
 				lib.Discord_RunCallbacks();
 				try {
 					Thread.sleep(2000);
-				} catch (InterruptedException ignored) {
-				}
+				} catch (InterruptedException ignored) {}
 			}
 		}, "RPC-Callback-Handler").start();
 	}
 
 
-	public void reloadPresence() {
+	public void reloadPresence(){
 		presence.details = "Play The #1 Custom RSPS";
-		presence.state = "Avalon.io";
+		presence.state = "Avalon317.com";
 	}
-
-	public static String getPlayercount() {
+	public static String getPlayercount(){
 		try {
 			String url = "";
 			URL obj = new URL(url);
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 			con.setRequestProperty("User-Agent", "Mozilla/5.0");
-			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(con.getInputStream()));
 			String inputLine;
 			StringBuffer response = new StringBuffer();
 
@@ -58,8 +57,10 @@ public class RichPresense {
 				response.append(inputLine);
 			}
 			in.close();
+
+			System.out.println(response.toString());
 			return response.toString();
-		} catch (Exception e) {
+		} catch(Exception e) {
 			return "212";
 		}
 	}
