@@ -76,6 +76,8 @@ public class FoxVote implements Runnable {
 			}
 			World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points * 2
 					+ " Vote scrolls! ::vote now to support the server.");
+			player.getSeasonPass().setXp(points*3);
+			player.sendMessage("You receive "+(points*3)+" Season Pass XP for voting!");
 			destroy();
 		} catch (Exception e) {
 			e.printStackTrace();

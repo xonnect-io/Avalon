@@ -12,7 +12,7 @@ import java.util.Set;
  * Author @Avalon (AlwaysDreaming.ai@gmail.com)
  * Created on - 6/14/2022
  */
-
+//i replaced the achievements since then so where is it? this is the new ones where do u complete it?
 public enum AchievementData {
 	//Easy
 	SUPPORT_AVALON(0, AchievementType.EASY, 1, "SUPPORT AVALON","Vote for Avalon",

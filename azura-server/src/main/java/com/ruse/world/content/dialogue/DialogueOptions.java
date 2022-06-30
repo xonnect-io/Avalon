@@ -1280,6 +1280,15 @@ public class DialogueOptions {
                         DialogueManager.sendStatement(player, "You do not currently have a task.");
                     }
                     break;
+                case 66668://yes
+                    if (player.getInventory().contains(23275)) {
+                        player.getInventory().delete(23275,1);
+                        player.sendMessage("You have unlocked the season pass!");
+                    } else {
+                        player.sendMessage("You do not have a season pass.");
+                    }
+                    player.getPacketSender().sendInterfaceRemoval();
+                    break;
                 case 668://yes
                     if(player.getSlayer().getSlayerTask() == null) {
                         player.sendMessage("You do not have a slayer task!");

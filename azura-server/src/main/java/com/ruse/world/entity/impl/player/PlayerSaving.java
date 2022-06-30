@@ -152,7 +152,10 @@ public class PlayerSaving {
 			object.addProperty("faceless-magician-killcount", new Integer(player.getPointsHandler().getFacelessMagicianKC()));
 			object.addProperty("lotus-magician-killcount", new Integer(player.getPointsHandler().getLotusMagicianKC()));
 			object.addProperty("shadow-magician-killcount", new Integer(player.getPointsHandler().getShadowMagicianKC()));
-
+			object.addProperty("seasonpass-xp", new Integer(player.getSeasonPass().getXp()));
+			object.addProperty("seasonpass-tier", new Integer(player.getSeasonPass().getTier()));
+			object.addProperty("seasonpass-kc", new Integer(player.getkc500forseasonpass()));
+			object.addProperty("unlockedseasonpass", new Boolean(player.isunlockedseasonpass()));
 			object.addProperty("mini-lucifer-killcount", player.getPointsHandler().getMiniLuciferkillcount());
 			object.addProperty("lucifer-killcount", player.getPointsHandler().getLuciferkillcount());
 			object.addProperty("celestial-member", new Boolean(player.getCelestial()));

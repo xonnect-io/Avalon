@@ -32,6 +32,7 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.grandLottery.GrandLottery;
 import com.ruse.world.content.minigames.impl.Barrows;
 import com.ruse.world.content.minigames.impl.VoidOfDarkness;
+import com.ruse.world.content.seasonpass.PassRewards;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.hunter.Hunter;
@@ -219,7 +220,9 @@ public class PlayerHandler {
         // Others
         Lottery.onLogin(player);
         Locations.login(player);
-
+        if(PassRewards.didSeasonEnd()){
+            player.getSeasonPass().reset();
+        }
         if(player.getLocation() != Locations.Location.PROGRESSION_ZONES) {
             player.getPacketSender().sendWalkableInterface(112000, false);
         }

@@ -439,6 +439,19 @@ public class PlayerLoading {
             if (reader.has("ab-killcount")) {
                 player.getPointsHandler().setAvalonBeastKC(reader.get("ab-killcount").getAsInt(), false);
             }
+            if (reader.has("seasonpass-xp")) {
+                player.getSeasonPass().setXp(reader.get("seasonpass-xp").getAsInt());
+            }
+            if (reader.has("seasonpass-tier")) {
+                player.getSeasonPass().setTier(reader.get("seasonpass-tier").getAsInt());
+            }
+            if (reader.has("seasonpass-kc")) {
+                player.set500kcforseasonpass(reader.get("seasonpass-kc").getAsInt());
+
+            }
+            if (reader.has("unlockedseasonpass")) {
+                player.setunlockedseasonpass(reader.get("unlockedseasonpass").getAsBoolean());
+            }
             if (reader.has("faceless-magician-killcount")) {
                 player.getPointsHandler().setFacelessMagicianKC(reader.get("faceless-magician-killcount").getAsInt(), false);
             }

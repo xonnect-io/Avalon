@@ -34,6 +34,8 @@ public class AchievementTracker {
         int oldProgress = progress.amountDone;
         int newProgress = progress.addAmount(amount, achievement.progressAmount);
         if (oldProgress != newProgress && newProgress >= achievement.progressAmount) {
+            player.getSeasonPass().addXp(2);
+            player.sendMessage("You receive 2 XP for completinga  daily achievement!");
             player.sendMessage("@red@<img=832>You have completed the achievement: @blu@" + achievement.toString());
         }
     }

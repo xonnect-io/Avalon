@@ -1,7 +1,5 @@
 package com.ruse.world.content.bossEvents;
 
-import java.util.ArrayList;
-
 import com.ruse.model.Item;
 import com.ruse.model.Position;
 import com.ruse.util.Misc;
@@ -9,6 +7,8 @@ import com.ruse.world.World;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.ArrayList;
 
 /**
  * 
@@ -98,6 +98,8 @@ public class BossEventHandler {
 			player.getPA().sendMessage(
 					"You have completed the boss task, check your inventory or bank or the floor for your reward.");
 			array.add(player.getUsername());
+			player.getSeasonPass().addXp(2);
+			player.sendMessage("You have received 2 XP for completing the boss event.");
 			finish(player);
 			return;
 		}

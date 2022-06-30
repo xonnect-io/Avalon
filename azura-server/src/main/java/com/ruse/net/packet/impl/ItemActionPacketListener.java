@@ -183,6 +183,10 @@ public class ItemActionPacketListener implements PacketListener {
             BirdNests.searchNest(player, itemId);
             return;
         }
+        if (player.getSeasonPass().isPass(itemId)) {
+            player.getSeasonPass().usepass();
+            return;
+        }
         if (Herblore.cleanHerb(player, itemId))
             return;
         if (MemberScrolls.handleScroll(player, itemId, false))

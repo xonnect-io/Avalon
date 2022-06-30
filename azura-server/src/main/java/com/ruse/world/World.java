@@ -8,6 +8,7 @@ import com.ruse.model.MessageType;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
 import com.ruse.util.CharacterBackup;
+import com.ruse.util.GameCalendar;
 import com.ruse.util.NameUtils;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.content.PlayerLogs;
@@ -37,6 +38,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import org.jetbrains.annotations.NotNull;
 
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
@@ -134,7 +136,11 @@ public class World {
         players.forEach(p -> p.getPacketSender().sendMessage(message));
     }
 
-
+    public static GameCalendar getCalendar() {
+        return calendar;
+    }
+    private static GameCalendar calendar = new GameCalendar(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"),
+            "GMT-3:00");
     public static void sendYellMessage(String message) {
         for (Player p : players) {
             if (p == null)

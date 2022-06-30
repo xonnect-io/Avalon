@@ -115,6 +115,7 @@ public class Player extends Character {
     @Getter
     @Setter
     private ArrayList<String> offences = new ArrayList<>();
+    public int npckillsforseasonpass = 0;
 
 
     @Getter
@@ -364,6 +365,7 @@ public class Player extends Character {
     private final List<Player> localPlayers = new LinkedList<Player>();
     private final List<NPC> localNpcs = new LinkedList<NPC>();
     private final PlayerProcess process = new PlayerProcess(this);
+    private boolean unlockedseasonpass;
     private final PlayerKillingAttributes playerKillingAttributes = new PlayerKillingAttributes(this);
     private final MinigameAttributes minigameAttributes = new MinigameAttributes();
     private final BankPinAttributes bankPinAttributes = new BankPinAttributes();
@@ -1794,6 +1796,19 @@ End new teleport
     public PointsHandler getPointsHandler() {
         return pointsHandler;
     }
+    public void setunlockedseasonpass(boolean unlockedpass) {
+        this.unlockedseasonpass = unlockedpass;
+    }
+    public boolean isunlockedseasonpass() {
+        return unlockedseasonpass;
+    }
+    public int set500kcforseasonpass(int kc) {
+        return this.kc500forseasonpass = kc;
+    }
+    public int getkc500forseasonpass() {
+        return this.kc500forseasonpass;
+    }
+    private int kc500forseasonpass;
 
     public CurrencyPouch getCurrencyPouch() {
         return currencyPouch;

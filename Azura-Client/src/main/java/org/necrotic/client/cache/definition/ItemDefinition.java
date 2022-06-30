@@ -4051,6 +4051,7 @@ public final class ItemDefinition {
 			case 23275:
 				itemDef.copyItem(5020);
 				itemDef.rdc3 = 73403;//666455
+				itemDef.actions = new String[]{"uses",null, null, null, "Drop"};
 				itemDef.name = "Gold Season Pass";
 				break;
 			case 22044:

@@ -153,6 +153,8 @@ public class Slayer {
 
             taskStreak++;
             player.getPointsHandler().incrementSlayerSpree(1);
+            player.getSeasonPass().addXp(1);
+            player.getPacketSender().sendMessage("You receive 1 XP for completing a slayer task!");
 
             player.getAchievementTracker().progress(AchievementData.SLAYER, 1);
             player.getAchievementTracker().progress(AchievementData.MODERATE_SLAYER, 1);

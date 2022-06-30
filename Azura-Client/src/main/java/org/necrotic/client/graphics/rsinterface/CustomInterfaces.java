@@ -2411,7 +2411,7 @@ public class CustomInterfaces extends RSInterface {
 		int c = 0;
 		int x = 25;
 		int y = 40;
-		tab.totalChildren(10);
+		tab.totalChildren(11);
 
 		addSpriteLoader(id, 1115);
 		tab.child(c++, id++, 0 + x, 0 + y);
@@ -2477,7 +2477,8 @@ public class CustomInterfaces extends RSInterface {
 
 			x += 52;
 		}
-
+		addSprite(105990, 1690);
+		tab.child(10, 105990, 114,87);
 	}
 
 	static void groupIronman(TextDrawingArea[] tda) {

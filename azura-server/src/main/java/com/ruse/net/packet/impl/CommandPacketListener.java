@@ -27,13 +27,13 @@ import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.*;
-import com.ruse.world.content.celestial.CelestialPortal;
 import com.ruse.world.content.PlayerPunishment.Jail;
 import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
 import com.ruse.world.content.cardPacks.cardPackInterfaceHandler;
+import com.ruse.world.content.celestial.CelestialPortal;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
@@ -51,13 +51,12 @@ import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.holidayevents.easter2017;
-import com.ruse.world.content.minigames.impl.*;
+import com.ruse.world.content.minigames.impl.DissolveAllDialogue;
 import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.randomevents.LootChest;
-import com.ruse.world.content.seasonpass.SeasonPass;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.SkillManager;
@@ -132,7 +131,7 @@ public class CommandPacketListener implements PacketListener {
         }
 
         if (command[0].equalsIgnoreCase("seasonpass")) {
-           new SeasonPass(player).openInterface();
+            player.getSeasonPass().openInterface();
         }
 
         if (command[0].equalsIgnoreCase("cp")) {
@@ -1048,7 +1047,12 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You've tried to kick someone in duel arena/wild. Logs written.");
             }
         }
+        if (command[0].equalsIgnoreCase("addspassxp")) {
+            int xptoadd = Integer.parseInt(command[1]);
 
+            player.getSeasonPass().addXp(xptoadd);
+            player.getSeasonPass().openInterface();
+        }
         if (command[0].equalsIgnoreCase("mute")) {
             try {
                 String[] time = command[1].split("h");

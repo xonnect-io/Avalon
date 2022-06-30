@@ -407,6 +407,11 @@ public class NPCDeathTask extends Task {
                         /** SLAYER **/
                         killer.getSlayer().killedNpc(npc);
                         npc.getCombatBuilder().getDamageMap().clear();
+                        killer.npckillsforseasonpass++;
+                        if(killer.npckillsforseasonpass == 500){
+                            killer.npckillsforseasonpass = 0;
+                            killer.sendMessage("You receive 1 XP for killing 500 NPCs!");
+                        }
                     }
                     stop();
                     break;
