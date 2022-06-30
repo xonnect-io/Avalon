@@ -145,8 +145,14 @@ public class PlayerLoading {
             }            if (reader.has("mini-lucifer")) {
                 player.setMiniLucifer(reader.get("mini-lucifer").getAsBoolean());
             }
-            if (reader.has("assassins-unlocked")) {
-                player.setAssassins(reader.get("assassins-unlocked").getAsBoolean());
+            if (reader.has("magic1-unlocked")) {
+                player.setMagicGuildTier1(reader.get("magic1-unlocked").getAsBoolean());
+            }
+            if (reader.has("magic2-unlocked")) {
+                player.setMagicGuildTier2(reader.get("magic2-unlocked").getAsBoolean());
+            }
+            if (reader.has("magic3-unlocked")) {
+                player.setMagicGuildTier3(reader.get("magic3-unlocked").getAsBoolean());
             }
             if (reader.has("celestial-member")) {
                 player.setCelestial(reader.get("celestial-member").getAsBoolean());
@@ -432,6 +438,15 @@ public class PlayerLoading {
             }
             if (reader.has("ab-killcount")) {
                 player.getPointsHandler().setAvalonBeastKC(reader.get("ab-killcount").getAsInt(), false);
+            }
+            if (reader.has("faceless-magician-killcount")) {
+                player.getPointsHandler().setFacelessMagicianKC(reader.get("faceless-magician-killcount").getAsInt(), false);
+            }
+            if (reader.has("lotus-magician-killcount")) {
+                player.getPointsHandler().setLotusMagicianKC(reader.get("lotus-magician-killcount").getAsInt(), false);
+            }
+            if (reader.has("shadow-magician-killcount")) {
+                player.getPointsHandler().setShadowMagicianKC(reader.get("shadow-magician-killcount").getAsInt(), false);
             }
             if (reader.has("mini-lucifer-killcount")) {
                 player.getPointsHandler().setMiniLuciferkillcount(reader.get("mini-lucifer-killcount").getAsInt());

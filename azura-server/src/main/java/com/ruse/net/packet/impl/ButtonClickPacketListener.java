@@ -169,12 +169,12 @@ public class ButtonClickPacketListener implements PacketListener {
         switch (id) {
             case 26070:
                 player.levelNotifications = !player.levelNotifications;
-                player.getPacketSender().sendMessage("Level-up notifications toggled: "+(player.levelNotifications ? "on" : "off")+".");
+                player.getPacketSender().sendMessage("Level-up notifications toggled: " + (player.levelNotifications ? "on" : "off") + ".");
                 break;
             case -18527:
             case 111214:
                 player.getPacketSender().sendString(1, GameSettings.StoreUrl);
-            break;
+                break;
 
             case -18522:
             case -17390:
@@ -187,17 +187,17 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(5011) && player.getInventory().contains(12537) && player.getInventory().contains(17013)) {
                     player.getPA().sendMessage("You sacrifice your light weapons and become a Tier 1 Magician in the Guild!");
-                    World.sendMessage( "<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Magician!");
-                    player.setAssassins(true);
-                    player.getInventory().delete(5011,1);
-                    player.getInventory().delete(12537,1);
-                    player.getInventory().delete(17013,1);
+                    World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Magician!");
+                    player.setMagicGuildTier1(true);
+                    player.getInventory().delete(5011, 1);
+                    player.getInventory().delete(12537, 1);
+                    player.getInventory().delete(17013, 1);
                     Position magicGuild = new Position(2655, 4017);
                     TeleportHandler.teleportPlayer(player, magicGuild, player.getSpellbook().getTeleportType());
                     return;
-                }   else
+                } else
                     player.getPA().sendMessage("You need to sacrifice x1 of Each Light weapon variant. (Staff, sword, and bow)");
-                     break;
+                break;
 
             case -18532:
                 player.getNewSpinner().findReward();
@@ -212,25 +212,51 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 8662:
-                Position fishingPos = new Position(2786,2598,0);
+                Position fishingPos = new Position(2786, 2598, 0);
                 TeleportHandler.teleportPlayer(player, fishingPos, TeleportType.NORMAL);
                 break;
 
             case 8665:
 
             case 8668:
-                Position cookingPos = new Position(2817,2598,0);
+                Position cookingPos = new Position(2817, 2598, 0);
                 TeleportHandler.teleportPlayer(player, cookingPos, TeleportType.NORMAL);
                 break;
 
             case 28178:
-                Position huntingPos = new Position(2788,2608,0);
+                Position huntingPos = new Position(2788, 2608, 0);
                 TeleportHandler.teleportPlayer(player, huntingPos, TeleportType.NORMAL);
                 break;
 
             case 8656:
-                Position miningPos = new Position(2803,2611,0);
+                Position miningPos = new Position(2803, 2611, 0);
                 TeleportHandler.teleportPlayer(player, miningPos, TeleportType.NORMAL);
+                break;
+
+            case 77342:
+                 if (player.getPointsHandler().getFacelessMagicianKC() < 50000) {
+                    player.getPA().sendMessage("You need 50,000 Faceless Magician kills before sacrificing a Dark weapon.");
+                     return;
+                }   else if (player.getMagicGuildTier1() && player.getPointsHandler().getFacelessMagicianKC() >= 50000 && player.getInventory().contains(22213)) {
+                    player.getPA().sendMessage("You sacrifice 1 Dark weapon and Unlock Tier 2 of the Magic Guild.");
+                    World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has achieved @red@Tier 2 @blu@of the @red@Magic Guild");
+                    player.getInventory().delete(22213, 1);
+                    return;
+                } else if (player.getMagicGuildTier1() && player.getPointsHandler().getFacelessMagicianKC() >= 50000 && player.getInventory().contains(22214)) {
+                    player.getPA().sendMessage("You sacrifice 1 Dark weapon and Unlock Tier 2 of the Magic Guild.");
+                     World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has achieved @red@Tier 2 @blu@of the @red@Magic Guild");
+                    player.getInventory().delete(22214, 1);
+                    return;
+                }  else if (player.getMagicGuildTier1() && player.getPointsHandler().getFacelessMagicianKC() >= 50000 && player.getInventory().contains(22215)) {
+                    player.getPA().sendMessage("You sacrifice 1 Dark weapon and Unlock Tier 2 of the Magic Guild.");
+                     World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has achieved @red@Tier 2 @blu@of the @red@Magic Guild");
+                    player.getInventory().delete(22215, 1);
+                    return;
+                }   else if (player.getPointsHandler().getFacelessMagicianKC() >= 50000 && !player.getInventory().contains(22215)
+                         || !player.getInventory().contains(22214) || !player.getInventory().contains(22213)) {
+                    player.getPA().sendMessage("You need a Dark weapon to Level up!");
+                    return;
+                }
                 break;
 
             case 8659:

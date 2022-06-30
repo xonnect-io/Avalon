@@ -1262,6 +1262,59 @@ public final class CombatFactory {
                 }
             }
 
+            else if (npc.getId() == 9116) { // Faceless magician
+                if (!((Player) entity).getMagicGuildTier1()) {
+                    player.getPA().sendInterface(77130);
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("You need to unlock Tier 1 first!");
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 9117) { // Lotus magician
+                if (!((Player) entity).getMagicGuildTier1()) {
+                    player.getPA().sendInterface(77130);
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("You need to unlock Tier 1 first!");
+                    return false;
+                }
+                if (!((Player) entity).getMagicGuildTier2()) {
+                    player.getPA().sendInterface(77130);
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("You need to unlock Tier 2 first!");
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 9118) { // Shadow magician
+                if (!((Player) entity).getMagicGuildTier1()) {
+                    player.getPA().sendInterface(77130);
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("You need to unlock Tier 1 first!");
+                    return false;
+                }
+                if (!((Player) entity).getMagicGuildTier2()) {
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("You need to unlock Tier 2 first!");
+                    return false;
+                }
+
+                if (!((Player) entity).getMagicGuildTier3()) {
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("You need to unlock Tier 3 first!");
+                    return false;
+                }
+            }
+
+            else if (npc.getId() == 9116) {
+                if (player.getPointsHandler().getSPAWNKILLCount() <= 99) {
+                    player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
+                            + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
             else if (npc.getId() == 1614) {
                 if (player.getPointsHandler().getNPCKILLCount() <= 49){
                     player.getPacketSender().sendMessage("You need 50 npc kill Count. You currently have @red@"

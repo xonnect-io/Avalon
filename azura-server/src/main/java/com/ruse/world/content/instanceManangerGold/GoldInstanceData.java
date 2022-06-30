@@ -69,7 +69,12 @@ public enum GoldInstanceData {
 			"Inuyasha",new Position(2758, 4743), RegionInstanceType.KINGS),
 	TOLOROKOTH(125099, 6430, "Tolrokoth", 3308, new int[] { 19624 },
 			"Tolrokoth",new Position(2758, 4743), RegionInstanceType.KINGS),
-
+	TIER_1(-125100, 9116, "Faceless Magician", 3308, new int[] { 19624 },
+			"Faceless Magician",new Position(2758, 4743), RegionInstanceType.KINGS),
+	TIER_2(-125101, 9117, "Lotus Magician", 3308, new int[] { 19624 },
+			"Lotus Magician",new Position(2758, 4743), RegionInstanceType.KINGS),
+	TIER_3(-125102, 9118, "Shadow Magician", 3308, new int[] { 19624 },
+			"Shadow Magician",new Position(2758, 4743), RegionInstanceType.KINGS),
 
 	;
 

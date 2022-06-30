@@ -1685,19 +1685,34 @@ Start new teleport
     }
 
     private boolean miniLucifer;
-    private boolean assassins;
+    private boolean magicguildtier1;
+    private boolean magicguildtier2;
+    private boolean magicguildtier3;
     private boolean darkSupreme;
 
-
-    public void setAssassins(boolean assassins) {
-        this.assassins = assassins;
+//Start magic guild
+    public void setMagicGuildTier1(boolean magicguildtier1) {
+        this.magicguildtier1 = magicguildtier1;
+    }
+    public boolean getMagicGuildTier1() {
+        return magicguildtier1;
     }
 
-    public boolean getAssassins() {
-        return assassins;
+    public void setMagicGuildTier2(boolean magicguildtier2) {
+        this.magicguildtier2 = magicguildtier2;
+    }
+    public boolean getMagicGuildTier2() {
+        return magicguildtier2;
     }
 
+    public void setMagicGuildTier3(boolean magicguildtier3) {
+        this.magicguildtier3 = magicguildtier3;
+    }
+    public boolean getMagicGuildTier3() {
+        return magicguildtier3;
+    }
 
+//End magic guild
 
     public void setMiniLucifer(boolean miniLucifer) {
         this.miniLucifer = miniLucifer;

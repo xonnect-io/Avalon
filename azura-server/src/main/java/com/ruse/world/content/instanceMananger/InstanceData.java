@@ -13,7 +13,7 @@ public enum InstanceData {
 
 	EMBER_GIANTS(-30465, 9838, "Ember Giant", 35, new int[] { 19624 },
 			"Ember Giant",new Position(2758, 4743), RegionInstanceType.KINGS),
-	TREE_BASILISK(-30464, 1718, "Tree Basilisk", 35, new int[] { 19624 },
+	TREE_BASILISK(-30464, 1718, "Tree Gorgon", 35, new int[] { 19624 },
 			"Tree Basilisk",new Position(2758, 4743), RegionInstanceType.KINGS),
 	BAT_OF_LIGHT(-30463, 9836, "Bat of light", 35, new int[] { 19624 },
 			"Bat of light",new Position(2758, 4743), RegionInstanceType.KINGS),
@@ -69,7 +69,12 @@ public enum InstanceData {
 			"Inuyasha",new Position(2758, 4743), RegionInstanceType.KINGS),
 	TOLOROKOTH(-30437, 6430, "Tolrokoth", 3308, new int[] { 19624 },
 			"Tolrokoth",new Position(2758, 4743), RegionInstanceType.KINGS),
-
+	TIER_1(-30436, 9116, "Faceless Magician", 3308, new int[] { 19624 },
+			"Faceless Magician",new Position(2758, 4743), RegionInstanceType.KINGS),
+	TIER_2(-30435, 9117, "Lotus Magician", 3308, new int[] { 19624 },
+			"Lotus Magician",new Position(2758, 4743), RegionInstanceType.KINGS),
+	TIER_3(-30434, 9118, "Shadow Magician", 3308, new int[] { 19624 },
+			"Shadow Magician",new Position(2758, 4743), RegionInstanceType.KINGS),
 
 
 

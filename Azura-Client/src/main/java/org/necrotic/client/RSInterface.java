@@ -1455,6 +1455,150 @@ public class RSInterface {
 		main.child(13, 77145, 250, 255);
 		main.child(14, 77146, 355, 38);
 	}
+	private static void assassinTier1Unlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(77330);
+		addSpriteLoader(77331, 1702);
+
+		addText(77332, "Magic Guild", tda, 2, 0xff8624, true, true);
+
+		addText(77333, "Information", tda, 2, 0xff8624, true, true);
+		addText(77334, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
+		addText(77335, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
+		addText(77336, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
+		addText(77337, "@red@- 50,000 Faceless Magician KC", tda, 1, 0xff8624, false, true);
+		addText(77338, "@red@- Sacrifice a Dark weapon", tda, 1, 0xff8624, false, true);
+		addSpriteLoader(77348, 1659);
+		addSpriteLoader(77349, 1658);
+		addSpriteLoader(77350, 1658);
+		addSpriteLoader(77351, 1704);
+		addSpriteLoader(77352, 1704);
+		addText(77339, "Tier 1", tda, 1, 0xff8624, false, true);
+		addText(77340, "Magic claws", tda, 1, 0xff8624, false, true);
+		addText(77341, "Tier 2", tda, 1, 0xff8624, false, true);
+		addText(77347, "Tier 3", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(77342, 1445, 132, 29, "Sacrifice", -1, 77343, 1);
+		addHoveredImageWSpriteLoader(77343, 1446, 132, 29, 77344);
+		addText(77345, "Level Up", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(77346, 714, "Close Window", 16, 16);
+
+		main.totalChildren(21);
+		main.child(0, 77331, 125, 35);
+		main.child(1, 77332, 250, 42);
+		main.child(2, 77333, 250, 95);
+		main.child(3, 77334, 250, 215);
+		main.child(4, 77335, 142, 120);
+		main.child(5, 77336, 142, 150);
+		main.child(6, 77337, 142, 165);
+		main.child(7, 77338, 142, 180);
+		main.child(8, 77348, 135, 60);
+		main.child(9, 77349, 213, 60);
+		main.child(10, 77350, 293, 60);
+		main.child(11, 77351, 262, 63);
+		main.child(12, 77352, 340, 63);
+		main.child(13, 77339, 142, 64);
+		main.child(14, 77340, 142, 233);
+		main.child(15, 77341, 218, 64);
+		main.child(16, 77342, 189, 279);
+		main.child(17, 77343, 189, 279);
+		main.child(18, 77345, 252, 287);
+		main.child(19, 77346, 355, 38);
+		main.child(20, 77347, 298, 64);
+	}
+
+	private static void assassinTier2Unlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(77430);
+		addSpriteLoader(77431, 1702);
+
+		addText(77432, "Magic Guild", tda, 2, 0xff8624, true, true);
+
+		addText(77433, "Information", tda, 2, 0xff8624, true, true);
+		addText(77434, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
+		addText(77435, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
+		addText(77436, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
+		addText(77437, "@red@- 100,000 Lotus Magician KC", tda, 1, 0xff8624, false, true);
+		addText(77438, "@red@- Sacrifice a Blood weapon", tda, 1, 0xff8624, false, true);
+		addSpriteLoader(77448, 1658);
+		addSpriteLoader(77449, 1659);
+		addSpriteLoader(77450, 1658);
+		addSpriteLoader(77452, 1704);
+		addText(77439, "Tier 1", tda, 1, 0xff8624, false, true);
+		addText(77440, "Gemstone Kaseki", tda, 1, 0xff8624, false, true);
+		addText(77441, "Tier 2", tda, 1, 0xff8624, false, true);
+		addText(77447, "Tier 3", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(77442, 1445, 132, 29, "Level Up", -1, 77443, 1);
+		addHoveredImageWSpriteLoader(77443, 1446, 132, 29, 77444);
+		addText(77445, "Level Up", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(77446, 714, "Close Window", 16, 16);
+
+		main.totalChildren(20);
+		main.child(0, 77431, 125, 35);
+		main.child(1, 77432, 250, 42);
+		main.child(2, 77433, 250, 95);
+		main.child(3, 77434, 250, 215);
+		main.child(4, 77435, 142, 120);
+		main.child(5, 77436, 142, 150);
+		main.child(6, 77437, 142, 165);
+		main.child(7, 77438, 142, 180);
+		main.child(8, 77448, 135, 60);
+		main.child(9, 77449, 213, 60);
+		main.child(10, 77450, 293, 60);
+		main.child(11, 77452, 340, 63);
+		main.child(12, 77439, 142, 64);
+		main.child(13, 77440, 142, 233);
+		main.child(14, 77441, 218, 64);
+		main.child(15, 77442, 189, 279);
+		main.child(16, 77443, 189, 279);
+		main.child(17, 77445, 252, 287);
+		main.child(18, 77446, 355, 38);
+		main.child(19, 77447, 298, 64);
+	}
+
+	private static void assassinTier3Unlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(77530);
+		addSpriteLoader(77531, 1702);
+
+		addText(77532, "Magic Guild", tda, 2, 0xff8624, true, true);
+
+		addText(77533, "Information", tda, 2, 0xff8624, true, true);
+		addText(77534, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
+		addText(77535, "Next Tier: @whi@Magic Master", tda, 1, 0xff8624, false, true);
+		addText(77536, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
+		addText(77537, "@red@- 150,000 Shadow Magician KC", tda, 1, 0xff8624, false, true);
+		addText(77538, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
+		addSpriteLoader(77548, 1658);
+		addSpriteLoader(77549, 1658);
+		addSpriteLoader(77550, 1659);
+		addText(77539, "Tier 1", tda, 1, 0xff8624, false, true);
+		addText(77540, "20% Permanent Damage Boost", tda, 1, 0xff8624, false, true);
+		addText(77541, "Tier 2", tda, 1, 0xff8624, false, true);
+		addText(77547, "Tier 3", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(77542, 1445, 132, 29, "Level Up", -1, 77543, 1);
+		addHoveredImageWSpriteLoader(77543, 1446, 132, 29, 77444);
+		addText(77545, "Level Up", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(77546, 714, "Close Window", 16, 16);
+
+		main.totalChildren(19);
+		main.child(0, 77531, 125, 35);
+		main.child(1, 77532, 250, 42);
+		main.child(2, 77533, 250, 95);
+		main.child(3, 77534, 250, 215);
+		main.child(4, 77535, 142, 120);
+		main.child(5, 77536, 142, 150);
+		main.child(6, 77537, 142, 165);
+		main.child(7, 77538, 142, 180);
+		main.child(8, 77548, 135, 60);
+		main.child(9, 77549, 213, 60);
+		main.child(10, 77550, 293, 60);
+		main.child(11, 77539, 142, 64);
+		main.child(12, 77540, 142, 233);
+		main.child(13, 77541, 218, 64);
+		main.child(14, 77542, 189, 279);
+		main.child(15, 77543, 189, 279);
+		main.child(16, 77545, 252, 287);
+		main.child(17, 77546, 355, 38);
+		main.child(18, 77547, 298, 64);
+	}
+
 
 	private static void mysteryBoxViewer(TextDrawingArea[] tda) { // lol nice sprites xD
 		RSInterface main = addInterface(48030);
@@ -2424,7 +2568,7 @@ public class RSInterface {
 		// Scoll bar size, witdh and scrolling size.
 		scrollTableft.width = 143;
 		scrollTableft.height = 255;
-		scrollTableft.scrollMax = 450;
+		scrollTableft.scrollMax = 485;
 
 		int npcList = 50;
 		int y = 1;
@@ -5993,6 +6137,9 @@ public class RSInterface {
 			mysteryBoxViewer(textDrawingAreas);
 			sufferingChest(textDrawingAreas);
 			assassinUnlock(textDrawingAreas);
+			assassinTier1Unlock(textDrawingAreas);
+			assassinTier2Unlock(textDrawingAreas);
+			assassinTier3Unlock(textDrawingAreas);
 			effectInterface(textDrawingAreas);
 			effectInterface2(textDrawingAreas);
 			effectInterface3(textDrawingAreas);

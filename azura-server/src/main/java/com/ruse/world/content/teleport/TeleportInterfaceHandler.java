@@ -166,10 +166,10 @@ public class TeleportInterfaceHandler {
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 			return;
 				}
-				if (!player.getAssassins()) {
+				if (!player.getMagicGuildTier1()) {
 					player.getPA().sendInterface(77130);
 					return;
-				} else if (player.getAssassins()) {
+				} else if (player.getMagicGuildTier1()) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 				player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return; }

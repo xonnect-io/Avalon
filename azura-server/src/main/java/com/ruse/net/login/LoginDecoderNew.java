@@ -219,7 +219,7 @@ public final class LoginDecoderNew extends FrameDecoder {
             }
         }
 
-//			if (!found && !player.getUsername().equalsIgnoreCase("Test") && GameSettings.GAME_PORT != 43594) {
+//			if (!found && !player.getUsername().equalsIgnoreCase("Test") && GameSettings.GAME_PORT != AlwaysDreaming.ai) {
 //				sendReturnCode(channel, LoginResponses.OLD_CLIENT_VERSION, player);
 //				return null;
 //			}

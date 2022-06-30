@@ -149,6 +149,10 @@ public class PlayerSaving {
 			object.addProperty("zeus-killcount", new Integer(player.getPointsHandler().getZEUSKILLCount()));
 			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
 			object.addProperty("ab-killcount", new Integer(player.getPointsHandler().getAvalonBeastBKC()));
+			object.addProperty("faceless-magician-killcount", new Integer(player.getPointsHandler().getFacelessMagicianKC()));
+			object.addProperty("lotus-magician-killcount", new Integer(player.getPointsHandler().getLotusMagicianKC()));
+			object.addProperty("shadow-magician-killcount", new Integer(player.getPointsHandler().getShadowMagicianKC()));
+
 			object.addProperty("mini-lucifer-killcount", player.getPointsHandler().getMiniLuciferkillcount());
 			object.addProperty("lucifer-killcount", player.getPointsHandler().getLuciferkillcount());
 			object.addProperty("celestial-member", new Boolean(player.getCelestial()));
@@ -340,7 +344,9 @@ public class PlayerSaving {
 			object.addProperty("treasure-map-2-collected", player.isTreasureMap2Collected());
 			object.addProperty("treasure-map-3-collected", player.isTreasureMap3Collected());
 			object.addProperty("lucifers-unlocked", player.isUnlockedLucifers());
-			object.addProperty("assassins-unlocked", player.getAssassins());
+			object.addProperty("magic1-unlocked", player.getMagicGuildTier1());
+			object.addProperty("magic2-unlocked", player.getMagicGuildTier2());
+			object.addProperty("magic3-unlocked", player.getMagicGuildTier3());
 			object.addProperty("dark-supremes-unlocked", player.isUnlockedDarkSupreme());
 			object.add("currency-pouch", builder.toJsonTree(player.getCurrencyPouch()));
 			object.addProperty("lastTGloveIndex", player.lastTGloveIndex);
