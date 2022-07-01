@@ -236,7 +236,7 @@ public class PlayerHandler {
         if (GameSettings.ELITE_DONO_DEAL == true)
         player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Special Goodiebag");
         if (GameSettings.SUMMER_DONO_DEAL == true)
-            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x5 Summer Goodiebag");
+            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x5 Summer Boxes!");
 
         if (GameSettings.BCRYPT_HASH_PASSWORDS && Misc.needsNewSalt(player.getSalt())) {
             player.setSalt(BCrypt.gensalt(GameSettings.BCRYPT_ROUNDS));

@@ -185,8 +185,8 @@ public class Donation extends Database {
                     }
                 if (GameSettings.SUMMER_DONO_DEAL && paid >= 50) {
                     player.getInventory().add(23322, 1);
-                    player.sendMessage("You received x5 Spring boxes for donating 50+");
-                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "</shad>@bla@Donated 50+ and received @red@<shad=1>x1 Owner cape Goodiebag");
+                    player.sendMessage("You received x5 Summer boxes for donating 50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "</shad>@bla@Donated 50+ and received @red@<shad=1>x5 Summer boxes!");
                 }
                 if (paid >= 5) {
                     World.sendMessage("<img=5><shad=1>@yel@Donation: @blu@" + player.getUsername()
