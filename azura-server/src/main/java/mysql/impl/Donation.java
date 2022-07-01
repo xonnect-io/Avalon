@@ -178,11 +178,16 @@ public class Donation extends Database {
                     player.getInventory().add(23174, (int) paid * 2);
                     player.sendMessage("You are rewarded x2 High-Tier tickets for donating more than $250");
                 }
-                if (GameSettings.ELITE_DONO_DEAL && paid > 75) {
+                if (GameSettings.ELITE_DONO_DEAL && paid >= 50) {
                     player.getInventory().add(3578, 1);
-                    player.sendMessage("You received an Owner cape Goodiebag for donating 75+");
-                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "</shad>@bla@Donated 75+ and received @red@<shad=1>x1 Owner cape Goodiebag");
+                    player.sendMessage("You received an Owner cape Goodiebag for donating 50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "</shad>@bla@Donated 50+ and received @red@<shad=1>x1 Owner cape Goodiebag");
                     }
+                if (GameSettings.SUMMER_DONO_DEAL && paid >= 50) {
+                    player.getInventory().add(23322, 1);
+                    player.sendMessage("You received x5 Spring boxes for donating 50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "</shad>@bla@Donated 50+ and received @red@<shad=1>x1 Owner cape Goodiebag");
+                }
                 if (paid >= 5) {
                     World.sendMessage("<img=5><shad=1>@yel@Donation: @blu@" + player.getUsername()
                             + "@or2@ has donated! @red@::Donate@or2@ now to show support for @red@Avalon!");
