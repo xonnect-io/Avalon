@@ -29,7 +29,7 @@ public class Configuration {
 	public static final String SETTINGS_DIRECTORY_NAME = ".Avalon_data";
 	public final static boolean JAGCACHED_ENABLED = false;
 	public final static String JAGCACHED_HOST = "";
-	public final static int SERVER_PORT = 43594;
+	public final static int SERVER_PORT = 9420;
 	public final static boolean DISPLAY_GAMEWORLD_ON_LOGIN = false;
 	public final static int NPC_BITS = 18;
 	public static final boolean SEND_HASH = true;

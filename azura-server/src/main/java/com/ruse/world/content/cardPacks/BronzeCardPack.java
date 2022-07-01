@@ -1,7 +1,9 @@
 package com.ruse.world.content.cardPacks;
 
-import com.ruse.model.Item;
+import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.world.World;
+import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.Arrays;
@@ -32,170 +34,154 @@ public class BronzeCardPack {
         player.getPacketSender().sendItemOnInterface(23387, 23276, 1);
     }
 
-    public static List<Item> bronzeRewards = Arrays.asList(
-            new Item(4446, 1, "bronze"),
-            new Item(19886, 1, "bronze"),
-            new Item(1486, 1, "bronze"),
-            new Item(20489, 1, "bronze"),
-            new Item(20489, 2, "bronze"),
-            new Item(10946, 10, "bronze"),
-            new Item(10946, 7, "bronze"),
-            new Item(10946, 5, "bronze"),
-            new Item(15288, 20, "bronze"),
-            new Item(15288, 15, "bronze"),
-            new Item(15288, 10, "bronze"),
-            new Item(5022, 1_000_000, "bronze"),
-            new Item(5022, 750_000,"bronze"),
-            new Item(6769, 1,"bronze"),
-            new Item(10942, 1, "bronze"),
-            new Item(4278, 200, "bronze"),
-            new Item(4278, 250, "bronze"),
-            new Item(4278, 300, "bronze")
+    public static List<Box> bronzeRewards = Arrays.asList(
+            new Box(4446, 1, 1, 33,false, "bronze"),
+            new Box(19886, 1, 1, 33,false, "bronze"),
+            new Box(1486, 1, 1, 33,false, "bronze"),
+            new Box(20489, 1, 1, 33,false, "bronze"),
+            new Box(20489, 1, 2, 33,false, "bronze"),
+            new Box(10946, 5, 10, 33,false, "bronze"),
+            new Box(10946, 5, 7, 33,false, "bronze"),
+            new Box(10946, 3, 5, 33,false, "bronze"),
+            new Box(15288, 10, 20, 33,false, "bronze"),
+            new Box(15288, 15, 20, 33,false, "bronze"),
+            new Box(15288, 5, 10, 33,false, "bronze"),
+            new Box(5022, 750_000, 1_000_000, 33,false, "bronze"),
+            new Box(5022, 500_000, 750_000, 33,false, "bronze"),
+            new Box(6769, 1, 1, 33,false, "bronze"),
+            new Box(10942, 1, 1, 33,false, "bronze"),
+            new Box(4278, 50, 200, 33,false, "bronze"),
+            new Box(4278, 50, 250, 33,false, "bronze"),
+            new Box(4278, 50, 300, 33,false, "bronze")
 
     );
 
-    public static List<Item> silverRewards = Arrays.asList(
-            new Item(15359, 3, "silver"),
-            new Item(15359, 5, "silver"),
-            new Item(15358, 3, "silver"),
-            new Item(15358, 5, "silver"),
-            new Item(19115, 200, "silver"),
-            new Item(19114, 100, "silver"),
-            new Item(19114, 50, "silver"),
-            new Item(23174, 3, "silver"),
-            new Item(15290, 200, "silver"),
-            new Item(15290, 250, "silver"),
-            new Item(15290, 300, "silver"),
-            new Item(15289, 40, "silver"),
-            new Item(15289, 50, "silver"),
-            new Item(15289, 75, "silver"),
-            new Item(23046, 1, "silver"),
-            new Item(20488, 15, "silver"),
-            new Item(20488, 10, "silver")
+    public static List<Box> silverRewards = Arrays.asList(
+            new Box(15359, 500_000, 750_000, 33,false, "silver"),
+            new Box(15359, 2, 5, 33,false, "silver"),
+            new Box(15358, 2, 3, 33,false, "silver"),
+            new Box(15358, 2, 5, 33,false, "silver"),
+            new Box(19115, 50, 200, 33,false, "silver"),
+            new Box(19114, 50, 100, 33,false, "silver"),
+            new Box(19114, 25, 50, 33,false, "silver"),
+            new Box(23174, 2, 3, 33,false, "silver"),
+            new Box(15290, 50, 200, 33,false, "silver"),
+            new Box(15290, 50, 250, 33,false, "silver"),
+            new Box(15290, 50, 300, 33,false, "silver"),
+            new Box(15289, 20, 40, 33,false, "silver"),
+            new Box(15289, 25, 50, 33,false, "silver"),
+            new Box(15289, 25, 75, 33,false, "silver"),
+            new Box(23046, 1, 1, 33,false, "silver"),
+            new Box(20488, 5, 15, 33,false, "silver"),
+            new Box(20488, 5, 10, 33,false, "silver"),
+            new Box(3739, 1, 1, 33,false, "silver"),
+            new Box(3738, 1, 1, 33,false, "silver"),
+            new Box(3737, 1, 1, 33,false, "silver"),
+            new Box(8087, 1, 1, 33,false, "silver"),
+            new Box(8088, 1, 1, 33,false, "silver"),
+            new Box(8089, 1, 1, 33,false, "silver"),
+            new Box(11137, 50, 200, 33,false, "silver"),
+            new Box(19888, 1, 1, 33,false, "silver"),
+            new Box(18823, 1, 1, 33,false, "silver"),
+            new Box(23264, 5, 25, 33,false, "silver"),
+            new Box(23264, 5, 50, 33,false, "silver"),
+            new Box(21220, 200, 1000, 33,false, "silver"),
+            new Box(21220, 200, 750, 33,false, "silver"),
+            new Box(23215, 50, 250, 33,false, "silver"),
+            new Box(23215, 50, 200, 33,false, "silver"),
+            new Box(22219, 25, 75, 33,false, "silver"),
+            new Box(22219, 25, 100, 33,false, "silver"),
+            new Box(21218, 15, 30, 33,false, "silver"),
+            new Box(21218, 15, 25, 33,false, "silver"),
+            new Box(22006, 15, 25, 33,false, "silver"),
+            new Box(22006, 15, 50, 33,false, "silver"),
+            new Box(20489, 3, 10, 33,false, "silver"),
+            new Box(10946, 10, 25, 33,false, "silver"),
+            new Box(10946, 10, 20, 33,false, "silver"),
+            new Box(15288, 50, 75, 33,false, "silver"),
+            new Box(15288, 20, 30, 33,false, "silver"),
+            new Box(15288, 35, 50, 33,false, "silver"),
+            new Box(5022, 1500000, 2500000, 33,false, "silver"),
+            new Box(5022, 1500000, 4000000, 33,false, "silver")
     );
 
-    public static List<Item> goldRewards = Arrays.asList(
-            new Item(3739, 1, "gold"),
-            new Item(3738, 1, "gold"),
-            new Item(3737, 1, "gold"),
-            new Item(8087, 1, "gold"),
-            new Item(8088, 1, "gold"),
-            new Item(8089, 1, "gold"),
-            new Item(11137, 200, "gold"),
-            new Item(19888, 1, "gold"),
-            new Item(18823, 1, "gold"),
-            new Item(23264, 30, "gold"),
-            new Item(23264, 50, "gold"),
-            new Item(21220, 1000,  "gold"),
-            new Item(21220, 750,  "gold"),
-            new Item(23215, 250,  "gold"),
-            new Item(23215, 200,  "gold"),
-            new Item(22219, 75,  "gold"),
-            new Item(22219, 100,  "gold"),
-            new Item(21218, 30,  "gold"),
-            new Item(21218, 25,  "gold"),
-            new Item(22006, 25,  "gold"),
-            new Item(22006, 50,  "gold"),
-            new Item(20489, 10,  "gold"),
-            new Item(10946, 30,  "gold"),
-            new Item(10946, 20, "gold"),
-            new Item(15288, 75, "gold"),
-            new Item(15288, 30, "gold"),
-            new Item(15288, 50, "gold"),
-            new Item(5022, 2500000, "gold"),
-            new Item(5022, 4000000, "gold"),
-            new Item(6769, 2, "gold"),
-            new Item(6769, 5, "gold"),
-            new Item(4278, 750, "gold"),
-            new Item(4278, 1000, "gold"),
-            new Item(15359,10, "gold"),
-            new Item(15359,20, "gold"),
-            new Item(15358,10, "gold"),
-            new Item(15358,20, "gold"),
-            new Item(19114,500, "gold"),
-            new Item(19114,250, "gold"),
-            new Item(23174,10, "gold"),
-            new Item(23174,20, "gold"),
-            new Item(15290,1000, "gold"),
-            new Item(15290,1250, "gold"),
-            new Item(15290,1500, "gold"),
-            new Item(15289,160, "gold"),
-            new Item(15289,200, "gold"),
-            new Item(15289,250, "gold"),
-            new Item(23048,1, "gold"),
-            new Item(23049,1, "gold"),
-            new Item(20488,50, "gold"),
-            new Item(20488,75, "gold"),
-            new Item(11137,1000, "gold")
-    );
+    public static List<Box> goldRewards = Arrays.asList(
 
-    public static List<Item> diamondRewards = Arrays.asList(
-
-            new Item(23264,150, "diamond"),
-            new Item(23264,250, "diamond"),
-            new Item(21220,5000, "diamond"),
-            new Item(21220,4000, "diamond"),
-            new Item(23215,1250, "diamond"),
-            new Item(23215,1000, "diamond"),
-            new Item(22219,400, "diamond"),
-            new Item(22219,500, "diamond"),
-            new Item(21218,150, "diamond"),
-            new Item(21218,100, "diamond"),
-            new Item(22006,125, "diamond"),
-            new Item(22006,250, "diamond"),
-            new Item(15003,4, "diamond"),
-            new Item(15002,2, "diamond"),
-            new Item(23002,2, "diamond"),
-            new Item(15004,1, "diamond"),
-            new Item(10934,1, "diamond"),
-            new Item(18818,1, "diamond"),
-            new Item(18888,1, "diamond"),
-            new Item(18881,1, "diamond"),
-            new Item(18883,1, "diamond"),
-            new Item(19810,1, "diamond"),
-            new Item(10942,1, "diamond"),
-            new Item(9084,1, "diamond"),
-            new Item(10947,25, "diamond"),
-            new Item(3737,1, "diamond"),
-            new Item(3738,1, "diamond"),
-            new Item(3739,1, "diamond")
-    );
-
-
-    public static List<Item> tanzaniteRewards = Arrays.asList(
-            new Item(12630,1, "tanzanite"),
-            new Item(9083,1, "tanzanite"),
-            new Item(20591,1, "tanzanite"),
-            new Item(10949,3, "tanzanite"),
-            new Item(3578,1, "tanzanite"),
-            new Item(14999,1, "tanzanite"),
-            new Item(22121,1, "tanzanite"),
-            new Item(23240,1, "tanzanite"),
-            new Item(10943,1, "tanzanite"),
-            new Item(23002,2, "tanzanite"),
-            new Item(15004,2, "tanzanite"),
-            new Item(5012,1, "tanzanite"),
-            new Item(12535,1, "tanzanite"),
-            new Item(17011,1, "tanzanite"),
-            new Item(4684,1, "tanzanite"),
-            new Item(4685,1, "tanzanite"),
-            new Item(4686,1, "tanzanite"),
-            new Item(20489,25, "tanzanite"),
-            new Item(10946,75, "tanzanite"),
-            new Item(10946,50, "tanzanite"),
-            new Item(6769,10, "tanzanite"),
-            new Item(6769,12, "tanzanite"),
-            new Item(19114,1500, "tanzanite"),
-            new Item(23174,30, "tanzanite"),
-            new Item(20488,200, "tanzanite"),
-            new Item(23264,750, "tanzanite"),
-            new Item(23215,2000, "tanzanite"),
-            new Item(15003,6, "tanzanite"),
-            new Item(15002,3, "tanzanite")
+            new Box(6769, 1, 5, 33,false, "gold"),
+            new Box(4278, 750, 1000, 33,false, "gold"),
+            new Box(15359, 10, 20, 33,false, "gold"),
+            new Box(15358, 10, 20, 33,false, "gold"),
+            new Box(19114, 250, 500, 33,false, "gold"),
+            new Box(23174, 10, 20, 33,false, "gold"),
+            new Box(15290, 1000, 1500, 33,false, "gold"),
+            new Box(15289, 160, 250, 33,false, "gold"),
+            new Box(23048, 1, 1, 33,false, "gold"),
+            new Box(23049, 1, 1, 33,false, "gold"),
+            new Box(20488, 50, 75, 33,false, "gold"),
+            new Box(11137, 500, 1000, 33,false, "gold")
 
     );
 
-    public static int getRarityColor( Item reward){
+    public static List<Box> diamondRewards = Arrays.asList(
+
+            new Box(23264, 150, 250, 33,true, "diamond"),
+            new Box(21220, 4000, 5000, 33,true, "diamond"),
+            new Box(23215, 1000, 1250, 33,true, "diamond"),
+            new Box(22219, 400, 500, 33,true, "diamond"),
+            new Box(21218, 100, 150, 33,true, "diamond"),
+            new Box(22006, 125, 250, 33,true, "diamond"),
+            new Box(15003, 2, 4, 33,true, "diamond"),
+            new Box(15002, 2, 2, 33,true, "diamond"),
+            new Box(23002, 1, 1, 33,true, "diamond"),
+            new Box(15004, 1, 1, 33,true, "diamond"),
+            new Box(10934, 1, 1, 33,true, "diamond"),
+            new Box(18818, 1, 1, 33,true, "diamond"),
+            new Box(18888, 1, 1, 33,true, "diamond"),
+            new Box(18881, 1, 1, 33,true, "diamond"),
+            new Box(18883, 1, 1, 33,true, "diamond"),
+            new Box(19810, 1, 1, 33,true, "diamond"),
+            new Box(10942, 1, 1, 33,true, "diamond"),
+            new Box(9084, 1, 1, 33,true, "diamond"),
+            new Box(10947, 15, 25, 33,true, "diamond"),
+            new Box(3737, 1, 1, 33,true, "diamond"),
+            new Box(3738, 1, 1, 33,true, "diamond"),
+            new Box(3739, 1, 1, 33,true, "diamond")
+
+    );
+
+
+    public static List<Box> tanzaniteRewards = Arrays.asList(
+            new Box(12630, 1, 1, 33,true, "tanzanite"),
+            new Box(9083, 1, 1, 33,true, "tanzanite"),
+            new Box(20591, 1, 1, 33,true, "tanzanite"),
+            new Box(10949, 2, 3, 33,true, "tanzanite"),
+            new Box(3578, 1, 1, 33,true, "tanzanite"),
+            new Box(14999, 1, 1, 33,true, "tanzanite"),
+            new Box(22121, 1, 1, 33,true, "tanzanite"),
+            new Box(23240, 1, 1, 33,true, "tanzanite"),
+            new Box(10943, 1, 1, 33,true, "tanzanite"),
+            new Box(23002, 2, 2, 33,true, "tanzanite"),
+            new Box(15004, 2, 2, 33,true, "tanzanite"),
+            new Box(5012, 1, 1, 33,true, "tanzanite"),
+            new Box(12535, 1, 1, 33,true, "tanzanite"),
+            new Box(17011, 1, 1, 33,true, "tanzanite"),
+            new Box(4684, 1, 1, 33,true, "tanzanite"),
+            new Box(4685, 1, 1, 33,true, "tanzanite"),
+            new Box(4686, 1, 1, 33,true, "tanzanite"),
+            new Box(20489, 15, 25, 33,true, "tanzanite"),
+            new Box(10946, 50, 75, 33,true, "tanzanite"),
+            new Box(6769, 10, 12, 33,true, "tanzanite"),
+            new Box(19114, 1000, 1500, 33,true, "tanzanite"),
+            new Box(23174, 25, 30, 33,true, "tanzanite"),
+            new Box(20488, 100, 200, 33,true, "tanzanite"),
+            new Box(23264, 500, 750, 33,true, "tanzanite"),
+            new Box(23215, 1500, 2000, 33,true, "tanzanite"),
+            new Box(15003, 4, 6, 33,true, "tanzanite"),
+            new Box(15002, 2, 3, 33,true, "tanzanite")
+
+    );
+
+    public static int getRarityColor(Box reward){
         int spriteId = 1673;//blank
         switch(reward.getRarityofItem()){
             case "bronze":
@@ -218,8 +204,8 @@ public class BronzeCardPack {
 
         return spriteId;
     }
-    public static void testcard(Player player){
-        if(!player.getInventory().contains(cardbeingused)){
+    public static void testcard(Player player) {
+        if (!player.getInventory().contains(cardbeingused)) {
             player.sendMessage("You have no more cards left.");
             return;
         }
@@ -231,32 +217,35 @@ public class BronzeCardPack {
 
 
         player.getInventory().delete(cardbeingused, 1);
-        Item reward;
-        List <Item> rewardstype;//default
-        for(int i = 0; i < 6; i++){
+        Box reward;
+        List<Box> rewardstype;//default
+        for (int i = 0; i < 6; i++) {
             int chance = Misc.random(100);
-            if(chance >=23 && chance < 50){
+            if (chance >= 23 && chance < 50) {
                 rewardstype = silverRewards;//27% chance
-            }else if(chance >=8 && chance <23){//15% chance
+            } else if (chance >= 8 && chance < 23) {//15% chance
                 rewardstype = goldRewards;
-            }else if(chance >=1 && chance < 8){//8% chance
+            } else if (chance >= 1 && chance < 8) {//8% chance
                 rewardstype = diamondRewards;
-            }else if(chance == 0){//1% chance
+            } else if (chance == 0) {//1% chance
                 rewardstype = tanzaniteRewards;
             } else {
                 rewardstype = bronzeRewards;
             }
 
             reward = getRandomItem(rewardstype);
-            player.getPacketSender().sendSpriteChange(23294+i, getRarityColor(reward));
-            player.getPacketSender().sendItemOnInterface(23287+i, reward.getId(), reward.getAmount());
-            player.getInventory().add(reward.getId(),reward.getAmount());
-
-
+            player.getPacketSender().sendSpriteChange(23294 + i, getRarityColor(reward));
+            player.getPacketSender().sendItemOnInterface(23287 + i, reward.getId(), reward.getAmount());
+            player.getInventory().add(reward.getId(), reward.getAmount());
+            if (rewardstype == tanzaniteRewards) {
+                World.sendMessage("<img=832> @red@" +player.getUsername() + " <col=ff812f>has just received @red@"
+                        + "x" + (reward.getAmount()) + " "
+                        + ItemDefinition.forId(reward.getId()).getName() + "<col=ff812f> from a @red@ Bronze Card Pack!");
+            }
         }
     }
 
-    public static Item getRandomItem(List<Item> items) {
+    public static Box getRandomItem(List<Box> items) {
         return items.get(new Random().nextInt(items.size()));
     }
 }

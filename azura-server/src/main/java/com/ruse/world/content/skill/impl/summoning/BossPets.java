@@ -31,6 +31,7 @@ public class BossPets {
 		GOLEM_PET(9821, 23163, 400,"100% key drop & 50% DR Bonus"),
 		DRAGON_PET(9820, 23162, 1500,"100% key drop & 50% DR Bonus"),
 		IRONS_PET(9016, 22116, "60% DR Bonus"),
+		SUMMER_SURFER(9120, 23323, "60% DR Bonus & 20% DMG Bonus"),
 		BLOOD_DEMON_PET(204, 23252, "70% DR Bonus & 30% DMG Bonus"),
 
 		;

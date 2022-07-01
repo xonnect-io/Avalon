@@ -281,6 +281,34 @@ public final class MobDefinition {
 				break;
 
 
+			case 9119:
+				definition.name = "Summer Surfer";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19486};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 9120:
+				definition.name = "Summer Surfer Jr.";
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.npcModels = new int[]{19486};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 40;
+				definition.scaleY = 40;
+				definition.drawYellowDotOnMap = true;
+				break;
+
+
 			case 9007:
 				definition.name = "Dreambody";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -1834,8 +1862,8 @@ public final class MobDefinition {
 				definition.actions[3] = "Trade";
 				break;
 			case 5604:
-				definition.name = "Zara's Boss Store";
-				definition.description = "SHELDON'S GROUNDED!".getBytes();
+				definition.name = "Avalons' Boss Store";
+				definition.description = "Spend your boss points on some rewards in my shop!".getBytes();
 				definition.actions = new String[6];
 				definition.actions[0] = null;
 				definition.actions[2] = null;

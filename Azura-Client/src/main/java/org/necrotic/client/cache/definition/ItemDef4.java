@@ -723,6 +723,19 @@ public class ItemDef4 {
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
+
+			case 23323:
+				itemDef.name = "Summer Surfer pet";
+				itemDef.modelID = 19486;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelZoom = 4500;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+
 			case 18883:
 				itemDef.copyItem(7671);
 				itemDef.name = "Deity gloves";
@@ -7749,7 +7762,7 @@ public class ItemDef4 {
 
 			case 23268:
 				itemDef.copyItem(4407);
-				itemDef.name = "Cloak of Summer";
+				itemDef.name = "Summer Cloak";
 				itemDef.modelID = 18553;
 				itemDef.maleEquip1 = 18554;
 				itemDef.femaleEquip1 = 18554;

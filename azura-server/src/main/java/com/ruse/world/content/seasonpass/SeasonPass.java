@@ -98,7 +98,9 @@ public class SeasonPass {
 		if(player.isunlockedseasonpass()) {
 			//	player.getInventory().add(PassRewards.memberRewards[getTier()].getId(),		PassRewards.memberRewards[getTier()].getAmount());
 			player.getBank(0).add(PassRewards.memberRewards[getTier() - 1 ].getId(),		PassRewards.memberRewards[getTier() - 1].getAmount());
-			itemName =  Misc.formatText(ItemDefinition.forId(PassRewards.memberRewards[getTier()- 1].getId()).getName());
+			player.getBank(0).add(PassRewards.defaultRewards[getTier() - 1].getId(),		PassRewards.defaultRewards[getTier() - 1].getAmount());
+
+			itemName =  Misc.formatText(ItemDefinition.forId(PassRewards.memberRewards[getTier()- 1].getId()).getName())+" and "+Misc.formatText(ItemDefinition.forId(PassRewards.defaultRewards[getTier() - 1].getId()).getName());
 		} else {
 			itemName =  Misc.formatText(ItemDefinition.forId(PassRewards.defaultRewards[getTier() - 1].getId()).getName());
 
@@ -121,6 +123,8 @@ public class SeasonPass {
 		}
 		if(player.isunlockedseasonpass()){
 			for(int i = 0; i < getTier(); i++){
+				player.getPacketSender().sendConfig(1714+i,1);
+
 				player.getPacketSender().sendConfig(1814+i,1);
 			}
 		} else {

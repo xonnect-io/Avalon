@@ -23,10 +23,10 @@ public class DragonKingBoss {
     // before the world is created and it wont spawn on server boot for 3 hrs
     public static int tick = 0;
 
-    public static Position SPAWN_POINT = new Position(2143, 5016,0);
+    public static Position SPAWN_POINT = new Position(2910 , 4706,0);
 
     public static int[] BOSS_IDS = {
-            4972
+            9119
     };
 
     public static void handleDrop(NPC npc) {

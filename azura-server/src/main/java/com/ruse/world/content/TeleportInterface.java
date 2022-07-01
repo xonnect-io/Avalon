@@ -41,10 +41,11 @@ public class TeleportInterface {
             } else {
                 player.getPacketSender().sendInterface(122000);
             }*/
+            case 11004:
                 new TeleportInterfaceHandler(player).open();
                 return true;
             case 122005:
-            case 11004:
+            case 5519:
                 TeleportInterface.sendMonsterTab(player);
                 return true;
             case 122006:
@@ -62,9 +63,6 @@ public class TeleportInterface {
             case 122009:
             case 11017:
                 TeleportInterface.sendMiscTab(player);
-                return true;
-            case 122017:
-                TeleportInterface.handleTeleports(player);
                 return true;
             case 122018:
             case 1717:

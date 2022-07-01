@@ -311,6 +311,9 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == 9017) {
                             NightmareBoss.handleDrop(npc);
                         }
+                        if (npc.getId() == 9119) {
+                            SummerSurfer.handleDrop(npc);
+                        }
                         if (npc.getId() == 3305) {
                             NarakuBoss.handleDrop(npc);
                         }

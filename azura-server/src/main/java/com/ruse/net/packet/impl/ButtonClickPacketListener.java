@@ -1,11 +1,8 @@
 package com.ruse.net.packet.impl;
 
 import com.ruse.GameSettings;
-import com.ruse.model.GameMode;
+import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
-import com.ruse.model.Position;
-import com.ruse.model.RegionInstance;
-import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Bank;
 import com.ruse.model.container.impl.Bank.BankSearchAttributes;
 import com.ruse.model.container.impl.GroupIronmanBank;
@@ -235,28 +232,77 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 77342:
                  if (player.getPointsHandler().getFacelessMagicianKC() < 50000) {
-                    player.getPA().sendMessage("You need 50,000 Faceless Magician kills before sacrificing a Dark weapon.");
+                     player.getPA().sendMessage("You need 50,000 Faceless Magician kills before sacrificing a Dark weapon.");
                      return;
-                }   else if (player.getMagicGuildTier1() && player.getPointsHandler().getFacelessMagicianKC() >= 50000 && player.getInventory().contains(22213)) {
+                 }
+                 if (player.getInventory().contains(22113, 1)) {
+                     player.getInventory().delete(22113, 1);
+                 }
+                    else if (player.getInventory().contains(22114, 1)) {
+                     player.getInventory().delete(22114, 1);
+                 }
+                    else if (player.getInventory().contains(22115, 1)) {
+                     player.getInventory().delete(22115, 1);
+                 }
+                 else if (!player.getInventory().containsAny(22113,22114,22115)) {
+                     player.getPA().sendMessage("You need to sacrifice a Dark weapon to Level up!");
+                     return;
+                 }
                     player.getPA().sendMessage("You sacrifice 1 Dark weapon and Unlock Tier 2 of the Magic Guild.");
-                    World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has achieved @red@Tier 2 @blu@of the @red@Magic Guild");
-                    player.getInventory().delete(22213, 1);
-                    return;
-                } else if (player.getMagicGuildTier1() && player.getPointsHandler().getFacelessMagicianKC() >= 50000 && player.getInventory().contains(22214)) {
-                    player.getPA().sendMessage("You sacrifice 1 Dark weapon and Unlock Tier 2 of the Magic Guild.");
-                     World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has achieved @red@Tier 2 @blu@of the @red@Magic Guild");
-                    player.getInventory().delete(22214, 1);
-                    return;
-                }  else if (player.getMagicGuildTier1() && player.getPointsHandler().getFacelessMagicianKC() >= 50000 && player.getInventory().contains(22215)) {
-                    player.getPA().sendMessage("You sacrifice 1 Dark weapon and Unlock Tier 2 of the Magic Guild.");
-                     World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has achieved @red@Tier 2 @blu@of the @red@Magic Guild");
-                    player.getInventory().delete(22215, 1);
-                    return;
-                }   else if (player.getPointsHandler().getFacelessMagicianKC() >= 50000 && !player.getInventory().contains(22215)
-                         || !player.getInventory().contains(22214) || !player.getInventory().contains(22213)) {
-                    player.getPA().sendMessage("You need a Dark weapon to Level up!");
+                     World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 2 @blu@of the @red@Magic Guild");
+                     player.getPacketSender().sendInterfaceRemoval();
+                     player.getPacketSender().sendInterface(77430);
+                     player.setMagicGuildTier2(true);
+                     player.getInventory().add(420, 1);
+                     player.getPA().sendMessage("<img=832> x1 Magic Claws has been added to your inventory.");
+
+
+                break;
+
+            case 77442:
+                if (player.getPointsHandler().getLotusMagicianKC() < 100_000) {
+                    player.getPA().sendMessage("You need 100,000 Lotus Magician kills before sacrificing a Blood weapon.");
                     return;
                 }
+                if (player.getInventory().contains(23226, 1)) {
+                    player.getInventory().delete(23226, 1);
+                }
+                else if (player.getInventory().contains(23227, 1)) {
+                    player.getInventory().delete(23227, 1);
+                }
+                else if (player.getInventory().contains(8136, 1)) {
+                    player.getInventory().delete(8136, 1);
+                }
+                else if (!player.getInventory().containsAny(23226,23227,8136)) {
+                    player.getPA().sendMessage("You need to sacrifice a Blood weapon to Level up!");
+                    return;
+                }
+                player.getPA().sendMessage("You sacrifice 1 Blood weapon and Unlock Tier 2 of the Magic Guild.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 3 @blu@of the @red@Magic Guild");
+                player.getPacketSender().sendInterfaceRemoval();
+                player.getPacketSender().sendInterface(77530);
+                player.setMagicGuildTier3(true);
+                player.getInventory().add(23229, 1);
+                player.getPA().sendMessage("<img=832> x1 Gemstone Kaseki has been added to your inventory.");
+                break;
+
+            case 77542:
+                if (player.getPointsHandler().getShadowMagicianKC() < 150_000) {
+                    player.getPA().sendMessage("You need 150,000 Shadow Magician kills before sacrificing 250m upgrade tokens");
+                    return;
+                }
+                if (player.getInventory().contains(12855, 250_000_000)) {
+                    player.getInventory().delete(12855, 250_000_000);
+                }
+                else if (!player.getInventory().contains(12855,250_000_000)) {
+                    player.getPA().sendMessage("You need to sacrifice 250m upgrade tokens to Level up!");
+                    return;
+                }
+                player.getPA().sendMessage("You sacrifice 250m upgrade tokens and Unlock Tier Magician Master of the Magic Guild.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Magician Master @blu@of the @red@Magic Guild");
+                player.getPacketSender().sendInterfaceRemoval();
+                player.setMagicianMaster(true);
+                player.getPA().sendMessage("<img=832> Your account has received a permanent 0.20% Damage increase!");
                 break;
 
             case 8659:

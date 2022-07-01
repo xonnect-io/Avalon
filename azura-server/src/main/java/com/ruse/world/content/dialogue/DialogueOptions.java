@@ -1283,6 +1283,7 @@ public class DialogueOptions {
                 case 66668://yes
                     if (player.getInventory().contains(23275)) {
                         player.getInventory().delete(23275,1);
+                        player.setunlockedseasonpass(true);
                         player.sendMessage("You have unlocked the season pass!");
                     } else {
                         player.sendMessage("You do not have a season pass.");

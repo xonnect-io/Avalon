@@ -110,6 +110,28 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 1208://GLOVES_NPC
                         break;
+                    case 460: //DAILY TASK
+                        npc.forceChat("Vis porta. Claudo te. Vis sera portus.sigillum");
+                        if (player.getMagicianMaster() == true) {
+                            DialogueManager.sendStatement(player, "You Already have mastered this minigame!");
+                        return;
+                        }
+                        if (player.getMagicGuildTier3() == true && player.getMagicGuildTier2() == true && player.getMagicGuildTier1() == true) {
+                            player.getPacketSender().sendInterfaceReset();
+                            player.getPacketSender().sendInterface(77530);
+                            return;
+                        }
+                        if (player.getMagicGuildTier2() == true && player.getMagicGuildTier1()) {
+                            player.getPacketSender().sendInterfaceReset();
+                            player.getPacketSender().sendInterface(77430);
+                            return;
+                        }
+                        if (player.getMagicGuildTier1()) {
+                            player.getPacketSender().sendInterfaceReset();
+                            player.getPacketSender().sendInterface(77330);
+                            return;
+                        }
+                        break;
                     case 289: //DAILY TASK
                         if (player.dailies.isEmpty()) {
                             DialogueManager.start(player, 9901);
@@ -906,8 +928,13 @@ public class NPCOptionPacketListener implements PacketListener {
 
                     case 568:
                         ShopManager.getShops().get(207).open(player);
-
+                    case 925:
+                       if ( player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
+                           DialogueManager.start(player, SlayerDialogues.chooseDifficulty(player));
+                       } else
+                           DialogueManager.start(player, SlayerDialogues.findAssignment(player));
                         break;
+
                     case 845:
                         DialogueManager.start(player, SlayerDialogues.findAssignment(player));
                         break;

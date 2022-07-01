@@ -33,21 +33,20 @@ public class FoxVote implements Runnable {
 			}
 
 			String name = player.getUsername().replace("_", " ");
-			ResultSet rs = executeQuery("SELECT * FROM fx_votes WHERE username='"+name+"' AND claimed=0 AND callback_date IS NOT NULL");
+			ResultSet rs = executeQuery("SELECT * FROM fx_votes WHERE username='"+name+
+					"' AND claimed=0 AND callback_date IS NOT NULL");
 
 			int points = 2;
+
 			while (rs.next()) {
 				String timestamp = rs.getTimestamp("callback_date").toString();
 				String ipAddress = rs.getString("ip_address");
 				int siteId = rs.getInt("site_id");
 
-
 				// Double vote pet
 				if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
 						&& player.getSummoning().getFamiliar().getSummonNpc().getId() == 8802) {
 					points *= 2;
-					player.getPacketSender()
-							.sendMessage("<shad=1>@yel@You get an extra vote scroll because of your pet!");
 				}
 
 				if (GameSettings.DOUBLE_VOTE) {
@@ -58,6 +57,7 @@ public class FoxVote implements Runnable {
 				player.getDailyRewards().handleVote();
 				player.lastVoteTime = System.currentTimeMillis();
 				player.setVoteCount(doMotivote.getVoteCount() + points);
+				player.getSeasonPass().setXp(1);
 				player.getAchievementTracker().progress(AchievementData.SUPPORT_AVALON, 1);
 				player.getAchievementTracker().progress(AchievementData.SUPPORTER, 1);
 				player.getAchievementTracker().progress(AchievementData.MEGA_SUPPORTER, 1);
@@ -73,11 +73,10 @@ public class FoxVote implements Runnable {
 
 				rs.updateInt("claimed", 1); // do not delete otherwise they can reclaim!
 				rs.updateRow();
+				if (points > 2)
+				World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points * 2
+						+ " Vote scrolls! ::vote now to support the server.");
 			}
-			World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points * 2
-					+ " Vote scrolls! ::vote now to support the server.");
-			player.getSeasonPass().setXp(points*3);
-			player.sendMessage("You receive "+(points*3)+" Season Pass XP for voting!");
 			destroy();
 		} catch (Exception e) {
 			e.printStackTrace();

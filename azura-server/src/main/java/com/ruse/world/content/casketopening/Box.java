@@ -1,5 +1,6 @@
 package com.ruse.world.content.casketopening;
 
+import com.ruse.model.ItemRarity;
 import com.ruse.util.Misc;
 
 public class Box {
@@ -10,6 +11,8 @@ public class Box {
     private double rate;
     private boolean announce;
 
+    public ItemRarity rarity;
+
     public Box(int id, int min, int max, double rate, boolean announce) {
         this.id = id;
         this.min = min;
@@ -17,7 +20,14 @@ public class Box {
         this.rate = rate;
         this.announce = announce;
     }
-
+    public Box(int id, int min, int max, double rate, boolean announce, String rarity) {
+        this.id = id;
+        this.min = min;
+        this.max = max;
+        this.rate = rate;
+        this.announce = announce;
+        this.rarityofitem = rarity;
+    }
     public Box(int id, int min, int max, double rate) {
         this.id = id;
         this.min = min;
@@ -96,7 +106,13 @@ public class Box {
     public void setMax(int max) {
         this.max = max;
     }
-    
+
+    public String getRarityofItem() {
+        return rarityofitem;
+    }
+
+    private String rarityofitem;
+
     public int getAmount() {
         return min + Misc.getRandom(max - min);
     }

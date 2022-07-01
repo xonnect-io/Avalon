@@ -5,11 +5,12 @@ import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.world.World;
-import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+
+import static com.ruse.world.content.progressionzone.ProgressionZone.getCurrentZone;
 
 /**
  * @author Snz
@@ -124,8 +125,9 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == 9001) {
-			ProgressionZone.teleport(player);
-			player.getPacketSender().sendInterfaceRemoval();
+			TeleportHandler.teleportPlayer(player, getCurrentZone(player).getCoords(), TeleportType.NORMAL);
+			player.sendMessage("You have been teleported to the " + getCurrentZone(player).getName() + " Zone.");
+			player.sendMessage("@blu@Once you completed the zone, you will be teleported to the next phase!");
 			return;
 		}
 

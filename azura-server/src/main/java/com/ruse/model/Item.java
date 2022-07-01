@@ -257,7 +257,13 @@ public class Item {
 		this.rate = rate;
 		this.announce = announce;
 	}
-
+	public Item(int id, int min, int max,boolean announce, String rarity) {
+		this.id = id;
+		this.min = min;
+		this.max = max;
+		this.announce = announce;
+		this.rarityofitem = rarity;
+	}
 	public int getMin() {
 		return min;
 	}

@@ -116,7 +116,7 @@ public class IronmanBoss {
 
 
 
-                String message = "@bla@Ironman has appeared ::ironman";
+                String message = "Ironman has appeared ::ironman";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {

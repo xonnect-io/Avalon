@@ -4178,6 +4178,13 @@ public class ItemDef2 {
 				itemDef.editedModelColor = new int[]{19197, 20386, 20386};
 				break;
 
+			case 23322:
+				itemDef.copyItem(6199);
+				itemDef.name = "Summer Box";
+				itemDef.newModelColor = new int[]{2999, 926, 22410};
+				itemDef.editedModelColor = new int[]{19197, 20386, 20386};
+				break;
+
 			case 13700:
 				itemDef.copyItem(4977);
 				itemDef.name = "Group Ironman full helm";

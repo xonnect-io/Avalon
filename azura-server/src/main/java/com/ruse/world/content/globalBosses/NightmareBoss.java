@@ -114,7 +114,7 @@ public class NightmareBoss {
                 currentBoss = npc;
                 World.register(npc);
 
-                String message = "@bla@Nightmare has appeared at ::nm";
+                String message = "Nightmare has appeared at ::nm";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {

@@ -142,9 +142,8 @@ public class PlayerLoading {
             }
             if (reader.has("mini-lucifer")) {
                 player.setMiniLucifer(reader.get("mini-lucifer").getAsBoolean());
-            }            if (reader.has("mini-lucifer")) {
-                player.setMiniLucifer(reader.get("mini-lucifer").getAsBoolean());
             }
+
             if (reader.has("magic1-unlocked")) {
                 player.setMagicGuildTier1(reader.get("magic1-unlocked").getAsBoolean());
             }
@@ -153,6 +152,9 @@ public class PlayerLoading {
             }
             if (reader.has("magic3-unlocked")) {
                 player.setMagicGuildTier3(reader.get("magic3-unlocked").getAsBoolean());
+            }
+            if (reader.has("magic-master")) {
+                player.setMagicianMaster(reader.get("magic-master").getAsBoolean());
             }
             if (reader.has("celestial-member")) {
                 player.setCelestial(reader.get("celestial-member").getAsBoolean());

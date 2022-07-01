@@ -14,7 +14,6 @@ import com.ruse.world.content.combat.range.CombatRangedAmmo.RangedWeaponData;
 import com.ruse.world.content.combat.weapon.FightType;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.DropUtils;
-import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Familiar;
 import com.ruse.world.entity.impl.Character;
@@ -114,8 +113,18 @@ public class DesolaceFormulas {
                     if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
                         bonus += 0.25;
                     }
+
+                    if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
+                        bonus += 0.20;
+                    }
                     if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                         bonus += 0.30;
+                    }
+                    if (plr.getEquipment().contains(7539)) {
+                        bonus += 0.20;
+                    }
+                    if (plr.getEquipment().contains(15009)) {
+                        bonus *= 2;
                     }
                     if (plr.getInventory().contains(23255)) {
                         bonus *= 1.5;
@@ -369,8 +378,18 @@ public class DesolaceFormulas {
             if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
                 bonus += 0.25;
             }
+
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
+                bonus += 0.20;
+            }
             if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 bonus += 0.30;
+            }
+            if (plr.getEquipment().contains(7539)) {
+                bonus += 0.20;
+            }
+            if (plr.getEquipment().contains(15009)) {
+                bonus *= 2;
             }
             if (plr.getInventory().contains(23255)) {
                 bonus *= 1.5;
@@ -484,10 +503,19 @@ public class DesolaceFormulas {
             if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
                 bonus += 0.25;
             }
+
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
+                bonus += 0.20;
+            }
             if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 bonus += 0.30;
             }
-
+            if (plr.getEquipment().contains(7539)) {
+                bonus += 0.20;
+            }
+            if (plr.getEquipment().contains(15009)) {
+                bonus *= 2;
+            }
             if (plr.getInventory().contains(23255)) {
                 bonus *= 1.5;
             }

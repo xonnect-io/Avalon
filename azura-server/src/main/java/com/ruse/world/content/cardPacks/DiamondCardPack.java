@@ -1,7 +1,9 @@
 package com.ruse.world.content.cardPacks;
 
 import com.ruse.model.Item;
+import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.Arrays;
@@ -260,7 +262,11 @@ public class DiamondCardPack {
             player.getPacketSender().sendItemOnInterface(23087+i, reward.getId(), reward.getAmount());
             player.getInventory().add(reward.getId(),reward.getAmount());
 
-
+            if (rewardstype == tanzaniteRewards) {
+                World.sendMessage("<img=832> @red@" +player.getUsername() + " <col=ff812f>has just received @red@"
+                        + "x" + (reward.getAmount()) + " "
+                        + ItemDefinition.forId(reward.getId()).getName() + "<col=ff812f> from a @red@ Diamond Card Pack!");
+            }
         }
     }
 

@@ -1,6 +1,5 @@
 package com.ruse.world.content.progressionzone;
 
-import com.ruse.model.GameObject;
 import com.ruse.model.Item;
 import com.ruse.model.Locations;
 import com.ruse.model.Position;

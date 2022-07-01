@@ -2550,18 +2550,19 @@ public final class ItemDefinition {
 				break;
 				
 			case 23272:// super sayian
-				itemDef.copyItem(7686);
-				itemDef.name = "Assassins Quiver";
+				itemDef.copyItem(12855);
+				itemDef.name = "Imbued Symbol";
+				itemDef.modelZoom = 950;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				//itemDef.modelZoom = 2200;
-				itemDef.modelID = 18558;
+				itemDef.modelID = 19485;
 				break;
+
 			case 23300:// super sayian
-				itemDef.copyItem(7686);
-				itemDef.name = "Celestial Quiver";
+				itemDef.copyItem(12855);
+				itemDef.name = "Celestial Symbol";
+				itemDef.modelZoom = 950;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				//itemDef.modelZoom = 2200;
-				itemDef.modelID = 18558;
+				itemDef.modelID = 19485;
 				itemDef.rdc2 = 99252;
 				break;
 			case 14020:

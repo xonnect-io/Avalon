@@ -285,6 +285,7 @@ public class Shop extends ItemContainer {
         getPlayer().getPacketSender().sendInterfaceRemoval().sendClientRightClickRemoval();
         getPlayer().setShop(ShopManager.getShops().get(id)).setInterfaceId(getInterfaceId()).setShopping(true);
         refreshItems();
+
         if (Misc.getMinutesPlayed(getPlayer()) <= 190)
             getPlayer().getPacketSender()
                     .sendMessage("Note: When selling an item to a store, it loses 50% of its original value.");
@@ -308,6 +309,10 @@ public class Shop extends ItemContainer {
                 }
             }
 
+            if (shop.getId() == PVM) {
+                currencyicon = 2;
+                player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
+            }
             if (shop.getId() == DONATOR_STORE_1) {
                 currencyicon = 2;
                 player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
@@ -1764,6 +1769,16 @@ public class Shop extends ItemContainer {
                     case 4151:
                     case 4152:
 
+                    case 15289:
+                        return new Object[]{22000, "PVM tickets"};
+                    case 15288:
+                        return new Object[]{85000, "PVM tickets"};
+                    case 15330:
+                        return new Object[]{10_000_000, "PVM tickets"};
+                    case 11137:
+                        return new Object[]{15000, "PVM tickets"};
+                    case 10947:
+                        return new Object[]{40000, "PVM tickets"};
                     case 11236:
                     case 15486:
                     case 15487:

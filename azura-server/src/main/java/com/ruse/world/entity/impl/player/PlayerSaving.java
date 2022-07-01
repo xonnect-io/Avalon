@@ -350,6 +350,7 @@ public class PlayerSaving {
 			object.addProperty("magic1-unlocked", player.getMagicGuildTier1());
 			object.addProperty("magic2-unlocked", player.getMagicGuildTier2());
 			object.addProperty("magic3-unlocked", player.getMagicGuildTier3());
+			object.addProperty("magic-master", player.getMagicianMaster());
 			object.addProperty("dark-supremes-unlocked", player.isUnlockedDarkSupreme());
 			object.add("currency-pouch", builder.toJsonTree(player.getCurrencyPouch()));
 			object.addProperty("lastTGloveIndex", player.lastTGloveIndex);

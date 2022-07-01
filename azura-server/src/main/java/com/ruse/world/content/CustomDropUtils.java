@@ -543,7 +543,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23309)) { //Midnight helmet
             percentBoost += 25;
         }
-
+        if (player.getEquipment().contains(7539)) { //Crab helmet
+            percentBoost += 20;
+        }
         if (player.getEquipment().contains(22100)) { //Fallen angel's helmet
             percentBoost += 20;
         }
@@ -691,6 +693,10 @@ public class CustomDropUtils {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.HELLRAISER.npcId) {
                 percentBoost += 10;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
+                percentBoost += 60;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {

@@ -114,7 +114,7 @@ public class OnyxPantherBoss {
 
 
 
-                String message = "@bla@Onyx Panther has appeared ::onyx";
+                String message = "Onyx Panther has appeared ::onyx";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {

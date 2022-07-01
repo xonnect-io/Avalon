@@ -244,6 +244,11 @@ public class ItemActionPacketListener implements PacketListener {
 
 
         switch (itemId) {
+            case 989:
+                Position crystalChest = new Position(2647, 4019, 0);
+                TeleportHandler.teleportPlayer(player, crystalChest, TeleportType.NORMAL);
+                break;
+
             case 9719:
                 player.sendMessage("You must bring this to your slayer master to cancel your task.");
                 break;
@@ -497,6 +502,12 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.EMERALD_CASKET);
                 player.getCasketOpening().openInterface();
                 break;
+
+            case 23322:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SUMMER_BOX);
+                player.getCasketOpening().openInterface();
+                break;
+
             case 15002:
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RUBY_CASKET);
                 player.getCasketOpening().openInterface();
@@ -852,7 +863,7 @@ public class ItemActionPacketListener implements PacketListener {
 
             case 6833:
                 player.getGoodieBag().boxId = itemId;
-                player.getGoodieBag().rewards = new int[]{455, 6199, 19116, 10946, 15290, 16045, 15785, 19331,
+                player.getGoodieBag().rewards = new int[]{455, 6199,6199, 19116, 10946, 15290, 16045, 15785, 19331,
                         18686, 15501, 989, 962, 3318, 3907, 11137, 4151, 12790, 15332, 7956};
                 player.getGoodieBag().open();
                 break;

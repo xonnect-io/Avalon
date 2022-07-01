@@ -1687,6 +1687,7 @@ Start new teleport
     }
 
     private boolean miniLucifer;
+    private boolean magicianMaster;
     private boolean magicguildtier1;
     private boolean magicguildtier2;
     private boolean magicguildtier3;
@@ -1712,6 +1713,13 @@ Start new teleport
     }
     public boolean getMagicGuildTier3() {
         return magicguildtier3;
+    }
+
+    public void setMagicianMaster(boolean magicianMaster) {
+        this.magicianMaster = magicianMaster;
+    }
+    public boolean getMagicianMaster() {
+        return magicianMaster;
     }
 
 //End magic guild

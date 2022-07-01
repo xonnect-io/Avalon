@@ -1279,7 +1279,7 @@ public final class CombatFactory {
                     return false;
                 }
                 if (!((Player) entity).getMagicGuildTier2()) {
-                    player.getPA().sendInterface(77130);
+                    player.getPA().sendInterface(77330);
                     entity.getCombatBuilder().reset(true);
                     player.getPacketSender().sendMessage("You need to unlock Tier 2 first!");
                     return false;
@@ -1295,13 +1295,13 @@ public final class CombatFactory {
                 }
                 if (!((Player) entity).getMagicGuildTier2()) {
                     entity.getCombatBuilder().reset(true);
-                    player.getPacketSender().sendMessage("You need to unlock Tier 2 first!");
+                    player.getPacketSender().sendMessage("You need to be a Tier 2 Magician to attack this npc.");
                     return false;
                 }
 
                 if (!((Player) entity).getMagicGuildTier3()) {
                     entity.getCombatBuilder().reset(true);
-                    player.getPacketSender().sendMessage("You need to unlock Tier 3 first!");
+                    player.getPacketSender().sendMessage("You need to be a Tier 3 Magician to attack this npc.");
                     return false;
                 }
             }

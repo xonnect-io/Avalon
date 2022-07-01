@@ -16,6 +16,7 @@ public class CustomInterfaces extends RSInterface {
 
 	public static TextDrawingArea[] tda;
 
+
 	public CustomInterfaces(TextDrawingArea[] tda) {
 		CustomInterfaces.tda = tda;
 	}
@@ -1936,7 +1937,7 @@ public class CustomInterfaces extends RSInterface {
 		addText(id, "Events", tda, 2, 0xFF981F, true, true);
 		info.child(c++, id++, 85 + x, 0 + y);
 		y += 20;
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 2; i++) {
 			//teleportText(id, "", "Select", fonts, 0, 0xFF9900, false, true, 154, 17);
 			addText(id, "id: " + id, tda, 0, 0xFF981F, false, true);
 			info.child(c++, id++, 10 + x, 0 + y);
@@ -1948,7 +1949,7 @@ public class CustomInterfaces extends RSInterface {
 		info.child(c++, id++, 85 + x, 0 + y);
 		y += 20;
 
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 10; i++) {
 			addText(id, "id: " + id, tda, 0, 0xFF981F, false, true);
 			info.child(c++, id++, 10 + x, 0 + y);
 			y += 17;

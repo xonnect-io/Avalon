@@ -366,6 +366,7 @@ public class CasketOpening {
         RAIDS(18404, Raids1.rewards),
         ZENYTE_CASKET(23253, Zenyte.rewards),
         SOSREWARDS(22053, SOSRewards.rewards),
+        SUMMER_BOX(23322, SummerBox.rewards),
         ;
         private int itemID;
         private Box[] loot;

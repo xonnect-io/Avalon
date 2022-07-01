@@ -111,6 +111,16 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");
         }
+        if (command[0].equalsIgnoreCase("summer")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(2910, 4699);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Summer Event!");
+        }
         if (command[0].equalsIgnoreCase("dissolveall")) {
         int price = 0;
             for (int i = 0; i < player.getInventory().capacity(); i++) {
@@ -147,6 +157,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("@red@<shad=1>Ironman boss: boss: boss: @yel@" + IronmanBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Avalon Guardian @yel@" + GuardianSpawnSystem.getLeft()  + " tickets left");
             player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft()  + " tokens left");
+            player.getPacketSender().sendMessage("@red@<shad=1>Summer Surfer @yel@" + SummerSurfer.timeLeft());
         }
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
                 || command[0].equalsIgnoreCase("start") || command[0].equalsIgnoreCase(
@@ -586,7 +597,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("<shad=1>@cya@Magic Maxhit: " + (Maxhits.magic(player, player) / 10));
         }
 
-        if (command[0].startsWith("reward") || command[0].startsWith("voted") || command[0].startsWith("claimvote")) {
+        if (command[0].equalsIgnoreCase("voted")) {
             new Thread(new FoxVote(player)).start();
         }
 
@@ -610,7 +621,7 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("vote")) {
             player.getPacketSender().sendString(1, GameSettings.VoteUrl);// "http://Ruseps.com/vote/?user="+player.getUsername());
-            player.getPacketSender().sendMessage("When you vote, do ::claimvote to redeem votes");
+            player.getPacketSender().sendMessage("When you vote, do ::voted to redeem votes");
         }
         if (command[0].equalsIgnoreCase("pricelist")) {
             player.getPacketSender().sendString(1, GameSettings.PriceList);// "http://Ruseps.com/vote/?user="+player.getUsername());

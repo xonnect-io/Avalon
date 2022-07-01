@@ -295,12 +295,23 @@ public class ItemDef3 {
 				itemDef.rdc2 = 15345;
 				break;
 
+			case 7539:
+				//itemDef.copyItem(4882);
+				itemDef.modelID = 19487;
+				itemDef.maleEquip1 = 19494;
+				itemDef.femaleEquip1 = 19494;
+				itemDef.name = "Crab helmet";
+				break;
+			case 15509:
+				//itemDef.copyItem(4882);
+				itemDef.name = "Summer Coronet";
+				itemDef.rdc2 = 59664;
+				break;
 			case 23259:
 				itemDef.copyItem(4882);
 				itemDef.name = "Reaper helm";
 				itemDef.rdc2 = 37664;
 				break;
-				
 			case 23260:
 				itemDef.copyItem(4894);
 				itemDef.name = "Reaper platebody";

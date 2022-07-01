@@ -114,7 +114,7 @@ public class NarakuBoss {
                 currentBoss = npc;
                 World.register(npc);
 
-                String message = "@bla@Naraku has appeared at ::naraku";
+                String message = "Naraku has appeared at ::naraku";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {

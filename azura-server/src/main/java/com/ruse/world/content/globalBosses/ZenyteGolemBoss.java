@@ -114,7 +114,7 @@ public class ZenyteGolemBoss {
 
 
 
-                String message = "@bla@Zenyte Golem has appeared ::zenyte";
+                String message = "Zenyte Golem has appeared ::zenyte";
 
                 for (Player players : World.getPlayers()) {
                     if (players == null) {
