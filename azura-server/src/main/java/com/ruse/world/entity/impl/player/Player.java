@@ -65,6 +65,7 @@ import com.ruse.world.content.grandexchange.GrandExchangeSlot;
 import com.ruse.world.content.groupironman.IronmanGroup;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceData;
+import com.ruse.world.content.minigames.MagicGuild;
 import com.ruse.world.content.minigames.MinigameAttributes;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.HallsOfValor;
@@ -74,6 +75,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.newspinner.MysteryBoxManager;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.properscratchcard.Scratchcard;
+import com.ruse.world.content.quests.QuestInterfaceHandler;
 import com.ruse.world.content.raids.RaidsParty;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.scratchcards.ScratchCard;
@@ -374,6 +376,11 @@ public class Player extends Character {
     private final BonusManager bonusManager = new BonusManager();
     private final PointsHandler pointsHandler = new PointsHandler(this);
     public final UnknownZone unknownZone = new UnknownZone(this);
+    public final QuestInterfaceHandler questInterface = new QuestInterfaceHandler(this);
+    public final MagicGuild magicGuildUnlock = new MagicGuild(this);
+    public final MagicGuild magicGuildT1 = new MagicGuild(this);
+    public final MagicGuild magicGuildT2 = new MagicGuild(this);
+    public final MagicGuild magicGuildT3 = new MagicGuild(this);
     private final PacketSender packetSender = new PacketSender(this);
     private final Appearance appearance = new Appearance(this);
     private final FrameUpdater frameUpdater = new FrameUpdater();
@@ -1685,15 +1692,71 @@ Start new teleport
     public void setTeleportType(TeleportCategory teleportType) {
     this.teleportType = teleportType;
     }
+/*
+End new teleport
+ */
 
-    private boolean miniLucifer;
+    /*
+    Start Quest One
+     */
+    public boolean questOneStarted;
+    private boolean questOneStep1;
+    private boolean questOneStep2;
+    private boolean questOneStep3;
+    private boolean questOneStep4;
+    private boolean questOneStep5;
+    public void setQuestOneStarted(boolean questOneStarted) {
+        this.questOneStarted = questOneStarted;
+    }
+    public boolean getQuestOneStarted() {
+        return questOneStarted;
+    }
+
+    public void setQuestOneStep1(boolean questOneStep1) {
+        this.questOneStep1 = questOneStep1;
+    }
+    public boolean getQuestOneStep1() {
+        return questOneStep1;
+    }
+
+    public void setQuestOneStep2(boolean questOneStep2) {
+        this.questOneStep2 = questOneStep2;
+    }
+    public boolean getQuestOneStep2() {return questOneStep2;
+    }
+
+    public void setQuestOneStep3(boolean questOneStep3) {
+        this.questOneStep3 = questOneStep3;
+    }
+    public boolean getQuestOneStep3() {
+        return questOneStep3;
+    }
+
+    public void setQuestOneStep4(boolean questOneStep4) {
+        this.questOneStep4 = questOneStep4;
+    }
+    public boolean getQuestOneStep4() {
+        return questOneStep4;
+    }
+
+    public void setQuestOneStep5(boolean questOneStep5) {
+        this.questOneStep5 = questOneStep5;
+    }
+    public boolean getQuestOneStep5() {
+        return questOneStep5; }
+
+    /*
+    End Quest One
+     */
+
+
+    /*
+    Start Magic Guild
+     */
     private boolean magicianMaster;
     private boolean magicguildtier1;
     private boolean magicguildtier2;
     private boolean magicguildtier3;
-    private boolean darkSupreme;
-
-//Start magic guild
     public void setMagicGuildTier1(boolean magicguildtier1) {
         this.magicguildtier1 = magicguildtier1;
     }
@@ -1722,23 +1785,41 @@ Start new teleport
         return magicianMaster;
     }
 
-//End magic guild
+    /*
+    End Magic Guild
+     */
 
+
+    /*
+    Start Fallen Angels
+     */
+    private boolean miniLucifer;
     public void setMiniLucifer(boolean miniLucifer) {
         this.miniLucifer = miniLucifer;
     }
-
     public boolean getMiniLucifer() {
         return miniLucifer;
     }
 
+    /*
+    End Fallen Angels
+     */
+
+    /*
+
+    Start Midnight Goblins
+     */
+    private boolean darkSupreme;
     public void setDarkSupreme(boolean darkSupreme) {
         this.darkSupreme = darkSupreme;
     }
-
     public boolean getDarkSupreme() {
         return darkSupreme;
     }
+    /*
+    End Midnight Goblins
+     */
+
     public TeleportData teleportData;
 
     public TeleportData getTeleportData() {

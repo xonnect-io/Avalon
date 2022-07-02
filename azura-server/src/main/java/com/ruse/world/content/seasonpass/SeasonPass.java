@@ -16,9 +16,7 @@ public class SeasonPass {
 	public SeasonPass(Player player) {
 		this.player = player;
 	}
-	public static final int[] SEASON_PASS = {
-			/*blue card*/ 23275
-	};
+	public static final int[] SEASON_PASS = {23275};
 
 	public static boolean isPass(final int itemId) {
 		for (int passes : SEASON_PASS) {
@@ -29,7 +27,7 @@ public class SeasonPass {
 		return false;
 	}
 
-	public void usepass(){
+	public void UnlockGoldSeasonPass(){
 		DialogueManager.start(player, new YesNoDialogue(player, "Unlock season pass?" ,"", 66668));
 
 	}
@@ -75,24 +73,24 @@ public class SeasonPass {
 	/**
 	 * after adding xp check if we can go to the next tier or not
 	 */
-	public void checkafteraddingxp(int xpadded) {
-		if(tier == 50){
+	public void checkafteraddingxp(int addExp) {
+		if(tier == 50) {
 			return;
 		}
 
-		if(getXp() + xpadded > 10){
-			this.xp =((getXp()+xpadded) - 10);
+		if(getXp() + addExp > 10){
+			this.xp =((getXp()+addExp) - 10);
 			addTier(1);
-			giverewardbasedontier();
-		} else if(getXp() + xpadded == 10){
+			giveRewards();
+		} else if(getXp() + addExp == 10){
 			addTier(1);
 			this.xp = 0;
-			giverewardbasedontier();
+			giveRewards();
 		} else {
-			this.xp+=xpadded;
+			this.xp+=addExp;
 		}
 	}
-	public void giverewardbasedontier() {
+	public void giveRewards() {
 		String itemName = "";
 
 		if(player.isunlockedseasonpass()) {
@@ -113,7 +111,7 @@ public class SeasonPass {
 	/**
 	 * checks what items you have unlocked based on whether youre a member or not
 	 */
-	public void checkwhatyouhaveunlocked () {
+	public void unlockConfiguration() {
 
 		//first reset all sprites
 		for (int i = 0; i < 50; i++) {
@@ -138,8 +136,8 @@ public class SeasonPass {
 		player.getPacketSender().sendString(105007, "XP: " + getXp() + "/10");
 		player.getPacketSender().sendString(105008, "" + getTier());
 		player.getPacketSender().sendString(105009, "SEASON " + PassRewards.SEASON);
-		player.getPacketSender().sendString(105010, "Season Ends: " + PassRewards.theEndDate()+" (in "+PassRewards.differenceindays()+" days)");
-		checkwhatyouhaveunlocked();
+		player.getPacketSender().sendString(105010, "Last Day: " + PassRewards.theEndDate());
+		unlockConfiguration();
 
 		int index = 0;
 		int interfaceId = 105105;

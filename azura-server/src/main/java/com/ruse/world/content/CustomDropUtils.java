@@ -325,6 +325,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(5012)) { //Legends bow
             percentBoost += 25;
         }
+        if (player.getEquipment().contains(23368)) { //Magic Claws
+            percentBoost += 30;
+        }
         if (player.getEquipment().contains(8410)) { //Elite sword(aoe)
             percentBoost += 20;
         }
@@ -663,6 +666,10 @@ public class CustomDropUtils {
                 percentBoost += 10;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.HELLRAISER.npcId) {
+                percentBoost += 10;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.YOSHI_PET.npcId) {
                 percentBoost += 15;
             }
@@ -690,10 +697,19 @@ public class CustomDropUtils {
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RED_FENRIR_PET.npcId) {
                 percentBoost += 50;
             }
+
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
-                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.HELLRAISER.npcId) {
-                percentBoost += 10;
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
+                percentBoost += 45;
             }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {
+                percentBoost += 45;
+            }            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {
+                percentBoost += 45;
+            }
+
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
                 percentBoost += 60;

@@ -1076,18 +1076,27 @@ public class ItemDef3 {
 			case 23062:
 				itemDef.copyItem(4708);
 				itemDef.name = "Nephilim Staff";
-				itemDef.modelZoom = 950;
+				itemDef.modelZoom = 2287;
+				itemDef.rotationX = 2026;
+				itemDef.rotationY = 635;
+				itemDef.rotationZ = 26;
+				itemDef.modelOffsetX = 9;
+				itemDef.modelOffsetY = 10;
 				itemDef.modelID = 18532;
 				itemDef.maleEquip1 = 18531;
 				itemDef.femaleEquip1 = 18531;
-				itemDef.rotationX = 1000;
 				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 				
 			case 23061:
 				itemDef.copyItem(4714);
 				itemDef.name = "Nephilim bow";
-				itemDef.modelZoom = 1500;
+				itemDef.modelZoom = 2096;
+				itemDef.rotationX = 1139;
+				itemDef.rotationY = 339;
+				itemDef.rotationZ = 25;
+				itemDef.modelOffsetX = 25;
+				itemDef.modelOffsetY = 30;
 				itemDef.modelID = 18530;
 				itemDef.maleEquip1 = 18529;
 				itemDef.femaleEquip1 = 18529;
@@ -1437,7 +1446,12 @@ public class ItemDef3 {
 			case 12852:
 				itemDef.name = "Vault token";
 				break;
-				
+			case 23367:
+				itemDef.copyItem(14808);
+				itemDef.name = "Magician pet Scroll";
+				itemDef.rdc2 = 67606;
+				break;
+
 			case 23095:
 				itemDef.copyItem(2902);
 				itemDef.name = "Mercenary gloves";
@@ -3584,6 +3598,14 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
+				break;
+
+			case 23368:
+				itemDef.copyItem(17702);
+				itemDef.name = "Magic claws";
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				itemDef.rdc2 = 28998;
 				break;
 
 			case 11763:

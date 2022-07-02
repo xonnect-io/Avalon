@@ -14,9 +14,9 @@ import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.AchievementsOLD.AchievementDataOLD;
 import com.ruse.world.content.*;
-import com.ruse.world.content.celestial.CelestialDialogues;
 import com.ruse.world.content.Gambling.FlowersData;
 import com.ruse.world.content.achievements.AchievementData;
+import com.ruse.world.content.celestial.CelestialDialogues;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.impl.AgilityTicketExchange;
@@ -26,6 +26,7 @@ import com.ruse.world.content.dissolving.NephilimDisassemble;
 import com.ruse.world.content.dissolving.OwnerDisassemble;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.minigames.impl.*;
+import com.ruse.world.content.quests.QuestDialogues;
 import com.ruse.world.content.raids.SODRaids;
 import com.ruse.world.content.raids.ZombieRaidData;
 import com.ruse.world.content.raids.ZombieRaids;
@@ -908,6 +909,7 @@ public class DialogueOptions {
             // System.out.println("Slayer master: " + player.getSlayer().getSlayerMaster().toString());
             // System.out.println("ID: " + id);
             switch (player.getDialogueActionId()) {
+
                 case 8221:
                     DialogueManager.start(player, CelestialDialogues.becomingCelestial(player));
                     break;
@@ -1254,6 +1256,9 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+                case 8621:
+                    DialogueManager.start(player, QuestDialogues.questCurseOfArravAccept(player));
+                    break;
                 case 8102:
                     if (player.getCelestial() == false && player.getSODRaidsKC() >= 50 && player.getInventory().contains(13379, 2)) {
                         player.getInventory().delete(13379, 2);
@@ -1715,6 +1720,11 @@ public class DialogueOptions {
 
         } else if (id == SECOND_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+
+                case 8621:
+                    DialogueManager.start(player, QuestDialogues.questCurseOfArravDecline(player));
+                    break;
+
                 case 668://no
                 case 8102:
                 case 6118:
@@ -1859,7 +1869,6 @@ public class DialogueOptions {
                     player.getInventory().add(14019, 1);
                     player.getPacketSender().sendMessage("You've purchased a Max cape.");
                     break;
-
                 case 9906:
                     if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER)
                             && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {

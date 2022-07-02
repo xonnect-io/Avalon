@@ -848,7 +848,7 @@ public enum CombatSpecial {
 			return new CombatContainer(player, target, 4, CombatType.MELEE, true);
 		}
 	},
-	DRAGON_CLAWS(new int[] { 14484, 18685, 13999 }, 50, 2, 1.8, CombatType.MELEE, WeaponInterface.CLAWS) {
+	DRAGON_CLAWS(new int[] { 14484,23368, 18685, 13999 }, 50, 2, 1.8, CombatType.MELEE, WeaponInterface.CLAWS) {
 		@Override
 		public CombatContainer container(Player player, Character target) {
 			player.performAnimation(new Animation(10961));

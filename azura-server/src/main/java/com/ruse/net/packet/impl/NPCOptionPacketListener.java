@@ -32,6 +32,7 @@ import com.ruse.world.content.minigames.impl.WarriorsGuild;
 import com.ruse.world.content.minigames.impl.trioMinigame;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.celestial.CelestialDialogues;
+import com.ruse.world.content.quests.QuestDialogues;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.construction.ConstructionActions;
@@ -108,6 +109,12 @@ public class NPCOptionPacketListener implements PacketListener {
                         DialogueManager.start(player, 1311);
                         player.setDialogueActionId(568);
                         break;
+/*
+                    case 432:
+                        player.getPacketSender().sendInterfaceReset();
+                        player.questInterface.openQuestOne();
+                        break;
+*/
                     case 1208://GLOVES_NPC
                         break;
                     case 460: //DAILY TASK
@@ -118,17 +125,17 @@ public class NPCOptionPacketListener implements PacketListener {
                         }
                         if (player.getMagicGuildTier3() == true && player.getMagicGuildTier2() == true && player.getMagicGuildTier1() == true) {
                             player.getPacketSender().sendInterfaceReset();
-                            player.getPacketSender().sendInterface(77530);
+                            player.magicGuildT3.openT3();
                             return;
                         }
                         if (player.getMagicGuildTier2() == true && player.getMagicGuildTier1()) {
                             player.getPacketSender().sendInterfaceReset();
-                            player.getPacketSender().sendInterface(77430);
+                            player.magicGuildT2.openT2();
                             return;
                         }
                         if (player.getMagicGuildTier1()) {
                             player.getPacketSender().sendInterfaceReset();
-                            player.getPacketSender().sendInterface(77330);
+                            player.magicGuildT1.openT1();
                             return;
                         }
                         break;
@@ -356,6 +363,9 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 1821:
                         DialogueManager.start(player, CelestialDialogues.main(player));
+                        break;
+                    case 432:
+                        DialogueManager.start(player, QuestDialogues.questCurseOfArravIntro(player));
                         break;
                     case 736:
                         player.forceChat("Ban emily!");

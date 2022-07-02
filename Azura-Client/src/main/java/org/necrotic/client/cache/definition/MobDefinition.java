@@ -246,7 +246,6 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19463};
 				definition.npcSizeInSquares = 1;
-				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.scaleXZ = 140;
@@ -259,7 +258,6 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19483};
 				definition.npcSizeInSquares = 1;
-				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.scaleXZ = 140;
@@ -272,7 +270,6 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19484};
 				definition.npcSizeInSquares = 1;
-				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.scaleXZ = 140;
@@ -286,7 +283,6 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19486};
 				definition.npcSizeInSquares = 1;
-				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.scaleXZ = 200;
@@ -300,14 +296,51 @@ public final class MobDefinition {
 				definition.actions[0] = null;
 				definition.npcModels = new int[]{19486};
 				definition.npcSizeInSquares = 1;
-				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.scaleXZ = 40;
 				definition.scaleY = 40;
-				definition.drawYellowDotOnMap = true;
+				definition.drawYellowDotOnMap = false;
 				break;
 
+			case 9121:
+				definition.name = "Faceless Magician";
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.npcModels = new int[]{19463};
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.drawYellowDotOnMap = false;
+				break;
+
+			case 9122:
+				definition.name = "Lotus Magician";
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.npcModels = new int[]{19483};
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.drawYellowDotOnMap = false;
+				break;
+
+			case 9123:
+				definition.name = "Shadow Magician";
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.npcModels = new int[]{19484};
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.drawYellowDotOnMap = false;
+				break;
 
 			case 9007:
 				definition.name = "Dreambody";
@@ -1902,6 +1935,7 @@ public final class MobDefinition {
 				definition.actions[3] = "Trade";
 				break;
 			case 432:
+				definition.npcModels = new int[]{16373,16374,16375};
 				definition.name = "Hendrix";
 				definition.description = "Hendrix! OPEN THE DAMN DOOR!".getBytes();
 				definition.actions = new String[6];

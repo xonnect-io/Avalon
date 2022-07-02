@@ -347,6 +347,12 @@ public class PlayerSaving {
 			object.addProperty("treasure-map-2-collected", player.isTreasureMap2Collected());
 			object.addProperty("treasure-map-3-collected", player.isTreasureMap3Collected());
 			object.addProperty("lucifers-unlocked", player.isUnlockedLucifers());
+			object.addProperty("quest-one-started", player.getQuestOneStarted());
+			object.addProperty("quest-one-step-one", player.getQuestOneStep1());
+			object.addProperty("quest-one-step-two", player.getQuestOneStep2());
+			object.addProperty("quest-one-step-three", player.getQuestOneStep3());
+			object.addProperty("quest-one-step-four", player.getQuestOneStep4());
+			object.addProperty("quest-one-step-five", player.getQuestOneStep5());
 			object.addProperty("magic1-unlocked", player.getMagicGuildTier1());
 			object.addProperty("magic2-unlocked", player.getMagicGuildTier2());
 			object.addProperty("magic3-unlocked", player.getMagicGuildTier3());

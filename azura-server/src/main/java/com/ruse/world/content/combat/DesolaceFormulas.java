@@ -120,6 +120,15 @@ public class DesolaceFormulas {
                     if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                         bonus += 0.30;
                     }
+                    if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
+                        bonus += 0.25;
+                    }
+                    if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {
+                        bonus += 0.25;
+                    }
+                    if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {
+                        bonus += 0.25;
+                    }
                     if (plr.getEquipment().contains(7539)) {
                         bonus += 0.20;
                     }
@@ -385,6 +394,15 @@ public class DesolaceFormulas {
             if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 bonus += 0.30;
             }
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
+                bonus += 0.25;
+            }
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {
+                bonus += 0.25;
+            }
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {
+                bonus += 0.25;
+            }
             if (plr.getEquipment().contains(7539)) {
                 bonus += 0.20;
             }
@@ -509,6 +527,15 @@ public class DesolaceFormulas {
             }
             if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 bonus += 0.30;
+            }
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
+                bonus += 0.25;
+            }
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {
+                bonus += 0.25;
+            }
+            if (plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {
+                bonus += 0.25;
             }
             if (plr.getEquipment().contains(7539)) {
                 bonus += 0.20;
@@ -788,6 +815,7 @@ public class DesolaceFormulas {
             case 11730:
                 return 4;
             case 14484:
+            case 23368:
             case 18685:
                 return 5;
             case 13883:

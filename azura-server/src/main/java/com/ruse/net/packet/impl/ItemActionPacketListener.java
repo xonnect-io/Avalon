@@ -184,7 +184,7 @@ public class ItemActionPacketListener implements PacketListener {
             return;
         }
         if (player.getSeasonPass().isPass(itemId)) {
-            player.getSeasonPass().usepass();
+            player.getSeasonPass().UnlockGoldSeasonPass();
             return;
         }
         if (Herblore.cleanHerb(player, itemId))
@@ -248,7 +248,9 @@ public class ItemActionPacketListener implements PacketListener {
                 Position crystalChest = new Position(2647, 4019, 0);
                 TeleportHandler.teleportPlayer(player, crystalChest, TeleportType.NORMAL);
                 break;
-
+            case 23367:
+                player.getPacketSender().sendInterface(77230);
+                break;
             case 9719:
                 player.sendMessage("You must bring this to your slayer master to cancel your task.");
                 break;

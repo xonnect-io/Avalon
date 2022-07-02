@@ -169,7 +169,7 @@ public class TeleportInterfaceHandler {
 			return;
 				}
 				if (!player.getMagicGuildTier1()) {
-					player.getPA().sendInterface(77130);
+					player.magicGuildUnlock.openMain();
 					return;
 				} else if (player.getMagicGuildTier1()) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),

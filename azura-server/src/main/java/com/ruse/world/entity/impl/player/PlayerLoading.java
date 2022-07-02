@@ -143,7 +143,19 @@ public class PlayerLoading {
             if (reader.has("mini-lucifer")) {
                 player.setMiniLucifer(reader.get("mini-lucifer").getAsBoolean());
             }
-
+            if (reader.has("quest-one-started")) {
+                player.setQuestOneStarted(reader.get("quest-one-started").getAsBoolean());
+            }            if (reader.has("quest-one-step-one")) {
+                player.setQuestOneStep1(reader.get("quest-one-step-one").getAsBoolean());
+            }            if (reader.has("quest-one-step-two")) {
+                player.setQuestOneStep2(reader.get("quest-one-step-two").getAsBoolean());
+            }            if (reader.has("quest-one-step-three")) {
+                player.setQuestOneStep3(reader.get("quest-one-step-three").getAsBoolean());
+            }            if (reader.has("quest-one-step-four")) {
+                player.setQuestOneStep4(reader.get("quest-one-step-four").getAsBoolean());
+            }            if (reader.has("quest-one-step-five")) {
+                player.setQuestOneStep5(reader.get("quest-one-step-five").getAsBoolean());
+            }
             if (reader.has("magic1-unlocked")) {
                 player.setMagicGuildTier1(reader.get("magic1-unlocked").getAsBoolean());
             }

@@ -172,9 +172,39 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111214:
                 player.getPacketSender().sendString(1, GameSettings.StoreUrl);
                 break;
+            case 77242:
+                if (player.getInventory().contains(23367)) {
+                    player.getInventory().delete(23367,1);
+                    player.getInventory().add(23324,1);
+                    player.getPA().sendMessage("You have chosen the Faeless Magician Pet!");
+                }
+                player.getPacketSender().removeInterface();
+                break;
 
+            case 77245:
+                if (player.getInventory().contains(23367)) {
+                player.getInventory().delete(23367,1);
+                player.getInventory().add(23325,1);
+                player.getPA().sendMessage("You have chosen the Lotus Magician Pet!");
+            }
+                player.getPacketSender().removeInterface();
+                break;
+
+            case 77248:
+                if (player.getInventory().contains(23367)) {
+                    player.getInventory().delete(23367,1);
+                    player.getInventory().add(23326,1);
+                    player.getPA().sendMessage("You have chosen the Shadow Magician Pet!");
+                }
+                player.getPacketSender().removeInterface();
+                break;
             case -18522:
             case -17390:
+            case 77146:
+            case 77346:
+            case 77446:
+            case 77546:
+            case 77251:
                 player.getPacketSender().removeInterface();
                 break;
             case 77142:

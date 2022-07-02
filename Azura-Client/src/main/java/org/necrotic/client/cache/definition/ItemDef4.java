@@ -736,6 +736,42 @@ public class ItemDef4 {
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
 
+			case 23324:
+				itemDef.name = "Faceless Magician pet";
+				itemDef.modelID = 19463;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelZoom = 3500;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+
+			case 23325:
+				itemDef.name = "Lotus Magician pet";
+				itemDef.modelID = 19483;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelZoom = 3500;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+
+			case 23326:
+				itemDef.name = "Shadow Magician pet";
+				itemDef.modelID = 19484;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelZoom = 3500;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+
 			case 18883:
 				itemDef.copyItem(7671);
 				itemDef.name = "Deity gloves";

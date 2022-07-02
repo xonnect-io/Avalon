@@ -1416,8 +1416,110 @@ public class RSInterface {
 		rareScroll.totalChildren(1);
 		rareScroll.child(0, 48171, 15, 3);
 	}
+	private static void questInterface(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(77830);
+		addSpriteLoader(77831, 1708);
+		addText(77832, "Quest Information", tda, 2, 0xff8624, true, true);
+		addText(77833, "Quest Name", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(77834, 714, "Close Window", 16, 16);
+		main.totalChildren(5);
+		main.child(0, 77831, 80, 28);
+		main.child(1, 77832, 250, 33);
+		main.child(2, 77833, 250, 57);
+		main.child(3, 77834, 384, 32);
+		main.child(4, 77835, 119, 77);
 
-	private static void assassinUnlock(TextDrawingArea[] tda) {
+		addText(77836, "- Speak to Avalon to accept the quest", tda, 1, 0xff8624, true, true);
+		addText(77837, "", tda, 1, 0xff8624, true, true);
+		addText(77838, "- Obtain the Data Report from Ben", tda, 1, 0xff8624, true, true);
+		addText(77839, "", tda, 1, 0xff8624, true, true);
+		addText(77840, "- Kill Cyber Hackers and obtain Cyber Engery", tda, 1, 0xff8624, true, true);
+		addText(77841, " ", tda, 1, 0xff8624, true, true);
+		addText(77842, "- Return the Cyber Energy to Avalon", tda, 1, 0xff8624, true, true);
+		addText(77843, "", tda, 1, 0xff8624, true, true);
+		addText(77844, "- Speak to Mike in the Hidden Valley", tda, 1, 0xff8624, true, true);
+		addText(77845, "", tda, 1, 0xff8624, true, true);
+		addText(77846, "- Help Mike obtain enough power to fight", tda, 1, 0xff8624, true, true);
+		addText(77847, "off the Cyber Demons", tda, 1, 0xff8624, true, true);
+		addText(77848, "", tda, 1, 0xff8624, true, true);
+		addText(77849, "- Find the Hidden computer components", tda, 1, 0xff8624, true, true);
+		addText(77850, "", tda, 1, 0xff8624, true, true);
+		addText(77851, "- Return to Avalon to complete the Quest", tda, 1, 0xff8624, true, true);
+		addText(77852, "", tda, 1, 0xff8624, true, true);
+		addText(77853, "", tda, 1, 0xff8624, true, true);
+		addText(77854, "", tda, 1, 0xff8624, true, true);
+		addText(77855, "", tda, 1, 0xff8624, true, true);
+
+
+
+		RSInterface scrollBar = addInterface(77835);
+		scrollBar.totalChildren(20);
+		scrollBar.child(0, 77836, 125, 10);
+		scrollBar.child(1, 77837, 125, 25);
+		scrollBar.child(2, 77838, 125, 40);
+		scrollBar.child(3, 77839, 125, 55);
+		scrollBar.child(4, 77840, 125, 70);
+		scrollBar.child(5, 77841, 125, 85);
+		scrollBar.child(6, 77842, 125, 100);
+		scrollBar.child(7, 77843, 125, 115);
+		scrollBar.child(8, 77844, 125, 130);
+		scrollBar.child(9, 77845, 125, 145);
+		scrollBar.child(10, 77846, 125, 160);
+		scrollBar.child(11, 77847, 125, 175);
+		scrollBar.child(12, 77848, 125, 190);
+		scrollBar.child(13, 77849, 125, 205);
+		scrollBar.child(14, 77850, 125, 220);
+		scrollBar.child(15, 77851, 125, 235);
+		scrollBar.child(16, 77852, 125, 250);
+		scrollBar.child(17, 77853, 125, 265);
+		scrollBar.child(18, 77854, 125, 280);
+		scrollBar.child(19, 77855, 125, 295);
+		scrollBar.width = 260;
+		scrollBar.height = 199;
+		scrollBar.scrollMax = 500;
+
+
+
+	}
+	private static void magicianPetUnlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(77230);
+		addSpriteLoader(77231, 1707);
+
+		addText(77232, "Choose an Magician Pet", tda, 2, 0xff8624, true, true);
+		addText(77233, "You may pick only one pet(They all provide 25% Damage Boost and 45% Drop Rate Boost)", tda, 0, 0xff8624, true, true);
+		addText(77234, "Faceless", tda, 2, 0xff8624, true, true);
+		addText(77235, "Death Lotus", tda, 2, 0xff8624, true, true);
+		addText(77236, "Shadow Hunter", tda, 2, 0xff8624, true, true);
+		RSInterface.drawNpcOnInterface(77237, 9116, 350);
+		RSInterface.drawNpcOnInterface(77238, 9117, 350);
+		RSInterface.drawNpcOnInterface(77239, 9118, 350);
+		addHoverButtonWSpriteLoader(77242, 1445, 132, 29, "Choose Faceless Magician", -1, 77243, 1);
+		addHoveredImageWSpriteLoader(77243, 1446, 132, 29, 77244);
+		addHoverButtonWSpriteLoader(77245, 1445, 132, 29, "Choose Lotus Magician", -1, 77246, 1);
+		addHoveredImageWSpriteLoader(77246, 1446, 132, 29, 77247);
+		addHoverButtonWSpriteLoader(77248, 1445, 132, 29, "Choose Shadow Magician", -1, 77249, 1);
+		addHoveredImageWSpriteLoader(77249, 1446, 132, 29, 77250);
+		addButtonWSpriteLoader(77251, 714, "Close Window", 16, 16);
+
+		main.totalChildren(16);
+		main.child(0, 77231, 10, 10);
+		main.child(1, 77232, 250, 16);
+		main.child(2, 77233, 250, 38);
+		main.child(3, 77242, 35, 280);
+		main.child(4, 77243, 35, 280);
+		main.child(5, 77245, 190, 280);
+		main.child(6, 77246, 190, 280);
+		main.child(7, 77248, 345, 280);
+		main.child(8, 77249, 345, 280);
+		main.child(9, 77235, 252, 287);
+		main.child(10, 77236, 408, 287);
+		main.child(11, 77234, 100, 287);
+		main.child(12, 77237, 30, 160);
+		main.child(13, 77238, 182, 160);
+		main.child(14, 77239, 342, 160);
+		main.child(15, 77251, 478, 14);
+	}
+	private static void magicianUnlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(77130);
 		addSpriteLoader(77131, 1701);
 
@@ -1455,7 +1557,7 @@ public class RSInterface {
 		main.child(13, 77145, 250, 255);
 		main.child(14, 77146, 355, 38);
 	}
-	private static void assassinTier1Unlock(TextDrawingArea[] tda) {
+	private static void magicianTier1Unlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(77330);
 		addSpriteLoader(77331, 1702);
 
@@ -1505,7 +1607,7 @@ public class RSInterface {
 		main.child(20, 77347, 298, 64);
 	}
 
-	private static void assassinTier2Unlock(TextDrawingArea[] tda) {
+	private static void magicianTier2Unlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(77430);
 		addSpriteLoader(77431, 1702);
 
@@ -1553,7 +1655,7 @@ public class RSInterface {
 		main.child(19, 77447, 298, 64);
 	}
 
-	private static void assassinTier3Unlock(TextDrawingArea[] tda) {
+	private static void magicianTier3Unlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(77530);
 		addSpriteLoader(77531, 1702);
 
@@ -2901,6 +3003,7 @@ public class RSInterface {
 		rsInterface.modelRotationX = 0;
 		rsInterface.npcDisplay = rsInterface.npcDisplay = MobDefinition.get(npcId).walkAnimation;
 	}
+
 
 	public static void GoldenScratchCardNew(TextDrawingArea[] tda) {
 		RSInterface tab = RSInterface.addInterface(39300);
@@ -6136,10 +6239,12 @@ public class RSInterface {
 			bronzeCardMain(textDrawingAreas);
 			mysteryBoxViewer(textDrawingAreas);
 			sufferingChest(textDrawingAreas);
-			assassinUnlock(textDrawingAreas);
-			assassinTier1Unlock(textDrawingAreas);
-			assassinTier2Unlock(textDrawingAreas);
-			assassinTier3Unlock(textDrawingAreas);
+			magicianUnlock(textDrawingAreas);
+			magicianPetUnlock(textDrawingAreas);
+			questInterface(textDrawingAreas);
+			magicianTier1Unlock(textDrawingAreas);
+			magicianTier2Unlock(textDrawingAreas);
+			magicianTier3Unlock(textDrawingAreas);
 			effectInterface(textDrawingAreas);
 			effectInterface2(textDrawingAreas);
 			effectInterface3(textDrawingAreas);
