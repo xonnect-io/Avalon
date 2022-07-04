@@ -78,10 +78,14 @@ public class Equipment extends ItemContainer {
 	 * The shield slot.
 	 */
 	public static final int SHIELD_SLOT = 5;
-
+	/**
+	 * The Aura slot.
+	 */
+	public static final int AURA_SLOT = 6;
 	/**
 	 * The bottoms slot.
 	 */
+
 	public static final int LEG_SLOT = 7;
 
 	/**
@@ -103,7 +107,6 @@ public class Equipment extends ItemContainer {
 	 * The arrows slot.
 	 */
 	public static final int AMMUNITION_SLOT = 13;
-	public static final int AURA_SLOT = 6;
 
 	public boolean wearingNexAmours() {
 		int head = getPlayer().getEquipment().getItems()[HEAD_SLOT].getId();

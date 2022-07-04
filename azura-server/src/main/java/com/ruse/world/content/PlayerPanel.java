@@ -100,6 +100,10 @@ public class PlayerPanel {
                 "Voting Points: @whi@ " + player.getPointsHandler().getVotingPoints(),
                 "Slayer Points: @whi@" + player.getPointsHandler().getSlayerPoints(),
                 "Loyalty Points: @whi@" + (int) player.getPointsHandler().getLoyaltyPoints(),
+                "Quests",
+                "Blood Runs Deep",
+                "The Chosen Commander",
+                "Demon Slayer",
               //  "Prestige Points: @whi@" + player.getPointsHandler().getPrestigePoints(),
               //  "Total Prestige: @whi@" + player.getPointsHandler().getTotalPrestiges(),
               //  "Event Points: @whi@ " + player.getPointsHandler().getEventPoints(),
@@ -123,6 +127,8 @@ public class PlayerPanel {
         player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Kill Tracker");
         player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Possible Loot");
         player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Item Stats");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Drop Rate Items");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Season Pass");
         player.getPacketSender().sendString(interfaceID++, "@yel@Change @yel@Password");
         player.getPacketSender().sendString(interfaceID++, "@yel@Edit @yel@Pin");
 

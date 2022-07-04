@@ -1257,7 +1257,14 @@ public class DialogueOptions {
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
                 case 8621:
-                    DialogueManager.start(player, QuestDialogues.questCurseOfArravAccept(player));
+                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepAccept(player));
+                    player.setQuestOneStarted(true);
+                    break;
+                case 8622:
+                    TeleportHandler.teleportPlayer(player, new Position(1823, 5087,2),
+                        player.getSpellbook().getTeleportType());
+                    player.getPacketSender().sendMessage("You teleport into the Old man's dream.");
+                    player.setQuestOneStep1(true);
                     break;
                 case 8102:
                     if (player.getCelestial() == false && player.getSODRaidsKC() >= 50 && player.getInventory().contains(13379, 2)) {
@@ -1722,7 +1729,7 @@ public class DialogueOptions {
             switch (player.getDialogueActionId()) {
 
                 case 8621:
-                    DialogueManager.start(player, QuestDialogues.questCurseOfArravDecline(player));
+                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepDecline(player));
                     break;
 
                 case 668://no
@@ -1853,6 +1860,11 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+
+                case 8625:
+                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepFatherReen2(player));
+                    break;
+
                 case 8005:
                     player.getPacketSender().sendInterfaceRemoval();
                     if (!player.getSkillManager().maxed()) {
@@ -2049,6 +2061,9 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+                case 8625:
+                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepFatherReen3(player));
+                    break;
                 case 8005:
                     player.getPacketSender().sendInterfaceRemoval();
                     if (!player.getSkillManager().maxed()) {
@@ -2382,6 +2397,7 @@ public class DialogueOptions {
                 case 197:
                 case 65:
                 case 8005:
+                case 8625:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 41:

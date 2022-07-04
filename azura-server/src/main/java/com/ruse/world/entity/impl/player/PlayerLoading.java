@@ -155,6 +155,12 @@ public class PlayerLoading {
                 player.setQuestOneStep4(reader.get("quest-one-step-four").getAsBoolean());
             }            if (reader.has("quest-one-step-five")) {
                 player.setQuestOneStep5(reader.get("quest-one-step-five").getAsBoolean());
+            }            if (reader.has("quest-one-step-six")) {
+                player.setQuestOneStep6(reader.get("quest-one-step-six").getAsBoolean());
+            }            if (reader.has("quest-one-step-seven")) {
+                player.setQuestOneStep7(reader.get("quest-one-step-seven").getAsBoolean());
+            }            if (reader.has("talked-to-ghost")) {
+                player.setTalkedToGhost(reader.get("talked-to-ghost").getAsBoolean());
             }
             if (reader.has("magic1-unlocked")) {
                 player.setMagicGuildTier1(reader.get("magic1-unlocked").getAsBoolean());
@@ -452,6 +458,9 @@ public class PlayerLoading {
             }
             if (reader.has("ab-killcount")) {
                 player.getPointsHandler().setAvalonBeastKC(reader.get("ab-killcount").getAsInt(), false);
+            }
+            if (reader.has("quest-one-dream-kc")) {
+                player.getPointsHandler().setQuestOneDreamKC(reader.get("quest-one-dream-kc").getAsInt(), false);
             }
             if (reader.has("seasonpass-xp")) {
                 player.getSeasonPass().setXp(reader.get("seasonpass-xp").getAsInt());

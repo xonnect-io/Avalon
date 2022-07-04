@@ -85,6 +85,7 @@ public class PointsHandler {
 	private int midnightgoblinkillcount;
 	private int shillingrate;
 	private int npckillcount;
+	private int questOneDreamKC;
 	private int unknownCompleted;
 	private int totalprestiges;
 	private int totalsprees;
@@ -837,6 +838,23 @@ private int pengRate;
 
 	public void incrementNPCKILLCount(int amt) {
 		this.npckillcount += amt;
+	}
+
+
+
+	public int getQuestOneDreamKC() {
+		return questOneDreamKC;
+	}
+
+	public void incrementQuestOneDreamKC(int amt) {
+		this.questOneDreamKC += amt;
+	}
+
+	public void setQuestOneDreamKC(int points, boolean add) {
+		if (add)
+			this.questOneDreamKC += points;
+		else
+			this.questOneDreamKC = points;
 	}
 
 	public void setNPCKILLCount(int points, boolean add) {

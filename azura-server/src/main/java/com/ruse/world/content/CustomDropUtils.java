@@ -72,13 +72,13 @@ public class CustomDropUtils {
             percentBoost += 75;
         }
 
-        if (player.getEquipment().contains(23280)) { //Owner ring (u)
+        if (player.getEquipment().contains(23234)) { //Owner ring (u)
             percentBoost += 60;
         }
-        if (player.getEquipment().contains(23280)) { //Owner ring
+        if (player.getEquipment().contains(23231)) { //Owner ring
             percentBoost += 50;
         }
-        if (player.getEquipment().contains(232588)) { //Plutonic ring
+        if (player.getEquipment().contains(23258)) { //Plutonic ring
             percentBoost += 40;
         }
         if (player.getEquipment().contains(18818)) { //Collecter ring III
@@ -113,9 +113,6 @@ public class CustomDropUtils {
             percentBoost += 40;
         }
         if (player.getEquipment().contains(22103)) { //Fallen Angel's boots
-            percentBoost += 30;
-        }
-        if (player.getEquipment().contains(23263)) { //Reapers boots
             percentBoost += 30;
         }
         if (player.getEquipment().contains(23263)) { //Reapers boots
@@ -225,10 +222,10 @@ public class CustomDropUtils {
          if (player.getEquipment().contains(23293)) { //Celestial amulet
                     percentBoost += 75;
                }
-        if (player.getEquipment().contains(23293)) { //Owner amulet (u)
+        if (player.getEquipment().contains(23233)) { //Owner amulet (u)
             percentBoost += 60;
         }
-        if (player.getEquipment().contains(23293)) { //Owner amulet
+        if (player.getEquipment().contains(23230)) { //Owner amulet
             percentBoost += 50;
         }
         if (player.getEquipment().contains(23258)) { //Plutonic amulet
@@ -272,10 +269,10 @@ public class CustomDropUtils {
         //start weapons
 
         if (player.getEquipment().contains(23228)) { //Icyenic bow
-            percentBoost += 90;
+            percentBoost += 50;
         }
         if (player.getEquipment().contains(23267)) { //Infernal Bow
-            percentBoost += 90;
+            percentBoost += 50;
         }
         if (player.getEquipment().contains(23227)) { //Blood legends sword
             percentBoost += 40;
@@ -412,7 +409,7 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(15644)) { //Elite legs(range)
             percentBoost += 10;
         }
-        if (player.getEquipment().contains(13847)) { //Elite legs(magic)
+        if (player.getEquipment().contains(15647)) { //Elite legs(magic)
             percentBoost += 10;
         }
         if (player.getEquipment().contains(11322)) { //Dragon rider platelegs

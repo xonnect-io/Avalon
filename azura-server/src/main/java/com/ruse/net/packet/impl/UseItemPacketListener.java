@@ -105,6 +105,31 @@ public class UseItemPacketListener implements PacketListener {
             CrystalChest.sendRewardInterface(player);
             return;
         }
+        if (usedWith.getId() == 4820 && itemUsedWith.getId() == 1468 ||
+                usedWith.getId() == 1468 && itemUsedWith.getId() == 4820) {
+            if (player.getInventory().contains(4820, 25) &&
+            player.getInventory().contains(1468, 10)) {
+                if(player.getInventory().contains(2347)) {
+                    player.getInventory().delete(4820, 25);
+                    player.getInventory().delete(1468, 10);
+                    player.getInventory().add(8534, 1);
+                    player.setQuestOneStep2(true);
+                    return;
+                } else
+                    player.getPacketSender().sendMessage("You need a hammer in your inventory to build the lectern.");
+            } else
+                player.getPacketSender().sendMessage("You don't have all the ingredients.");
+            return;
+        }
+        if (usedWith.getId() == 4682 && itemUsedWith.getId() == 23369 ||
+                usedWith.getId() == 23369 && itemUsedWith.getId() == 4682) {
+                    player.getInventory().delete(4682, 1);
+                    player.getInventory().delete(23369, 1);
+                    player.getInventory().add(552, 1);
+                    DialogueManager.sendStatement(player, "You make an Ghost-speak amulet, equip it to talk to ghosts.");
+
+
+        }
 
         if (usedWith.getId() == 22108) {
             CurrencyPouch.handleItemOnItem(player, itemUsedWith);

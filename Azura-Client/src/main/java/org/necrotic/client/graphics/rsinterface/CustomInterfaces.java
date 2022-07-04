@@ -1758,11 +1758,9 @@ public class CustomInterfaces extends RSInterface {
 		c = 0;
 		x = 3;
 		y = 3;
-		info.totalChildren(10);
+		info.totalChildren(15);
 
-		for (int i = 0; i < 10; i++) {
-			//hoverText(id, "---", "Select", tda, 1, 0xFFA500, false, true, 100, 11, false);
-			// addText(id, "---", tda, 0, 0xFFA500, true, true);
+		for (int i = 0; i < 15; i++) {
 			teleportText(id, "", "Select", fonts, 1, 0xFF9900, true, true, 169, 17);
 			info.child(c++, id++, 0 + x, 0 + y);
 			y += 17;
@@ -1858,7 +1856,7 @@ public class CustomInterfaces extends RSInterface {
 		c = 0;
 		x = -5;
 		y = 3;
-		info.totalChildren(23);
+		info.totalChildren(27);
 
 		addText(id, "Main", tda, 2, 0xFF981F, true, true);
 		info.child(c++, id++, 85 + x, 0 + y);
@@ -1887,6 +1885,17 @@ public class CustomInterfaces extends RSInterface {
 
 		for (int i = 0; i < 6; i++) {
 			addText(id, "id: " + id, tda, 0, 0xFF981F, false, true);
+			info.child(c++, id++, 10 + x, 0 + y);
+			y += 17;
+		}
+
+		y += 5;
+		addText(id, "Quests", tda, 2, 0xFF981F, true, true);
+		info.child(c++, id++, 85 + x, 0 + y);
+		y += 20;
+
+		for (int i = 0; i < 3; i++) {
+			teleportText(id, "", "Select", fonts, 0, ColorConstants.YELLOW, false, true, 169, 17);
 			info.child(c++, id++, 10 + x, 0 + y);
 			y += 17;
 		}

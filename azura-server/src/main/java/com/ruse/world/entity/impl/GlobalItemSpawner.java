@@ -3,7 +3,6 @@ package com.ruse.world.entity.impl;
 import com.ruse.model.GroundItem;
 import com.ruse.model.Item;
 import com.ruse.model.Position;
-import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -35,6 +34,7 @@ public class GlobalItemSpawner {
         nullCheckAndSpawn(player, new Item(7509, 1), ROCKCAKE_POSITION);
         nullCheckAndSpawn(player, new Item(952, 1), STARTER_SPADE);
         nullCheckAndSpawn(player, new Item(952, 1), STARTER_SPADE2);
+        nullCheckAndSpawn(player, new Item(4682, 1), new Position(3245, 3210, 0));
         timer = System.currentTimeMillis();
     }
 

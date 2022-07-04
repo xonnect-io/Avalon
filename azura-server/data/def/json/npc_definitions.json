@@ -133203,7 +133203,7 @@
     "examine": "Not exactly a warrior princess.",
     "combat": 24,
     "size": 1,
-    "attackable": true,
+    "attackable": false,
     "aggressive": false,
     "retreats": false,
     "poisonous": false,

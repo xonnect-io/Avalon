@@ -364,8 +364,34 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 1821:
                         DialogueManager.start(player, CelestialDialogues.main(player));
                         break;
-                    case 432:
-                        DialogueManager.start(player, QuestDialogues.questCurseOfArravIntro(player));
+                    case 6040:
+                        if (player.getQuestOneStarted() == false)
+                        DialogueManager.start(player, QuestDialogues.questBloodRunsDeepIntro(player));
+                        else if (player.getQuestOneStarted() == true && player.getQuestOneStep2() == false || player.getQuestOneStep3() == false) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepInProgress(player));
+                            return;
+                        } else if (player.getQuestOneStep2() == true && player.getQuestOneStep3() == true) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepEnterRealm(player));
+                        }
+                        break;
+                    case 2899:
+                        if (player.getQuestOneStep4() == false && !player.getInventory().contains(552)) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepFatherReen(player));
+                        } else if (player.getInventory().contains(552))
+                            player.getPacketSender().sendMessage("You already have a ghost-speak amulet in your inventory.");
+                        break;
+                    case 305:
+                        if (player.getQuestOneStep2() == false || player.getQuestOneStep3() == false)
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepDream(player));
+                        else if (player.getQuestOneStep2() == true && player.getQuestOneStep3() == true)
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepDreamComplete(player));
+                        break;
+
+                    case 1541:
+                        if (player.getEquipment().contains(552))
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepLumbridgeGhost(player));
+                        else
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepLumbridgeGhostGibberish(player));
                         break;
                     case 736:
                         player.forceChat("Ban emily!");

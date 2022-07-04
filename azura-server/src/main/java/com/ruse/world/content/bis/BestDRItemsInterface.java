@@ -1,5 +1,6 @@
 package com.ruse.world.content.bis;
 
+import com.ruse.model.container.impl.Equipment;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class BestDRItemsInterface {
     private static String[] text = new String[]{"Head", "Body", "Legs", "Weapon", "Shield", "Amulet", "Cape", "Gloves",
-            "Boots", "Ring", "Auras", "Pets", "Magic Damage"};
+            "Boots", "Ring", "Auras", "Pets", "Misc"};
     public static List<Integer> itemsToIgnore = new ArrayList() {
         {
             add(5424); //add custom items ids here
@@ -28,18 +29,67 @@ public class BestDRItemsInterface {
             openInterface(player, index);
             return true;
         } else if (buttonId == 109322) {
-            openInterface(player, 14);
+            int index = (buttonId - 109316) + 4;
+            openInterface(player, index);
             return true;
         } else if (buttonId == 109323) {
-            openInterface(player, 15);
+            int index = (buttonId - 109316) + 4;
+            openInterface(player, index);
             return true;
         } else if (buttonId == 109324) {
-            openInterface(player, 17);
+            int index = (buttonId - 109316) + 4;
+            openInterface(player, index);
             return true;
         }
         return false;
     }
 
+    public static int getSlotForButton(int index){
+        int slot = 0;
+        switch(index){
+            case 0:
+                slot = Equipment.HEAD_SLOT;
+                break;
+            case 1:
+                slot = Equipment.BODY_SLOT;
+                break;
+            case 2:
+                slot = Equipment.LEG_SLOT;
+                break;
+            case 3:
+                slot = Equipment.WEAPON_SLOT;
+                break;
+            case 4:
+                slot = Equipment.SHIELD_SLOT;
+                break;
+            case 5:
+                slot = Equipment.AMULET_SLOT;
+                break;
+            case 6:
+                slot = Equipment.CAPE_SLOT;
+                break;
+            case 7:
+                slot = Equipment.HANDS_SLOT;
+                break;
+            case 8:
+                slot = Equipment.FEET_SLOT;
+                break;
+            case 9:
+                slot = Equipment.RING_SLOT;
+                break;
+            case 10:
+                slot = Equipment.AURA_SLOT;
+                break;
+            case 11: //PETS
+                break;
+            case 12://misc
+
+                break;
+        }
+
+
+        return slot;
+    }
     public static void openInterface(Player player, int bonus) {
 
         for (int i = 0; i < 5; i++) {
@@ -56,8 +106,8 @@ public class BestDRItemsInterface {
 
         for (ItemDefinition i : ItemDefinition.getDefinitions()) {
             if (i != null) {
-                if (!i.isNoted() && i.getBonus()[bonus] > 0 && !itemsToIgnore.contains(i.getId()))// && i.getEquipmentSlot() ==
-                    // Equipment.BODY_SLOT)
+                if (!i.isNoted() && i.getDropratechance() > 0 && !itemsToIgnore.contains(i.getId()) && i.getEquipmentSlot() ==
+                        getSlotForButton(bonus))
                     objects.add(i);
             }
         }
@@ -65,9 +115,9 @@ public class BestDRItemsInterface {
         Collections.sort(objects, new Comparator<ItemDefinition>() {
             @Override
             public int compare(ItemDefinition p, ItemDefinition p1) {
-                if (p.getBonus()[bonus] == p1.getBonus()[bonus]) {
+                if (p.getDropratechance() == p1.getDropratechance()) {
                     return 0;
-                } else if (p.getBonus()[bonus] > p1.getBonus()[bonus]) {
+                } else if (p.getDropratechance() > p1.getDropratechance()) {
                     return -1;
                 } else {
                     return 1;
@@ -79,7 +129,7 @@ public class BestDRItemsInterface {
         int size = (objects.size() >= 100 ? 100 : objects.size());
         for (int i = 0; i < size; i++) {
             player.getPacketSender().sendString(interId++,
-                    "" + objects.get(i).getBonus()[bonus]);
+                    "" + objects.get(i).getDropratechance());
             player.getPacketSender().sendString(interId++, "" + objects.get(i).getName());
             player.getPacketSender().sendItemOnInterface(interId++, objects.get(i).getId(), 1);
 

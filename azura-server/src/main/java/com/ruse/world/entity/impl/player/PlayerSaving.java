@@ -149,6 +149,7 @@ public class PlayerSaving {
 			object.addProperty("zeus-killcount", new Integer(player.getPointsHandler().getZEUSKILLCount()));
 			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
 			object.addProperty("ab-killcount", new Integer(player.getPointsHandler().getAvalonBeastBKC()));
+			object.addProperty("quest-one-dream-kc", new Integer(player.getPointsHandler().getQuestOneDreamKC()));
 			object.addProperty("faceless-magician-killcount", new Integer(player.getPointsHandler().getFacelessMagicianKC()));
 			object.addProperty("lotus-magician-killcount", new Integer(player.getPointsHandler().getLotusMagicianKC()));
 			object.addProperty("shadow-magician-killcount", new Integer(player.getPointsHandler().getShadowMagicianKC()));
@@ -353,6 +354,9 @@ public class PlayerSaving {
 			object.addProperty("quest-one-step-three", player.getQuestOneStep3());
 			object.addProperty("quest-one-step-four", player.getQuestOneStep4());
 			object.addProperty("quest-one-step-five", player.getQuestOneStep5());
+			object.addProperty("quest-one-step-six", player.getQuestOneStep6());
+			object.addProperty("quest-one-step-seven", player.getQuestOneStep7());
+			object.addProperty("talked-to-ghost", player.getTalkedToGhost());
 			object.addProperty("magic1-unlocked", player.getMagicGuildTier1());
 			object.addProperty("magic2-unlocked", player.getMagicGuildTier2());
 			object.addProperty("magic3-unlocked", player.getMagicGuildTier3());

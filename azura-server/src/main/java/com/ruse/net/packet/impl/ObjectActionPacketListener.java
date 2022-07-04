@@ -182,6 +182,16 @@ public class ObjectActionPacketListener implements PacketListener {
                             }
                         }
                         switch (id) {
+                            case 11354:
+                                if (player.getTalkedToGhost() == true) {
+                                    TeleportHandler.teleportPlayer(player, new Position(2722, 2737),
+                                            player.getSpellbook().getTeleportType());
+                                    player.setQuestOneStep4(true);
+                                }
+                                else
+                                if (player.getTalkedToGhost() == false)
+                                    player.getPacketSender().sendMessage("You don't want to enter this rift without knowing whats on the other side..");
+                                break;
                             case 22099:
                                 if (player.getRights() == PlayerRights.SAPPHIRE_DONATOR || player.getRights() == PlayerRights.EMERALD_DONATOR
                                 || player.getRights() == PlayerRights.RUBY_DONATOR || player.getRights() == PlayerRights.DIAMOND_DONATOR

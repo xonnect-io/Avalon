@@ -1,11 +1,11 @@
 package com.ruse.world.content.skill.impl.woodcutting;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class WoodcuttingData {
 
@@ -67,7 +67,7 @@ public class WoodcuttingData {
 		TEAK(35, 85, 6333, new int[] { 9036 }, 7, true), DRAMEN(36, 25, 771, new int[] { 1292 }, 7, true),
 		MAPLE(45, 100, 1517, new int[] { 1307, 4677, 4674 }, 7, true),
 		MAHOGANY(50, 125, 22060, new int[] { 9034 }, 7, true), YEW(60, 175, 1515, new int[] { 1309 }, 14, true),
-		MAGIC(75, 250, 1513, new int[] { 1306 }, 20, true);
+		MAGIC(75, 250, 1513, new int[] { 1306 }, 20, true), DREAM(1, 250, 1468, new int[] { 16604 }, 20, true);
 
 		private int[] objects;
 		private int req, xp, log, ticks;

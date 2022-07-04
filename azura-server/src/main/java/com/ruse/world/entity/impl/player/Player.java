@@ -1705,6 +1705,9 @@ End new teleport
     private boolean questOneStep3;
     private boolean questOneStep4;
     private boolean questOneStep5;
+    private boolean questOneStep6;
+    private boolean questOneStep7;
+    private boolean talkedToGhost;
     public void setQuestOneStarted(boolean questOneStarted) {
         this.questOneStarted = questOneStarted;
     }
@@ -1744,6 +1747,24 @@ End new teleport
     }
     public boolean getQuestOneStep5() {
         return questOneStep5; }
+
+    public void setQuestOneStep6(boolean questOneStep6) {
+        this.questOneStep6 = questOneStep6;
+    }
+    public boolean getQuestOneStep6() {
+        return questOneStep6; }
+
+    public void setQuestOneStep7(boolean questOneStep7) {
+        this.questOneStep7 = questOneStep7;
+    }
+    public boolean getQuestOneStep7() {
+        return questOneStep7; }
+
+    public void setTalkedToGhost(boolean talkedToGhost) {
+        this.talkedToGhost = talkedToGhost;
+    }
+    public boolean getTalkedToGhost() {return talkedToGhost;
+    }
 
     /*
     End Quest One
@@ -2704,7 +2725,6 @@ End new teleport
     public int getTotalPrestiges() {
         return totalprestiges;
     }
-
     public void incrementTotalPrestiges(int totalprestiges) {
         this.totalprestiges += totalprestiges;
     }

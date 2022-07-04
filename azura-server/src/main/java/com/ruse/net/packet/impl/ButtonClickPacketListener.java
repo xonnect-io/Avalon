@@ -1,8 +1,11 @@
 package com.ruse.net.packet.impl;
 
 import com.ruse.GameSettings;
-import com.ruse.model.*;
+import com.ruse.model.GameMode;
 import com.ruse.model.Locations.Location;
+import com.ruse.model.Position;
+import com.ruse.model.RegionInstance;
+import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Bank;
 import com.ruse.model.container.impl.Bank.BankSearchAttributes;
 import com.ruse.model.container.impl.GroupIronmanBank;
@@ -180,7 +183,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 player.getPacketSender().removeInterface();
                 break;
-
+            case 77834:
+                player.getPacketSender().removeInterface();
+                break;
             case 77245:
                 if (player.getInventory().contains(23367)) {
                 player.getInventory().delete(23367,1);
@@ -562,7 +567,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendInterfaceRemoval();
                 KillTrackerInterface.open(player);
                 break;
-            case 111608:
+            case 111610:
                 player.setInputHandling(new ChangePassword());
                 player.getPacketSender().sendEnterInputPrompt("Enter a new password:");
                 break;
@@ -573,9 +578,18 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111606:
                 PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[0]);
                 break;
-            case 111609:
+            case 111611:
                 player.setInputHandling(new SetPinPacketListener());
                 player.getPacketSender().sendEnterInputPrompt("Enter the pin that you want to set$pin");
+                break;
+            case 111608:
+                BestDRItemsInterface.openInterface(player, 0);
+                break;
+            case 111609:
+                player.getSeasonPass().openInterface();
+                break;
+            case 111425:
+                player.questInterface.openQuestOne();
                 break;
             case 111607:
                 BestItemsInterface.openInterface(player, 0);

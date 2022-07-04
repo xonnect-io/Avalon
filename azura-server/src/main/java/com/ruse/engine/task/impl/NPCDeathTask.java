@@ -390,6 +390,12 @@ public class NPCDeathTask extends Task {
                         if (npc instanceof GlobalBoss) {
                             GlobalBossHandler.onDeath((GlobalBoss) npc);
                         }
+                        if (npc.getId() == 6804)
+                        killer.getPointsHandler().incrementQuestOneDreamKC(1);
+
+                        if (npc.getId() == 6804 &&
+                            killer.getPointsHandler().getQuestOneDreamKC() == 50);
+                        killer.setQuestOneStep3(true);
 
                         if (killer.getCurrentClue().getCurrentTask() != SlayerTasks.NO_TASK) {
                             if (killer.getCurrentClue().getAmountToSlay() > 0) {

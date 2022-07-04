@@ -1934,14 +1934,11 @@ public final class MobDefinition {
 				definition.actions[2] = "Follow";
 				definition.actions[3] = "Trade";
 				break;
-			case 432:
-				definition.npcModels = new int[]{16373,16374,16375};
-				definition.name = "Hendrix";
-				definition.description = "Hendrix! OPEN THE DAMN DOOR!".getBytes();
-				definition.actions = new String[6];
-				definition.actions[0] = "Talk-to";
-				definition.actions[2] = "Follow";
-				definition.actions[3] = "Trade";
+			case 6040:
+				definition.actions = new String[]{"Talk-to", null, null, null, null};
+				break;
+			case 1541:
+				definition.actions = new String[]{"Talk-to", null, null, null, null};
 				break;
 			case 5861:
 				definition.name = "The Riftsplitter";
@@ -1975,6 +1972,9 @@ public final class MobDefinition {
 				definition.walkAnimation = lightguild.walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcSizeInSquares = 1;
+				break;
+			case 6804:
+				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 			case 440:
 				definition.name = "Demon of Deity";
@@ -5644,7 +5644,6 @@ public final class MobDefinition {
 			case 7347:
 			case 6800:
 			case 9488:
-			case 6804:
 			case 6822:
 			case 6849:
 			case 7355:

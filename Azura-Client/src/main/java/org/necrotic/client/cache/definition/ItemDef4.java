@@ -3079,6 +3079,19 @@ public class ItemDef4 {
 				itemDef.modelZoom = 900;
 				itemDef.description = "A pair of Flarefrost boots.".getBytes();
 				break;
+
+			case 1468:
+				itemDef.name = "Drowsy Branches";
+				itemDef.description = "A Drowsy Branch".getBytes();
+				itemDef.rdc2 = 11000000;
+				break;
+
+			case 23369:
+				itemDef.copyItem(552);
+				itemDef.name = "Holy amulet";
+				itemDef.rdc2 = 20;
+				break;
+
 			case 23298:
 				itemDef.copyItem(3791);
 				itemDef.actions = new String[5];

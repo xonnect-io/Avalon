@@ -16,6 +16,7 @@ public class ItemDefinition {
 
 
     public static final int COIN_ID = 995;
+    public static final int TOKEN_ID = 10835;
     public static final int MILL_ID = 10835;
     public static final int UPGRADE_TOKEN_ID = 12855;
     public static final int PVM_TICKETS = 5022;
@@ -26,6 +27,7 @@ public class ItemDefinition {
      */
     private static final String FILE_DIRECTORY = "./data/def/txt/items.txt";
     private static final String NAME_DIRECTORY = "./data/def/txt/itemnames.txt";
+    private static final String DROPCHANCE_DIRECTORY = "./data/def/txt/dropchance.txt";
 
     /**
      * The max amount of items that will be loaded.-+
@@ -65,6 +67,7 @@ public class ItemDefinition {
     private EquipmentType equipmentType = EquipmentType.WEAPON;
     private double[] bonus = new double[18];
     private int[] requirement = new int[25];
+    private int dropratechance;
 
     /**
      * Loading all item definitions
@@ -96,6 +99,13 @@ public class ItemDefinition {
                     int index = Integer.valueOf(line.substring(12, other[0].length()));
                     int requirement = Integer.valueOf(value);
                     definition.requirement[index] = requirement;
+                    continue;
+                }
+                if (line.contains("dropchance")) {
+//                    String[] other = line.split("]");
+//                    int index = Integer.valueOf(line.substring(12, other[0].length()));
+                    int dropratechance = Integer.valueOf(value);
+                    definition.dropratechance = dropratechance;
                     continue;
                 }
                 switch (token.toLowerCase()) {
@@ -140,7 +150,7 @@ public class ItemDefinition {
 
 
         try {
-            File file = new File(FILE_DIRECTORY);
+            File file = new File(NAME_DIRECTORY);
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = reader.readLine()) != null) {
@@ -171,17 +181,50 @@ public class ItemDefinition {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-     dumpItems();
+//        try {
+//            File file = new File(DROPCHANCE_DIRECTORY);
+//            BufferedReader reader = new BufferedReader(new FileReader(file));
+//            String line;
+//            while ((line = reader.readLine()) != null) {
+//                if (line.contains("inish")) {
+//                    definitions[definition.id] = definition;
+//                    continue;
+//                }
+//
+//                String[] args = line.split(": ");
+//                if (args.length <= 1)
+//                    continue;
+//                String token = args[0], value = args[1];
+//
+//                switch (token.toLowerCase()) {
+//                    case "item id":
+//                        int id = Integer.valueOf(value);
+//                        if (id < definitions.length)
+//                            definition = ItemDefinition.forId(id);
+//                        break;
+//                    case "dropchance":
+//                        if (definition != null) {
+//                            int dropchance = Integer.valueOf(value);
+//                            definition.dropratechance = dropchance;
+//                        }
+//                        break;
+//                }
+//                definition.isEquitable = definition.equipmentType != EquipmentType.WEAPON || definition.isWeapon();
+//            }
+//            reader.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        dumpItems();
     }
-    
+
     public boolean isEquitable;
-    
+
     public static void dumpItems() {
 
         File file = new File("./data/def/itemstats.dat");
         if (file.exists())
-           file.delete();
+            file.delete();
 
         GameServer.getLoader().getEngine().submit(() -> {
             try {
@@ -368,7 +411,9 @@ public class ItemDefinition {
     public double[] getBonus() {
         return bonus;
     }
-
+    public int getDropratechance(){
+        return dropratechance;
+    }
     public int[] getRequirement() {
         return requirement;
     }
