@@ -394,8 +394,10 @@ public class NPCDeathTask extends Task {
                         killer.getPointsHandler().incrementQuestOneDreamKC(1);
 
                         if (npc.getId() == 6804 &&
-                            killer.getPointsHandler().getQuestOneDreamKC() == 50);
-                        killer.setQuestOneStep3(true);
+                            killer.getPointsHandler().getQuestOneDreamKC() == 50) {
+                            killer.setQuestOneStep3(true);
+                            killer.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Fight off the Daganoth Army");
+                        }
 
                         if (killer.getCurrentClue().getCurrentTask() != SlayerTasks.NO_TASK) {
                             if (killer.getCurrentClue().getAmountToSlay() > 0) {

@@ -1856,7 +1856,7 @@ public class CustomInterfaces extends RSInterface {
 		c = 0;
 		x = -5;
 		y = 3;
-		info.totalChildren(27);
+		info.totalChildren(25);
 
 		addText(id, "Main", tda, 2, 0xFF981F, true, true);
 		info.child(c++, id++, 85 + x, 0 + y);
@@ -1894,7 +1894,7 @@ public class CustomInterfaces extends RSInterface {
 		info.child(c++, id++, 85 + x, 0 + y);
 		y += 20;
 
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 1; i++) {
 			teleportText(id, "", "Select", fonts, 0, ColorConstants.YELLOW, false, true, 169, 17);
 			info.child(c++, id++, 10 + x, 0 + y);
 			y += 17;

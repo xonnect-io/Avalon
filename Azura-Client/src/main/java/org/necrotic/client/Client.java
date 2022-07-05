@@ -19033,8 +19033,8 @@ public class Client extends GameRenderer {
                             spritesMap.get(853).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
 
                         }
-                        if (entityDef.id == 6040 || entityDef.id == 1988) {
-                            spritesMap.get(853).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
+                        if (entityDef.id == 6040) {
+                            spritesMap.get(1566).drawSprite(spriteDrawX - 8, spriteDrawY - 26);
 
                         }
                         if (entityDef.id == 198) {

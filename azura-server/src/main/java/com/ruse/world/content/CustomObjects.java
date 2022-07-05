@@ -214,14 +214,6 @@ public class CustomObjects {
     // NOTE: You must add to the client's customobjects array to make them spawn,
     // this is just clipping!
     private static final int[][] CLIENT_OBJECTS = {
-            {42192, 1783, 5334, 0, 1},
-            {42192, 1783, 5332, 0, 1},
-            {42192, 1783, 5331, 0, 1},
-            {42192, 1783, 5329, 0, 1},
-            {42192, 1777, 5323, 0, 2},
-            {42192, 1775, 5323, 0, 2},
-            {42192, 1774, 5323, 0, 2},
-            {42192, 1772, 5323, 0, 2},
             {14694, 2991, 3904, 0, 0},
             {14694, 2991, 3905, 0, 0},
             {14694, 2991, 3906, 0, 0},
@@ -751,15 +743,6 @@ public class CustomObjects {
 
     // Objects that are handled by the server on regionchange
     private static final int[][] CUSTOM_OBJECTS_SPAWNS = {
-            {42192, 1783, 5334, 0, 1},
-            {42192, 1783, 5332, 0, 1},
-            {42192, 1783, 5331, 0, 1},
-            {42192, 1783, 5329, 0, 1},
-            {42192, 1777, 5323, 0, 2},
-            {42192, 1775, 5323, 0, 2},
-            {42192, 1774, 5323, 0, 2},
-            {42192, 1772, 5323, 0, 2},
-
             {14694, 2991, 3904, 0, 0},
             {14694, 2991, 3905, 0, 0},
             {14694, 2991, 3906, 0, 0},

@@ -30370,7 +30370,7 @@
   },
   {
     "id": 1373,
-    "name": "King Vargas",
+    "name": "King Roald",
     "examine": "It's an NPC.",
     "combat": 0,
     "size": 2,
@@ -136310,7 +136310,7 @@
     "aggressive": false,
     "retreats": false,
     "poisonous": false,
-    "respawn": -1,
+    "respawn": 5,
     "maxHit": 355,
     "hitpoints": 830,
     "attackSpeed": 5,

@@ -101,9 +101,12 @@ public class PlayerPanel {
                 "Slayer Points: @whi@" + player.getPointsHandler().getSlayerPoints(),
                 "Loyalty Points: @whi@" + (int) player.getPointsHandler().getLoyaltyPoints(),
                 "Quests",
-                "Blood Runs Deep",
-                "The Chosen Commander",
-                "Demon Slayer",
+                (player.getQuestOneStep7() == true) ?
+                        "@gre@ Blood Runs Deep" : "@red@ Blood Runs Deep",
+               /* (player.getQuestOneStep7() == true) ?
+                "@gre@ Blood Runs Deep" : "@red@ Blood Runs Deep",
+                (player.getQuestOneStep7() == true) ?
+                        "@gre@ Blood Runs Deep" : "@red@ Blood Runs Deep",*/
               //  "Prestige Points: @whi@" + player.getPointsHandler().getPrestigePoints(),
               //  "Total Prestige: @whi@" + player.getPointsHandler().getTotalPrestiges(),
               //  "Event Points: @whi@ " + player.getPointsHandler().getEventPoints(),

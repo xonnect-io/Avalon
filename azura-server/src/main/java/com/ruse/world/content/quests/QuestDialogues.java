@@ -1,5 +1,6 @@
 package com.ruse.world.content.quests;
 
+import com.ruse.model.PlayerRights;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dialogue.DialogueExpression;
 import com.ruse.world.content.dialogue.DialogueType;
@@ -133,8 +134,8 @@ public class QuestDialogues {
                                     public String[] dialogue() {
                                         String line1 = "Afterwards, you will have to enter the Spiritual Realm";
                                         String line2 = "and retrieve the Prophecy Tablet.";
-                                        String line3 = "Use it on the Lecturn to Craft a Daggonoth Lair Teleport";
-                                        String line4 = "Their you will need to Defeat the Daggonoth Mother";
+                                        String line3 = "Use it on the Lecturn to Craft a Dagonnoth Cave Teleport";
+                                        String line4 = "There you will need to Defeat the Dagonnoth Boss.";
                                         return new String[]{"" + line1 + "", "" + line2
                                                 + "", "" + line3 + "", "" + line4};
                                     }
@@ -165,7 +166,7 @@ public class QuestDialogues {
 
                                             @Override
                                             public String[] dialogue() {
-                                                String line1 = "After you defeat the Dagganoth Mother";
+                                                String line1 = "After you defeat the Dagganoth Boss,";
                                                 String line2 = "obtain the Enchanted herbs and return them to me.";
                                                 String line3 = "I will then reward you for helping me save the man.";
                                                 return new String[]{"" + line1 + "", "" + line2
@@ -284,6 +285,885 @@ public class QuestDialogues {
 
     }
 
+
+    public static Dialogue questBloodRunsDeepKingRoald(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.NPC_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 648;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "Hello Adventurer, i advise you to leave this moment.";
+                String line2 = "This place should not be open to people as you,";
+                String line3 = "don't you see the dead soldiers around you?";
+                String line4 = "This place is full of ghosts! What are you doing?";
+                return new String[]{"" + line1+ "", "" + line2+ "", "" + line3+ "", "" + line4};
+            }
+
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+            @Override
+            public Dialogue nextDialogue() {
+                return new Dialogue() {
+
+                    @Override
+                    public DialogueType type() {
+                        return DialogueType.OPTION;
+                    }
+
+                    @Override
+                    public int npcId() {
+                        return 648;
+                    }
+
+                    @Override
+                    public DialogueExpression animation() {
+                        return DialogueExpression.NORMAL;
+                    }
+
+                    @Override
+                    public String[] dialogue() {
+                        String line1 = "Ksenia has sent me to retrieve the prophecy tablet.";
+                        String line2 = "I hear you guys have a ghost problem!";
+                        return new String[]{"" + line1+ "", "" + line2};
+                    }
+
+                    @Override
+                    public void specialAction() {
+                        player.setDialogueActionId(8631);
+                    }
+                };
+            }
+        };
+    }
+
+
+    public static Dialogue questBloodRunsDeepKingRoald2(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.PLAYER_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 648;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "Ksenia has sent me to retrieve the prophecy tablet.";
+                return new String[]{"" + line1};
+            }
+
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+            @Override
+            public Dialogue nextDialogue() {
+                return new Dialogue() {
+
+                    @Override
+                    public DialogueType type() {
+                        return DialogueType.NPC_STATEMENT;
+                    }
+
+                    @Override
+                    public int npcId() {
+                        return 648;
+                    }
+
+                    @Override
+                    public DialogueExpression animation() {
+                        return DialogueExpression.NORMAL;
+                    }
+
+                    @Override
+                    public String[] dialogue() {
+                        String line1 = "A Prophecy tablet? Why on Earth would you need that?";
+                        String line2 = "This tablet, combined with a Lectern can open";
+                        String line3 = "a gateway into the heart of the Dagganoth Cave";
+                        String line4 = "What is the reasoning behind Ksenia's needs?";
+                        return new String[]{"" + line1+ "", "" + line2 + "", "" + line3 + "", "" + line4};
+                    }
+
+                    @Override
+                    public void specialAction() {
+                        player.setDialogueActionId(8631);
+                    }
+
+                    @Override
+                    public Dialogue nextDialogue() {
+                        return new Dialogue() {
+
+                            @Override
+                            public DialogueType type() {
+                                return DialogueType.PLAYER_STATEMENT;
+                            }
+
+                            @Override
+                            public int npcId() {
+                                return 648;
+                            }
+
+                            @Override
+                            public DialogueExpression animation() {
+                                return DialogueExpression.NORMAL;
+                            }
+
+                            @Override
+                            public String[] dialogue() {
+                                String line1 = "We need to kill the Dagganoth Boss, and retrieve";
+                                String line2 = "the enchanted herbs. An old man washed ashore,";
+                                String line3 = "and she has been taking care of him. He is really";
+                                String line4 = "sick and needs these herbs will help revive him.";
+                                return new String[]{"" + line1+ "", "" + line2 + "", "" + line3 + "", "" + line4};
+                            }
+
+                            @Override
+                            public void specialAction() {
+                                player.setDialogueActionId(8631);
+                            }
+
+                            @Override
+                            public Dialogue nextDialogue() {
+                                return new Dialogue() {
+
+                                    @Override
+                                    public DialogueType type() {
+                                        return DialogueType.NPC_STATEMENT;
+                                    }
+
+                                    @Override
+                                    public int npcId() {
+                                        return 648;
+                                    }
+
+                                    @Override
+                                    public DialogueExpression animation() {
+                                        return DialogueExpression.NORMAL;
+                                    }
+
+                                    @Override
+                                    public String[] dialogue() {
+                                        String line1 = "Such bad news, sincerely I will help.";
+                                        String line2 = "First I will need you to catch 5 eels from";
+                                        String line3 = "the pond North of here, but be careful traveler.";
+                                        String line4 = "This pond lurks some terrible, terrible ghosts.";
+                                        return new String[]{"" + line1+ "", "" + line2 + "", "" + line3 + "", "" + line4};
+                                    }
+
+                                    @Override
+                                    public void specialAction() {
+                                        player.setDialogueActionId(8631);
+                                    }
+
+                                    @Override
+                                    public Dialogue nextDialogue() {
+                                        return new Dialogue() {
+
+                                            @Override
+                                            public DialogueType type() {
+                                                return DialogueType.NPC_STATEMENT;
+                                            }
+
+                                            @Override
+                                            public int npcId() {
+                                                return 648;
+                                            }
+
+                                            @Override
+                                            public DialogueExpression animation() {
+                                                return DialogueExpression.NORMAL;
+                                            }
+
+                                            @Override
+                                            public String[] dialogue() {
+                                                String line1 = "I will trade you the prophecy tablet for";
+                                                String line2 = "the eels. Return to me when you have caught them.";
+                                                String line3 = "I Have an extra fishing pole and bait right here.";
+                                                return new String[]{"" + line1+ "", "" + line2 + "", "" + line3};
+                                            }
+
+                                            @Override
+                                            public void specialAction() {
+                                                player.setDialogueActionId(8631);
+                                            }
+
+
+                                            @Override
+                                            public Dialogue nextDialogue() {
+                                                return new Dialogue() {
+
+                                                    @Override
+                                                    public DialogueType type() {
+                                                        return DialogueType.ITEM_STATEMENT;
+                                                    }
+
+                                                    @Override
+                                                    public DialogueExpression animation() {
+                                                        return DialogueExpression.NORMAL;
+                                                    }
+
+                                                    @Override
+                                                    public String[] dialogue() {
+                                                        player.getInventory().add(307, 1);
+                                                        return new String[]{"" + "King Roald gives you a Fishing rod."};
+                                                    }
+
+                                                    @Override
+                                                    public String[] item() {
+                                                        return new String[]{"" + 307 + "", "180", "" + "Fishing rod" + ""};
+                                                    }
+
+                                                    @Override
+                                                    public Dialogue nextDialogue() {
+                                                        return new Dialogue() {
+
+                                                            @Override
+                                                            public DialogueType type() {
+                                                                return DialogueType.ITEM_STATEMENT;
+                                                            }
+
+                                                            @Override
+                                                            public DialogueExpression animation() {
+                                                                return DialogueExpression.NORMAL;
+                                                            }
+
+                                                            @Override
+                                                            public String[] dialogue() {
+                                                                player.getInventory().add(10515, 5);
+                                                                return new String[]{"" + "King Roald gives you some worms."};
+                                                            }
+
+                                                            @Override
+                                                            public String[] item() {
+                                                                return new String[]{"" + 10515 + "", "180", "" + "Worms" + ""};
+                                                            }
+                                                        };
+                                                    }
+
+                                                };
+                                            }
+                                        };
+                                    }
+                                };
+                            }
+                        };
+                    }
+                };
+            }
+        };
+    }
+
+    public static Dialogue questBloodRunsDeepKingRoald3(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.PLAYER_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 648;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "I hear you guys have a ghost problem!";
+                return new String[]{"" + line1};
+            }
+
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+            @Override
+            public Dialogue nextDialogue() {
+                return new Dialogue() {
+
+                    @Override
+                    public DialogueType type() {
+                        return DialogueType.NPC_STATEMENT;
+                    }
+
+                    @Override
+                    public int npcId() {
+                        return 648;
+                    }
+
+                    @Override
+                    public DialogueExpression animation() {
+                        return DialogueExpression.NORMAL;
+                    }
+
+                    @Override
+                    public String[] dialogue() {
+                        String line1 = "Unfortunately this place is littered with ghosts.";
+                        String line2 = "They all have seem to have a reason to why they";
+                        String line3 = "haunt the caves, I pray one day they will get to see";
+                        String line4 = "the light again. I'm working on freeing them.";
+                        return new String[]{"" + line1+ "", "" + line2 + "", "" + line3 + "", "" + line4};
+                    }
+
+                    @Override
+                    public void specialAction() {
+                        player.setDialogueActionId(8631);
+                    }
+
+                    @Override
+                    public Dialogue nextDialogue() {
+                        return new Dialogue() {
+
+                            @Override
+                            public DialogueType type() {
+                                return DialogueType.PLAYER_STATEMENT;
+                            }
+
+                            @Override
+                            public int npcId() {
+                                return 648;
+                            }
+
+                            @Override
+                            public DialogueExpression animation() {
+                                return DialogueExpression.NORMAL;
+                            }
+
+                            @Override
+                            public String[] dialogue() {
+                                String line1 = "Good luck on that!";
+                                return new String[]{"" + line1};
+                            }
+
+                            @Override
+                            public void specialAction() {
+                                player.setDialogueActionId(8631);
+                            }
+
+                            @Override
+                            public Dialogue nextDialogue() {
+                                return new Dialogue() {
+
+                                    @Override
+                                    public DialogueType type() {
+                                        return DialogueType.NPC_STATEMENT;
+                                    }
+
+                                    @Override
+                                    public int npcId() {
+                                        return 648;
+                                    }
+
+                                    @Override
+                                    public DialogueExpression animation() {
+                                        return DialogueExpression.NORMAL;
+                                    }
+
+                                    @Override
+                                    public String[] dialogue() {
+                                        String line1 = "Thank you adventurer, I better get back to work now.";
+                                        return new String[]{"" + line1};
+                                    }
+
+                                    @Override
+                                    public void specialAction() {
+                                        player.setDialogueActionId(8631);
+                                    }
+                                };
+                            }
+                        };
+                    }
+                };
+            }
+        };
+    }
+    public static Dialogue questBloodRunsDeepVisitDagonnoth(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.NPC_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 6040;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "Excellent work " + player.getUsername() + ", use the teleport when you're ready!";
+                return new String[]{"" + line1};
+            }
+
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+        };
+    }
+
+    public static Dialogue questBloodRunsDeepAfterCompletion(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.NPC_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 6040;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "Excellent work " + player.getUsername() + ", thanks to you the old man is healed.";
+                String line2 = "You can enter the Dagannoth cave whenever you please, just be careful.";
+                return new String[]{"" + line1+ "", "" + line2 };
+            }
+
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+        };
+    }
+
+    public static Dialogue questBloodRunsDeepFinalReturn(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.PLAYER_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 6040;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "I have the Enchanted herbs from the Cave";
+                return new String[]{"" + line1};
+            }
+
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+
+            @Override
+            public Dialogue nextDialogue() {
+                return new Dialogue() {
+
+                    @Override
+                    public DialogueType type() {
+                        return DialogueType.NPC_STATEMENT;
+                    }
+
+                    @Override
+                    public int npcId() {
+                        return 6040;
+                    }
+
+                    @Override
+                    public DialogueExpression animation() {
+                        return DialogueExpression.NORMAL;
+                    }
+
+                    @Override
+                    public String[] dialogue() {
+                        String line1 = "Excellent work adventurer, now i can heal the sick man.";
+                        return new String[]{"" + line1};
+                    }
+
+                    @Override
+                    public void specialAction() {
+                        player.setDialogueActionId(8631);
+                    }
+
+                    @Override
+                    public Dialogue nextDialogue() {
+                        return new Dialogue() {
+
+                            @Override
+                            public DialogueType type() {
+                                return DialogueType.ITEM_STATEMENT;
+                            }
+
+                            @Override
+                            public DialogueExpression animation() {
+                                return DialogueExpression.NORMAL;
+                            }
+
+                            @Override
+                            public String[] dialogue() {
+                                player.getInventory().delete(17510, 1);
+                                player.getBank(0).add(21218,10);
+                                player.getBank(0).add(19116,5);
+                                if (player.getQuestOneStep7() == false) {
+                                    if (player.getAmountDonated() < 10) {
+                                        player.incrementAmountDonated(10);
+                                        player.setRights(PlayerRights.SAPPHIRE_DONATOR);
+                                        player.getPacketSender().sendMessage("<img=832> You have obtained free Sapphire Donator rank status for completing a quest.");
+                                    }
+                                    player.getPacketSender().sendMessage("<img=832> Your reward @red@X5 Super Mystery boxes@bla@ were placed in your bank.");
+                                    player.getPacketSender().sendMessage("<img=832> Your reward @red@X10 Invention lamps@bla@ were placed in your bank.");
+                                    player.getPacketSender().sendMessage("<img=832> Your @red@Holy Amulet @bla@will now give a @red@25% DR Boost");
+                                    player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@Blood Runs Deep");
+                                    player.setQuestOneStep7(true);
+
+                                }
+                                return new String[]{"" + "You give the Enchanted Herb to Ksenia."};
+                            }
+
+                            @Override
+                            public String[] item() {
+                                return new String[]{"" + 17510 + "", "180", "" + "Enchanted Herb" + ""};
+                            }
+                        };
+                    }
+                };
+            }
+        };
+    }
+
+    public static Dialogue questBloodRunsDeepReturnItemsNotFound(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.NPC_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 648;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "Excellent work " + player.getUsername() + " return the items to me.";
+                return new String[]{"" + line1};
+            }
+
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+        };
+    }
+
+
+    public static Dialogue questBloodRunsDeepReturnItems(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.PLAYER_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 648;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "I have the items you asked me to obtain.";
+                return new String[]{"" + line1};
+            }
+
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+            @Override
+            public Dialogue nextDialogue() {
+                return new Dialogue() {
+
+                    @Override
+                    public DialogueType type() {
+                        return DialogueType.NPC_STATEMENT;
+                    }
+
+                    @Override
+                    public int npcId() {
+                        return 6040;
+                    }
+
+                    @Override
+                    public DialogueExpression animation() {
+                        return DialogueExpression.NORMAL;
+                    }
+
+                    @Override
+                    public String[] dialogue() {
+                        String line1 = "Excellent work traveler, give them here.";
+                        return new String[]{"" + line1};
+                    }
+
+                    @Override
+                    public void specialAction() {
+                        player.setDialogueActionId(8631);
+                    }
+
+                    @Override
+                    public Dialogue nextDialogue() {
+                        return new Dialogue() {
+
+                            @Override
+                            public DialogueType type() {
+                                return DialogueType.ITEM_STATEMENT;
+                            }
+
+                            @Override
+                            public DialogueExpression animation() {
+                                return DialogueExpression.NORMAL;
+                            }
+
+                            @Override
+                            public String[] dialogue() {
+                                player.getInventory().delete(8534, 1);
+                                return new String[]{"" + "You give the lectern to Ksenia."};
+                            }
+
+                            @Override
+                            public String[] item() {
+                                return new String[]{"" + 8534 + "", "180", "" + "Lectern" + ""};
+                            }
+
+                            @Override
+                            public Dialogue nextDialogue() {
+                                return new Dialogue() {
+
+                                    @Override
+                                    public DialogueType type() {
+                                        return DialogueType.ITEM_STATEMENT;
+                                    }
+
+                                    @Override
+                                    public DialogueExpression animation() {
+                                        return DialogueExpression.NORMAL;
+                                    }
+
+                                    @Override
+                                    public String[] dialogue() {
+                                        player.getInventory().delete(15406, 1);
+                                        player.getInventory().add(18813, 1);
+                                        player.setQuestOneStep6(true);
+                                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Help Craft the Daganoth lair teleport.");
+                                        return new String[]{"" + "You give Ksenia the Prophecy tablet for the Daganoth teleport."};
+                                    }
+                                    @Override
+                                    public String[] item() {
+                                        return new String[]{"" + 15406 + "", "180", "" + "Prophecy tablet" + ""};
+                                    }
+                                };
+                            }
+
+                        };
+                    }
+                };
+            }
+        };
+    }
+
+    public static Dialogue questBloodRunsDeepKingRoaldComplete(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.PLAYER_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 648;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "I have the 5 eels for you King Roald.";
+                return new String[]{"" + line1};
+            }
+
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+            @Override
+            public Dialogue nextDialogue() {
+                return new Dialogue() {
+
+                    @Override
+                    public DialogueType type() {
+                        return DialogueType.NPC_STATEMENT;
+                    }
+
+                    @Override
+                    public int npcId() {
+                        return 648;
+                    }
+
+                    @Override
+                    public DialogueExpression animation() {
+                        return DialogueExpression.NORMAL;
+                    }
+
+                    @Override
+                    public String[] dialogue() {
+                        String line1 = "Excellent work traveler, give them here.";
+                        return new String[]{"" + line1};
+                    }
+
+                    @Override
+                    public void specialAction() {
+                        player.setDialogueActionId(8631);
+                    }
+
+                    @Override
+                    public Dialogue nextDialogue() {
+                        return new Dialogue() {
+
+                            @Override
+                            public DialogueType type() {
+                                return DialogueType.ITEM_STATEMENT;
+                            }
+
+                            @Override
+                            public DialogueExpression animation() {
+                                return DialogueExpression.NORMAL;
+                            }
+
+                            @Override
+                            public String[] dialogue() {
+                                player.getInventory().delete(17801, 5);
+                                return new String[]{"" + "You give the eels to King Roald"};
+                            }
+
+                            @Override
+                            public String[] item() {
+                                return new String[]{"" + 10515 + "", "180", "" + "Eels" + ""};
+                            }
+
+                            @Override
+                            public Dialogue nextDialogue() {
+                                return new Dialogue() {
+
+                                    @Override
+                                    public DialogueType type() {
+                                        return DialogueType.ITEM_STATEMENT;
+                                    }
+
+                                    @Override
+                                    public DialogueExpression animation() {
+                                        return DialogueExpression.NORMAL;
+                                    }
+
+                                    @Override
+                                    public String[] dialogue() {
+                                        player.getInventory().add(15406, 1);
+                                        player.setQuestOneStep5(true);
+                                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Obtain the Prophecy tablet");
+                                        return new String[]{"" + "Gives you the Prophecy tablet"};
+                                    }
+
+                                    @Override
+                                    public String[] item() {
+                                        return new String[]{"" + 10515 + "", "180", "" + "Prophecy tablet" + ""};
+                                    }
+                                };
+                            }
+
+                        };
+                    }
+                };
+            }
+        };
+    }
+
+    public static Dialogue questBloodRunsDeepKingRoaldExit(final Player player) {
+        return new Dialogue() {
+            @Override
+            public DialogueType type() {
+                return DialogueType.NPC_STATEMENT;
+            }
+
+            @Override
+            public int npcId() {
+                return 648;
+            }
+
+            @Override
+            public DialogueExpression animation() {
+                return DialogueExpression.NORMAL;
+            }
+
+            @Override
+            public String[] dialogue() {
+                String line1 = "Return the tablet to Ksenia to build the portal.";
+                return new String[]{"" + line1};
+            }
+            @Override
+            public void specialAction() {
+                player.setDialogueActionId(8621);
+            }
+        };
+    }
+
     public static Dialogue questBloodRunsDeepDream(final Player player) {
         return new Dialogue() {
                     @Override
@@ -335,7 +1215,7 @@ public class QuestDialogues {
 
                     @Override
                     public String[] dialogue() {
-                        String line1 = "You will also need to kill 50 Spirit Dagonoths.";
+                        String line1 = "You will also need to kill 50 Spirit Dagonnoths.";
                         String line2 = "Good luck adventurer, and may the Avalon Gods be with you.";
                         return new String[]{"" + line1+ "", "" + line2};
                     }
@@ -370,9 +1250,9 @@ public class QuestDialogues {
             @Override
             public String[] dialogue() {
                 String line1 = "Excellent work adventurer, I have another request to ask.";
-                String line2 = "King Vargas holds an ancient tablet that can be used on";
-                String line3 = "the lectern, granting us a teleport to the Dagonoth Cave.";
-                String line4 = "Speak with King Vargas in the Spiritual Realm, tell him I sent you.";
+                String line2 = "King Roald holds an ancient tablet that can be used on";
+                String line3 = "the lectern, granting us a teleport to the Dagonnoth Cave.";
+                String line4 = "Speak with King Roald in the Spiritual Realm, tell him I sent you.";
                 return new String[]{"" + line1 + "","" + line2+ "","" + line3+ "","" + line4};
             }
 
@@ -661,7 +1541,7 @@ public class QuestDialogues {
                             public String[] dialogue() {
                                 String line1 = "Ksenia has sent me, she needs my help.";
                                 String line2 = "I have crafted a ghost-speak amulet to talk to you.";
-                                String line3 = "She said I need to talk to King Vargas in the Realm";
+                                String line3 = "She said I need to talk to King Roald in the Realm";
                                 String line4 = "to obtain the Prophecy tablet.";
                                 return new String[]{"" + line1 + "","" + line2+ "","" + line3+ "","" + line4};
                             }
@@ -896,7 +1776,7 @@ public class QuestDialogues {
 
             @Override
             public String[] dialogue() {
-                String line1 = "Excellent work adventurer, speak to Ksenia for your next assignment";
+                String line1 = "Great work " + player.getUsername() + ", return to Ksenia.";
                 return new String[]{"" + line1};
             }
 

@@ -1937,6 +1937,14 @@ public final class MobDefinition {
 			case 6040:
 				definition.actions = new String[]{"Talk-to", null, null, null, null};
 				break;
+
+			case 927:
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.actions = new String[]{"Bait", null, null, null, null};
+				break;
+
 			case 1541:
 				definition.actions = new String[]{"Talk-to", null, null, null, null};
 				break;
@@ -1975,6 +1983,7 @@ public final class MobDefinition {
 				break;
 			case 6804:
 				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
 				break;
 			case 440:
 				definition.name = "Demon of Deity";

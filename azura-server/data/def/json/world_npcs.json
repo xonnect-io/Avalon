@@ -29999,11 +29999,38 @@
     }
   },
   {
-    "npc-id": 1208,
+    "npc-id": 648,
     "face": "WEST",
     "position": {
       "x": 1773,
       "y": 5327,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": false,
+      "radius": 1
+    }
+  },
+
+  {
+    "npc-id": 927,
+    "face": "WEST",
+    "position": {
+      "x": 1763,
+      "y": 5361,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": false,
+      "radius": 1
+    }
+  },
+  {
+    "npc-id": 927,
+    "face": "WEST",
+    "position": {
+      "x": 1757,
+      "y": 5360,
       "z": 0
     },
     "walking-policy": {

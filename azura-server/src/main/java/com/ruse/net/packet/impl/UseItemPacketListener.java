@@ -113,6 +113,8 @@ public class UseItemPacketListener implements PacketListener {
                     player.getInventory().delete(4820, 25);
                     player.getInventory().delete(1468, 10);
                     player.getInventory().add(8534, 1);
+                    if(player.getQuestOneStep2() == false)
+                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Create a lectern inside the dream");
                     player.setQuestOneStep2(true);
                     return;
                 } else

@@ -183,9 +183,17 @@ public class ObjectActionPacketListener implements PacketListener {
                         }
                         switch (id) {
                             case 11354:
+
+                                if (player.getQuestOneStep6() == true) {
+                                    player.getPacketSender().sendMessage("The rift has been closed.");
+                                return;
+                        }
                                 if (player.getTalkedToGhost() == true) {
-                                    TeleportHandler.teleportPlayer(player, new Position(2722, 2737),
+                                    TeleportHandler.teleportPlayer(player, new Position(1778, 5331),
                                             player.getSpellbook().getTeleportType());
+
+                                    if(player.getQuestOneStep4() == false)
+                                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Access the Spirit Realm");
                                     player.setQuestOneStep4(true);
                                 }
                                 else

@@ -248,6 +248,10 @@ public class ItemActionPacketListener implements PacketListener {
                 Position crystalChest = new Position(2647, 4019, 0);
                 TeleportHandler.teleportPlayer(player, crystalChest, TeleportType.NORMAL);
                 break;
+            case 18813:
+                Position dagannothCave = new Position(2913, 4446, 0);
+                TeleportHandler.teleportPlayer(player, dagannothCave, TeleportType.NORMAL);
+                break;
             case 23367:
                 player.getPacketSender().sendInterface(77230);
                 break;

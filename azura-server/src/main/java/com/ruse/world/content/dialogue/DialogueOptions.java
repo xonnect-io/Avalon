@@ -1256,14 +1256,21 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+                case 8631:
+                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoald2(player));
+                    break;
                 case 8621:
-                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepAccept(player));
+                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepAccept(player));                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Create a lectern inside the dream");
+                    if(player.getQuestOneStep1() == false)
+                        player.getPacketSender().sendMessage("<img=832>You started a Quest: @red@Blood Runs Deep");
                     player.setQuestOneStarted(true);
                     break;
                 case 8622:
                     TeleportHandler.teleportPlayer(player, new Position(1823, 5087,2),
                         player.getSpellbook().getTeleportType());
-                    player.getPacketSender().sendMessage("You teleport into the Old man's dream.");
+                    player.getPacketSender().sendMessage("You teleport into the old man's dream.");
+                    if(player.getQuestOneStep1() == false)
+                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Travel to the old man's dream");
                     player.setQuestOneStep1(true);
                     break;
                 case 8102:
@@ -1727,7 +1734,9 @@ public class DialogueOptions {
 
         } else if (id == SECOND_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
-
+                case 8631:
+                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoald3(player));
+                    break;
                 case 8621:
                     DialogueManager.start(player, QuestDialogues.questBloodRunsDeepDecline(player));
                     break;

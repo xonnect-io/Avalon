@@ -115,13 +115,17 @@ public class NPCOptionPacketListener implements PacketListener {
                         player.questInterface.openQuestOne();
                         break;
 */
+                    case 927:
+                        player.setEntityInteraction(npc);
+                        Fishing.setupFishing(player, Fishing.forSpot(npc.getId(), true));
+                        break;
                     case 1208://GLOVES_NPC
                         break;
                     case 460: //DAILY TASK
                         npc.forceChat("Vis porta. Claudo te. Vis sera portus.sigillum");
                         if (player.getMagicianMaster() == true) {
                             DialogueManager.sendStatement(player, "You Already have mastered this minigame!");
-                        return;
+                            return;
                         }
                         if (player.getMagicGuildTier3() == true && player.getMagicGuildTier2() == true && player.getMagicGuildTier1() == true) {
                             player.getPacketSender().sendInterfaceReset();
@@ -179,15 +183,15 @@ public class NPCOptionPacketListener implements PacketListener {
                             String yourMastersName = "";
                             String thisMasterName = "";
                             int reqSlayer = 0;
-                            if(yourMaster != null) {
+                            if (yourMaster != null) {
                                 yourMastersName = yourMaster.getSlayerMasterName();
                             }
-                            if(thisMaster != null) {
+                            if (thisMaster != null) {
                                 reqSlayer = thisMaster.getSlayerReq();
                                 thisMasterName = thisMaster.getSlayerMasterName();
                             }
-                            if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
+                            if (player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
+                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName + ".");
                             } else {
                                 DialogueManager.sendStatement(player, "You currently have an assignment with " + yourMastersName);
                             }
@@ -229,7 +233,7 @@ public class NPCOptionPacketListener implements PacketListener {
                             return;
                         }
                         if (player.getInventory().contains(4277)) {
-                            player.getInventory().delete(4277,1);
+                            player.getInventory().delete(4277, 1);
                             player.setDoubleDMGTimer(24000);
                             player.setDoubleDDRTimer(24000);
                             TaskManager.submit(new DoubleDDRTask(player));
@@ -238,7 +242,7 @@ public class NPCOptionPacketListener implements PacketListener {
                             DialogueManager.sendStatement(player, "Magnificent work, traveller!");
 
                         } else {
-                        npc.forceChat("You're Awake! Grab a spade and dig for the treasure!");
+                            npc.forceChat("You're Awake! Grab a spade and dig for the treasure!");
                         }
                         break;
                     case 662:
@@ -294,23 +298,18 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 304:
                         if (player.getLocation() == Location.SAPPHIRE_ZONE) {
                             ShopManager.getShops().get(131).open(player);
-                        } else
-                        if (player.getLocation() == Location.EMERALD_ZONE) {
+                        } else if (player.getLocation() == Location.EMERALD_ZONE) {
                             ShopManager.getShops().get(132).open(player);
-                        } else
-                            if (player.getLocation() == Location.RUBY_ZONE) {
+                        } else if (player.getLocation() == Location.RUBY_ZONE) {
                             ShopManager.getShops().get(133).open(player);
-                        } else
-                            if (player.getLocation() == Location.DIAMOND_ZONE) {
-                             ShopManager.getShops().get(134).open(player);
-                        } else
-                            if (player.getLocation() == Location.ONYX_ZONE) {
+                        } else if (player.getLocation() == Location.DIAMOND_ZONE) {
+                            ShopManager.getShops().get(134).open(player);
+                        } else if (player.getLocation() == Location.ONYX_ZONE) {
                             ShopManager.getShops().get(135).open(player);
-                       } else
-                            if (player.getLocation() == Location.ZENYTE_ZONE) {
-                                ShopManager.getShops().get(136).open(player);
-                            }
-                            npc.forceChat("Silly noob, you are not at a donator zone");
+                        } else if (player.getLocation() == Location.ZENYTE_ZONE) {
+                            ShopManager.getShops().get(136).open(player);
+                        }
+                        npc.forceChat("Silly noob, you are not at a donator zone");
                         break;
                     case 436:
                         ShopManager.getShops().get(103).open(player);
@@ -364,8 +363,42 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 1821:
                         DialogueManager.start(player, CelestialDialogues.main(player));
                         break;
+
+                    case 648:
+                        if (player.getQuestOneStep5() == false && !player.getInventory().contains(17801, 5)) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoald(player));
+                            return;
+                        } else if (player.getInventory().contains(17801, 5) && player.getQuestOneStep5() == false) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoaldComplete(player));
+                            return;
+                        } else if (player.getQuestOneStep5() == true) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoaldExit(player));
+                            return;
+                        }
+                        break;
+
                     case 6040:
-                        if (player.getQuestOneStarted() == false)
+
+                        if (player.getQuestOneStep7() == true) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepAfterCompletion(player));
+                            return;
+                        }
+                        if (player.getQuestOneStep7() == false && player.getInventory().contains(17510) && player.getQuestOneStep6() == true) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepFinalReturn(player));
+                            return;
+                        }
+                        if (player.getQuestOneStep6() == true) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepVisitDagonnoth(player));
+                            return;
+                        }
+                        if (player.getQuestOneStep5() == true && player.getInventory().contains(15406) && player.getInventory().contains(8534)) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepReturnItems(player));
+                        return;
+                         } else if (player.getQuestOneStep5() == true && !player.getInventory().contains(15406) && !player.getInventory().contains(8534)) {
+                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepReturnItemsNotFound(player));
+                        return;
+                        }
+                             if (player.getQuestOneStarted() == false)
                         DialogueManager.start(player, QuestDialogues.questBloodRunsDeepIntro(player));
                         else if (player.getQuestOneStarted() == true && player.getQuestOneStep2() == false || player.getQuestOneStep3() == false) {
                             DialogueManager.start(player, QuestDialogues.questBloodRunsDeepInProgress(player));

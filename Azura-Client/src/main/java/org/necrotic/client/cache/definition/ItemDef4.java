@@ -3084,14 +3084,32 @@ public class ItemDef4 {
 				itemDef.name = "Drowsy Branches";
 				itemDef.description = "A Drowsy Branch".getBytes();
 				itemDef.rdc2 = 11000000;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = null;
+				itemDef.actions[4] = "Drop";
 				break;
 
 			case 23369:
 				itemDef.copyItem(552);
 				itemDef.name = "Holy amulet";
-				itemDef.rdc2 = 20;
+				itemDef.rdc2 = 200;
 				break;
-
+			case 18813:
+				itemDef.name = "Dagonnoth Cave Teleport";
+				itemDef.rdc2 = 10000;
+				break;
+			case 17510:
+				itemDef.name = "Enchanted Herb";
+				itemDef.rdc2 = 5000;
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.actions[4] = "Drop";
+				break;
+			case 8534:
+				itemDef.name = "Lectern";
+				itemDef.rdc2 = 5000;
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.actions[4] = "Drop";
+				break;
 			case 23298:
 				itemDef.copyItem(3791);
 				itemDef.actions = new String[5];

@@ -26,6 +26,7 @@ public class Fishing {
 		MONK_FISH(318, new int[] { 7944, 389 }, 305, -1, new int[] { 62, 81 }, false, new int[] { 120, 150 }, 621),
 
 		HARPOON(312, new int[] { 359, 371 }, 311, -1, new int[] { 35, 50 }, true, new int[] { 80, 100 }, 618),
+		EEL(927, new int[] { 17801 }, 307, 10515, new int[] { 1 }, true, new int[] { 100 }, 623),
 
 		HARPOON2(313, new int[] { 383 }, 311, -1, new int[] { 76 }, true, new int[] { 110 }, 618),
 

@@ -244,7 +244,6 @@ public final class ObjectDefinition {
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
 
-
 		if (definition.type == 22769) {
 			definition.objectModelIDs = new int[]{18796};
 			definition.name = "AFK Tanzanite"; //#7a37b3
