@@ -105,7 +105,7 @@ import com.ruse.world.region.RegionManager;
 import com.ruse.world.region.dynamic.DynamicRegion;
 import lombok.Getter;
 import lombok.Setter;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -3779,7 +3779,7 @@ End new teleport
 
     public void claimDonation(Player player, boolean fromLogin) {
         if (player.lastDonationClaim < System.currentTimeMillis())
-            new  Donation(player).run();
+            new Store(player).run();
         else if (!fromLogin)
             player.sendMessage("You can only claim donations once every 30seconds!");
     }

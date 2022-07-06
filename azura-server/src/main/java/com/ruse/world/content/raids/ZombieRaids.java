@@ -296,7 +296,7 @@ public class ZombieRaids {
 
                 for (Player player : party.getPlayers()) {
                     player.getInventory().add(18404, 1);
-
+                    player.getSeasonPass().addXp(2);
                     player.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     player.setZombieRaidsKC(player.getZombieRaidsKC() + 1);
 

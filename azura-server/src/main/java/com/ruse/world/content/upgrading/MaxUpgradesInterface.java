@@ -5,7 +5,7 @@ import com.ruse.model.PlayerRights;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 public class MaxUpgradesInterface {
 
@@ -159,13 +159,13 @@ public class MaxUpgradesInterface {
 
     public double getBoost(double chance){
         double percentBoost = 0D;
-        if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+        if(player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
             percentBoost += 15;
-        } else if(player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
             percentBoost += 10;
-        } else if(player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
             percentBoost += 7;
-        } else if(player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
             percentBoost += 5;
         }
 

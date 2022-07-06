@@ -79,6 +79,7 @@ public class Shop extends ItemContainer {
     private static final int ONYX_STORE = 135;
     private static final int ZENYTE_STORE = 136;
     private static final int HIGH_TIER_STORE = 137;
+
     private static final int DUNGEONEERING_STORE_NEW = 152;
     private static final int KOL_STORE = 207;
     private static final int VOTE_STORE = 90;
@@ -120,7 +121,7 @@ public class Shop extends ItemContainer {
     private static final int PET_STORE_3 = PetShop.PetShopType.DROP_RATE.getShopId();
     private static final int PET_STORE_4 = PetShop.PetShopType.MISC.getShopId();
 
-    private static final int SELL_FOR_TAXBAGS_SHOP = 119;
+    private static final int SELL_ITEMS = 119;
     private final int id;
     private String name;
     private Item currency;
@@ -178,7 +179,7 @@ public class Shop extends ItemContainer {
     }
 
     public static boolean shopBuysItem(int shopId, Item item) {
-        if (shopId == GENERAL_STORE || shopId == SELL_FOR_TAXBAGS_SHOP)
+        if (shopId == GENERAL_STORE || shopId == SELL_ITEMS)
             return true;
         if (shopId == DUNGEONEERING_STORE || shopId == DUNGEONEERING_STORE_NEW || shopId == KOL_STORE || shopId == PKING_REWARDS_STORE || shopId == BOSS_SHOP
                 || shopId == EVENT_SHOP
@@ -373,6 +374,10 @@ public class Shop extends ItemContainer {
                 return;
             }
         }
+        if( id == SELL_ITEMS) {
+            player.getPacketSender().sendMessage("You cannot buy items from this shop");
+            return;
+        }
         int finalValue = 0;
         String finalString = sellingItem ? "" + ItemDefinition.forId(item.getId()).getName() + ": shop will buy for "
                 : "" + ItemDefinition.forId(shopItem.getId()).getName() + " currently costs @red@";
@@ -399,7 +404,7 @@ public class Shop extends ItemContainer {
                     || id == ENERGY_FRAGMENT_STORE || id == AGILITY_TICKET_STORE
                     || id == PYRAMID_OUTBREAK_SHOP || id == BARROWS_STORE || id == MEMBERS_STORE_I || id == MEMBERS_STORE_II
                     || id == DONATOR_STORE_1 || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4
-                    || id == PET_STORE_1 || id == PET_STORE_2 || id == PET_STORE_3 || id == PET_STORE_4 || id == SELL_FOR_TAXBAGS_SHOP || id == KOL_STORE) {
+                    || id == PET_STORE_1 || id == PET_STORE_2 || id == PET_STORE_3 || id == PET_STORE_4 || id == SELL_ITEMS || id == KOL_STORE) {
                 Object[] obj = ShopManager.getCustomShopData(id, item.getId());
                 if (obj == null)
                     return;
@@ -621,14 +626,14 @@ public class Shop extends ItemContainer {
         }
         if (!shopSellsItem(item))
             return this;
-        if (getItems()[slot].getAmount() <= 1 && id != GENERAL_STORE && id != SELL_FOR_TAXBAGS_SHOP) {
+        if (getItems()[slot].getAmount() <= 1 && id != GENERAL_STORE && id != SELL_ITEMS) {
             player.getPacketSender().sendMessage("The shop has run out of stock for this item.");
             return this;
         }
         if (item.getAmount() > getItems()[slot].getAmount())
             item.setAmount(getItems()[slot].getAmount());
         int amountBuying = item.getAmount();
-        if (amountBuying == getItems()[slot].getAmount() && id != GENERAL_STORE && id != SELL_FOR_TAXBAGS_SHOP) {
+        if (amountBuying == getItems()[slot].getAmount() && id != GENERAL_STORE && id != SELL_ITEMS) {
             amountBuying = getItems()[slot].getAmount() - 1;
             player.getPacketSender().sendMessage("You buy the maximum amount you can from the shop.");
         }
@@ -659,7 +664,10 @@ public class Shop extends ItemContainer {
                 return this;
             }
         }
-
+        if (id == SELL_ITEMS){
+            getPlayer().sendMessage("You can not purchase items from this shop.");
+            return this;
+        }
 
         if (id == PET_STORE_2){
             getPlayer().sendMessage("Coming soon...");
@@ -680,7 +688,7 @@ public class Shop extends ItemContainer {
                         || id == SHILLINGS || id == ENERGY_FRAGMENT_STORE || id == AGILITY_TICKET_STORE
                         || id == PYRAMID_OUTBREAK_SHOP || id == BARROWS_STORE || id == MEMBERS_STORE_I
                         || id == MEMBERS_STORE_II || id == DONATOR_STORE_1 || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4
-                        || id ==  PET_STORE_1 || id ==  PET_STORE_2 || id ==  PET_STORE_3 || id == PET_STORE_4|| id == SELL_FOR_TAXBAGS_SHOP) {
+                        || id ==  PET_STORE_1 || id ==  PET_STORE_2 || id ==  PET_STORE_3 || id == PET_STORE_4) {
                     value = (int) ShopManager.getCustomShopData(id, item.getId())[0];
             }
         } else {
@@ -871,7 +879,7 @@ public class Shop extends ItemContainer {
             if (!shopSellsItem(item)) {
                 break;
             }
-            if (getItems()[slot].getAmount() <= 1 && id != GENERAL_STORE && id != SELL_FOR_TAXBAGS_SHOP) {
+            if (getItems()[slot].getAmount() <= 1 && id != GENERAL_STORE && id != SELL_ITEMS) {
                 player.getPacketSender().sendMessage("The shop has run out of stock for this item.");
                 break;
             }
@@ -1188,7 +1196,7 @@ public class Shop extends ItemContainer {
                     case 11319:
                         return new Object[] { 3750, "Vote points" };
                 }
-            } else if (shop == SELL_FOR_TAXBAGS_SHOP) {
+            } else if (shop == SELL_ITEMS) {
                 switch (item) {
 
                     case 4803:

@@ -1851,7 +1851,7 @@ public class CustomInterfaces extends RSInterface {
 		RSInterface info = addInterface(interID);
 		info.width = 182 - 16;
 		info.height = 195;
-		info.scrollMax = 500;
+		info.scrollMax = 450;
 		id = interID + 1;
 		c = 0;
 		x = -5;
@@ -2421,10 +2421,13 @@ public class CustomInterfaces extends RSInterface {
 		int c = 0;
 		int x = 25;
 		int y = 40;
-		tab.totalChildren(11);
+		tab.totalChildren(12);
 
 		addSpriteLoader(id, 1115);
 		tab.child(c++, id++, 0 + x, 0 + y);
+
+		teleportText(77888, "Information", "Information", fonts, 0, 0xff8624, false, true, 60, 20);
+		tab.child(11, 77888, 18 + x, 221 + y);
 
 		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
 		tab.child(c++, id++, 440 + x, 3 + y);
@@ -2448,7 +2451,6 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(c++, id++, 285 + x, 26 + y);
 		addText(id, "Season Ends: 10 days", tda, 0, 0xd4d4d4, true, true);
 		tab.child(c++, id++, 285 + x, 45 + y);
-
 		tab.child(c++, 105100, 89 + x, 61 + y);
 
 		interID = 105100;

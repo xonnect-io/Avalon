@@ -796,7 +796,6 @@ public class ButtonClickPacketListener implements PacketListener {
                             return;
                         }
                     }
-
                     new InstanceManager(player).create3X3Instance(player.getData().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
                 } else {
                     player.getPA().sendMessage("Select the boss you'd like to instance.");
@@ -890,6 +889,25 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 Position position3 = GameSettings.GOLEMS_LOCATION;
                 TeleportHandler.teleportPlayer(player, position3, TeleportType.NORMAL);
+                break;
+            case 77888:
+               int interfaceId = 77892;
+                    for (int i = 77892; i < 77903; i++)
+                        player.getPacketSender().sendString(i, "");
+                    player.getPacketSender().sendInterface(77889);
+                    player.getPacketSender().sendString(77890, "Close window");
+                    player.getPacketSender().sendString(77891, "Season Pass Information");
+                    player.getPacketSender().sendString(interfaceId, "");
+                    player.getPacketSender().sendString(interfaceId++, "@red@" + "Main Commands:");
+                    player.getPacketSender().sendString(interfaceId++, "@re1@" + "Claiming votes (::voted) - 3xp");
+                    player.getPacketSender().sendString(interfaceId++, "@re1@" + "Every 500 npc kills - 1xp");
+                    player.getPacketSender().sendString(interfaceId++, "@re1@" + "1HR Playtime - 1xp");
+                    player.getPacketSender().sendString(interfaceId++, "@re1@" + "Easy Slayer task - 1xp");
+                    player.getPacketSender().sendString(interfaceId++, "@re1@" + "Medium Slayer task - 2xp");
+                    player.getPacketSender().sendString(interfaceId++, "@re1@" + "Hard Slayer task - 3xp");
+                player.getPacketSender().sendString(interfaceId++, "@re1@" + "Complete an achievement - 2xp");
+                    player.getPacketSender().sendString(interfaceId++, "@re1@" + "");
+
                 break;
 
             case 142270:// Shetani

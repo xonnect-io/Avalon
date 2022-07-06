@@ -371,8 +371,9 @@ public final class MobDefinition {
 				definition.standAnimation = get(12810).standAnimation;
 				definition.walkAnimation = get(12810).walkAnimation;
 				definition.npcSizeInSquares = 1;
-				definition.scaleY = 90;
-				definition.scaleXZ = 90;
+				definition.scaleY = 95;
+				definition.scaleXZ = 95;
+				definition.rdc2 = 28315;
 				//definition.walkingBackwardsAnimation = 4;
 				//definition.walkLeftAnimation = 4;
 				//definition.walkRightAnimation = 4;
@@ -1895,7 +1896,7 @@ public final class MobDefinition {
 				definition.actions[3] = "Trade";
 				break;
 			case 5604:
-				definition.name = "Avalons' Boss Store";
+				definition.name = "Boss Point Store";
 				definition.description = "Spend your boss points on some rewards in my shop!".getBytes();
 				definition.actions = new String[6];
 				definition.actions[0] = null;
@@ -2400,9 +2401,12 @@ public final class MobDefinition {
 			case 1821:
 				definition.name = "@cya@Celestial Being";
 				definition.description = "a God from the Celestial Zone".getBytes();
-				definition.npcModels = new int[]{18813};
+				definition.npcModels = new int[]{19520,19521,19522,19518,19519};
 				definition.standAnimation = 808;
+				definition.rdc2 = 37664;
 				definition.walkAnimation = 819;
+				definition.scaleXZ = 120;
+				definition.scaleY = 120;
 				definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				definition.changedModelColours = new int[1]; // same here
 				definition.changedModelColours[0] = 40; // the texture that it currently has
@@ -4411,7 +4415,7 @@ public final class MobDefinition {
 				
 				case 117:
 				definition.setDefault();
-				definition.name = "Giant Spiders";
+				definition.name = "Arachnes";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
 				definition.npcSizeInSquares = 3;

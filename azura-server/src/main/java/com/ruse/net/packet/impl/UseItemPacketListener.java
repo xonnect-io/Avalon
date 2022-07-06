@@ -333,11 +333,6 @@ public class UseItemPacketListener implements PacketListener {
                 || itemUsedWith.getId() == 12934) {
             ToxicBlowpipe.loadPipe(player);
         }
-        if (usedWith.getId() == 5012 && itemUsedWith.getId() == 10949 && itemUsedWith.getAmount() >= 3)
-            World.sendMessage("<img=16> <shad=1>[" + player.getUsername() + "] @cya@Turned his Supreme twisted bow into a Light Twisted Bow!");
-
-        if (usedWith.getId() == 10949 && itemUsedWith.getId() == 5012 && usedWith.getAmount() >= 3)
-            World.sendMessage("<img=16> <shad=1>[" + player.getUsername() + "] @cya@Turned his Supreme twisted bow into a Light Twisted Bow!");
 
         if (usedWith.getId() == 946 || itemUsedWith.getId() == 946)
             Fletching.openSelection(player, usedWith.getId() == 946 ? itemUsedWith.getId() : usedWith.getId());
@@ -618,12 +613,6 @@ public class UseItemPacketListener implements PacketListener {
             }
         }
         switch (npc.getId()) {
-            case 1821:
-                if (player.getInventory().contains(7995)) {
-                    player.getInventory().delete(7995, 1);
-                    player.setCelestial(true);
-                }
-                break;
 
             case VaultOfWar.GLOVES_NPC:
                 VaultOfWar.useGlovesOnNPC(player, new Item(id));

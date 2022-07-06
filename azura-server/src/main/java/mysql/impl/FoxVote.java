@@ -31,6 +31,7 @@ public class FoxVote implements Runnable {
 			if (!connect(HOST, DATABASE, USER, PASS)) {
 				return;
 			}
+			System.out.println("connected to vote database");
 
 			String name = player.getUsername().replace("_", " ");
 			ResultSet rs = executeQuery("SELECT * FROM fx_votes WHERE username='"+name+
@@ -57,7 +58,7 @@ public class FoxVote implements Runnable {
 				player.getDailyRewards().handleVote();
 				player.lastVoteTime = System.currentTimeMillis();
 				player.setVoteCount(doMotivote.getVoteCount() + points);
-				player.getSeasonPass().setXp(1);
+				player.getSeasonPass().addXp(3 * points);
 				player.getAchievementTracker().progress(AchievementData.SUPPORT_AVALON, 1);
 				player.getAchievementTracker().progress(AchievementData.SUPPORTER, 1);
 				player.getAchievementTracker().progress(AchievementData.MEGA_SUPPORTER, 1);

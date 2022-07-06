@@ -2562,8 +2562,8 @@ public final class ItemDefinition {
 				itemDef.name = "Celestial Symbol";
 				itemDef.modelZoom = 950;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.modelID = 19485;
-				itemDef.rdc2 = 99252;
+				itemDef.modelID = 19517;
+				//itemDef.rdc2 = 99252;
 				break;
 			case 14020:
 				itemDef.name = "Veteran hood";

@@ -153,8 +153,15 @@ public class Slayer {
 
             taskStreak++;
             player.getPointsHandler().incrementSlayerSpree(1);
-            player.getSeasonPass().addXp(1);
-            player.getPacketSender().sendMessage("You receive 1 XP for completing a slayer task!");
+
+             if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER))
+                player.getSeasonPass().addXp(1);
+            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER))
+                player.getSeasonPass().addXp(2);
+            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER))
+                player.getSeasonPass().addXp(2);
+            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER))
+                player.getSeasonPass().addXp(4);
 
             player.getAchievementTracker().progress(AchievementData.SLAYER, 1);
             player.getAchievementTracker().progress(AchievementData.MODERATE_SLAYER, 1);

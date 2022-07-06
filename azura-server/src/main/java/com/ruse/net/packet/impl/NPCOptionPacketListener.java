@@ -858,9 +858,6 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
-        if (player.getUsername().equalsIgnoreCase("test")){
-        //    World.deregister(interact);
-        }
         if (player.getEquipment().contains(22006) && player.getLastCombatType() == RANGED) {
             if (CombatFactory.npcsDeathDartDontWork(interact)) {
                 player.getMovementQueue().reset();

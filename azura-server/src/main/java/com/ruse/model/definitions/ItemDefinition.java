@@ -26,7 +26,7 @@ public class ItemDefinition {
      * The directory in which item definitions are found.
      */
     private static final String FILE_DIRECTORY = "./data/def/txt/items.txt";
-    private static final String NAME_DIRECTORY = "./data/def/txt/itemnames.txt";
+    private static final String NAME_DIRECTORY = "./data/def/txt/items.txt";
     private static final String DROPCHANCE_DIRECTORY = "./data/def/txt/dropchance.txt";
 
     /**

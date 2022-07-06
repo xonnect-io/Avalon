@@ -1388,7 +1388,7 @@
   },
   {
     "id": 59,
-    "name": "Giant spider",
+    "name": "Arachne",
     "examine": "I think this spider has been genetically modified.",
     "combat": 2,
     "size": 1,
@@ -2664,7 +2664,7 @@
   },
   {
     "id": 117,
-    "name": "Giant Spider",
+    "name": "Arachne",
     "examine": "eek! It's a giant spider!",
     "combat": 28,
     "size": 2,

@@ -60,7 +60,7 @@ import com.ruse.world.content.skill.impl.woodcutting.WoodcuttingData.Hatchet;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 import static com.ruse.world.World.getPlayers;
 
@@ -1674,7 +1674,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getClickDelay().reset();
                                 break;
                             case 305:
-                                if (player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+                                if (player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
                                     boolean restore1 = player.getSpecialPercentage() < 100;
                                     if (restore1) {
                                         player.setSpecialPercentage(100);

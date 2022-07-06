@@ -7,7 +7,6 @@ import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
-import com.ruse.model.container.impl.Equipment;
 import com.ruse.util.Misc;
 import com.ruse.util.NameUtils;
 import com.ruse.world.content.BonusManager;
@@ -19,7 +18,7 @@ import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.Dueling.DuelRule;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 public class CurseHandler {
 
@@ -350,24 +349,24 @@ public class CurseHandler {
 		/**
 		 * Donator Rank Bonusses
 		 */
-		if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT ||
-				player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT ||
+		if(player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT ||
+				player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT ||
 				player.getRights().equals(PlayerRights.YOUTUBER)) {
 			toRemove *= 0.80;
 		} else
-			if (player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+			if (player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
 			toRemove *= 0.85;
 		} else
-			if (player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+			if (player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
 			toRemove *= 0.88;
 		} else
-			if (player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+			if (player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
 			toRemove *= 0.90;
 		} else
-			if (player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+			if (player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
 			toRemove *= 0.93;
 		} else
-			if (player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+			if (player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
 			toRemove *= 0.95;
 		}
 		if (toRemove > 0) {

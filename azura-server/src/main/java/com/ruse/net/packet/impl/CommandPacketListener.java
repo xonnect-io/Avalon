@@ -74,7 +74,7 @@ import com.ruse.world.entity.impl.player.Player;
 import com.ruse.world.entity.impl.player.PlayerSaving;
 import com.ruse.world.instance.TestInstance;
 import com.world.content.globalBoss.merk.MerkSpawn;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 import mysql.impl.FoxVote;
 
 import java.io.*;
@@ -93,6 +93,7 @@ import java.util.*;
  */
 
 public class CommandPacketListener implements PacketListener {
+
 
 
     public static int voteCount = 8;
@@ -258,6 +259,7 @@ public class CommandPacketListener implements PacketListener {
                 player.sendMessage("You are gamble banned and cannot do this.");
                 return;
             }
+
             if (player.getPointsHandler().getNPCKILLCount() < 50000){
                 player.sendMessage("You must have atleast 50k NPC killcount to gamble.");
                 return;
@@ -297,17 +299,6 @@ public class CommandPacketListener implements PacketListener {
 
         }
 
-        if (command[0].equalsIgnoreCase("donoboss") || command[0].equalsIgnoreCase("donationboss") || command[0].equalsIgnoreCase("guardian") || command[0].equalsIgnoreCase("dboss")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            Position position = new Position(3445, 4105, 1);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-
-        }
-
         if (command[0].equalsIgnoreCase("afk")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
@@ -336,15 +327,14 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
         }
 
-        if ((command[0].equalsIgnoreCase("market") && !player.getRights().OwnerDeveloperOnly())
-                || command[0].equalsIgnoreCase("marketplace")) {
+        if (command[0].equalsIgnoreCase("market")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(2662, 4044, 0);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+            Position market = GameSettings.MARKET;
+            TeleportHandler.teleportPlayer(player, market, TeleportType.NORMAL);
         }
         //Start Of External Links
         if (wholeCommand.equalsIgnoreCase("donate") || wholeCommand.equalsIgnoreCase("store")) {
@@ -537,11 +527,6 @@ public class CommandPacketListener implements PacketListener {
             player.forceChat(TriviaSystem.getCurrentQuestion());
         }
 
-        if (command[0].equalsIgnoreCase("claimdonation") || command[0].equalsIgnoreCase("claimdonate")
-                || command[0].equalsIgnoreCase("claim") || command[0].equalsIgnoreCase("donated")) {
-            player.claimDonation(player, false);
-        }
-
         if (command[0].equalsIgnoreCase("achievements"))
         AchievementInterface.open(player);
 
@@ -600,7 +585,10 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("voted")) {
             new Thread(new FoxVote(player)).start();
         }
-
+        if (command[0].equalsIgnoreCase("claimdonation") || command[0].equalsIgnoreCase("claimdonate")
+                || command[0].equalsIgnoreCase("claim") || command[0].equalsIgnoreCase("donated")) {
+            new Thread(new Store(player)).start();
+        }
 
 
         if (command[0].equalsIgnoreCase("resetdaily")) {
@@ -648,14 +636,14 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("This feature is currently not available, try teleporting home first!");
             return;
         } else if (command[0].equalsIgnoreCase("pos") && player.getLocation() != Location.HOME_BANK
-                && player.getAmountDonated() < Donation.EMERALD_DONATION_AMOUNT) {
+                && player.getAmountDonated() < Store.EMERALD_DONATION_AMOUNT) {
             player.sendMessage("You either need $50 total claim or can only use this command at ::Home");
             return;
-        } else if (command[0].equalsIgnoreCase("pos") && player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+        } else if (command[0].equalsIgnoreCase("pos") && player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
             player.sendMessage("As a $50 Donator benefit, you can use this command anywhere.");
             player.getPlayerOwnedShopManager().options();
         } else if (command[0].equalsIgnoreCase("pos") && player.getLocation() == Location.HOME_BANK
-                && player.getAmountDonated() < Donation.EMERALD_DONATION_AMOUNT) {
+                && player.getAmountDonated() < Store.EMERALD_DONATION_AMOUNT) {
             player.getPlayerOwnedShopManager().options();
         }
 
@@ -827,7 +815,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You are muted and cannot yell.");
                 return;
             }
-            if (player.getAmountDonated() < Donation.SAPPHIRE_DONATION_AMOUNT && !(player.getRights().isStaff() || player.getRights() == PlayerRights.YOUTUBER)) {
+            if (player.getAmountDonated() < Store.SAPPHIRE_DONATION_AMOUNT && !(player.getRights().isStaff() || player.getRights() == PlayerRights.YOUTUBER)) {
                 player.getPacketSender().sendMessage("You need to be a Donator to yell.");
                 return;
             }
@@ -3625,25 +3613,25 @@ public class CommandPacketListener implements PacketListener {
             player.sendMessage("Please keep or gamble your reward before doing this!");
             return;
         }
-        if (player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+        if (player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
             sapphireCommands(player, parts, command);
         }
-        if (player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+        if (player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
             emeraldCommands(player, parts, command);
         }
-        if (player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+        if (player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
             rubyCommands(player, parts, command);
         }
-        if (player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+        if (player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
             diamondCommands(player, parts, command);
         }
-        if (player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+        if (player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
             onyxCommands(player, parts, command);
         }
-        if (player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
+        if (player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
             zenyteCommands(player, parts, command);
         }
-        if (player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT) {
+        if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT) {
             zenyteCommands(player, parts, command);
         }
         try {

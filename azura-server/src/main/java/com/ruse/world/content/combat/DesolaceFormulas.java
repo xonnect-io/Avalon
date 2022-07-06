@@ -19,7 +19,7 @@ import com.ruse.world.content.skill.impl.summoning.Familiar;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 public class DesolaceFormulas {
 
@@ -138,19 +138,19 @@ public class DesolaceFormulas {
                     if (plr.getInventory().contains(23255)) {
                         bonus *= 1.5;
                     }
-                    if(plr.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+                    if(plr.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
                         bonus += 1.75;
-                    } else if (plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
+                    } else if (plr.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
                         bonus += 1.5;
-                    } else if (plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+                    } else if (plr.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
                         bonus += 1.35;
-                    } else if (plr.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+                    } else if (plr.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
                         bonus += 1.25;
-                    } else if (plr.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+                    } else if (plr.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
                         bonus += 1.15;
-                    } else if (plr.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+                    } else if (plr.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
                         bonus += 1.10;
-                    } else if(plr.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+                    } else if(plr.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
                         bonus += 1.05;
                     }
 
@@ -412,19 +412,19 @@ public class DesolaceFormulas {
             if (plr.getInventory().contains(23255)) {
                 bonus *= 1.5;
             }
-            if(plr.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+            if(plr.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
                 bonus += 1.75;
-            } else if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
                 bonus += 1.5;
-            } else if(plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
                 bonus += 1.35;
-            } else if(plr.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
                 bonus += 1.25;
-            } else if(plr.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
                 bonus += 1.15;
-            } else if(plr.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
                 bonus += 1.10;
-            } else if(plr.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
                 bonus += 1.05;
             }
             rangeLevel *= bonus;
@@ -546,19 +546,19 @@ public class DesolaceFormulas {
             if (plr.getInventory().contains(23255)) {
                 bonus *= 1.5;
             }
-            if(plr.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
+            if(plr.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
                 bonus += 1.75;
-            } else if(plr.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
                 bonus += 1.5;
-            } else if(plr.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
                 bonus += 1.35;
-            } else if(plr.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
                 bonus += 1.25;
-            } else if(plr.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
                 bonus += 1.15;
-            } else if(plr.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
                 bonus += 1.10;
-            } else if(plr.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+            } else if(plr.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
                 bonus += 1.05;
             }
 

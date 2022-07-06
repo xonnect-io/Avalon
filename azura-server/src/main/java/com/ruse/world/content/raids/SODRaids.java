@@ -293,6 +293,7 @@ public class SODRaids {
                     player.setEnteredSODRaids(false);
                     Box drop = getLoot(loot, party.getPlayers().size());
 
+                    player.getSeasonPass().addXp(2);
                     if (drop.isAnnounce()) {
                         String message = "@blu@News: @red@" + player.getUsername() + " @blu@has just received @red@"
                                 + ItemDefinition.forId(drop.getId()).getName() + "@blu@ from @red@Souls of Suffering";

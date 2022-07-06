@@ -801,6 +801,7 @@ public class ItemDef4 {
 				itemDef.modelID = 65228;
 				itemDef.maleEquip1 = 65227;
 				itemDef.femaleEquip1 = 65227;
+				itemDef.modelOffsetY = 6;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
@@ -1742,23 +1743,16 @@ public class ItemDef4 {
 				itemDef.newModelColor[0] = 60; // the texture that it currently has
 				itemDef.editedModelColor[0] = 115; // the new texture u want it to have
 				itemDef.stackable = false;
-
-
 				break;
 
 			case 18889:
+				itemDef.copyItem(10666);
 				itemDef.name = "@cya@Colossal spirit shield";
 				itemDef.modelID = 65228;
 				itemDef.maleEquip1 = 65227;
 				itemDef.femaleEquip1 = 65227;
-				itemDef21 = ItemDefinition.get(10666);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.modelOffsetY = 6;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 62; // the texture that it currently has
@@ -1766,18 +1760,20 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 
+			case 23370:
+				itemDef.copyItem(22053);
+				itemDef.name = "Suffering key";
+				itemDef.stackable = true;
+				itemDef.rdc3 = 800;
+				break;
+
 			case 6293:
+				itemDef.copyItem(10666);
 				itemDef.name = "Shadow spirit shield";
 				itemDef.modelID = 65228;
 				itemDef.maleEquip1 = 65227;
 				itemDef.femaleEquip1 = 65227;
-				itemDef21 = ItemDefinition.get(10666);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.modelOffsetY = 6;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
@@ -1786,17 +1782,12 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 18754:
+				itemDef.copyItem(10666);
 				itemDef.name = "Hellfire spirit shield";
 				itemDef.modelID = 65228;
 				itemDef.maleEquip1 = 65227;
 				itemDef.femaleEquip1 = 65227;
-				itemDef21 = ItemDefinition.get(10666);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.modelOffsetY = 6;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
@@ -1837,17 +1828,12 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 20057:
+				itemDef.copyItem(10666);
 				itemDef.name = "Moonlight spirit shield";
 				itemDef.modelID = 65228;
 				itemDef.maleEquip1 = 65227;
 				itemDef.femaleEquip1 = 65227;
-				itemDef21 = ItemDefinition.get(10666);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.modelOffsetY = 6;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
@@ -5281,6 +5267,32 @@ public class ItemDef4 {
 				itemDef.name = "Gemstone Kaseki";
 				itemDef.rotationX = 0;
 				itemDef.rdc2 = 23815;
+				break;
+
+			case 9687:
+				itemDef.copyItem(18829);
+				itemDef.name = "Steadfast scale";
+				itemDef.rotationX = 180;
+				itemDef.rotationY = 150;
+				itemDef.rotationZ = 10;
+				itemDef.rdc3 = 11;
+				itemDef.modelZoom = 1000;
+				break;
+			case 9688:
+				itemDef.copyItem(7860);
+				itemDef.name = "Drone tail-part";
+				itemDef.rotationX = 350;
+				itemDef.rotationY = 330;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 5;
+				itemDef.modelOffsetY = 0;
+				itemDef.rdc3 = 11;
+				itemDef.modelZoom = 1000;
+				break;
+				case 9689:
+				itemDef.copyItem(19950);
+				itemDef.name = "Mutant gland";
+				itemDef.rdc3 = 11;
 				break;
 
 			case 3909:

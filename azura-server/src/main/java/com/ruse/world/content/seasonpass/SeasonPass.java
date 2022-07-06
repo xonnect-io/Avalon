@@ -78,7 +78,7 @@ public class SeasonPass {
 			return;
 		}
 
-		if(getXp() + addExp > 10){
+		else if(getXp() + addExp > 10){
 			this.xp =((getXp()+addExp) - 10);
 			addTier(1);
 			giveRewards();

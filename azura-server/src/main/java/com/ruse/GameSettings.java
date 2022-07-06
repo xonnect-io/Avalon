@@ -135,7 +135,7 @@ public class GameSettings {
     public static final Position PYRAMID_LOBBY = new Position(3488, 9243, 0);
     public static final Position STARTER = new Position(2783, 9495, 0);
     public static final Position CORP_CORDS = new Position(2900, 4384);
-    public static final Position STARTER_BED = new Position(2333, 4119, 0);
+    public static final Position MARKET = new Position(2660, 4044, 0);
     public static final Position HOME_CORDS = new Position(2655, 4017, 0);
     public static final Position TRIO_CORDS = new Position(3025, 5231, 0);
     public static final Position KFC_CORDS = new Position(2606, 4774, 4);
@@ -146,7 +146,7 @@ public class GameSettings {
     public static final Position DUSTCLAW_LOCATION = new Position(2958, 9487, 0);
     public static final Position LORDS_LOCATION = new Position(2989, 9483, 0);
     public static final Position SHADOWS_LOCATION = new Position(2330, 3888, 0);
-    public static final Position GOLEMS_LOCATION = new Position(2377, 3886, 0);
+    public static final Position GOLEMS_LOCATION = new Position(2330, 3888, 4);
     public static final Position SHETANI_LOCATION = new Position(1698, 5600, 0);
     public static final Position RIPPER_LOCATION = new Position(1625, 5601, 0);
     public static final Position PREDATOR = new Position(2901, 3617, 0);
@@ -162,7 +162,7 @@ public class GameSettings {
      */
 
     public static final int[] UNTRADEABLE_ITEMS = {
-            1468,8534,
+            1468,8534,17510,18813,23369,552,
             23229,23061,23062,23063,23220,23221,23222,23223,23224,14050,14051,14052,14053,14055,18333,
             23003, 23004, 23005, 23006, 23007, 23007,23018,11319, 11310, 15328, 15330, 4440, 4438, 4442, 14067, 11318, 9054, 9055, 9056,
             1580, 19994,22053,19748,21814, 21815, 21816, 6198,11317, 2947, 2948, 2949,11315, 11314, 11316, 5154, 5155, 5156, 8830, 8831,
@@ -196,7 +196,7 @@ public class GameSettings {
      * Unsellable items Items which cannot be sold to shops
      */
     public static final int UNSELLABLE_ITEMS[] = new int[]{
-            1468,8534,
+            1468,8534,17510,18813,23369,552,
             23229,23061,23062,23063,23220,23221,23222,23223,23224,
             14067, 15328, 15330, 4440, 4438, 4442, 9054, 9055, 9056, 9057,
             15492, 13263, 13281, 14019, 14022, 19785, 19786, 1419, 16127, 4084, 5497, 15403, 10887, 13727, 20079, 20081,

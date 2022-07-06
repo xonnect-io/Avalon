@@ -307,6 +307,51 @@ public class ItemDef3 {
 				itemDef.name = "Summer Coronet";
 				itemDef.rdc2 = 59664;
 				break;
+			case 23371:
+				itemDef.copyItem(4882);
+				itemDef.name = "Blood warrior helm";
+				itemDef.rdc2 = 37664;
+				itemDef.modelID = 19520;
+				itemDef.maleEquip1 = 19520;
+				itemDef.femaleEquip1 = 19520;
+				break;
+			case 23372:
+				itemDef.copyItem(4894);
+				itemDef.name = "Blood warrior platebody";
+				itemDef.rdc2 = 37664;
+				itemDef.modelID = 19521;
+				itemDef.maleEquip1 = 19521;
+				itemDef.femaleEquip1 = 19521;
+				break;
+				
+			case 23373:
+				itemDef.copyItem(4900);
+				itemDef.name = "Blood warrior platelegs";
+				itemDef.rdc2 = 37664;
+				itemDef.modelID = 19522;
+				itemDef.maleEquip1 = 19522;
+				itemDef.femaleEquip1 = 19522;
+				break;
+
+			case 23374:
+				itemDef.copyItem(20456);
+				itemDef.name = "Blood warrior boots";
+				itemDef.rdc2 = 37664;
+				itemDef.modelID = 19518;
+				itemDef.maleEquip1 = 19518;
+				itemDef.femaleEquip1 = 19518;
+				break;
+
+			case 23375:
+				itemDef.copyItem(20460);
+				itemDef.name = "Blood warrior gloves";
+				itemDef.rdc2 = 37664;
+				itemDef.modelID = 19519;
+				itemDef.maleEquip1 = 19519;
+				itemDef.femaleEquip1 = 19519;
+				break;
+
+
 			case 23259:
 				itemDef.copyItem(4882);
 				itemDef.name = "Reaper helm";
@@ -317,25 +362,23 @@ public class ItemDef3 {
 				itemDef.name = "Reaper platebody";
 				itemDef.rdc2 = 37664;
 				break;
-				
+
 			case 23261:
 				itemDef.copyItem(4900);
 				itemDef.name = "Reaper platelegs";
 				itemDef.rdc2 = 37664;
 				break;
-				
+
 			case 23262:
 				itemDef.copyItem(20460);
 				itemDef.name = "Reaper gloves";
 				itemDef.rdc2 = 37664;
 				break;
-				
+
 			case 23263:
 				itemDef.copyItem(20456);
 				itemDef.name = "Reaper boots";
-				itemDef.rdc2 = 37664;
 				break;
-				
 				
 			case 23021:
 				itemDef.copyItem(4708);

@@ -8,7 +8,7 @@ import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 public class CustomDropUtils {
 
@@ -620,6 +620,10 @@ public class CustomDropUtils {
         }
         //end helmet
 
+        if (player.getEquipment().contains(23369) && player.getQuestOneStep7() == true) { //Holy amulet
+            percentBoost += 25;
+        }
+
         if (npc == 9312) {
             percentBoost += player.getNephilimBonus();
         }
@@ -726,19 +730,19 @@ public class CustomDropUtils {
         /**
          * Donator Rank bonusses
          */
-        if(player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+        if(player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
             percentBoost += 100;
-        } else if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
             percentBoost += 75;
-        } else if(player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
             percentBoost += 45;
-        } else if(player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
             percentBoost += 30;
-        } else if(player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
             percentBoost += 20;
-        } else if(player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
             percentBoost += 15;
-        } else if(player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
             percentBoost += 5;
         }
 
@@ -864,25 +868,25 @@ public class CustomDropUtils {
         /**
          * Donator Rank bonusses
          */
-        if (player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+        if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
             percentBoost += 30;
         } else
-             if (player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
+             if (player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
             percentBoost += 25;
         } else
-            if (player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+            if (player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
             percentBoost += 20;
         } else
-            if (player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+            if (player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
             percentBoost += 15;
         } else
-            if (player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+            if (player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
             percentBoost += 10;
         } else
-            if (player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+            if (player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
             percentBoost += 7;
         } else
-            if (player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+            if (player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
             percentBoost += 5;
         }
 

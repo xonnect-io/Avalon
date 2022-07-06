@@ -5597,16 +5597,12 @@ public class ItemDef2 {
 				itemDef.rdc2 = 444444;
 				break;
 			case 19987:
+				itemDef.copyItem(10666);
 				itemDef.name = "L.S spirit shield";
-				itemdefyogipic1111 = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
-				itemDef.rotationY = itemdefyogipic1111.rotationY;
-				itemDef.rotationX = itemdefyogipic1111.rotationX;
 				itemDef.modelID = 64200;
 				itemDef.maleEquip1 = 64201;
 				itemDef.femaleEquip1 = 64201;
+				itemDef.modelOffsetY = 6;
 				itemDef.groundActions = new String[5];
 				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;
@@ -5951,17 +5947,12 @@ public class ItemDef2 {
 				itemDef.rdc2 = 987654;
 				break;
 			case 21019:
+				itemDef.copyItem(10666);
 				itemDef.name = "Turtle spirit shield";
 				itemDef.modelID = 64235;
 				itemDef.maleEquip1 = 64236;
 				itemDef.femaleEquip1 = 64236;
-				itemDef21 = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				//itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.modelOffsetY = 6;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
@@ -6127,16 +6118,12 @@ public class ItemDef2 {
 				break;
 
 			case 20090:
+				itemDef.copyItem(10666);
 				itemDef.name = "Cursed spirit shield";
-				itemdefyogipic1111 = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
-				itemDef.rotationY = itemdefyogipic1111.rotationY;
-				itemDef.rotationX = itemdefyogipic1111.rotationX;
 				itemDef.modelID = 64200;
 				itemDef.maleEquip1 = 64201;
 				itemDef.femaleEquip1 = 64201;
+				itemDef.modelOffsetY = 6;
 				itemDef.groundActions = new String[5];
 				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;
@@ -6354,16 +6341,12 @@ public class ItemDef2 {
 				itemDef.rdc2 = 23662;
 				break;
 			case 21065:
+				itemDef.copyItem(10666);
 				itemDef.name = "Ruthless spirit shield";
-				itemdefyogipic1111 = ItemDefinition.get(1540);
-				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
-				itemDef.rotationY = itemdefyogipic1111.rotationY;
-				itemDef.rotationX = itemdefyogipic1111.rotationX;
 				itemDef.modelID = 64200;
 				itemDef.maleEquip1 = 64201;
 				itemDef.femaleEquip1 = 64201;
+				itemDef.modelOffsetY = 6;
 				itemDef.groundActions = new String[5];
 				itemDef.groundActions[2] = "Take";
 				itemDef.stackable = false;

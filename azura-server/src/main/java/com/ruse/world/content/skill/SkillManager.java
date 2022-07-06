@@ -20,7 +20,7 @@ import com.ruse.world.content.skill.impl.old_dungeoneering.UltimateIronmanHandle
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Familiar;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 /**
  * Represents a player's skills in the game, also manages calculations such as
@@ -352,20 +352,20 @@ public class SkillManager {
 /**
  * Donator Rank Bonusses
  */
-        if (player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT ||
+        if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT ||
                 player.getRights().equals(PlayerRights.YOUTUBER)) {
             experience *= 1.5;
-        } else if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT) {
+        } else if(player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
             experience *= 1.25;
-        } else if (player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
             experience *= 1.25;
-        } else if (player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
             experience *= 1.20;
-        } else if (player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
             experience *= 1.15;
-        } else if (player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
             experience *= 1.10;
-        } else if (player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+        } else if (player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
             experience *= 1.05;
         }
 
@@ -460,8 +460,11 @@ public class SkillManager {
             if (skills.maxLevel[skill.ordinal()] == getMaxAchievingLevel(skill)) {
                 player.getPacketSender()
                         .sendMessage("Well done! You've achieved the highest possible level in this skill!");
-                player.getSeasonPass().addXp(3);
-                player.sendMessage("You receive 3 XP for maxing your level.");
+
+                if (skill != Skill.ATTACK && skill != Skill.STRENGTH && skill != Skill.DEFENCE &&
+                        skill != Skill.RANGED && skill != Skill.MAGIC && skill != Skill.CONSTITUTION) {
+                    player.getSeasonPass().addXp(2);
+                }
                 World.sendMessage("<shad=15536940><img=5> " + player.getUsername()
                         + " has just achieved the highest possible level in " + skillName + "!");
 

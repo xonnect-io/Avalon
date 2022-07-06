@@ -10,7 +10,7 @@ import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.DialogueType;
 import com.ruse.world.entity.impl.mini.MiniPlayer;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 public class MemberScrolls {
 
@@ -19,19 +19,19 @@ public class MemberScrolls {
 			return;
 		}
 		PlayerRights rights = null;
-		if (player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT)
+		if (player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT)
 			rights = PlayerRights.SAPPHIRE_DONATOR;
-		if (player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT)
+		if (player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT)
 			rights = PlayerRights.EMERALD_DONATOR;
-		if (player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT)
+		if (player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT)
 			rights = PlayerRights.RUBY_DONATOR;
-		if (player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT)
+		if (player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT)
 			rights = PlayerRights.DIAMOND_DONATOR;
-		if (player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT)
+		if (player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT)
 			rights = PlayerRights.ONYX_DONATOR;
-		if (player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT)
+		if (player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT)
 			rights = PlayerRights.ZENYTE_DONATOR;
-		if (player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT)
+		if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT)
 			rights = PlayerRights.TANZANITE_DONATOR;
 		if (rights != null && rights != player.getRights()) {
 			player.getPacketSender().sendMessage(

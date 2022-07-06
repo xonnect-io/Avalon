@@ -51,7 +51,7 @@ public enum AchievementData {
             new Item[] {new Item(19114, 1)},
             new LoyaltyPointReward(2000)
     ),
-    GIANT_SPIDERS(9, AchievementType.EASY, 100, "Giant Spider","Kill x100 Giant Spiders",
+    GIANT_SPIDERS(9, AchievementType.EASY, 100, "Arachne","Kill x100 Arachnes",
             new Item[] {new Item(19114, 1)},
             new LoyaltyPointReward(2000)
     ),

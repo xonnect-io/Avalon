@@ -3,7 +3,7 @@ package com.ruse.model;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 /**
  * Represents a player's privilege rights.
@@ -161,19 +161,19 @@ public enum PlayerRights {
 		/**
 		 * Donator Rank bonusses
 		 */
-		if (player.getAmountDonated() >= Donation.TANZANITE_DONATION_AMOUNT) {
+		if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT) {
 			return 15;
-		} else if(player.getAmountDonated() >= Donation.ZENYTE_DONATION_AMOUNT ||player.getRights().equals(PlayerRights.YOUTUBER)) {
+		} else if(player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT ||player.getRights().equals(PlayerRights.YOUTUBER)) {
 			return 15;
-		} else if(player.getAmountDonated() >= Donation.ONYX_DONATION_AMOUNT) {
+		} else if(player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
 			return 12;
-		} else if(player.getAmountDonated() >= Donation.DIAMOND_DONATION_AMOUNT) {
+		} else if(player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
 			return 10;
-		} else if(player.getAmountDonated() >= Donation.RUBY_DONATION_AMOUNT) {
+		} else if(player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
 			return 7;
-		} else if(player.getAmountDonated() >= Donation.EMERALD_DONATION_AMOUNT) {
+		} else if(player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
 			return 5;
-		} else if(player.getAmountDonated() >= Donation.SAPPHIRE_DONATION_AMOUNT) {
+		} else if(player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
 			return 3;
 		} else {
 			return 0;

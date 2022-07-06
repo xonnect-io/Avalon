@@ -44,7 +44,7 @@ import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
 import com.ruse.world.entity.impl.npc.NpcAggression;
 import com.ruse.world.entity.impl.player.Player;
-import mysql.impl.Donation;
+import mysql.impl.Store;
 
 import static com.ruse.model.Skill.*;
 
@@ -278,7 +278,7 @@ public class DialogueOptions {
                     break;
                 case 88:
                     player.getPacketSender().sendInterfaceRemoval();
-                    if (player.getAmountDonated() < Donation.SAPPHIRE_DONATION_AMOUNT) {
+                    if (player.getAmountDonated() < Store.SAPPHIRE_DONATION_AMOUNT) {
                         player.getPacketSender().sendMessage("You need to be a member to teleport to this zone.")
                                 .sendMessage("To become a member, use the command ::store and browse our store.");
                         return;
