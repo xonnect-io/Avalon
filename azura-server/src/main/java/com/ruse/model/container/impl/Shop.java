@@ -374,8 +374,10 @@ public class Shop extends ItemContainer {
                 return;
             }
         }
-        if( id == SELL_ITEMS) {
-            player.getPacketSender().sendMessage("You cannot buy items from this shop");
+        if (id == SELL_ITEMS) {
+            player.getPacketSender().sendMessage(ItemDefinition.forId(item.getId()).getName() + ": shop will buy for @red@" + (ItemDefinition.forId(item.getId()).getValue())
+                    + " Upgrade Tokens"
+                    );
             return;
         }
         int finalValue = 0;
@@ -1138,7 +1140,7 @@ public class Shop extends ItemContainer {
             slot = 0;
             final Path path = Paths.get("./data/shopdata.txt");
 
-            Shop shop = new Shop(null, 119, "Billz Exchange Shop", new Item(ItemDefinition.MILL_ID), new Item[]{});
+            Shop shop = new Shop(null, 119, "Item Exchange", new Item(ItemDefinition.UPGRADE_TOKEN_ID), new Item[]{});
             try (Stream<String> lines = Files.lines(path)) {
 
                 lines.forEach(line -> {
@@ -1199,71 +1201,74 @@ public class Shop extends ItemContainer {
             } else if (shop == SELL_ITEMS) {
                 switch (item) {
 
-                    case 4803:
-                    case 19754:
-                        return new Object[]{20000, "Bill Bags"};
-                    case 1053:
-                    case 1057:
-                    case 1055:
-                        return new Object[]{4, "Bill Bags"};
-                    case 1038:
-                    case 1040:
-                    case 1042:
-                    case 1044:
-                    case 1046:
-                    case 1048:
-                    case 1050:
-                        return new Object[]{10, "Bill Bags"};
-                    case 14008:
-                    case 14009:
-                    case 14010:
-                        return new Object[]{5, "Bill Bags"};
-                    case 14484:
-                        return new Object[]{2, "Bill Bags"};
-                    case 19115:
-                        return new Object[]{2, "Bill Bags"};
-                    case 19114:
-                        return new Object[]{4, "Bill Bags"};
-                    case 13736:
-                        return new Object[]{1, "Bill Bags"};
-                    case 13744:
-                    case 13742:
-                    case 13740:
-                    case 13738:
-                        return new Object[]{3, "Bill Bags"};
-                    case 6293:
-                    case 18754:
-                        return new Object[]{7, "Bill Bags"};
-                    case 11694:
-                    case 11696:
-                    case 11698:
-                    case 11700:
-                        return new Object[]{9, "Bill Bags"};
-                    case 15018:
-                        return new Object[]{2, "Bill Bags"};
-                    case 15019:
-                    case 15020:
-                    case 15220:
-                    case 12601:
-                    case 12603:
-                    case 12605:
-                        return new Object[]{2, "Bill Bags"};
-                    case 20000:
-                    case 20001:
-                    case 20002:
-                        return new Object[]{4, "Bill Bags"};
-                    case 6769:
-                        return new Object[]{15, "Bill Bags"};
-                    case 10942:
-                        return new Object[]{40, "Bill Bags"};
-                    case 10934:
-                        return new Object[]{100, "Bill Bags"};
-                    case 455:
-                        return new Object[]{3, "Bill Bags"};
-                    case 19116:
-                        return new Object[]{2, "Bill Bags"};
-                    case 3000:
-                        return new Object[]{1, "Bill Bags"};
+                    case 11137:
+                        return new Object[]{100 * 2, "Upgrade Tokens"};
+                    case 21218:
+                        return new Object[]{5000 * 2, "Upgrade Tokens"};
+                    case 23020:
+                        return new Object[]{75000 * 2, "Upgrade Tokens"};
+                    case 8411:
+                    case 8412:
+                    case 8413:
+                        return new Object[]{2_500_000 * 2, "Upgrade Tokens"};
+
+
+                    case 4684:
+                        return new Object[]{4_000_000 * 2, "Upgrade Tokens"};
+                    case 4685:
+                    case 4686:
+                        return new Object[]{5_000_000 * 2, "Upgrade Tokens"};
+
+
+                    case 5012:
+                    case 12535:
+                    case 17011:
+                        return new Object[]{15_000_000 * 2, "Upgrade Tokens"};
+
+                    case 5011:
+                    case 12537:
+                    case 17013:
+                        return new Object[]{25_000_000 * 2, "Upgrade Tokens"};
+
+
+                    case 22113:
+                    case 22114:
+                    case 22115:
+                        return new Object[]{75_000_000 * 2, "Upgrade Tokens"};
+
+
+                    case 8136:
+                    case 23226:
+                    case 23227:
+                        return new Object[]{225_000_000 * 2, "Upgrade Tokens"};
+                    case 18889:
+                    case 18885:
+                    case 18887:
+                        return new Object[]{5_000_000 * 2, "Upgrade Tokens"};
+                    case 9080:
+                    case 9081:
+                    case 9082:
+                        return new Object[]{100_000 * 2, "Upgrade Tokens"};
+                    case 23258:
+                    case 22005:
+                        return new Object[]{2_000_000 * 2, "Upgrade Tokens"};
+                    case 23281:
+                    case 23282:
+                    case 23283:
+                    case 23284:
+                    case 23285:
+                        return new Object[]{20_000_000  * 2, "Upgrade Tokens"};
+                    case 23303:
+                    case 23304:
+                    case 23305:
+                    case 23306:
+                    case 23307:
+                    case 23308:
+                    case 23309:
+                    case 23310:
+                    case 23311:
+                        return new Object[]{25_000_000 * 2, "Upgrade Tokens"};
+
                 }
 
             } else if (shop == PKING_REWARDS_STORE) {

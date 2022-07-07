@@ -27,7 +27,7 @@ public class CelestialZoneTask {
                     tick = 1001;
                 }
                 tick++;
-                System.out.println("Celestial Tick: " + tick);
+                //System.out.println("Celestial Tick: " + tick);
                 stop();
             }
         });

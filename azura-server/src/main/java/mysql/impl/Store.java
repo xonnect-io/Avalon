@@ -12,10 +12,10 @@ import java.sql.*;
 
 public class Store implements Runnable {
 
-    public static final String HOST = "127.0.0.1";
-    public static final String USER = "u189330247_Store";
-    public static final String PASS = "8ytqy63zYrAUGWz";
-    public static final String DATABASE = "u189330247_Store";
+    public static final String HOST = "195.179.236.205";
+    public static final String USER = "u189330247_Vote";
+    public static final String PASS = "z^BVLDF5!";
+    public static final String DATABASE = "u189330247_Vote";
 
     private Player player;
     private Connection conn;
@@ -54,7 +54,7 @@ public class Store implements Runnable {
         if (player.getAmountDonated() >= ZENYTE_DONATION_AMOUNT)
             rights = PlayerRights.ZENYTE_DONATOR;
         if (rights != null && rights != player.getRights()) {
-            player.getPacketSender().sendMessage(
+            player.getPacketSender().sendMessage(//so does the pass up here and shit even matter
                     "You've become a " + Misc.formatText(rights.toString().toLowerCase()) + "! Congratulations!");
             player.setRights(rights);
             player.getPacketSender().sendRights();
@@ -63,7 +63,7 @@ public class Store implements Runnable {
     @Override
     public void run() {
         try {
-            if (!connect(HOST, "u189330247_Store", "u189330247_Store", "8ytqy63zYrAUGWz")) {
+            if (!connect(HOST, DATABASE, USER, PASS)) {
                 return;
             }
             System.out.println("connected to store database");
@@ -74,7 +74,7 @@ public class Store implements Runnable {
 
             while (rs.next()) {
                 int item_number = rs.getInt("item_number");
-                double paid = rs.getDouble("paid");
+                double amount = rs.getDouble("amount");
                 int quantity = rs.getInt("quantity");
 
 
@@ -180,14 +180,29 @@ public class Store implements Runnable {
                         return;
                 }
 
-                PlayerLogs.logPlayerDonations(player.getUsername(), "Donated: $" + paid
+                PlayerLogs.logPlayerDonations(player.getUsername(), "Donated: $" + amount
                         + ", Item: " + ItemDefinition.forId(id).getName() + ", Amount: " + item_number + ", ID: " + id + ", item_number: " + item_number);
 
+                player.getInventory().add(23174, (int) amount);
                 player.sendMessage("Thanks for donating!");
-
-                if (paid >= 5) {
+                player.sendMessage("You are rewarded " + (int) amount + " High-Tier Tickets!");
+                if (amount > 250) {
+                    player.getInventory().add(23174, (int) amount * 2);
+                    player.sendMessage("You are rewarded x2 High-Tier tickets for donating more than $250");
+                }
+                if (GameSettings.ELITE_DONO_DEAL && amount >= 50) {
+                    player.getInventory().add(3578, 1);
+                    player.sendMessage("You received an Owner cape Goodiebag for donating 50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Owner cape Goodiebag");
+                }
+                if (GameSettings.SUMMER_DONO_DEAL && amount >= 50) {
+                    player.getInventory().add(23322, 5);
+                    player.sendMessage("You received x5 Summer boxes for donating 50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x5 Summer boxes!");
+                }
+                if (amount >= 5) {
                     World.sendMessage("<img=5><shad=1>@yel@Donation: @blu@" + player.getUsername()
-                            + "@or2@ has donated! @red@::Donate@or2@ now to show support for @red@Solak!");
+                            + "@or2@ has donated! @red@::Donate@or2@ now to show support for @red@Avalon!");
                 } else {
                     player.sendMessage("Your donation message is only displayed for purchases over $5");
                 }
@@ -210,14 +225,13 @@ public class Store implements Runnable {
      */
     public boolean connect(String host, String database, String user, String pass) {
         try {
-            this.conn = DriverManager.getConnection("jdbc:mysql://"+host+":3306/"+database+"?"+"user="+user+"&password="+pass+"&&characterEncoding=utf8");
-            System.out.print("We are connected to: "+database+" \n");
+            this.conn = DriverManager.getConnection("jdbc:mysql://"+host+":3306/"+database, user, pass);
             return true;
         } catch (SQLException e) {
-             System.out.println("Failing connecting to database!");
+            System.out.println("Failing connecting to database!");
             return false;
         }
-    }
+    }//1sec
 
     public void destroy() {
         try {
