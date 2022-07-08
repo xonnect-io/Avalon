@@ -2,7 +2,7 @@ package org.necrotic.client;
 
 public enum IronIcon {
 
-	ULTIMATE(839, 1), EXTREME(856, 1), NORMAL(840, 2);
+	ULTIMATE(839, 1), EXTREME(1463, 1), NORMAL(840, 2);
 
 	private final int icon, rights;
 

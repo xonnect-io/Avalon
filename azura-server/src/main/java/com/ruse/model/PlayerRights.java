@@ -27,7 +27,11 @@ public enum PlayerRights {
 	CRAP(-1, "<col=0><shad=FFFFFF>", 1, 1),
 	SUPPORT(-1, "<col=FFFFFF><shad=0>", 1, 1),
 	ZENYTE_DONATOR(-1, "@bla@<shad=0>", 1, 1),
-	TANZANITE_DONATOR(-1, "@bla@<shad=0>", 1, 1);
+	TANZANITE_DONATOR(10, "@bla@<shad=0>", 1, 1),
+	NULL_(-1, "@or2@<shad=0>", 1, 1),
+	NULL_1(-1, "@or2@<shad=0>", 1, 1),
+	NULL_2(-1, "@or2@<shad=0>", 1, 1),
+	COMMUNITY_MANAGER(5, "@or2@<shad=0>", 1, 1);
 
 	PlayerRights(int yellDelaySeconds, String yellHexColorPrefix, double loyaltyPointsGainModifier,
 			double experienceGainModifier) {
@@ -38,7 +42,7 @@ public enum PlayerRights {
 	}
 
 	private static final ImmutableSet<PlayerRights> STAFF = Sets.immutableEnumSet(HELPER, SUPPORT, MODERATOR,
-			ADMINISTRATOR, OWNER);
+			ADMINISTRATOR, OWNER,COMMUNITY_MANAGER);
 	private static final ImmutableSet<PlayerRights> MEMBERONLY = Sets.immutableEnumSet(SAPPHIRE_DONATOR, EMERALD_DONATOR,
 			DIAMOND_DONATOR, RUBY_DONATOR, HELPER, MODERATOR, ADMINISTRATOR, ONYX_DONATOR, ZENYTE_DONATOR,TANZANITE_DONATOR, OWNER, YOUTUBER);
 	private static final ImmutableSet<PlayerRights> REGULARDONATORONLY = Sets.immutableEnumSet(SAPPHIRE_DONATOR, EMERALD_DONATOR,

@@ -285,9 +285,10 @@ public class ChatArea extends GameFrame {
 						if (playerRights == 13) { //Zenyte Donator
 							playerRights += 3;
 						}
-						if (playerRights == 14) { //Zenyte Donator
+						if (playerRights == 14) { //Tanzanite Donator
 							playerRights += 3;
 						}
+
 						if (name != null && name.indexOf("@") == 0) {
 							int substringLength = Client.getClient().getPrefixSubstringLength(name);
 							name = name.substring(substringLength);

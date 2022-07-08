@@ -866,7 +866,7 @@ public class Client extends GameRenderer {
         sound = new int[50];
         anInt1211 = 78;
         promptInput = "";
-        modIcons = new Sprite[18];
+        modIcons = new Sprite[19];
         tabID = 3;
         setInputTaken(false);
         mapImagePixelCutRight = new int[152];
@@ -2712,6 +2712,9 @@ public class Client extends GameRenderer {
             menuTooltip = menuTooltip + "<img=852><col=20B2AA>Tanzanite@whi@ ";
         }
 
+        if (player.playerRights == 18) {
+            menuTooltip = menuTooltip + "<img=856>@or2@Community Manager@whi@ ";
+        }
         if (player.playerRights == 4) {
             menuTooltip =  "<img=12>@whi@ ";
 
@@ -9317,6 +9320,7 @@ public class Client extends GameRenderer {
                     if (rights == 14) { //Tanzanite Donator
                         rights += 3;
                     }
+
                     if (rights != 0) {
                         modIcons[rights].drawTransparentSprite(xOffset, yOffset - 12, 255);
                         xOffset += modIcons[rights].maxWidth + 2;
@@ -18552,6 +18556,7 @@ public class Client extends GameRenderer {
             modIcons[15] = spritesMap.get(1509);
             modIcons[16] = spritesMap.get(1508);
             modIcons[17] = spritesMap.get(852);
+            modIcons[18] = spritesMap.get(856);
 
             multiOverlay = spritesMap.get(1025);
             XPOverlay = spritesMap.get(1025);
@@ -19037,10 +19042,7 @@ public class Client extends GameRenderer {
                             spritesMap.get(1566).drawSprite(spriteDrawX - 8, spriteDrawY - 26);
 
                         }
-                        if (entityDef.id == 198) {
-                            spritesMap.get(856).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
 
-                        }
                         if (entityDef.id == 3306) {
                             spritesMap.get(876).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
 
@@ -19445,6 +19447,10 @@ public class Client extends GameRenderer {
 
         if (player.playerRights == 14) {
             return "<img=852>@mag@Tanzanite Donator@whi@ ";
+        }
+
+        if (player.playerRights == 18) {
+            return "<img=856>@or2@Community Manager@whi@ ";
         }
         return "";
     }

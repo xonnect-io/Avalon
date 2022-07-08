@@ -33,8 +33,8 @@ public class SpawnGuardianBoss extends EnterAmount {
 
 		player.incrementGuardianBonus(highTierTickets);
 		if (GuardianSpawnSystem.highTierCount <= 99) {
-			World.sendMessage("<col=4141ff><img=856>[Avalon Guardian]<img=856> @or2@" + player.getUsername() + " has contributed " + highTierTickets + " High-Tier Tickets.");
-			World.sendMessage("<col=4141ff><img=856>[Avalon Guardian]<img=856> @blu@" + GuardianSpawnSystem.getLeft() + " @or2@more High-Tier Tickets left for Avalon Guardian spawn.");
+			World.sendMessage("<col=4141ff><img=1463>[Avalon Guardian]<img=1463> @or2@" + player.getUsername() + " has contributed " + highTierTickets + " High-Tier Tickets.");
+			World.sendMessage("<col=4141ff><img=1463>[Avalon Guardian]<img=1463> @blu@" + GuardianSpawnSystem.getLeft() + " @or2@more High-Tier Tickets left for Avalon Guardian spawn.");
 			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getGuardianBonus() + "% @blu@Drop rate bonus your next Guardian kill");
 			return;
 
@@ -42,7 +42,7 @@ public class SpawnGuardianBoss extends EnterAmount {
 			String message = "The Avalon Guardian has appeared ::Guardian";
 			NPC npc = new NPC(3830, new Position(3445, 4113, 1)); //NPC npc = new NPC(3830, new Position(3491, 2782));
 			World.register(npc);
-			World.sendMessage("<col=4141ff><img=856>[Avalon Guardian]<img=856> @or2@" + player.getUsername() + " has contributed " + highTierTickets + " High-Tier Tickets.");
+			World.sendMessage("<col=4141ff><img=1463>[Avalon Guardian]<img=1463> @or2@" + player.getUsername() + " has contributed " + highTierTickets + " High-Tier Tickets.");
 			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getGuardianBonus() + "% @blu@Drop rate bonus your next Guardian kill");
 
 			if (GameSettings.LOCALHOST == false)

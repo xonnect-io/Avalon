@@ -785,18 +785,6 @@ public class CommandPacketListener implements PacketListener {
             }
             return;
         }
-        if (GameSettings.BETA_ENABLED) {
-            if (command[0].equalsIgnoreCase("ownerup")) {
-                player.setRights(PlayerRights.OWNER);
-                player.getPacketSender().sendRights();
-                PlayerPanel.refreshPanel(player);
-            }
-            if (command[0].equalsIgnoreCase("ownerdown")) {
-                player.setRights(PlayerRights.PLAYER);
-                player.getPacketSender().sendRights();
-                PlayerPanel.refreshPanel(player);
-            }
-        }
     }
 
 
@@ -3667,6 +3655,7 @@ public class CommandPacketListener implements PacketListener {
                     break;
 
                 case ADMINISTRATOR:
+                case COMMUNITY_MANAGER:
                     playerCommands(player, parts, command);
                     memberCommands(player, parts, command);
                     helperCommands(player, parts, command);

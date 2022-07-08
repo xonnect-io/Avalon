@@ -53,6 +53,8 @@ public class Store implements Runnable {
             rights = PlayerRights.ONYX_DONATOR;
         if (player.getAmountDonated() >= ZENYTE_DONATION_AMOUNT)
             rights = PlayerRights.ZENYTE_DONATOR;
+        if (player.getAmountDonated() >= TANZANITE_DONATION_AMOUNT)
+            rights = PlayerRights.TANZANITE_DONATOR;
         if (rights != null && rights != player.getRights()) {
             player.getPacketSender().sendMessage(//so does the pass up here and shit even matter
                     "You've become a " + Misc.formatText(rights.toString().toLowerCase()) + "! Congratulations!");

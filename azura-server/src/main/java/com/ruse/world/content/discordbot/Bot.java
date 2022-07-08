@@ -18,7 +18,7 @@ public class Bot {
 
     private static String TOKEN = "OTg4MzU2NTgzOTI5MDQ5MDk5.GPekPf.h129ZhaNbX3oPRccnix9mG_JRe3UTQUTTMoBvg";
     public static String PREFIX = "::";
-    public static String GOD_ROLE = "988344671753367573";
+    public static String GOD_ROLE = "928084516235534336";
     public static String OWNER_ROLE = "928081454926274571";
     public static String VERIFIED_ROLE = "928085230059917382";
     public static String PLAYER_ROLE = "931379844401483796";

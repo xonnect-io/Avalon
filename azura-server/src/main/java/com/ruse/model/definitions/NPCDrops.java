@@ -10,8 +10,11 @@ import com.ruse.util.JsonLoader;
 import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
-import com.ruse.world.content.*;
+import com.ruse.world.content.CustomDropUtils;
+import com.ruse.world.content.DropLog;
 import com.ruse.world.content.DropLog.DropLogEntry;
+import com.ruse.world.content.KillsTracker;
+import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
 import com.ruse.world.content.collectionlog.CollectionEntry;
@@ -19,9 +22,7 @@ import com.ruse.world.content.combat.CombatBuilder.CombatDamageCache;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
-import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.prayer.BonesData;
-import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.GroundItemManager;
 import com.ruse.world.entity.impl.mini.MiniPlayer;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -428,8 +429,15 @@ public class NPCDrops {
                             player.getInventory().add(item.getId(), item.getAmount());
                             player.getInventory().add(item.getId(), item.getAmount());
                         } else {
-                            if (player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23090
-                                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23087) {
+					if ( player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 4446
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18818
+                                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
+                                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19888
+                                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 18888
+                                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 774
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 22119
+                                    || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 22120
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18823) {
                                 if (player.getInventory().canHold(item)) {
                                     player.getInventory().add(item);
                                     player.getInventory().add(item);
@@ -463,8 +471,15 @@ public class NPCDrops {
                     continue;
                 }
             }
-            if ((player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23090
-                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23087)
+            if ( player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 4446
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18818
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19888
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 18888
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 774
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 22119
+                    || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 22120
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18823
                     || (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && (!player.isInsideRaids()))) {
                 if (player.getGameMode() != GameMode.ULTIMATE_IRONMAN) {

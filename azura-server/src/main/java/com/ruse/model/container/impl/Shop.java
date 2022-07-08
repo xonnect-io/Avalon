@@ -142,9 +142,6 @@ public class Shop extends ItemContainer {
      */
     public Shop(Player player, int id, String name, Item currency, Item[] stockItems) {
         super(player);
-        if (stockItems.length > 42)
-            throw new ArrayIndexOutOfBoundsException(
-                    "Stock cannot have more than 40 items; check shop[" + id + "]: stockLength: " + stockItems.length);
         this.id = id;
         this.name = name.length() > 0 ? name : "General Store";
         this.currency = currency;
@@ -989,7 +986,7 @@ public class Shop extends ItemContainer {
 
     @Override
     public int capacity() {
-        return 42;
+        return 100;
     }
 
     @Override
@@ -1211,8 +1208,6 @@ public class Shop extends ItemContainer {
                     case 8412:
                     case 8413:
                         return new Object[]{2_500_000 * 2, "Upgrade Tokens"};
-
-
                     case 4684:
                         return new Object[]{4_000_000 * 2, "Upgrade Tokens"};
                     case 4685:
@@ -1269,6 +1264,55 @@ public class Shop extends ItemContainer {
                     case 23311:
                         return new Object[]{25_000_000 * 2, "Upgrade Tokens"};
 
+                    case 23230:
+                    case 23231:
+                    case 23232:
+                        return new Object[]{45_000_000 * 2, "Upgrade Tokens"};
+                    case 18818:
+                    case 18888:
+                        return new Object[]{1_000_000 * 2, "Upgrade Tokens"};
+                    case 4278:
+                        return new Object[]{500 * 2, "Upgrade Tokens"};
+                    case 23264:
+                        return new Object[]{4000 * 2, "Upgrade Tokens"};
+                    case 23321:
+                    case 22006:
+                        case 23044:
+                        return new Object[]{10000 * 2, "Upgrade Tokens"};
+                    case 23045:
+                        return new Object[]{100_000 * 2, "Upgrade Tokens"};
+                    case 23046:
+                        return new Object[]{300_000 * 2, "Upgrade Tokens"};
+                    case 23047:
+                        return new Object[]{750_000 * 2, "Upgrade Tokens"};
+                    case 23048:
+                        return new Object[]{1_500_000 * 2, "Upgrade Tokens"};
+                    case 23049:
+                        return new Object[]{3_000_000 * 2, "Upgrade Tokens"};
+                    case 22100:
+                    case 22101:
+                    case 22102:
+                        return new Object[]{12_000_000 * 2, "Upgrade Tokens"};
+                    case 22103:
+                    case 22104:
+                        return new Object[]{8_000_000 * 2, "Upgrade Tokens"};
+                    case 22105:
+                        return new Object[]{40_000_000 * 2, "Upgrade Tokens"};
+                    case 20591:
+                        return new Object[]{15_000_000 * 2, "Upgrade Tokens"};
+                    case 20400:
+                        return new Object[]{25_000_000 * 2, "Upgrade Tokens"};
+                    case 7995:
+                        return new Object[]{40_000_000 * 2, "Upgrade Tokens"};
+                    case 18883:
+                    case 18881:
+                        return new Object[]{1_500_000 * 2, "Upgrade Tokens"};
+                    case 19810:
+                        return new Object[]{2_500_000 * 2, "Upgrade Tokens"};
+                    case 9084:
+                        return new Object[]{1_000_000 * 2, "Upgrade Tokens"};
+                    case 9083:
+                        return new Object[]{15_000_000 * 2, "Upgrade Tokens"};
                 }
 
             } else if (shop == PKING_REWARDS_STORE) {

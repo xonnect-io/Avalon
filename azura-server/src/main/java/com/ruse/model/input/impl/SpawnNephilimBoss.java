@@ -28,8 +28,8 @@ public class SpawnNephilimBoss extends EnterAmount {
 
 		player.incrementNephilimBonus(ticketAmount);
 		if (NephilimSpawnSystem.sacrificedCount <= 249) {
-			World.sendMessage("@red@<img=856>[Nephilim Warrior]<img=856> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
-			World.sendMessage("@red@<img=856>[Nephilim Warrior]<img=856> @blu@" + NephilimSpawnSystem.getLeft() + " @epi@more Nephilim tokens left for Nephilim Warrior spawn.");
+			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
+			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> @blu@" + NephilimSpawnSystem.getLeft() + " @epi@more Nephilim tokens left for Nephilim Warrior spawn.");
 			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");
 			return;
 
@@ -37,7 +37,7 @@ public class SpawnNephilimBoss extends EnterAmount {
 			String message = "The Nephilim Warrior has appeared ::Nephilim";
 			NPC npc = new NPC(9312, new Position(2145, 3302));
 			World.register(npc);
-			World.sendMessage("@red@<img=856>[Nephilim Warrior]<img=856> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
+			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
 			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");
 
 			if (GameSettings.LOCALHOST == false)
