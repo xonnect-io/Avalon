@@ -171,6 +171,8 @@ public class EquipPacketListener implements PacketListener {
             case 23087:
             case 23090:
             case 18818:
+            case 23230:
+            case 23231:
                 DialogueManager.sendStatement(player, "<img=14>This item collects all drops automatically!");
                 player.getPacketSender().sendMessage("<shad=1>@red@This item collects all drops automatically!");
                 break;
@@ -299,6 +301,10 @@ public class EquipPacketListener implements PacketListener {
             case 16339:
             case 6068:
             case 9703:
+            case 23377:
+            case 23378:
+            case 23379:
+            case 23380:
                 if (player.getGameMode() != GameMode.IRONMAN && player.getGameMode() != GameMode.ULTIMATE_IRONMAN && player.getGameMode() != GameMode.GROUP_IRONMAN && player.getLocation() != Location.DUNGEONEERING) {
                     player.getPacketSender().sendMessage("You must be in Iron Man mode to use this.");
                     return false;

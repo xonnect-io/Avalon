@@ -1,7 +1,5 @@
 package com.ruse.world.content;
 
-import java.util.ArrayList;
-
 import com.ruse.model.Flag;
 import com.ruse.model.Item;
 import com.ruse.model.container.impl.Equipment;
@@ -9,8 +7,10 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.entity.impl.player.Player;
 
-public class ItemDegrading {
+import java.util.ArrayList;
 
+public class ItemDegrading {
+	public static int maxStarterCollects = 500;
 	public static int maxRecoilCharges = 40, maxForgingCharges = 140, maxZulrahCharges = 16383, maxAncientCharges = 819, maxlordCharges = 5000;
 
 	public static boolean handleItemDegrading(Player p, DegradingItem d) {
@@ -89,6 +89,12 @@ public class ItemDegrading {
 			} else {
 				return p.setRecoilCharges(p.getRecoilCharges() + 1);
 			}
+			case STARTER_COLLECTOR:
+				if (reset) {
+					return p.setStarterCharges(0);
+				} else {
+					return p.setStarterCharges(p.getStarterCharges() + 1);
+				}
 		case RING_OF_FORGING:
 			if (reset) {
 				return p.setForgingCharges(0);
@@ -116,7 +122,7 @@ public class ItemDegrading {
 		LORDS_RING(681, 681, Equipment.RING_SLOT, maxlordCharges, true, false),
 		RING_OF_RECOIL(2550, 2550, Equipment.RING_SLOT, maxRecoilCharges, true, false),
 		RING_OF_FORGING(2568, 2568, Equipment.RING_SLOT, maxForgingCharges, true, false),
-
+		STARTER_COLLECTOR(23090, 23090, Equipment.AMULET_SLOT, maxStarterCollects, true, false),
 		// Statius's equipment
 
 		// STATIUS_FULL_HELM(13896, 13898, Equipment.HEAD_SLOT, maxAncientCharges, true,

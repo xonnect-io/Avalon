@@ -842,7 +842,7 @@ public class QuestDialogues {
                                 player.getBank(0).add(21218,10);
                                 player.getBank(0).add(19116,5);
                                 if (player.getQuestOneStep7() == false) {
-                                    if (player.getAmountDonated() < 10) {
+                                    if (player.getAmountDonated() < 10 && player.getRights() != PlayerRights.OWNER) {
                                         player.incrementAmountDonated(10);
                                         player.setRights(PlayerRights.SAPPHIRE_DONATOR);
                                         player.getPacketSender().sendMessage("<img=832> You have obtained free Sapphire Donator rank status for completing a quest.");

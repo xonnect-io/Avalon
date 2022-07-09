@@ -754,6 +754,9 @@ public class PlayerLoading {
                 player.setRecoilCharges(reader.get("recoil-deg").getAsInt());
             }
 
+            if (reader.has("starter-deg")) {
+                player.setStarterCharges(reader.get("starter-deg").getAsInt());
+            }
             if (reader.has("brawlers-deg")) {
                 player.setBrawlerCharges(builder.fromJson(reader.get("brawlers-deg").getAsJsonArray(), int[].class));
             }

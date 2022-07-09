@@ -507,6 +507,10 @@ public class Locations {
 
 			@Override
 			public void enter(Player player) {
+				CurseHandler.deactivateAll(player);
+				PrayerHandler.deactivateAll(player);
+				player.getPacketSender().sendInterfaceRemoval()
+						.sendMessage("@red@<img=832> Prayers have been disabled for this minigame");
 				player.setRegionInstance(new RegionInstance(player, RegionInstance.RegionInstanceType.SOD));
 				player.getPacketSender().sendInteractionOption("null", 2, true);
 			}

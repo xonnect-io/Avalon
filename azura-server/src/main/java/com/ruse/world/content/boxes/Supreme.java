@@ -2,7 +2,7 @@ package com.ruse.world.content.boxes;
 
 import com.ruse.world.content.casketopening.Box;
 
-public class Zenyte {
+public class Supreme {
 
     public static Box[] rewards = {
             new Box(15004, 2, 33),

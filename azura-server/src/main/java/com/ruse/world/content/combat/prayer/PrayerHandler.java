@@ -225,6 +225,20 @@ public class PrayerHandler {
 			//HolyPrayers.deactivateAll(player);
 			return;
 		}
+		if (player.getLocation() == Location.SOD) {
+			player.getPacketSender().sendMessage("For some reason, your prayers do not have any effect in here.");
+			CurseHandler.deactivateAll(player);
+			PrayerHandler.deactivateAll(player);
+			//HolyPrayers.deactivateAll(player);
+			return;
+		}
+		if (player.getLocation() == Location.PYRAMID) {
+			player.getPacketSender().sendMessage("For some reason, your prayers do not have any effect in here.");
+			CurseHandler.deactivateAll(player);
+			PrayerHandler.deactivateAll(player);
+			//HolyPrayers.deactivateAll(player);
+			return;
+		}
 		PrayerData pd = PrayerData.prayerData.get(prayerId);
 		if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) <= 0) {
 			player.getPacketSender().sendConfig(pd.configId, 0);
@@ -250,12 +264,12 @@ public class PrayerHandler {
 		}
 		if (prayerId == RIGOUR && player.getSkillManager().getMaxLevel(Skill.INVENTION) < 78) {
 			player.getPacketSender().sendConfig(pd.configId, 0);
-			player.getPacketSender().sendMessage("You need a Dungeoneering level of at least 78 to use Rigour.");
+			player.getPacketSender().sendMessage("You need a Invention level of at least 78 to use Rigour.");
 			return;
 		}
 		if (prayerId == AUGURY && player.getSkillManager().getMaxLevel(Skill.INVENTION) < 78) {
 			player.getPacketSender().sendConfig(pd.configId, 0);
-			player.getPacketSender().sendMessage("You need a Dungeoneering level of at least 78 to use Augury.");
+			player.getPacketSender().sendMessage("You need a Invention level of at least 78 to use Augury.");
 			return;
 		}
 

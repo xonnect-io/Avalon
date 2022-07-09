@@ -1297,7 +1297,7 @@ public class ItemDef3 {
 				
 			case 23078:
 				itemDef.copyItem(4710);
-				itemDef.name = "Dragon rider lance";
+				itemDef.name = "Vitatlity lance";
 				itemDef.modelZoom = 2700;
 				itemDef.rotationX = 1200;
 				itemDef.rotationY = 400;
@@ -1446,7 +1446,7 @@ public class ItemDef3 {
 				
 			case 23090:
 				itemDef.copyItem(23087);
-				itemDef.name = "Upgraded collectors necklace";
+				itemDef.name = "Starter Collector";
 				itemDef.modelID = 100209;
 				itemDef.maleEquip1 = 100210;
 				itemDef.femaleEquip1 = 100210;

@@ -34,6 +34,11 @@ public enum AutoCastSpell {
     MOONLIGHT(18629, CombatSpells.MEDIUM),
     VINDICTA(17600, CombatSpells.MEDIUM),
     RUTHLESS(23145, CombatSpells.MEDIUM),
+    LEGENDS(17011, CombatSpells.LEGENDS),
+    LIGHT(17013, CombatSpells.LIGHT),
+    DARK(22114, CombatSpells.DARK),
+    BLOOD(23227, CombatSpells.BLOOD),
+    NEPHILIM(23062, CombatSpells.NEPHILIM),
     MAGIC(23026,CombatSpells.MEDIUM)
     ;
 

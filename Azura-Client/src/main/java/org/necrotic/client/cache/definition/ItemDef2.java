@@ -718,13 +718,26 @@ public class ItemDef2 {
 				def = ItemDefinition.get(1333);
 				itemDef.modelOffsetX = 46;
 				itemDef.modelOffsetY = 10;
-				itemDef.modelZoom = 2200;
+				itemDef.modelZoom = 2500;
 				itemDef.rotationY = 300;
 				itemDef.rotationX = 600;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				
-
+				break;
+			case 23376:
+				itemDef.name = "Wrath Hammer";
+				itemDef.modelID = 64044;
+				itemDef.maleEquip1 = 64044;
+				itemDef.femaleEquip1 = 64044;
+				def = ItemDefinition.get(1333);
+				itemDef.modelOffsetX = -45;
+				itemDef.modelOffsetY = 10;
+				itemDef.modelZoom = 2500;
+				itemDef.rotationY = 260;
+				itemDef.rotationX = 1400;
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
 				break;
 			case 5420:
 				itemDef.name = "Madman helm";
@@ -2607,9 +2620,10 @@ public class ItemDef2 {
 				//	itemDef.rdc2 = 2353627;
 				break;
 			case 1153:
-				itemDef.copyItem(4708);
+				itemDef.copyItem(4977);
 				itemDef.name = "Starter helm";
-				itemDef.modelZoom = 1000;
+				itemDef.modelZoom = 890;
+				itemDef.modelOffsetX = -2;
 				itemDef.modelID = 100129;
 				itemDef.maleEquip1 = 100130;
 				itemDef.femaleEquip1 = 100130;
@@ -3807,8 +3821,10 @@ public class ItemDef2 {
 				//	itemDef.rdc2 = 34737;
 				break;
 			case 16691:
+				itemDef.copyItem(4977);
 				itemDef.name = "Ironman full helm";
 				itemDef.modelID = 80047;
+				itemDef.modelOffsetX = 3;
 				itemDef.maleEquip1 = 80048;
 				itemDef.femaleEquip1 = 80048;
 				break;

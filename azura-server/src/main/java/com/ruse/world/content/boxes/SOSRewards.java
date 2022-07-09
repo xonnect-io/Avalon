@@ -16,7 +16,7 @@ public class SOSRewards {
 			new Box(23310, 1,1, 0.01, true), // Mystic legs
 			new Box(23311, 1,1, 0.01, true), // Mystic legs
 			new Box(14999, 1,1, 0.01, true), // Onyx casket
-			new Box(23276, 1,1, 0.01, true), // Bronze card pack
+			new Box(23276, 1,1, 0.01, true), // Starter Card pack
 			new Box(15288, 10,250, 0.01, true), // Upgrade token packs
 
 			new Box(15288, 1,2,66,false), // x2 100k token pack

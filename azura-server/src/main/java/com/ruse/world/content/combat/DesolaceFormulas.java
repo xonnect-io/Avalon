@@ -372,6 +372,9 @@ public class DesolaceFormulas {
             if (plr.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 16879) {
                 rangeLevel *= 1.10;
             }
+            if (plr.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 18799) {
+                rangeLevel *= 1.2;
+            }
             if (plr.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 18332) {
                 rangeLevel *= 1.90;
             }
@@ -740,7 +743,7 @@ public class DesolaceFormulas {
             return 1;
         if (id == 22010 || id == 19137 || id == 19136 || id == 14919 || id == 15785 || id == 20173 || id == 9929
                 || id == 14056 || id == 21606 || id == 671 || id == 16879 || id == 18332 || id == 22083 || id == 20553
-                || id == 18636 || id == 8411 || id == 8088 || id == 5073 || id == 8001 || id == 8253 || id == 22089
+                || id == 8411 || id == 8088 || id == 5073 || id == 8001 || id == 8253 || id == 22089
                 || id == 7543 || id == 19843 || id == 9941 || id == 5012 || id == 5011 || id == 22113 || id == 5010 || id == 19135)
             return 1;
         if (id == 20000)

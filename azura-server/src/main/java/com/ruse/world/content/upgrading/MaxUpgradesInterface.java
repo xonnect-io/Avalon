@@ -80,7 +80,7 @@ public class MaxUpgradesInterface {
         UPGRADED_OWNER_CAPE(50,new Item(22110,-1),new Item(22109, 1),new Item(22110, 1), new Item(7995, 1)),
 
         //ROW 9
-        RAGE_POTION(100,new Item(17540,-1),new Item(23225, 1),new Item(17540, 1),new Item(12855, 50_000_000)),
+        RAGE_POTION(100,new Item(15330,-1),new Item(23225, 1),new Item(15330, 1),new Item(12855, 50_000_000)),
         OWNER_POTION(100,new Item(7995,-1),new Item(23242, 1),new Item(7995, 1),new Item(23225, 1),new Item(12855, 100_000_000)),
         EMPTY_CREST(100,new Item(779,-1),new Item(782, 1),new Item(779, 1),new Item(780, 1),new Item(781, 1)),
         LIGHT_MELEE_CREST(100,new Item(782,-1),new Item(23246, 1),new Item(782, 1),new Item(12537, 1)),

@@ -613,6 +613,7 @@ public class Player extends Character {
     private int[] constructionCoords;
     private int[] previousTeleports = new int[]{0, 0, 0, 0};
     private int recoilCharges;
+    private int starterCharges;
     private int forgingCharges;
     private int blowpipeCharges;
     private int runEnergy = 100;
@@ -3384,6 +3385,14 @@ End new teleport
 
     public int setRecoilCharges(int recoilCharges) {
         return this.recoilCharges = recoilCharges;
+    }
+
+    public int getStarterCharges() {
+        return this.starterCharges;
+    }
+
+    public int setStarterCharges(int starterCharges) {
+        return this.starterCharges = starterCharges;
     }
 
     public int getBlowpipeCharges() {

@@ -104,7 +104,7 @@ public class CasketOpening {
 
     public boolean removeAllItems() {
 
-        int amount = player.getInventory().getAmount(22053);
+        int amount = player.getInventory().getAmount(23370);
 
         if (player.getInventory().getAmount(getCurrentCasket().getItemID()) >= 1) {
             player.getInventory().delete(getCurrentCasket().getItemID(), amount);
@@ -256,7 +256,7 @@ public class CasketOpening {
             new Item(23310, 1), // Mystic legs
             new Item(23311, 1), // Mystic legs
             new Item(14999, 1), // Onyx casket
-            new Item(23276, 1), // Bronze card pack
+            new Item(23276, 1), // Starter Card pack
             new Item(15288, 250) // Upgrade token packs
 
     );
@@ -287,7 +287,7 @@ public class CasketOpening {
         player.sendMessage(":resetCasket");
         player.getPA().sendInterface(48130);
         player.getPacketSender().sendString(48135, "Suffering key");
-        player.getPacketSender().sendItemOnInterface(48145, 22053, 0, 1);
+        player.getPacketSender().sendItemOnInterface(48145, 23370, 0, 1);
 
 
         for (int i = 0; i < common.size(); i++) {
@@ -359,13 +359,13 @@ public class CasketOpening {
         OFF_BOX(23173, OffBox.loot),
         WEAPON_BOX(19114, WepBox.loot),
         HOV_BOX(23086, HOVBox.loot),
-        EMERALD_CASKET(15003, Silver.rewards),
-        ONYX_CASKET(14999, Onyx.rewards),
-        RUBY_CASKET(15002, Ruby.rewards),
-        DIAMOND_CASKET(15004, Diamond.rewards),
+        ELITE(15002, Elite.rewards),
+        LEGENDARY(14999, Legendary.rewards),
+        AZURE(15003, Azure.rewards),
+        EXCLUSIVE(15004, Exclusive.rewards),
         RAIDS(18404, Raids1.rewards),
-        ZENYTE_CASKET(23253, Zenyte.rewards),
-        SOSREWARDS(22053, SOSRewards.rewards),
+        SUPREME(23253, Supreme.rewards),
+        SOSREWARDS(23370, SOSRewards.rewards),
         SUMMER_BOX(23322, SummerBox.rewards),
         ;
         private int itemID;

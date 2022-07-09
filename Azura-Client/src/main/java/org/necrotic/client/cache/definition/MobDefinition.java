@@ -154,7 +154,7 @@ public final class MobDefinition {
 				definition.name = "Cthulu";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19256};
-				definition.npcSizeInSquares = 2;
+				definition.npcSizeInSquares = 3;
 				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;

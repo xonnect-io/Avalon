@@ -669,9 +669,6 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case -16332:
                 player.getGoodieBag().claim();
-                if (player.getInventory().contains(7995)) {
-                    World.sendMessage("<shad=1>@red@[OWNER CAPE] A player has received an Owner cape from the $75 goodiebag! GZ");
-                }
                 break;
 
 

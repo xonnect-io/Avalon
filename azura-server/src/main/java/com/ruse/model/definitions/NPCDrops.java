@@ -10,11 +10,8 @@ import com.ruse.util.JsonLoader;
 import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
-import com.ruse.world.content.CustomDropUtils;
-import com.ruse.world.content.DropLog;
+import com.ruse.world.content.*;
 import com.ruse.world.content.DropLog.DropLogEntry;
-import com.ruse.world.content.KillsTracker;
-import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
 import com.ruse.world.content.collectionlog.CollectionEntry;
@@ -432,12 +429,16 @@ public class NPCDrops {
 					if ( player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 4446
                                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18818
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23231
+                                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23230
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19888
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 18888
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 774
                                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 22119
                                     || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 22120
-                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18823) {
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18823
+                                    ||  player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23090 ) {
+
                                 if (player.getInventory().canHold(item)) {
                                     player.getInventory().add(item);
                                     player.getInventory().add(item);
@@ -474,14 +475,37 @@ public class NPCDrops {
             if ( player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 4446
                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18818
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23231
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23293
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23280
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23230
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19888
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 18888
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 774
                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 22119
                     || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 22120
                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18823
+                    ||  player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23090
                     || (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && (!player.isInsideRaids()))) {
+                if (player.getEquipment().contains(23090)) {
+                    ItemDegrading.handleItemDegrading(player, ItemDegrading.DegradingItem.STARTER_COLLECTOR);
+                    int startercharges = (ItemDegrading.maxStarterCollects - player.getStarterCharges());
+                    if (player.getStarterCharges() == 10 || player.getStarterCharges() == 25 || player.getStarterCharges() == 40
+                            || player.getStarterCharges() == 55 || player.getStarterCharges() == 70 || player.getStarterCharges() == 85 ||
+                            player.getStarterCharges() == 100 || player.getStarterCharges() == 115 || player.getStarterCharges() == 130 ||
+                            player.getStarterCharges() == 145 || player.getStarterCharges() == 160 || player.getStarterCharges() == 175 ||
+                            player.getStarterCharges() == 190 || player.getStarterCharges() == 205 || player.getStarterCharges() == 220 ||
+                            player.getStarterCharges() == 235 || player.getStarterCharges() == 240 || player.getStarterCharges() == 255 ||
+                            player.getStarterCharges() == 270 || player.getStarterCharges() == 285 || player.getStarterCharges() == 300 ||
+                            player.getStarterCharges() == 315 || player.getStarterCharges() == 330 || player.getStarterCharges() == 345 ||
+                            player.getStarterCharges() == 360 || player.getStarterCharges() == 375 || player.getStarterCharges() == 390 ||
+                            player.getStarterCharges() == 405 || player.getStarterCharges() == 420 || player.getStarterCharges() == 435 ||
+                            player.getStarterCharges() == 450 || player.getStarterCharges() == 465 || player.getStarterCharges() == 480 ||
+                            player.getStarterCharges() == 495)
+                    player.getPacketSender().sendMessage("You have " + startercharges + " starter amulet "
+                            + (startercharges == 1 ? "charge" : "charges") + " remaining.");
+                }
                 if (player.getGameMode() != GameMode.ULTIMATE_IRONMAN) {
                     player.performGraphic(new Graphic(385));
                     if (player.getInventory().canHold(item)) {

@@ -91,19 +91,19 @@ public class Store implements Runnable {
 
                 int id = -1;
                 switch (item_number) {
-                    //Bronze Card Pack
+                    //Starter Card Pack
                     case 1:
                         player.getInventory().add(23276, quantity);
                         break;
-                    //Silver Card Pack
+                    //Quill's Card Pack
                     case 2:
                         player.getInventory().add(23277, quantity);
                         break;
-                    //Gold Card Pack
+                    //Celestial's Card Pack
                     case 3:
                         player.getInventory().add(23278, quantity);
                         break;
-                    //Diamond Card Pack
+                    //Avalon's Card Pack
                     case 4:
                         player.getInventory().add(23279, quantity);
                         break;

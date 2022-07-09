@@ -176,6 +176,16 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
 
         }
+        if (command[0].equalsIgnoreCase("donoboss") || command[0].equalsIgnoreCase("donationboss") || command[0].equalsIgnoreCase("guardian") || command[0].equalsIgnoreCase("dboss")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position position = new Position(3445, 4105, 1);
+            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+
+        }
 
         if (command[0].equalsIgnoreCase("dk") || command[0].equalsIgnoreCase("dragonking")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS

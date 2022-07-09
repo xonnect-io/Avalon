@@ -333,7 +333,7 @@ public class SkillManager {
 
 
         if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_EXP) {
-            experience *= 3;
+            experience *= 2;
         }
         if (WellOfGoodwill.isActive())
             experience *= 1.3;

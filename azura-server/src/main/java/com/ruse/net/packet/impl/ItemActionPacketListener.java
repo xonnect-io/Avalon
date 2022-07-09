@@ -505,7 +505,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getMysteryBoxOpener().display(20489, "Launch Casket", commonLaunch, uncommonLaunch, raresLaunch);
                 break;
             case 15003:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.EMERALD_CASKET);
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ELITE);
                 player.getCasketOpening().openInterface();
                 break;
 
@@ -515,19 +515,19 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 15002:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.RUBY_CASKET);
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.AZURE);
                 player.getCasketOpening().openInterface();
                 break;
             case 15004:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.DIAMOND_CASKET);
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.EXCLUSIVE);
                 player.getCasketOpening().openInterface();
                 break;
             case 14999:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ONYX_CASKET);
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.LEGENDARY);
                 player.getCasketOpening().openInterface();
                 break;
             case 23253:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ZENYTE_CASKET);
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SUPREME);
                 player.getCasketOpening().openInterface();
                 break;
 

@@ -2,7 +2,7 @@ package com.ruse.world.content.boxes;
 
 import com.ruse.world.content.casketopening.Box;
 
-public class Onyx {
+public class Legendary {
 
     public static Box[] rewards = {
             new Box(20489, 5, 33),

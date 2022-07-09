@@ -10,7 +10,7 @@ public class GameSettings {
 
     public static final int GAME_VERSION = 3;
     public static final int GAME_PORT = 9420;
-    public static boolean LOCALHOST = false;
+    public static boolean LOCALHOST = true;
     public static boolean BOGO = false;
     public static boolean B2GO = false;
     public static boolean ELITE_DONO_DEAL = false;
@@ -162,7 +162,7 @@ public class GameSettings {
      */
 
     public static final int[] UNTRADEABLE_ITEMS = {
-            1468,8534,17510,18813,23369,552,
+            1468,8534,17510,18813,23369,552,23090,
             23229,23061,23062,23063,23220,23221,23222,23223,23224,14050,14051,14052,14053,14055,18333,
             23003, 23004, 23005, 23006, 23007, 23007,23018,11319, 11310, 15328, 15330, 4440, 4438, 4442, 14067, 11318, 9054, 9055, 9056,
             1580, 19994,22053,19748,21814, 21815, 21816, 6198,11317, 2947, 2948, 2949,11315, 11314, 11316, 5154, 5155, 5156, 8830, 8831,
@@ -196,7 +196,7 @@ public class GameSettings {
      * Unsellable items Items which cannot be sold to shops
      */
     public static final int UNSELLABLE_ITEMS[] = new int[]{
-            1468,8534,17510,18813,23369,552,
+            1468,8534,17510,18813,23369,552,23090,
             23229,23061,23062,23063,23220,23221,23222,23223,23224,
             14067, 15328, 15330, 4440, 4438, 4442, 9054, 9055, 9056, 9057,
             15492, 13263, 13281, 14019, 14022, 19785, 19786, 1419, 16127, 4084, 5497, 15403, 10887, 13727, 20079, 20081,

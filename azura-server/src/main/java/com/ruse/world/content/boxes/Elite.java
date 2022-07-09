@@ -2,7 +2,7 @@ package com.ruse.world.content.boxes;
 
 import com.ruse.world.content.casketopening.Box;
 
-public class Silver {
+public class Elite {
     public static Box[] rewards = {
             new Box(12855, 25_000, 33),
             new Box(5022, 25_000, 33),

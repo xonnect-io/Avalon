@@ -679,7 +679,7 @@ public final class CombatFactory {
 			otherBonusMultiplier = 2.8;
 		}*/
         if (player.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 17700
-                && player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 17698) {
+                && player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23376) {
             maxHit *= 9.1;
             otherBonusMultiplier = 9.8;
         }
@@ -727,7 +727,7 @@ public final class CombatFactory {
                     - player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION)) * 0.35;
         }
         if (player.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 17700
-                && player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 17698) {
+                && player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23376) {
             maxHit += (player.getSkillManager().getMaxLevel(Skill.CONSTITUTION)
                     - player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION)) * 0.35;
         }
@@ -745,14 +745,14 @@ public final class CombatFactory {
             if (EquipmentBonus.berserkerNecklaceEffect(player)) {
                 maxHit *= 1.2;
             }
-            if (player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 19843) {
+ /*           if (player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 19843) {
                 maxHit *= 2.2;
             }
             if (player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 3738) {
                 maxHit *= 1.9;
             }
             if (player.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 17700
-                    && player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 17698) {
+                    && player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23376) {
                 maxHit *= 9.0;
             }
             if (player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 9941) {
@@ -808,7 +808,7 @@ public final class CombatFactory {
             }
             if (player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 14056) {
                 maxHit *= 2.2;
-            }
+            }*/
             /** SLAYER HELMET **/
             if (npc.getId() == player.getSlayer().getSlayerTask().getNpcId()) {
                 if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23071
@@ -898,7 +898,7 @@ public final class CombatFactory {
         }
 
         maxHit = (int) (baseDamage * specialMultiplier * voidDmgBonus);
-        if (player.checkItem(Equipment.WEAPON_SLOT, 20173)) {
+  /*      if (player.checkItem(Equipment.WEAPON_SLOT, 20173)) {
             maxHit *= 2.05;
         }
         if (player.checkItem(Equipment.WEAPON_SLOT, 671)) {
@@ -972,7 +972,7 @@ public final class CombatFactory {
         }
         if (player.checkItem(Equipment.WEAPON_SLOT, 19136)) {
             maxHit *= 1.35;
-        }
+        }*/
         if (!player.checkItem(Equipment.WEAPON_SLOT, 20171) || !player.checkItem(Equipment.WEAPON_SLOT, 20553)) {
 
             if (player.getCurseActive()[PrayerHandler.SHARP_EYE] || player.getCurseActive()[CurseHandler.SAP_RANGER]) {

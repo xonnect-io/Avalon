@@ -118,7 +118,7 @@ public enum Upgradeables {
     MAGE_BODY(TIER_5, new Item(8324, 1), new Item(18637, 1), 5000, 20),
     MAGE_LEGS(TIER_5, new Item(8325, 1), new Item(18623, 1), 5000, 20),
     ARTDEF(TIER_5, new Item(8329, 1), new Item(17700, 1), 5000, 20),
-    ARTSWORD(TIER_5, new Item(16137, 1), new Item(17698, 1), 5000, 20),
+    ARTSWORD(TIER_5, new Item(16137, 1), new Item(23376, 1), 5000, 20),
     T5_AURA(TIER_5, new Item(23048, 1), new Item(23049, 1), 4_000_000, 40),
     //END TIER 5 (FIVE)
 

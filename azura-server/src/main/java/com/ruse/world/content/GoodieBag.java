@@ -104,6 +104,18 @@ public class GoodieBag {
                 player.getInventory().add(rewards[player.selectedGoodieBag], 1);
                 claimed = true;
                 boxId = -1;
+                if (rewards[player.selectedGoodieBag] == 7995 && boxId == 3578) {
+                    player.sendMessage("@red@<img=832>" + player.getUsername() + " @or2@has just received @red@Owner cape @or2@from a goodiebag" );
+                }
+                if (rewards[player.selectedGoodieBag] == 23230) {
+                    player.sendMessage("@red@<img=832>" + player.getUsername() + " @or2@has just received @red@Owner amulet @or2@from a goodiebag" );
+                }
+                if (rewards[player.selectedGoodieBag] == 23231) {
+                    player.sendMessage("@red@<img=832>" + player.getUsername() + " @or2@has just received @red@Owner ring @or2@from a goodiebag" );
+                }
+                if (rewards[player.selectedGoodieBag] == 23232) {
+                    player.sendMessage("@red@<img=832>" + player.getUsername() + " @or2@has just received @red@Owner bracelet @or2@from a goodiebag" );
+                }
             } else {
                 player.sendMessage("@red@You need a goodiebag box to claim the reward");
             }

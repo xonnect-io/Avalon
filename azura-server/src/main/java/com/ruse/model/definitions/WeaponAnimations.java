@@ -231,7 +231,6 @@ public final class WeaponAnimations {
 		case 19843:
 		case 19137:
 		case 17712:
-		case 18636:
 		case 8253:
 		case 19135:
 		case 671:
@@ -261,7 +260,7 @@ public final class WeaponAnimations {
 			playerStandIndex = 847;
 			break;
 		}
-		if (weaponId == 17698 && shieldId == 17700) {
+		if (weaponId == 23376 && shieldId == 17700) {
 			playerStandIndex = 0x328;
 		playerWalkIndex = 0x333;
 		playerRunIndex = 4029;
@@ -307,13 +306,13 @@ public final class WeaponAnimations {
 			return 1074;
 		if (weaponId == 20542 || weaponId == 11308)
 			return 440;
-		if (weaponId == 17698 && shieldId == 17700)
+		if (weaponId == 23376 && shieldId == 17700)
 			return 4841;
 		if (weaponId == 22010)// ginrei
 			return 1074;
 		if (weaponId == 21606)
 			return 4230;
-		if (weaponId == 19137 || weaponId == 19135 || weaponId == 671 || weaponId == 19136 || weaponId == 8253 || weaponId == 18636 || weaponId == 19843 || weaponId == 19843
+		if (weaponId == 19137 || weaponId == 19135 || weaponId == 671 || weaponId == 19136 || weaponId == 8253 || weaponId == 19843 || weaponId == 19843
 				|| weaponId == 17712)// Minigun
 			return 12153;
 		if (weaponId == 17704)

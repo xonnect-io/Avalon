@@ -2,7 +2,7 @@ package com.ruse.world.content.boxes;
 
 import com.ruse.world.content.casketopening.Box;
 
-public class Ruby {
+public class Azure {
 
     public static Box[] rewards = {
             new Box(20488, 2, 33),

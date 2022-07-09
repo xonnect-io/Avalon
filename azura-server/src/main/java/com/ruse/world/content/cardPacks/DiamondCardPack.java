@@ -265,7 +265,7 @@ public class DiamondCardPack {
             if (rewardstype == tanzaniteRewards) {
                 World.sendMessage("<img=832> @red@" +player.getUsername() + " <col=ff812f>has just received @red@"
                         + "x" + (reward.getAmount()) + " "
-                        + ItemDefinition.forId(reward.getId()).getName() + "<col=ff812f> from a @red@ Diamond Card Pack!");
+                        + ItemDefinition.forId(reward.getId()).getName() + "<col=ff812f> from a @red@ Avalon's Card Pack!");
             }
         }
     }

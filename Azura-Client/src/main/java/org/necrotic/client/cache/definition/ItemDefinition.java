@@ -493,8 +493,8 @@ public final class ItemDefinition {
 			case 12855:
 				itemDef.copyItem(7478);
 				itemDef.name = "@yel@Upgrade Tokens";
-				itemDef.modelID = 18540;
-				itemDef.modelZoom = 1200;
+				itemDef.modelID = 19538;
+				itemDef.modelZoom = 1000;
 				itemDef.actions = new String[]{"Activate", null, null, null, "Drop"};
 				break;
 				
@@ -2198,40 +2198,12 @@ public final class ItemDefinition {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 18809;
-				itemDef.rdc2 = 12111;
-				break;
-
-			case 15003:
-				itemDef.name = "<col=C5CEDF><shad=0>Silver Casket<shad-1>";
-				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 18809;
-				itemDef.rdc2 = 988331;
-				break;
-
-			case 15002:
-				itemDef.name = "Ruby Casket";
-				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 18809;
+				itemDef.modelID = 19527;
 				itemDef.rdc2 = 92111;
 				break;
 
-			case 14999:
-				itemDef.name = "Onyx Casket";
+			case 15003:
+				itemDef.name = "Azure Casket";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
@@ -2240,12 +2212,24 @@ public final class ItemDefinition {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 18809;
-				itemDef.rdc2 = 100;
+				itemDef.modelID = 19526;
+				break;
+
+			case 15002:
+				itemDef.name = "Elite Casket";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.rotationY = 100;
+				itemDef.rotationX = 90;
+				itemDef.modelID = 19527;
 				break;
 
 			case 15004:
-				itemDef.name = "@cya@<shad=0>Diamond Exclusive Casket<shad-1>";
+				itemDef.name = "Exclusive Casket";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
@@ -2254,21 +2238,33 @@ public final class ItemDefinition {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 18809;
-				itemDef.rdc2 = 129911;
+				itemDef.modelID = 19528;
 				break;
 
-			case 23253:
-				itemDef.name = "Zenyte Casket";
+			case 14999:
+				itemDef.name = "Legendary Casket";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = 1600;
+				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 18237;
+				itemDef.modelID = 19529;
+				break;
+
+			case 23253:
+				itemDef.name = "Supreme Casket";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.rotationY = 100;
+				itemDef.rotationX = 90;
+				itemDef.modelID = 19531;
 				break;
 
 			case 15355:
@@ -3685,7 +3681,7 @@ public final class ItemDefinition {
 				break;
 				
 			case 19582:
-				itemDef.name = "Megaleather Range set";
+				itemDef.name = "Sagittarian range set";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.actions[2] = "Open-All";

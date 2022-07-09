@@ -234,6 +234,7 @@ public class PlayerSaving {
 					player.getSlayer().getDuoPartner() == null ? "null" : player.getSlayer().getDuoPartner());
 			object.addProperty("double-slay-xp", player.getSlayer().doubleSlayerXP);
 			object.addProperty("recoil-deg", new Integer(player.getRecoilCharges()));
+			object.addProperty("starter-deg", new Integer(player.getStarterCharges()));
 			object.addProperty("blowpipe-deg", new Integer(player.getBlowpipeCharges()));
 			object.add("brawlers-deg", builder.toJsonTree(player.getBrawlerChargers()));
 			object.add("ancient-deg", builder.toJsonTree(player.getAncientArmourCharges()));

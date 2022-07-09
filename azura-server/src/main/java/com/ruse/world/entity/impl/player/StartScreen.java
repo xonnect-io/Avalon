@@ -67,7 +67,7 @@ public class StartScreen {
             player.getPacketSender().sendInterface(3559);
             player.getAppearance().setCanChangeAppearance(true);
             player.setNewPlayer(false);
-            World.sendMessage("<img=18><shad=1><col=ffca3c>[New Arrival] " + player.getUsername() + " has just logged into @cya@Avalon<col=ffca3c> for the first time!");
+            World.sendMessage("<img=832><shad=1><col=ffca3c>[New Arrival] " + player.getUsername() + " has just logged into @cya@Avalon<col=ffca3c> for the first time!");
             player.getPacketSender().sendRights();
             if (player.getGameMode() == GameMode.GROUP_IRONMAN) {
                 player.moveTo(GameSettings.HOME_CORDS);
@@ -142,7 +142,7 @@ public class StartScreen {
         NORMAL("Normal", 52761, -12780, 1, 0,
                 new Item[]{new Item(13281, 1),new Item( 1153, 1), new Item(1115, 1), new Item(1067, 1) , new Item(17817, 400) ,
                         new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
-                         new Item(20054, 1),  new Item(1478, 1),
+                         new Item(20054, 1),  new Item(23090, 1),
                         new Item(10499, 1), new Item(459, 1),new Item(6199, 4),  new Item(290, 2),
                         new Item(15031, 1), new Item(6570, 1)
                 },
@@ -155,9 +155,9 @@ public class StartScreen {
                 new Item[]{new Item(13281, 1), new Item( 16691, 1),
                         new Item(17239, 1), new Item(16669, 1) , new Item(17817, 400) ,
                         new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
-                        new Item(20054, 1),  new Item(1478, 1),
-                        new Item(10499, 1),new Item(459, 1),new Item(6199, 4),new Item(630, 1),
-                        new Item(18740, 1)
+                        new Item(20054, 1),  new Item(23090, 1),
+                        new Item(10499, 1),new Item(459, 1),new Item(6199, 4),new Item(23377, 1),
+                        new Item(23379, 1)
                 },
                 "Ironman mode is a very intense gamemode",
                 "You are not allowed to trade or stake",
@@ -169,9 +169,9 @@ public class StartScreen {
         ULTIMATE_IRONMAN("Ultimate Iron", 52763, -12778, 1, 2,
                 new Item[]{new Item(13281, 1), new Item( 4977, 1), new Item(4989, 1), new Item(4995, 1) ,
                          new Item(17817, 400) ,new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
-                          new Item(20054, 1),  new Item(1478, 1),
-                        new Item(10499, 1), new Item(459, 1),new Item(6199, 4),new Item(630, 1),
-                        new Item(18740, 1)
+                          new Item(20054, 1),  new Item(23090, 1),
+                        new Item(10499, 1), new Item(459, 1),new Item(6199, 4),new Item(23378, 1),
+                        new Item(23380, 1)
                 },
                 "Ultimate ironman is harder than ironman",
                 "@red@Same as ironman mode, but you can't banks",
@@ -182,7 +182,7 @@ public class StartScreen {
         GROUP_IRON("Group Ironman", 52778, -12760, 1, 3,
                 new Item[]{new Item(13281, 1), new Item( 13700, 1),new Item(13701, 1), new Item(13702, 1) ,
                         new Item(17817, 400) ,new Item(18365, 1), new Item(16995, 1), new Item(16879, 1)
-                        ,new Item(20054, 1),  new Item(1478, 1),
+                        ,new Item(20054, 1),  new Item(23090, 1),
                         new Item(10499, 1), new Item(459, 1),new Item(6199, 4), new Item(630, 1),
                         new Item(18740, 1)
                 },
@@ -197,7 +197,7 @@ public class StartScreen {
         VETERAN_MODE("Veteran", 52774, -12763, 1, 4,
                 new Item[]{new Item( 1153, 1),new Item(1115, 1), new Item(1067, 1) ,
                         new Item(17817, 400) , new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
-                        new Item(13281, 1),  new Item(20054, 1),  new Item(1478, 1),
+                        new Item(13281, 1),  new Item(20054, 1),  new Item(23090, 1),
                         new Item(10499, 1), new Item(459, 1),new Item(6199, 4),  new Item(290, 2),
                         new Item(15031, 1), new Item(6570, 1)
                 },

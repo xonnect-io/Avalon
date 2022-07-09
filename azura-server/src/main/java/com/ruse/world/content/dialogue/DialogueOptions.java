@@ -1256,6 +1256,7 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+
                 case 8631:
                     DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoald2(player));
                     break;
@@ -1734,6 +1735,7 @@ public class DialogueOptions {
 
         } else if (id == SECOND_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+
                 case 8631:
                     DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoald3(player));
                     break;

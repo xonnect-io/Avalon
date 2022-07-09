@@ -265,7 +265,7 @@ public class GoldCardPack {
             if (rewardstype == tanzaniteRewards) {
                 World.sendMessage("<img=832> @red@" +player.getUsername() + " <col=ff812f>has just received @red@"
                         + "x" + (reward.getAmount()) + " "
-                        + ItemDefinition.forId(reward.getId()).getName() + "<col=ff812f> from a @red@ Gold Card Pack!");
+                        + ItemDefinition.forId(reward.getId()).getName() + "<col=ff812f> from a @red@ Celestial's Card Pack!");
             }
 
         }

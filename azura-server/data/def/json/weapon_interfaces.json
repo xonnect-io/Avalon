@@ -284,6 +284,11 @@
     "item-id": 17698,
     "interface": "WARHAMMER"
   },
+  {
+    "hash": 23376,
+    "item-id": 23376,
+    "interface": "WARHAMMER"
+  },
     {
     "hash": 22078,
     "item-id": 22078,
@@ -325,8 +330,43 @@
     "interface": "STAFF"
   },
   {
+    "hash": 17011,
+    "item-id": 17011,
+    "interface": "STAFF"
+  },
+  {
+    "hash": 17011,
+    "item-id": 17011,
+    "interface": "STAFF"
+  },
+  {
+    "hash": 17011,
+    "item-id": 17011,
+    "interface": "STAFF"
+  },
+  {
+    "hash": 17011,
+    "item-id": 17011,
+    "interface": "STAFF"
+  },
+  {
     "hash": 17013,
     "item-id": 17013,
+    "interface": "STAFF"
+  },
+  {
+    "hash": 22114,
+    "item-id": 22114,
+    "interface": "STAFF"
+  },
+  {
+    "hash": 23227,
+    "item-id": 23227,
+    "interface": "STAFF"
+  },
+  {
+    "hash": 23062,
+    "item-id": 23062,
     "interface": "STAFF"
   },
   {
@@ -2655,6 +2695,11 @@
   {
     "hash": 8087,
     "item-id": 8087,
+    "interface": "SWORD"
+  },
+  {
+    "hash": 23078,
+    "item-id": 23078,
     "interface": "SWORD"
   },
   {
