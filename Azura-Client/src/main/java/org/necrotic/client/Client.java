@@ -19031,7 +19031,7 @@ public class Client extends GameRenderer {
 
                         }
                         if (entityDef.id == 1821) {
-                            spritesMap.get(869).drawSprite(spriteDrawX - 4, spriteDrawY - 5);
+                            spritesMap.get(1711).drawSprite(spriteDrawX - 25, spriteDrawY - 65);
 
                         }
                         if (entityDef.id == 925 || entityDef.id == 1988) {

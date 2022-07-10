@@ -307,12 +307,33 @@ public class Shop extends ItemContainer {
                 }
             }
 
-            if (shop.getId() == PVM) {
-                currencyicon = 2;
+            if (shop.getId() == 104) {
+                currencyicon = 1;
                 player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
             }
-            if (shop.getId() == DONATOR_STORE_1) {
+           else if (shop.getId() == 24) {
                 currencyicon = 2;
+                player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
+            } else if (shop.getId() == 137) {
+                    currencyicon = 1;
+                    player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
+            } else if (shop.getId() == 123) {
+                currencyicon = 1;
+                player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
+            } else if (shop.getId() == 110) {
+                currencyicon = 1;
+                player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
+            } else if (shop.getId() == 102) {
+                currencyicon = 1;
+                player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
+            } else if (shop.getId() == 471) {
+                currencyicon = 5;
+                player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
+            } else if (shop.getId() == 107) {
+                currencyicon = 5;
+                player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
+            } else if (shop.getId() == 90) {
+                currencyicon = 3;
                 player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
             } else {
                 player.getPacketSender().sendString(35613 + i, "," + -1);

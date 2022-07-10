@@ -157,6 +157,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 241:
                         ShopManager.getShops().get(123).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "Spend your Global boss tokens on items");
                         break;
                     case GroupConfig.NPC_ID:
                         if (player.getGameMode() == GameMode.GROUP_IRONMAN) {
@@ -271,10 +273,14 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 3089:
                         ShopManager.getShops().get(104).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "");
                         npc.forceChat("PvM ticket shop!");
                         break;
                     case 5838:
                         ShopManager.getShops().get(137).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "Sell items for 50% of their original value");
                         break;
                     case 659:
                         if (GameSettings.newYear2017) {
@@ -710,6 +716,8 @@ public class NPCOptionPacketListener implements PacketListener {
                                         "You can earn points and coins by voting. To do so, simply use the ::vote command.");
                         ;
                         ShopManager.getShops().get(90).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "Voting Points: @whi@" + player.getPointsHandler().getVotingPoints() + "");
                         // player.setDialogueActionId(8);
                         // DialogueManager.start(player, 13);
                         break;
@@ -1085,6 +1093,8 @@ public class NPCOptionPacketListener implements PacketListener {
                                 .sendMessage("<shad=1>@gre@You currently have " + player.getPointsHandler().getDonatorPoints()
                                         + " Donator points.")
                                 .sendMessage("<shad=1>@gre@You can get more points by donating at ::donate");
+                        player.getPacketSender().sendString(3903,
+                                "Donation Points: @whi@" + player.getPointsHandler().getDonatorPoints() + "");
                         ShopManager.getShops().get(24).open(player);
                         break;
                     case 550:
@@ -1334,6 +1344,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 9000:
                         ShopManager.getShops().get(107).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "Spend Boss Slayer Tickets in this shop");
                         break;
 
                     case PlayerOwnedShopManager.NPC_ID:
@@ -1362,6 +1374,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 5604:
                         ShopManager.getShops().get(102).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "Boss Points: @whi@" + player.getPointsHandler().getBossPoints() + "");
                         player.sendMessage(
                                 "<img=99>You have @red@" + player.getPointsHandler().getBossPoints() + " Boss Points!");
 
@@ -1416,6 +1430,8 @@ public class NPCOptionPacketListener implements PacketListener {
                                 .sendMessage("<shad=1>@red@You currently have " + player.getPointsHandler().getSlayerPoints()
                                         + " Slayer points.");
                         ShopManager.getShops().get(471).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "Slayer Points: @whi@" + player.getPointsHandler().getSlayerPoints() + "");
                         break;
                     case 705:
                         ShopManager.getShops().get(5).open(player);

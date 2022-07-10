@@ -864,12 +864,12 @@ public class CommandPacketListener implements PacketListener {
                 for (Player plr : World.getPlayers()) {
                     if (plr != null) {
                         if (plr.getHostAddress().equals(target.getHostAddress()) && !plr.equals(target)
-                                && !plr.getUsername().equalsIgnoreCase("nucky")
-                                && !target.getUsername().equalsIgnoreCase("nucky")
+                                && !plr.getUsername().equalsIgnoreCase("avalon")
+                                && !target.getUsername().equalsIgnoreCase("celestial")
+                                && !plr.getUsername().equalsIgnoreCase("quill")
+                                && !target.getUsername().equalsIgnoreCase("diyos")
                                 && !plr.getUsername().equalsIgnoreCase("test")
-                                && !target.getUsername().equalsIgnoreCase("test")
-                                && !plr.getUsername().equalsIgnoreCase("james")
-                                && !target.getUsername().equalsIgnoreCase("james")) {
+                                && !target.getUsername().equalsIgnoreCase("divine")) {
                             player.sendMessage(
                                     plr.getUsername() + " has the same Ip address as " + target.getUsername());
                         }
@@ -1281,37 +1281,7 @@ public class CommandPacketListener implements PacketListener {
             GameSettings.broadcastMessage = message;
             GameSettings.broadcastTime = time;
         }
-        if (command[0].equalsIgnoreCase("checkbank")) {
-            Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
-            if (plr != null) {
-                player.getPacketSender().sendMessage("Loading bank..");
-                plr.getBank(0).openOther(player, true, false);
-            } else {
-                player.getPacketSender().sendMessage("Player is offline!");
-            }
-        }
-        if (command[0].equalsIgnoreCase("check")) {
-            Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
-            if (plr != null) {
-                player.getPacketSender().sendMessage("Showing bank and inventory of " + plr.getUsername() + "...");
-                plr.getBank(0).openOther(player, true, false);
-                player.getPacketSender().sendInterfaceSet(5292, 3321);
-                player.getPacketSender().sendItemContainer(plr.getInventory(), 3322);
-            } else {
-                player.getPacketSender().sendMessage("Player is offline!");
-            }
-        }
-        if (command[0].equalsIgnoreCase("checkinv")) {
-            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
-            if (player2 == null) {
-                player.getPacketSender().sendMessage("Cannot find that player online..");
-                return;
-            }
-            player.getPacketSender().sendItemContainer(player2.getInventory(), 3214);
-        }
-        if (command[0].equalsIgnoreCase("endcheck")) {
-            player.getInventory().refreshItems();
-        }
+
         if (command[0].equalsIgnoreCase("unban")) {
             String playerToBan = wholeCommand.substring(6);
             if (!PlayerSaving.playerExists(playerToBan)) {
@@ -1449,35 +1419,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("customevent")) {
             player.getEventBossManager().display();
         }
-        if (command[0].equalsIgnoreCase("sd")) {
-            if (player.getUsername().equalsIgnoreCase("Sesshomaru")
-                    || player.getUsername().equalsIgnoreCase("Higurashi")) {
-                player.getPacketSender().sendMessage("Do not use your main account for testing difficulties.");
-                return;
-            }
-            try {
-                if (command[1].equalsIgnoreCase("1")) {
-                    Difficulty.set(player, Difficulty.FUN, true);
-                } else if (command[1].equalsIgnoreCase("2")) {
-                    Difficulty.set(player, Difficulty.EASY, true);
-                } else if (command[1].equalsIgnoreCase("3")) {
-                    Difficulty.set(player, Difficulty.REGULAR, true);
-                } else if (command[1].equalsIgnoreCase("4")) {
-                    Difficulty.set(player, Difficulty.HARD, true);
-                } else if (command[1].equalsIgnoreCase("5")) {
-                    Difficulty.set(player, Difficulty.EXTREME, true);
-                } else {
-                    player.getPacketSender().sendMessage("Did not understand.");
-                    player.getPacketSender().sendMessage(
-                            "Your current gamemode is: " + player.getDifficulty().toString().toLowerCase());
-                    return;
-                }
-                player.getPacketSender().sendMessage(
-                        "You have set your difficulty to: " + player.getDifficulty().toString().toLowerCase());
-            } catch (Exception e) {
-                player.getPacketSender().sendMessage("Invalid syntax; ::sd [1-5]");
-            }
-        }
+
         if (command[0].equalsIgnoreCase("addn")) {
             NPCSpawn spawn = new NPCSpawn(Integer.parseInt(command[1]), Direction.SOUTH, player.getPosition());
             NPC.spawns.add(spawn);
@@ -1890,6 +1832,37 @@ public class CommandPacketListener implements PacketListener {
             }
         }
 
+        if (command[0].equalsIgnoreCase("checkbank")) {
+            Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (plr != null) {
+                player.getPacketSender().sendMessage("Loading bank..");
+                plr.getBank(0).openOther(player, true, false);
+            } else {
+                player.getPacketSender().sendMessage("Player is offline!");
+            }
+        }
+        if (command[0].equalsIgnoreCase("check")) {
+            Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (plr != null) {
+                player.getPacketSender().sendMessage("Showing bank and inventory of " + plr.getUsername() + "...");
+                plr.getBank(0).openOther(player, true, false);
+                player.getPacketSender().sendInterfaceSet(5292, 3321);
+                player.getPacketSender().sendItemContainer(plr.getInventory(), 3322);
+            } else {
+                player.getPacketSender().sendMessage("Player is offline!");
+            }
+        }
+        if (command[0].equalsIgnoreCase("checkinv")) {
+            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (player2 == null) {
+                player.getPacketSender().sendMessage("Cannot find that player online..");
+                return;
+            }
+            player.getPacketSender().sendItemContainer(player2.getInventory(), 3214);
+        }
+        if (command[0].equalsIgnoreCase("endcheck")) {
+            player.getInventory().refreshItems();
+        }
         if (command[0].equalsIgnoreCase("master")) {
             for (Skill skill : Skill.values()) {
                 int level = SkillManager.getMaxAchievingLevel(skill);

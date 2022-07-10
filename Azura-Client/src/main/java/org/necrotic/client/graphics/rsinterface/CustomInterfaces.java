@@ -2804,19 +2804,20 @@ public class CustomInterfaces extends RSInterface {
 			removeSomething(i);
 		}
 		RSInterface newTab = addTabInterface(15000);
-		addSpriteLoader(15002, 1668);
+		addSpriteLoader(73155, 1668);
 		addButtonWSpriteLoader(15001, 618, "Show Equipment Stats", 41, 40);
+		addButtonWSpriteLoader(15002, 307, null, 41, 40);
 		addButtonWSpriteLoader(15003, 620, "Open Items kept on Death", 41, 40);
-		addButtonWSpriteLoader(15004, 1662, "Toggle Cosmetic Overrides", 41, 40);
+		addButtonWSpriteLoader(15004, 1662, "Toggle Cosmetic overrides", 41, 40);
 		newTab.totalChildren(5);
-		setBounds(15002, 22, 122, 0, newTab);
-		setBounds(15001, 25, 205, 1, newTab);
-		setBounds(15003, 125, 205, 2, newTab);
-		setBounds(15004, 75, 205, 3, newTab);
-		setBounds(1644, 0, 0, 4, newTab);
+		setBounds(15001, 25, 205, 0, newTab);
+		//setBounds(15002, 20, 120, 1, newTab);
+		setBounds(15003, 125, 205, 1, newTab);
+		setBounds(15004, 75, 205, 4, newTab);
+		setBounds(1644, 0, 0, 2, newTab);
+		setBounds(73155, 22,123, 3, newTab);
 		//setBounds(1669, 0, 0, 5, newTab);
 	}
-
 	private void duelingInterface() {
 		RSInterface newTab = addTabInterface(6575);
 		addConfigButtonWSpriteLoader(37890, 6575, 1, 1, 10, 10, "Head", 286, 1, 286);
