@@ -548,7 +548,9 @@ public class PlayerLoading {
             if (reader.has("bh-rank")) {
                 player.getAppearance().setBountyHunterSkull(reader.get("bh-rank").getAsInt());
             }
-
+            if (reader.has("prestigeicon")) {
+                player.getAppearance().setprestigeIcon(reader.get("prestigeicon").getAsInt());
+            }
             if (reader.has("gender")) {
                 player.getAppearance().setGender(Gender.valueOf(reader.get("gender").getAsString()));
             }

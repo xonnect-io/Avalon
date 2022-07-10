@@ -2946,7 +2946,10 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("worldnpcs")) {
             player.sendMessage("There are currently " + World.getNpcs().size() + " npcs in the world");
         }
-
+        if (command[0].equals("prestigeicon")) {
+            int prestigeicon = Integer.parseInt(command[1]);
+            player.getAppearance().setprestigeIcon(player.getPointsHandler().getTotalPrestiges());
+        }
         if (command[0].equals("takeitem")) {
             int item = Integer.parseInt(command[1]);
             int amount = Integer.parseInt(command[2]);

@@ -390,12 +390,14 @@ public final class Player extends Entity {
 
 		return model;
 	}
-
+	public int maxprestiges = 6;
+	public int prestigeIcon;
 	public void updatePlayer(ByteBuffer stream) {
 		stream.position = 0;
 		myGender = stream.getUnsignedByte();
 		headIcon = stream.getUnsignedByte();
 		bountyHunterIcon = stream.getUnsignedByte();
+		prestigeIcon = stream.getUnsignedByte();
 		skulled = stream.getUnsignedShort() == 1;
 		if (bountyHunterIcon > 4 && bountyHunterIcon != 255) {
 			bountyHunterIcon = 4;

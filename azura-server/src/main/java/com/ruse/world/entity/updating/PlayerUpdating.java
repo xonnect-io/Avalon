@@ -1,16 +1,8 @@
 package com.ruse.world.entity.updating;
 
-import java.util.Iterator;
-
-import com.ruse.model.Appearance;
+import com.ruse.model.*;
 import com.ruse.model.ChatMessage.Message;
-import com.ruse.model.Direction;
-import com.ruse.model.Flag;
-import com.ruse.model.Gender;
 import com.ruse.model.Locations.Location;
-import com.ruse.model.Position;
-import com.ruse.model.Skill;
-import com.ruse.model.UpdateFlag;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.movement.MovementQueue;
@@ -23,6 +15,8 @@ import com.ruse.world.World;
 import com.ruse.world.entity.Entity;
 import com.ruse.world.entity.impl.mini.MiniPlayer;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.Iterator;
 
 /**
  * Represents the associated player's player updating.
@@ -559,6 +553,7 @@ public class PlayerUpdating {
 		properties.put(appearance.getGender().ordinal());
 		properties.put(appearance.getHeadHint());
 		properties.put(target.getLocation() == Location.WILDERNESS ? appearance.getBountyHunterSkull() : -1);
+		properties.put(appearance.getprestigeIcon());
 		properties.putShort(target.getSkullIcon());
 		if (player.getNpcTransformationId() <= 0) {
 			int[] equip = new int[equipment.capacity()];

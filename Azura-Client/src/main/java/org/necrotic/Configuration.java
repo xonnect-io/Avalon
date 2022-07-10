@@ -18,7 +18,7 @@ public class Configuration {
 	}
 	
 	public static final boolean IS_RUNNING_WINDOWS = true;
-	
+	public static boolean DISPLAY_PRESTIGES = false;
 	public final static int CLIENT_VERSION = 3;
 	public static boolean localHost = true;
 	public static final boolean FORCE_CACHE_UPDATE = true;
@@ -58,8 +58,8 @@ public class Configuration {
 	public static boolean GROUND_TEXT = true;
 	public static boolean HIGH_DETAIL = true;
 //	public static boolean hdTexturing = true;
-	public static boolean hdMinimap = false;
-	public static boolean hdShading = false;
+	public static boolean hdMinimap = true;
+	public static boolean hdShading = true;
 	public static boolean TOGGLE_ROOF_OFF = true;
 	public static boolean TOGGLE_FOV = true;
 	public static boolean DEPTH_BUFFER = false;

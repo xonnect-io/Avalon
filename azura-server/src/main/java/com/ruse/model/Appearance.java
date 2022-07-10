@@ -71,7 +71,31 @@ public class Appearance {
 		player.getUpdateFlag().flag(Flag.APPEARANCE);
 		return this;
 	}
+	/**
+	 * The player's prestige icon
+	 */
+	private int prestigeIcon = 0;
+	/**
+	 * Gets the player's current prestige icon
+	 *
+	 * @return The player's prestige icon
+	 */
+	public int getprestigeIcon() {
+		return prestigeIcon;
+	}
 
+	/**
+	 * Sets the player's bounty hunter skull.
+	 *
+	 * @param prestigeIcon The skull hint index to use.
+	 * @return The Appearance instance.
+	 */
+	public Appearance setprestigeIcon(int prestigeIcon) {
+		this.prestigeIcon = prestigeIcon;
+		player.getPointsHandler().setTotalPrestiges(prestigeIcon);
+		player.getUpdateFlag().flag(Flag.APPEARANCE);
+		return this;
+	}
 	/**
 	 * Gets the player's current bounty hunter skull.
 	 * 

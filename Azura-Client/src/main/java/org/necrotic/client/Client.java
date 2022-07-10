@@ -1731,6 +1731,7 @@ public class Client extends GameRenderer {
         updateSetting(26014, Configuration.NEW_HITMARKS);
         updateSetting(26026, Configuration.DISPLAY_HP_ABOVE_HEAD);
         updateSetting(26027, Configuration.DISPLAY_USERNAMES_ABOVE_HEAD);
+        updateSetting(26097, Configuration.DISPLAY_PRESTIGES);
         updateSetting(26029, Configuration.CONSTITUTION_ENABLED);
         updateSetting(26033, Configuration.HIGHLIGHT_USERNAME);
         updateSetting(26054, !Configuration.HIGH_DETAIL);
@@ -1762,6 +1763,7 @@ public class Client extends GameRenderer {
                 stream.writeBoolean(Configuration.NEW_CURSORS);
                 stream.writeBoolean(Configuration.DISPLAY_HP_ABOVE_HEAD);
                 stream.writeBoolean(Configuration.DISPLAY_USERNAMES_ABOVE_HEAD);
+                stream.writeBoolean(Configuration.DISPLAY_PRESTIGES);
                 stream.writeBoolean(GameFrameConstants.gameframeType != GameFrameType.FRAME_525);
                 stream.writeBoolean(Configuration.HIGHLIGHT_USERNAME);
                 stream.writeBoolean(Configuration.HIGH_DETAIL);
@@ -1813,6 +1815,7 @@ public class Client extends GameRenderer {
             Configuration.NEW_CURSORS = stream.readBoolean();
             Configuration.DISPLAY_HP_ABOVE_HEAD = stream.readBoolean();
             Configuration.DISPLAY_USERNAMES_ABOVE_HEAD = stream.readBoolean();
+            Configuration.DISPLAY_PRESTIGES = stream.readBoolean();
             GameFrameConstants.gameframeType = stream.readBoolean() ? GameFrameType.FRAME_554 : GameFrameType.FRAME_525;
             Configuration.HIGHLIGHT_USERNAME = stream.readBoolean();
             Configuration.HIGH_DETAIL = stream.readBoolean();
@@ -6228,6 +6231,12 @@ public class Client extends GameRenderer {
                     pushMessage("Displaying usernames above head turned " + (Configuration.DISPLAY_USERNAMES_ABOVE_HEAD ? "on" : "off") + ".", 0, "");
                     Save.settings(Client.getClient());
                     updateSetting(interfaceId, !Configuration.DISPLAY_USERNAMES_ABOVE_HEAD);
+                    break;
+                case 26097:
+                    Configuration.DISPLAY_PRESTIGES = !Configuration.DISPLAY_PRESTIGES;
+                    pushMessage("Displaying prestiges above head turned " + (Configuration.DISPLAY_PRESTIGES ? "on" : "off") + ".", 0, "");
+                    Save.settings(Client.getClient());
+                    updateSetting(interfaceId, !Configuration.DISPLAY_PRESTIGES);
                     break;
                 case 26014:
                     Configuration.NEW_HITMARKS = !Configuration.NEW_HITMARKS;
@@ -19031,7 +19040,7 @@ public class Client extends GameRenderer {
 
                         }
                         if (entityDef.id == 1821) {
-                            spritesMap.get(1711).drawSprite(spriteDrawX - 25, spriteDrawY - 65);
+                            spritesMap.get(1712).drawSprite(spriteDrawX - 15, spriteDrawY - 55);
 
                         }
                         if (entityDef.id == 925 || entityDef.id == 1988) {
@@ -19097,6 +19106,13 @@ public class Client extends GameRenderer {
                                 skullIcons[0].drawSprite(spriteDrawX - 12, spriteDrawY - l);
                                 l += 19;
                             }
+                            if(Configuration.DISPLAY_PRESTIGES)
+                                if (player.prestigeIcon > 0 && player.prestigeIcon < player.maxprestiges) {//here
+                                    spritesMap.get(1709 + player.prestigeIcon).drawSprite(spriteDrawX - 18, spriteDrawY - l - 23);//here just chang
+                                    newSmallFont.drawCenteredString("@red@Prestige: @whi@"+player.prestigeIcon, spriteDrawX, spriteDrawY - l + 20 , 0x15FF00, 0x000000);
+
+                                    l += 28;
+                                }
                             if (player.bountyHunterIcon >= 0 && player.bountyHunterIcon <= 4) {
                                 spritesMap.get(1026 + player.bountyHunterIcon).drawSprite(spriteDrawX - (player.skulled ? 8 : 10), spriteDrawY - l);
                                 l += 28;
@@ -19108,21 +19124,21 @@ public class Client extends GameRenderer {
 
                             if (Configuration.DISPLAY_USERNAMES_ABOVE_HEAD) {
                                 if ((player.playerRights >= 1) && (player.playerRights <= 2) && (getOverheadPlayerTitle(player).startsWith("<col"))) {
-                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX, spriteDrawY - 10, 0x15FF00, 0x000000);
+                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX, spriteDrawY , 0x15FF00, 0x000000);
                                 } else if ((player.playerRights >= 1) && (player.playerRights <= 2)) {
-                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 20, spriteDrawY - 10, 0x15FF00, 0x000000);
+                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 20, spriteDrawY , 0x15FF00, 0x000000);
                                 } else if (player.playerRights == 10) {
-                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 10, spriteDrawY - 10, 0x15FF00, 0x000000);
+                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 10, spriteDrawY , 0x15FF00, 0x000000);
                                 } else if (player.playerRights == 6 || player.playerRights == 8 || player.playerRights == 9) {
-                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 10, spriteDrawY - 10, 0x15FF00, 0x000000);
+                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 10, spriteDrawY , 0x15FF00, 0x000000);
                                 } else if (player.playerRights == 7) {
-                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 85, spriteDrawY - 10, 0x15FF00, 0x000000);
+                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 85, spriteDrawY, 0x15FF00, 0x000000);
                                 } else if ((player.playerRights >= 3) && (player.playerRights <= 4)) {
-                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 250, spriteDrawY - 10, 0x15FF00, 0x000000);
+                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 250, spriteDrawY, 0x15FF00, 0x000000);
                                 } else if ((player.playerRights == 5)) {
-                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 120, spriteDrawY - 10, 0x15FF00, 0x000000);
+                                    newSmallFont.drawCenteredString(player.name != null ? getOverheadPlayerTitle(player) + player.name : "null username", spriteDrawX + 120, spriteDrawY, 0x15FF00, 0x000000);
                                 } else {
-                                    newSmallFont.drawCenteredString((player.name != null ? player.name : "null username"), spriteDrawX, spriteDrawY - 10, 0x15FF00, 0x000000);
+                                    newSmallFont.drawCenteredString((player.name != null ? player.name : "null username"), spriteDrawX, spriteDrawY , 0x15FF00, 0x000000);
                                 }
                             }
                         }

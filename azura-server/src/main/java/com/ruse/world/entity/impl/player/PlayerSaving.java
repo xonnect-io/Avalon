@@ -175,6 +175,7 @@ public class PlayerSaving {
 			object.addProperty("target-percentage",
 					new Integer(player.getPlayerKillingAttributes().getTargetPercentage()));
 			object.addProperty("bh-rank", new Integer(player.getAppearance().getBountyHunterSkull()));
+			object.addProperty("prestigeicon", new Integer(player.getAppearance().getprestigeIcon()));
 			object.addProperty("gender", player.getAppearance().getGender().name());
 			object.addProperty("spell-book", player.getSpellbook().name());
 			object.addProperty("prayer-book", player.getPrayerbook().name());

@@ -2119,6 +2119,7 @@ public class DialogueOptions {
                     player.getSkillManager().resetSkill(HUNTER, false);
                     player.getSkillManager().resetSkill(SUMMONING, false);
                     player.getPointsHandler().setPrestigePoints(1, true);
+                    player.getAppearance().setprestigeIcon(player.getPointsHandler().getTotalPrestiges());
                     player.getPacketSender().sendMessage("You have just prestiged to level " + player.getPointsHandler().getTotalPrestiges()+ "!");
                     player.getPacketSender().sendMessage(player.getPointsHandler().getTotalPrestiges()+ " Prestige Mboxes have been added to your inventory as a reward.");
                     World.sendMessage("@blu@<shad=1>[News] @red@"+player.getUsername()+ "@bla@ has just prestiged to level " + player.getPointsHandler().getTotalPrestiges() + "!");
