@@ -28,6 +28,7 @@ public class Trading {
 
 	public void requestTrade(Player player2) {
 
+
 		if (player == null || player2 == null || player.getConstitution() <= 0 || player2.getConstitution() <= 0
 				|| player.isTeleporting() || player2.isTeleporting())
 			return;
@@ -43,26 +44,6 @@ public class Trading {
 			}
 		}
 
-		/*
-		 * if(player.getLocation() == Location.JAIL && !player.getRights().isStaff()){
-		 * player.getPacketSender().sendMessage("You're jailed, and can't trade.");
-		 * return; }
-		 * 
-		 * if(player2.getLocation() == Location.JAIL && !player2.getRights().isStaff()){
-		 * player.getPacketSender().sendMessage("They're jailed, and can't trade."); }
-		 * 
-		 * if(Jail.isJailed(player) && !player.getRights().isStaff()) {
-		 * player.getPacketSender().sendMessage("You cannot trade in jail."); return; }
-		 * 
-		 * if(Jail.isJailed(player2) && !player2.getRights().isStaff()){
-		 * player.getPacketSender().
-		 * sendMessage("That player cannot trade as they're jailed."); return; }
-		 */
-		if (player.getGameMode() == GameMode.GROUP_IRONMAN || player2.getGameMode() == GameMode.GROUP_IRONMAN
-				&& !(player.getRights().OwnerDeveloperOnly() || player2.getRights().OwnerDeveloperOnly())) {
-			player.getPacketSender().sendMessage("Ironman players are not allowed to trade.");
-			return;
-		}
 		if (player.getGameMode() == GameMode.IRONMAN
 				&& !(player.getRights().OwnerDeveloperOnly() || player2.getRights().OwnerDeveloperOnly())) {
 			player.getPacketSender().sendMessage("Ironman players are not allowed to trade.");
@@ -85,23 +66,19 @@ public class Trading {
 			return;
 		}
 
+			 if (player.getGameMode() == GameMode.GROUP_IRONMAN && player2.getGameMode() == GameMode.GROUP_IRONMAN
+					 && player.getIronmanGroup() != null && player2.getIronmanGroup() != null &&
+					 player.getIronmanGroup().getUniqueId() ==  player2.getIronmanGroup().getUniqueId()
+					 || player.getRights().isStaff() || player2.getRights().isStaff()) {
 
-
-		if (player.getGameMode() == GameMode.GROUP_IRONMAN && player2.getGameMode() == GameMode.GROUP_IRONMAN
-				&& player.getIronmanGroup() != null && player2.getIronmanGroup() != null &&
-				player.getIronmanGroup().getUniqueId() ==  player2.getIronmanGroup().getUniqueId()){
-		}else {
-			if (player.getGameMode() == GameMode.IRONMAN || player.getGameMode() == GameMode.ULTIMATE_IRONMAN
-					|| player.getGameMode() == GameMode.GROUP_IRONMAN) {
-				player.getPacketSender().sendMessage("Ironmen are not allowed to trade.");
-				return;
-			}
-			if (player2.getGameMode() == GameMode.IRONMAN || player2.getGameMode() == GameMode.ULTIMATE_IRONMAN
-					|| player.getGameMode() == GameMode.GROUP_IRONMAN) {
-				player.getPacketSender().sendMessage("That player is an Ironman and cannot trade.");
-				return;
-			}
-		}
+			 } else {
+				 if (player.getGameMode() == GameMode.IRONMAN || player.getGameMode() == GameMode.ULTIMATE_IRONMAN
+						 || player.getGameMode() == GameMode.GROUP_IRONMAN || player2.getGameMode() == GameMode.IRONMAN
+						 || player2.getGameMode() == GameMode.ULTIMATE_IRONMAN || player.getGameMode() == GameMode.GROUP_IRONMAN) {
+					 player.getPacketSender().sendMessage("Ironmen are not allowed to trade.");
+					 return;
+				 }
+			 }
 
 		if (player.getLocation() == Location.DUNGEONEERING) {
 			player.getPacketSender().sendMessage("You are far too busy to trade at the moment!");
@@ -121,13 +98,7 @@ public class Trading {
 			BankPin.init(player, false);
 			return;
 		}
-		/*
-		 * if(player.getHostAddress().equals(player2.getHostAddress()) &&
-		 * player.getRights() != PlayerRights.OWNER && player.getRights() !=
-		 * PlayerRights.OWNER) { player.getPacketSender().
-		 * sendMessage("Same IP-adress found. You cannot trade yourself from the same IP."
-		 * ); return; }
-		 */
+
 		if (System.currentTimeMillis() - lastTradeSent < 5000 && !inTrade()) {
 			player.getPacketSender().sendMessage("You're sending trade requests too frequently. Please slow down.");
 			return;
@@ -140,12 +111,7 @@ public class Trading {
 			declineTrade(true);
 			return;
 		}
-		/*if (player.getLocation() == Location.GODWARS_DUNGEON
-				&& player.getMinigameAttributes().getGodwarsDungeonAttributes().hasEnteredRoom()
-				&& !player2.getMinigameAttributes().getGodwarsDungeonAttributes().hasEnteredRoom()) {
-			player.getPacketSender().sendMessage("You cannot reach that.");
-			return;
-		}*/
+
 		if (player.isShopping() || player.isBanking()) {
 			player.getPacketSender().sendInterfaceRemoval();
 			return;
@@ -245,12 +211,7 @@ public class Trading {
 		Player player2 = World.getPlayers().get(getTradeWith());
 		if (player2 == null || player == null)
 			return;
-		/*
-		 * if(player.getNewPlayerDelay() > 0 && player.getRights().ordinal() == 0) {
-		 * player.getPacketSender().sendMessage("You must wait another "+player.
-		 * getNewPlayerDelay() / 60+" minutes before being able to trade items.");
-		 * return; }
-		 */
+
 		switch (itemId) {
 			case 6769:
 			case 10942:

@@ -1463,6 +1463,7 @@ public class NPCOptionPacketListener implements PacketListener {
             }
             DropsInterface.open(player);
             DropsInterface.buildRightSide(player, npc.getId());
+            player.sendMessage((npc.getDefinition().getName()) + " kills: @blu@" + KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), player));
             return;
         }
         if (BossPets.pickup(player, npc)) { // done in ur NPCDef just change pick up option index from 1 to 3 and ur

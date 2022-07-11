@@ -418,7 +418,47 @@ public class NPCDeathTask extends Task {
                         /** SLAYER **/
                         killer.getSlayer().killedNpc(npc);
                         npc.getCombatBuilder().getDamageMap().clear();
-                        killer.npckillsforseasonpass++;
+                                if (KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (1000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (1500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (2000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (2500) || KillsTracker.getTotalKillsForNpc(1023, killer) == (3000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (3500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (4000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (4500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (5000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (5500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (6000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (6500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (7000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (7500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (8000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (8500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (9000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (9500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (10000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (10500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (11000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (11500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (12000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (12500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (13000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (13500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (14000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (14500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (15000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (15500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (16000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (16500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (17000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (17500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (18000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (18500) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (19000)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (20000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (20500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (21000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (21500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (22000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (22500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (23000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (23500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (24000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (24500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (25000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (25500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (26000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (26500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (27000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (27500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (28000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (28500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (29000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (29500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (30000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (30500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (31000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (31500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (32000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (32500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (33000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (33500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (34000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (34500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (35000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (35500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (36000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (36500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (37000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (37500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (38000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (38500)
+                                || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (39000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (39500)) {
+                            killer.sendMessage(" kills:" + KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) + " @blu@" + (npc.getDefinition().getName()) + " kills.");
+                        }
                         if(killer.npckillsforseasonpass == 500){
                             killer.npckillsforseasonpass = 0;
                             killer.sendMessage("You receive 1 XP for killing 500 NPCs!");
