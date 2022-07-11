@@ -548,7 +548,7 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("donationdeals") || command[0].equalsIgnoreCase("deals")) {
             player.sendMessage(
-                    "<shad=1>@yel@<img=14>Please check out the donation deals in our ::Discord - #Donation-deals");
+                    "<shad=1>@yel@Please check out the donation deals in our ::Discord - #Donation-deals");
         }
 
         if (wholeCommand.equalsIgnoreCase("droprate") || wholeCommand.equalsIgnoreCase("mydr") || wholeCommand.equalsIgnoreCase("dr")) {

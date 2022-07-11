@@ -1,7 +1,6 @@
 package com.ruse.net.packet.impl;
 
 import com.ruse.model.*;
-import com.ruse.model.Locations.Location;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.net.packet.Packet;
 import com.ruse.net.packet.PacketListener;
@@ -46,8 +45,8 @@ public class DropItemPacketListener implements PacketListener {
 
 		player.getPacketSender().sendInterfaceRemoval();
 		player.getCombatBuilder().cooldown(false);
-		if (player.getLocation() != null && player.getLocation() == Location.GENERAL) {
-			player.getPacketSender().sendMessage("You cannot drop items here");
+		if (player.getLocation() != null) {
+			player.getPacketSender().sendMessage("You cannot drop items at the moment.");
 			return;
 		}
 		switch (item.getId()) {

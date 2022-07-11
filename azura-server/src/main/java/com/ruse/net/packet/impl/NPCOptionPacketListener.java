@@ -1046,7 +1046,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         player.getPacketSender().sendString(3903,
                                 "Loyalty Points: @whi@" + player.getPointsHandler().getLoyaltyPoints() + "");
                         player.getPacketSender().sendMessage("").sendMessage(
-                                "You currently have " + player.getPointsHandler().getLoyaltyPoints() + " Loyalty Points.");
+                                "You currently have @red@" + player.getPointsHandler().getLoyaltyPoints()
+                                        + " @bla@Loyalty Points.");
                         ;
                         break;
                     case 4653:
@@ -1080,8 +1081,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 741:
                         player.getPacketSender().sendMessage("")
-                                .sendMessage("<shad=1>@gre@You currently have " + player.getPointsHandler().getDonatorPoints()
-                                        + " Donator points.")
+                                .sendMessage("You currently have @red@" + player.getPointsHandler().getDonatorPoints()
+                                        + " @bla@Donator points.")
                                 .sendMessage("<shad=1>@gre@You can get more points by donating at ::donate");
                         player.getPacketSender().sendString(3903,
                                 "Donation Points: @whi@" + player.getPointsHandler().getDonatorPoints() + "");
@@ -1113,8 +1114,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 2538:
                         player.getPacketSender().sendMessage("")
-                                .sendMessage("You currently have " + player.getPointsHandler().getVotingPoints()
-                                        + " Voting points.")
+                                .sendMessage("You currently have @red@" + player.getPointsHandler().getVotingPoints()
+                                        + " @bla@Voting points.")
                                 .sendMessage(
                                         "You can earn points and coins by voting. To do so, simply use the ::vote command.");
                         ;
@@ -1417,8 +1418,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 925:
                         player.getPacketSender().sendMessage("")
-                                .sendMessage("<shad=1>@red@You currently have " + player.getPointsHandler().getSlayerPoints()
-                                        + " Slayer points.");
+                                .sendMessage("You currently have @red@" + player.getPointsHandler().getSlayerPoints()
+                                        + " @bla@Slayer points.");
                         ShopManager.getShops().get(471).open(player);
                         player.getPacketSender().sendString(3903,
                                 "Slayer Points: @whi@" + player.getPointsHandler().getSlayerPoints() + "");
@@ -1428,11 +1429,6 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 2538:
                         player.getPacketSender().sendMessage("Coming soon!");
-                        // player.getPacketSender().sendMessage("").sendMessage("You currently have
-                        // "+player.getPointsHandler().getVotingPoints()+" Voting
-                        // points.").sendMessage("You can earn points and coins by voting. To do so,
-                        // simply use the ::vote command.");;
-                        // ShopManager.getShops().get(90).open(player);
                         break;
                     case 2253:
                         ShopManager.getShops().get(10).open(player);
