@@ -2246,7 +2246,7 @@ public class ItemDef4 {
 			case 23321:
 				itemDef.copyItem(19000);
 				itemDef.name = "Suffered Crystals";
-				itemDef.rdc2 = 325111;
+				itemDef.rdc2 = 421788;
 				itemDef.rotationX = 150;
 				break;
 

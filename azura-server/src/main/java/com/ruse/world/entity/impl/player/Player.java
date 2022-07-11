@@ -3144,7 +3144,22 @@ End new teleport
     public void setHween2016All(boolean[] boolAray) {
         this.hween2016 = boolAray;
     }
+    private boolean[] bossPets = new boolean[100]; // [BossPet.values().length]
 
+    public Player setBossPet(int i, boolean completed) {
+        bossPets[i] = completed;
+        return this;
+    }
+    public boolean[] getBossPetsAll() {
+        return bossPets;
+    }
+    public boolean getBossPet(int i) {
+        return bossPets[i];
+    }
+
+    public void setBossPetsAll(boolean[] Array) {
+        this.bossPets = Array;
+    }
     public int getChristmas2016() {
         return christmas2016;
     }

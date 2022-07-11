@@ -58,7 +58,10 @@ public class FoxVote implements Runnable {
 				player.getDailyRewards().handleVote();
 				player.lastVoteTime = System.currentTimeMillis();
 				player.setVoteCount(doMotivote.getVoteCount() + points);
+				if (points < 3)
 				player.getSeasonPass().addXp(3 * points);
+				if (points > 3)
+					player.getSeasonPass().addXp(9);
 				player.getAchievementTracker().progress(AchievementData.SUPPORT_AVALON, 1);
 				player.getAchievementTracker().progress(AchievementData.SUPPORTER, 1);
 				player.getAchievementTracker().progress(AchievementData.MEGA_SUPPORTER, 1);

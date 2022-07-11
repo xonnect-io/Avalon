@@ -1066,6 +1066,9 @@ public class PlayerLoading {
                 player.setHween2016All(builder.fromJson(reader.get("hween2016").getAsJsonArray(), boolean[].class));
             }
 
+            if (reader.has("bosspets")) {
+                player.setBossPetsAll(builder.fromJson(reader.get("bosspets").getAsJsonArray(), boolean[].class));
+            }
             if (reader.has("donehween2016")) {
                 player.setDoneHween2016(reader.get("donehween2016").getAsBoolean());
             }

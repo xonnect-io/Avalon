@@ -339,6 +339,7 @@ public final class Player extends Entity {
 		return model_2;
 	}
 
+
 	public Model getPlayerModel() {
 		if (!visible) {
 			return null;
@@ -390,7 +391,7 @@ public final class Player extends Entity {
 
 		return model;
 	}
-	public int maxprestiges = 6;
+	public int maxprestiges = 21;
 	public int prestigeIcon;
 	public void updatePlayer(ByteBuffer stream) {
 		stream.position = 0;

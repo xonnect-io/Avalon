@@ -3142,28 +3142,47 @@ public final class MobDefinition {
 				//definition.rdc2 = 664466;
 				break;
 
-			case 1394:
-				definition.name = "Rich Cookie monster";
-				MobDefinition coookieoeee = MobDefinition.get(2292);
-				definition.description = "GWD.".getBytes();
-				definition.npcModels = new int[]{64303};
-
-				definition.standAnimation = 842;
-				definition.walkAnimation = coookieoeee.walkAnimation;
-				definition.scaleXZ = 140;
+			case 4285:
+				definition.name = "Item Exchange";
+				definition.scaleXZ = 130;
 				definition.drawYellowDotOnMap = true;
-				definition.scaleY = 140;
+				definition.scaleY = 130;
 				definition.combatLevel = 0;
 				definition.actions = new String[5];
 				definition.actions[0] = null;
-				//definition.rdc2 = 664466;
 				definition.actions = new String[5];
-				definition.actions[0] = "Open Shop";
-				definition.actions[2] = "<col=629658>View Market";
+				definition.actions[0] = "Trade";
 
 				break;
 
-
+			case 8711:
+				definition.name = "Mini lucifer";
+				MobDefinition miniLucifer = MobDefinition.get(2292);
+				definition.npcModels = new int[]{100000, 100001, 100002, 100003, 100004, 100005};
+				definition.combatLevel = miniLucifer.combatLevel;
+				definition.standAnimation = miniLucifer.standAnimation;
+				definition.walkAnimation = miniLucifer.walkAnimation;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.actions[0] = null;
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 120;
+				definition.scaleY = 120;
+				break;
+			case 8712:
+				definition.name = "Lucifer";
+				MobDefinition lucifer = MobDefinition.get(2292);
+				definition.npcModels = new int[]{100000, 100001, 100002, 100003, 100004, 100005};
+				definition.combatLevel = lucifer.combatLevel;
+				definition.standAnimation = lucifer.standAnimation;
+				definition.walkAnimation = lucifer.walkAnimation;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.actions[0] = null;
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 225;
+				definition.scaleY = 225;
+				break;
 			case 1988:
 				definition.name = "<img=15>Slayer Progression";
 				MobDefinition spryi2 = MobDefinition.get(53);
@@ -3250,11 +3269,11 @@ public final class MobDefinition {
 				break;
 			case 9011:
 				definition.name = "Fallen Warrior";
-				MobDefinition miniLucifer = MobDefinition.get(2292);
+				MobDefinition fallenWarrior = MobDefinition.get(2292);
 				definition.npcModels = new int[]{17030};
-				definition.combatLevel = miniLucifer.combatLevel;
-				definition.standAnimation = miniLucifer.standAnimation;
-				definition.walkAnimation = miniLucifer.walkAnimation;
+				definition.combatLevel = fallenWarrior.combatLevel;
+				definition.standAnimation = fallenWarrior.standAnimation;
+				definition.walkAnimation = fallenWarrior.walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.actions[0] = null;
 				definition.drawYellowDotOnMap = true;
@@ -3264,11 +3283,11 @@ public final class MobDefinition {
 				break;
 			case 9012:
 				definition.name = "Fallen Angel";
-				MobDefinition lucifer = MobDefinition.get(2292);
+				MobDefinition fallenAngel = MobDefinition.get(2292);
 				definition.npcModels = new int[]{17049,17056,17061,17066,17097,17197,17360};
-				definition.combatLevel = lucifer.combatLevel;
-				definition.standAnimation = lucifer.standAnimation;
-				definition.walkAnimation = lucifer.walkAnimation;
+				definition.combatLevel = fallenAngel.combatLevel;
+				definition.standAnimation = fallenAngel.standAnimation;
+				definition.walkAnimation = fallenAngel.walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.actions[0] = null;
 				definition.drawYellowDotOnMap = true;
@@ -3276,6 +3295,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 200;
 				definition.scaleY = 200;
 				break;
+
 			case 9312:
 				definition.name = "Nephilim Warrior";
 				MobDefinition Shinda = MobDefinition.get(2292);

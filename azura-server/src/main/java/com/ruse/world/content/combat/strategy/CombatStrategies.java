@@ -170,6 +170,12 @@ public class CombatStrategies {
 		STRATEGIES.put(6047, new PantherWolf());
 
 
+		STRATEGIES.put(9106, new LuciferCombatScript());
+		STRATEGIES.put(9108, new LuciferCombatScript());
+		STRATEGIES.put(9111, new LuciferCombatScript());
+		STRATEGIES.put(9109, new LuciferCombatScript());
+		STRATEGIES.put(8712, new LuciferCombatScript());
+
 		STRATEGIES.put(9815, new SimpleScript());
 		STRATEGIES.put(9816, new SimpleScript());
 		STRATEGIES.put(9817, new SimpleScript());

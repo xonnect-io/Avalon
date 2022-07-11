@@ -18,7 +18,7 @@ public class Configuration {
 	}
 	
 	public static final boolean IS_RUNNING_WINDOWS = true;
-	public static boolean DISPLAY_PRESTIGES = false;
+	public static boolean DISPLAY_PRESTIGES = true;
 	public final static int CLIENT_VERSION = 3;
 	public static boolean localHost = true;
 	public static final boolean FORCE_CACHE_UPDATE = true;

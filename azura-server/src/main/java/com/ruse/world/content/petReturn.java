@@ -1,5 +1,7 @@
 package com.ruse.world.content;
 
+import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.concurrent.ExecutorService;
@@ -10,32 +12,32 @@ public class petReturn implements Runnable {
 	private static final ExecutorService SERVICE = Executors.newCachedThreadPool();
 
 	public static void main(Player player) {
-		/*SERVICE.execute(() -> {
+		SERVICE.execute(() -> {
 			try {
 				player.getInventory().delete(1561, 1);
 				int invSpace = player.getInventory().getFreeSlots();
 				int daCount = 0;
-				for (int i = 0; i < BossPet.values().length; i++) {
+				for (int i = 0; i < BossPets.BossPet.values().length; i++) {
 					// // System.out.println("daCount < invSpace "+(boolean) (daCount < invSpace));
 					// // System.out.println("getBossPet("+i+"),
 					// "+ItemDefinition.forId(BossPet.values()[i].itemId).getName()+" =
 					// "+player.getBossPet(i));
 					if (daCount < invSpace && player.getBossPet(i)) {
-						player.getInventory().add(BossPet.values()[i+ 1].itemId, 1);
+						player.getInventory().add(BossPets.BossPet.values()[i+ 1].itemId, 1);
 						player.getPacketSender().sendMessage("Returned your "
-								+ ItemDefinition.forId(BossPet.values()[i+ 1].itemId).getName() + " to your inventory.");
+								+ ItemDefinition.forId(BossPets.BossPet.values()[i+ 1].itemId).getName() + " to your inventory.");
 						daCount++;
 					} else if (daCount >= invSpace && player.getBossPet(i) && !player.getBank(0).isFull()) {
-						player.getBank(0).add(BossPet.values()[i+ 1].itemId, 1);
+						player.getBank(0).add(BossPets.BossPet.values()[i+ 1].itemId, 1);
 						player.getPacketSender().sendMessage("Returned your "
-								+ ItemDefinition.forId(BossPet.values()[i+ 1].itemId).getName() + " to your bank.");
+								+ ItemDefinition.forId(BossPets.BossPet.values()[i+ 1].itemId).getName() + " to your bank.");
 						daCount++;
 					}
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		});*/
+		});
 
 	}
 

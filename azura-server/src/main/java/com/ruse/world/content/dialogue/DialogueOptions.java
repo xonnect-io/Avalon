@@ -1360,6 +1360,9 @@ public class DialogueOptions {
                 case 666:
                     VaultOfWar.forgeGloves(player);
                     break;
+                case 99928:
+                    ExperienceLamps.confirmoneorall(player,1);
+                    break;
                 case 103:
                     MemberScrolls.claimBond(player);
                     break;
@@ -1742,7 +1745,9 @@ public class DialogueOptions {
                 case 8621:
                     DialogueManager.start(player, QuestDialogues.questBloodRunsDeepDecline(player));
                     break;
-
+                case 99928:
+                    ExperienceLamps.confirmoneorall(player,2);
+                    break;
                 case 668://no
                 case 8102:
                 case 6118:
@@ -2085,8 +2090,8 @@ public class DialogueOptions {
                         player.getPacketSender().sendMessage("Please unequip all your items first.");
                         return ;
                     }
-                    if (player.getPointsHandler().getTotalPrestiges() >= 10) {
-                        player.getPacketSender().sendMessage("@red@You already are max prestige(10). Wait until next season to unlock more.");
+                    if (player.getPointsHandler().getTotalPrestiges() >= 20) {
+                        player.getPacketSender().sendMessage("@red@You already are max prestige(20). Wait until next season to unlock more.");
                         return ;
                     }
                     if (player.getLocation() == Location.WILDERNESS || player.getCombatBuilder().isBeingAttacked()) {

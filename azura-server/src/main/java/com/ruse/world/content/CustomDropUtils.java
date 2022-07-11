@@ -687,18 +687,22 @@ public class CustomDropUtils {
                 percentBoost += 60;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
-                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FENRIR_PET.npcId) {
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAMMUS_PET.npcId) {
                 percentBoost += 50;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
-                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GREEN_FENRIR_PET.npcId) {
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DEMON_PET.npcId) {
                 percentBoost += 50;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
-                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RED_FENRIR_PET.npcId) {
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GOLEM_PET.npcId) {
                 percentBoost += 50;
             }
 
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DRAGON_PET.npcId) {
+                percentBoost += 50;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
                 percentBoost += 45;

@@ -1,7 +1,5 @@
 package com.ruse.world.content;
 
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import com.ruse.model.GameMode;
 import com.ruse.model.Item;
 import com.ruse.model.Locations;
@@ -12,6 +10,8 @@ import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.PlayerPunishment.Jail;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @author: @Gabbe Warning: This crap is so messy and ugly. Will redo it once I
@@ -58,7 +58,11 @@ public class Trading {
 		 * player.getPacketSender().
 		 * sendMessage("That player cannot trade as they're jailed."); return; }
 		 */
-
+		if (player.getGameMode() == GameMode.GROUP_IRONMAN || player2.getGameMode() == GameMode.GROUP_IRONMAN
+				&& !(player.getRights().OwnerDeveloperOnly() || player2.getRights().OwnerDeveloperOnly())) {
+			player.getPacketSender().sendMessage("Ironman players are not allowed to trade.");
+			return;
+		}
 		if (player.getGameMode() == GameMode.IRONMAN
 				&& !(player.getRights().OwnerDeveloperOnly() || player2.getRights().OwnerDeveloperOnly())) {
 			player.getPacketSender().sendMessage("Ironman players are not allowed to trade.");

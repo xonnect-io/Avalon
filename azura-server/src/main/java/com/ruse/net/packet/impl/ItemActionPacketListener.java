@@ -44,6 +44,7 @@ import com.ruse.world.content.skill.impl.runecrafting.RunecraftingPouches;
 import com.ruse.world.content.skill.impl.runecrafting.RunecraftingPouches.RunecraftingPouch;
 import com.ruse.world.content.skill.impl.slayer.SlayerDialogues;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
+import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.CharmingImp;
 import com.ruse.world.content.skill.impl.summoning.SummoningData;
 import com.ruse.world.content.skill.impl.woodcutting.BirdNests;
@@ -244,6 +245,31 @@ public class ItemActionPacketListener implements PacketListener {
 
 
         switch (itemId) {
+
+            case 1561:
+                if (!player.getClickDelay().elapsed(10000)) {
+                    player.getPacketSender().sendMessage("Please wait 10 seconds before doing that.");
+                    return;
+                }
+                player.getInventory().delete(1561, 1);
+                int invSpace = player.getInventory().getFreeSlots();
+                int daCount = 0;
+                for (int i = 0; i < BossPets.BossPet.values().length; i++) {
+                    if (daCount < invSpace && player.getBossPet(i)) {
+                        player.getInventory().add(BossPets.BossPet.values()[i].itemId, 1);
+                        player.getPacketSender().sendMessage("Returned your "
+                                + ItemDefinition.forId(BossPets.BossPet.values()[i].itemId).getName() + " to your inventory.");
+                        daCount++;
+                    } else if (daCount >= invSpace && player.getBossPet(i) && !player.getBank(0).isFull()) {
+                        player.getBank(0).add(BossPets.BossPet.values()[i].itemId, 1);
+                        player.getPacketSender().sendMessage("Returned your "
+                                + ItemDefinition.forId(BossPets.BossPet.values()[i].itemId).getName() + " to your bank.");
+                        daCount++;
+                    }
+                }
+                player.getClickDelay().reset();
+                break;
+
             case 989:
                 Position crystalChest = new Position(2647, 4019, 0);
                 TeleportHandler.teleportPlayer(player, crystalChest, TeleportType.NORMAL);

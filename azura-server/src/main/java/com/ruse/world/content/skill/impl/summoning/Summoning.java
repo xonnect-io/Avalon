@@ -6,6 +6,7 @@ import com.ruse.engine.task.impl.FamiliarSpawnTask;
 import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.container.impl.BeastOfBurden;
+import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.movement.MovementQueue;
 import com.ruse.world.World;
 import com.ruse.world.content.skill.impl.summoning.BossPets.BossPet;
@@ -137,7 +138,19 @@ public class Summoning {
 		}
 		NPC foll = new NPC(bossPet.npcId, new Position(player.getPosition().getX(),
 				player.getPosition().getY() + 1, player.getPosition().getZ()));
-
+		for (int i = 0; i < BossPet.values().length; i++) {
+			if (BossPet.values()[i].npcId == bossPet.npcId) {
+				// player.getPacketSender().sendMessage("HEY IT WORKED U FUCKIN RETARD. INDEX:
+				// "+i);
+				if (!player.getBossPet(i)) {
+					player.getPacketSender()
+							.sendMessage("You've unlocked " + ItemDefinition.forId(BossPet.values()[i].itemId).getName()
+									+ ", it can be re-purchased from the Zoo Keeper if lost.");
+					player.setBossPet(i, true);
+				}
+				break;
+			}
+		}
 		if (!player.getObtainedPets().contains(bossPet)){
 			player.getObtainedPets().add(bossPet);
 		}

@@ -3,6 +3,10 @@ package com.ruse.world.content;
 import com.ruse.model.Difficulty;
 import com.ruse.model.Skill;
 import com.ruse.util.Misc;
+import com.ruse.world.content.dialogue.Dialogue;
+import com.ruse.world.content.dialogue.DialogueExpression;
+import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.dialogue.DialogueType;
 import com.ruse.world.content.skill.SkillManager;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -22,8 +26,32 @@ public class ExperienceLamps {
 		}
 		return true;
 	}
+	public static void confirmoneorall(Player player, int choice){
+		player.getPacketSender().sendInterfaceRemoval();
+		switch(choice){
+			case 1:
+				player.getInventory().delete(thelamp.getItemId(), 1);
+				player.getSkillManager().addExperience(theskill, howmuchxp);
+				player.getPacketSender().sendMessage("You've received some experiencein "
+						+ Misc.formatText(theskill.toString().toLowerCase()) + ".");
+				break;
+			case 2:
+
+				player.getSkillManager().addExperience(theskill, howmuchxp*player.getInventory().getAmount(thelamp.getItemId()));
+
+				player.getPacketSender().sendMessage("You've received some experience in "
+						+ Misc.formatText(theskill.toString().toLowerCase()) + ".");
+				player.getInventory().delete(thelamp.getItemId(), player.getInventory().getAmount(thelamp.getItemId()));
+				break;
+		}
+
+	}
+	public static int howmuchxp;
+	public static Skill theskill;
+	public static LampData thelamp;
 
 	public static boolean handleButton(Player player, int button) {
+		howmuchxp = 0;
 		if (button == -27451) {
 			try {
 				player.getPacketSender().sendInterfaceRemoval();
@@ -31,22 +59,52 @@ public class ExperienceLamps {
 				if (player.getUsableObject()[0] != null) {
 					Skill skill = (Skill) player.getUsableObject()[1];
 					switch (((String) player.getUsableObject()[0]).toLowerCase()) {
-					case "reset":
-						player.getSkillManager().resetSkill(skill, false);
-						break;
-					case "prestige":
-						//player.getSkillManager().resetSkill(skill, true);
-						break;
-					case "xp":
-						LampData lamp = (LampData) player.getUsableObject()[2];
-						if (!player.getInventory().contains(lamp.getItemId()))
-							return true;
-						int exp = getExperienceReward(player, lamp, skill);
-						player.getInventory().delete(lamp.getItemId(), 1);
-						player.getSkillManager().addExperience(skill, exp);
-						player.getPacketSender().sendMessage("You've received some experience in "
-								+ Misc.formatText(skill.toString().toLowerCase()) + ".");
-						break;
+						case "reset":
+							player.getSkillManager().resetSkill(skill, false);
+							break;
+						case "prestige":
+							//player.getSkillManager().resetSkill(skill, true);
+							break;
+						case "xp":
+							LampData lamp = (LampData) player.getUsableObject()[2];
+							int exp = getExperienceReward(player, lamp, skill);
+							if (player.getInventory().getAmount(lamp.getItemId()) > 1){
+								howmuchxp = exp;
+								theskill = skill;
+								thelamp = lamp;
+								DialogueManager.start(player, new Dialogue() {
+
+									@Override
+									public DialogueType type() {
+										return DialogueType.OPTION;
+									}
+
+									@Override
+									public DialogueExpression animation() {
+										return null;
+									}
+
+									@Override
+									public String[] dialogue() {
+
+										return new String[]{"Use one", "Use all"};
+									}
+
+									@Override
+									public void specialAction() {
+										player.setDialogueActionId(99928);
+									}
+
+								});
+
+							} else {
+								player.getInventory().delete(lamp.getItemId(), 1);
+								player.getSkillManager().addExperience(skill, exp);
+								player.getPacketSender().sendMessage("You've received some experience in "
+										+ Misc.formatText(skill.toString().toLowerCase()) + ".");
+							}
+
+							break;
 					}
 				}
 			} catch (Exception e) {
@@ -56,7 +114,7 @@ public class ExperienceLamps {
 			Interface_Buttons interfaceButton = Interface_Buttons.forButton(button);
 			if (interfaceButton == null)
 				return false;
-			if (interfaceButton == Interface_Buttons.INVENTION) {
+			if (interfaceButton == Interface_Buttons.CONSTRUCTION) {
 				player.getPacketSender().sendMessage("That skill is not trainable yet.");
 				return true;
 			}
@@ -102,7 +160,7 @@ public class ExperienceLamps {
 
 		ATTACK(-27529), MAGIC(-27526), MINING(-27523), WOODCUTTING(-27520), AGILITY(-27517), FLETCHING(-27514),
 		THIEVING(-27511), STRENGTH(-27508), RANGED(-27505), SMITHING(-27502), FIREMAKING(-27499), HERBLORE(-27496),
-		SLAYER(-27493), INVENTION(-27490), DEFENCE(-27487), PRAYER(-27484), FISHING(-27481), CRAFTING(-27478),
+		SLAYER(-27493), CONSTRUCTION(-27490), DEFENCE(-27487), PRAYER(-27484), FISHING(-27481), CRAFTING(-27478),
 		FARMING(-27475), HUNTER(-27472), SUMMONING(-27469), CONSTITUTION(-27466), DUNGEONEERING(-27463),
 		COOKING(-27460), RUNECRAFTING(-27457);
 

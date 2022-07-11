@@ -251,7 +251,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         GrandLottery.open(player);
                         break;
 
-                    case 1394:
+                    case 4285:
                         ShopManager.getShops().get(119).open(player);
                         break;
 
@@ -799,7 +799,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         ShopManager.getShops().get(11).open(player);
                         break;
                     case 28:
-                        player.getPetShop().openInterface(PetShop.PetShopType.DAMAGE);
+                        ShopManager.getShops().get(83).open(player);
                         break;
                     case 2676:
                         player.getPacketSender().sendInterface(3559);
@@ -1049,16 +1049,6 @@ public class NPCOptionPacketListener implements PacketListener {
                                 "You currently have " + player.getPointsHandler().getLoyaltyPoints() + " Loyalty Points.");
                         ;
                         break;
-                    case 1394:
-                        int[] items = {1053, 1057, 1055, 1038, 1040, 1042, 1044, 1046, 1048, 1050, 14008, 14009, 14010,
-                                14484, 19115, 19114, 13736, 13744, 13738, 13742, 13740, 6293, 18754, 11694, 11696, 11698, 11700,
-                                15018, 15019, 15020, 15220, 12601, 12603, 12605, 20000, 20001, 20002, 6769, 10942, 10934,
-                                455};
-                        player.getPacketSender().sendInterface(52300);
-                        for (int i = 0; i < items.length; i++)
-                            player.getPacketSender().sendItemOnInterface(52302, items[i], i, 1);
-                        break;
-
                     case 4653:
                         player.getPacketSender().sendInterfaceRemoval();
                         ShopManager.getShops().get(85).open(player);

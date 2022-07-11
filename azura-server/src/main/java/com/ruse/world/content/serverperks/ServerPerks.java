@@ -124,6 +124,9 @@ public class ServerPerks {
         updateOverlay();
         World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has just been activated!");
 
+        World.sendBroadcastMessage(activePerk.getName() + " has just been activated for 1 hour");
+        GameSettings.broadcastMessage = "The Nephilim Warrior has appeared ::Nephilim";
+        GameSettings.broadcastTime = 100;
         if (GameSettings.LOCALHOST == false)
         discordBroadcast("");
         //reset();

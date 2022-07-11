@@ -2799,23 +2799,25 @@ public class CustomInterfaces extends RSInterface {
 				1673, 1674, 1675, 1676,
 				1677, 1678, 1679, 1680,
 				1681, 1682, 1683, 1684,
-				1685, 1686, 1687, 1668};
+				1685, 1686, 1687, 1668,};
 		for (int i : remove) {
 			removeSomething(i);
 		}
 		RSInterface newTab = addTabInterface(15000);
 		addSpriteLoader(73155, 1668);
+		addSpriteLoader(73156, 1669);
 		addButtonWSpriteLoader(15001, 618, "Show Equipment Stats", 41, 40);
 		addButtonWSpriteLoader(15002, 307, null, 41, 40);
 		addButtonWSpriteLoader(15003, 620, "Open Items kept on Death", 41, 40);
 		addButtonWSpriteLoader(15004, 1662, "Toggle Cosmetic overrides", 41, 40);
-		newTab.totalChildren(5);
+		newTab.totalChildren(6);
 		setBounds(15001, 25, 205, 0, newTab);
 		//setBounds(15002, 20, 120, 1, newTab);
 		setBounds(15003, 125, 205, 1, newTab);
 		setBounds(15004, 75, 205, 4, newTab);
 		setBounds(1644, 0, 0, 2, newTab);
-		setBounds(73155, 22,123, 3, newTab);
+		setBounds(73155, 22,122, 3, newTab);
+		setBounds(73156, 28,128, 5, newTab);
 		//setBounds(1669, 0, 0, 5, newTab);
 	}
 	private void duelingInterface() {
@@ -5847,6 +5849,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addText(26015, "Display new hitmarks", 0xe4a146, false, true, 52, 0);
 		addText(26028, "Display hitpoints above \\nhead.", 0xe4a146, false, true, 52, 0);
 		addText(26025, "Display usernames above \\nhead.", 0xe4a146, false, true, 52, 0);
+		addText(26098, "Display prestige \\nrank above head.", 0xe4a146, false, true, 52, 0);
 		addText(26030, "Enable x10 damage", 0xe4a146, false, true, 52, 0);
 		addText(26032, "Show ground-item\\ntext", 0xe4a146, false, true, 52, 0);
 		addText(26034, "Enable highlighting \\nyour username\\nwhen mentioned-\\nin chat.", 0xe4a146, false, true, 52, 0);
@@ -5856,6 +5859,8 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addButton(26014, 4, -1, 484, 485, 15, 15, "Toggle hitmarks", 654, 1);
 		addButton(26026, 4, -1, 484, 485, 15, 15, "Toggle hitpoints above head", 655, 1);
 		addButton(26027, 4, -1, 484, 485, 15, 15, "Toggle usernames above head", 656, 1);
+		addButton(26097, 4, -1, 484, 485, 15, 15, "Toggle prestiges", 6566, 1);
+
 		addButton(26029, 4, -1, 484, 485, 15, 15, "Toggle constitution", 657, 1);
 		addButton(26031, 4, -1, 484, 485, 15, 15, "Toggle ground-item text", 658, 1);
 		addButton(26033, 4, -1, 484, 485, 15, 15, "Toggle push-notifications", 659, 1);
@@ -5875,9 +5880,8 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addText(26066, "Toggle fog", 0xe4a146, false, true, 52, 0);
 		addText(26068, "Toggle particles", 0xe4a146, false, true, 52, 0);
 		addText(26071, "Toggle level-up\\nmessages", 0xe4a146, false, true, 52, 0);
-		addText(26083, "Toggle Gameframe", 0xe4a146, false, true, 52, 0);
 		addButton(26070, 4, -1, 484, 485, 15, 15, "Toggle level-up messages", 663, 1);
-		addButton(26080, 4, -1, 484, 485, 15, 15, "Toggle Gameframe", 664, 1);
+
 		/**
 		 * Fixed buttons
 		 */
@@ -5894,7 +5898,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addHoverButton(26022, 490, 50, 39, "Fullscreen Mode", -1, 26023, 1);
 		addHoveredButton(26023, 491, 50, 39, 26024);
 
-		setChildren(76, rsinterface);
+		setChildren(75, rsinterface);
 		int i = 0;
 		// background
 		setBounds(26001, x + -15, y + -30, i, rsinterface);
@@ -5940,10 +5944,6 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		i++;
 		setBounds(26070, x + 432, y + 200, i, rsinterface);
 		i++;
-		setBounds(26080, x + 154, y + 222, i, rsinterface);
-		i++;
-		setBounds(26083, x + 9, y + 224, i, rsinterface);
-		i++;
 		// fog
 		setBounds(26067, x + 154, y + 151 + 48, i, rsinterface);
 		i++;
@@ -5979,8 +5979,6 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		setBounds(26005, x + 7, y + 146 + 24, i, rsinterface);
 		i++;
 		setBounds(26005, x + 7, y + 146 + 48, i, rsinterface);
-		i++;
-		setBounds(26005, x + 7, y + 215, i, rsinterface);
 		i++;
 		// second row horizontal line
 		setBounds(26005, x + 170, y + 161, i, rsinterface);
@@ -6085,6 +6083,11 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		setBounds(26066, x + 9, y + 178 + 21, i, rsinterface);
 		i++;
 		setBounds(26068, x + 175, y + 170 + 28, i, rsinterface);
+		// toggle title above heads
+		i++;
+		setBounds(26097, x + 432, 275, i, rsinterface);
+		i++;
+		setBounds(26098, 365, 275, i, rsinterface);
 
 	}
 

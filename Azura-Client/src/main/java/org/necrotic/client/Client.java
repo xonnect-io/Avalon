@@ -8106,9 +8106,9 @@ public class Client extends GameRenderer {
                                 } else if (value < 100000) {
                                     smallText.drawRegularText(true, childX - 5, 0xffff00, value + "", childY + 10);
                                 } else if (value < 10000000) {
-                                    smallText.drawRegularText(true, childX - 5, 0xffff00, (value / 1000) + "", childY + 10);
+                                    smallText.drawRegularText(true, childX - 5, 0xffff00, (value / 1000) + "K", childY + 10);
                                 } else {
-                                    smallText.drawRegularText(true, childX - 5, 0xffff00, (value / 1000000) + "", childY + 10);
+                                    smallText.drawRegularText(true, childX - 5, 0xffff00, (value / 1000000) + "M", childY + 10);
                                 }
 
                             }

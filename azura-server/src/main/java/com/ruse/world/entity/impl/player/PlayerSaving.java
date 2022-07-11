@@ -166,6 +166,7 @@ public class PlayerSaving {
 			object.addProperty("boss-points", new Integer(player.getPointsHandler().getBossPoints()));
 			object.addProperty("shilling-rate", new Integer(player.getPointsHandler().getSHILLINGRate()));
 
+			object.add("bosspets", builder.toJsonTree(player.getBossPetsAll()));
 			object.addProperty("slayer-points", new Integer(player.getPointsHandler().getSlayerPoints()));
 			object.addProperty("pk-points", new Integer(player.getPointsHandler().getPkPoints()));
 			object.addProperty("player-kills", new Integer(player.getPlayerKillingAttributes().getPlayerKills()));

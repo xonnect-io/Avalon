@@ -8,7 +8,7 @@ import com.ruse.world.entity.impl.player.Player;
 
 /**
  * Familiar spawn on login
- * 
+ *
  * @author Gabriel Hannason
  */
 public class FamiliarSpawnTask extends Task {
