@@ -1,5 +1,7 @@
 package com.ruse.world.content.instanceMananger;
 
+import com.ruse.engine.task.Task;
+import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Position;
 import com.ruse.model.RegionInstance;
 import com.ruse.model.RegionInstance.RegionInstanceType;
@@ -29,7 +31,7 @@ public class InstanceManager {
 			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 750);
 		} else {
 			player.getPA()
-					.sendMessage("You need an instance token, these can be obtained from killing any npc ingame!");
+					.sendMessage("You need an instance token, these can be obtained from killing any npc in-game!");
 			player.getPA().sendMessage("You need to have 750+ Avalon tokens in your inventory");
 			return;
 		}
@@ -174,17 +176,18 @@ public class InstanceManager {
 		if (player.currentInstanceNpcId == -1 || player.currentInstanceNpcName == "") {
 			return;
 		}
-		player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
-
-		if (player.getCurrentInstanceAmount() == 110 || player.getCurrentInstanceAmount() == 100 || player.getCurrentInstanceAmount() == 90 ||
-				player.getCurrentInstanceAmount() == 80 || player.getCurrentInstanceAmount() == 70 ||  player.getCurrentInstanceAmount() == 60 ||
-				player.getCurrentInstanceAmount() == 50 || player.getCurrentInstanceAmount() == 40 || player.getCurrentInstanceAmount() == 30 ||
-				player.getCurrentInstanceAmount() == 20 || player.getCurrentInstanceAmount() == 10) {
-			player.getPA().sendMessage("You currently need to kill " + player.getCurrentInstanceAmount() + " " + NpcName);
+		if (player.getCurrentInstanceAmount() == 111 || player.getCurrentInstanceAmount() == 101 || player.getCurrentInstanceAmount() == 91 ||
+				player.getCurrentInstanceAmount() == 81 || player.getCurrentInstanceAmount() == 71 ||  player.getCurrentInstanceAmount() == 61 ||
+				player.getCurrentInstanceAmount() == 51 || player.getCurrentInstanceAmount() == 41 || player.getCurrentInstanceAmount() == 31 ||
+				player.getCurrentInstanceAmount() == 21 || player.getCurrentInstanceAmount() == 11) {
+			player.getPA().sendMessage("You currently need to kill " + (player.getCurrentInstanceAmount() - 1) + " " + NpcName);
 		}
 
-		if (player.getCurrentInstanceAmount() <= 0) {
+		player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
 
+
+
+		if (player.getCurrentInstanceAmount() <= 0) {
 			player.getPA().sendMessage("You have used up the total instance count!");
 			finish();
 			return;
@@ -192,14 +195,15 @@ public class InstanceManager {
 	}
 
 	public void finish() {
-		player.getPA().sendMessage("You have used up all your kills inside the instance.");
 		player.getPA().sendMessage("to leave the instance simply teleport out.");
 		if (player != null) {
 			onLogout();
 		}
 	}
 
+	public static int tick = 0;
 	public void onLogout() {
+		player.getClickDelay().reset();
 		if (player.getRegionInstance() != null)
 			player.getRegionInstance().destruct();
 		player.setData(null);
@@ -207,4 +211,19 @@ public class InstanceManager {
 		player.setCurrentInstanceNpcId(-1);
 		player.setCurrentInstanceNpcName("");
 	}
+
+	public void startTask() {
+		TaskManager.submit(new Task(1,false) {
+			@Override
+			public void execute() {
+				player.getClickDelay().equals(5000);
+				if(tick == 5) {
+					player.getClickDelay().reset();
+					stop();
+				}
+				tick++;
+			}
+		});
+	}
+
 }

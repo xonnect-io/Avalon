@@ -253,6 +253,8 @@ public class NPCOptionPacketListener implements PacketListener {
 
                     case 4285:
                         ShopManager.getShops().get(119).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "Items can be sold to this store");
                         break;
 
 

@@ -208,13 +208,20 @@ public class NPCDrops {
 
     public static void dropPetFragment(Player player, Position pos, NPC npc) {
             int reward = 19000;
-            int rand = Misc.getRandom(50);
+            int rand = Misc.getRandom(60);
             if (rand == 1) {
                     player.getPacketSender().sendMessage("X1 Pet Fragment has been sent to your inventory.");
                 player.getInventory().add(reward, 1);
                 }
             }
-
+    public static void dropInstanceToken(Player player, Position pos, NPC npc) {
+        int reward = 4278;
+        int rand = Misc.getRandom(60);
+        if (rand == 1) {
+            player.getPacketSender().sendMessage("X1 Instance token has been sent to your inventory.");
+            player.getInventory().add(reward, 1);
+        }
+    }
 
     public static void handleDrops(Player player, NPC npc) {
         handleDrops(player, npc, 1);
@@ -237,6 +244,7 @@ public class NPCDrops {
             dropClue(player, npcPos, npc);
         }*/
         dropPetFragment(player,npcPos,npc);
+        dropInstanceToken(player,npcPos,npc);
         HashMap<Double, ArrayList<NpcDropItem>> dropRates = new HashMap<>();
 
         for (NpcDropItem drop : drops) {

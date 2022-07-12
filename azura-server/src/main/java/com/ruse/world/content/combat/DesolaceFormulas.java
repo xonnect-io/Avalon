@@ -154,6 +154,88 @@ public class DesolaceFormulas {
                         bonus += 1.05;
                     }
 
+
+                    if (plr.getEquipment().contains(7995)) {
+                        bonus *= 1.3;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(23230)) {
+                        bonus *= 1.3;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(23231)) {
+                        bonus *= 1.3;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(23232)) {
+                        bonus *= 1.3;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2;
+                        return (int) bonus;
+                    }
+
+                    if (plr.getEquipment().contains(22109)) {
+                        bonus *= 1.5;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2.2;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(23233)) {
+                        bonus *= 1.5;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2.2;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(23234)) {
+                        bonus *= 1.5;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2.2;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(23235)) {
+                        bonus *= 1.5;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2.2;
+                        return (int) bonus;
+                    }
+
+                    if (plr.getEquipment().contains(23270)) {
+                        bonus *= 1.75;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2.5;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(23280)) {
+                        bonus *= 1.75;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2.5;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(23292)) {
+                        bonus *= 1.75;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2.5;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(23293)) {
+                        bonus *= 1.75;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2.5;
+                        return (int) bonus;
+                    }
+                    if (plr.getEquipment().contains(20591)) {
+                        bonus *= 1.2;
+                        if (plr.isOpMode() || plr.isGodMode())
+                            bonus += bonus * 2;
+                        return (int) bonus;
+                    }
+
                     base *= bonus;
                 }
                 
@@ -227,6 +309,9 @@ public class DesolaceFormulas {
                         .sendMessage("Void Melee accuracy buff applied. Is " + attackLevel + ", pre-equip bonuses");
             }
         }
+
+
+
         attackLevel *= plr.isSpecialActivated() ? plr.getCombatSpecial().getAccuracyBonus() : 1;
         int i = (int) plr.getBonusManager().getAttackBonus()[bestMeleeAtk(plr)];
 
@@ -430,6 +515,89 @@ public class DesolaceFormulas {
             } else if(plr.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
                 bonus += 1.05;
             }
+
+
+            if (plr.getEquipment().contains(7995)) {
+                bonus *= 1.3;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(23230)) {
+                bonus *= 1.3;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(23231)) {
+                bonus *= 1.3;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(23232)) {
+                bonus *= 1.3;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2;
+                return (int) bonus;
+            }
+
+            if (plr.getEquipment().contains(22109)) {
+                bonus *= 1.5;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2.2;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(23233)) {
+                bonus *= 1.5;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2.2;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(23234)) {
+                bonus *= 1.5;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2.2;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(23235)) {
+                bonus *= 1.5;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2.2;
+                return (int) bonus;
+            }
+
+            if (plr.getEquipment().contains(23270)) {
+                bonus *= 1.75;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2.5;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(23280)) {
+                bonus *= 1.75;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2.5;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(23292)) {
+                bonus *= 1.75;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2.5;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(23293)) {
+                bonus *= 1.75;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2.5;
+                return (int) bonus;
+            }
+            if (plr.getEquipment().contains(20591)) {
+                bonus *= 1.2;
+                if (plr.isOpMode() || plr.isGodMode())
+                    bonus += bonus * 2;
+                return (int) bonus;
+            }
+
             rangeLevel *= bonus;
         }
         /*
@@ -690,15 +858,85 @@ public class DesolaceFormulas {
         	damage *=1.5;
         }
         if (p.getEquipment().contains(7995)) {
+            damage *= 2;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 3;
+            return (int) damage;
+        }
+        if (p.getEquipment().contains(23230)) {
+            damage *= 2;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 3;
+            return (int) damage;
+        }
+        if (p.getEquipment().contains(23231)) {
+            damage *= 2;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 3;
+            return (int) damage;
+        }
+        if (p.getEquipment().contains(23232)) {
+            damage *= 2;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 3;
+            return (int) damage;
+        }
+
+        if (p.getEquipment().contains(22109)) {
             damage *= 2.5;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 4;
+            return (int) damage;
+        }
+        if (p.getEquipment().contains(23233)) {
+            damage *= 2.5;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 4;
+            return (int) damage;
+        }
+        if (p.getEquipment().contains(23234)) {
+            damage *= 2.5;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 4;
+            return (int) damage;
+        }
+        if (p.getEquipment().contains(23235)) {
+            damage *= 2.5;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 4;
+            return (int) damage;
+        }
+
+        if (p.getEquipment().contains(23270)) {
+            damage *= 3;
             if (p.isOpMode() || p.isGodMode())
                 damage += damage * 6;
             return (int) damage;
         }
-        if (p.getEquipment().contains(20591)) {
-            damage *= 1.5;
+        if (p.getEquipment().contains(23280)) {
+            damage *= 3;
             if (p.isOpMode() || p.isGodMode())
                 damage += damage * 6;
+            return (int) damage;
+        }
+        if (p.getEquipment().contains(23292)) {
+            damage *= 3;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 6;
+            return (int) damage;
+        }
+        if (p.getEquipment().contains(23293)) {
+            damage *= 3;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 6;
+            return (int) damage;
+        }
+
+
+        if (p.getEquipment().contains(20591)) {
+            damage *= 2;
+            if (p.isOpMode() || p.isGodMode())
+                damage += damage * 3;
             return (int) damage;
         }
         if (p.isOpMode() || p.isGodMode())

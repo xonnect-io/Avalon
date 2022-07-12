@@ -1529,7 +1529,7 @@ public final class MobDefinition {
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 3;
+				definition.npcSizeInSquares = 1;
 				break;
 			case 9839:
 				definition.setDefault();
@@ -2681,6 +2681,7 @@ public final class MobDefinition {
 				definition.combatLevel = 800;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 809;
+				definition.npcSizeInSquares = 1;
 				break;
 
 			case 970:
@@ -2849,9 +2850,9 @@ public final class MobDefinition {
 				definition.combatLevel = 138;
 				definition.standAnimation = 7949;
 				definition.walkAnimation = 7952;
-				definition.scaleXZ = 180;
-				definition.scaleY = 180;
-				definition.npcSizeInSquares = 3;
+				definition.scaleXZ = 150;
+				definition.scaleY = 150;
+				definition.npcSizeInSquares = 2;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.rdc2 = 2232356;
 				break;
@@ -3457,6 +3458,7 @@ public final class MobDefinition {
 				definition.walkAnimation = poke.walkAnimation;
 				definition.scaleXZ = 70;
 				definition.scaleY = 70;
+				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 
@@ -3491,6 +3493,7 @@ public final class MobDefinition {
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 130;
 				definition.scaleY = 130;
+				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 
@@ -3858,6 +3861,7 @@ public final class MobDefinition {
 				definition.combatLevel = 699;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
+				definition.npcSizeInSquares = 1;
 				break;
 
 			case 8011:
@@ -3928,9 +3932,9 @@ public final class MobDefinition {
 				definition.npcModels = new int[]{17215};
 				MobDefinition icebeasts = get(1);
 				definition.combatLevel = 130;
-				definition.scaleXZ = 200;
-				definition.scaleY = 200;
-				definition.npcSizeInSquares = 2;
+				definition.scaleXZ = 150;
+				definition.scaleY = 150;
+				definition.npcSizeInSquares = 1;
 				definition.description = icebeasts.description;
 				definition.drawYellowDotOnMap = true;
 				definition.degreesToTurn = 32;
@@ -4728,6 +4732,7 @@ public final class MobDefinition {
 				definition.actions[4] = null;
 				definition.scaleXZ = 70;
 				definition.scaleY = 70;
+				definition.npcSizeInSquares = 1;
 				break;
 			case 606:
 				definition.name = "<col=7d9781>Shadow Warrior";
@@ -4750,6 +4755,7 @@ public final class MobDefinition {
 				definition.actions[2] = null;
 				definition.actions[3] = null;
 				definition.actions[4] = null;
+				definition.npcSizeInSquares = 1;
 				break;
 			case 607:
 				definition.name = "<col=E3E3E3>COL Warrior";
@@ -5284,10 +5290,11 @@ public final class MobDefinition {
 			case 53:
 				definition.name = "Joyx Golem";
 				definition.npcModels = new int[]{17213};
-				definition.scaleXZ = 99;
+				definition.scaleXZ = 129;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
-				definition.scaleY = 99;
+				definition.scaleY = 129;
+				definition.npcSizeInSquares = 1;
 				break;
 			case 3060:
 				definition.npcModels = new int[]{49137, 49144};

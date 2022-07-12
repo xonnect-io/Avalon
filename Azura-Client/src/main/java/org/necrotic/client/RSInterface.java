@@ -1481,6 +1481,51 @@ public class RSInterface {
 
 
 	}
+
+
+	private static void prestigeInterface(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(77930);
+		addSpriteLoader(77931, 1731);
+		addText(77932, "Prestige Information", tda, 2, 0xff8624, true, true);
+		addText(77998, "Prestige: 1", tda, 0, 0xff8624, true, true);
+		addText(77999, "Prestige: 2", tda, 0, 0xff8624, true, true);
+		addText(77995, "Current", tda, 2, 0xff8624, true, true);
+		addText(77996, "Next", tda, 2, 0xff8624, true, true);
+		addText(77933, "Prestige Rewards", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(77934, 714, "Close Window", 16, 16);
+		addText(77935, "Prestige", tda, 2, 0xff8624, true, true);
+		addSpriteLoader(77936, 1710);
+		addSpriteLoader(77937, 1732);
+		addSpriteLoader(77938, 1711);
+
+
+		addItemOnInterface(77939, 66930, new String[]{null});
+		addItemOnInterface(77940, 66930, new String[]{null});
+		addItemOnInterface(77941, 66930, new String[]{null});
+		addItemOnInterface(77942, 66930, new String[]{null});
+
+		addHoverButtonWSpriteLoader(77944, 1733, 118, 28, "Enter Prestige", -1, 77945, 1);
+		addHoveredImageWSpriteLoader(77945, 1734, 118, 28, 77946);
+		main.totalChildren(17);
+		main.child(0, 77931, 130, 47);
+		main.child(1, 77932, 250, 49);
+		main.child(2, 77933, 250, 180);
+		main.child(3, 77944, 187, 139);
+		main.child(4, 77945, 187, 139);
+		main.child(5, 77934, 338, 47);
+		main.child(6, 77935, 247, 147);
+		main.child(7, 77936, 157, 90);
+		main.child(8, 77937, 230, 94);
+		main.child(9, 77938, 293, 90);
+		main.child(10, 77939, 185, 210);
+		main.child(11, 77940, 230, 210);
+		main.child(12, 77942, 275, 210);
+		main.child(13, 77998, 175, 125);
+		main.child(14, 77999, 312, 125);
+		main.child(15, 77995, 175, 70);
+		main.child(16, 77996, 312, 70);
+	}
+
 	private static void magicianPetUnlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(77230);
 		addSpriteLoader(77231, 1707);
@@ -6242,6 +6287,7 @@ public class RSInterface {
 			magicianUnlock(textDrawingAreas);
 			magicianPetUnlock(textDrawingAreas);
 			questInterface(textDrawingAreas);
+			prestigeInterface(textDrawingAreas);
 			magicianTier1Unlock(textDrawingAreas);
 			magicianTier2Unlock(textDrawingAreas);
 			magicianTier3Unlock(textDrawingAreas);

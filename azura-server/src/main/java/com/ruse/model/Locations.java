@@ -732,10 +732,8 @@ public class Locations {
 
 			@Override
 			public void leave(Player player) {
-				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-					new InstanceManager(player).onLogout();
-				}
-				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
+				new InstanceManager(player).onLogout();
+				player.getPA().sendMessage("Your instance was destroyed.");
 			}
 
 			@Override

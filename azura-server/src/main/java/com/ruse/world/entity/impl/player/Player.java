@@ -377,6 +377,7 @@ public class Player extends Character {
     private final PointsHandler pointsHandler = new PointsHandler(this);
     public final UnknownZone unknownZone = new UnknownZone(this);
     public final QuestInterfaceHandler questInterface = new QuestInterfaceHandler(this);
+    public final PrestigeInterfaceHandler prestigeInterface = new PrestigeInterfaceHandler(this);
     public final MagicGuild magicGuildUnlock = new MagicGuild(this);
     public final MagicGuild magicGuildT1 = new MagicGuild(this);
     public final MagicGuild magicGuildT2 = new MagicGuild(this);

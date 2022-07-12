@@ -530,7 +530,7 @@ public class ItemActionPacketListener implements PacketListener {
                         18629, 4446, 19886, 10934,15288};
                 player.getMysteryBoxOpener().display(20489, "Launch Casket", commonLaunch, uncommonLaunch, raresLaunch);
                 break;
-            case 15003:
+            case 15002:
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ELITE);
                 player.getCasketOpening().openInterface();
                 break;
@@ -540,7 +540,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getCasketOpening().openInterface();
                 break;
 
-            case 15002:
+            case 15003:
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.AZURE);
                 player.getCasketOpening().openInterface();
                 break;
@@ -867,6 +867,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
                     return;
                 }
+                if (!player.getClickDelay().elapsed(5000)) {
+                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
+                    return;
+                }
                 new InstanceInterfaceHandler(player).open();
                 break;
             case 23264:
@@ -876,6 +880,10 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 if (player.currentInstanceAmount >= 1) {
                     player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
+                    return;
+                }
+                if (!player.getClickDelay().elapsed(5000)) {
+                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
                     return;
                 }
                 new GoldInstanceInterfaceHandler(player).open();
@@ -1889,6 +1897,10 @@ public class ItemActionPacketListener implements PacketListener {
                     return;
                 }
 
+                if (!player.getClickDelay().elapsed(5000)) {
+                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
+                    return;
+                }
                 boolean validNpc = false;
                 for (InstanceData data : InstanceData.values()) {
                     if (data.getNpcid() == player.lastInstanceNpc) {
@@ -1920,6 +1932,10 @@ public class ItemActionPacketListener implements PacketListener {
                     return;
                 }
 
+                if (!player.getClickDelay().elapsed(5000)) {
+                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
+                    return;
+                }
                 boolean valid = false;
                 for (InstanceData data : InstanceData.values()) {
                     if (data.getNpcid() == player.lastInstanceNpc) {

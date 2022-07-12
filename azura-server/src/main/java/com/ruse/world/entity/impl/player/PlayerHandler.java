@@ -278,13 +278,13 @@ public class PlayerHandler {
                 player.sendMessage("@red@If you lose it relog to re-obtain!");
             }
         }
-
         //ClanChatManager.handleLogin(player);
         ClanChatManager.resetInterface(player);
         ClanChatManager.join(player, "help");
 
         player.getPacketSender().updateSpecialAttackOrb().sendIronmanMode(player.getGameMode().ordinal());
-
+            player.getClickDelay().reset();
+            System.out.println("Reset click delay");
         System.out.println("PLAYER RIGHTS: " + player.getRights());
         if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() <= Store.SAPPHIRE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=255><img=5> Helper "

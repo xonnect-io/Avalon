@@ -1619,6 +1619,9 @@ public class CommandPacketListener implements PacketListener {
             ItemDefinition.dumpItems();
         }
 
+        if (command[0].equalsIgnoreCase("prestige")) {
+            player.prestigeInterface.openPrestigeInterface();
+        }
         if (command[0].equalsIgnoreCase("spawnhellraiser")) {
             HellraiserSystem.commandSpawnBoss();
         }

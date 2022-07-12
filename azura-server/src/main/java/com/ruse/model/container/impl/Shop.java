@@ -575,7 +575,11 @@ public class Shop extends ItemContainer {
         }
         if (itemValue <= 0)
             return;
+
         itemValue = (int) (itemValue * 0.5D);
+        if (id == 119) {
+            itemValue = 2;
+        }
         if (itemValue <= 0) {
             itemValue = 1;
         }

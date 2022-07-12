@@ -1015,7 +1015,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 142278:// Ipotane
                 if (player.getPointsHandler().getZEUSKILLCount() <= 14999) {
                     player.getPacketSender().sendMessage("You need 15,000 Zeus kills. You currently have @red@"
-                            + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
+                            + player.getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
                     return;
                 }
                 Position groudon = new Position(2893, 5469, 0);

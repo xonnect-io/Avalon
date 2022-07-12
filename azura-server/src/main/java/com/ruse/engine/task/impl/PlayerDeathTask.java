@@ -1,20 +1,9 @@
 package com.ruse.engine.task.impl;
 
-import java.util.ArrayList;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import com.ruse.GameSettings;
 import com.ruse.engine.task.Task;
-import com.ruse.model.Animation;
-import com.ruse.model.DamageDealer;
-import com.ruse.model.Flag;
-import com.ruse.model.GameMode;
-import com.ruse.model.GroundItem;
-import com.ruse.model.Item;
+import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
-import com.ruse.model.PlayerRights;
-import com.ruse.model.Position;
-import com.ruse.model.Skill;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
@@ -29,6 +18,9 @@ import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.GroundItemManager;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Represents a player's death task, through which the process of dying is
@@ -74,7 +66,8 @@ public class PlayerDeathTask extends Task {
 
                     if (player.currentInstanceAmount < 1) {
                     player.performAnimation(new Animation(0x900));
-                    player.getPacketSender().sendMessage("Oh dear, you are dead!");
+                    player.getPacketSender().sendMessage("Oh dear, you are dead!")
+                    ;player.getClickDelay().reset();
                         CurseHandler.deactivateAll(player);
                         PrayerHandler.deactivateAll(player);
                     this.death = getDeathNpc(player);
@@ -86,6 +79,7 @@ public class PlayerDeathTask extends Task {
             		player.setCurrentInstanceAmount(-1);
             		player.setCurrentInstanceNpcId(-1);
             		player.setCurrentInstanceNpcName("");
+                        player.getClickDelay().reset();
             		player.performAnimation(new Animation(0x900));
         			Position[] locations = new Position[] { new Position(2656, 4016, 0), new Position(2656, 4016, 0) };
         			Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
