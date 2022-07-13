@@ -7,7 +7,7 @@ import java.net.URL;
 
 /**
  * Client Launcher.
- * @author Woo, created on 3-1-2022.
+ * @author MGT Madness, created on 24-12-2013.
  */
 public class Launcher
 {
@@ -17,12 +17,12 @@ public class Launcher
          * <p>
          * This is the location the Jar filed will be stored and executed at.
          */
-        static String directory = System.getProperty("user.home") + "/Avalon.jar";
+        static String directory = System.getProperty("user.home") + "/AvalonBeta.jar";
 
         /**
          * Download link of the Download Client.
          */
-        static String downloadLink = "https://avalon317.com/resources/Avalon-Client.jar";
+        static String downloadLink = "https://www.dropbox.com/s/bxywxl1bgpbt0lk/AvalonBeta.jar?dl=1";
 
         /**
          * Main method used to start the launcher.
@@ -43,7 +43,7 @@ public class Launcher
                 frame = new JFrame("Downloading latest client...");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Container c = frame.getContentPane();
-                Dimension d = new Dimension(260, 20);
+                Dimension d = new Dimension(260, 4);
                 c.setPreferredSize(d);
                 frame.pack();
                 frame.setVisible(true);
