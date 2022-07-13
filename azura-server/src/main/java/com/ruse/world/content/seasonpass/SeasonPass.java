@@ -77,7 +77,6 @@ public class SeasonPass {
 		if(tier == 50) {
 			return;
 		}
-
 		else if(getXp() + addExp > 10){
 			this.xp =((getXp()+addExp) - 10);
 			addTier(1);
@@ -106,7 +105,7 @@ public class SeasonPass {
 
 		}
 		player.sendMessage("Congratulations you have advanced to tier "+getTier()+"!");
-		player.sendMessage("The tier reward ("+itemName+") was sent to your bank.");
+		player.sendMessage("The tier reward "+itemName+" was sent to your bank.");
 	}
 	/**
 	 * checks what items you have unlocked based on whether youre a member or not

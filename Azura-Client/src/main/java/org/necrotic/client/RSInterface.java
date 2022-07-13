@@ -1485,7 +1485,7 @@ public class RSInterface {
 
 	private static void prestigeInterface(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(77930);
-		addSpriteLoader(77931, 1731);
+		addSpriteLoader(77931, 1740);
 		addText(77932, "Prestige Information", tda, 2, 0xff8624, true, true);
 		addText(77998, "Prestige: 1", tda, 0, 0xff8624, true, true);
 		addText(77999, "Prestige: 2", tda, 0, 0xff8624, true, true);
@@ -1495,7 +1495,7 @@ public class RSInterface {
 		addButtonWSpriteLoader(77934, 714, "Close Window", 16, 16);
 		addText(77935, "Prestige", tda, 2, 0xff8624, true, true);
 		addSpriteLoader(77936, 1710);
-		addSpriteLoader(77937, 1732);
+		addSpriteLoader(77937, 1741);
 		addSpriteLoader(77938, 1711);
 
 
@@ -1504,8 +1504,8 @@ public class RSInterface {
 		addItemOnInterface(77941, 66930, new String[]{null});
 		addItemOnInterface(77942, 66930, new String[]{null});
 
-		addHoverButtonWSpriteLoader(77944, 1733, 118, 28, "Enter Prestige", -1, 77945, 1);
-		addHoveredImageWSpriteLoader(77945, 1734, 118, 28, 77946);
+		addHoverButtonWSpriteLoader(77944, 1742, 118, 28, "Enter Prestige", -1, 77945, 1);
+		addHoveredImageWSpriteLoader(77945, 1743, 118, 28, 77946);
 		main.totalChildren(17);
 		main.child(0, 77931, 130, 47);
 		main.child(1, 77932, 250, 49);

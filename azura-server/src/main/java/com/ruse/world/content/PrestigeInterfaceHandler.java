@@ -14,8 +14,8 @@ public class PrestigeInterfaceHandler {
             player.getPacketSender().sendSpriteChange(77938, 1710);
             player.getPacketSender().sendString(77998, "Prestige: @whi@None");
             player.getPacketSender().sendString(77999, "Prestige: @whi@1");
-            player.getPacketSender().sendItemOnInterface(77939, 19115, 50);
-            player.getPacketSender().sendItemOnInterface(77940, 19114, 25);
+            player.getPacketSender().sendItemOnInterface(77939, 20488, 10);
+            player.getPacketSender().sendItemOnInterface(77940, 15003, 1);
             player.getPacketSender().sendItemOnInterface(77942, 23236, 1);
         } else if (player.getPointsHandler().getTotalPrestiges() == 1) {
             player.getPacketSender().sendString(77998, "Prestige: @whi@1");

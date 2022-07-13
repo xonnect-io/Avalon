@@ -19,6 +19,7 @@ import com.ruse.world.World;
 import com.ruse.world.allornothing.DoubleOrNothing;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
@@ -81,6 +82,9 @@ import com.ruse.world.entity.impl.player.StartScreen;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static com.ruse.model.Skill.*;
+import static com.ruse.model.Skill.SUMMONING;
 
 /**
  * This packet listener manages a button that the player has clicked upon.
@@ -170,6 +174,80 @@ public class ButtonClickPacketListener implements PacketListener {
             case 26070:
                 player.levelNotifications = !player.levelNotifications;
                 player.getPacketSender().sendMessage("Level-up notifications toggled: " + (player.levelNotifications ? "on" : "off") + ".");
+                break;
+            case 77944:
+                player.getPacketSender().sendInterfaceRemoval();
+                if (!player.getSkillManager().maxed()) {
+                    DialogueManager.sendStatement(player, "You must be maxed in all skills to do this.");
+                    return;
+                }
+                if (player.getEquipment().getFreeSlots() != player.getEquipment().capacity()) {
+                    player.getPacketSender().sendMessage("Please unequip all your items first.");
+                    return ;
+                }
+                if (player.getPointsHandler().getTotalPrestiges() >= 1) {
+                    player.getPacketSender().sendMessage("@red@You already are max prestige. Wait until next season to unlock another.");
+                    return ;
+                }
+                if (player.getLocation() == Location.WILDERNESS || player.getCombatBuilder().isBeingAttacked()) {
+                    player.getPacketSender().sendMessage("You cannot do this at the moment");
+                    return ;
+                }
+                player.getPointsHandler().incrementTotalPrestiges(1);
+                player.getSkillManager().resetSkill(ATTACK, false);
+                player.getSkillManager().resetSkill(DEFENCE, false);
+                player.getSkillManager().resetSkill(STRENGTH, false);
+                player.getSkillManager().resetSkill(CONSTITUTION, false);
+                player.getSkillManager().resetSkill(RANGED, false);
+                player.getSkillManager().resetSkill(PRAYER, false);
+                player.getSkillManager().resetSkill(MAGIC, false);
+                player.getSkillManager().resetSkill(COOKING, false);
+                player.getSkillManager().resetSkill(WOODCUTTING, false);
+                player.getSkillManager().resetSkill(FLETCHING, false);
+                player.getSkillManager().resetSkill(FISHING, false);
+                player.getSkillManager().resetSkill(FIREMAKING, false);
+                player.getSkillManager().resetSkill(CRAFTING, false);
+                player.getSkillManager().resetSkill(SMITHING, false);
+                player.getSkillManager().resetSkill(MINING, false);
+                player.getSkillManager().resetSkill(HERBLORE, false);
+                player.getSkillManager().resetSkill(AGILITY, false);
+                player.getSkillManager().resetSkill(THIEVING, false);
+                player.getSkillManager().resetSkill(SLAYER, false);
+                player.getSkillManager().resetSkill(FARMING, false);
+                player.getSkillManager().resetSkill(RUNECRAFTING, false);
+                player.getSkillManager().resetSkill(INVENTION, false);
+                player.getSkillManager().resetSkill(HUNTER, false);
+                player.getSkillManager().resetSkill(SUMMONING, false);
+                player.getPointsHandler().setPrestigePoints(1, true);
+                player.getAppearance().setprestigeIcon(player.getPointsHandler().getTotalPrestiges());
+                player.getPacketSender().sendMessage("You have just prestiged to level " + player.getPointsHandler().getTotalPrestiges()+ "!");
+                player.getPacketSender().sendMessage(player.getPointsHandler().getTotalPrestiges()+ " Prestige Mboxes have been added to your inventory as a reward.");
+                World.sendMessage("@blu@<shad=1>[News] @red@"+player.getUsername()+ "@bla@ has just prestiged to level " + player.getPointsHandler().getTotalPrestiges() + "!");
+                player.getAchievementTracker().progress(AchievementData.PRESTIGE_VETERAN, 1);
+                player.getAchievementTracker().progress(AchievementData.PRESTIGE_MASTER, 1);
+                if (player.getPointsHandler().getTotalPrestiges() == 1)
+                    player.getInventory().add(20488, 10);
+                player.getInventory().add(15003, 1);
+                    player.getInventory().add(23236, 1);
+                if (player.getPointsHandler().getTotalPrestiges() == 2)
+                    player.getInventory().add(23236, 2);
+                if (player.getPointsHandler().getTotalPrestiges() == 3)
+                    player.getInventory().add(23236, 3);
+                if (player.getPointsHandler().getTotalPrestiges() == 4)
+                    player.getInventory().add(23236, 4);
+                if (player.getPointsHandler().getTotalPrestiges() == 5)
+                    player.getInventory().add(23236, 5);
+                if (player.getPointsHandler().getTotalPrestiges() == 6)
+                    player.getInventory().add(23236, 6);
+                if (player.getPointsHandler().getTotalPrestiges() == 7)
+                    player.getInventory().add(23236, 7);
+                if (player.getPointsHandler().getTotalPrestiges() == 8)
+                    player.getInventory().add(23236, 8);
+                if (player.getPointsHandler().getTotalPrestiges() == 9)
+                    player.getInventory().add(23236, 9);
+                if (player.getPointsHandler().getTotalPrestiges() == 10)
+                    player.getInventory().add(23236, 10);
+                player.prestigeInterface.openPrestigeInterface();
                 break;
             case -18527:
             case 111214:
