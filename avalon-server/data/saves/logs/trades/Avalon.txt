@@ -1,0 +1,9 @@
+[4/19/22 12:19AM] Gave item to Donator. Name: Upgrade Tokens. Id: 12855, amount: 67045	
+[4/26/22 02:16PM] Gave item to Testingl. Name: Ruthless helm. Id: 23139, amount: 1	
+[4/26/22 02:16PM] Gave item to Testingl. Name: Owner's Aura. Id: 22111, amount: 1	
+[4/26/22 02:16PM] Gave item to Testingl. Name: Ruthless body. Id: 23140, amount: 1	
+[4/26/22 02:16PM] Gave item to Testingl. Name: Ruthless bow. Id: 23144, amount: 1	
+[4/26/22 02:16PM] Gave item to Testingl. Name: Ruthless boots. Id: 23143, amount: 1	
+[4/26/22 02:16PM] Gave item to Testingl. Name: Ruthless legs. Id: 23141, amount: 1	
+[4/26/22 02:16PM] Gave item to Testingl. Name: Collector ring III. Id: 18818, amount: 1	
+[4/26/22 02:16PM] Gave item to Testingl. Name: Upgraded Owner's Cape. Id: 22109, amount: 1	

@@ -1,0 +1,469 @@
+[4/17/22 11:03PM] Player picked up item: Starter legs, id: 8328, amount: 1, owner: Avalon	
+[4/17/22 11:03PM] Player picked up item: Magic staff, id: 23026, amount: 1, owner: Avalon	
+[4/26/22 07:09PM] Player picked up item: Heavy chainsaw, id: 22080, amount: 1, owner: Avalon	
+[4/26/22 09:54PM] Player picked up item: Tormented tentacle, id: 18686, amount: 1, owner: Avalon	
+[4/29/22 06:29AM] Player picked up item: Leafy coif, id: 17043, amount: 1, owner: Avalon	
+[4/29/22 06:30AM] Player picked up item: Leafy coif, id: 17043, amount: 1, owner: Avalon	
+[4/30/22 01:17PM] Player picked up item: Belligerent legs, id: 11423, amount: 1, owner: Avalon	
+[4/30/22 01:17PM] Player picked up item: Elite Sword (AoE), id: 8410, amount: 1, owner: Avalon	
+[4/30/22 01:17PM] Player picked up item: Avalon Crossbow, id: 8088, amount: 1, owner: Avalon	
+[4/30/22 10:25PM] Player picked up item: Satanic hell legs, id: 13304, amount: 1, owner: Avalon	
+[4/30/22 11:04PM] Player picked up item: Avalon Coins, id: 995, amount: 3399783, owner: Avalon	
+[4/30/22 11:04PM] Player picked up item: Dragon bones, id: 537, amount: 50, owner: Avalon	
+[5/1/22 11:27AM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/1/22 11:27AM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/1/22 11:27AM] Player picked up item: Dragonballz Bones, id: 2025, amount: 6, owner: Avalon	
+[5/1/22 11:27AM] Player picked up item: Upgrade Tokens, id: 12855, amount: 20000, owner: Avalon	
+[5/1/22 11:27AM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/1/22 12:07PM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/1/22 12:07PM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/1/22 12:07PM] Player picked up item: Dragonballz Bones, id: 2025, amount: 6, owner: Avalon	
+[5/1/22 12:07PM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/1/22 12:07PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 20000, owner: Avalon	
+[5/1/22 12:14PM] Player picked up item: Avalon Coins, id: 995, amount: 2805820, owner: Avalon	
+[5/1/22 12:14PM] Player picked up item: Dragon bones, id: 537, amount: 50, owner: Avalon	
+[5/1/22 12:29PM] Player picked up item: None, id: 22329, amount: 2, owner: Avalon	
+[5/1/22 12:29PM] Player picked up item: Vote scroll, id: 19670, amount: 4, owner: Avalon	
+[5/1/22 12:29PM] Player picked up item: Progressive Reward Box, id: 10025, amount: 8, owner: Avalon	
+[5/1/22 12:29PM] Player picked up item: Vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[5/1/22 12:29PM] Player picked up item: None, id: 22329, amount: 2, owner: Avalon	
+[5/1/22 12:29PM] Player picked up item: None, id: 22329, amount: 2, owner: Avalon	
+[5/1/22 12:29PM] Player picked up item: None, id: 22329, amount: 2, owner: Avalon	
+[5/1/22 12:29PM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[5/1/22 12:30PM] Player picked up item: Special Bones, id: 2026, amount: 100, owner: Avalon	
+[5/1/22 12:31PM] Player picked up item: Vote scroll, id: 19670, amount: 4, owner: Avalon	
+[5/1/22 12:31PM] Player picked up item: Vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[5/1/22 12:31PM] Player picked up item: Progressive Reward Box, id: 10025, amount: 6, owner: Avalon	
+[5/2/22 12:29AM] Player picked up item: Pet fragment, id: 19000, amount: 20, owner: Avalon	
+[5/2/22 12:29AM] Player picked up item: Upgrade Tokens, id: 12855, amount: 20000, owner: Avalon	
+[5/2/22 12:29AM] Player picked up item: PVM ticket, id: 5022, amount: 20000, owner: Avalon	
+[5/3/22 12:59AM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[5/3/22 10:49AM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 1, owner: Avalon	
+[5/4/22 03:36AM] Player picked up item: Master Treasure Key, id: 23107, amount: 499915, owner: Avalon	
+[5/4/22 11:43AM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/4/22 11:43AM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/4/22 11:43AM] Player picked up item: Upgrade Tokens, id: 12855, amount: 10000, owner: Avalon	
+[5/4/22 11:43AM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/4/22 11:46AM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/4/22 11:46AM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/4/22 11:46AM] Player picked up item: Upgrade Tokens, id: 12855, amount: 10000, owner: Avalon	
+[5/4/22 11:46AM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/4/22 12:07PM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/4/22 12:07PM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 1, owner: Avalon	
+[5/4/22 12:07PM] Player picked up item: Dragonballz Bones, id: 2025, amount: 6, owner: Avalon	
+[5/4/22 12:07PM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/4/22 12:07PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 20000, owner: Avalon	
+[5/4/22 12:07PM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/4/22 12:34PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 20000, owner: Avalon	
+[5/4/22 12:34PM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/4/22 12:34PM] Player picked up item: Dragonballz Bones, id: 2025, amount: 6, owner: Avalon	
+[5/4/22 12:34PM] Player picked up item: $1 Scroll, id: 10946, amount: 1, owner: Avalon	
+[5/4/22 12:34PM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/4/22 12:34PM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/4/22 12:37PM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/4/22 12:37PM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 1, owner: Avalon	
+[5/4/22 12:37PM] Player picked up item: Dragonballz Bones, id: 2025, amount: 6, owner: Avalon	
+[5/4/22 12:37PM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/4/22 12:37PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 20000, owner: Avalon	
+[5/4/22 12:37PM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/4/22 12:39PM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/4/22 12:39PM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/4/22 12:39PM] Player picked up item: Dragonballz Bones, id: 2025, amount: 6, owner: Avalon	
+[5/4/22 12:39PM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/4/22 12:39PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 20000, owner: Avalon	
+[5/4/22 12:40PM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/4/22 12:40PM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/4/22 12:40PM] Player picked up item: Dragonballz Bones, id: 2025, amount: 6, owner: Avalon	
+[5/4/22 12:40PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 20000, owner: Avalon	
+[5/4/22 12:43PM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/4/22 12:43PM] Player picked up item: Dragonballz Bones, id: 2025, amount: 6, owner: Avalon	
+[5/4/22 12:43PM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 1, owner: Avalon	
+[5/4/22 12:43PM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/4/22 12:43PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 20000, owner: Avalon	
+[5/4/22 12:43PM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/5/22 04:32PM] Player picked up item: Bones, id: 526, amount: 1, owner: Avalon	
+[5/5/22 04:32PM] Player picked up item: Bones, id: 526, amount: 1, owner: Avalon	
+[5/5/22 08:09PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:10PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:10PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:10PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:10PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:10PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:11PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:11PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:11PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:11PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:11PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:11PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:11PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:18PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:18PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:19PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:19PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:19PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:19PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:20PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:20PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:21PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:21PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:21PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:23PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:23PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:23PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:24PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:24PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:25PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:25PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:25PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:25PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:29PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:29PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:30PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:30PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:30PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:30PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:30PM] Player picked up item: Dagon'hai hat, id: 14499, amount: 1, owner: Avalon	
+[5/5/22 08:31PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:31PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:33PM] Player picked up item: Spade, id: 952, amount: 1, owner: Avalon	
+[5/5/22 08:34PM] Player picked up item: Spade, id: 952, amount: 1, owner: Avalon	
+[5/5/22 08:37PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:38PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:40PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:40PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:41PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:41PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:44PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/5/22 08:44PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:46PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:48PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 08:48PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/5/22 10:14PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/6/22 01:33AM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/6/22 03:54PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/6/22 03:54PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/6/22 03:54PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/8/22 07:17AM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/8/22 07:17AM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/8/22 01:21PM] Player picked up item: Avalon Coins, id: 995, amount: 2034, owner: Avalon	
+[5/8/22 01:21PM] Player picked up item: Dragon bones, id: 537, amount: 1, owner: Avalon	
+[5/8/22 03:00PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/8/22 03:01PM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/8/22 06:44PM] Player picked up item: PvM Box, id: 7956, amount: 1, owner: Avalon	
+[5/8/22 11:33PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 500000000, owner: Avalon	
+[5/8/22 11:33PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 500000000, owner: Avalon	
+[5/9/22 12:32AM] Player picked up item: PVM ticket, id: 5022, amount: 100, owner: Avalon	
+[5/9/22 12:32AM] Player picked up item: Avalon Tokens, id: 10835, amount: 500, owner: Avalon	
+[5/9/22 08:55PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 2000, owner: Avalon	
+[5/10/22 12:05AM] Player picked up item: OVERPOWERED CHEST, id: 20488, amount: 1, owner: Avalon	
+[5/10/22 12:09AM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/10/22 12:09AM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/10/22 12:09AM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/10/22 12:10AM] Player picked up item: Upgrade Tokens, id: 12855, amount: 10000, owner: Avalon	
+[5/10/22 06:25PM] Player picked up item: Elite dragonbone, id: 18830, amount: 1, owner: Avalon	
+[5/10/22 06:30PM] Player picked up item: PVM ticket, id: 5022, amount: 35, owner: Avalon	
+[5/10/22 06:30PM] Player picked up item: Elite dragonbone, id: 18830, amount: 1, owner: Avalon	
+[5/10/22 06:30PM] Player picked up item: Elite dragonbone, id: 18830, amount: 1, owner: Avalon	
+[5/11/22 11:50AM] Player picked up item: PvM box, id: 7956, amount: 1, owner: Avalon	
+[5/12/22 10:20AM] Player picked up item: Upgrade Token, id: 12855, amount: 743065408, owner: Avalon	
+[5/13/22 03:09AM] Player picked up item: Picture, id: 11000, amount: 1, owner: Avalon	
+[5/13/22 07:43PM] Player picked up item: Onyx Casket, id: 14999, amount: 92, owner: Avalon	
+[5/13/22 08:28PM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/13/22 08:28PM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/13/22 08:28PM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/13/22 08:28PM] Player picked up item: Upgrade Token, id: 12855, amount: 10000, owner: Avalon	
+[5/13/22 08:43PM] Player picked up item: PVM ticket, id: 5022, amount: 2000, owner: Avalon	
+[5/13/22 08:43PM] Player picked up item: Global Boss token, id: 23229, amount: 2, owner: Avalon	
+[5/13/22 08:43PM] Player picked up item: Upgrade Token, id: 12855, amount: 10000, owner: Avalon	
+[5/13/22 08:43PM] Player picked up item: Crystal key, id: 989, amount: 4, owner: Avalon	
+[5/13/22 08:55PM] Player picked up item: AFK ticket, id: 5020, amount: 10000, owner: Avalon	
+[5/13/22 08:55PM] Player picked up item: Summoning charm box, id: 20481, amount: 1, owner: Avalon	
+[5/13/22 08:55PM] Player picked up item: Upgrade Token pack (5k), id: 15290, amount: 1, owner: Avalon	
+[5/13/22 08:55PM] Player picked up item: Lazycat bones, id: 2023, amount: 3, owner: Avalon	
+[5/14/22 05:21PM] Player picked up item: PVM ticket, id: 5022, amount: 100, owner: Avalon	
+[5/16/22 12:12PM] Player picked up item: PVM ticket, id: 5022, amount: 10, owner: Avalon	
+[5/16/22 12:36PM] Player picked up item: PVM ticket, id: 5022, amount: 10, owner: Avalon	
+[5/16/22 01:07PM] Player picked up item: PVM ticket, id: 5022, amount: 10, owner: Avalon	
+[5/16/22 01:11PM] Player picked up item: PVM ticket, id: 5022, amount: 20, owner: Avalon	
+[5/16/22 02:05PM] Player picked up item: PVM ticket, id: 5022, amount: 20, owner: Avalon	
+[5/16/22 02:09PM] Player picked up item: PVM ticket, id: 5022, amount: 10, owner: Avalon	
+[5/16/22 02:09PM] Player picked up item: PVM ticket, id: 5022, amount: 10, owner: Avalon	
+[5/16/22 02:09PM] Player picked up item: PVM ticket, id: 5022, amount: 10, owner: Avalon	
+[5/16/22 02:09PM] Player picked up item: PVM ticket, id: 5022, amount: 10, owner: Avalon	
+[5/16/22 02:09PM] Player picked up item: PVM ticket, id: 5022, amount: 10, owner: Avalon	
+[5/16/22 02:09PM] Player picked up item: PVM ticket, id: 5022, amount: 30, owner: Avalon	
+[5/18/22 08:33AM] Player picked up item: Antique lamp, id: 11137, amount: 20, owner: Avalon	
+[5/18/22 10:37AM] Player picked up item: PVM ticket, id: 5022, amount: 100, owner: Avalon	
+[5/18/22 10:37AM] Player picked up item: Avalon token, id: 10835, amount: 500, owner: Avalon	
+[5/18/22 09:44PM] Player picked up item: Vote scroll, id: 23020, amount: 2, owner: Avalon	
+[5/19/22 11:13AM] Player picked up item: Webby legs, id: 19472, amount: 1, owner: Avalon	
+[5/19/22 11:13AM] Player picked up item: Webby legs, id: 19472, amount: 1, owner: Avalon	
+[5/19/22 11:15AM] Player picked up item: Webby legs, id: 19472, amount: 1, owner: Avalon	
+[5/19/22 11:16AM] Player picked up item: Webby legs, id: 19472, amount: 1, owner: Avalon	
+[5/21/22 07:52PM] Player picked up item: Upgrade Token, id: 12855, amount: 1000, owner: Avalon	
+[5/21/22 07:52PM] Player picked up item: PVM ticket, id: 5022, amount: 500, owner: Avalon	
+[5/21/22 07:53PM] Player picked up item: PVM ticket, id: 5022, amount: 500, owner: Avalon	
+[5/21/22 07:53PM] Player picked up item: Upgrade Token, id: 12855, amount: 1000, owner: Avalon	
+[5/21/22 07:53PM] Player picked up item: Pet fragment, id: 19000, amount: 1, owner: Avalon	
+[5/25/22 05:51PM] Player picked up item: Spade, id: 952, amount: 1, owner: Avalon	
+[5/25/22 06:54PM] Player picked up item: Spade, id: 952, amount: 1, owner: Avalon	
+[5/25/22 10:26PM] Player picked up item: Spade, id: 952, amount: 1, owner: Avalon	
+[5/25/22 10:45PM] Player picked up item: Spade, id: 952, amount: 1, owner: Avalon	
+[5/25/22 10:46PM] Player picked up item: Spade, id: 952, amount: 1, owner: Avalon	
+[5/26/22 10:41PM] Player picked up item: PVM ticket, id: 5022, amount: 5, owner: Avalon	
+[5/26/22 10:41PM] Player picked up item: PVM ticket, id: 5022, amount: 9, owner: Avalon	
+[5/26/22 11:39PM] Player picked up item: PVM ticket, id: 5022, amount: 75, owner: Avalon	
+[5/26/22 11:41PM] Player picked up item: PVM ticket, id: 5022, amount: 75, owner: Avalon	
+[5/27/22 01:07AM] Player picked up item: PVM ticket, id: 5022, amount: 500, owner: Avalon	
+[5/27/22 01:07AM] Player picked up item: Pet fragment, id: 19000, amount: 1, owner: Avalon	
+[5/27/22 01:07AM] Player picked up item: Upgrade Token, id: 12855, amount: 1000, owner: Avalon	
+[5/27/22 01:07AM] Player picked up item: PvM box, id: 7956, amount: 15, owner: Avalon	
+[5/27/22 01:08AM] Player picked up item: PVM ticket, id: 5022, amount: 500, owner: Avalon	
+[5/27/22 01:08AM] Player picked up item: Pet fragment, id: 19000, amount: 1, owner: Avalon	
+[5/27/22 01:08AM] Player picked up item: Upgrade Token, id: 12855, amount: 1000, owner: Avalon	
+[5/29/22 05:42PM] Player picked up item: Elite dragon bones, id: 18830, amount: 1, owner: Avalon	
+[5/29/22 05:44PM] Player picked up item: Upgrade Token, id: 12855, amount: 100, owner: Avalon	
+[5/29/22 10:21PM] Player picked up item: PVM ticket, id: 5022, amount: 45, owner: Avalon	
+[5/29/22 10:22PM] Player picked up item: PVM ticket, id: 5022, amount: 45, owner: Avalon	
+[5/29/22 10:22PM] Player picked up item: Upgrade Token, id: 12855, amount: 350, owner: Avalon	
+[5/29/22 10:23PM] Player picked up item: PVM ticket, id: 5022, amount: 45, owner: Avalon	
+[5/29/22 10:23PM] Player picked up item: PVM ticket, id: 5022, amount: 180, owner: Avalon	
+[5/29/22 10:23PM] Player picked up item: PVM ticket, id: 5022, amount: 90, owner: Avalon	
+[5/29/22 10:23PM] Player picked up item: Fury shark, id: 17817, amount: 3, owner: Avalon	
+[5/29/22 10:23PM] Player picked up item: PVM ticket, id: 5022, amount: 45, owner: Avalon	
+[5/30/22 02:03PM] Player picked up item: Upgrade Token pack (100k), id: 15288, amount: 1, owner: Avalon	
+[5/30/22 02:03PM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 1, owner: Avalon	
+[5/30/22 02:03PM] Player picked up item: Global Boss token, id: 23229, amount: 4, owner: Avalon	
+[5/30/22 02:03PM] Player picked up item: Grand mystery box, id: 19114, amount: 4, owner: Avalon	
+[5/30/22 02:03PM] Player picked up item: Antique lamp, id: 11137, amount: 20, owner: Avalon	
+[5/30/22 02:03PM] Player picked up item: Upgrade Token, id: 12855, amount: 11063, owner: Avalon	
+[5/30/22 02:05PM] Player picked up item: Upgrade Token, id: 12855, amount: 21856, owner: Avalon	
+[5/30/22 02:05PM] Player picked up item: Grand mystery box, id: 19114, amount: 8, owner: Avalon	
+[5/30/22 02:05PM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 3, owner: Avalon	
+[5/30/22 02:05PM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[5/30/22 02:05PM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[5/30/22 02:15PM] Player picked up item: Grand mystery box, id: 19114, amount: 6, owner: Avalon	
+[5/30/22 02:15PM] Player picked up item: Global Boss token, id: 23229, amount: 6, owner: Avalon	
+[5/30/22 02:15PM] Player picked up item: Antique lamp, id: 11137, amount: 20, owner: Avalon	
+[5/30/22 02:15PM] Player picked up item: Upgrade Token, id: 12855, amount: 21103, owner: Avalon	
+[5/30/22 02:26PM] Player picked up item: Upgrade Token, id: 12855, amount: 10887, owner: Avalon	
+[5/30/22 02:26PM] Player picked up item: Grand mystery box, id: 19114, amount: 4, owner: Avalon	
+[5/30/22 02:26PM] Player picked up item: Emerald Casket, id: 15003, amount: 1, owner: Avalon	
+[5/30/22 02:26PM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 1, owner: Avalon	
+[5/30/22 02:26PM] Player picked up item: Global Boss token, id: 23229, amount: 4, owner: Avalon	
+[5/30/22 02:26PM] Player picked up item: Antique lamp, id: 11137, amount: 20, owner: Avalon	
+[5/30/22 02:32PM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 2, owner: Test	
+[5/30/22 02:32PM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Test	
+[5/30/22 02:32PM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Test	
+[5/30/22 02:32PM] Player picked up item: Upgrade Token, id: 12855, amount: 22354, owner: Test	
+[5/30/22 02:32PM] Player picked up item: Grand mystery box, id: 19114, amount: 8, owner: Test	
+[5/31/22 11:15PM] Player picked up item: vote Mystery Box, id: 15501, amount: 3, owner: Avalon	
+[5/31/22 11:15PM] Player picked up item: Global Boss token, id: 23229, amount: 6, owner: Avalon	
+[5/31/22 11:15PM] Player picked up item: Vote scroll, id: 23020, amount: 3, owner: Avalon	
+[5/31/22 11:15PM] Player picked up item: Antique lamp, id: 11137, amount: 30, owner: Avalon	
+[5/31/22 11:15PM] Player picked up item: Special bones, id: 2026, amount: 75, owner: Avalon	
+[5/31/22 11:15PM] Player picked up item: Progressive reward box, id: 10025, amount: 5, owner: Avalon	
+[5/31/22 11:16PM] Player picked up item: vote Mystery Box, id: 15501, amount: 3, owner: Avalon	
+[5/31/22 11:16PM] Player picked up item: Global Boss token, id: 23229, amount: 6, owner: Avalon	
+[5/31/22 11:16PM] Player picked up item: Vote scroll, id: 23020, amount: 3, owner: Avalon	
+[5/31/22 11:16PM] Player picked up item: Antique lamp, id: 11137, amount: 30, owner: Avalon	
+[5/31/22 11:16PM] Player picked up item: Special bones, id: 2026, amount: 75, owner: Avalon	
+[5/31/22 11:16PM] Player picked up item: Progressive reward box, id: 10025, amount: 6, owner: Avalon	
+[5/31/22 11:22PM] Player picked up item: vote Mystery Box, id: 15501, amount: 2, owner: Avalon	
+[5/31/22 11:22PM] Player picked up item: Progressive reward box, id: 10025, amount: 3, owner: Avalon	
+[5/31/22 11:22PM] Player picked up item: 100% DR Scroll (30 Min), id: 15358, amount: 1, owner: Avalon	
+[5/31/22 11:22PM] Player picked up item: Global Boss token, id: 23229, amount: 4, owner: Avalon	
+[5/31/22 11:23PM] Player picked up item: Vote scroll, id: 23020, amount: 2, owner: Avalon	
+[5/31/22 11:32PM] Player picked up item: vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[5/31/22 11:32PM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[5/31/22 11:32PM] Player picked up item: Vote scroll, id: 23020, amount: 4, owner: Avalon	
+[5/31/22 11:32PM] Player picked up item: Special bones, id: 2026, amount: 100, owner: Avalon	
+[5/31/22 11:32PM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[5/31/22 11:32PM] Player picked up item: Progressive reward box, id: 10025, amount: 6, owner: Avalon	
+[6/1/22 12:45AM] Player picked up item: vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[6/1/22 12:45AM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[6/1/22 12:45AM] Player picked up item: Vote scroll, id: 23020, amount: 4, owner: Avalon	
+[6/1/22 12:45AM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[6/1/22 12:45AM] Player picked up item: Special bones, id: 2026, amount: 100, owner: Avalon	
+[6/1/22 12:45AM] Player picked up item: Progressive reward box, id: 10025, amount: 8, owner: Avalon	
+[6/1/22 12:45AM] Player picked up item: OP Mystery box, id: 20488, amount: 2, owner: Avalon	
+[6/1/22 12:59AM] Player picked up item: vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[6/1/22 12:59AM] Player picked up item: 2X Damage Scroll (30 Min), id: 15359, amount: 2, owner: Avalon	
+[6/1/22 12:59AM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[6/1/22 12:59AM] Player picked up item: Vote scroll, id: 23020, amount: 4, owner: Avalon	
+[6/1/22 12:59AM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[6/1/22 12:59AM] Player picked up item: Special bones, id: 2026, amount: 100, owner: Avalon	
+[6/1/22 12:59AM] Player picked up item: Progressive reward box, id: 10025, amount: 8, owner: Avalon	
+[6/1/22 01:02AM] Player picked up item: vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[6/1/22 01:02AM] Player picked up item: Progressive reward box, id: 10025, amount: 4, owner: Avalon	
+[6/1/22 01:02AM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[6/1/22 01:02AM] Player picked up item: Vote scroll, id: 23020, amount: 4, owner: Avalon	
+[6/1/22 01:02AM] Player picked up item: Special bones, id: 2026, amount: 100, owner: Avalon	
+[6/1/22 01:02AM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[6/1/22 02:12AM] Player picked up item: Upgrade Token pack (100k), id: 15288, amount: 1, owner: Avalon	
+[6/1/22 02:12AM] Player picked up item: Antique lamp, id: 11137, amount: 20, owner: Avalon	
+[6/1/22 02:12AM] Player picked up item: Global Boss token, id: 23229, amount: 4, owner: Avalon	
+[6/1/22 02:12AM] Player picked up item: Grand mystery box, id: 19114, amount: 4, owner: Avalon	
+[6/1/22 02:12AM] Player picked up item: Upgrade Token, id: 12855, amount: 11120, owner: Avalon	
+[6/1/22 02:15AM] Player picked up item: Upgrade Token, id: 12855, amount: 11024, owner: Avalon	
+[6/1/22 02:15AM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 2, owner: Avalon	
+[6/1/22 02:15AM] Player picked up item: Grand mystery box, id: 19114, amount: 4, owner: Avalon	
+[6/1/22 02:15AM] Player picked up item: Global Boss token, id: 23229, amount: 4, owner: Avalon	
+[6/1/22 02:15AM] Player picked up item: Antique lamp, id: 11137, amount: 20, owner: Avalon	
+[6/2/22 12:32PM] Player picked up item: Upgrade Token, id: 12855, amount: 500000000, owner: Avalon	
+[6/2/22 01:28PM] Player picked up item: Super mystery box, id: 19116, amount: 4, owner: Avalon	
+[6/2/22 01:28PM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 1, owner: Avalon	
+[6/4/22 01:35AM] Player picked up item: Spade, id: 952, amount: 1, owner: Avalon	
+[6/6/22 10:51PM] Player picked up item: Arts staff, id: 22092, amount: 1, owner: Avalon	
+[6/13/22 05:40PM] Player picked up item: $1 Scroll, id: 10946, amount: 1, owner: Avalon	
+[6/15/22 02:41PM] Player picked up item: None, id: 23276, amount: 1, owner: Avalon	
+[6/15/22 04:37PM] Player picked up item: Starter Card pack, id: 23276, amount: 1, owner: Avalon
+[6/15/22 04:38PM] Player picked up item: Starter Card pack, id: 23276, amount: 1, owner: Avalon
+[6/15/22 04:38PM] Player picked up item: Starter Card pack, id: 23276, amount: 1, owner: Avalon
+[6/15/22 08:57PM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[6/15/22 08:57PM] Player picked up item: AFK ticket, id: 5020, amount: 20000, owner: Avalon	
+[6/15/22 08:57PM] Player picked up item: Upgrade Token pack (5k), id: 15290, amount: 2, owner: Avalon	
+[6/15/22 08:57PM] Player picked up item: Lazycat bones, id: 2023, amount: 9, owner: Avalon	
+[6/15/22 08:57PM] Player picked up item: Super mystery box, id: 19116, amount: 2, owner: Avalon	
+[6/15/22 08:57PM] Player picked up item: Global Boss token, id: 23229, amount: 3, owner: Avalon	
+[6/15/22 08:57PM] Player picked up item: Summoning charm box, id: 20481, amount: 2, owner: Avalon	
+[6/16/22 03:01PM] Player picked up item: Upgrade Token pack (25k), id: 15289, amount: 2, owner: Avalon	
+[6/16/22 03:01PM] Player picked up item: Antique lamp, id: 11137, amount: 30, owner: Avalon	
+[6/16/22 03:01PM] Player picked up item: Upgrade Token, id: 12855, amount: 11386, owner: Avalon	
+[6/16/22 03:01PM] Player picked up item: Global Boss token, id: 23229, amount: 4, owner: Avalon	
+[6/16/22 03:01PM] Player picked up item: Grand mystery box, id: 19114, amount: 6, owner: Avalon	
+[6/16/22 04:14PM] Player picked up item: Vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[6/16/22 04:14PM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[6/16/22 04:14PM] Player picked up item: Vote scroll, id: 23020, amount: 4, owner: Avalon	
+[6/16/22 04:14PM] Player picked up item: Special bones, id: 2026, amount: 100, owner: Avalon	
+[6/16/22 04:14PM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[6/16/22 04:14PM] Player picked up item: Progressive reward box, id: 10025, amount: 6, owner: Avalon	
+[6/16/22 04:44PM] Player picked up item: Progressive reward box, id: 10025, amount: 4, owner: Avalon	
+[6/17/22 01:56AM] Player picked up item: Zenyte Shield, id: 22117, amount: 1, owner: Avalon	
+[6/17/22 02:50AM] Player picked up item: Vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[6/17/22 02:50AM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[6/17/22 02:50AM] Player picked up item: Vote scroll, id: 23020, amount: 4, owner: Avalon	
+[6/17/22 02:50AM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[6/17/22 02:50AM] Player picked up item: Special bones, id: 2026, amount: 100, owner: Avalon	
+[6/17/22 02:50AM] Player picked up item: Progressive reward box, id: 10025, amount: 6, owner: Avalon	
+[6/18/22 03:56AM] Player picked up item: Vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[6/18/22 03:56AM] Player picked up item: $1 Scroll, id: 10946, amount: 2, owner: Avalon	
+[6/18/22 03:56AM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[6/18/22 03:56AM] Player picked up item: Vote scroll, id: 23020, amount: 4, owner: Avalon	
+[6/18/22 03:56AM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[6/18/22 03:56AM] Player picked up item: Special bones, id: 2026, amount: 100, owner: Avalon	
+[6/18/22 03:56AM] Player picked up item: Progressive reward box, id: 10025, amount: 8, owner: Avalon	
+[6/18/22 01:13PM] Player picked up item: Super mystery box, id: 19116, amount: 6, owner: Avalon	
+[6/18/22 01:13PM] Player picked up item: Grand mystery box, id: 19114, amount: 2, owner: Avalon	
+[6/18/22 05:40PM] Player picked up item: Dragon bones, id: 536, amount: 1, owner: Avalon	
+[6/18/22 05:54PM] Player picked up item: Elite dragon bones, id: 18830, amount: 2, owner: Avalon	
+[6/18/22 05:54PM] Player picked up item: Elite dragon bones, id: 18830, amount: 1, owner: Avalon	
+[6/18/22 08:43PM] Player picked up item: Elite dragon bones, id: 18830, amount: 1, owner: Avalon	
+[6/19/22 02:13AM] Player picked up item: Upgrade Token, id: 12855, amount: 6, owner: Avalon	
+[6/19/22 02:18AM] Player picked up item: OP Mystery box, id: 20488, amount: 2, owner: Avalon	
+[6/19/22 02:18AM] Player picked up item: Vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[6/19/22 02:18AM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[6/19/22 02:18AM] Player picked up item: Vote scroll, id: 23020, amount: 4, owner: Avalon	
+[6/19/22 02:24AM] Player picked up item: Upgrade Token, id: 12855, amount: 12, owner: Avalon	
+[6/19/22 07:52AM] Player picked up item: Golden precision bracelet, id: 17263, amount: 1, owner: Avalon	
+[6/20/22 11:13PM] Player picked up item: PVM ticket, id: 5022, amount: 75, owner: Avalon	
+[6/21/22 09:56PM] Player picked up item: Vote Mystery Box, id: 15501, amount: 4, owner: Avalon	
+[6/21/22 09:56PM] Player picked up item: Upgrade Token pack (5k), id: 15290, amount: 2, owner: Avalon	
+[6/21/22 09:56PM] Player picked up item: Global Boss token, id: 23229, amount: 8, owner: Avalon	
+[6/21/22 09:56PM] Player picked up item: Antique lamp, id: 11137, amount: 40, owner: Avalon	
+[6/21/22 09:56PM] Player picked up item: Vote scroll, id: 23020, amount: 4, owner: Avalon	
+[6/21/22 09:56PM] Player picked up item: Special bones, id: 2026, amount: 100, owner: Avalon	
+[6/21/22 09:56PM] Player picked up item: Progressive reward box, id: 10025, amount: 4, owner: Avalon	
+[6/21/22 10:15PM] Player picked up item: PVM ticket, id: 5022, amount: 1000, owner: Avalon	
+[6/21/22 10:15PM] Player picked up item: Third-age melee set, id: 11858, amount: 1, owner: Avalon	
+[6/23/22 04:50PM] Player picked up item: Rock, id: 19660, amount: 1, owner: Avalon	
+[6/23/22 11:41PM] Player picked up item: Owner's cape, id: 7995, amount: 1, owner: Avalon	
+[6/24/22 11:00PM] Player picked up item: Upgrade Token, id: 12855, amount: 20573, owner: Avalon	
+[6/24/22 11:00PM] Player picked up item: Upgrade Token pack (100k), id: 15288, amount: 1, owner: Avalon	
+[6/24/22 11:00PM] Player picked up item: Global Boss token, id: 23229, amount: 6, owner: Avalon	
+[6/24/22 11:00PM] Player picked up item: Grand mystery box, id: 19114, amount: 6, owner: Avalon	
+[6/24/22 11:00PM] Player picked up item: Antique lamp, id: 11137, amount: 20, owner: Avalon	
+[6/24/22 11:01PM] Player picked up item: Global Boss token, id: 23229, amount: 6, owner: Avalon	
+[6/24/22 11:01PM] Player picked up item: Upgrade Token pack (100k), id: 15288, amount: 1, owner: Avalon	
+[6/24/22 11:01PM] Player picked up item: Grand mystery box, id: 19114, amount: 6, owner: Avalon	
+[6/24/22 11:01PM] Player picked up item: Antique lamp, id: 11137, amount: 20, owner: Avalon	
+[6/24/22 11:01PM] Player picked up item: Upgrade Token, id: 12855, amount: 21047, owner: Avalon	
+[6/26/22 12:06AM] Player picked up item: Gold charm, id: 12158, amount: 8, owner: Avalon	
+[6/26/22 12:06AM] Player picked up item: Big bones, id: 532, amount: 1, owner: Avalon	
+[6/29/22 01:30PM] Player picked up item: Santa hat, id: 1050, amount: 1, owner: Avalon	
+[6/30/22 06:21PM] Player picked up item: PvM box, id: 7956, amount: 1, owner: Avalon	
+[6/30/22 06:21PM] Player picked up item: PVM ticket, id: 5022, amount: 75, owner: Avalon	
+[7/1/22 11:09AM] Player picked up item: PVM ticket, id: 5022, amount: 5000, owner: Avalon	
+[7/1/22 11:09AM] Player picked up item: Global Boss token, id: 23229, amount: 4, owner: Avalon	
+[7/1/22 11:09AM] Player picked up item: Upgrade Token, id: 12855, amount: 20000, owner: Avalon	
+[7/1/22 11:52AM] Player picked up item: PVM ticket, id: 5022, amount: 5000, owner: Avalon	
+[7/1/22 11:52AM] Player picked up item: Global Boss token, id: 23229, amount: 4, owner: Avalon	
+[7/1/22 11:52AM] Player picked up item: Upgrade Token, id: 12855, amount: 20000, owner: Avalon	
+[7/4/22 04:42AM] Player picked up item: Holy symbol, id: 4682, amount: 1, owner: Avalon	
+[7/4/22 11:55AM] Player picked up item: Holy symbol, id: 4682, amount: 1, owner: Avalon	
+[7/4/22 05:55PM] Player picked up item: Dagannoth bones, id: 6729, amount: 1, owner: Avalon	
+[7/4/22 05:55PM] Player picked up item: Dagannoth hide, id: 6155, amount: 1, owner: Avalon	
+[7/4/22 05:55PM] Player picked up item: Dagannoth bones, id: 6729, amount: 1, owner: Avalon	
+[7/4/22 06:53PM] Player picked up item: Hammer, id: 2347, amount: 1, owner: Avalon	
+[7/4/22 06:53PM] Player picked up item: Iron nails, id: 4820, amount: 5, owner: Avalon	
+[7/4/22 07:09PM] Player picked up item: Holy symbol, id: 4682, amount: 1, owner: Avalon	
+[7/4/22 07:14PM] Player picked up item: Grimy buckthorn, id: 17510, amount: 1, owner: Avalon	
+[7/4/22 07:14PM] Player picked up item: Dagannoth hide, id: 6155, amount: 1, owner: Avalon	
+[7/4/22 07:14PM] Player picked up item: Dagannoth bones, id: 6729, amount: 1, owner: Avalon	
+[7/5/22 12:47PM] Player picked up item: Elite dragon bones, id: 18830, amount: 1, owner: Avalon	
+[7/8/22 09:23AM] Player picked up item: Frost platelegs, id: 13916, amount: 1, owner: Avalon	
+[7/8/22 09:29PM] Player picked up item: Upgrade Token, id: 12855, amount: 50, owner: Avalon	
+[7/8/22 09:29PM] Player picked up item: Upgrade Token, id: 12855, amount: 50, owner: Avalon	
+[7/8/22 11:22PM] Player picked up item: Dragon bones, id: 536, amount: 2, owner: Avalon	
+[7/9/22 09:41AM] Player picked up item: None, id: 23377, amount: 1, owner: Avalon	
+[7/9/22 09:45AM] Player picked up item: None, id: 23377, amount: 1, owner: Avalon	
+[7/11/22 10:13PM] Player picked up item: PvM Box (t2), id: 22214, amount: 2, owner: Avalon	
+[7/11/22 10:13PM] Player picked up item: PVM ticket, id: 5022, amount: 200, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: Shark, id: 386, amount: 26, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 200, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: Shark, id: 386, amount: 10, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 100, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 500, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 600, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: Prayer potion (4), id: 2435, amount: 20, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 400, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PvM Box (t2), id: 22214, amount: 1, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: Prayer potion (4), id: 2435, amount: 10, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 100, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 200, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: Prayer potion (4), id: 2435, amount: 17, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: Upgrade Token, id: 12855, amount: 1000, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PvM Box (t2), id: 22214, amount: 1, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 200, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 800, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 200, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 100, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 100, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 100, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 100, owner: Avalon	
+[7/11/22 10:14PM] Player picked up item: PVM ticket, id: 5022, amount: 300, owner: Avalon	
+[7/12/22 04:10PM] Player picked up item: PVM ticket, id: 5022, amount: 2, owner: Avalon	
+[7/12/22 04:15PM] Player picked up item: PvM box, id: 7956, amount: 4, owner: Avalon	
+[7/12/22 04:15PM] Player picked up item: Mystery box, id: 6199, amount: 2, owner: Avalon	
+[7/12/22 04:19PM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[7/12/22 04:19PM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[7/12/22 04:19PM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[7/12/22 04:20PM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[7/12/22 04:31PM] Player picked up item: PVM ticket, id: 5022, amount: 2, owner: Avalon	
+[7/12/22 04:35PM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[7/12/22 04:36PM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[7/12/22 04:42PM] Player picked up item: PVM ticket, id: 5022, amount: 200, owner: Avalon	
+[7/12/22 04:42PM] Player picked up item: Upgrade Token, id: 12855, amount: 2000, owner: Avalon	
+[7/12/22 05:21PM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[7/12/22 05:21PM] Player picked up item: PVM ticket, id: 5022, amount: 2, owner: Avalon	
+[7/12/22 05:31PM] Player picked up item: Crystal key, id: 989, amount: 2, owner: Avalon	
+[7/12/22 05:31PM] Player picked up item: PvM box, id: 7956, amount: 2, owner: Avalon	
+[7/12/22 05:35PM] Player picked up item: PVM ticket, id: 5022, amount: 2, owner: Avalon	
+[7/12/22 05:43PM] Player picked up item: Elite dragon bones, id: 18830, amount: 2, owner: Avalon	
+[7/12/22 05:43PM] Player picked up item: PVM ticket, id: 5022, amount: 70, owner: Avalon	
+[7/12/22 05:44PM] Player picked up item: Elite dragon bones, id: 18830, amount: 2, owner: Avalon	
+[7/12/22 05:44PM] Player picked up item: Elite dragon bones, id: 18830, amount: 2, owner: Avalon	
+[7/12/22 05:44PM] Player picked up item: PVM ticket, id: 5022, amount: 70, owner: Avalon	
+[7/12/22 05:45PM] Player picked up item: Elite dragon bones, id: 18830, amount: 2, owner: Avalon	
+[7/12/22 05:45PM] Player picked up item: Upgrade Token, id: 12855, amount: 500, owner: Avalon	
+[7/12/22 05:45PM] Player picked up item: Upgrade Token, id: 12855, amount: 500, owner: Avalon	

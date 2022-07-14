@@ -1,0 +1,2 @@
+[5/25/22 09:04PM] Player picked up item: Spade, id: 952, amount: 1, owner: Newlyl	
+[5/25/22 09:05PM] Player picked up item: Spade, id: 952, amount: 1, owner: Newlyl	

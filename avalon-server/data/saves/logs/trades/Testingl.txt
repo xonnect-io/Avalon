@@ -1,0 +1,8 @@
+[4/26/22 02:16PM] Received item from Avalon. Name: Ruthless helm. Id: 23139, amount: 1	
+[4/26/22 02:16PM] Received item from Avalon. Name: Owner's Aura. Id: 22111, amount: 1	
+[4/26/22 02:16PM] Received item from Avalon. Name: Ruthless body. Id: 23140, amount: 1	
+[4/26/22 02:16PM] Received item from Avalon. Name: Ruthless bow. Id: 23144, amount: 1	
+[4/26/22 02:16PM] Received item from Avalon. Name: Ruthless boots. Id: 23143, amount: 1	
+[4/26/22 02:16PM] Received item from Avalon. Name: Ruthless legs. Id: 23141, amount: 1	
+[4/26/22 02:16PM] Received item from Avalon. Name: Collector ring III. Id: 18818, amount: 1	
+[4/26/22 02:16PM] Received item from Avalon. Name: Upgraded Owner's Cape. Id: 22109, amount: 1	

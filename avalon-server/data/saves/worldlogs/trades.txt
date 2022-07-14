@@ -1,0 +1,39 @@
+
+[4/19/22 12:19AM]  [ Avalon ] Gave item to Donator. Name: Upgrade Tokens. Id: 12855, amount: 67045	
+[4/19/22 12:19AM]  [ Donator ] Received item from Avalon. Name: Upgrade Tokens. Id: 12855, amount: 67045	
+[4/26/22 01:32PM]  [ Test ] Gave item to Testing. Name: Owner's cape. Id: 7995, amount: 1	
+[4/26/22 01:32PM]  [ Test ] Gave item to Testing. Name: Avatar titan boots. Id: 19945, amount: 1	
+[4/26/22 01:32PM]  [ Test ] Gave item to Testing. Name: Avatar titan cape. Id: 19944, amount: 1	
+[4/26/22 01:32PM]  [ Test ] Gave item to Testing. Name: Avatar titan gloves. Id: 19946, amount: 1	
+[4/26/22 01:32PM]  [ Test ] Gave item to Testing. Name: Ruby blade. Id: 23200, amount: 1	
+[4/26/22 01:32PM]  [ Test ] Gave item to Testing. Name: Emerald blade. Id: 23198, amount: 1	
+[4/26/22 01:32PM]  [ Test ] Gave item to Testing. Name: Diamond blade. Id: 23201, amount: 1	
+[4/26/22 01:32PM]  [ Testing ] Received item from Test. Name: Owner's cape. Id: 7995, amount: 1	
+[4/26/22 01:32PM]  [ Testing ] Received item from Test. Name: Avatar titan boots. Id: 19945, amount: 1	
+[4/26/22 01:32PM]  [ Testing ] Received item from Test. Name: Avatar titan cape. Id: 19944, amount: 1	
+[4/26/22 01:32PM]  [ Testing ] Received item from Test. Name: Avatar titan gloves. Id: 19946, amount: 1	
+[4/26/22 01:32PM]  [ Testing ] Received item from Test. Name: Ruby blade. Id: 23200, amount: 1	
+[4/26/22 01:32PM]  [ Testing ] Received item from Test. Name: Emerald blade. Id: 23198, amount: 1	
+[4/26/22 01:32PM]  [ Testing ] Received item from Test. Name: Diamond blade. Id: 23201, amount: 1	
+[4/26/22 02:16PM]  [ Avalon ] Gave item to Testingl. Name: Ruthless helm. Id: 23139, amount: 1	
+[4/26/22 02:16PM]  [ Avalon ] Gave item to Testingl. Name: Owner's Aura. Id: 22111, amount: 1	
+[4/26/22 02:16PM]  [ Avalon ] Gave item to Testingl. Name: Ruthless body. Id: 23140, amount: 1	
+[4/26/22 02:16PM]  [ Avalon ] Gave item to Testingl. Name: Ruthless bow. Id: 23144, amount: 1	
+[4/26/22 02:16PM]  [ Avalon ] Gave item to Testingl. Name: Ruthless boots. Id: 23143, amount: 1	
+[4/26/22 02:16PM]  [ Avalon ] Gave item to Testingl. Name: Ruthless legs. Id: 23141, amount: 1	
+[4/26/22 02:16PM]  [ Avalon ] Gave item to Testingl. Name: Collector ring III. Id: 18818, amount: 1	
+[4/26/22 02:16PM]  [ Avalon ] Gave item to Testingl. Name: Upgraded Owner's Cape. Id: 22109, amount: 1	
+[4/26/22 02:16PM]  [ Testingl ] Received item from Avalon. Name: Ruthless helm. Id: 23139, amount: 1	
+[4/26/22 02:16PM]  [ Testingl ] Received item from Avalon. Name: Owner's Aura. Id: 22111, amount: 1	
+[4/26/22 02:16PM]  [ Testingl ] Received item from Avalon. Name: Ruthless body. Id: 23140, amount: 1	
+[4/26/22 02:16PM]  [ Testingl ] Received item from Avalon. Name: Ruthless bow. Id: 23144, amount: 1	
+[4/26/22 02:16PM]  [ Testingl ] Received item from Avalon. Name: Ruthless boots. Id: 23143, amount: 1	
+[4/26/22 02:16PM]  [ Testingl ] Received item from Avalon. Name: Ruthless legs. Id: 23141, amount: 1	
+[4/26/22 02:16PM]  [ Testingl ] Received item from Avalon. Name: Collector ring III. Id: 18818, amount: 1	
+[4/26/22 02:16PM]  [ Testingl ] Received item from Avalon. Name: Upgraded Owner's Cape. Id: 22109, amount: 1	
+[5/25/22 11:45PM]  [ Tylickett ] Gave item to Boo. Name: Treasure map. Id: 4277, amount: 1	
+[5/25/22 11:45PM]  [ Boo ] Received item from Tylickett. Name: Treasure map. Id: 4277, amount: 1	
+[5/25/22 11:45PM]  [ Boo ] Gave item to Tylickett. Name: Treasure map. Id: 4277, amount: 1	
+[5/25/22 11:45PM]  [ Boo ] Gave item to Tylickett. Name: Treasure map. Id: 4277, amount: 1	
+[5/25/22 11:45PM]  [ Tylickett ] Received item from Boo. Name: Treasure map. Id: 4277, amount: 1	
+[5/25/22 11:45PM]  [ Tylickett ] Received item from Boo. Name: Treasure map. Id: 4277, amount: 1	

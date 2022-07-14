@@ -1,0 +1,9 @@
+[5/22/22 04:47PM] Avalonl used command ::spawnloot | Player rights = DEVELOPER	
+[5/22/22 04:47PM] Avalonl used command ::spawnchest | Player rights = DEVELOPER	
+[5/22/22 04:50PM] Avalonl used command ::1master | Player rights = DEVELOPER	
+[5/22/22 04:51PM] Avalonl used command ::master | Player rights = DEVELOPER	
+[5/22/22 04:52PM] Avalonl used command ::spawnchest | Player rights = DEVELOPER	
+[5/22/22 04:52PM] Avalonl used command ::home | Player rights = DEVELOPER	
+[5/22/22 05:06PM] Avalonl used command ::1empty | Player rights = DEVELOPER	
+[5/22/22 05:06PM] Avalonl used command ::empty | Player rights = DEVELOPER	
+[5/22/22 05:06PM] Avalonl used command ::spawnchest | Player rights = DEVELOPER	

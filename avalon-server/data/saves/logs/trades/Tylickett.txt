@@ -1,0 +1,3 @@
+[5/25/22 11:45PM] Gave item to Boo. Name: Treasure map. Id: 4277, amount: 1	
+[5/25/22 11:45PM] Received item from Boo. Name: Treasure map. Id: 4277, amount: 1	
+[5/25/22 11:45PM] Received item from Boo. Name: Treasure map. Id: 4277, amount: 1	

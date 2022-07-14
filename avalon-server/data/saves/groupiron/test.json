@@ -1,0 +1,9010 @@
+{
+  "Name": "test",
+  "UniqueID": 79,
+  "Leader": "Avalongr",
+  "Members": [
+    "Avalongr"
+  ],
+  "Bank": [
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "min": 0,
+      "max": 0,
+      "rate": 0.0,
+      "announce": false,
+      "amount": 0,
+      "slot": 0
+    }
+  ]
+}

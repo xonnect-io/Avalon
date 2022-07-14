@@ -1,0 +1,2 @@
+[5/25/22 11:29PM] Player picked up item: Spade, id: 952, amount: 1, owner: Avalonol	
+[5/25/22 11:32PM] Player picked up item: Dragon bones, id: 537, amount: 4, owner: Avalonol	

@@ -1,0 +1,5 @@
+[5/25/22 11:44PM] Login. ip: 127.0.0.1, mac: K2103N008191020211125083625.000000-300, uuid: E8-F4-08-84-DE-87	
+[5/25/22 11:44PM] Picked up gr.Item Spade, amount: 1	
+[5/25/22 11:45PM] Receiving item from trade with Tylickett Id: 4277, amount: 1	
+[5/25/22 11:45PM] Gave item in trade to Tylickett. Id: 4277, amount: 1	
+[5/25/22 11:45PM] Gave item in trade to Tylickett. Id: 4277, amount: 1	

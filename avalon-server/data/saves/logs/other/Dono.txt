@@ -1,0 +1,8 @@
+[4/19/22 02:06AM] Login. ip: 127.0.0.1, mac: K2103N008191020211125083625.000000-300, uuid: E8-F4-08-84-DE-87	
+[4/19/22 02:06AM] Login. ip: 127.0.0.1, mac: K2103N008191020211125083625.000000-300, uuid: E8-F4-08-84-DE-87	
+[4/19/22 02:06AM] Emptied item (id:1153, amount:1) -- Iron full helm	
+[4/19/22 02:07AM] Has just redeemed a $10 Bond successfully!	
+[4/19/22 02:07AM] Has just redeemed a $1 Scroll successfully!	
+[4/19/22 02:08AM] Has just redeemed a $10 Bond successfully!	
+[4/19/22 02:08AM] Has just redeemed a $10 Bond successfully!	
+[4/19/22 02:08AM] Has just redeemed a $10 Bond successfully!	

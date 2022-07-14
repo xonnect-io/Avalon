@@ -1,0 +1,68 @@
+[4/19/22 12:18AM] Login. ip: 127.0.0.1, mac: K2103N008191020211125083625.000000-300, uuid: E8-F4-08-84-DE-87	
+[4/19/22 12:19AM] Receiving item from trade with Avalon Id: 12855, amount: 67045	
+[4/19/22 12:19AM] Player bought 6769 x 10 from Avalon's pos shop for 10 Avalon tokens	
+[4/19/22 12:19AM] Has just redeemed a $5 Bond successfully!	
+[4/19/22 12:19AM] Has just redeemed a $5 Bond successfully!	
+[4/19/22 12:21AM] Player bought 23057 x 4 from Avalon's pos shop for 40 Avalon tokens	
+[4/19/22 12:21AM] Has just redeemed a $10 Bond successfully!	
+[4/19/22 12:21AM] Has just redeemed a $10 Bond successfully!	
+[4/19/22 12:26AM] Login. ip: 127.0.0.1, mac: K2103N008191020211125083625.000000-300, uuid: E8-F4-08-84-DE-87	
+[4/19/22 12:26AM] Has just redeemed a $10 Bond successfully!	
+[4/19/22 12:26AM] Has just redeemed a $10 Bond successfully!	
+[4/19/22 12:28AM] Player bought 23058 x 10 from Avalon's pos shop for 10 Avalon tokens	
+[4/19/22 12:28AM] Player bought 23058 x 8 from Avalon's pos shop for 8 Avalon tokens	
+[4/19/22 12:28AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:30AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:30AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:30AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:30AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:30AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:30AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:30AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:30AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:31AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:31AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:31AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:31AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:31AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:31AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:31AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:31AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:31AM] Has just redeemed a $25 Bond successfully!	
+[4/19/22 12:32AM] Player bought 23059 x 10 from Avalon's pos shop for 10 Avalon tokens	
+[4/19/22 12:32AM] Player bought 23059 x 5 from Avalon's pos shop for 5 Avalon tokens	
+[4/19/22 12:32AM] Player bought 23059 x 4 from Avalon's pos shop for 4 Avalon tokens	
+[4/19/22 12:32AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:46AM] Login. ip: 127.0.0.1, mac: K2103N008191020211125083625.000000-300, uuid: E8-F4-08-84-DE-87	
+[4/19/22 12:46AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:46AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $100 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 12:47AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 12:48AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 12:48AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 12:48AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 12:48AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 01:46AM] Login. ip: 127.0.0.1, mac: K2103N008191020211125083625.000000-300, uuid: E8-F4-08-84-DE-87	
+[4/19/22 01:46AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 01:46AM] Has just redeemed a $250 Bond successfully!	
+[4/19/22 01:46AM] Picked up gr.Item $250 Bond, amount: 73	

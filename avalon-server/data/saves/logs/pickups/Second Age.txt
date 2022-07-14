@@ -1,0 +1,6 @@
+[3/31/22 04:10PM] Player picked up item: Avalon Coins, id: 995, amount: 4188765, owner: Avalon
+[3/31/22 04:10PM] Player picked up item: Dragon bones, id: 537, amount: 50, owner: Avalon
+[3/31/22 10:54PM] Player picked up item: Avalon Coins, id: 995, amount: 209120, owner: Avalon
+[3/31/22 11:02PM] Player picked up item: Upgrade Tokens, id: 12855, amount: 4212, owner: Avalon
+[4/2/22 12:15PM] Player picked up item: War gauntlets (T1), id: 23099, amount: 1, owner: Avalon
+[4/2/22 12:16PM] Player picked up item: War gauntlets (T2), id: 23100, amount: 1, owner: Avalon

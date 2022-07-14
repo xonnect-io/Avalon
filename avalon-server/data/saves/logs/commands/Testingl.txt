@@ -1,0 +1,2 @@
+[4/26/22 02:52PM] Testingl used command ::mypos | Player rights = PLAYER	
+[4/26/22 02:52PM] Testingl used command ::mypos | Player rights = PLAYER	

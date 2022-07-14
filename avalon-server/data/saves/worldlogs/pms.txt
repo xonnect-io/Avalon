@@ -1,0 +1,13 @@
+
+[6/13/22 01:14AM]  [ Avalon ] Sent to Divine: E  o	
+[6/13/22 01:14AM]  [ Divine ] Received from Avalon: E  o	
+[6/13/22 01:14AM]  [ Divine ] Sent to Avalon: E  o	
+[6/13/22 01:14AM]  [ Avalon ] Received from Divine: E  o	
+[7/7/22 06:44PM]  [ Avalon ] Sent to Test:  T e s t i net	
+[7/7/22 06:44PM]  [ Test ] Received from Avalon:  T e s t i net	
+[7/7/22 06:45PM]  [ Avalon ] Sent to Test:  H e l l o	
+[7/7/22 06:45PM]  [ Test ] Received from Avalon:  H e l l o	
+[7/7/22 06:45PM]  [ Avalon ] Sent to Test:  W 	
+[7/7/22 06:45PM]  [ Test ] Received from Avalon:  W 	
+[7/7/22 06:45PM]  [ Avalon ] Sent to Test:  N a me   i s	
+[7/7/22 06:45PM]  [ Test ] Received from Avalon:  N a me   i s	

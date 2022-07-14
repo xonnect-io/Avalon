@@ -1,0 +1,5 @@
+[5/18/22 09:14PM] Sugary used command ::voted | Player rights = PLAYER	
+[5/18/22 09:15PM] Sugary used command ::voted | Player rights = PLAYER	
+[5/18/22 09:15PM] Sugary used command ::voted | Player rights = PLAYER	
+[5/18/22 09:15PM] Sugary used command ::claim | Player rights = PLAYER	
+[5/18/22 09:16PM] Sugary used command ::voted | Player rights = PLAYER	

@@ -1,0 +1,57 @@
+
+[3/31/22 10:54PM]  [ Avalon ] Player dropped item: Avalon Coins, id: 995, amount: 209120
+[3/31/22 11:02PM]  [ Avalon ] Player dropped item: Upgrade Tokens, id: 12855, amount: 4212
+[4/1/22 07:55PM]  [ Avalon ] Player dropped item: Iron full helm, id: 1153, amount: 1
+[4/1/22 07:55PM]  [ Avalon ] Player dropped item: Iron full helm, id: 1154, amount: 1
+[4/1/22 07:55PM]  [ Avalon ] Player dropped item: Yogifus body, id: 9251, amount: 1
+[4/7/22 10:37PM]  [ Test ] Player dropped item: Shortbow, id: 841, amount: 1	
+[4/17/22 11:03PM]  [ Avalon ] Player dropped item: Starter legs, id: 8328, amount: 1	
+[4/17/22 11:03PM]  [ Avalon ] Player dropped item: Magic staff, id: 23026, amount: 1	
+[4/20/22 11:58PM]  [ Test ] Player dropped item: Onyx fragments, id: 23208, amount: 1	
+[4/26/22 01:29PM]  [ Test ] Player dropped item: Owner's cape, id: 7995, amount: 1	
+[4/26/22 01:30PM]  [ Test ] Player dropped item: Zenyte blade, id: 23203, amount: 1	
+[4/26/22 07:09PM]  [ Avalon ] Player dropped item: Heavy chainsaw, id: 22080, amount: 1	
+[4/26/22 09:54PM]  [ Avalon ] Player dropped item: Tormented tentacle, id: 18686, amount: 1	
+[4/30/22 01:17PM]  [ Avalon ] Player dropped item: Belligerent legs, id: 11423, amount: 1	
+[4/30/22 01:17PM]  [ Avalon ] Player dropped item: Elite Sword (AoE), id: 8410, amount: 1	
+[4/30/22 01:17PM]  [ Avalon ] Player dropped item: Avalon Crossbow, id: 8088, amount: 1	
+[4/30/22 10:25PM]  [ Avalon ] Player dropped item: Satanic hell legs, id: 13304, amount: 1	
+[5/3/22 10:49AM]  [ Avalon ] Player dropped item: Upgrade Token pack (25k), id: 15289, amount: 1	
+[5/4/22 03:36AM]  [ Avalon ] Player dropped item: Master Treasure Key, id: 23107, amount: 499915	
+[5/5/22 08:30PM]  [ Avalon ] Player dropped item: Dagon'hai hat, id: 14499, amount: 1	
+[5/8/22 11:33PM]  [ Avalon ] Player dropped item: Upgrade Tokens, id: 12855, amount: 500000000	
+[5/8/22 11:33PM]  [ Avalon ] Player dropped item: Upgrade Tokens, id: 12855, amount: 500000000	
+[5/12/22 10:20AM]  [ Avalon ] Player dropped item: Upgrade Token, id: 12855, amount: 743065408	
+[5/13/22 03:09AM]  [ Avalon ] Player dropped item: Picture, id: 11000, amount: 1	
+[5/13/22 07:43PM]  [ Avalon ] Player dropped item: Onyx Casket, id: 14999, amount: 92	
+[5/18/22 09:41PM]  [ Avalon ] Player dropped item: Vote scroll, id: 23020, amount: 6	
+[5/18/22 09:43PM]  [ Avalon ] Player dropped item: Vote scroll, id: 23020, amount: 2	
+[5/19/22 11:13AM]  [ Avalon ] Player dropped item: Webby legs, id: 19472, amount: 1	
+[5/19/22 11:13AM]  [ Avalon ] Player dropped item: Webby legs, id: 19472, amount: 1	
+[5/19/22 11:14AM]  [ Avalon ] Player dropped item: Webby legs, id: 19472, amount: 1	
+[5/19/22 11:16AM]  [ Avalon ] Player dropped item: Webby legs, id: 19472, amount: 1	
+[5/19/22 11:21AM]  [ Avalon ] Player dropped item: Webby body, id: 19473, amount: 1	
+[5/19/22 11:22AM]  [ Avalon ] Player dropped item: Webby legs, id: 19472, amount: 1	
+[5/19/22 11:22AM]  [ Avalon ] Player dropped item: Webby helmet, id: 19811, amount: 1	
+[6/2/22 12:32PM]  [ Avalon ] Player dropped item: Upgrade Token, id: 12855, amount: 500000000	
+[6/6/22 10:51PM]  [ Avalon ] Player dropped item: Arts staff, id: 22092, amount: 1	
+[6/15/22 02:41PM]  [ Avalon ] Player dropped item: None, id: 23276, amount: 1	
+[6/15/22 04:37PM]  [ Avalon ] Player dropped item: Starter Card pack, id: 23276, amount: 1
+[6/15/22 04:37PM]  [ Avalon ] Player dropped item: Starter Card pack, id: 23276, amount: 1
+[6/15/22 04:38PM]  [ Avalon ] Player dropped item: Starter Card pack, id: 23276, amount: 1
+[6/17/22 01:56AM]  [ Avalon ] Player dropped item: Zenyte Shield, id: 22117, amount: 1	
+[6/17/22 02:26AM]  [ Avalon ] Player dropped item: Chest key (custom key), id: 11795, amount: 1	
+[6/19/22 07:52AM]  [ Avalon ] Player dropped item: Golden precision bracelet, id: 17263, amount: 1	
+[6/23/22 04:50PM]  [ Avalon ] Player dropped item: Rock, id: 19660, amount: 1	
+[6/23/22 11:41PM]  [ Avalon ] Player dropped item: Owner's cape, id: 7995, amount: 1	
+[7/4/22 12:00PM]  [ Avalon ] Player dropped item: Ghostspeak amulet, id: 552, amount: 1	
+[7/4/22 12:01PM]  [ Avalon ] Player dropped item: Ghostspeak amulet, id: 552, amount: 1	
+[7/4/22 12:01PM]  [ Avalon ] Player dropped item: Ghostspeak amulet, id: 552, amount: 1	
+[7/4/22 02:42PM]  [ Avalon ] Player dropped item: Ghostspeak amulet, id: 552, amount: 1	
+[7/6/22 08:13PM]  [ Avalon ] Player dropped item: None, id: 23354, amount: 1	
+[7/8/22 09:23AM]  [ Avalon ] Player dropped item: Frost platelegs, id: 13916, amount: 1	
+[7/8/22 09:29PM]  [ Avalon ] Player dropped item: Upgrade Token, id: 12855, amount: 50	
+[7/8/22 09:29PM]  [ Avalon ] Player dropped item: Upgrade Token, id: 12855, amount: 50	
+[7/8/22 11:41PM]  [ Avalon ] Player dropped item: Upgraded collectors necklace, id: 23090, amount: 1	
+[7/9/22 09:41AM]  [ Avalon ] Player dropped item: None, id: 23377, amount: 1	
+[7/9/22 09:45AM]  [ Avalon ] Player dropped item: None, id: 23377, amount: 1	
