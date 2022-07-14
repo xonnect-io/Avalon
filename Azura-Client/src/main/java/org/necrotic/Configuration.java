@@ -1,45 +1,32 @@
 package org.necrotic;
 
 public class Configuration {
-	/**
-	 * Client Dimensions
-	 */		
-	public static int 
-		clientSize = 0,
-		clientWidth = 765,
-		clientHeight = 503;
-	
-	public static int getClientWidth() {
-		return clientWidth;
+
+
+	public static boolean localHost = true;
+
+	public final static String SERVER_HOST() {
+		return localHost ? "127.0.0.1" : "51.81.49.184";
 	}
-	
-	public static int getClientHeight() {
-		return clientHeight;
-	}
-	
-	public static final boolean IS_RUNNING_WINDOWS = true;
-	public static boolean DISPLAY_PRESTIGES = true;
+
+	public final static int SERVER_PORT = 9420;
+
 	public final static int CLIENT_VERSION = 3;
-	public static boolean localHost = false;
+
+	public final static String CLIENT_NAME = "Avalon";
+	public final static String CACHE_DIRECTORY_NAME = "." + CLIENT_NAME;
+	public static final String SETTINGS_DIRECTORY_NAME = "." + Configuration.CLIENT_NAME + "_data";
 	public static final boolean FORCE_CACHE_UPDATE = true;
+
+	public static final boolean IS_RUNNING_WINDOWS = true;
 	public static final boolean STOP_CACHE_UPDATES = false;
 	public static final boolean DROPBOX_MODE = false;
-	public final static String CLIENT_NAME = "Avalon";
-	public final static String CACHE_DIRECTORY_NAME = ".Avalon";
-	public static final String SETTINGS_DIRECTORY_NAME = ".Avalon_data";
 	public final static boolean JAGCACHED_ENABLED = false;
 	public final static String JAGCACHED_HOST = "";
-	public final static int SERVER_PORT = 9420;
-	public final static boolean DISPLAY_GAMEWORLD_ON_LOGIN = false;
+	public static boolean DISPLAY_PRESTIGES = false;
 	public final static int NPC_BITS = 18;
 	public static final boolean SEND_HASH = true;
-	public static final int[] REPACK_INDICIES = {
-			//4
-	};
-	public static final int statMenuColor = 0x49bfff;
-	public static final boolean CTRL_HOVER_HINT = true;
 	public static final boolean USING_INTELLIJ = true;
-	
 	public static boolean SAVE_ACCOUNTS = true;
 	public static boolean DISPLAY_HP_ABOVE_HEAD = false;
 	public static boolean DISPLAY_USERNAMES_ABOVE_HEAD = false;
@@ -57,13 +44,27 @@ public class Configuration {
 	public static boolean FOG_ENABLED = false;
 	public static boolean GROUND_TEXT = true;
 	public static boolean HIGH_DETAIL = true;
-//	public static boolean hdTexturing = true;
 	public static boolean hdMinimap = true;
 	public static boolean hdShading = true;
 	public static boolean TOGGLE_ROOF_OFF = true;
 	public static boolean TOGGLE_FOV = true;
 	public static boolean DEPTH_BUFFER = false;
-	public final static String SERVER_HOST() {
-		return localHost ? "127.0.0.1" : "51.81.49.184";
+
+	public static final int[] REPACK_INDICIES = {
+			//4
+	};
+
+	public static int 
+		clientSize = 0,
+		clientWidth = 765,
+		clientHeight = 503;
+	
+	public static int getClientWidth() {
+		return clientWidth;
 	}
+	public static int getClientHeight() {
+		return clientHeight;
+	}
+	
+
 }

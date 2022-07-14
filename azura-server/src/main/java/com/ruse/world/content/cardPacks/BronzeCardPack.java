@@ -24,7 +24,7 @@ public class BronzeCardPack {
     }
     public static int cardbeingused = -1;
     public static final void openCard(Player player, int itemId) {
-        if (player.getInventory().getFreeSlots() <= 0) {
+        if (player.getInventory().getFreeSlots() < 6) {
             player.getPacketSender().sendMessage("You do not have enough free inventory slots to do this.");
             return;
         }

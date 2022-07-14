@@ -1104,7 +1104,7 @@ public class GameRenderer extends Applet implements Runnable, MouseListener, Mou
 			public void windowClosing(WindowEvent e) {
 				//if(Client.loggedIn) {
 					int result = JOptionPane.showConfirmDialog(gameFrame,
-				            "Are you sure you want to exit Avalon ?", "Exit Confirmation",
+				            "Are you sure you want to exit "+ Configuration.CLIENT_NAME+ " ?", "Exit Confirmation",
 				            JOptionPane.YES_NO_OPTION);
 				        if (result == JOptionPane.YES_OPTION) {
 				        	gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

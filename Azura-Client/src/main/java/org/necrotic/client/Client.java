@@ -1472,7 +1472,7 @@ public class Client extends GameRenderer {
                     FileUtilities.delete(Signlink.getCacheDirectory());
                 } catch (IOException e) {
                     e.printStackTrace();
-                    showErrorScreen(instance, "A fatal error occured while attempting to fix the previous loading error", "Please screenshot this message and report it to Avalon immediately", e.getMessage());
+                    showErrorScreen(instance, "A fatal error occured while attempting to fix the previous loading error", "Please screenshot this message and report it to "+ Configuration.CLIENT_NAME+ " immediately", e.getMessage());
                 }
             }
         });
@@ -8849,9 +8849,6 @@ public class Client extends GameRenderer {
         int centerY = getScreenHeight() / 2;
         // titleAlpha = 0;
         titleAlpha += titleAlpha < 250 ? 8 : 0;
-        if (Configuration.DISPLAY_GAMEWORLD_ON_LOGIN) {
-            drawAnimatedWorldBackground(true);
-        } else {
             if (titleAlpha < 250) {
                 spritesMap.get(449).drawTransparentSprite(centerX - spritesMap.get(449).myWidth / 2, centerY - spritesMap.get(449).myHeight / 2, titleAlpha);
             } else {
@@ -8991,7 +8988,6 @@ public class Client extends GameRenderer {
                 // normalText.drawText(0xffffff, "MouseX: "+mouseX+", MouseY: "+mouseY, 80,
                 // 200);
             }
-        }
 
         if (!resizing) {
             titleScreenIP.drawGraphics(canvas.getGraphics(), 0, 0);
