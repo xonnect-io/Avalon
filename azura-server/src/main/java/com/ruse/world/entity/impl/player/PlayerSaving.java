@@ -265,6 +265,9 @@ public class PlayerSaving {
 					builder.toJsonTree(player.getMinigameAttributes().getDungeoneeringAttributes().getBoundItems()));
 
 			object.add("collection-data", builder.toJsonTree(player.getCollectionLogData()));
+			object.add("collectionlog-data", builder.toJsonTree(player.getCollectionLog2().collectionLog));
+			object.add("collectionlog-data2", builder.toJsonTree(player.getCollectionLog2().collectionLogofkills));
+			object.add("collectionlog-data3", builder.toJsonTree(player.getCollectionLog2().collectionLogofrewards));
 			object.add("holy-prayers-unlocked", builder.toJsonTree(player.getUnlockedHolyPrayers()));
 
 			object.addProperty("rune-ess", new Integer(player.getStoredRuneEssence()));

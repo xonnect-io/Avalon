@@ -8,6 +8,8 @@ import com.ruse.model.Graphic;
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.world.content.osrscollectionlog.CollectionLog;
+import com.ruse.world.content.osrscollectionlog.LogType;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -49,6 +51,7 @@ public class CrystalChest {
 						CustomObjects.objectRespawnTask(p, new GameObject(173, chest.getPosition().copy(), 10, 1),
 								chest, 10);
 					}
+					LogType.MYSTERY_BOX.log(p, CollectionLog.CRYSTAL_KEY, new Item( item.getId()));
 					stop();
 					break;
 				}

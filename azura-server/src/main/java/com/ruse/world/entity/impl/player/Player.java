@@ -73,6 +73,8 @@ import com.ruse.world.content.minigames.impl.UnknownZone;
 import com.ruse.world.content.minigames.impl.VoidOfDarkness;
 import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.newspinner.MysteryBoxManager;
+import com.ruse.world.content.osrscollectionlog.CollectionLog;
+import com.ruse.world.content.osrscollectionlog.LogType;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.properscratchcard.Scratchcard;
 import com.ruse.world.content.quests.QuestInterfaceHandler;
@@ -113,7 +115,33 @@ import java.util.concurrent.CopyOnWriteArrayList;
 //import com.ruse.mysql.Hiscores;
 
 public class Player extends Character {
+    public static int BARROWS_CHESTS_OPENED, CALLISTOS_KILLED,DONATOR_MYSTERY_BOXES_OPENED,CRYSTAL_KEYS_OPENED,RAIDS_COMPLETED, CHAOS_ELEMENTALS_KILLED ;
+    public static boolean BARROWS_KEY_LOG_CLAIMED,CALLISTO_LOG_CLAIMED,DONATOR_MYSTERY_BOX_LOG_CLAIMED,CRYSTAL_KEY_LOG_CLAIMED,RAIDS_LOG_CLAIMED, CHAOS_ELEMENTAL_LOG_CLAIMED;
+    private final CollectionLog collectionLog2 = new CollectionLog(this);
 
+    public CollectionLog getCollectionLog2() {
+        return collectionLog2;
+    }
+    public com.ruse.world.content.osrscollectionlog.Collection logwerechecking;
+    public com.ruse.world.content.osrscollectionlog.Collection getLogtoCheck() {
+        return logwerechecking;
+    }
+    public com.ruse.world.content.osrscollectionlog.Collection setLogtoCheck(com.ruse.world.content.osrscollectionlog.Collection log){
+        logwerechecking = log;
+        return logwerechecking;
+    }
+    public LogType logtype;
+
+    /**
+     * what log type were viewing like bosses, mystery boxes, etc
+     * @param logType
+     */
+    public void setCollectionLogOpen(LogType logType) {
+        logtype = logType;
+    }
+    public LogType getCollectionLogOpen(){
+        return logtype;
+    }
     @Getter
     @Setter
     private ArrayList<String> offences = new ArrayList<>();

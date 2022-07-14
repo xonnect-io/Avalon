@@ -1301,14 +1301,20 @@ public class DialogueOptions {
                     }
                     break;
                 case 66668://yes
+                    player.getPacketSender().sendInterfaceRemoval();
+                    if(player.isunlockedseasonpass()){
+                        player.sendMessage("You have already unlocked the season pass!");
+                        return;
+
+                    }
                     if (player.getInventory().contains(23275)) {
                         player.getInventory().delete(23275,1);
                         player.setunlockedseasonpass(true);
                         player.sendMessage("You have unlocked the season pass!");
+                        player.getSeasonPass().checkforprevioustiers();
                     } else {
                         player.sendMessage("You do not have a season pass.");
                     }
-                    player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 668://yes
                     if(player.getSlayer().getSlayerTask() == null) {

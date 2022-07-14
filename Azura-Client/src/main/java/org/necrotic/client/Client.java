@@ -7949,10 +7949,18 @@ public class Client extends GameRenderer {
                                         } else if (atInventoryInterfaceType != 0 && atInventoryIndex == i3 && atInventoryInterface == childInterface.id) {
                                             selectedItem.drawSprite1(k5, j6);
                                         } else {
+
                                             if (childInterface.id == 30375 && childInterface.invStackSizes[i3] == 0) {
                                                 selectedItem.drawSpriteWithOpacity(k5, j6, 75);
                                             } else {
-                                                if (itemOpacity == 256) {
+                                                if ( childInterface.id == 61026) {
+                                                    if (childInterface.invStackSizes[i3] == 0) {
+                                                        selectedItem.drawSpriteWithOpacity(k5, j6, 90);
+                                                    } else {
+                                                        selectedItem.drawSprite(k5,j6);
+                                                    }
+                                                }
+                                                else if (itemOpacity == 256) {
                                                     selectedItem.drawSprite(k5, j6);
                                                 } else {
                                                     selectedItem.drawSpriteWithOpacity(k5, j6, itemOpacity);

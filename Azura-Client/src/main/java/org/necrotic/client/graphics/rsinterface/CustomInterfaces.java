@@ -4132,7 +4132,81 @@ public class CustomInterfaces extends RSInterface {
 		list.width = 174;
 		list.scrollMax = 1405;
 	}
+	public static void collectionLog(TextDrawingArea[] advancedFonts) {
+		RSInterface tab = addInterface(61000);
+		addSprite(61001, 1731);
+		addText(61002, "Collection Log", advancedFonts, 2, 0xff981f, true, true);
 
+		String[] tabNames = {"Bosses", "Mboxes", "Keys", "Other"};
+
+		for (int i = 0; i < tabNames.length; ++i) {
+			addConfigButton(61003 + i, 61000, 1732, 1733, 96, 20, "View "+tabNames[i], i, 5, 1106);
+			addText(61008 + i, tabNames[i], advancedFonts, 1, 0xff981f, false, true);
+		}
+
+		addText(61015, "barrows", advancedFonts, 2, 0xff981f, false, true);
+		addText(61016, "Obtained: <col=ff0000>0/9", advancedFonts, 0, 0xff981f, false, true);
+		addText(61017, "barrows kills: <col=ffffff>1", advancedFonts, 0, 0xff981f, false, true);
+		addHoverButton(24502, CLOSE_BUTTON, CLOSE_BUTTON, 21, 21, "Close", 250, 24503, 3);
+		addHoveredButton(24503, CLOSE_BUTTON_HOVER, CLOSE_BUTTON_HOVER, 21, 21, 24504);
+		addSprite(61018,1734);
+		addText(61019, "Rewards for completing the collection log:", advancedFonts, 0, 0xff981f, false, true);
+		addHoverButton(61020,1735, 70, 39, "Collect", 0, 61021, 1);
+		addHoveredButton(61021, 1736, 70, 39, 858);
+		addText(61023, "Claim", advancedFonts, 2, 0xff981f, false, true);
+
+		addToItemGroup(61024, 5, 1, 7, 5, false, new String[]{null, null, null, null, null});
+
+		int x = 10, y = 10, child = 0;
+		tab.totalChildren(23);
+		tab.child(child++, 61001, x, y);
+
+		tab.child(child++, 61002, 250+x, 10+y);
+		tab.child(child++, 24502, 476+x, 10+y);
+		tab.child(child++, 24503, 476+x, 10+y);
+		for (int i = 0; i < tabNames.length; ++i) {
+			tab.child(child++, 61003 + i, 10+x+(i * 83), 34+y);
+			tab.child(child++, 61008 + i, 14+x+(i * 85), 37+y);
+		}
+		tab.child(child++, 61025, 214+x, 98+y);
+		tab.child(child++, 61050, 11+x, 58+y);
+		tab.child(child++, 61015, 216+x, 57+y);
+		tab.child(child++, 61016, 216+x, 81+y);
+		tab.child(child++, 61017, 380,90);
+		tab.child(child++, 61018, 216+x, 255+y);
+		tab.child(child++, 61019, 216+x, 242+y);
+		tab.child(child++, 61020, 415+x, 259+y);
+		tab.child(child++, 61021, 415+x, 259+y);
+		tab.child(child++, 61023, 432+x, 276+y);
+		tab.child(child++, 61024, 222+x, 260+y);
+
+		RSInterface items = addInterface(61025);
+
+		addToItemGroup(61026, 6, 35, 10, 5, false, new String[]{null, null, null, null, null});
+
+		items.totalChildren(1);
+
+
+		items.child(0, 61026, 5, 5);
+		items.width = 500;
+		items.height = 155;
+		items.scrollMax = 800;
+
+		RSInterface scroll = addInterface(61050);
+		scroll.totalChildren(150);
+		for (int i = 0; i < 50; ++i) {
+			addHoverButton(61051 + i, i % 2 == 0 ? 1739 : 1738, 186, 15, "", -1, 61101 + i, 1);
+			addHoveredButton(61101 + i, 1737, 186, 15, 61049);
+			addText(61151 + i, "barrows", advancedFonts, 1, 0xff981f, false, true);
+			scroll.child(i, 61051 + i, 0, i * 15);
+			scroll.child(i + 50, 61101 + i, 0, i * 15);
+			scroll.child(i + 100, 61151 + i, 2, y-10);
+			y+= 15;
+		}
+		scroll.width = 186;
+		scroll.height = 243;
+		scroll.scrollMax = 750;
+	}
 	private void redoSpellBooks() {
 		RSInterface newInterface = addTabInterface(11000);
 		RSInterface spellButtons = interfaceCache[1151];
@@ -7511,7 +7585,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		clanChatTabInterface();
 		configureLunar();
 		redoSpellBooks();
-
+		collectionLog(tda);
 		shopInterface();
 		bankInterface();
 		playerPanelv3();

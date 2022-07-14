@@ -24,6 +24,7 @@ import com.ruse.world.content.dailytasks_new.TaskChallenge;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.groupironman.IronmanGroup;
+import com.ruse.world.content.osrscollectionlog.Collection;
 import com.ruse.world.content.skill.SkillManager.Skills;
 import com.ruse.world.content.skill.impl.slayer.SlayerMaster;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
@@ -274,7 +275,30 @@ public class PlayerLoading {
                 }.getType();
                 player.setCollectionLogData(new Gson().fromJson(reader.get("collection-data"), collectionLogType));
             }
+            if (reader.has("collectionlog-data")) {
+                HashMap<Collection, ArrayList<Item>>collectionlog = builder.fromJson(reader.get("collectionlog-data"),
 
+                        new TypeToken<HashMap<Collection, ArrayList<Item>>>() {
+                        }.getType());
+                player.getCollectionLog2().collectionLog = collectionlog;
+
+            }
+            if (reader.has("collectionlog-data2")) {
+                HashMap<Collection, Integer>collectionlog2 = builder.fromJson(reader.get("collectionlog-data2"),
+
+                        new TypeToken<HashMap<Collection, Integer>>() {
+                        }.getType());
+                player.getCollectionLog2().collectionLogofkills= collectionlog2;
+
+            }
+            if (reader.has("collectionlog-data3")) {
+                HashMap<Collection, Boolean>collectionlog3 = builder.fromJson(reader.get("collectionlog-data3"),
+
+                        new TypeToken<HashMap<Collection, Boolean>>() {
+                        }.getType());
+                player.getCollectionLog2().collectionLogofrewards= collectionlog3;
+
+            }
             if (reader.has("holy-prayers-unlocked")) {
                 player.setUnlockedHolyPrayers(
                         builder.fromJson(reader.get("holy-prayers-unlocked").getAsJsonArray(), boolean[].class));

@@ -12,8 +12,11 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.osrscollectionlog.CollectionLog;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+
+import static com.ruse.world.content.osrscollectionlog.LogType.BOSSES;
 
 /**
  * Handles the Barrows minigame and it's objects, npcs, etc.
@@ -258,7 +261,10 @@ public class Barrows {
 					player.getPacketSender()
 							.sendMessage("<img=5><col=009966><shad=0> Congratulations! You've just received "
 									+ ItemDefinition.forId(b).getName() + " from Barrows!");
+					BOSSES.log(player, CollectionLog.BARROWS_KEY, new Item(b));
 				}
+
+
 				int coffin = Misc.getRandom(250);
 				if (coffin == 1 || (player.getRights().isMember() && coffin == 2)
 						|| player.getUsername().equalsIgnoreCase("debug")) {

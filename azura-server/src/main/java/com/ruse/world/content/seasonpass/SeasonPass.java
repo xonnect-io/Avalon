@@ -3,8 +3,10 @@ package com.ruse.world.content.seasonpass;
 
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.world.content.dialogue.Dialogue;
+import com.ruse.world.content.dialogue.DialogueExpression;
 import com.ruse.world.content.dialogue.DialogueManager;
-import com.ruse.world.content.minigames.impl.YesNoDialogue;
+import com.ruse.world.content.dialogue.DialogueType;
 import com.ruse.world.entity.impl.player.Player;
 
 public class SeasonPass {
@@ -28,10 +30,41 @@ public class SeasonPass {
 	}
 
 	public void UnlockGoldSeasonPass(){
-		DialogueManager.start(player, new YesNoDialogue(player, "Unlock season pass?" ,"", 66668));
+		DialogueManager.start(player, new Dialogue() {
 
+			@Override
+			public DialogueType type() {
+				return DialogueType.OPTION;
+			}
+
+			@Override
+			public DialogueExpression animation() {
+				return null;
+			}
+
+			@Override
+			public String[] dialogue() {
+
+				return new String[]{"Unlock season pass", "Cancel"};
+			}
+
+			@Override
+			public void specialAction() {
+				player.setDialogueActionId(66668);
+			}
+
+		});
 	}
-
+	/**
+	 * previous tier rewards added when you use the season pass
+	 */
+	public void checkforprevioustiers() {
+		for(int i = 0; i <= getTier(); i++){
+			player.getBank(0).add(PassRewards.memberRewards[i].getId(),PassRewards.memberRewards[i].getAmount());
+		}
+		player.sendMessage("The previous tier rewards have been added to your bank!");
+		openInterface();
+	}
 	public static int getSpriteByXp(int xp){
 		int spriteId = 1690;//blank
 		switch(xp){

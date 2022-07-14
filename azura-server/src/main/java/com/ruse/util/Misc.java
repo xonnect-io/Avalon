@@ -14,7 +14,6 @@ import com.ruse.world.content.combat.CombatContainer.ContainerHit;
 import com.ruse.world.entity.impl.player.Player;
 import org.jboss.netty.buffer.ChannelBuffer;
 
-import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.nio.ByteBuffer;
@@ -26,7 +25,6 @@ import java.security.SecureRandom;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.time.ZonedDateTime;
-import java.util.List;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
@@ -967,25 +965,6 @@ public class Misc {
         return false;
     }
 
-    // This and below from
-    // https://www.rune-server.ee/runescape-development/rs2-client/tools/589900-rs2-hsb-color-picker.html
-    public static int RGB_to_RS2HSB(int red, int green, int blue) {
-        float[] HSB = Color.RGBtoHSB(red, green, blue, null);
-        float hue = (HSB[0]);
-        float saturation = (HSB[1]);
-        float brightness = (HSB[2]);
-        int encode_hue = (int) (hue * 63); // to 6-bits
-        int encode_saturation = (int) (saturation * 7); // to 3-bits
-        int encode_brightness = (int) (brightness * 127); // to 7-bits
-        return (encode_hue << 10) + (encode_saturation << 7) + (encode_brightness);
-    }
-
-    public static int RS2HSB_to_RGB(int RS2HSB) {
-        int decode_hue = (RS2HSB >> 10) & 0x3f;
-        int decode_saturation = (RS2HSB >> 7) & 0x07;
-        int decode_brightness = (RS2HSB & 0x7f);
-        return Color.HSBtoRGB((float) decode_hue / 63, (float) decode_saturation / 7, (float) decode_brightness / 127);
-    }
 
     public static String getColorBasedOnValue(int value) {
         if (value > 100000000) // 100m

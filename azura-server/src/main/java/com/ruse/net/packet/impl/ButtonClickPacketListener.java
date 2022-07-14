@@ -54,6 +54,7 @@ import com.ruse.world.content.loyalty_streak.LoyaltyStreakManager;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.PestControl;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
+import com.ruse.world.content.osrscollectionlog.CollectionLogButtons;
 import com.ruse.world.content.polling.PollCreation;
 import com.ruse.world.content.polling.PollManager;
 import com.ruse.world.content.raids.RaidsParty;
@@ -84,7 +85,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.ruse.model.Skill.*;
-import static com.ruse.model.Skill.SUMMONING;
 
 /**
  * This packet listener manages a button that the player has clicked upon.
@@ -140,7 +140,9 @@ public class ButtonClickPacketListener implements PacketListener {
         if (PossibleLootInterface.handleButton(player, id)) {
             return;
         }
-
+        if(CollectionLogButtons.onButtonClick(player, id)) {
+            return;
+        }
         if (player.getAchievementInterface() != null && player.getAchievementInterface().handleButton(id)) {
             return;
         }

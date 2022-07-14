@@ -54,6 +54,7 @@ import com.ruse.world.content.holidayevents.easter2017;
 import com.ruse.world.content.minigames.impl.DissolveAllDialogue;
 import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
+import com.ruse.world.content.osrscollectionlog.CollectionLog;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.randomevents.LootChest;
@@ -74,8 +75,8 @@ import com.ruse.world.entity.impl.player.Player;
 import com.ruse.world.entity.impl.player.PlayerSaving;
 import com.ruse.world.instance.TestInstance;
 import com.world.content.globalBoss.merk.MerkSpawn;
-import mysql.impl.Store;
 import mysql.impl.FoxVote;
+import mysql.impl.Store;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -84,6 +85,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.*;
+
+import static com.ruse.world.content.osrscollectionlog.LogType.BOSSES;
 
 /**
  * This packet listener manages commands a player uses by using the command
@@ -121,6 +124,21 @@ public class CommandPacketListener implements PacketListener {
             Position pos = new Position(2910, 4699);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Summer Event!");
+        }
+        if (command[0].equalsIgnoreCase("collectionlog")) {
+            player.getCollectionLog2().open(BOSSES);
+        }
+        if (command[0].equalsIgnoreCase("barrowslog")) {
+            Item item = new Item(4710);
+
+            BOSSES.log(player, CollectionLog.BARROWS_KEY, item);
+            player.getCollectionLog2().open(BOSSES);
+        }
+        if (command[0].equalsIgnoreCase("logkill")) {
+
+            int npcid = Integer.parseInt(command[1]);
+            player.getCollectionLog2().registerkill(npcid);
+
         }
         if (command[0].equalsIgnoreCase("dissolveall")) {
         int price = 0;
@@ -411,9 +429,7 @@ public class CommandPacketListener implements PacketListener {
         }
 */
 
-        if (command[0].equalsIgnoreCase("collection") || command[0].equalsIgnoreCase("collectionlog")) {
-            player.getCollectionLog().open();
-        }
+
 
         if (command[0].equalsIgnoreCase("whatdrops")) {
             try {
