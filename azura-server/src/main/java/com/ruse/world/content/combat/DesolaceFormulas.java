@@ -647,6 +647,7 @@ public class DesolaceFormulas {
     }
 
     public static int getMagicAttack(Player plr) {
+
         // boolean voidEquipment = EquipmentBonus.wearingVoid(plr);//,
         // CombatType.MAGIC);
         int magicLevel = plr.getSkillManager().getCurrentLevel(Skill.MAGIC);
@@ -664,6 +665,11 @@ public class DesolaceFormulas {
         } else if (plr.getPrayerActive()[PrayerHandler.DESTRUCTION]) {
             magicLevel *= 1.25;
         }
+
+        if (plr.getMagicianMaster() == true) {
+            magicLevel *=1.3;
+        }
+
         if (EquipmentBonus.voidMage(plr)) {
             magicLevel *= 1.3;
             if (plr.getCurrentClanChat() != null && plr.getCurrentClanChat().getName().equalsIgnoreCase("Debug")) {
@@ -847,6 +853,7 @@ public class DesolaceFormulas {
             damageMultiplier += .10;
         }
 
+
         damage *= damageMultiplier;
 
         if (maxHit > 0) {
@@ -933,6 +940,9 @@ public class DesolaceFormulas {
         }
 
 
+        if (p.getMagicianMaster() == true) {
+            damage *=1.2;
+        }
         if (p.getEquipment().contains(20591)) {
             damage *= 2;
             if (p.isOpMode() || p.isGodMode())

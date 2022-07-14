@@ -6147,7 +6147,7 @@
   },
   {
     "id": 277,
-    "name": "Fire Warrior of Lesarkus",
+    "name": "Lesarkus Warrior",
     "examine": "Intimidating!",
     "combat": 84,
     "size": 1,
@@ -42399,7 +42399,7 @@
   },
   {
     "id": 1914,
-    "name": "Dessous",
+    "name": "Vampire warrior",
     "examine": "Vampire warrior of Zamorak.",
     "combat": 139,
     "size": 1,
@@ -140244,7 +140244,7 @@
     "attackBonus": 400,
     "defenceMelee": 5,
     "defenceRange": 5,
-    "defenceMage": 5
+    "defenceMage": 9999999
   },
       {
     "id": 9117,
@@ -140258,7 +140258,7 @@
     "poisonous": false,
     "respawn": 5,
     "maxHit": 300,
-    "hitpoints": 500000,
+    "hitpoints": 750000,
     "attackSpeed": 6,
     "attackAnim": 12028,
     "defenceAnim": 404,
@@ -140266,7 +140266,7 @@
     "attackBonus": 400,
     "defenceMelee": 5,
     "defenceRange": 5,
-    "defenceMage": 5
+    "defenceMage": 9999999
   },
       {
     "id": 9118,
@@ -140280,7 +140280,7 @@
     "poisonous": false,
     "respawn": 5,
     "maxHit": 300,
-    "hitpoints": 500000,
+    "hitpoints": 1000000,
     "attackSpeed": 6,
     "attackAnim": 12028,
     "defenceAnim": 404,
@@ -140288,7 +140288,7 @@
     "attackBonus": 400,
     "defenceMelee": 5,
     "defenceRange": 5,
-    "defenceMage": 5
+    "defenceMage": 9999999
   },
     {
     "id": 9007,

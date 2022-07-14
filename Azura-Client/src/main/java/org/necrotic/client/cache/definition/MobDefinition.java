@@ -241,6 +241,41 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				break;
 
+			case 13456:
+				definition.name = "Ancient Warrior";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = 0;
+				break;
+
+			case 277:
+				definition.name = "Lesarkus Warrior";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 115;
+				definition.scaleY = 115;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = 0;
+				break;
+
+			case 1914:
+				definition.name = "Vampire Warrior";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = 0;
+				break;
 			case 9116:
 				definition.name = "Faceless Magician";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -251,6 +286,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 140;
 				definition.scaleY = 140;
 				definition.drawYellowDotOnMap = true;
+				definition.headIcon = 2;
 				break;
 
 			case 9117:
@@ -263,6 +299,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 140;
 				definition.scaleY = 140;
 				definition.drawYellowDotOnMap = true;
+				definition.headIcon = 2;
 				break;
 
 			case 9118:
@@ -275,6 +312,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 140;
 				definition.scaleY = 140;
 				definition.drawYellowDotOnMap = true;
+				definition.headIcon = 2;
 				break;
 
 

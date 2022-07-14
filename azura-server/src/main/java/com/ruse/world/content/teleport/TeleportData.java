@@ -165,6 +165,9 @@ public enum TeleportData {
 	MAGIC_GUILD(28314, 28314, 28314, 28238, "Magic Guild", "Magic Guild",
 			"@or1@Health: @whi@500,000"," ","",  TeleportCategory.MINIGAMES, new Position(2204, 4511, 0), -1, false, 9116, -1,
 			new int[][] {{23368, 1}, {23299, 1}, {23367, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1,1}, {-1,1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, -1}, {-1, -1}},500),
+	WARRIOR_GUILD(28315, 28315, 28315, 28239, "Warrior Guild", "Warrior Guild",
+			"@or1@Health: @whi@1,000,000"," ","",  TeleportCategory.MINIGAMES, new Position(1948, 4191, 0), -1, false, 277, -1,
+			new int[][] {{23368, 1}, {23299, 1}, {23367, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1,1}, {-1,1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, -1}, {-1, -1}},400),
 
 	/*
 	 * Dungeons
@@ -191,7 +194,7 @@ public enum TeleportData {
 			new int[][] {{23229, 1}, {12855, 10_000}, {5022, 1000},{989, 2},{2025, 3},{6769, 1},{10946, 3},{10946, 1},{11314, 1},{13323, 1}, {13324, 1}, {13325, 1}, {13326, 1}, {13327, 1}, {-1, -1}, {-1, -1}, {-1, -1}},1150),
 
 	AFK_BOSS(28308, 28308, 28308, 28232, "Afk boss", "Afk boss",
-			"@or1@Health:@whi@ 75,000,000", "@or1@To Spawn:@whi@ " + AfkSystem.getLeft() + " steals left","",
+			"@or1@Health:@whi@ 75,000,000", "@or1@To Spawn:@whi@ " + AfkSystem.getLeft() + " ores left","",
 			TeleportCategory.GLOBALS, new Position(2013, 4505, 0), 79, false, 3779, -1,
 			new int[][] {{23229, 1}, {15290, 1}, {2023, 3},{20481, 1},{989, 1},{19116, 2},{19115, 10},{15288, 1},{10946, 1},{6769, 1}, {10942, 1}, {10947, 1}, {20511, 1}, {14068, 1}, {14069, 1}, {14070, 1}, {14071, 1}},1400),
 
@@ -219,7 +222,7 @@ public enum TeleportData {
 
 	DONATION_BOSS(28313, 28313, 28313, 28237, "Avalon Guardian", "Avalon Guardian",
 			"@or1@Health:@whi@ 3,000,000,000","@or1@To Spawn: @whi@" + GuardianSpawnSystem.getLeft() + " tickets left","",
-			TeleportCategory.GLOBALS, new Position(3491, 2772, 0), 79, false, 3830, -1,
+			TeleportCategory.GLOBALS, new Position(3445, 4105, 1), 79, false, 3830, -1,
 			new int[][] {{23229, 2}, {19114, 2}, {11137, 10},{12855, 10_000},{15289, 1},{15288, 1},{15003, 1},{15002, 1},{10946, 1},{6769, 1}, {10942, 1}, {14999, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1900),
 
 	IRON(28314, 28314, 28314, 28238, "Iron", "Iron",

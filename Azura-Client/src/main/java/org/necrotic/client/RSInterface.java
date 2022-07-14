@@ -1564,6 +1564,197 @@ public class RSInterface {
 		main.child(14, 77239, 342, 160);
 		main.child(15, 77251, 478, 14);
 	}
+	private static void warriorUnlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(71500);
+		addSpriteLoader(71501, 1701);
+
+		addText(71502, "Warrior Guild", tda, 2, 0xff8624, true, true);
+
+		addText(71503, "Information", tda, 2, 0xff8624, true, true);
+		addText(71504, "Requirements", tda, 2, 0xff8624, true, true);
+		addText(71505, "The Guild is a completion Minigame", tda, 1, 0xff8624, false, true);
+		addText(71506, "There is three tiers of the Guild", tda, 1, 0xff8624, false, true);
+		addText(71507, "You need requirements for each tier", tda, 1, 0xff8624, false, true);
+		addText(71508, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
+		addText(71509, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
+		addText(71510, "@red@Tier 3 Magician", tda, 1, 0xff8624, false, true);
+		addText(71511, "@red@x1 Owner Fragment(s)", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(71512, 1445, 132, 29, "Sacrifice", -1, 71513, 1);
+		addHoveredImageWSpriteLoader(71513, 1446, 132, 29, 71514);
+
+		addText(71515, "Sacrifice", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(71516, 714, "Close Window", 16, 16);
+
+		main.totalChildren(15);
+		main.child(0, 71501, 125, 35);
+		main.child(1, 71502, 250, 42);
+		main.child(2, 71503, 250, 65);
+		main.child(3, 71504, 250, 175);
+		main.child(4, 71505, 142, 85);
+		main.child(5, 71506, 142, 100);
+		main.child(6, 71507, 142, 115);
+		main.child(7, 71508, 142, 130);
+		main.child(8, 71509, 142, 145);
+		main.child(9, 71510, 142, 197);
+		main.child(10, 71511, 142, 212);
+		main.child(11, 71512, 189, 248);
+		main.child(12, 71513, 189, 248);
+		main.child(13, 71515, 250, 255);
+		main.child(14, 71516, 355, 38);
+	}
+	private static void warriorTier1Unlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(71520);
+		addSpriteLoader(71521, 1702);
+
+		addText(71522, "Warrior Guild", tda, 2, 0xff8624, true, true);
+		addText(71523, "Information", tda, 2, 0xff8624, true, true);
+		addText(71524, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
+		addText(71525, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
+		addText(71526, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
+		addText(71527, "@red@- 50,000 Lesarkus Warrior KC", tda, 1, 0xff8624, false, true);
+		addText(71528, "@red@- Sacrifice a Dark weapon", tda, 1, 0xff8624, false, true);
+		addSpriteLoader(71538, 1659);
+		addSpriteLoader(71539, 1658);
+		addSpriteLoader(71540, 1658);
+		addSpriteLoader(71541, 1704);
+		addSpriteLoader(71542, 1704);
+		addText(71529, "Tier 1", tda, 1, 0xff8624, false, true);
+		addText(71530, "Lesarkus Blade", tda, 1, 0xff8624, false, true);
+		addText(71531, "Tier 2", tda, 1, 0xff8624, false, true);
+		addText(71537, "Tier 3", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(71532, 1445, 132, 29, "Sacrifice", -1, 71533, 1);
+		addHoveredImageWSpriteLoader(71533, 1446, 132, 29, 71534);
+		addText(71535, "Level Up", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(71536, 714, "Close Window", 16, 16);
+		main.totalChildren(21);
+		main.child(0, 71521, 125, 35);
+		main.child(1, 71522, 250, 42);
+		main.child(2, 71523, 250, 95);
+		main.child(3, 71524, 250, 215);
+		main.child(4, 71525, 142, 120);
+		main.child(5, 71526, 142, 150);
+		main.child(6, 71527, 142, 165);
+		main.child(7, 71528, 142, 180);
+		main.child(8, 71538, 135, 60);
+		main.child(9, 71539, 213, 60);
+		main.child(10, 71540, 293, 60);
+		main.child(11, 71541, 262, 63);
+		main.child(12, 71542, 340, 63);
+		main.child(13, 71529, 142, 64);
+		main.child(14, 71530, 142, 233);
+		main.child(15, 71531, 218, 64);
+		main.child(16, 71532, 189, 279);
+		main.child(17, 71533, 189, 279);
+		main.child(18, 71535, 252, 287);
+		main.child(19, 71536, 355, 38);
+		main.child(20, 71537, 298, 64);
+	}
+
+	private static void warriorTier2Unlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(71560);
+		addSpriteLoader(71561, 1702);
+
+		addText(71562, "Warriors Guild", tda, 2, 0xff8624, true, true);
+
+		addText(71563, "Information", tda, 2, 0xff8624, true, true);
+		addText(71564, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
+		addText(71565, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
+		addText(71566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
+		addText(71567, "@red@- 100,000 Vampire Warrior KC", tda, 1, 0xff8624, false, true);
+		addText(71568, "@red@- Sacrifice a Blood weapon", tda, 1, 0xff8624, false, true);
+
+
+
+		addSpriteLoader(71578, 1658);
+		addSpriteLoader(71579, 1659);
+		addSpriteLoader(71580, 1658);
+		addSpriteLoader(71582, 1704);
+
+
+		addText(71569, "Tier 1", tda, 1, 0xff8624, false, true);
+		addText(71570, "Gemstone Kaseki", tda, 1, 0xff8624, false, true);
+		addText(71571, "Tier 2", tda, 1, 0xff8624, false, true);
+		addText(71577, "Tier 3", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(71572, 1445, 132, 29, "Level Up", -1, 71573, 1);
+		addHoveredImageWSpriteLoader(71573, 1446, 132, 29, 71574);
+		addText(71575, "Level Up", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(71576, 714, "Close Window", 16, 16);
+
+		main.totalChildren(20);
+		main.child(0, 71561, 125, 35);
+		main.child(1, 71562, 250, 42);
+		main.child(2, 71563, 250, 95);
+		main.child(3, 71564, 250, 215);
+		main.child(4, 71565, 142, 120);
+		main.child(5, 71566, 142, 150);
+		main.child(6, 71567, 142, 165);
+		main.child(7, 71568, 142, 180);
+		main.child(8, 71578, 135, 60);
+		main.child(9, 71579, 213, 60);
+		main.child(10, 71580, 293, 60);
+		main.child(11, 71582, 340, 63);
+		main.child(12, 71569, 142, 64);
+		main.child(13, 71570, 142, 233);
+		main.child(14, 71571, 218, 64);
+		main.child(15, 71572, 189, 279);
+		main.child(16, 71573, 189, 279);
+		main.child(17, 71575, 252, 287);
+		main.child(18, 71576, 355, 38);
+		main.child(19, 71577, 298, 64);
+	}
+
+
+	private static void warriorTier3Unlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(80560);
+		addSpriteLoader(80561, 1702);
+
+		addText(80562, "Warrior Guild", tda, 2, 0xff8624, true, true);
+
+		addText(80563, "Information", tda, 2, 0xff8624, true, true);
+		addText(80564, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
+		addText(80565, "Next Tier: @whi@Warrior Master", tda, 1, 0xff8624, false, true);
+		addText(80566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
+		addText(80567, "@red@- 150,000 Ancient Warrior KC", tda, 1, 0xff8624, false, true);
+		addText(80568, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
+
+
+		addSpriteLoader(80578, 1658);
+		addSpriteLoader(80579, 1658);
+		addSpriteLoader(80580, 1659);
+		addText(80569, "Tier 1", tda, 1, 0xff8624, false, true);
+		addText(80570, "20% Permanent Melee Dmg Boost", tda, 1, 0xff8624, false, true);
+		addText(80571, "Tier 2", tda, 1, 0xff8624, false, true);
+		addText(80577, "Tier 3", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(80572, 1445, 132, 29, "Level Up", -1, 80573, 1);
+		addHoveredImageWSpriteLoader(80573, 1446, 132, 29, 80574);
+		addText(80575, "Level Up", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(80576, 714, "Close Window", 16, 16);
+
+		main.totalChildren(19);
+		main.child(0, 80561, 125, 35);
+		main.child(1, 80562, 250, 42);
+		main.child(2, 80563, 250, 95);
+		main.child(3, 80564, 250, 215);
+		main.child(4, 80565, 142, 120);
+		main.child(5, 80566, 142, 150);
+		main.child(6, 80567, 142, 165);
+		main.child(7, 80568, 142, 180);
+
+
+		main.child(8, 80578, 135, 60);
+		main.child(9, 80579, 213, 60);
+		main.child(10, 80580, 293, 60);
+
+		main.child(11, 80569, 142, 64);
+		main.child(12, 80570, 142, 233);
+		main.child(13, 80571, 218, 64);
+		main.child(14, 80572, 189, 279);
+		main.child(15, 80573, 189, 279);
+		main.child(16, 80575, 252, 287);
+		main.child(17, 80576, 355, 38);
+		main.child(18, 80577, 298, 64);
+	}
+
 	private static void magicianUnlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(77130);
 		addSpriteLoader(77131, 1701);
@@ -1716,7 +1907,7 @@ public class RSInterface {
 		addSpriteLoader(77549, 1658);
 		addSpriteLoader(77550, 1659);
 		addText(77539, "Tier 1", tda, 1, 0xff8624, false, true);
-		addText(77540, "20% Permanent Damage Boost", tda, 1, 0xff8624, false, true);
+		addText(77540, "20% Permanent Magic Dmg Boost", tda, 1, 0xff8624, false, true);
 		addText(77541, "Tier 2", tda, 1, 0xff8624, false, true);
 		addText(77547, "Tier 3", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(77542, 1445, 132, 29, "Level Up", -1, 77543, 1);
@@ -6285,6 +6476,10 @@ public class RSInterface {
 			mysteryBoxViewer(textDrawingAreas);
 			sufferingChest(textDrawingAreas);
 			magicianUnlock(textDrawingAreas);
+			warriorUnlock(textDrawingAreas);
+			warriorTier1Unlock(textDrawingAreas);
+			warriorTier2Unlock(textDrawingAreas);
+			warriorTier3Unlock(textDrawingAreas);
 			magicianPetUnlock(textDrawingAreas);
 			questInterface(textDrawingAreas);
 			prestigeInterface(textDrawingAreas);

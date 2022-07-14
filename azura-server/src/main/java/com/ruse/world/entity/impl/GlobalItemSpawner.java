@@ -47,13 +47,5 @@ public class GlobalItemSpawner {
             // 60*60 seconds (1 hr)
         }
     }
-    private static void nullCheckAndRespawn(Player player, Item item, Position pos) {
-        if (GroundItemManager.getGroundItem(player, item, pos) == null) {
-            GroundItemManager.spawnGroundItem(player,
-                    new GroundItem(item, pos, player.getUsername(), false, 60*60, false, 0)); // each player will have
-            // an instance of the
-            // shovel, will last
-            // 60*60 seconds (1 hr)
-        }
-    }
+
 }
