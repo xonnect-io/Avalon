@@ -2,8 +2,8 @@
   <artifact type="jar" name="azura-runelite:jar">
     <output-path>$PROJECT_DIR$/../..</output-path>
     <root id="archive" name="azura-runelite.jar">
-      <element id="module-output" name="avalon-runelite" />
-      <element id="module-output" name="Avalon-Client" />
+      <element id="module-output" name="azura-runelite" />
+      <element id="module-output" name="Azura-Client" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/runelite/pushingpixels/substance/8.0.02/substance-8.0.02.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/ryleykimmel/Alertify4J/master/Alertify4J-master.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar" path-in-jar="/" />

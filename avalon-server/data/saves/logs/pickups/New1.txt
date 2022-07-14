@@ -1,2 +1,0 @@
-[4/27/22 01:10PM] Player picked up item: Avalon Coins, id: 995, amount: 4686, owner: New1	
-[4/27/22 01:12PM] Player picked up item: Avalon Coins, id: 995, amount: 2440, owner: New1	

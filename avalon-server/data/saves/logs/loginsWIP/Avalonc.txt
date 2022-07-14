@@ -1,5 +1,0 @@
-[5/25/22 10:56PM] Login from host 127.0.0.1, serial number: E8-F4-08-84-DE-87, mac address:K2103N008191020211125083625.000000-300	
-[7/12/22 11:21PM] Login from host 127.0.0.1, serial number: E8-F4-08-84-DE-87, mac address:K2103N008191020211125083625.000000-300	
-[7/12/22 11:21PM] Logout with password 123Logout from host 127.0.0.1, serial number: E8-F4-08-84-DE-87, mac address:K2103N008191020211125083625.000000-300	
-[7/12/22 11:21PM] Login from host 127.0.0.1, serial number: E8-F4-08-84-DE-87, mac address:K2103N008191020211125083625.000000-300	
-[7/12/22 11:23PM] Logout with password 123Logout from host 127.0.0.1, serial number: E8-F4-08-84-DE-87, mac address:K2103N008191020211125083625.000000-300	

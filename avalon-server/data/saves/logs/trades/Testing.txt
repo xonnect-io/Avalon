@@ -1,7 +1,0 @@
-[4/26/22 01:32PM] Received item from Test. Name: Owner's cape. Id: 7995, amount: 1	
-[4/26/22 01:32PM] Received item from Test. Name: Avatar titan boots. Id: 19945, amount: 1	
-[4/26/22 01:32PM] Received item from Test. Name: Avatar titan cape. Id: 19944, amount: 1	
-[4/26/22 01:32PM] Received item from Test. Name: Avatar titan gloves. Id: 19946, amount: 1	
-[4/26/22 01:32PM] Received item from Test. Name: Ruby blade. Id: 23200, amount: 1	
-[4/26/22 01:32PM] Received item from Test. Name: Emerald blade. Id: 23198, amount: 1	
-[4/26/22 01:32PM] Received item from Test. Name: Diamond blade. Id: 23201, amount: 1	

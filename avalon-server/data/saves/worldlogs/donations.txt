@@ -1,8 +1,0 @@
-[5/18/22 08:33PM]  [ Avalon ] Donated: $50.0, Item: None, Amount: 1, ID: -1, item_number: 1	
-[5/18/22 08:41PM]  [ Avalon ] Donated: $50.0, Item: None, Amount: 1, ID: -1, item_number: 1	
-[7/6/22 07:10PM]  [ Avalon ] Donated: $1.0, Item: None, Amount: 5, ID: -1, item_number: 5	
-[7/6/22 07:12PM]  [ Avalon ] Donated: $1.0, Item: None, Amount: 5, ID: -1, item_number: 5	
-[7/6/22 07:13PM]  [ Avalon ] Donated: $50.0, Item: None, Amount: 5, ID: -1, item_number: 5	
-[7/6/22 07:29PM]  [ Avalon ] Donated: $250.0, Item: None, Amount: 1, ID: -1, item_number: 1	
-[7/6/22 07:31PM]  [ Avalon ] Donated: $250.0, Item: None, Amount: 1, ID: -1, item_number: 1	
-[7/6/22 07:32PM]  [ Avalon ] Donated: $250.0, Item: None, Amount: 1, ID: -1, item_number: 1	

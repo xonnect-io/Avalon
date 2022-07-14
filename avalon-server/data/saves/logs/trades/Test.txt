@@ -1,7 +1,0 @@
-[4/26/22 01:32PM] Gave item to Testing. Name: Owner's cape. Id: 7995, amount: 1	
-[4/26/22 01:32PM] Gave item to Testing. Name: Avatar titan boots. Id: 19945, amount: 1	
-[4/26/22 01:32PM] Gave item to Testing. Name: Avatar titan cape. Id: 19944, amount: 1	
-[4/26/22 01:32PM] Gave item to Testing. Name: Avatar titan gloves. Id: 19946, amount: 1	
-[4/26/22 01:32PM] Gave item to Testing. Name: Ruby blade. Id: 23200, amount: 1	
-[4/26/22 01:32PM] Gave item to Testing. Name: Emerald blade. Id: 23198, amount: 1	
-[4/26/22 01:32PM] Gave item to Testing. Name: Diamond blade. Id: 23201, amount: 1	

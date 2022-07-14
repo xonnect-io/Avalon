@@ -1,5 +1,0 @@
-[4/26/22 11:54AM] Tests used command ::afk | Player rights = PLAYER	
-[4/26/22 11:55AM] Tests used command ::afk | Player rights = PLAYER	
-[4/26/22 11:55AM] Tests used command ::afk | Player rights = PLAYER	
-[4/26/22 12:03PM] Tests used command ::ref | Player rights = PLAYER	
-[4/26/22 12:04PM] Tests used command ::tele 2752 9472 | Player rights = PLAYER	

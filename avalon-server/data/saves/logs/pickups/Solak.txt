@@ -1,1 +1,0 @@
-[3/30/22 09:43AM] Player picked up item: Avalon Coins, id: 995, amount: 3698737, owner: Solak

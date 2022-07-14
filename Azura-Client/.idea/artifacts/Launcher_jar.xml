@@ -2,7 +2,7 @@
   <artifact type="jar" name="Launcher:jar">
     <output-path>$PROJECT_DIR$/../../AvalonWebpage/public_html/resources</output-path>
     <root id="archive" name="Azura-Client.jar">
-      <element id="module-output" name="Avalon-Client" />
+      <element id="module-output" name="Azura-Client" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/club/minnced/discord-rpc-release/v3.3.0/discord-rpc-release-v3.3.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/MinnDevelopment/java-discord-rpc/v2.0.1/java-discord-rpc-v2.0.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/runelite/pushingpixels/trident/1.5.00/trident-1.5.00.jar" path-in-jar="/" />

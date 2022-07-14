@@ -1,3 +1,0 @@
-[4/19/22 02:06AM] Dono used command ::empty | Player rights = PLAYER	
-[4/19/22 08:57AM] Dono used command ::1dzone | Player rights = SAPPHIRE_DONATOR	
-[4/19/22 08:57AM] Dono used command ::dzone | Player rights = SAPPHIRE_DONATOR	

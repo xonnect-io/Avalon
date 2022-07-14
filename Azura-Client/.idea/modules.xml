@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Avalon-Client.iml" filepath="$PROJECT_DIR$/Avalon-Client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../azura-runelite/avalon-runelite.iml" filepath="$PROJECT_DIR$/../azura-runelite/avalon-runelite.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../azura-server/avalon-server.iml" filepath="$PROJECT_DIR$/../azura-server/avalon-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Azura-Client.iml" filepath="$PROJECT_DIR$/Azura-Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../azura-runelite/azura-runelite.iml" filepath="$PROJECT_DIR$/../azura-runelite/azura-runelite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../azura-server/azura-server.iml" filepath="$PROJECT_DIR$/../azura-server/azura-server.iml" />
     </modules>
   </component>
 </project>
