@@ -4137,7 +4137,7 @@ public class CustomInterfaces extends RSInterface {
 		addSprite(61001, 1731);
 		addText(61002, "Collection Log", advancedFonts, 2, 0xff981f, true, true);
 
-		String[] tabNames = {"Bosses", "Mboxes", "Keys", "Other"};
+		String[] tabNames = {"Monsters", "Zones", "Bosses", "Minigames", "Boxes"};
 
 		for (int i = 0; i < tabNames.length; ++i) {
 			addConfigButton(61003 + i, 61000, 1732, 1733, 96, 20, "View "+tabNames[i], i, 5, 1106);
@@ -4158,7 +4158,7 @@ public class CustomInterfaces extends RSInterface {
 		addToItemGroup(61024, 5, 1, 7, 5, false, new String[]{null, null, null, null, null});
 
 		int x = 10, y = 10, child = 0;
-		tab.totalChildren(23);
+		tab.totalChildren(25);
 		tab.child(child++, 61001, x, y);
 
 		tab.child(child++, 61002, 250+x, 10+y);
@@ -4172,7 +4172,7 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(child++, 61050, 11+x, 58+y);
 		tab.child(child++, 61015, 216+x, 57+y);
 		tab.child(child++, 61016, 216+x, 81+y);
-		tab.child(child++, 61017, 380,90);
+		tab.child(child++, 61017, 430,90);
 		tab.child(child++, 61018, 216+x, 255+y);
 		tab.child(child++, 61019, 216+x, 242+y);
 		tab.child(child++, 61020, 415+x, 259+y);

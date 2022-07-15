@@ -294,7 +294,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 77142:
                 if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
-                    player.getPA().sendMessage("You need 50,000 Beast KC before you can sacrifice your light weapons.");
+                    player.getPA().sendMessage("You need 50,000 Skeleton Brute KC before you can sacrifice your light weapons.");
                     return;
                 }
                 if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(5011) && player.getInventory().contains(12537) && player.getInventory().contains(17013)) {
@@ -1098,8 +1098,8 @@ public class ButtonClickPacketListener implements PacketListener {
                             + player.getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
                     return;
                 }
-                Position groudon = new Position(2893, 5469, 0);
-                TeleportHandler.teleportPlayer(player, groudon, TeleportType.NORMAL);
+                Position ipotane = new Position(2893, 5469, 0);
+                TeleportHandler.teleportPlayer(player, ipotane, TeleportType.NORMAL);
                 break;
 
             case 142279:// Vindicta

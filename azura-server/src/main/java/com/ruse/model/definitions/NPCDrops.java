@@ -32,7 +32,7 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import static com.ruse.world.content.osrscollectionlog.LogType.BOSSES;
+import static com.ruse.world.content.osrscollectionlog.LogType.*;
 
 
 /**
@@ -539,6 +539,9 @@ public class NPCDrops {
                         new GroundItem(item, pos, player.getUsername(), false, 150, goGlobal, 200));
                 DropLog.submit(player, new DropLogEntry(itemId, item.getAmount(), drop.isAnnounce()));
             }
+
+            MONSTERS.log(player, npc.getId(), item);
+            ZONES.log(player, npc.getId(), item);
             BOSSES.log(player, npc.getId(), item);
         //    new CollectionEntry(npc.getId(), item.getId(), item.getAmount()).submit(player);
         }

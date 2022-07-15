@@ -1548,7 +1548,7 @@ public class ItemDef3 {
 
 			case 23099:
 				itemDef.copyItem(2902);
-				itemDef.name = "War gauntlets (T1)";
+				itemDef.name = "Brute gauntlets";
 				itemDef.modelID = 100223;
 				itemDef.maleEquip1 = 100224;
 				itemDef.femaleEquip1 = 100224;
@@ -1558,6 +1558,7 @@ public class ItemDef3 {
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 0;
 				break;
+
 				
 			case 23100:
 				itemDef.copyItem(23099);
@@ -1620,6 +1621,17 @@ public class ItemDef3 {
 				itemDef.actions = new String[]{null, null, null, null, "Drop"};
 				itemDef.modelID = 100235;
 				itemDef.modelZoom = 400;
+				break;
+
+			case 23381:
+				itemDef.copyItem(5074);
+				itemDef.name = "Brute Pet";
+				itemDef.modelID = 26628;
+				itemDef.modelZoom = 700;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 20;
 				break;
 
 			case 23108:
@@ -2267,7 +2279,12 @@ public class ItemDef3 {
 			case 1434:
 			case 7158:
 				break;
-				
+
+			case 19776:
+				itemDef.name = "Brute boots";
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+
 			case 17043:
 				itemDef.name = "Leafy coif";
 				itemDef.modelOffsetX = -0;
@@ -3192,7 +3209,7 @@ public class ItemDef3 {
 				break;
 				
 			case 15448:
-				itemDef.name = "Groudon-flame power";
+				itemDef.name = "Ipotane-death power";
 				break;
 				
 			case 15449:
@@ -3206,19 +3223,19 @@ public class ItemDef3 {
 			case 3107:
 				itemDef.groundActions = new String[5];
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
-				itemDef.name = "Groudon-flame boots";
+				itemDef.name = "Ipotane-death boots";
 				break;
 				
 			case 13640:
 				itemDef.groundActions = new String[5];
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
-				itemDef.name = "Groudon-flame staff";
+				itemDef.name = "Ipotane-death staff";
 				break;
 				
 			case 13964:
 				itemDef.groundActions = new String[5];
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
-				itemDef.name = "Groudon-flame shield";
+				itemDef.name = "Ipotane-death shield";
 				break;
 				
 			case 11317:
@@ -3247,7 +3264,7 @@ public class ItemDef3 {
 				break;
 				
 			case 21934:
-				itemDef.name = "Groudon-flame helm";
+				itemDef.name = "Ipotane-death helm";
 				itemDef.modelID = 65112;
 				itemDef.maleEquip1 = 65113;
 				itemDef.femaleEquip1 = 65113;
@@ -3261,13 +3278,13 @@ public class ItemDef3 {
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 40; 
+				itemDef.editedModelColor[0] = 126;
 				itemDef.stackable = false;
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
 				
 			case 19918:
-				itemDef.name = "Groudon-flame body";
+				itemDef.name = "Ipotane-death body";
 				itemDef.modelID = 65114;
 				itemDef.maleEquip1 = 65115;
 				itemDef.femaleEquip1 = 65115;
@@ -3282,12 +3299,12 @@ public class ItemDef3 {
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 40; 
+				itemDef.editedModelColor[0] = 126;
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
 				
 			case 19913:
-				itemDef.name = "Groudon-flame legs";
+				itemDef.name = "Ipotane-death legs";
 				itemDef.modelID = 65116;
 				itemDef.maleEquip1 = 65117;
 				itemDef.femaleEquip1 = 65117;
@@ -3301,7 +3318,7 @@ public class ItemDef3 {
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 40; 
+				itemDef.editedModelColor[0] = 126;
 				itemDef.stackable = false;
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;

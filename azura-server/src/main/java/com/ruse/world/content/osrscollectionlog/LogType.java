@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public enum LogType {
 
-    BOSSES, MYSTERY_BOX, KEYS, OTHER;
+    MONSTERS, ZONES, BOSSES, MINIGAMES, BOXES;
 
     public void log(Player killer, int keyId, Item reward) {
         killer.getCollectionLog2().registerkill(keyId);

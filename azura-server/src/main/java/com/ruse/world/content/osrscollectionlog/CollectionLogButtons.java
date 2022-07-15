@@ -13,50 +13,61 @@ public class CollectionLogButtons {
     private static final HashMap<Integer, Collection> MYSTERY_BOX_LOG_BUTTONS = new HashMap<>();
     private static final HashMap<Integer, Collection> KEYS_LOG_BUTTONS = new HashMap<>();
     private static final HashMap<Integer, Collection> OTHER_LOG_BUTTONS = new HashMap<>();
+    private static final HashMap<Integer, Collection> BOXES_LOG_BUTTONS = new HashMap<>();
 
     static {
         int button_index;//The start button
         button_index = -4485;
         //We must store the button twice, using prefix increment operator, once for the background sprite.
-        for (final Collection collection : Collection.getAsList(LogType.BOSSES)) {
+        for (final Collection collection : Collection.getAsList(LogType.MONSTERS)) {
             BOSS_LOG_BUTTONS.put(button_index++, collection);
         }
         button_index = -4485;
-        for (final Collection collection : Collection.getAsList(LogType.MYSTERY_BOX)) {
+        for (final Collection collection : Collection.getAsList(LogType.ZONES)) {
             MYSTERY_BOX_LOG_BUTTONS.put(button_index++, collection);
         }
         button_index = -4485;
-        for (final Collection collection : Collection.getAsList(LogType.KEYS)) {
+        for (final Collection collection : Collection.getAsList(LogType.BOSSES)) {
             KEYS_LOG_BUTTONS.put(button_index++, collection);
         }
         button_index = -4485;
-        for (final Collection collection : Collection.getAsList(LogType.OTHER)) {
+        for (final Collection collection : Collection.getAsList(LogType.MINIGAMES)) {
             OTHER_LOG_BUTTONS.put(button_index++, collection);
+        }
+        button_index = -4485;
+        for (final Collection collection : Collection.getAsList(LogType.BOXES)) {
+            BOXES_LOG_BUTTONS.put(button_index++, collection);
         }
     }
 
     public static boolean onButtonClick(Player player, int button) {
         if(button == -4533) {
-            player.getCollectionLog2().open(LogType.BOSSES);
+            player.getCollectionLog2().open(LogType.MONSTERS);
             player.getPacketSender().sendConfig(1106, 0);
             return true;
         }
 
         if(button == -4532) {
-           player.getCollectionLog2().open(LogType.MYSTERY_BOX);
+           player.getCollectionLog2().open(LogType.ZONES);
             player.getPacketSender().sendConfig(1106, 1);
             return true;
         }
 
         if(button == -4531) {
-            player.getCollectionLog2().open(LogType.KEYS);
+            player.getCollectionLog2().open(LogType.BOSSES);
             player.getPacketSender().sendConfig(1106, 2);
             return true;
         }
 
         if(button == -4530) {
-            player.getCollectionLog2().open(LogType.OTHER);
+            player.getCollectionLog2().open(LogType.MINIGAMES);
             player.getPacketSender().sendConfig(1106, 3);
+            return true;
+        }
+
+        if(button == -4529) {
+            player.getCollectionLog2().open(LogType.BOXES);
+            player.getPacketSender().sendConfig(1106, 4);
             return true;
         }
 
@@ -66,17 +77,20 @@ public class CollectionLogButtons {
             return true;
         }
 
-        if (player.getCollectionLogOpen() == LogType.BOSSES && BOSS_LOG_BUTTONS.containsKey(button)) {
+        if (player.getCollectionLogOpen() == LogType.MONSTERS && BOSS_LOG_BUTTONS.containsKey(button)) {
             player.getCollectionLog2().sendInterface(BOSS_LOG_BUTTONS.get(button));
             return true;
-        } else if (player.getCollectionLogOpen() == LogType.MYSTERY_BOX && MYSTERY_BOX_LOG_BUTTONS.containsKey(button)) {
+        } else if (player.getCollectionLogOpen() == LogType.ZONES && MYSTERY_BOX_LOG_BUTTONS.containsKey(button)) {
             player.getCollectionLog2().sendInterface(MYSTERY_BOX_LOG_BUTTONS.get(button));
             return true;
-        } else if (player.getCollectionLogOpen() == LogType.KEYS && KEYS_LOG_BUTTONS.containsKey(button)) {
+        } else if (player.getCollectionLogOpen() == LogType.BOSSES && KEYS_LOG_BUTTONS.containsKey(button)) {
             player.getCollectionLog2().sendInterface(KEYS_LOG_BUTTONS.get(button));
             return true;
-        } else if (player.getCollectionLogOpen() == LogType.OTHER && OTHER_LOG_BUTTONS.containsKey(button)) {
+        } else if (player.getCollectionLogOpen() == LogType.MINIGAMES && OTHER_LOG_BUTTONS.containsKey(button)) {
             player.getCollectionLog2().sendInterface(OTHER_LOG_BUTTONS.get(button));
+            return true;
+        } else if (player.getCollectionLogOpen() == LogType.BOXES && BOXES_LOG_BUTTONS.containsKey(button)) {
+            player.getCollectionLog2().sendInterface(BOXES_LOG_BUTTONS.get(button));
             return true;
         }
         return false;

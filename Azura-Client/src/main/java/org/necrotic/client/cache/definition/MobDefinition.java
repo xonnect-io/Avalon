@@ -1185,20 +1185,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 128;
 				definition.scaleY = 128;
 				break;
-			case 9807:
-				definition.setDefault();
-				definition.name = "Vindicta";
-				definition.npcModels = new int[]{100191, 100193};
-				definition.combatLevel = MobDefinition.get(2292).combatLevel;
-				definition.standAnimation = MobDefinition.get(82).standAnimation;
-				definition.walkAnimation = MobDefinition.get(82).walkAnimation;
-				definition.actions = new String[5];
-				definition.actions[0] = null;
-				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 128;
-				definition.scaleY = 128;
-				break;
+
 
 			case 9808:
 				definition.setDefault();
@@ -3524,7 +3511,7 @@ public final class MobDefinition {
 
 			case 8010:
 				definition.name = "Ipotane";
-				definition.description = "Groudon.".getBytes();
+				definition.description = "Ipotane.".getBytes();
 				definition.npcModels = new int[]{17296};
 				definition.combatLevel = 699;
 				definition.standAnimation = 808;
@@ -3533,6 +3520,20 @@ public final class MobDefinition {
 				definition.scaleY = 130;
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
+				break;
+
+			case 9807:
+				definition.setDefault();
+				definition.name = "Vindicta";
+				definition.npcModels = new int[]{100191, 100193};
+				definition.combatLevel = MobDefinition.get(2292).combatLevel;
+				definition.standAnimation = MobDefinition.get(82).standAnimation;
+				definition.walkAnimation = MobDefinition.get(82).walkAnimation;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 128;
+				definition.scaleY = 128;
 				break;
 
 			case 350:
@@ -3615,15 +3616,28 @@ public final class MobDefinition {
 				break;
 
 			case 225:
-				definition.name = "Avalon Beasts";
-				definition.description = "Beast of Avalon.".getBytes();
-				definition.npcModels = new int[]{18539};
-				definition.combatLevel = 200;
+				definition.name = "Skeleton Brute Jr";
+				definition.description = "stuff".getBytes();
+				definition.combatLevel = 132;
+				definition.npcModels = new int[]{26628, 26637, 26642, 23932, 26623};
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.degreesToTurn = 32;
+				definition.headIcon = -1;
+				definition.npcSizeInSquares = 1;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
-				definition.scaleXZ = 110;
-				definition.scaleY = 110;
-				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.walkingBackwardsAnimation = -1;
+				definition.walkLeftAnimation = -1;
+				definition.walkRightAnimation = -1;
+				definition.configChild = -1;
+				definition.varBitChild = -1;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
+				definition.modelLightning = 0;
+				definition.modelShadowing = 0;
+				definition.drawYellowDotOnMap = false;
+				definition.disableRightClick = true;
+				definition.visibilityOrRendering = false;
 				break;
 				
 			case 450:
@@ -3823,26 +3837,7 @@ public final class MobDefinition {
 				definition.degreesToTurn = 32;
 				definition.rdc2 = 2345;
 				break;
-			/**
-			 * 	definition.name = "Starter Boss";
-			 definition.description = "Groudon.".getBytes();
-			 definition.npcModels = new int[] {65191};
-			 definition.combatLevel = 699;
-			 definition.standAnimation = 15;
-			 definition.walkAnimation = 13;
-			 definition.adjustVertextPointsXOrY = 75;
-			 definition.adjustVertextPointZ = 75;
-			 //originalModelColours
-			 //
-			 definition.changedModelColours = new int[] { 64, 64 };
-			 definition.originalModelColours = new int[] { 40, 24 };
-			 //  definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-			 //   definition.changedModelColours = new int[1]; // same here
-			 //  definition.changedModelColours[0] = 58; // the texture that it currently has
-			 //  definition.originalModelColours[0] = 40; // the new texture u want it to have
 
-
-			 */
 			case 6692:
 				definition.name = "Revenant Tarragon";
 				definition.combatLevel = 126;

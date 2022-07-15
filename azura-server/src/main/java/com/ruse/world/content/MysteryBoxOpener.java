@@ -10,6 +10,8 @@ import com.ruse.world.entity.impl.player.Player;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.ruse.world.content.osrscollectionlog.LogType.BOXES;
+
 public class MysteryBoxOpener {
 
 	private Player player;
@@ -77,6 +79,7 @@ public class MysteryBoxOpener {
 
 		player.getInventory().delete(boxId, 1);
 		player.getInventory().add(reward, 1);
+		BOXES.log(player, boxId, new Item(reward));
 	}
 
 	public void openAll(int boxId) {
@@ -106,6 +109,7 @@ public class MysteryBoxOpener {
 
 			rewards.merge(reward, 1, Integer::sum);
 
+			BOXES.log(player, boxId, new Item(reward));
 		}
 		player.getInventory().delete(boxId, amount);
 		boolean bank = amount <= player.getInventory().getFreeSlots();

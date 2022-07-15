@@ -10,8 +10,8 @@ public class MagicGuild {
     public void openMain() {
         player.getPacketSender().sendInterface(77130);
         player.getPacketSender().sendString(77140,  player.getPointsHandler().getAvalonBeastBKC() >= 50000
-                ? "@gre@- 50,000 Avalon Beast KC"
-                : "@red@- 50,000 Avalon Beast KC");
+                ? "@gre@- 50,000 Skeleton Brute KC"
+                : "@red@- 50,000 Skeleton Brute KC");
 
     }
 

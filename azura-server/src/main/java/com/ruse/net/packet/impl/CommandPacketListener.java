@@ -86,7 +86,7 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.*;
 
-import static com.ruse.world.content.osrscollectionlog.LogType.BOSSES;
+import static com.ruse.world.content.osrscollectionlog.LogType.MONSTERS;
 
 /**
  * This packet listener manages commands a player uses by using the command
@@ -126,13 +126,12 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Teleporting you to the Summer Event!");
         }
         if (command[0].equalsIgnoreCase("collectionlog")) {
-            player.getCollectionLog2().open(BOSSES);
+            player.getCollectionLog2().open(MONSTERS);
         }
         if (command[0].equalsIgnoreCase("barrowslog")) {
             Item item = new Item(4710);
-
-            BOSSES.log(player, CollectionLog.BARROWS_KEY, item);
-            player.getCollectionLog2().open(BOSSES);
+            MONSTERS.log(player, CollectionLog.BARROWS_KEY, item);
+            player.getCollectionLog2().open(MONSTERS);
         }
         if (command[0].equalsIgnoreCase("logkill")) {
 

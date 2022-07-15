@@ -190,7 +190,7 @@ public class RSInterface {
 
 		String[] TELE_NAMES = {"Dustclaw Teleport - @gre@Lvl 1", "Lord Teleport - @gre@Lvl 1", "Shadow Teleport - @yel@Lvl 2", "Golem Teleport - @yel@Lvl 3", "Shetani Teleport - @or1@Lvl 3",
 				"Ripper Teleport - @or1@Lvl 4", "Avatar Teleport - @or2@Lvl 5", "Wyverns Teleport - @or2@Lvl 6", "Oni Teleport - @red@Lvl 7", "Shenron Teleport - @red@Lvl 8",
-				"Subzero Teleport - @mag@Lvl 9", "Zeus Teleport - @mag@Lvl 10", "Ipotane Teleport - @cya@Lvl 11", "Vindicta Teleport - @cya@Lvl 12", "Beast Teleport - @cya@Lvl 13"};
+				"Subzero Teleport - @mag@Lvl 9", "Zeus Teleport - @mag@Lvl 10", "Ipotane Teleport - @cya@Lvl 11", "Vindicta Teleport - @cya@Lvl 12", "Brute Teleport - @cya@Lvl 13"};
 
 		String[] TELE_REQ = {"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:",
 				"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:",
@@ -1768,7 +1768,7 @@ public class RSInterface {
 		addText(77137, "You need requirements for each tier", tda, 1, 0xff8624, false, true);
 		addText(77138, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
 		addText(77139, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
-		addText(77140, "@red@50k Beast KC", tda, 1, 0xff8624, false, true);
+		addText(77140, "@red@50k Skeleton Brute KC", tda, 1, 0xff8624, false, true);
 		addText(77141, "@red@Sacrifice x 1 of EACH Light Weapon", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(77142, 1445, 132, 29, "Sacrifice", -1, 77143, 1);
 		addHoveredImageWSpriteLoader(77143, 1446, 132, 29, 77144);

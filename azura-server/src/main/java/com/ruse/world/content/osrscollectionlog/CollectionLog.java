@@ -21,12 +21,36 @@ import static com.ruse.world.content.osrscollectionlog.CollectionLogUtility.*;
  * @Since juli 15, 2020
  */
 public class CollectionLog {
+    //MONSTERS
+    public static final int ARACHNES = 117;
+    public static final int DEMON_GODDESS = 501;
+    public static final int ENERGY_SKELETONS = 503;
+    public static final int TUROTH = 1627;
+    public static final int FALLEN_WARRIOR = 9011;
+    public static final int CAVE_DRONE = 6799;
+    public static final int CAVE_MUTANT = 6798;
+    public static final int CAVE_SNAIL = 6792;
 
+    //ZONES
+    public static final int DUSTCLAW = 1614;
+    public static final int LORD = 603;
+    public static final int SHADOW = 12843;
+    public static final int GOLEM = 53;
+    public static final int SHETANI = 8018;
+    public static final int RIPPER = 13635;
+    public static final int AVATAR = 8008;
+    public static final int WYVERN = 3308;
+    public static final int ONI = 3117;
+    public static final int SHENRON = 201;
+    public static final int SUBZERO = 202;
+    public static final int ZEUS = 203;
+    public static final int IPOTANE = 8010;
+    public static final int VINDICTA = 9807;
+
+    public static final int BRUTE = 6329;
 
     public static final int BARROWS_KEY = 120_000;
     public static final int ZOMBIE_RAIDS = 99999;
-    public static final int CHAOS_ELE = 3200;
-    public static final int CALLISTO = 2009;
     public static final int MYSTERY_BOX = 6199;
     public static final int CRYSTAL_KEY = 989;
 
@@ -70,26 +94,32 @@ public class CollectionLog {
     }
     public int sumTotalObtained() {
         int globalTotal = 0;
-        List<Collection> log = Collection.getAsList(LogType.KEYS);
+        List<Collection> log = Collection.getAsList(LogType.BOSSES);
         int total = log.size();
         Collection col;
         for (int i = 0; i < total; i++){
             col = log.get(i);
             globalTotal+= col.totalCollectables();
         }
-        log = Collection.getAsList(LogType.BOSSES);
+        log = Collection.getAsList(LogType.MONSTERS);
         total = log.size();
         for (int i = 0; i < total; i++){
             col = log.get(i);
             globalTotal+= col.totalCollectables();
         }
-       log = Collection.getAsList(LogType.MYSTERY_BOX);
+       log = Collection.getAsList(LogType.ZONES);
         total = log.size();
         for (int i = 0; i < total; i++){
             col = log.get(i);
             globalTotal+= col.totalCollectables();
         }
-        log = Collection.getAsList(LogType.OTHER);
+        log = Collection.getAsList(LogType.MINIGAMES);
+        total = log.size();
+        for (int i = 0; i < total; i++){
+            col = log.get(i);
+            globalTotal+= col.totalCollectables();
+        }
+        log = Collection.getAsList(LogType.BOXES);
         total = log.size();
         for (int i = 0; i < total; i++){
             col = log.get(i);
@@ -99,23 +129,29 @@ public class CollectionLog {
     }
     public int totalAmountToCollect() {
         int globalTotal = 0;
-        List<Collection> log = Collection.getAsList(LogType.KEYS);
+        List<Collection> log = Collection.getAsList(LogType.BOSSES);
         int total = log.size();
         for (int i = 0; i < total; i++){
 
             globalTotal+= totalObtained(log.get(i));
         }
-        log = Collection.getAsList(LogType.BOSSES);
+        log = Collection.getAsList(LogType.MONSTERS);
         total = log.size();
         for (int i = 0; i < total; i++){
             globalTotal+= totalObtained(log.get(i));
         }
-       log = Collection.getAsList(LogType.MYSTERY_BOX);
+       log = Collection.getAsList(LogType.ZONES);
         total = log.size();
         for (int i = 0; i < total; i++){
             globalTotal+= totalObtained(log.get(i));
         }
-        log = Collection.getAsList(LogType.OTHER);
+        log = Collection.getAsList(LogType.MINIGAMES);
+        total = log.size();
+        for (int i = 0; i < total; i++){
+
+            globalTotal+= totalObtained(log.get(i));
+        }
+        log = Collection.getAsList(LogType.BOXES);
         total = log.size();
         for (int i = 0; i < total; i++){
 
@@ -128,52 +164,36 @@ public class CollectionLog {
         Collection logToCheck = player.getLogtoCheck();
 
         if (collection == logToCheck) {
-
-
             final int totalCollectables = collection.totalCollectables();
-
             if (totalCollectables == totalObtained(logToCheck)) {
-
-
-
                 boolean alreadyClaimed = player.getCollectionLog2().collectedrewardsforthatnpc(logToCheck);
-
-
-
                 if (alreadyClaimed) {
                     player.sendMessage("You have already claimed this collection log reward.");
                     return;
                 }
-
-
-
                 player.getInventory().addItems(logToCheck.getReward(),true);
                 player.getCollectionLog2().collectionLogofrewards.put(logToCheck, true);
                 player.sendMessage(Color.PURPLE.wrap("You have collected the reward for completing " + Color.BLUE.wrap(logToCheck.getName()) + " " + Color.PURPLE.wrap("collection log.")));
             } else {
-
                 player.sendMessage(Color.RED.wrap("This collection log is not yet complete."));
             }
         }
     }
 
     public void sendInterface(Collection collection) {
+
         for (int i = 0 ; i < 60 ; i++) {
-
             player.getPacketSender().sendItemOnInterface(ITEM_CONTAINER,  -1,i, -1);
-
         }
+
         for (int i = 0 ; i < 4 ; i++) {
             player.getPacketSender().sendItemOnInterface1(REWARD_ITEM_CONTAINER, -1,i, -1);
         }
+
         int obtained = 0;
         final int obtainables = collection.totalCollectables();
-
-
         var kills = collectionLogofkills.get(collection);
-
         Item[] items = collection.getObtainables();
-
         var obtainedItems = collectionLog.get(collection);
         int slot = 0;
 
@@ -185,25 +205,21 @@ public class CollectionLog {
                     obtained++;
                 item.setAmount(amount);
             }
-          //  player.getPacketSender().sendItemOnInterface(ITEM_CONTAINER,  item.getId(),slot++, item.getAmount());
-        //    slot++;
-//            player.getPacketSender().sendItemOnInterface1(ITEM_CONTAINER, item.getId(), slot++, item.getAmount());
-       //     slot++;
+
         }
         for (Item item : items) {
             player.getPacketSender().sendItemOnInterface(ITEM_CONTAINER,  item.getId(),slot++, item.getAmount());
 
         }
-//        player.getPacketSender().sendScrollbarHeight(54150, (int) (Collection.getAsList(collection.getLogType()).size() * 15.1));
-//        player.getPacketSender().sendScrollbarHeight(SCROLL_BAR, items.length * 7 + 2);
+
         player.getPacketSender().setScrollBar(54150, (int) (Collection.getAsList(collection.getLogType()).size() * 15.1));
         player.getPacketSender().setScrollBar(SCROLL_BAR, items.length * 7 + 2);
 
 
         player.getPacketSender().sendString(NAME_STRING, "@lre@" + collection.getName());
         player.getPacketSender().sendString(OBTAINED_STRING, "@lre@Obtained: " + getColor(obtained, obtainables) + obtained + "/" + obtainables);
-        String plural = collection.getLogType() == LogType.MYSTERY_BOX || collection.getLogType() == LogType.KEYS ? "Opened: " : "Kills: ";
-       player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + collection.getName() + " " + "" + plural + "@whi@" + (kills == null ? "0" : kills));
+        String plural = collection.getLogType() == LogType.BOXES ? "Opened: " : "Kills: ";
+       player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + plural + "@whi@" + (kills == null ? "0" : kills));
 
         int pos = 0;
         for (Item item : collection.getReward()){

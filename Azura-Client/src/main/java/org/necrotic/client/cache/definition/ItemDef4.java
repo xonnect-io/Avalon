@@ -195,7 +195,7 @@ public class ItemDef4 {
 				itemDef.editedModelColor[0] = 75; //
 				break;
 			case 17594:
-				itemDef.name = "Arcnum helm";
+				itemDef.name = "Brute helm";
 				itemDef.modelID = 65480;
 				itemDef.maleEquip1 = 65481;
 				itemDef.femaleEquip1 = 65481;
@@ -211,7 +211,7 @@ public class ItemDef4 {
 				break;
 
 			case 17596:
-				itemDef.name = "Arcnum body";
+				itemDef.name = "Brute body";
 				itemDef.modelID = 65482;
 				itemDef.maleEquip1 = 65483;
 				itemDef.femaleEquip1 = 65483;
@@ -226,7 +226,7 @@ public class ItemDef4 {
 
 				break;
 			case 17598:
-				itemDef.name = "Arcnum legs";
+				itemDef.name = "Brute legs";
 				itemDef.modelID = 65484;
 				itemDef.maleEquip1 = 65485;
 				itemDef.femaleEquip1 = 65485;
@@ -3874,8 +3874,8 @@ public class ItemDef4 {
 
 				break;
 			case 3324:
-				itemDef.name = "Ring of wealth (ii)";
 				itemDef.copyItem(2579);
+				itemDef.name = "Ring of wealth (ii)";
 				itemDef.rdc2 = 86521;
 				itemDef.stackable = false;
 				break;

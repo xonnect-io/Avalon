@@ -12003,7 +12003,7 @@ name: Rock climbing boots
 finish
 
 Item Id: 3107
-name: Groudon-flame boots
+name: Ipotane-death boots
 finish
 
 Item Id: 3108
@@ -49091,7 +49091,7 @@ name: Law talisman staff
 finish
 
 Item Id: 13640
-name: Groudon-flame staff
+name: Ipotane-death staff
 finish
 
 Item Id: 13641
@@ -50339,11 +50339,11 @@ name: Corrupt dragon med helm (deg)
 finish
 
 Item Id: 13964
-name: Groudon-flame shield
+name: Ipotane-death shield
 finish
 
 Item Id: 13965
-name: Groudon-flame shield
+name: Ipotane-death shield
 finish
 
 Item Id: 13966
@@ -55791,7 +55791,7 @@ name: Attacker lvl 3
 finish
 
 Item Id: 15448
-name: Groudon-flame power
+name: Ipotane-death power
 finish
 
 Item Id: 15449
@@ -63583,27 +63583,27 @@ name: Cure potion
 finish
 
 Item Id: 17594
-name: Arcnum helm
+name: Brute helm
 finish
 
 Item Id: 17595
-name: Arcnum helm
+name: Brute helm
 finish
 
 Item Id: 17596
-name: Arcnum body
+name: Brute body
 finish
 
 Item Id: 17597
-name: Arcnum body
+name: Brute body
 finish
 
 Item Id: 17598
-name: Arcnum legs
+name: Brute legs
 finish
 
 Item Id: 17599
-name: Arcnum legs
+name: Brute legs
 finish
 
 Item Id: 17600
@@ -72231,7 +72231,7 @@ name: Shengo seed
 finish
 
 Item Id: 19913
-name: Groudon-flame legs
+name: Ipotane-death legs
 finish
 
 Item Id: 19914
@@ -72251,7 +72251,7 @@ name: Arc mace
 finish
 
 Item Id: 19918
-name: Groudon-flame body
+name: Ipotane-death body
 finish
 
 Item Id: 19919
@@ -79663,7 +79663,7 @@ name: Theatrical earrings
 finish
 
 Item Id: 21934
-name: Groudon-flame helm
+name: Ipotane-death helm
 finish
 
 Item Id: 21935

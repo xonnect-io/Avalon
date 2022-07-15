@@ -51,7 +51,7 @@ public class CrystalChest {
 						CustomObjects.objectRespawnTask(p, new GameObject(173, chest.getPosition().copy(), 10, 1),
 								chest, 10);
 					}
-					LogType.MYSTERY_BOX.log(p, CollectionLog.CRYSTAL_KEY, new Item( item.getId()));
+					LogType.ZONES.log(p, CollectionLog.CRYSTAL_KEY, new Item( item.getId()));
 					stop();
 					break;
 				}

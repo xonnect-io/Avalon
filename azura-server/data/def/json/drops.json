@@ -23697,9 +23697,16 @@
       ],
       "drops": [
         {
+          "id": 12855,
+          "count": [
+            1200
+          ],
+          "chance": 15
+        },
+        {
           "id": 5022,
           "count": [
-            110
+            100
           ],
           "chance": 3
         },
@@ -23730,13 +23737,6 @@
             1
           ],
           "chance": 4000
-        },
-        {
-          "id": 10835,
-          "count": [
-            120
-          ],
-          "chance": 3
         },
         {
           "id": 20488,
@@ -23859,24 +23859,6 @@
             1
           ],
           "chance": 6000
-        },
-        {
-          "id": 5022,
-          "count": [
-            90,
-            100,
-            110
-          ],
-          "chance": 3
-        },
-        {
-          "id": 10835,
-          "count": [
-            25,
-            35,
-            70
-          ],
-          "chance": 3
         }
       ]
     },
@@ -24900,6 +24882,75 @@
   },
   {
     "npcIds": [
+      8010
+    ],
+    "drops": [
+      {"id": 12855, "count": [1500], "chance": 15},
+      {"id": 5022, "count": [125], "chance": 3},
+      {"id": 8803,"count": [1],"chance": 4000},
+      {"id": 8804,"count": [1], "chance": 4000},
+      {"id": 8805,"count": [1],"chance": 4000},
+      {"id": 20173,"count": [1],"chance": 4000},
+      {"id": 15289, "count": [1], "chance": 4000},
+      {"id": 20488, "count": [1], "chance": 7000},
+      {"id": 10025, "count": [1], "chance": 7000},
+      {"id": 13640, "count": [1], "chance": 6000},
+      {"id": 15448, "count": [1], "chance": 6000},
+      {"id": 21934, "count": [1], "chance": 6000},
+      {"id": 19918, "count": [1], "chance": 6000},
+      {"id": 19913, "count": [1], "chance": 6000},
+      {"id": 13964, "count": [1], "chance": 6000},
+      {"id": 3107, "count": [1], "chance": 6000},
+      {"id": 15401, "count": [1], "chance": 6000}
+    ]
+  },
+  {
+    "npcIds": [
+      6329
+    ],
+    "drops": [
+      {"id": 12855, "count": [2500], "chance": 15},
+      {"id": 5022, "count": [175], "chance": 3},
+      {"id": 23381,"count": [1],"chance": 25000},
+      {"id": 10947,"count": [1], "chance": 15000},
+      {"id": 17594,"count": [1],"chance": 15000},
+      {"id": 17596,"count": [1],"chance": 15000},
+      {"id": 17598, "count": [1], "chance": 15000},
+      {"id": 23099, "count": [1], "chance": 15000},
+      {"id": 19776, "count": [1], "chance": 15000},
+      {"id": 15289, "count": [1], "chance": 3500},
+      {"id": 20488, "count": [1], "chance": 6000},
+      {"id": 10025, "count": [1], "chance": 6000}
+    ]
+  },
+  {
+    "npcIds": [
+      9807
+    ],
+    "drops": [
+      {"id": 12855, "count": [2000], "chance": 15},
+      {"id": 5022, "count": [150], "chance": 3},
+      {"id": 23082,"count": [1],"chance": 25000},
+      {"id": 10947,"count": [1], "chance": 20000},
+      {"id": 22084,"count": [1],"chance": 5000},
+      {"id": 8326,"count": [1],"chance": 5000},
+      {"id": 8327, "count": [1], "chance": 5000},
+      {"id": 8328, "count": [1], "chance": 5000},
+      {"id": 22083, "count": [1], "chance": 5000},
+      {"id": 8330, "count": [1], "chance": 5000},
+      {"id": 8331, "count": [1], "chance": 5000},
+      {"id": 8332, "count": [1], "chance": 5000},
+      {"id": 22092, "count": [1], "chance": 5000},
+      {"id": 8323, "count": [1], "chance": 5000},
+      {"id": 8324, "count": [1], "chance": 5000},
+      {"id": 8325, "count": [1], "chance": 5000},
+      {"id": 15289, "count": [1], "chance": 3500},
+      {"id": 20488, "count": [1], "chance": 6000},
+      {"id": 10025, "count": [1], "chance": 6000}
+    ]
+  },
+  {
+    "npcIds": [
       202
     ],
     "drops": [
@@ -24918,7 +24969,7 @@
       {"id": 18683, "count": [1], "chance": 6000},
       {"id": 15511, "count": [1], "chance": 6000},
       {"id": 13306, "count": [1], "chance": 6000},
-      {"id": 16817, "count": [1], "chance": 6000},
+      {"id": 18817, "count": [1], "chance": 6000},
       {"id": 13302, "count": [1], "chance": 6000},
       {"id": 13305, "count": [1], "chance": 6000}
     ]
