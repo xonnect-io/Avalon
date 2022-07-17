@@ -1548,10 +1548,10 @@ public class ItemDef3 {
 
 			case 23099:
 				itemDef.copyItem(2902);
-				itemDef.name = "Brute gauntlets";
-				itemDef.modelID = 100223;
-				itemDef.maleEquip1 = 100224;
-				itemDef.femaleEquip1 = 100224;
+				itemDef.name = "Bork gauntlets";
+				itemDef.modelID = 19549;
+				itemDef.maleEquip1 = 19550;
+				itemDef.femaleEquip1 = 19550;
 				itemDef.modelZoom = 700;
 				itemDef.rotationX = 0;
 				itemDef.rotationY = 520;
@@ -1625,13 +1625,13 @@ public class ItemDef3 {
 
 			case 23381:
 				itemDef.copyItem(5074);
-				itemDef.name = "Brute Pet";
-				itemDef.modelID = 26628;
-				itemDef.modelZoom = 700;
+				itemDef.name = "Bork Pet";
+				itemDef.modelID = 19542;
+				itemDef.modelZoom = 5800;
 				itemDef.rotationY = 0;
 				itemDef.rotationX = 0;
 				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 20;
+				itemDef.modelOffsetY = 0;
 				break;
 
 			case 23108:
@@ -2281,7 +2281,8 @@ public class ItemDef3 {
 				break;
 
 			case 19776:
-				itemDef.name = "Brute boots";
+				itemDef.name = "Bork boots";
+				itemDef.modelID = 19551;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
@@ -4230,7 +4231,7 @@ public class ItemDef3 {
 				break;
 				
 			case 3745:
-				itemDef.name = "Yogi Staff";
+				itemDef.name = "Magician Staff";
 				itemdefedit1 = ItemDefinition.get(4675);
 				itemDef.modelID = 64399;
 				itemDef.femaleEquip1 = 64400;

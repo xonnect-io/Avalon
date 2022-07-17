@@ -491,6 +491,14 @@ public class ItemActionPacketListener implements PacketListener {
                 player.setDoubleDMGTimer(3000);
                 TaskManager.submit(new DoubleDMGTask(player));
                 break;
+
+            case 15501:
+                int[] commonsuper = new int[] {19582, 14525, 11858,18686,18799,5095,10025 };
+                int[] uncommonsuper = new int[] { 19116, 21218,17714,17686,15924,16023,15935,15888,15818,12994,16272};
+                int[] raresuper = new int[] {8800,8801, 8802,8803,8804,8805,8806,8807,8808,3907,10946,6769,20489};
+                player.getMysteryBoxOpener().display(15501, "Vote Mystery Box", commonsuper, uncommonsuper, raresuper);
+                break;
+
             case 19116:
                 int[] commonsuper1 = new int[] {12855, 989, 4888, 18332, 14377,13902,13899 ,11730};
                 int[] uncommonsuper1 = new int[] {13922,13952,13940,13910,13946,13934,13916,13949,13937,14915,14919,14924};
@@ -508,7 +516,7 @@ public class ItemActionPacketListener implements PacketListener {
             case 19114:// grandmbox
                 int[] commongrand = new int[] { 13740, 15290};
                 int[] uncommongrand = new int[] {20549, 20173, 8809,8834,8835,8860,8861,8862,15830,3318,15418};
-                int[] raresgrand = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092,10946};
+                int[] raresgrand = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092,10946,10942,6769};
                 player.getMysteryBoxOpener().display(19114, "Grand Box", commongrand, uncommongrand, raresgrand);
                 break;
             case 20488:// grandmbox
@@ -522,12 +530,11 @@ public class ItemActionPacketListener implements PacketListener {
                 DialogueManager.start(player, NephilimTokenExchange.getDialogue(player));
                 break;
             case 20489:
-                int[] commonLaunch = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808, 20549, 20173, 8809,
-                        10946, 6769,15290};
-                int[] uncommonLaunch = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325, 22084, 22083, 22092,
-                        10942,15289};
-                int[] raresLaunch = new int[] {18753, 18749, 18631, 18752, 18748, 18637, 18751, 18638, 18623, 18750, 18636,
-                        18629, 4446, 19886, 10934,15288};
+                int[] commonLaunch = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325, 22084, 22083, 22092,
+                        10946,6769,15288};
+                int[] uncommonLaunch = new int[] {18753, 18749, 18631, 18752, 18748, 18637, 18751, 18638, 18623, 18750, 18636,
+                        18629, 4446, 19886, 10942};
+                int[] raresLaunch = new int[] {8253,8087,8088,8089,10947,12608,10934,3578};
                 player.getMysteryBoxOpener().display(20489, "Launch Casket", commonLaunch, uncommonLaunch, raresLaunch);
                 break;
             case 15002:
@@ -794,7 +801,8 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 7956:
-                int[] commonpvm = new int[] {10350, 10348, 4718, 10346, 14499, 14497, 14501, 4710, 16054, 17193, 17339, 4734, 4753, 4757, 4759, 4755,
+                int[] commonpvm = new int[] {10350, 10348, 4718, 10346, 14499, 14497, 14501, 4710, 16054,
+                        17193, 17339, 4734, 4753, 4757, 4759, 4755,
                         4745, 4749, 4751, 4747, 290};
                 int[] uncommonpvm = new int[] {19582, 14525, 11858, 23020};
                 int[] rarepvm = new int[] {4151,11235,15486,12933,18353,15031,6585,6737,7462};
@@ -842,11 +850,15 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] rareSlayer = new int[] {20542,13300,13301,13304,18683,15511,13306,18817,13302,13305,15230,15231,15232,15233,15234,17662,15235,15236,21031,21032,21033,21034,21035,13640,15448,21934,19918,19913,13964,3107,15401 };
                 player.getMysteryBoxOpener().display(7120, "Slayer Box", commonSlayer, uncommonSlayer, rareSlayer);
                 break;
+            case 18768:// Dragonball box
+                int[] commondbz = new int[] {2025,6199,18686,18799,5095,15290,7956};
+                int[] uncommondbz = new int[] {14827,14818,14820,11195,10946,19116,15418,17291,3318,19136,10887};
+                int[] raredbz = new int[] {15289,6769,9481,9482,9483,9478,9479,9480};
+                player.getMysteryBoxOpener().display(18768, "Dragonball Box", commondbz, uncommondbz, raredbz);
+                break;
             case 22123:// slayer box
-                int[] commonSlayerU = new int[] {15289,19114,19115,19116,22003};
-                int[] uncommonSlayerU = new int[] {15288,15358,15359,8323,8324,8325,8326,8327,8328,8330,8331,8332,22092,22084,22083};
-                int[] rareSlayerU = new int[] {18750,18753,18752,18751,18636,18749,18748,18638,18629,18631,18637,18623,19886,4446,10946,1486,10947,3737,3738,3739};
-                player.getMysteryBoxOpener().display(22123, "Slayer Box (u)", commonSlayerU, uncommonSlayerU, rareSlayerU);
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SLAYER_U);
+                player.getCasketOpening().openInterface();
                 break;
             case 22121:
                 if (player.getLocation() != Location.HOME_BANK) {
@@ -907,7 +919,6 @@ public class ItemActionPacketListener implements PacketListener {
                         18686, 15501, 989, 962, 3318, 3907, 11137, 4151, 12790, 15332, 7956};
                 player.getGoodieBag().open();
                 break;
-
             case 23274:
                 player.getGoodieBag().boxId = itemId;
                 player.getGoodieBag().rewards = new int[]{23275, 14999, 23002, 10943,15004,12630,10942,9084,22121,9083
@@ -2163,17 +2174,6 @@ public class ItemActionPacketListener implements PacketListener {
                         + (recoilcharges1 == 1 ? "charge" : "charges") + " remaining.");
                 break;
             // case 13738:
-            case 13740:
-            case 13742:
-                // case 13744:
-                if (player.isSpiritDebug()) {
-                    player.getPacketSender().sendMessage("You toggle your Spirit Shield to not display specific messages.");
-                    player.setSpiritDebug(false);
-                } else if (player.isSpiritDebug() == false) {
-                    player.getPacketSender().sendMessage("You toggle your Spirit Shield to display specific messages.");
-                    player.setSpiritDebug(true);
-                }
-                break;
             case 23020:
                 if (player.busy()) {
                     player.getPacketSender().sendMessage("You can not do this right now.");

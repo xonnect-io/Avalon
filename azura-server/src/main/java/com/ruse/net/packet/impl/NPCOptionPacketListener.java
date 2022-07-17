@@ -121,7 +121,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 1208://GLOVES_NPC
                         break;
-                    case 460: //DAILY TASK
+                    case 460: //MAGIC GUILD
                         npc.forceChat("Vis porta. Claudo te. Vis sera portus.sigillum");
                         if (player.getMagicianMaster() == true) {
                             DialogueManager.sendStatement(player, "You Already have mastered this minigame!");
@@ -140,6 +140,27 @@ public class NPCOptionPacketListener implements PacketListener {
                         if (player.getMagicGuildTier1()) {
                             player.getPacketSender().sendInterfaceReset();
                             player.magicGuildT1.openT1();
+                            return;
+                        }
+                        break;
+                    case 198: //WARRIOR GUILD
+                        if (player.getWarriorMaster() == true) {
+                            DialogueManager.sendStatement(player, "You already have mastered this minigame!");
+                            return;
+                        }
+                        if (player.getWarriorGuildTier3() == true && player.getWarriorGuildTier2() == true && player.getWarriorGuildTier1() == true) {
+                            player.getPacketSender().sendInterfaceReset();
+                            player.warriorGuildT3.openT3();
+                            return;
+                        }
+                        if (player.getWarriorGuildTier2() == true && player.getWarriorGuildTier1()) {
+                            player.getPacketSender().sendInterfaceReset();
+                            player.warriorGuildT2.openT2();
+                            return;
+                        }
+                        if (player.getWarriorGuildTier1()) {
+                            player.getPacketSender().sendInterfaceReset();
+                            player.warriorGuildT1.openT1();
                             return;
                         }
                         break;

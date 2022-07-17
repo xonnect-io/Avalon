@@ -42,6 +42,7 @@ public class TeleportInterface {
                 player.getPacketSender().sendInterface(122000);
             }*/
             case 11004:
+            case 71517:
                 new TeleportInterfaceHandler(player).open();
                 return true;
             case 122005:

@@ -150,9 +150,16 @@ public class PlayerSaving {
 			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
 			object.addProperty("ab-killcount", new Integer(player.getPointsHandler().getAvalonBeastBKC()));
 			object.addProperty("quest-one-dream-kc", new Integer(player.getPointsHandler().getQuestOneDreamKC()));
+			object.addProperty("zombie-raid-kc", new Integer(player.getPointsHandler().getZombieRaidKC()));
+			object.addProperty("isles-kc", new Integer(player.getPointsHandler().getIslesKC()));
+			object.addProperty("suffering-kc", new Integer(player.getPointsHandler().getSufferingKC()));
+			object.addProperty("treasure-hunter-kc", new Integer(player.getPointsHandler().getTreasureHunterKC()));
 			object.addProperty("faceless-magician-killcount", new Integer(player.getPointsHandler().getFacelessMagicianKC()));
 			object.addProperty("lotus-magician-killcount", new Integer(player.getPointsHandler().getLotusMagicianKC()));
 			object.addProperty("shadow-magician-killcount", new Integer(player.getPointsHandler().getShadowMagicianKC()));
+			object.addProperty("lesarkus-warrior-killcount", new Integer(player.getPointsHandler().getLesarkusWarriorKC()));
+			object.addProperty("vampire-warrior-killcount", new Integer(player.getPointsHandler().getVampireWarriorKC()));
+			object.addProperty("ancient-warrior-killcount", new Integer(player.getPointsHandler().getAncientWarriorKC()));
 			object.addProperty("seasonpass-xp", new Integer(player.getSeasonPass().getXp()));
 			object.addProperty("seasonpass-tier", new Integer(player.getSeasonPass().getTier()));
 			object.addProperty("seasonpass-kc", new Integer(player.getkc500forseasonpass()));
@@ -367,6 +374,10 @@ public class PlayerSaving {
 			object.addProperty("magic2-unlocked", player.getMagicGuildTier2());
 			object.addProperty("magic3-unlocked", player.getMagicGuildTier3());
 			object.addProperty("magic-master", player.getMagicianMaster());
+			object.addProperty("warrior1-unlocked", player.getWarriorGuildTier1());
+			object.addProperty("warrior2-unlocked", player.getWarriorGuildTier2());
+			object.addProperty("warrior3-unlocked", player.getWarriorGuildTier3());
+			object.addProperty("warrior-master", player.getWarriorMaster());
 			object.addProperty("dark-supremes-unlocked", player.isUnlockedDarkSupreme());
 			object.add("currency-pouch", builder.toJsonTree(player.getCurrencyPouch()));
 			object.addProperty("lastTGloveIndex", player.lastTGloveIndex);

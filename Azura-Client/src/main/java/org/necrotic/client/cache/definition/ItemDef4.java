@@ -195,26 +195,20 @@ public class ItemDef4 {
 				itemDef.editedModelColor[0] = 75; //
 				break;
 			case 17594:
-				itemDef.name = "Brute helm";
-				itemDef.modelID = 65480;
-				itemDef.maleEquip1 = 65481;
-				itemDef.femaleEquip1 = 65481;
-				itemDef21 = ItemDefinition.get(4882);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				//itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.copyItem(4882);
+				itemDef.name = "Bork helm";
+				itemDef.modelID = 19543;
+				itemDef.maleEquip1 = 19544;
+				itemDef.femaleEquip1 = 19544;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 
 			case 17596:
-				itemDef.name = "Brute body";
-				itemDef.modelID = 65482;
-				itemDef.maleEquip1 = 65483;
-				itemDef.femaleEquip1 = 65483;
+				itemDef.name = "Bork body";
+				itemDef.modelID = 19545;
+				itemDef.maleEquip1 = 19546;
+				itemDef.femaleEquip1 = 19546;
 				itemDef21 = ItemDefinition.get(4894);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -226,10 +220,10 @@ public class ItemDef4 {
 
 				break;
 			case 17598:
-				itemDef.name = "Brute legs";
-				itemDef.modelID = 65484;
-				itemDef.maleEquip1 = 65485;
-				itemDef.femaleEquip1 = 65485;
+				itemDef.name = "Bork legs";
+				itemDef.modelID = 19547;
+				itemDef.maleEquip1 = 19548;
+				itemDef.femaleEquip1 = 19548;
 				itemDef21 = ItemDefinition.get(4900);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -712,6 +706,17 @@ public class ItemDef4 {
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
 
+			case 23382:
+				itemDef.name = "Cthulu offspring";
+				itemDef.modelID = 19256;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelZoom = 3500;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
 			case 23323:
 				itemDef.name = "Summer Surfer pet";
 				itemDef.modelID = 19486;
@@ -838,7 +843,6 @@ public class ItemDef4 {
 				itemDef.actions = new String[5];
 				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc2 = 53921;
-				itemDef.stackable = true;
 				break;
 			case 22111:
 				itemDef.name = "Owner's Aura";
@@ -1008,7 +1012,6 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = itemDef21.actions;
 				itemDef.rdc3 = 1;
-				itemDef.stackable = true;
 				break;
 			case 23239:
 				itemDef.name = "Blood Attachment";
@@ -1022,7 +1025,6 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = itemDef21.actions;
 				itemDef.rdc3 = 900;
-				itemDef.stackable = true;
 				break;
 				
 			case 22113:
@@ -7583,6 +7585,9 @@ public class ItemDef4 {
 				break;
 			case 5012:
 				itemDef.copyItem(11235);
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				itemDef.name = "Legends Bow";
 				itemDef.modelID = 17416;
 				itemDef.femaleEquip1 = 17460;
@@ -7596,34 +7601,41 @@ public class ItemDef4 {
 				break;
 			case 23226:
 				itemDef.copyItem(11235);
-				itemDef.name = "Legends Blood Bow";
-				itemDef.modelID = 17416;
-				itemDef.femaleEquip1 = 17460;
-				itemDef.maleEquip1 = 17460;
-				itemDef.modelOffsetX = 15;
-				itemDef.modelOffsetY = -15;
-				itemDef.modelZoom = 3000;
-				itemDef.rotationY = 565;
-				itemDef.rotationX = 0;
-				itemDef.rotationZ = 0;
-				itemDef.rdc2 = 79765;
+				itemDef.name = "Blood Gun";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.modelID = 19555;
+				itemDef.femaleEquip1 = 19555;
+				itemDef.maleEquip1 = 19555;
+				itemDef.modelOffsetX = 82;
+				itemDef.modelOffsetY = 105;
+				itemDef.modelZoom = 1017;
+				itemDef.rotationY = 348;
+				itemDef.rotationX = 878;
+				itemDef.rotationZ = 1417;
 				break;
 			case 23227:
 				itemDef.copyItem(22114);
-				itemDef.name = "Legends Blood Staff";
-				itemDef.modelID = 17362;
-				itemDef.maleEquip1 = 17369;
-				itemDef.femaleEquip1 = 17369;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 4;
-				itemDef.modelZoom = 2913;
-				itemDef.rotationY = 565;
-				itemDef.rotationX = 1015;
-				itemDef.rotationZ = 0;
-				itemDef.rdc2 = 79765;
+				itemDef.name = "Blood Staff";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.modelID = 19556;
+				itemDef.maleEquip1 = 19556;
+				itemDef.femaleEquip1 = 19556;
+				itemDef.modelOffsetX = -113;
+				itemDef.modelOffsetY = -26;
+				itemDef.modelZoom = 2965;
+				itemDef.rotationY = 480;
+				itemDef.rotationX = 1261;
+				itemDef.rotationZ = 200;
 				break;
 			case 5011:
 				itemDef.copyItem(11235);
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				itemDef.name = "Legends Light Bow";
 				itemDef.modelID = 17416;
 				itemDef.femaleEquip1 = 17460;
@@ -7677,22 +7689,32 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 8136:
-				itemDef.name = "Legends Blood Sword";
-				ItemDefinition vitur2222 = ItemDefinition.get(12537);
-				itemDef.modelID = 17361;
-				itemDef.femaleEquip1 = 17360;
-				itemDef.maleEquip1 = 17360;
-				itemDef.actions = vitur2222.actions;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 15;
-				itemDef.modelZoom = 1780;
-				itemDef.rotationY = 475;
-				itemDef.rotationX = 983;
-				itemDef.rotationZ = 0;
+				itemDef.name = "Blood blade";
+				itemDef.modelID = 19554;
+				itemDef.femaleEquip1 = 19554;
+				itemDef.maleEquip1 = 19554;
+				itemDef.modelZoom = 3200;
+				itemDef.rotationX = 165;//189
+				itemDef.rotationY = 252;//768
+				itemDef.rotationZ = 322;//768
+				itemDef.modelOffsetX = 78;
+				itemDef.modelOffsetY = -252;
 				itemDef.stackable = false;
-				itemDef.rdc2 = 79765;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				break;
-
+			case 23383:
+				itemDef.copyItem(23079);
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.name = "Lesarkus Blade";
+				itemDef.modelID = 19552;
+				itemDef.femaleEquip1 = 19553;
+				itemDef.maleEquip1 = 19553;
+				itemDef.stackable = false;
+				break;
 			case 12535:
 				itemDef.name = "Legends Sword";
 				ItemDefinition vitur22 = ItemDefinition.get(12537);
@@ -7712,7 +7734,9 @@ public class ItemDef4 {
 			case 12537:
 				ItemDefinition executionz = ItemDefinition.get(4755);
 				itemDef.maleEquip1 = 65323;
-				itemDef.actions = executionz.actions;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				itemDef.name = "Legends Light Sword";
 				itemDef.modelID = 17361;
 				itemDef.femaleEquip1 = 17360;
@@ -7788,6 +7812,9 @@ public class ItemDef4 {
 			case 17011:
 				itemDef.copyItem(22114);
 				itemDef.name = "Legends Staff";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				itemDef.modelID = 17362;
 				itemDef.maleEquip1 = 17369;
 				itemDef.femaleEquip1 = 17369;
@@ -7802,6 +7829,9 @@ public class ItemDef4 {
 			case 17013:
 				itemDef.copyItem(22114);
 				itemDef.name = "Legends Light Staff";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				itemDef.modelID = 17362;
 				itemDef.maleEquip1 = 17369;
 				itemDef.femaleEquip1 = 17369;
@@ -7849,7 +7879,7 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				itemDef.stackable = false;
 				itemDef.rdc2 = 565656;
 				break;
@@ -7875,6 +7905,9 @@ public class ItemDef4 {
 			case 4684:
 				itemDef.copyItem(15642);
 				itemDef.name = "Legends helm";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				itemDef.modelID = 16776;
 				itemDef.maleEquip1 = 16776;
 				itemDef.femaleEquip1 = 16776;
@@ -7903,7 +7936,7 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 18554;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				//itemDef.rdc2 = 23708;
 				itemDef.rotationX = 1220;
 				break;
@@ -7915,7 +7948,7 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 18556;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				//itemDef.rdc2 = 23708;
 				itemDef.modelZoom = 1180;
 				itemDef.rotationX = 0;
@@ -7923,6 +7956,9 @@ public class ItemDef4 {
 			case 4685:
 				itemDef.copyItem(15643);
 				itemDef.name = "Legends body";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				itemDef.modelID = 16780;
 				itemDef.maleEquip1 = 16780;
 				itemDef.femaleEquip1 = 16780;
@@ -7932,6 +7968,9 @@ public class ItemDef4 {
 			case 4686:
 				itemDef.copyItem(15644);
 				itemDef.name = "Legends legs";
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
 				itemDef.modelID = 16797;
 				itemDef.maleEquip1 = 16797;
 				itemDef.femaleEquip1 = 16797;

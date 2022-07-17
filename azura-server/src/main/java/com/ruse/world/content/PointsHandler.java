@@ -80,12 +80,19 @@ public class PointsHandler {
 	private int facelessMagicianKC;
 	private int lotusMagicianKC;
 	private int shadowMagicianKC;
+	private int vampireWarriorKC;
+	private int lesarkusWarriorKC;
+	private int ancientWarriorKC;
 	private int miniLuciferkillcount;
 	private int luciferkillcount;
 	private int midnightgoblinkillcount;
 	private int shillingrate;
 	private int npckillcount;
 	private int questOneDreamKC;
+	private int islesKC;
+	private int treasureHunter;
+	private int suffering;
+	private int zombieRaidKC;
 	private int unknownCompleted;
 	private int totalprestiges;
 	private int totalsprees;
@@ -668,13 +675,6 @@ private int pengRate;
 		return avalonBeastKC;
 	}
 
-	public void setAvalonBeastKC(int avalonBeastKC) {
-		this.avalonBeastKC = avalonBeastKC;
-	}
-	public void addAvalonBeastKC() {
-		this.avalonBeastKC++;
-	}
-
 	public void addAvalonBeastKC(int amt) {
 		this.avalonBeastKC += amt;
 	}
@@ -687,67 +687,66 @@ private int pengRate;
 	}
 
 
+	//Warrior Guild
+	public int getLesarkusWarriorKC() {
+		return lesarkusWarriorKC;
+	}
+	public void addLesarkusWarriorKC(int amt) {this.lesarkusWarriorKC += amt;}
+	public void setLesarkusWarriorKC(int points, boolean add) {
+		if (add)
+			this.lesarkusWarriorKC += points;
+		else
+			this.lesarkusWarriorKC = points;
+	}
+	public int getVampireWarriorKC() {
+		return vampireWarriorKC;
+	}
+	public void addVampireWarriorKC(int amt) {this.vampireWarriorKC += amt;}
+	public void setVampireWarriorKC(int points, boolean add) {
+		if (add)
+			this.vampireWarriorKC += points;
+		else
+			this.vampireWarriorKC = points;
+	}
+	public int getAncientWarriorKC() {
+		return ancientWarriorKC;
+	}
+	public void addAncientWarriorKC(int amt) {this.ancientWarriorKC += amt;}
+	public void setAncientWarriorKC(int points, boolean add) {
+		if (add)
+			this.ancientWarriorKC += points;
+		else
+			this.ancientWarriorKC = points;
+	}
+	//
 	//Magic Guild
 	public int getFacelessMagicianKC() {
 		return facelessMagicianKC;
 	}
-
-	public void setFacelessMagicianKC(int facelessMagicianKC) {
-		this.facelessMagicianKC = facelessMagicianKC;
-	}
-	public void addFacelessMagicianKC() {
-		this.facelessMagicianKC++;
-	}
-
-	public void AddFacelessMagicianKC(int amt) {
-		this.facelessMagicianKC += amt;
-	}
-
+	public void addFacelessMagicianKC(int amt) {this.facelessMagicianKC += amt;}
 	public void setFacelessMagicianKC(int points, boolean add) {
 		if (add)
 			this.facelessMagicianKC += points;
 		else
 			this.facelessMagicianKC = points;
 	}
-
 	public int getLotusMagicianKC() {
 		return lotusMagicianKC;
 	}
-
-	public void setLotusMagicianKC(int lotusMagicianKC) {
-		this.lotusMagicianKC = lotusMagicianKC;
-	}
-	public void addLotusMagicianKC() {
-		this.lotusMagicianKC++;
-	}
-
-	public void AddLotusMagicianKC(int amt) {
-		this.lotusMagicianKC += amt;
-	}
-
+	public void addLotusMagicianKC(int amt) {this.lotusMagicianKC += amt;}
 	public void setLotusMagicianKC(int points, boolean add) {
 		if (add)
 			this.lotusMagicianKC += points;
 		else
 			this.lotusMagicianKC = points;
 	}
-
-
 	public int getShadowMagicianKC() {
 		return shadowMagicianKC;
 	}
-
 	public void setShadowMagicianKC(int shadowMagicianKC) {
 		this.shadowMagicianKC = shadowMagicianKC;
 	}
-	public void addShadowMagicianKC() {
-		this.shadowMagicianKC++;
-	}
-
-	public void AddShadowMagicianKC(int amt) {
-		this.shadowMagicianKC += amt;
-	}
-
+	public void addShadowMagicianKC(int amt) {this.shadowMagicianKC += amt;}
 	public void setShadowMagicianKC(int points, boolean add) {
 		if (add)
 			this.shadowMagicianKC += points;
@@ -755,7 +754,6 @@ private int pengRate;
 			this.shadowMagicianKC = points;
 	}
 	//
-
 	//
 	public int getGROUDONKILLCount() {
 		return groudonkillcount;
@@ -839,9 +837,30 @@ private int pengRate;
 	public void incrementNPCKILLCount(int amt) {
 		this.npckillcount += amt;
 	}
-
-
-
+	public void incrementZombieRaidKC(int amt) {
+		this.zombieRaidKC += amt;
+	}
+	public void incrementIslesKC(int amt) {
+		this.islesKC += amt;
+	}
+	public void incrementTreasureHunterKC(int amt) {
+		this.treasureHunter += amt;
+	}
+	public void incrementSufferingKC(int amt) {
+		this.suffering += amt;
+	}
+	public int getZombieRaidKC() {
+		return zombieRaidKC;
+	}
+	public int getIslesKC() {
+		return islesKC;
+	}
+	public int getTreasureHunterKC() {
+		return treasureHunter;
+	}
+	public int getSufferingKC() {
+		return suffering;
+	}
 	public int getQuestOneDreamKC() {
 		return questOneDreamKC;
 	}
@@ -856,7 +875,30 @@ private int pengRate;
 		else
 			this.questOneDreamKC = points;
 	}
-
+	public void setZombieRaidsKC(int points, boolean add) {
+		if (add)
+			this.zombieRaidKC += points;
+		else
+			this.zombieRaidKC = points;
+	}
+	public void setSufferingKC(int points, boolean add) {
+		if (add)
+			this.suffering += points;
+		else
+			this.suffering = points;
+	}
+	public void setIslesKC(int points, boolean add) {
+		if (add)
+			this.islesKC += points;
+		else
+			this.islesKC = points;
+	}
+	public void setTreasureHunterKC(int points, boolean add) {
+		if (add)
+			this.treasureHunter += points;
+		else
+			this.treasureHunter = points;
+	}
 	public void setNPCKILLCount(int points, boolean add) {
 		if (add)
 			this.npckillcount += points;

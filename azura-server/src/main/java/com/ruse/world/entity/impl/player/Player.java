@@ -67,6 +67,7 @@ import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceData;
 import com.ruse.world.content.minigames.MagicGuild;
 import com.ruse.world.content.minigames.MinigameAttributes;
+import com.ruse.world.content.minigames.WarriorGuild;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.content.minigames.impl.UnknownZone;
@@ -115,18 +116,39 @@ import java.util.concurrent.CopyOnWriteArrayList;
 //import com.ruse.mysql.Hiscores;
 
 public class Player extends Character {
-    public static int MYSTERY_BOXES_OPENED,SPIDERS_KILLED,DUSTCLAWS_KILLED,HANTO_KILLED,
-            LEGEND_RAIDS_COMPLETED,DEMON_GODDESS_KILLED,ENERGY_SKELETONS_KILLED,TUROTH_KILLED,
+    public static int MYSTERY_BOXES_OPENED,PVM_BOXES_OPENED,PVM_BOXES_T2_OPENED,SUPER_BOXES_OPENED,EXTREME_BOXES_OPENED,
+            OP_BOXES_OPENED,GRAND_BOXES_OPENED,VOTE_BOXES_OPENED,PROGRESSIVE_BOXES_OPENED,SLAYER_BOXES_OPENED,SLAYER_BOXESU_OPENED,
+            DRAGON_BALL_BOXES_OPENED,RAID_BOXES_OPENED,LAUNCH_BOXES_OPENED,AZURE_CASKETS_OPENED,ELITE_CASKETS_OPENED,
+            EXCLUSIVE_CASKETS_OPENED, LEGENDARY_CASKETS_OPENED, SUPREME_CASKETS_OPENED,
+            SPIDERS_KILLED,DUSTCLAWS_KILLED,HANTO_KILLED,
+            SUFFERING_COMPLETED,DEMON_GODDESS_KILLED,ENERGY_SKELETONS_KILLED,TUROTH_KILLED,
             FALLEN_WARRIOR_KILLED,CAVE_DRONE_KILLED,CAVE_MUTANT_KILLED,CAVE_SNAIL_KILLED
     ,LORDS_KILLED,SHADOW_KILLED,GOLEM_KILLED,SHETANI_KILLED,RIPPER_KILLED,AVATAR_KILLED,WYVERNS_KILLED,
             ONI_KILLED,SHENRON_KILLED,SUBZERO_KILLED,ZEUS_KILLED,IPOTANE_KILLED,VINDICTA_KILLED,BEAST_KILLED
+            ,RADITZ_KILLED,GOKU_KILLED,BOTANIC_KILLED,ENRAGED_GUARDIAN_KILLED,ELEMENTAL_GUARDIAN_KILLED,
+            INYUASHA_KILLED,TOLROKOTH_KILLED,DEITY_DEMON_KILLED,MUTATED_HOUND_KILLED,VALDIS_KILLED,COLLOSAL_AVATAR_KILLED,
+            INFERNAL_DEMON_KILLED,FALLEN_ANGEL_KILLED,MIDNIGHT_GOBLIN_KILLED,BLOOD_DEMON_KILLED,UNKNOWN_MINIGAMES_COMPLETED,
+            ISLES_OF_AVALON_COMPLETED,
+            TREASURE_HUNTER_COMPLETED,
+            PYRAMID_OUTBREAK_COMPLETED
             ;
-    public static boolean MYSTERY_BOX_LOG_CLAIMED,ARACHNES_LOG_CLAIMED,DUSTCLAW_LOG_CLAIMED,HANTO_LOG_CLAIMED,LEGEND_RAIDS_LOG_CLAIMED,
+    public static boolean MYSTERY_BOX_LOG_CLAIMED,PVM_BOX_LOG_CLAIMED,PVM_BOX_T2_LOG_CLAIMED,SUPER_BOX_LOG_CLAIMED,
+            EXTREME_BOX_LOG_CLAIMED,GRAND_BOX_LOG_CLAIMED,OP_BOX_LOG_CLAIMED,VOTE_BOX_LOG_CLAIMED,PROGRESSIVE_BOX_LOG_CLAIMED,
+            SLAYER_BOX_LOG_CLAIMED,SLAYER_BOXU_LOG_CLAIMED,DRAGON_BALL_BOX_LOG_CLAIMED,RAID_BOX_LOG_CLAIMED,
+            LAUNCH_BOX_LOG_CLAIMED,AZURE_CASKET_LOG_CLAIMED,ELITE_CASKET_LOG_CLAIMED,EXCLUSIVE_CASKET_LOG_CLAIMED,LEGENDARY_CASKET_LOG_CLAIMED,SUPREME_CASKET_LOG_CLAIMED,
+            ARACHNES_LOG_CLAIMED,DUSTCLAW_LOG_CLAIMED,HANTO_LOG_CLAIMED, SUFFERING_LOG_CLAIMED,
             DEMON_GODDESS_LOG_CLAIMED, ENERGY_SKELETONS_LOG_CLAIMED, TUROTH_LOG_CLAIMED,
             FALLEN_WARRIOR_LOG_CLAIMED,CAVE_DRONE_LOG_CLAIMED,CAVE_MUTANT_LOG_CLAIMED,CAVE_SNAIL_LOG_CLAIMED,
             LORD_LOG_CLAIMED,SHADOW_LOG_CLAIMED,GOLEM_LOG_CLAIMED,SHETANI_LOG_CLAIMED,RIPPER_LOG_CLAIMED,AVATAR_LOG_CLAIMED
             ,WYVERNS_LOG_CLAIMED,ONI_LOG_CLAIMED,SHENRON_LOG_CLAIMED,SUBZERO_LOG_CLAIMED,ZEUS_LOG_CLAIMED,IPOTANE_LOG_CLAIMED,
-            VINDICTA_LOG_CLAIMED,BEAST_LOG_CLAIMED
+            VINDICTA_LOG_CLAIMED,BEAST_LOG_CLAIMED,RADITZ_LOG_CLAIMED,GOKU_LOG_CLAIMED,BOTANIC_LOG_CLAIMED,
+            ENRAGED_GUARDIAN_LOG_CLAIMED,ELEMENTAL_GUARDIAN_LOG_CLAIMED,INYUASHA_LOG_CLAIMED,TOLROKOTH_LOG_CLAIMED,
+            DEITY_DEMON_LOG_CLAIMED,MUTATED_HOUND_LOG_CLAIMED,VALDIS_LOG_CLAIMED,COLLOSAL_AVATAR_LOG_CLAIMED,
+            INFERNAL_DEMON_LOG_CLAIMED,FALLEN_ANGEL_LOG_CLAIMED,MIDNIGHT_GOBLIN_LOG_CLAIMED,BLOOD_DEMON_LOG_CLAIMED,
+            UNKNOWN_MINIGAMES_LOG_CLAIMED,
+            ISLES_OF_AVALON_LOG_CLAIMED,
+            TREASURE_HUNTER_LOG_CLAIMED,
+            PYRAMID_OUTBREAK_LOG_CLAIMED
             ;
     private final CollectionLog collectionLog2 = new CollectionLog(this);
 
@@ -421,6 +443,10 @@ public class Player extends Character {
     public final MagicGuild magicGuildT1 = new MagicGuild(this);
     public final MagicGuild magicGuildT2 = new MagicGuild(this);
     public final MagicGuild magicGuildT3 = new MagicGuild(this);
+    public final WarriorGuild warriorGuildUnlock = new WarriorGuild(this);
+    public final WarriorGuild warriorGuildT1 = new WarriorGuild(this);
+    public final WarriorGuild warriorGuildT2 = new WarriorGuild(this);
+    public final WarriorGuild warriorGuildT3 = new WarriorGuild(this);
     private final PacketSender packetSender = new PacketSender(this);
     private final Appearance appearance = new Appearance(this);
     private final FrameUpdater frameUpdater = new FrameUpdater();
@@ -535,6 +561,7 @@ public class Player extends Character {
     private boolean placeholders = true;
     private boolean enteredZombieRaids;
     private int zombieRaidsKC;
+    private int islesKC;
     private boolean enteredSODRaids;
     private int sodRaidsKC;
     private RaidsParty raidsParty;
@@ -824,14 +851,6 @@ public class Player extends Character {
 
     public void setInsideRaids(boolean insideRaids) {
         this.insideRaids = insideRaids;
-    }
-
-    public int getZombieRaidsKC() {
-        return zombieRaidsKC;
-    }
-
-    public void setZombieRaidsKC(int zombieRaidsKC) {
-        this.zombieRaidsKC = zombieRaidsKC;
     }
 
     public boolean isEnteredZombieRaids() {
@@ -1850,7 +1869,44 @@ End new teleport
     /*
     End Magic Guild
      */
+    /*
+    Start Warrior Guild
+     */
+    private boolean warriorMaster;
+    private boolean warriorguildtier1;
+    private boolean warriorguildtier2;
+    private boolean warriorguildtier3;
+    public void setWarriorGuildTier1(boolean warriorguildtier1) {
+        this.warriorguildtier1 = warriorguildtier1;
+    }
+    public boolean getWarriorGuildTier1() {
+        return warriorguildtier1;
+    }
 
+    public void setWarriorGuildTier2(boolean warriorguildtier2) {
+        this.warriorguildtier2 = warriorguildtier2;
+    }
+    public boolean getWarriorGuildTier2() {
+        return warriorguildtier2;
+    }
+
+    public void setWarriorGuildTier3(boolean warriorguildtier3) {
+        this.warriorguildtier3 = warriorguildtier3;
+    }
+    public boolean getWarriorGuildTier3() {
+        return warriorguildtier3;
+    }
+
+    public void setWarriorMaster(boolean warriorMaster) {
+        this.warriorMaster = warriorMaster;
+    }
+    public boolean getWarriorMaster() {
+        return warriorMaster;
+    }
+
+    /*
+    End Warrior Guild
+     */
 
     /*
     Start Fallen Angels

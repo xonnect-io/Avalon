@@ -541,8 +541,11 @@ public class NPCDrops {
             }
 
             MONSTERS.log(player, npc.getId(), item);
+
             ZONES.log(player, npc.getId(), item);
+
             BOSSES.log(player, npc.getId(), item);
+
         //    new CollectionEntry(npc.getId(), item.getId(), item.getAmount()).submit(player);
         }
 

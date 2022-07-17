@@ -298,7 +298,7 @@ public class ZombieRaids {
                     player.getInventory().add(18404, 1);
                     player.getSeasonPass().addXp(2);
                     player.getAchievementTracker().progress(AchievementData.RAIDER, 1);
-                    player.setZombieRaidsKC(player.getZombieRaidsKC() + 1);
+                    player.getPointsHandler().incrementZombieRaidKC(1);
 
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
                         player.getInventory().add(18404, 1);

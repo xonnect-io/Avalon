@@ -63583,27 +63583,27 @@ name: Cure potion
 finish
 
 Item Id: 17594
-name: Brute helm
+name: Bork helm
 finish
 
 Item Id: 17595
-name: Brute helm
+name: Bork helm
 finish
 
 Item Id: 17596
-name: Brute body
+name: Bork body
 finish
 
 Item Id: 17597
-name: Brute body
+name: Bork body
 finish
 
 Item Id: 17598
-name: Brute legs
+name: Bork legs
 finish
 
 Item Id: 17599
-name: Brute legs
+name: Bork legs
 finish
 
 Item Id: 17600

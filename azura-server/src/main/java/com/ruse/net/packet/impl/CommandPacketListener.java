@@ -54,7 +54,6 @@ import com.ruse.world.content.holidayevents.easter2017;
 import com.ruse.world.content.minigames.impl.DissolveAllDialogue;
 import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
-import com.ruse.world.content.osrscollectionlog.CollectionLog;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.randomevents.LootChest;
@@ -128,17 +127,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("collectionlog")) {
             player.getCollectionLog2().open(MONSTERS);
         }
-        if (command[0].equalsIgnoreCase("barrowslog")) {
-            Item item = new Item(4710);
-            MONSTERS.log(player, CollectionLog.BARROWS_KEY, item);
-            player.getCollectionLog2().open(MONSTERS);
-        }
-        if (command[0].equalsIgnoreCase("logkill")) {
 
-            int npcid = Integer.parseInt(command[1]);
-            player.getCollectionLog2().registerkill(npcid);
-
-        }
         if (command[0].equalsIgnoreCase("dissolveall")) {
         int price = 0;
             for (int i = 0; i < player.getInventory().capacity(); i++) {

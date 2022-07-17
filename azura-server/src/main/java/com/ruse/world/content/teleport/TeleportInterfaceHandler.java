@@ -176,7 +176,21 @@ public class TeleportInterfaceHandler {
 				player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return; }
 		}
-
+		if (player.getCurrentTeleport().getNpcId() == 277) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			}
+			if (!player.getWarriorGuildTier1()) {
+				player.warriorGuildUnlock.openMain();
+				return;
+			} else if (player.getWarriorGuildTier1()) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return; }
+		}
 		if (player.getCurrentTeleport().getNpcId() == 9011) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
@@ -231,7 +245,7 @@ public class TeleportInterfaceHandler {
 		if (player.getCurrentTeleport().getNpcId() == 9106) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if ((player.getZombieRaidsKC() >= 100 || player.getRights() == PlayerRights.OWNER)) {
+			if ((player.getPointsHandler().getZombieRaidKC() >= 100 || player.getRights() == PlayerRights.OWNER)) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 			} else {

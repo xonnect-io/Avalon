@@ -264,6 +264,14 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().removeInterface();
                 break;
             case 77834:
+            case -18522:
+            case -17390:
+            case 77146:
+            case 77346:
+            case 77446:
+            case 77546:
+            case 77251:
+            case 71516:
                 player.getPacketSender().removeInterface();
                 break;
             case 77245:
@@ -283,18 +291,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 player.getPacketSender().removeInterface();
                 break;
-            case -18522:
-            case -17390:
-            case 77146:
-            case 77346:
-            case 77446:
-            case 77546:
-            case 77251:
-                player.getPacketSender().removeInterface();
-                break;
             case 77142:
                 if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
-                    player.getPA().sendMessage("You need 50,000 Skeleton Brute KC before you can sacrifice your light weapons.");
+                    player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your light weapons.");
                     return;
                 }
                 if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(5011) && player.getInventory().contains(12537) && player.getInventory().contains(17013)) {
@@ -310,7 +309,22 @@ public class ButtonClickPacketListener implements PacketListener {
                 } else
                     player.getPA().sendMessage("You need to sacrifice x1 of Each Light weapon variant. (Staff, sword, and bow)");
                 break;
-
+            case 71512:
+                if (player.getMagicianMaster() == false) {
+                    player.getPA().sendMessage("You need to be a Magician Master before you can sacrifice an Owner Fragment.");
+                    return;
+                }
+                if (player.getMagicianMaster() == true && player.getInventory().contains(23321, 250)) {
+                    player.getPA().sendMessage("You sacrifice x250 Suffered Crystals and become a Tier 1 Warrior in the Guild!");
+                    World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Warrior!");
+                    player.setWarriorGuildTier1(true);
+                    player.getInventory().delete(23321, 250);
+                    Position warriorGuild = new Position(2655, 4017);
+                    TeleportHandler.teleportPlayer(player, warriorGuild, player.getSpellbook().getTeleportType());
+                    return;
+                } else
+                    player.getPA().sendMessage("@red@You need x250 Suffered Crystals in your inventory to sacrifice !");
+                break;
             case -18532:
                 player.getNewSpinner().findReward();
                 break;
@@ -344,7 +358,26 @@ public class ButtonClickPacketListener implements PacketListener {
                 Position miningPos = new Position(2803, 2611, 0);
                 TeleportHandler.teleportPlayer(player, miningPos, TeleportType.NORMAL);
                 break;
-
+            case 71532:
+                if (player.getPointsHandler().getLesarkusWarriorKC() < 50000) {
+                    player.getPA().sendMessage("You need 50,000 Lesarkus Warrior kills before sacrificing x250 Suffered Crystals.");
+                    return;
+                }
+                if (player.getInventory().contains(13379, 1)) {
+                    player.getInventory().delete(13379, 1);
+                }
+                else if (!player.getInventory().contains(13379, 1)) {
+                    player.getPA().sendMessage("You need x1 Owner Fragment to Level up!");
+                    return;
+                }
+                player.getPA().sendMessage("You sacrifice x1 Owner Fragment and Unlock Tier 2 of the Warrior Guild.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 2 @blu@of the @red@Warrior Guild");
+                player.getPacketSender().sendInterfaceRemoval();
+                player.getPacketSender().sendInterface(71560);
+                player.setWarriorGuildTier2(true);
+                player.getInventory().add(3745, 1);
+                player.getPA().sendMessage("<img=832> x1 Lesarkus Blade has been added to your inventory.");
+                break;
             case 77342:
                  if (player.getPointsHandler().getFacelessMagicianKC() < 50000) {
                      player.getPA().sendMessage("You need 50,000 Faceless Magician kills before sacrificing a Dark weapon.");
@@ -368,10 +401,8 @@ public class ButtonClickPacketListener implements PacketListener {
                      player.getPacketSender().sendInterfaceRemoval();
                      player.getPacketSender().sendInterface(77430);
                      player.setMagicGuildTier2(true);
-                     player.getInventory().add(420, 1);
-                     player.getPA().sendMessage("<img=832> x1 Magic Claws has been added to your inventory.");
-
-
+                     player.getInventory().add(3745, 1);
+                     player.getPA().sendMessage("<img=832> x1 Magician staff has been added to your inventory.");
                 break;
 
             case 77442:
@@ -514,7 +545,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("This feature has not yet been coded.");
                 break;
                 case -17403:
-                player.getPacketSender().sendMessage("You can sacrifice Fallen Angel armor pieces to the chest to increase your chances.");
+                player.getPacketSender().sendMessage("<img=832> 30% Chance at 2X loot on Rare Rewards with @blu@Cthulu's offspring summoned");
                 break;
             case 110007:
                 player.getCasketOpening().spin();

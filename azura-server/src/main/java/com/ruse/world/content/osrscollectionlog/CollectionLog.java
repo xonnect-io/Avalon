@@ -1,9 +1,10 @@
 package com.ruse.world.content.osrscollectionlog;
 
 
-
 import com.ruse.model.Item;
 import com.ruse.util.Color;
+import com.ruse.util.Misc;
+import com.ruse.world.content.KillsTracker;
 import com.ruse.world.entity.impl.player.Player;
 import lombok.var;
 
@@ -11,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
 
 import static com.ruse.world.content.osrscollectionlog.CollectionLogUtility.*;
 
@@ -47,11 +47,52 @@ public class CollectionLog {
     public static final int IPOTANE = 8010;
     public static final int VINDICTA = 9807;
 
-    public static final int BRUTE = 6329;
+    public static final int BORK = 7134;
 
+
+
+    public static final int HANTO = 250;
+    public static final int RADITZ = 225;
+    public static final int GOKU = 452;
+    public static final int BOTANIC = 2342;
+    public static final int ENRAGED_GUARDIAN = 2949;
+    public static final int ELEMENTAL_GUARDIAN = 505;
+    public static final int INYUASHA = 185;
+    public static final int TOLROKOTH = 6430;
+    public static final int DEITY_DEMON = 440;
+    public static final int MUTATED_HOUND = 9839;
+    public static final int VALDIS = 205;
+    public static final int COLLOSAL_AVATAR = 4540;
+    public static final int INFERNAL_DEMON = 12810;
+    public static final int FALLEN_ANGEL = 9012;
+    public static final int MIDNIGHT_GOBLIN = 9837;
+    public static final int BLOOD_DEMON = 9813;
+
+    public static final int UNKNOWN_MINIGAME = 823;
+    public static final int ISLES_OF_AVALON = 23086;
+    public static final int TREASURE_HUNTER = 100001;
+    public static final int PYRAMID_OUTBREAK = 100002;
     public static final int BARROWS_KEY = 120_000;
-    public static final int ZOMBIE_RAIDS = 99999;
+    public static final int SUFFERING_KEY = 23370;
     public static final int MYSTERY_BOX = 6199;
+    public static final int PVM_BOX = 7956;
+    public static final int PVM_BOX_T2 = 22214;
+    public static final int SUPER = 19116;
+    public static final int EXTREME = 19115;
+    public static final int GRAND = 19114;
+    public static final int OP = 20488;
+    public static final int VOTE = 15501;
+    public static final int PROGRESSIVE = 10025;
+    public static final int SLAYER = 7120;
+    public static final int SLAYERU = 22123;
+    public static final int RAID_BOX = 18404;
+    public static final int LAUNCH_CASKET = 20489;
+    public static final int AZURE_CASKET = 15003;
+    public static final int ELITE_CASKET = 15002;
+    public static final int EXCLUSIVE_CASKET = 15004;
+    public static final int LEGENDARY_CASKET = 14999;
+    public static final int SUPREME_CASKET = 23253;
+    public static final int DRAGON_BALL = 18768;
     public static final int CRYSTAL_KEY = 989;
 
     private final Player player;
@@ -80,9 +121,7 @@ public class CollectionLog {
     }
     public int totalkillsforthatnpc(Collection collection) {
 
-      var kills = collectionLogofkills.get(collection);
-      if(kills == null)
-        return 1;
+        var kills = collectionLogofkills.getOrDefault(collection, 1);
         return kills;
     }
     public boolean collectedrewardsforthatnpc(Collection collection) {
@@ -216,10 +255,30 @@ public class CollectionLog {
         player.getPacketSender().setScrollBar(SCROLL_BAR, items.length * 7 + 2);
 
 
+        if (collection.getLogType() == LogType.BOXES)
+        player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : kills - 1));
+
+        else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("souls of suffering"))
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : player.getPointsHandler().getSufferingKC()));
+
+        else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("unknown crypt"))
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Completed: " + "@whi@" + (kills == null ? "0" : player.getPointsHandler().getUnknownCompleted()));
+
+        else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("treasure hunter"))
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : player.getPointsHandler().getTreasureHunterKC()));
+
+        else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("pyramid outbreak"))
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Purchased: " + "@whi@" + (kills == null ? "0" : kills));
+
+        else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("isles of avalon"))
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Completed: " + "@whi@" + (kills == null ? "0" : player.getPointsHandler().getIslesKC()));
+
+        else if(collection.getLogType() == LogType.MONSTERS || collection.getLogType() == LogType.ZONES || collection.getLogType() == LogType.BOSSES)
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Kills: @whi@" +
+            Misc.insertCommasToNumber(String.valueOf(KillsTracker.getTotalKillsForNpc(Arrays.stream(collection.getKey()).sum(), player))));
+
         player.getPacketSender().sendString(NAME_STRING, "@lre@" + collection.getName());
         player.getPacketSender().sendString(OBTAINED_STRING, "@lre@Obtained: " + getColor(obtained, obtainables) + obtained + "/" + obtainables);
-        String plural = collection.getLogType() == LogType.BOXES ? "Opened: " : "Kills: ";
-       player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + plural + "@whi@" + (kills == null ? "0" : kills));
 
         int pos = 0;
         for (Item item : collection.getReward()){
@@ -231,9 +290,10 @@ public class CollectionLog {
     public void registerkill(int npcid) {
         Arrays.stream(Collection.values()).filter(e -> Arrays.stream(e.getKey()).anyMatch(n -> n == npcid)).findFirst().ifPresent(c -> {
             int beforekills = player.getCollectionLog2().totalkillsforthatnpc(c);
-            player.getCollectionLog2().collectionLogofkills.put(c, beforekills++);
+            player.getCollectionLog2().collectionLogofkills.put(c, beforekills+1);
         });
     }
+
     public void open(LogType logType) {
         final List<Collection> log = Collection.getAsList(logType);
         final int total = log.size();

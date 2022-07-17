@@ -13,6 +13,28 @@ import com.ruse.world.content.Effigies;
 
 public class Item {
 
+	public Item(int id, double rate, boolean announce) {
+		this.id = id;
+		this.min = 1;
+		this.max = 1;
+		this.rate = rate;
+		this.announce = announce;
+	}
+
+	public Item(int id, int amount, double rate, boolean announce) {
+		this.id = id;
+		this.min = amount;
+		this.max = amount;
+		this.rate = rate;
+		this.announce = announce;
+	}
+	public Item(int id, int min, int max, double rate) {
+		this.id = id;
+		this.min = min;
+		this.max = max;
+		this.rate = rate;
+		this.announce = false;
+	}
 	/**
 	 * An Item object constructor.
 	 *

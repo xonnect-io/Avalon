@@ -190,7 +190,7 @@ public class RSInterface {
 
 		String[] TELE_NAMES = {"Dustclaw Teleport - @gre@Lvl 1", "Lord Teleport - @gre@Lvl 1", "Shadow Teleport - @yel@Lvl 2", "Golem Teleport - @yel@Lvl 3", "Shetani Teleport - @or1@Lvl 3",
 				"Ripper Teleport - @or1@Lvl 4", "Avatar Teleport - @or2@Lvl 5", "Wyverns Teleport - @or2@Lvl 6", "Oni Teleport - @red@Lvl 7", "Shenron Teleport - @red@Lvl 8",
-				"Subzero Teleport - @mag@Lvl 9", "Zeus Teleport - @mag@Lvl 10", "Ipotane Teleport - @cya@Lvl 11", "Vindicta Teleport - @cya@Lvl 12", "Brute Teleport - @cya@Lvl 13"};
+				"Subzero Teleport - @mag@Lvl 9", "Zeus Teleport - @mag@Lvl 10", "Ipotane Teleport - @cya@Lvl 11", "Vindicta Teleport - @cya@Lvl 12", "Bork Teleport - @cya@Lvl 13"};
 
 		String[] TELE_REQ = {"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:",
 				"Requirement:", "Requirement:", "Requirement:", "Requirement:", "Requirement:",
@@ -1372,10 +1372,10 @@ public class RSInterface {
 		addText(48134, "Rare (1/1000)", tda, 1, 0xff8624, true, true);
 		addText(48135, "Mbox Name", tda, 1, 0xff8624, true, true);
 		addClickableText(48133, "Increase chances", "Increase chances", fonts, 0, ColorConstants.BRIGHT_YELLOW, 130, 13);
-		addHoverButtonWSpriteLoader(48136, 1445, 90, 25, "Open", -1, 48137, 1);
-		addHoveredImageWSpriteLoader(48137, 1446, 118, 28, 48138);
-		addHoverButtonWSpriteLoader(48139, 1445, 90, 25, "Open All", -1, 48140, 1);
-		addHoveredImageWSpriteLoader(48140, 1446, 118, 118, 48141);
+		addHoverButtonWSpriteLoader(48136, 1660, 90, 25, "Open", -1, 48137, 1);
+		addHoveredImageWSpriteLoader(48137, 1661, 118, 28, 48138);
+		addHoverButtonWSpriteLoader(48139, 1660, 90, 25, "Open All", -1, 48140, 1);
+		addHoveredImageWSpriteLoader(48140, 1661, 118, 118, 48141);
 		addText(48142, "Open", tda, 2, ColorConstants.ORANGE2, true, true);
 		addText(48143, "Open All", tda, 2, ColorConstants.ORANGE2, true, true);
 		addText(48144, "Souls of Suffering", tda, 2, ColorConstants.ORANGE2, true, true);
@@ -1578,14 +1578,16 @@ public class RSInterface {
 		addText(71508, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
 		addText(71509, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
 		addText(71510, "@red@Tier 3 Magician", tda, 1, 0xff8624, false, true);
-		addText(71511, "@red@x1 Owner Fragment(s)", tda, 1, 0xff8624, false, true);
+		addText(71511, "@red@Sacrifice x250 Suffered Crystals", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(71512, 1445, 132, 29, "Sacrifice", -1, 71513, 1);
 		addHoveredImageWSpriteLoader(71513, 1446, 132, 29, 71514);
 
 		addText(71515, "Sacrifice", tda, 2, 0xff8624, true, true);
 		addButtonWSpriteLoader(71516, 714, "Close Window", 16, 16);
 
-		main.totalChildren(15);
+		addButtonWSpriteLoader(71517, 1502, "Back to Teleports", 16, 16);
+
+		main.totalChildren(16);
 		main.child(0, 71501, 125, 35);
 		main.child(1, 71502, 250, 42);
 		main.child(2, 71503, 250, 65);
@@ -1601,6 +1603,7 @@ public class RSInterface {
 		main.child(12, 71513, 189, 248);
 		main.child(13, 71515, 250, 255);
 		main.child(14, 71516, 355, 38);
+		main.child(15, 71517, 135, 38);
 	}
 	private static void warriorTier1Unlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(71520);
@@ -1612,7 +1615,7 @@ public class RSInterface {
 		addText(71525, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
 		addText(71526, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(71527, "@red@- 50,000 Lesarkus Warrior KC", tda, 1, 0xff8624, false, true);
-		addText(71528, "@red@- Sacrifice a Dark weapon", tda, 1, 0xff8624, false, true);
+		addText(71528, "@red@- Sacrifice x1 Owner Fragment", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(71538, 1659);
 		addSpriteLoader(71539, 1658);
 		addSpriteLoader(71540, 1658);
@@ -1661,10 +1664,7 @@ public class RSInterface {
 		addText(71565, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
 		addText(71566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(71567, "@red@- 100,000 Vampire Warrior KC", tda, 1, 0xff8624, false, true);
-		addText(71568, "@red@- Sacrifice a Blood weapon", tda, 1, 0xff8624, false, true);
-
-
-
+		addText(71568, "@red@- Sacrifice 100m Upgrade Tokens", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(71578, 1658);
 		addSpriteLoader(71579, 1659);
 		addSpriteLoader(71580, 1658);
@@ -1768,7 +1768,7 @@ public class RSInterface {
 		addText(77137, "You need requirements for each tier", tda, 1, 0xff8624, false, true);
 		addText(77138, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
 		addText(77139, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
-		addText(77140, "@red@50k Skeleton Brute KC", tda, 1, 0xff8624, false, true);
+		addText(77140, "@red@50k Bork KC", tda, 1, 0xff8624, false, true);
 		addText(77141, "@red@Sacrifice x 1 of EACH Light Weapon", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(77142, 1445, 132, 29, "Sacrifice", -1, 77143, 1);
 		addHoveredImageWSpriteLoader(77143, 1446, 132, 29, 77144);
@@ -1811,7 +1811,7 @@ public class RSInterface {
 		addSpriteLoader(77351, 1704);
 		addSpriteLoader(77352, 1704);
 		addText(77339, "Tier 1", tda, 1, 0xff8624, false, true);
-		addText(77340, "Magic claws", tda, 1, 0xff8624, false, true);
+		addText(77340, "Magician staff", tda, 1, 0xff8624, false, true);
 		addText(77341, "Tier 2", tda, 1, 0xff8624, false, true);
 		addText(77347, "Tier 3", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(77342, 1445, 132, 29, "Sacrifice", -1, 77343, 1);

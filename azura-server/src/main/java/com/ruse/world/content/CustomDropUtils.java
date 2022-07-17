@@ -322,7 +322,7 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(5012)) { //Legends bow
             percentBoost += 25;
         }
-        if (player.getEquipment().contains(23368)) { //Magic Claws
+        if (player.getEquipment().contains(3745)) { //Magician Staff
             percentBoost += 30;
         }
         if (player.getEquipment().contains(8410)) { //Elite sword(aoe)

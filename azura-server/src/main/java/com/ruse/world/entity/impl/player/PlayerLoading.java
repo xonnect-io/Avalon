@@ -163,6 +163,18 @@ public class PlayerLoading {
             }            if (reader.has("talked-to-ghost")) {
                 player.setTalkedToGhost(reader.get("talked-to-ghost").getAsBoolean());
             }
+            if (reader.has("warrior1-unlocked")) {
+                player.setWarriorGuildTier1(reader.get("warrior1-unlocked").getAsBoolean());
+            }
+            if (reader.has("warrior2-unlocked")) {
+                player.setWarriorGuildTier2(reader.get("warrior2-unlocked").getAsBoolean());
+            }
+            if (reader.has("warrior3-unlocked")) {
+                player.setWarriorGuildTier3(reader.get("warrior3-unlocked").getAsBoolean());
+            }
+            if (reader.has("warrior-master")) {
+                player.setWarriorMaster(reader.get("warrior-master").getAsBoolean());
+            }
             if (reader.has("magic1-unlocked")) {
                 player.setMagicGuildTier1(reader.get("magic1-unlocked").getAsBoolean());
             }
@@ -486,6 +498,19 @@ public class PlayerLoading {
             if (reader.has("quest-one-dream-kc")) {
                 player.getPointsHandler().setQuestOneDreamKC(reader.get("quest-one-dream-kc").getAsInt(), false);
             }
+
+            if (reader.has("zombie-raid-kc")) {
+                player.getPointsHandler().setZombieRaidsKC(reader.get("zombie-raid-kc").getAsInt(), false);
+            }
+            if (reader.has("isles-kc")) {
+                player.getPointsHandler().setIslesKC(reader.get("isles-kc").getAsInt(), false);
+            }
+            if (reader.has("treasure-hunter-kc")) {
+                player.getPointsHandler().setTreasureHunterKC(reader.get("treasure-hunter-kc").getAsInt(), false);
+            }
+            if (reader.has("suffering-kc")) {
+                player.getPointsHandler().setSufferingKC(reader.get("suffering-kc").getAsInt(), false);
+            }
             if (reader.has("seasonpass-xp")) {
                 player.getSeasonPass().setXp(reader.get("seasonpass-xp").getAsInt());
             }
@@ -507,6 +532,15 @@ public class PlayerLoading {
             }
             if (reader.has("shadow-magician-killcount")) {
                 player.getPointsHandler().setShadowMagicianKC(reader.get("shadow-magician-killcount").getAsInt(), false);
+            }
+            if (reader.has("lesarkus-warrior-killcount")) {
+                player.getPointsHandler().setLesarkusWarriorKC(reader.get("lesarkus-warrior-killcount").getAsInt(), false);
+            }
+            if (reader.has("vampire-warrior-killcount")) {
+                player.getPointsHandler().setVampireWarriorKC(reader.get("vampire-warrior-killcount").getAsInt(), false);
+            }
+            if (reader.has("ancient-warrior-killcount")) {
+                player.getPointsHandler().setAncientWarriorKC(reader.get("ancient-warrior-killcount").getAsInt(), false);
             }
             if (reader.has("mini-lucifer-killcount")) {
                 player.getPointsHandler().setMiniLuciferkillcount(reader.get("mini-lucifer-killcount").getAsInt());

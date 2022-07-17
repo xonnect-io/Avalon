@@ -2148,7 +2148,6 @@ public final class ItemDefinition {
 				break;
 			case 10947:
 				itemDef.name = "@red@Deity Attachment";
-
 				itemDef21 = ItemDefinition.get(12159);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
@@ -2158,11 +2157,9 @@ public final class ItemDefinition {
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.rdc2 = 416546661;
-				itemDef.stackable = true;
 				break;
 			case 10949:
 				itemDef.name = "Light Attachment";
-
 				itemDef21 = ItemDefinition.get(12159);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
@@ -2172,7 +2169,6 @@ public final class ItemDefinition {
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.rdc2 = 123412;
-				itemDef.stackable = true;
 				break;
 			case 15501:
 				itemDef.name = "Vote Mystery Box";
@@ -4015,7 +4011,6 @@ public final class ItemDefinition {
 			case 5022:
 				itemDef.name = "<col=ff4f4f>PVM ticket";
 				itemDef.rdc2 = 325111;
-				itemDef.stackable = true;
 				itemDef21 = ItemDefinition.get(18652);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;

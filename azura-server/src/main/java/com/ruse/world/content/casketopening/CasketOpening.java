@@ -8,12 +8,16 @@ import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.boxes.*;
 import com.ruse.world.content.casketopening.impl.*;
+import com.ruse.world.content.osrscollectionlog.CollectionLog;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+
+import static com.ruse.world.content.osrscollectionlog.LogType.BOXES;
+import static com.ruse.world.content.osrscollectionlog.LogType.MINIGAMES;
 
 public class CasketOpening {
 
@@ -175,7 +179,6 @@ public class CasketOpening {
             }
             sendItem(i, 23, SlotPrize.getId(), SlotPrize.getMax(), NOT_PRIZE.getId(), NOT_PRIZE.getMax(), 110501);
         }
-
         final boolean announceLoot = announce;
         TaskManager.submit(new Task(7, player, false) {
 
@@ -188,7 +191,34 @@ public class CasketOpening {
             }
         });
     }
+    public void processAll() {
+        SlotPrize = null;
+        canCasketOpening = false;
+        Box[] loot = getCurrentCasket().getLoot() ;
+        SlotPrize = getLoot1(loot);
+        if (SlotPrize.getRate() < 10D && Misc.getRandom(1) == 0){
+            SlotPrize = getLoot1(loot);
+        }
+        if (SlotPrize.getRate() < 10D && Misc.getRandom(2) == 0){
+            SlotPrize = getLoot1(loot);
+        }
+        boolean announce = SlotPrize.isAnnounce();
+        for (int i = 0; i < 7; i++) {
+            Box NOT_PRIZE = getLoot1(loot);
+            if (NOT_PRIZE.getRate() > 10 && Misc.getRandom(2) == 0) {
+                NOT_PRIZE = getLoot1(loot);
+            }
 
+            sendItem(i, 3, SlotPrize.getId(), SlotPrize.getAmount(), NOT_PRIZE.getId(), NOT_PRIZE.getAmount(), 110501);
+        }
+        // player.getBank(0).add(new Item(SlotPrize.getId(), SlotPrize.getMax()), false);
+        //   canCasketOpening = true;
+        if(getCurrentCasket().getItemID() == 23370){
+            player.getPointsHandler().incrementSufferingKC(1);
+        }
+        reward(announce);
+        player.setSpinning(false);
+    }
 
     public void processQuick() {
         SlotPrize = null;
@@ -207,11 +237,14 @@ public class CasketOpening {
             if (NOT_PRIZE.getRate() > 10 && Misc.getRandom(2) == 0) {
                 NOT_PRIZE = getLoot1(loot);
             }
+
             sendItem(i, 3, SlotPrize.getId(), SlotPrize.getAmount(), NOT_PRIZE.getId(), NOT_PRIZE.getAmount(), 110501);
         }
          // player.getBank(0).add(new Item(SlotPrize.getId(), SlotPrize.getMax()), false);
        //   canCasketOpening = true;
-
+        if(getCurrentCasket().getItemID() == 23370){
+        player.getPointsHandler().incrementSufferingKC(1);
+        }
         reward(announce);
         player.setSpinning(false);
     }
@@ -230,13 +263,16 @@ public class CasketOpening {
         if (SlotPrize == null) {
             return;
         }
+        MINIGAMES.log(player, CollectionLog.SUFFERING_KEY, new Item(SlotPrize.getId()));
+        BOXES.log(player, getCurrentCasket().getItemID(), new Item(SlotPrize.getId()));
+
         player.getInventory().add(SlotPrize.getId(), SlotPrize.getAmount());
         player.sendMessage(
                 "@red@You won x" + SlotPrize.getAmount() + " " + ItemDefinition.forId(SlotPrize.getId()).getName());
 
         if (announce) {
             String message = "@red@" + player.getUsername() + " <col=ff812f>has just received @red@"
-                    + (SlotPrize.getMax() > 1 ? "x" + SlotPrize.getMax() : "") + " "
+                    + (SlotPrize.getMax() > 1 ? "x" + SlotPrize.getAmount() : "") + " "
                     + ItemDefinition.forId(SlotPrize.getId()).getName() + "<col=ff812f> from a @red@" +
                     ItemDefinition.forId(getCurrentCasket().getItemID()).getName() + "!";
             World.sendNewsMessage(message);
@@ -246,41 +282,41 @@ public class CasketOpening {
     }
 
     public static List<Item> rare = Arrays.asList(
-            new Item(23303, 1), // Mystic helmet
-            new Item(23304, 1), // Mystic body
-            new Item(23305, 1), // Mystic legs
-            new Item(23306, 1), // Mystic legs
-            new Item(23307, 1), // Mystic legs
-            new Item(23308, 1), // Mystic legs
-            new Item(23309, 1), // Mystic legs
-            new Item(23310, 1), // Mystic legs
-            new Item(23311, 1), // Mystic legs
-            new Item(14999, 1), // Onyx casket
-            new Item(23276, 1), // Starter Card pack
-            new Item(15288, 250) // Upgrade token packs
+            new Item(23303, 1, 1, 0.1, true), // Mystic helmet
+            new Item(23304, 1, 1, 0.1, true), // Mystic body
+            new Item(23305, 1, 1, 0.1, true), // Mystic legs
+            new Item(23306, 1, 1, 0.1, true), // Mystic legs
+            new Item(23307, 1, 1, 0.1, true), // Mystic legs
+            new Item(23308, 1, 1, 0.1, true), // Mystic legs
+            new Item(23309, 1, 1, 0.1, true), // Mystic legs
+            new Item(23310, 1, 1, 0.1, true), // Mystic legs
+            new Item(23311, 1, 1, 0.1, true), // Mystic legs
+            new Item(14999, 1, 1, 0.1, true), // Onyx casket
+            new Item(23276, 1, 1, 0.1, true), // Starter Card pack
+            new Item(15288, 10, 250, 0.1, true) // Upgrade token packs
 
     );
 
     public static List<Item> common = Arrays.asList(
-            new Item(15288, 2), // x2 100k token pack
-            new Item(5022, 100_000), // Pvm tickets
-            new Item(7956, 5000), // pvm box t1
-            new Item(19114, 50), // Grand mystery box
-            new Item(20488, 5), // Grand mystery box
-            new Item(11137, 75), // xp lamps
-            new Item(20489, 1), // Launch casket
-            new Item(15358, 1), // 30min effect scroll
-            new Item(15359, 1), // 30min effect scroll
-            new Item(15288, 5), // x5 100k token packs
-            new Item(23321, 20), // Soulless crystal
-            new Item(10946, 1), // $1 scroll
-            new Item(4446, 1), // $1 scroll
-            new Item(19886, 1), // $1 scroll
-            new Item(8087, 1), // $1 scroll
-            new Item(8088, 1), // $1 scroll
-            new Item(8089, 1), // $1 scroll
-            new Item(22006, 25), // Deathtouch darts
-            new Item(15003, 1) // Silver chest
+            new Item(15288, 1,2,50,false), // x2 100k token pack
+            new Item(5022, 10_000, 100_000,50,false), // Pvm tickets
+            new Item(7956, 100,5000,50,false), // pvm box t1
+            new Item(19114, 5,50,50,false), // Grand mystery box
+            new Item(20488, 1,5,50,false), // Grand mystery box
+            new Item(11137, 25,75,50,false), // xp lamps
+            new Item(20489, 1,1,50,false), // Launch casket
+            new Item(15358, 1,1,50,false), // 30min effect scroll
+            new Item(15359, 1,1,50,false), // 30min effect scroll
+            new Item(15288, 3,5,33,false), // x5 100k token packs
+            new Item(23321, 10,20,20,false), // Soulless crystal
+            new Item(10946, 1,1,20,false), // $1 scroll
+            new Item(4446, 1,1,20,false), // $1 scroll
+            new Item(19886, 1,1,20,false), // $1 scroll
+            new Item(8087, 1,1,5,false), // $1 scroll
+            new Item(8088, 1,1,5,false), // $1 scroll
+            new Item(8089, 1,1,5,false), // $1 scroll
+            new Item(22006, 5,25,5,false), // Deathtouch darts
+            new Item(15003, 1,1,5,false) // Silver chest
     );
 
     public void openSOSInterface() {
@@ -291,11 +327,11 @@ public class CasketOpening {
 
 
         for (int i = 0; i < common.size(); i++) {
-                player.getPacketSender().sendItemOnInterface(48151, common.get(i).getId(),i, common.get(i).getAmount());
+                player.getPacketSender().sendItemOnInterface(48151, common.get(i).getId(),i, common.get(i).getMax());
         }
 
         for (int i = 0; i < rare.size(); i++) {
-                player.getPacketSender().sendItemOnInterface(48171, rare.get(i).getId(),i, rare.get(i).getAmount());
+                player.getPacketSender().sendItemOnInterface(48171, rare.get(i).getId(),i, rare.get(i).getMax());
         }
 
     }
@@ -367,6 +403,7 @@ public class CasketOpening {
         SUPREME(23253, Supreme.rewards),
         SOSREWARDS(23370, SOSRewards.rewards),
         SUMMER_BOX(23322, SummerBox.rewards),
+        SLAYER_U(22123, SlayerU.rewards),
         ;
         private int itemID;
         private Box[] loot;

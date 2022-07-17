@@ -1261,7 +1261,28 @@ public final class CombatFactory {
                     return false;
                 }
             }
-
+            else if (npc.getId() == 277) { // Lesarkus Warrior
+                if (!((Player) entity).getWarriorGuildTier1()) {
+                    player.getPA().sendInterface(71500);
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("You need to unlock Tier 1 first!");
+                    return false;
+                }
+            }
+            else if (npc.getId() == 1914) { // Vampire Warrior
+                if (!((Player) entity).getWarriorGuildTier2()) {
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("You need to be a Tier 2 Warrior to attack this npc.");
+                    return false;
+                }
+            }
+            else if (npc.getId() == 13456) { // Ancient Warrior
+                if (!((Player) entity).getWarriorGuildTier3()) {
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("You need to be a Tier 3 Warrior to attack this npc.");
+                    return false;
+                }
+            }
             else if (npc.getId() == 9116) { // Faceless magician
                 if (!((Player) entity).getMagicGuildTier1()) {
                     player.getPA().sendInterface(77130);
@@ -1272,12 +1293,6 @@ public final class CombatFactory {
             }
 
             else if (npc.getId() == 9117) { // Lotus magician
-                if (!((Player) entity).getMagicGuildTier1()) {
-                    player.getPA().sendInterface(77130);
-                    entity.getCombatBuilder().reset(true);
-                    player.getPacketSender().sendMessage("You need to unlock Tier 1 first!");
-                    return false;
-                }
                 if (!((Player) entity).getMagicGuildTier2()) {
                     player.getPA().sendInterface(77330);
                     entity.getCombatBuilder().reset(true);
@@ -1287,18 +1302,6 @@ public final class CombatFactory {
             }
 
             else if (npc.getId() == 9118) { // Shadow magician
-                if (!((Player) entity).getMagicGuildTier1()) {
-                    player.getPA().sendInterface(77130);
-                    entity.getCombatBuilder().reset(true);
-                    player.getPacketSender().sendMessage("You need to unlock Tier 1 first!");
-                    return false;
-                }
-                if (!((Player) entity).getMagicGuildTier2()) {
-                    entity.getCombatBuilder().reset(true);
-                    player.getPacketSender().sendMessage("You need to be a Tier 2 Magician to attack this npc.");
-                    return false;
-                }
-
                 if (!((Player) entity).getMagicGuildTier3()) {
                     entity.getCombatBuilder().reset(true);
                     player.getPacketSender().sendMessage("You need to be a Tier 3 Magician to attack this npc.");

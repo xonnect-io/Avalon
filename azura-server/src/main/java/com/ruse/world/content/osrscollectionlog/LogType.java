@@ -1,9 +1,8 @@
 package com.ruse.world.content.osrscollectionlog;
 
 
-
-
 import com.ruse.model.Item;
+import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -36,6 +35,7 @@ public enum LogType {
                         first.get().setAmount(first.get().getAmount() + finalReward.getAmount());
                     } else {
                         v.add(finalReward);
+                        killer.sendMessage("@red@A unique item has been added to your collection log!");
                     }
                 }
 
@@ -43,6 +43,7 @@ public enum LogType {
                 final int totalCollectables = c.totalCollectables();
                 int after = killer.getCollectionLog2().totalObtained(c);
                 if(after != before && after == totalCollectables) {
+                    World.sendMessage( "@red@" + killer.getUsername() +  "<col=297A29> completed the @red@"+c.getName()+" <col=297A29>collection log.");
                     killer.sendMessage("<col=297A29>Congratulations! You have completed the "+c.getName()+" collection log.");
                 }
                 return v;

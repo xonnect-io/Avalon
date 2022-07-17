@@ -7,7 +7,6 @@ import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.dailytasks_new.DailyTask;
-import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.HashMap;
@@ -25,21 +24,6 @@ public class TreasureHunter {
     public static Item MASTER_KEY = new Item(23107);
     private HashMap<Item, Integer> auraDrops = new HashMap<>();
 
-    public static void addKey(Player player, NPC npc) {
-       /* int chanceInt = Misc.getRandom(3);
-        if (chanceInt == 1) {
-            if (npc.getId() == NPC_1) {
-                player.getInventory().add(new Item(KEY_1));
-            } else if (npc.getId() == NPC_2) {
-                player.getInventory().add(new Item(KEY_2));
-            } else if (npc.getId() == NPC_3) {
-                player.getInventory().add(new Item(KEY_3));
-            } else if (npc.getId() == NPC_4) {
-                player.getInventory().add(new Item(KEY_4));
-            }
-            System.out.println("Congratulations, you've received a key from killing a " + npc.getDefinition().getName() + "!");
-        }*/
-    }
 
     public static boolean combineKeys(Player player, Item used, Item usedWith) {
         if (used.getId() >= KEY_1 && used.getId() <= KEY_4 && usedWith.getId() >= KEY_1 && usedWith.getId() <= KEY_4) {
@@ -65,19 +49,11 @@ public class TreasureHunter {
         }
     }
 
-    /**
-     * Returns the Chest Rewards
-     *
-     * @param player
-     */
     public static void handleRewards(Player player) {
-        //Guaranteed Cash Drop
-
-        Box box = BoxLoot.getLoot(loot);
+        Box box = BoxLoot.getLoot(loot, player);
         player.getInventory().add(box.getId(), box.getAmount());
-
+        player.getPointsHandler().incrementTreasureHunterKC(1);
         DailyTask.TREASURE_HUNTER.tryProgress(player);
-
     }
 
 

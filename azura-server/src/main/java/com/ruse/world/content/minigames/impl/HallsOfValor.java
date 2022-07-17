@@ -58,7 +58,7 @@ public class HallsOfValor {
 
     public static void handleReward(Player player) {
         if (player.getInventory().contains(KEY_REWARD.getId())) {
-            Box box = BoxLoot.getLoot(loot);
+            Box box = BoxLoot.getLoot(loot,player);
             player.getInventory().delete(KEY_REWARD.getId(), 1);
             player.getInventory().add(box.getId(), box.getAmount());
             DailyTask.HALLS_OF_VALOR.tryProgress(player);
@@ -117,11 +117,13 @@ public class HallsOfValor {
             if (player.getMinigameAttributes().getHallsOfValorAttributes().getKillcount() > 4) {
                 resetBarrows(player);
                 player.getInventory().add(KEY_REWARD);
+                handleReward(player);
                 player.getAchievementTracker().progress(AchievementData.CLEAR_THE_ISLES, 1);
                 if (player.getRegionInstance() != null) {
                     player.getRegionInstance().getNpcsList().remove(player);
                 }
                 player.moveTo(HallsOfValor.TELEPORT_OUT);
+                player.getPointsHandler().incrementIslesKC(1);
             }
         }
     }

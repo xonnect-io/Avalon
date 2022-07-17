@@ -227,7 +227,6 @@ public final class MobDefinition {
 				definition.scaleY = 250;
 				definition.drawYellowDotOnMap = true;
 				break;
-
 			case 9115:
 				definition.name = "Hellish Sufferer";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -446,6 +445,19 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = false;
 				break;
 
+			case 9112:
+				definition.name = "Cthulu offspring";
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.npcModels = new int[]{19256};
+				definition.npcSizeInSquares = 1;
+				definition.combatLevel = 300;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.drawYellowDotOnMap = false;
+				break;
 			case 3712:
 				definition.name = "The Chain Warden";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -3616,11 +3628,9 @@ public final class MobDefinition {
 				break;
 
 			case 225:
-				definition.name = "Skeleton Brute Jr";
-				definition.description = "stuff".getBytes();
-				definition.combatLevel = 132;
-				definition.npcModels = new int[]{26628, 26637, 26642, 23932, 26623};
-				definition.actions = new String[]{null, null, null, null, null};
+				definition.copy(7134);
+				definition.name = "Bork pet";
+				definition.description = "Bork offspring.".getBytes();
 				definition.degreesToTurn = 32;
 				definition.headIcon = -1;
 				definition.npcSizeInSquares = 1;

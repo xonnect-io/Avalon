@@ -11,10 +11,10 @@ import com.ruse.motivote3.doMotivote;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
+import com.ruse.world.content.StarterTasks.StarterTaskData;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.afk.AFKBossDrops;
 import com.ruse.world.content.afk.AfkSystem;
-import com.ruse.world.content.StarterTasks.StarterTaskData;
 import com.ruse.world.content.bossEvents.BossEventHandler;
 import com.ruse.world.content.combat.strategy.impl.Exoden;
 import com.ruse.world.content.combat.strategy.impl.KalphiteQueen;
@@ -120,7 +120,7 @@ public class NPCDeathTask extends Task {
                     break;
                 case 0:
                     if (killer != null) {
-
+                        killer.getCollectionLog2().registerkill(npc.getId());
                         boolean boss = (npc.getDefaultConstitution() > 2000);
                         if (!Nex.nexMinion(npc.getId()) && npc.getId() != 1158
                                 && !(npc.getId() >= 3493 && npc.getId() <= 3497)) {
@@ -602,7 +602,42 @@ public class NPCDeathTask extends Task {
         } else if (npc.getId() == 203) {// zeus
             killer.getPointsHandler().incrementZEUSKILLCount(1);
         }
-
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 277
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addLesarkusWarriorKC(2);
+        } else if (npc.getId() == 277) {// Lesarkus warrior
+            killer.getPointsHandler().addLesarkusWarriorKC(1);
+        }
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 13456
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addAncientWarriorKC(2);
+        } else if (npc.getId() == 13456) {// Ancient warrior
+            killer.getPointsHandler().addAncientWarriorKC(1);
+        }
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 1914
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addVampireWarriorKC(2);
+        } else if (npc.getId() == 1914) {// Vampire warrior
+            killer.getPointsHandler().addVampireWarriorKC(1);
+        }
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9116
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addFacelessMagicianKC(2);
+        } else if (npc.getId() == 9116) {// Faceless magician
+            killer.getPointsHandler().addFacelessMagicianKC(1);
+        }
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9117
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addLotusMagicianKC(2);
+        } else if (npc.getId() == 9117) {//  Lotus magician
+            killer.getPointsHandler().addLotusMagicianKC(1);
+        }
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9118
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addShadowMagicianKC(2);
+        } else if (npc.getId() == 9118) {//  Shadow magician
+            killer.getPointsHandler().addShadowMagicianKC(1);
+        }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 225
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().addAvalonBeastKC(2);

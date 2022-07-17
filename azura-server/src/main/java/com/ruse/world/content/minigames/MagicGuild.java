@@ -10,14 +10,14 @@ public class MagicGuild {
     public void openMain() {
         player.getPacketSender().sendInterface(77130);
         player.getPacketSender().sendString(77140,  player.getPointsHandler().getAvalonBeastBKC() >= 50000
-                ? "@gre@- 50,000 Skeleton Brute KC"
-                : "@red@- 50,000 Skeleton Brute KC");
+                ? "@gre@- 50,000 Bork KC"
+                : "@red@- 50,000 Bork KC");
 
     }
 
     public void openT1() {
         player.getPacketSender().sendInterface(77330);
-        player.getPacketSender().sendString(77337,  player.getPointsHandler().getFacelessMagicianKC() >= 50000
+        player.getPacketSender().sendString(77337,  player.getPointsHandler().getFacelessMagicianKC() >= 100_000
                 ? "@gre@- 50,000 Faceless Magician KC"
                 : "@red@- 50,000 Faceless Magician KC");
 

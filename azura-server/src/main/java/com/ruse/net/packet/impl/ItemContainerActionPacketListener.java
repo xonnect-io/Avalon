@@ -524,17 +524,6 @@ public class ItemContainerActionPacketListener implements PacketListener {
 						break;
 					// case 13738:
 					case 13740:
-					case 13742:
-						// case 13744:
-						if (player.isSpiritDebug()) {
-							player.getPacketSender()
-									.sendMessage("You toggle your Spirit Shield to not display specific messages.");
-							player.setSpiritDebug(false);
-						} else if (player.isSpiritDebug() == false) {
-							player.getPacketSender().sendMessage("You toggle your Spirit Shield to display specific messages.");
-							player.setSpiritDebug(true);
-						}
-						break;
 					case 4566:
 						player.performAnimation(new Animation(451));
 						break;

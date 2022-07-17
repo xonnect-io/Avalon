@@ -315,8 +315,8 @@ public final class WeaponAnimations {
 		if (weaponId == 19137 || weaponId == 19135 || weaponId == 671 || weaponId == 19136 || weaponId == 8253 || weaponId == 19843 || weaponId == 19843
 				|| weaponId == 17712)// Minigun
 			return 12153;
-		if (weaponId == 17704)
-			return 4230;
+		if (weaponId == 17704 || weaponId == 23326)
+		return 4230;
 		if (weaponId == 10033 || weaponId == 10034)
 			return 2779;
 		if (prop.contains("dart")) {

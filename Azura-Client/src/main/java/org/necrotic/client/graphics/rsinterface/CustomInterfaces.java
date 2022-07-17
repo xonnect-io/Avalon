@@ -4172,7 +4172,7 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(child++, 61050, 11+x, 58+y);
 		tab.child(child++, 61015, 216+x, 57+y);
 		tab.child(child++, 61016, 216+x, 81+y);
-		tab.child(child++, 61017, 430,90);
+		tab.child(child++, 61017, 380,90);
 		tab.child(child++, 61018, 216+x, 255+y);
 		tab.child(child++, 61019, 216+x, 242+y);
 		tab.child(child++, 61020, 415+x, 259+y);

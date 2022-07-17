@@ -24,6 +24,7 @@ import com.ruse.world.content.PetShop;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.minigames.impl.RecipeForDisaster;
+import com.ruse.world.content.osrscollectionlog.CollectionLog;
 import com.ruse.world.content.skill.impl.old_dungeoneering.UltimateIronmanHandler;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.player.Player;
@@ -37,6 +38,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
+
+import static com.ruse.world.content.osrscollectionlog.LogType.MINIGAMES;
 
 /**
  * Messy but perfect Shop System
@@ -702,7 +705,6 @@ public class Shop extends ItemContainer {
             getPlayer().sendMessage("You can not purchase items from this shop.");
             return this;
         }
-
         if (id == PET_STORE_2){
             getPlayer().sendMessage("Coming soon...");
             return this;
@@ -967,6 +969,9 @@ public class Shop extends ItemContainer {
 
                     super.switchItem(to, new Item(item.getId(), 1), slot, false, false);
 
+                    if (id == PYRAMID_OUTBREAK_SHOP) {
+                        MINIGAMES.log(player, CollectionLog.PYRAMID_OUTBREAK, new Item(item.getId()));
+                    }
                     playerCurrencyAmount -= value;
                 } else {
                     break;
