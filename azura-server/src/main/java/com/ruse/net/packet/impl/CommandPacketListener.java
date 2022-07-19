@@ -126,6 +126,7 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("collectionlog")) {
             player.getCollectionLog2().open(MONSTERS);
+            player.getPacketSender().sendConfig(1106, 0);
         }
 
         if (command[0].equalsIgnoreCase("dissolveall")) {

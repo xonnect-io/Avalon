@@ -85,6 +85,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.ruse.model.Skill.*;
+import static com.ruse.world.content.osrscollectionlog.LogType.MONSTERS;
 
 /**
  * This packet listener manages a button that the player has clicked upon.
@@ -779,7 +780,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 BestItemsInterface.openInterface(player, 0);
                 break;*/
             case 111604:
-                player.getCollectionLog().open();
+                player.getCollectionLog2().open(MONSTERS);
+                player.getPacketSender().sendConfig(1106, 0);
                 break;
             case 111605:
                 player.getPacketSender().sendInterfaceRemoval();
