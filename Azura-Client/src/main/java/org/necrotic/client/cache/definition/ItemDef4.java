@@ -729,6 +729,27 @@ public class ItemDef4 {
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
 
+			case 23387:
+				itemDef.copyItem(11987);
+				itemDef.name = "Lesarkus Warrior pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+
+			case 23388:
+				itemDef.copyItem(11987);
+				itemDef.name = "Vampire Warrior pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+
+			case 23389:
+				itemDef.copyItem(11987);
+				itemDef.name = "Elf Warrior pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+
 			case 23324:
 				itemDef.name = "Faceless Magician pet";
 				itemDef.modelID = 19463;

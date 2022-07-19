@@ -146,7 +146,7 @@ public class Store implements Runnable {
                         break;
                     //1.5x DR BOOSTER
                     case 14:
-                        player.getInventory().add(23255, quantity);
+                        player.getInventory().add(4442, quantity);
                         break;
                     //1.5x DMG BOOSTER
                     case 15:

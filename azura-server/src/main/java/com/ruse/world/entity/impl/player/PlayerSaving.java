@@ -378,6 +378,10 @@ public class PlayerSaving {
 			object.addProperty("warrior2-unlocked", player.getWarriorGuildTier2());
 			object.addProperty("warrior3-unlocked", player.getWarriorGuildTier3());
 			object.addProperty("warrior-master", player.getWarriorMaster());
+			object.addProperty("archer1-unlocked", player.getArcherGuildTier1());
+			object.addProperty("archer2-unlocked", player.getArcherGuildTier2());
+			object.addProperty("archer3-unlocked", player.getArcherGuildTier3());
+			object.addProperty("archer-master", player.getArcherMaster());
 			object.addProperty("dark-supremes-unlocked", player.isUnlockedDarkSupreme());
 			object.add("currency-pouch", builder.toJsonTree(player.getCurrencyPouch()));
 			object.addProperty("lastTGloveIndex", player.lastTGloveIndex);

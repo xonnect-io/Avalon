@@ -320,6 +320,11 @@
     "interface": "STAFF"
   },
   {
+    "hash": 3745,
+    "item-id": 3745,
+    "interface": "STAFF"
+  },
+  {
     "hash": 23061,
     "item-id": 23061,
     "interface": "BOW"
@@ -762,6 +767,11 @@
   {
     "hash": 1277,
     "item-id": 1277,
+    "interface": "SWORD"
+  },
+  {
+    "hash": 23383,
+    "item-id": 23383,
     "interface": "SWORD"
   },
   {
@@ -2405,12 +2415,12 @@
    {
     "hash": 19136,
     "item-id": 19136,
-    "interface": "SHORTBOW"
+    "interface": "BSOAT"
   },
   {
     "hash": 23226,
     "item-id": 23226,
-    "interface": "BSOAT"
+    "interface": "SHORTBOW"
   },
    {
     "hash": 19135,

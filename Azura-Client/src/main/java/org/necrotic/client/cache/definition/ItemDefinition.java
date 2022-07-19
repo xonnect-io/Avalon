@@ -2441,36 +2441,7 @@ public final class ItemDefinition {
 				itemDef.rdc2 = 99252;
 
 				break;
-			case 4440:
-				itemDef21 = ItemDefinition.get(19890);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.modelID = itemDef21.modelID;
-				itemDef.maleEquip1 = itemDef21.maleEquip1;
-				itemDef.femaleEquip1 = itemDef21.femaleEquip1;
-				itemDef.name = "@cya@X1.5 DR Booster";
-				itemDef.rdc2 = 35252;
 
-				break;
-			case 4438:
-				itemDef21 = ItemDefinition.get(19890);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.modelID = itemDef21.modelID;
-				itemDef.maleEquip1 = itemDef21.maleEquip1;
-				itemDef.femaleEquip1 = itemDef21.femaleEquip1;
-				itemDef.name = "@gre@X2 DDR Booster";
-				itemDef.rdc2 = 19252;
-
-				break;
 			case 14017:
 				itemDef.name = "Brackish blade";
 				itemDef.modelZoom = 1488;

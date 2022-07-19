@@ -288,12 +288,12 @@ public enum Collection {
             new Item(20489), new Item(10934), new Item(15288), new Item(10935), new Item(18823), new Item(19888),
             new Item(3578), new Item(22121),new Item(18818), new Item(18888), new Item(18881), new Item(18883),
             new Item(19810), new Item(12630), new Item(12535), new Item(17011), new Item(5012), new Item(7995),
-            new Item(9083), new Item(23254), new Item(23255), new Item(22110)),
+            new Item(9083), new Item(23254), new Item(4442), new Item(22110)),
     SURREME_CASKET(Player.SUPREME_CASKETS_OPENED, LogType.BOXES, "Supreme Casket", new int[] {CollectionLog.SUPREME_CASKET}, Player.SUPREME_CASKET_LOG_CLAIMED, new Item[] { new Item(23279,1) },
             new Item(15004), new Item(10935), new Item(3578), new Item(15288), new Item(10943), new Item(23240),
             new Item(22121),new Item(18818), new Item(18888), new Item(18881), new Item(18883), new Item(19810),
             new Item(12630), new Item(17013), new Item(5011), new Item(12537), new Item(7995), new Item(9083),
-            new Item(23254), new Item(23255), new Item(22110)),
+            new Item(23254), new Item(4442), new Item(22110)),
 
     //Minigames
     PYRAMID_OUTBREAK(Player.PYRAMID_OUTBREAK_COMPLETED, LogType.MINIGAMES, "Pyramid Outbreak", new int[] {CollectionLog.PYRAMID_OUTBREAK}, Player.PYRAMID_OUTBREAK_LOG_CLAIMED, new Item[] { new Item(10946, 3) },

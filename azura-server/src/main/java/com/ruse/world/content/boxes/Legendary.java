@@ -26,7 +26,7 @@ public class Legendary {
             new Box(7995, 1, 1.333,true),
             new Box(9083, 1, 1.333,true),
             new Box(23254, 1, 1,true),
-            new Box(23255, 1, 1,true),
+            new Box(4442, 1, 1,true),
             new Box(22110, 1, 1,true),
     };
 }

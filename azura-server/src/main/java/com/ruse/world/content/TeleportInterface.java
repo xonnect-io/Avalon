@@ -9,7 +9,9 @@ import com.ruse.world.World;
 import com.ruse.world.content.boxes.Raids1;
 import com.ruse.world.content.boxes.Starter;
 import com.ruse.world.content.casketopening.Box;
-import com.ruse.world.content.minigames.impl.*;
+import com.ruse.world.content.minigames.impl.HallsOfValor;
+import com.ruse.world.content.minigames.impl.PyramidOutbreak;
+import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
@@ -43,6 +45,7 @@ public class TeleportInterface {
             }*/
             case 11004:
             case 71517:
+            case 77147:
                 new TeleportInterfaceHandler(player).open();
                 return true;
             case 122005:

@@ -1564,6 +1564,45 @@ public class RSInterface {
 		main.child(14, 77239, 342, 160);
 		main.child(15, 77251, 478, 14);
 	}
+
+	private static void warriorPetUnlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(80230);
+		addSpriteLoader(80231, 1707);
+
+		addText(80232, "Choose an Warrior Pet", tda, 2, 0xff8624, true, true);
+		addText(80233, "You may pick only one pet(They all provide 25% Damage Boost and 45% Drop Rate Boost)", tda, 0, 0xff8624, true, true);
+		addText(80234, "Lesarkus Warrior", tda, 2, 0xff8624, true, true);
+		addText(80235, "Vampire Warrior", tda, 2, 0xff8624, true, true);
+		addText(80236, "Elf Warrior", tda, 2, 0xff8624, true, true);
+		RSInterface.drawNpcOnInterface(80237, 277, 350);
+		RSInterface.drawNpcOnInterface(80238, 1914, 350);
+		RSInterface.drawNpcOnInterface(80239, 2359, 350);
+		addHoverButtonWSpriteLoader(80242, 1445, 132, 29, "Choose Lesarkus Warrior", -1, 80243, 1);
+		addHoveredImageWSpriteLoader(80243, 1446, 132, 29, 80244);
+		addHoverButtonWSpriteLoader(80245, 1445, 132, 29, "Choose Vampire Warrior", -1, 80246, 1);
+		addHoveredImageWSpriteLoader(80246, 1446, 132, 29, 80247);
+		addHoverButtonWSpriteLoader(80248, 1445, 132, 29, "Choose Elf Warrior", -1, 80249, 1);
+		addHoveredImageWSpriteLoader(80249, 1446, 132, 29, 80250);
+		addButtonWSpriteLoader(80251, 714, "Close Window", 16, 16);
+
+		main.totalChildren(16);
+		main.child(0, 80231, 10, 10);
+		main.child(1, 80232, 250, 16);
+		main.child(2, 80233, 250, 38);
+		main.child(3, 80242, 35, 280);
+		main.child(4, 80243, 35, 280);
+		main.child(5, 80245, 190, 280);
+		main.child(6, 80246, 190, 280);
+		main.child(7, 80248, 345, 280);
+		main.child(8, 80249, 345, 280);
+		main.child(9, 80235, 252, 287);
+		main.child(10, 80236, 408, 287);
+		main.child(11, 80234, 100, 287);
+		main.child(12, 80237, 30, 160);
+		main.child(13, 80238, 182, 160);
+		main.child(14, 80239, 342, 160);
+		main.child(15, 80251, 478, 14);
+	}
 	private static void warriorUnlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(71500);
 		addSpriteLoader(71501, 1701);
@@ -1577,7 +1616,7 @@ public class RSInterface {
 		addText(71507, "You need requirements for each tier", tda, 1, 0xff8624, false, true);
 		addText(71508, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
 		addText(71509, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
-		addText(71510, "@red@Tier 3 Magician", tda, 1, 0xff8624, false, true);
+		addText(71510, "@red@Magician Master", tda, 1, 0xff8624, false, true);
 		addText(71511, "@red@Sacrifice x250 Suffered Crystals", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(71512, 1445, 132, 29, "Sacrifice", -1, 71513, 1);
 		addHoveredImageWSpriteLoader(71513, 1446, 132, 29, 71514);
@@ -1615,7 +1654,7 @@ public class RSInterface {
 		addText(71525, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
 		addText(71526, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(71527, "@red@- 50,000 Lesarkus Warrior KC", tda, 1, 0xff8624, false, true);
-		addText(71528, "@red@- Sacrifice x1 Owner Fragment", tda, 1, 0xff8624, false, true);
+		addText(71528, "@red@- Sacrifice x1 Blood Attachment", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(71538, 1659);
 		addSpriteLoader(71539, 1658);
 		addSpriteLoader(71540, 1658);
@@ -1664,7 +1703,7 @@ public class RSInterface {
 		addText(71565, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
 		addText(71566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(71567, "@red@- 100,000 Vampire Warrior KC", tda, 1, 0xff8624, false, true);
-		addText(71568, "@red@- Sacrifice 100m Upgrade Tokens", tda, 1, 0xff8624, false, true);
+		addText(71568, "@red@- Sacrifice x1 Owner Fragment", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(71578, 1658);
 		addSpriteLoader(71579, 1659);
 		addSpriteLoader(71580, 1658);
@@ -1672,7 +1711,7 @@ public class RSInterface {
 
 
 		addText(71569, "Tier 1", tda, 1, 0xff8624, false, true);
-		addText(71570, "Gemstone Kaseki", tda, 1, 0xff8624, false, true);
+		addText(71570, "Kismet Medallion", tda, 1, 0xff8624, false, true);
 		addText(71571, "Tier 2", tda, 1, 0xff8624, false, true);
 		addText(71577, "Tier 3", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(71572, 1445, 132, 29, "Level Up", -1, 71573, 1);
@@ -1714,7 +1753,7 @@ public class RSInterface {
 		addText(80564, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(80565, "Next Tier: @whi@Warrior Master", tda, 1, 0xff8624, false, true);
 		addText(80566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(80567, "@red@- 150,000 Ancient Warrior KC", tda, 1, 0xff8624, false, true);
+		addText(80567, "@red@- 150,000 Elf Warrior KC", tda, 1, 0xff8624, false, true);
 		addText(80568, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
 
 
@@ -1775,8 +1814,9 @@ public class RSInterface {
 
 		addText(77145, "Sacrifice", tda, 2, 0xff8624, true, true);
 		addButtonWSpriteLoader(77146, 714, "Close Window", 16, 16);
+		addButtonWSpriteLoader(77147, 1502, "Back to Teleports", 16, 16);
 
-		main.totalChildren(15);
+		main.totalChildren(16);
 		main.child(0, 77131, 125, 35);
 		main.child(1, 77132, 250, 42);
 		main.child(2, 77133, 250, 65);
@@ -1792,6 +1832,7 @@ public class RSInterface {
 		main.child(12, 77143, 189, 248);
 		main.child(13, 77145, 250, 255);
 		main.child(14, 77146, 355, 38);
+		main.child(15, 77147, 135, 38);
 	}
 	private static void magicianTier1Unlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(77330);
@@ -6481,6 +6522,7 @@ public class RSInterface {
 			warriorTier2Unlock(textDrawingAreas);
 			warriorTier3Unlock(textDrawingAreas);
 			magicianPetUnlock(textDrawingAreas);
+			warriorPetUnlock(textDrawingAreas);
 			questInterface(textDrawingAreas);
 			prestigeInterface(textDrawingAreas);
 			magicianTier1Unlock(textDrawingAreas);

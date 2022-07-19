@@ -1740,7 +1740,7 @@ public class Shop extends ItemContainer {
                     case 22110:
                         return new Object[]{400, "High-Tier Tickets"};
                     case 23254:
-                    case 23255:
+                    case 4442:
                         return new Object[]{725, "High-Tier Tickets"};
                 }
             } else if (shop == EASTER_STORE_2) {

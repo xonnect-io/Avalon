@@ -1907,7 +1907,44 @@ End new teleport
     /*
     End Warrior Guild
      */
+    /*
+    Start Archer Guild
+     */
+    private boolean archerMaster;
+    private boolean archerguildtier1;
+    private boolean archerguildtier2;
+    private boolean archerguildtier3;
+    public void setArcherGuildTier1(boolean archerguildtier1) {
+        this.archerguildtier1 = archerguildtier1;
+    }
+    public boolean getArcherGuildTier1() {
+        return archerguildtier1;
+    }
 
+    public void setArcherGuildTier2(boolean archerguildtier2) {
+        this.archerguildtier2 = archerguildtier2;
+    }
+    public boolean getArcherGuildTier2() {
+        return archerguildtier2;
+    }
+
+    public void setArcherGuildTier3(boolean archerguildtier3) {
+        this.archerguildtier3 = archerguildtier3;
+    }
+    public boolean getArcherGuildTier3() {
+        return archerguildtier3;
+    }
+
+    public void setArcherMaster(boolean archerMaster) {
+        this.archerMaster = archerMaster;
+    }
+    public boolean getArcherMaster() {
+        return archerMaster;
+    }
+
+    /*
+    End Archer Guild
+     */
     /*
     Start Fallen Angels
      */

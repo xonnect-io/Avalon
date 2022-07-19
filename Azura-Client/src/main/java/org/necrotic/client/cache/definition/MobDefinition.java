@@ -240,16 +240,15 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				break;
 
-			case 13456:
-				definition.name = "Ancient Warrior";
+			case 2359:
+				definition.name = "Elf Warrior";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
+				definition.scaleXZ = 115;
+				definition.scaleY = 115;
 				definition.drawYellowDotOnMap = true;
-				definition.headIcon = 0;
 				break;
 
 			case 277:
@@ -258,10 +257,9 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 115;
-				definition.scaleY = 115;
+				definition.scaleXZ = 125;
+				definition.scaleY = 125;
 				definition.drawYellowDotOnMap = true;
-				definition.headIcon = 0;
 				break;
 
 			case 1914:
@@ -270,11 +268,11 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
+				definition.scaleXZ = 125;
+				definition.scaleY = 125;
 				definition.drawYellowDotOnMap = true;
-				definition.headIcon = 0;
 				break;
+
 			case 9116:
 				definition.name = "Faceless Magician";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -285,7 +283,6 @@ public final class MobDefinition {
 				definition.scaleXZ = 140;
 				definition.scaleY = 140;
 				definition.drawYellowDotOnMap = true;
-				definition.headIcon = 2;
 				break;
 
 			case 9117:
@@ -298,7 +295,6 @@ public final class MobDefinition {
 				definition.scaleXZ = 140;
 				definition.scaleY = 140;
 				definition.drawYellowDotOnMap = true;
-				definition.headIcon = 2;
 				break;
 
 			case 9118:
@@ -311,7 +307,6 @@ public final class MobDefinition {
 				definition.scaleXZ = 140;
 				definition.scaleY = 140;
 				definition.drawYellowDotOnMap = true;
-				definition.headIcon = 2;
 				break;
 
 
@@ -378,6 +373,40 @@ public final class MobDefinition {
 				definition.scaleY = 80;
 				definition.drawYellowDotOnMap = false;
 				break;
+
+
+			case 9124:
+				definition.copy(277);
+				definition.name = "Lesarkus Warrior";
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.drawYellowDotOnMap = false;
+				break;
+
+			case 9125:
+				definition.copy(1914);
+				definition.name = "Vampire Warrior";
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.drawYellowDotOnMap = false;
+				break;
+
+			case 9126:
+				definition.copy(2359);
+				definition.name = "Elf Warrior";
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.drawYellowDotOnMap = false;
+				break;
+
+
 
 			case 9007:
 				definition.name = "Dreambody";
@@ -2418,8 +2447,8 @@ public final class MobDefinition {
 				break;
 
 			case 198:
-				definition.name = "Battle Brawl Master(Npc Tiers)";
-				definition.description = "Still dedicated to Twinky".getBytes();
+				definition.name = "Master Warrior";
+				definition.description = "Born to kill".getBytes();
 				definition.npcModels = new int[7];
 				definition.npcModels[0] = 65530; //pern mask
 				definition.npcModels[1] = 65275; //pern body
@@ -2427,7 +2456,7 @@ public final class MobDefinition {
 				definition.npcModels[3] = 65105; //max
 				definition.npcModels[4] = 13319; //bgloves
 				definition.npcModels[5] = 53309; //glaivens
-				definition.npcModels[6] = 62750; //bow
+				definition.npcModels[6] = 19553; //bow
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
 				definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc

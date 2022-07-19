@@ -608,10 +608,10 @@ public class NPCDeathTask extends Task {
         } else if (npc.getId() == 277) {// Lesarkus warrior
             killer.getPointsHandler().addLesarkusWarriorKC(1);
         }
-        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 13456
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 2359
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().addAncientWarriorKC(2);
-        } else if (npc.getId() == 13456) {// Ancient warrior
+        } else if (npc.getId() == 2359) {// Elf warrior
             killer.getPointsHandler().addAncientWarriorKC(1);
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 1914

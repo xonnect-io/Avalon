@@ -163,6 +163,18 @@ public class PlayerLoading {
             }            if (reader.has("talked-to-ghost")) {
                 player.setTalkedToGhost(reader.get("talked-to-ghost").getAsBoolean());
             }
+            if (reader.has("archer1-unlocked")) {
+                player.setArcherGuildTier1(reader.get("archer1-unlocked").getAsBoolean());
+            }
+            if (reader.has("archer2-unlocked")) {
+                player.setArcherGuildTier2(reader.get("archer2-unlocked").getAsBoolean());
+            }
+            if (reader.has("archer3-unlocked")) {
+                player.setArcherGuildTier3(reader.get("archer3-unlocked").getAsBoolean());
+            }
+            if (reader.has("archer-master")) {
+                player.setArcherMaster(reader.get("archer-master").getAsBoolean());
+            }
             if (reader.has("warrior1-unlocked")) {
                 player.setWarriorGuildTier1(reader.get("warrior1-unlocked").getAsBoolean());
             }

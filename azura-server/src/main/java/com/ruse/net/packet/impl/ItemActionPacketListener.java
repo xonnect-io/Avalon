@@ -281,6 +281,9 @@ public class ItemActionPacketListener implements PacketListener {
             case 23367:
                 player.getPacketSender().sendInterface(77230);
                 break;
+            case 23386:
+                player.getPacketSender().sendInterface(80230);
+                break;
             case 9719:
                 player.sendMessage("You must bring this to your slayer master to cancel your task.");
                 break;

@@ -1,5 +1,6 @@
 package com.ruse.world.content.combat;
 
+import com.ruse.model.PlayerRights;
 import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.util.Misc;
@@ -7,7 +8,9 @@ import com.ruse.world.content.combat.effect.EquipmentBonus;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.weapon.FightStyle;
+import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.DropUtils;
+import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Familiar;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -74,6 +77,81 @@ public class Maxhits {
             }
             if (player.getInventory().contains(4442)) {
                 base *= 1.5;
+            }
+            if (player.getInventory().contains(7539)) {
+                base *= 1.5;
+            }
+            if (player.getWarriorMaster() == true) {
+                base *= 1.2;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+                base *= 1.15;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {// admin pet
+                base *= 1.25;
+            }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {// admin pet
+                base *= 1.20;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {// admin pet
+                base *= 1.30;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {// admin pet
+                base *= 1.25;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {// admin pet
+                base *= 1.25;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {// admin pet
+                base *= 1.25;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LESARKUS_WARRIOR.npcId) {// admin pet
+                base *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.VAMPIRE_WARRIOR.npcId) {// admin pet
+                base *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {// admin pet
+                base *= 1.25D;
+            }
+            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
+                base *= 2;
+            }
+
+            if(player.getRights() == PlayerRights.OWNER) {
+                base *= 5.5;
+            }
+            if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
+                base *= 1.75;
+            }
+            if (player.getRights() == PlayerRights.ZENYTE_DONATOR) {
+                base *= 1.5;
+            }
+            if (player.getRights() == PlayerRights.ONYX_DONATOR) {
+                base *= 1.35;
+            }
+            if (player.getRights() == PlayerRights.DIAMOND_DONATOR) {
+                base *= 1.25;
+            }
+            if (player.getRights() == PlayerRights.RUBY_DONATOR) {
+                base *= 1.15;
+            }
+            if (player.getRights() == PlayerRights.EMERALD_DONATOR) {
+                base *= 1.10;
+            }
+            if(player.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
+                base *= 1.10;
             }
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916 ||
@@ -246,6 +324,77 @@ public class Maxhits {
             if (player.getInventory().contains(4442)) {
                 maxHit *= 1.5;
             }
+            if (player.getInventory().contains(7539)) {
+                maxHit *= 1.5;
+            }
+            if (player.getArcherMaster() == true) {
+                maxHit *= 1.2;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+                maxHit *= 1.15D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {// admin pet
+                maxHit *= 1.20D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {// admin pet
+                maxHit *= 1.30D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LESARKUS_WARRIOR.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.VAMPIRE_WARRIOR.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
+                maxHit *= 2;
+            }
+            if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
+                maxHit *= 1.75D;
+            }
+            if (player.getRights() == PlayerRights.ZENYTE_DONATOR) {
+                maxHit *= 1.5D;
+            }
+            if (player.getRights() == PlayerRights.ONYX_DONATOR) {
+                maxHit *= 1.35D;
+            }
+            if (player.getRights() == PlayerRights.DIAMOND_DONATOR) {
+                maxHit *= 1.25D;
+            }
+            if (player.getRights() == PlayerRights.RUBY_DONATOR) {
+                maxHit *= 1.15D;
+            }
+            if (player.getRights() == PlayerRights.EMERALD_DONATOR) {
+                maxHit *= 1.10D;
+            }
+            if(player.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
+                maxHit *= 1.10D;
+            }
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 13800) {
@@ -394,6 +543,78 @@ public class Maxhits {
             }
             if (player.getInventory().contains(4442)) {
                 maxHit *= 1.5;
+            }
+            if (player.getInventory().contains(7539)) {
+                maxHit *= 1.5;
+            }
+            if (player.getMagicianMaster() == true) {
+                maxHit *= 1.2;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+                maxHit *= 1.15D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {// admin pet
+                maxHit *= 1.20D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {// admin pet
+                maxHit *= 1.30D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LESARKUS_WARRIOR.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.VAMPIRE_WARRIOR.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+
+            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
+                maxHit *= 2;
+            }
+            if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
+                maxHit *= 1.75D;
+            }
+            if (player.getRights() == PlayerRights.ZENYTE_DONATOR) {
+                maxHit *= 1.5D;
+            }
+            if (player.getRights() == PlayerRights.ONYX_DONATOR) {
+                maxHit *= 1.35D;
+            }
+            if (player.getRights() == PlayerRights.DIAMOND_DONATOR) {
+                maxHit *= 1.25D;
+            }
+            if (player.getRights() == PlayerRights.RUBY_DONATOR) {
+                maxHit *= 1.15D;
+            }
+            if (player.getRights() == PlayerRights.EMERALD_DONATOR) {
+                maxHit *= 1.10D;
+            }
+            if(player.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
+                maxHit *= 1.10D;
             }
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916 ||

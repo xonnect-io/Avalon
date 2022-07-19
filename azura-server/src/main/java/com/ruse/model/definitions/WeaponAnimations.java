@@ -310,6 +310,7 @@ public final class WeaponAnimations {
 			return 4841;
 		if (weaponId == 22010)// ginrei
 			return 1074;
+
 		if (weaponId == 21606)
 			return 4230;
 		if (weaponId == 19137 || weaponId == 19135 || weaponId == 671 || weaponId == 19136 || weaponId == 8253 || weaponId == 19843 || weaponId == 19843
@@ -417,69 +418,65 @@ public final class WeaponAnimations {
 		}
 		switch (weaponId) { // if you don't want
 		// to use strings
-		case 17702:
-		return 10961;
-		case 14919:
-		case 22089:
-		case 7543:
-		case 14056:
-		case 9929:
-		case 5073:
-			return 4230;
-		case 21057:
-			return 4603;
-		case 20000:
-		case 20001:
-		case 20002:
-		case 20003:
-			return 7041;
-		case 22083:
-			return 4230;
-		case 6522: // Obsidian throw
-			return 2614;
-		case 4153: // granite maul
-		case 17734:
-		case 16137:
-		case 13760:
-			return 1665;
-		case 21053:
-		case 21054:
-		case 21055:
-		case 21056:
-		return 4230;
-		case 17726:
-			return 12028;
-		case 17724:
-			return 12029;
-		case 13879:
-		case 13956:
-		case 13883:
-			return 806;
-		case 16184:
-			return 2661;
-		case 16425:
-			return 2661;
-		case 15241:
-			return 12153;
-		case 4747: // torag
-			return 0x814;
-		case 4710: // ahrim
-			return 406;
-		case 18353:
-			return 13055;
-		case 18349:
-			return 386;
-		case 11798:
-			return 7512;
-		case 19146:
-			return 386;
-		case 4755: // verac
-			return 2062;
-		case 4734: // karil
-			return 2075;
-		case 10887:
-			
-			return 5865;
+			case 17702:
+			return 10961;
+			case 14919:
+			case 22089:
+			case 7543:
+			case 14056:
+			case 9929:
+			case 5073:
+			case 23226:
+			case 22083:
+			case 21053:
+			case 21054:
+			case 21055:
+			case 21056:
+				return 4230;
+			case 21057:
+				return 4603;
+			case 20000:
+			case 20001:
+			case 20002:
+			case 20003:
+				return 7041;
+			case 6522: // Obsidian throw
+				return 2614;
+			case 4153: // granite maul
+			case 17734:
+			case 16137:
+			case 13760:
+				return 1665;
+			case 17726:
+				return 12028;
+			case 17724:
+				return 12029;
+			case 13879:
+			case 13956:
+			case 13883:
+				return 806;
+			case 16184:
+			case 16425:
+				return 2661;
+			case 15241:
+				return 12153;
+			case 4747: // torag
+				return 0x814;
+			case 4710: // ahrim
+				return 406;
+			case 18353:
+				return 13055;
+			case 18349:
+			case 19146:
+				return 386;
+			case 11798:
+				return 7512;
+			case 4755: // verac
+				return 2062;
+			case 4734: // karil
+				return 2075;
+			case 10887:
+				return 5865;
 			
 		case 4151:
 		case 13444:
@@ -539,6 +536,8 @@ public final class WeaponAnimations {
 			return 13042;
 		case 18355:
 			return 13046;
+			case 23226:
+				return 4230;
 		case 14484:
 		case 23368:
 		case 18685:

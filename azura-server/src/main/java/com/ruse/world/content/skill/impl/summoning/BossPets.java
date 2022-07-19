@@ -35,6 +35,9 @@ public class BossPets {
 		FACELESS_MAGICIAN(9121, 23324, "45% DR Bonus & 25% DMG Bonus"),
 		LOTUS_MAGICIAN(9122, 23325, "45% DR Bonus & 25% DMG Bonus"),
 		SHADOW_MAGICIAN(9123, 23326, "45% DR Bonus & 25% DMG Bonus"),
+		LESARKUS_WARRIOR(9124, 23387, "45% DR Bonus & 25% DMG Bonus"),
+		VAMPIRE_WARRIOR(9125, 23388, "45% DR Bonus & 25% DMG Bonus"),
+		ELF_WARRIOR(9126, 23389, "45% DR Bonus & 25% DMG Bonus"),
 		BLOOD_DEMON_PET(204, 23252, "70% DR Bonus & 30% DMG Bonus"),
 
 		;

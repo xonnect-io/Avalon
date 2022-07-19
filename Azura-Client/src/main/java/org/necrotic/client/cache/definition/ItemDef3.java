@@ -158,19 +158,33 @@ public class ItemDef3 {
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 0;
 				break;
-				
+
 			case 23254:
-				itemDef.copyItem(550);
+				itemDef.copyItem(18344);
 				itemDef.name = "X1.5 DR Booster";
 				itemDef.actions = new String[]{null, null, null, null, "Drop"};
-				itemDef.rdc2 = 15345;
+				itemDef.rdc2 = 35252;
 				break;
 				
+			case 23384:
+				itemDef.copyItem(14885);
+				itemDef.name = "Kismet Medallion";
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.rdc2 = 10;
+				break;
+
+			case 23385:
+				itemDef.copyItem(14877);
+				itemDef.name = "Seraphic Statuette";
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.rdc2 = 17800;
+				break;
+
 			case 23255:
-				itemDef.copyItem(550);
+				itemDef.copyItem(18344);
 				itemDef.name = "X1.5 Damage Booster";
 				itemDef.actions = new String[]{null, null, null, null, "Drop"};
-				itemDef.rdc3 = 899;
+				itemDef.rdc2 = 99252;
 				break;
 				
 			case 23005:
@@ -1509,6 +1523,11 @@ public class ItemDef3 {
 				itemDef.rdc2 = 67606;
 				break;
 
+			case 23386:
+				itemDef.copyItem(14808);
+				itemDef.name = "Warrior pet Scroll";
+				itemDef.rdc2 = 77606;
+				break;
 			case 23095:
 				itemDef.copyItem(2902);
 				itemDef.name = "Mercenary gloves";

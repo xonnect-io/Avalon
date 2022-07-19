@@ -34,8 +34,8 @@ public class WarriorGuild {
     public void openT3() {
         player.getPacketSender().sendInterface(80560);
         player.getPacketSender().sendString(80567,  player.getPointsHandler().getAncientWarriorKC() >= 150_000
-                ? "@gre@- 150,000 Ancient Warrior KC"
-                : "@red@- 150,000 Ancient Warrior KC");
+                ? "@gre@- 150,000 Elf Warrior KC"
+                : "@red@- 150,000 Elf Warrior KC");
 
     }
 }

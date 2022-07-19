@@ -1087,13 +1087,13 @@ public class Locations {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
 					player.getPacketSender()
-							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+							.sendMessage("As you enter the Emerald Donator Zone, your health regenerates to full.");
 				}
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
 							player.getSkillManager().getMaxLevel(Skill.PRAYER));
-					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+					player.getPacketSender().sendMessage("As you enter the Emerald Donator Zone, the gods restore your prayer.");
 				}
 			}
 		},
@@ -1106,13 +1106,13 @@ public class Locations {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
 					player.getPacketSender()
-							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+							.sendMessage("As you enter the Ruby Donator Zone, your health regenerates to full.");
 				}
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
 							player.getSkillManager().getMaxLevel(Skill.PRAYER));
-					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+					player.getPacketSender().sendMessage("As you enter the Ruby Donator Zone, the gods restore your prayer.");
 				}
 			}
 		},
@@ -1125,13 +1125,13 @@ public class Locations {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
 					player.getPacketSender()
-							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+							.sendMessage("As you enter the Diamond Donator Zone, your health regenerates to full.");
 				}
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
 							player.getSkillManager().getMaxLevel(Skill.PRAYER));
-					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+					player.getPacketSender().sendMessage("As you enter the Diamond Donator Zone, the gods restore your prayer.");
 				}
 			}
 		},
@@ -1144,13 +1144,13 @@ public class Locations {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
 					player.getPacketSender()
-							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+							.sendMessage("As you enter the Onyx Donator Zone, your health regenerates to full.");
 				}
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
 							player.getSkillManager().getMaxLevel(Skill.PRAYER));
-					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+					player.getPacketSender().sendMessage("As you enter the Onyx Donator Zone, the gods restore your prayer.");
 				}
 			}
 		},
@@ -1163,13 +1163,32 @@ public class Locations {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
 					player.getPacketSender()
-							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
+							.sendMessage("As you enter the Zenyte Donator Zone, your health regenerates to full.");
 				}
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
 							player.getSkillManager().getMaxLevel(Skill.PRAYER));
-					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
+					player.getPacketSender().sendMessage("As you enter the Zenyte Donator Zone, the gods restore your prayer.");
+				}
+			}
+		},
+		TANZANITE_ZONE(new int[] { 2690, 2750 }, new int[] { 4806, 4866 }, false, true, true, false, true, false) {
+
+			@Override
+			public void enter(Player player) {
+				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
+						.getMaxLevel(Skill.CONSTITUTION)) {
+					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
+							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					player.getPacketSender()
+							.sendMessage("As you enter the Tanzanite Donator Zone, your health regenerates to full.");
+				}
+				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+						.getMaxLevel(Skill.PRAYER)) {
+					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+							player.getSkillManager().getMaxLevel(Skill.PRAYER));
+					player.getPacketSender().sendMessage("As you enter the Tanzanite Donator Zone, the gods restore your prayer.");
 				}
 			}
 		},

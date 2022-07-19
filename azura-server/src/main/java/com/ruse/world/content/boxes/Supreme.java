@@ -26,7 +26,7 @@ public class Supreme {
             new Box(7995, 1, 2.5,true),
             new Box(9083, 1, 2.5,true),
             new Box(23254, 1, 2,true),
-            new Box(23255, 1, 2,true),
+            new Box(4442, 1, 2,true),
             new Box(22110, 1, 2,true),
     };
 }

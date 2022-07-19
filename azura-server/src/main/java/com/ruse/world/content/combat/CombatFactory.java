@@ -31,6 +31,7 @@ import com.ruse.world.content.combat.weapon.FightStyle;
 import com.ruse.world.content.globalBosses.GuardianSpawnSystem;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringBossNpc;
+import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
@@ -43,7 +44,7 @@ import com.ruse.world.entity.impl.player.Player;
 
 import java.util.Optional;
 
-import static com.ruse.world.content.combat.CombatType.RANGED;
+import static com.ruse.world.content.combat.CombatType.*;
 
 /**
  * A static factory class containing all miscellaneous methods related to, and
@@ -411,7 +412,7 @@ public final class CombatFactory {
                     return Misc.getRandom(10 + DesolaceFormulas.getRangedDefence(p2)) < Misc
                             .getRandom(15 + DesolaceFormulas.getRangedAttack(p1));
             }
-        } else if (attacker.isPlayer() && victim.isNpc() && type != CombatType.MAGIC) {
+        } else if (attacker.isPlayer() && victim.isNpc() && type != MAGIC) {
             Player p1 = (Player) attacker;
             NPC n = (NPC) victim;
             int percentBoost = 0;
@@ -451,7 +452,7 @@ public final class CombatFactory {
         }
 
         if (type == CombatType.DRAGON_FIRE)
-            type = CombatType.MAGIC;
+            type = MAGIC;
         double random =  Math.random() * 10;
         double prayerMod = 1;
         double equipmentBonus = 1;
@@ -461,7 +462,7 @@ public final class CombatFactory {
         if (attacker.isPlayer()) {
             Player player = (Player) attacker;
 
-            equipmentBonus = type == CombatType.MAGIC
+            equipmentBonus = type == MAGIC
                     ? player.getBonusManager().getAttackBonus()[BonusManager.ATTACK_MAGIC]
                     : player.getBonusManager().getAttackBonus()[player.getFightType().getBonusType()];
             bonusType = player.getFightType().getCorrespondingBonus();
@@ -503,7 +504,7 @@ public final class CombatFactory {
                 } else if (CurseHandler.isActivated(player, CurseHandler.LEECH_RANGED)) {
                     prayerMod = 1.05 + +(player.getLeechedBonuses()[4] * 0.01);
                 }
-            } else if (type == CombatType.MAGIC) {
+            } else if (type == MAGIC) {
                 if (PrayerHandler.isActivated(player, PrayerHandler.MYSTIC_WILL)) {
                     prayerMod = 1.05;
                 } if (PrayerHandler.isActivated(player, PrayerHandler.DESTRUCTION)) {
@@ -547,11 +548,11 @@ public final class CombatFactory {
             Player player = (Player) victim;
 
             if (bonusType == -1) {
-                equipmentBonus = type == CombatType.MAGIC
+                equipmentBonus = type == MAGIC
                         ? player.getBonusManager().getDefenceBonus()[BonusManager.DEFENCE_MAGIC]
                         : player.getSkillManager().getCurrentLevel(Skill.DEFENCE);
             } else {
-                equipmentBonus = type == CombatType.MAGIC
+                equipmentBonus = type == MAGIC
                         ? player.getBonusManager().getDefenceBonus()[BonusManager.DEFENCE_MAGIC]
                         : player.getBonusManager().getDefenceBonus()[bonusType];
             }
@@ -1017,6 +1018,64 @@ public final class CombatFactory {
         if (player.getInventory().contains(4442)) {
             maxHit *= 1.5;
         }
+        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+            maxHit *= 1.15D;
+        }
+        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {// admin pet
+            maxHit *= 1.25D;
+        }
+
+        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {// admin pet
+            maxHit *= 1.20D;
+        }
+        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {// admin pet
+            maxHit *= 1.30D;
+        }
+        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {// admin pet
+            maxHit *= 1.25D;
+        }
+        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {// admin pet
+            maxHit *= 1.25D;
+        }
+        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {// admin pet
+            maxHit *= 1.25D;
+        }
+
+        if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
+            maxHit *= 2;
+        }
+
+        if(player.getRights() == PlayerRights.OWNER) {
+            maxHit *= 5.5D;
+        }
+        if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
+            maxHit *= 1.75D;
+        }
+        if (player.getRights() == PlayerRights.ZENYTE_DONATOR) {
+            maxHit *= 1.5D;
+        }
+        if (player.getRights() == PlayerRights.ONYX_DONATOR) {
+            maxHit *= 1.35D;
+        }
+        if (player.getRights() == PlayerRights.DIAMOND_DONATOR) {
+            maxHit *= 1.25D;
+        }
+        if (player.getRights() == PlayerRights.RUBY_DONATOR) {
+            maxHit *= 1.15D;
+        }
+        if (player.getRights() == PlayerRights.EMERALD_DONATOR) {
+            maxHit *= 1.10D;
+        }
+        if(player.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
+            maxHit *= 1.10D;
+        }
         if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592) {
             maxHit *= 2;
         }
@@ -1276,7 +1335,7 @@ public final class CombatFactory {
                     return false;
                 }
             }
-            else if (npc.getId() == 13456) { // Ancient Warrior
+            else if (npc.getId() == 2359) { // Elf Warrior
                 if (!((Player) entity).getWarriorGuildTier3()) {
                     entity.getCombatBuilder().reset(true);
                     player.getPacketSender().sendMessage("You need to be a Tier 3 Warrior to attack this npc.");
@@ -1673,7 +1732,7 @@ public final class CombatFactory {
         boolean projectilePathBlocked = false;
         if (a.isPlayer()
                 && (strategy.getCombatType() == CombatType.RANGED
-                || strategy.getCombatType() == CombatType.MAGIC && ((Player) a).getCastSpell() != null
+                || strategy.getCombatType() == MAGIC && ((Player) a).getCastSpell() != null
                 && !(((Player) a).getCastSpell() instanceof CombatAncientSpell))
                 || a.isNpc() && strategy.getCombatType() == CombatType.MELEE) {
             if (!RegionClipping.canProjectileAttack(b, a))
@@ -1880,7 +1939,7 @@ public final class CombatFactory {
         } else if (builder.getVictim().isNpc() && builder.getCharacter().isPlayer()) {
             Player attacker = (Player) builder.getCharacter();
             NPC npc = (NPC) builder.getVictim();
-            if ((npc.getId() == 9818 && container.getCombatType() == CombatType.MAGIC)
+            if ((npc.getId() == 9818 && container.getCombatType() == MAGIC)
             || (npc.getId() == 9817 && container.getCombatType() == CombatType.RANGED)
             || (npc.getId() == 9815 && container.getCombatType() == CombatType.MELEE)) {
                 container.allHits(context -> {
@@ -1909,11 +1968,25 @@ public final class CombatFactory {
                     }
                 });
             } else if ((npc.getId() == 9026 && container.getCombatType() == CombatType.RANGED)
-                    || (npc.getId() == 9027 && container.getCombatType() == CombatType.MAGIC)
+                    || (npc.getId() == 9027 && container.getCombatType() == MAGIC)
                     || (npc.getId() == 9025 && container.getCombatType() == CombatType.MELEE)) {
                 attacker.sendMessage("The beast seems to not be affected by your current Combat Type.");
                 container.allHits(context -> {
                         context.setAccurate(false);
+                });
+            } else if ((npc.getId() == 227 && container.getCombatType() == RANGED  || container.getCombatType() == MAGIC)
+                    || (npc.getId() == 1914 && container.getCombatType() == RANGED  || container.getCombatType() == MAGIC)
+                    || (npc.getId() == 2359 && container.getCombatType() == RANGED  || container.getCombatType() == MAGIC)) {
+                attacker.sendMessage("The guild npcs seem to not be affected by your current Combat Type.");
+                container.allHits(context -> {
+                    context.setAccurate(false);
+                });
+            } else if ((npc.getId() == 9116 && container.getCombatType() == RANGED  || container.getCombatType() == MELEE)
+                    || (npc.getId() == 9117 && container.getCombatType() == RANGED  || container.getCombatType() == MELEE)
+                    || (npc.getId() == 9118 && container.getCombatType() == RANGED  || container.getCombatType() == MELEE)) {
+                attacker.sendMessage("The guild npcs seem to not be affected by your current Combat Type.");
+                container.allHits(context -> {
+                    context.setAccurate(false);
                 });
             } else if((npc.getId() == 9024 && container.getCombatType() == ((Kiljaeden)npc).avoiding)
             || (npc.getId() == 9814 && container.getCombatType() == ((Heimdall)npc).avoiding) ) {
@@ -1927,7 +2000,7 @@ public final class CombatFactory {
                     context.getHit().incrementAbsorbedDamage(hit / 2);
                     context.setAccurate(true);
                 });
-            } else if ((npc.getId() == DungeoneeringBossNpc.Constants.BOSS_PROT_MAGE && npc.getTransformationId() == -1 || npc.getTransformationId() == DungeoneeringBossNpc.Constants.BOSS_PROT_MAGE) && container.getCombatType() == CombatType.MAGIC) {
+            } else if ((npc.getId() == DungeoneeringBossNpc.Constants.BOSS_PROT_MAGE && npc.getTransformationId() == -1 || npc.getTransformationId() == DungeoneeringBossNpc.Constants.BOSS_PROT_MAGE) && container.getCombatType() == MAGIC) {
                 container.allHits(context -> {
                     int hit = context.getHit().getDamage();
                     context.getHit().incrementAbsorbedDamage(hit / 2);
@@ -1940,7 +2013,7 @@ public final class CombatFactory {
                     context.setAccurate(true);
                 });
             } else if (npc.getId() == 1158
-                    && (container.getCombatType() == CombatType.MAGIC || container.getCombatType() == CombatType.RANGED)
+                    && (container.getCombatType() == MAGIC || container.getCombatType() == CombatType.RANGED)
                     || npc.getId() == 1160 && container.getCombatType() == CombatType.MELEE) {
                 container.allHits(context -> {
                     if (CombatFactory.fullVeracs(attacker)) {
@@ -1958,7 +2031,7 @@ public final class CombatFactory {
                 if (!CombatFactory.fullVeracs(attacker)) {
                     attacker.getPacketSender()
                             .sendMessage("Your "
-                                    + (container.getCombatType() == CombatType.MAGIC ? "magic"
+                                    + (container.getCombatType() == MAGIC ? "magic"
                                     : container.getCombatType() == CombatType.RANGED ? "ranged" : "melee")
                                     + " attack has" + (!container.getHits()[0].isAccurate() ? "" : " close to")
                                     + " no effect on the queen.");
@@ -1988,7 +2061,7 @@ public final class CombatFactory {
     protected static void giveExperience(CombatBuilder builder, CombatContainer container, int damage) {
 
         // This attack does not give any experience.
-        if (container.getExperience().length == 0 && container.getCombatType() != CombatType.MAGIC) {
+        if (container.getExperience().length == 0 && container.getCombatType() != MAGIC) {
             return;
         }
 
@@ -1996,7 +2069,7 @@ public final class CombatFactory {
         if (builder.getCharacter().isPlayer()) {
             Player player = (Player) builder.getCharacter();
 
-            if (container.getCombatType() == CombatType.MAGIC) {
+            if (container.getCombatType() == MAGIC) {
                 if (player.getCurrentlyCasting() != null)
                     player.getSkillManager().addExperience(Skill.MAGIC,
                             (int) (((damage * .90)) / container.getExperience().length)
@@ -2424,7 +2497,7 @@ public final class CombatFactory {
             Player victim = (Player) target;
             if (damage > 0 && Misc.getRandom(10) <= 4) {
                 int deflectDamage = -1;
-                if (CurseHandler.isActivated(victim, CurseHandler.DEFLECT_MAGIC) && combatType == CombatType.MAGIC) {
+                if (CurseHandler.isActivated(victim, CurseHandler.DEFLECT_MAGIC) && combatType == MAGIC) {
                     victim.performGraphic(new Graphic(2228, GraphicHeight.MIDDLE));
                     victim.performAnimation(new Animation(12573));
                     deflectDamage = (int) (damage * 0.20);

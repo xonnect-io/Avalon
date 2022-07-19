@@ -469,7 +469,7 @@ public class CardPackRewards {
             new Box(22121,4, 33),
             new Box(23240,4, 33),
             new Box(23254,1, 33),
-            new Box(23255,1, 33)
+            new Box(4442,1, 33)
     };
 
 
@@ -604,7 +604,7 @@ public class CardPackRewards {
             new Box(22121,4, 33),
             new Box(23240,4, 33),
             new Box(23254,1, 33),
-            new Box(23255,1, 33)
+            new Box(4442,1, 33)
     };
 
 

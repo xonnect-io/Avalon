@@ -167,7 +167,7 @@ public class DiamondCardPack {
             new Box(22121, 2, 4, 55, true, "tanzanite"),
             new Box(23240, 2, 4, 55, true, "tanzanite"),
             new Box(23254, 1, 1, 55, true, "tanzanite"),
-            new Box(23255, 1, 1, 55, true, "tanzanite")
+            new Box(4442, 1, 1, 55, true, "tanzanite")
     );
 
     public static int getRarityColor(Box reward) {

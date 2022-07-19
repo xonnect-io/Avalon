@@ -255,14 +255,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111214:
                 player.getPacketSender().sendString(1, GameSettings.StoreUrl);
                 break;
-            case 77242:
-                if (player.getInventory().contains(23367)) {
-                    player.getInventory().delete(23367,1);
-                    player.getInventory().add(23324,1);
-                    player.getPA().sendMessage("You have chosen the Faeless Magician Pet!");
-                }
-                player.getPacketSender().removeInterface();
-                break;
+
             case 77834:
             case -18522:
             case -17390:
@@ -272,6 +265,44 @@ public class ButtonClickPacketListener implements PacketListener {
             case 77546:
             case 77251:
             case 71516:
+            case 71576:
+            case 80576:
+                player.getPacketSender().removeInterface();
+                break;
+
+            case 80242:
+                if (player.getInventory().contains(23386)) {
+                    player.getInventory().delete(23386,1);
+                    player.getInventory().add(23387,1);
+                    player.getPA().sendMessage("You have chosen the Lesarkus Warrior Pet!");
+                }
+                player.getPacketSender().removeInterface();
+                break;
+            case 80245:
+                if (player.getInventory().contains(23386)) {
+                    player.getInventory().delete(23386,1);
+                    player.getInventory().add(23388,1);
+                    player.getPA().sendMessage("You have chosen the Vampire Warrior Pet!");
+                }
+                player.getPacketSender().removeInterface();
+                break;
+
+            case 80248:
+                if (player.getInventory().contains(23386)) {
+                    player.getInventory().delete(23386,1);
+                    player.getInventory().add(23389,1);
+                    player.getPA().sendMessage("You have chosen the Elf Warrior Pet!");
+                }
+                player.getPacketSender().removeInterface();
+                break;
+
+
+            case 77242:
+                if (player.getInventory().contains(23367)) {
+                    player.getInventory().delete(23367,1);
+                    player.getInventory().add(23324,1);
+                    player.getPA().sendMessage("You have chosen the Faeless Magician Pet!");
+                }
                 player.getPacketSender().removeInterface();
                 break;
             case 77245:
@@ -291,6 +322,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 player.getPacketSender().removeInterface();
                 break;
+
+
             case 77142:
                 if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
                     player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your light weapons.");
@@ -309,9 +342,10 @@ public class ButtonClickPacketListener implements PacketListener {
                 } else
                     player.getPA().sendMessage("You need to sacrifice x1 of Each Light weapon variant. (Staff, sword, and bow)");
                 break;
+
             case 71512:
                 if (player.getMagicianMaster() == false) {
-                    player.getPA().sendMessage("You need to be a Magician Master before you can sacrifice an Owner Fragment.");
+                    player.getPA().sendMessage("You need to be a Magician Master before you can sacrifice x250 Suffered Crystals.");
                     return;
                 }
                 if (player.getMagicianMaster() == true && player.getInventory().contains(23321, 250)) {
@@ -360,7 +394,37 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 71532:
                 if (player.getPointsHandler().getLesarkusWarriorKC() < 50000) {
-                    player.getPA().sendMessage("You need 50,000 Lesarkus Warrior kills before sacrificing x250 Suffered Crystals.");
+                    player.getPA().sendMessage("You need 50,000 Lesarkus Warrior kills before sacrificing x1 Blood Attachment.");
+                    return;
+                }
+
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    return;
+                }
+                if (player.getInventory().contains(23239, 1)) {
+                    player.getInventory().delete(23239, 1);
+                }
+                else if (!player.getInventory().contains(23239, 1)) {
+                    player.getPA().sendMessage("You need x1 Blood Attachment to Level up!");
+                    return;
+                }
+                player.getPA().sendMessage("You sacrifice x1 Blood Attachment and Unlock Tier 2 of the Warrior Guild.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 2 @blu@of the @red@Warrior Guild");
+                player.getPacketSender().sendInterfaceRemoval();
+                player.getPacketSender().sendInterface(71560);
+                player.setWarriorGuildTier2(true);
+                player.getInventory().add(23383, 1);
+                player.getPA().sendMessage("<img=832> x1 Lesarkus Blade has been added to your inventory.");
+                break;
+            case 71572:
+                if (player.getPointsHandler().getVampireWarriorKC() < 100_000) {
+                    player.getPA().sendMessage("You need 100,000 Vampire Warrior kills before sacrificing x1 Owner Fragment.");
+                    return;
+                }
+
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
                     return;
                 }
                 if (player.getInventory().contains(13379, 1)) {
@@ -370,19 +434,50 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPA().sendMessage("You need x1 Owner Fragment to Level up!");
                     return;
                 }
-                player.getPA().sendMessage("You sacrifice x1 Owner Fragment and Unlock Tier 2 of the Warrior Guild.");
-                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 2 @blu@of the @red@Warrior Guild");
+                player.getPA().sendMessage("You sacrifice x1 Owner Fragment and Unlock Tier 3 of the Warrior Guild.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 3 @blu@of the @red@Warrior Guild");
                 player.getPacketSender().sendInterfaceRemoval();
-                player.getPacketSender().sendInterface(71560);
-                player.setWarriorGuildTier2(true);
-                player.getInventory().add(3745, 1);
-                player.getPA().sendMessage("<img=832> x1 Lesarkus Blade has been added to your inventory.");
+                player.getPacketSender().sendInterface(80560);
+                player.setWarriorGuildTier3(true);
+                player.getInventory().add(23384, 1);
+                player.getPA().sendMessage("<img=832> x1 Kismet Medallion has been added to your inventory.");
+                break;
+            case 80572:
+                if (player.getPointsHandler().getAncientWarriorKC() < 150_000) {
+                    player.getPA().sendMessage("You need 150,000 Elf Warrior kills before sacrificing 250,000,000 Upgrade Tokens.");
+                    return;
+                }
+
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    return;
+                }
+
+                if (player.getInventory().contains(12855, 250_000_000)) {
+                    player.getInventory().delete(13379, 250_000_000);
+                }
+                else if (!player.getInventory().contains(12855, 250_000_000)) {
+                    player.getPA().sendMessage("You need 250,000,000 Upgrade tokens to Level up!");
+                    return;
+                }
+                player.getPA().sendMessage("You sacrifice 250,000,000 upgrade tokens and Unlock Tier Warrior Master.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Warrior Master @blu@of the @red@Warrior Guild");
+                player.getPacketSender().sendInterfaceRemoval();
+                player.setWarriorMaster(true);
+                player.getInventory().add(23386, 1);
+                player.getPA().sendMessage("<img=832>x1 Warrior Pet scroll was added to your inventory");
+                player.getPA().sendMessage("<img=832> Your account has received a permanent 0.20% Melee Damage increase!");
                 break;
             case 77342:
                  if (player.getPointsHandler().getFacelessMagicianKC() < 50000) {
                      player.getPA().sendMessage("You need 50,000 Faceless Magician kills before sacrificing a Dark weapon.");
                      return;
                  }
+
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    return;
+                }
                  if (player.getInventory().contains(22113, 1)) {
                      player.getInventory().delete(22113, 1);
                  }
@@ -410,6 +505,11 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPA().sendMessage("You need 100,000 Lotus Magician kills before sacrificing a Blood weapon.");
                     return;
                 }
+
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    return;
+                }
                 if (player.getInventory().contains(23226, 1)) {
                     player.getInventory().delete(23226, 1);
                 }
@@ -434,21 +534,28 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 77542:
                 if (player.getPointsHandler().getShadowMagicianKC() < 150_000) {
-                    player.getPA().sendMessage("You need 150,000 Shadow Magician kills before sacrificing 250m upgrade tokens");
+                    player.getPA().sendMessage("You need 150,000 Shadow Magician kills before sacrificing 250,000,000 upgrade tokens");
+                    return;
+                }
+
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
                     return;
                 }
                 if (player.getInventory().contains(12855, 250_000_000)) {
                     player.getInventory().delete(12855, 250_000_000);
                 }
                 else if (!player.getInventory().contains(12855,250_000_000)) {
-                    player.getPA().sendMessage("You need to sacrifice 250m upgrade tokens to Level up!");
+                    player.getPA().sendMessage("You need to sacrifice 250,000,000 Upgrade Tokens to level up!");
                     return;
                 }
-                player.getPA().sendMessage("You sacrifice 250m upgrade tokens and Unlock Tier Magician Master of the Magic Guild.");
+                player.getPA().sendMessage("You sacrifice 250,000,000 upgrade tokens and Unlock Tier Magician Master of the Magic Guild.");
                 World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Magician Master @blu@of the @red@Magic Guild");
                 player.getPacketSender().sendInterfaceRemoval();
                 player.setMagicianMaster(true);
-                player.getPA().sendMessage("<img=832> Your account has received a permanent 0.20% Damage increase!");
+                player.getInventory().add(23367, 1);
+                player.getPA().sendMessage("<img=832>x1 Magician Pet scroll was added to your inventory");
+                player.getPA().sendMessage("<img=832> Your account has received a permanent 0.20% Magic Damage increase!");
                 break;
 
             case 8659:

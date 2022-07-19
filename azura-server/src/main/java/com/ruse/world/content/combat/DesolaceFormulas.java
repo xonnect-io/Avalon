@@ -249,6 +249,64 @@ public class DesolaceFormulas {
             if (plr.getInventory().contains(4442)) {
             	maxHit *=1.5;
             }
+            if (plr.getSummoning() != null && plr.getSummoning().getFamiliar() != null
+                    && plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+                maxHit *= 1.15D;
+            }
+            if (plr.getSummoning() != null && plr.getSummoning().getFamiliar() != null
+                    && plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+
+            if (plr.getSummoning() != null && plr.getSummoning().getFamiliar() != null
+                    && plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {// admin pet
+                maxHit *= 1.20D;
+            }
+            if (plr.getSummoning() != null && plr.getSummoning().getFamiliar() != null
+                    && plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {// admin pet
+                maxHit *= 1.30D;
+            }
+            if (plr.getSummoning() != null && plr.getSummoning().getFamiliar() != null
+                    && plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (plr.getSummoning() != null && plr.getSummoning().getFamiliar() != null
+                    && plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (plr.getSummoning() != null && plr.getSummoning().getFamiliar() != null
+                    && plr.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+
+            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
+                maxHit *= 2;
+            }
+
+            if(plr.getRights() == PlayerRights.OWNER) {
+                maxHit *= 5.5D;
+            }
+            if(plr.getRights() == PlayerRights.TANZANITE_DONATOR) {
+                maxHit *= 1.75D;
+            }
+            if (plr.getRights() == PlayerRights.ZENYTE_DONATOR) {
+                maxHit *= 1.5D;
+            }
+            if (plr.getRights() == PlayerRights.ONYX_DONATOR) {
+                maxHit *= 1.35D;
+            }
+            if (plr.getRights() == PlayerRights.DIAMOND_DONATOR) {
+                maxHit *= 1.25D;
+            }
+            if (plr.getRights() == PlayerRights.RUBY_DONATOR) {
+                maxHit *= 1.15D;
+            }
+            if (plr.getRights() == PlayerRights.EMERALD_DONATOR) {
+                maxHit *= 1.10D;
+            }
+            if(plr.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
+                maxHit *= 1.10D;
+            }
         }
         if (victim.isPlayer()) {
             Player p = (Player) victim;
@@ -863,6 +921,64 @@ public class DesolaceFormulas {
         }
         if (p.getInventory().contains(4442)) {
         	damage *=1.5;
+        }
+        if (p.getSummoning() != null && p.getSummoning().getFamiliar() != null
+                && p.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+            maxHit *= 1.15D;
+        }
+        if (p.getSummoning() != null && p.getSummoning().getFamiliar() != null
+                && p.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {// admin pet
+            maxHit *= 1.25D;
+        }
+
+        if (p.getSummoning() != null && p.getSummoning().getFamiliar() != null
+                && p.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {// admin pet
+            maxHit *= 1.20D;
+        }
+        if (p.getSummoning() != null && p.getSummoning().getFamiliar() != null
+                && p.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {// admin pet
+            maxHit *= 1.30D;
+        }
+        if (p.getSummoning() != null && p.getSummoning().getFamiliar() != null
+                && p.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {// admin pet
+            maxHit *= 1.25D;
+        }
+        if (p.getSummoning() != null && p.getSummoning().getFamiliar() != null
+                && p.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {// admin pet
+            maxHit *= 1.25D;
+        }
+        if (p.getSummoning() != null && p.getSummoning().getFamiliar() != null
+                && p.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {// admin pet
+            maxHit *= 1.25D;
+        }
+
+        if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
+            maxHit *= 2;
+        }
+
+        if(p.getRights() == PlayerRights.OWNER) {
+            maxHit *= 5.5D;
+        }
+        if(p.getRights() == PlayerRights.TANZANITE_DONATOR) {
+            maxHit *= 1.75D;
+        }
+        if (p.getRights() == PlayerRights.ZENYTE_DONATOR) {
+            maxHit *= 1.5D;
+        }
+        if (p.getRights() == PlayerRights.ONYX_DONATOR) {
+            maxHit *= 1.35D;
+        }
+        if (p.getRights() == PlayerRights.DIAMOND_DONATOR) {
+            maxHit *= 1.25D;
+        }
+        if (p.getRights() == PlayerRights.RUBY_DONATOR) {
+            maxHit *= 1.15D;
+        }
+        if (p.getRights() == PlayerRights.EMERALD_DONATOR) {
+            maxHit *= 1.10D;
+        }
+        if(p.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
+            maxHit *= 1.10D;
         }
         if (p.getEquipment().contains(7995)) {
             damage *= 2;
