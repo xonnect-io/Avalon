@@ -6138,6 +6138,9 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				definition.description = "A denizen of the Abyss!".getBytes();
 				break;
+			case 3975:
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				break;
 			case 6335:
 				definition.name = "Zamorakian Mage";
 				definition.description = "stuff".getBytes();

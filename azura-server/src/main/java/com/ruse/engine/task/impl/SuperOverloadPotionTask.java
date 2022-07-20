@@ -28,8 +28,7 @@ public class SuperOverloadPotionTask extends Task {
 		}
 		int timer = player.getOverloadPotionTimer();
 		if (timer == 600 || timer == 598 || timer == 596 || timer == 594 || timer == 592) {
-			player.processovlmode();
-			player.overlodemode();
+
 			player.performAnimation(new Animation(3170));
 			player.dealDamage(new Hit(100, Hitmask.RED, CombatIcon.NONE));
 		}

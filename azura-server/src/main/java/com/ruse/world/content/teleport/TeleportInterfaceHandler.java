@@ -32,14 +32,18 @@ public class TeleportInterfaceHandler {
 
 	public void open() {
 		player.getPacketSender().resetItemsOnInterface(28229 + 20, 20);
-		player.setTeleportType(TeleportCategory.BOSSES);
-		switchTab(28216);
+		player.setTeleportType(TeleportCategory.MONSTERS);
+		if (player.getTeleportData() == null) {
+			player.setTeleportData(TeleportData.MINOTAUR);
+			switchData();
+		}
+		switchTab(28215);
 		player.getPA().sendInterface(28200);
 	}
 
 	public void open(TeleportCategory type) {
 		player.setTeleportType(type);
-		switchTab(28216);
+		switchTab(28215);
 		player.getPA().sendInterface(28200);
 	}
 

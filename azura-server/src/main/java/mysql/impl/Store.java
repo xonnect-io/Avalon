@@ -185,6 +185,7 @@ public class Store implements Runnable {
                 PlayerLogs.logPlayerDonations(player.getUsername(), "Donated: $" + amount
                         + ", Item: " + ItemDefinition.forId(id).getName() + ", Amount: " + item_number + ", ID: " + id + ", item_number: " + item_number);
 
+                player.setAmountDonatedToday((int)amount);
                 player.getInventory().add(23174, (int) amount);
                 player.sendMessage("Thanks for donating!");
                 player.sendMessage("You are rewarded " + (int) amount + " High-Tier Tickets!");
@@ -208,7 +209,6 @@ public class Store implements Runnable {
                 } else {
                     player.sendMessage("Your donation message is only displayed for purchases over $5");
                 }
-
                 rs.updateInt("claimed", 1);
                 rs.updateRow();
             }

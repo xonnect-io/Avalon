@@ -3,7 +3,7 @@ package org.necrotic;
 public class Configuration {
 
 
-	public static boolean localHost = false;
+	public static boolean localHost = true;
 
 	public final static String SERVER_HOST() {
 		return localHost ? "127.0.0.1" : "51.81.49.184";

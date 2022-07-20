@@ -31,7 +31,6 @@ import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
 import com.ruse.world.entity.impl.mini.MiniPlayer;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
-import com.world.content.globalBoss.merk.MerkSpawn;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -188,9 +187,6 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == SkeletalHorror.NPC_ID) {
                             SkeletalHorror.wyrmAlive = false;
                         }
-                        if (npc.getId() == MerkSpawn.NPC_ID) {
-                            MerkSpawn.wyrmAlive = false;
-                        }
                         if (npc.getId() == 6203 || npc.getId() == 6260 || npc.getId() == 6247 || npc.getId() == 6222) { // done
                             StarterTasks.doProgress(killer, StarterTaskData.KILL_20_GWD_BOSSES);
                         }
@@ -316,9 +312,6 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == 3305) {
                             NarakuBoss.handleDrop(npc);
-                        }
-                        if (npc.getId() == MerkSpawn.NPC_ID) {
-                            MerkSpawn.handleDrop(npc);
                         }
                         if (npc.getId() == 187) {
                             HellraiserBossDrop.handleDrop(npc);

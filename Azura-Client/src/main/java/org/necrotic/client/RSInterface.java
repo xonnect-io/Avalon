@@ -1226,16 +1226,6 @@ public class RSInterface {
 
 
 	//they should not be seperate interfaces.
-	private static void effectInterface(TextDrawingArea[] tda) {//wtf did u do with it lol and why are there several, it should all be in 1 interface
-		RSInterface main = addInterface(48300);
-		addSpriteLoader(48301, 1386);
-		addText(48302, "000 Minutes", tda, 0, ColorConstants.ORA, true, true);
-		addText(48303, "Super Ovl", tda, 0, ColorConstants.SNOW_WHITE, true, true);
-		main.totalChildren(3);
-		main.child(0, 48301, 462, 13);
-		main.child(1, 48302, 478, 51);
-		main.child(2, 48303, 478, 40);
-	}
 
 	private static void effectInterface2(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(48400);
@@ -6528,7 +6518,6 @@ public class RSInterface {
 			magicianTier1Unlock(textDrawingAreas);
 			magicianTier2Unlock(textDrawingAreas);
 			magicianTier3Unlock(textDrawingAreas);
-			effectInterface(textDrawingAreas);
 			effectInterface2(textDrawingAreas);
 			effectInterface3(textDrawingAreas);
 			startInterface(textDrawingAreas);

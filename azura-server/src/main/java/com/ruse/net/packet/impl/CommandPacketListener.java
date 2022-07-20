@@ -73,7 +73,6 @@ import com.ruse.world.entity.impl.npc.NPCSpawn;
 import com.ruse.world.entity.impl.player.Player;
 import com.ruse.world.entity.impl.player.PlayerSaving;
 import com.ruse.world.instance.TestInstance;
-import com.world.content.globalBoss.merk.MerkSpawn;
 import mysql.impl.FoxVote;
 import mysql.impl.Store;
 
@@ -123,6 +122,12 @@ public class CommandPacketListener implements PacketListener {
             Position pos = new Position(2910, 4699);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Summer Event!");
+        }
+
+        if (command[0].equalsIgnoreCase("donodeals")) {
+            player.getDonationDeals().displayReward();
+            player.getDonationDeals().displayTime();
+            player.getPacketSender().sendString(57277, "@yel@$" + player.getAmountDonatedToday());
         }
         if (command[0].equalsIgnoreCase("collectionlog")) {
             player.getCollectionLog2().open(MONSTERS);
@@ -2848,9 +2853,6 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("spawnprime")) {
             SkeletalHorror.spawncommand();
-        }
-        if (command[0].equalsIgnoreCase("spawnmerk")) {
-            MerkSpawn.spawncommand();
         }
         if (command[0].equalsIgnoreCase("boxviewer")) {
             int[] common = new int[]{4151, 6570, 6585, 1053, 1055};

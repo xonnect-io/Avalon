@@ -6926,7 +6926,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		RSInterface.addText(28211, "", tda, 2, ClientConstants.ORANGE, true, true);
 		RSInterface.addText(28212, "Teleport", tda, 2, ClientConstants.ORANGE, true, true);
 		RSInterface.addText(28213, "", tda, 2, ClientConstants.ORANGE, true, true);
-		RSInterface.addNpc(28214, 250);
+		RSInterface.addNpc(28214, 1719);
 		RSInterface.addText(28208, "Rewards", tda, 2, ClientConstants.ORANGE, false, true);
 		RSInterface.addText(28209, "NPC Display", tda, 2, ClientConstants.ORANGE, true, true);
 		RSInterface.addText(64110, "Description", tda, 2, ClientConstants.ORANGE, true, true);

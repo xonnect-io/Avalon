@@ -29,6 +29,7 @@ public class InfiniteOverloadTask extends Task {
             player.dealDamage(new Hit(100, Hitmask.RED, CombatIcon.NONE));
         }
 
+
         if (time == 300) {
             Consumables.levelIncrease(player, Skill.ATTACK, 130);
             Consumables.levelIncrease(player, Skill.STRENGTH, 130);

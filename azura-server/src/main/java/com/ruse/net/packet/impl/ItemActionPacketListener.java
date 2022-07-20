@@ -127,7 +127,7 @@ public class ItemActionPacketListener implements PacketListener {
         player.performAnimation(new Animation(829));
         player.getInventory().getItems()[slot] = new Item(replacePotion, 1);
         player.getInventory().refreshItems();
-        player.setOverloadPotionTimer(600);
+        player.setOverloadPotionTimer(100000);
         player.setPotionUsed("Owner Mode");
         TaskManager.submit(new OwnerPotionTask(player));
         return true;
@@ -655,8 +655,8 @@ public class ItemActionPacketListener implements PacketListener {
 
             case 15330:
                 if (!drinkSuperOverload(player, slot, 15330))
-
                     return;
+
                 player.getPacketSender().sendInterfaceRemoval();
                 player.getCombatBuilder().incrementAttackTimer(1).cooldown(false);
                 player.getCombatBuilder().setDistanceSession(null);
@@ -671,6 +671,9 @@ public class ItemActionPacketListener implements PacketListener {
                     Consumables.overloadIncrease(player, Skill.RANGED, 0.38);
                     Consumables.overloadIncrease(player, Skill.MAGIC, 0.38);
                 }
+                if (player.getOverloadPotionTimer() > 1) {
+                    player.getPacketSender().sendEffectTimerSeconds(12000000, EffectTimer.INFINITE_SUPER_OVERLOAD);
+                }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
 
@@ -684,7 +687,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.setCastSpell(null);
                 player.getFoodTimer().reset();
                 player.getPotionTimer().reset();
-                player.setOverloadPotionTimer(100000);
+                player.setOverloadPotionTimer(12000000);
                 if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
                     player.getSkillManager().setCurrentLevel(Skill.PRAYER, 200);
                     player.getSkillManager().setCurrentLevel(Skill.ATTACK, 200);
@@ -693,6 +696,9 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getSkillManager().setCurrentLevel(Skill.RANGED, 200);
                     player.getSkillManager().setCurrentLevel(Skill.MAGIC, 200);
                     player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 1200);
+                }
+                if (player.getOverloadPotionTimer() > 1) {
+                    player.getPacketSender().sendEffectTimerSeconds(12000000, EffectTimer.INFINITE_RAGE_POTION);
                 }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
@@ -715,6 +721,9 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getSkillManager().setCurrentLevel(Skill.RANGED, 240);
                     player.getSkillManager().setCurrentLevel(Skill.MAGIC, 240);
                     player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 2400);
+                }
+                if (player.getOverloadPotionTimer() > 1) {
+                    player.getPacketSender().sendEffectTimerSeconds(12000000, EffectTimer.INFINITE_OWNER_POTION);
                 }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;

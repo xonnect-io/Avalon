@@ -1,19 +1,16 @@
 package com.ruse.world.content;
 
-import java.io.File;
+import com.ruse.engine.task.Task;
+import com.ruse.engine.task.TaskManager;
+import com.ruse.util.Misc;
+import com.ruse.world.entity.impl.player.Player;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalTime;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.stream.Stream;
-
-import com.ruse.engine.task.Task;
-import com.ruse.engine.task.TaskManager;
-import com.ruse.util.Misc;
-import com.ruse.world.entity.impl.player.Player;
 
 /**
  * @author Suic
@@ -27,7 +24,7 @@ public class DonationDeals {
 		this.player = player;
 	}
 
-	private final int[][] items = new int[][] { { 20488, 4}, { 19888, 1}, { 8412, 1 }, };
+	private final int[][] items = new int[][] { { 14999, 1}, { 3578, 1}, { 23279, 1 }, };
 
 	public static long timeLeft = 86400000 - 1000;
 

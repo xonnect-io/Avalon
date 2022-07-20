@@ -1,9 +1,5 @@
 package com.ruse.world.content.combat;
 
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.function.Consumer;
-
 import com.ruse.model.CombatIcon;
 import com.ruse.model.Hit;
 import com.ruse.model.Hitmask;
@@ -12,8 +8,11 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.npc.impl.MaxHitDummy;
-
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * A container that holds all of the data needed for a single combat hook.
@@ -119,7 +118,12 @@ public class CombatContainer {
 		ContainerHit[] array = new ContainerHit[hitAmount];
 		for (int i = 0; i < array.length; i++) {
 			boolean accuracy = !checkAccuracy || CombatFactory.rollAccuracy(attacker, victim, combatType);
-			array[i] = new ContainerHit(CombatFactory.getHit(attacker, victim, combatType), accuracy);
+
+			if (victim instanceof MaxHitDummy && attacker.asPlayer() != null) {
+				array[i] = new ContainerHit(CombatFactory.getMaxHit(attacker, victim, combatType), true);
+			} else {
+				array[i] = new ContainerHit(CombatFactory.getHit(attacker, victim, combatType), accuracy);
+			}
 			if (array[i].isAccurate()) {
 				accurate = true;
 			}

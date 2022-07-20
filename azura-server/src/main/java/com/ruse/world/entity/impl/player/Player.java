@@ -1432,7 +1432,6 @@ public class Player extends Character {
 
     public void process() {
         processGodMode();
-        processovlmode();
         process.sequence();
 
     }
@@ -1487,14 +1486,6 @@ public class Player extends Character {
         }
     }
 
-    public void processovlmode() {
-        packetSender.sendString(48302, (overloadPotionTimer / 100) + " minutes");
-        packetSender.sendString(48303, getPotionUsed());
-        overloadPotionTimer--;
-        if (overloadPotionTimer < 1) {
-            endovlmode();
-        }
-    }
 
     public void dispose() {
         // save();

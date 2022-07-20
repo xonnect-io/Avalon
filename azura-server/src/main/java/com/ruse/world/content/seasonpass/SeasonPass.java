@@ -106,21 +106,31 @@ public class SeasonPass {
 	/**
 	 * after adding xp check if we can go to the next tier or not
 	 */
-	public void checkafteraddingxp(int addExp) {
-		if(tier == 50) {
+	public void checkafteraddingxp(int xpadded) {
+		if(tier == 50){
 			return;
 		}
-		else if(getXp() + addExp > 10){
-			this.xp =((getXp()+addExp) - 10);
-			addTier(1);
-			giveRewards();
-		} else if(getXp() + addExp == 10){
+
+		if(getXp() + xpadded > 10){
+			int totaltierstoadvance = xpadded / 10; //2
+			int xptotier = 10 - getXp();
+			int howmuchxpleft = xpadded - xptotier;
+			int remainderxp = howmuchxpleft % 10;
+			this.xp =remainderxp;
+			for(int i = 0; i < totaltierstoadvance; i++){
+				this.tier++;
+				giveRewards();
+			}
+		} else if(getXp() + xpadded == 10){
 			addTier(1);
 			this.xp = 0;
 			giveRewards();
 		} else {
-			this.xp+=addExp;
+			this.xp+=xpadded;
 		}
+
+
+
 	}
 	public void giveRewards() {
 		String itemName = "";
