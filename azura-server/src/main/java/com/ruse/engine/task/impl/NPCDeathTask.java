@@ -478,7 +478,8 @@ public class NPCDeathTask extends Task {
         if (npc.getDefinition().getRespawnTime() > 0
                 && npc.getLocation() != Location.PYRAMID
                 && npc.getLocation() != Location.DUNGEONEERING
-                && npc.getLocation() != Location.CUSTOM_RAIDS && !npc.isEventBoss()) {
+                && npc.getLocation() != Location.CUSTOM_RAIDS && !npc.isEventBoss()
+                && npc.getLocation() != Location.KEEPERS_OF_LIGHT_GAME) {
             if (npc.respawn)
                 TaskManager.submit(new NPCRespawnTask(npc, npc.getDefinition().getRespawnTime(), killer));
         }

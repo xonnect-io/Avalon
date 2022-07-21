@@ -311,7 +311,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.sendMessage("Please join a party before entering a dungeon.");
                                 }
                                 break;
-                        /*    case 5222:
+                              case 5222:
                                 if (player.getLocation() == Location.KEEPERS_OF_LIGHT_LOBBY) {
                                     if (player.getPosition().getY() < 5030) {
                                         KeepersOfLight.insertWaiting(player);
@@ -320,7 +320,6 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                 }
                                 break;
-*/
                             case 41207:
                                 if (player.getInventory().contains(TreasureHunter.MASTER_KEY.getId())) {
                                     player.getInventory().delete(TreasureHunter.MASTER_KEY);

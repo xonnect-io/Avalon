@@ -8,7 +8,7 @@ import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
-import com.ruse.world.content.randomevents.raidsystem.RaidNPC;
+import com.ruse.world.content.raidsystem.RaidNPC;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.npc.NPCMovementCoordinator.Coordinator;
 import com.ruse.world.entity.impl.player.Player;

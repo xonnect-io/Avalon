@@ -226,11 +226,10 @@ public class PlayerHandler {
         if(player.getLocation() != Locations.Location.PROGRESSION_ZONES) {
             player.getPacketSender().sendWalkableInterface(112000, false);
         }
-        /*
+
         if(player.getLocation() == Location.KEEPERS_OF_LIGHT_LOBBY ||  player.getLocation() == Location.KEEPERS_OF_LIGHT_GAME) {
             player.getPacketSender().sendWalkableInterface(21005, false);
         }
-*/
 
         player.getPacketSender().sendMessage("<shad=1>@bla@Welcome to " + GameSettings.RSPS_NAME + "!");
         if (GameSettings.ELITE_DONO_DEAL == true)

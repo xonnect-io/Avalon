@@ -128,7 +128,7 @@ public class HitQueue {
 					Player p = (Player) attacker;
 
 					if (damage > 0) {
-						if (p.getLocation() == Location.PEST_CONTROL_GAME) {
+						if (p.getLocation() == Location.PEST_CONTROL_GAME || p.getLocation() == Location.KEEPERS_OF_LIGHT_GAME) {
 							p.getMinigameAttributes().getPestControlAttributes().incrementDamageDealt(damage);
 						} else if (p.getLocation() == Location.DUNGEONEERING) {
 							p.getMinigameAttributes().getDungeoneeringAttributes().incrementDamageDealt(damage);

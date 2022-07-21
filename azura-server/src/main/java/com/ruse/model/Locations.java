@@ -70,9 +70,7 @@ public class Locations {
 			},
 		AFK(new int[] { 3024, 3056 }, new int[] { 4050, 4082 }, false, false, true, false, false, true) {
 		},
-	/*
 		KEEPERS_OF_LIGHT_LOBBY(new int[] { 2304, 2344 }, new int[] { 4992, 5050 }, false, false, true, false, false, true) {
-
 
 			@Override
 			public void process(Player player) {
@@ -99,6 +97,13 @@ public class Locations {
 
 		KEEPERS_OF_LIGHT_GAME(new int[] { 2345, 2431 }, new int[] { 4992, 5054 }, true, false, true, false, true, true) {
 
+			/*@Override
+			public boolean canTeleport(Player player) {
+				player.getPacketSender()
+						.sendMessage("Teleport spells are blocked on this island. Win or die!");
+				return false;
+			}*/
+
 			@Override
 			public void leave(Player player) {
 				KeepersOfLight.leave(player, true);
@@ -119,7 +124,7 @@ public class Locations {
 				KeepersOfLight.leave(player, true);
 			}
 		},
-	*/
+
 		EASTER(new int[] { 3123, 3138}, new int[] { 3392, 3419},
 				true, true, true, false, false, true) {},
 		SUMMER_EVENT(new int[] { 3076, 3133}, new int[] { 2886, 2938},

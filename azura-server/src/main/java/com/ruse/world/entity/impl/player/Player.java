@@ -4050,7 +4050,7 @@ End new teleport
     private boolean canChat = true;
 
     public boolean isInMinigame() {
-        boolean inMinigameLoc = getLocation() == Locations.Location.VAULT_OF_WAR || getLocation() == Locations.Location.VOID_OF_DARKNESS || getLocation() == Locations.Location.HALLS_OF_VALOR || getLocation() == Locations.Location.TREASURE_HUNTER;
+        boolean inMinigameLoc = getLocation() == Locations.Location.KEEPERS_OF_LIGHT_GAME || getLocation() == Locations.Location.VAULT_OF_WAR || getLocation() == Locations.Location.VOID_OF_DARKNESS || getLocation() == Locations.Location.HALLS_OF_VALOR || getLocation() == Locations.Location.TREASURE_HUNTER;
         boolean inMinigameInstance = getMapInstance() instanceof DungeoneeringInstance;
         return inMinigameLoc || inMinigameInstance;
     }

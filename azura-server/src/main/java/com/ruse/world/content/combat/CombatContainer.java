@@ -7,7 +7,6 @@ import com.ruse.util.Misc;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
-import com.ruse.world.entity.impl.npc.impl.MaxHitDummy;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.Arrays;
@@ -118,12 +117,7 @@ public class CombatContainer {
 		ContainerHit[] array = new ContainerHit[hitAmount];
 		for (int i = 0; i < array.length; i++) {
 			boolean accuracy = !checkAccuracy || CombatFactory.rollAccuracy(attacker, victim, combatType);
-
-			if (victim instanceof MaxHitDummy && attacker.asPlayer() != null) {
-				array[i] = new ContainerHit(CombatFactory.getMaxHit(attacker, victim, combatType), true);
-			} else {
-				array[i] = new ContainerHit(CombatFactory.getHit(attacker, victim, combatType), accuracy);
-			}
+			array[i] = new ContainerHit(CombatFactory.getHit(attacker, victim, combatType), accuracy);
 			if (array[i].isAccurate()) {
 				accurate = true;
 			}
