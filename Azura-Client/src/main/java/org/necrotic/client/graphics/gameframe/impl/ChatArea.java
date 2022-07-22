@@ -41,10 +41,10 @@ public class ChatArea extends GameFrame {
 		private final int[][] actions = {{999}, {998}, {997, 996, 995, 994, 993}, {992, 991, 990, 989}, {1003, 1002, 1001, 1000}, {987, 986, 985, 984}, {983, 982, 981, 980}};
 
 		public void drawChannelButtons(Client client, ScreenMode screenMode) {
-			if (screenMode != ScreenMode.FIXED) {
-				Client.spritesMap.get(4).drawSprite(getOffSetX() + 5, getOffSetY() + 143);
-			}
-
+//			if (screenMode != ScreenMode.FIXED) {
+//				Client.spritesMap.get(4).drawSprite(getOffSetX() + 5, getOffSetY() + 143);
+//			}
+			Client.spritesMap.get(4).drawSprite(getOffSetX() + 5, getOffSetY() + 143);
 			switch (client.cButtonCPos) {
 				case 0:
 				case 1:
@@ -227,18 +227,20 @@ public class ChatArea extends GameFrame {
 			} else {
 				if (!componentHidden()) {
 					if (!client.messagePromptRaised && client.aString844 == null && client.backDialogID == -1 && client.dialogID == -1 && client.inputDialogState == 0) {
-						float rate = 50f / getHeight();
-
-						for (int i = 0; i < getHeight() - 35; i++) {
-							int opacity = (int) (i * rate);
-							// if(resizeY + i < Client.clientHeight - 26)
-							DrawingArea.fillRect(getOffSetX() + 5, getOffSetY() + 121 - i, getWidth() - 10, 1, 0, opacity);
-
-						}
-
-						DrawingArea.drawAlphaGradient(getOffSetX() + 5, getOffSetY() + 5, getWidth() - 10, 1, 0xb4aea1, 0, 250);
+//						float rate = 50f / getHeight();
+//
+//						for (int i = 0; i < getHeight() - 35; i++) {
+//							int opacity = (int) (i * rate);
+//							// if(resizeY + i < Client.clientHeight - 26)
+//							DrawingArea.fillRect(getOffSetX() + 5, getOffSetY() + 121 - i, getWidth() - 10, 1, 0, opacity);
+//
+//						}
+//
+//						DrawingArea.drawAlphaGradient(getOffSetX() + 5, getOffSetY() + 5, getWidth() - 10, 1, 0xb4aea1, 0, 250);
+						Client.spritesMap.get(3).drawSprite(getOffSetX(), getOffSetY());
 					} else {
-						Client.spritesMap.get(3).drawTransparentSprite(getOffSetX(), getOffSetY(), 255);
+						Client.spritesMap.get(3).drawSprite(getOffSetX(), getOffSetY());
+						//Client.spritesMap.get(3).drawTransparentSprite(getOffSetX(), getOffSetY(), 255);
 					}
 
 					// for(int i = 0; i < getWidth)
@@ -285,10 +287,6 @@ public class ChatArea extends GameFrame {
 						if (playerRights == 13) { //Zenyte Donator
 							playerRights += 3;
 						}
-						if (playerRights == 14) { //Tanzanite Donator
-							playerRights += 3;
-						}
-
 						if (name != null && name.indexOf("@") == 0) {
 							int substringLength = Client.getClient().getPrefixSubstringLength(name);
 							name = name.substring(substringLength);
@@ -336,7 +334,7 @@ public class ChatArea extends GameFrame {
 							if (client.chatTypeView == 5 || client.chatTypeView == 0) {
 								if (positionY > 0 && positionY < 210) {
 									int xPos = 11;
-									textDrawingArea.drawBasicString(client.chatMessages[i], xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0xffffff, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
+									textDrawingArea.drawBasicString(client.chatMessages[i], xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0, screenMode == ScreenMode.FIXED ? -1 : -1, true);
 								}
 
 								scrollPosition++;
@@ -371,15 +369,15 @@ public class ChatArea extends GameFrame {
 									if (position == 0) {
 										textDrawingArea.drawBasicString(title, xPos + getOffSetX(), positionY + getOffSetY(), client.chatColor[i], -1, true);
 										xPos += textDrawingArea.getTextWidth(title) + 3;
-										textDrawingArea.drawBasicString(name + ":", xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0xffffff, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
+										textDrawingArea.drawBasicString(name + ":", xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
 										xPos += textDrawingArea.getTextWidth(name + ":") + 2;
 										textDrawingArea.drawBasicString(client.chatMessages[i], xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 255 : 0x7FA9FF, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
 									} else {
-										textDrawingArea.drawBasicString(name, xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0xffffff, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
+										textDrawingArea.drawBasicString(name, xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
 										xPos += textDrawingArea.getTextWidth(name) + 2;
 										textDrawingArea.drawBasicString(title, xPos + getOffSetX(), positionY + getOffSetY(), client.chatColor[i], -1, true);
 										xPos += textDrawingArea.getTextWidth(title);
-										textDrawingArea.drawBasicString("<col=000000>:</col> " + client.chatMessages[i], xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 255 : 0x7FA9FF, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
+										textDrawingArea.drawBasicString("<col=000000>:</col> " + client.chatMessages[i], xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 255 : 255, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
 									}
 								}
 								scrollPosition++;
@@ -390,7 +388,7 @@ public class ChatArea extends GameFrame {
 							if (client.chatTypeView == 2 || client.chatTypeView == 0 && client.splitPrivateChat == 0) {
 								if (positionY > 0 && positionY < 210) {
 									int xPos = 11;
-									textDrawingArea.drawBasicString("From", xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0xffffff, screenMode == ScreenMode.FIXED ? -1 : 0, true);
+									textDrawingArea.drawBasicString("From", xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0, screenMode == ScreenMode.FIXED ? -1 : 0, true);
 									xPos += textDrawingArea.getTextWidth("From ");
 									if (playerRights > 0) {
 										client.modIcons[playerRights].drawTransparentSprite(xPos + 1 + getOffSetX(), positionY - 11 + getOffSetY(), 255);
@@ -402,9 +400,9 @@ public class ChatArea extends GameFrame {
 										xPos += 14;
 									}
 
-									textDrawingArea.drawBasicString(name + ":", xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0xffffff, screenMode == ScreenMode.FIXED ? -1 : 0, true);
+									textDrawingArea.drawBasicString(name + ":", xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0, screenMode == ScreenMode.FIXED ? -1 : -1, true);
 									xPos += textDrawingArea.getTextWidth(name) + 8;
-									textDrawingArea.drawBasicString(client.chatMessages[i], xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0x800000 : 0xFF5256, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
+									textDrawingArea.drawBasicString(client.chatMessages[i], xPos + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0x800000 : 0x800000, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
 								}
 
 								scrollPosition++;
@@ -414,7 +412,7 @@ public class ChatArea extends GameFrame {
 						if (chatType == 4 && (client.tradeMode == 0 || client.tradeMode == 1 && client.isFriendOrSelf(name))) {
 							if (client.chatTypeView == 3 || client.chatTypeView == 0) {
 								if (positionY > 0 && positionY < 210) {
-									textDrawingArea.drawBasicString(name + " " + client.chatMessages[i], 11 + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0x800080 : 0xFF00D4, screenMode == ScreenMode.FIXED ? -1 : 0, false);
+									textDrawingArea.drawBasicString(name + " " + client.chatMessages[i], 11 + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0x800080 : 0x800080, screenMode == ScreenMode.FIXED ? -1 : -1, false);
 								}
 
 								scrollPosition++;
@@ -424,7 +422,7 @@ public class ChatArea extends GameFrame {
 						if (chatType == 22 && (client.tradeMode == 0 || client.tradeMode == 1 && client.isFriendOrSelf(name))) {
 							if (client.chatTypeView == 3 || client.chatTypeView == 0) {
 								if (positionY > 0 && positionY < 210) {
-									textDrawingArea.drawBasicString(name + " " + client.chatMessages[i], 11 + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0x800080 : 0xFF00D4, screenMode == ScreenMode.FIXED ? -1 : 0, false);
+									textDrawingArea.drawBasicString(name + " " + client.chatMessages[i], 11 + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0x800080 : 0x800080, screenMode == ScreenMode.FIXED ? -1 : -1, false);
 								}
 
 								scrollPosition++;
@@ -434,7 +432,7 @@ public class ChatArea extends GameFrame {
 						if (chatType == 5 && client.splitPrivateChat == 0 && client.privateChatMode < 2) {
 							if (client.chatTypeView == 2 || client.chatTypeView == 0) {
 								if (positionY > 0 && positionY < 210) {
-									textDrawingArea.drawBasicString(client.chatMessages[i], 11 + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0x800000 : 0xFF5256, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
+									textDrawingArea.drawBasicString(client.chatMessages[i], 11 + getOffSetX(), positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0x800000 : 0x800080, screenMode == ScreenMode.FIXED ? -1 : 0x000000, true);
 								}
 
 								scrollPosition++;
@@ -470,8 +468,8 @@ public class ChatArea extends GameFrame {
 							if (client.chatTypeView == 11 || client.chatTypeView == 0) {
 								if (positionY > 0 && positionY < 210) {
 									int positionX = 11;
-									String message = (screenMode == ScreenMode.FIXED ? "<col=800000>" : "<col=FF5256>") + client.chatMessages[i] + "</col>";
-									textDrawingArea.drawBasicString("" + message, positionX, positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0xffffff, screenMode == ScreenMode.FIXED ? -1 : 0, true);
+									String message = (screenMode == ScreenMode.FIXED ? "<col=800000>" : "<col=800000>") + client.chatMessages[i] + "</col>";
+									textDrawingArea.drawBasicString("" + message, positionX, positionY + getOffSetY(), screenMode == ScreenMode.FIXED ? 0 : 0, screenMode == ScreenMode.FIXED ? -1 : 0, true);
 								}
 
 								scrollPosition++;
@@ -511,7 +509,7 @@ public class ChatArea extends GameFrame {
 					Client.anInt1211 = 111;
 				}
 
-				client.drawScrollbar(114, Client.anInt1211 - Client.anInt1089 - 113, getOffSetY() + 7, getOffSetX() + 495, Client.anInt1211, false, screenMode != ScreenMode.FIXED);
+				client.drawScrollbar(114, Client.anInt1211 - Client.anInt1089 - 113, getOffSetY() + 7, getOffSetX() + 495, Client.anInt1211, false,false);
 
 				if (Client.myPlayer != null && Client.myPlayer.name != null) {
 
@@ -526,9 +524,6 @@ public class ChatArea extends GameFrame {
 					if (client.myRights > 0) {
 						int crown = client.myRights;
 						if (crown == 13) { //Zenyte Donator
-							crown += 3;
-						}
-						if (crown == 14) { //Tanzanite Donator
 							crown += 3;
 						}
 						int yOffset = 0;
@@ -553,9 +548,9 @@ public class ChatArea extends GameFrame {
 
 					textDrawingArea.drawBasicString(Client.myPlayer.loyaltyTitle + "<col=000000> </col>", drawOffsetX, drawOffsetY, Client.myPlayer.loyaltyColor, -1, true);
 					drawOffsetX += textDrawingArea.getTextWidth(Client.myPlayer.loyaltyTitle) + 3;
-					textDrawingArea.drawBasicString(Client.myPlayer.name + ":", drawOffsetX, drawOffsetY, screenMode == ScreenMode.FIXED ? 0 : 0xffffff, -1, true);
+					textDrawingArea.drawBasicString(Client.myPlayer.name + ":", drawOffsetX, drawOffsetY, screenMode == ScreenMode.FIXED ? 0 : 0, -1, true);
 					drawOffsetX += textDrawingArea.getTextWidth(Client.myPlayer.name) + 2;
-					textDrawingArea.drawBasicString(" " + RSFontSystem.handleOldSyntax(Client.inputString) + "*", drawOffsetX, drawOffsetY, getScreenMode() == ScreenMode.FIXED ? 255 : 0x7fa9ff, -1, false);
+					textDrawingArea.drawBasicString(" " + RSFontSystem.handleOldSyntax(Client.inputString) + "*", drawOffsetX, drawOffsetY, getScreenMode() == ScreenMode.FIXED ? 255 : 255, -1, false);
 				}
 
 				drawSplitChatSelectionBox(client);

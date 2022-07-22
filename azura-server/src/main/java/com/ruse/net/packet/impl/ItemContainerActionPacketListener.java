@@ -1013,7 +1013,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 									true, true);
 						}
 						player.getGroupIronmanBank().open(player);
-					} else if (interfaceId == 11) {
+					} else if (interfaceId == 5382) {
 						player.setInputHandling(new EnterAmountToRemoveFromBank(id, slot));
 						player.getPacketSender().sendEnterAmountPrompt("How many would you like to withdraw?");
 					} else {
