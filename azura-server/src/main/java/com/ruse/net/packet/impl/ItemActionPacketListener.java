@@ -33,6 +33,7 @@ import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
 import com.ruse.world.content.instanceMananger.InstanceManager;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceInterfaceHandler;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
+import com.ruse.world.content.minigames.impl.DisassembleValue;
 import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.content.skill.impl.herblore.Herblore;
 import com.ruse.world.content.skill.impl.herblore.ingredientsBook;
@@ -1878,6 +1879,46 @@ public class ItemActionPacketListener implements PacketListener {
             case 23231:
             case 23232:
                 player.getOwnerDissolving().handleDialogue(itemId);
+                break;
+            case 23246:
+            DialogueManager.start(player, new DisassembleValue(player,
+                    "Disassemble for x1 Legends Light Blade", "Cancel", 4200));
+            break;
+            case 23247:
+                DialogueManager.start(player, new DisassembleValue(player,
+                        "Disassemble for x1 Legends Light Staff", "Cancel", 4201));
+                break;
+
+            case 23248:
+                DialogueManager.start(player, new DisassembleValue(player,
+                        "Disassemble for x1 Legends Light Bow", "Cancel", 4202));
+                break;
+
+            case 23243:
+                DialogueManager.start(player, new DisassembleValue(player,
+                        "Disassemble for x1 Legends Dark Blade", "Cancel", 4203));
+                break;
+            case 23244:
+                DialogueManager.start(player, new DisassembleValue(player,
+                        "Disassemble for x1 Legends Dark Staff", "Cancel", 4204));
+                break;
+
+            case 23245:
+                DialogueManager.start(player, new DisassembleValue(player,
+                        "Disassemble for x1 Legends Dark Bow", "Cancel", 4205));
+                break;
+            case 23249:
+                DialogueManager.start(player, new DisassembleValue(player,
+                        "Disassemble for x1 Blood Blade", "Cancel", 4206));
+                break;
+            case 23250:
+                DialogueManager.start(player, new DisassembleValue(player,
+                        "Disassemble for x1 Blood Staff", "Cancel", 4207));
+                break;
+
+            case 23251:
+                DialogueManager.start(player, new DisassembleValue(player,
+                        "Disassemble for x1  Blood Gun", "Cancel", 4208));
                 break;
             case 22219:
                 int amount5 = player.getInventory().getAmount(itemId);

@@ -34,7 +34,7 @@ public class PlayerPanel {
                 "Bonus Skill: @whi@" + StringUtils.capitalizeFirst(DoubleXPSkillEvent.currentSkill.toString()),
                 //
                 "Globals",
-                "Tribal Goblin: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
+                "Terrorstep: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
                 "Hellraiser: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",
                 (VoteBossDrop.currentSpawn == null
                         ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/60 please vote!"
@@ -49,6 +49,7 @@ public class PlayerPanel {
                 ? "Ironman boss: @whi@" + IronmanBoss.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
                 "Avalon Guard: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
                 "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
+                (SummerSurfer.currentBoss == null ? "Summer Surfer: @whi@" + SummerSurfer.timeLeft() : "Summer Surfer:  @whi@Alive ::summer"),
         };
 
         for (int i = 0; i < Messages.length; i++) {

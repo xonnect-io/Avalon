@@ -433,7 +433,7 @@ public final class MobDefinition {
 				definition.npcModels = get(12810).npcModels;
 				definition.combatLevel = 0;
 				definition.name = "Boss Slayer Master";
-				definition.actions = new String[]{"Talk-To", null, "Get-Task", "Trade", null};
+				definition.actions = new String[]{"Talk-To", null, "Get-Task", "Trade", "Canel-Task"};
 				definition.standAnimation = get(12810).standAnimation;
 				definition.walkAnimation = get(12810).walkAnimation;
 				definition.npcSizeInSquares = 1;
@@ -4258,7 +4258,7 @@ public final class MobDefinition {
 				break;
 			case 3779:
 				MobDefinition GF = get(4275);
-				definition.name = "Tribal Ape";
+				definition.name = "Terrorstep";
 				definition.combatLevel = 40;
 				definition.scaleXZ = 280;
 				definition.scaleY = 280;
@@ -6466,7 +6466,7 @@ public final class MobDefinition {
 				break;
 			case 1707:
 				MobDefinition slayer8 = get(4275);
-				definition.name = "Tribal goblin";
+				definition.name = "Terrorstep";
 				definition.combatLevel = 40;
 				definition.scaleXZ = 390;
 				definition.scaleY = 390;

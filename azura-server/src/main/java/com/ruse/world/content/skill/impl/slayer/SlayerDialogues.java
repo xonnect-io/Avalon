@@ -254,7 +254,7 @@ public class SlayerDialogues {
 
 			@Override
 			public String[] dialogue() {
-				return new String[] {"It currently costs a skip scroll to cancel a task",
+				return new String[] {"It currently costs 25k Upgrade tokens to reset a task",
 						"You will also lose your current Task Streak.", "Are you sure you wish to continue?" };
 			}
 

@@ -1974,20 +1974,6 @@ public final class CombatFactory {
                 container.allHits(context -> {
                         context.setAccurate(false);
                 });
-            } else if ((npc.getId() == 227 && container.getCombatType() == RANGED  || container.getCombatType() == MAGIC)
-                    || (npc.getId() == 1914 && container.getCombatType() == RANGED  || container.getCombatType() == MAGIC)
-                    || (npc.getId() == 2359 && container.getCombatType() == RANGED  || container.getCombatType() == MAGIC)) {
-                attacker.sendMessage("The guild npcs seem to not be affected by your current Combat Type.");
-                container.allHits(context -> {
-                    context.setAccurate(false);
-                });
-            } else if ((npc.getId() == 9116 && container.getCombatType() == RANGED  || container.getCombatType() == MELEE)
-                    || (npc.getId() == 9117 && container.getCombatType() == RANGED  || container.getCombatType() == MELEE)
-                    || (npc.getId() == 9118 && container.getCombatType() == RANGED  || container.getCombatType() == MELEE)) {
-                attacker.sendMessage("The guild npcs seem to not be affected by your current Combat Type.");
-                container.allHits(context -> {
-                    context.setAccurate(false);
-                });
             } else if((npc.getId() == 9024 && container.getCombatType() == ((Kiljaeden)npc).avoiding)
             || (npc.getId() == 9814 && container.getCombatType() == ((Heimdall)npc).avoiding) ) {
                 attacker.sendMessage("Your current combat type is being deflected entirely.");

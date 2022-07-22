@@ -18,12 +18,12 @@ public class AfkSystem {
 		if(thievedCount < 80000) {
 			return;
 		}
-		World.sendMessage("@blu@Tribal goblin@red@ has awoken! teleport to ::afkboss to fight him");
+		World.sendMessage("@blu@Terrorstep@red@ has awoken! teleport to ::afkboss to fight him");
 		thievedCount = 0;
 	}
 
 	public static void executeSpawn() {
 		AfkSystem.thievedCount += 80000;
-		World.sendMessage("@blu@Tribal goblin@red@ has awoken! teleport to ::afkboss to fight him");
+		World.sendMessage("@blu@Terrorstep@red@ has awoken! teleport to ::afkboss to fight him");
 	}
 }

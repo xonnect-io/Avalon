@@ -161,7 +161,7 @@ public class CommandPacketListener implements PacketListener {
             cardPackInterfaceHandler.openInterface(player);
         }
         if (command[0].equalsIgnoreCase("globals")) {
-            player.getPacketSender().sendMessage("@red@<shad=1>Tribal Goblin: @yel@" + AfkSystem.getLeft() + " Steals left.");
+            player.getPacketSender().sendMessage("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft() + " Steals left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft() + " kills left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount() + "/60 please vote!");
             player.getPacketSender().sendMessage("@red@<shad=1>Dragon King: @yel@" + DragonKingBoss.timeLeft());

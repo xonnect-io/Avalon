@@ -1510,7 +1510,9 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 946:
                         ShopManager.getShops().get(82).open(player);
                         break;
-
+                    case 9000:
+                    DialogueManager.start(player, SlayerDialogues.resetTaskDialogue(player));
+                    break;
                     case 705:
                         ShopManager.getShops().get(7).open(player);
                         break;

@@ -89,8 +89,8 @@ public class Slayer {
         SlayerTasks task = getSlayerTask();
         if (task == SlayerTasks.NO_TASK)
             return;
-        if (player.getPointsHandler().getSlayerPoints() < 5) {
-            player.getPacketSender().sendMessage("You must have at-least 5 slayer points in order to skip a task.");
+        if (!player.getInventory().contains(12855,25000)) {
+            player.getPacketSender().sendMessage("You must have at-least 25000 Upgrade tokens in order to skip a task.");
             return;
         }
         this.slayerTask = SlayerTasks.NO_TASK;
@@ -100,7 +100,7 @@ public class Slayer {
         } else {
             this.taskStreak = 0;
         }
-         player.getPointsHandler().setSlayerPoints(-5, true);
+        player.getInventory().delete(12855,25000);
 
         PlayerPanel.refreshPanel(player);
         Player duo = duoPartner == null ? null : World.getPlayerByName(duoPartner);

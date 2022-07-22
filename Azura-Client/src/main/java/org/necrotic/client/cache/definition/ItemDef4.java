@@ -925,6 +925,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1150;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
 				break;
 				
@@ -936,6 +937,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1150;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
 				break;
 				
@@ -947,6 +949,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1150;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
 				break;
 				
@@ -959,6 +962,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1150;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
 				break;
 				
@@ -970,6 +974,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1150;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
 				break;
 				
@@ -981,6 +986,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1150;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
 				break;
 				
@@ -993,6 +999,7 @@ public class ItemDef4 {
 				itemDef.rdc2 = 700;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
 				break;
 				
@@ -1005,6 +1012,7 @@ public class ItemDef4 {
 				itemDef.rdc2 = 700;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
 				break;
 				
@@ -1017,6 +1025,7 @@ public class ItemDef4 {
 				itemDef.rdc2 = 700;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
 				break;
 				

@@ -73,11 +73,11 @@ public class MaxUpgradesInterface {
 
         //ROW 8
         OWNER_AURA(100,new Item(22110,-1),new Item(22111, 1),new Item(22110, 1), new Item(12630, 1)),
-        OWNER_AMULET(50,new Item(23230,-1),new Item(23233, 1),new Item(23230, 1), new Item(22105, 1)),
-        OWNERS_RING(50,new Item(23231,-1),new Item(23234, 1),new Item(23231, 1), new Item(22105, 1)),
-        OWNERS_BRACELET(50,new Item(23232,-1),new Item(23235, 1),new Item(23232, 1), new Item(22105, 1)),
-        UPGRADED_OWNER_AURA(50,new Item(22110,-1),new Item(23241, 1),new Item(22110, 1), new Item(22111, 1)),
-        UPGRADED_OWNER_CAPE(50,new Item(22110,-1),new Item(22109, 1),new Item(22110, 1), new Item(7995, 1)),
+        OWNER_AMULET(100,new Item(23230,-1),new Item(23233, 1),new Item(23230, 1), new Item(22110, 2)),
+        OWNERS_RING(100,new Item(23231,-1),new Item(23234, 1),new Item(23231, 1), new Item(22110, 2)),
+        OWNERS_BRACELET(100,new Item(23232,-1),new Item(23235, 1),new Item(23232, 1), new Item(22110, 2)),
+        UPGRADED_OWNER_AURA(100,new Item(22110,-1),new Item(23241, 1),new Item(22110, 2), new Item(22111, 1)),
+        UPGRADED_OWNER_CAPE(100,new Item(22110,-1),new Item(22109, 1),new Item(22110, 2), new Item(7995, 1)),
 
         //ROW 9
         RAGE_POTION(100,new Item(15330,-1),new Item(23225, 1),new Item(15330, 1),new Item(12855, 50_000_000)),
