@@ -87,9 +87,9 @@ public class MaxUpgradesInterface {
         LIGHT_MAGIC_CREST(100,new Item(782,-1),new Item(23247, 1),new Item(782, 1),new Item(17013, 1)),
         LIGHT_RANGE_CREST(100,new Item(782,-1),new Item(23248, 1),new Item(782, 1),new Item(5011, 1)),
 
-        DARK_MELEE_CREST(100,new Item(782,-1),new Item(23243, 1),new Item(782, 1),new Item(22113, 1)),
-        DARK_MAGIC_CREST(100,new Item(782,-1),new Item(23244, 1),new Item(782, 1),new Item(22115, 1)),
-        DARK_RANGE_CREST(100,new Item(782,-1),new Item(23245, 1),new Item(782, 1),new Item(22114, 1)),
+        DARK_MELEE_CREST(100,new Item(782,-1),new Item(23243, 1),new Item(782, 1),new Item(22115, 1)),
+        DARK_MAGIC_CREST(100,new Item(782,-1),new Item(23244, 1),new Item(782, 1),new Item(22114, 1)),
+        DARK_RANGE_CREST(100,new Item(782,-1),new Item(23245, 1),new Item(782, 1),new Item(22113, 1)),
         BLOOD_MELEE_CREST(100,new Item(782,-1),new Item(23249, 1),new Item(782, 1),new Item(8136, 1)),
         BLOOD_MAGIC_CREST(100,new Item(782,-1),new Item(23250, 1),new Item(782, 1),new Item(23227, 1)),
         BLOOD_RANGE_CREST(100,new Item(782,-1),new Item(23251, 1),new Item(782, 1),new Item(23226, 1)),

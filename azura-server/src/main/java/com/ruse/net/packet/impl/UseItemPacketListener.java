@@ -26,6 +26,7 @@ import com.ruse.world.content.holidayevents.christmas2016;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.WarriorsGuild;
+import com.ruse.world.content.quests.TheOmegaDialogues;
 import com.ruse.world.content.skill.impl.cooking.Cooking;
 import com.ruse.world.content.skill.impl.cooking.CookingData;
 import com.ruse.world.content.skill.impl.crafting.Flax;
@@ -101,8 +102,15 @@ public class UseItemPacketListener implements PacketListener {
             return;
         }
 
-        if (usedWith.getId() == 9003 && itemUsedWith.getId() == 989) {
-            CrystalChest.sendRewardInterface(player);
+        if (usedWith.getId() == 1927 && itemUsedWith.getId() == 17572) {
+            player.getInventory().delete(1927, 1);
+            player.getInventory().delete(17572, 1);
+            player.getInventory().add(15413, 1);
+            player.getPacketSender().sendMessage("You add the poison to the milk.");
+            if (player.getQuestTwoStep1() == false) {
+                player.setQuestTwoStep1(true);
+                player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Obtain Poisoned Milk");
+            }
             return;
         }
         if (usedWith.getId() == 4820 && itemUsedWith.getId() == 1468 ||
@@ -114,7 +122,7 @@ public class UseItemPacketListener implements PacketListener {
                     player.getInventory().delete(1468, 10);
                     player.getInventory().add(8534, 1);
                     if(player.getQuestOneStep2() == false)
-                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Create a lectern inside the dream");
+                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Create a lectern inside the dream");
                     player.setQuestOneStep2(true);
                     return;
                 } else
@@ -655,6 +663,13 @@ public class UseItemPacketListener implements PacketListener {
                 } else {
                     player.getPacketSender().sendMessage("You manage to continue your clue..");
                 }
+                break;
+
+            case 7746:
+                if (npc.getId() == 1921) {
+                    DialogueManager.start(player, TheOmegaDialogues.PubOffer(player));
+                }
+
                 break;
             case 4837:
                 if (NpcDefinition.forId(npc.getId()).getName().contains("ark wizar")) {

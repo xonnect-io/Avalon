@@ -267,6 +267,8 @@ public class CollectionLog {
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("treasure hunter"))
             player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : player.getPointsHandler().getTreasureHunterKC()));
 
+
+
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("pyramid outbreak"))
             player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Purchased: " + "@whi@" + (kills == null ? "0" : kills));
 

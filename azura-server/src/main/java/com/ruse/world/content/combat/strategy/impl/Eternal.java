@@ -35,7 +35,7 @@ public class Eternal implements CombatStrategy {
 			eternal.setConstitution(eternal.getConstitution() + hitAmount);
 			eternal.getCombatBuilder().setContainer(new CombatContainer(eternal, victim, 1, 3, CombatType.MAGIC, true));
 			((Player) victim).getPacketSender().sendMessage(MessageType.NPC_ALERT,
-					"Eternal absorbs his next attack, healing himself a bit.");
+					"The Dragon King absorbs his next attack, healing himself a bit.");
 		}
 		if (Locations.goodDistance(eternal.getPosition().copy(), victim.getPosition().copy(), 3)
 				&& Misc.getRandom(5) <= 3) {

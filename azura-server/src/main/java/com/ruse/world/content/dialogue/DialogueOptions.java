@@ -15,7 +15,6 @@ import com.ruse.world.World;
 import com.ruse.world.content.AchievementsOLD.AchievementDataOLD;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Gambling.FlowersData;
-import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.celestial.CelestialDialogues;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
@@ -26,7 +25,8 @@ import com.ruse.world.content.dissolving.NephilimDisassemble;
 import com.ruse.world.content.dissolving.OwnerDisassemble;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.minigames.impl.*;
-import com.ruse.world.content.quests.QuestDialogues;
+import com.ruse.world.content.quests.BloodRunsDeepDialogues;
+import com.ruse.world.content.quests.TheOmegaDialogues;
 import com.ruse.world.content.raids.SODRaids;
 import com.ruse.world.content.raids.ZombieRaidData;
 import com.ruse.world.content.raids.ZombieRaids;
@@ -910,6 +910,9 @@ public class DialogueOptions {
             // System.out.println("ID: " + id);
             switch (player.getDialogueActionId()) {
 
+                case 4621:
+                    DialogueManager.start(player, TheOmegaDialogues.PoisonedMilk(player));
+                    break;
                 case 8221:
                     DialogueManager.start(player, CelestialDialogues.becomingCelestial(player));
                     break;
@@ -995,6 +998,10 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
+
+                case 4621:
+                    DialogueManager.start(player, TheOmegaDialogues.OmegaEgg(player));
+                    break;
                 case 8221:
                     DialogueManager.start(player, CelestialDialogues.celestialZone(player));
                     break;
@@ -1099,6 +1106,10 @@ public class DialogueOptions {
             }
         } else if (id == THIRD_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
+
+                case 4621:
+                    DialogueManager.start(player, TheOmegaDialogues.RancidFlour(player));
+                    break;
                 case 8221:
                     DialogueManager.start(player, CelestialDialogues.celestialEnergy(player));
                     break;
@@ -1229,6 +1240,7 @@ public class DialogueOptions {
                 case 84:
                 case 87:
                 case 9926:
+                case 4621:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 14:
@@ -1256,6 +1268,13 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+
+                case 4622:
+                    if(player.getInventory().contains(12855, 5))
+                    DialogueManager.start(player, TheOmegaDialogues.PubAccept(player));
+                    else
+                        DialogueManager.sendStatement(player,"You need 5 Upgrade Tokens to purchase the Greenman's Ale.");
+                    break;
 
                 case 4200:
                     if (player.getInventory().contains(23246, 1)) {
@@ -1324,12 +1343,16 @@ public class DialogueOptions {
                     }
                     break;
                 case 8631:
-                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoald2(player));
+                    DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepKingRoald2(player));
+                    break;
+                case 4621:
+                    DialogueManager.start(player, TheOmegaDialogues.Accept(player));
+                        player.getPacketSender().sendMessage("<img=832>You started a Quest: @blu@The Omega");
+                    player.setQuestTwoStarted(true);
                     break;
                 case 8621:
-                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepAccept(player));                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Create a lectern inside the dream");
-                    if(player.getQuestOneStep1() == false)
-                        player.getPacketSender().sendMessage("<img=832>You started a Quest: @red@Blood Runs Deep");
+                    DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepAccept(player));
+                        player.getPacketSender().sendMessage("<img=832>You started a Quest: @blu@Blood Runs Deep");
                     player.setQuestOneStarted(true);
                     break;
                 case 8622:
@@ -1337,7 +1360,7 @@ public class DialogueOptions {
                         player.getSpellbook().getTeleportType());
                     player.getPacketSender().sendMessage("You teleport into the old man's dream.");
                     if(player.getQuestOneStep1() == false)
-                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Travel to the old man's dream");
+                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Travel to the old man's dream");
                     player.setQuestOneStep1(true);
                     break;
                 case 8102:
@@ -1811,11 +1834,18 @@ public class DialogueOptions {
         } else if (id == SECOND_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
 
+                case 4622:
+                    DialogueManager.start(player, TheOmegaDialogues.PubDecline(player));
+                    break;
+
                 case 8631:
-                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoald3(player));
+                    DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepKingRoald3(player));
+                    break;
+                case 4621:
+                    DialogueManager.start(player, TheOmegaDialogues.Decline(player));
                     break;
                 case 8621:
-                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepDecline(player));
+                    DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepDecline(player));
                     break;
                 case 99928:
                     ExperienceLamps.confirmoneorall(player,2);
@@ -1950,7 +1980,7 @@ public class DialogueOptions {
             switch (player.getDialogueActionId()) {
 
                 case 8625:
-                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepFatherReen2(player));
+                    DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepFatherReen2(player));
                     break;
 
                 case 8005:
@@ -2150,80 +2180,10 @@ public class DialogueOptions {
         } else if (id == SECOND_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
                 case 8625:
-                    DialogueManager.start(player, QuestDialogues.questBloodRunsDeepFatherReen3(player));
+                    DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepFatherReen3(player));
                     break;
                 case 8005:
-                    player.getPacketSender().sendInterfaceRemoval();
-                    if (!player.getSkillManager().maxed()) {
-                        DialogueManager.sendStatement(player, "You must be maxed in all skills to do this.");
-                        return;
-                    }
-                    if (player.getEquipment().getFreeSlots() != player.getEquipment().capacity()) {
-                        player.getPacketSender().sendMessage("Please unequip all your items first.");
-                        return ;
-                    }
-                    if (player.getPointsHandler().getTotalPrestiges() >= 20) {
-                        player.getPacketSender().sendMessage("@red@You already are max prestige(20). Wait until next season to unlock more.");
-                        return ;
-                    }
-                    if (player.getLocation() == Location.WILDERNESS || player.getCombatBuilder().isBeingAttacked()) {
-                        player.getPacketSender().sendMessage("You cannot do this at the moment");
-                        return ;
-                    }
-                    player.getPointsHandler().incrementTotalPrestiges(1);
-                    player.getSkillManager().resetSkill(ATTACK, false);
-                    player.getSkillManager().resetSkill(DEFENCE, false);
-                    player.getSkillManager().resetSkill(STRENGTH, false);
-                    player.getSkillManager().resetSkill(CONSTITUTION, false);
-                    player.getSkillManager().resetSkill(RANGED, false);
-                    player.getSkillManager().resetSkill(PRAYER, false);
-                    player.getSkillManager().resetSkill(MAGIC, false);
-                    player.getSkillManager().resetSkill(COOKING, false);
-                    player.getSkillManager().resetSkill(WOODCUTTING, false);
-                    player.getSkillManager().resetSkill(FLETCHING, false);
-                    player.getSkillManager().resetSkill(FISHING, false);
-                    player.getSkillManager().resetSkill(FIREMAKING, false);
-                    player.getSkillManager().resetSkill(CRAFTING, false);
-                    player.getSkillManager().resetSkill(SMITHING, false);
-                    player.getSkillManager().resetSkill(MINING, false);
-                    player.getSkillManager().resetSkill(HERBLORE, false);
-                    player.getSkillManager().resetSkill(AGILITY, false);
-                    player.getSkillManager().resetSkill(THIEVING, false);
-                    player.getSkillManager().resetSkill(SLAYER, false);
-                    player.getSkillManager().resetSkill(FARMING, false);
-                    player.getSkillManager().resetSkill(RUNECRAFTING, false);
-                    player.getSkillManager().resetSkill(INVENTION, false);
-                    player.getSkillManager().resetSkill(HUNTER, false);
-                    player.getSkillManager().resetSkill(SUMMONING, false);
-                    player.getPointsHandler().setPrestigePoints(1, true);
-                    player.getAppearance().setprestigeIcon(player.getPointsHandler().getTotalPrestiges());
-                    player.getPacketSender().sendMessage("You have just prestiged to level " + player.getPointsHandler().getTotalPrestiges()+ "!");
-                    player.getPacketSender().sendMessage(player.getPointsHandler().getTotalPrestiges()+ " Prestige Mboxes have been added to your inventory as a reward.");
-                    World.sendMessage("@blu@<shad=1>[News] @red@"+player.getUsername()+ "@bla@ has just prestiged to level " + player.getPointsHandler().getTotalPrestiges() + "!");
-
-                    player.getAchievementTracker().progress(AchievementData.PRESTIGE_VETERAN, 1);
-                    player.getAchievementTracker().progress(AchievementData.PRESTIGE_MASTER, 1);
-
-                    if (player.getPointsHandler().getTotalPrestiges() == 1)
-                        player.getInventory().add(23236, 1);
-                    if (player.getPointsHandler().getTotalPrestiges() == 2)
-                        player.getInventory().add(23236, 2);
-                    if (player.getPointsHandler().getTotalPrestiges() == 3)
-                        player.getInventory().add(23236, 3);
-                    if (player.getPointsHandler().getTotalPrestiges() == 4)
-                        player.getInventory().add(23236, 4);
-                    if (player.getPointsHandler().getTotalPrestiges() == 5)
-                        player.getInventory().add(23236, 5);
-                    if (player.getPointsHandler().getTotalPrestiges() == 6)
-                        player.getInventory().add(23236, 6);
-                    if (player.getPointsHandler().getTotalPrestiges() == 7)
-                        player.getInventory().add(23236, 7);
-                    if (player.getPointsHandler().getTotalPrestiges() == 8)
-                        player.getInventory().add(23236, 8);
-                    if (player.getPointsHandler().getTotalPrestiges() == 9)
-                        player.getInventory().add(23236, 9);
-                    if (player.getPointsHandler().getTotalPrestiges() == 10)
-                        player.getInventory().add(23236, 10);
+                    player.prestigeInterface.openPrestigeInterface();
                     break;
 
                 case 9906:

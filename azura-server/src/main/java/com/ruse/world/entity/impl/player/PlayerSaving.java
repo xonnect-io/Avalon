@@ -174,6 +174,7 @@ public class PlayerSaving {
 			object.addProperty("shilling-rate", new Integer(player.getPointsHandler().getSHILLINGRate()));
 
 			object.add("bosspets", builder.toJsonTree(player.getBossPetsAll()));
+			object.addProperty("quest-points", new Integer(player.getPointsHandler().getQuestPoints()));
 			object.addProperty("slayer-points", new Integer(player.getPointsHandler().getSlayerPoints()));
 			object.addProperty("pk-points", new Integer(player.getPointsHandler().getPkPoints()));
 			object.addProperty("player-kills", new Integer(player.getPlayerKillingAttributes().getPlayerKills()));
@@ -369,6 +370,16 @@ public class PlayerSaving {
 			object.addProperty("quest-one-step-five", player.getQuestOneStep5());
 			object.addProperty("quest-one-step-six", player.getQuestOneStep6());
 			object.addProperty("quest-one-step-seven", player.getQuestOneStep7());
+
+			object.addProperty("quest-two-started", player.getQuestTwoStarted());
+			object.addProperty("quest-two-step-one", player.getQuestTwoStep1());
+			object.addProperty("quest-two-step-two", player.getQuestTwoStep2());
+			object.addProperty("quest-two-step-three", player.getQuestTwoStep3());
+			object.addProperty("quest-two-step-four", player.getQuestTwoStep4());
+			object.addProperty("quest-two-step-five", player.getQuestTwoStep5());
+			object.addProperty("quest-two-step-six", player.getQuestTwoStep6());
+			object.addProperty("quest-two-step-seven", player.getQuestTwoStep7());
+
 			object.addProperty("talked-to-ghost", player.getTalkedToGhost());
 			object.addProperty("magic1-unlocked", player.getMagicGuildTier1());
 			object.addProperty("magic2-unlocked", player.getMagicGuildTier2());

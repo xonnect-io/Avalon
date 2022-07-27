@@ -55,6 +55,7 @@ public class PointsHandler {
 	private int barrowsPoints;
 	private int prestigePoints;
 	private int slayerPoints;
+	private int questPoints;
 	private int commendations;
 	private int dungTokens;
 	private int pkPoints;
@@ -170,6 +171,17 @@ public class PointsHandler {
 			this.slayerPoints += slayerPoints;
 		else
 			this.slayerPoints = slayerPoints;
+	}
+
+	public int getQuestPoints() {
+		return questPoints;
+	}
+
+	public void setQuestPoints(int questPoints, boolean add) {
+		if (add)
+			this.questPoints += questPoints;
+		else
+			this.questPoints = questPoints;
 	}
 
 	public int getCommendations() {

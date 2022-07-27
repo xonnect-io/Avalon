@@ -168,6 +168,7 @@ public class TeleportInterfaceHandler {
 
 			if (player.getRights() == PlayerRights.OWNER) {
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				player.setMagicGuildTier1(true);
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 			return;
@@ -182,6 +183,7 @@ public class TeleportInterfaceHandler {
 		}
 		if (player.getCurrentTeleport().getNpcId() == 277) {
 			if (player.getRights() == PlayerRights.OWNER) {
+				player.setWarriorGuildTier1(true);
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);

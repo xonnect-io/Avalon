@@ -32,7 +32,6 @@ import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
-import com.ruse.world.content.cardPacks.cardPackInterfaceHandler;
 import com.ruse.world.content.celestial.CelestialPortal;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
@@ -124,6 +123,27 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Teleporting you to the Summer Event!");
         }
 
+        if (command[0].equalsIgnoreCase("doom") || command[0].equalsIgnoreCase("doomboss")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(3488, 4697);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Doom Slayer Boss!");
+        }
+        if (command[0].equalsIgnoreCase("guardian")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position position = new Position(3445, 4105, 1);
+            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+
+        }
+
         if (command[0].equalsIgnoreCase("donodeals")) {
             player.getDonationDeals().displayReward();
             player.getDonationDeals().displayTime();
@@ -157,17 +177,15 @@ public class CommandPacketListener implements PacketListener {
             player.getSeasonPass().openInterface();
         }
 
-        if (command[0].equalsIgnoreCase("cp")) {
-            cardPackInterfaceHandler.openInterface(player);
-        }
         if (command[0].equalsIgnoreCase("globals")) {
             player.getPacketSender().sendMessage("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft() + " Steals left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft() + " kills left.");
+            player.getPacketSender().sendMessage("@red@<shad=1>Doom Slayer Boss: @yel@" + SlayerBossSystem.getLeft() + " tasks left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount() + "/60 please vote!");
             player.getPacketSender().sendMessage("@red@<shad=1>Dragon King: @yel@" + DragonKingBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Nightmare boss: @yel@" + NightmareBoss.timeLeft());
-            player.getPacketSender().sendMessage("@red@<shad=1>Naraku boss: boss: @yel@" + NarakuBoss.timeLeft());
-            player.getPacketSender().sendMessage("@red@<shad=1>Ironman boss: boss: boss: @yel@" + IronmanBoss.timeLeft());
+            player.getPacketSender().sendMessage("@red@<shad=1>Naraku boss: @yel@" + NarakuBoss.timeLeft());
+            player.getPacketSender().sendMessage("@red@<shad=1>Ironman boss: @yel@" + IronmanBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Avalon Guardian @yel@" + GuardianSpawnSystem.getLeft()  + " tickets left");
             player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft()  + " tokens left");
             player.getPacketSender().sendMessage("@red@<shad=1>Summer Surfer @yel@" + SummerSurfer.timeLeft());
@@ -185,16 +203,6 @@ public class CommandPacketListener implements PacketListener {
             }
             Position position = new Position(3109, 5530, 0);
             player.sendMessage("@blu@Current Hellraiser count: @red@" + HellraiserSystem.npckills);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-
-        }
-        if (command[0].equalsIgnoreCase("donoboss") || command[0].equalsIgnoreCase("donationboss") || command[0].equalsIgnoreCase("guardian") || command[0].equalsIgnoreCase("dboss")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            Position position = new Position(3445, 4105, 1);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
 
         }
@@ -1636,6 +1644,9 @@ public class CommandPacketListener implements PacketListener {
             HellraiserSystem.commandSpawnBoss();
         }
 
+        if (command[0].equalsIgnoreCase("spawndoom")) {
+            SlayerBossSystem.commandSpawnBoss();
+        }
         if (command[0].equalsIgnoreCase("spawnafk")) {
             AfkSystem.executeSpawn();
         }
@@ -2228,10 +2239,6 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("celestialrespawn")) {
             CelestialPortal.spawn();
-        }
-        if (command[0].equalsIgnoreCase("startdoom") || command[0].equalsIgnoreCase("spawndoom")) {
-            Doom.spawnWave1(player);
-            player.getPacketSender().sendMessage("Done spawning doom shit");
         }
 
         if (command[0].equalsIgnoreCase("runes")) {

@@ -26,15 +26,19 @@ public class GlobalItemSpawner {
         nullCheckAndSpawn(player, new Item(1351, 1), new Position(2693, 9560, 0));
         nullCheckAndSpawn(player, new Item(1949, 1), new Position(3142, 3453, 0));
         nullCheckAndSpawn(player, new Item(1005, 1), new Position(3143, 3453, 0));
-        nullCheckAndSpawn(player, new Item(946, 1), new Position(3205, 3212, 0));
-        nullCheckAndSpawn(player, new Item(1923, 1), new Position(3208, 3214, 0));
-        nullCheckAndSpawn(player, new Item(1931, 1), new Position(3209, 3214, 0));
-        nullCheckAndSpawn(player, new Item(1935, 1), new Position(3211, 3212, 0));
-        nullCheckAndSpawn(player, new Item(558, 1), new Position(3206, 3208, 0));
+        nullCheckAndSpawn(player, new Item(4168, 1), new Position(3205, 3212, 0));
+        nullCheckAndSpawn(player, new Item(3727, 1), new Position(3209, 3212, 0));
         nullCheckAndSpawn(player, new Item(7509, 1), ROCKCAKE_POSITION);
         nullCheckAndSpawn(player, new Item(952, 1), STARTER_SPADE);
         nullCheckAndSpawn(player, new Item(952, 1), STARTER_SPADE2);
+        nullCheckAndSpawn(player, new Item(7546, 1), new Position (3167,3310,0));
         nullCheckAndSpawn(player, new Item(4682, 1), new Position(3245, 3210, 0));
+        timer = System.currentTimeMillis();
+    }
+    public static void spawnEGG(Player player) {
+        long a = System.currentTimeMillis();
+        nullCheckAndSpawn(player, new Item(10537, 1), player.getPosition());
+        long b = System.currentTimeMillis();
         timer = System.currentTimeMillis();
     }
 

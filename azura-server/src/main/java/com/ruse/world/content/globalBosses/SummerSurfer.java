@@ -21,7 +21,7 @@ public class SummerSurfer {
 
     public static int tick = 0;
 
-    public static Position SPAWN_POINT = new Position(2593, 2673,0);
+    public static Position SPAWN_POINT = new Position(2910 , 4706,0);
 
     public static int[] BOSS_IDS = {
             9119

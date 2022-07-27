@@ -3,8 +3,7 @@ package com.ruse.engine.task.impl;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.engine.task.impl.globalevents.GlobalEventBossTask;
-import com.ruse.model.Animation;
-import com.ruse.model.DamageDealer;
+import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.motivote3.doMotivote;
@@ -28,6 +27,7 @@ import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
+import com.ruse.world.entity.impl.GlobalItemSpawner;
 import com.ruse.world.entity.impl.mini.MiniPlayer;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -193,9 +193,6 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == 1023) { // done
                             StarterTasks.doProgress(killer, StarterTaskData.KILL_100_STARTER);
                         }
-                        if (npc.getId() == 4972) { // done
-                            StarterTasks.doProgress(killer, StarterTaskData.KILL_DRAGON_KING);
-                        }
 
                         if (!(npc.getId() == 1)) {
                             StarterTasks.doProgress(killer, StarterTaskData.REACH_1000_TOTAL);
@@ -294,6 +291,22 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == 4972) {
                             DragonKingBoss.handleDrop(npc);
+                            if(killer.getQuestTwoStarted() == true && killer.getQuestTwoStep2() == false) {
+                                if (killer.getEquipment().contains(1580)) {
+                                    killer.getInventory().add(10537, 1);
+                                    World.sendMessage("An Omega egg has been placed in your inventory.");
+                                    killer.setQuestTwoStep2(true);
+                                    killer.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Obtain the Omega Egg");
+                                } else  if (!killer.getEquipment().contains(1580) && killer.getQuestTwoStarted() == true && killer.getQuestTwoStep2() == false) {
+                                    GlobalItemSpawner.spawnEGG(killer);
+                                    killer.getPacketSender().sendMessage("This Omega egg is too hot. Ice gloves could help.");
+                                }
+                            }
+                        }
+                        if (npc.getId() == 9128 && killer.getQuestTwoStep6() == false) {
+                            killer.setQuestTwoStep6(true);
+                            killer.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Defeat the Evil cook");
+                            killer.getPacketSender().sendMessage("Return to Duke of Horacio to claim your reward!");
                         }
                         if (npc.getId() == 587) {
                             IronmanBoss.handleDrop(npc);
@@ -389,7 +402,7 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == 6804 &&
                             killer.getPointsHandler().getQuestOneDreamKC() == 50) {
                             killer.setQuestOneStep3(true);
-                            killer.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Fight off the Daganoth Army");
+                            killer.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Fight off the Daganoth Army");
                         }
 
                         if (killer.getCurrentClue().getCurrentTask() != SlayerTasks.NO_TASK) {

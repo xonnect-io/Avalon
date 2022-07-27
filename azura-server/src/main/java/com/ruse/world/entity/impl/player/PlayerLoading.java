@@ -146,21 +146,54 @@ public class PlayerLoading {
             }
             if (reader.has("quest-one-started")) {
                 player.setQuestOneStarted(reader.get("quest-one-started").getAsBoolean());
-            }            if (reader.has("quest-one-step-one")) {
+            }
+            if (reader.has("quest-one-step-one")) {
                 player.setQuestOneStep1(reader.get("quest-one-step-one").getAsBoolean());
-            }            if (reader.has("quest-one-step-two")) {
+            }
+            if (reader.has("quest-one-step-two")) {
                 player.setQuestOneStep2(reader.get("quest-one-step-two").getAsBoolean());
-            }            if (reader.has("quest-one-step-three")) {
+            }
+            if (reader.has("quest-one-step-three")) {
                 player.setQuestOneStep3(reader.get("quest-one-step-three").getAsBoolean());
-            }            if (reader.has("quest-one-step-four")) {
+            }
+            if (reader.has("quest-one-step-four")) {
                 player.setQuestOneStep4(reader.get("quest-one-step-four").getAsBoolean());
-            }            if (reader.has("quest-one-step-five")) {
+            }
+            if (reader.has("quest-one-step-five")) {
                 player.setQuestOneStep5(reader.get("quest-one-step-five").getAsBoolean());
-            }            if (reader.has("quest-one-step-six")) {
+            }
+            if (reader.has("quest-one-step-six")) {
                 player.setQuestOneStep6(reader.get("quest-one-step-six").getAsBoolean());
-            }            if (reader.has("quest-one-step-seven")) {
+            }
+            if (reader.has("quest-one-step-seven")) {
                 player.setQuestOneStep7(reader.get("quest-one-step-seven").getAsBoolean());
-            }            if (reader.has("talked-to-ghost")) {
+            }
+            if (reader.has("quest-two-started")) {
+                player.setQuestTwoStarted(reader.get("quest-two-started").getAsBoolean());
+            }
+            if (reader.has("quest-two-step-one")) {
+                player.setQuestTwoStep1(reader.get("quest-two-step-one").getAsBoolean());
+            }
+            if (reader.has("quest-two-step-two")) {
+                player.setQuestTwoStep2(reader.get("quest-two-step-two").getAsBoolean());
+            }
+            if (reader.has("quest-two-step-three")) {
+                player.setQuestTwoStep3(reader.get("quest-two-step-three").getAsBoolean());
+            }
+            if (reader.has("quest-two-step-four")) {
+                player.setQuestTwoStep4(reader.get("quest-two-step-four").getAsBoolean());
+            }
+            if (reader.has("quest-two-step-five")) {
+                player.setQuestTwoStep5(reader.get("quest-two-step-five").getAsBoolean());
+            }
+            if (reader.has("quest-two-step-six")) {
+                player.setQuestTwoStep6(reader.get("quest-two-step-six").getAsBoolean());
+            }
+            if (reader.has("quest-two-step-seven")) {
+                player.setQuestTwoStep7(reader.get("quest-two-step-seven").getAsBoolean());
+            }
+
+            if (reader.has("talked-to-ghost")) {
                 player.setTalkedToGhost(reader.get("talked-to-ghost").getAsBoolean());
             }
             if (reader.has("archer1-unlocked")) {
@@ -595,6 +628,9 @@ public class PlayerLoading {
                 player.getPointsHandler().setSlayerPoints(reader.get("slayer-points").getAsInt(), false);
             }
 
+            if (reader.has("quest-points")) {
+                player.getPointsHandler().setQuestPoints(reader.get("quest-points").getAsInt(), false);
+            }
             if (reader.has("pk-points")) {
                 player.getPointsHandler().setPkPoints(reader.get("pk-points").getAsInt(), false);
             }

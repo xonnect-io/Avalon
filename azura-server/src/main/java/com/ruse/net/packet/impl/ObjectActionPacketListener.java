@@ -185,6 +185,13 @@ public class ObjectActionPacketListener implements PacketListener {
                             case 172:
                                 CrystalChest.handleChest(player,gameObject,false);
                                 break;
+                            case 8689:
+                                if (player.getInventory().contains(3727)) {
+                                    player.getInventory().delete(3727, 1);
+                                    player.getInventory().add(1927, 1);
+                                    player.performAnimation(new Animation(2338));
+                                } else player.getPacketSender().sendMessage("You need a bucket to collect milk from Betsy");
+                                break;
                             case 11354:
 
                                 if (player.getQuestOneStep6() == true) {
@@ -196,7 +203,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                             player.getSpellbook().getTeleportType());
 
                                     if(player.getQuestOneStep4() == false)
-                                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @red@Access the Spirit Realm");
+                                        player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Access the Spirit Realm");
                                     player.setQuestOneStep4(true);
                                 }
                                 else
@@ -1927,13 +1934,12 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 break;
                             case 1739:
-                                if (player.getLocation() == Location.LUMBRIDGE) {
-                                    // player.moveTo(teleportTarget)
-                                    // player.setDialogueActionId(154);
-                                    // DialogueManager.start(player, 154);
+                                if (gameObject.getPosition().getX() == 3204 && gameObject.getPosition().getY() == 3207
+                                        && player.getPosition().getZ() == 1) {
                                     player.moveTo(
                                             new Position(player.getPosition().getX(), player.getPosition().getY(), 2));
                                 }
+                                break;
                             case 15638:
                                 if (player.getLocation() == Location.WARRIORS_GUILD) {
                                     player.moveTo(new Position(2840, 3539, 0));
@@ -2263,6 +2269,7 @@ public class ObjectActionPacketListener implements PacketListener {
                             return;
                         }
                         switch (gameObject.getId()) {
+
                             case 409:
                                 if (player.getSkillManager().getMaxLevel(Skill.DEFENCE) < 30) {
                                     player.getPacketSender()
@@ -2631,9 +2638,17 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getPacketSender().sendMessage("Eww. That's a terrible idea!");
                                 break;
                             case 1739:
-                                if (player.getLocation() == Location.LUMBRIDGE) {
+                                if (gameObject.getPosition().getX() == 3204 && gameObject.getPosition().getY() == 3207
+                                        && player.getPosition().getZ() == 1) {
                                     player.moveTo(
                                             new Position(player.getPosition().getX(), player.getPosition().getY(), 0));
+                               return;
+                                }
+                                if (gameObject.getPosition().getX() == 3204 && gameObject.getPosition().getY() == 3207
+                                        && player.getPosition().getZ() == 2) {
+                                    player.moveTo(
+                                            new Position(player.getPosition().getX(), player.getPosition().getY(), 1));
+                                    return;
                                 }
                                 break;
                             case 172:

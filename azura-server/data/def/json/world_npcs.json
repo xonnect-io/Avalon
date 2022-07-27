@@ -1,6 +1,32 @@
 [
-
-
+  {
+    "npc-id": 9128,
+    "face": "NORTH",
+    "position": { "x": 3212, "y": 9624, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 2
+    }
+  },
+  {
+    "npc-id": 278,
+    "face": "EAST",
+    "position": { "x": 3210, "y": 3215, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 2
+    }
+  },
+  {
+    "npc-id": 9127,
+    "face": "EAST",
+    "position": { "x": 3210, "y": 3221, "z": 1 },
+    "walking-policy": {"coordinate": true,"radius": 2
+    }
+  },
+  {
+    "npc-id": 1921,
+    "face": "EAST",
+    "position": { "x": 3223, "y": 3397, "z": 0 },
+    "walking-policy": {"coordinate": true,"radius": 2
+    }
+  },
   {
     "npc-id": 9116,
     "face": "EAST",

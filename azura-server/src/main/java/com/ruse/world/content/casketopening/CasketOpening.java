@@ -399,6 +399,7 @@ public class CasketOpening {
         LEGENDARY(14999, Legendary.rewards),
         AZURE(15003, Azure.rewards),
         EXCLUSIVE(15004, Exclusive.rewards),
+        PRESTIGE(23236, PrestigeBox.rewards),
         RAIDS(18404, Raids1.rewards),
         SUPREME(23253, Supreme.rewards),
         SOSREWARDS(23370, SOSRewards.rewards),

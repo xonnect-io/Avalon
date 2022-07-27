@@ -429,9 +429,12 @@ public class ItemDefinition {
         HAT(Equipment.HEAD_SLOT), CAPE(Equipment.CAPE_SLOT), SHIELD(Equipment.SHIELD_SLOT),
         GLOVES(Equipment.HANDS_SLOT), BOOTS(Equipment.FEET_SLOT), AMULET(Equipment.AMULET_SLOT),
         RING(Equipment.RING_SLOT), ARROWS(Equipment.AMMUNITION_SLOT), FULL_MASK(Equipment.HEAD_SLOT),
-        FULL_HELMET(Equipment.HEAD_SLOT), BODY(Equipment.BODY_SLOT), PLATEBODY(Equipment.BODY_SLOT)
-        , FULL_HELMET1(Equipment.HEAD_SLOT),
-        LEGS(Equipment.LEG_SLOT), WEAPON(Equipment.WEAPON_SLOT), AURA(Equipment.AURA_SLOT);
+        FULL_HELMET(Equipment.HEAD_SLOT), BODY(Equipment.BODY_SLOT), PLATEBODY(Equipment.BODY_SLOT),
+        FULL_HELMET1(Equipment.HEAD_SLOT), LEGS(Equipment.LEG_SLOT), WEAPON(Equipment.WEAPON_SLOT),
+        AURA(Equipment.AURA_SLOT), PET(Equipment.PET_SLOT)
+
+        ;
+
 
         private int slot;
 

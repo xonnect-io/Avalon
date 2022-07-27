@@ -132,15 +132,11 @@ public class CustomObjects {
 			{411, 2545, 2610, 0, 3},    //regular
 			{410, 2543, 2612, 0, 0},    //lunar
 			{305, 2539, 2602, 0, 2},    //rejuvination altar
-			{7479, 2991, 2517, 0, 0},    //custom portal
-			{3378, 2991, 2515, 0, 3},    //custom chest
 			{10804, 3090, 3275, 0, 0},
 			{29942, 2967, 2549, 0, 0},    //Small Obelisk
 			{1746, 2967, 2548, 0, 3},    //Summoning Ladder
 			{305, 2525, 2603, 0, 0},    //rejuvination altar
 			{26945, 2517, 2600, 0, 1},    //WellOfGoodwill
-			{7479, 2519, 2613, 0, 0},    //custom portal
-			{3378, 2520, 2613, 0, 0},    //custom chest
 			{2783, 2513, 2584, 0, 2},    //anvil
 			{2783, 2516, 2582, 0, 1},    //anvil
 			{11666, 2513, 2579, 0, 3},    //furnace
@@ -156,8 +152,6 @@ public class CustomObjects {
 			{409, 3095, 3512, 0, 4},    //regular
 			{410, 3091, 3512, 0, 0},    //lunar
 			{305, 3093, 3506, 0, 2},    //rejuvination altar
-			{3378, 2584, 2618, 0, 2},    //chest key
-			{3378, 3094, 3486, 0, 2},    //chest key
 			{305, 3090, 3497, 0, 0},    //rejuvination altar
 			{9975, 3094, 3481, 0, 3},    //Slayer Dungeon
 
@@ -171,7 +165,6 @@ public class CustomObjects {
 			{7476, 2583, 2582, 0, 0},    //portal 2
 			{7477, 2581, 2591, 0, 0},    //portal 3
 			{7478, 2579, 2598, 0, 0},    //portal 4
-			{7479, 3092, 3485, 0, 0},    //main portal
 			{2783, 3079, 3481, 0, 2},    //anvil
 			{2783, 3081, 3481, 0, 1},    //anvil
 			{11666, 3079, 3477, 0, 3},    //furnace

@@ -906,6 +906,7 @@ public final class ObjectDefinition {
 			definition.actions = new String[]{null, null, null, null, null};
 			definition.objectModelIDs = new int[]{19540};
 		}
+
 		if (definition.type == 10805 || definition.type == 10806 || definition.type == 10807) {
 			definition.name = "Grand Exchange clerk";
 			definition.interactive = true;

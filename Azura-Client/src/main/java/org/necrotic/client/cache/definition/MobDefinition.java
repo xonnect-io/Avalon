@@ -5362,10 +5362,10 @@ public final class MobDefinition {
 			case 53:
 				definition.name = "Joyx Golem";
 				definition.npcModels = new int[]{17213};
-				definition.scaleXZ = 129;
+				definition.scaleXZ = 229;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
-				definition.scaleY = 129;
+				definition.scaleY = 229;
 				definition.npcSizeInSquares = 1;
 				break;
 			case 3060:
@@ -5485,6 +5485,29 @@ public final class MobDefinition {
 				definition.name = "Lost Survivor";
 				definition.actions = new String[]{"Talk-to", null, null, null, null};
 				break;
+
+			case 9127:
+				definition.copy(741);
+				definition.standAnimation = 1386;
+				definition.walkAnimation = 1380;
+				definition.drawYellowDotOnMap = true;
+				definition.name = "Duke Horacio";
+				definition.combatLevel = MobDefinition.get(2292).combatLevel;
+				definition.standAnimation = MobDefinition.get(2292).standAnimation;
+				definition.walkAnimation = MobDefinition.get(2292).walkAnimation;
+				definition.actions = new String[]{"Talk-to", null, null, null, null};
+				break;
+
+			case 9128:
+				definition.copy(278);
+				definition.drawYellowDotOnMap = true;
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
+				definition.name = "Evil cook";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.rdc2 = 800;
+				break;
+
 			case 6307:
 				definition.npcModels = new int[]{4821, 4828, 4833};
 				definition.name = "Monkey guard";

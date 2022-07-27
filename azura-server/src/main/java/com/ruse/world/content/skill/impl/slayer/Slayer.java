@@ -13,6 +13,7 @@ import com.ruse.world.content.NpcRequirements;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.globalBosses.SlayerBossSystem;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -186,13 +187,13 @@ public class Slayer {
 
     @SuppressWarnings("incomplete-switch")
     public void givePoints(SlayerMaster master) {
-        int pointsReceived = 3;
+        int pointsReceived = Misc.getRandom(3-6);
         switch (master) {
             case MEDIUM_SLAYER:
-                pointsReceived = 6;
+                pointsReceived = Misc.getRandom(6-10);
                 break;
             case HARD_SLAYER:
-                pointsReceived = 10;
+                pointsReceived = Misc.getRandom(10-20);
                 break;
 
         }
@@ -203,6 +204,9 @@ public class Slayer {
             pointsReceived *= 2;
         }
 
+        SlayerBossSystem.slayerTasks++;
+        SlayerBossSystem.spawnBoss();
+        SlayerBossSystem.callBoss();
         player.getPointsHandler().setSlayerPoints(pointsReceived, true);
         PlayerPanel.refreshPanel(player);
     }

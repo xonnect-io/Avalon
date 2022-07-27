@@ -810,6 +810,9 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111425:
                 player.questInterface.openQuestOne();
                 break;
+            case 111426:
+                player.questInterface.openQuestTwo();
+                break;
             case 111607:
                 BestItemsInterface.openInterface(player, 0);
                 break;

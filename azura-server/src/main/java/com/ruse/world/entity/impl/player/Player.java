@@ -1823,6 +1823,75 @@ End new teleport
 
 
     /*
+    Start Quest Two
+     */
+    public boolean questTwoStarted;
+    private boolean questTwoStep1;
+    private boolean questTwoStep2;
+    private boolean questTwoStep3;
+    private boolean questTwoStep4;
+    private boolean questTwoStep5;
+    private boolean questTwoStep6;
+    private boolean questTwoStep7;
+
+    public void setQuestTwoStarted(boolean questTwoStarted) {
+        this.questTwoStarted = questTwoStarted;
+    }
+    public boolean getQuestTwoStarted() {
+        return questTwoStarted;
+    }
+
+    public void setQuestTwoStep1(boolean questTwoStep1) {
+        this.questTwoStep1 = questTwoStep1;
+    }
+    public boolean getQuestTwoStep1() {
+        return questTwoStep1;
+    }
+
+    public void setQuestTwoStep2(boolean questTwoStep2) {
+        this.questTwoStep2 = questTwoStep2;
+    }
+    public boolean getQuestTwoStep2() {return questTwoStep2;
+    }
+
+    public void setQuestTwoStep3(boolean questTwoStep3) {
+        this.questTwoStep3 = questTwoStep3;
+    }
+    public boolean getQuestTwoStep3() {
+        return questTwoStep3;
+    }
+
+    public void setQuestTwoStep4(boolean questTwoStep4) {
+        this.questTwoStep4 = questTwoStep4;
+    }
+    public boolean getQuestTwoStep4() {
+        return questTwoStep4;
+    }
+
+    public void setQuestTwoStep5(boolean questTwoStep5) {
+        this.questTwoStep5 = questTwoStep5;
+    }
+    public boolean getQuestTwoStep5() {
+        return questTwoStep5; }
+
+    public void setQuestTwoStep6(boolean questTwoStep6) {
+        this.questTwoStep6 = questTwoStep6;
+    }
+    public boolean getQuestTwoStep6() {
+        return questTwoStep6; }
+
+    public void setQuestTwoStep7(boolean questTwoStep7) {
+        this.questTwoStep7 = questTwoStep7;
+    }
+    public boolean getQuestTwoStep7() {
+        return questTwoStep7; }
+
+
+    /*
+    End Quest Two
+     */
+
+    /*
     Start Magic Guild
      */
     private boolean magicianMaster;

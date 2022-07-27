@@ -108,6 +108,11 @@ public class Equipment extends ItemContainer {
 	 */
 	public static final int AMMUNITION_SLOT = 13;
 
+	/**
+	 * The Pet slot.
+	 */
+	public static final int PET_SLOT = 14;
+
 	public boolean wearingNexAmours() {
 		int head = getPlayer().getEquipment().getItems()[HEAD_SLOT].getId();
 		int body = getPlayer().getEquipment().getItems()[BODY_SLOT].getId();

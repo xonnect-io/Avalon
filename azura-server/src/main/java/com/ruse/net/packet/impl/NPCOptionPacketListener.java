@@ -32,7 +32,8 @@ import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.WarriorsGuild;
 import com.ruse.world.content.minigames.impl.trioMinigame;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
-import com.ruse.world.content.quests.QuestDialogues;
+import com.ruse.world.content.quests.BloodRunsDeepDialogues;
+import com.ruse.world.content.quests.TheOmegaDialogues;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.construction.ConstructionActions;
@@ -109,6 +110,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         DialogueManager.start(player, 1311);
                         player.setDialogueActionId(568);
                         break;
+
 /*
                     case 432:
                         player.getPacketSender().sendInterfaceReset();
@@ -272,12 +274,13 @@ public class NPCOptionPacketListener implements PacketListener {
                         GrandLottery.open(player);
                         break;
 
+
+
                     case 4285:
                         ShopManager.getShops().get(119).open(player);
                         player.getPacketSender().sendString(3903,
                                 "Items can be sold to this store");
                         break;
-
 
                     case 1050:
                         player.moveTo(new Position(2793, 3276));
@@ -395,65 +398,91 @@ public class NPCOptionPacketListener implements PacketListener {
 
                     case 648:
                         if (player.getQuestOneStep5() == false && !player.getInventory().contains(17801, 5)) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoald(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepKingRoald(player));
                             return;
                         } else if (player.getInventory().contains(17801, 5) && player.getQuestOneStep5() == false) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoaldComplete(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepKingRoaldComplete(player));
                             return;
                         } else if (player.getQuestOneStep5() == true) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepKingRoaldExit(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepKingRoaldExit(player));
                             return;
                         }
                         break;
+                    case 9127:
 
+                        if (player.getQuestTwoStep7() == true ) {
+                            DialogueManager.start(player, TheOmegaDialogues.GoodDay(player));
+                            return;
+                        }
+                        if (player.getQuestTwoStep6() == true ) {
+                            DialogueManager.start(player, TheOmegaDialogues.QuestComplete(player));
+                            return;
+                        }
+
+                        if (player.getQuestTwoStep4() == true && player.getQuestTwoStep5() == false ) {
+                            DialogueManager.start(player, TheOmegaDialogues.DukeHoracio(player));
+                            return;
+                        }
+                        if (player.getQuestTwoStep5() == true ) {
+                            DialogueManager.start(player, TheOmegaDialogues.DukeHoracioFinal(player));
+                            return;
+                        }
+
+                        break;
+                    case 1921:
+                        if (player.getQuestTwoStarted() == true) {
+                            DialogueManager.start(player, TheOmegaDialogues.PubIntro(player));
+                            return;
+                        }
+                        break;
                     case 6040:
 
                         if (player.getQuestOneStep7() == true) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepAfterCompletion(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepAfterCompletion(player));
                             return;
                         }
                         if (player.getQuestOneStep7() == false && player.getInventory().contains(17510) && player.getQuestOneStep6() == true) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepFinalReturn(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepFinalReturn(player));
                             return;
                         }
                         if (player.getQuestOneStep6() == true) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepVisitDagonnoth(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepVisitDagonnoth(player));
                             return;
                         }
                         if (player.getQuestOneStep5() == true && player.getInventory().contains(15406) && player.getInventory().contains(8534)) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepReturnItems(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepReturnItems(player));
                         return;
                          } else if (player.getQuestOneStep5() == true && !player.getInventory().contains(15406) && !player.getInventory().contains(8534)) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepReturnItemsNotFound(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepReturnItemsNotFound(player));
                         return;
                         }
                              if (player.getQuestOneStarted() == false)
-                        DialogueManager.start(player, QuestDialogues.questBloodRunsDeepIntro(player));
+                        DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepIntro(player));
                         else if (player.getQuestOneStarted() == true && player.getQuestOneStep2() == false || player.getQuestOneStep3() == false) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepInProgress(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepInProgress(player));
                             return;
                         } else if (player.getQuestOneStep2() == true && player.getQuestOneStep3() == true) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepEnterRealm(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepEnterRealm(player));
                         }
                         break;
                     case 2899:
                         if (player.getQuestOneStep4() == false && !player.getInventory().contains(552)) {
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepFatherReen(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepFatherReen(player));
                         } else if (player.getInventory().contains(552))
                             player.getPacketSender().sendMessage("You already have a ghost-speak amulet in your inventory.");
                         break;
                     case 305:
                         if (player.getQuestOneStep2() == false || player.getQuestOneStep3() == false)
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepDream(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepDream(player));
                         else if (player.getQuestOneStep2() == true && player.getQuestOneStep3() == true)
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepDreamComplete(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepDreamComplete(player));
                         break;
 
                     case 1541:
                         if (player.getEquipment().contains(552))
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepLumbridgeGhost(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepLumbridgeGhost(player));
                         else
-                            DialogueManager.start(player, QuestDialogues.questBloodRunsDeepLumbridgeGhostGibberish(player));
+                            DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepLumbridgeGhostGibberish(player));
                         break;
                     case 736:
                         player.forceChat("Ban emily!");
@@ -800,7 +829,22 @@ public class NPCOptionPacketListener implements PacketListener {
                         ShopManager.getShops().get(99).open(player);
                         break;
                     case 278:
-                        ShopManager.getShops().get(16).open(player);
+                        if (player.getQuestTwoStarted() == false) {
+                            DialogueManager.start(player, TheOmegaDialogues.Intro(player));
+                            return;
+                        }
+                        if (player.getQuestTwoStarted() == true && player.getQuestTwoStep1() == false
+                                || player.getQuestTwoStep2() == false || player.getQuestTwoStep3() == false) {
+                            DialogueManager.start(player, TheOmegaDialogues.QuestReminder(player));
+                            return;
+                        }
+                        if (player.getQuestTwoStarted() == true && player.getQuestTwoStep1() == true
+                                && player.getQuestTwoStep2() == true && player.getQuestTwoStep3() == true &&
+                                player.getInventory().contains(15413,1 )&& player.getInventory().contains(7546,1 )&&
+                                player.getInventory().contains(10537,1 )) {
+                            DialogueManager.start(player, TheOmegaDialogues.OfferItems(player));
+                            return;
+                        }
                         break;
                     case 4946:
                         ShopManager.getShops().get(15).open(player);

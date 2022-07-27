@@ -27,6 +27,7 @@ public class Globals extends ListenerAdapter {
         eb.addField("**Vote boss:** ", VoteBossDrop.currentSpawn == null  ? "" + doMotivote.getVoteCount() + "/60" : "Alive", true);
         eb.addField("**AFK Boss:** ", ""+ AfkSystem.getLeft() + " steals left", true);
         eb.addField("**Hellraiser:** ", ""+ HellraiserSystem.getLeft() + "  kills left", true);
+        eb.addField("**Doom Slayer Boss:** ", ""+ SlayerBossSystem.getLeft() + "  tasks left", true);
         eb.addField("**Dragon King:** ", DragonKingBoss.currentBoss == null  ? "" + DragonKingBoss.timeLeft() + "" : "Alive", true);
         eb.addField("**Nightmare:** ", NightmareBoss.currentBoss == null  ? "" + NightmareBoss.timeLeft() + "" : "Alive", true);
         eb.addField("**Naraku:** ", NarakuBoss.currentBoss == null  ? "" + NarakuBoss.timeLeft() + "" : "Alive", true);

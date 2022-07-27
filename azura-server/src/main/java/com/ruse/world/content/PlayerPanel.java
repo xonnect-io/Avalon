@@ -100,20 +100,13 @@ public class PlayerPanel {
                 "Slayer Points: @whi@" + player.getPointsHandler().getSlayerPoints(),
                 "Loyalty Points: @whi@" + (int) player.getPointsHandler().getLoyaltyPoints(),
                 "Quests",
-                (player.getQuestOneStep7() == true) ?
-                        "@gre@ Blood Runs Deep" : "@red@ Blood Runs Deep",
-               /* (player.getQuestOneStep7() == true) ?
-                "@gre@ Blood Runs Deep" : "@red@ Blood Runs Deep",
-                (player.getQuestOneStep7() == true) ?
-                        "@gre@ Blood Runs Deep" : "@red@ Blood Runs Deep",*/
-              //  "Prestige Points: @whi@" + player.getPointsHandler().getPrestigePoints(),
-              //  "Total Prestige: @whi@" + player.getPointsHandler().getTotalPrestiges(),
-              //  "Event Points: @whi@ " + player.getPointsHandler().getEventPoints(),
-             //   "Commendations: @whi@ " + player.getPointsHandler().getCommendations(),
-              //  "Dung. Tokens: @whi@ " + player.getPointsHandler().getDungeoneeringTokens(),
-              //  "Penguin Multiplier: @whi@ " + player.getPointsHandler().getPengRate() + "%",
-               // "Barrows Points: @whi@" + player.getPointsHandler().getBarrowsPoints(),
-               // "Pk Points: @whi@" + player.getPointsHandler().getPkPoints(),
+
+                player.getQuestOneStep7() == true ? "@gre@ Blood Runs Deep" :
+                        player.getQuestOneStarted() == true && player.getQuestOneStep7() == false ? "@yel@ Blood Runs Deep" :
+                                "@red@ Blood Runs Deep",
+                player.getQuestTwoStep7() == true ? "@gre@ The Omega" :
+                        player.getQuestTwoStarted() == true && player.getQuestTwoStep7() == false ? "@yel@ The Omega" :
+                                "@red@ The Omega",
 
         };
 

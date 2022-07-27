@@ -8,7 +8,21 @@ public class ItemDef4 {
 		ItemDefinition finity;
 		switch (id) {
 
-
+			case 17572:
+				itemDef.name = "Weak poison";
+				break;
+			case 15413:
+				itemDef.name = "Poisoned milk";
+				itemDef.modelID = 19557;
+				break;
+			case 7546:
+				itemDef.name = "Rancid flour";
+				itemDef.rdc2 = 10;
+				break;
+			case 23390:
+				itemDef.copyItem(10537);
+				itemDef.name = "Omega egg";
+				break;
 			case 17815:
 				itemDef.name = "Raw fury shark";
 				itemDef2 = ItemDefinition.get(20429);

@@ -37,4 +37,35 @@ public class QuestInterfaceHandler {
         player.getPacketSender().sendString(77852, (player.getQuestOneStep7() == true) ?
                 "@gre@ Quest Complete" : "");
     }
+
+    public void openQuestTwo() {
+        player.getPacketSender().sendInterface(77830);
+        player.getPacketSender().sendString(77833, "The Omega");
+        player.getPacketSender().sendString(77836, (player.questTwoStarted == true) ?
+                "@gre@ - I Spoke with the cook and offered my help." : "@red@ - Speak to the Lumbridge Cook");
+        player.getPacketSender().sendString(77837, "");
+        player.getPacketSender().sendString(77838, (player.getQuestTwoStep1() == true) ?
+                "@gre@ - Obtain poisoned milk" : "@red@ - Obtain poisoned milk");
+        player.getPacketSender().sendString(77839, "");
+        player.getPacketSender().sendString(77840, (player.getQuestTwoStep2() == true) ?
+                "@gre@ - Obtain the Omega Egg" : "@red@- Obtain the Omega Egg");
+        player.getPacketSender().sendString(77841, " ");
+        player.getPacketSender().sendString(77842, (player.getQuestTwoStep3() == true) ?
+                "@gre@ - Obtain rancid flour" : "@red@  - Obtain rancid flour");
+        player.getPacketSender().sendString(77843, " ");
+        player.getPacketSender().sendString(77844, (player.getQuestTwoStep4() == true) ?
+                "@gre@ - Return the ingredients to the cook" : "@red@ - Return the ingredients to the cook");
+        player.getPacketSender().sendString(77845, " ");
+        player.getPacketSender().sendString(77846, (player.getQuestTwoStep5() == true) ?
+                "@gre@ - Warn Duke Horacio" : "@red@ - Warn Duke Horacio");
+        player.getPacketSender().sendString(77847, " ");
+        player.getPacketSender().sendString(77848, (player.getQuestTwoStep6() == true) ?
+                "@gre@ - Defeat the Evil Cook" : "@red@ - Defeat the Evil Cook");
+        player.getPacketSender().sendString(77849, "");
+        player.getPacketSender().sendString(77850, (player.getQuestTwoStep7() == true) ?
+                "@gre@ - Return to Duke Horacio" : "@red@ - Return to Duke Horacio");
+        player.getPacketSender().sendString(77851, " ");
+        player.getPacketSender().sendString(77852, (player.getQuestTwoStep7() == true) ?
+                "@gre@ Quest Complete" : "");
+    }
 }

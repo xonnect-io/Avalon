@@ -27,6 +27,7 @@ public class PickupItemPacketListener implements PacketListener {
 		final int x = packet.readLEShort();
 		if (player.isTeleporting())
 			return;
+
 		if (player.getCombatBuilder().isAttacking()) {
 			player.getCombatBuilder().cooldown(false);
 		}
@@ -51,6 +52,24 @@ public class PickupItemPacketListener implements PacketListener {
 				GroundItem gItem = GroundItemManager.getGroundItem(player, new Item(itemId), position);
 				if (!player.getControllerManager().canTakeItem(gItem)) {
 					return;
+				}
+
+				if (itemId == 10537 && !player.getEquipment().contains(1580)) {
+					player.getPacketSender().sendMessage("This Omega egg is too hot. Ice gloves could help.");
+					return;
+				}
+
+				if (itemId == 10537 && player.getEquipment().contains(1580) && player.getQuestTwoStep2() == false) {
+					player.setQuestTwoStep2(true);
+					player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Obtain the Omega Egg");
+				}
+				if (itemId == 7546 && !player.getEquipment().contains(4168)) {
+					player.getPacketSender().sendMessage("The rancid smell is too much, try wearing nose plugs first.");
+					return;
+				}
+				if (itemId == 7546 && player.getQuestTwoStep3() == false) {
+					player.setQuestTwoStep3(true);
+					player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Obtain Rancid flour");
 				}
 				if (itemId == 7509 && player.getEquipment().forSlot(Equipment.HANDS_SLOT).getId() != 1580) {
 					player.getPacketSender().sendMessage("This rock cake is too hot. Ice gloves could help.");
