@@ -218,34 +218,52 @@ public final class ObjectDefinition {
 		}
 		if (definition.type == 22099) {
 			definition.objectModelIDs = new int[]{15573};
+			definition.modelSizeY = 135;
+			definition.modelSizeX = 135;
 			definition.name = "AFK Sapphire";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
 		
 		if (definition.type == 22098) {
 			definition.objectModelIDs = new int[]{15574};
+			definition.modelSizeY = 135;
+			definition.modelSizeX = 135;
 			definition.name = "AFK Emerald";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
 		if (definition.type == 22097) {
 			definition.objectModelIDs = new int[]{15577};
+			definition.modelSizeY = 135;
+			definition.modelSizeX = 135;
 			definition.name = "AFK Ruby";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
 		if (definition.type == 8455) {
 			definition.objectModelIDs = new int[]{15580};
+			definition.modelSizeY = 135;
+			definition.modelSizeX = 135;
 			definition.name = "AFK Diamond";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
 
 		if (definition.type == 8456) {
 			definition.objectModelIDs = new int[]{15578};
+			definition.modelSizeY = 135;
+			definition.modelSizeX = 135;
 			definition.name = "AFK Onyx";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
-
+		if (definition.type == 22768) {
+			definition.objectModelIDs = new int[]{19558};
+			definition.modelSizeY = 135;
+			definition.modelSizeX = 135;
+			definition.name = "AFK Zenyte"; //#7a37b3
+			definition.actions = new String[]{"Mine", null, null, null, null};
+		}
 		if (definition.type == 22769) {
 			definition.objectModelIDs = new int[]{18796};
+			definition.modelSizeY = 135;
+			definition.modelSizeX = 135;
 			definition.name = "AFK Tanzanite"; //#7a37b3
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}

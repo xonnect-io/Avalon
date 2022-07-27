@@ -3920,7 +3920,7 @@ public class ItemDef4 {
 
 				break;
 			case 3324:
-				itemDef.copyItem(2579);
+				itemDef.copyItem(2572);
 				itemDef.name = "Ring of wealth (ii)";
 				itemDef.rdc2 = 86521;
 				itemDef.stackable = false;

@@ -8794,7 +8794,7 @@ public class Client extends GameRenderer {
                         textArea2Hover = true;
                     }
                 }
-                if (mouseX >= 233 && mouseX <= 248 && mouseY >= 286 && mouseY <= 302) {
+                if (mouseX >= 320 && mouseX <= 336 && mouseY >= 282 && mouseY <= 296) {
                     //cursor = Configuration.NEW_CURSORS ? 1061 : Cursor.HAND_CURSOR;
                     rememberMeHover = true;
                 }
@@ -8803,9 +8803,9 @@ public class Client extends GameRenderer {
 
             if (mouseX >= 225 && mouseX <= 540) {
                 if (mouseY >= 394 && mouseY <= 449) {
-                    accountHovers[0] = mouseX >= 225 && mouseX <= 280;
-                    accountHovers[1] = mouseX >= 355 && mouseX <= 410;
-                    accountHovers[2] = mouseX >= 485 && mouseX <= 540;
+                    accountHovers[0] = mouseX >= 255 && mouseX <= 295;
+                    accountHovers[1] = mouseX >= 355 && mouseX <= 395;
+                    accountHovers[2] = mouseX >= 445 && mouseX <= 495;
 
                     for (int i = 0; i < accountHovers.length; i++) {
                         if (accountHovers[i]) {
@@ -8817,9 +8817,9 @@ public class Client extends GameRenderer {
             }
             if (mouseX >= 282 && mouseX <= 550) {
                 if (mouseY >= 394 && mouseY <= 404) {
-                    accountDeletion[0] = mouseX >= 280 && mouseX <= 290;
+                    accountDeletion[0] = mouseX >= 310 && mouseX <= 320;
                     accountDeletion[1] = mouseX >= 410 && mouseX <= 420;
-                    accountDeletion[2] = mouseX >= 540 && mouseX <= 550;
+                    accountDeletion[2] = mouseX >= 510 && mouseX <= 520;
 
                     for (int i = 0; i < accountDeletion.length; i++) {
                         if (accountDeletion[i]) {
@@ -8866,27 +8866,27 @@ public class Client extends GameRenderer {
                 // spritesMap.get(1177].drawAdvancedSprite(310, 115);
 
                 if (loginHover) {
-                    spritesMap.get(464).drawAdvancedSprite(302, 293);//LOGINEDIT
+                    spritesMap.get(464).drawAdvancedSprite(278, 310);//LOGINEDIT
                 } else {
-                    spritesMap.get(463).drawAdvancedSprite(302, 293);//LOGINEDIT
+                    spritesMap.get(463).drawAdvancedSprite(278, 310);//LOGINEDIT
                 }
 
                 if (!showTwoFactorAuth) {
 
                     if (textArea1Hover) {
-                        spritesMap.get(466).drawAdvancedSprite(233, 190);
+                        spritesMap.get(466).drawAdvancedSprite(245, 190);
                     } else {
-                        spritesMap.get(465).drawAdvancedSprite(233, 190);
+                        spritesMap.get(465).drawAdvancedSprite(245, 190);
                     }
                     if (textArea2Hover) {
-                        spritesMap.get(470).drawAdvancedSprite(233, 238);
+                        spritesMap.get(466).drawAdvancedSprite(245, 243);
                     } else {
-                        spritesMap.get(469).drawAdvancedSprite(233, 238);
+                        spritesMap.get(465).drawAdvancedSprite(245, 243);
                     }
                     if (Configuration.SAVE_ACCOUNTS) {
-                        spritesMap.get(468).drawAdvancedSprite(233, 286);
+                        spritesMap.get(468).drawAdvancedSprite(320, 282);
                     } else {
-                        spritesMap.get(467).drawAdvancedSprite(233, 286);
+                        spritesMap.get(467).drawAdvancedSprite(320, 282);
                     }
                 }
                 //normalText.method385(0xffff00, "Mouse X: " + super.mouseX + " , Mouse Y: " + super.mouseY, 314, 5);
@@ -8901,28 +8901,28 @@ public class Client extends GameRenderer {
                     }
 
                     if (loginScreenCursorPos == 0 && loopCycle % 45 < 10) {
-                        chatTextDrawingArea.drawRegularText(true, 270, 16777215, currentPinCode + "|", 292);
+                        chatTextDrawingArea.drawRegularText(true, 252, 16777215, currentPinCode + "|", 292);
                     } else {
-                        chatTextDrawingArea.drawRegularText(true, 270, 16777215, currentPinCode, 292);
+                        chatTextDrawingArea.drawRegularText(true, 252, 16777215, currentPinCode, 292);
                     }
                 } else {
 
                     if (loginScreenCursorPos == 0 && loopCycle % 45 < 10) {
-                        chatTextDrawingArea.drawRegularText(true, 270, 16777215, myUsername + "|", 213);
+                        chatTextDrawingArea.drawRegularText(true, 252, 16777215, myUsername + "|", 213);
                     } else {
-                        chatTextDrawingArea.drawRegularText(true, 270, 16777215, myUsername, 213);
+                        chatTextDrawingArea.drawRegularText(true, 252, 16777215, myUsername, 213);
                     }
 
                     if (loginScreenCursorPos == 1 && loopCycle % 45 < 10) {
-                        chatTextDrawingArea.drawRegularText(true, 270, 16777215, getStars(password) + "|", 263);
+                        chatTextDrawingArea.drawRegularText(true, 252, 16777215, getStars(password) + "|", 263);
                     } else {
-                        chatTextDrawingArea.drawRegularText(true, 270, 16777215, getStars(password), 263);
+                        chatTextDrawingArea.drawRegularText(true, 252, 16777215, getStars(password), 263);
                     }
                 }
 
                 if (!showTwoFactorAuth) {
 
-                    int drawAccountX = 226;
+                    int drawAccountX = 258;
 
                     for (int i = 0; i < accountHovers.length; i++) {
                         Account account = accountManager.getAccounts()[i];
@@ -8931,10 +8931,10 @@ public class Client extends GameRenderer {
                             if (accountManager != null) {
                                 if (accountHovers[i]) {
                                     spritesMap.get(1594).drawAdvancedSprite(drawAccountX, 394);
-                                    spritesMap.get(1598).drawAdvancedSprite(drawAccountX - 33, 454);
+                                    spritesMap.get(1598).drawAdvancedSprite(drawAccountX - 22, 443);
                                 } else {
                                     spritesMap.get(1593).drawAdvancedSprite(drawAccountX, 394);
-                                    spritesMap.get(1597).drawAdvancedSprite(drawAccountX - 33, 454);
+                                    spritesMap.get(1597).drawAdvancedSprite(drawAccountX - 22, 443);
                                 }
 
                                 if (accountDeletion[i]) {
@@ -8946,20 +8946,20 @@ public class Client extends GameRenderer {
                         } else {
                             if (accountHovers[i]) {
                                 spritesMap.get(1596).drawAdvancedSprite(drawAccountX, 394);
-                                spritesMap.get(1598).drawAdvancedSprite(drawAccountX - 33, 454);
+                                spritesMap.get(1598).drawAdvancedSprite(drawAccountX - 22, 443);
                             } else {
                                 spritesMap.get(1595).drawAdvancedSprite(drawAccountX, 394);
-                                spritesMap.get(1597).drawAdvancedSprite(drawAccountX - 33, 454);
+                                spritesMap.get(1597).drawAdvancedSprite(drawAccountX - 22, 443);
                             }
                             if (accountDeletion[i]) {
                                 spritesMap.get(1600).drawAdvancedSprite(drawAccountX + 54, 394);
                             } else {
                                 spritesMap.get(1599).drawAdvancedSprite(drawAccountX + 54, 394);
                             }
-                            newSmallFont.drawCenteredString("" + account.getUsername(), drawAccountX + 26,
-                                    469, 0xFFFFFF, 0);
+                            newSmallFont.drawCenteredString("" + account.getUsername(), drawAccountX + 18,
+                                    457, 0xFFFFFF, 0);
                         }
-                        drawAccountX += 130;
+                        drawAccountX += 98;
 
                     }
                 }

@@ -277,7 +277,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 else
                                     player.getPacketSender().sendMessage("You need to be a Onyx Donator to afk this rock. Your current rank is " + player.getRights());
                                 break;
-                            case 8457:
+                            case 22768:
                                 if (player.getRights() == PlayerRights.ZENYTE_DONATOR || player.getRights() == PlayerRights.TANZANITE_DONATOR || player.getRights().isStaff())
                                     Mining.mineAfkRock(player, id, 6);
                                 else
