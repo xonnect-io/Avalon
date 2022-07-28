@@ -267,6 +267,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 71516:
             case 71576:
             case 80576:
+            case 77934:
                 player.getPacketSender().removeInterface();
                 break;
 

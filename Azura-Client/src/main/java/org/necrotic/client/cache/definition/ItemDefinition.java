@@ -3017,7 +3017,7 @@ public final class ItemDefinition {
 
 			case 20549:
 					itemDef.copyItem(4710);
-					itemDef.name = "Scythe of demons";
+					itemDef.name = "Demonic scythe";
 					itemDef.modelID = 18154;
 					itemDef.femaleEquip1 = 18153;
 					itemDef.maleEquip1 = 18153;
@@ -4882,7 +4882,7 @@ public final class ItemDefinition {
 		}
 		
 		if (customId == 22079) { // weapon
-			itemDef.name = "ankoue maul";
+			itemDef.name = "Ankoue maul";
 			ItemDefinition itemDef2 = ItemDefinition.get(18353);
 			itemDef.modelID = 65014;
 			itemDef.femaleEquip1 = 65015;

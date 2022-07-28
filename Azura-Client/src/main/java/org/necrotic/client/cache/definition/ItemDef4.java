@@ -3087,15 +3087,15 @@ public class ItemDef4 {
 				itemDef.description = "A pair of Emberkeen boots.".getBytes();
 				break;
 			case 23297:
-				itemDef.copyItem(3791);
+				itemDef.copyItem(23131);
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 18906;
-				itemDef.maleEquip1 = 18906;
-				itemDef.femaleEquip1 = 18906;
-				itemDef.name = "Flarefrost boots";
-				itemDef.modelZoom = 900;
+				itemDef.modelID = 19561;
+				itemDef.maleEquip1 = 19561;
+				itemDef.femaleEquip1 = 19561;
+				itemDef.name = "Elderbone boots";
+				itemDef.modelZoom = 700;
 				itemDef.description = "A pair of Flarefrost boots.".getBytes();
 				break;
 
@@ -4303,58 +4303,44 @@ public class ItemDef4 {
 
 			case 13922:// stat help
 				itemDef.name = "Frost full helm";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.rdc2 = 623522;
 				break;
 
 			case 13928:// stat help
 				itemDef.name = "Frost war hammer";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.rdc2 = 623522;
 				break;
 
 			case 13916:// stat help
 				itemDef.name = "Frost platelegs";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.rdc2 = 623522;
 				break;
 
 			case 13910:// stat help
 				itemDef.name = "Frost platebody";
 				itemDef.rdc2 = 623522;
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13952:
 				itemDef.rdc2 = 638528482;
 				itemDef.name = "Lime coif";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13946:
 				itemDef.rdc2 = 638528482;
 				itemDef.name = "Lime leather body";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13949:
 				itemDef.rdc2 = 638528482;
 				itemDef.name = "Lime leather chaps";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 16043:
@@ -4368,41 +4354,31 @@ public class ItemDef4 {
 			case 13959:
 				itemDef.rdc2 = 638528482;
 				itemDef.name = "Lime javelin";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;// 236799 purp - 2356 gold / 773red
 
 			case 13940:
 				itemDef.name = "Pink hood";
 				itemDef.rdc2 = 2483285;
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13943:
 				itemDef.name = "Pink staff";
 				itemDef.rdc2 = 2483285;
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13934:
 				itemDef.name = "Pink robe top";
 				itemDef.rdc2 = 2483285;
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13937:
 				itemDef.name = "Pink robe bottom";
 				itemDef.rdc2 = 2483285;
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13996:
@@ -4419,9 +4395,7 @@ public class ItemDef4 {
 				itemDef.rotationY = itemGWD113.rotationY;
 				itemDef.rotationX = itemGWD113.rotationX;
 				itemDef.actions = itemGWD113.actions;
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13913:
@@ -4437,14 +4411,12 @@ public class ItemDef4 {
 				itemDef.rotationY = itemGWD1112.rotationY;
 				itemDef.rotationX = itemGWD1112.rotationX;
 				itemDef.actions = itemGWD1112.actions;
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13919:
 				ItemDefinition itemGWDs1112 = ItemDefinition.get(5576);
-				itemDef.name = "Exotic plateskirt";
+				itemDef.name = "Exotic platelegs";
 				itemDef.modelID = 16371;
 				itemDef.femaleEquip1 = 16372;
 				itemDef.maleEquip1 = 16372;
@@ -4455,24 +4427,18 @@ public class ItemDef4 {
 				itemDef.rotationY = itemGWDs1112.rotationY;
 				itemDef.rotationX = itemGWDs1112.rotationX;
 				itemDef.actions = itemGWDs1112.actions;
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 13931:
 				itemDef.name = "Exotic spear";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.rdc2 = 44556;
 				break;
 
 			case 13925:
 				itemDef.name = "Exotic longsword";
-				itemDef.actions = new String[5];
-				itemDef.actions[2] = null;
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.rdc2 = 44556;
 				break;
 

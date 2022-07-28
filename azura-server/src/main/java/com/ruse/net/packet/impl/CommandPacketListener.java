@@ -2393,18 +2393,6 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("There was an error setting your yell hex. You entered: " + hex);
             return;
         }
-    }
-
-    private static void rubyCommands(Player player, String[] command, String wholeCommand) {
-        if (command[0].equalsIgnoreCase("ruby")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            TeleportHandler.teleportPlayer(player, GameSettings.RUBY_ZONE, TeleportType.NORMAL);
-            player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
-        }
 
         if (wholeCommand.equalsIgnoreCase("bank")) {
             if (player.getInterfaceId() > 0) {
@@ -2420,6 +2408,19 @@ public class CommandPacketListener implements PacketListener {
             }
             player.getBank(player.getCurrentBankTab()).open();
         }
+    }
+
+    private static void rubyCommands(Player player, String[] command, String wholeCommand) {
+        if (command[0].equalsIgnoreCase("ruby")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            TeleportHandler.teleportPlayer(player, GameSettings.RUBY_ZONE, TeleportType.NORMAL);
+            player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
+        }
+
     }
 
     private static void diamondCommands(Player player, String[] command, String wholeCommand) {
@@ -3662,8 +3663,14 @@ public class CommandPacketListener implements PacketListener {
                     moderatorCommands(player, parts, command);
                     contributorCommands(player, parts, command);
                     administratorCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
                     supportCommands(player, parts, command);
-                    globalModCommands(player, parts, command);
+                    globalModCommands(player, parts, command);                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    zenyteCommands(player, parts, command);
+                    tanzaniteCommands(player, parts, command);
                     break;
 
                 case OWNER:
