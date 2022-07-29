@@ -17,6 +17,7 @@ import com.ruse.world.content.pos.PlayerOwnedShop.ShopItem;
 import com.ruse.world.entity.impl.player.Player;
 import lombok.Getter;
 import lombok.Setter;
+import mysql.impl.CheckPrice;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -793,6 +794,8 @@ public class PlayerOwnedShopManager {
                 player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, cashAmount);
                 player.getInventory().add(item.getId(), removed);
                 current.addEarnings(item.getPrice() * removed);
+                new Thread(new CheckPrice(player, item.getId(), item.getAmount(), cashAmount)).run();
+
                 PlayerLogs.log(player.getUsername(), "Player bought " + item.getId() + " x " + removed + " from "
                         + current.username + "'s pos shop for " + cashAmount + " Avalon tokens");
                 PlayerLogs.log(current.username, "Player sold " + item.getId() + " x " + removed + " to "

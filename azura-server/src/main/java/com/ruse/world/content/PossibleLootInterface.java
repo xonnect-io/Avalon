@@ -68,7 +68,7 @@ public class PossibleLootInterface {
         FORTUNE(23002, WheelOfFortune.rewards),
         OCAPE(3578, Ocape.rare),
         TREASURE_HUNTER("Treasure Hunter",  -1,TreasureHunter.loot),
-        ISLES_OF_AVALON(23086, HallsOfValor.loot),
+        ISLES_OF_AVALON("Isles of Avalon",  -1,HallsOfValor.loot),
         RAIDS(18404, Raids1.rewards),
         BRONZE_CARD_PACK(23276, CardPackRewards.bronze),
         SILVER_CARD_PACK(23277, CardPackRewards.silver),
