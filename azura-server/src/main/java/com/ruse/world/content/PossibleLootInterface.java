@@ -69,7 +69,7 @@ public class PossibleLootInterface {
         OCAPE(3578, Ocape.rare),
         TREASURE_HUNTER("Treasure Hunter",  -1,TreasureHunter.loot),
         ISLES_OF_AVALON(23086, HallsOfValor.loot),
-        RAIDS(18404, ZombieRaidLoot.LOOT),
+        RAIDS(18404, Raids1.rewards),
         BRONZE_CARD_PACK(23276, CardPackRewards.bronze),
         SILVER_CARD_PACK(23277, CardPackRewards.silver),
         GOLD_CARD_PACK(23278, CardPackRewards.gold),

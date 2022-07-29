@@ -3206,6 +3206,7 @@ public class Client extends GameRenderer {
             if (child == null) {
                 continue;
             }
+            HoverMenuManager.reset();
             int offset = child.xOffset;
             xSpritePos += offset;
             ySpritePos += child.yOffset;
@@ -3341,6 +3342,7 @@ public class Client extends GameRenderer {
                 }
 
                 if (child.atActionType == 3 && xPos >= xSpritePos && yPos >= ySpritePos && xPos < xSpritePos + child.width && yPos < ySpritePos + child.height) {
+                    HoverMenuManager.reset();
                     menuActionName[menuActionRow] = "Close";
                     menuActionID[menuActionRow] = 200;
                     menuActionCmd3[menuActionRow] = child.id;
@@ -3348,6 +3350,7 @@ public class Client extends GameRenderer {
                 }
 
                 if (child.atActionType == 4 && xPos >= xSpritePos && yPos >= ySpritePos && xPos < xSpritePos + child.width && yPos < ySpritePos + child.height) {
+                    HoverMenuManager.reset();
                     menuActionName[menuActionRow] = child.tooltip + (myRights == 4 ? ", " + child.id : "");
                     menuActionID[menuActionRow] = 169;
                     menuActionCmd3[menuActionRow] = child.id;
@@ -3360,6 +3363,7 @@ public class Client extends GameRenderer {
 
                 if (child.atActionType == 5 && xPos >= xSpritePos && yPos >= ySpritePos && xPos < xSpritePos + child.width && yPos < ySpritePos + child.height) {
                     childHovered = child;
+                    HoverMenuManager.reset();
                     menuActionName[menuActionRow] = child.tooltip + (myRights == 4 ? ", " + child.id : "");
                     menuActionID[menuActionRow] = 646;
                     menuActionCmd3[menuActionRow] = child.id;
@@ -3367,6 +3371,7 @@ public class Client extends GameRenderer {
                 }
 
                 if (child.atActionType == 6 && !aBoolean1149 && xPos >= xSpritePos && yPos >= ySpritePos && xPos < xSpritePos + child.width && yPos < ySpritePos + child.height) {
+                    HoverMenuManager.reset();
                     menuActionName[menuActionRow] = child.tooltip + (myRights == 4 ? ", " + child.id : "");
                     menuActionID[menuActionRow] = 679;
                     menuActionCmd3[menuActionRow] = child.id;
@@ -3507,7 +3512,17 @@ public class Client extends GameRenderer {
                                             for (int i4 = 2; i4 >= 0; i4--) {
                                                 if (itemDef.actions[i4] != null) {
                                                     menuActionName[menuActionRow] = itemDef.actions[i4] + " @lre@" + itemDef.name;
+                                                    if (itemDef.actions[i4].contains("Open")) {
 
+                                                        HoverMenuManager.showMenu = true;
+                                                        HoverMenuManager.hintName = itemDef.name;
+                                                        HoverMenuManager.hintId = itemDef.id;
+                                                    } else {
+                                                        HoverMenuManager.reset();
+                                                    }
+                                                    if (HoverMenuManager.showMenu) {
+                                                        HoverMenuManager.drawHintMenu();
+                                                    }
                                                     if (i4 == 0) {
                                                         menuActionID[menuActionRow] = 74;
                                                     }
@@ -3769,7 +3784,15 @@ public class Client extends GameRenderer {
                                             }
                                         }
 
+                                        if (HoverMenuManager.shouldDraw(itemDef.id)) {
+                                            HoverMenuManager.showMenu = true;
+                                            HoverMenuManager.hintName = itemDef.name;
+                                            HoverMenuManager.hintId = itemDef.id;
+                                        }
 
+                                        if (HoverMenuManager.showMenu && HoverMenuManager.drawType() == 1) {
+                                            HoverMenuManager.drawHintMenu();
+                                        }
                                         if (openInterfaceID == 5292 && child.invStackSizes[containerSlot] == 0) {
                                             menuActionRow = 3;
                                             menuActionName[0] = "Cancel";
@@ -6731,7 +6754,9 @@ public class Client extends GameRenderer {
         } else if (menuScreenArea == 0) {
             drawMenu();
         }
-
+        if (HoverMenuManager.showMenu) {
+            HoverMenuManager.drawHintMenu();
+        }
         if (drawMultiwayIcon == 1) {
             multiOverlay.drawSprite(GameFrame.getScreenMode() == ScreenMode.FIXED ? 472 : getScreenWidth() - 40, GameFrame.getScreenMode() == ScreenMode.FIXED ? 296 : 175);
         }
@@ -18392,7 +18417,7 @@ public class Client extends GameRenderer {
         if (!cacheDir.exists()) {
             cacheDir.mkdir();
         }
-
+        HoverMenuManager.init();
         for (int i = 0; i <= 10; i++) {
             if (!new File(Signlink.getCacheDirectory() + "Shop/currency" + i + ".png").exists()) {
                 HttpDownloadUtility.downloadFile("http://atlantis317.com/server/currency" + i + ".png", Signlink.getCacheDirectory() + "Shop/");
@@ -18501,6 +18526,7 @@ public class Client extends GameRenderer {
             mapDotNPC = new Sprite(mediaArchive, "mapdots", 1);
             mapDotPlayer = new Sprite(mediaArchive, "mapdots", 2);
             mapDotFriend = new Sprite(mediaArchive, "mapdots", 3);
+            mapDotTeam = new Sprite(mediaArchive, "mapdots", 4);
             mapDotTeam = new Sprite(mediaArchive, "mapdots", 4);
             alertBack = new Sprite("alertback");
             alertBorder = new Sprite("alertborder");
