@@ -22,6 +22,7 @@ public class ItemDef4 {
 			case 23390:
 				itemDef.copyItem(10537);
 				itemDef.name = "Omega egg";
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 17815:
 				itemDef.name = "Raw fury shark";
@@ -7709,6 +7710,22 @@ public class ItemDef4 {
 				itemDef.rotationZ = 322;//768
 				itemDef.modelOffsetX = 78;
 				itemDef.modelOffsetY = -252;
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				break;
+			case 23391:
+				itemDef.name = "Empyrean maul";
+				itemDef.modelID = 19562;
+				itemDef.femaleEquip1 = 19563;
+				itemDef.maleEquip1 = 19563;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationX = 617;//189
+				itemDef.rotationY = 1626;//768
+				itemDef.rotationZ = 26;//768
+				itemDef.modelOffsetX = -1;
+				itemDef.modelOffsetY = 12;
 				itemDef.stackable = false;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";

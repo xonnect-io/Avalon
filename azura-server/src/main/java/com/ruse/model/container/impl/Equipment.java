@@ -89,6 +89,11 @@ public class Equipment extends ItemContainer {
 	public static final int LEG_SLOT = 7;
 
 	/**
+	 * The Charm slot.
+	 */
+	public static final int CHARM_SLOT = 8;
+
+	/**
 	 * The gloves slot.
 	 */
 	public static final int HANDS_SLOT = 9;
@@ -112,6 +117,7 @@ public class Equipment extends ItemContainer {
 	 * The Pet slot.
 	 */
 	public static final int PET_SLOT = 14;
+
 
 	public boolean wearingNexAmours() {
 		int head = getPlayer().getEquipment().getItems()[HEAD_SLOT].getId();

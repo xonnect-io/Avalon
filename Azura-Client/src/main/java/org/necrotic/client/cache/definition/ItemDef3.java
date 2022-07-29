@@ -169,14 +169,14 @@ public class ItemDef3 {
 			case 23384:
 				itemDef.copyItem(14885);
 				itemDef.name = "Kismet Medallion";
-				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.rdc2 = 10;
 				break;
 
 			case 23385:
 				itemDef.copyItem(14877);
 				itemDef.name = "Seraphic Statuette";
-				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.rdc2 = 17800;
 				break;
 
