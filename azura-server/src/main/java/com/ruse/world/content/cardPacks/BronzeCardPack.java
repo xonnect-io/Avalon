@@ -40,96 +40,96 @@ public class BronzeCardPack {
             new Box(1486, 1, 1, 33,false, "bronze"),
             new Box(20489, 1, 1, 33,false, "bronze"),
             new Box(20489, 1, 2, 33,false, "bronze"),
-            new Box(10946, 5, 10, 33,false, "bronze"),
-            new Box(10946, 5, 7, 33,false, "bronze"),
-            new Box(10946, 3, 5, 33,false, "bronze"),
-            new Box(15288, 10, 20, 33,false, "bronze"),
-            new Box(15288, 15, 20, 33,false, "bronze"),
-            new Box(15288, 5, 10, 33,false, "bronze"),
-            new Box(5022, 750_000, 1_000_000, 33,false, "bronze"),
-            new Box(5022, 500_000, 750_000, 33,false, "bronze"),
+            new Box(10946, 3, 10, 33,false, "bronze"),
+            new Box(10946, 3, 7, 33,false, "bronze"),
+            new Box(10946, 2, 5, 33,false, "bronze"),
+            new Box(15288, 5, 20, 33,false, "bronze"),
+            new Box(15288, 5, 20, 33,false, "bronze"),
+            new Box(15288, 2, 10, 33,false, "bronze"),
+            new Box(5022, 250_000, 1_000_000, 33,false, "bronze"),
+            new Box(5022, 300_000, 750_000, 33,false, "bronze"),
             new Box(6769, 1, 1, 33,false, "bronze"),
             new Box(10942, 1, 1, 33,false, "bronze"),
-            new Box(4278, 50, 200, 33,false, "bronze"),
-            new Box(4278, 50, 250, 33,false, "bronze"),
-            new Box(4278, 50, 300, 33,false, "bronze")
+            new Box(4278, 25, 200, 33,false, "bronze"),
+            new Box(4278, 25, 250, 33,false, "bronze"),
+            new Box(4278, 25, 300, 33,false, "bronze")
 
     );
 
     public static List<Box> silverRewards = Arrays.asList(
-            new Box(15359, 500_000, 750_000, 33,false, "silver"),
-            new Box(15359, 2, 5, 33,false, "silver"),
-            new Box(15358, 2, 3, 33,false, "silver"),
-            new Box(15358, 2, 5, 33,false, "silver"),
-            new Box(19115, 50, 200, 33,false, "silver"),
-            new Box(19114, 50, 100, 33,false, "silver"),
+            new Box(15359, 300_000, 750_000, 33,false, "silver"),
+            new Box(15359, 1, 5, 33,false, "silver"),
+            new Box(15358, 1, 3, 33,false, "silver"),
+            new Box(15358, 1, 5, 33,false, "silver"),
+            new Box(19115, 25, 200, 33,false, "silver"),
+            new Box(19114, 25, 100, 33,false, "silver"),
             new Box(19114, 25, 50, 33,false, "silver"),
-            new Box(23174, 2, 3, 33,false, "silver"),
-            new Box(15290, 50, 200, 33,false, "silver"),
-            new Box(15290, 50, 250, 33,false, "silver"),
-            new Box(15290, 50, 300, 33,false, "silver"),
-            new Box(15289, 20, 40, 33,false, "silver"),
-            new Box(15289, 25, 50, 33,false, "silver"),
-            new Box(15289, 25, 75, 33,false, "silver"),
+            new Box(23174, 1, 3, 33,false, "silver"),
+            new Box(15290, 25, 200, 33,false, "silver"),
+            new Box(15290, 25, 250, 33,false, "silver"),
+            new Box(15290, 25, 300, 33,false, "silver"),
+            new Box(15289, 10, 40, 33,false, "silver"),
+            new Box(15289, 10, 50, 33,false, "silver"),
+            new Box(15289, 10, 75, 33,false, "silver"),
             new Box(23046, 1, 1, 33,false, "silver"),
-            new Box(20488, 5, 15, 33,false, "silver"),
-            new Box(20488, 5, 10, 33,false, "silver"),
+            new Box(20488, 3, 15, 33,false, "silver"),
+            new Box(20488, 3, 10, 33,false, "silver"),
             new Box(3739, 1, 1, 33,false, "silver"),
             new Box(3738, 1, 1, 33,false, "silver"),
             new Box(3737, 1, 1, 33,false, "silver"),
             new Box(8087, 1, 1, 33,false, "silver"),
             new Box(8088, 1, 1, 33,false, "silver"),
             new Box(8089, 1, 1, 33,false, "silver"),
-            new Box(11137, 50, 200, 33,false, "silver"),
+            new Box(11137, 25, 200, 33,false, "silver"),
             new Box(19888, 1, 1, 33,false, "silver"),
             new Box(18823, 1, 1, 33,false, "silver"),
             new Box(23264, 5, 25, 33,false, "silver"),
             new Box(23264, 5, 50, 33,false, "silver"),
-            new Box(21220, 200, 1000, 33,false, "silver"),
-            new Box(21220, 200, 750, 33,false, "silver"),
-            new Box(23215, 50, 250, 33,false, "silver"),
-            new Box(23215, 50, 200, 33,false, "silver"),
-            new Box(22219, 25, 75, 33,false, "silver"),
-            new Box(22219, 25, 100, 33,false, "silver"),
-            new Box(21218, 15, 30, 33,false, "silver"),
-            new Box(21218, 15, 25, 33,false, "silver"),
-            new Box(22006, 15, 25, 33,false, "silver"),
-            new Box(22006, 15, 50, 33,false, "silver"),
-            new Box(20489, 3, 10, 33,false, "silver"),
-            new Box(10946, 10, 25, 33,false, "silver"),
-            new Box(10946, 10, 20, 33,false, "silver"),
-            new Box(15288, 50, 75, 33,false, "silver"),
-            new Box(15288, 20, 30, 33,false, "silver"),
-            new Box(15288, 35, 50, 33,false, "silver"),
-            new Box(5022, 1500000, 2500000, 33,false, "silver"),
-            new Box(5022, 1500000, 4000000, 33,false, "silver")
+            new Box(21220, 100, 1000, 33,false, "silver"),
+            new Box(21220, 100, 750, 33,false, "silver"),
+            new Box(23215, 25, 250, 33,false, "silver"),
+            new Box(23215, 25, 200, 33,false, "silver"),
+            new Box(22219, 15, 75, 33,false, "silver"),
+            new Box(22219, 15, 100, 33,false, "silver"),
+            new Box(21218, 10, 30, 33,false, "silver"),
+            new Box(21218, 10, 25, 33,false, "silver"),
+            new Box(22006, 10, 25, 33,false, "silver"),
+            new Box(22006, 10, 50, 33,false, "silver"),
+            new Box(20489, 2, 10, 33,false, "silver"),
+            new Box(10946, 5, 25, 33,false, "silver"),
+            new Box(10946, 5, 20, 33,false, "silver"),
+            new Box(15288, 10, 75, 33,false, "silver"),
+            new Box(15288, 10, 30, 33,false, "silver"),
+            new Box(15288, 10, 50, 33,false, "silver"),
+            new Box(5022, 500_000, 2_500_000, 33,false, "silver"),
+            new Box(5022, 500_000, 4_000_000, 33,false, "silver")
     );
 
     public static List<Box> goldRewards = Arrays.asList(
 
             new Box(6769, 1, 5, 33,false, "gold"),
-            new Box(4278, 750, 1000, 33,false, "gold"),
-            new Box(15359, 10, 20, 33,false, "gold"),
-            new Box(15358, 10, 20, 33,false, "gold"),
-            new Box(19114, 250, 500, 33,false, "gold"),
+            new Box(4278, 300, 1000, 33,false, "gold"),
+            new Box(15359, 5, 20, 33,false, "gold"),
+            new Box(15358, 5, 20, 33,false, "gold"),
+            new Box(19114, 125, 500, 33,false, "gold"),
             new Box(23174, 10, 20, 33,false, "gold"),
-            new Box(15290, 1000, 1500, 33,false, "gold"),
-            new Box(15289, 160, 250, 33,false, "gold"),
+            new Box(15290, 125, 1500, 33,false, "gold"),
+            new Box(15289, 50, 250, 33,false, "gold"),
             new Box(23048, 1, 1, 33,false, "gold"),
             new Box(23049, 1, 1, 33,false, "gold"),
-            new Box(20488, 50, 75, 33,false, "gold"),
-            new Box(11137, 500, 1000, 33,false, "gold")
+            new Box(20488, 25, 75, 33,false, "gold"),
+            new Box(11137, 300, 1000, 33,false, "gold")
 
     );
 
     public static List<Box> diamondRewards = Arrays.asList(
 
-            new Box(23264, 150, 250, 33,true, "diamond"),
-            new Box(21220, 4000, 5000, 33,true, "diamond"),
-            new Box(23215, 1000, 1250, 33,true, "diamond"),
-            new Box(22219, 400, 500, 33,true, "diamond"),
-            new Box(21218, 100, 150, 33,true, "diamond"),
-            new Box(22006, 125, 250, 33,true, "diamond"),
+            new Box(23264, 50, 250, 33,true, "diamond"),
+            new Box(21220, 2500, 5000, 33,true, "diamond"),
+            new Box(23215, 500, 1250, 33,true, "diamond"),
+            new Box(22219, 200, 500, 33,true, "diamond"),
+            new Box(21218, 50, 150, 33,true, "diamond"),
+            new Box(22006, 75, 250, 33,true, "diamond"),
             new Box(15003, 2, 4, 33,true, "diamond"),
             new Box(15002, 2, 2, 33,true, "diamond"),
             new Box(23002, 1, 1, 33,true, "diamond"),
@@ -142,7 +142,7 @@ public class BronzeCardPack {
             new Box(19810, 1, 1, 33,true, "diamond"),
             new Box(10942, 1, 1, 33,true, "diamond"),
             new Box(9084, 1, 1, 33,true, "diamond"),
-            new Box(10947, 15, 25, 33,true, "diamond"),
+            new Box(10947, 5, 25, 33,true, "diamond"),
             new Box(3737, 1, 1, 33,true, "diamond"),
             new Box(3738, 1, 1, 33,true, "diamond"),
             new Box(3739, 1, 1, 33,true, "diamond")
@@ -168,15 +168,15 @@ public class BronzeCardPack {
             new Box(4684, 1, 1, 33,true, "tanzanite"),
             new Box(4685, 1, 1, 33,true, "tanzanite"),
             new Box(4686, 1, 1, 33,true, "tanzanite"),
-            new Box(20489, 15, 25, 33,true, "tanzanite"),
-            new Box(10946, 50, 75, 33,true, "tanzanite"),
-            new Box(6769, 10, 12, 33,true, "tanzanite"),
-            new Box(19114, 1000, 1500, 33,true, "tanzanite"),
+            new Box(20489, 10, 25, 33,true, "tanzanite"),
+            new Box(10946, 30, 75, 33,true, "tanzanite"),
+            new Box(6769, 6, 12, 33,true, "tanzanite"),
+            new Box(19114, 750, 1500, 33,true, "tanzanite"),
             new Box(23174, 25, 30, 33,true, "tanzanite"),
-            new Box(20488, 100, 200, 33,true, "tanzanite"),
-            new Box(23264, 500, 750, 33,true, "tanzanite"),
-            new Box(23215, 1500, 2000, 33,true, "tanzanite"),
-            new Box(15003, 4, 6, 33,true, "tanzanite"),
+            new Box(20488, 75, 200, 33,true, "tanzanite"),
+            new Box(23264, 300, 750, 33,true, "tanzanite"),
+            new Box(23215, 750, 2000, 33,true, "tanzanite"),
+            new Box(15003, 3, 6, 33,true, "tanzanite"),
             new Box(15002, 2, 3, 33,true, "tanzanite")
 
     );
@@ -209,6 +209,10 @@ public class BronzeCardPack {
             player.sendMessage("You have no more cards left.");
             return;
         }
+        if (player.getInventory().getFreeSlots() < 6) {
+            player.sendMessage("You need to bank first!");
+            return;
+        }
         player.getPacketSender().sendItemOnInterface(23387, -1, 1);
         player.getPacketSender().sendInterface(23280); // Open the interface.
 
@@ -221,14 +225,14 @@ public class BronzeCardPack {
         List<Box> rewardstype;//default
         for (int i = 0; i < 6; i++) {
             int chance = Misc.random(100);
-            if (chance >= 23 && chance < 50) {
-                rewardstype = silverRewards;//27% chance
-            } else if (chance >= 8 && chance < 23) {//15% chance
-                rewardstype = goldRewards;
-            } else if (chance >= 1 && chance < 8) {//8% chance
-                rewardstype = diamondRewards;
-            } else if (chance == 0) {//1% chance
-                rewardstype = tanzaniteRewards;
+            if (chance >= 16 && chance < 36) {
+                rewardstype = silverRewards; //20% chance
+            } else if (chance >= 6 && chance < 16) {
+                rewardstype = goldRewards;//10% chance
+            } else if (chance >= 2 && chance < 6) {
+                rewardstype = diamondRewards;//5% chance
+            } else if (chance <= 1) {
+                rewardstype = tanzaniteRewards; //1% chance
             } else {
                 rewardstype = bronzeRewards;
             }

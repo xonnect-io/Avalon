@@ -1073,7 +1073,6 @@ public class TheOmegaDialogues {
                             player.getPacketSender().sendMessage("<img=832> Your rewarded 3 Quest points");
                             player.getPointsHandler().setQuestPoints(3, true);
                             player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your bank.");
-                            player.getPacketSender().sendMessage("<img=832> Your @red@Omega Egg @bla@will now provide a @red@15% Drop rate boost");
                             player.setQuestTwoStep7(true);
                         }
                         return new String[]{"" + line1};

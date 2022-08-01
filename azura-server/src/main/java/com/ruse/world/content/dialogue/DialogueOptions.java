@@ -24,6 +24,7 @@ import com.ruse.world.content.dialogue.impl.Tutorial;
 import com.ruse.world.content.dissolving.NephilimDisassemble;
 import com.ruse.world.content.dissolving.OwnerDisassemble;
 import com.ruse.world.content.groupironman.GroupManager;
+import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.quests.BloodRunsDeepDialogues;
 import com.ruse.world.content.quests.TheOmegaDialogues;
@@ -1387,6 +1388,23 @@ public class DialogueOptions {
                         }
                     } else {
                         DialogueManager.sendStatement(player, "You do not currently have a task.");
+                    }
+                    break;
+
+                case 66669://yes
+                    player.getPacketSender().sendInterfaceRemoval();
+                    if(player.isMembershipUnlocked()){
+                        player.sendMessage("You have already unlocked the monthly membership pass!");
+                        return;
+
+                    }
+                    if (player.getInventory().contains(23275)) {
+                        player.getInventory().delete(23275,1);
+                        player.setUnlockedMembership(true);
+                        player.sendMessage("You have unlocked the monthly membership pass!");
+                        player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
+                    } else {
+                        player.sendMessage("You do not have a monthly membership pass.");
                     }
                     break;
                 case 66668://yes

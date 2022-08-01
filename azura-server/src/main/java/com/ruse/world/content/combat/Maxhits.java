@@ -78,9 +78,15 @@ public class Maxhits {
             if (player.getInventory().contains(4442)) {
                 base *= 1.5;
             }
-            if (player.getInventory().contains(7539)) {
+            if (player.getEquipment().contains(7539)) {
                 base *= 1.5;
             }
+
+            int MeleeDamage = Misc.getRandom(1,100);
+            if (player.isMembershipUnlocked() == true && MeleeDamage > 90) {
+                base *= 2;
+            }
+
             if (player.getWarriorMaster() == true) {
                 base *= 1.2;
             }
@@ -324,8 +330,12 @@ public class Maxhits {
             if (player.getInventory().contains(4442)) {
                 maxHit *= 1.5;
             }
-            if (player.getInventory().contains(7539)) {
+            if (player.getEquipment().contains(7539)) {
                 maxHit *= 1.5;
+            }
+            int RangeDamage = Misc.getRandom(1, 100);
+            if (player.isMembershipUnlocked() == true && RangeDamage > 90) {
+                maxHit *= 2;
             }
             if (player.getArcherMaster() == true) {
                 maxHit *= 1.2;
@@ -544,8 +554,12 @@ public class Maxhits {
             if (player.getInventory().contains(4442)) {
                 maxHit *= 1.5;
             }
-            if (player.getInventory().contains(7539)) {
+            if (player.getEquipment().contains(7539)) {
                 maxHit *= 1.5;
+            }
+            int MagicDamage = Misc.getRandom(1, 100);
+            if (player.isMembershipUnlocked() == true && MagicDamage > 90) {
+                maxHit *= 2;
             }
             if (player.getMagicianMaster() == true) {
                 maxHit *= 1.2;

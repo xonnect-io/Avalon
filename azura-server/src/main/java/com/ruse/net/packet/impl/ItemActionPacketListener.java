@@ -292,6 +292,9 @@ public class ItemActionPacketListener implements PacketListener {
             case 12855:
                 player.getUpgradeInterface().openInterface(Upgradeables.UpgradeType.TIER_1);
                 break;
+            case 23392:
+                player.membershipInterfaceHandler.openBenefitTab();
+                break;
             case 23177:
                 player.getInventory().delete(23177, 1);
                 player.getInventory().add(23139, 1);

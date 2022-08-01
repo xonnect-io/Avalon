@@ -20,6 +20,32 @@ public class CustomDropUtils {
      */
     public static int drBonus(Player player, int npc) {
         int percentBoost = 0;
+
+                /*
+        Charms
+         */
+        if (player.getEquipment().contains(23390)) {
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(7677)) {
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(23384)) {
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23385)) {
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23394)) {
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(23395)) {
+            percentBoost += 50;
+        }
+        /*
+        End charms
+         */
+
         //Auras
         if (player.getEquipment().contains(23271)) { //Celestial Aura
             percentBoost += 60;
@@ -644,6 +670,10 @@ public class CustomDropUtils {
             }
         }
 
+        if (player.isMembershipUnlocked()) {
+            percentBoost *= 1.2;
+        }
+
         if (!player.isInsideRaids()) {
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
@@ -736,6 +766,7 @@ public class CustomDropUtils {
             }
         }
 
+
         if (player.getInventory().contains(23254)) {
             percentBoost *= 1.5;
         }
@@ -767,6 +798,10 @@ public class CustomDropUtils {
 
         if (GameSettings.DOUBLEDR == true) {
             percentBoost *= 2;
+        }
+
+        if (player.isMembershipUnlocked()) {
+            percentBoost *= 1.1;
         }
 
         if (player.getDoubleDRTimer() > 0) {

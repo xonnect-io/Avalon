@@ -164,6 +164,8 @@ public class PlayerSaving {
 			object.addProperty("seasonpass-tier", new Integer(player.getSeasonPass().getTier()));
 			object.addProperty("seasonpass-kc", new Integer(player.getkc500forseasonpass()));
 			object.addProperty("unlockedseasonpass", new Boolean(player.isunlockedseasonpass()));
+			object.addProperty("unlockedMembership", new Boolean(player.isMembershipUnlocked()));
+			object.addProperty("unlockedCosmetic", new Boolean(player.isCosmeticUnlocked()));
 			object.addProperty("mini-lucifer-killcount", player.getPointsHandler().getMiniLuciferkillcount());
 			object.addProperty("lucifer-killcount", player.getPointsHandler().getLuciferkillcount());
 			object.addProperty("celestial-member", new Boolean(player.getCelestial()));

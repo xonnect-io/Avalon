@@ -569,6 +569,12 @@ public class PlayerLoading {
             if (reader.has("unlockedseasonpass")) {
                 player.setunlockedseasonpass(reader.get("unlockedseasonpass").getAsBoolean());
             }
+            if (reader.has("unlockedMembership")) {
+                player.setUnlockedMembership(reader.get("unlockedMembership").getAsBoolean());
+            }
+            if (reader.has("unlockedCosmetic")) {
+                player.setUnlockedCosmetic(reader.get("unlockedCosmetic").getAsBoolean());
+            }
             if (reader.has("faceless-magician-killcount")) {
                 player.getPointsHandler().setFacelessMagicianKC(reader.get("faceless-magician-killcount").getAsInt(), false);
             }

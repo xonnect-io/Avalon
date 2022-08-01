@@ -2439,7 +2439,6 @@ public final class ItemDefinition {
 				itemDef.femaleEquip1 = itemDef21.femaleEquip1;
 				itemDef.name = "@red@X1.5 Damage Booster";
 				itemDef.rdc2 = 99252;
-
 				break;
 
 			case 14017:
@@ -4016,6 +4015,19 @@ public final class ItemDefinition {
 				itemDef.rdc3 = 73403;//666455
 				itemDef.actions = new String[]{ "Claim",null, null, null, "Drop"};
 				itemDef.name = "Gold Season Pass";
+				break;
+
+			case 23392:
+				itemDef.copyItem(5020);
+				itemDef.rdc3 = 43403;//666455
+				itemDef.actions = new String[]{ "Claim",null, null, null, "Drop"};
+				itemDef.name = "Monthly Benefits Pass";
+				break;
+			case 23393:
+				itemDef.copyItem(5020);
+				itemDef.rdc3 = 23403;//666455
+				itemDef.actions = new String[]{ "Claim",null, null, null, "Drop"};
+				itemDef.name = "Monthly Cosmetic Pass";
 				break;
 			case 22044:
 				itemDef.modelID = 65270;

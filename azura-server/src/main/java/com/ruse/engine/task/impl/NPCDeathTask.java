@@ -7,6 +7,7 @@ import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.motivote3.doMotivote;
+import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
@@ -392,7 +393,16 @@ public class NPCDeathTask extends Task {
                             killer.getAchievementTracker().progress(AchievementData.ONE_MILLION, 1);
                             HellraiserSystem.npckills++;
                         }
-
+                        int rngRoll = Misc.getRandom(1, 100);
+                        if (killer.isMembershipUnlocked() && rngRoll > 90) {
+                            killer.getPointsHandler().incrementNPCKILLCount(1);
+                            killer.getAchievementTracker().progress(AchievementData.REACH_10K_KILLS, 1);
+                            killer.getAchievementTracker().progress(AchievementData.REACH_100K_KILLS, 1);
+                            killer.getAchievementTracker().progress(AchievementData.REACH_500K_KILLS, 1);
+                            killer.getAchievementTracker().progress(AchievementData.ONE_MILLION, 1);
+                            HellraiserSystem.npckills++;
+                            killer.getPacketSender().sendMessage("You received x2 KC from your Membership status.");
+                        }
                         if (npc instanceof GlobalBoss) {
                             GlobalBossHandler.onDeath((GlobalBoss) npc);
                         }

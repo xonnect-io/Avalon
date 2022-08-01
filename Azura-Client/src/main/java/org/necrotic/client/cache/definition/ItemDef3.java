@@ -165,7 +165,7 @@ public class ItemDef3 {
 				itemDef.actions = new String[]{null, null, null, null, "Drop"};
 				itemDef.rdc2 = 35252;
 				break;
-				
+
 			case 23384:
 				itemDef.copyItem(14885);
 				itemDef.name = "Kismet Medallion";
@@ -180,13 +180,7 @@ public class ItemDef3 {
 				itemDef.rdc2 = 17800;
 				break;
 
-			case 23255:
-				itemDef.copyItem(18344);
-				itemDef.name = "X1.5 Damage Booster";
-				itemDef.actions = new String[]{null, null, null, null, "Drop"};
-				itemDef.rdc2 = 99252;
-				break;
-				
+
 			case 23005:
 				itemDef.copyItem(23004);
 				itemDef.name = "Cyan Easter Egg";

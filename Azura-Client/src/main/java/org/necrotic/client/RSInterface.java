@@ -102,7 +102,128 @@ public class RSInterface {
 		winnings.height = 111;
 		winnings.scrollMax = 300;
 	}
+	public static void membershipUnlock(TextDrawingArea[] TDA) {
+		RSInterface widget = addInterface(28002);
+		addSprite(28003, 1745);
+		addText(28004, "Avalon's Membership Program", TDA, 2, 0xFF981F, true, true);
+			addText(28006, "Resets: September, 1st, 2022", TDA, 1, 0xFF981F, false, true);
+		addButton(28007, 1658, 1659, "View Benefits tab");
+		addButton(28008, 1658, 1659, "View Cosmetic tab");
+		addText(28009, "Benefits", TDA, 1, 0xFF981F, false, true);
+		addText(28010, "Cosmetic", TDA, 1, 0xFF981F, false, true);
+		addText(28011, "To become a member you", TDA, 1, 0xFF981F, false, true);
+		addText(28012, "have to claim the pass.", TDA, 1, 0xFF981F, false, true);
+		addText(28013, "The pass can ONLY be", TDA, 1, 0xFF981F, false, true);
+		addText(28014, "obtained by donating. ", TDA, 1, 0xFF981F, false, true);
+		addText(28015, "The program resets ", TDA, 1, 0xFF981F, false, true);
+		addText(28016, "the 1st of each month. ", TDA, 1, 0xFF981F, false, true);
+		addText(28017, "If you are a member", TDA, 1, 0xFF981F, false, true);
+		addText(28018, "your status will reset.", TDA, 1, 0xFF981F, false, true);
+		addText(28019, "Member status:", TDA, 2, 0xFF981F, false, true);
+		addText(28020, "As a member you will", TDA, 1, 0xFF981F, false, true);
+		addText(28021, "have access to the", TDA, 1, 0xFF981F, false, true);
+		addText(28022, "::members zone and", TDA, 1, 0xFF981F, false, true);
+		addText(28023, "the perks on the right", TDA, 1, 0xFF981F, false, true);
 
+
+		addText(28024, "@whi@20% DR and 10% DDR boost", TDA, 1, 0xFF981F, false, true);
+		addText(28025, "@whi@15% Chance to deal X2 DMG", TDA, 1, 0xFF981F, false, true);
+		addText(28026, "@whi@10% Chance to double KC", TDA, 1, 0xFF981F, false, true);
+		addText(28027, "@whi@10% Chance to keep boxes", TDA, 1, 0xFF981F, false, true);
+		addButton(28028, 1660, 1661, "Unlock Membership");
+		addText(28029, "Claim pass", TDA, 2, 0xFF981F, false, true);
+		addText(28030, "Status: @red@F2P", TDA, 0, 0xFF981F, false, true);
+		addButton1(28005, 1016, 1017, "Close interface");
+		widget.totalChildren(28);
+
+		widget.child(0, 28003, 55, 10);
+		widget.child(1, 28004, 255, 14);
+		widget.child(2, 28005, 415, 14);
+		widget.child(3, 28006, 242, 35);
+		widget.child(4, 28007, 66, 35);
+		widget.child(5, 28008, 144, 35);
+		widget.child(6, 28009, 73, 36);
+		widget.child(7, 28010, 148, 36);
+		widget.child(8, 28011, 73, 69);
+		widget.child(9, 28012, 73, 83);
+		widget.child(10, 28013, 73, 97);
+		widget.child(11, 28014, 73, 111);
+		widget.child(12, 28015, 73, 125);
+		widget.child(13, 28016, 73, 139);
+		widget.child(14, 28017, 73, 153);
+		widget.child(15, 28018, 73, 167);
+		widget.child(16, 28019, 90, 185);
+		widget.child(17, 28020, 73, 202);
+		widget.child(18, 28021, 73, 216);
+		widget.child(19, 28022, 73, 230);
+		widget.child(20, 28023, 73, 245);
+		widget.child(21, 28024, 246, 184);
+		widget.child(22, 28025, 246, 205);
+		widget.child(23, 28026, 246, 226);
+		widget.child(24, 28027, 246, 247);
+		widget.child(25, 28028, 266, 276);
+		widget.child(26, 28029, 290, 281); //23
+		widget.child(27, 28030, 77, 283);
+		//
+
+	}
+	public static void cosmeticUnlock(TextDrawingArea[] TDA) {
+		RSInterface widget = addInterface(60600);
+		addSprite(60603, 1746);
+		addText(60604, "Avalon's Membership Program", TDA, 2, 0xFF981F, true, true);
+		addText(60606, "Resets: September, 1st, 2022", TDA, 1, 0xFF981F, false, true);
+		addButton(60607, 1658, 1659, "View Benefits tab");
+		addButton(60608, 1658, 1659, "View Cosmetic tab");
+		addText(60609, "Benefits", TDA, 1, 0xFF981F, false, true);
+		addText(60610, "Cosmetic", TDA, 1, 0xFF981F, false, true);
+		addText(60611, "To become a member you have to ", TDA, 1, 0xFF981F, false, true);
+		addText(60612, "claim the cosmetic pass.", TDA, 1, 0xFF981F, false, true);
+		addText(60613, "The cosmetic pass can ONLY be", TDA, 1, 0xFF981F, false, true);
+		addText(60614, "obtained by donating directly. ", TDA, 1, 0xFF981F, false, true);
+		addText(60615, "The program resets the 1st", TDA, 1, 0xFF981F, false, true);
+		addText(60616, "of each momth, If you are a ", TDA, 1, 0xFF981F, false, true);
+		addText(60617, "member your status will reset.", TDA, 1, 0xFF981F, false, true);
+		addText(60618, "Cosmetic status:", TDA, 2, 0xFF981F, false, true);
+		addText(60619, "Unlock The outfit to the left", TDA, 1, 0xFF981F, false, true);
+		addText(60620, "and the rewards below.", TDA, 1, 0xFF981F, false, true);
+		RSInterface.drawNpcOnInterface(60622, 1914, 320);
+		addToItemGroup(60623, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
+		addToItemGroup(60624, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
+		addToItemGroup(60625, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
+		addButton(60628, 1660, 1661, "Unlock Membership");
+		addText(60629, "Claim pass", TDA, 2, 0xFF981F, false, true);
+		addText(60630, "Status: @red@F2P", TDA, 0, 0xFF981F, false, true);
+		addButton1(60605, 1016, 1017, "Close interface");
+		widget.totalChildren(25);
+
+		widget.child(0, 60603, 55, 10);
+		widget.child(1, 60604, 255, 14);
+		widget.child(2, 60605, 415, 14);
+		widget.child(3, 60606, 242, 35);
+		widget.child(4, 60607, 66, 35);
+		widget.child(5, 60608, 144, 35);
+		widget.child(6, 60609, 73, 36);
+		widget.child(7, 60610, 148, 36);
+		widget.child(8, 60611, 233, 69);
+		widget.child(9, 60612, 233, 83);
+		widget.child(10, 60613, 233, 97);
+		widget.child(11, 60614, 233, 111);
+		widget.child(12, 60615, 233, 125);
+		widget.child(13, 60616, 233, 139);
+		widget.child(14, 60617, 233, 153);
+		widget.child(15, 60618, 253, 170);
+		widget.child(16, 60619, 233, 184);
+		widget.child(17, 60620, 233, 198);
+		widget.child(18, 60622, 80, 160);
+		widget.child(19, 60623, 255, 234);
+		widget.child(20, 60624, 313, 233);
+		widget.child(21, 60625, 370, 234);
+		widget.child(22, 60628, 266, 276);
+		widget.child(23, 60629, 290, 281); //23
+		widget.child(24, 60630, 77, 283);
+		//
+
+	}
 	public static void scratchCardInterface(TextDrawingArea[] font) {
 		final int STARTING_POINT = 25400;
 		RSInterface main = addInterface(STARTING_POINT);
@@ -6528,6 +6649,8 @@ public class RSInterface {
 			drItems(textDrawingAreas);
 			itemHoverBox(textDrawingAreas);
 			killTracker(textDrawingAreas);
+			membershipUnlock(textDrawingAreas);
+			cosmeticUnlock(textDrawingAreas);
 			scratchCardInterface(textDrawingAreas);
 			mysteryBoxSpinner(textDrawingAreas);
 			customServerPerks(textDrawingAreas);

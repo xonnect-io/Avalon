@@ -50,6 +50,7 @@ import com.ruse.world.content.instanceMananger.InstanceManager;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceInterfaceHandler;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.loyalty_streak.LoyaltyStreakManager;
+import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.PestControl;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
@@ -173,6 +174,51 @@ public class ButtonClickPacketListener implements PacketListener {
         new WellForGlobalBossesInterface(player).button(id);
 
         switch (id) {
+            case 28028:
+            if(player.isMembershipUnlocked()){
+                player.sendMessage("You have already claimed a membership this Month");
+                return;
+
+            }
+            if (player.getInventory().contains(23392)) {
+                player.getInventory().delete(23392,1);
+                player.getPacketSender().removeInterface();
+                player.setUnlockedMembership(true);
+                player.membershipInterfaceHandler.openBenefitTab();
+                player.sendMessage("You have claimed your Monthly Membership");
+                player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
+            } else {
+                player.sendMessage("You do not have a monthly membership pass.");
+            }
+            break;
+            case -4908:
+                if(player.isCosmeticUnlocked()){
+                    player.sendMessage("You have already claimed a cosmetic membership this Month");
+                    return;
+
+                }
+                if (player.getInventory().contains(23393)) {
+                    player.getInventory().delete(23393,1);
+                    player.getPacketSender().removeInterface();
+                    player.setUnlockedCosmetic(true);
+                    player.getInventory().add(18419,1);
+                    player.getInventory().add(18410,1);
+                    player.getInventory().add(18437,1);
+                    player.membershipInterfaceHandler.openCosmeticTab();
+                    player.sendMessage("You have claimed your Monthly Cosmetic Membership");
+                    player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
+                } else {
+                    player.sendMessage("You do not have a Monthly Cosmetic pass.");
+                }
+                break;
+
+            case -4928:
+            case 28008:
+                player.membershipInterfaceHandler.openCosmeticTab();
+                break;
+            case -4929:
+                player.membershipInterfaceHandler.openBenefitTab();
+                break;
             case 26070:
                 player.levelNotifications = !player.levelNotifications;
                 player.getPacketSender().sendMessage("Level-up notifications toggled: " + (player.levelNotifications ? "on" : "off") + ".");

@@ -574,11 +574,21 @@ public class CommandPacketListener implements PacketListener {
                     .sendMessage("Droprate  bonus is + @red@" + CustomDropUtils.drBonus(player, player.getSlayer().getSlayerTask().getNpcId())
                             + "@bla@%. / X2 Drop bonus is + <col=248f8f>" + CustomDropUtils.getDoubleDropChance(player, player.getSlayer().getSlayerTask().getNpcId())
                             + "@bla@%.");
+           if (player.isMembershipUnlocked())
+               player.getPacketSender()
+                   .sendMessage("You're getting a @red@20% DR Boost@bla@ with your Monthly Membership!");
+            if (player.isMembershipUnlocked())
+                player.getPacketSender()
+                        .sendMessage("You're getting a @red@10% DDR Boost@bla@ with your Monthly Membership!");
         }
 
         if (wholeCommand.equalsIgnoreCase("ddr")) {
             player.getPacketSender().sendMessage(
                     "Your Double  bonus is + @red@" + CustomDropUtils.getDoubleDropChance(player, player.getSlayer().getSlayerTask().getNpcId()) + "@bla@%.");
+
+            if (player.isMembershipUnlocked())
+                player.getPacketSender()
+                        .sendMessage("You're getting a @red@10% Overall DDR Boost@bla@ with your Monthly Membership!");
         }
         if (command[0].equalsIgnoreCase("time") || command[0].equalsIgnoreCase("date")
                 || command[0].equalsIgnoreCase("clock")) {
@@ -1062,12 +1072,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You've tried to kick someone in duel arena/wild. Logs written.");
             }
         }
-        if (command[0].equalsIgnoreCase("addspassxp")) {
-            int xptoadd = Integer.parseInt(command[1]);
 
-            player.getSeasonPass().addXp(xptoadd);
-            player.getSeasonPass().openInterface();
-        }
         if (command[0].equalsIgnoreCase("mute")) {
             try {
                 String[] time = command[1].split("h");

@@ -135,9 +135,6 @@ public class DesolaceFormulas {
                     if (plr.getEquipment().contains(15009)) {
                         bonus *= 2;
                     }
-                    if (plr.getInventory().contains(23255)) {
-                        bonus *= 1.5;
-                    }
                     if(plr.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
                         bonus += 1.75;
                     } else if (plr.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
@@ -555,9 +552,6 @@ public class DesolaceFormulas {
             if (plr.getEquipment().contains(15009)) {
                 bonus *= 2;
             }
-            if (plr.getInventory().contains(23255)) {
-                bonus *= 1.5;
-            }
             if(plr.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
                 bonus += 1.75;
             } else if(plr.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
@@ -777,9 +771,6 @@ public class DesolaceFormulas {
             }
             if (plr.getEquipment().contains(15009)) {
                 bonus *= 2;
-            }
-            if (plr.getInventory().contains(23255)) {
-                bonus *= 1.5;
             }
             if(plr.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || plr.getRights().equals(PlayerRights.YOUTUBER)) {
                 bonus += 1.75;

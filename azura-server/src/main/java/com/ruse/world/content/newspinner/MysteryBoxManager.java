@@ -5,6 +5,7 @@ import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.newspinner.boxes.MysteryBox;
 import com.ruse.world.content.newspinner.boxes.RegularMysteryBox;
@@ -141,6 +142,12 @@ public class MysteryBoxManager {
         player.getPacketSender().sendFrame126("Status: Rolling...", 47011);
 
         player.getInventory().delete(mysteryBox.getId(), 1);
+
+        int rngRoll = Misc.getRandom(1, 100);
+        if (player.isMembershipUnlocked() && rngRoll > 90) {
+            player.getInventory().add(mysteryBox.getId(), 1);
+            player.getPacketSender().sendMessage("You kept your " + mysteryBox.getName() +" with your Membership status.");
+        }
 
         int random = Helper.random(1, 100);
         ArrayList<Item> reward_list = random < 59 ? mysteryBox.getCommon_items() : random >= 59 && random <= 92 ? mysteryBox.getUncommon_items() : random > 90 && random <= 98 ? mysteryBox.getRare_items() : mysteryBox.getSuper_rare_items();

@@ -30,6 +30,7 @@ import com.ruse.world.content.combat.pvp.BountyHunter;
 import com.ruse.world.content.combat.range.DwarfMultiCannon;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.grandLottery.GrandLottery;
+import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.Barrows;
 import com.ruse.world.content.minigames.impl.VoidOfDarkness;
 import com.ruse.world.content.seasonpass.PassRewards;
@@ -223,6 +224,11 @@ public class PlayerHandler {
         if(PassRewards.didSeasonEnd()){
             player.getSeasonPass().reset();
         }
+
+        if(MembershipManager.didMonthEnd()){
+            player.getMembershipManager().reset();
+        }
+
         if(player.getLocation() != Locations.Location.PROGRESSION_ZONES) {
             player.getPacketSender().sendWalkableInterface(112000, false);
         }

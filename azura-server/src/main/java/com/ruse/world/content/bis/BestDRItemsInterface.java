@@ -84,7 +84,7 @@ public class BestDRItemsInterface {
                 slot = Equipment.PET_SLOT;
                 break;
             case 12://misc
-
+                slot = Equipment.CHARM_SLOT;
                 break;
         }
 

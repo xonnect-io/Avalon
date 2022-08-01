@@ -65,6 +65,8 @@ import com.ruse.world.content.grandexchange.GrandExchangeSlot;
 import com.ruse.world.content.groupironman.IronmanGroup;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceData;
+import com.ruse.world.content.membership.MembershipInterfaceHandler;
+import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.MagicGuild;
 import com.ruse.world.content.minigames.MinigameAttributes;
 import com.ruse.world.content.minigames.WarriorGuild;
@@ -429,6 +431,8 @@ public class Player extends Character {
     private final List<NPC> localNpcs = new LinkedList<NPC>();
     private final PlayerProcess process = new PlayerProcess(this);
     private boolean unlockedseasonpass;
+    private boolean unlockedMembership;
+    private boolean unlockedCosmetic;
     private final PlayerKillingAttributes playerKillingAttributes = new PlayerKillingAttributes(this);
     private final MinigameAttributes minigameAttributes = new MinigameAttributes();
     private final BankPinAttributes bankPinAttributes = new BankPinAttributes();
@@ -438,6 +442,7 @@ public class Player extends Character {
     private final PointsHandler pointsHandler = new PointsHandler(this);
     public final UnknownZone unknownZone = new UnknownZone(this);
     public final QuestInterfaceHandler questInterface = new QuestInterfaceHandler(this);
+    public final MembershipInterfaceHandler membershipInterfaceHandler = new MembershipInterfaceHandler(this);
     public final PrestigeInterfaceHandler prestigeInterface = new PrestigeInterfaceHandler(this);
     public final MagicGuild magicGuildUnlock = new MagicGuild(this);
     public final MagicGuild magicGuildT1 = new MagicGuild(this);
@@ -804,7 +809,7 @@ public class Player extends Character {
 
     private boolean chargingAttack;
     private final SeasonPass seasonPass = new SeasonPass(this);
-
+    private final MembershipManager membershipManager = new MembershipManager(this);
     public Player(PlayerSession playerIO) {
         super(GameSettings.HOME_CORDS.copy());
         this.session = playerIO;
@@ -2105,6 +2110,19 @@ End new teleport
     }
     public boolean isunlockedseasonpass() {
         return unlockedseasonpass;
+    }
+
+    public void setUnlockedMembership(boolean unlockedMembership) {
+        this.unlockedMembership = unlockedMembership;
+    }
+    public boolean isMembershipUnlocked() {
+        return unlockedMembership;
+    }
+    public void setUnlockedCosmetic(boolean unlockedCosmetic) {
+        this.unlockedCosmetic = unlockedCosmetic;
+    }
+    public boolean isCosmeticUnlocked() {
+        return unlockedCosmetic;
     }
     public int set500kcforseasonpass(int kc) {
         return this.kc500forseasonpass = kc;
@@ -4098,6 +4116,10 @@ End new teleport
 
     public SeasonPass getSeasonPass() {
         return seasonPass;
+    }
+
+    public MembershipManager getMembershipManager() {
+        return membershipManager;
     }
 
     public int lastInstanceNpc = -1;
