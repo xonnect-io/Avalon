@@ -307,8 +307,8 @@ public class Shop extends ItemContainer {
             }
 
             if (shop.getId() == 104) {
-                currencyicon = 0;
-                player.getPacketSender().sendString(35613 + i, (finalValue/ 2) + "," + currencyicon);
+                currencyicon = 1;
+                player.getPacketSender().sendString(35613 + i, (finalValue) + "," + currencyicon);
             }
             else if (shop.getId() == 119) {
                 currencyicon = 0;
@@ -961,6 +961,8 @@ public class Shop extends ItemContainer {
                             player.getPointsHandler().setLoyaltyPoints(-value, true);
                         } else if (id == BARROWS_STORE) {
                             player.getPointsHandler().setBarrowsPoints(-value, true);
+                        } else if (id == SLAYER_SHOP) {
+                            player.getPointsHandler().setSlayerPoints(-value, true);
                         } else if (id == MEMBERS_STORE_I || id == MEMBERS_STORE_II || id == DONATOR_STORE_1
                                 || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4) {
                             player.getPointsHandler().setDonatorPoints(-value, true);
@@ -1882,7 +1884,7 @@ public class Shop extends ItemContainer {
                     case 2023:
                         return new Object[]{100, "PVM tickets"};
                     case 11314:
-                        return new Object[]{5000000, "PVM tickets"};
+                        return new Object[]{2500000, "PVM tickets"};
                     case 18350:
                     case 18352:
                     case 18354:
@@ -1890,8 +1892,6 @@ public class Shop extends ItemContainer {
                     case 18358:
                     case 18360:
                     case 11235:
-                    case 4151:
-                    case 4152:
 
                     case 15289:
                         return new Object[]{22000, "PVM tickets"};
@@ -1906,6 +1906,8 @@ public class Shop extends ItemContainer {
                     case 11236:
                     case 15486:
                     case 15487:
+                    case 4151:
+                    case 4152:
                         return new Object[]{1500, "PVM tickets"};
                     case 15290:
                         return new Object[]{5000, "PVM tickets"};

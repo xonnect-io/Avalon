@@ -359,6 +359,46 @@ public class ItemDef3 {
 				itemDef.femaleEquip1 = 19519;
 				break;
 
+			case 23396:
+				itemDef.copyItem(4882);
+				itemDef.name = "Cosmetic helm";
+				itemDef.modelID = 19567;
+				itemDef.maleEquip1 = 19567;
+				itemDef.femaleEquip1 = 19567;
+				break;
+			case 23397:
+				itemDef.copyItem(4894);
+				itemDef.name = "Cosmetic platebody";
+				itemDef.modelID = 19568;
+				itemDef.maleEquip1 = 19568;
+				itemDef.femaleEquip1 = 19568;
+				break;
+
+			case 23398:
+				itemDef.copyItem(4900);
+				itemDef.name = "Cosmetic platelegs";
+				itemDef.modelID = 19569;
+				itemDef.maleEquip1 = 19569;
+				itemDef.femaleEquip1 = 19569;
+				break;
+
+			case 23399:
+				itemDef.copyItem(20456);
+				itemDef.name = "Cosmetic boots";
+				itemDef.modelID = 19570;
+				itemDef.maleEquip1 = 19570;
+				itemDef.femaleEquip1 = 19570;
+				break;
+
+			case 23400:
+				itemDef.copyItem(20460);
+				itemDef.name = "Cosmetic gloves";
+				itemDef.modelID = 19571;
+				itemDef.maleEquip1 = 19571;
+				itemDef.femaleEquip1 = 19571;
+				break;
+
+
 
 			case 23259:
 				itemDef.copyItem(4882);

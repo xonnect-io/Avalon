@@ -210,7 +210,7 @@ public class NPCDrops {
 
     public static void dropPetFragment(Player player, Position pos, NPC npc) {
             int reward = 19000;
-            int rand = Misc.getRandom(60);
+            int rand = Misc.getRandom(40);
             if (rand == 1) {
                     player.getPacketSender().sendMessage("X1 Pet Fragment has been sent to your inventory.");
                 player.getInventory().add(reward, 1);

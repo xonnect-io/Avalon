@@ -1070,10 +1070,8 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 568:
                         ShopManager.getShops().get(207).open(player);
                     case 925:
-                       if ( player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                           DialogueManager.start(player, SlayerDialogues.chooseDifficulty(player));
-                       } else
-                           DialogueManager.start(player, SlayerDialogues.findAssignment(player));
+                        player.setDialogueActionId(9906);
+                        DialogueManager.start(player, 9906);
                         break;
 
                     case 845:

@@ -187,13 +187,13 @@ public class Slayer {
 
     @SuppressWarnings("incomplete-switch")
     public void givePoints(SlayerMaster master) {
-        int pointsReceived = Misc.getRandom(3-6);
+        int pointsReceived = Misc.getRandom(5) + 3 + player.getSlayer().getTaskStreak();
         switch (master) {
             case MEDIUM_SLAYER:
-                pointsReceived = Misc.getRandom(6-10);
+                pointsReceived = Misc.getRandom(10) + 6 + player.getSlayer().getTaskStreak();
                 break;
             case HARD_SLAYER:
-                pointsReceived = Misc.getRandom(10-20);
+                pointsReceived = Misc.getRandom(15) + 10 + player.getSlayer().getTaskStreak();
                 break;
 
         }

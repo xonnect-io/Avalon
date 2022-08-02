@@ -13,31 +13,30 @@ import mysql.impl.Store;
 
 public enum PlayerRights {
 
-	PLAYER(-1, null, 1, 1),
-	MODERATOR(-1, "<col=20B2AA><shad=0>", 1, 1),
-	ADMINISTRATOR(-1, "@yel@<shad=0>", 1, 1),
-	ONYX_DONATOR(-1, "@bla@<shad=0>", 1, 1),
-	OWNER(-1, "<col=0><shad=B40404>", 1, 1),
-	HELPER(-1, "<col=0><shad=FFFFFF>", 1, 1),
-	SAPPHIRE_DONATOR(60, "@blu@<shad=0>", 1, 1),
-	EMERALD_DONATOR(45, "@gre@<shad=0>", 1, 1),
-	RUBY_DONATOR(30, "@red@<shad=0>", 1, 1),
-	DIAMOND_DONATOR(15, "@whi@<shad=0>", 1, 1),
-	YOUTUBER(-1, "<col=CD201F><shad=ffffff>", 1, 1),
-	CRAP(-1, "<col=0><shad=FFFFFF>", 1, 1),
-	SUPPORT(-1, "<col=FFFFFF><shad=0>", 1, 1),
-	ZENYTE_DONATOR(-1, "@bla@<shad=0>", 1, 1),
-	TANZANITE_DONATOR(10, "@bla@<shad=0>", 1, 1),
-	NULL_(-1, "@or2@<shad=0>", 1, 1),
-	NULL_1(-1, "@or2@<shad=0>", 1, 1),
-	NULL_2(-1, "@or2@<shad=0>", 1, 1),
-	COMMUNITY_MANAGER(5, "@or2@<shad=0>", 1, 1);
+	PLAYER(-1, null, 1 ),
+	MODERATOR(-1, "<col=20B2AA><shad=0>", 1 ),
+	ADMINISTRATOR(-1, "@yel@<shad=0>", 1 ),
+	ONYX_DONATOR(-1, "@bla@<shad=0>", 1 ),
+	OWNER(-1, "<col=0><shad=B40404>", 1),
+	HELPER(-1, "<col=0><shad=FFFFFF>", 1),
+	SAPPHIRE_DONATOR(60, "@blu@<shad=0>", 1),
+	EMERALD_DONATOR(45, "@gre@<shad=0>", 1),
+	RUBY_DONATOR(30, "@red@<shad=0>", 1),
+	DIAMOND_DONATOR(15, "@whi@<shad=0>", 1),
+	YOUTUBER(-1, "<col=CD201F><shad=ffffff>", 1),
+	CRAP(-1, "<col=0><shad=FFFFFF>", 1),
+	SUPPORT(-1, "<col=FFFFFF><shad=0>", 1),
+	ZENYTE_DONATOR(-1, "@bla@<shad=0>", 1),
+	TANZANITE_DONATOR(10, "@bla@<shad=0>", 1),
+	NULL_(-1, "@or2@<shad=0>", 1),
+	NULL_1(-1, "@or2@<shad=0>", 1),
+	NULL_2(-1, "@or2@<shad=0>", 1),
+	COMMUNITY_MANAGER(5, "@or2@<shad=0>", 1);
 
-	PlayerRights(int yellDelaySeconds, String yellHexColorPrefix, double loyaltyPointsGainModifier,
+	PlayerRights(int yellDelaySeconds, String yellHexColorPrefix,
 			double experienceGainModifier) {
 		this.yellDelay = yellDelaySeconds;
 		this.yellHexColorPrefix = yellHexColorPrefix;
-		this.loyaltyPointsGainModifier = loyaltyPointsGainModifier;
 		this.experienceGainModifier = experienceGainModifier;
 	}
 
@@ -69,7 +68,6 @@ public enum PlayerRights {
 	 */
 	private int yellDelay;
 	private String yellHexColorPrefix;
-	private double loyaltyPointsGainModifier;
 	private double experienceGainModifier;
 
 	public int getYellDelay() {
@@ -84,12 +82,7 @@ public enum PlayerRights {
 		return yellHexColorPrefix;
 	}
 
-	/**
-	 * The amount of loyalty points the rank gain per 4 seconds
-	 */
-	public double getLoyaltyPointsGainModifier() {
-		return loyaltyPointsGainModifier;
-	}
+
 
 	public double getExperienceGainModifier() {
 		return experienceGainModifier;

@@ -152,7 +152,7 @@ public class Consumables {
         ANCHOVIES(new Item(319), 10), SHRIMPS(new Item(315), 30), SARDINE(new Item(325), 40), COD(new Item(339), 70),
         TROUT(new Item(333), 70), PIKE(new Item(351), 80), MACKEREL(new Item(355), 60), SALMON(new Item(329), 90),
         TUNA(new Item(361), 100), LOBSTER(new Item(379), 120), BASS(new Item(365), 130), SWORDFISH(new Item(373), 140),
-        MEAT_PIZZA(new Item(2293), 145), MONKFISH(new Item(7946), 160), SHARK(new Item(385), 200),
+        MEAT_PIZZA(new Item(-13), 145), MONKFISH(new Item(7946), 160), SHARK(new Item(385), 200),
         SEA_TURTLE(new Item(397), 210), MANTA_RAY(new Item(391), 220), CAVEFISH(new Item(15266), 230),
         ROCKTAIL(new Item(15272), 230), FURYSHARK(new Item(17817), 500),
         CANDY(new Item(13557), 200),
@@ -324,7 +324,7 @@ public class Consumables {
                      */
 
                 case 7218:
-                    drinkStatPotion(player, itemId, 229, slot, Skill.AGILITY.ordinal(), false);
+                    drinkStatPotion(player, itemId, -1, slot, Skill.AGILITY.ordinal(), false);
                     player.heal(110);
                     player.getInventory().add(7220, 1);
                     break;
@@ -342,7 +342,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 125, slot, 0, false); // attack pot2
                     break;
                 case 125:
-                    drinkStatPotion(player, itemId, 229, slot, 0, false); // attack pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 0, false); // attack pot 1
                     break;
                 /*
                  * Defence potions
@@ -357,7 +357,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 137, slot, 1, false); // Defence pot 2
                     break;
                 case 137:
-                    drinkStatPotion(player, itemId, 229, slot, 1, false); // Defence pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 1, false); // Defence pot 1
                     break;
                 /*
                  * Strength potions
@@ -372,7 +372,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 119, slot, 2, false); // Strength pot 2
                     break;
                 case 119:
-                    drinkStatPotion(player, itemId, 229, slot, 2, false); // Strength pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 2, false); // Strength pot 1
                     break;
 
                 /*
@@ -433,7 +433,7 @@ public class Consumables {
                     break;
                 case 179:
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     PoisonImmunityTask.makeImmune(player, 86);
                     player.getPacketSender().sendMessage("You're now immune to any kind of poison for another 86 seconds.");
@@ -500,7 +500,7 @@ public class Consumables {
                     break;
                 case 131:
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     for (int i = 0; i < 24; i++) {
                         if (i == 3 || i == 5)
@@ -546,7 +546,7 @@ public class Consumables {
                     break;
                 case 2458: // Antifire pot 1
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     FireImmunityTask.makeImmune(player, 360, 50);
                     player.getPacketSender()
@@ -581,7 +581,7 @@ public class Consumables {
                     break;
                 case 15307: // Super Antifire pot 1
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     FireImmunityTask.makeImmune(player, 360, 100);
                     player.getPacketSender()
@@ -620,7 +620,7 @@ public class Consumables {
                 case 3022:
                 case 3014: // Energy potion 1
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     player.setRunEnergy(player.getRunEnergy() + (itemId == 3014 ? 15 : 40));
                     if (player.getRunEnergy() > 100)
@@ -642,8 +642,8 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 9745, slot, 2, false);
                     break;
                 case 9745:
-                    drinkStatPotion(player, itemId, 229, slot, 0, false);
-                    drinkStatPotion(player, itemId, 229, slot, 2, false);
+                    drinkStatPotion(player, itemId, -1, slot, 0, false);
+                    drinkStatPotion(player, itemId, -1, slot, 2, false);
                     break;
                 /*
                  * Agility potions
@@ -658,7 +658,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 3038, slot, 16, false); // Agility pot 2
                     break;
                 case 3038:
-                    drinkStatPotion(player, itemId, 229, slot, 16, false); // Agility pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 16, false); // Agility pot 1
                     break;
                 /*
                  * Prayer potions
@@ -701,7 +701,7 @@ public class Consumables {
                     break;
                 case 143: // Prayer pot 1
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     player.getSkillManager().setCurrentLevel(Skill.PRAYER,
                             (int) (player.getSkillManager().getCurrentLevel(Skill.PRAYER)
@@ -752,7 +752,6 @@ public class Consumables {
                     break;
                 case 12146: // Summoning pot 1
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
                     player.getInventory().refreshItems();
                     player.getSkillManager().setCurrentLevel(Skill.SUMMONING,
                             (int) (player.getSkillManager().getCurrentLevel(Skill.SUMMONING)
@@ -775,7 +774,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 14844, slot, 12, false); // Crafting pot 2
                     break;
                 case 14844:
-                    drinkStatPotion(player, itemId, 229, slot, 12, false); // Crafting pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 12, false); // Crafting pot 1
                     break;
                 /*
                  * Super Attack potions
@@ -790,7 +789,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 149, slot, 0, true); // Super Attack pot 2
                     break;
                 case 149:
-                    drinkStatPotion(player, itemId, 229, slot, 0, true); // Super Attack pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 0, true); // Super Attack pot 1
                     break;
                 /*
                  * Super Anti poison potions
@@ -821,7 +820,7 @@ public class Consumables {
                     break;
                 case 185: // Super anti poison pot 1
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     PoisonImmunityTask.makeImmune(player, 346);
                     player.getPacketSender()
@@ -840,7 +839,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 155, slot, 10, false); // Fishing pot 2
                     break;
                 case 155:
-                    drinkStatPotion(player, itemId, 229, slot, 10, false); // Fishing pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 10, false); // Fishing pot 1
                     break;
                 /*
                  * Hunter potions
@@ -855,7 +854,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 10004, slot, 22, false); // Hunter pot 2
                     break;
                 case 10004:
-                    drinkStatPotion(player, itemId, 229, slot, 22, false); // Hunter pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 22, false); // Hunter pot 1
                     break;
                 /*
                  * Super Strength potions
@@ -870,7 +869,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 161, slot, 2, true); // Super Strength pot 2
                     break;
                 case 161:
-                    drinkStatPotion(player, itemId, 229, slot, 2, true); // Super Strength pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 2, true); // Super Strength pot 1
                     break;
                 /*
                  * Fletching potions
@@ -885,7 +884,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 14852, slot, 9, false); // Fletching pot 2
                     break;
                 case 14852:
-                    drinkStatPotion(player, itemId, 229, slot, 9, false); // Fletching pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 9, false); // Fletching pot 1
                     break;
                 /*
                  * Super Restore potions
@@ -952,7 +951,7 @@ public class Consumables {
                     break;
                 case 3030:
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     for (int i = 0; i < 24; i++) {
                         if (i == 3)
@@ -983,7 +982,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 167, slot, 1, true);
                     break;
                 case 167:
-                    drinkStatPotion(player, itemId, 229, slot, 1, true);
+                    drinkStatPotion(player, itemId, -1, slot, 1, true);
                     break;
                 /*
                  * Antipoison+ potions
@@ -1014,7 +1013,7 @@ public class Consumables {
                     break;
                 case 5949: // Antipoison+ pot 1
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     PoisonImmunityTask.makeImmune(player, 518);
                     player.getPacketSender()
@@ -1033,7 +1032,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 173, slot, 4, false); // Ranging pot 2
                     break;
                 case 173:
-                    drinkStatPotion(player, itemId, 229, slot, 4, false); // Ranging pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 4, false); // Ranging pot 1
                     break;
                 /*
                  * Magic potions
@@ -1048,7 +1047,7 @@ public class Consumables {
                     drinkStatPotion(player, itemId, 3046, slot, 6, false); // Magic pot 2
                     break;
                 case 3046:
-                    drinkStatPotion(player, itemId, 229, slot, 6, false); // Magic pot 1
+                    drinkStatPotion(player, itemId, -1, slot, 6, false); // Magic pot 1
                     break;
                 /*
                  * Zamorak brews
@@ -1176,7 +1175,7 @@ public class Consumables {
                         return;
                     }
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     int[] toDecrease111 = {1, 3};
                     for (int tD : toDecrease111) {
@@ -1307,7 +1306,7 @@ public class Consumables {
                     break;
                 case 6691:
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     decrease = new int[]{0, 2, 4, 6};
                     for (int tD : decrease) {
@@ -1387,7 +1386,7 @@ public class Consumables {
                  * sendMessage("This potion can only be used once every "+GameSettings.
                  * Spec_Restore_Cooldown/1000/60+" minutes."); return; }
                  * player.performAnimation(new Animation(829));
-                 * player.getInventory().getItems()[slot] = new Item(229);
+                 * player.getInventory().getItems()[slot] = new Item(-1);
                  * player.getInventory().refreshItems();
                  * player.setSpecialPercentage(player.getSpecialPercentage() + 25);
                  * if(player.getSpecialPercentage() > 10.00) player.setSpecialPercentage(100);
@@ -1536,7 +1535,7 @@ public class Consumables {
                         return;
                     }
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     player.getSkillManager().setCurrentLevel(Skill.forId(0),
                             player.getSkillManager().getCurrentLevel(Skill.forId(0)) + getExtremePotionBoost(player, 0));
@@ -1583,7 +1582,7 @@ public class Consumables {
                         return;
                     }
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     player.getSkillManager().setCurrentLevel(Skill.forId(2),
                             player.getSkillManager().getCurrentLevel(Skill.forId(2)) + getExtremePotionBoost(player, 2));
@@ -1630,7 +1629,7 @@ public class Consumables {
                         return;
                     }
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     player.getSkillManager().setCurrentLevel(Skill.forId(1),
                             player.getSkillManager().getCurrentLevel(Skill.forId(1)) + getExtremePotionBoost(player, 1));
@@ -1677,7 +1676,7 @@ public class Consumables {
                         return;
                     }
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     player.getSkillManager().setCurrentLevel(Skill.forId(6),
                             player.getSkillManager().getCurrentLevel(Skill.forId(6)) + getExtremePotionBoost(player, 6));
@@ -1724,7 +1723,7 @@ public class Consumables {
                         return;
                     }
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     player.getSkillManager().setCurrentLevel(Skill.forId(4),
                             player.getSkillManager().getCurrentLevel(Skill.forId(4)) + getExtremePotionBoost(player, 4));
@@ -1771,7 +1770,7 @@ public class Consumables {
                         return;
                     }
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     player.setPrayerRenewalPotionTimer(600);
                     TaskManager.submit(new PrayerRenewalPotionTask(player));
@@ -1807,7 +1806,7 @@ public class Consumables {
                     break;
                 case 15303:
                     player.performAnimation(new Animation(829));
-                    player.getInventory().getItems()[slot] = new Item(229);
+                    player.getInventory().getItems()[slot] = new Item(-1);
                     player.getInventory().refreshItems();
                     player.setSpecialPercentage(100);
                     CombatSpecial.updateBar(player);

@@ -68,10 +68,11 @@ public class ExperienceLamps {
 						case "xp":
 							LampData lamp = (LampData) player.getUsableObject()[2];
 							int exp = getExperienceReward(player, lamp, skill);
+							howmuchxp = exp;
+							theskill = skill;
+							thelamp = lamp;
 							if (player.getInventory().getAmount(lamp.getItemId()) > 1){
-								howmuchxp = exp;
-								theskill = skill;
-								thelamp = lamp;
+
 								DialogueManager.start(player, new Dialogue() {
 
 									@Override

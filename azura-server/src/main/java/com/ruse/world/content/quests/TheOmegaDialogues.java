@@ -1,5 +1,6 @@
 package com.ruse.world.content.quests;
 
+import com.ruse.model.Item;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dialogue.DialogueExpression;
 import com.ruse.world.content.dialogue.DialogueType;
@@ -1066,13 +1067,25 @@ public class TheOmegaDialogues {
                     public String[] dialogue() {
                         String line1 = "Excellent work " + player.getUsername() + ", take this as a reward.";
                         if (player.getQuestOneStep7() == false) {
-                            player.getBank(0).add(21218,10);
-                            player.getBank(0).add(19115,10);
-                            player.getBank(0).add(23390,1);
+
+                            Item lamp = new Item(21218, 10);
+                            Item lamp2 = new Item(19115, 10);
+                            Item egg = new Item(23390, 1);
+                            if (!player.getGameMode().isUltIronman()) {
+                                player.getBank(0).add(lamp);
+                                player.getBank(0).add(lamp2);
+                                player.getBank(0).add(egg);
+                                player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your bank.");
+                            }
+                            else if (player.getGameMode().isUltIronman()) {
+                                player.getInventory().add(lamp);
+                                player.getInventory().add(lamp2);
+                                player.getInventory().add(egg);
+                                player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your inventory.");
+                            }
                             player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@The Omega");
                             player.getPacketSender().sendMessage("<img=832> Your rewarded 3 Quest points");
                             player.getPointsHandler().setQuestPoints(3, true);
-                            player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your bank.");
                             player.setQuestTwoStep7(true);
                         }
                         return new String[]{"" + line1};

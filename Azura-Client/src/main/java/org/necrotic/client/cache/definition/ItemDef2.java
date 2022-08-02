@@ -2299,6 +2299,7 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.rdc2 = 9;
 				break;
+
 			case 673:
 				itemDef.name = "Grime boots";
 				def = ItemDefinition.get(14605);
@@ -2319,6 +2320,7 @@ public class ItemDef2 {
 				itemDef.name = itemDef.name.replace("class 3", "Grime");
 				itemDef.name = itemDef.name.replace("(b)", "");
 				itemDef.rdc2 = 9;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 677:

@@ -15,7 +15,8 @@ public class PassRewards {
 	/**
 	 *  change this every month
 	 */
-	public static Calendar seasonEnd = new GregorianCalendar(World.getCalendar().getInstance().get(Calendar.YEAR), Calendar.AUGUST, 1, 1, 0);
+	public static Calendar seasonEnd = new GregorianCalendar(World.getCalendar().getInstance().get(Calendar.YEAR), Calendar.AUGUST, 30, 23, 30);
+	public static Calendar seasonStart = new GregorianCalendar(World.getCalendar().getInstance().get(Calendar.YEAR), Calendar.SEPTEMBER, 1, 0, 30);
 
 	public static final String INFO_FILE_PATH = "./data/saves/seasonpass/info.txt";
 	public static final String REWARDS_FILE_PATH = "./data/saves/seasonpass/goldRewards.txt";
@@ -35,12 +36,9 @@ public class PassRewards {
 		long diffTime = endTime - startTime;
 		long diffDays = diffTime / (1000 * 60 * 60 * 24);
 		DateFormat dateFormat = DateFormat.getDateInstance();
-//		System.out.println("The difference between "+
-//				dateFormat.format(startDate)+" and "+
-//				dateFormat.format(endDate)+" is "+
-//				diffDays+" days.");
 		return dateFormat.format(endDate);
 	}
+
 	public static long differenceindays() {
 		Calendar start = Calendar.getInstance();
 		Calendar end = seasonEnd;
@@ -64,7 +62,11 @@ public class PassRewards {
 		loadDefaultRewards();
 		loadMemberRewards();
 	}
+	public static boolean isSeasonInProgress() {
+		Calendar calendar = World.getCalendar().getInstance();
 
+		return calendar.after(seasonStart)  && calendar.before(seasonEnd);
+	}
 	public static void loadInformation() {
 		try {
 			BufferedReader r = new BufferedReader(new FileReader(INFO_FILE_PATH));

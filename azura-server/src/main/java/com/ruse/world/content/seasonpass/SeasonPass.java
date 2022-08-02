@@ -1,6 +1,7 @@
 package com.ruse.world.content.seasonpass;
 
 
+import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.content.dialogue.Dialogue;
@@ -135,19 +136,31 @@ public class SeasonPass {
 	public void giveRewards() {
 		String itemName = "";
 
+
 		if(player.isunlockedseasonpass()) {
-			//	player.getInventory().add(PassRewards.memberRewards[getTier()].getId(),		PassRewards.memberRewards[getTier()].getAmount());
-			player.getBank(0).add(PassRewards.memberRewards[getTier() - 1 ].getId(),		PassRewards.memberRewards[getTier() - 1].getAmount());
-			player.getBank(0).add(PassRewards.defaultRewards[getTier() - 1].getId(),		PassRewards.defaultRewards[getTier() - 1].getAmount());
+			if (player.getGameMode().isUltIronman()) {
+				player.getInventory().add(new Item(PassRewards.memberRewards[getTier() - 1].getId(), PassRewards.memberRewards[getTier() - 1].getAmount()));
+				player.getInventory().add(new Item(PassRewards.defaultRewards[getTier() - 1].getId(), PassRewards.defaultRewards[getTier() - 1].getAmount()));
+
+			} else
+			player.getBank(0).add(PassRewards.memberRewards[getTier() - 1 ].getId(),PassRewards.memberRewards[getTier() - 1].getAmount());
+			player.getBank(0).add(PassRewards.defaultRewards[getTier() - 1].getId(),PassRewards.defaultRewards[getTier() - 1].getAmount());
 
 			itemName =  Misc.formatText(ItemDefinition.forId(PassRewards.memberRewards[getTier()- 1].getId()).getName())+" and "+Misc.formatText(ItemDefinition.forId(PassRewards.defaultRewards[getTier() - 1].getId()).getName());
 		} else {
 			itemName =  Misc.formatText(ItemDefinition.forId(PassRewards.defaultRewards[getTier() - 1].getId()).getName());
 
-			player.getBank(0).add(PassRewards.defaultRewards[getTier() - 1].getId(),		PassRewards.defaultRewards[getTier() - 1].getAmount());
+			if (player.getGameMode().isUltIronman()) {
+				player.getInventory().add(new Item(PassRewards.defaultRewards[getTier() - 1].getId(), PassRewards.defaultRewards[getTier() - 1].getAmount()));
+			} else
+				player.getBank(0).add(PassRewards.defaultRewards[getTier() - 1].getId(),		PassRewards.defaultRewards[getTier() - 1].getAmount());
 
 		}
 		player.sendMessage("Congratulations you have advanced to tier "+getTier()+"!");
+		if (player.getGameMode().isUltIronman()) {
+			player.sendMessage("The tier reward " + itemName + " was sent to your inventory.");
+			return;
+		}
 		player.sendMessage("The tier reward "+itemName+" was sent to your bank.");
 	}
 	/**

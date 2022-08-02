@@ -521,6 +521,10 @@ public class GameRenderer extends Applet implements Runnable, MouseListener, Mou
 				sendCommand("home");
 				keyEvent.consume();
 				return;
+			} else if (keyCode == KeyEvent.VK_U) {
+				sendCommand("upgrade");
+				keyEvent.consume();
+				return;
 			} else if (keyCode == KeyEvent.VK_Z) {
 				sendCommand("zones");
 				keyEvent.consume();

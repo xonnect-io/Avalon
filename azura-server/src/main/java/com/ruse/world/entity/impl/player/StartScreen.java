@@ -144,7 +144,7 @@ public class StartScreen {
                         new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
                          new Item(20054, 1),  new Item(23090, 1),
                         new Item(10499, 1), new Item(459, 1),new Item(6199, 4),  new Item(290, 2),
-                        new Item(15031, 1), new Item(6570, 1)
+                        new Item(15031, 1), new Item(6570, 1), new Item(995, 50_000_000)
                 },
                 "In this game mode",
                 "Play the game without any restrictions.",
@@ -157,7 +157,7 @@ public class StartScreen {
                         new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
                         new Item(20054, 1),  new Item(23090, 1),
                         new Item(10499, 1),new Item(459, 1),new Item(6199, 4),new Item(23377, 1),
-                        new Item(23379, 1)
+                        new Item(23379, 1), new Item(995, 50_000_000)
                 },
                 "Ironman mode is a very intense gamemode",
                 "You are not allowed to trade or stake",
@@ -171,7 +171,7 @@ public class StartScreen {
                          new Item(17817, 400) ,new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
                           new Item(20054, 1),  new Item(23090, 1),
                         new Item(10499, 1), new Item(459, 1),new Item(6199, 4),new Item(23378, 1),
-                        new Item(23380, 1)
+                        new Item(23380, 1), new Item(995, 50_000_000)
                 },
                 "Ultimate ironman is harder than ironman",
                 "@red@Same as ironman mode, but you can't banks",
@@ -184,7 +184,7 @@ public class StartScreen {
                         new Item(17817, 400) ,new Item(18365, 1), new Item(16995, 1), new Item(16879, 1)
                         ,new Item(20054, 1),  new Item(23090, 1),
                         new Item(10499, 1), new Item(459, 1),new Item(6199, 4), new Item(630, 1),
-                        new Item(18740, 1)
+                        new Item(18740, 1), new Item(995, 50_000_000)
                 },
                 "Group Ironman mode is a very fun gamemode",
                 "Same rules as ironman mode",
@@ -199,7 +199,7 @@ public class StartScreen {
                         new Item(17817, 400) , new Item(18365, 1), new Item(16995, 1), new Item(16879, 1),
                         new Item(13281, 1),  new Item(20054, 1),  new Item(23090, 1),
                         new Item(10499, 1), new Item(459, 1),new Item(6199, 4),  new Item(290, 2),
-                        new Item(15031, 1), new Item(6570, 1)
+                        new Item(15031, 1), new Item(6570, 1), new Item(995, 50_000_000)
                 },
                 "This is probably the hardest game mode",
                 "@red@The EXP rate in this mode is the hardest",

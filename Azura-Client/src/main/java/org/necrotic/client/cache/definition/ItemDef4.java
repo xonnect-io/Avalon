@@ -44,6 +44,12 @@ public class ItemDef4 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
+			case 23401:
+				itemDef.copyItem(14808);
+				itemDef.name = "Scroll of Insurance";
+				itemDef.rdc2 = 3262;
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				break;
 			case 23395:
 				itemDef.copyItem(10537);
 				itemDef.modelZoom = 617;
@@ -3329,6 +3335,7 @@ public class ItemDef4 {
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetY = 0;
 				itemDef.rdc = 6421272;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 18365:
 				itemDef.copyItem(4710);
@@ -3343,6 +3350,7 @@ public class ItemDef4 {
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetY = 0;
 				itemDef.rdc = 6421272;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 16879:
 				itemDef.copyItem(4710);
@@ -3357,6 +3365,7 @@ public class ItemDef4 {
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetY = 0;
 				itemDef.rdc = 6421272;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 18766:
 				itemDef.name = "Archie gloves";

@@ -1,10 +1,10 @@
 package com.ruse.world.content;
 
-import java.util.Map;
-
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.Map;
 
 public class UIMBank {
 
@@ -23,8 +23,8 @@ public class UIMBank {
 
 	public void deposit(int id, int amount) {
 		if(player.getInterfaceId() == 48700) {
-		if (player.getUimBankItems().size() >= 70) {
-			player.sendMessage("@red@Your Ultimate ironman bank can only hold 70 items.");
+		if (player.getUimBankItems().size() >= 28) {
+			player.sendMessage("@red@Your Ultimate ironman bank can only hold 28 items.");
 			return;
 		}
 

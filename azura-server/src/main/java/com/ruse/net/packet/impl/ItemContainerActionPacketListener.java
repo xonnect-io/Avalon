@@ -107,7 +107,9 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				if (player.getGambling().inGamble()) {
 					player.getGambling().gambleItem(id, 1, slot);
 				}
-				player.getUimBank().deposit(id, 1);
+				//player.getUimBank().deposit(id, 1);
+				player.getPacketSender().sendMessage("This collection box is only for withdrawing items!");
+
 				break;
 			case -8365:
 				if (player.getGambling().inGamble()) {
@@ -763,7 +765,8 @@ public class ItemContainerActionPacketListener implements PacketListener {
 					player.getGambling().gambleItem(id, player.getInventory().getAmount(id), slot);
 				}
 				// System.out.println("CALLED HERE for amount: " + player.getInventory().getAmount(id));
-				player.getUimBank().deposit(id, player.getInventory().getAmount(id));
+				player.getPacketSender().sendMessage("This collection box is only for withdrawing items!");
+				//player.getUimBank().deposit(id, player.getInventory().getAmount(id));
 				break;
 
 			case -8365:

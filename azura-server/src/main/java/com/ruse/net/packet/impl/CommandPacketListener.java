@@ -65,6 +65,7 @@ import com.ruse.world.content.skill.impl.fletching.BoltData;
 import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
+import com.ruse.world.content.upgrading.Upgradeables;
 import com.ruse.world.entity.impl.GroundItemManager;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.npc.NPCMovementCoordinator;
@@ -237,14 +238,21 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            if (player.getGameMode().isIronman()) {
-                player.getPacketSender().sendMessage("Only Ironmen can access this boss");
-                return;
+            if (!player.getRights().isStaff()) {
+                if (!player.getGameMode().isIronman()) {
+                    player.getPacketSender().sendMessage("Only Ironmen can access this boss");
+                    return;
+                }
             }
             Position[] locations = new Position[]{new Position(3808, 2842, 0)};
             Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
             TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Ironman boss!");
+        }
+
+        if (command[0].equalsIgnoreCase("upgrade") || command[0].equalsIgnoreCase("upgrades")
+                || command[0].equalsIgnoreCase("upgradeables")) {
+            player.getUpgradeInterface().openInterface(Upgradeables.UpgradeType.TIER_1);
         }
 
         if (command[0].equalsIgnoreCase("neph") || command[0].equalsIgnoreCase("nephilim")) {
@@ -950,6 +958,12 @@ public class CommandPacketListener implements PacketListener {
                             .sendMessage("Failed to move player to your coords. Are you or them in a minigame?")
                             .sendMessage("Also will fail if they're in duel/wild.");
             }
+        }
+        if (command[0].equalsIgnoreCase("addspassxp")) {
+            int xptoadd = Integer.parseInt(command[1]);
+
+            player.getSeasonPass().addXp(xptoadd);
+            player.getSeasonPass().openInterface();
         }
         if (command[0].equalsIgnoreCase("staffzone")) {
             if (command.length > 1 && command[1].equalsIgnoreCase("all") && player.getRights().OwnerDeveloperOnly()) {
@@ -1856,7 +1870,7 @@ public class CommandPacketListener implements PacketListener {
                 if (players != null) {
                     players.getInventory().add(id, amount);
                     players.sendMessage(
-                            "You have received: " + ItemDefinition.forId(id).getName() + " By Adam for being beasts.");
+                            "You have received: " + ItemDefinition.forId(id).getName() + " for being beasts.");
                 }
             }
         }

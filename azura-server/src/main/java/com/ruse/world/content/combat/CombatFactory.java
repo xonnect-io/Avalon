@@ -1541,6 +1541,15 @@ public final class CombatFactory {
                 }
             }
 
+            else if (npc.getId() == 587) { // Ironman
+                if (!player.getGameMode().isIronman()) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("Only Ironmen can access this boss");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+
             else if (npc.getId() == 3830) { // Guardian spawn
                 if (GuardianSpawnSystem.highTierCount < 100) {
                     ((Player) entity).getPacketSender()
@@ -2352,7 +2361,7 @@ public final class CombatFactory {
                     }
                 });
             }
-                if (CurseHandler.isActivated(p, CurseHandler.SOUL_SPLIT) && damage > 0) {
+                if (CurseHandler.isActivated(p, CurseHandler.SOUL_SPLIT) || ((Player) attacker).getEquipment().contains(1486) || ((Player) attacker).getEquipment().contains(12608) && damage > 0  ) {
                 final int form = damage / 4;
                 new Projectile(attacker, target, 2263, 44, 3, 43, 31, 0).sendProjectile();
                 TaskManager.submit(new Task(1, p, false) {

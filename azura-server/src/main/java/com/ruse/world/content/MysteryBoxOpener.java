@@ -3,6 +3,7 @@ package com.ruse.world.content;
 import com.ruse.model.GameMode;
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
@@ -76,7 +77,16 @@ public class MysteryBoxOpener {
 		else if (chance >= 0) {
 			reward = common[RandomUtility.exclusiveRandom(0, common.length)];
 		}
-
+		int rngRoll = Misc.getRandom(1, 100);
+		if (player.isMembershipUnlocked() && rngRoll > 90) {
+			player.getInventory().add(boxId, 1);
+			player.getPacketSender().sendMessage("You kept your " + ItemDefinition.forId(boxId).getName() +" with your Membership status.");
+		}
+		if (player.getInventory().contains(23401)) {
+			player.getInventory().delete(23401, 1);
+			player.getInventory().add(boxId, 1);
+			player.getPacketSender().sendMessage("You kept your " + ItemDefinition.forId(boxId).getName() +" and an Insurance scroll is consumed.");
+		}
 		player.getInventory().delete(boxId, 1);
 		player.getInventory().add(reward, 1);
 		BOXES.log(player, boxId, new Item(reward));
@@ -111,6 +121,7 @@ public class MysteryBoxOpener {
 
 			BOXES.log(player, boxId, new Item(reward));
 		}
+
 		player.getInventory().delete(boxId, amount);
 		boolean bank = amount <= player.getInventory().getFreeSlots();
 		rewards.forEach((key, value) -> {

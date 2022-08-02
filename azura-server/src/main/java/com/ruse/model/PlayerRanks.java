@@ -104,10 +104,6 @@ public class PlayerRanks {
 			return experienceGainModifier;
 		}
 
-		public double getLoyaltyPointsGainModifier() {
-			return loyaltyPointsGainModifier;
-		}
-
 		public int getYellDelay() {
 			return yellDelay;
 		}

@@ -167,7 +167,19 @@ public class Locations {
 				player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getGuardianBonus() + "% @blu@Drop rate bonus your next Guardian kill");
 			}
 		},
+		VOTE_BOSS(new int[] { 3410, 3440}, new int[] { 4110, 4140},
+				true, true, true, false, false, true) {
 
+		},
+		ZENYTE_BOSS(new int[] { 2588, 2598}, new int[] { 2664, 2678},
+				true, true, true, false, false, true) {
+
+		},
+
+		SUMMER(new int[] { 2895, 2922}, new int[] { 4690, 4720},
+				true, true, true, false, false, true) {
+
+		},
 		LUCIFER(new int[] { 2301, 2367}, new int[] { 3970, 4024},
 				false, true, true, false, false, true) {},
 		UNKNOWN_MINIGAME(new int[] { 1720, 1790 }, new int[] { 5120, 5220 }, true, true, true, false, false, false){

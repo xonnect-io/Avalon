@@ -185,10 +185,12 @@ public class Store implements Runnable {
                 PlayerLogs.logPlayerDonations(player.getUsername(), "Donated: $" + amount
                         + ", Item: " + ItemDefinition.forId(id).getName() + ", Amount: " + item_number + ", ID: " + id + ", item_number: " + item_number);
 
+                player.incrementAmountDonated((int) amount);
                 player.setAmountDonatedToday((int)amount);
                 player.getInventory().add(23174, (int) amount);
                 player.sendMessage("Thanks for donating!");
                 player.sendMessage("You are rewarded " + (int) amount + " High-Tier Tickets!");
+                player.sendMessage("Your total amount donated was increased by " + (int) amount + ". your new total is: " + player.getAmountDonated());
                 if (amount > 250) {
                     player.getInventory().add(23174, (int) amount * 2);
                     player.sendMessage("You are rewarded x2 High-Tier tickets for donating more than $250");

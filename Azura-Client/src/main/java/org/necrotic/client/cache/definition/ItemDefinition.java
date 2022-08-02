@@ -972,7 +972,7 @@ public final class ItemDefinition {
 				break;
 			case 13740:
 			case 13742:
-				itemDef.actions = new String[]{null, "Wear", "Toggle", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "Dissolve", null, "Drop"};
 				break;
 			case 13738:
 			case 13744:

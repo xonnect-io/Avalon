@@ -148,7 +148,11 @@ public class MysteryBoxManager {
             player.getInventory().add(mysteryBox.getId(), 1);
             player.getPacketSender().sendMessage("You kept your " + mysteryBox.getName() +" with your Membership status.");
         }
-
+        if (player.getInventory().contains(23401)) {
+            player.getInventory().delete(23401, 1);
+            player.getInventory().add(mysteryBox.getId(), 1);
+            player.getPacketSender().sendMessage("You kept your " + mysteryBox.getName() +" and an Insurance scroll is consumed.");
+        }
         int random = Helper.random(1, 100);
         ArrayList<Item> reward_list = random < 59 ? mysteryBox.getCommon_items() : random >= 59 && random <= 92 ? mysteryBox.getUncommon_items() : random > 90 && random <= 98 ? mysteryBox.getRare_items() : mysteryBox.getSuper_rare_items();
         Item reward = Helper.random(reward_list);

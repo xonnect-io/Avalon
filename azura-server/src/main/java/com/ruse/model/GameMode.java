@@ -11,6 +11,9 @@ public enum GameMode {
 		return this.equals(IRONMAN) || this.equals(ULTIMATE_IRONMAN) || this.equals(GROUP_IRONMAN);
 	}
 
+	public boolean isUltIronman() {
+		return this.equals(ULTIMATE_IRONMAN);
+	}
 	public static void set(Player player, GameMode newMode, boolean death) {
 		if (UltimateIronmanHandler.hasItemsStored(player)) {
 			player.getPacketSender().sendMessage("You must claim your stored items at Dungeoneering first.");

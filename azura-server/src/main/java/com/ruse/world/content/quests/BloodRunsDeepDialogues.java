@@ -839,14 +839,25 @@ public class BloodRunsDeepDialogues {
                             @Override
                             public String[] dialogue() {
                                 player.getInventory().delete(17510, 1);
-                                player.getBank(0).add(21218,10);
-                                player.getBank(0).add(19116,5);
 
-                                player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@Blood Runs Deep");
-                                player.getPacketSender().sendMessage("<img=832> Your rewarded 2 Quest points");
-                                player.getPointsHandler().setQuestPoints(2, true);
-                                player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your bank.");
-                                player.getPacketSender().sendMessage("<img=832> Your @red@Holy Amulet @bla@will now give a @red@25% DR Boost");
+                                if (!player.getGameMode().isUltIronman()) {
+                                    player.getBank(0).add(21218, 10);
+                                    player.getBank(0).add(19116, 5);
+                                    player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@Blood Runs Deep");
+                                    player.getPacketSender().sendMessage("<img=832> Your rewarded 2 Quest points");
+                                    player.getPointsHandler().setQuestPoints(2, true);
+                                    player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your bank.");
+                                    player.getPacketSender().sendMessage("<img=832> Your @red@Holy Amulet @bla@will now give a @red@25% DR Boost");
+                                }
+                                if (player.getGameMode().isUltIronman()) {
+                                    player.getInventory().add(21218, 10);
+                                    player.getInventory().add(19116, 5);
+                                    player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@Blood Runs Deep");
+                                    player.getPacketSender().sendMessage("<img=832> Your rewarded 2 Quest points");
+                                    player.getPointsHandler().setQuestPoints(2, true);
+                                    player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your inventory .");
+                                    player.getPacketSender().sendMessage("<img=832> Your @red@Holy Amulet @bla@will now give a @red@25% DR Boost");
+                                }
                                 player.setQuestOneStep7(true);
                                 if (player.getQuestOneStep7() == false) {
                                     if (player.getAmountDonated() < 10 && player.getRights() != PlayerRights.OWNER) {

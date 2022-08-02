@@ -45,7 +45,7 @@ public class DropItemPacketListener implements PacketListener {
 
 		player.getPacketSender().sendInterfaceRemoval();
 		player.getCombatBuilder().cooldown(false);
-		if (player.getLocation() != null) {
+		if (player.getLocation() != Locations.Location.HOME_BANK) {
 			player.getPacketSender().sendMessage("You cannot drop items at the moment.");
 			return;
 		}

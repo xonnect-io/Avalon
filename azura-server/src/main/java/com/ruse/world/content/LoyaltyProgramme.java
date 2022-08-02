@@ -325,29 +325,4 @@ public class LoyaltyProgramme {
 		player.getUpdateFlag().flag(Flag.APPEARANCE);
 	}
 
-	public static void incrementPoints(Player player) {
-		double pts = player.getRights().getLoyaltyPointsGainModifier();
-		if (WellOfGoodwill.bonusLoyaltyPoints(player)) {
-			pts *= 1.5;
-		}
-		player.getPointsHandler().incrementLoyaltyPoints(pts);
-		player.getAchievementAttributes().incrementTotalLoyaltyPointsEarned(pts);
-
-		int totalPoints = (int) player.getPointsHandler().getLoyaltyPoints();
-		if (totalPoints >= 100000) {
-			unlock(player, LoyaltyTitles.LOYALIST);
-		}
-
-		if (player.getInterfaceId() == 43000) {
-			player.getPacketSender().sendString(43120, "Your Loyalty Points: " + totalPoints);
-		}
-		//player.getPacketSender().sendMessage("You have earned @red@" + pts + " @bla@Loyalty Points.");
-		// player.getPacketSender().sendString(39172, "@or2@Loyalty Points:
-		// @yel@"+totalPoints); HANDLED by PlayerPanel
-
-		if (player.getAchievementAttributes().getTotalLoyaltyPointsEarned() >= 500000) {
-			unlock(player, LoyaltyTitles.VETERAN);
-		}
-		PlayerPanel.refreshPanel(player);
-	}
 }

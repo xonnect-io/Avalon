@@ -7,6 +7,7 @@ import com.ruse.model.Locations.Location;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Prayerbook;
 import com.ruse.model.Skill;
+import com.ruse.model.container.impl.Equipment;
 import com.ruse.util.NameUtils;
 import com.ruse.world.content.BonusManager;
 import com.ruse.world.content.Sounds;
@@ -209,6 +210,8 @@ public class PrayerHandler {
 	public static void activatePrayer(Player player, final int prayerId) {
 		if (player.getPrayerbook() == Prayerbook.CURSES)
 			return;
+
+
 		if (player.getPrayerActive()[prayerId])
 			return;
 		if (Dueling.checkRule(player, DuelRule.NO_PRAYER)) {
@@ -484,6 +487,8 @@ public class PrayerHandler {
 					return;
 				}
 
+
+
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) <= 0) {
 					for (int i = 0; i < player.getPrayerActive().length; i++) {
 						if (player.getPrayerActive()[i])
@@ -499,6 +504,12 @@ public class PrayerHandler {
 				//	this.stop();
 				//	return;
 			//	}
+				if(	player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 7995|| player.getEquipment().get(Equipment.AURA_SLOT).getId() == 12608
+						||player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 22109|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20591
+						|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20400 || player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23270) {
+					drainAmount = 0;
+				}
+
 				int total = (int) (player.getSkillManager().getCurrentLevel(Skill.PRAYER) - drainAmount);
 				player.getSkillManager().setCurrentLevel(Skill.PRAYER, total, true);
 			}

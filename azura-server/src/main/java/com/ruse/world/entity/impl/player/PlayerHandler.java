@@ -221,10 +221,12 @@ public class PlayerHandler {
         // Others
         Lottery.onLogin(player);
         Locations.login(player);
-        if(PassRewards.didSeasonEnd()){
+//        if(PassRewards.didSeasonEnd()){
+//            player.getSeasonPass().reset();
+//        }
+        if(!PassRewards.isSeasonInProgress()){
             player.getSeasonPass().reset();
         }
-
         if(MembershipManager.didMonthEnd()){
             player.getMembershipManager().reset();
         }

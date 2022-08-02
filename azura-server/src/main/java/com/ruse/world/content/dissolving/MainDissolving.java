@@ -390,6 +390,7 @@ public class MainDissolving {
 		STAFF_OF_FESTIVE(14924, new Item[]{new Item(UPG_TOKEN, 500)}, 5200, anim),
 		NATURE_BOW(14919, new Item[]{new Item(UPG_TOKEN, 500)}, 5200, anim),
 		DEMNIC_SWORD(14915, new Item[]{new Item(UPG_TOKEN, 500)}, 5200, anim),
+		DIVINE(13740, new Item[]{new Item(UPG_TOKEN, 2000)}, 14200, anim),
 		SIGIL2(13748, new Item[]{new Item(UPG_TOKEN, 1200)}, 11200, anim),
 		SIGIL3(13750, new Item[]{new Item(UPG_TOKEN, 1200)}, 11200, anim),
 		SIGIL4(13752, new Item[]{new Item(UPG_TOKEN, 1200)}, 11200, anim),

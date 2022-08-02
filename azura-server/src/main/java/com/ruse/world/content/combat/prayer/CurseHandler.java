@@ -1,12 +1,10 @@
 package com.ruse.world.content.combat.prayer;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
+import com.ruse.model.container.impl.Equipment;
 import com.ruse.util.Misc;
 import com.ruse.util.NameUtils;
 import com.ruse.world.content.BonusManager;
@@ -19,6 +17,9 @@ import com.ruse.world.content.minigames.impl.Dueling.DuelRule;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Store;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CurseHandler {
 
@@ -311,9 +312,14 @@ public class CurseHandler {
 					return;
 				}
 				double drain = getDrain(player);
-				/*if(player.getAmountDonated() >=500) {
+				if(player.getAmountDonated() >=500) {
 					drain = 0;
-				}*/
+				}
+				if(	player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 7995|| player.getEquipment().get(Equipment.AURA_SLOT).getId() == 12608
+						||player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 22109|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20591
+						|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20400 || player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23270) {
+					drain = 0;
+				}
 				//if (drain <= 0 && !player.checkItem(Equipment.CAPE_SLOT, 19748)) {
 				//	stop();
 				//	return;
