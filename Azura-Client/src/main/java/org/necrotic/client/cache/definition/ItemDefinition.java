@@ -1877,7 +1877,7 @@ public final class ItemDefinition {
 				itemDef.actions[2] = "Open-All";
 				break;
 			case 6570:
-				itemDef.actions[2] = "Upgrade";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 			case 4155:
 				itemDef.name = "Slayer gem";

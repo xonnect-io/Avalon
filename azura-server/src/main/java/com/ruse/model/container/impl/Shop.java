@@ -185,7 +185,7 @@ public class Shop extends ItemContainer {
                 || shopId == TRAIN_RANGED
                 || shopId == TRAIN_MAGIC
                 || shopId == STARDUST_EXCHANGE_STORE || shopId == SHILLINGS
-                || shopId == VOTE_STORE || shopId == RECIPE_FOR_DISASTER_STORE || shopId == EVENT_SHOP
+                || shopId == VOTE_STORE || shopId == RECIPE_FOR_DISASTER_STORE || shopId == EVENT_SHOP || shopId == GLOBAL_BOSS
                 || shopId == BOSS_SHOP || shopId == ENERGY_FRAGMENT_STORE || shopId == AGILITY_TICKET_STORE
                 || shopId == PYRAMID_OUTBREAK_SHOP || shopId == TOKKUL_EXCHANGE_STORE || shopId == BOSS_SLAYER_SHOP || shopId == PVM || shopId == AFK
                 || shopId == PRESTIGE_STORE || shopId == SLAYER_SHOP || shopId == LOYALTY_POINT_SHOP || shopId == BARROWS_STORE
@@ -389,7 +389,7 @@ public class Shop extends ItemContainer {
                 return;
             }
         } else {
-            if (id == EASTER_STORE_2) {
+            if (id == EASTER_STORE_2 || id == GLOBAL_BOSS) {
                 player.getPacketSender().sendMessage("You cannot sell items to this store.");
                 return;
             }

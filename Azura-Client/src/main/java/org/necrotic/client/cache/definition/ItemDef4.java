@@ -6756,7 +6756,7 @@ public class ItemDef4 {
 			case 15442:
 			case 15443:
 			case 15444:
-
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 			case 13953:
 			case 13954:
