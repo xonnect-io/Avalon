@@ -28562,21 +28562,21 @@
         "count": [
           1
         ],
-        "chance": 50
+        "chance": 35
       },
       {
         "id": 989,
         "count": [
           7
         ],
-        "chance": 50
+        "chance": 40
       },
       {
         "id": 6199,
         "count": [
           7
         ],
-        "chance": 50
+        "chance": 40
       },
       {
         "id": 5022,
@@ -28591,6 +28591,13 @@
           6
         ],
         "chance": 2000
+      },
+      {
+        "id": 23402,
+        "count": [
+          1
+        ],
+        "chance": 1
       }
     ]
   },

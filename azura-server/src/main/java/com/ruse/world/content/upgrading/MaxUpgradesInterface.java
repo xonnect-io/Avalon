@@ -17,19 +17,19 @@ public class MaxUpgradesInterface {
 
     enum CustomCombinerData {
     	//ROW 1
-    	ELITE_MELEE_WEAPON(100,new Item(8087,-1), new Item(8410, 1), new Item(12855, 3000000), new Item(8087, 1),new Item(4151, 1), new Item(18686, 1),new Item(22077, 1), new Item(20549, 1), new Item(22084, 1), new Item(18750, 1)),
+    	ELITE_MELEE_WEAPON(100,new Item(8087,-1),new Item(8410, 1), new Item(12855, 3000000), new Item(8087, 1),new Item(4151, 1), new Item(18686, 1),new Item(22077, 1), new Item(20549, 1), new Item(22084, 1), new Item(18750, 1)),
         ELITE_MELEE_HELM(100,new Item(11320,-1), new Item(8828, 1), new Item(12855, 2000000), new Item(11320, 1),new Item(8810, 1), new Item(11140, 1),new Item(5022, 40000), new Item(6927, 1)),
         ELITE_MELEE_BODY(100,new Item(11321,-1), new Item(8829, 1), new Item(12855, 2000000), new Item(11321, 1), new Item(19749, 1), new Item(8335, 1),new Item(5022, 40000), new Item(6928, 1)),
         ELITE_MELEE_LEGS(100,new Item(11322,-1), new Item(8833, 1), new Item(12855, 2000000), new Item(11322, 1), new Item(22080, 1), new Item(19114, 2),new Item(5022, 40000), new Item(6929, 1)),
         EXCECUTION_HELMET(100,new Item(8828,-1), new Item(4684, 1), new Item(12855, 3000000), new Item(8828, 1), new Item(15642, 1),new Item(15645, 1), new Item(10947, 1)),
-        SUPREME_GLOVES(100,new Item(5071,-1),new Item(18883, 1),new Item(5071, 1),new Item(14063, 1), new Item(10947, 1), new Item(12855, 4_000_000), new Item(5022, 1_000_000)),
+        SUPREME_GLOVES(100,new Item(8087,-1),  new Item(18883, 1),new Item(5071, 1),new Item(14063, 1), new Item(10947, 1), new Item(12855, 4_000_000), new Item(5022, 1_000_000)),
         //ROW 2
         ELITE_RANGED_WEAPON(100,new Item(8088,-1), new Item(8411, 1), new Item(12855, 3000000), new Item(8088, 1),  new Item(11235, 1), new Item(18799, 1),new Item(19136, 1), new Item(20173, 1), new Item(22083, 1), new Item(18636, 1)),
         ELITE_RANGED_HELM(100,new Item(11340,-1), new Item(15642, 1), new Item(12855, 2000000), new Item(11340, 1), new Item(8811, 1), new Item(8334, 1),new Item(5022, 40000), new Item(6930, 1)),
         ELITE_RANGED_BODY(100,new Item(11341,-1), new Item(15643, 1), new Item(12855, 2000000), new Item(11341, 1), new Item(11195, 1), new Item(16137, 1),new Item(5022, 40000), new Item(6931, 1)),
         ELITE_RANGED_LEGS(100,new Item(11342,-1), new Item(15644, 1), new Item(12855, 2000000), new Item(11342, 1), new Item(19115, 2), new Item(19114, 2),new Item(5022, 40000), new Item(6932, 1)),
         EXCECUTION_BODY(100,new Item(8829,-1), new Item(4685, 1), new Item(12855, 3000000), new Item(8829, 1), new Item(15643, 1),new Item(15646, 1), new Item(10947, 1)),
-        SUPREME_BOOTS(100,new Item(18881,-1),new Item(18881, 1), new Item(3107, 1), new Item(5072, 1), new Item(21960, 1), new Item(10947, 1), new Item(12855, 4_000_000)),
+        SUPREME_BOOTS(100,new Item(18881,-1),new Item(18881, 1), new Item(3107, 1), new Item(5072, 1), new Item(16265, 1), new Item(10947, 1), new Item(12855, 4_000_000)),
         //ROW 3
     	ELITE_MAGE_WEAPON(100,new Item(8089,-1), new Item(8412, 1), new Item(12855, 3000000), new Item(8089, 1), new Item(15486, 1), new Item(5095, 1),new Item(6936, 1), new Item(8809, 1), new Item(22092, 1), new Item(18629, 1)),
         ELITE_MAGE_HELM(100,new Item(11421,-1), new Item(15645, 1), new Item(12855, 2000000), new Item(11421, 1),  new Item(8812, 1), new Item(4367, 1),new Item(5022, 40000), new Item(6933, 1)),

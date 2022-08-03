@@ -3075,6 +3075,13 @@ public class ItemDef4 {
 				itemDef.modelID = 65285;
 				break;
 
+			case 23402:
+				itemDef.copyItem(18830);
+				itemDef.name = "Starter bones";
+				itemDef.newModelColor = new int[]{63};
+				itemDef.editedModelColor = new int[]{67};
+				itemDef.modelID = 65285;
+				break;
 			case 23280:
 				itemDef.modelID = 18910;
 				itemDef.modelZoom = 287;

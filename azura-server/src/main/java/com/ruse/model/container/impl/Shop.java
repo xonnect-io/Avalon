@@ -949,6 +949,8 @@ public class Shop extends ItemContainer {
                             player.getPointsHandler().setPkPoints(-value, true);
                         } else if (id == VOTE_STORE) {
                             player.getPointsHandler().setVotingPoints(-value, true);
+                        } else if (id == SLAYER_SHOP) {
+                            player.getPointsHandler().setSlayerPoints(-value, true);
                         } else if (id == DUNGEONEERING_STORE) {
                             player.getPointsHandler().setDungeoneeringTokens(-value, true);
                         } else if (id == EVENT_SHOP) {
@@ -961,8 +963,6 @@ public class Shop extends ItemContainer {
                             player.getPointsHandler().setLoyaltyPoints(-value, true);
                         } else if (id == BARROWS_STORE) {
                             player.getPointsHandler().setBarrowsPoints(-value, true);
-                        } else if (id == SLAYER_SHOP) {
-                            player.getPointsHandler().setSlayerPoints(-value, true);
                         } else if (id == MEMBERS_STORE_I || id == MEMBERS_STORE_II || id == DONATOR_STORE_1
                                 || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4) {
                             player.getPointsHandler().setDonatorPoints(-value, true);
@@ -998,6 +998,8 @@ public class Shop extends ItemContainer {
                             player.getPointsHandler().setPkPoints(-value * canBeBought, true);
                         } else if (id == VOTE_STORE) {
                             player.getPointsHandler().setVotingPoints(-value * canBeBought, true);
+                        } else if (id == SLAYER_SHOP) {
+                            player.getPointsHandler().setSlayerPoints(-value * canBeBought, true);
                         } else if (id == DUNGEONEERING_STORE) {
                             player.getPointsHandler().setDungeoneeringTokens(-value * canBeBought, true);
                         } else if (id == EVENT_SHOP) {
