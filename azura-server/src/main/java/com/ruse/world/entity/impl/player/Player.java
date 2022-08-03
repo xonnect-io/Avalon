@@ -181,7 +181,8 @@ public class Player extends Character {
     @Setter
     private ArrayList<String> offences = new ArrayList<>();
     public int npckillsforseasonpass = 0;
-
+    public int skilllampxp;
+    public Skill theskill;
 
     @Getter
     private final ArrayList<BossPets.BossPet> obtainedPets = new ArrayList<>();

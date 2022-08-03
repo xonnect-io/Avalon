@@ -31,16 +31,16 @@ public class ExperienceLamps {
 		switch(choice){
 			case 1:
 				player.getInventory().delete(thelamp.getItemId(), 1);
-				player.getSkillManager().addExperience(theskill, howmuchxp);
-				player.getPacketSender().sendMessage("You've received some experiencein "
-						+ Misc.formatText(theskill.toString().toLowerCase()) + ".");
+				player.getSkillManager().addExperience(player.theskill, player.skilllampxp);
+				player.getPacketSender().sendMessage("You've received some experience in "
+						+ Misc.formatText(player.theskill.toString().toLowerCase()) + ".");
 				break;
 			case 2:
 
-				player.getSkillManager().addExperience(theskill, howmuchxp*player.getInventory().getAmount(thelamp.getItemId()));
+				player.getSkillManager().addExperience(player.theskill, 		player.skilllampxp *player.getInventory().getAmount(thelamp.getItemId()));
 
 				player.getPacketSender().sendMessage("You've received some experience in "
-						+ Misc.formatText(theskill.toString().toLowerCase()) + ".");
+						+ Misc.formatText(player.theskill.toString().toLowerCase()) + ".");
 				player.getInventory().delete(thelamp.getItemId(), player.getInventory().getAmount(thelamp.getItemId()));
 				break;
 		}
@@ -51,7 +51,7 @@ public class ExperienceLamps {
 	public static LampData thelamp;
 
 	public static boolean handleButton(Player player, int button) {
-		howmuchxp = 0;
+		player.skilllampxp  = 0;
 		if (button == -27451) {
 			try {
 				player.getPacketSender().sendInterfaceRemoval();
@@ -68,9 +68,11 @@ public class ExperienceLamps {
 						case "xp":
 							LampData lamp = (LampData) player.getUsableObject()[2];
 							int exp = getExperienceReward(player, lamp, skill);
-							howmuchxp = exp;
-							theskill = skill;
+							player.skilllampxp = exp;
+							//howmuchxp = exp;
+							player.theskill = skill;
 							thelamp = lamp;
+							System.out.println("skill: "+player.theskill.getFormatName()+" "+player.skilllampxp+"");
 							if (player.getInventory().getAmount(lamp.getItemId()) > 1){
 
 								DialogueManager.start(player, new Dialogue() {
@@ -88,7 +90,7 @@ public class ExperienceLamps {
 									@Override
 									public String[] dialogue() {
 
-										return new String[]{"Use one", "Use all"};
+										return new String[]{"Use 1 lamp on "+player.theskill.getFormatName(), "Use "+player.getInventory().getAmount(lamp.getItemId())+" lamps on "+player.theskill.getFormatName()};
 									}
 
 									@Override
