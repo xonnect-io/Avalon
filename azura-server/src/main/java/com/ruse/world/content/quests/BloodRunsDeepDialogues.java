@@ -858,7 +858,6 @@ public class BloodRunsDeepDialogues {
                                     player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your inventory .");
                                     player.getPacketSender().sendMessage("<img=832> Your @red@Holy Amulet @bla@will now give a @red@25% DR Boost");
                                 }
-                                player.setQuestOneStep7(true);
                                 if (player.getQuestOneStep7() == false) {
                                     if (player.getAmountDonated() < 10 && player.getRights() != PlayerRights.OWNER) {
                                         player.incrementAmountDonated(10);
@@ -866,6 +865,8 @@ public class BloodRunsDeepDialogues {
                                         player.getPacketSender().sendMessage("<img=832> You have obtained free Sapphire Donator rank status for completing a quest.");
                                     }
                                 }
+                                player.setQuestOneStep7(true);
+
                                 return new String[]{"" + "You give the Enchanted Herb to Ksenia."};
                             }
 

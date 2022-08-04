@@ -66,7 +66,7 @@ public class ProgressionZone {
         for (int i = 0; i < monster.getRewards().length; i++) {
             player.getPacketSender().sendItemOnInterface(112006 + i, monster.getRewards()[i]);
         }
-        double percentage = (double) player.getProgressionZones()[monster.ordinal()] / (double) monster.getAmountToKill() * 100;
+        double percentage = ((double) player.getProgressionZones()[monster.ordinal()] / (double) monster.getAmountToKill()) * 100D;
 
         if (percentage >= 100)
             percentage = 100;

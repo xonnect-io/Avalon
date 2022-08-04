@@ -204,6 +204,12 @@ public class Slayer {
             pointsReceived *= 2;
         }
 
+        player.getPacketSender().sendMessage("You have completed your Slayer task.");
+
+        String tasks = String.valueOf(SlayerBossSystem.getLeft());
+        if (tasks.endsWith(String.valueOf(0))) {
+            World.sendMessage("A Slayer task has been completed." + "(" + tasks+  " tasks left until Global Slayer Boss)");
+        }
         SlayerBossSystem.slayerTasks++;
         SlayerBossSystem.spawnBoss();
         SlayerBossSystem.callBoss();

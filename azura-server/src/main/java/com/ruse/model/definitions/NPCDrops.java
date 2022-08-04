@@ -14,7 +14,6 @@ import com.ruse.world.content.*;
 import com.ruse.world.content.DropLog.DropLogEntry;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
-import com.ruse.world.content.collectionlog.CollectionEntry;
 import com.ruse.world.content.combat.CombatBuilder.CombatDamageCache;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
@@ -441,6 +440,10 @@ public class NPCDrops {
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
                                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23231
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23230
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23232
+                                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23233
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23280
+                                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23293
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19888
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 18888
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 774
@@ -477,8 +480,9 @@ public class NPCDrops {
 
                     DropLog.submit(player, new DropLogEntry(itemId, item.getAmount(), drop.isAnnounce()));
                     DropLog.submit(player, new DropLogEntry(itemId, item.getAmount(), drop.isAnnounce()));
-                    new CollectionEntry(npc.getId(), item.getId(), item.getAmount()).submit(player);
-                    new CollectionEntry(npc.getId(), item.getId(), item.getAmount()).submit(player);
+                    MONSTERS.log(player, npc.getId(), item);
+                    ZONES.log(player, npc.getId(), item);
+                    BOSSES.log(player, npc.getId(), item);
                     continue;
                 }
             }
@@ -486,9 +490,11 @@ public class NPCDrops {
                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18818
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23231
-                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23293
-                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23280
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23230
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23233
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23234
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23280
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23293
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19888
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 18888
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 774
@@ -501,18 +507,8 @@ public class NPCDrops {
                 if (player.getEquipment().contains(23090)) {
                     ItemDegrading.handleItemDegrading(player, ItemDegrading.DegradingItem.STARTER_COLLECTOR);
                     int startercharges = (ItemDegrading.maxStarterCollects - player.getStarterCharges());
-                    if (player.getStarterCharges() == 10 || player.getStarterCharges() == 25 || player.getStarterCharges() == 40
-                            || player.getStarterCharges() == 55 || player.getStarterCharges() == 70 || player.getStarterCharges() == 85 ||
-                            player.getStarterCharges() == 100 || player.getStarterCharges() == 115 || player.getStarterCharges() == 130 ||
-                            player.getStarterCharges() == 145 || player.getStarterCharges() == 160 || player.getStarterCharges() == 175 ||
-                            player.getStarterCharges() == 190 || player.getStarterCharges() == 205 || player.getStarterCharges() == 220 ||
-                            player.getStarterCharges() == 235 || player.getStarterCharges() == 240 || player.getStarterCharges() == 255 ||
-                            player.getStarterCharges() == 270 || player.getStarterCharges() == 285 || player.getStarterCharges() == 300 ||
-                            player.getStarterCharges() == 315 || player.getStarterCharges() == 330 || player.getStarterCharges() == 345 ||
-                            player.getStarterCharges() == 360 || player.getStarterCharges() == 375 || player.getStarterCharges() == 390 ||
-                            player.getStarterCharges() == 405 || player.getStarterCharges() == 420 || player.getStarterCharges() == 435 ||
-                            player.getStarterCharges() == 450 || player.getStarterCharges() == 465 || player.getStarterCharges() == 480 ||
-                            player.getStarterCharges() == 495)
+                        String charges = String.valueOf(player.getStarterCharges());
+                    if (charges.endsWith(String.valueOf(0)))
                     player.getPacketSender().sendMessage("You have " + startercharges + " starter amulet "
                             + (startercharges == 1 ? "charge" : "charges") + " remaining.");
                 }

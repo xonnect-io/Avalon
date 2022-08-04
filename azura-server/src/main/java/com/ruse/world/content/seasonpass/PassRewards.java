@@ -16,7 +16,7 @@ public class PassRewards {
 	 *  change this every month
 	 */
 	public static Calendar seasonEnd = new GregorianCalendar(World.getCalendar().getInstance().get(Calendar.YEAR), Calendar.AUGUST, 30, 23, 30);
-	public static Calendar seasonStart = new GregorianCalendar(World.getCalendar().getInstance().get(Calendar.YEAR), Calendar.SEPTEMBER, 1, 0, 30);
+	public static Calendar seasonStart = new GregorianCalendar(World.getCalendar().getInstance().get(Calendar.YEAR), Calendar.AUGUST, 1, 0, 30);
 
 	public static final String INFO_FILE_PATH = "./data/saves/seasonpass/info.txt";
 	public static final String REWARDS_FILE_PATH = "./data/saves/seasonpass/goldRewards.txt";

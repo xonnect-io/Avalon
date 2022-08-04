@@ -3351,7 +3351,7 @@ public final class MobDefinition {
 			case 9012:
 				definition.name = "Fallen Angel";
 				MobDefinition fallenAngel = MobDefinition.get(2292);
-				definition.npcModels = new int[]{17049,17056,17061,17066,17097,17197,17360};
+				definition.npcModels = new int[]{17049,17056,17061,17066,17097,17197};
 				definition.combatLevel = fallenAngel.combatLevel;
 				definition.standAnimation = fallenAngel.standAnimation;
 				definition.walkAnimation = fallenAngel.walkAnimation;

@@ -481,13 +481,14 @@ public final class ItemDefinition {
 			case 4278:
 				itemDef.name = "Instance Token";
 				itemDef.actions = new String[]{"Open", null, "Last instance", null, "Destroy"};
+				itemDef.stackable = false;
 				break;
 				
 			case 23264:
 				itemDef.copyItem(4278);
 				itemDef.name = "Instance Token (u)";
 				itemDef.rdc3 = 328593;
-				itemDef.stackable = true;
+				itemDef.stackable = false;
 				break;
 
 			case 12855:
@@ -2448,7 +2449,7 @@ public final class ItemDefinition {
 				itemDef.rotationY = 1580;
 				itemDef.rotationX = 1;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
-				itemDef.actions = new String[]{null, "Wield", null, null, "Destroy"};
+				itemDef.actions = new String[]{null, "Wield", "<col=C3C0B2>Dissolve", null, "Destroy"};
 				itemDef.modelID = 64593;
 				itemDef.maleEquip1 = 64704;
 				itemDef.femaleEquip1 = 64704;
@@ -3965,8 +3966,7 @@ public final class ItemDefinition {
 				//itemDef.rdc2 = 23452;//333233 gold
 				itemDef.stackable = true;
 				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Add-to-pouch";
-				itemDef.actions[2] = "Convert-to-coin";
+				itemDef.actions[0] = "Convert-to-coin";
 				itemDef21 = ItemDefinition.get(18652);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;

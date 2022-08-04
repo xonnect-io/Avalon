@@ -138,7 +138,9 @@ public enum Upgradeables {
     COLLECTOR_NECK(TIER_6, new Item(19886, 1), new Item(19888, 1), 35000, 25),
     COLLECTOR_RING(TIER_6, new Item(4446, 1), new Item(18823, 1), 35000, 25),
     T6_AURA(TIER_6, new Item(23049, 1), new Item(12630, 1), 10_000_000, 30),
-
+    INSTANCE_TOKEN(TIER_6, new Item(4278, 1), new Item(23264, 1), 2500, 25),
+    XP_LAMP(TIER_6, new Item(11137, 1), new Item(21218, 1), 10_000, 20),
+    CREEPER_CAPE(TIER_6, new Item(1486, 1), new Item(23133, 1), 1_000_000, 20),
     //END TIER 6 (SIX)
 
     ;

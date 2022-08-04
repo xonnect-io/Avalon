@@ -45,20 +45,8 @@ public class DropItemPacketListener implements PacketListener {
 
 		player.getPacketSender().sendInterfaceRemoval();
 		player.getCombatBuilder().cooldown(false);
-		if (player.getLocation() != Locations.Location.HOME_BANK) {
-			player.getPacketSender().sendMessage("You cannot drop items at the moment.");
-			return;
-		}
-		switch (item.getId()) {
-			case 6769:
-			case 10942:
-			case 10934:
-			case 10935:
-			case 10943:
-			case 10946:
-				player.getPacketSender().sendMessage("@red@You can not drop bonds, you can only trade via player owned shops!");
-				return;
-		}
+			destroyItemInterface(player, item);
+
 		if (item.getId() != -1 && item.getAmount() >= 1) {
 			if (item.tradeable() && !ItemBinding.isBoundItem(item.getId())) {
 				player.getInventory().setItem(itemSlot, new Item(-1, 0)).refreshItems();

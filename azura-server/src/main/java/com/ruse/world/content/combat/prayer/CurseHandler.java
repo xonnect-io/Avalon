@@ -295,11 +295,11 @@ public class CurseHandler {
 		TaskManager.submit(new Task(1, player, true) {
 			@Override
 			public void execute() {
-				if(player.switchedPrayerBooks) {
+		/*		if(player.switchedPrayerBooks) {
 					player.switchedPrayerBooks = false;
 					this.stop();
 					return;
-				}
+				}*/
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) <= 0) {
 					for (CurseData curse : CurseData.values()) {
 						if (player.getCurseActive()[curse.ordinal()]) {

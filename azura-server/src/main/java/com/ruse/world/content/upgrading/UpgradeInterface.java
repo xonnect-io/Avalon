@@ -1,6 +1,5 @@
 package com.ruse.world.content.upgrading;
 
-import com.ruse.model.GameMode;
 import com.ruse.model.Item;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Skill;
@@ -32,10 +31,6 @@ public class UpgradeInterface {
 
         switch (buttonId) {
             case -3284:
-                if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
-                    player.getPacketSender().sendMessage("This feature is not currently available for Ultimate Ironman");
-                    return false;
-                }
                 handleUpgrade(true);
                 return true;
             case -3334:
@@ -156,8 +151,13 @@ public class UpgradeInterface {
                                     player.getSkillManager().addExperience(Skill.INVENTION, 1000);
                                     success++;
                                     if (noted) {
-                                        player.getBank(Bank.getTabForItem(player, val.getReward().getId())).add(val.getReward(), false);
-                                        player.sendMessage("Your items have been banked.");
+                                        if (player.getGameMode().isUltIronman()) {
+                                            player.getUimBank().deposit(val.getReward().getId(),val.getReward().getAmount());
+                                            player.sendMessage("Your items have been added to your collection box.");
+                                        } else if (!player.getGameMode().isUltIronman()) {
+                                            player.getBank(Bank.getTabForItem(player, val.getReward().getId())).add(val.getReward(), false);
+                                            player.sendMessage("Your items have been banked.");
+                                        }
                                     } else {
                                         player.getInventory().add(val.getReward());
                                     }

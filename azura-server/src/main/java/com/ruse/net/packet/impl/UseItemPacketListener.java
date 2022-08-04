@@ -66,7 +66,6 @@ public class UseItemPacketListener implements PacketListener {
     public final static int ITEM_ON_OBJECT = 192;
     public final static int ITEM_ON_GROUND_ITEM = 25;
     public static final int ITEM_ON_PLAYER = 14;
-    public static int[] ownerItems =  {18750,18753,18752,18751,18636,18749,18748,18638,18629,18631,18637,18623,19886,4446,10946,1486,10947,3737,3738,3739};
 
     /**
      * The PacketListener logger to debug sendInformation and print out errors.

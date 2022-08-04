@@ -50,7 +50,6 @@ public class PlayerPanel {
                 ? "Ironman boss: @whi@" + IronmanBoss.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
                 "Avalon Guard: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
                 "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
-                (SummerSurfer.currentBoss == null ? "Summer Surfer: @whi@" + SummerSurfer.timeLeft() : "Summer Surfer:  @whi@Alive ::summer"),
         };
 
         for (int i = 0; i < Messages.length; i++) {

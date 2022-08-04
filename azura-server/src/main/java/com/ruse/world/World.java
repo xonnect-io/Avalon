@@ -286,7 +286,6 @@ public class World {
         OnyxPantherBoss.initiateSpawn();
         NarakuBoss.spawn();
         NightmareBoss.execute();
-        SummerSurfer.cycle();
         KeepersOfLight.sequence();
         CelestialZoneTask.startTask();
         Bot.updatePlayers();

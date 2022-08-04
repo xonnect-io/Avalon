@@ -103,6 +103,16 @@ public class NPCDeathTask extends Task {
                         return;
                     }
 
+                    String bosspoints = String.valueOf(killer.getPointsHandler().getBossPoints());
+
+                    if (BOSSES.contains(npc.getId())) {
+                        killer.getPointsHandler().incrementBossPoints(1);
+                        if (bosspoints.endsWith(String.valueOf(0))) {
+                            killer.sendMessage("<img=99>You now have @red@" + killer.getPointsHandler().getBossPoints()
+                                    + " Boss Points!");
+                        }
+                    }
+
                     if ((killer instanceof MiniPlayer) && killer.getMiniPlayerOwner() != null) {
                         killer = killer.getMiniPlayerOwner();
                     }
@@ -172,7 +182,6 @@ public class NPCDeathTask extends Task {
                             Wildywyrm.wyrmAlive = false;
                             World.getPlayers().forEach(p -> PlayerPanel.refreshPanel(p));
                         }
-
                         if (npc.getId() == 3779) {
                             AFKBossDrops.handleDrop(npc);
                             AfkSystem.thievedCount -= 80000;
@@ -320,9 +329,6 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == 9017) {
                             NightmareBoss.handleDrop(npc);
-                        }
-                        if (npc.getId() == 9119) {
-                            SummerSurfer.handleDrop(npc);
                         }
                         if (npc.getId() == 3305) {
                             NarakuBoss.handleDrop(npc);

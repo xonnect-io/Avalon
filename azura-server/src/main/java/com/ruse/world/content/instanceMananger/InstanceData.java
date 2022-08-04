@@ -57,7 +57,7 @@ public enum InstanceData {
 			"Hanto warrior",new Position(2758, 4743), RegionInstanceType.KINGS),
 	RADITZ(-30443, 449, "Raditz", 3308, new int[] { 19624 },
 			"Raditz",new Position(2758, 4743), RegionInstanceType.KINGS),
-	GOKU(-30442, 452, "Raditz", 3308, new int[] { 19624 },
+	GOKU(-30442, 452, "Goku", 3308, new int[] { 19624 },
 			"Raditz",new Position(2758, 4743), RegionInstanceType.KINGS),
 	BOTANIC(-30441, 2342, "Botanic Guardian", 3308, new int[] { 19624 },
 			"Botanic Guardian",new Position(2758, 4743), RegionInstanceType.KINGS),

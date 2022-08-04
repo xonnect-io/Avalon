@@ -176,23 +176,22 @@ public class InstanceManager {
 		if (player.currentInstanceNpcId == -1 || player.currentInstanceNpcName == "") {
 			return;
 		}
-		if (player.getCurrentInstanceAmount() == 111 || player.getCurrentInstanceAmount() == 101 || player.getCurrentInstanceAmount() == 91 ||
-				player.getCurrentInstanceAmount() == 81 || player.getCurrentInstanceAmount() == 71 ||  player.getCurrentInstanceAmount() == 61 ||
-				player.getCurrentInstanceAmount() == 51 || player.getCurrentInstanceAmount() == 41 || player.getCurrentInstanceAmount() == 31 ||
-				player.getCurrentInstanceAmount() == 21 || player.getCurrentInstanceAmount() == 11) {
+
+		String tasks = String.valueOf(player.getCurrentInstanceAmount());
+		if (tasks.endsWith(String.valueOf(1))) {
 			player.getPA().sendMessage("You currently need to kill " + (player.getCurrentInstanceAmount() - 1) + " " + NpcName);
-		}
-
-		player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
-
-
-
-		if (player.getCurrentInstanceAmount() <= 0) {
+			player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
+		} else 	if (player.getCurrentInstanceAmount() <= 0) {
 			player.getPA().sendMessage("You have used up the total instance count!");
 			finish();
 			return;
 		}
 	}
+
+
+
+
+
 
 	public void finish() {
 		player.getPA().sendMessage("to leave the instance simply teleport out.");

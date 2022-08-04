@@ -180,6 +180,12 @@ public class Locations {
 				true, true, true, false, false, true) {
 
 		},
+
+
+		HELLRAISER(new int[] { 3078, 3115}, new int[] { 5520, 5560},
+				true, true, true, false, false, true) {
+
+		},
 		LUCIFER(new int[] { 2301, 2367}, new int[] { 3970, 4024},
 				false, true, true, false, false, true) {},
 		UNKNOWN_MINIGAME(new int[] { 1720, 1790 }, new int[] { 5120, 5220 }, true, true, true, false, false, false){

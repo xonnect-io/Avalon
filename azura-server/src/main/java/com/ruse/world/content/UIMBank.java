@@ -22,22 +22,12 @@ public class UIMBank {
 	}
 
 	public void deposit(int id, int amount) {
-		if(player.getInterfaceId() == 48700) {
 		if (player.getUimBankItems().size() >= 28) {
 			player.sendMessage("@red@Your Ultimate ironman bank can only hold 28 items.");
 			return;
 		}
-
-		if (!player.getInventory().contains(id)) {
-			return;
-		}
-
-		player.getInventory().delete(id, amount);
-
 		player.getUimBankItems().merge(id, amount, Integer::sum);
-
 		update();
-	}
 	}
 
 	public void withdraw(int id, int amount) {

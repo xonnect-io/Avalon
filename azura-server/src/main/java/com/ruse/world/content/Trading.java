@@ -212,16 +212,6 @@ public class Trading {
 		if (player2 == null || player == null)
 			return;
 
-		switch (itemId) {
-			case 6769:
-			case 10942:
-			case 10934:
-			case 10935:
-			case 10943:
-			case 10946:
-				player.getPacketSender().sendMessage("@red@You can not trade bonds, you can only trade them via player owned shops!");
-				return;
-		}
 		if (player.getRights() != PlayerRights.OWNER || player.getRights() != PlayerRights.ADMINISTRATOR && player2.getRights() != PlayerRights.OWNER
 				&& !(itemId == 1419 && player.getRights().isStaff())) {
 			if (!new Item(itemId).tradeable()) {

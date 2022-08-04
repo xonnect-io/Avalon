@@ -54,12 +54,12 @@ public class PickupItemPacketListener implements PacketListener {
 					return;
 				}
 
-				if (itemId == 10537 && !player.getEquipment().contains(1580)) {
-					player.getPacketSender().sendMessage("This Omega egg is too hot. Ice gloves could help.");
+				if (itemId == 10537 && !player.getEquipment().contains(12864)) {
+					player.getPacketSender().sendMessage("This Omega egg is too hot. Chilling gloves could help.");
 					return;
 				}
 
-				if (itemId == 10537 && player.getEquipment().contains(1580) && player.getQuestTwoStep2() == false) {
+				if (itemId == 10537 && player.getEquipment().contains(12864) && player.getQuestTwoStep2() == false) {
 					player.setQuestTwoStep2(true);
 					player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Obtain the Omega Egg");
 				}

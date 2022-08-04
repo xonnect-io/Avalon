@@ -4,6 +4,8 @@ import com.ruse.model.Item;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.model.definitions.NpcDefinition;
+import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
@@ -112,9 +114,12 @@ public class TeleportInterfaceHandler {
 					} else {
 						player.getPA().sendString(28209, data.getName());
 					}
-					player.getPA().sendString(64112, data.getDescription());
+					//player.getPA().sendString(64112, data.getDescription());
 					player.getPA().sendString(64113, data.getReq1());
 					player.getPA().sendString(64114, data.getReq2());
+					player.getPacketSender().sendString(64112, "Health: @whi@"+
+							Misc.insertCommasToNumber(NpcDefinition.forId(data.getNpcId()).getHitpoints()));
+
 					player.getPA().sendNpcOnInterface(28214, data.getNpcId(), data.getAdjustedZoom());
 					System.err.println("" + data.getNpcId());
 				}
@@ -200,26 +205,23 @@ public class TeleportInterfaceHandler {
 		if (player.getCurrentTeleport().getNpcId() == 9011) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if (!player.isUnlockedLucifers() || player.getRights() != PlayerRights.OWNER) {
+			if (!player.isUnlockedLucifers() == true || player.getRights() != PlayerRights.OWNER) {
 				Item[] requirements = new Item[]{new Item(ItemDefinition.UPGRADE_TOKEN_ID, 25_000_000), new Item(20400, 1),
 						new Item(18823, 3), new Item(19888, 3)};
 				if (player.getInventory().containsAll(requirements)) {
 					player.getInventory().deleteItemSet(requirements);
 					player.setUnlockedLucifers(true);
-					player.sendMessage("@red@Congratulations, you have unlocked Fallen Angel's zone!");
-					return;
+					player.sendMessage("@red@Congratulations, you have unlocked Fallen Warrior's zone!");
 				} else {
-					player.sendMessage("You do not have the requirements to unlock Fallen Angels!");
-					player.sendMessage("You need an enraged cape + 3 coll rings II, 3 colls necks II to sacrifice!!");
+					player.sendMessage("You do not have the requirements to unlock Fallen Warriors!");
+					player.sendMessage("You need 25m tokens, an enraged cape + 3 coll rings II, 3 colls necks II to sacrifice!!");
 					player.sendMessage("@red@Try again with these items in your inventory!");
 					return;
 				}
-			} else if (player.isUnlockedLucifers()) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
-			return;
+				return;
 			}
-
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == 9837) {

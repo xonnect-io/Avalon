@@ -1,35 +1,18 @@
 package com.ruse.world.content;
 
 import com.ruse.model.Item;
-import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.world.entity.impl.player.Player;
 
 public class ConvertCoins {
 
 	public static void convertMillCoins(Player player) {
-		if (player.getInventory().getFreeSlots() < 1) {
-			player.sendMessage("You need atleast "+1+" inventory slots to do this.");
+		if (player.getInventory().getAmount(995) > 2_146_483_646) {
+			player.sendMessage("You must bank some coins before converting any more tickets!");
 			return;
 		}
-		if (player.getInventory().getAmount(ItemDefinition.COIN_ID) >= 1_000) {
-			int amount = player.getInventory().getAmount(ItemDefinition.COIN_ID) / 1_000;
-			player.getInventory().delete(new Item(ItemDefinition.COIN_ID, amount * 1_000));
-			player.getInventory().add(new Item(ItemDefinition.UPGRADE_TOKEN_ID, amount));
-			player.sendMessage("You have successfully converted coins to Avalon tokens");
-		} else {
-			player.sendMessage("You don't have enough coins to convert to Avalon tokens");
-		}
+		player.getInventory().delete(5021,1);
+		player.getInventory().add(new Item(995, 1_000_000));
+		player.sendMessage("You have successfully converted your 1m ticket into 1,000,000 coins!");
+
 	}
-	/*
-	public static void convertMillCoins(Player player) {
-		if (player.getInventory().getAmount(ItemDefinition.COIN_ID) >= 1_000_000) {
-			int amount = player.getInventory().getAmount(ItemDefinition.COIN_ID) / 1_000_000;
-			player.getInventory().delete(new Item(ItemDefinition.COIN_ID, player.getInventory().getAmount(995)));
-			player.getInventory().add(new Item(5021, amount));
-			player.sendMessage("You have successfully converted your Avalon tokens to 1m bag");
-		} else {
-			player.sendMessage("You don't have enough coins to convert to 1m bag");
-		}
-	}
-*/
 }

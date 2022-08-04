@@ -34,7 +34,6 @@ import com.ruse.world.content.raids.ZombieRaids;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.mining.Mining;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
-import com.ruse.world.content.skill.impl.old_dungeoneering.DungeoneeringFloor;
 import com.ruse.world.content.skill.impl.slayer.*;
 import com.ruse.world.content.skill.impl.summoning.CharmingImp;
 import com.ruse.world.content.skill.impl.summoning.SummoningTab;
@@ -225,17 +224,7 @@ public class DialogueOptions {
                     DialogueManager.start(player, 102);
                     break;
                 case 67:
-                    player.getPacketSender().sendInterfaceRemoval();
-                    if (player.getMinigameAttributes().getDungeoneeringAttributes().getParty() != null) {
-                        if (player.getMinigameAttributes().getDungeoneeringAttributes().getParty().getOwner().getUsername()
-                                .equals(player.getUsername())) {
-                            player.getMinigameAttributes().getDungeoneeringAttributes().getParty()
-                                    .setDungeoneeringFloor(DungeoneeringFloor.FIRST_FLOOR);
-                            player.getMinigameAttributes().getDungeoneeringAttributes().getParty()
-                                    .sendMessage("The party leader has changed floor.");
-                            player.getMinigameAttributes().getDungeoneeringAttributes().getParty().refreshInterface();
-                        }
-                    }
+                    player.getRaidsParty().add(player);
                     break;
                 case 68:
                     player.getPacketSender().sendInterfaceRemoval();

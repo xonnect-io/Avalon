@@ -18,7 +18,7 @@ public class BossPointReward implements NonItemReward {
 
     @Override
     public void giveReward(Player player) {
-        player.setBossPoints(player.getBossPoints() + amount);
+        player.getPointsHandler().incrementBossPoints(amount);
     }
 
     @Override

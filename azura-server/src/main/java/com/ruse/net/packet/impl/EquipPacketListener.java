@@ -173,7 +173,11 @@ public class EquipPacketListener implements PacketListener {
             case 18818:
             case 23230:
             case 23231:
-                DialogueManager.sendStatement(player, "<img=1730>This item collects all drops automatically!");
+            case 23233:
+            case 23234:
+            case 23280:
+            case 23293:
+                DialogueManager.sendStatement(player, "This item collects all drops automatically!");
                 player.getPacketSender().sendMessage("<shad=1>@red@This item collects all drops automatically!");
                 break;
             case 13634:

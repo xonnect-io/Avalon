@@ -977,6 +977,10 @@ private int pengRate;
 			this.achievementPoints = points;
 	}
 
+	public void incrementAchievementPoints(double amount) {
+		this.achievementPoints += amount;
+	}
+
 	public int getSkillingPoints() {
 		return skillingPoints;
 	}

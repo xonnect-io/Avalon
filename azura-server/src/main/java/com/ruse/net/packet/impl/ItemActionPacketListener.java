@@ -526,6 +526,11 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] raresgrand = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092,10946,10942,6769};
                 player.getMysteryBoxOpener().display(19114, "Grand Box", commongrand, uncommongrand, raresgrand);
                 break;
+
+            case 5021:
+                ConvertCoins.convertMillCoins(player);
+                break;
+
             case 20488:// grandmbox
                 int[] commonOP = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808,20549,20173,8809};
                 int[] uncommonOP = new int[] {10946,10946,8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092 };
@@ -2058,27 +2063,6 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 break;*/
 
-          /*  case 5021:
-
-                int amount1 = player.getInventory().getAmount(5021);
-                if (amount1 > 2147 || amount1 + player.getInventory().getAmount(ItemDefinition.COIN_ID) > 2147000000) {
-                    long amountLeft;
-                    if (!player.getInventory().contains(ItemDefinition.COIN_ID))
-                        amountLeft = (long) (((long) amount1 * (long) 1000000) - (long) 2147000000);
-                    else
-                        amountLeft = ((long) amount1 * (long) 1000000) - (long) (2147000000 - player.getInventory().getAmount(ItemDefinition.COIN_ID));
-                    player.getInventory().delete(5021, amount1);
-                    player.getInventory().add(ItemDefinition.COIN_ID, 2147000000 - (player.getInventory().getAmount(ItemDefinition.COIN_ID)));
-                    player.setMoneyInPouch(player.getMoneyInPouch() + amountLeft);
-                    player.getPacketSender().sendString(8135, "" + player.getMoneyInPouch());
-                    player.sendMessage("<shad=1>@red@The rest of the cash(" + amountLeft / 1000000
-                            + "M) has been added to your @blu@pouch@red@!");
-                    return;
-                }
-                player.getInventory().delete(5021, amount1);
-                player.getInventory().add(ItemDefinition.COIN_ID, 1000000 * amount1);
-                break;*/
-
             case 11846:
             case 11848:
             case 11850:
@@ -2161,9 +2145,6 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(5500, 1);
 
 
-                break;
-            case ItemDefinition.COIN_ID:
-                ConvertCoins.convertMillCoins(player);
                 break;
             case ItemDefinition.MILL_ID:
                 int amount = player.getInventory().getAmount(ItemDefinition.MILL_ID);

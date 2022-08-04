@@ -429,9 +429,7 @@ public class Maxhits {
             }
             if (player.getEquipment().contains(23034) &&
                     player.getEquipment().contains(23035) &&
-                    player.getEquipment().contains(23036) &&
-                    player.getEquipment().contains(23037) &&
-                    player.getEquipment().contains(23038)) {
+                    player.getEquipment().contains(23036)) {
                 maxHit *= 1.10;
             }
 

@@ -18,7 +18,7 @@ public class LoyaltyPointReward implements NonItemReward {
 
     @Override
     public void giveReward(Player player) {
-        player.getPointsHandler().incrementLoyaltyPoints(player.getPointsHandler().getLoyaltyPoints() + amount);
+        player.getPointsHandler().incrementLoyaltyPoints( amount);
     }
 
     @Override

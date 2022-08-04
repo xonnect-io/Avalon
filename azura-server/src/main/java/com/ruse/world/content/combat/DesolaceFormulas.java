@@ -895,7 +895,8 @@ public class DesolaceFormulas {
                 || p.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 13956) {
             damageMultiplier += .10;
         }
-        if (p.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() == 1486) {
+        if (p.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() == 1486
+        || p.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() == 23133 ) {
             CurseHandler.activateCurse(p, CurseHandler.SOUL_SPLIT);
         }
         if (p.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 18335) {

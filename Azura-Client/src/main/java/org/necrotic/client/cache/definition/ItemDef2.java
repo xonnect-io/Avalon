@@ -4327,7 +4327,7 @@ public class ItemDef2 {
 				//	itemDef.rdc2 = 34737;
 				break;
 			case 8811:
-				itemDef.name = "<col=7f39f2>Avalon boots";
+				itemDef.name = "<col=7f39f2>Shadow boots";
 				itemDef.modelID = 65226;
 				itemDef.maleEquip1 = 65226;
 				itemDef.femaleEquip1 = 65226;

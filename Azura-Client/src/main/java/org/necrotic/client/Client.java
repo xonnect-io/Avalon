@@ -3520,7 +3520,7 @@ public class Client extends GameRenderer {
                                                     } else {
                                                         HoverMenuManager.reset();
                                                     }
-                                                    if (HoverMenuManager.showMenu) {
+                                                    if (HoverMenuManager.showMenu  && HoverMenuManager.drawType() == 1) {
                                                         HoverMenuManager.drawHintMenu();
                                                     }
                                                     if (i4 == 0) {
@@ -6754,9 +6754,7 @@ public class Client extends GameRenderer {
         } else if (menuScreenArea == 0) {
             drawMenu();
         }
-        if (HoverMenuManager.showMenu) {
-            HoverMenuManager.drawHintMenu();
-        }
+
         if (drawMultiwayIcon == 1) {
             multiOverlay.drawSprite(GameFrame.getScreenMode() == ScreenMode.FIXED ? 472 : getScreenWidth() - 40, GameFrame.getScreenMode() == ScreenMode.FIXED ? 296 : 175);
         }
@@ -17644,6 +17642,9 @@ public class Client extends GameRenderer {
         anInt1315 = 0;
         skillTabHoverChild = 0;
         if (tabArea.isHovering(this, GameFrame.getScreenMode()) && !tabArea.componentHidden()) {
+            if (HoverMenuManager.showMenu) {
+                HoverMenuManager.drawHintMenu();
+            }
             if (invOverlayInterfaceID != -1) {
                 buildInterfaceMenu(tabArea.getxPos() + (GameFrame.getScreenMode() == ScreenMode.FIXED ? 31 : 40), RSInterface.interfaceCache[invOverlayInterfaceID], super.mouseX, tabArea.getyPos() + (GameFrame.getScreenMode() == ScreenMode.FIXED ? 36 : getScreenWidth() <= GameFrameConstants.smallTabs ? -6 : 30), super.mouseY, 0);
             } else if (tabInterfaceIDs[tabID] != -1) {

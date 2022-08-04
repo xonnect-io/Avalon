@@ -480,14 +480,13 @@ public class PrayerHandler {
 		TaskManager.submit(new Task(1, player, true) {
 			@Override
 			public void execute() {
-
+/*
 				if(player.switchedPrayerBooks) {
 					player.switchedPrayerBooks = false;
 					this.stop();
 					return;
 				}
-
-
+*/
 
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) <= 0) {
 					for (int i = 0; i < player.getPrayerActive().length; i++) {

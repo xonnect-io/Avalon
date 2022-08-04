@@ -400,6 +400,7 @@ public class MainDissolving {
 		SIGIL3(13750, new Item[]{new Item(UPG_TOKEN, 1200)}, 11200, anim),
 		SIGIL4(13752, new Item[]{new Item(UPG_TOKEN, 1200)}, 11200, anim),
 		DRAGON1(1149, new Item[]{new Item(UPG_TOKEN, 15)}, 150, anim),
+		BRAKISH(14017, new Item[]{new Item(UPG_TOKEN, 25)}, 180, anim),
 		DRAGON9(6739, new Item[]{new Item(UPG_TOKEN, 15)}, 150, anim),
 		DRAGON2(1249, new Item[]{new Item(UPG_TOKEN, 15)}, 150, anim),
 		DRAGON3(3204, new Item[]{new Item(UPG_TOKEN, 15)}, 150, anim),

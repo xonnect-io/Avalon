@@ -43,7 +43,7 @@ public enum LogType {
                 final int totalCollectables = c.totalCollectables();
                 int after = killer.getCollectionLog2().totalObtained(c);
                 if(after != before && after == totalCollectables) {
-                    World.sendMessage( "@red@" + killer.getUsername() +  "<col=297A29> completed the @red@"+c.getName()+" <col=297A29>collection log.");
+                    World.sendMessage( "@red@<img=832> " + killer.getUsername() +  "<col=297A29> completed the @red@"+c.getName()+" <col=297A29>collection log.");
                     killer.sendMessage("<col=297A29>Congratulations! You have completed the "+c.getName()+" collection log.");
                 }
                 return v;

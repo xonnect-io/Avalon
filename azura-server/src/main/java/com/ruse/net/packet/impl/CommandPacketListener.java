@@ -187,9 +187,8 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("@red@<shad=1>Nightmare boss: @yel@" + NightmareBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Naraku boss: @yel@" + NarakuBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Ironman boss: @yel@" + IronmanBoss.timeLeft());
-            player.getPacketSender().sendMessage("@red@<shad=1>Avalon Guardian @yel@" + GuardianSpawnSystem.getLeft()  + " tickets left");
-            player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft()  + " tokens left");
-            player.getPacketSender().sendMessage("@red@<shad=1>Summer Surfer @yel@" + SummerSurfer.timeLeft());
+            player.getPacketSender().sendMessage("@red@<shad=1>Avalon Guardian @yel@" + GuardianSpawnSystem.getLeft() + " tickets left");
+            player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft() + " tokens left");
         }
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
                 || command[0].equalsIgnoreCase("start") || command[0].equalsIgnoreCase(
