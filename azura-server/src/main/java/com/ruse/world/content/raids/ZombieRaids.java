@@ -292,7 +292,7 @@ public class ZombieRaids {
 
             @Override
             public void execute() {
-                party.sendMessage("@red@Your party has defeated the League of Legends Raids!");
+                party.sendMessage("@red@Your party has completed the League of Legends Raids!");
 
                 for (Player player : party.getPlayers()) {
                     player.getInventory().add(18404, 1);
@@ -305,8 +305,7 @@ public class ZombieRaids {
                         player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Slayer Perk is active!");
                     }
                 }
-                party.sendMessage("@red@Use the portal south to go back to the raid lobby.");
-
+                party.moveTo(ZombieRaidData.lobbyPosition);
                 party.setDeathCount(0);
                 party.setKills(0);
                 party.setCurrentPhase(1);

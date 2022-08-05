@@ -254,7 +254,7 @@ public class RSInterface {
 
 		addToItemGroup(STARTING_POINT + 12, 3, 1, 70, 0, false, false, null, false);
 
-		main.child(10, STARTING_POINT + 12, 140, 128);
+		main.child(10, STARTING_POINT + 12, 155, 145);
 
 		for (int i = 0; i < 3; i++) {
 			addScratchcardSprite(STARTING_POINT + 13 + i, 1513);

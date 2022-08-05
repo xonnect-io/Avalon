@@ -8,7 +8,7 @@ import com.ruse.world.entity.impl.player.Player;
 import java.util.Random;
 
 public class Scratchcard {
-
+//think this is the interface id
     private final int INTERFACE_ID = 25400;
     private final int ITEM_CONTAINER_ID = 25412;
 
@@ -66,6 +66,9 @@ public class Scratchcard {
 
     private void updateInterface() {
         player.getPacketSender().resetScratchcard();
-        player.getPacketSender().sendItemArrayOnInterface(ITEM_CONTAINER_ID, game.getItems());
-    }
+        for (int i = 0 ; i < game.getItems().length ; i++) {
+
+            player.getPacketSender().sendItemOnInterface(ITEM_CONTAINER_ID,  game.getItems()[i],i, 1);
+
+        }    }
 }

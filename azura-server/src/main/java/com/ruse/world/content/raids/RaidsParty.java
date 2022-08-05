@@ -74,7 +74,10 @@ public class RaidsParty {
             getOwner().getPacketSender().sendMessage("Your party is full.");
             return;
         }
-        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY || p.getLocation() != Locations.Location.SOD_LOBBY ||p.isTeleporting()) {
+        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY || p.isTeleporting()) {
+            getOwner().getPacketSender().sendMessage("That player is not in Raids.");
+            return;
+        } else if (p.getLocation() != Locations.Location.SOD_LOBBY || p.isTeleporting()) {
             getOwner().getPacketSender().sendMessage("That player is not in Raids.");
             return;
         }
@@ -122,10 +125,9 @@ public class RaidsParty {
             p.getPacketSender().sendMessage("This party has already entered a dungeon.");
             return;
         }
-        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY || p.getLocation() != Locations.Location.SOD_LOBBY ||p.isTeleporting()) {
+        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY||p.isTeleporting()) {
             return;
         }
-
 
         sendMessage(p.getUsername() + " has joined the party.");
         p.getPacketSender().sendMessage("You've joined " + getOwner().getUsername() + "'s party.");
