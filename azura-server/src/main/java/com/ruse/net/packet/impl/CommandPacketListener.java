@@ -337,17 +337,13 @@ public class CommandPacketListener implements PacketListener {
         }
 
         if (command[0].equalsIgnoreCase("afk")) {
+
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-
-            if (player.getAmountDonated() < 10) {
-                player.getPacketSender().sendMessage("You need to claim $10 in bonds@blu@ (Sapphire donator)@bla@ to unlock the afk zone!");
-                return;
-            }
-            Position position = new Position(2905, 5344, 0);
+            Position position = new Position(2655, 3988, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
             player.getPacketSender().sendMessage("<shad=1>@gre@Welcome to the afk zone!");
 
@@ -360,19 +356,10 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(2653, 4026, 0);
+            Position position = new Position(3124, 2985, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
         }
 
-        if (command[0].equalsIgnoreCase("market")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            Position market = GameSettings.MARKET;
-            TeleportHandler.teleportPlayer(player, market, TeleportType.NORMAL);
-        }
         //Start Of External Links
         if (wholeCommand.equalsIgnoreCase("donate") || wholeCommand.equalsIgnoreCase("store")) {
             player.getPacketSender().sendString(1, GameSettings.StoreUrl);
@@ -1630,6 +1617,10 @@ public class CommandPacketListener implements PacketListener {
     }
 
     private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
+        if (command[0].equalsIgnoreCase("spawnslayerboss")) {
+            SlayerBossSystem.commandSpawnBoss();
+        }
+
         if (command[0].equals("dumpspawns")) {
             for (NPC npc : World.getNpcs()) {
                 if (npc == null)

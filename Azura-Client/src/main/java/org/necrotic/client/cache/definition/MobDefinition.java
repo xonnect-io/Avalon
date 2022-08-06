@@ -2018,10 +2018,9 @@ public final class MobDefinition {
 			case 5861:
 				definition.name = "The Riftsplitter";
 				break;
-			case 436:
+			case 4653:
 				definition.name = "Sir Away";
-				definition.npcModels = new int[]{19926};
-				MobDefinition worsk = get(202);
+				MobDefinition worsk = get(1);
 				definition.combatLevel = 0;
 				definition.scaleXZ = 120;
 				definition.scaleY = 120;
@@ -2996,6 +2995,7 @@ public final class MobDefinition {
 				definition.walkAnimation = theincredhulk.walkAnimation;
 				definition.scaleXZ = 270;
 				definition.scaleY = 270;
+				definition.npcSizeInSquares = 2;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				//definition.rdc2 = 6211;
 				break;
@@ -4561,7 +4561,17 @@ public final class MobDefinition {
 				definition.scaleY = 150;
 				definition.npcModels = new int[]{15159};
 				break;
-
+			case 9129:
+				definition.name = "@red@Doom Champion";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				definition.npcModels = new int[]{19574};
+				break;
 				case 187:
 				definition.name = "Hellraiser";
 				definition.actions = new String[]{null, "Attack", null, null, null};

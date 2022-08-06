@@ -28,6 +28,8 @@ public enum LogType {
             killer.getCollectionLog2().collectionLog.compute(c, (k, v) -> {
                 if (v == null) {
                     v = new ArrayList<>();
+                    System.out.println("Hitting unique item : " + finalReward);
+                    killer.sendMessage("@red@A unique item has been added to your collection log!");
                     v.add(finalReward);
                 } else {
                     Optional<Item> first = v.stream().filter(loot -> loot.getId() == finalReward.getId()).findFirst();
@@ -35,6 +37,7 @@ public enum LogType {
                         first.get().setAmount(first.get().getAmount() + finalReward.getAmount());
                     } else {
                         v.add(finalReward);
+                        System.out.println("Hitting unique item 2: " + finalReward);
                         killer.sendMessage("@red@A unique item has been added to your collection log!");
                     }
                 }

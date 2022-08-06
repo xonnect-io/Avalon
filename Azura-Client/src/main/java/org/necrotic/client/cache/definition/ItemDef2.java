@@ -2007,6 +2007,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 57; // the texture that it currently has
 				itemDef.editedModelColor[0] = 126; // the new texture u want it to have
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 			case 16021:
 				itemDef.name = "Ripper body";
@@ -2017,6 +2018,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 57; // the texture that it currently has
 				itemDef.editedModelColor[0] = 126; // the new texture u want it to have
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 			case 15933:
 				itemDef.name = "Ripper legs";
@@ -2027,6 +2029,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 57; // the texture that it currently has
 				itemDef.editedModelColor[0] = 126; // the new texture u want it to have
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 			case 7885:
 				itemDef.name = "Mac's blade";

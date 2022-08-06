@@ -343,13 +343,9 @@ public class NPCOptionPacketListener implements PacketListener {
                         }
                         npc.forceChat("Silly noob, you are not at a donator zone");
                         break;
-                    case 436:
+                    case 4653:
                         ShopManager.getShops().get(103).open(player);
                         npc.forceChat("Get back to afking you lazy cat");
-                        break;
-                    case 4653:
-                        DialogueManager.start(player, 178);
-                        player.setDialogueActionId(178);
                         break;
                     case 1872:
                         if (player.getLocation() == Location.ZULRAH_WAITING) {
@@ -1115,10 +1111,6 @@ public class NPCOptionPacketListener implements PacketListener {
                                         + " @bla@Loyalty Points.");
                         ;
                         break;
-                    case 4653:
-                        player.getPacketSender().sendInterfaceRemoval();
-                        ShopManager.getShops().get(85).open(player);
-                        break;
                     case 736:
                         npc.forceChat("Thanx for the follow :)");
                         break;
@@ -1420,10 +1412,6 @@ public class NPCOptionPacketListener implements PacketListener {
                         }
 
                         player.getClickDelay().reset();
-                        break;
-                    case 4653:
-                        player.getPacketSender()
-                                .sendMessage("Unfortunately, ship charters are still being established. Check back soon.");
                         break;
                     case 736:
                         player.forceChat("Nah. I don't want to feed the cancer.");

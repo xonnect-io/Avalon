@@ -11,7 +11,7 @@ public class SlayerBossSystem {
 	public static int slayerTasks = 0;
 	
 	public static void commandSpawnBoss() {
-		NPC npc = new NPC(187, new Position(3100, 5536));
+		NPC npc = new NPC(9129, new Position(3488, 4704));
 		World.register(npc);
 		World.sendMessage("Doom Guardian has Arrived! fight him now at ::doom");
 		slayerTasks = 0;
@@ -21,7 +21,7 @@ public class SlayerBossSystem {
 			return;
 		}
 
-		NPC npc = new NPC(187, new Position(3100, 5536));
+		NPC npc = new NPC(9129, new Position(3488, 4704));
 		World.register(npc);
 		World.sendMessage("Doom Guardian has Arrived! fight him now at ::doom");
 		slayerTasks = 0;
