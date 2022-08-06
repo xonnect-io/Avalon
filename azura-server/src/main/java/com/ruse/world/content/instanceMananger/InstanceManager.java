@@ -176,11 +176,11 @@ public class InstanceManager {
 		if (player.currentInstanceNpcId == -1 || player.currentInstanceNpcName == "") {
 			return;
 		}
-
+		player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
 		String tasks = String.valueOf(player.getCurrentInstanceAmount());
 		if (tasks.endsWith(String.valueOf(1))) {
 			player.getPA().sendMessage("You currently need to kill " + (player.getCurrentInstanceAmount() - 1) + " " + NpcName);
-			player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
+
 		} else 	if (player.getCurrentInstanceAmount() <= 0) {
 			player.getPA().sendMessage("You have used up the total instance count!");
 			finish();

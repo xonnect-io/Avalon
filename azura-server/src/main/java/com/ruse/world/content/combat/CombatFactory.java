@@ -12,8 +12,10 @@ import com.ruse.model.movement.PathFinder;
 import com.ruse.motivote3.doMotivote;
 import com.ruse.util.Misc;
 import com.ruse.world.clip.region.RegionClipping;
-import com.ruse.world.content.*;
+import com.ruse.world.content.BonusManager;
+import com.ruse.world.content.ItemDegrading;
 import com.ruse.world.content.ItemDegrading.DegradingItem;
+import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.Kraken.KrakenInstance;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.combat.effect.CombatPoisonEffect;
@@ -28,7 +30,6 @@ import com.ruse.world.content.combat.strategy.impl.Nex;
 import com.ruse.world.content.combat.strategy.impl.Scorpia;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.combat.weapon.FightStyle;
-import com.ruse.world.content.globalBosses.GuardianSpawnSystem;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringBossNpc;
 import com.ruse.world.content.serverperks.ServerPerks;
@@ -44,7 +45,8 @@ import com.ruse.world.entity.impl.player.Player;
 
 import java.util.Optional;
 
-import static com.ruse.world.content.combat.CombatType.*;
+import static com.ruse.world.content.combat.CombatType.MAGIC;
+import static com.ruse.world.content.combat.CombatType.RANGED;
 
 /**
  * A static factory class containing all miscellaneous methods related to, and
@@ -1549,7 +1551,7 @@ public final class CombatFactory {
                     return false;
                 }
             }
-
+/*
             else if (npc.getId() == 3830) { // Guardian spawn
                 if (GuardianSpawnSystem.highTierCount < 100) {
                     ((Player) entity).getPacketSender()
@@ -1559,7 +1561,7 @@ public final class CombatFactory {
                     return false;
                 }
             }
-
+*/
             else if (npc.getId() == 130) { // wiz
                 if (entity.getCombatBuilder().getStrategy().getCombatType() == CombatType.MELEE) {
                     ((Player) entity).getPacketSender().sendMessage("Kree'arra is resistant to melee attacks.");

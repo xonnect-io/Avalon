@@ -235,6 +235,9 @@ public class PlayerLoading {
             if (reader.has("celestial-member")) {
                 player.setCelestial(reader.get("celestial-member").getAsBoolean());
             }
+            if (reader.has("fallen-warrior-unlocked")) {
+                player.setFallenWarrior(reader.get("fallen-warrior-unlocked").getAsBoolean());
+            }
             if (reader.has("dark-supreme")) {
                 player.setDarkSupreme(reader.get("dark-supreme").getAsBoolean());
             }

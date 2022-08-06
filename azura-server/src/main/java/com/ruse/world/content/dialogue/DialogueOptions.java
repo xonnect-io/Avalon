@@ -2165,6 +2165,7 @@ public class DialogueOptions {
                         final int amt = player.getDialogueActionId() == 70 ? 1 : player.getInventory().getAmount(23020);
                         player.getPacketSender().sendInterfaceRemoval();
                         player.getInventory().delete(23020, amt);
+                        player.getSeasonPass().addXp(amt * 3);
                         player.getPacketSender().sendMessage(
                                 "You claim the " + (amt > 1 ? "scrolls" : "scroll") + " and receive your reward.");
                         int minutes = player.getGameMode() == GameMode.NORMAL ? 10 : 5;
@@ -2366,6 +2367,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23020) && player.getClickDelay().elapsed(700)) {
                         int amt = !all ? 1 : player.getInventory().getAmount(23020);
                         player.getInventory().delete(23020, amt);
+                        player.getSeasonPass().addXp(amt * 3);
                         player.getPointsHandler().incrementVotingPoints(amt);
                         PlayerPanel.refreshPanel(player);
                         player.getPacketSender().sendMessage(

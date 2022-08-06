@@ -440,8 +440,10 @@ public class NPCDrops {
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
                                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23231
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23230
-                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23232
+                                    || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 23232
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23233
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23234
+                                    || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 23235
                                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23280
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23293
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19888
@@ -491,8 +493,10 @@ public class NPCDrops {
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23231
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23230
-                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23233
-                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23234
+                    || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 23232
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23233
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23234
+                    || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 23235
                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23280
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23293
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19888

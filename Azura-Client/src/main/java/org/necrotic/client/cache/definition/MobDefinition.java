@@ -3967,8 +3967,9 @@ public final class MobDefinition {
 				definition.npcModels = new int[]{17203,17205,17207,17209,17210,17212,65015}; //17203,17204,17206,17208,17210,17211
 				definition.name = "Shadow hunter";
 				definition.combatLevel = 347;
-				definition.scaleXZ = 220;
-				definition.scaleY = 220;
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
+				definition.npcSizeInSquares = 1;
 				definition.standAnimation = 13217;
 				definition.walkAnimation = 13218;
 				definition.actions = new String[]{null, "Attack", null, null, null};

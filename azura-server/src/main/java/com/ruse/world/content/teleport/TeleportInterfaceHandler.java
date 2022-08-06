@@ -35,10 +35,6 @@ public class TeleportInterfaceHandler {
 	public void open() {
 		player.getPacketSender().resetItemsOnInterface(28229 + 20, 20);
 		player.setTeleportType(TeleportCategory.MONSTERS);
-		if (player.getTeleportData() == null) {
-			player.setTeleportData(TeleportData.MINOTAUR);
-			switchData();
-		}
 		switchTab(28215);
 		player.getPA().sendInterface(28200);
 	}
@@ -157,6 +153,17 @@ public class TeleportInterfaceHandler {
 				player.sendMessage("@red@You need 10k Midnight Goblin kills to go here!");
 			return;
 		}
+		if (player.getCurrentTeleport().getNpcId() == 587) {
+			if (player.getRights() == PlayerRights.OWNER)
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getGameMode().isIronman() || player.getRights() == PlayerRights.OWNER) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			}
+			else
+				player.sendMessage("@red@This boss is Ironman only!");
+			return;
+		}
 		if (player.getCurrentTeleport().getNpcId() == 9318) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
@@ -168,7 +175,17 @@ public class TeleportInterfaceHandler {
 				player.sendMessage("You need to be an Onyx donator to go here.");
 			return;
 		}
-
+		if (player.getCurrentTeleport().getNpcId() == 9319) {
+			if (player.getRights() == PlayerRights.OWNER)
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getAmountDonated() >= 5000) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			}
+			else
+				player.sendMessage("You need to be an Zenyte Donator to go here.");
+			return;
+		}
 		if (player.getCurrentTeleport().getNpcId() == 9116) {
 
 			if (player.getRights() == PlayerRights.OWNER) {
@@ -202,15 +219,23 @@ public class TeleportInterfaceHandler {
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return; }
 		}
-		if (player.getCurrentTeleport().getNpcId() == 9011) {
-			if (player.getRights() == PlayerRights.OWNER)
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.FALLEN_WARRIOR.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if (!player.isUnlockedLucifers() == true || player.getRights() != PlayerRights.OWNER) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getFallenWarrior() == true) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+					return;
+				} else if (player.getFallenWarrior() == false) {
 				Item[] requirements = new Item[]{new Item(ItemDefinition.UPGRADE_TOKEN_ID, 25_000_000), new Item(20400, 1),
 						new Item(18823, 3), new Item(19888, 3)};
 				if (player.getInventory().containsAll(requirements)) {
 					player.getInventory().deleteItemSet(requirements);
-					player.setUnlockedLucifers(true);
+					player.setFallenWarrior(true);
 					player.sendMessage("@red@Congratulations, you have unlocked Fallen Warrior's zone!");
 				} else {
 					player.sendMessage("You do not have the requirements to unlock Fallen Warriors!");
@@ -218,38 +243,34 @@ public class TeleportInterfaceHandler {
 					player.sendMessage("@red@Try again with these items in your inventory!");
 					return;
 				}
-				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
-						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
-				return;
 			}
 		}
 
-		if (player.getCurrentTeleport().getNpcId() == 9837) {
-			if (player.getRights() == PlayerRights.OWNER)
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.MIDNIGHT_GOBLIN.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if (!player.isUnlockedDarkSupreme()) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.isUnlockedDarkSupreme() == true) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.isUnlockedDarkSupreme() == false) {
 				Item[] requirements = new Item[]{ new Item(5011, 1), new Item(12537, 1), new Item(17013, 1)};
 				if (player.getInventory().containsAll(requirements)) {
 					player.getInventory().deleteItemSet(requirements);
 					player.setUnlockedDarkSupreme(true);
 					player.sendMessage("@red@Congratulations, you have unlocked Midnight Goblin's zone!");
-					return;
-				} else  if (player.getRights() == PlayerRights.OWNER) {
-					TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
-							player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
-				}  else
+				} else {
 					player.sendMessage(""); player.sendMessage("You do not have the requirements to unlock Midnight Goblins!");
 					player.sendMessage("You need to sacrifice a Legends Light bow, sword, and staff!");
 					player.sendMessage("@red@Try again with these items in your inventory!");
 					return;
-
-			} else if (player.isUnlockedDarkSupreme()) {
-				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
-						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
-				return;
+				}
 			}
-
 		}
+
 		if (player.getCurrentTeleport().getNpcId() == 9106) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");

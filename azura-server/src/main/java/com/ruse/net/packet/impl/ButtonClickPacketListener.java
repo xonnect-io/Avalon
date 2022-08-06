@@ -1165,7 +1165,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendString(8145, "");
                 int interfaceId = 8147;
                 player.getPacketSender().sendString(interfaceId++, "@red@" + "Season Pass Information:");
-                player.getPacketSender().sendString(interfaceId++, "@re1@" + "Claiming votes (::voted) - 3xp");
+                player.getPacketSender().sendString(interfaceId++, "@re1@" + "Claiming vote scrolls - 3xp");
                 player.getPacketSender().sendString(interfaceId++, "@re1@" + "Every 500 npc kills - 1xp");
                 player.getPacketSender().sendString(interfaceId++, "@re1@" + "1HR Playtime - 1xp");
                 player.getPacketSender().sendString(interfaceId++, "@re1@" + "Easy Slayer task - 1xp");

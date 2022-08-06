@@ -173,8 +173,10 @@ public class EquipPacketListener implements PacketListener {
             case 18818:
             case 23230:
             case 23231:
+            case 23232:
             case 23233:
             case 23234:
+            case 23235:
             case 23280:
             case 23293:
                 DialogueManager.sendStatement(player, "This item collects all drops automatically!");

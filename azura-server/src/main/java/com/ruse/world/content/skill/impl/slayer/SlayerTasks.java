@@ -16,18 +16,18 @@ public enum SlayerTasks {
 
 	// Easy bosses xp =  half the npcs health
 	HANTO(SlayerMaster.BOSS_SLAYER, 250, "Hanto warrior can be found by using the Teleport interface.", 50_000 / 2,
-			new Position(3040, 2846, 0)),
+			new Position(2849, 4576, 0)),
 	RADITZ(SlayerMaster.BOSS_SLAYER, 449, "Raditz can be found by using the Teleport interface.", 100_000 / 2,
-			new Position(2911, 3911, 0)),
+			new Position(2911, 3991, 0)),
 	GOKU(SlayerMaster.BOSS_SLAYER, 452, "Goku can be found by using the Teleport interface.", 500_000 / 2,
-			new Position(3357, 9311, 0)),
+			new Position(3358, 9307, 0)),
 	//Med bosses xp =  half the npcs health
 	BOTANIC_GUARDIAN(SlayerMaster.BOSS_SLAYER, 2342, "Botanic Guardian can be found by using the Teleport interface.", 6000000 / 2,
 			new Position(2586, 9449, 0)),
 	ENRAGED_GUARDIAN(SlayerMaster.BOSS_SLAYER, 2949, "Enraged Guardian can be found by using the Teleport interface.", 6000000 / 2,
-			new Position(2847, 2847, 0)),
+			new Position(3039, 3995, 0)),
 	ELEMENTAL_GUARDIAN(SlayerMaster.BOSS_SLAYER, 505, "Elemental Guardian can be found by using the Teleport interface.", 6000000 / 2,
-			new Position(2847, 2850, 0)),
+			new Position(2781, 4576, 0)),
 
 	// Hard bosses xp =  half the npcs health
 	INUYASHA(SlayerMaster.BOSS_SLAYER, 185, "Inuyashas can be found by using the Teleport interface.", 5000000 / 2,
@@ -35,7 +35,7 @@ public enum SlayerTasks {
 	TOLROKOTH(SlayerMaster.BOSS_SLAYER, 6430, "Tolrokoths can be found by using the Teleport interface.", 5000000 / 2,
 			new Position(1887, 5468, 0)),
 	DEMONS_OF_DEITY(SlayerMaster.BOSS_SLAYER, 440, "Demons of Deity can be found by using the Teleport interface.", 4500000 / 2,
-			new Position(2781, 4576, 0)),
+			new Position(2842, 9387, 0)),
 	MUTATED_HOUND(SlayerMaster.BOSS_SLAYER, 9839, "Mutated hounds can be found by using the Teleport interface.", 25000000 / 2,
 			new Position(3421, 4777, 0)),
 	PLUTONIC_DEMON(SlayerMaster.BOSS_SLAYER, 12810, "Plutonic demons can be found by using the Teleport interface.", 250000000 / 2,

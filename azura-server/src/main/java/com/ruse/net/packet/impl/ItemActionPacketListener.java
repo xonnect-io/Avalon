@@ -1175,6 +1175,7 @@ public class ItemActionPacketListener implements PacketListener {
                  int minutesDMG = 5 * amt;
 
                 player.getInventory().delete(23020, amt);
+                player.getSeasonPass().addXp(amt * 3);
                 player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, 5_000 * amt);
                 player.getPacketSender()
                         .sendMessage("@blu@You are rewarded " + (amt * 1) + " vote "
@@ -2229,6 +2230,7 @@ public class ItemActionPacketListener implements PacketListener {
                 int minutesDMG = 5 * amt;
 
                 player.getInventory().delete(23020, amt);
+                player.getSeasonPass().addXp(amt * 3);
                 player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, 5_000  * amt);
                 player.getPacketSender()
                         .sendMessage("@blu@You are rewarded " + (amt * 1) + " vote "

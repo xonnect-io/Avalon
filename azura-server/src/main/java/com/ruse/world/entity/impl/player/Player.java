@@ -837,6 +837,21 @@ public class Player extends Character {
     }
 
 
+    public boolean hasFallenWarrior;
+
+    public boolean isFallenWarrior() {
+        return hasFallenWarrior;
+    }
+
+    public void setFallenWarrior(boolean hasFallenWarrior) {
+        this.hasFallenWarrior = hasFallenWarrior;
+    }
+
+    public boolean getFallenWarrior() {
+        return hasFallenWarrior;
+    }
+
+
     public boolean hasCelestial;
 
     public boolean isCelestial() {

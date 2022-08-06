@@ -210,12 +210,16 @@ public class Maxhits {
                 }
             }
 
-            if (player.getEquipment().contains(23028) &&
-                    player.getEquipment().contains(23029) &&
-                    player.getEquipment().contains(23030) &&
-                    player.getEquipment().contains(23031) &&
-                    player.getEquipment().contains(23032)) {
-                maxHit *= 1.10;
+            if (player.getEquipment().contains(23230) || player.getEquipment().contains(23231) ||
+                    player.getEquipment().contains(23232) || player.getEquipment().contains(23233) ||
+                    player.getEquipment().contains(23234) || player.getEquipment().contains(23235) ||
+                    player.getEquipment().contains(7995) || player.getEquipment().contains(22109)) {
+                maxHit *= 1.2;
+            }
+
+            if (player.getEquipment().contains(23280) || player.getEquipment().contains(23292) ||
+                    player.getEquipment().contains(23293) || player.getEquipment().contains(23270)) {
+                maxHit *= 1.35;
             }
 
             if (player.getDoubleDMGTimer() > 0) {
@@ -332,6 +336,17 @@ public class Maxhits {
             }
             if (player.getEquipment().contains(7539)) {
                 maxHit *= 1.5;
+            }
+            if (player.getEquipment().contains(23230) || player.getEquipment().contains(23231) ||
+                    player.getEquipment().contains(23232) || player.getEquipment().contains(23233) ||
+                    player.getEquipment().contains(23234) || player.getEquipment().contains(23235) ||
+                    player.getEquipment().contains(7995) || player.getEquipment().contains(22109)) {
+                maxHit *= 1.2;
+            }
+
+            if (player.getEquipment().contains(23280) || player.getEquipment().contains(23292) ||
+                    player.getEquipment().contains(23293) || player.getEquipment().contains(23270)) {
+                maxHit *= 1.35;
             }
             int RangeDamage = Misc.getRandom(1, 100);
             if (player.isMembershipUnlocked() == true && RangeDamage > 90) {
@@ -535,13 +550,16 @@ public class Maxhits {
                     }
                 }
             }
+            if (player.getEquipment().contains(23230) || player.getEquipment().contains(23231) ||
+                    player.getEquipment().contains(23232) || player.getEquipment().contains(23233) ||
+                    player.getEquipment().contains(23234) || player.getEquipment().contains(23235) ||
+                    player.getEquipment().contains(7995) || player.getEquipment().contains(22109)) {
+                maxHit *= 1.2;
+            }
 
-            if (player.getEquipment().contains(23021) &&
-                    player.getEquipment().contains(23022) &&
-                    player.getEquipment().contains(23023) &&
-                    player.getEquipment().contains(23024) &&
-                    player.getEquipment().contains(23025)) {
-                maxHit *= 1.10;
+            if (player.getEquipment().contains(23280) || player.getEquipment().contains(23292) ||
+                    player.getEquipment().contains(23293) || player.getEquipment().contains(23270)) {
+                maxHit *= 1.35;
             }
             if (player.getEquipment().contains(23048)) { //Tier 5 Aura
                 maxHit *= 1.05D;
