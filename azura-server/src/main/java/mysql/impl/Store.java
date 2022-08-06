@@ -189,21 +189,26 @@ public class Store implements Runnable {
                 player.setAmountDonatedToday((int)amount);
                 player.getInventory().add(23174, (int) amount);
                 player.sendMessage("Thanks for donating!");
-                player.sendMessage("You are rewarded " + (int) amount + " High-Tier Tickets!");
+                player.sendMessage("You are rewarded " + (int) amount + " Nephilim Tokens!");
                 player.sendMessage("Your total amount donated was increased by " + (int) amount + ". your new total is: " + player.getAmountDonated());
                 if (amount > 250) {
-                    player.getInventory().add(23174, (int) amount * 2);
-                    player.sendMessage("You are rewarded x2 High-Tier tickets for donating more than $250");
+                    player.getInventory().add(23174, (int) amount);
+                    player.sendMessage("You are rewarded an extra" + (int) amount+ " Nephilim Tokens for donating more than $250");
                 }
                 if (GameSettings.ELITE_DONO_DEAL && amount >= 50) {
+                    player.getInventory().add(3578, 1);
+                    player.sendMessage("You received an Elite Goodiebag for donating 50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Elite Goodiebag!");
+                }
+                if (GameSettings.OWNER_CAPE_DONO_DEAL && amount >= 50) {
                     player.getInventory().add(3578, 1);
                     player.sendMessage("You received an Owner cape Goodiebag for donating 50+");
                     World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Owner cape Goodiebag");
                 }
-                if (GameSettings.SUMMER_DONO_DEAL && amount >= 50) {
-                    player.getInventory().add(23322, 5);
-                    player.sendMessage("You received x5 Summer boxes for donating 50+");
-                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x5 Summer boxes!");
+                if (GameSettings.OWNER_JEWELRY_DONO_DEAL && amount >= 50) {
+                    player.getInventory().add(23240, 1);
+                    player.sendMessage("You received x1 Owner jewelry Goodiebag for donating 50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Owner jewelry Goodiebag!");
                 }
                 if (amount >= 5) {
                     World.sendMessage("<img=5><shad=1>@yel@Donation: @blu@" + player.getUsername()

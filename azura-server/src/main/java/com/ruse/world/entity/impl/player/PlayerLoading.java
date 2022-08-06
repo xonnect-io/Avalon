@@ -1218,6 +1218,8 @@ public class PlayerLoading {
                 player.setPreviousTeleports(builder.fromJson(reader.get("p-tps").getAsJsonArray(), int[].class));
             }
 
+            if (reader.has("afk-tree"))
+                player.setAfkTree(reader.get("afk-tree").getAsInt());
             if (reader.has("afk-sapphire"))
                 player.setAfkSapphire(reader.get("afk-sapphire").getAsInt());
             if (reader.has("afk-emerald"))

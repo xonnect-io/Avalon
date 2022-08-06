@@ -9,6 +9,7 @@ import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.skill.impl.mining.Mining;
+import com.ruse.world.content.skill.impl.woodcutting.Woodcutting;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class PossibleLootInterface {
     }
 
     public static boolean handleButton(Player player, int buttonID) {
-        if (buttonID >= 101272 && buttonID <= 101336) {
+        if (buttonID >= 101272 && buttonID <= 101338) {
             int index = (buttonID - 101272) / 2;
 
             if (index <= LootData.values().length)
@@ -81,6 +82,7 @@ public class PossibleLootInterface {
         PVMMBOX(PVMBox.ITEM_ID, PVMBox.commonpvm, PVMBox.uncommonpvm, PVMBox.rarepvm),
         PVMMBOX_T2(22214, PVMBoxT2.commonpvm, PVMBoxT2.uncommonpvm, PVMBoxT2.rarepvm),
         MBOX(6199,MBox.common, MBox.uncommon,MBox.rare),
+        AFK_TREE("Metal AFK Tree",-1, Woodcutting.afktree),
         AFK_SAPPHIRE("Sapphire AFK Rock",-1, Mining.sapphire),
         AFK_EMERALD("Emerald AFK Rock",-1, Mining.emerald),
         AFK_RUBY("Ruby AFK Rock",-1, Mining.ruby),

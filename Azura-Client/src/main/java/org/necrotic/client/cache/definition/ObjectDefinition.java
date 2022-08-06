@@ -220,52 +220,59 @@ public final class ObjectDefinition {
 			definition.objectModelIDs = new int[]{15573};
 			definition.modelSizeY = 135;
 			definition.modelSizeX = 135;
+			definition.mapSceneID = 11;
 			definition.name = "AFK Sapphire";
-			definition.actions = new String[]{"Mine", null, null, null, null};
+			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
 		
 		if (definition.type == 22098) {
 			definition.objectModelIDs = new int[]{15574};
 			definition.modelSizeY = 135;
 			definition.modelSizeX = 135;
+			definition.mapSceneID = 11;
 			definition.name = "AFK Emerald";
-			definition.actions = new String[]{"Mine", null, null, null, null};
+			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
 		if (definition.type == 22097) {
 			definition.objectModelIDs = new int[]{15577};
 			definition.modelSizeY = 135;
 			definition.modelSizeX = 135;
+			definition.mapSceneID = 11;
 			definition.name = "AFK Ruby";
-			definition.actions = new String[]{"Mine", null, null, null, null};
+			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
 		if (definition.type == 8455) {
 			definition.objectModelIDs = new int[]{15580};
 			definition.modelSizeY = 135;
 			definition.modelSizeX = 135;
+			definition.mapSceneID = 11;
 			definition.name = "AFK Diamond";
-			definition.actions = new String[]{"Mine", null, null, null, null};
+			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
 
 		if (definition.type == 8456) {
 			definition.objectModelIDs = new int[]{15578};
 			definition.modelSizeY = 135;
 			definition.modelSizeX = 135;
+			definition.mapSceneID = 11;
 			definition.name = "AFK Onyx";
-			definition.actions = new String[]{"Mine", null, null, null, null};
+			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
 		if (definition.type == 22768) {
 			definition.objectModelIDs = new int[]{19558};
 			definition.modelSizeY = 135;
 			definition.modelSizeX = 135;
+			definition.mapSceneID = 11;
 			definition.name = "AFK Zenyte"; //#7a37b3
-			definition.actions = new String[]{"Mine", null, null, null, null};
+			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
 		if (definition.type == 22769) {
 			definition.objectModelIDs = new int[]{18796};
 			definition.modelSizeY = 135;
 			definition.modelSizeX = 135;
+			definition.mapSceneID = 11;
 			definition.name = "AFK Tanzanite"; //#7a37b3
-			definition.actions = new String[]{"Mine", null, null, null, null};
+			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
 		if (definition.type == 4004) {
 			definition.actions = new String[]{"Sacrifice", null, null, null, null};
@@ -700,6 +707,14 @@ public final class ObjectDefinition {
 			definition.interactive = true;
 			definition.actions = new String[5];
 			definition.actions[0] = "Start Raid";
+		}
+		if (definition.type == 1333) {
+			definition.objectModelIDs = new int[]{19573};
+			definition.name = "Metal AFK Tree";
+			definition.interactive = true;
+			definition.actions = new String[5];
+			definition.actions[0] = "Chop";
+			definition.actions[1] = "Check-rewards";
 		}
 		if (definition.type == 7478) {
 			definition.objectModelIDs = new int[]{2318};

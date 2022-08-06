@@ -572,6 +572,7 @@ public class Player extends Character {
     private int sodRaidsKC;
     private RaidsParty raidsParty;
     private boolean insideRaids;
+    private int afkTree;
     private int afkSapphire;
     private int afkEmerald;
     private int afkbRuby;
@@ -906,6 +907,12 @@ public class Player extends Character {
         this.raidsParty = raidsParty;
     }
 
+    public int getAfkTree() {
+        return afkTree;
+    }
+    public void setAfkTree(int afkTree) {
+        this.afkTree = afkTree;
+    }
 
 
     public int getAfkSapphire() {

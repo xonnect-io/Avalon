@@ -347,6 +347,7 @@ public class PlayerSaving {
 			// builder.toJsonTre1e(player.getBank(0).getValidItems()));
 
 
+			object.addProperty("afk-tree", player.getAfkTree());
 			object.addProperty("afk-sapphire", player.getAfkSapphire());
 			object.addProperty("afk-emerald", player.getAfkEmerald());
 			object.addProperty("afk-ruby", player.getAfkbRuby());

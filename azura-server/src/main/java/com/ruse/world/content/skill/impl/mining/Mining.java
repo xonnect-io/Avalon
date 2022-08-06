@@ -23,94 +23,109 @@ public class Mining {
 
 
     public static Box[] sapphire = new Box[]{
-            new Box(5022, 1, 2, 100),  //Pvm tickets
-            new Box(5022, 3, 4, 75),  //Pvm tickets
-            new Box(5020, 1, 2, 100),  //Afk tickets
-            new Box(5020, 3, 4, 70),  //Afk tickets
-            new Box(ItemDefinition.MILL_ID, 1, 2, 100),  //Orbs
-            new Box(ItemDefinition.MILL_ID, 2, 4, 60),  //Orbs
-            new Box(6199, 1, 0.4D),  //mystery box
-            new Box(23204, 1, 3D),  //sapphire fragment
-            new Box(7956, 1, 0.3D),  //Pvm box
+            new Box(5022, 2, 4, 100),  //Pvm tickets
+            new Box(5022, 4, 8, 75),  //Pvm tickets
+            new Box(5020, 2, 4, 100),  //Afk tickets
+            new Box(5020, 4, 8, 70),  //Afk tickets
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 2, 6, 100),  //Orbs
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 6, 12, 60),  //Orbs
+            new Box(6199, 1, 3, 0.4D),  //mystery box
+            new Box(7956, 1,3, 0.3D),  //Pvm box
             new Box(19116, 0.05D), //Super mbox
+            new Box(10946, 0.01D,true), //$1 Scroll
+            new Box(15002, 0.001D,true), //Elite casket
+            new Box(23204, 1, 3D),  //sapphire fragment
     };
     public static Box[] emerald = new Box[]{
-            new Box(5022, 2, 4, 100),  //Pvm tickets
-            new Box(5022, 6, 8, 75),  //Pvm tickets
-            new Box(5020, 2, 4, 100),  //Afk tickets
-            new Box(5020, 6, 8, 70),  //Afk tickets
-            new Box(ItemDefinition.MILL_ID, 2, 4, 100),  //Orbs
-            new Box(ItemDefinition.MILL_ID, 4, 8, 60),  //Orbs
-            new Box(6199, 3, 0.3D),  //mystery box
+            new Box(5022, 2, 8, 100),  //Pvm tickets
+            new Box(5022, 8, 16, 75),  //Pvm tickets
+            new Box(5020, 2, 8, 100),  //Afk tickets
+            new Box(5020, 8, 16, 70),  //Afk tickets
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 2, 12, 100),  //Orbs
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 12, 24, 60),  //Orbs
+            new Box(6199, 1, 7, 0.4D),  //mystery box
+            new Box(7956, 1,7, 0.3D),  //Pvm box
+            new Box(19114, 0.05D), //Super mbox
+            new Box(10946, 0.01D,true), //$1 Scroll
+            new Box(6769, 0.005D,true), //$5 BBond
+            new Box(15004, 0.001D,true), //Exclusive casket
             new Box(23205, 1, 3D),  //emerald fragment
-            new Box(7956, 3, 0.2D),  //Pvm box
-            new Box(19115, 0.05D), //Ext mbox
     };
     public static Box[] ruby = new Box[]{
-            new Box(5022, 4, 8, 100),  //Pvm tickets
-            new Box(5022, 12, 16, 75),  //Pvm tickets
-            new Box(5020, 4, 8, 100),  //Afk tickets
-            new Box(5020, 12, 16, 70),  //Afk tickets
-            new Box(ItemDefinition.MILL_ID, 4, 8, 100),  //Orbs
-            new Box(ItemDefinition.MILL_ID, 8, 16, 60),  //Orbs
-            new Box(6199, 7, 0.3D),  //mystery box
+            new Box(5022, 8, 16, 100),  //Pvm tickets
+            new Box(5022, 16, 32, 75),  //Pvm tickets
+            new Box(5020, 8, 16, 100),  //Afk tickets
+            new Box(5020, 16, 32, 70),  //Afk tickets
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 2, 16, 100),  //Orbs
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 14, 32, 60),  //Orbs
+            new Box(6199, 1, 7, 0.4D),  //mystery box
+            new Box(7956, 1,7, 0.3D),  //Pvm box
+            new Box(19114, 0.05D), //Super mbox
+            new Box(10946, 0.01D,true), //$1 Scroll
+            new Box(6769, 0.005D,true), //$5 BBond
+            new Box(15004, 0.001D,true), //Exclusive casket
             new Box(23206, 1, 3D),  //ruby fragment
-            new Box(7956, 7, 0.2D),  //Pvm box
-            new Box(19114, 0.05D), //Grand mbox
-            new Box(10946, 0.01D), //$1 scroll
     };
     public static Box[] diamond = new Box[]{
-            new Box(5022, 8, 16, 100),  //Pvm tickets
-            new Box(5022, 24, 32, 75),  //Pvm tickets
-            new Box(5020, 8, 16, 100),  //Afk tickets
-            new Box(5020, 24, 32, 70),  //Afk tickets
-            new Box(ItemDefinition.MILL_ID, 8, 16, 100),  //Orbs
-            new Box(ItemDefinition.MILL_ID, 16, 32, 60),  //Orbs
-            new Box(6199, 7, 0.9D),  //mystery box
+            new Box(5022, 8, 20, 100),  //Pvm tickets
+            new Box(5022, 24, 40, 75),  //Pvm tickets
+            new Box(5020, 8, 20, 100),  //Afk tickets
+            new Box(5020, 24, 40, 70),  //Afk tickets
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 8, 20, 100),  //Orbs
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 20, 40, 60),  //Orbs
+            new Box(6199, 1, 9, 0.4D),  //mystery box
+            new Box(7956, 1,9, 0.3D),  //Pvm box
+            new Box(20488, 0.05D), //Super mbox
+            new Box(6769, 0.005D,true), //$5 BBond
+            new Box(10942, 0.005D,true), //$5 BBond
+            new Box(14999, 0.001D,true), //Exclusive casket
             new Box(23207, 1, 3D),  //diamond fragment
-            new Box(7956, 7, 0.6D),  //Pvm box
-            new Box(19114, 0.15D), //Grand mbox
-            new Box(10946, 0.03D), //$1 scroll
     };
     public static Box[] onyx = new Box[]{
-            new Box(5022, 8, 16, 100),  //Pvm tickets
-            new Box(5022, 24, 32, 75),  //Pvm tickets
-            new Box(5020, 8, 16, 100),  //Afk tickets
-            new Box(5020, 24, 32, 70),  //Afk tickets
-            new Box(ItemDefinition.MILL_ID, 8, 16, 100),  //Orbs
-            new Box(ItemDefinition.MILL_ID, 16, 32, 60),  //Orbs
-            new Box(6199, 7, 0.9D),  //mystery box
+            new Box(5022, 8, 24, 100),  //Pvm tickets
+            new Box(5022, 24, 44, 75),  //Pvm tickets
+            new Box(5020, 8, 24, 100),  //Afk tickets
+            new Box(5020, 24, 44, 70),  //Afk tickets
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 8, 24, 100),  //Orbs
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 20, 44, 60),  //Orbs
+            new Box(6199, 1, 10, 0.4D),  //mystery box
+            new Box(7956, 1,10, 0.3D),  //Pvm box
+            new Box(20488, 0.05D), //Super mbox
+            new Box(6769, 0.005D,true), //$5 BBond
+            new Box(10942, 0.005D,true), //$5 BBond
+            new Box(14999, 0.001D,true), //Exclusive casket
             new Box(23208, 1, 3D),  //onyx fragment
-            new Box(7956, 7, 0.6D),  //Pvm box
-            new Box(19114, 0.15D), //Grand mbox
-            new Box(10946, 0.03D), //$1 scroll
     };
     public static Box[] zenyte = new Box[]{
-            new Box(5022, 8, 16, 100),  //Pvm tickets
-            new Box(5022, 24, 32, 75),  //Pvm tickets
-            new Box(5020, 8, 16, 100),  //Afk tickets
-            new Box(5020, 24, 32, 70),  //Afk tickets
-            new Box(ItemDefinition.MILL_ID, 8, 16, 100),  //Orbs
-            new Box(ItemDefinition.MILL_ID, 16, 32, 60),  //Orbs
-            new Box(6199, 7, 0.9D),  //mystery box
-            new Box(23209, 1, 3D),  //zenyte fragment
-            new Box(7956, 7, 0.6D),  //Pvm box
-            new Box(19114, 0.15D), //Grand mbox
-            new Box(10946, 0.03D), //$1 scroll
+            new Box(5022, 8, 28, 100),  //Pvm tickets
+            new Box(5022, 24, 48, 75),  //Pvm tickets
+            new Box(5020, 8, 28, 100),  //Afk tickets
+            new Box(5020, 24, 48, 70),  //Afk tickets
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 8, 28, 100),  //Orbs
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 20, 48, 60),  //Orbs
+            new Box(6199, 1, 10, 0.4D),  //mystery box
+            new Box(7956, 1,10, 0.3D),  //Pvm box
+            new Box(20488, 0.05D), //Super mbox
+            new Box(6769, 0.005D,true), //$5 BBond
+            new Box(10942, 0.005D,true), //$5 BBond
+            new Box(23253, 0.001D,true), //Exclusive casket
+            new Box(23209, 1, 3D),  //onyx fragment
     };
 
     public static Box[] tanzanite = new Box[]{
-            new Box(5022, 8, 16, 100),  //Pvm tickets
-            new Box(5022, 24, 32, 75),  //Pvm tickets
-            new Box(5020, 8, 16, 100),  //Afk tickets
-            new Box(5020, 24, 32, 70),  //Afk tickets
-            new Box(ItemDefinition.MILL_ID, 8, 16, 100),  //Orbs
-            new Box(ItemDefinition.MILL_ID, 16, 32, 60),  //Orbs
-            new Box(6199, 7, 0.9D),  //mystery box
-            new Box(23209, 1, 3D),  //zenyte fragment
-            new Box(7956, 7, 0.6D),  //Pvm box
-            new Box(19114, 0.15D), //Grand mbox
-            new Box(10946, 0.03D), //$1 scroll
+            new Box(5022, 8, 30, 100),  //Pvm tickets
+            new Box(5022, 24, 50, 75),  //Pvm tickets
+            new Box(5020, 8, 30, 100),  //Afk tickets
+            new Box(5020, 24, 50, 70),  //Afk tickets
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 8, 30, 100),  //Orbs
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 20, 50, 60),  //Orbs
+            new Box(6199, 1, 10, 0.4D),  //mystery box
+            new Box(7956, 1,10, 0.3D),  //Pvm box
+            new Box(20488, 0.05D), //Super mbox
+            new Box(6769, 0.005D,true), //$5 BBond
+            new Box(10942, 0.005D,true), //$5 BBond
+            new Box(23253, 0.001D,true), //Exclusive casket
+            new Box(23209, 1, 3D),  //onyx fragment
     };
 
 
@@ -157,38 +172,40 @@ public class Mining {
                 }
 
                 final int pickaxe = MiningData.getPickaxe(player);
+                if (pickaxe > 0) {
+                    final Pickaxe p = MiningData.forPick(pickaxe);
+                    if (MiningData.isHoldingPickaxe(player)) {
+                        player.performAnimation(new Animation(12003));
+                        Box[] loot = sapphire;
+                        if (tier == 1) {
+                            player.setAfkSapphire(player.getAfkSapphire() + 1);
+                        } else if (tier == 2) {
+                            loot = emerald;
+                            player.setAfkEmerald(player.getAfkEmerald() + 1);
+                        } else if (tier == 3) {
+                            loot = ruby;
+                            player.setAfkbRuby(player.getAfkbRuby() + 1);
+                        } else if (tier == 4) {
+                            loot = diamond;
+                            player.setAfkDiamond(player.getAfkDiamond() + 1);
+                        } else if (tier == 5) {
+                            loot = onyx;
+                            player.setAfkOnyx(player.getAfkOnyx() + 1);
+                        } else if (tier == 6) {
+                            loot = zenyte;
+                            player.setAfkZenyte(player.getAfkZenyte() + 1);
+                        } else if (tier == 7) {
+                            loot = tanzanite;
+                            player.setAfkTanzanite(player.getAfkTanzanite() + 1);
+                        }
 
-                if (MiningData.isHoldingPickaxe(player) || (player.getInventory().contains(pickaxe))) {
-                    player.performAnimation(new Animation(12003));
-                    Box[] loot = sapphire;
-                    if (tier == 1) {
-                        player.setAfkSapphire(player.getAfkSapphire() + 1);
-                    } else if (tier == 2) {
-                        loot = emerald;
-                        player.setAfkEmerald(player.getAfkEmerald() + 1);
-                    } else if (tier == 3) {
-                        loot = ruby;
-                        player.setAfkbRuby(player.getAfkbRuby() + 1);
-                    } else if (tier == 4) {
-                        loot = diamond;
-                        player.setAfkDiamond(player.getAfkDiamond() + 1);
-                    } else if (tier == 5) {
-                        loot = onyx;
-                        player.setAfkOnyx(player.getAfkOnyx() + 1);
-                    } else if (tier == 6) {
-                        loot = zenyte;
-                        player.setAfkZenyte(player.getAfkZenyte() + 1);
-                    } else if (tier == 7) {
-                        loot = tanzanite;
-                        player.setAfkTanzanite(player.getAfkTanzanite() + 1);
+                        Box reward = CasketOpening.getLoot(loot);
+                        player.getInventory().add(reward.getId(), reward.getMin() + Misc.getRandom(reward.getMax() - reward.getMin()));
+                        AfkSystem.thievedCount++;
+                        player.getInventory().refreshItems();
+                        player.getClickDelay().reset();
+                        return;
                     }
-
-                    Box reward = CasketOpening.getLoot(loot);
-                    player.getInventory().add(reward.getId(), reward.getMin() + Misc.getRandom(reward.getMax() - reward.getMin()));
-                    AfkSystem.thievedCount++;
-                    player.getInventory().refreshItems();
-                    player.getClickDelay().reset();
-                    return;
                 } else
                     this.stop();
                 player.getPacketSender().sendMessage("You don't have a pickaxe to mine this rock with.");

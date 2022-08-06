@@ -16,6 +16,7 @@ public class MainDissolving {
 	static int anim = 11904;
 	static int UPG_TOKEN = 12855;
 	public enum DissolvingData {
+		TORNADO(14018, new Item[]{new Item(UPG_TOKEN, 700)}, 250, anim),
 		CHAINSAW(22080, new Item[]{new Item(UPG_TOKEN, 5250)}, 15500, anim),
 		SHETANI_STAFF(5095, new Item[]{new Item(UPG_TOKEN, 80)}, 180, anim),
 		SABER(21057, new Item[]{new Item(UPG_TOKEN, 400)}, 1500, anim),

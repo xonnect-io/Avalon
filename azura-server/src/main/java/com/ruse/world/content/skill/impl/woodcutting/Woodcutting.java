@@ -6,13 +6,18 @@ import com.ruse.model.Animation;
 import com.ruse.model.GameObject;
 import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Equipment;
+import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.world.World;
 import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.StarterTasks;
 import com.ruse.world.content.StarterTasks.StarterTaskData;
 import com.ruse.world.content.achievements.AchievementData;
+import com.ruse.world.content.afk.AfkSystem;
+import com.ruse.world.content.casketopening.Box;
+import com.ruse.world.content.casketopening.CasketOpening;
 import com.ruse.world.content.skill.impl.firemaking.Logdata;
 import com.ruse.world.content.skill.impl.firemaking.Logdata.logData;
 import com.ruse.world.content.skill.impl.woodcutting.WoodcuttingData.Hatchet;
@@ -20,7 +25,86 @@ import com.ruse.world.content.skill.impl.woodcutting.WoodcuttingData.Trees;
 import com.ruse.world.entity.impl.player.Player;
 
 public class Woodcutting {
+	public static Box[] afktree = new Box[]{
+			new Box(5022, 1, 2, 100),  //Pvm tickets
+			new Box(5022, 3, 4, 75),  //Pvm tickets
+			new Box(5020, 1, 2, 100),  //Afk tickets
+			new Box(5020, 3, 4, 70),  //Afk tickets
+			new Box(ItemDefinition.UPGRADE_TOKEN_ID, 2, 4, 100),  //Orbs
+			new Box(ItemDefinition.UPGRADE_TOKEN_ID, 4, 6, 60),  //Orbs
+			new Box(6199, 1, 0.4D),  //mystery box
+			new Box(7956, 1, 0.3D),  //Pvm box
+			new Box(19116, 0.05D), //Super mbox
+			new Box(15003, 0.001D), //Azure casket
+	};
+	public static void chopAFKtree(Player player, int objectId, int tier) {
+		player.getSkillManager().stopSkilling();
+		player.getPacketSender().sendInterfaceRemoval();
+		if (!player.getClickDelay().elapsed(2000))
+			return;
+		if (player.getInventory().getFreeSlots() <= 0) {
+			player.getPacketSender().sendMessage("You need some more inventory space to do this.");
+			return;
+		}
+		if (player.busy() || player.getCombatBuilder().isBeingAttacked() || player.getCombatBuilder().isAttacking()) {
+			player.getPacketSender().sendMessage("You cannot do that right now.");
+			return;
+		}
 
+
+		int accounts = 1;
+		for (Player p : World.getPlayers()) {
+			if (p == null)
+				continue;
+			if (!player.equals(p) && player.getHostAddress().equals(p.getHostAddress())) {
+				if (p.getInteractingObject() != null && (p.getInteractingObject().getId() == 52601
+						|| p.getInteractingObject().getId() == 53654 || p.getInteractingObject().getId() == 30035)) {
+					accounts++;
+					continue;
+				}
+			}
+		}
+		if (accounts > 2){
+			player.getPacketSender().sendMessage("You already have two accounts afk.");
+			return;
+		}
+
+		player.setCurrentTask(new Task(4, player, true) {
+
+			@Override
+			public void execute() {
+				if (player.getInventory().getFreeSlots() <= 0) {
+					player.getPacketSender().sendMessage("You do not have any free inventory space left.");
+					this.stop();
+					return;
+				}
+
+				final Hatchet axe = Hatchet.forId(WoodcuttingData.getHatchet(player));
+				if (axe != null) {
+					player.performAnimation(new Animation(axe.getAnim()));
+					Box[] loot = afktree;
+					if (tier == 1) {
+						player.setAfkTree(player.getAfkTree() + 1);
+					}
+					Box reward = CasketOpening.getLoot(loot);
+					player.getInventory().add(reward.getId(), reward.getMin() + Misc.getRandom(reward.getMax() - reward.getMin()));
+					AfkSystem.thievedCount++;
+					player.getInventory().refreshItems();
+					player.getClickDelay().reset();
+					return;
+				} else
+					this.stop();
+				player.getPacketSender().sendMessage("You don't have a hatchet to chop this tree with.");
+			}
+
+			@Override
+			public void stop() {
+				setEventRunning(false);
+				player.performAnimation(new Animation(65535));
+			}
+		});
+		TaskManager.submit(player.getCurrentTask());
+	}
 	public static void cutWood(final Player player, final GameObject object, boolean restarting) {
 		if (!restarting)
 			player.getSkillManager().stopSkilling();

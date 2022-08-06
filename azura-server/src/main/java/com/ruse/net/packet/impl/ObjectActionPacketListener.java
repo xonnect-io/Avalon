@@ -292,6 +292,9 @@ public class ObjectActionPacketListener implements PacketListener {
                                 else
                                     player.getPacketSender().sendMessage("You need to be a Tanzanite Donator to afk this rock. Your current rank is " + player.getRights());
                                 break;
+                                case 1333:
+                                    Woodcutting.chopAFKtree(player, id, 1);
+                                break;
                             case 41204:
                                 player.setOpenedTeleports(true);
                                 TeleportInterface.sendMinigameData(player, TeleportInterface.Minigames.values()[0]);
@@ -2339,6 +2342,33 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getPacketSender().sendMessage("You steal a golden ring");
                                 // Stalls.stealFromStall(player, 30, 34, 15009, "You steal a golden ring.");
                                 break;
+
+                            case 1333:
+                                PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[26]);
+                                break;
+
+                            case 22099:
+                                PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[27]);
+                                break;
+                            case 22098:
+                                PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[28]);
+                                break;
+                            case 22097:
+                                PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[29]);
+                                break;
+                            case 8455:
+                                PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[30]);
+                                break;
+                            case 8456:
+                                PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[31]);
+                                break;
+                            case 22768:
+                                PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[32]);
+                                break;
+                            case 22769:
+                                PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[33]);
+                                break;
+
                             case 4876:
 
                                 if (!player.getClickDelay().elapsed(2500))
