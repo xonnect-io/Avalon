@@ -340,12 +340,14 @@ public class NPCOptionPacketListener implements PacketListener {
                             ShopManager.getShops().get(135).open(player);
                         } else if (player.getLocation() == Location.ZENYTE_ZONE) {
                             ShopManager.getShops().get(136).open(player);
-                        }
+                        } else
                         npc.forceChat("Silly noob, you are not at a donator zone");
                         break;
                     case 4653:
+                        player.getPacketSender().sendString(3903,
+                                "AFK Tickets in Inventory: @whi@" + player.getInventory().getAmount(5020) + "");
                         ShopManager.getShops().get(103).open(player);
-                        npc.forceChat("Get back to afking you lazy cat");
+                        npc.forceChat("Get back to the grind!");
                         break;
                     case 1872:
                         if (player.getLocation() == Location.ZULRAH_WAITING) {

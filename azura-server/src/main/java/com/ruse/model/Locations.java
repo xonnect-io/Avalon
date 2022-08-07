@@ -1120,7 +1120,7 @@ public class Locations {
 				}
 			}
 		},
-		RUBY_ZONE(new int[] { 2503, 2557 }, new int[] { 2684, 2750 }, false, true, true, false, true, false) {
+		RUBY_ZONE(new int[] { 2180, 2240 }, new int[] { 4230, 4290 }, false, true, true, false, true, false) {
 
 			@Override
 			public void enter(Player player) {

@@ -1771,10 +1771,6 @@ public final class ItemDefinition {
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
-			case 14667:
-				itemDef.name = "Zombie fragment";
-				itemDef.modelID = ItemDefinition.get(14639).modelID;
-				break;
 			case 20054:
 				itemDef.name = "Starter ring";
 				itemDef.rdc2 = 20402;

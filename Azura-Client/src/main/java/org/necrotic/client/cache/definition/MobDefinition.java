@@ -4515,7 +4515,7 @@ public final class MobDefinition {
 				definition.name = "Arachnes";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
-				definition.npcSizeInSquares = 3;
+				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.scaleXZ = 150;

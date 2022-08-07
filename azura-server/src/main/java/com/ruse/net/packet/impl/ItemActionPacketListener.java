@@ -272,7 +272,7 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 989:
-                Position crystalChest = new Position(2647, 4019, 0);
+                Position crystalChest = new Position(3100, 2979, 0);
                 TeleportHandler.teleportPlayer(player, crystalChest, TeleportType.NORMAL);
                 break;
             case 18813:
@@ -702,7 +702,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getPotionTimer().reset();
                 player.setOverloadPotionTimer(12000000);
                 if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
-                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 200);
+                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 2000);
                     player.getSkillManager().setCurrentLevel(Skill.ATTACK, 200);
                     player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 200);
                     player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 200);
@@ -727,7 +727,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getPotionTimer().reset();
                 player.setOverloadPotionTimer(100000);
                 if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
-                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 240);
+                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 2400);
                     player.getSkillManager().setCurrentLevel(Skill.ATTACK, 240);
                     player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 240);
                     player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 240);
@@ -1990,8 +1990,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
                     return;
                 }
-
-                new InstanceManager(player).create3X3Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
+                if (player.get4x4() == true)
+                new InstanceManager(player).create4X4Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
+                else
+                    new InstanceManager(player).create3X3Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
                 break;
             case 23264:
                 if (player.getLocation() == Location.JAIL) {
@@ -2025,8 +2027,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
                     return;
                 }
-
-                new GoldInstanceManager(player).create3X3Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
+                if (player.get4x4() == true)
+                    new GoldInstanceManager(player).create4X4Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
+                else
+                    new GoldInstanceManager(player).create3X3Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
                 break;
             case 23014:
             case 23015:

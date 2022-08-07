@@ -171,7 +171,7 @@ public enum CombatSpecial {
 			return new CombatContainer(player, target, 3, CombatType.RANGED, true);
 		}
 	},
-	MINIGUN(new int[] { 19135, 19136, 19137, 20173, 671, 20553, 19843,8088,8411,5012,5010,5011,22113,21606,8001,22089,9929,14056,15785,8253, 22083 }, 33, 1.01, 2.01, CombatType.RANGED,
+	MINIGUN(new int[] { 19135, 19136, 19137, 20173, 671, 20553, 19843,8088,8411,5012,5010,5011,22113,21606,8001,22089,9929,14056,15785,8253, 17672,22083 }, 33, 1.01, 2.01, CombatType.RANGED,
 			WeaponInterface.BSOAT) { // arma spec
 		@Override
 		public CombatContainer container(Player player, Character target) {

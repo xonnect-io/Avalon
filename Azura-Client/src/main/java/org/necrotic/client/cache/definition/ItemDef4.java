@@ -8,6 +8,11 @@ public class ItemDef4 {
 		ItemDefinition finity;
 		switch (id) {
 
+			case 14667:
+				itemDef.name = "Mummy fragment";
+				itemDef.modelID = ItemDefinition.get(14639).modelID;
+				break;
+
 			case 17572:
 				itemDef.name = "Weak poison";
 				break;
