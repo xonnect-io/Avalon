@@ -144,6 +144,12 @@ public class PlayerLoading {
             if (reader.has("mini-lucifer")) {
                 player.setMiniLucifer(reader.get("mini-lucifer").getAsBoolean());
             }
+            if (reader.has("3x3")) {
+                player.set3x3(reader.get("3x3").getAsBoolean());
+            }
+            if (reader.has("4x4")) {
+                player.set4x4(reader.get("3x3").getAsBoolean());
+            }
             if (reader.has("quest-one-started")) {
                 player.setQuestOneStarted(reader.get("quest-one-started").getAsBoolean());
             }

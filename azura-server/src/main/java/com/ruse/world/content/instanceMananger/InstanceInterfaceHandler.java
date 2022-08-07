@@ -15,9 +15,13 @@ public class InstanceInterfaceHandler {
 	public void open() {
 		sendBossNames();
 		player.getPA().sendInterface(35000);
+		player.set3x3(false);
+		player.set4x4(false);
+		player.getPacketSender().sendConfig(1085, 0);
 		player.getPacketSender().sendItemOnInterface(35006, 4278, 0, 1);
-		player.getPacketSender().sendString(135009,"Spawns: @whi@60");
-		player.getPacketSender().sendString(135011,"@yel@Upgrade token");
+		player.getPacketSender().sendString(135009, "Spawns: @whi@60");
+		player.getPacketSender().sendString(135011, "@yel@Upgrade token");
+		player.getPacketSender().sendString(135010, "Cost: @whi@750 Upgrade tokens");
 	}
 
 	public void sendBossNames() {

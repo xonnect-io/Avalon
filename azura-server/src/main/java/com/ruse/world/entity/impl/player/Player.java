@@ -914,6 +914,22 @@ public class Player extends Character {
         this.afkTree = afkTree;
     }
 
+    private boolean threebythree;
+    public boolean get3x3() {
+        return threebythree;
+    }
+    public void set3x3(boolean threebythree) {
+        this.threebythree = threebythree;
+    }
+
+    private boolean fourbyfour;
+    public boolean get4x4() {
+        return fourbyfour;
+    }
+    public void set4x4(boolean fourbyfour) {
+        this.fourbyfour = fourbyfour;
+    }
+
 
     public int getAfkSapphire() {
         return afkSapphire;

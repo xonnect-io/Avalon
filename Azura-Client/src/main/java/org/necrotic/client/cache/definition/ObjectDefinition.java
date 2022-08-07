@@ -928,17 +928,6 @@ public final class ObjectDefinition {
 			definition.actions = new String[5];
 			definition.solid = false;
 		}
-		if (definition.type == 1278) {
-			definition.objectModelIDs = new int[]{19539};
-			  definition.modelSizeH = 100;
-			  definition.modelSizeY = 80;
-		}
-		if (definition.type == 1276) {
-			definition.modelSizeH = 100;
-			definition.modelSizeY = 80;
-			definition.actions = new String[]{null, null, null, null, null};
-			definition.objectModelIDs = new int[]{19540};
-		}
 
 		if (definition.type == 10805 || definition.type == 10806 || definition.type == 10807) {
 			definition.name = "Grand Exchange clerk";

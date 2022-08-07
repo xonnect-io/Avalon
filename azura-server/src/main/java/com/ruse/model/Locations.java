@@ -381,7 +381,7 @@ public class Locations {
 
 			@Override
 			public void process(Player player) {
-				//if (player.getRaidsParty() != null)
+				if (player.getRaidsParty() != null)
 					player.getRaidsParty().refreshInterface();
 			}
 

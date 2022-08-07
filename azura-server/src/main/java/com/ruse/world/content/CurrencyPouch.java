@@ -87,10 +87,11 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().upgradeTokens < amount) {
-                    insufficientFundsError = true;
+
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().upgradeTokens));
+                    player.getCurrencyPouch().upgradeTokens = 0;
                     break;
                 }
-
                 if (player.getCurrencyPouch().upgradeTokens <= 0) {
                     emptyFundsError = true;
                     break;
@@ -114,10 +115,11 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().pvmTickets < amount) {
-                    insufficientFundsError = true;
-                    break;
-                }
 
+                        player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().pvmTickets));
+                        player.getCurrencyPouch().pvmTickets = 0;
+                        break;
+                    }
                 if (player.getCurrencyPouch().pvmTickets <= 0) {
                     emptyFundsError = true;
                     break;
@@ -141,7 +143,9 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().afkTickets < amount) {
-                    insufficientFundsError = true;
+
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().afkTickets));
+                    player.getCurrencyPouch().afkTickets = 0;
                     break;
                 }
 
@@ -168,7 +172,9 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().slayerTickets < amount) {
-                    insufficientFundsError = true;
+
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().slayerTickets));
+                    player.getCurrencyPouch().slayerTickets = 0;
                     break;
                 }
 
@@ -195,9 +201,11 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().voteScrolls < amount) {
-                    insufficientFundsError = true;
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().voteScrolls));
+                    player.getCurrencyPouch().voteScrolls = 0;
                     break;
                 }
+
 
                 if (player.getCurrencyPouch().voteScrolls <= 0) {
                     emptyFundsError = true;
@@ -222,10 +230,10 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().petFragments < amount) {
-                    insufficientFundsError = true;
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().petFragments));
+                    player.getCurrencyPouch().petFragments = 0;
                     break;
                 }
-
                 if (player.getCurrencyPouch().petFragments <= 0) {
                     emptyFundsError = true;
                     break;
@@ -249,10 +257,10 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().instanceTokens < amount) {
-                    insufficientFundsError = true;
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().instanceTokens));
+                    player.getCurrencyPouch().instanceTokens = 0;
                     break;
                 }
-
                 if (player.getCurrencyPouch().instanceTokens <= 0) {
                     emptyFundsError = true;
                     break;
@@ -276,7 +284,8 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().goldCharms < amount) {
-                    insufficientFundsError = true;
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().goldCharms));
+                    player.getCurrencyPouch().goldCharms = 0;
                     break;
                 }
 
@@ -303,7 +312,8 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().greenCharms < amount) {
-                    insufficientFundsError = true;
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().greenCharms));
+                    player.getCurrencyPouch().greenCharms = 0;
                     break;
                 }
 
@@ -330,10 +340,10 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().crimsonCharms < amount) {
-                    insufficientFundsError = true;
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().crimsonCharms));
+                    player.getCurrencyPouch().crimsonCharms = 0;
                     break;
                 }
-
                 if (player.getCurrencyPouch().crimsonCharms <= 0) {
                     emptyFundsError = true;
                     break;
@@ -357,10 +367,10 @@ public class CurrencyPouch {
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().blueCharms < amount) {
-                    insufficientFundsError = true;
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().blueCharms));
+                    player.getCurrencyPouch().blueCharms = 0;
                     break;
                 }
-
                 if (player.getCurrencyPouch().blueCharms <= 0) {
                     emptyFundsError = true;
                     break;

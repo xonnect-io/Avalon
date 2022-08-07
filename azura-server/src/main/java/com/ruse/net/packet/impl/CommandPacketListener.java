@@ -55,6 +55,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
+import com.ruse.world.content.raids.ZombieRaids;
 import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
@@ -109,7 +110,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(2655, 4017);
+            Position pos = new Position(3110, 2990);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");
         }
@@ -1620,7 +1621,9 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("spawnslayerboss")) {
             SlayerBossSystem.commandSpawnBoss();
         }
-
+        if (command[0].equalsIgnoreCase("finishraid")) {
+            ZombieRaids.finishRaid(player.getRaidsParty());
+        }
         if (command[0].equals("dumpspawns")) {
             for (NPC npc : World.getNpcs()) {
                 if (npc == null)

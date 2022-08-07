@@ -7,7 +7,6 @@ import com.ruse.model.RegionInstance;
 import com.ruse.model.RegionInstance.RegionInstanceType;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.definitions.NpcDefinition;
-import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -26,13 +25,13 @@ public class GoldInstanceManager {
 	private static final GoldInstanceData[] values = GoldInstanceData.values();
 
 	public void create3X3Instance(int npcId, RegionInstanceType type) {
-		if (player.getInventory().contains(23264) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 750)) {
+		if (player.getInventory().contains(23264) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 1500)) {
 			player.getInventory().delete(23264, 1);
-			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 750);
+			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 1500);
 		} else {
 			player.getPA()
-					.sendMessage("You need an instance token, these can be obtained from killing any npc in-game!");
-			player.getPA().sendMessage("You need to have 750+ Avalon tokens in your inventory");
+					.sendMessage("You need an instance token (u), these can be obtained from upgrading instance tokens");
+			player.getPA().sendMessage("You need 1,500 Avalon tokens in your inventory to start a 3x3 instance.");
 			return;
 		}
 		if (player.getRegionInstance() != null) {
@@ -79,7 +78,7 @@ public class GoldInstanceManager {
 		}
 		for (GoldInstanceData data : values) {
 			if (npcId == data.getNpcid() || NpcDefinition.forId(npcId).getName() == data.getName()) {
-				player.setCurrentInstanceAmount(120);
+				player.setCurrentInstanceAmount(60);
 				player.setCurrentInstanceNpcId(data.getNpcid());
 				player.setCurrentInstanceNpcName(data.getName());
 				if (data.getNpcid() == 6260) {
@@ -93,14 +92,15 @@ public class GoldInstanceManager {
 		player.getPA().sendInterfaceRemoval();
 	}
 
-	public void create4X4InstanceGold(int npcId, RegionInstanceType type) {
-		if (player.getInventory().contains(23264) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 1500)) {
+
+	public void create4X4Instance(int npcId, RegionInstanceType type) {
+		if (player.getInventory().contains(23264) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 3000)) {
 			player.getInventory().delete(23264, 1);
-			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 1500);
+			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 3000);
 		} else {
 			player.getPA()
-					.sendMessage("You need an instance token, these can be obtained from killing any npc ingame!");
-			player.getPA().sendMessage("You need to have 750+ Avalon tokens in your inventory");
+					.sendMessage("You need an instance token, these can be obtained from killing any npc in-game!");
+			player.getPA().sendMessage("You need 3000 Avalon tokens in your inventory to start a 4x4 instance.");
 			return;
 		}
 		if (player.getRegionInstance() != null) {
@@ -121,39 +121,41 @@ public class GoldInstanceManager {
 		}
 		player.setRegionInstance(new RegionInstance(player, type));
 		player.lastInstanceNpc = npcId;
-		player.moveTo(new Position(2786, 4775 ,
+		player.moveTo(new Position(2785, 4771 ,
 				player.getIndex() * 4));
+
+
 		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
+					player.getPosition().getY() - 10 , player.getIndex() * pos));
+			npc_.setSpawnedFor(player);
+			player.getRegionInstance().getNpcsList().add(npc_);
+			World.register(npc_);
+		}
+		for (int i = 0; i < 4; i++) {
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
 					player.getPosition().getY() - 8 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
 					player.getPosition().getY() - 6 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
 					player.getPosition().getY() - 4 , player.getIndex() * pos));
-			npc_.setSpawnedFor(player);
-			player.getRegionInstance().getNpcsList().add(npc_);
-			World.register(npc_);
-		}
-		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
-					player.getPosition().getY() - 2 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (GoldInstanceData data : values) {
 			if (npcId == data.getNpcid() || NpcDefinition.forId(npcId).getName() == data.getName()) {
-				player.setCurrentInstanceAmount(data.getEndamount() + Misc.exclusiveRandom(25, 60));
+				player.setCurrentInstanceAmount(120);
 				player.setCurrentInstanceNpcId(data.getNpcid());
 				player.setCurrentInstanceNpcName(data.getName());
 				if (data.getNpcid() == 6260) {
@@ -166,6 +168,7 @@ public class GoldInstanceManager {
 				+ player.getCurrentInstanceNpcName());
 		player.getPA().sendInterfaceRemoval();
 	}
+
 
 	public void finish() {
 		player.getPA().sendMessage("to leave the instance simply teleport out.");

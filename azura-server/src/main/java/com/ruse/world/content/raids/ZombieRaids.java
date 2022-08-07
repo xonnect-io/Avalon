@@ -23,6 +23,8 @@ public class ZombieRaids {
         Player p = party.getOwner();
         p.getPacketSender().sendInterfaceRemoval();
 
+        System.out.println(party.getOwner() == null ? "null" : "not null");
+
         if (party.hasEnteredRaids()) {
             p.getPacketSender().sendMessage("your party is already in a raids!");
             return;
@@ -66,6 +68,8 @@ public class ZombieRaids {
                     CurseHandler.deactivateAll(member);
                     stop();
                 }
+
+
             });
             member.getSkillManager().stopSkilling();
             member.getPacketSender().sendClientRightClickRemoval();
@@ -299,21 +303,26 @@ public class ZombieRaids {
                     player.getSeasonPass().addXp(2);
                     player.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     player.getPointsHandler().incrementZombieRaidKC(1);
+                    player.getRaidsParty().enteredDungeon(false);
+                    party.setDeathCount(0);
+                    party.setKills(0);
+                    party.setCurrentPhase(1);
 
+                    player.moveTo(ZombieRaidData.lobbyPosition);
+                    if (player.getRaidsParty() != null) {
+                        player.getRaidsParty().remove(player, true);
+                        player.sendMessage("You left your Raids party.");
+                    }
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
                         player.getInventory().add(18404, 1);
                         player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Slayer Perk is active!");
                     }
                 }
-                party.moveTo(ZombieRaidData.lobbyPosition);
-                party.setDeathCount(0);
-                party.setKills(0);
-                party.setCurrentPhase(1);
                 party.getPlayers().clear();
-
                 stop();
             }
         });
+
     }
 
     public static Box getLoot(Box[] loot, int size) {

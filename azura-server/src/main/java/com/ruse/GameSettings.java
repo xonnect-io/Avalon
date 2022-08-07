@@ -130,12 +130,12 @@ public class GameSettings {
     /**
      * The default position
      */
-    public static final Position DEFAULT_POSITION = new Position(2655, 4017, 0);
+    public static final Position DEFAULT_POSITION = new Position(3110, 2990, 0);
     public static final Position PYRAMID_LOBBY = new Position(3488, 9243, 0);
     public static final Position STARTER = new Position(2783, 9495, 0);
     public static final Position CORP_CORDS = new Position(2900, 4384);
     public static final Position MARKET = new Position(2660, 4044, 0);
-    public static final Position HOME_CORDS = new Position(2655, 4017, 0);
+    public static final Position HOME_CORDS = new Position(3110, 2990, 0);
     public static final Position TRIO_CORDS = new Position(3025, 5231, 0);
     public static final Position KFC_CORDS = new Position(2606, 4774, 4);
     public static final Position CHILL_CORDS = new Position(3816, 2829, 0);

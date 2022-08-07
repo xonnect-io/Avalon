@@ -12,11 +12,15 @@ public class GoldInstanceInterfaceHandler {
 	}
 
 	public void open() {
-		player.getPA().sendInterface(75000);
 		sendBossNames();
+		player.set3x3(false);
+		player.set4x4(false);
+		player.getPA().sendInterface(75000);
+		player.getPacketSender().sendConfig(1085, 0);
 		player.getPacketSender().sendItemOnInterface(36665, 23264, 0, 1);
-		player.getPacketSender().sendString(75009,"Spawns: @whi@120");
-		player.getPacketSender().sendString(75011,"@yel@Upgrade token (u)");
+		player.getPacketSender().sendString(75009, "Spawns: @whi@120");
+		player.getPacketSender().sendString(75011, "@yel@Upgrade token (u)");
+		player.getPacketSender().sendString(75010, "Cost: @whi@1,500 Upgrade tokens");
 	}
 
 	public void sendBossNames() {

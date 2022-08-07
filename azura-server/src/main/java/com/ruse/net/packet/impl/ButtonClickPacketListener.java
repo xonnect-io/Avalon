@@ -174,6 +174,30 @@ public class ButtonClickPacketListener implements PacketListener {
         new WellForGlobalBossesInterface(player).button(id);
 
         switch (id) {
+            case 75012://3x3
+                player.set4x4(false);
+                player.set3x3(true);
+                player.sendMessage("You have selected 3x3 instances.");
+                player.getPacketSender().sendString(75010, "Cost: @whi@1,500 Upgrade tokens");
+                break;
+            case 75013://4x4
+                player.set3x3(false);
+                player.set4x4(true);
+                player.sendMessage("You have selected 4x4 instances.");
+                player.getPacketSender().sendString(75010, "Cost: @whi@3,000 Upgrade tokens");
+                break;
+            case 135012://3x3
+                player.set4x4(false);
+                player.set3x3(true);
+                player.sendMessage("You have selected 3x3 instances.");
+                player.getPacketSender().sendString(135010, "Cost: @whi@750 Upgrade tokens");
+                break;
+                case 135013://4x4
+                    player.set3x3(false);
+                    player.set4x4(true);
+                    player.sendMessage("You have selected 4x4 instances.");
+                    player.getPacketSender().sendString(135010, "Cost: @whi@1,500 Upgrade tokens");
+                break;
             case 28028:
             if(player.isMembershipUnlocked()){
                 player.sendMessage("You have already claimed a membership this Month");
@@ -383,7 +407,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getInventory().delete(5011, 1);
                     player.getInventory().delete(12537, 1);
                     player.getInventory().delete(17013, 1);
-                    Position magicGuild = new Position(2655, 4017);
+                    Position magicGuild = new Position(3110, 2990);
                     TeleportHandler.teleportPlayer(player, magicGuild, player.getSpellbook().getTeleportType());
                     return;
                 } else
@@ -400,7 +424,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Warrior!");
                     player.setWarriorGuildTier1(true);
                     player.getInventory().delete(23321, 250);
-                    Position warriorGuild = new Position(2655, 4017);
+                    Position warriorGuild = new Position(3110, 2990);
                     TeleportHandler.teleportPlayer(player, warriorGuild, player.getSpellbook().getTeleportType());
                     return;
                 } else
@@ -416,6 +440,12 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 21372:
                 player.getWheelOfFortune().open();
+                break;
+
+
+            case 8666:
+                Position prayerAlter = new Position(3093, 2985, 0);
+                TeleportHandler.teleportPlayer(player, prayerAlter, TeleportType.NORMAL);
                 break;
 
             case 8662:
@@ -621,7 +651,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 12162:
-                Position slayerPos = new Position(2664,4015,0);
+                Position slayerPos = new Position(3115,2971,0);
                 TeleportHandler.teleportPlayer(player, slayerPos, TeleportType.NORMAL);
                 break;
 
@@ -1026,44 +1056,79 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 75003:
                 if (player.getDataGold() != null) {
-                    if (player.getDataGold().getNpcid() == 1265) {
-                        player.sendMessage("Avalon lions can only be killed at ::train");
-                        return;
-                    }
-
-                    if (player.getDataGold().getNpcid() == 1265
-                            || player.getDataGold().getNpcid() == 1023
-                            || player.getDataGold().getNpcid() == 1233
-                            || player.getDataGold().getNpcid() == 1234) {
-                        if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getData().getNpcid(), player) > 500) {
-                            player.sendMessage("This place is for new players with less than 5k npc kills.");
+                    if (player.get3x3() == true) {
+                        if (player.getDataGold().getNpcid() == 1265) {
+                            player.sendMessage("Avalon lions can only be killed at ::train");
                             return;
                         }
-                    }
+                        if (player.getDataGold().getNpcid() == 1265
+                                || player.getDataGold().getNpcid() == 1023
+                                || player.getDataGold().getNpcid() == 1233
+                                || player.getDataGold().getNpcid() == 1234) {
+                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getDataGold().getNpcid(), player) > 500) {
+                                player.sendMessage("This place is for new players with less than 5k npc kills.");
+                                return;
+                            }
+                        }
+                        new GoldInstanceManager(player).create3X3Instance(player.getDataGold().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
+                    } else if (player.get4x4() == true) {
+                        if (player.getDataGold().getNpcid() == 1265) {
+                            player.sendMessage("Avalon lions can only be killed at ::train");
+                            return;
+                        }
 
-                    new GoldInstanceManager(player).create3X3Instance(player.getDataGold().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
-                } else {
+                        if (player.getDataGold().getNpcid() == 1265
+                                || player.getDataGold().getNpcid() == 1023
+                                || player.getDataGold().getNpcid() == 1233
+                                || player.getDataGold().getNpcid() == 1234) {
+                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getData().getNpcid(), player) > 500) {
+                                player.sendMessage("This place is for new players with less than 5k npc kills.");
+                                return;
+                            }
+                        }
+                        new GoldInstanceManager(player).create4X4Instance(player.getDataGold().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
+                    }
+                }
+                else {
                     player.getPA().sendMessage("Select the boss you'd like to instance.");
                 }
                 break;
             case -30533:
                 if (player.getData() != null) {
-                    if (player.getData().getNpcid() == 1265) {
-                        player.sendMessage("Avalon lions can only be killed at ::train");
-                        return;
-                    }
-
-                    if (player.getData().getNpcid() == 1265
-                            || player.getData().getNpcid() == 1023
-                            || player.getData().getNpcid() == 1233
-                            || player.getData().getNpcid() == 1234) {
-                        if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getData().getNpcid(), player) > 500) {
-                            player.sendMessage("This place is for new players with less than 5k npc kills.");
+                    if (player.get3x3() == true) {
+                        if (player.getData().getNpcid() == 1265) {
+                            player.sendMessage("Avalon lions can only be killed at ::train");
                             return;
                         }
+                        if (player.getData().getNpcid() == 1265
+                                || player.getData().getNpcid() == 1023
+                                || player.getData().getNpcid() == 1233
+                                || player.getData().getNpcid() == 1234) {
+                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getData().getNpcid(), player) > 500) {
+                                player.sendMessage("This place is for new players with less than 5k npc kills.");
+                                return;
+                            }
+                        }
+                        new InstanceManager(player).create3X3Instance(player.getData().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
+                    } else if (player.get4x4() == true) {
+                        if (player.getData().getNpcid() == 1265) {
+                            player.sendMessage("Avalon lions can only be killed at ::train");
+                            return;
+                        }
+
+                        if (player.getData().getNpcid() == 1265
+                                || player.getData().getNpcid() == 1023
+                                || player.getData().getNpcid() == 1233
+                                || player.getData().getNpcid() == 1234) {
+                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getData().getNpcid(), player) > 500) {
+                                player.sendMessage("This place is for new players with less than 5k npc kills.");
+                                return;
+                            }
+                        }
+                        new InstanceManager(player).create4X4Instance(player.getData().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
                     }
-                    new InstanceManager(player).create3X3Instance(player.getData().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
-                } else {
+                }
+                    else {
                     player.getPA().sendMessage("Select the boss you'd like to instance.");
                 }
                 break;
