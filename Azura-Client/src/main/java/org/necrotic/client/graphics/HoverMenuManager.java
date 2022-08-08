@@ -35,7 +35,7 @@ public class HoverMenuManager {
                         10946,666,15424,674,8800,8801,8802,20549,8803,8804,8805,20173,8806,8807,8808
                 )));
 
-        menus.put(19114, new HoverMenu("Has a chance to give $1 scrolls, $5 & $10 bonds, and T4 equipment.",
+        menus.put(19114, new HoverMenu("Has a chance to give $1 scrolls, $5 & $10 bonds, and T5 equipment.",
                 Arrays.asList(
                         8326,8327,8328,22084,8330,8331,8332,22083,8323,8324,8325,22092,10946,6769,10942
                 )));

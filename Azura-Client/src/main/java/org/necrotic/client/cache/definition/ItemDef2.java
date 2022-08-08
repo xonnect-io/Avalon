@@ -2659,7 +2659,7 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 8323:
-				itemDef.name = "T4 Magic helm";
+				itemDef.name = "T5 Magic helm";
 				itemDef.modelID = 100084;
 				itemDef.maleEquip1 = 100085;
 				itemDef.femaleEquip1 = 100085;
@@ -2677,7 +2677,7 @@ public class ItemDef2 {
 				itemDef.rdc2 = 46880;
 				break;
 			case 8324:
-				itemDef.name = "T4 Magic body";
+				itemDef.name = "T5 Magic body";
 				itemDef.modelID = 100093;
 				itemDef.maleEquip1 = 100094;
 				itemDef.femaleEquip1 = 100094;
@@ -2696,7 +2696,7 @@ public class ItemDef2 {
 				break;
 
 			case 8325:
-				itemDef.name = "T4 Magic legs";
+				itemDef.name = "T5 Magic legs";
 				itemDef.modelID = 100091;
 				itemDef.maleEquip1 = 100092;
 				itemDef.femaleEquip1 = 100092;
@@ -2715,7 +2715,7 @@ public class ItemDef2 {
 				break;
 				
 			case 8326:
-				itemDef.name = "T4 Melee helm";
+				itemDef.name = "T5 Melee helm";
 				itemDef.modelID = 100105;
 				itemDef.maleEquip1 = 100106;
 				itemDef.femaleEquip1 = 100106;
@@ -2731,7 +2731,7 @@ public class ItemDef2 {
 				break;
 				
 			case 8327:
-				itemDef.name = "T4 Melee body";
+				itemDef.name = "T5 Melee body";
 				itemDef.modelID = 100098;
 				itemDef.maleEquip1 = 100099;
 				itemDef.femaleEquip1 = 100099;
@@ -2747,7 +2747,7 @@ public class ItemDef2 {
 				break;
 			
 			case 8328:
-				itemDef.name = "T4 Melee legs";
+				itemDef.name = "T5 Melee legs";
 				itemDef.modelID = 100107;
 				itemDef.maleEquip1 = 100108;
 				itemDef.femaleEquip1 = 100108;
@@ -3099,7 +3099,7 @@ public class ItemDef2 {
 				itemDef.value = 1;
 				break;
 			case 8330:
-				itemDef.name = "T4 Range helm";
+				itemDef.name = "T5 Range helm";
 				itemDef.modelID = 100117;
 				itemDef.maleEquip1 = 100118;
 				itemDef.femaleEquip1 = 100118;
@@ -3118,7 +3118,7 @@ public class ItemDef2 {
 				 itemDef.rdc2 = 34343;
 				break;
 			case 8331:
-				itemDef.name = "T4 Range body";
+				itemDef.name = "T5 Range body";
 				itemDef.modelID = 100119;
 				itemDef.maleEquip1 = 100115;
 				itemDef.femaleEquip1 = 100115;
@@ -3138,7 +3138,7 @@ public class ItemDef2 {
 				break;
 
 			case 8332:
-				itemDef.name = "T4 Range legs";
+				itemDef.name = "T5 Range legs";
 				itemDef.modelID = 100120;
 				itemDef.maleEquip1 = 100121;
 				itemDef.femaleEquip1 = 100121;

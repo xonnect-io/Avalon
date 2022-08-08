@@ -1149,20 +1149,10 @@ public class ItemDef4 {
 				break;
 				
 			case 22115:
-				itemDef.name = "Dark Legends Sword";
-				ItemDefinition dsword = ItemDefinition.get(12537);
-				itemDef.modelID = 17361;
-				itemDef.femaleEquip1 = 17360;
-				itemDef.maleEquip1 = 17360;
-				itemDef.actions = dsword.actions;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 15;
-				itemDef.modelZoom = 1780;
-				itemDef.rotationY = 475;
-				itemDef.rotationX = 983;
-				itemDef.rotationZ = 0;
-				itemDef.stackable = false;
-				itemDef.rdc2 = 00000001;
+				itemDef.copyItem(12537);
+				itemDef.name = "Dark Scythe of Vitur";
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{57};
 				break;
 				
 			case 22116:
@@ -7757,20 +7747,10 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 8136:
-				itemDef.name = "Blood blade";
-				itemDef.modelID = 19554;
-				itemDef.femaleEquip1 = 19554;
-				itemDef.maleEquip1 = 19554;
-				itemDef.modelZoom = 3200;
-				itemDef.rotationX = 165;//189
-				itemDef.rotationY = 252;//768
-				itemDef.rotationZ = 322;//768
-				itemDef.modelOffsetX = 78;
-				itemDef.modelOffsetY = -252;
-				itemDef.stackable = false;
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
+				itemDef.copyItem(12537);
+				itemDef.name = "Blood Scythe of Vitur";
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{52};
 				break;
 			case 23391:
 				itemDef.name = "Empyrean maul";
@@ -7800,39 +7780,29 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 12535:
-				itemDef.name = "Legends Sword";
-				ItemDefinition vitur22 = ItemDefinition.get(12537);
-				itemDef.modelID = 17361;
-				itemDef.femaleEquip1 = 17360;
-				itemDef.maleEquip1 = 17360;
-				itemDef.actions = vitur22.actions;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 15;
-				itemDef.modelZoom = 1780;
-				itemDef.rotationY = 475;
-				itemDef.rotationX = 983;
-				itemDef.rotationZ = 0;
-				itemDef.stackable = false;
+				itemDef.copyItem(12537);
+				itemDef.name = "Legends Scythe of Vitur";
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{104};
 				break;
 
 			case 12537:
-				ItemDefinition executionz = ItemDefinition.get(4755);
-				itemDef.maleEquip1 = 65323;
+				itemDef.name = "Light Scythe Of Vitur";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
-				itemDef.name = "Legends Light Sword";
-				itemDef.modelID = 17361;
-				itemDef.femaleEquip1 = 17360;
-				itemDef.maleEquip1 = 17360;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 15;
-				itemDef.modelZoom = 1780;
-				itemDef.rotationY = 475;
-				itemDef.rotationX = 983;
+				itemDef.modelID = 65320;
+				itemDef.femaleEquip1 = 65321;
+				itemDef.maleEquip1 = 65321;
+				itemDef.modelOffsetX = -19;
+				itemDef.modelOffsetY = 85;
+				itemDef.modelZoom = 3000;
+				itemDef.rotationY = 259;
+				itemDef.rotationX = 883;
 				itemDef.rotationZ = 0;
 				itemDef.stackable = false;
-				itemDef.rdc2 = 11000000;
+				itemDef.newModelColor = new int[]{40};
+				itemDef.editedModelColor = new int[]{76};
 				break;
 
 			case 9940:

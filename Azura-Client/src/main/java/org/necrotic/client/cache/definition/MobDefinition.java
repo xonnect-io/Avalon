@@ -4818,20 +4818,12 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				break;
 			case 606:
-				definition.name = "<col=7d9781>Shadow Warrior";
+				definition.name = "<col=7d9781>Zero Killer";
 				definition.combatLevel = 284;
 				definition.walkAnimation = 1660;
 				definition.standAnimation = 11973;
-				definition.npcModels = new int[9];
-				definition.npcModels[0] = 65499; //HEAD
-				definition.npcModels[1] = 55820; //JAW
-				definition.npcModels[2] = 65501; //CHEST
-				definition.npcModels[3] = 65505; //CAPE
-				definition.npcModels[4] = 64090; //ARM
-				definition.npcModels[5] = 65507; //HAND//shield
-				definition.npcModels[6] = 65510; //WEP
-				definition.npcModels[7] = 65503; //LEG
-				definition.npcModels[8] = 65508; //BOOT
+				definition.npcModels = new int[1];
+				definition.npcModels[0] = 19576;
 				definition.actions = new String[5];
 				definition.actions[0] = null;
 				definition.actions[1] = "Attack";

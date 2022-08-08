@@ -3,18 +3,15 @@ package com.ruse.world.content.combat.strategy.impl;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Animation;
-import com.ruse.model.GroundItem;
-import com.ruse.model.Item;
+import com.ruse.model.Graphic;
 import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.model.projectile.Projectile;
 import com.ruse.util.Misc;
-import com.ruse.util.RandomUtility;
 import com.ruse.world.content.combat.CombatContainer;
 import com.ruse.world.content.combat.CombatType;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
 import com.ruse.world.entity.impl.Character;
-import com.ruse.world.entity.impl.GroundItemManager;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -25,12 +22,8 @@ public class HellraiserBossCombatScript implements CombatStrategy {
 	/**
 	 * Attacking melee
 	 */
-	private static final Animation MELEE = new Animation(2922);
-	private static final Animation MELEE1 = new Animation(1603);
-		/**
-	 * Attacking mage
-	 */
-	private static final Animation MAGIC = new Animation(3301);
+	private static final Animation MELEE = new Animation(407);
+	private static final Animation MELEE1 = new Animation(406);
 	@Override
 	public boolean canAttack(Character entity, Character victim) {
 		// TODO Auto-generated method stub
@@ -45,17 +38,7 @@ public class HellraiserBossCombatScript implements CombatStrategy {
 
 	int[] foodIds = new int[] { 15272, 17817,391 };
 
-	private void spawnFood(Player player) {
-		if (RandomUtility.inclusiveRandom(0, 100) > 65) {
-			int pickedFood = foodIds[RandomUtility.exclusiveRandom(0, foodIds.length)];
-			
-			GroundItemManager.spawnGroundItem(player,
-					new GroundItem(new Item(pickedFood),
-							new Position(foodloc.getX() + Misc.getRandom(10), foodloc.getY() + Misc.getRandom(10), 0),
-							"", true, 200, true, 200));
-			
-		}
-	}
+
 	//Player player = (Player) victim;
 	//spawnFood(player);
 	//NPC npc = (NPC) entity;
@@ -64,19 +47,9 @@ public class HellraiserBossCombatScript implements CombatStrategy {
 	public boolean customContainerAttack(Character entity, Character victim) {
 		NPC earthquake = (NPC) entity;
 		Player player = (Player) victim;
-	//	NPC npc = (NPC) entity;
-		//
-		
-		if (earthquake.isChargingAttack() || earthquake.getConstitution() <= 0) {
-			earthquake.getCombatBuilder().setAttackTimer(4);
-			return true;
-		}
-		attack = 0;
-		if (attack == 7) {
 			Position pos = victim.getPosition().copy();
 			earthquake.setChargingAttack(true).getCombatBuilder().setAttackTimer(6);
 			new Projectile(earthquake, victim, 1741, 44, 3, 43, 43, 0).sendProjectile();
-			spawnFood(player);
 			TaskManager.submit(new Task(4, earthquake, false) {
 
 				@Override
@@ -88,32 +61,22 @@ public class HellraiserBossCombatScript implements CombatStrategy {
 					earthquake.setChargingAttack(false);
 					stop();
 					earthquake.performAnimation(MELEE1);
+					earthquake.performGraphic(new Graphic(1176));
 				}
 			});
-			attack = 0;
-		} else {
+
 			if (Locations.goodDistance(earthquake.getPosition().copy(), victim.getPosition().copy(), 1)
 					&& Misc.getRandom(5) <= 3) {
-				
-				spawnFood(player);
-				earthquake.getCombatBuilder().setContainer(new CombatContainer(earthquake, victim, 1, 1, CombatType.MELEE, true));
 				earthquake.getCombatBuilder().setContainer(new CombatContainer(earthquake, victim, 1, 1, CombatType.MELEE, true));
 
 				earthquake.getCombatBuilder().setContainer(new CombatContainer(earthquake, victim, 1, 1, CombatType.MELEE, true));
 
+				earthquake.getCombatBuilder().setContainer(new CombatContainer(earthquake, victim, 1, 1, CombatType.MELEE, true));
+
+				earthquake.performGraphic(new Graphic(1201));
 				earthquake.performAnimation(MELEE);
-			} 
-			else {
-				spawnFood(player);
-				new Projectile(earthquake, victim, 1830 , 44, 3, 43, 43, 0).sendProjectile();
-				earthquake.getCombatBuilder()
-						.setContainer(new CombatContainer(earthquake, victim, 1, 1, CombatType.MAGIC, true));
-				earthquake.performAnimation(MAGIC);
+				earthquake.performGraphic(new Graphic(1176));
 			}
-			
-		}
-		spawnFood(player);
-		attack++;
 		return true;
 	}
 

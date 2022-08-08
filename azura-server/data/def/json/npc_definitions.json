@@ -13393,7 +13393,7 @@
     "poisonous": false,
     "respawn": 10,
     "maxHit": 60,
-    "hitpoints": 66660,
+    "hitpoints": 500000,
     "attackSpeed": 4,
     "attackAnim": 11968,
     "defenceAnim": 11974,

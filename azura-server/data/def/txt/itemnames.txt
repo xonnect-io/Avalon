@@ -30623,15 +30623,15 @@ name: Torn curtains
 finish
 
 Item Id: 8323
-name: T4 Magic helm
+name: T5 Magic helm
 finish
 
 Item Id: 8324
-name: T4 Magic body
+name: T5 Magic body
 finish
 
 Item Id: 8325
-name: T4 Magic legs
+name: T5 Magic legs
 finish
 
 Item Id: 8326
@@ -30651,15 +30651,15 @@ name: Art's Defender
 finish
 
 Item Id: 8330
-name: T4 Range helm
+name: T5 Range helm
 finish
 
 Item Id: 8331
-name: T4 Range body
+name: T5 Range body
 finish
 
 Item Id: 8332
-name: T4 Range legs
+name: T5 Range legs
 finish
 
 Item Id: 8333

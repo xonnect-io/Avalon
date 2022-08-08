@@ -127,7 +127,7 @@ public class DropsInterface {
 
 	public static void resetRight(Player player) {
 		player.getPacketSender().sendString(HEADER, "Avalon Loot Viewer"); // Search button
-		player.getPacketSender().sendString(SEARCHED_STRING, "10251"); // Search button
+		player.getPacketSender().sendString(SEARCHED_STRING, "Search for an NPC"); // Search button
 		player.getPacketSender().sendString(STRING_AMOUNT, "");
 		player.getPacketSender().sendString(STRING_CHANCE, "");
 		player.getPacketSender().sendString(STRING_VALUE, "");

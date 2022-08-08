@@ -2,16 +2,10 @@ package com.ruse.world.content.combat.strategy.impl;
 
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
-import com.ruse.model.Animation;
-import com.ruse.model.Graphic;
-import com.ruse.model.Locations;
-import com.ruse.model.Position;
-import com.ruse.model.Projectile;
+import com.ruse.model.*;
 import com.ruse.util.Misc;
 import com.ruse.world.content.combat.CombatContainer;
 import com.ruse.world.content.combat.CombatType;
-import com.ruse.world.content.combat.HitQueue.CombatHit;
-import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -35,14 +29,10 @@ public class BandosAvatar implements CombatStrategy {
 		if (bandosAvatar.isChargingAttack() || victim.getConstitution() <= 0) {
 			return true;
 		}
-		if (Misc.getRandom(15) <= 2) {
-			Player player = (com.ruse.world.entity.impl.player.Player) victim;
-			CurseHandler.deactivateAll(player);
-			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@red@Collosal Avatar deactivated your prayer");
-		}
+
 		if (Locations.goodDistance(bandosAvatar.getPosition().copy(), victim.getPosition().copy(), 1)
 				&& Misc.getRandom(5) <= 3) {
-			bandosAvatar.performAnimation(new Animation(bandosAvatar.getDefinition().getAttackAnimation()));
+			bandosAvatar.performAnimation(new Animation(422));
 			bandosAvatar.getCombatBuilder()
 					.setContainer(new CombatContainer(bandosAvatar, victim, 1, 1, CombatType.MELEE, true));
 		} else if (!Locations.goodDistance(bandosAvatar.getPosition().copy(), victim.getPosition().copy(), 3)
@@ -51,13 +41,13 @@ public class BandosAvatar implements CombatStrategy {
 			final Position pos = new Position(victim.getPosition().getX() - 2 + Misc.getRandom(4),
 					victim.getPosition().getY() - 2 + Misc.getRandom(4));
 			((Player) victim).getPacketSender().sendGlobalGraphic(new Graphic(1549), pos);
-			bandosAvatar.performAnimation(new Animation(11246));
+			bandosAvatar.performAnimation(new Animation(422));
 			bandosAvatar.forceChat("You shall perish!");
 			TaskManager.submit(new Task(2) {
 				@Override
 				protected void execute() {
 					bandosAvatar.moveTo(pos);
-					bandosAvatar.performAnimation(new Animation(bandosAvatar.getDefinition().getAttackAnimation()));
+					bandosAvatar.performAnimation(new Animation(422));
 					bandosAvatar.getCombatBuilder()
 							.setContainer(new CombatContainer(bandosAvatar, victim, 1, 1, CombatType.MELEE, false));
 					bandosAvatar.setChargingAttack(false);
@@ -67,8 +57,7 @@ public class BandosAvatar implements CombatStrategy {
 			});
 		} else {
 			bandosAvatar.setChargingAttack(true);
-			boolean barrage = Misc.getRandom(4) <= 2;
-			bandosAvatar.performAnimation(new Animation(barrage ? 11245 : 11252));
+			bandosAvatar.performAnimation(new Animation(422));
 			bandosAvatar.getCombatBuilder()
 					.setContainer(new CombatContainer(bandosAvatar, victim, 1, 3, CombatType.MAGIC, true));
 			TaskManager.submit(new Task(1, bandosAvatar, false) {
@@ -76,27 +65,9 @@ public class BandosAvatar implements CombatStrategy {
 
 				@Override
 				public void execute() {
-					if (tick == 0 && !barrage) {
-						new Projectile(bandosAvatar, victim, 2706, 44, 3, 43, 43, 0).sendProjectile();
+					if (tick == 0) {
+						new Projectile(bandosAvatar, victim, 422, 44, 3, 43, 43, 0).sendProjectile();
 					} else if (tick == 1) {
-						if (barrage && victim.isPlayer() && Misc.getRandom(10) <= 5) {
-							victim.getMovementQueue().freeze(15);
-							victim.performGraphic(new Graphic(369));
-						}
-						if (barrage && Misc.getRandom(6) <= 3) {
-							bandosAvatar.performAnimation(new Animation(11245));
-							for (Player toAttack : Misc.getCombinedPlayerList((Player) victim)) {
-								if (toAttack != null
-										&& Locations.goodDistance(bandosAvatar.getPosition(), toAttack.getPosition(), 7)
-										&& toAttack.getConstitution() > 0) {
-									bandosAvatar.forceChat("DIE!");
-									new CombatHit(bandosAvatar.getCombatBuilder(),
-											new CombatContainer(bandosAvatar, toAttack, 2, CombatType.MAGIC, false))
-													.handleAttack();
-									toAttack.performGraphic(new Graphic(1556));
-								}
-							}
-						}
 						bandosAvatar.setChargingAttack(false).getCombatBuilder()
 								.setAttackTimer(attackDelay(bandosAvatar) - 2);
 						stop();

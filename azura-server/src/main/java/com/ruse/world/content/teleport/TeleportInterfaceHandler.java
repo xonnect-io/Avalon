@@ -7,6 +7,7 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
+import com.ruse.world.content.seasonpass.PassRewards;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -219,7 +220,21 @@ public class TeleportInterfaceHandler {
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return; }
 		}
-
+		if (player.getCurrentTeleport().getNpcId() == 606) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getSeasonPass().getTier() == 50) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getSeasonPass().getTier() < 50) {
+					player.sendMessage("You need to have completed the season " + PassRewards.SEASON + " gold pass to do this.");
+					return;
+				}
+		}
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.FALLEN_WARRIOR.getNpcId()) {
 			if (player.getRights() == PlayerRights.OWNER) {
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
