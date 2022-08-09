@@ -1330,14 +1330,14 @@ public final class CombatFactory {
                     return false;
                 }
             }
-            else if (npc.getId() == 1914) { // Vampire Warrior
+            else if (npc.getId() == 1914) { // Fatal Warrior
                 if (!((Player) entity).getWarriorGuildTier2()) {
                     entity.getCombatBuilder().reset(true);
                     player.getPacketSender().sendMessage("You need to be a Tier 2 Warrior to attack this npc.");
                     return false;
                 }
             }
-            else if (npc.getId() == 2359) { // Elf Warrior
+            else if (npc.getId() == 2359) { // Immortal Warrior
                 if (!((Player) entity).getWarriorGuildTier3()) {
                     entity.getCombatBuilder().reset(true);
                     player.getPacketSender().sendMessage("You need to be a Tier 3 Warrior to attack this npc.");

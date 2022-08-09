@@ -103,9 +103,11 @@ public class CombatStrategies {
 		STRATEGIES.put(2044, new ZulrahLogic());
 		STRATEGIES.put(795, new IceQueen());
 		// STRATEGIES.put(286, new MutantKFC());
+		STRATEGIES.put(9312, new NephilimBoss());
 		Dragon dragonStrategy = new Dragon();
 		STRATEGIES.put(8015, new EliteDragon());
-		STRATEGIES.put(4972, new Eternal());
+		STRATEGIES.put(4972, new DragonKing());
+		STRATEGIES.put(3830, new DonoGuardian());
 		STRATEGIES.put(50, dragonStrategy);
 		STRATEGIES.put(941, dragonStrategy);
 		STRATEGIES.put(55, dragonStrategy);
@@ -152,6 +154,8 @@ public class CombatStrategies {
 		STRATEGIES.put(DrakeCombatStrategy.DRAKE, new DrakeCombatStrategy());
 		STRATEGIES.put(9837, new LuciferCombatScript());
 		STRATEGIES.put(4540, new BandosAvatar());
+		STRATEGIES.put(8013, new VotingBoss());
+		STRATEGIES.put(3779, new Terrorstep());
 		STRATEGIES.put(6430, new CrystalQueen());
 		STRATEGIES.put(585, new Veigar());
 		STRATEGIES.put(1234, new CrazyWitch());
@@ -161,7 +165,8 @@ public class CombatStrategies {
 		STRATEGIES.put(12843, new FractiteDemon());
 		STRATEGIES.put(9014, new SolakTheGreat());
 		STRATEGIES.put(9012, new LuciferCombatScript());
-		STRATEGIES.put(9017, new GolemOfSolak());
+		STRATEGIES.put(9017, new NightmareBoss());
+		//STRATEGIES.put(9017, new GolemOfSolak());
 		STRATEGIES.put(3305, new PantherOfSolak());
 		STRATEGIES.put(9020, new ArmouredBunnyCombatScript());
 		//STRATEGIES.put(9014, new SolakTheGreat());

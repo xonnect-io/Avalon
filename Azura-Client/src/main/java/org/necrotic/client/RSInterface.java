@@ -1683,16 +1683,16 @@ public class RSInterface {
 		addText(80232, "Choose an Warrior Pet", tda, 2, 0xff8624, true, true);
 		addText(80233, "You may pick only one pet(They all provide 25% Damage Boost and 45% Drop Rate Boost)", tda, 0, 0xff8624, true, true);
 		addText(80234, "Lesarkus Warrior", tda, 2, 0xff8624, true, true);
-		addText(80235, "Vampire Warrior", tda, 2, 0xff8624, true, true);
-		addText(80236, "Elf Warrior", tda, 2, 0xff8624, true, true);
+		addText(80235, "Fatal Warrior", tda, 2, 0xff8624, true, true);
+		addText(80236, "Immortal Warrior", tda, 2, 0xff8624, true, true);
 		RSInterface.drawNpcOnInterface(80237, 277, 350);
 		RSInterface.drawNpcOnInterface(80238, 1914, 350);
 		RSInterface.drawNpcOnInterface(80239, 2359, 350);
 		addHoverButtonWSpriteLoader(80242, 1445, 132, 29, "Choose Lesarkus Warrior", -1, 80243, 1);
 		addHoveredImageWSpriteLoader(80243, 1446, 132, 29, 80244);
-		addHoverButtonWSpriteLoader(80245, 1445, 132, 29, "Choose Vampire Warrior", -1, 80246, 1);
+		addHoverButtonWSpriteLoader(80245, 1445, 132, 29, "Choose Fatal Warrior", -1, 80246, 1);
 		addHoveredImageWSpriteLoader(80246, 1446, 132, 29, 80247);
-		addHoverButtonWSpriteLoader(80248, 1445, 132, 29, "Choose Elf Warrior", -1, 80249, 1);
+		addHoverButtonWSpriteLoader(80248, 1445, 132, 29, "Choose Immortal Warrior", -1, 80249, 1);
 		addHoveredImageWSpriteLoader(80249, 1446, 132, 29, 80250);
 		addButtonWSpriteLoader(80251, 714, "Close Window", 16, 16);
 
@@ -1813,7 +1813,7 @@ public class RSInterface {
 		addText(71564, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(71565, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
 		addText(71566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(71567, "@red@- 100,000 Vampire Warrior KC", tda, 1, 0xff8624, false, true);
+		addText(71567, "@red@- 100,000 Fatal Warrior KC", tda, 1, 0xff8624, false, true);
 		addText(71568, "@red@- Sacrifice x1 Owner Fragment", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(71578, 1658);
 		addSpriteLoader(71579, 1659);
@@ -1864,7 +1864,7 @@ public class RSInterface {
 		addText(80564, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(80565, "Next Tier: @whi@Warrior Master", tda, 1, 0xff8624, false, true);
 		addText(80566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(80567, "@red@- 150,000 Elf Warrior KC", tda, 1, 0xff8624, false, true);
+		addText(80567, "@red@- 150,000 Immortal Warrior KC", tda, 1, 0xff8624, false, true);
 		addText(80568, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
 
 

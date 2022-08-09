@@ -634,13 +634,13 @@ public class NPCDeathTask extends Task {
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 2359
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().addAncientWarriorKC(2);
-        } else if (npc.getId() == 2359) {// Elf warrior
+        } else if (npc.getId() == 2359) {// Immortal Warrior
             killer.getPointsHandler().addAncientWarriorKC(1);
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 1914
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().addVampireWarriorKC(2);
-        } else if (npc.getId() == 1914) {// Vampire warrior
+        } else if (npc.getId() == 1914) {// Fatal Warrior
             killer.getPointsHandler().addVampireWarriorKC(1);
         }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9116

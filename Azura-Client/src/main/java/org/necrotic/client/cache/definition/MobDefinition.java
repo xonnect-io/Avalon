@@ -241,8 +241,9 @@ public final class MobDefinition {
 				break;
 
 			case 2359:
-				definition.name = "Elf Warrior";
+				definition.name = "Immortal Warrior";
 				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19577};
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -254,6 +255,7 @@ public final class MobDefinition {
 			case 277:
 				definition.name = "Lesarkus Warrior";
 				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19578};
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -263,8 +265,9 @@ public final class MobDefinition {
 				break;
 
 			case 1914:
-				definition.name = "Vampire Warrior";
+				definition.name = "Fatal Warrior";
 				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19579};
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -387,7 +390,7 @@ public final class MobDefinition {
 
 			case 9125:
 				definition.copy(1914);
-				definition.name = "Vampire Warrior";
+				definition.name = "Fatal Warrior";
 				definition.actions = new String[5];
 				definition.actions[0] = null;
 				definition.npcSizeInSquares = 1;
@@ -398,7 +401,7 @@ public final class MobDefinition {
 
 			case 9126:
 				definition.copy(2359);
-				definition.name = "Elf Warrior";
+				definition.name = "Immortal Warrior";
 				definition.actions = new String[5];
 				definition.actions[0] = null;
 				definition.scaleXZ = 80;
@@ -822,7 +825,7 @@ public final class MobDefinition {
 				//definition.rdc2 = 2592952;
 				definition.scaleXZ = 125;
 				definition.scaleY = 125;
-				definition.npcSizeInSquares = 2;
+				definition.npcSizeInSquares = 5;
 				break;
 				
 			case 505:
@@ -3373,9 +3376,9 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.actions[0] = null;
 				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 425;
-				definition.scaleY = 425;
+				definition.npcSizeInSquares = 4;
+				definition.scaleXZ = 350;
+				definition.scaleY = 350;
 				break;
 			case 9013:
 				definition.name = "Fallen Angel pet";
@@ -3438,7 +3441,7 @@ public final class MobDefinition {
 				definition.name = "Nightmare Boss";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
-				definition.npcSizeInSquares = 1;
+				definition.npcSizeInSquares = 2;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 170;
@@ -4281,8 +4284,8 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 4;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
-				definition.scaleXZ = 390;
-				definition.scaleY = 390;
+				definition.scaleXZ = 360;
+				definition.scaleY = 360;
 				break;
 				
 			case 3831:
@@ -4707,7 +4710,7 @@ public final class MobDefinition {
 				definition.scaleY = 50;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
-				definition.npcModels = new int[]{15193};
+				definition.npcModels = new int[]{18037};
 				break;
 				
 			case 184:

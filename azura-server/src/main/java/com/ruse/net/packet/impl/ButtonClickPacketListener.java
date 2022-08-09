@@ -338,6 +338,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 71576:
             case 80576:
             case 77934:
+            case 71536:
                 player.getPacketSender().removeInterface();
                 break;
 
@@ -353,7 +354,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 if (player.getInventory().contains(23386)) {
                     player.getInventory().delete(23386,1);
                     player.getInventory().add(23388,1);
-                    player.getPA().sendMessage("You have chosen the Vampire Warrior Pet!");
+                    player.getPA().sendMessage("You have chosen the Fatal Warrior Pet!");
                 }
                 player.getPacketSender().removeInterface();
                 break;
@@ -362,7 +363,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 if (player.getInventory().contains(23386)) {
                     player.getInventory().delete(23386,1);
                     player.getInventory().add(23389,1);
-                    player.getPA().sendMessage("You have chosen the Elf Warrior Pet!");
+                    player.getPA().sendMessage("You have chosen the Immortal Warrior Pet!");
                 }
                 player.getPacketSender().removeInterface();
                 break;
@@ -496,7 +497,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 71572:
                 if (player.getPointsHandler().getVampireWarriorKC() < 100_000) {
-                    player.getPA().sendMessage("You need 100,000 Vampire Warrior kills before sacrificing x1 Owner Fragment.");
+                    player.getPA().sendMessage("You need 100,000 Fatal Warrior kills before sacrificing x1 Owner Fragment.");
                     return;
                 }
 
@@ -521,7 +522,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 80572:
                 if (player.getPointsHandler().getAncientWarriorKC() < 150_000) {
-                    player.getPA().sendMessage("You need 150,000 Elf Warrior kills before sacrificing 250,000,000 Upgrade Tokens.");
+                    player.getPA().sendMessage("You need 150,000 Immortal Warrior kills before sacrificing 250,000,000 Upgrade Tokens.");
                     return;
                 }
 
@@ -1061,6 +1062,16 @@ public class ButtonClickPacketListener implements PacketListener {
                             player.sendMessage("Avalon lions can only be killed at ::train");
                             return;
                         }
+                        if (player.getData().getNpcid() == 9116 && !player.getMagicGuildTier1()) {
+                            player.getPA().sendMessage("You need to have unlocked Tier 1 of the magician guild to instance this npc");
+                            return;
+                        }		if (player.getData().getNpcid() == 9117 && !player.getMagicGuildTier2()) {
+                            player.getPA().sendMessage("You need to have unlocked Tier 2 of the magician guild to instance this npc");
+                            return;
+                        }		if (player.getData().getNpcid() == 9118 && !player.getMagicGuildTier3()) {
+                            player.getPA().sendMessage("You need to have unlocked Tier 3 of the magician guild to instance this npc");
+                            return;
+                        }
                         if (player.getDataGold().getNpcid() == 1265
                                 || player.getDataGold().getNpcid() == 1023
                                 || player.getDataGold().getNpcid() == 1233
@@ -1098,6 +1109,16 @@ public class ButtonClickPacketListener implements PacketListener {
                     if (player.get3x3() == true) {
                         if (player.getData().getNpcid() == 1265) {
                             player.sendMessage("Avalon lions can only be killed at ::train");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 9116 && !player.getMagicGuildTier1()) {
+                            player.getPA().sendMessage("You need to have unlocked Tier 1 of the magician guild to instance this npc");
+                            return;
+                        } if (player.getData().getNpcid() == 9117 && !player.getMagicGuildTier2()) {
+                            player.getPA().sendMessage("You need to have unlocked Tier 2 of the magician guild to instance this npc");
+                            return;
+                        } if (player.getData().getNpcid() == 9118 && !player.getMagicGuildTier3()) {
+                            player.getPA().sendMessage("You need to have unlocked Tier 3 of the magician guild to instance this npc");
                             return;
                         }
                         if (player.getData().getNpcid() == 1265

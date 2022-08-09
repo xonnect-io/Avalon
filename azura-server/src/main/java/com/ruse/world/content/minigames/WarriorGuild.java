@@ -26,16 +26,16 @@ public class WarriorGuild {
     public void openT2() {
         player.getPacketSender().sendInterface(71560);
         player.getPacketSender().sendString(71567,  player.getPointsHandler().getVampireWarriorKC() >= 100_000
-                ? "@gre@- 100,000 Vampire Warrior KC"
-                : "@red@- 100,000 Vampire Warrior KC");
+                ? "@gre@- 100,000 Fatal Warrior KC"
+                : "@red@- 100,000 Fatal Warrior KC");
 
     }
 
     public void openT3() {
         player.getPacketSender().sendInterface(80560);
         player.getPacketSender().sendString(80567,  player.getPointsHandler().getAncientWarriorKC() >= 150_000
-                ? "@gre@- 150,000 Elf Warrior KC"
-                : "@red@- 150,000 Elf Warrior KC");
+                ? "@gre@- 150,000 Immortal Warrior KC"
+                : "@red@- 150,000 Immortal Warrior KC");
 
     }
 }

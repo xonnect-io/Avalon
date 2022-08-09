@@ -35,9 +35,14 @@ public class TeleportInterfaceHandler {
 
 	public void open() {
 		player.getPacketSender().resetItemsOnInterface(28229 + 20, 20);
-		player.setTeleportType(TeleportCategory.MONSTERS);
 		switchTab(28215);
 		player.getPA().sendInterface(28200);
+		player.setTeleportType(TeleportCategory.MONSTERS);
+		player.getPA().sendString(28205, "Monsters");
+		sendItemsOnInterface(TeleportData.MINOTAUR);
+		player.setCurrentTeleport(TeleportData.MINOTAUR);
+		switchData();
+		player.getPacketSender().sendString(64112, "Health: @whi@"+ "2,500");
 	}
 
 	public void open(TeleportCategory type) {
@@ -226,7 +231,7 @@ public class TeleportInterfaceHandler {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
-			} else if (player.getSeasonPass().getTier() == 50) {
+			} else if (player.getSeasonPass().getTier() == 50 && player.isunlockedseasonpass()) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;

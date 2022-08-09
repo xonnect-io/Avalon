@@ -16,6 +16,7 @@ public class BossPets {
 		DONKEY_KONG_PET(1894, 5506 ,  "7% DR Bonus"),
 		VEGETA_PET(5001, 461 ,  "10% DR Bonus"),
 		YOSHI_PET(3377, 462 ,  "15% DR Bonus"),
+		TOLROKOTH_PET(6431, 14067 ,  "15% DR Bonus"),
 		ZORBAK_PET(1906, 11319  ,  "25% DR Bonus"),
 		RAICHU_PET(1801, 11318  ,  "50% DR Bonus & 15% DMG Bonus"),
 

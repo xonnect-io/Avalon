@@ -5052,7 +5052,7 @@ public class ItemDef3 {
 				break;
 				
 			case 14067:
-				itemDef.modelID = 15193;
+				itemDef.modelID = 18037;
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 0;
 				itemDef.modelZoom = 4500;

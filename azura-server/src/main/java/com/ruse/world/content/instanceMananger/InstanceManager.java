@@ -25,6 +25,13 @@ public class InstanceManager {
 	private static final InstanceData[] values = InstanceData.values();
 
 	public void create3X3Instance(int npcId, RegionInstanceType type) {
+		if (npcId == 9116 && !player.getMagicGuildTier1()) {
+			player.getPA().sendMessage("You need to have unlocked Tier 1 of the magician guild to instance this npc");
+		}		if (npcId == 9117 && !player.getMagicGuildTier2()) {
+			player.getPA().sendMessage("You need to have unlocked Tier 2 of the magician guild to instance this npc");
+		}		if (npcId == 9118 && !player.getMagicGuildTier3()) {
+			player.getPA().sendMessage("You need to have unlocked Tier 3 of the magician guild to instance this npc");
+		}
 		if (player.getInventory().contains(4278) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 750)) {
 			player.getInventory().delete(4278, 1);
 			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 750);
@@ -94,6 +101,7 @@ public class InstanceManager {
 
 
 	public void create4X4Instance(int npcId, RegionInstanceType type) {
+
 		if (player.getInventory().contains(4278) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 1500)) {
 			player.getInventory().delete(4278, 1);
 			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 1500);
