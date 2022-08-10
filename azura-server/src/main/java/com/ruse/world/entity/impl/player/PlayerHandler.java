@@ -226,10 +226,9 @@ public class PlayerHandler {
         if (!PassRewards.isSeasonInProgress()) {
             player.getSeasonPass().reset();
         }
-        if (MembershipManager.didMonthEnd()) {
+        if (!MembershipManager.didMonthEnd()) {
             player.getMembershipManager().reset();
         }
-
         if (player.getLocation() != Locations.Location.PROGRESSION_ZONES) {
             player.getPacketSender().sendWalkableInterface(112000, false);
         }

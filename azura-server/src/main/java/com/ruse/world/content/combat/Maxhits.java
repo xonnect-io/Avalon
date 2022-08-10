@@ -228,6 +228,11 @@ public class Maxhits {
             if (player.getMinutesVotingDMG() > 0) {
                 maxHit *= 2;
             }
+
+            if (player.getEquipment().contains(11676) && player.getEquipment().contains(8839)
+                    && player.getEquipment().contains(8840) && player.getEquipment().contains(8842)) {
+                maxHit *= 1.2;
+            }
         }
 
         // Dharoks effect
@@ -476,6 +481,11 @@ public class Maxhits {
             if (player.getMinutesVotingDMG() > 0) {
                 maxHit *= 2;
             }
+            if (player.getEquipment().contains(11675) && player.getEquipment().contains(8839)
+                    && player.getEquipment().contains(8840) && player.getEquipment().contains(8842)) {
+                maxHit *= 1.2;
+            }
+
         }
 
         maxHit *= 10;
@@ -696,6 +706,12 @@ public class Maxhits {
             if (player.getMinutesVotingDMG() > 0) {
                 maxHit *= 2;
             }
+
+            if (player.getEquipment().contains(11674) && player.getEquipment().contains(8839)
+                    && player.getEquipment().contains(8840) && player.getEquipment().contains(8842)) {
+                maxHit *= 1.2;
+            }
+
         }
 
         maxHit *= 10;

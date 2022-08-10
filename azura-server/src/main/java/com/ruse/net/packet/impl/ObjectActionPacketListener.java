@@ -195,6 +195,16 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.performAnimation(new Animation(2338));
                                 } else player.getPacketSender().sendMessage("You need a bucket to collect milk from Betsy");
                                 break;
+                            case 25214:
+                                if (!player.isMembershipUnlocked()) {
+                                    player.getPacketSender().sendMessage("Check back next update!");
+                                    return;
+                                } else
+                                if (player.isMembershipUnlocked())
+                                    TeleportHandler.teleportPlayer(player, new Position(1778, 5331),
+                                            player.getSpellbook().getTeleportType());
+                                break;
+
                             case 11354:
 
                                 if (player.getQuestOneStep6() == true) {
