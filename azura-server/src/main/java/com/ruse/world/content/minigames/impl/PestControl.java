@@ -220,7 +220,7 @@ public class PestControl {
 	 * Starts a game and moves players in to the game.
 	 */
 	private static void startGame() {
-		boolean startGame = !gameRunning && PLAYERS_IN_BOAT >= 1;
+		boolean startGame = !gameRunning && PLAYERS_IN_BOAT >= 3;
 		if (startGame) {
 			gameRunning = true;
 			spawnMainNPCs();
