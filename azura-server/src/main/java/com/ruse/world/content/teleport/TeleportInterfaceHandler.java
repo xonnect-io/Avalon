@@ -225,7 +225,7 @@ public class TeleportInterfaceHandler {
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return; }
 		}
-		if (player.getCurrentTeleport().getNpcId() == 606) {
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.SEASON_PASS.getNpcId()) {
 			if (player.getRights() == PlayerRights.OWNER) {
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),

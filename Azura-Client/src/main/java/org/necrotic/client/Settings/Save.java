@@ -50,6 +50,7 @@ public class Save {
 			object.addProperty("gameframe", GameFrameConstants.gameframeType == GameFrameConstants.GameFrameType.FRAME_525 ? false : false);
 			object.addProperty("highlight-username", Configuration.HIGHLIGHT_USERNAME);
 			object.addProperty("high-detail", Configuration.HIGH_DETAIL);
+			object.addProperty("prestige-emblems", Configuration.DISPLAY_PRESTIGES);
 			object.addProperty("split-chat-color", client.splitChatColor);
 			object.addProperty("clan-chat-color", client.clanChatColor);
 			object.addProperty("split-chat", client.variousSettings[502]);

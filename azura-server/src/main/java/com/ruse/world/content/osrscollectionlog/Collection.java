@@ -312,10 +312,14 @@ public enum Collection {
             new Item(12855), new Item(5022), new Item(15290), new Item(10025), new Item(7956),
             new Item(19114), new Item(19115), new Item(20488), new Item(23044), new Item(6769),
             new Item(23161), new Item(23162), new Item(23163), new Item(22110)),
+    PEST_CONTROL(Player.PEST_CONTROL_COMPLETED, LogType.MINIGAMES, "Pest Control", new int[] {CollectionLog.PEST_CONTROL}, Player.PEST_CONTROL_LOG_CLAIMED, new Item[] { new Item(15002,2) },
+            new Item(11674), new Item(11676), new Item(11675), new Item(8839), new Item(8840),
+            new Item(8842), new Item(15288), new Item(22219), new Item(15358), new Item(15359),
+            new Item(20488)),
     SUFFERING_RAIDS(Player.SUFFERING_COMPLETED, LogType.MINIGAMES, "Souls of Suffering", new int[] {CollectionLog.SUFFERING_KEY}, Player.SUFFERING_LOG_CLAIMED, new Item[] { new Item(14999) },
             new Item(23303), new Item(23304), new Item(23305), new Item(23306), new Item(23307),
             new Item(23308), new Item(23309), new Item(23310), new Item(23311), new Item(14999),
-            new Item(23276), new Item(15288));
+            new Item(23276), new Item(23403), new Item(15288));
 
     private int attributeKey;
     private final LogType logType;

@@ -126,7 +126,7 @@ public class CelestialDialogues {
 
             @Override
             public String[] dialogue() {
-                String line1 = "The Celestial zone opens for 10 minutes every 3 hours.";
+                String line1 = "The Celestial zone opens for 1 hour every 3 hours.";
                 String line2 = "Complete tasks in the Celestial Zone to get Celestial Energy";
                 return new String[] { "" + line1 + "", "" + line2 + ""};
             }

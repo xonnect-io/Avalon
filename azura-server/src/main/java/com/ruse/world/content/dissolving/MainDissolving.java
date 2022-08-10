@@ -16,6 +16,10 @@ public class MainDissolving {
 	static int anim = 11904;
 	static int UPG_TOKEN = 12855;
 	public enum DissolvingData {
+		ENRAGED_SWORD(3737, new Item[]{new Item(UPG_TOKEN, 25_000)}, 50000, anim),
+		BOTANIC_BOW(3738, new Item[]{new Item(UPG_TOKEN, 25_000)}, 50000, anim),
+		ELEMENTAL_STAFF(3739, new Item[]{new Item(UPG_TOKEN, 25_000)}, 50000, anim),
+		CREEPER_CAPE(1486, new Item[]{new Item(UPG_TOKEN, 50_000)}, 100_000, anim),
 		TORNADO(14018, new Item[]{new Item(UPG_TOKEN, 700)}, 250, anim),
 		CHAINSAW(22080, new Item[]{new Item(UPG_TOKEN, 5250)}, 15500, anim),
 		SHETANI_STAFF(5095, new Item[]{new Item(UPG_TOKEN, 80)}, 180, anim),
@@ -67,6 +71,8 @@ public class MainDissolving {
 		T4_MAGIC2(8325, new Item[]{new Item(UPG_TOKEN, 20000)}, 60_000, anim),
 		T4_MAGIC3(8324, new Item[]{new Item(UPG_TOKEN, 20000)}, 60_000, anim),
 		T4_MAGIC4(22092, new Item[]{new Item(UPG_TOKEN, 20000)}, 60_000, anim),
+		COLLECTOR_RING(4446, new Item[]{new Item(UPG_TOKEN, 75_000)}, 150_000, anim),
+		COLLECTOR_AMULET(19886, new Item[]{new Item(UPG_TOKEN, 75_000)}, 150_000, anim),
 		CORRUPT_ARCHIE1(18636, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_ARCHIE2(18638, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_ARCHIE3(18748, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),

@@ -707,7 +707,7 @@ public class DiscordMessager extends JSONObject {
 			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
 					//.withURL("http://Avalon317.com")
 					.withColor(Color.CYAN)
-					.withDescription("The Celestial Zone Portal has opened for 10 minutes (Celestials only)")
+					.withDescription("The Celestial Zone Portal has opened for 1 hour (Celestials only)")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))

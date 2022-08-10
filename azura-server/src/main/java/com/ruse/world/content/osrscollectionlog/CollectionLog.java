@@ -72,6 +72,7 @@ public class CollectionLog {
     public static final int ISLES_OF_AVALON = 23086;
     public static final int TREASURE_HUNTER = 100001;
     public static final int PYRAMID_OUTBREAK = 100002;
+    public static final int PEST_CONTROL = 100003;
     public static final int BARROWS_KEY = 120_000;
     public static final int SUFFERING_KEY = 23370;
     public static final int MYSTERY_BOX = 6199;

@@ -1673,7 +1673,7 @@ for (Item item : player.getInventory().getItems()) {
 			@Override
 			public void process(Player player) {
 				if (player.getWalkableInterfaceId() != 21100)
-					player.getPacketSender().sendWalkableInterface(21100, true);
+					player.sendParallellInterfaceVisibility(21100, true);
 			}
 
 			@Override
@@ -1686,11 +1686,13 @@ for (Item item : player.getInventory().getItems()) {
 			@Override
 			public void leave(Player player) {
 				PestControl.leave(player, true);
+				player.sendParallellInterfaceVisibility(21100, false);
 			}
 
 			@Override
 			public void logout(Player player) {
 				PestControl.leave(player, true);
+				player.sendParallellInterfaceVisibility(21100, false);
 			}
 
 			@Override
@@ -1706,8 +1708,8 @@ for (Item item : player.getInventory().getItems()) {
 		PEST_CONTROL_BOAT(new int[] { 2660, 2663 }, new int[] { 2638, 2643 }, false, false, false, false, false, true) {
 			@Override
 			public void process(Player player) {
-				if (player.getWalkableInterfaceId() != 21005)
-					player.getPacketSender().sendWalkableInterface(21005, true);
+				if (!player.walkableInterfaceList.contains(21005))
+					player.sendParallellInterfaceVisibility(21005, true);
 			}
 
 			@Override
@@ -1720,12 +1722,14 @@ for (Item item : player.getInventory().getItems()) {
 			public void leave(Player player) {
 				if (player.getLocation() != PEST_CONTROL_GAME) {
 					PestControl.leave(player, true);
+					player.sendParallellInterfaceVisibility(21005, false);
 				}
 			}
 
 			@Override
 			public void logout(Player player) {
 				PestControl.leave(player, true);
+				player.sendParallellInterfaceVisibility(21005, false);
 			}
 		},
 		SOULWARS(new int[] { -1, -1 }, new int[] { -1, -1 }, true, true, true, false, true, true) {

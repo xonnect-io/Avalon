@@ -9,7 +9,6 @@ import com.ruse.world.World;
 import com.ruse.world.content.boxes.*;
 import com.ruse.world.content.casketopening.impl.*;
 import com.ruse.world.content.osrscollectionlog.CollectionLog;
-import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -240,12 +239,14 @@ public class CasketOpening {
             }
 
             sendItem(i, 3, SlotPrize.getId(), SlotPrize.getAmount(), NOT_PRIZE.getId(), NOT_PRIZE.getAmount(), 110501);
+
         }
          // player.getBank(0).add(new Item(SlotPrize.getId(), SlotPrize.getMax()), false);
        //   canCasketOpening = true;
         if(getCurrentCasket().getItemID() == 23370){
         player.getPointsHandler().incrementSufferingKC(1);
         }
+
         reward(announce);
         player.setSpinning(false);
     }
@@ -275,38 +276,29 @@ public class CasketOpening {
                     + ItemDefinition.forId(SlotPrize.getId()).getName() + "<col=ff812f> from a @red@" +
                     ItemDefinition.forId(getCurrentCasket().getItemID()).getName() + "!";
             World.sendNewsMessage(message);
+            if (SlotPrize.isAnnounce() && player.getEquipment().contains(23403) && Misc.getRandom(5) == 1) {
+                player.getPacketSender().sendMessage("Your Suffering charm has doubled your rare reward!");
+                player.getInventory().add(SlotPrize.getId(), SlotPrize.getAmount());
+            }
         }
 
         canCasketOpening = true;
     }
-    public static List<Item> rarepet = Arrays.asList(
-            new Item(23303, 1, 1, 0.31, true), // Mystic helmet
-            new Item(23304, 1, 1, 0.31, true), // Mystic body
-            new Item(23305, 1, 1, 0.31, true), // Mystic legs
-            new Item(23306, 1, 1, 0.31, true), // Mystic legs
-            new Item(23307, 1, 1, 0.31, true), // Mystic legs
-            new Item(23308, 1, 1, 0.31, true), // Mystic legs
-            new Item(23309, 1, 1, 0.31, true), // Mystic legs
-            new Item(23310, 1, 1, 0.31, true), // Mystic legs
-            new Item(23311, 1, 1, 0.31, true), // Mystic legs
-            new Item(14999, 1, 1, 0.31, true), // Onyx casket
-            new Item(23276, 1, 1, 0.31, true), // Starter Card pack
-            new Item(15288, 10, 250, 0.35, true) // Upgrade token packs
 
-    );
-    public static List<Item> rare = Arrays.asList(
-            new Item(23303, 1, 1, 0.1, true), // Mystic helmet
-            new Item(23304, 1, 1, 0.1, true), // Mystic body
-            new Item(23305, 1, 1, 0.1, true), // Mystic legs
-            new Item(23306, 1, 1, 0.1, true), // Mystic legs
-            new Item(23307, 1, 1, 0.1, true), // Mystic legs
-            new Item(23308, 1, 1, 0.1, true), // Mystic legs
-            new Item(23309, 1, 1, 0.1, true), // Mystic legs
-            new Item(23310, 1, 1, 0.1, true), // Mystic legs
-            new Item(23311, 1, 1, 0.1, true), // Mystic legs
-            new Item(14999, 1, 1, 0.1, true), // Onyx casket
-            new Item(23276, 1, 1, 0.1, true), // Starter Card pack
-            new Item(15288, 10, 250, 0.5, true) // Upgrade token packs
+    public static List<Item> rare = Arrays.asList( // 1/1000
+            new Item(23303, 1, 1, 0.02, true), // Mystic helmet
+            new Item(23304, 1, 1, 0.02, true), // Mystic body
+            new Item(23305, 1, 1, 0.02, true), // Mystic legs
+            new Item(23306, 1, 1, 0.02, true), // Mystic legs
+            new Item(23307, 1, 1, 0.02, true), // Mystic legs
+            new Item(23308, 1, 1, 0.02, true), // Mystic legs
+            new Item(23309, 1, 1, 0.02, true), // Mystic legs
+            new Item(23310, 1, 1, 0.02, true), // Mystic legs
+            new Item(23311, 1, 1, 0.02, true), // Mystic legs
+            new Item(14999, 1, 1, 0.02, true), // Onyx casket
+            new Item(23276, 1, 1, 0.02, true), // Starter Card pack
+            new Item(23403, 1, 1, 0.02, true), // Suffering charm
+            new Item(15288, 10, 250, 0.02, true) // Upgrade token packs
 
     );
 
@@ -337,10 +329,7 @@ public class CasketOpening {
         player.getPA().sendInterface(48130);
         player.getPacketSender().sendString(48135, "Suffering key");
         player.getPacketSender().sendItemOnInterface(48145, 23370, 0, 1);
-        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
-            player.getPacketSender().sendString(48134, "Rare (1/750)");
-        }
+            player.getPacketSender().sendString(48134, "Rare (1/500)");
 
         for (int i = 0; i < common.size(); i++) {
                 player.getPacketSender().sendItemOnInterface(48151, common.get(i).getId(),i, common.get(i).getMax());

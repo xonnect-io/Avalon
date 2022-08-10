@@ -132,6 +132,7 @@ public class Player extends Character {
             INFERNAL_DEMON_KILLED,FALLEN_ANGEL_KILLED,MIDNIGHT_GOBLIN_KILLED,BLOOD_DEMON_KILLED,UNKNOWN_MINIGAMES_COMPLETED,
             ISLES_OF_AVALON_COMPLETED,
             TREASURE_HUNTER_COMPLETED,
+            PEST_CONTROL_COMPLETED,
             PYRAMID_OUTBREAK_COMPLETED
             ;
     public static boolean MYSTERY_BOX_LOG_CLAIMED,PVM_BOX_LOG_CLAIMED,PVM_BOX_T2_LOG_CLAIMED,SUPER_BOX_LOG_CLAIMED,
@@ -150,6 +151,7 @@ public class Player extends Character {
             UNKNOWN_MINIGAMES_LOG_CLAIMED,
             ISLES_OF_AVALON_LOG_CLAIMED,
             TREASURE_HUNTER_LOG_CLAIMED,
+            PEST_CONTROL_LOG_CLAIMED,
             PYRAMID_OUTBREAK_LOG_CLAIMED
             ;
     private final CollectionLog collectionLog2 = new CollectionLog(this);

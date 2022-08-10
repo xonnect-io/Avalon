@@ -180,7 +180,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 
@@ -195,7 +195,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17674:
@@ -209,7 +209,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17676:
@@ -223,7 +223,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17678:
@@ -237,7 +237,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17680:
@@ -251,7 +251,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17682:
@@ -265,7 +265,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17684:
@@ -279,7 +279,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -298,7 +298,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 			
 				break;
@@ -313,7 +313,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17688:
@@ -327,7 +327,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17714:
@@ -341,7 +341,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -356,7 +356,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17692:
@@ -370,7 +370,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17694:
@@ -463,7 +463,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
 				itemDef.editedModelColor[0] = 66;
@@ -481,7 +481,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = 1400;
 				itemDef.rotationY = 700;
 				itemDef.rotationX = 1;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
 				itemDef.editedModelColor[0] = 66;
@@ -499,7 +499,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = 1800;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
 				itemDef.editedModelColor[0] = 66;
@@ -517,7 +517,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = 1000;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = 120;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
 				itemDef.editedModelColor[0] = 66; // the new texture u want it to have
@@ -561,7 +561,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = 850;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = 90;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -576,7 +576,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -591,7 +591,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -607,7 +607,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
@@ -626,7 +626,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
@@ -645,7 +645,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has

@@ -108,6 +108,7 @@ public class Shop extends ItemContainer {
     private static final int DUNGEONEERING_STORE = 44;
     private static final int PRESTIGE_STORE = 46;
     private static final int SLAYER_SHOP = 471;
+    private static final int PEST_CONTROL = 371;
     private static final int LOYALTY_POINT_SHOP = 110;
     private static final int BARROWS_STORE = 79;
     private static final int MEMBERS_STORE_I = 24;
@@ -188,7 +189,7 @@ public class Shop extends ItemContainer {
                 || shopId == VOTE_STORE || shopId == RECIPE_FOR_DISASTER_STORE || shopId == EVENT_SHOP || shopId == GLOBAL_BOSS
                 || shopId == BOSS_SHOP || shopId == ENERGY_FRAGMENT_STORE || shopId == AGILITY_TICKET_STORE
                 || shopId == PYRAMID_OUTBREAK_SHOP || shopId == TOKKUL_EXCHANGE_STORE || shopId == BOSS_SLAYER_SHOP || shopId == PVM || shopId == AFK
-                || shopId == PRESTIGE_STORE || shopId == SLAYER_SHOP || shopId == LOYALTY_POINT_SHOP || shopId == BARROWS_STORE
+                || shopId == PRESTIGE_STORE || shopId == SLAYER_SHOP|| shopId == PEST_CONTROL || shopId == LOYALTY_POINT_SHOP || shopId == BARROWS_STORE
                 || shopId == MEMBERS_STORE_I || shopId == MEMBERS_STORE_II || shopId == DONATOR_STORE_1
                 || shopId == DONATOR_STORE_2 || shopId == DONATOR_STORE_3 || shopId == DONATOR_STORE_4|| shopId == PET_STORE_1
                 || shopId == PET_STORE_2 || shopId == PET_STORE_3 || shopId == PET_STORE_4 || shopId == 118)
@@ -259,6 +260,7 @@ public class Shop extends ItemContainer {
                     && id != BOSS_SLAYER_SHOP
                     && id != SLAYER_SHOP
 
+                    && id != PEST_CONTROL
                     && id != KOL_STORE
                     && id != 17 && id != 2 // 17
                     && id != 33 && id != 39 && id != 11 && id != 34 && id != 14 && id != 13 && id != 18 && id != 15
@@ -305,8 +307,11 @@ public class Shop extends ItemContainer {
                     finalValue = (int) obj[0];
                 }
             }
-
-            if (shop.getId() == 104) {
+            if (shop.getId() == 371) {
+                currencyicon = 1;
+                player.getPacketSender().sendString(35613 + i, (finalValue) + "," + currencyicon);
+            }
+            else if (shop.getId() == 104) {
                 currencyicon = 1;
                 player.getPacketSender().sendString(35613 + i, (finalValue) + "," + currencyicon);
             }
@@ -416,7 +421,7 @@ public class Shop extends ItemContainer {
                 return;
             }
             /** CUSTOM CURRENCY, CUSTOM SHOP VALUES **/
-            if (id == TOKKUL_EXCHANGE_STORE || id == BOSS_SLAYER_SHOP || id == SLAYER_SHOP || id == PVM || id == AFK || id == STARDUST_EXCHANGE_STORE
+            if (id == TOKKUL_EXCHANGE_STORE || id == BOSS_SLAYER_SHOP || id == SLAYER_SHOP || id == PEST_CONTROL || id == PVM || id == AFK || id == STARDUST_EXCHANGE_STORE
                     || id == SHILLINGS
                     || id == TRAIN_MELEE
                     || id == TRAIN_RANGED
@@ -713,7 +718,7 @@ public class Shop extends ItemContainer {
             playerCurrencyAmount = player.getInventory().getAmount(currency.getId());
             currencyName = ItemDefinition.forId(currency.getId()).getName().toLowerCase();
                 /** CUSTOM CURRENCY, CUSTOM SHOP VALUES **/
-                if (id == TOKKUL_EXCHANGE_STORE || id == BOSS_SLAYER_SHOP  || id == SLAYER_SHOP || id == PVM
+                if (id == TOKKUL_EXCHANGE_STORE || id == BOSS_SLAYER_SHOP  || id == SLAYER_SHOP || id == PEST_CONTROL || id == PVM
                         || id == AFK
                         || id == TRAIN_MELEE
                         || id == TRAIN_RANGED
@@ -737,6 +742,8 @@ public class Shop extends ItemContainer {
                 playerCurrencyAmount = player.getPointsHandler().getPkPoints();
             } else if (id == SLAYER_SHOP) {
                 playerCurrencyAmount = player.getPointsHandler().getSlayerPoints();
+            } else if (id == PEST_CONTROL) {
+                playerCurrencyAmount = player.getPointsHandler().getCommendations();
             } else if (id == VOTE_STORE) {
                 playerCurrencyAmount = player.getPointsHandler().getVotingPoints();
             } else if (id == EVENT_SHOP) {
@@ -951,6 +958,8 @@ public class Shop extends ItemContainer {
                             player.getPointsHandler().setVotingPoints(-value, true);
                         } else if (id == SLAYER_SHOP) {
                             player.getPointsHandler().setSlayerPoints(-value, true);
+                        } else if (id == PEST_CONTROL) {
+                            player.getPointsHandler().setCommendations(-value, true);
                         } else if (id == DUNGEONEERING_STORE) {
                             player.getPointsHandler().setDungeoneeringTokens(-value, true);
                         } else if (id == EVENT_SHOP) {
@@ -973,6 +982,9 @@ public class Shop extends ItemContainer {
 
                     if (id == PYRAMID_OUTBREAK_SHOP) {
                         MINIGAMES.log(player, CollectionLog.PYRAMID_OUTBREAK, new Item(item.getId()));
+                    }
+                    if (id == PEST_CONTROL) {
+                        MINIGAMES.log(player, CollectionLog.PEST_CONTROL, new Item(item.getId()));
                     }
                     playerCurrencyAmount -= value;
                 } else {
@@ -1000,6 +1012,8 @@ public class Shop extends ItemContainer {
                             player.getPointsHandler().setVotingPoints(-value * canBeBought, true);
                         } else if (id == SLAYER_SHOP) {
                             player.getPointsHandler().setSlayerPoints(-value * canBeBought, true);
+                        } else if (id == PEST_CONTROL) {
+                            player.getPointsHandler().setCommendations(-value * canBeBought, true);
                         } else if (id == DUNGEONEERING_STORE) {
                             player.getPointsHandler().setDungeoneeringTokens(-value * canBeBought, true);
                         } else if (id == EVENT_SHOP) {
@@ -1662,6 +1676,27 @@ public class Shop extends ItemContainer {
                     case 23006:
                     case 23007:
                         return new Object[]{1000, "Easter ticket"};
+                }
+            } else if (shop == PEST_CONTROL) {
+                switch (item) {
+                    case 11674:
+                    case 11676:
+                    case 11675:
+                        return new Object[]{500, "Commendation points"};
+                    case 8839:
+                    case 8840:
+                        return new Object[]{600, "Commendation points"};
+                    case 8842:
+                        return new Object[]{400, "Commendation points"};
+                    case 15288:
+                        return new Object[]{25, "Commendation points"};
+                    case 22219:
+                        return new Object[]{5, "Commendation points"};
+                    case 15358:
+                    case 15359:
+                        return new Object[]{50, "Commendation points"};
+                    case 20488:
+                        return new Object[]{20, "Commendation points"};
                 }
             } else if (shop == GLOBAL_BOSS) {
                 switch (item) {

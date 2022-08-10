@@ -263,7 +263,7 @@ public class ItemDef3 {
 				itemDef.modelID = 100068;
 				itemDef.maleEquip1 = 100069;
 				itemDef.femaleEquip1 = 100069;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 23015:
@@ -617,7 +617,7 @@ public class ItemDef3 {
 			case 23044:
 				itemDef.copyItem(1);
 				itemDef.name = "Aura 1";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.modelID = 100123;
 				itemDef.rotationX = 0;
 				itemDef.modelZoom = 2000;
@@ -2347,12 +2347,12 @@ public class ItemDef3 {
 				itemDef.modelID = 96120;
 				itemDef.maleEquip1 = 96121;
 				itemDef.femaleEquip1 = 96121;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 18332:
 				itemDef.name = "Leafy Longbow";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 13591:
@@ -2376,7 +2376,7 @@ public class ItemDef3 {
 				itemDef.modelID = 96122;
 				itemDef.maleEquip1 = 96123;
 				itemDef.femaleEquip1 = 96123;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 17321:
@@ -2384,17 +2384,17 @@ public class ItemDef3 {
 				itemDef.modelID = 96124;
 				itemDef.maleEquip1 = 96125;
 				itemDef.femaleEquip1 = 96125;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 10696:
 				itemDef.name = "Leafy boots";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 15026:
 				itemDef.name = "Leafy gloves";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 14733:
@@ -2405,7 +2405,7 @@ public class ItemDef3 {
 				itemDef.modelID = 99929;
 				itemDef.maleEquip1 = 99930;
 				itemDef.femaleEquip1 = 99930;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 14732:
@@ -2416,7 +2416,7 @@ public class ItemDef3 {
 				itemDef.modelID = 99931;
 				itemDef.maleEquip1 = 99932;
 				itemDef.femaleEquip1 = 99932;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 14734:
@@ -2427,12 +2427,12 @@ public class ItemDef3 {
 				itemDef.modelOffsetY = -0;
 				itemDef.modelZoom = 1550;
 				itemDef.name = "Chilling legs";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 14377:
 				itemDef.name = "Chilling Staff";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 10865:
@@ -2440,7 +2440,7 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 99926;
 				itemDef.femaleEquip1 = 99926;
 				itemDef.name = "Chilling boots";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 12864:
@@ -2448,12 +2448,12 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 99928;
 				itemDef.femaleEquip1 = 99928;
 				itemDef.name = "Chilling gloves";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 4367:
 				itemDef.name = "Art's cape";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.modelID = 65333;
 				itemDef.maleEquip1 = 65334;
 				itemDef.femaleEquip1 = 65334;
@@ -2478,7 +2478,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 10946:
@@ -2509,7 +2509,7 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.newModelColor = new int[]{40};
 				itemDef.editedModelColor = new int[]{95};
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 7995:
@@ -2572,7 +2572,7 @@ public class ItemDef3 {
 				itemDef.femaleEquip1 = 65334;
 				itemDef.newModelColor = new int[]{57};
 				itemDef.editedModelColor = new int[]{78};
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 36232;
 				itemDef.modelZoom = 1385;
@@ -2589,7 +2589,7 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 65334;
 				itemDef.femaleEquip1 = 65334;
 				itemDef.modelZoom = 1700;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 29295;
 				itemDef.rotationX = 200;
@@ -2606,7 +2606,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{40};
 				itemDef.editedModelColor = new int[]{52};
@@ -2623,7 +2623,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{40};
 				itemDef.editedModelColor = new int[]{52};
@@ -2640,7 +2640,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{40};
 				itemDef.editedModelColor = new int[]{52};
@@ -2704,7 +2704,7 @@ public class ItemDef3 {
 				itemDef.modelID = 15715;
 				itemDef.maleEquip1 = 15716;
 				itemDef.femaleEquip1 = 15716;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{40};
 				itemDef.editedModelColor = new int[]{51};
@@ -2718,7 +2718,7 @@ public class ItemDef3 {
 				itemDef.femaleEquip1 = 15720;
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 0;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{40};
 				itemDef.editedModelColor = new int[]{51};
@@ -2736,7 +2736,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{40};
 				itemDef.editedModelColor = new int[]{51};
@@ -2753,7 +2753,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 19738;
 				break;
@@ -2769,7 +2769,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 19738;
 				break;
@@ -2785,7 +2785,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 19738;
 				break;
@@ -2796,7 +2796,7 @@ public class ItemDef3 {
 				itemDef.modelID = 15815;
 				itemDef.maleEquip1 = 15831;
 				itemDef.femaleEquip1 = 15831;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 
@@ -2811,7 +2811,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = 1200;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 19738;
 				break;
@@ -2840,18 +2840,18 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 15722;
 				itemDef.modelZoom = 2500;
 				itemDef.femaleEquip1 = 15722;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
 			case 19888:
 				itemDef.name = "Collector necklace @cya@II";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 18823:
 				itemDef.name = "Collector ring @cya@II";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 18888:
@@ -2865,7 +2865,7 @@ public class ItemDef3 {
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.name = "Collector necklace @mag@III";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 18818:
@@ -2879,7 +2879,7 @@ public class ItemDef3 {
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.name = "Collector ring @mag@III";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 21816:
@@ -2908,7 +2908,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -2923,7 +2923,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -2938,7 +2938,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -2953,7 +2953,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 
@@ -2968,7 +2968,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -2983,7 +2983,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -2998,7 +2998,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -3013,7 +3013,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -3028,7 +3028,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -3043,7 +3043,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -3058,7 +3058,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -3086,7 +3086,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -3101,7 +3101,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -3116,7 +3116,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -3131,7 +3131,7 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -4200,7 +4200,7 @@ public class ItemDef3 {
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; 
 				itemDef.editedModelColor[0] = 97;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
 				break;
 				
 			case 3740:

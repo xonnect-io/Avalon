@@ -1482,7 +1482,7 @@ public class RSInterface {
 		addText(48132, "Rewards", tda, 1, 0xff8624, true, true);
 		addText(48134, "Rare (1/1000)", tda, 1, 0xff8624, true, true);
 		addText(48135, "Mbox Name", tda, 1, 0xff8624, true, true);
-		addClickableText(48133, "Increase chances", "Increase chances", fonts, 0, ColorConstants.BRIGHT_YELLOW, 130, 13);
+		addClickableText(48133, "Earn X2 rewards", "Earn X2 rewards", fonts, 0, ColorConstants.BRIGHT_YELLOW, 130, 13);
 		addHoverButtonWSpriteLoader(48136, 1660, 90, 25, "Open", -1, 48137, 1);
 		addHoveredImageWSpriteLoader(48137, 1661, 118, 28, 48138);
 		addHoverButtonWSpriteLoader(48139, 1660, 90, 25, "Open All", -1, 48140, 1);

@@ -730,7 +730,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("This feature has not yet been coded.");
                 break;
                 case -17403:
-                player.getPacketSender().sendMessage("<img=832> 30% Chance at 2X loot on Rare Rewards with @blu@Cthulu's offspring summoned");
+                player.getPacketSender().sendMessage("<img=832> 20% Chance at 2X loot on Rare Rewards with a @blu@Suffering charm @bla@equipped.");
                 break;
             case 110007:
                 player.getCasketOpening().spin();

@@ -72,6 +72,9 @@ public class Load {
 			if (reader.has("highlight-username")) {
 				Configuration.HIGHLIGHT_USERNAME = reader.get("highlight-username").getAsBoolean();
 			}
+			if (reader.has("prestige-emblems")) {
+				Configuration.DISPLAY_PRESTIGES = reader.get("prestige-emblems").getAsBoolean();
+			}
 			if (reader.has("high-detail")) {
 				if (!reader.get("high-detail").getAsBoolean()) {
 					Client.setLowDetail();

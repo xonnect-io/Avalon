@@ -108,6 +108,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 					player.getGambling().gambleItem(id, 1, slot);
 				}
 				//player.getUimBank().deposit(id, 1);
+				if (player.getGameMode().isUltIronman())
 				player.getPacketSender().sendMessage("This collection box is only for withdrawing items!");
 
 				break;
@@ -765,6 +766,8 @@ public class ItemContainerActionPacketListener implements PacketListener {
 					player.getGambling().gambleItem(id, player.getInventory().getAmount(id), slot);
 				}
 				// System.out.println("CALLED HERE for amount: " + player.getInventory().getAmount(id));
+
+				if (player.getGameMode().isUltIronman())
 				player.getPacketSender().sendMessage("This collection box is only for withdrawing items!");
 				//player.getUimBank().deposit(id, player.getInventory().getAmount(id));
 				break;

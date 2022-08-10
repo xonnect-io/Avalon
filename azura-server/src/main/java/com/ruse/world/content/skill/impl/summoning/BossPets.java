@@ -20,6 +20,7 @@ public class BossPets {
 		ZORBAK_PET(1906, 11319  ,  "25% DR Bonus"),
 		RAICHU_PET(1801, 11318  ,  "50% DR Bonus & 15% DMG Bonus"),
 
+		HOOKER(4444, 20511, "N/A"),
 		//Boss pets & Minigame pets
 		FALLEN_ANGEL_PET(9013, 22107  ,  "60% DR Bonus & 25% DMG Bonus"),
 		FENRIR_PET(9830, 23108, 300,"50% DR Bonus"),

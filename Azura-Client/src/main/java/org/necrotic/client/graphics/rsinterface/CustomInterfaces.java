@@ -3177,7 +3177,7 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(7, 37208, 435, 315);
 	}
 
-	private void pestControlInterfaces() {
+	private static void pestControlInterfaces() {
 		RSInterface rsinterface = addTabInterface(21100);
 		addSpriteLoader(21101, 680);
 		addSpriteLoader(21102, 681);
@@ -3185,18 +3185,18 @@ public class CustomInterfaces extends RSInterface {
 		addSpriteLoader(21104, 683);
 		addSpriteLoader(21105, 684);
 		addSpriteLoader(21106, 685);
-		addText(21107, "W", 0xcc00cc, false, true, 52, tda, 1);
-		addText(21108, "E", 0x0000FF, false, true, 52, tda, 1);
-		addText(21109, "SE", 0xffff44, false, true, 52, tda, 1);
-		addText(21110, "SW", 0xcc0000, false, true, 52, tda, 1);
-		addText(21111, "250", 0x99ff33, false, true, 52, tda, 1);
-		addText(21112, "250", 0x99ff33, false, true, 52, tda, 1);
-		addText(21113, "250", 0x99ff33, false, true, 52, tda, 1);
-		addText(21114, "250", 0x99ff33, false, true, 52, tda, 1);
-		addText(21115, "***", 0x99ff33, false, true, 52, tda, 1);
-		addText(21116, "***", 0x99ff33, false, true, 52, tda, 1);
-		addText(21117, "Time Remaining:", 0xffffff, false, true, 52, tda, 0);
-		addText(21118, "", 0xffffff, false, true, 52, tda, 0);
+		addText(21107, "W", 0xcc00cc, false, true, 52, fonts, 1);
+		addText(21108, "E", 0x0000FF, false, true, 52, fonts, 1);
+		addText(21109, "S", 0xffff44, false, true, 52, fonts, 1);
+		addText(21110, "N", 0xcc0000, false, true, 52, fonts, 1);
+		addText(21111, "250", 0x99ff33, false, true, 52, fonts, 1);
+		addText(21112, "250", 0x99ff33, false, true, 52, fonts, 1);
+		addText(21113, "250", 0x99ff33, false, true, 52, fonts, 1);
+		addText(21114, "250", 0x99ff33, false, true, 52, fonts, 1);
+		addText(21115, "***", 0x99ff33, false, true, 52, fonts, 1);
+		addText(21116, "***", 0x99ff33, false, true, 52, fonts, 1);
+		addText(21117, "Time Remaining:", 0xffffff, false, true, 52, fonts, 0);
+		addText(21118, "", 0xffffff, false, true, 52, fonts, 0);
 		byte byte0 = 18;
 		rsinterface.children = new int[byte0];
 		rsinterface.childX = new int[byte0];
@@ -3220,10 +3220,10 @@ public class CustomInterfaces extends RSInterface {
 		setBounds(21117, 8, 88, 16, rsinterface);
 		setBounds(21118, 87, 88, 17, rsinterface);
 		RSInterface rsinterface2 = addTabInterface(21005);
-		addText(21006, "Next Departure:", 0xCCCBCB, false, true, 52, tda, 1);
-		addText(21007, "Players Ready:", 0x5BD230, false, true, 52, tda, 1);
-		addText(21008, "(Need 5 to 25 players)", 0xDED36A, false, true, 52, tda, 1);
-		addText(21009, "Commendations:", 0x99FFFF, false, true, 52, tda, 1);
+		addText(21006, "Next Departure:", 0xCCCBCB, false, true, 52, fonts, 1);
+		addText(21007, "Players Ready:", 0x5BD230, false, true, 52, fonts, 1);
+		addText(21008, "(Need 5 to 25 players)", 0xDED36A, false, true, 52, fonts, 1);
+		addText(21009, "Commendations:", 0x99FFFF, false, true, 52, fonts, 1);
 		byte0 = 4;
 		rsinterface2.children = new int[byte0];
 		rsinterface2.childX = new int[byte0];
@@ -3248,7 +3248,7 @@ public class CustomInterfaces extends RSInterface {
 
 		addButtonWSpriteLoader(18728, 689, "Close Window", 16, 16);
 
-		addText(18729, "", tda, 0, 0xFFA500, false, true);
+		addText(18729, "", fonts, 0, 0xFFA500, false, true);
 
 		// addButton(18776, 0, "PestControl/X", 102, 22, "extra", 1);
 		tab1.totalChildren(13);
@@ -3267,7 +3267,7 @@ public class CustomInterfaces extends RSInterface {
 		tab1.child(11, 18729, 370, 47);
 		tab1.child(12, 18745, 338, 274);
 
-		//tab1.child(17, 18776, 334, 46);
+		// tab1.child(17, 18776, 334, 46);
 		/* Equipment Tab Void */
 		RSInterface tab2 = addTabInterface(18746);
 
@@ -3276,30 +3276,19 @@ public class CustomInterfaces extends RSInterface {
 
 		addButtonWSpriteLoader(18749, 687, "Purchase", 142, 14);
 		addButtonWSpriteLoader(18750, 687, "Purchase", 142, 14);
-		addButtonWSpriteLoader(18751, 687, "Purchase", 142, 14);
-		addButtonWSpriteLoader(18752, 687, "Purchase", 142, 14);
-		addButtonWSpriteLoader(18753, 687, "Purchase", 142, 14);
-		addButtonWSpriteLoader(18754, 687, "Purchase", 142, 14);
-		addButtonWSpriteLoader(18755, 687, "Purchase", 142, 14);
-		addButtonWSpriteLoader(18756, 687, "Purchase", 142, 14);
-		addButtonWSpriteLoader(18728, 689, "Close Window", 16, 16);
 
+		addButtonWSpriteLoader(18728, 689, "Close Window", 16, 16);
 		// addButton(18776, 0, "PestControl/X", 102, 22, "extra", 1);
-		tab2.totalChildren(12);
+		tab2.totalChildren(6);
 		tab2.child(0, 18747, 4, 16);
 		tab2.child(1, 18748, 56, 231);
 		tab2.child(2, 18749, 30, 127);
 		tab2.child(3, 18750, 184, 127);
-		tab2.child(4, 18751, 340, 127);
-		tab2.child(5, 18752, 29, 209);
-		tab2.child(6, 18753, 184, 209);
-		tab2.child(7, 18754, 339, 209);
-		tab2.child(8, 18755, 185, 277);
-		tab2.child(9, 18756, 340, 277);
-		tab2.child(10, 18728, 480, 20);
-		tab2.child(11, 18729, 370, 47);
+		tab2.child(4, 18728, 480, 20);
+		tab2.child(5, 18729, 370, 47);
 
 	}
+
 
 	private void friendsTabInterface() {
 		RSInterface tab = addTabInterface(5065);

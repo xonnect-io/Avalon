@@ -16,15 +16,15 @@ public class CelestialZoneTask {
         TaskManager.submit(new Task(1,false) {
             @Override
             public void execute() {
-                if(tick == 1000) {
+                if(tick == 6000) {
                     CelestialPortal.despawn(true);
             }
                 if(tick == 18000) {
                     CelestialPortal.spawn();
                 }
-                if(tick == 19000) {
+                if(tick == 24000) {
                     CelestialPortal.despawn(true);
-                    tick = 1001;
+                    tick = 6001;
                 }
                 tick++;
                 //System.out.println("Celestial Tick: " + tick);

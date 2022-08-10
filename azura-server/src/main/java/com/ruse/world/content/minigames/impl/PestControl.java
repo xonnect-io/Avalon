@@ -105,6 +105,7 @@ public class PestControl {
 		p.getSession().clearMessages();
 		p.moveTo(new Position(2657, 2639, 0));
 		p.getMovementQueue().setLockMovement(false).reset();
+		p.getPacketSender().sendInterfaceRemoval();
 	}
 
 	/**
@@ -165,7 +166,28 @@ public class PestControl {
 			}
 		}
 	}
+	private static void removeBoatInterface() {
+		for (Player p : playerMap.keySet()) {
+				p.getPacketSender().sendString(21006, "");
+				p.getPacketSender().sendString(21007, "");
+				p.getPacketSender().sendString(21009, "");
+			p.getPacketSender().sendString(21008, "");
+		}
+	}
 
+	private static void removeGameInterface() {
+		for (Player p : playerMap.keySet()) {
+			if (p == null)
+				continue;
+				p.getPacketSender().sendString(21111, "");
+				p.getPacketSender().sendString(21112, "");
+				p.getPacketSender().sendString(21113, "");
+				p.getPacketSender().sendString(21114, "");
+			p.getPacketSender().sendString(21115, "");
+				p.getPacketSender().sendString(21116, "");
+				p.getPA().removeInterface();
+			}
+	}
 	/**
 	 * Updates the game interface for every player.
 	 */
@@ -198,7 +220,7 @@ public class PestControl {
 	 * Starts a game and moves players in to the game.
 	 */
 	private static void startGame() {
-		boolean startGame = !gameRunning && PLAYERS_IN_BOAT >= 2;
+		boolean startGame = !gameRunning && PLAYERS_IN_BOAT >= 1;
 		if (startGame) {
 			gameRunning = true;
 			spawnMainNPCs();
@@ -222,9 +244,9 @@ public class PestControl {
 	 * Teleports the player in to the game
 	 */
 	private static void movePlayerToIsland(Player p) {
-		p.getPacketSender().sendInterfaceRemoval();
+		removeBoatInterface();
 		p.getSession().clearMessages();
-		p.moveTo(new Position(2658, 2611, 0));
+		p.moveTo(new Position(2655 + Misc.getRandom(1), 2591 + Misc.getRandom(1), 0));
 		p.getMovementQueue().setLockMovement(false).reset();
 		DialogueManager.start(p, 26);
 		PLAYERS_IN_BOAT--;
@@ -243,13 +265,14 @@ public class PestControl {
 			String state = getState(p);
 			if (state != null && state.equals(PLAYING)) {
 				leave(p, false);
-				if (won && p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() >= 50) {
+				removeGameInterface();
+				if (won && p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() >= 5000) {
 					p.getPacketSender()
 							.sendMessage("The portals were successfully closed. You've been rewarded for your effort.");
-					p.getPacketSender().sendMessage("You've received 11 Commendations and 950k coins.");
-					p.getPointsHandler().setCommendations(11, true);
+					p.getPacketSender().sendMessage("You've received 4 Commendations and some upgrade tokens.");
+					p.getPointsHandler().setCommendations(4, true);
 					PlayerPanel.refreshPanel(p);
-					p.getInventory().add(ItemDefinition.COIN_ID, 950000);
+					p.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, Misc.getRandom(50_000) + 50_000);
 
 					p.restart();
 				} else if (won)
@@ -296,12 +319,12 @@ public class PestControl {
 	 */
 	private static void spawnMainNPCs() {
 		int knightHealth = 3000 - (PLAYERS_IN_BOAT * 14);
-		int portalHealth = 50000 + (PLAYERS_IN_BOAT * 14);
+		int portalHealth = 2500000 + (PLAYERS_IN_BOAT * 1000000);
 		knight = spawnPCNPC(3782, new Position(2656, 2592), knightHealth); // knight
-		portals[0] = spawnPCNPC(6142, new Position(2628, 2591), portalHealth); // purple
-		portals[1] = spawnPCNPC(6143, new Position(2680, 2588), portalHealth); // red
-		portals[2] = spawnPCNPC(6144, new Position(2669, 2570), portalHealth); // blue
-		portals[3] = spawnPCNPC(6145, new Position(2645, 2569), portalHealth); // yellow
+		portals[0] = spawnPCNPC(6142, new Position(2630, 2591), portalHealth); // purple
+		portals[1] = spawnPCNPC(6145, new Position(2655, 2615), portalHealth); // red
+		portals[2] = spawnPCNPC(6143, new Position(2679, 2590), portalHealth); // blue
+		portals[3] = spawnPCNPC(6144, new Position(2654, 2566), portalHealth); // yellow
 		npcList.add(knight);
 		for (NPC n : portals) {
 			npcList.add(n);
@@ -319,9 +342,11 @@ public class PestControl {
 	 * @return Information about the portal with the index specified
 	 */
 	private static String getPortalText(int i) {
-		return (portals[i] != null && (portals[i].getConstitution() > 0 && portals[i].getConstitution() > 0))
-				? Integer.toString(portals[i].getConstitution())
-				: "Dead";
+		if (gameRunning == true) {
+			return (portals[i] != null && (portals[i].getConstitution() > 0 && portals[i].getConstitution() > 0))
+					? "@gre@Alive"
+					: "@red@Dead";
+		} else return ("");
 	}
 
 	/**

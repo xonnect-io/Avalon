@@ -131,8 +131,7 @@ public final class CelestialPortal {
 		CustomObjects.spawnGlobalObject(PORTAL.object);
 			if (GameSettings.LOCALHOST == false)
 		DiscordMessager.sendCelestialLog("");
-		System.out.println("<img=832> The Celestial Zone Portal has opened for 10 minutes (Celestials only)");
-		World.sendMessage("<img=832> The Celestial Zone Portal has opened for 10 minutes (Celestials only)");
+		World.sendMessage("<img=832> The Celestial Zone Portal has opened for 1 hour (Celestials only)");
 		}
 
 	}
@@ -166,7 +165,7 @@ public final class CelestialPortal {
 					}
 				}
 			}
-			World.sendMessage("<img=832> The Celestial Zone is now closed and will open again in 3 hours.");
+			World.sendMessage("<img=832> The Celestial Zone is now closed and will open again in 2 hours.");
 			CelestialZoneTask.startTask();
 			tick = 0;
 			PORTAL = null;

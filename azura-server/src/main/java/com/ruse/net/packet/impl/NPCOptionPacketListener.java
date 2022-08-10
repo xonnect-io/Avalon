@@ -345,7 +345,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 4653:
                         player.getPacketSender().sendString(3903,
-                                "AFK Tickets in Inventory: @whi@" + player.getInventory().getAmount(5020) + "");
+                                "AFK Tickets in Inventory: " + player.getInventory().getAmount(5020) + "");
                         ShopManager.getShops().get(103).open(player);
                         npc.forceChat("Get back to the grind!");
                         break;
@@ -694,10 +694,9 @@ public class NPCOptionPacketListener implements PacketListener {
                         player.setDialogueActionId(17);
                         break;*/
                     case 3789:
-
-                        player.getPacketSender().sendInterface(18730);
-                        player.getPacketSender().sendString(18729,
-                                "Commendations: " + Integer.toString(player.getPointsHandler().getCommendations()));
+                        ShopManager.getShops().get(371).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "Pest Control Points: " + player.getPointsHandler().getCommendations() + "");
                         break;
                     case 2948:
                         DialogueManager.start(player, WarriorsGuild.warriorsGuildDialogue(player));
@@ -767,7 +766,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         ;
                         ShopManager.getShops().get(90).open(player);
                         player.getPacketSender().sendString(3903,
-                                "Voting Points: @whi@" + player.getPointsHandler().getVotingPoints() + "");
+                                "Voting Points: " + player.getPointsHandler().getVotingPoints() + "");
                         // player.setDialogueActionId(8);
                         // DialogueManager.start(player, 13);
                         break;
@@ -1107,7 +1106,7 @@ public class NPCOptionPacketListener implements PacketListener {
 
                         ShopManager.getShops().get(110).open(player);
                         player.getPacketSender().sendString(3903,
-                                "Loyalty Points: @whi@" + player.getPointsHandler().getLoyaltyPoints() + "");
+                                "Loyalty Points: " + player.getPointsHandler().getLoyaltyPoints() + "");
                         player.getPacketSender().sendMessage("").sendMessage(
                                 "You currently have @red@" + player.getPointsHandler().getLoyaltyPoints()
                                         + " @bla@Loyalty Points.");
@@ -1144,7 +1143,7 @@ public class NPCOptionPacketListener implements PacketListener {
                                         + " @bla@Donator points.")
                                 .sendMessage("<shad=1>@gre@You can get more points by donating at ::donate");
                         player.getPacketSender().sendString(3903,
-                                "Donation Points: @whi@" + player.getPointsHandler().getDonatorPoints() + "");
+                                "Donation Points: " + player.getPointsHandler().getDonatorPoints() + "");
                         ShopManager.getShops().get(24).open(player);
                         break;
                     case 550:
@@ -1421,7 +1420,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 5604:
                         ShopManager.getShops().get(102).open(player);
                         player.getPacketSender().sendString(3903,
-                                "Boss Points: @whi@" + player.getPointsHandler().getBossPoints() + "");
+                                "Boss Points: " + player.getPointsHandler().getBossPoints() + "");
                         player.sendMessage(
                                 "<img=99>You have @red@" + player.getPointsHandler().getBossPoints() + " Boss Points!");
 
@@ -1477,7 +1476,7 @@ public class NPCOptionPacketListener implements PacketListener {
                                         + " @bla@Slayer points.");
                         ShopManager.getShops().get(471).open(player);
                         player.getPacketSender().sendString(3903,
-                                "Slayer Points: @whi@" + player.getPointsHandler().getSlayerPoints() + "");
+                                "Slayer Points: " + player.getPointsHandler().getSlayerPoints() + "");
                         break;
                     case 705:
                         ShopManager.getShops().get(5).open(player);
