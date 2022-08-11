@@ -12,7 +12,7 @@ public class CheckPrice implements Runnable{
 
     public static final String HOST = "195.179.236.205";
     public static final String USER = "u189330247_Vote";
-    public static final String PASS = "fgGg46Besl%a!tgbT^";
+    public static final String PASS = "n~7u^D:1";
     public static final String DATABASE = "u189330247_Vote";
 
     private Player player;
