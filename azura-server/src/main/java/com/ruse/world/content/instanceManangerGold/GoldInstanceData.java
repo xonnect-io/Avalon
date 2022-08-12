@@ -58,7 +58,7 @@ public enum GoldInstanceData {
 	RADITZ(125093, 449, "Raditz", 3308, new int[] { 19624 },
 			"Raditz",new Position(2758, 4743), RegionInstanceType.KINGS),
 	GOKU(125094, 452, "Goku", 3308, new int[] { 19624 },
-			"Raditz",new Position(2758, 4743), RegionInstanceType.KINGS),
+			"Goku",new Position(2758, 4743), RegionInstanceType.KINGS),
 	BOTANIC(125095, 2342, "Botanic Guardian", 3308, new int[] { 19624 },
 			"Botanic Guardian",new Position(2758, 4743), RegionInstanceType.KINGS),
 	ENRAGED_GUARDIAN(125096, 2949, "Enraged Guardian", 3308, new int[] { 19624 },

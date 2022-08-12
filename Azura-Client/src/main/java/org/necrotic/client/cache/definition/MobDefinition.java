@@ -2021,6 +2021,13 @@ public final class MobDefinition {
 			case 5861:
 				definition.name = "The Riftsplitter";
 				break;
+
+			case 4650:
+				definition.name = "Sir Lotto";
+				definition.drawYellowDotOnMap = true;
+				definition.actions = new String[]{"Talk-to", null, null, null, null};
+				break;
+
 			case 4653:
 				definition.name = "Sir Away";
 				MobDefinition worsk = get(1);
@@ -3830,7 +3837,7 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 			case 1023:
-				definition.name = "Dark bloodveld";
+				definition.name = "Trapper";
 				MobDefinition slayer10 = MobDefinition.get(1618);
 				definition.description = "GWD.".getBytes();
 				//definition.npcModels = new int[] {64064};

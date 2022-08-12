@@ -23,7 +23,6 @@ import com.ruse.world.content.combat.effect.CombatPoisonEffect.CombatPoisonData;
 import com.ruse.world.content.combat.strategy.CombatStrategies;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.discordbot.Bot;
-import com.ruse.world.content.grandLottery.GrandLottery;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.polling.PollManager;
@@ -116,7 +115,6 @@ public final class GameLoader {
 		serviceLoader.execute(NPC::init);
 		serviceLoader.execute(DoubleOrNothing::initialize);
 		serviceLoader.execute(PollManager::initialize);
-		serviceLoader.execute(GrandLottery::init);
 		serviceLoader.execute(ShopManager::parseTaxShop);
 		serviceLoader.execute(LotterySystem::loadTickets);
 		serviceLoader.execute(AOESystem.getSingleton()::parseData);

@@ -53,7 +53,7 @@ public enum SlayerTasks {
 	ELEMENTAL_FIRE(SlayerMaster.MEDIUM_SLAYER, 1741, "Medium Slayer Dungeon", 40_000 / 2, new Position(2334, 5223)),
 	WILD_GRAAHK(SlayerMaster.MEDIUM_SLAYER, 1734, "Medium Slayer Dungeon", 40_000 / 2, new Position(2343, 5201)),
 	RUSTED_GARGOYLE(SlayerMaster.MEDIUM_SLAYER, 1712, "Medium Slayer Dungeon", 45_000 / 2, new Position(2324, 5200)),
-	DARK_BLOODVELD(SlayerMaster.MEDIUM_SLAYER, 1710, "Medium Slayer Dungeon", 45_000 / 2, new Position(2320, 5230)),
+	TRAPPER(SlayerMaster.MEDIUM_SLAYER, 1710, "Medium Slayer Dungeon", 45_000 / 2, new Position(2320, 5230)),
 	ZAMORAK_BIRD(SlayerMaster.MEDIUM_SLAYER, 1725, "Medium Slayer Dungeon", 50_000 / 2, new Position(2345, 5242)),
 
 	// Hard slayer tasks xp =  half the npcs health

@@ -1986,6 +1986,10 @@ public class DialogueOptions {
         } else if (id == FIRST_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
 
+                case 8821:
+                    player.getPacketSender().sendInterfaceRemoval();
+                    player.getPacketSender().sendMessage("This feature has not yet coded.");
+                    break;
                 case 8625:
                     DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepFatherReen2(player));
                     break;
@@ -2187,6 +2191,8 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+
+
                 case 8625:
                     DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepFatherReen3(player));
                     break;
@@ -2401,6 +2407,11 @@ public class DialogueOptions {
             }
         } else if (id == THIRD_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+
+                case 8821:
+                    player.getPacketSender().sendInterfaceRemoval();
+                    break;
+
                 case 9906:
                 case 9085:
                     if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER)

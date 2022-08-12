@@ -42,7 +42,6 @@ import com.ruse.world.content.dailyTask.DailyTaskInterface;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.DialogueOptions;
 import com.ruse.world.content.goldenscratch.ScratchCard;
-import com.ruse.world.content.grandLottery.GrandLottery;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
@@ -1004,9 +1003,6 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 break;
 
-            case 30902:
-                GrandLottery.buy(player, 1);
-                break;
             case -8384:
                 player.sendMessage("Auto gambling has been disabled.");
                 player.sendMessage("In order to gamble, you have to purchase the dice bag or seeds via ::Store");
@@ -1062,6 +1058,73 @@ public class ButtonClickPacketListener implements PacketListener {
                             player.sendMessage("Avalon lions can only be killed at ::train");
                             return;
                         }
+                        if (player.getData().getNpcid() == 9807 && player.getPointsHandler().getGROUDONKILLCount() <= 24999) {
+                            player.getPacketSender().sendMessage("You need 25,000 Ipotane kills. You currently have @red@"
+                                    + player.getPointsHandler().getGROUDONKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+
+                        if ( player.getData().getNpcid() == 8010 && player.getPointsHandler().getZEUSKILLCount() <= 14999) {
+                            player.getPacketSender().sendMessage("You need 15,000 Zeus kills. You currently have @red@"
+                                    + player.getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+
+                        if (player.getData().getNpcid() == 203 && player.getPointsHandler().getSATANKILLCount() <= 4999) {
+                            player.getPacketSender().sendMessage("You need 5,000 Subzero kills. You currently have @red@"
+                                    + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 202 && player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
+                            player.getPacketSender().sendMessage("You need 3,500 Shenron kills. You currently have @red@"
+                                    + player.getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 201 && player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
+                            player.getPacketSender().sendMessage("You need 2,500 Oni kills. You currently have @red@"
+                                    + player.getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 3117 && player.getPointsHandler().getANGELKILLCount() <= 1499) {
+                            player.getPacketSender().sendMessage("You need 1,500 Wyvern kills. You currently have @red@"
+                                    + player.getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 3308 &&  player.getPointsHandler().getAVATARKILLCount() <= 1199) {
+                            player.getPacketSender().sendMessage("You need 1,200 Avatar kills. You currently have @red@"
+                                    + player.getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 8008 &&  player.getPointsHandler().getKINGKILLCount() <= 999) {
+                            player.getPacketSender().sendMessage("You need 1,000 Ripper kills. You currently have @red@"
+                                    + player.getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 13635 && player.getPointsHandler().getBEASTKILLCount() <= 499) {
+                            player.getPacketSender().sendMessage("You need 500 Shetani kills. You currently have @red@"
+                                    + player.getPointsHandler().getBEASTKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 8018 && player.getPointsHandler().getDRAGONKILLCount() <= 399) {
+                            player.getPacketSender().sendMessage("You need 400 Golem kills. You currently have @red@"
+                                    + player.getPointsHandler().getDRAGONKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 53 && player.getPointsHandler().getDEMONKILLCount() <= 299) {
+                            player.getPacketSender().sendMessage("You need 300 Shadow kills. You currently have @red@"
+                                    + player.getPointsHandler().getDEMONKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 12843 && player.getPointsHandler().getLORDKILLCount() <= 199) {
+                            player.getPacketSender().sendMessage("You need 200 Lord kills. You currently have @red@"
+                                    + player.getPointsHandler().getLORDKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 603 && player.getPointsHandler().getSPAWNKILLCount() <= 99) {
+                            player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
+                                    + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
+                            return;
+                        }
                         if (player.getData().getNpcid() == 9116 && !player.getMagicGuildTier1()) {
                             player.getPA().sendMessage("You need to have unlocked Tier 1 of the magician guild to instance this npc");
                             return;
@@ -1109,6 +1172,73 @@ public class ButtonClickPacketListener implements PacketListener {
                     if (player.get3x3() == true) {
                         if (player.getData().getNpcid() == 1265) {
                             player.sendMessage("Avalon lions can only be killed at ::train");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 9807 && player.getPointsHandler().getGROUDONKILLCount() <= 24999) {
+                            player.getPacketSender().sendMessage("You need 25,000 Ipotane kills. You currently have @red@"
+                                    + player.getPointsHandler().getGROUDONKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+
+                        if ( player.getData().getNpcid() == 8010 && player.getPointsHandler().getZEUSKILLCount() <= 14999) {
+                            player.getPacketSender().sendMessage("You need 15,000 Zeus kills. You currently have @red@"
+                                    + player.getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+
+                        if (player.getData().getNpcid() == 203 && player.getPointsHandler().getSATANKILLCount() <= 4999) {
+                            player.getPacketSender().sendMessage("You need 5,000 Subzero kills. You currently have @red@"
+                                    + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 202 && player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
+                            player.getPacketSender().sendMessage("You need 3,500 Shenron kills. You currently have @red@"
+                                    + player.getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 201 && player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
+                            player.getPacketSender().sendMessage("You need 2,500 Oni kills. You currently have @red@"
+                                    + player.getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 3117 && player.getPointsHandler().getANGELKILLCount() <= 1499) {
+                            player.getPacketSender().sendMessage("You need 1,500 Wyvern kills. You currently have @red@"
+                                    + player.getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 3308 &&  player.getPointsHandler().getAVATARKILLCount() <= 1199) {
+                            player.getPacketSender().sendMessage("You need 1,200 Avatar kills. You currently have @red@"
+                                    + player.getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 8008 &&  player.getPointsHandler().getKINGKILLCount() <= 999) {
+                            player.getPacketSender().sendMessage("You need 1,000 Ripper kills. You currently have @red@"
+                                    + player.getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 13635 && player.getPointsHandler().getBEASTKILLCount() <= 499) {
+                            player.getPacketSender().sendMessage("You need 500 Shetani kills. You currently have @red@"
+                                    + player.getPointsHandler().getBEASTKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 8018 && player.getPointsHandler().getDRAGONKILLCount() <= 399) {
+                            player.getPacketSender().sendMessage("You need 400 Golem kills. You currently have @red@"
+                                    + player.getPointsHandler().getDRAGONKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 53 && player.getPointsHandler().getDEMONKILLCount() <= 299) {
+                            player.getPacketSender().sendMessage("You need 300 Shadow kills. You currently have @red@"
+                                    + player.getPointsHandler().getDEMONKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 12843 && player.getPointsHandler().getLORDKILLCount() <= 199) {
+                            player.getPacketSender().sendMessage("You need 200 Lord kills. You currently have @red@"
+                                    + player.getPointsHandler().getLORDKILLCount() + "@bla@ kills.");
+                            return;
+                        }
+                        if (player.getData().getNpcid() == 603 && player.getPointsHandler().getSPAWNKILLCount() <= 99) {
+                            player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
+                                    + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
                             return;
                         }
                         if (player.getData().getNpcid() == 9116 && !player.getMagicGuildTier1()) {

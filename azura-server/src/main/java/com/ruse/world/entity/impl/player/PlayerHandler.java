@@ -28,7 +28,6 @@ import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.pvp.BountyHunter;
 import com.ruse.world.content.combat.range.DwarfMultiCannon;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
-import com.ruse.world.content.grandLottery.GrandLottery;
 import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.Barrows;
 import com.ruse.world.content.minigames.impl.VoidOfDarkness;
@@ -470,11 +469,6 @@ public class PlayerHandler {
                     .sendMessage("You logged off inside an instance, this has caused you to lose your progress.");
         }
 
-        if (GrandLottery.enabled) {
-            // player.getPA()
-            // .sendMessage("The Lottery is currently active, Talk to Lottie at home bank to
-            // enter the Lottery.");
-        }
 
         GlobalItemSpawner.spawnGlobalGroundItems(player);
         player.unlockPkTitles();

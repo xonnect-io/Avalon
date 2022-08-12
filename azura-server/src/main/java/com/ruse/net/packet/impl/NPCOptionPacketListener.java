@@ -23,7 +23,6 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.EnterLotteryTicketAmount;
-import com.ruse.world.content.grandLottery.GrandLottery;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupConfig;
 import com.ruse.world.content.groupironman.GroupManager;
@@ -269,9 +268,6 @@ public class NPCOptionPacketListener implements PacketListener {
                         } else {
                             npc.forceChat("You're Awake! Grab a spade and dig for the treasure!");
                         }
-                        break;
-                    case 662:
-                        GrandLottery.open(player);
                         break;
 
 
@@ -693,6 +689,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         DialogueManager.start(player, 29);
                         player.setDialogueActionId(17);
                         break;*/
+
                     case 3789:
                         ShopManager.getShops().get(371).open(player);
                         player.getPacketSender().sendString(3903,
