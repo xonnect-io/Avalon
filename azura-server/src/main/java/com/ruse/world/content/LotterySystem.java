@@ -24,8 +24,8 @@ public final class LotterySystem {
 	 * Author @Suic
 	 */
 
-	public static final Path LOTTERY_DATA = Paths.get("data", "lottery_data.txt");
-	public static final Path LOTTERY_WINNERS = Paths.get("data", "lottery_winners.txt");
+	public static final Path LOTTERY_DATA = Paths.get("data","saves","lottery", "lottery_data.txt");
+	public static final Path LOTTERY_WINNERS = Paths.get("data","saves","lottery", "lottery_winners.txt");
 
 	private static Map<String, Integer> entries = new HashMap<>();
 
@@ -36,7 +36,7 @@ public final class LotterySystem {
 
 	public static void loadTickets() {
 		try {
-			Misc.createFilesIfNotExist("./data/lottery_data.txt", false);
+			Misc.createFilesIfNotExist("./data/saves/lottery/lottery_data.txt", false);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

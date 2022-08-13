@@ -1,6 +1,5 @@
 package com.ruse.world.content;
 
-import com.ruse.world.entity.impl.player.Player;
 import lombok.Getter;
 
 @Getter
@@ -25,7 +24,7 @@ public enum YoutuberLinks {
     TREUMER("https://www.youtube.com/channel/UC3LYiy3Gs5IA1wE6E8s_e4g",  "treumer"),
     SIXX("https://www.youtube.com/channel/UC5h1L0yQhmTvIVUOCIbi0GA",  "sixx"),
     PERP("https://www.youtube.com/channel/UCtb_rEautI4iFM0ZVIB0lkw",  "perp"),
-    LANO("https://www.youtube.com/channel/UCIz0u4h_J2e_c5MNJBN0uiw/videos?view_as=subscriber",  "lano", "lanos"),
+    LANO("https://www.youtube.com/channel/UCIz0u4h_J2e_c5MNJBN0uiw",  "lano", "lanos"),
 
 
     ;
@@ -36,22 +35,6 @@ public enum YoutuberLinks {
     YoutuberLinks(String URL, String... names) {
         this.URL = URL;
         this.names = names;
-    }
-
-    public static void handleCommand(Player player, String command){
-        for (YoutuberLinks link : YoutuberLinks.values()){
-            for (String name : link.getNames()) {
-                if (command.equalsIgnoreCase(name)){
-                    if (link == VIHTIC){
-                        player.getPacketSender().sendString(1, "https://www.youtube.com/channel/UCyvtKISjnfLtbwe_69snxWA");
-                    }else
-                    player.getPacketSender().sendString(1, link.getURL());
-
-                    player.getPacketSender().sendMessage("Attempting to open the link.");
-                    return;
-                }
-            }
-        }
     }
 
 

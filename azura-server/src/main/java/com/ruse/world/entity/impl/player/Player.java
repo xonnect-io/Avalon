@@ -196,9 +196,6 @@ public class Player extends Character {
     private final PetShop petShop = new PetShop(this);
 
     @Getter
-    private final RaidsInterface raidsInterface = new RaidsInterface(this);
-
-    @Getter
     private final UpgradeInterface upgradeInterface = new UpgradeInterface(this);
 
     @Getter

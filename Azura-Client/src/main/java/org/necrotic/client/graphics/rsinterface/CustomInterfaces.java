@@ -6634,107 +6634,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 
 	}
 
-	static void raidsInterface() {
-		int interID = 120000;
-		RSInterface tab = addInterface(interID);
-		int id = interID + 1;
-		int c = 0;
-		int x = 35;
-		int y = 25;
-		tab.totalChildren(11);
 
-		addSpriteLoader(id, 1571);
-		tab.child(c++, id++, 0 + x, 0 + y);
-
-		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
-		tab.child(c++, id++, 408 + x, 9 + y);
-		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
-		tab.child(c++, id++, 408 + x, 9 + y);
-		id++;
-
-
-		hoverButton(id, 1572, 1573, "Start Raids", 2, 0xff8624, "Start Raids");
-		tab.child(c++, id++, 219 + x, 167 + y);
-
-
-
-		addConfigButtonWSpriteLoader(id, interID, 1574, 1575, 204, 45, "Select", 0, 5, 2466);
-		tab.child(c++, id++, 11 + x, 221 + y);
-		addConfigButtonWSpriteLoader(id, interID, 1574, 1575, 204, 45, "Select", 1, 5, 2466);
-		tab.child(c++, id++, 219 + x, 221 + y);
-
-
-
-		/*hoverButton(id, 1574, 1575, "Select", 2, 0xff8624, "Fury Raid");
-		tab.child(c++, id++, 11 + x, 221 + y);
-
-		hoverButton(id, 1574, 1575, "Select", 2, 0xff8624, "Naxramax Raid");
-		tab.child(c++, id++, 219 + x, 221 + y);*/
-
-
-		addText(id, "Fury Raid", tda, 2, 0xff8624, true, true);
-		tab.child(c++, id++, 113 + x, 236 + y);
-
-
-		addText(id, "Naxramax Raid", tda, 2, 0xff8624, true, true);
-		tab.child(c++, id++, 321 + x, 236 + y);
-
-
-		tab.child(c++, 120050, 221 + x, 40 + y);
-		tab.child(c++, 120100, 12 + x, 58 + y);
-		tab.child(c++, 120200, 12 + x, 140 + y);
-
-
-		interID = 120050;
-		RSInterface npc = addInterface(interID);
-		npc.totalChildren(1);
-		npc.width = 200 - 16;
-		npc.height = 121;
-		npc.scrollMax = 121;
-		y = 0;
-		c = 0;
-		id = interID + 1;
-		x = 0;
-		addNpc(id, 50);
-		npc.child(c++, id++, 30 + x, 4 + y);
-
-
-		interID = 120100;
-		RSInterface scroll = addInterface(interID);
-		scroll.totalChildren(1);
-		scroll.width = 201 - 16;
-		scroll.height = 56;
-		scroll.scrollMax = 105;
-		y = 0;
-		c = 0;
-		id = interID + 1;
-		x = 0;
-		addText(id, "Something goes here \\nI guess", tda, 0, 0x8d8d8d, false, true);
-		scroll.child(c++, id++, 2 + x, 2 + y);
-
-
-		interID = 120200;
-		RSInterface scroll1 = addInterface(interID);
-		scroll1.totalChildren(25);
-		scroll1.width = 201 - 16;
-		scroll1.height = 56;
-		scroll1.scrollMax = 101;
-		y = 0;
-		c = 0;
-		id = interID + 1;
-		x = 0;
-
-
-		for (int z = 0; z < 5; z++) {
-			for (int i = 0; i < 5; i++) {
-				dropGroup(id, 1, 1, 1, 1);
-				scroll1.child(c++, id++, 2 + x, 2 + y);
-				x += 37;
-			}
-			x = 0;
-			y += 34;
-		}
-	}
 
 	static void minigameInterface() {
 		int interID = 79000;
@@ -7045,7 +6945,6 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		achievements();
 		donatorShop();
 		petShop();
-		raidsInterface();
 		teleportInterface();
 		minigameInterface();
 		vodOverlay(tda);

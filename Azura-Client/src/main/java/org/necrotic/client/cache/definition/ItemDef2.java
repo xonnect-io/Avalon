@@ -2634,7 +2634,7 @@ public class ItemDef2 {
 				itemDef.femaleEquip1 = 100130;
 				itemDef.newModelColor = new int[]{51};
 				itemDef.editedModelColor = new int[]{52};
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 1115:
 				itemDef.copyItem(4712);
@@ -2645,7 +2645,7 @@ public class ItemDef2 {
 				itemDef.femaleEquip1 = 100132;
 				itemDef.newModelColor = new int[]{51};
 				itemDef.editedModelColor = new int[]{52};
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 1067:
 				itemDef.copyItem(4714);
@@ -2656,7 +2656,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[]{51};
 				itemDef.editedModelColor = new int[]{52};
 				itemDef.femaleEquip1 = 100134;	
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 8323:
 				itemDef.name = "T5 Magic helm";
@@ -4411,7 +4411,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemdefyogipic.modelZoom;
 				itemDef.rotationY = itemdefyogipic.rotationY;
 				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 60; // the texture that it currently has

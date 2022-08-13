@@ -23,22 +23,6 @@ public class Gambling {
 			return;
 		}
 
-		//if (player.getClanChatName() == null) {
-		//	player.getPacketSender().sendMessage("You need to be in the @blu@'dice' @bla@clan chat.");
-		//	return;
-		//} else if (player.getClanChatName().equalsIgnoreCase("help")) {
-		//	player.getPacketSender().sendMessage("You can't roll a dice in this clanchat channel!");
-		//	return;
-		//} else if (!player.getClanChatName().equalsIgnoreCase("dice")) {
-		//	player.getPacketSender().sendMessage("You need to be in the @blu@'dice' @bla@clan chat");
-		//	return;
-			////// } else
-			////// if(!player.getCurrentClanChat().getOwnerName().equalsIgnoreCase(player.getUsername()))
-			////// {
-			// player.getPacketSender().sendMessage("You must be the Owner of the clanchat
-			////// to roll the dice.");
-			// return;
-		//}
 		if (!player.getClickDelay().elapsed(2000)) {
 			player.getPacketSender().sendMessage("You must wait 2 seconds between each dice cast.");
 			return;

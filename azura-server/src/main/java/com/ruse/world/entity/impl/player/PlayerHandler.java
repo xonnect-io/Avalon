@@ -246,8 +246,6 @@ public class PlayerHandler {
 
         if (GameSettings.BCRYPT_HASH_PASSWORDS && Misc.needsNewSalt(player.getSalt())) {
             player.setSalt(BCrypt.gensalt(GameSettings.BCRYPT_ROUNDS));
-            // System.out.println(player.getUsername() + " needs a new salt. Generated one, rounds ("
-            //	+ GameSettings.BCRYPT_ROUNDS + ")");
         }
 
         if (Misc.isWeekend()) {

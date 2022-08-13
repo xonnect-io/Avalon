@@ -147,9 +147,6 @@ public class ButtonClickPacketListener implements PacketListener {
             return;
         }
 
-        if (player.getRaidsInterface().handleButton( id)) {
-            return;
-        }
         if (player.getUpgradeInterface().handleButton( id)) {
             return;
         }

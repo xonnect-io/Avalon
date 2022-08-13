@@ -310,10 +310,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 TeleportInterface.sendMinigameData(player, TeleportInterface.Minigames.values()[0]);
                                 TeleportInterface.sendMinigamesTab(player);
                                 break;
-                            case 41205:
-                                player.sendMessage("Coming soon...");
-                                ///player.getRaidsInterface().openInterface(RaidsInterface.Raids.FURY_RAIDS);
-                                break;
+
                             case 3736:
                                 player.moveTo(GameSettings.STARTER);
                                 break;

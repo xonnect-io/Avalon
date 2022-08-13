@@ -1,7 +1,6 @@
 package com.ruse.world.content;
 
 import com.ruse.engine.GameEngine;
-import com.ruse.model.PlayerRights;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
@@ -40,27 +39,24 @@ public class Lottery {
 	/*
 	 * Can players enter the lottery right now?
 	 */
-	private static final boolean LOTTERY_ENABLED = false;
+	private static final boolean LOTTERY_ENABLED = true;
 
 	/*
 	 * The amount of coins required to enter the lottery.
 	 */
-	private static final int PRICE_TO_ENTER = 1000000;
+	private static final int PRICE_TO_ENTER = 50000;
 
 	/*
 	 * Get's the amount of gold people have put in the pot.
 	 */
 	public static final int getPot() {
-		if (CONTESTERS.size() == 0) {
-			return 0;
-		}
-		return (CONTESTERS.size() * (PRICE_TO_ENTER - 250000));
+		return (CONTESTERS.size() * (PRICE_TO_ENTER));
 	}
 
 	/*
 	 * The user who won the Lottery last
 	 */
-	private static String LAST_WINNER = "Crimson";
+	private static String LAST_WINNER = "cowKiller69";
 
 	public static String getLastWinner() {
 		return LAST_WINNER;
@@ -99,14 +95,14 @@ public class Lottery {
 			DialogueManager.start(p, 17);
 			return;
 		}
-		if (p.getInventory().getAmount(ItemDefinition.COIN_ID) < PRICE_TO_ENTER || p.getRights() == PlayerRights.OWNER) {
+		if (p.getInventory().getAmount(ItemDefinition.UPGRADE_TOKEN_ID) < PRICE_TO_ENTER) {
 			p.getPacketSender().sendInterfaceRemoval().sendMessage("")
-					.sendMessage("You do not have enough money in your inventory to enter this week's lottery.")
-					.sendMessage("The lottery for this week costs "
-							+ Misc.insertCommasToNumber("" + PRICE_TO_ENTER + "") + " coins to enter.");
+					.sendMessage("You do not have enough tokens in your inventory to enter the lottery.")
+					.sendMessage("The lottery costs "
+							+ Misc.insertCommasToNumber("" + PRICE_TO_ENTER + "") + " upgrade tokens to enter.");
 			return;
 		}
-		p.getInventory().delete(ItemDefinition.COIN_ID, PRICE_TO_ENTER);
+		p.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, PRICE_TO_ENTER);
 		p.getAchievementAttributes().setCoinsGambled(p.getAchievementAttributes().getCoinsGambled() + PRICE_TO_ENTER);
 		addToLottery(p.getUsername());
 		p.getPacketSender().sendMessage("You have entered the lottery!")
@@ -265,13 +261,13 @@ public class Lottery {
 
 				@Override
 				public int npcId() {
-					return 4249;
+					return 4650;
 				}
 
 				@Override
 				public String[] dialogue() {
 					return new String[] { "The pot is currently at:",
-							"" + Misc.insertCommasToNumber("" + Lottery.getPot()) + " coins." };
+							"" + Misc.insertCommasToNumber("" + Lottery.getPot()) + " Upgrade Tokens." };
 				}
 
 				@Override
@@ -296,7 +292,7 @@ public class Lottery {
 
 				@Override
 				public int npcId() {
-					return 4249;
+					return 4650;
 				}
 
 				@Override

@@ -178,7 +178,7 @@
         "line1": "Lottery! Get your weekly ticket!",
         "line2": "One draw every week! Step up!",
         "next": 15,
-        "npcId": 4249
+        "npcId": 4650
     },
     {
         "id": 15,
@@ -202,7 +202,7 @@
         "line3": "of the pot of gold and another lottery will begin. If",
         "line4": "you have any questions, feel free to ask other contesters.",
         "next": 15,
-        "npcId": 4249
+        "npcId": 4650
     },
     {
         "id": 17,
@@ -213,7 +213,7 @@
         "line2": "lottery.",
         "line3": "The winner is announced every Friday.",
         "next": 15,
-        "npcId": 4249
+        "npcId": 4650
     },
     {
         "id": 18,
@@ -225,7 +225,7 @@
         "line3": "The winner is announced every Friday.",
         "line4": "Good luck!",
         "next": 15,
-        "npcId": 4249
+        "npcId": 4650
     },
     {
         "id": 19,
