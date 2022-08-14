@@ -22,7 +22,6 @@ import com.ruse.world.content.combat.magic.CombatSpells;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.DialogueManager;
-import com.ruse.world.content.dialogue.EnterLotteryTicketAmount;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupConfig;
 import com.ruse.world.content.groupironman.GroupManager;
@@ -239,11 +238,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         }
                         break;
 
-                    case 788:
-                        player.setEntityInteraction(npc);
-                        player.setDialogueActionId(831);
-                        EnterLotteryTicketAmount.lotteryNPC = npc;
-                        DialogueManager.start(player, 218);
+                    case 4650:
+                        LotteryEvent.initialdialogue(player);
                         break;
 
                     case 2938:
@@ -732,10 +728,6 @@ public class NPCOptionPacketListener implements PacketListener {
                         player.setDialogueActionId(9);
                         DialogueManager.start(player, 64);
                         break;
-                    case 4650:
-                        player.setDialogueActionId(9);
-                        DialogueManager.start(player, 14);
-                        break;
                     case 6807:
                     case 6994:
                     case 6995:
@@ -1083,10 +1075,8 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 8459:
                         Decanting.notedDecanting(player);
                         break;
-                    case 788:
-                        player.getPacketSender().sendEnterInputPrompt(
-                                "How many would you like to buy (1 Lottery ticket costs 1 Avalon tokens)");
-                        player.setInputHandling(new EnterLotteryTicketAmount());
+                    case 4650:
+                        LotteryEvent.purchaseTicket(player);
                         break;
                     case 3306:
                     case 130:
@@ -1401,10 +1391,11 @@ public class NPCOptionPacketListener implements PacketListener {
                     case PlayerOwnedShopManager.NPC_ID:
                         player.getPlayerOwnedShopManager().openEditor();
                         break;
-                    case 788:
-                        player.sendMessage("@bla@There are currently @red@" + LotterySystem.getCurrentTicketAmount()
-                                + " @bla@Lottery tickets- Winner pot is@red@: " + LotterySystem.getTotalPrizepool()
-                                + "@bla@ Avalon tokens");
+                    case 4650:
+//                        player.sendMessage("@bla@There are currently @red@" + LotterySystem.getCurrentTicketAmount()
+//                                + " @bla@Lottery tickets- Winner pot is@red@: " + LotterySystem.getTotalPrizepool()
+//                                + "@bla@ Avalon tokens");
+                        LotteryEvent.whenwinnersdrawn(player);
                         break;
                     case 5382:
                         if (player.getGameMode().equals(GameMode.ULTIMATE_IRONMAN)) {

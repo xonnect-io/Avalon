@@ -1258,7 +1258,9 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
-
+                case 12112:
+                    LotteryEvent.checkpurchaseticket(player);
+                    break;
                 case 4622:
                     if(player.getInventory().contains(12855, 5))
                     DialogueManager.start(player, TheOmegaDialogues.PubAccept(player));
@@ -1840,7 +1842,9 @@ public class DialogueOptions {
 
         } else if (id == SECOND_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
-
+                case 12112:
+                    player.getPacketSender().sendInterfaceRemoval();
+                    break;
                 case 4622:
                     DialogueManager.start(player, TheOmegaDialogues.PubDecline(player));
                     break;
@@ -1985,7 +1989,9 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
-
+                case 12111:
+                    LotteryEvent.purchaseTicket(player);
+                    break;
                 case 8821:
                     player.getPacketSender().sendInterfaceRemoval();
                     player.getPacketSender().sendMessage("This feature has not yet coded.");
@@ -2192,7 +2198,9 @@ public class DialogueOptions {
         } else if (id == SECOND_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
 
-
+                case 12111:
+                    LotteryEvent.getCurrentPot(player);
+                    break;
                 case 8625:
                     DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepFatherReen3(player));
                     break;
@@ -2407,7 +2415,9 @@ public class DialogueOptions {
             }
         } else if (id == THIRD_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
-
+                case 12111:
+                    LotteryEvent.whenwinnersdrawn(player);
+                    break;
                 case 8821:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;

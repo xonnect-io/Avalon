@@ -10,6 +10,7 @@ import com.ruse.model.Position;
 import com.ruse.util.CharacterBackup;
 import com.ruse.util.GameCalendar;
 import com.ruse.util.NameUtils;
+import com.ruse.util.ServerData;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.Reminders;
@@ -59,7 +60,10 @@ public class World {
      */
     private static final CharacterList<Player> players = new CharacterList<>(GameSettings.playerCharacterListCapacity);
     private static final Map<String, Player> playersByUesrname = new ConcurrentHashMap<>();
-
+    public static ServerData getServerData() {
+        return serverData;
+    }
+    public static ServerData serverData = new ServerData();
     /**
      * All of the registered NPCs.
      */
@@ -280,6 +284,7 @@ public class World {
         FightPit.sequence();
         PestControl.sequence();
         DragonKingBoss.sequence();
+        serverData.processQueue();
         Reminders.sequence();
         IronmanBoss.execute();
         ZenyteGolemBoss.cycle();

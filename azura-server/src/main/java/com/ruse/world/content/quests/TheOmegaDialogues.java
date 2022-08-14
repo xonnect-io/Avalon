@@ -559,7 +559,7 @@ public class TheOmegaDialogues {
                                     public String[] dialogue() {
                                         String line1 = "The Omega Egg is protected by the Dragon King.";
                                         String line2 = "You will need to defeat the Dragon King to get the egg.";
-                                        String line3 = "Make sure you have Ice gloves to collect pick it up!";
+                                        String line3 = "Make sure you have Chilling gloves to collect pick it up!";
                                         return new String[]{"" + line1 + "", "" + line2 + "", "" + line3};
                                     }
 
@@ -761,7 +761,7 @@ public class TheOmegaDialogues {
             public String[] dialogue() {
                 String line1 = "The Omega Egg is protected by the Dragon King.";
                 String line2 = "You will need to defeat the Dragon King to get the egg.";
-                String line3 = "Make sure you have Ice gloves to collect pick it up!";
+                String line3 = "Make sure you have Chilling gloves to collect pick it up!";
                 return new String[]{"" + line1 + "", "" + line2 + "", "" + line3};
             }
 

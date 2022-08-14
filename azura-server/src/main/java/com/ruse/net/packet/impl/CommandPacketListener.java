@@ -618,6 +618,36 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("voted")) {
             new Thread(new FoxVote(player)).start();
         }
+        if (command[0].equalsIgnoreCase("testafk")) {
+            Afking.afk(player);
+        }
+        if (command[0].equalsIgnoreCase("addlottery1")) {
+            World.getServerData().getTopLottery().update(player.getUsername(), 800);
+            World.getServerData().setTopLottery(World.getServerData().getTopLottery());
+            World.getServerData().processQueue();
+            player.sendMessage("total entries: "+World.getServerData().getTopLottery().getEntries().size()+" "+World.getServerData().getTopLottery().getTotalPot());
+        }
+        if (command[0].equalsIgnoreCase("checkwinner")) {
+            LotteryEvent.initialdialogue(player);
+            player.sendMessage("total entries: "+World.getServerData().getTopLottery().getEntries().size()+" "+World.getServerData().getTopLottery().getTotalPot());
+        }
+        if (command[0].equalsIgnoreCase("resetdate")) {
+            int hour = Integer.parseInt(command[1]);
+            int minute = Integer.parseInt(command[2]);
+            LotteryEvent.setdate(hour,minute);
+
+        }
+        if (command[0].equalsIgnoreCase("randomwinner")) {
+            LotteryData wogw = World.getServerData().getTopLottery();
+            ArrayList<Map.Entry<String, Integer>> winners = wogw.getSortedResultsForWinners();
+
+            Map<String, Integer> winnerMap = new HashMap<>();
+            winners.forEach(entry -> winnerMap.put(entry.getKey(), entry.getValue()));
+            for (Map.Entry<String, Integer> entry : winners) {
+                player.sendMessage("The winner is: "+entry.getKey());
+            }
+            wogw.clear();
+        }
         if (command[0].equalsIgnoreCase("claimdonation") || command[0].equalsIgnoreCase("claimdonate")
                 || command[0].equalsIgnoreCase("claim") || command[0].equalsIgnoreCase("donated")) {
             new Thread(new Store(player)).start();

@@ -63,7 +63,7 @@ public class NPCDeathTask extends Task {
      */
     private Set<Integer> BOSSES = new HashSet<>(Arrays.asList(1999, 440, 2882, 2881, 2883, 7134, 5666, 7286, 4540, 6222, 252,
             449, 452, 6260, 6247, 6203, 8349, 50, 2001, 1158, 8133, 3200, 13447, 8549, 1382, 2000, 2009, 2006, 8000,
-            8002, 6430, 185, 3831, 2342, 2949, 1120, 8015)); // use
+            8002, 6430, 185, 3831, 2342, 2949, 1120, 8015,9837)); // use
     /**
      * The amount of ticks on the task.
      */
@@ -309,7 +309,6 @@ public class NPCDeathTask extends Task {
                                     killer.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Obtain the Omega Egg");
                                 } else  if (!killer.getEquipment().contains(1580) && killer.getQuestTwoStarted() == true && killer.getQuestTwoStep2() == false) {
                                     GlobalItemSpawner.spawnEGG(killer);
-                                    killer.getPacketSender().sendMessage("This Omega egg is too hot. Ice gloves could help.");
                                 }
                             }
                         }

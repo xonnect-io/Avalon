@@ -1,4 +1,5 @@
 package com.ruse.world.entity.impl.player;
+
 import com.ruse.GameServer;
 import com.ruse.GameSettings;
 import com.ruse.engine.task.Task;
@@ -13,6 +14,7 @@ import com.ruse.model.definitions.WeaponInterfaces;
 import com.ruse.model.input.impl.EnterPinPacketListener;
 import com.ruse.net.PlayerSession;
 import com.ruse.net.SessionState;
+import com.ruse.net.packet.impl.Afking;
 import com.ruse.net.security.ConnectionHandler;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
@@ -569,7 +571,7 @@ public class PlayerHandler {
                     }
                     player.setOverloadPotionTimer(0);
                 }
-
+                Afking.resetAfk(player, true);
                 player.getControllerManager().logout();
                 StaffList.logout(player);
                 StaffList.updateGlobalInterface();

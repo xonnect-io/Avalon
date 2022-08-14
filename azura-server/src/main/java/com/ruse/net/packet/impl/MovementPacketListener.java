@@ -24,7 +24,7 @@ public class MovementPacketListener implements PacketListener {
 
 		if (packet.getOpcode() == 248)
 			size -= 14;
-
+		Afking.resetAfk(player,false);
 		player.setEntityInteraction(null);
 		player.getSkillManager().stopSkilling();
 		player.getMovementQueue().setFollowCharacter(null);

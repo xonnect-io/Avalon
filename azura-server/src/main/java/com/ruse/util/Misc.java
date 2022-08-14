@@ -88,7 +88,43 @@ public class Misc {
                 TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time)),
                 TimeUnit.MILLISECONDS.toSeconds(time) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(time)));
     }
+    public static Date getFutureDate(int year, int month, int day, int hour, int minute, int second) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, day, hour, minute, second);
+        return calendar.getTime();
+    }
+    public static String fill2(int value)
+    {
+        String ret = String.valueOf(value);
 
+        if (ret.length() < 2)
+            ret = "0" + ret;
+        return ret;
+    }
+
+    public static String get_duration(Date date1, Date date2)
+    {
+        TimeUnit timeUnit = TimeUnit.SECONDS;
+
+        long diffInMilli = date2.getTime() - date1.getTime();
+        long s = timeUnit.convert(diffInMilli, TimeUnit.MILLISECONDS);
+
+        long days = s / (24 * 60 * 60);
+        long rest = s - (days * 24 * 60 * 60);
+        long hrs = rest / (60 * 60);
+        long rest1 = rest - (hrs * 60 * 60);
+        long min = rest1 / 60;
+        long sec = s % 60;
+
+        String dates = "";
+        if (days > 0) dates = days + " Days ";
+
+        dates += fill2((int) hrs) + "h ";
+        dates += fill2((int) min) + "m ";
+        dates += fill2((int) sec) + "s ";
+
+        return dates;
+    }
     public static String toFormattedMS(long time) {
         return String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(time),
                 TimeUnit.MILLISECONDS.toSeconds(time) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(time)));

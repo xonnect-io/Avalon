@@ -20,6 +20,7 @@ public class IdleLogoutPacketListener implements PacketListener {
 		 * !player.getSkillManager().getSkillAttributes().getCurrentTask().isRunning()))
 		 * { World.removePlayer(player); }
 		 */
+
 		player.setInactive(true);
 	}
 }

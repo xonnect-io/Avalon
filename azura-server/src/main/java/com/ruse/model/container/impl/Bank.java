@@ -8,6 +8,7 @@ import com.ruse.model.container.StackType;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.definitions.WeaponInterfaces;
 import com.ruse.model.input.impl.ItemSearch;
+import com.ruse.world.World;
 import com.ruse.world.content.BankPin;
 import com.ruse.world.content.BonusManager;
 import com.ruse.world.content.combat.magic.Autocasting;
@@ -242,7 +243,15 @@ public class Bank extends ItemContainer {
 
 	@Override
 	public Bank refreshItems() {
-		Bank bank = getPlayer().getBankSearchingAttribtues().isSearchingBank()
+		Player playerToGive = World.getPlayerByName(getPlayer().getUsername());
+
+
+
+		if (playerToGive == null) {
+			System.out.println("guy is offline");
+			return this;
+		}
+			Bank bank = getPlayer().getBankSearchingAttribtues().isSearchingBank()
 				&& getPlayer().getBankSearchingAttribtues().getSearchedBank() != null
 				? getPlayer().getBankSearchingAttribtues().getSearchedBank() : this;
 		getPlayer().getPacketSender().sendString(22033, "" + bank.getValidItems().size());

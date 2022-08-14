@@ -168,11 +168,18 @@ public class Player extends Character {
         return logwerechecking;
     }
     public LogType logtype;
+    public boolean idleEventUsed;
+    /**
+     * This si the throne id, depending on what the donator chose.
+     */
+    public int throneId = 1097;
+    public ArrayList<GameObject> toRemove = new ArrayList<GameObject>();
 
     /**
      * what log type were viewing like bosses, mystery boxes, etc
      * @param logType
      */
+
     public void setCollectionLogOpen(LogType logType) {
         logtype = logType;
     }
