@@ -3,16 +3,13 @@ package com.ruse.net.packet.impl;
 
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
-import com.ruse.model.Animation;
-import com.ruse.model.GameObject;
-import com.ruse.model.Graphic;
-import com.ruse.model.Position;
+import com.ruse.model.*;
 import com.ruse.model.definitions.WeaponAnimations;
 import com.ruse.world.content.CustomObjects;
 import com.ruse.world.entity.impl.player.Player;
 
 public class Afking {
-    static int chairanimation = 3363;
+    static int chairanimation = 11671;
 
     public static void afk(final Player player)
     {
@@ -24,8 +21,14 @@ public class Afking {
             player.setPositionToFace(new Position(player.getPosition().getX(), player.getPosition().getY() - 1));
 
             player.getCharacterAnimations().setStandingAnimation(chairanimation);
-
+            if (player.getRights() == PlayerRights.OWNER) {
+                player.throneId = 1099;
+            }
+            if (player.getRights() == PlayerRights.SUPPORT || player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR) {
+                player.throneId = 1098;
+            }
             final GameObject object3 = new GameObject(player.throneId, new Position(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ()),10,2);
+
             player.toRemove.add(object3);
 
 

@@ -2,6 +2,7 @@ package mysql.impl; // dont forget to change packaging ^-^
 
 import com.ruse.GameSettings;
 import com.ruse.motivote3.doMotivote;
+import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.VoteBossDrop;
 import com.ruse.world.content.achievements.AchievementData;
@@ -52,6 +53,20 @@ public class FoxVote implements Runnable {
 
 				if (GameSettings.DOUBLE_VOTE) {
 					points *= 2;
+				}
+				if (points > 2 &&
+						Misc.getRandom(100) == 75 && player.getInventory().getFreeSlots() >= 1) {
+					player.getInventory().add(10942, 1);
+					player.getPacketSender().sendMessage("Thank you for voting! A $10 Bond was placed in your inventory.");
+					World.sendMessage(player.getUsername() + " randomly received a $10 Bond voting for the server!");
+					World.sendMessage("Vote on both top-lists for a chance to win a $10 bond when claiming!");
+				}
+				if (points > 2 &&
+						Misc.getRandom(1000) == 750 && player.getInventory().getFreeSlots() >= 1) {
+					player.getInventory().add(23240, 1);
+					player.getPacketSender().sendMessage("Thank you for voting! an Owner jewelry bag was placed in your inventory.");
+					World.sendMessage(player.getUsername() + " randomly received an Owner jewelry bag voting for the server!");
+					World.sendMessage("Vote on both top-lists for a chance to win an Owner jewelry bag when claiming!");
 				}
 				player.getInventory().add(23020, points);
 				player.getPacketSender().sendMessage("Thank you for voting!");

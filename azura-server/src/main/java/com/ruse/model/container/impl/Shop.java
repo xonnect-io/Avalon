@@ -161,6 +161,7 @@ public class Shop extends ItemContainer {
      * @param item The item which the player is buying
      * @return true or false if the player has enough space to buy the item
      */
+
     public static boolean hasInventorySpace(Player player, Item item, int currency, int pricePerItem) {
         if (player.getInventory().getFreeSlots() >= 1) {
             return true;
@@ -762,6 +763,7 @@ public class Shop extends ItemContainer {
                     || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4) {
                 playerCurrencyAmount = player.getPointsHandler().getDonatorPoints();
             }
+
         }
 
         if (player.getLocation() == Location.SKILLING_ISLAND) {
@@ -977,7 +979,33 @@ public class Shop extends ItemContainer {
                             player.getPointsHandler().setDonatorPoints(-value, true);
                         }
                     }
-
+                    if (id == PKING_REWARDS_STORE) {
+                        player.getPacketSender().sendString(3903, "Pk points: " + player.getPointsHandler().getPkPoints());
+                    } else if (id == SLAYER_SHOP) {
+                        player.getPacketSender().sendString(3903, "Slayer Points: " + player.getPointsHandler().getSlayerPoints());
+                    } else if (id == PEST_CONTROL) {
+                        player.getPacketSender().sendString(3903, "Pest Control Points: " + player.getPointsHandler().getCommendations());
+                    } else if (id == VOTE_STORE) {
+                        player.getPacketSender().sendString(3903, "Voting Points: " + player.getPointsHandler().getVotingPoints());
+                    } else if (id == EVENT_SHOP) {
+                        player.getPacketSender().sendString(3903, "Event Points: " + player.getPointsHandler().getEventPoints());
+                    } else if (id == BOSS_SHOP) {
+                        player.getPacketSender().sendString(3903, "Boss Points: " + player.getPointsHandler().getBossPoints());
+                    } else if (id == DUNGEONEERING_STORE) {
+                        player.getPacketSender().sendString(3903, "Dung Points: " + player.getPointsHandler().getDungeoneeringTokens());
+                    } else if (id == PRESTIGE_STORE) {
+                        player.getPacketSender().sendString(3903, "Prestige Points: " + player.getPointsHandler().getPrestigePoints());
+                    } else if (id == LOYALTY_POINT_SHOP) {
+                        player.getPacketSender().sendString(3903, "Loyalty Points: " + player.getPointsHandler().getLoyaltyPoints());
+                    } else if (id == BARROWS_STORE) {
+                        player.getPacketSender().sendString(3903, "Barrows Points: " + player.getPointsHandler().getBarrowsPoints());
+                    } else if (id == MEMBERS_STORE_I) {
+                        playerCurrencyAmount = player.getPointsHandler().getDonatorPoints();
+                        player.getPacketSender().sendString(3903, "Donator Points: " + player.getPointsHandler().getDonatorPoints());
+                    } else if (id == AFK) {
+                        player.getPacketSender().sendString(3903,
+                                "AFK Tickets in Inventory: " + player.getInventory().getAmount(5020) + "");
+                    }
                     super.switchItem(to, new Item(item.getId(), 1), slot, false, false);
 
                     if (id == PYRAMID_OUTBREAK_SHOP) {
@@ -1030,6 +1058,33 @@ public class Shop extends ItemContainer {
                                 || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4) {
                             player.getPointsHandler().setDonatorPoints(-value * canBeBought, true);
                         }
+                    }
+                    if (id == PKING_REWARDS_STORE) {
+                        player.getPacketSender().sendString(3903, "Pk points: " + player.getPointsHandler().getPkPoints());
+                    } else if (id == SLAYER_SHOP) {
+                        player.getPacketSender().sendString(3903, "Slayer Points: " + player.getPointsHandler().getSlayerPoints());
+                    } else if (id == PEST_CONTROL) {
+                        player.getPacketSender().sendString(3903, "Pest Control Points: " + player.getPointsHandler().getCommendations());
+                    } else if (id == VOTE_STORE) {
+                        player.getPacketSender().sendString(3903, "Voting Points: " + player.getPointsHandler().getVotingPoints());
+                    } else if (id == EVENT_SHOP) {
+                        player.getPacketSender().sendString(3903, "Event Points: " + player.getPointsHandler().getEventPoints());
+                    } else if (id == BOSS_SHOP) {
+                        player.getPacketSender().sendString(3903, "Boss Points: " + player.getPointsHandler().getBossPoints());
+                    } else if (id == DUNGEONEERING_STORE) {
+                        player.getPacketSender().sendString(3903, "Dung Points: " + player.getPointsHandler().getDungeoneeringTokens());
+                    } else if (id == PRESTIGE_STORE) {
+                        player.getPacketSender().sendString(3903, "Prestige Points: " + player.getPointsHandler().getPrestigePoints());
+                    } else if (id == LOYALTY_POINT_SHOP) {
+                        player.getPacketSender().sendString(3903, "Loyalty Points: " + player.getPointsHandler().getLoyaltyPoints());
+                    } else if (id == BARROWS_STORE) {
+                        player.getPacketSender().sendString(3903, "Barrows Points: " + player.getPointsHandler().getBarrowsPoints());
+                    } else if (id == MEMBERS_STORE_I) {
+                        playerCurrencyAmount = player.getPointsHandler().getDonatorPoints();
+                        player.getPacketSender().sendString(3903, "Donator Points: " + player.getPointsHandler().getDonatorPoints());
+                    } else if (id == AFK) {
+                        player.getPacketSender().sendString(3903,
+                                "AFK Tickets in Inventory: " + player.getInventory().getAmount(5020) + "");
                     }
                     super.switchItem(to, new Item(item.getId(), canBeBought), slot, false, false);
                     playerCurrencyAmount -= value;
@@ -1282,6 +1337,7 @@ public class Shop extends ItemContainer {
                     case 15330:
                         return new Object[] { 1000, "Vote points" };
                 }
+
             } else if (shop == SELL_ITEMS) {
                 switch (item) {
 

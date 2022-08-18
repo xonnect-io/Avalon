@@ -11,6 +11,7 @@ public class IdleLogoutPacketListener implements PacketListener {
 
 	@Override
 	public void handleMessage(Player player, Packet packet) {
+		Afking.afk(player);
 		if (player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR
 			 || player.getRights() == PlayerRights.OWNER)
 			return;

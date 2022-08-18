@@ -3803,6 +3803,10 @@ public final class MobDefinition {
 				definition.scaleY = 180;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
+			case 4648:
+				definition.actions = new String[5];
+				definition.actions[0] = "Talk-to";
+				break;
 			case 250:
 				definition.name = "Hanto warrior";
 				definition.description = "Hanto warriors are part of the samurai clan.".getBytes();

@@ -1,12 +1,9 @@
 package com.ruse.world.entity.impl.player;
 
 import com.ruse.GameSettings;
-import com.ruse.model.Locations;
+import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
-import com.ruse.model.Position;
-import com.ruse.model.Prayerbook;
 import com.ruse.model.RegionInstance.RegionInstanceType;
-import com.ruse.model.Skill;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.PlayerPunishment;
 import com.ruse.world.content.combat.pvp.BountyHunter;
@@ -62,11 +59,35 @@ public class PlayerProcess {
 			previousHeight = player.getPosition().getZ();
 		}
 
-
+		int rank_amount = 0;
+		if (player.getRights() == PlayerRights.SAPPHIRE_DONATOR)
+			rank_amount = 1;
+		if (player.getRights() == PlayerRights.EMERALD_DONATOR)
+			rank_amount = 1;
+		if (player.getRights() == PlayerRights.RUBY_DONATOR)
+			rank_amount = 2;
+		if (player.getRights() == PlayerRights.DIAMOND_DONATOR)
+			rank_amount = 2;
+		if (player.getRights() == PlayerRights.ONYX_DONATOR)
+			rank_amount = 3;
+		if (player.getRights() == PlayerRights.ZENYTE_DONATOR)
+			rank_amount = 3;
+		if (player.getRights() == PlayerRights.TANZANITE_DONATOR)
+			rank_amount = 4;
+		if (player.getRights() == PlayerRights.SUPPORT)
+			rank_amount = 4;
+		if (player.getRights() == PlayerRights.MODERATOR)
+			rank_amount = 4;
+		if (player.getRights() == PlayerRights.ADMINISTRATOR)
+			rank_amount = 4;
+		if (player.getRights() == PlayerRights.COMMUNITY_MANAGER)
+			rank_amount = 4;
+		if (player.getRights() == PlayerRights.OWNER)
+			rank_amount = 8;
 		if (!player.isInActive()) {
 			if (loyaltyTick >= 6) {
+				player.getPointsHandler().incrementLoyaltyPoints(1 + rank_amount);
 				PlayerPanel.refreshPanel(player);
-				//LoyaltyProgramme.incrementPoints(player);
 				loyaltyTick = 0;
 			}
 			loyaltyTick++;

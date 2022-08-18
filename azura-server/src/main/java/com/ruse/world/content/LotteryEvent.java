@@ -45,7 +45,7 @@ public class LotteryEvent {
             return;
         }
         World.getServerData().getTopLottery().update(player.getUsername(), TICKET_VALUE);
-        player.getInventory().delete(995,TICKET_VALUE);
+        player.getInventory().delete(12855,TICKET_VALUE);
         player.sendMessage("You have entered the lottery! Good luck! Total entries: " + World.getServerData().getTopLottery().getEntries().size());
 
     }
@@ -238,7 +238,7 @@ public class LotteryEvent {
             winners.forEach(entry -> winnerMap.put(entry.getKey(), entry.getValue()));
 
 
-            Item totalpot = new Item(995, lottery.getTotalPot());
+            Item totalpot = new Item(12855, lottery.getTotalPot());
 
             if (winners.size() == 0) { // no winners
                 lottery.setWinners(winnerMap);

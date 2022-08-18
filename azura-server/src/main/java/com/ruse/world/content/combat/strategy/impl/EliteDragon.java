@@ -8,7 +8,6 @@ import com.ruse.model.Locations;
 import com.ruse.util.Misc;
 import com.ruse.world.content.combat.CombatContainer;
 import com.ruse.world.content.combat.CombatType;
-import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -30,11 +29,8 @@ public class EliteDragon implements CombatStrategy {
 	public boolean customContainerAttack(Character entity, Character victim) {
 		NPC dragon = (NPC) entity;
 		Player player = (Player) victim;
-		if (Misc.getRandom(5) <= 2) {
-			Player Player = (com.ruse.world.entity.impl.player.Player) victim;
-			CurseHandler.deactivateAll(Player);
-			((Player) victim).getPacketSender().sendMessage("<img=18><shad=1>@red@The Dragon King deactivated your prayer");
-		}
+
+
 		if (Misc.getRandom(10) <= 2) {
 			int itemid = player.getEquipment().forSlot(5).getId();
 

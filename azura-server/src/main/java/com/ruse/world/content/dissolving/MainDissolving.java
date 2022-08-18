@@ -16,6 +16,9 @@ public class MainDissolving {
 	static int anim = 11904;
 	static int UPG_TOKEN = 12855;
 	public enum DissolvingData {
+		PURIFIER_STAFF(8089, new Item[]{new Item(UPG_TOKEN, 125_000)}, 900_000, anim),
+		JUDICATOR_BOW(8088, new Item[]{new Item(UPG_TOKEN, 125_000)}, 900_000, anim),
+		DRAGON_LANCE(8087, new Item[]{new Item(UPG_TOKEN, 125_000)}, 900_000, anim),
 		ENRAGED_SWORD(3737, new Item[]{new Item(UPG_TOKEN, 25_000)}, 50000, anim),
 		BOTANIC_BOW(3738, new Item[]{new Item(UPG_TOKEN, 25_000)}, 50000, anim),
 		ELEMENTAL_STAFF(3739, new Item[]{new Item(UPG_TOKEN, 25_000)}, 50000, anim),
