@@ -37,9 +37,9 @@ public class LotteryData implements Serializable {
     /**
      * The date the week is over. The initial date is set.
      */
-    private Date date = Misc.getFutureDate(2022, Calendar.AUGUST, 14, 20, 0, 0);
+    private Date date = Misc.getFutureDate(2022, Calendar.AUGUST, 29, 20, 0, 0);
 
-    private Date date20minsbefore = Misc.getFutureDate(2022, Calendar.AUGUST, 14, 20, 40, 0);
+    private Date date20minsbefore = Misc.getFutureDate(2022, Calendar.AUGUST, 22, 19, 40, 0);
 
     /**
      * Requests that an update be made on the entries variable.

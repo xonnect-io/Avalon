@@ -220,7 +220,7 @@ public class LotteryEvent {
         Calendar calendar = World.getCalendar().getInstance();
         Date date = calendar.getTime();
         if (calendar.getTime().after(lottery.get20minutedate()) && !warningannounced) {
-            World.sendMessage("[LOTTERY] The lottery will be drawn in " + whenwinnersdrawn() + ".");
+            World.sendMessage("[LOTTERY] The lottery will be drawn in 20 minutes!");
             warningannounced = true;
             return;
         }
