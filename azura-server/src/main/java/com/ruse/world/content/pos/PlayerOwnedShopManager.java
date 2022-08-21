@@ -1,5 +1,6 @@
 package com.ruse.world.content.pos;
 
+import com.ruse.GameSettings;
 import com.ruse.model.GameMode;
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
@@ -254,7 +255,10 @@ public class PlayerOwnedShopManager {
             player.getPacketSender().sendInterfaceRemoval();
             return;
         }
-
+        if (GameSettings.BETA_ACTIVE) {
+            player.getPacketSender().sendMessage("The POS is disabled during beta.");
+            return;
+        }
         player.getPacketSender().sendString(113006, "" + Misc.insertCommasToNumber(player.getInventory().getAmount(ItemDefinition.UPGRADE_TOKEN_ID)));
 
         int length = getMyShop() != null && getMyShop().getHistoryItems() != null && getMyShop().getHistoryItems().size() >= 4 ? getMyShop().getHistoryItems().size()  : 4;

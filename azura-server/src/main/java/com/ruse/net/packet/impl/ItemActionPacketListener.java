@@ -304,6 +304,16 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(23143, 1);
                 break;
 
+            case 23407:
+                player.getInventory().delete(23396, 1);
+                player.getInventory().add(23397, 1);
+                player.getInventory().add(23398, 1);
+                player.getInventory().add(23399, 1);
+                player.getInventory().add(23400, 1);
+                if (Misc.getRandom(10) > 9)
+                    player.getInventory().add(23393, 1);
+                player.sendMessage("You were extra lucky and have been given a cosmetic pass back for next season!");
+                break;
             case PrayerHandler.HOLY_SCROLL_DESTRUCTION_ITEM:
                 if(!player.isHolyPrayerUnlocked(PrayerHandler.HOLY_DESTRUCTION_IDX)) {
                     player.setUnlockedHolyPrayer(PrayerHandler.HOLY_DESTRUCTION_IDX, true);

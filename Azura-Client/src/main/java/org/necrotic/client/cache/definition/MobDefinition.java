@@ -180,7 +180,7 @@ public final class MobDefinition {
 				definition.name = "Gutter";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19370,19372,19398,19403,19404,19410,19411};
-				definition.npcSizeInSquares = 1;
+				definition.npcSizeInSquares = 3;
 				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -193,7 +193,7 @@ public final class MobDefinition {
 				definition.name = "Midnight Sufferer";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19435,19441,19444,100137,18943,100136};
-				definition.npcSizeInSquares = 1;
+				definition.npcSizeInSquares = 3;
 				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -206,7 +206,7 @@ public final class MobDefinition {
 				definition.name = "Souless Sufferer";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19421,19423,19425,100137,100139,100136};
-				definition.npcSizeInSquares = 1;
+				definition.npcSizeInSquares = 3;
 				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -219,7 +219,7 @@ public final class MobDefinition {
 				definition.name = "Hellish Sufferer";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19427,19429,19433,100137,18552,100136};
-				definition.npcSizeInSquares = 1;
+				definition.npcSizeInSquares = 3;
 				definition.combatLevel = 300;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -228,22 +228,33 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				break;
 			case 9115:
-				definition.name = "Hellish Sufferer";
+				definition.name = "Akuji";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{19427,19429,19433,100137,18552,100136};
-				definition.npcSizeInSquares = 1;
-				definition.combatLevel = 300;
+				definition.npcModels = new int[]{19583};
+				definition.npcSizeInSquares = 2;
+				definition.combatLevel = 200;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 250;
-				definition.scaleY = 250;
+				definition.scaleXZ = 150;
+				definition.scaleY = 150;
 				definition.drawYellowDotOnMap = true;
 				break;
-
+			case 9244:
+				definition.name = "Akuji";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19584,19585,19588,19586,19587};
+				definition.npcSizeInSquares = 2;
+				definition.combatLevel = 200;
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 150;
+				definition.scaleY = 150;
+				definition.drawYellowDotOnMap = true;
+				break;
 			case 2359:
 				definition.name = "Immortal Warrior";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{19577};
+				definition.npcModels = new int[]{19582};
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -255,7 +266,7 @@ public final class MobDefinition {
 			case 277:
 				definition.name = "Lesarkus Warrior";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{19578};
+				definition.npcModels = new int[]{19580};
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -267,7 +278,7 @@ public final class MobDefinition {
 			case 1914:
 				definition.name = "Fatal Warrior";
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{19579};
+				definition.npcModels = new int[]{19581};
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;

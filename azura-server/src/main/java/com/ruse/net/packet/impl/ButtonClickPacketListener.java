@@ -213,7 +213,7 @@ public class ButtonClickPacketListener implements PacketListener {
             break;
             case -4908:
                 if(player.isCosmeticUnlocked()){
-                    player.sendMessage("You have already claimed a cosmetic membership this Month");
+                    player.sendMessage("You have already Claimed a cosmetic membership this Month");
                     return;
 
                 }
@@ -221,9 +221,10 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getInventory().delete(23393,1);
                     player.getPacketSender().removeInterface();
                     player.setUnlockedCosmetic(true);
-                    player.getInventory().add(18419,1);
-                    player.getInventory().add(18410,1);
-                    player.getInventory().add(18437,1);
+                    player.getInventory().add(23404,1);
+                    player.getInventory().add(23405,1);
+                    player.getInventory().add(23406,1);
+                    player.getInventory().add(23407,1);
                     player.membershipInterfaceHandler.openCosmeticTab();
                     player.sendMessage("You have claimed your Monthly Cosmetic Membership");
                     player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
@@ -467,8 +468,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, miningPos, TeleportType.NORMAL);
                 break;
             case 71532:
-                if (player.getPointsHandler().getLesarkusWarriorKC() < 50000) {
-                    player.getPA().sendMessage("You need 50,000 Lesarkus Warrior kills before sacrificing x1 Blood Attachment.");
+                if (player.getPointsHandler().getLesarkusWarriorKC() < 25000) {
+                    player.getPA().sendMessage("You need 25,000 Lesarkus Warrior kills before sacrificing x1 Blood Attachment.");
                     return;
                 }
 
@@ -492,8 +493,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPA().sendMessage("<img=832> x1 Lesarkus Blade has been added to your inventory.");
                 break;
             case 71572:
-                if (player.getPointsHandler().getVampireWarriorKC() < 100_000) {
-                    player.getPA().sendMessage("You need 100,000 Fatal Warrior kills before sacrificing x1 Owner Fragment.");
+                if (player.getPointsHandler().getVampireWarriorKC() < 50_000) {
+                    player.getPA().sendMessage("You need 50,000 Fatal Warrior kills before sacrificing x1 Owner Fragment.");
                     return;
                 }
 
@@ -517,8 +518,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPA().sendMessage("<img=832> x1 Kismet Medallion has been added to your inventory.");
                 break;
             case 80572:
-                if (player.getPointsHandler().getAncientWarriorKC() < 150_000) {
-                    player.getPA().sendMessage("You need 150,000 Immortal Warrior kills before sacrificing 250,000,000 Upgrade Tokens.");
+                if (player.getPointsHandler().getAncientWarriorKC() < 75_000) {
+                    player.getPA().sendMessage("You need 75,000 Immortal Warrior kills before sacrificing 250,000,000 Upgrade Tokens.");
                     return;
                 }
 
@@ -543,8 +544,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPA().sendMessage("<img=832> Your account has received a permanent 0.20% Melee Damage increase!");
                 break;
             case 77342:
-                 if (player.getPointsHandler().getFacelessMagicianKC() < 50000) {
-                     player.getPA().sendMessage("You need 50,000 Faceless Magician kills before sacrificing a Dark weapon.");
+                 if (player.getPointsHandler().getFacelessMagicianKC() < 25000) {
+                     player.getPA().sendMessage("You need 25,000 Faceless Magician kills before sacrificing a Dark weapon.");
                      return;
                  }
 
@@ -575,8 +576,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 77442:
-                if (player.getPointsHandler().getLotusMagicianKC() < 100_000) {
-                    player.getPA().sendMessage("You need 100,000 Lotus Magician kills before sacrificing a Blood weapon.");
+                if (player.getPointsHandler().getLotusMagicianKC() < 50_000) {
+                    player.getPA().sendMessage("You need 50,000 Lotus Magician kills before sacrificing a Blood weapon.");
                     return;
                 }
 
@@ -607,8 +608,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 77542:
-                if (player.getPointsHandler().getShadowMagicianKC() < 150_000) {
-                    player.getPA().sendMessage("You need 150,000 Shadow Magician kills before sacrificing 250,000,000 upgrade tokens");
+                if (player.getPointsHandler().getShadowMagicianKC() < 75_000) {
+                    player.getPA().sendMessage("You need 75,000 Shadow Magician kills before sacrificing 250,000,000 upgrade tokens");
                     return;
                 }
 
@@ -676,6 +677,15 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 21360:
             case -17490:
+            case -12286:
+            case 28133:
+            case 27133:
+            case 26133:
+            case -16938:
+            case -17492:
+            case 31502:
+            case 142255:
+            case -4931:
                 player.getPacketSender().sendInterfaceRemoval();
                 break;
 
@@ -1904,18 +1914,6 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendInterfaceRemoval();
                 // player.sendMessage("Enjoy your reward");
                 break;
-            case -12286:
-            case 28133:
-            case 27133:
-            case 26133:
-            case -16938:
-            case -17492:
-            case 31502:
-            case 142255:
-                player.getPacketSender().sendInterfaceRemoval();
-                //CLOSE INTERFACE
-                break;
-
             case 27005:
             case 22012:
                 if (!player.isBanking() || player.getInterfaceId() != 5292)

@@ -386,6 +386,16 @@ public class PlayerSaving {
 			object.addProperty("quest-two-step-six", player.getQuestTwoStep6());
 			object.addProperty("quest-two-step-seven", player.getQuestTwoStep7());
 
+
+			object.addProperty("quest-three-started", player.getQuestThreeStarted());
+			object.addProperty("quest-three-step-one", player.getQuestThreeStep1());
+			object.addProperty("quest-three-step-two", player.getQuestThreeStep2());
+			object.addProperty("quest-three-step-three", player.getQuestThreeStep3());
+			object.addProperty("quest-three-step-four", player.getQuestThreeStep4());
+			object.addProperty("quest-three-step-five", player.getQuestThreeStep5());
+			object.addProperty("quest-three-step-six", player.getQuestThreeStep6());
+			object.addProperty("quest-three-step-seven", player.getQuestThreeStep7());
+
 			object.addProperty("talked-to-ghost", player.getTalkedToGhost());
 			object.addProperty("magic1-unlocked", player.getMagicGuildTier1());
 			object.addProperty("magic2-unlocked", player.getMagicGuildTier2());

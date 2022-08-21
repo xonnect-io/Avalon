@@ -122,7 +122,7 @@ public class RSInterface {
 		addText(28019, "Member status:", TDA, 2, 0xFF981F, false, true);
 		addText(28020, "As a member you will", TDA, 1, 0xFF981F, false, true);
 		addText(28021, "have access to the", TDA, 1, 0xFF981F, false, true);
-		addText(28022, "::members zone and", TDA, 1, 0xFF981F, false, true);
+		addText(28022, "members zone and", TDA, 1, 0xFF981F, false, true);
 		addText(28023, "the perks on the right", TDA, 1, 0xFF981F, false, true);
 
 
@@ -186,7 +186,7 @@ public class RSInterface {
 		addText(60618, "Cosmetic status:", TDA, 2, 0xFF981F, false, true);
 		addText(60619, "Unlock The outfit to the left", TDA, 1, 0xFF981F, false, true);
 		addText(60620, "and the rewards below.", TDA, 1, 0xFF981F, false, true);
-		RSInterface.drawNpcOnInterface(60622, 1914, 320);
+		RSInterface.drawNpcOnInterface(60622, 9244, 420);
 		addToItemGroup(60623, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
 		addToItemGroup(60624, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
 		addToItemGroup(60625, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
@@ -1764,7 +1764,7 @@ public class RSInterface {
 		addText(71524, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(71525, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
 		addText(71526, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(71527, "@red@- 50,000 Lesarkus Warrior KC", tda, 1, 0xff8624, false, true);
+		addText(71527, "@red@- 25,000 Lesarkus Warrior KC", tda, 1, 0xff8624, false, true);
 		addText(71528, "@red@- Sacrifice x1 Blood Attachment", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(71538, 1659);
 		addSpriteLoader(71539, 1658);
@@ -1813,7 +1813,7 @@ public class RSInterface {
 		addText(71564, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(71565, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
 		addText(71566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(71567, "@red@- 100,000 Fatal Warrior KC", tda, 1, 0xff8624, false, true);
+		addText(71567, "@red@- 50,000 Fatal Warrior KC", tda, 1, 0xff8624, false, true);
 		addText(71568, "@red@- Sacrifice x1 Owner Fragment", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(71578, 1658);
 		addSpriteLoader(71579, 1659);
@@ -1864,7 +1864,7 @@ public class RSInterface {
 		addText(80564, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(80565, "Next Tier: @whi@Warrior Master", tda, 1, 0xff8624, false, true);
 		addText(80566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(80567, "@red@- 150,000 Immortal Warrior KC", tda, 1, 0xff8624, false, true);
+		addText(80567, "@red@- 75,000 Immortal Warrior KC", tda, 1, 0xff8624, false, true);
 		addText(80568, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
 
 
@@ -1903,6 +1903,190 @@ public class RSInterface {
 		main.child(16, 80575, 252, 287);
 		main.child(17, 80576, 355, 38);
 		main.child(18, 80577, 298, 64);
+	}
+
+	private static void archerUnlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(88130);
+		addSpriteLoader(88131, 1701);
+
+		addText(88132, "Archer Guild", tda, 2, 0xff8624, true, true);
+
+		addText(88133, "Information", tda, 2, 0xff8624, true, true);
+		addText(88134, "Requirements", tda, 2, 0xff8624, true, true);
+		addText(88135, "The Guild is a completion Minigame", tda, 1, 0xff8624, false, true);
+		addText(88136, "There is three tiers of the Guild", tda, 1, 0xff8624, false, true);
+		addText(88137, "You need requirements for each tier", tda, 1, 0xff8624, false, true);
+		addText(88138, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
+		addText(88139, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
+		addText(88140, "@red@Warrior Master", tda, 1, 0xff8624, false, true);
+		addText(88141, "@red@Sacrifice 10,000 Celestial Energy", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(88142, 1445, 132, 29, "Sacrifice", -1, 88143, 1);
+		addHoveredImageWSpriteLoader(88143, 1446, 132, 29, 88144);
+
+		addText(88145, "Sacrifice", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(88146, 714, "Close Window", 16, 16);
+		addButtonWSpriteLoader(88147, 1502, "Back to Teleports", 16, 16);
+
+		main.totalChildren(16);
+		main.child(0, 88131, 125, 35);
+		main.child(1, 88132, 250, 42);
+		main.child(2, 88133, 250, 65);
+		main.child(3, 88134, 250, 175);
+		main.child(4, 88135, 142, 85);
+		main.child(5, 88136, 142, 100);
+		main.child(6, 88137, 142, 115);
+		main.child(7, 88138, 142, 130);
+		main.child(8, 88139, 142, 145);
+		main.child(9, 88140, 142, 197);
+		main.child(10, 88141, 142, 212);
+		main.child(11, 88142, 189, 248);
+		main.child(12, 88143, 189, 248);
+		main.child(13, 88145, 250, 255);
+		main.child(14, 88146, 355, 38);
+		main.child(15, 88147, 135, 38);
+	}
+	private static void archerTier1Unlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(88330);
+		addSpriteLoader(88331, 1702);
+
+		addText(88332, "Archer Guild", tda, 2, 0xff8624, true, true);
+
+		addText(88333, "Information", tda, 2, 0xff8624, true, true);
+		addText(88334, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
+		addText(88335, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
+		addText(88336, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
+		addText(88337, "@red@- 25,000 Faceless Magician KC", tda, 1, 0xff8624, false, true);
+		addText(88338, "@red@- Sacrifice a Dark weapon", tda, 1, 0xff8624, false, true);
+		addSpriteLoader(88348, 1659);
+		addSpriteLoader(88349, 1658);
+		addSpriteLoader(88350, 1658);
+		addSpriteLoader(88351, 1704);
+		addSpriteLoader(88352, 1704);
+		addText(88339, "Tier 1", tda, 1, 0xff8624, false, true);
+		addText(88340, "Archers bow", tda, 1, 0xff8624, false, true);
+		addText(88341, "Tier 2", tda, 1, 0xff8624, false, true);
+		addText(88347, "Tier 3", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(88342, 1445, 132, 29, "Sacrifice", -1, 88343, 1);
+		addHoveredImageWSpriteLoader(88343, 1446, 132, 29, 88344);
+		addText(88345, "Level Up", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(88346, 714, "Close Window", 16, 16);
+
+		main.totalChildren(21);
+		main.child(0, 88331, 125, 35);
+		main.child(1, 88332, 250, 42);
+		main.child(2, 88333, 250, 95);
+		main.child(3, 88334, 250, 215);
+		main.child(4, 88335, 142, 120);
+		main.child(5, 88336, 142, 150);
+		main.child(6, 88337, 142, 165);
+		main.child(7, 88338, 142, 180);
+		main.child(8, 88348, 135, 60);
+		main.child(9, 88349, 213, 60);
+		main.child(10, 88350, 293, 60);
+		main.child(11, 88351, 262, 63);
+		main.child(12, 88352, 340, 63);
+		main.child(13, 88339, 142, 64);
+		main.child(14, 88340, 142, 233);
+		main.child(15, 88341, 218, 64);
+		main.child(16, 88342, 189, 279);
+		main.child(17, 88343, 189, 279);
+		main.child(18, 88345, 252, 287);
+		main.child(19, 88346, 355, 38);
+		main.child(20, 88347, 298, 64);
+	}
+
+	private static void archerTier2Unlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(88430);
+		addSpriteLoader(88431, 1702);
+
+		addText(88432, "Archer Guild", tda, 2, 0xff8624, true, true);
+
+		addText(88433, "Information", tda, 2, 0xff8624, true, true);
+		addText(88434, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
+		addText(88435, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
+		addText(88436, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
+		addText(88437, "@red@- 50,000 Lotus Magician KC", tda, 1, 0xff8624, false, true);
+		addText(88438, "@red@- Sacrifice a Blood weapon", tda, 1, 0xff8624, false, true);
+		addSpriteLoader(88448, 1658);
+		addSpriteLoader(88449, 1659);
+		addSpriteLoader(88450, 1658);
+		addSpriteLoader(88452, 1704);
+		addText(88439, "Tier 1", tda, 1, 0xff8624, false, true);
+		addText(88440, "Gemstone Kaseki", tda, 1, 0xff8624, false, true);
+		addText(88441, "Tier 2", tda, 1, 0xff8624, false, true);
+		addText(88447, "Tier 3", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(88442, 1445, 132, 29, "Level Up", -1, 88443, 1);
+		addHoveredImageWSpriteLoader(88443, 1446, 132, 29, 88444);
+		addText(88445, "Level Up", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(88446, 714, "Close Window", 16, 16);
+
+		main.totalChildren(20);
+		main.child(0, 88431, 125, 35);
+		main.child(1, 88432, 250, 42);
+		main.child(2, 88433, 250, 95);
+		main.child(3, 88434, 250, 215);
+		main.child(4, 88435, 142, 120);
+		main.child(5, 88436, 142, 150);
+		main.child(6, 88437, 142, 165);
+		main.child(7, 88438, 142, 180);
+		main.child(8, 88448, 135, 60);
+		main.child(9, 88449, 213, 60);
+		main.child(10, 88450, 293, 60);
+		main.child(11, 88452, 340, 63);
+		main.child(12, 88439, 142, 64);
+		main.child(13, 88440, 142, 233);
+		main.child(14, 88441, 218, 64);
+		main.child(15, 88442, 189, 279);
+		main.child(16, 88443, 189, 279);
+		main.child(17, 88445, 252, 287);
+		main.child(18, 88446, 355, 38);
+		main.child(19, 88447, 298, 64);
+	}
+
+	private static void archerTier3Unlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(88530);
+		addSpriteLoader(88531, 1702);
+
+		addText(88532, "Archer Guild", tda, 2, 0xff8624, true, true);
+
+		addText(88533, "Information", tda, 2, 0xff8624, true, true);
+		addText(88534, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
+		addText(88535, "Next Tier: @whi@Archer Master", tda, 1, 0xff8624, false, true);
+		addText(88536, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
+		addText(88537, "@red@- 75,000 Shadow Magician KC", tda, 1, 0xff8624, false, true);
+		addText(88538, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
+		addSpriteLoader(88548, 1658);
+		addSpriteLoader(88549, 1658);
+		addSpriteLoader(88550, 1659);
+		addText(88539, "Tier 1", tda, 1, 0xff8624, false, true);
+		addText(88540, "20% Permanent Range Dmg Boost", tda, 1, 0xff8624, false, true);
+		addText(88541, "Tier 2", tda, 1, 0xff8624, false, true);
+		addText(88547, "Tier 3", tda, 1, 0xff8624, false, true);
+		addHoverButtonWSpriteLoader(88542, 1445, 132, 29, "Level Up", -1, 88543, 1);
+		addHoveredImageWSpriteLoader(88543, 1446, 132, 29, 88444);
+		addText(88545, "Level Up", tda, 2, 0xff8624, true, true);
+		addButtonWSpriteLoader(88546, 714, "Close Window", 16, 16);
+
+		main.totalChildren(19);
+		main.child(0, 88531, 125, 35);
+		main.child(1, 88532, 250, 42);
+		main.child(2, 88533, 250, 95);
+		main.child(3, 88534, 250, 215);
+		main.child(4, 88535, 142, 120);
+		main.child(5, 88536, 142, 150);
+		main.child(6, 88537, 142, 165);
+		main.child(7, 88538, 142, 180);
+		main.child(8, 88548, 135, 60);
+		main.child(9, 88549, 213, 60);
+		main.child(10, 88550, 293, 60);
+		main.child(11, 88539, 142, 64);
+		main.child(12, 88540, 142, 233);
+		main.child(13, 88541, 218, 64);
+		main.child(14, 88542, 189, 279);
+		main.child(15, 88543, 189, 279);
+		main.child(16, 88545, 252, 287);
+		main.child(17, 88546, 355, 38);
+		main.child(18, 88547, 298, 64);
 	}
 
 	private static void magicianUnlock(TextDrawingArea[] tda) {
@@ -1955,7 +2139,7 @@ public class RSInterface {
 		addText(77334, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(77335, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
 		addText(77336, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(77337, "@red@- 50,000 Faceless Magician KC", tda, 1, 0xff8624, false, true);
+		addText(77337, "@red@- 25,000 Faceless Magician KC", tda, 1, 0xff8624, false, true);
 		addText(77338, "@red@- Sacrifice a Dark weapon", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(77348, 1659);
 		addSpriteLoader(77349, 1658);
@@ -2005,7 +2189,7 @@ public class RSInterface {
 		addText(77434, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(77435, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
 		addText(77436, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(77437, "@red@- 100,000 Lotus Magician KC", tda, 1, 0xff8624, false, true);
+		addText(77437, "@red@- 50,000 Lotus Magician KC", tda, 1, 0xff8624, false, true);
 		addText(77438, "@red@- Sacrifice a Blood weapon", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(77448, 1658);
 		addSpriteLoader(77449, 1659);
@@ -2053,7 +2237,7 @@ public class RSInterface {
 		addText(77534, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(77535, "Next Tier: @whi@Magic Master", tda, 1, 0xff8624, false, true);
 		addText(77536, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(77537, "@red@- 150,000 Shadow Magician KC", tda, 1, 0xff8624, false, true);
+		addText(77537, "@red@- 75,000 Shadow Magician KC", tda, 1, 0xff8624, false, true);
 		addText(77538, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(77548, 1658);
 		addSpriteLoader(77549, 1658);
@@ -6628,6 +6812,10 @@ public class RSInterface {
 			mysteryBoxViewer(textDrawingAreas);
 			sufferingChest(textDrawingAreas);
 			magicianUnlock(textDrawingAreas);
+			archerUnlock(textDrawingAreas);
+			archerTier1Unlock(textDrawingAreas);
+			archerTier2Unlock(textDrawingAreas);
+			archerTier3Unlock(textDrawingAreas);
 			warriorUnlock(textDrawingAreas);
 			warriorTier1Unlock(textDrawingAreas);
 			warriorTier2Unlock(textDrawingAreas);

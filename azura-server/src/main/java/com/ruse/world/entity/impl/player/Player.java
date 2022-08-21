@@ -1936,10 +1936,76 @@ End new teleport
     }
     public boolean getQuestTwoStep7() {
         return questTwoStep7; }
+    /*
+    End Quest Two
+     */
 
 
     /*
-    End Quest Two
+    Start Quest Three
+     */
+    public boolean questThreeStarted;
+    private boolean questThreeStep1;
+    private boolean questThreeStep2;
+    private boolean questThreeStep3;
+    private boolean questThreeStep4;
+    private boolean questThreeStep5;
+    private boolean questThreeStep6;
+    private boolean questThreeStep7;
+
+    public void setQuestThreeStarted(boolean questThreeStarted) {
+        this.questThreeStarted = questThreeStarted;
+    }
+    public boolean getQuestThreeStarted() {
+        return questThreeStarted;
+    }
+
+    public void setQuestThreeStep1(boolean questThreeStep1) {
+        this.questThreeStep1 = questThreeStep1;
+    }
+    public boolean getQuestThreeStep1() {
+        return questThreeStep1;
+    }
+
+    public void setQuestThreeStep2(boolean questThreeStep2) {
+        this.questThreeStep2 = questThreeStep2;
+    }
+    public boolean getQuestThreeStep2() {return questThreeStep2;
+    }
+
+    public void setQuestThreeStep3(boolean questThreeStep3) {
+        this.questThreeStep3 = questThreeStep3;
+    }
+    public boolean getQuestThreeStep3() {
+        return questThreeStep3;
+    }
+
+    public void setQuestThreeStep4(boolean questThreeStep4) {
+        this.questThreeStep4 = questThreeStep4;
+    }
+    public boolean getQuestThreeStep4() {
+        return questThreeStep4;
+    }
+
+    public void setQuestThreeStep5(boolean questThreeStep5) {
+        this.questThreeStep5 = questThreeStep5;
+    }
+    public boolean getQuestThreeStep5() {
+        return questThreeStep5; }
+
+    public void setQuestThreeStep6(boolean questThreeStep6) {
+        this.questThreeStep6 = questThreeStep6;
+    }
+    public boolean getQuestThreeStep6() {
+        return questThreeStep6; }
+
+    public void setQuestThreeStep7(boolean questThreeStep7) {
+        this.questThreeStep7 = questThreeStep7;
+    }
+    public boolean getQuestThreeStep7() {
+        return questThreeStep7; }
+    /*
+    End Quest Three
      */
 
     /*

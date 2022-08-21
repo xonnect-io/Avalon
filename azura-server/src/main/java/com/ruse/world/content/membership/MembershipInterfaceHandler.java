@@ -29,9 +29,9 @@ public class MembershipInterfaceHandler {
         player.getPacketSender().sendString(60606, ("Resets: " + MembershipManager.theEndDate()));
         player.getPacketSender().sendString(60630, (player.isCosmeticUnlocked() == true) ?
                 "Membership: @gre@Active" : "Membership: @red@Inactive");
-        player.getPacketSender().sendItemOnInterface(60623, 18419, 0, 1);
-        player.getPacketSender().sendItemOnInterface(60624, 18410,0, 1);
-        player.getPacketSender().sendItemOnInterface(60625, 18437,0, 1);
+        player.getPacketSender().sendItemOnInterface(60623, 23404, 0, 1);
+        player.getPacketSender().sendItemOnInterface(60624, 23405,0, 1);
+        player.getPacketSender().sendItemOnInterface(60625, 23406,0, 1);
 
     }
 }

@@ -2067,6 +2067,64 @@ public class ItemDef4 {
 				itemDef.editedModelColor[0] = 66; // the new texture u want it to have
 				itemDef.stackable = false;
 				break;
+			case 23404:
+				itemDef.name = "Season 1 Partyhat";
+				itemDef.modelID = 65286;
+				itemDef.maleEquip1 = 65287;
+				itemDef.femaleEquip1 = 65287;
+				itemDef21 = ItemDefinition.get(1040);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.rotationZ = itemDef21.rotationZ;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 40; // the texture that it currently has
+				itemDef.editedModelColor[0] = 98; // the new texture u want it to have
+				itemDef.stackable = false;
+				break;
+				case 23405:
+				itemDef.name = "Season 1 Santa hat";
+				itemDef.modelID = 65288;
+				itemDef.maleEquip1 = 65289;
+				itemDef.femaleEquip1 = 65289;
+				itemDef21 = ItemDefinition.get(1050);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.rotationZ = itemDef21.rotationZ;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 40; // the texture that it currently has
+				itemDef.editedModelColor[0] = 98; // the new texture u want it to have
+				itemDef.stackable = false;
+				break;
+			case 23406:
+				itemDef.name = "Season 1 Sled";
+				itemDef21 = ItemDefinition.get(4083);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.rotationZ = itemDef21.rotationZ;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.modelID = 65302;
+				itemDef.femaleEquip1 = 65302;
+				itemDef.maleEquip1 = 65302;
+				itemDef.actions = new String[]{null, "Ride", null, null, "Drop"};
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 60; // the texture that it currently has
+				itemDef.editedModelColor[0] = 98;
+				itemDef.stackable = false;
+				itemDef.value = 1;
+				break;
 			case 19134:
 				itemDef.name = "Staff Santa hat";
 				itemDef.modelID = 65288;
@@ -3583,7 +3641,6 @@ public class ItemDef4 {
 				itemDef.modelID = 65302;
 				itemDef.femaleEquip1 = 65302;
 				itemDef.maleEquip1 = 65302;
-
 				itemDef.actions = new String[]{null, "Ride", null, null, "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here

@@ -2384,7 +2384,15 @@ public final class ItemDefinition {
 				itemDef.editedModelColor = new int[]{64};
 				itemDef.modelID = 65284;
 				break;
-				
+			case 23407:
+				itemDef.copyItem(6199);
+				itemDef.name = "Season 1 Cosmetic set";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.newModelColor = new int[]{63};
+				itemDef.editedModelColor = new int[]{98};
+				itemDef.modelID = 65284;
+				break;
 			case 19116:
 				itemDef.copyItem(6199);
 				itemDef.name = "Super Mystery Box";

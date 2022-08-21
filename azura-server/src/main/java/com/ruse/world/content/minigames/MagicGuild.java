@@ -18,24 +18,24 @@ public class MagicGuild {
     public void openT1() {
         player.getPacketSender().sendInterface(77330);
         player.getPacketSender().sendString(77337,  player.getPointsHandler().getFacelessMagicianKC() >= 100_000
-                ? "@gre@- 50,000 Faceless Magician KC"
-                : "@red@- 50,000 Faceless Magician KC");
+                ? "@gre@- 25,000 Faceless Magician KC"
+                : "@red@- 25,000 Faceless Magician KC");
 
     }
 
     public void openT2() {
         player.getPacketSender().sendInterface(77430);
         player.getPacketSender().sendString(77437,  player.getPointsHandler().getLotusMagicianKC() >= 50000
-                ? "@gre@- 100,000 Lotus Magician KC"
-                : "@red@- 100,000 Lotus Magician KC");
+                ? "@gre@- 50,000 Lotus Magician KC"
+                : "@red@- 50,000 Lotus Magician KC");
 
     }
 
     public void openT3() {
         player.getPacketSender().sendInterface(77530);
         player.getPacketSender().sendString(77537,  player.getPointsHandler().getShadowMagicianKC() >= 150000
-                ? "@gre@- 150,000 Shadow Magician KC"
-                : "@red@- 150,000 Shadow Magician KC");
+                ? "@gre@- 75,000 Shadow Magician KC"
+                : "@red@- 75,000 Shadow Magician KC");
 
     }
 }
