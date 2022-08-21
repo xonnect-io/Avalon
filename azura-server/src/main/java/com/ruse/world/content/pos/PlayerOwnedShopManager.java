@@ -257,6 +257,7 @@ public class PlayerOwnedShopManager {
         }
         if (GameSettings.BETA_ACTIVE) {
             player.getPacketSender().sendMessage("The POS is disabled during beta.");
+            player.getPacketSender().removeInterface();
             return;
         }
         player.getPacketSender().sendString(113006, "" + Misc.insertCommasToNumber(player.getInventory().getAmount(ItemDefinition.UPGRADE_TOKEN_ID)));
@@ -424,7 +425,11 @@ public class PlayerOwnedShopManager {
 
 
     public void options() {
-
+        if (GameSettings.BETA_ACTIVE) {
+            player.getPacketSender().sendMessage("The POS is disabled during beta.");
+            player.getPacketSender().removeInterface();
+            return;
+        }
         DialogueManager.start(player, new Dialogue() {
 
             @Override
