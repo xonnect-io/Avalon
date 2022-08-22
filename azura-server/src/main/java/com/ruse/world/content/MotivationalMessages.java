@@ -11,21 +11,18 @@ public class MotivationalMessages {
     public void startTask() {
         if (player.motivationalToggle) {
             player.getPacketSender().sendInterface(60640);
-            if (Misc.getRandom(10) == 5) {
+            if (Misc.getRandom(5) == 5) {
                 player.getPacketSender().sendString(60642, ("Focus on your goal. Dont look in any direction but ahead"));
                 System.out.println("Random: 5");
-            } else if (Misc.getRandom(10) == 4) {
+            } else if (Misc.getRandom(5) == 4) {
                 player.getPacketSender().sendString(60642, ("When you feel like quitting, think about why you started."));
                 System.out.println("Random: 4");
-            } else if (Misc.getRandom(10) == 3) {
+            } else if (Misc.getRandom(5) == 3) {
                 player.getPacketSender().sendString(60642, ("A dream does not become reality through magic; it takes sweat."));
                 System.out.println("Random: 3");
-            } else if (Misc.getRandom(10) == 2) {
+            } else if (Misc.getRandom(5) == 2) {
                 player.getPacketSender().sendString(60642, ("When you feel like quitting, think about why you started."));
                 System.out.println("Random: 2");
-            } else if (Misc.getRandom(10) == 1) {
-                player.getPacketSender().sendString(60642, ("You must do what others don’t to achieve what others wont"));
-                System.out.println("Random: 1");
             } else
                 player.getPacketSender().sendString(60642, ("Suffer the pain of discipline. Or, suffer the pain of regret."));
             System.out.println("Random: 0");
