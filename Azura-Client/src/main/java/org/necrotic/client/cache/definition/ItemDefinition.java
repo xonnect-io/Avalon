@@ -1989,18 +1989,12 @@ public final class ItemDefinition {
 				// itemDef.rdc2 = 16368;//this is for you dope :)
 				break;
 			case 23403:
+				itemDef.copyItem(12855);
 				itemDef.name = "Suffering charm";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 19580;
-				itemDef.modelZoom = 1000;
-				itemDef21 = ItemDefinition.get(10942);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.rotationZ = itemDef21.rotationZ;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.modelZoom = 950;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.modelID = 19517;
+				itemDef.rdc2 = 96252;
 				break;
 			case 6769:
 				itemDef.name = "$5 Bond";

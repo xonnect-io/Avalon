@@ -4629,7 +4629,16 @@ public final class MobDefinition {
 				definition.name = "Mummy";
 				definition.rdc2 = 59511;
 				break;
-	            
+			case 1508:
+				definition.name = "Forest archer";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares =2;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 120;
+				definition.scaleY = 120;
+				break;
 		case 827:
 			definition.name = "Unknown archer";
 			definition.actions = new String[]{null, "Attack", null, null, null};

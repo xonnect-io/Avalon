@@ -2690,6 +2690,16 @@ public class RSInterface {
 
 	}
 
+	public static void teleportFade(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(60640);
+		addSprite(60641, 1747);
+		addText(60642, "Focus on your goal. Dont look in any direction but ahead", tda, 2, ColorConstants.WHITE, true, true);
+
+		main.totalChildren(2);
+		main.child(0, 60641, 0, 0);
+		main.child(1, 60642, 247, 290);
+	}
+
 	public static void addNpc(int ID, int npcId) {
 		RSInterface petCanvas = interfaceCache[ID] = new RSInterface();
 		petCanvas.id = ID;
@@ -6797,6 +6807,7 @@ public class RSInterface {
 
 		aClass44 = streamLoader;
 		try {
+			teleportFade(textDrawingAreas);
 			teleportInterface(textDrawingAreas);
 			teleportInterface1(textDrawingAreas);
 			godWars(textDrawingAreas);

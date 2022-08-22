@@ -449,6 +449,7 @@ public class Player extends Character {
     private final BonusManager bonusManager = new BonusManager();
     private final PointsHandler pointsHandler = new PointsHandler(this);
     public final UnknownZone unknownZone = new UnknownZone(this);
+    public final MotivationalMessages motivationalMessages = new MotivationalMessages(this);
     public final QuestInterfaceHandler questInterface = new QuestInterfaceHandler(this);
     public final MembershipInterfaceHandler membershipInterfaceHandler = new MembershipInterfaceHandler(this);
     public final PrestigeInterfaceHandler prestigeInterface = new PrestigeInterfaceHandler(this);
@@ -569,6 +570,7 @@ public class Player extends Character {
     //	public GameModes selectedGameMode;
     public GameModes selectedGameMode;
     public boolean dropMessageToggle = false;
+    public boolean motivationalToggle = true;
     public boolean hasReferral;
     public long lastDonationClaim;
     private boolean placeholders = true;

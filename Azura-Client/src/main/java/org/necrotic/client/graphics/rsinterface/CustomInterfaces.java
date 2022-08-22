@@ -4618,7 +4618,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addConfigButton(913, 904, 307, 308, 40, 40, "Toggle-Mouse Buttons", 0, 5, 170);
 		addConfigButton(915, 904, 307, 308, 40, 40, "Toggle-Chat Effects", 0, 5, 171);
 		addConfigButton(957, 904, 307, 308, 40, 40, "Toggle-Split Private Chat", 1, 5, 287);
-		addConfigButton(12464, 904, 307, 308, 40, 40, "Toggle-Accept Aid", 0, 5, 427);
+		addConfigButton(12464, 904, 307, 308, 40, 40, "Toggle-Motivational Messages", 0, 5, 427);
 		tab.totalChildren(30);
 		int x = 0;
 		int y = 2;

@@ -176,7 +176,10 @@ public enum TeleportData {
 	WARRIOR_GUILD(28316, 28316, 28316, 28240, "Warrior Guild", "Warrior Guild",
 			"@or1@Health: @whi@1,000,000"," ","",  TeleportCategory.MINIGAMES, new Position(1948, 4191, 0), -1, false, 277, -1,
 			new int[][] {{23383, 1}, {23384, 1}, {23386, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1,1}, {-1,1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, -1}, {-1, -1}},515),
-
+	/*RANGE_GUILD(28317, 28317, 28317, 28241, "Archer Guild", "Archer Guild",
+			"@or1@Health: @whi@1,000,000"," ","",  TeleportCategory.MINIGAMES, new Position(3357, 4701, 0), -1, false, 1508, -1,
+			new int[][] {{23383, 1}, {23384, 1}, {23386, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1,1}, {-1,1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, -1}, {-1, -1}},515),
+*/
 	/*
 	 * Dungeons
 	 */

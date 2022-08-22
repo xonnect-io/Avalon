@@ -365,6 +365,12 @@ public class ItemDef3 {
 				itemDef.modelID = 19584;
 				itemDef.maleEquip1 = 19584;
 				itemDef.femaleEquip1 = 19584;
+				itemDef.modelZoom = 600;
+				itemDef.rotationX = 9;
+				itemDef.rotationY = 165;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 172;
 				break;
 			case 23397:
 				itemDef.copyItem(4894);
@@ -372,14 +378,26 @@ public class ItemDef3 {
 				itemDef.modelID = 19585;
 				itemDef.maleEquip1 = 19585;
 				itemDef.femaleEquip1 = 19585;
+				itemDef.modelZoom = 2374;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 26;
 				break;
 
 			case 23398:
 				itemDef.copyItem(4900);
-				itemDef.name = "Cosmetic platelegs";
+				itemDef.name = "Cosmetic leggings";
 				itemDef.modelID = 19588;
 				itemDef.maleEquip1 = 19588;
 				itemDef.femaleEquip1 = 19588;
+				itemDef.modelZoom = 1661;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 10;
 				break;
 
 			case 23399:
@@ -388,6 +406,12 @@ public class ItemDef3 {
 				itemDef.modelID = 19586;
 				itemDef.maleEquip1 = 19586;
 				itemDef.femaleEquip1 = 19586;
+				itemDef.modelZoom = 617;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 340;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 22;
 				break;
 
 			case 23400:
@@ -396,6 +420,12 @@ public class ItemDef3 {
 				itemDef.modelID = 19587;
 				itemDef.maleEquip1 = 19587;
 				itemDef.femaleEquip1 = 19587;
+				itemDef.modelZoom = 1678;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 96;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 43;
 				break;
 
 
@@ -2589,7 +2619,7 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 65334;
 				itemDef.femaleEquip1 = 65334;
 				itemDef.modelZoom = 1700;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 29295;
 				itemDef.rotationX = 200;

@@ -43,6 +43,7 @@ public class TeleportHandler {
 		player.performAnimation(teleportType.getStartAnimation());
 		player.performGraphic(teleportType.getStartGraphic());
 		Sounds.sendSound(player, Sound.TELEPORT);
+		player.motivationalMessages.startTask();
 		TaskManager.submit(new Task(1, player, true) {
 			int tick = 0;
 
@@ -56,15 +57,19 @@ public class TeleportHandler {
 						player.performAnimation(new Animation(8939, 20));
 						player.performGraphic(new Graphic(1576));
 					} else if (tick == 4) {
+						player.motivationalMessages.startTask();
 						player.performAnimation(new Animation(8941));
 						player.performGraphic(new Graphic(1577));
 						player.moveTo(targetLocation).setPosition(targetLocation);
+						if (player.getPosition() == (targetLocation))
+							player.motivationalMessages.endTask();
 						player.getMovementQueue().setLockMovement(false).reset();
 						stop();
 					}
 					break;
 				default:
 					if (tick == teleportType.getStartTick()) {
+						player.motivationalMessages.startTask();
 						cancelCurrentActions(player);
 						player.performAnimation(teleportType.getEndAnimation());
 						player.performGraphic(teleportType.getEndGraphic());
@@ -83,6 +88,8 @@ public class TeleportHandler {
 
 						onArrival(player, targetLocation);
 						player.setTeleporting(false);
+						if (player.getPosition() == (targetLocation))
+							player.motivationalMessages.endTask();
 					} else if (tick == teleportType.getStartTick() + 3) {
 						player.getMovementQueue().setLockMovement(false).reset();
 					} else if (tick == teleportType.getStartTick() + 4)

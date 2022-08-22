@@ -558,6 +558,11 @@ public class CommandPacketListener implements PacketListener {
             player.sendMessage("Show drop messages currently set to: " + player.dropMessageToggle);
             return;
         }
+        if (command[0].equalsIgnoreCase("motivational")) {
+            player.motivationalToggle = !player.motivationalToggle;
+            player.sendMessage("Show motivational teleport messages currently set to: " + player.motivationalToggle);
+            return;
+        }
 
         if (command[0].equalsIgnoreCase("donationdeals") || command[0].equalsIgnoreCase("deals")) {
             player.sendMessage(

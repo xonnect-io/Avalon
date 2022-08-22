@@ -674,7 +674,11 @@ public class ButtonClickPacketListener implements PacketListener {
                 Position skillingShopsPos = new Position(2818,2592,0);
                 TeleportHandler.teleportPlayer(player, skillingShopsPos, TeleportType.NORMAL);
                 break;
-
+            case 12464:
+                player.motivationalToggle = !player.motivationalToggle;
+                player.sendMessage("Show motivational teleport messages currently set to: " + player.motivationalToggle);
+                player.getPacketSender().sendConfig(427, player.motivationalToggle ? 0 : 1);
+                break;
             case 21360:
             case -17490:
             case -12286:
