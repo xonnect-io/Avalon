@@ -157,18 +157,6 @@ public class NPCDeathTask extends Task {
                             }
                         }
 
-                         if (npc.getId() == 6260) {
-                            killer.getAchievementAttributes().setGodKilled(0, true);
-                        } else if (npc.getId() == 6222) {
-                            killer.getAchievementAttributes().setGodKilled(1, true);
-                        } else if (npc.getId() == 6247) {
-                            killer.getAchievementAttributes().setGodKilled(2, true);
-                        } else if (npc.getId() == 6203) {
-                            killer.getAchievementAttributes().setGodKilled(3, true);
-                        } else if (npc.getId() == 8133) {
-                        } else if (npc.getId() == 13447) {
-                            killer.getAchievementAttributes().setGodKilled(4, true);
-                        }
                         if (killer.getLocation() == Location.CUSTOM_RAIDS) {
                             Dungeoneering.handleNpcDeath(killer, npc);
                         } // fixed, enjoy.

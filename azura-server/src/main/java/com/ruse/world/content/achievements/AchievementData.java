@@ -143,7 +143,7 @@ public enum AchievementData {
             new Item[] {new Item(6199, 2),new Item(10025, 1)},
             new LoyaltyPointReward(3000)
     ),
-    SHADOW(30, AchievementType.MEDIUM, 250, "Shadow","Kill x250 Shadow!",
+    SHADOW(30, AchievementType.MEDIUM, 300, "Shadow","Kill 300 Shadow!",
             new Item[] {new Item(6199, 2),new Item(10025, 1)},
             new LoyaltyPointReward(3000)
     ),

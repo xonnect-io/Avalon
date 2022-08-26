@@ -202,8 +202,9 @@ public class ObjectActionPacketListener implements PacketListener {
                                     return;
                                 } else
                                 if (player.isMembershipUnlocked())
-                                    TeleportHandler.teleportPlayer(player, new Position(1778, 5331),
+                                    TeleportHandler.teleportPlayer(player, new Position(1825, 5152, 2),
                                             player.getSpellbook().getTeleportType());
+                                player.getPacketSender().sendMessage("You enter the Member's Dungeon.");
                                 break;
 
                             case 11354:
@@ -358,7 +359,11 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.performGraphic(new Graphic(1310));
                                 break;
                             case 2141:
+                                int[] commongrand = new int[] { 15288, 5022,7956,19114,20488,11137,20489,15358,15359,15288,23321,10946,4446,19886,8087,8088,8089,22006};
+                                int[] uncommongrand = new int[] {20549, 20173, 8809,8834,8835,8860,8861,8862,15830,3318,15418};
+                                int[] raresgrand = new int[] {23303, 23304, 23305, 23306, 23307, 23308, 23309, 23310, 23311,14999,23276,23403};
                                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SOSREWARDS);
+                                player.getMysteryBoxOpener().backgroundDisplay(23370, "Suffering Chest", commongrand, uncommongrand, raresgrand);
                                 player.getCasketOpening().openSOSInterface();
                                 break;
                             case 7289:
@@ -2691,9 +2696,6 @@ public class ObjectActionPacketListener implements PacketListener {
                                             new Position(player.getPosition().getX(), player.getPosition().getY(), 1));
                                     return;
                                 }
-                                break;
-                            case 172:
-                                CrystalChest.sendRewardInterface(player);
                                 break;
 
                             case 9975:

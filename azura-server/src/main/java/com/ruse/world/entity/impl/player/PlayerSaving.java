@@ -122,8 +122,6 @@ public class PlayerSaving {
 			object.addProperty("dung-tokens", new Integer(player.getPointsHandler().getDungeoneeringTokens()));
 			object.addProperty("commendations", new Integer(player.getPointsHandler().getCommendations()));
 			object.addProperty("loyalty-points", new Integer(player.getPointsHandler().getLoyaltyPoints()));
-			object.addProperty("total-loyalty-points",
-					new Double(player.getAchievementAttributes().getTotalLoyaltyPointsEarned()));
 			object.addProperty("godmodetime", player.getGodModeTimer());
 			object.addProperty("voting-points", new Integer(player.getPointsHandler().getVotingPoints()));
 			object.add("tasks-completion", builder.toJsonTree(player.getStarterTaskAttributes().getCompletion()));
@@ -237,7 +235,6 @@ public class PlayerSaving {
 			object.addProperty("autocast-spell",
 					player.getAutocastSpell() != null ? player.getAutocastSpell().spellId() : -1);
 			object.addProperty("dfs-charges", player.getDfsCharges());
-			object.addProperty("coins-gambled", new Integer(player.getAchievementAttributes().getCoinsGambled()));
 			object.addProperty("slayer-master", player.getSlayer().getSlayerMaster().name());
 			object.addProperty("slayer-task", player.getSlayer().getSlayerTask().name());
 			object.addProperty("prev-slayer-task", player.getSlayer().getLastTask().name());
@@ -252,7 +249,6 @@ public class PlayerSaving {
 			object.add("brawlers-deg", builder.toJsonTree(player.getBrawlerChargers()));
 			object.add("ancient-deg", builder.toJsonTree(player.getAncientArmourCharges()));
 			object.add("killed-players", builder.toJsonTree(player.getPlayerKillingAttributes().getKilledPlayers()));
-			object.add("killed-gods", builder.toJsonTree(player.getAchievementAttributes().getGodsKilled()));
 			object.add("vod-brother",
 					builder.toJsonTree(player.getMinigameAttributes().getVoidOfDarknessAttributes().getBarrowsData()));
 			object.addProperty("vod-killcount",
@@ -317,9 +313,6 @@ public class PlayerSaving {
 			object.add("loyalty-titles", builder.toJsonTree(player.getUnlockedLoyaltyTitles()));
 			object.add("kills", builder.toJsonTree(player.getKillsTracker().toArray()));
 			object.add("drops", builder.toJsonTree(player.getDropLog().toArray()));
-			object.add("achievements-completion",
-					builder.toJsonTree(player.getAchievementAttributes().getCompletion()));
-			object.add("achievements-progress", builder.toJsonTree(player.getAchievementAttributes().getProgress()));
 			object.addProperty("fri13may16", new Boolean(player.didFriday13May2016())); // player.didfri13may16
 			object.addProperty("spiritdebug", new Boolean(player.isSpiritDebug()));
 			object.addProperty("reffered", new Boolean(player.gotReffered()));
@@ -427,8 +420,6 @@ public class PlayerSaving {
 			object.add("favorite-teleports", builder.toJsonTree(player.getFavoriteTeleports()));
 
 			object.add("obtained-pets", builder.toJsonTree(player.getObtainedPets()));
-			object.add("achievements-completion",builder.toJsonTree(player.getAchievementAttributes().getCompletion()));
-			object.add("achievements-progress", builder.toJsonTree(player.getAchievementAttributes().getProgress()));
 			object.add("achievements", player.getAchievementTracker().jsonSave());
 			writer.write(builder.toJson(object));
 			writer.close();

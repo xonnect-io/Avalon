@@ -14,7 +14,6 @@ import com.ruse.net.packet.PacketListener;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
-import com.ruse.world.content.CrystalChest;
 import com.ruse.world.content.CurrencyPouch;
 import com.ruse.world.content.ItemForging;
 import com.ruse.world.content.PlayerLogs;
@@ -487,12 +486,7 @@ public class UseItemPacketListener implements PacketListener {
                             }
                         }
                         switch (objectId) {
-                            case 172:
-                            case 173:
-                                if (itemId == 9003) {
-                                    CrystalChest.sendRewardInterface(player);
-                                }
-                                break;
+
                             case 16135://betrayed
 
                                 if (itemId == 8868 || itemId == 21201 || itemId == 21202 || itemId == 21203 || itemId == 21204) {

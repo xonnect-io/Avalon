@@ -121,6 +121,27 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 1208://GLOVES_NPC
                         break;
+                    case 649: //ARCHER GUILD
+                        if (player.getArcherMaster() == true) {
+                            DialogueManager.sendStatement(player, "You Already have mastered this minigame!");
+                            return;
+                        }
+                        if (player.getArcherGuildTier3() == true && player.getArcherGuildTier2() == true && player.getArcherGuildTier1() == true) {
+                            player.getPacketSender().sendInterfaceReset();
+                            player.archerGuildT3.openT3();
+                            return;
+                        }
+                        if (player.getArcherGuildTier2() == true && player.getArcherGuildTier1()) {
+                            player.getPacketSender().sendInterfaceReset();
+                            player.archerGuildT2.openT2();
+                            return;
+                        }
+                        if (player.getArcherGuildTier1()) {
+                            player.getPacketSender().sendInterfaceReset();
+                            player.archerGuildT1.openT1();
+                            return;
+                        }
+                        break;
                     case 460: //MAGIC GUILD
                         npc.forceChat("Vis porta. Claudo te. Vis sera portus.sigillum");
                         if (player.getMagicianMaster() == true) {

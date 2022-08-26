@@ -137,7 +137,6 @@ public class PlayerHandler {
         PrayerHandler.deactivateAll(player);
         CurseHandler.deactivateAll(player);
         BonusManager.sendCurseBonuses(player);
-        AchievementsOLD.updateInterface(player);
         Barrows.handleLogin(player);
         VoidOfDarkness.handleLogin(player);
         // Tasks
@@ -401,9 +400,7 @@ public class PlayerHandler {
         }
 
         StaffList.updateGlobalInterface();
-        if (player.getPointsHandler().getAchievementPoints() == 0) {
-            AchievementsOLD.setPoints(player);
-        }
+
 
         player.getUpdateFlag().flag(Flag.APPEARANCE);
 

@@ -270,7 +270,9 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 player.getClickDelay().reset();
                 break;
-
+            case 5733:
+                player.getPacketSender().sendMessage("This is a powerful potato! Do not eat it!");
+                break;
             case 989:
                 Position crystalChest = new Position(3100, 2979, 0);
                 TeleportHandler.teleportPlayer(player, crystalChest, TeleportType.NORMAL);
@@ -1886,6 +1888,11 @@ public class ItemActionPacketListener implements PacketListener {
             return;
         player.getMainDissolving().handle(itemId);
         switch (itemId) {
+            case 5733:
+                player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 150000);
+                player.getSkillManager().setCurrentLevel(Skill.PRAYER, 1200);
+                player.sendMessage("<shad=1>@red@Your potato heals you");
+                break;
             case 23061:
             case 23062:
             case 23063:

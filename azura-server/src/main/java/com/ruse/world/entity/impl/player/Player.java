@@ -23,7 +23,6 @@ import com.ruse.util.Misc;
 import com.ruse.util.Stopwatch;
 import com.ruse.world.World;
 import com.ruse.world.allornothing.AONType;
-import com.ruse.world.content.AchievementsOLD.AchievementAttributes;
 import com.ruse.world.content.BankPin.BankPinAttributes;
 import com.ruse.world.content.*;
 import com.ruse.world.content.DropLog.DropLogEntry;
@@ -67,13 +66,8 @@ import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceData;
 import com.ruse.world.content.membership.MembershipInterfaceHandler;
 import com.ruse.world.content.membership.MembershipManager;
-import com.ruse.world.content.minigames.MagicGuild;
 import com.ruse.world.content.minigames.MinigameAttributes;
-import com.ruse.world.content.minigames.WarriorGuild;
-import com.ruse.world.content.minigames.impl.Dueling;
-import com.ruse.world.content.minigames.impl.HallsOfValor;
-import com.ruse.world.content.minigames.impl.UnknownZone;
-import com.ruse.world.content.minigames.impl.VoidOfDarkness;
+import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.newspinner.MysteryBoxManager;
 import com.ruse.world.content.osrscollectionlog.CollectionLog;
@@ -445,7 +439,6 @@ public class Player extends Character {
     private final MinigameAttributes minigameAttributes = new MinigameAttributes();
     private final BankPinAttributes bankPinAttributes = new BankPinAttributes();
     private final BankSearchAttributes bankSearchAttributes = new BankSearchAttributes();
-    private final AchievementAttributes achievementAttributes = new AchievementAttributes();
     private final BonusManager bonusManager = new BonusManager();
     private final PointsHandler pointsHandler = new PointsHandler(this);
     public final UnknownZone unknownZone = new UnknownZone(this);
@@ -457,6 +450,10 @@ public class Player extends Character {
     public final MagicGuild magicGuildT1 = new MagicGuild(this);
     public final MagicGuild magicGuildT2 = new MagicGuild(this);
     public final MagicGuild magicGuildT3 = new MagicGuild(this);
+    public final ArcherGuild archerGuildUnlock = new ArcherGuild(this);
+    public final ArcherGuild archerGuildT1 = new ArcherGuild(this);
+    public final ArcherGuild archerGuildT2 = new ArcherGuild(this);
+    public final ArcherGuild archerGuildT3 = new ArcherGuild(this);
     public final WarriorGuild warriorGuildUnlock = new WarriorGuild(this);
     public final WarriorGuild warriorGuildT1 = new WarriorGuild(this);
     public final WarriorGuild warriorGuildT2 = new WarriorGuild(this);
@@ -2833,9 +2830,6 @@ End new teleport
         return bankSearchAttributes;
     }
 
-    public AchievementAttributes getAchievementAttributes() {
-        return achievementAttributes;
-    }
 
     public BankPinAttributes getBankPinAttributes() {
         return bankPinAttributes;

@@ -453,6 +453,14 @@ public class NPCDrops {
                                     || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 22120
                                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18823
                                     ||  player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23090 ) {
+                        if (player.getEquipment().contains(23090)) {
+                            ItemDegrading.handleItemDegrading(player, ItemDegrading.DegradingItem.STARTER_COLLECTOR);
+                            int startercharges = (ItemDegrading.maxStarterCollects - player.getStarterCharges());
+                            String charges = String.valueOf(player.getStarterCharges());
+                            if (charges.endsWith(String.valueOf(0)))
+                                player.getPacketSender().sendMessage("You have " + startercharges + " starter amulet "
+                                        + (startercharges == 1 ? "charge" : "charges") + " remaining.");
+                        }
 
                                 if (player.getInventory().canHold(item)) {
                                     player.getInventory().add(item);

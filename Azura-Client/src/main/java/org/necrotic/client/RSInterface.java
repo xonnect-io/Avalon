@@ -1963,7 +1963,7 @@ public class RSInterface {
 		addSpriteLoader(88351, 1704);
 		addSpriteLoader(88352, 1704);
 		addText(88339, "Tier 1", tda, 1, 0xff8624, false, true);
-		addText(88340, "Archers bow", tda, 1, 0xff8624, false, true);
+		addText(88340, "Batman's bow", tda, 1, 0xff8624, false, true);
 		addText(88341, "Tier 2", tda, 1, 0xff8624, false, true);
 		addText(88347, "Tier 3", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(88342, 1445, 132, 29, "Sacrifice", -1, 88343, 1);
@@ -3231,8 +3231,10 @@ public class RSInterface {
 		RSInterface.drawNpcOnInterface(35004, 9838, 1000);
 		RSInterface.addText(35005, "Start Instance", tda, 2, ClientConstants.ORANGE, false, true);
 		addToItemGroup(35006, 1, 1, 1, 1, true, new String[]{null, null, null, null, null});
+		addHoverButton(125008, CLOSE_BUTTON, CLOSE_BUTTON, 16, 16, "Close Window", 0, 125009, 1);
+		addHoveredButton(125009, CLOSE_BUTTON_HOVER, CLOSE_BUTTON_HOVER, 16, 16, 125010);
 
-		RSInterface.setChildren(16, tab);
+		RSInterface.setChildren(18, tab);
 		tab.child(0, 35001, 60, 5);
 		tab.child(1, 35002, 176, 29 - 16);
 		tab.child(2, 35003, 245, 304 - 23);
@@ -3249,6 +3251,8 @@ public class RSInterface {
 		tab.child(13, 135013, 323, 243);
 		tab.child(14, 135015, 257, 248);
 		tab.child(15, 135016, 328, 248);
+		tab.child(16, 125008, 400, 10);
+		tab.child(17, 125009, 400, 10);
 		// Scoll bar size, witdh and scrolling size.
 		scrollTableft.width = 143;
 		scrollTableft.height = 255;
@@ -3287,8 +3291,10 @@ public class RSInterface {
 		RSInterface.drawNpcOnInterface(36660, 9838, 1000);
 		RSInterface.addText(75005, "Start Instance", tda, 2, ClientConstants.ORANGE, false, true);
 		addToItemGroup(36665, 1, 1, 1, 1, true, new String[]{null, null, null, null, null});
+		addHoverButton(125008, CLOSE_BUTTON, CLOSE_BUTTON, 16, 16, "Close Window", 0, 125009, 1);
+		addHoveredButton(125009, CLOSE_BUTTON_HOVER, CLOSE_BUTTON_HOVER, 16, 16, 125010);
 
-		RSInterface.setChildren(16, tab);
+		RSInterface.setChildren(18, tab);
 		tab.child(0, 75001, 60, 5);
 		tab.child(1, 75002, 176, 29 - 16);
 		tab.child(2, 75003, 245, 304 - 23);
@@ -3305,6 +3311,8 @@ public class RSInterface {
 		tab.child(13, 75013, 323, 243);
 		tab.child(14, 75015, 257, 248);
 		tab.child(15, 75016, 328, 248);
+		tab.child(16, 125008, 400, 10);
+		tab.child(17, 125009, 400, 10);
 		// Scoll bar size, witdh and scrolling size.
 		scrollTableft.width = 143;
 		scrollTableft.height = 255;

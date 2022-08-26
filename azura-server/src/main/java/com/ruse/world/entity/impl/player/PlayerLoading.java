@@ -519,10 +519,6 @@ public class PlayerLoading {
                 player.getPointsHandler().setLoyaltyPoints(reader.get("loyalty-points").getAsInt(), false);
             }
 
-            if (reader.has("total-loyalty-points")) {
-                player.getAchievementAttributes()
-                        .incrementTotalLoyaltyPointsEarned(reader.get("total-loyalty-points").getAsDouble());
-            }
 
             if (reader.has("voting-points")) {
                 player.getPointsHandler().setVotingPoints(reader.get("voting-points").getAsInt(), false);
@@ -828,10 +824,6 @@ public class PlayerLoading {
                 DropLog.submit(player, builder.fromJson(reader.get("drops").getAsJsonArray(), DropLogEntry[].class));
             }
 
-            if (reader.has("coins-gambled")) {
-                player.getAchievementAttributes().setCoinsGambled(reader.get("coins-gambled").getAsInt());
-            }
-
             if (reader.has("slayer-master")) {
                 player.getSlayer().setSlayerMaster(SlayerMaster.valueOf(reader.get("slayer-master").getAsString()));
             }
@@ -922,10 +914,6 @@ public class PlayerLoading {
                 player.getPlayerKillingAttributes().setKilledPlayers(list);
             }
 
-            if (reader.has("killed-gods")) {
-                player.getAchievementAttributes()
-                        .setGodsKilled(builder.fromJson(reader.get("killed-gods").getAsJsonArray(), boolean[].class));
-            }
             if (reader.has("vod-brother")) {
                 player.getMinigameAttributes().getVoidOfDarknessAttributes().setBarrowsData(
                         builder.fromJson(reader.get("vod-brother").getAsJsonArray(), int[][].class));
@@ -1129,15 +1117,7 @@ public class PlayerLoading {
                         builder.fromJson(reader.get("loyalty-titles").getAsJsonArray(), boolean[].class));
             }
 
-            if (reader.has("achievements-completion")) {
-                player.getAchievementAttributes().setCompletion(
-                        builder.fromJson(reader.get("achievements-completion").getAsJsonArray(), boolean[].class));
-            }
 
-            if (reader.has("achievements-progress")) {
-                player.getAchievementAttributes().setProgress(
-                        builder.fromJson(reader.get("achievements-progress").getAsJsonArray(), int[].class));
-            }
 
             if (reader.has("yellhexcolor")) {
                 player.setYellHex(reader.get("yellhexcolor").getAsString());
@@ -1370,15 +1350,7 @@ public class PlayerLoading {
                 player.getAchievementTracker().load(reader.get("achievements"));
             }
 
-            if (reader.has("achievements-completion")) {
-                player.getAchievementAttributes().setCompletion(
-                        builder.fromJson(reader.get("achievements-completion").getAsJsonArray(), boolean[].class));
-            }
 
-            if (reader.has("achievements-progress")) {
-                player.getAchievementAttributes().setProgress(
-                        builder.fromJson(reader.get("achievements-progress").getAsJsonArray(), int[].class));
-            }
 
             /*
              * File rooms = new File("./data/saves/housing/rooms/" + player.getUsername() +

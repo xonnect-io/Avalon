@@ -176,10 +176,12 @@ public enum TeleportData {
 	WARRIOR_GUILD(28316, 28316, 28316, 28240, "Warrior Guild", "Warrior Guild",
 			"@or1@Health: @whi@1,000,000"," ","",  TeleportCategory.MINIGAMES, new Position(1948, 4191, 0), -1, false, 277, -1,
 			new int[][] {{23383, 1}, {23384, 1}, {23386, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1,1}, {-1,1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, -1}, {-1, -1}},515),
-	/*RANGE_GUILD(28317, 28317, 28317, 28241, "Archer Guild", "Archer Guild",
+	RANGE_GUILD(28317, 28317, 28317, 28241, "Archer Guild", "Archer Guild",
 			"@or1@Health: @whi@1,000,000"," ","",  TeleportCategory.MINIGAMES, new Position(3357, 4701, 0), -1, false, 1508, -1,
-			new int[][] {{23383, 1}, {23384, 1}, {23386, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1,1}, {-1,1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, -1}, {-1, -1}},515),
-*/
+			new int[][] {{17718, 1}, {23384, 1}, {23386, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1,1}, {-1,1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, -1}, {-1, -1}},515),
+
+
+
 	/*
 	 * Dungeons
 	 */
@@ -196,7 +198,7 @@ public enum TeleportData {
 			"@or1@Health:@whi@ 1,000,000","","",  TeleportCategory.DUNGEONS, new Position(2081, 5532, 0), 10, false, 6792, -1,
 			new int[][] {{12855, 2500}, {5022, 250}, {22214, 5}, {22219, 1},{-1, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},900),
 
-	/*
+	/*5
 	 * Global bosses
 	 */
 	KC_BOSS(28307, 28307, 28307, 28231, "Hellraiser", "Hellraiser",
@@ -212,7 +214,7 @@ public enum TeleportData {
 
 	VBOSS(28309, 28309, 28309, 28233, "Vote boss", "Vote boss",
 			"@or1@Health:@whi@ 1,500,000,000","@or1@To Spawn: @whi@" + (VoteBossDrop.currentSpawn == null ?  doMotivote.getVoteCount() + "/50 please vote!"
-			: "Alive ::Vboss"),"", TeleportCategory.GLOBALS, new Position(2848, 4577, 0), 79, false, 8013, -1,
+			: "Alive ::Vboss"),"", TeleportCategory.GLOBALS, new Position(3428, 4115, 0), 79, false, 8013, -1,
 			new int[][] {{23229, 2}, {23020, 1}, {15501, 1},{11137, 1},{2026, 25},{10025, 5},{15290, 1},{20488, 1},{15358, 1},{15359, 1}, {11316, 1}, {20489, 1}, {15003, 1}, {15002, 1}, {4446, 1}, {19886, 1}, {10946, 1}},1600),
 
 

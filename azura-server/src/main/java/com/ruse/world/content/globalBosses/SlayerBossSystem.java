@@ -7,29 +7,29 @@ public class SlayerBossSystem {
 	public static int getLeft() {
 		return totalCount - slayerTasks;
 		}
-	public static final int totalCount = 500;
+	public static final int totalCount = 300;
 	public static int slayerTasks = 0;
 	
 	public static void commandSpawnBoss() {
 		NPC npc = new NPC(9129, new Position(3488, 4704));
 		World.register(npc);
-		World.sendMessage("Doom Guardian has Arrived! fight him now at ::doom");
+		World.sendMessage("Slayer Guardian has Arrived! fight him now at ::slayerboss");
 		slayerTasks = 0;
 	}
 	public static void spawnBoss() {
-		if(slayerTasks < 500) {
+		if(slayerTasks < 300) {
 			return;
 		}
 
 		NPC npc = new NPC(9129, new Position(3488, 4704));
 		World.register(npc);
-		World.sendMessage("Doom Guardian has Arrived! fight him now at ::doom");
+		World.sendMessage("Slayer Guardian has Arrived! fight him now at ::slayerboss");
 		slayerTasks = 0;
 	}
 	public static void callBoss() {
-		if(slayerTasks > 124 && slayerTasks < 126) {
+		if(slayerTasks == 75) {
 		World.sendMessage("<shad=1>@or2@We are 25% to spawning the Slayer boss, keep slaying!");
-		if(slayerTasks > 249 && slayerTasks < 251) {
+		if(slayerTasks == 150) {
 			World.sendMessage("<img=832> <shad=1>@or2@We are halfway to spawning the Slayer boss, keep slaying!");
 			return;
 				}

@@ -163,7 +163,14 @@ public class AchievementInterface {
             return;
         }
         player.getAchievementTracker().setCollected(selected);
-        player.getInventory().add(selected.itemRewards);
+
+        if (player.getInventory().getFreeSlots() > selected.itemRewards.length) {
+            player.sendMessage("Your achievement rewards have been placed in your inventory!");
+            player.getInventory().add(selected.itemRewards);
+        } else {
+            player.getBank(player.getCurrentBankTab()).add(selected.itemRewards);
+            player.sendMessage("Your achievement rewards have been placed in your bank!");
+        }
         for (NonItemReward reward : selected.nonItemRewards) {
             reward.giveReward(player);
         }

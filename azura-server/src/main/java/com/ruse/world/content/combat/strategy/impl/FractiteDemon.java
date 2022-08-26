@@ -4,11 +4,8 @@ import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.*;
 import com.ruse.util.Misc;
-import com.ruse.world.World;
 import com.ruse.world.content.combat.CombatContainer;
 import com.ruse.world.content.combat.CombatType;
-import com.ruse.world.content.combat.prayer.CurseHandler;
-import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -96,10 +93,6 @@ public class FractiteDemon implements CombatStrategy {
             public void execute() {
                 if (tick == 0) {
                     if (Locations.goodDistance(target , npc, 10)) {
-                        npc.forceChat("Your gods wont help you here!!");
-                        target.sendMessage("Fractite demon has knocked your prayers down!");
-                        CurseHandler.deactivateAll(target);
-                        PrayerHandler.deactivateAll(target);
                         target.performGraphic(new Graphic(481));
                         target.dealDamage(new Hit(target.getConstitution() / 4, Hitmask.RED, CombatIcon.MAGIC));
                     }

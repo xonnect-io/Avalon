@@ -37,7 +37,12 @@ public class MysteryBoxOpener {
 		this.rare = rare;
 		updateInterface(boxId, name, common, uncommon, rare);
 	}
-
+	public void backgroundDisplay(int boxId, String name, int[] common, int[] uncommon, int[] rare) {
+		openBox = boxId;
+		this.common = common;
+		this.uncommon = uncommon;
+		this.rare = rare;
+	}
 	private void updateInterface(int boxId, String name, int[] common, int[] uncommon, int[] rare) {
 
 		for(int i = 0; i < 3; i++) {
@@ -113,6 +118,53 @@ public class MysteryBoxOpener {
 
 			} else if (chance > 65) { //65% of 100% = 35% (remainder)
 				reward = uncommon[RandomUtility.exclusiveRandom(0, uncommon.length)];
+			} else if (chance >= 0) { //0% of 100% = 55% (remainder)
+				reward = common[RandomUtility.exclusiveRandom(0, common.length)]; // ye its correct.
+			}
+
+			rewards.merge(reward, 1, Integer::sum);
+
+			BOXES.log(player, boxId, new Item(reward));
+		}
+
+		player.getInventory().delete(boxId, amount);
+		boolean bank = amount <= player.getInventory().getFreeSlots();
+		rewards.forEach((key, value) -> {
+			if (bank) {
+				player.getInventory().add(new Item(key, value), false);
+			} else {
+				Item item = new Item(key, value);
+				player.depositItemBank(item, false);
+			}
+		});
+		player.getInventory().refreshItems();
+
+		if(!bank) {
+			player.sendMessage("@blu@Your rewards have been added to your bank.");
+		}
+
+	}
+
+	public void openAllRaids2Chest(int boxId) {
+		if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+			player.getPacketSender().sendMessage("You can not do this as an Ultimate Ironman.");
+			return;
+		}
+		int amount = player.getInventory().getAmount(boxId);
+		Map<Integer, Integer> rewards = new HashMap<>();
+		for (int i = 0; i < amount; i++) {
+			int reward = -1;
+			int chance = RandomUtility.inclusiveRandom(0, 500);
+			String name = ItemDefinition.forId(boxId).getName();
+			if (chance > 499) {
+				reward = rare[RandomUtility.exclusiveRandom(0, rare.length)];
+
+				if ( reward == 23303 || reward == 23304 || reward == 23305 || reward == 23306 || reward == 23307
+						|| reward == 23308|| reward == 23309|| reward == 23310|| reward == 23311|| reward == 14999
+						|| reward == 23276|| reward == 23403) {
+					reward = rare[RandomUtility.exclusiveRandom(0, rare.length)];
+					World.sendMessage("@blu@<img=832>News: @red@"+ player.getUsername() +" @blu@has received @red@" + ItemDefinition.forId(reward).getName() + " @blu@from a @red@ " + ItemDefinition.forId(boxId).getName()+ "" );
+				}
 			} else if (chance >= 0) { //0% of 100% = 55% (remainder)
 				reward = common[RandomUtility.exclusiveRandom(0, common.length)]; // ye its correct.
 			}

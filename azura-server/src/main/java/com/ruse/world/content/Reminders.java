@@ -12,7 +12,7 @@ import com.ruse.world.World;
 public class Reminders {
 	
 	
-    private static final int TIME = 600000; //10 minutes
+    private static final int TIME = 900000; //10 minutes
 	private static Stopwatch timer = new Stopwatch().reset();
 	public static String currentMessage;
 	

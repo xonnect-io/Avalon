@@ -821,8 +821,6 @@ public class ItemDef2 {
 				itemDef.rotationX = def.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				
-
 				break;
 			case 17706:
 				itemDef.name = "Chest";
@@ -1293,18 +1291,16 @@ public class ItemDef2 {
 
 				itemDef.rdc2 = 2344321;
 				break;
+			case 5733:
+				itemDef.actions = new String[]{"Eat", null, "Heal", "Commands", "Drop"};
+				break;
 			case 17718:
+				itemDef.copyItem(22083);
 				itemDef.name = "Batman's bow";
 				itemDef.modelID = 64073;
 				itemDef.maleEquip1 = 64074;
 				itemDef.femaleEquip1 = 64074;
-				def = ItemDefinition.get(20171);
-				itemDef.modelOffsetX = def.modelOffsetX;
-				itemDef.modelOffsetY = def.modelOffsetY;
-				itemDef.modelZoom = def.modelZoom;
-				itemDef.rotationY = def.rotationY;
-				itemDef.rotationX = def.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17720:

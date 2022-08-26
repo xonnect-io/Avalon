@@ -94,9 +94,6 @@ public class CustomObjects {
 
 			{41207, 2015, 5024, 0, 0},//th chest
 
-            {41200, 1971, 5020, 0, 0},//vod coffin
-            {41201, 1954, 5031, 0, 0},//vod coffin
-            {41202, 1936, 5022, 0, 0},//vod coffin
 			{41203, 1954, 5006, 0, 2},//vod chest
 
 			{3769, 2528, 4572, 4, 4}, // Celestial fire

@@ -103,7 +103,6 @@ public class Lottery {
 			return;
 		}
 		p.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, PRICE_TO_ENTER);
-		p.getAchievementAttributes().setCoinsGambled(p.getAchievementAttributes().getCoinsGambled() + PRICE_TO_ENTER);
 		addToLottery(p.getUsername());
 		p.getPacketSender().sendMessage("You have entered the lottery!")
 				.sendMessage("A winner is announced every Friday.");

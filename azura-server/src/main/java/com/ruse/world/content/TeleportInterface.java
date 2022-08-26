@@ -46,6 +46,7 @@ public class TeleportInterface {
             case 11004:
             case 71517:
             case 77147:
+            case 88147:
                 new TeleportInterfaceHandler(player).open();
                 return true;
             case 122005:

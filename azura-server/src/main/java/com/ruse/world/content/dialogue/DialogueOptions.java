@@ -12,7 +12,6 @@ import com.ruse.model.input.impl.*;
 import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
-import com.ruse.world.content.AchievementsOLD.AchievementDataOLD;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Gambling.FlowersData;
 import com.ruse.world.content.celestial.CelestialDialogues;
@@ -506,13 +505,6 @@ public class DialogueOptions {
                     break;
                 case 78:
                     player.getPacketSender().sendInterfaceRemoval();
-                    for (AchievementDataOLD d : AchievementDataOLD.values()) {
-                        if (!player.getAchievementAttributes().getCompletion()[d.ordinal()]) {
-                            player.getPacketSender()
-                                    .sendMessage("You must have completed all achievements in order to buy this cape.");
-                            return;
-                        }
-                    }
                     if (player.getInventory().getAmount(ItemDefinition.COIN_ID) < 100000000) {
                         player.getPacketSender().sendMessage("You do not have enough coins.");
                         return;
@@ -731,35 +723,6 @@ public class DialogueOptions {
                     break;
                 case 78:
                     player.getPacketSender().sendInterfaceRemoval();
-                    for (AchievementDataOLD d : AchievementDataOLD.values()) {
-                        if (!((player.getSkillManager().getExperience(Skill.AGILITY) >= 200000000
-                                && player.getSkillManager().getExperience(ATTACK) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.CONSTITUTION) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.COOKING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.CRAFTING) >= 200000000
-                                && player.getSkillManager().getExperience(DEFENCE) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.INVENTION) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.FARMING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.FIREMAKING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.FISHING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.FLETCHING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.HERBLORE) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.HUNTER) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.MAGIC) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.MINING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.PRAYER) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.RANGED) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.RUNECRAFTING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.SLAYER) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.SMITHING) >= 200000000
-                                && player.getSkillManager().getExperience(STRENGTH) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.THIEVING) >= 200000000
-                                && player.getSkillManager().getExperience(Skill.WOODCUTTING) >= 200000000))) {
-                            player.getPacketSender().sendMessage(
-                                    "You must have obtained at least 200m experience in all skills to purchase this cape.");
-                            return;
-                        }
-                    }
                     if (player.getInventory().getAmount(ItemDefinition.COIN_ID) < 200000000) {
                         player.getPacketSender().sendMessage("You do not have enough coins.");
                         return;

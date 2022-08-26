@@ -4631,6 +4631,18 @@ public final class MobDefinition {
 				break;
 			case 1508:
 				definition.name = "Forest archer";
+				definition.npcModels = new int[]{19593};
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares =2;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
+				break;
+			case 1458:
+				definition.name = "Chaotic archer";
+				definition.npcModels = new int[]{19592};
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
 				definition.npcSizeInSquares =2;
@@ -4638,6 +4650,19 @@ public final class MobDefinition {
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 120;
 				definition.scaleY = 120;
+				break;
+
+			case 1457:
+				definition.name = "Divine archer";
+				definition.npcModels = new int[]{19594};
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares =2;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
+				definition.rdc2 = 34343;
 				break;
 		case 827:
 			definition.name = "Unknown archer";
@@ -6801,6 +6826,53 @@ public final class MobDefinition {
 				definition.degreesToTurn = 32;
 				//	definition.rdc2 = 111;
 				break;
+
+			case 1756:
+				MobDefinition zd = get(4972);
+				definition.name = "Zamorak Dragon";
+				definition.combatLevel = 40;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.npcSizeInSquares = 1;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.description = zd.description;
+				definition.drawYellowDotOnMap = true;
+				definition.npcModels = new int[]{19595};//64091
+				definition.standAnimation = zd.standAnimation;
+				definition.walkAnimation = zd.walkAnimation;
+				definition.degreesToTurn = 32;
+				break;
+			case 1755:
+				MobDefinition gd = get(4972);
+				definition.name = "Guthix Dragon";
+				definition.combatLevel = 40;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.npcSizeInSquares = 1;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.description = gd.description;
+				definition.drawYellowDotOnMap = true;
+				definition.npcModels = new int[]{19596};//64091
+				definition.standAnimation = gd.standAnimation;
+				definition.walkAnimation = gd.walkAnimation;
+				definition.degreesToTurn = 32;
+				break;
+				case 1754:
+				MobDefinition sd = get(4972);
+				definition.name = "Saradomin Dragon";
+				definition.combatLevel = 40;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.npcSizeInSquares = 1;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.description = sd.description;
+				definition.drawYellowDotOnMap = true;
+				definition.npcModels = new int[]{19597};//64091
+				definition.standAnimation = sd.standAnimation;
+				definition.walkAnimation = sd.walkAnimation;
+				definition.degreesToTurn = 32;
+				break;
+
 			case 6871:
 				MobDefinition sc = get(1);
 				definition.name = "Spirit critter";

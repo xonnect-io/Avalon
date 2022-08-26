@@ -182,7 +182,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("globals")) {
             player.getPacketSender().sendMessage("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft() + " Steals left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft() + " kills left.");
-            player.getPacketSender().sendMessage("@red@<shad=1>Doom Slayer Boss: @yel@" + SlayerBossSystem.getLeft() + " tasks left.");
+            player.getPacketSender().sendMessage("@red@<shad=1>Global Slayer Boss: @yel@" + SlayerBossSystem.getLeft() + " tasks left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount() + "/60 please vote!");
             player.getPacketSender().sendMessage("@red@<shad=1>Dragon King: @yel@" + DragonKingBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Nightmare boss: @yel@" + NightmareBoss.timeLeft());
@@ -3609,9 +3609,7 @@ public class CommandPacketListener implements PacketListener {
             DiscordMessager.active = !DiscordMessager.active;
             player.getPacketSender().sendMessage("Discord messages is now set to: " + DiscordMessager.active);
         }
-        if (command[0].equalsIgnoreCase("crewards")) {
-            CrystalChest.sendRewardInterface(player);
-        }
+
         if (command[0].equalsIgnoreCase("bolts")) {
             for (int i = 0; i < BoltData.values().length; i++) {
                 player.getInventory().add(BoltData.values()[i].getBolt(), 1000).add(BoltData.values()[i].getTip(),

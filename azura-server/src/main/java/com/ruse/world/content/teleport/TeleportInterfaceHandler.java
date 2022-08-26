@@ -37,12 +37,14 @@ public class TeleportInterfaceHandler {
 		player.getPacketSender().resetItemsOnInterface(28229 + 20, 20);
 		switchTab(28215);
 		player.getPA().sendInterface(28200);
-		player.setTeleportType(TeleportCategory.MONSTERS);
-		player.getPA().sendString(28205, "Monsters");
-		sendItemsOnInterface(TeleportData.MINOTAUR);
-		player.setCurrentTeleport(TeleportData.MINOTAUR);
-		switchData();
-		player.getPacketSender().sendString(64112, "Health: @whi@"+ "2,500");
+		if (player.getTeleportData() == null) {
+			player.setTeleportType(TeleportCategory.MONSTERS);
+			player.getPA().sendString(28205, "Monsters");
+			sendItemsOnInterface(TeleportData.MINOTAUR);
+			player.setCurrentTeleport(TeleportData.MINOTAUR);
+			switchData();
+			player.getPacketSender().sendString(64112, "Health: @whi@" + "2,500");
+		}
 	}
 
 	public void open(TeleportCategory type) {
@@ -221,6 +223,22 @@ public class TeleportInterfaceHandler {
 				player.warriorGuildUnlock.openMain();
 				return;
 			} else if (player.getWarriorGuildTier1()) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return; }
+		}
+		if (player.getCurrentTeleport().getNpcId() == 1508) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.setArcherGuildTier1(true);
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			}
+			if (!player.getArcherGuildTier1()) {
+				player.archerGuildUnlock.openMain();
+				return;
+			} else if (player.getArcherGuildTier1()) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return; }

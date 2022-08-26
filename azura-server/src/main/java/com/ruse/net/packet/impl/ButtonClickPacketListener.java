@@ -690,6 +690,11 @@ public class ButtonClickPacketListener implements PacketListener {
             case 31502:
             case 142255:
             case -4931:
+            case 125008:
+            case 88346:
+            case 88446:
+            case 88546:
+            case 88146:
                 player.getPacketSender().sendInterfaceRemoval();
                 break;
 
@@ -737,7 +742,14 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getCasketOpening().quickSpin();
                 break;
             case -17397:
-                player.getPacketSender().sendMessage("This feature has not yet been coded.");
+                // example for mbox with random data. - open all
+                if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+                    player.sendMessage("@red@As an Ultimate ironman you can't do this.");
+                    return;
+                }
+                if (player.getInventory().contains(player.getMysteryBoxOpener().getOpenBox())) {
+                    player.getMysteryBoxOpener().openAllRaids2Chest(player.getMysteryBoxOpener().getOpenBox());
+                }
                 break;
                 case -17403:
                 player.getPacketSender().sendMessage("<img=832> 20% Chance at 2X loot on Rare Rewards with a @blu@Suffering charm @bla@equipped.");
@@ -2422,9 +2434,6 @@ public class ButtonClickPacketListener implements PacketListener {
             return true;
         }
         if (player.isPlayerLocked() && id != 2458) {
-            return true;
-        }
-        if (AchievementsOLD.handleButton(player, id)) {
             return true;
         }
         if (Sounds.handleButton(player, id)) {
