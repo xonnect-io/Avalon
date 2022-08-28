@@ -21,34 +21,14 @@ public class VoidOfDarkness {
     public static final Object[][] data = {{"Tectonic skeleton lord", 126507}, {"Skinhead the Destroyer", 126508},
             {"Great elf of Avalon Age", 126509}};
     public static Box[] loot = { //
-            new Box(995, 50, 100000, 100D),
+            new Box(12855, 2500, 7500, 80D),
+            new Box(7956, 5, 20, 80D),
+            new Box(22214, 5, 20, 60D),
+            new Box(19116, 3, 10, 60D),
+            new Box(19115, 2, 7, 50D),
+            new Box(19114, 1, 3, 40D),
+            new Box(20488, 1, 3, 33D),
 
-            //magic
-            new Box(23021, 1, 0.25D, true),
-            new Box(23022, 1, 0.25D, true),
-            new Box(23023, 1, 0.25D, true),
-            new Box(23027, 1, 0.5D, true),
-            new Box(23024, 1, 0.5D, true),
-            new Box(23025, 1, 0.5D, true),
-
-            //melee
-            new Box(23028, 1, 0.25D, true),
-            new Box(23029, 1, 0.25D, true),
-            new Box(23030, 1, 0.25D, true),
-            new Box(23031, 1, 0.5D, true),
-            new Box(23032, 1, 0.5D, true),
-
-            //ranged
-            new Box(23034, 1, 0.25D, true),
-            new Box(23035, 1, 0.25D, true),
-            new Box(23036, 1, 0.25D, true),
-            new Box(23037, 1, 0.5D, true),
-            new Box(23038, 1, 0.5D, true),
-
-            //weps
-            new Box(23026, 1, 0.28D, true),
-            new Box(23033, 1, 0.28D, true),
-            new Box(23039, 1, 0.33D, true),
     };
     private final Player player;
 
@@ -79,7 +59,7 @@ public class VoidOfDarkness {
                     + NpcDefinition.forId(player.getMinigameAttributes().getVoidOfDarknessAttributes().getBarrowsData()[i][0]).getName());
         }
 
-        player.getPacketSender().sendString(126506, "Veng of Deception");
+        player.getPacketSender().sendString(126506, "Members Dungeon");
         player.getPacketSender().sendString(126510,
                 "Killcount: " + player.getMinigameAttributes().getVoidOfDarknessAttributes().getKillcount());
     }
@@ -97,7 +77,7 @@ public class VoidOfDarkness {
     public void handleObject(GameObject object) {
         if (object.getId() == CHEST_ID) {
             if (player.getMinigameAttributes().getVoidOfDarknessAttributes().getKillcount() < 3) {
-                player.getPacketSender().sendMessage("You've not searched all the coffins yet.");
+                player.getPacketSender().sendMessage("You've not defeated the dragons yet.");
                 return;
             }
             if (player.getInventory().getFreeSlots() < 1) {

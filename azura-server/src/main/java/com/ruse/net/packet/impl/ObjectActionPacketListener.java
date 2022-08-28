@@ -202,7 +202,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     return;
                                 } else
                                 if (player.isMembershipUnlocked())
-                                    TeleportHandler.teleportPlayer(player, new Position(1825, 5152, 2),
+                                    TeleportHandler.teleportPlayer(player, new Position(1954, 5010, 0),
                                             player.getSpellbook().getTeleportType());
                                 player.getPacketSender().sendMessage("You enter the Member's Dungeon.");
                                 break;

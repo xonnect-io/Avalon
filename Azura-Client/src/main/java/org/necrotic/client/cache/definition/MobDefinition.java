@@ -833,6 +833,7 @@ public final class MobDefinition {
 			case 4972:
 				definition.npcModels = new int[]{15079};
 				definition.name = "Dragon king";
+				definition.combatLevel = 320;
 				//definition.rdc2 = 2592952;
 				definition.scaleXZ = 125;
 				definition.scaleY = 125;
@@ -842,7 +843,7 @@ public final class MobDefinition {
 			case 505:
 				MobDefinition poke2 = MobDefinition.get(1);
 				definition.description = "GWD.".getBytes();
-				definition.combatLevel = poke2.combatLevel;
+				definition.combatLevel = 162;
 				definition.standAnimation = poke2.standAnimation;
 				definition.walkAnimation = poke2.walkAnimation;
 				definition.npcModels = new int[]{16836};
@@ -1052,47 +1053,6 @@ public final class MobDefinition {
 				break;
 
 			//
-
-			case 9028:
-				definition.setDefault();
-				definition.name = "Tectonic skeleton lord";
-				definition.npcModels = new int[]{100097};
-				definition.combatLevel = 500;
-				definition.standAnimation = MobDefinition.get(2292).standAnimation;
-				definition.walkAnimation = MobDefinition.get(2292).walkAnimation;
-				definition.actions = MobDefinition.get(1233).actions;
-				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 128;
-				definition.scaleY = 128;
-				break;
-			case 9029:
-				definition.setDefault();
-				definition.name = "Skinhead the Destroyer";
-				definition.npcModels = new int[]{100109};
-				definition.combatLevel = 500;
-				definition.standAnimation = MobDefinition.get(2292).standAnimation;
-				definition.walkAnimation = MobDefinition.get(2292).walkAnimation;
-				definition.actions = MobDefinition.get(1233).actions;
-				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 128;
-				definition.scaleY = 128;
-				break;
-			case 9030:
-				definition.setDefault();
-				definition.name = "Great elf of Avalon";
-				definition.npcModels = new int[]{100114};
-				definition.combatLevel = 500;
-				definition.standAnimation = MobDefinition.get(2292).standAnimation;
-				definition.walkAnimation = MobDefinition.get(2292).walkAnimation;
-				definition.actions = MobDefinition.get(1233).actions;
-				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 128;
-				definition.scaleY = 128;
-				break;
-
 
 			case 9031:
 				definition.setDefault();
@@ -4328,7 +4288,7 @@ public final class MobDefinition {
 				definition.name = "Enraged Guardian";
 				definition.npcModels = new int[]{18014};
 				MobDefinition Botanic1 = get(1);
-				definition.combatLevel = 800;
+				definition.combatLevel = 260;
 				definition.scaleXZ = 190;
 				definition.scaleY = 170;
 				definition.npcSizeInSquares = 2;
@@ -4391,7 +4351,7 @@ public final class MobDefinition {
 				definition.name = "Botanic Guardian";
 				definition.npcModels = new int[]{16838};
 				MobDefinition Herbal11 = get(1);
-				definition.combatLevel = 800;
+				definition.combatLevel = 300;
 				definition.scaleXZ = 100;
 				definition.scaleY = 100;
 				definition.npcSizeInSquares = 2;
@@ -6827,12 +6787,12 @@ public final class MobDefinition {
 				//	definition.rdc2 = 111;
 				break;
 
-			case 1756:
+			case 9029:
 				MobDefinition zd = get(4972);
 				definition.name = "Zamorak Dragon";
-				definition.combatLevel = 40;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
+				definition.combatLevel = 140;
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = zd.description;
@@ -6842,12 +6802,12 @@ public final class MobDefinition {
 				definition.walkAnimation = zd.walkAnimation;
 				definition.degreesToTurn = 32;
 				break;
-			case 1755:
+			case 9028:
 				MobDefinition gd = get(4972);
 				definition.name = "Guthix Dragon";
-				definition.combatLevel = 40;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
+				definition.combatLevel = 140;
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = gd.description;
@@ -6857,12 +6817,12 @@ public final class MobDefinition {
 				definition.walkAnimation = gd.walkAnimation;
 				definition.degreesToTurn = 32;
 				break;
-				case 1754:
+				case 9030:
 				MobDefinition sd = get(4972);
 				definition.name = "Saradomin Dragon";
-				definition.combatLevel = 40;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
+				definition.combatLevel = 140;
+					definition.scaleXZ = 140;
+					definition.scaleY = 140;
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = sd.description;

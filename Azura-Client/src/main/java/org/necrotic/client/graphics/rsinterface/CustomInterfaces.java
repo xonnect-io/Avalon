@@ -6923,6 +6923,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		DailyTaskInterface(tda);
 		InstanceManager(tda);
 		InstanceManagerGold(tda);
+		InstanceManagerSlayer(tda);
 		WellOfGoodWill(tda);
 		DailyMboxes(tda);
 		commands(tda);

@@ -12,14 +12,16 @@ import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.strategy.impl.Scorpia;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceManager;
 import com.ruse.world.content.instanceMananger.InstanceManager;
+import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.raids.SODRaids;
+import com.ruse.world.content.raids.ZombieRaids;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.transportation.TeleportHandler;
-import com.ruse.world.content.raids.ZombieRaids;
 import com.ruse.world.entity.Entity;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -714,6 +716,8 @@ public class Locations {
 			public void logout(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
 						new InstanceManager(player).onLogout();
+						new GoldInstanceManager(player).onLogout();
+					new SlayerInstanceManager(player).onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
 			}
@@ -722,6 +726,8 @@ public class Locations {
 			public void leave(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
 					new InstanceManager(player).onLogout();
+					new GoldInstanceManager(player).onLogout();
+					new SlayerInstanceManager(player).onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
 			}
@@ -730,6 +736,8 @@ public class Locations {
 			public void login(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
 					new InstanceManager(player).onLogout();
+					new GoldInstanceManager(player).onLogout();
+					new SlayerInstanceManager(player).onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
 				player.moveTo(GameSettings.DEFAULT_POSITION.copy());
@@ -739,6 +747,8 @@ public class Locations {
 			public void onDeath(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
 					new InstanceManager(player).onLogout();
+					new GoldInstanceManager(player).onLogout();
+					new SlayerInstanceManager(player).onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
 			}
@@ -748,6 +758,8 @@ public class Locations {
 			public void logout(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
 					new InstanceManager(player).onLogout();
+					new GoldInstanceManager(player).onLogout();
+					new SlayerInstanceManager(player).onLogout();
 				}
 				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
 				player.moveTo(GameSettings.DEFAULT_POSITION.copy());
@@ -756,6 +768,8 @@ public class Locations {
 			@Override
 			public void leave(Player player) {
 				new InstanceManager(player).onLogout();
+				new GoldInstanceManager(player).onLogout();
+				new SlayerInstanceManager(player).onLogout();
 				player.getPA().sendMessage("Your instance was destroyed.");
 			}
 
@@ -763,6 +777,8 @@ public class Locations {
 			public void login(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
 					new InstanceManager(player).onLogout();
+					new GoldInstanceManager(player).onLogout();
+					new SlayerInstanceManager(player).onLogout();
 				}
 				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
 				player.moveTo(GameSettings.DEFAULT_POSITION.copy());
@@ -772,6 +788,8 @@ public class Locations {
 			public void onDeath(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
 					new InstanceManager(player).onLogout();
+					new GoldInstanceManager(player).onLogout();
+					new SlayerInstanceManager(player).onLogout();
 				}
 				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
 			}

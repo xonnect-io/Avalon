@@ -3213,6 +3213,61 @@ public class RSInterface {
 
 	}
 
+	public static void InstanceManagerSlayer(TextDrawingArea[] tda) {
+		RSInterface tab = RSInterface.addInterface(71000);
+		RSInterface scrollTableft = RSInterface.addInterface(71070);
+		RSInterface.addSprite(71001, 1267);
+		RSInterface.addText(71002, "Slayer Instance Manager", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(131007, "Monsters", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(131008, "Preview", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(131009, "Spawns: @whi@60", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(131010, "Cost: @whi@750 Upgrade tokens", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(131011, "Upgrade token", tda, 1, ClientConstants.ORANGE, false, true);		RSInterface.addText(131011, "Upgrade token", tda, 1, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(131012, "Slayer Task: @red@Task required", tda, 1, ClientConstants.ORANGE, false, true);
+
+		RSInterface.addButton1(71003, 1245, 1246, "Select");
+		RSInterface.drawNpcOnInterface(35004, 1727, 800);
+		RSInterface.addText(71005, "Start Instance", tda, 2, ClientConstants.ORANGE, false, true);
+		addToItemGroup(35006, 1, 1, 1, 1, true, new String[]{null, null, null, null, null});
+		addHoverButton(125008, CLOSE_BUTTON, CLOSE_BUTTON, 16, 16, "Close Window", 0, 125009, 1);
+		addHoveredButton(125009, CLOSE_BUTTON_HOVER, CLOSE_BUTTON_HOVER, 16, 16, 125010);
+
+		RSInterface.setChildren(15, tab);
+		tab.child(0, 71001, 60, 5);
+		tab.child(1, 71002, 172, 29 - 16);
+		tab.child(2, 71003, 245, 304 - 23);
+		tab.child(3, 71070, 73, 52);
+		tab.child(4, 35004, 250, 60);
+		tab.child(5, 71005, 277, 311 - 23);
+		tab.child(6, 35006, 246, 183);
+		tab.child(7, 131007, 123, 35);
+		tab.child(8, 131008, 291, 35);
+		tab.child(9, 131009, 247, 253);
+		tab.child(10, 131010, 247, 223);
+		tab.child(11, 131011, 285, 188);
+		tab.child(12, 131012, 247, 238);
+		tab.child(13, 125008, 400, 10);
+		tab.child(14, 125009, 400, 10);
+		// Scoll bar size, witdh and scrolling size.
+		scrollTableft.width = 143;
+		scrollTableft.height = 255;
+		scrollTableft.scrollMax = 300;
+
+		int npcList = 13;
+		int y = 1;
+		for (int i = 0; i < npcList; i++) {
+			RSInterface.addText(48071 + i, "boss", tda, 1, ClientConstants.ORANGE, false, false, ClientConstants.WHITE, "Select", 150);
+
+		}
+		RSInterface.setChildren(npcList, scrollTableft);
+
+		for (int i = 0; i < npcList; i++) {
+			scrollTableft.child(i, 48071 + i, 0, y);
+			y += 15;
+		}
+
+	}
+
 	public static void InstanceManager(TextDrawingArea[] tda) {
 		RSInterface tab = RSInterface.addInterface(35000);
 		RSInterface scrollTableft = RSInterface.addInterface(35070);
@@ -3241,7 +3296,7 @@ public class RSInterface {
 		tab.child(3, 35070, 73, 52);
 		tab.child(4, 35004, 250, 60);
 		tab.child(5, 35005, 277, 311 - 23);
-		tab.child(6, 35006, 246, 185);
+		tab.child(6, 35006, 246, 183);
 		tab.child(7, 135007, 123, 35);
 		tab.child(8, 135008, 291, 35);
 		tab.child(9, 135009, 283, 200);
@@ -3301,7 +3356,7 @@ public class RSInterface {
 		tab.child(3, 75070, 73, 52);
 		tab.child(4, 36660, 250, 60);
 		tab.child(5, 75005, 277, 311 - 23);
-		tab.child(6, 36665, 246, 185);
+		tab.child(6, 36665, 246, 183);
 		tab.child(7, 75007, 123, 35);
 		tab.child(8, 75008, 291, 35);
 		tab.child(9, 75009, 283, 200);

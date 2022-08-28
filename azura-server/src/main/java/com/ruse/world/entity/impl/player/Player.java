@@ -62,6 +62,7 @@ import com.ruse.world.content.eventboss.EventBossManager;
 import com.ruse.world.content.gamblinginterface.GamblingInterface;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
 import com.ruse.world.content.groupironman.IronmanGroup;
+import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceData;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceData;
 import com.ruse.world.content.membership.MembershipInterfaceHandler;
@@ -526,6 +527,7 @@ public class Player extends Character {
 
     public InstanceData data;
     public GoldInstanceData dataGold;
+    public SlayerInstanceData dataSlayer;
     public String currentInstanceNpcName;
     public int currentInstanceNpcId;
     public int currentInstanceAmount;
@@ -1165,6 +1167,15 @@ public class Player extends Character {
 
     public void setDataGold(GoldInstanceData dataGold) {
         this.dataGold = dataGold;
+    }
+
+
+    public SlayerInstanceData getDataSlayer() {
+        return dataSlayer;
+    }
+
+    public void setDataSlayer(SlayerInstanceData dataSlayer) {
+        this.dataSlayer = dataSlayer;
     }
 
     public String getCurrentInstanceNpcName() {

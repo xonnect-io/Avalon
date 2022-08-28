@@ -63,7 +63,7 @@ public class NPCDeathTask extends Task {
      */
     private Set<Integer> BOSSES = new HashSet<>(Arrays.asList(1999, 440, 2882, 2881, 2883, 7134, 5666, 7286, 4540, 6222, 252,
             449, 452, 6260, 6247, 6203, 8349, 50, 2001, 1158, 8133, 3200, 13447, 8549, 1382, 2000, 2009, 2006, 8000,
-            8002, 6430, 185, 3831, 2342, 2949, 1120, 8015,9837)); // use
+            8002, 6430, 185, 3831, 2342, 2949, 1120, 8015,9837,250,505)); // use
     /**
      * The amount of ticks on the task.
      */
@@ -426,6 +426,12 @@ public class NPCDeathTask extends Task {
 
                         /** SLAYER **/
                         killer.getSlayer().killedNpc(npc);
+
+                        if (npc.getId() == killer.getSlayer().getSlayerTask().getNpcId() && Misc.getRandom(25) == 5) {
+                            killer.getPacketSender().sendMessage("X1 @mag@<shad=2>Instance token (s) </shad>@bla@has been sent to your inventory.");
+                            killer.getInventory().add(23408, 1);
+                        }
+
                         npc.getCombatBuilder().getDamageMap().clear();
                                 if (KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (500)
                                 || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (1000) || KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) == (1500)

@@ -44,6 +44,8 @@ import com.ruse.world.content.dialogue.DialogueOptions;
 import com.ruse.world.content.goldenscratch.ScratchCard;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupManager;
+import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceInterfaceHandler;
+import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceManager;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
 import com.ruse.world.content.instanceMananger.InstanceManager;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceInterfaceHandler;
@@ -167,6 +169,7 @@ public class ButtonClickPacketListener implements PacketListener {
         new DailyTaskInterface(player).tabClicking(id);
         new InstanceInterfaceHandler(player).handleButtons(id);
         new GoldInstanceInterfaceHandler(player).handleButtons(id);
+        new SlayerInstanceInterfaceHandler(player).handleButtons(id);
         new WellForGlobalBossesInterface(player).button(id);
 
         switch (id) {
@@ -1190,6 +1193,23 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPA().sendMessage("Select the boss you'd like to instance.");
                 }
                 break;
+
+
+            case 71003:
+                if (player.getDataSlayer() != null) {
+                        if (player.getDataSlayer().getNpcid() != player.getSlayer().getSlayerTask().getNpcId()) {
+                            player.getPacketSender().sendMessage("@red@This is not your current slayer task!");
+                            return;
+                        }
+                        new SlayerInstanceManager(player).create2X2Instance(player.getDataSlayer().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
+                    }
+                else {
+                    player.getPA().sendMessage("Select the slayer npc you'd like to instance.");
+                }
+                break;
+
+
+
             case -30533:
                 if (player.getData() != null) {
                     if (player.get3x3() == true) {

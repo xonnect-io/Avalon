@@ -115,11 +115,12 @@ public class PlayerProcess {
 				|| player.getRegionInstance().getType() == RegionInstanceType.CONSTRUCTION_DUNGEON)) {
 			((House) player.getRegionInstance()).process();
 		}
+		/*
 		if (player.getPrayerbook() == Prayerbook.CURSES && player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.ZOMBIE
 				|| player.getLocation() == Location.SOD || player.getLocation() == Location.SOD_LOBBY) {
 			player.setPrayerbook(Prayerbook.NORMAL);
 			player.getPacketSender().sendTabInterface(GameSettings.PRAYER_TAB, player.getPrayerbook().getInterfaceId());
-		}
+		}*/
 
 		if(PlayerPunishment.isReadyForUnban(player.getUsername())) {
 			PlayerPunishment.unban(player.getUsername());

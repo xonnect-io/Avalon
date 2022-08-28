@@ -491,6 +491,13 @@ public final class ItemDefinition {
 				itemDef.stackable = false;
 				break;
 
+			case 23408:
+				itemDef.copyItem(4278);
+				itemDef.name = "Instance Token (s)";
+				itemDef.rdc3 = 115593;
+				itemDef.stackable = false;
+				break;
+
 			case 12855:
 				itemDef.copyItem(7478);
 				itemDef.name = "@yel@Upgrade Tokens";

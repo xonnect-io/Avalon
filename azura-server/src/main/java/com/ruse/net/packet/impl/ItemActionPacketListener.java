@@ -28,6 +28,7 @@ import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.impl.NephilimTokenExchange;
 import com.ruse.world.content.holidayevents.easter2017;
+import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceInterfaceHandler;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
 import com.ruse.world.content.instanceMananger.InstanceManager;
@@ -272,6 +273,21 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
             case 5733:
                 player.getPacketSender().sendMessage("This is a powerful potato! Do not eat it!");
+                break;
+            case 23408:
+                if (player.getLocation() == Location.JAIL) {
+                    player.sendMessage("<shad=1>@red@You can't start an instance while your in jail.");
+                    return;
+                }
+                if (player.currentInstanceAmount >= 1) {
+                    player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
+                    return;
+                }
+                if (!player.getClickDelay().elapsed(5000)) {
+                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
+                    return;
+                }
+                new SlayerInstanceInterfaceHandler(player).open();
                 break;
             case 989:
                 Position crystalChest = new Position(3100, 2979, 0);
