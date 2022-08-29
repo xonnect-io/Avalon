@@ -12,6 +12,7 @@ public class CurrencyPouch {
     private long upgradeTokens;
     private long pvmTickets;
     private long afkTickets;
+    private long globalTokens;
     private long slayerTickets;
     private long voteScrolls;
     private long petFragments;
@@ -21,12 +22,31 @@ public class CurrencyPouch {
     private long crimsonCharms;
     private long blueCharms;
 
+
+    private long highTierTicket;
+    private long celestialEnergy;
+    private long instancetokensu;
+    private long instancetoken_s;
+
+    public static final int PVM_TICKET = 5022;
+    public static final int GLOBAL_BOSS_TOKEN = 23229;
+
+    public static final int HIGH_TIER_TICKET = 23174;
+    public static final int CELESTIAL_ENERGY = 23273;
+    public static final int INSTANCE_TOKEN_U = 23264;
+    public static final int INSTANCE_TOKEN_S = 23408;
+
     public static void checkBalance(Player player) {
         long amount;
         String currency;
 
         amount = player.getCurrencyPouch().upgradeTokens;
         currency = "Avalon tokens";
+        player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
+
+
+        amount = player.getCurrencyPouch().upgradeTokens;
+        currency = "Global boss token";
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
         amount = player.getCurrencyPouch().pvmTickets;
@@ -38,7 +58,7 @@ public class CurrencyPouch {
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
         amount = player.getCurrencyPouch().slayerTickets;
-        currency = "Slayer tickets";
+        currency = "Boss Slayer tickets";
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
         amount = player.getCurrencyPouch().voteScrolls;
@@ -68,6 +88,27 @@ public class CurrencyPouch {
         amount = player.getCurrencyPouch().blueCharms;
         currency = "Blue charms";
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
+
+        amount = player.getCurrencyPouch().globalTokens;
+        currency = "Global boss tokens";
+        player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
+
+        amount = player.getCurrencyPouch().highTierTicket;
+        currency = "High-tier tickets";
+        player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
+
+        amount = player.getCurrencyPouch().celestialEnergy;
+        currency = "Celestial Energy";
+        player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
+
+        amount = player.getCurrencyPouch().instancetokensu;
+        currency = "Instance tokens (u)";
+        player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
+
+        amount = player.getCurrencyPouch().instancetoken_s;
+        currency = "Instance tokens (s)";
+        player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
+
     }
 
     public static void withdrawCurrency(Player player, int type, int amount) {
@@ -168,7 +209,7 @@ public class CurrencyPouch {
                 }
                 break;
             case 3: //Slayer tickets
-                currency = 5023;
+                currency = 9000;
                 inventoryAmount = player.getInventory().getAmount(currency);
 
                 if (player.getCurrencyPouch().slayerTickets < amount) {
@@ -389,6 +430,147 @@ public class CurrencyPouch {
                     player.getInventory().add(new Item(currency, amount));
                 }
                 break;
+
+
+            case 11: //Global boss tokens
+                currency = GLOBAL_BOSS_TOKEN;
+                inventoryAmount = player.getInventory().getAmount(currency);
+
+                if (player.getCurrencyPouch().globalTokens < amount) {
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().globalTokens));
+                    player.getCurrencyPouch().globalTokens = 0;
+                    break;
+                }
+                if (player.getCurrencyPouch().globalTokens <= 0) {
+                    emptyFundsError = true;
+                    break;
+                }
+
+                if (player.getCurrencyPouch().globalTokens >= amount) {
+                    long longAmount = ((long)inventoryAmount + (long)amount);
+                    if (longAmount > Integer.MAX_VALUE) {
+                        long amountToSubtract = Integer.MAX_VALUE - inventoryAmount;
+                        amount = (int) amountToSubtract;
+                    }
+                    if (amount <= 0) {
+                        break;
+                    }
+                    player.getCurrencyPouch().globalTokens -= amount;
+                    player.getInventory().add(new Item(currency, amount));
+                }
+                break;
+
+            case 12: //High-tier tickets
+                currency = HIGH_TIER_TICKET;
+                inventoryAmount = player.getInventory().getAmount(currency);
+
+                if (player.getCurrencyPouch().highTierTicket < amount) {
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().highTierTicket));
+                    player.getCurrencyPouch().highTierTicket = 0;
+                    break;
+                }
+                if (player.getCurrencyPouch().highTierTicket <= 0) {
+                    emptyFundsError = true;
+                    break;
+                }
+
+                if (player.getCurrencyPouch().highTierTicket >= amount) {
+                    long longAmount = ((long)inventoryAmount + (long)amount);
+                    if (longAmount > Integer.MAX_VALUE) {
+                        long amountToSubtract = Integer.MAX_VALUE - inventoryAmount;
+                        amount = (int) amountToSubtract;
+                    }
+                    if (amount <= 0) {
+                        break;
+                    }
+                    player.getCurrencyPouch().highTierTicket -= amount;
+                    player.getInventory().add(new Item(currency, amount));
+                }
+                break;
+
+            case 13: //Celestial energy
+                currency = CELESTIAL_ENERGY;
+                inventoryAmount = player.getInventory().getAmount(currency);
+
+                if (player.getCurrencyPouch().celestialEnergy < amount) {
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().celestialEnergy));
+                    player.getCurrencyPouch().celestialEnergy = 0;
+                    break;
+                }
+                if (player.getCurrencyPouch().celestialEnergy <= 0) {
+                    emptyFundsError = true;
+                    break;
+                }
+
+                if (player.getCurrencyPouch().celestialEnergy >= amount) {
+                    long longAmount = ((long)inventoryAmount + (long)amount);
+                    if (longAmount > Integer.MAX_VALUE) {
+                        long amountToSubtract = Integer.MAX_VALUE - inventoryAmount;
+                        amount = (int) amountToSubtract;
+                    }
+                    if (amount <= 0) {
+                        break;
+                    }
+                    player.getCurrencyPouch().celestialEnergy -= amount;
+                    player.getInventory().add(new Item(currency, amount));
+                }
+                break;
+
+            case 14: //Instance token (u)
+                currency = INSTANCE_TOKEN_U;
+                inventoryAmount = player.getInventory().getAmount(currency);
+
+                if (player.getCurrencyPouch().instancetokensu < amount) {
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().instancetokensu));
+                    player.getCurrencyPouch().instancetokensu = 0;
+                    break;
+                }
+                if (player.getCurrencyPouch().instancetokensu <= 0) {
+                    emptyFundsError = true;
+                    break;
+                }
+
+                if (player.getCurrencyPouch().instancetokensu >= amount) {
+                    long longAmount = ((long)inventoryAmount + (long)amount);
+                    if (longAmount > Integer.MAX_VALUE) {
+                        long amountToSubtract = Integer.MAX_VALUE - inventoryAmount;
+                        amount = (int) amountToSubtract;
+                    }
+                    if (amount <= 0) {
+                        break;
+                    }
+                    player.getCurrencyPouch().instancetokensu -= amount;
+                    player.getInventory().add(new Item(currency, amount));
+                }
+                break;
+
+            case 15: //Instance tokens (s)
+                currency = INSTANCE_TOKEN_S;
+                inventoryAmount = player.getInventory().getAmount(currency);
+
+                if (player.getCurrencyPouch().instancetoken_s < amount) {
+                    player.getInventory().add(new Item(currency, (int)  player.getCurrencyPouch().instancetoken_s));
+                    player.getCurrencyPouch().instancetoken_s = 0;
+                    break;
+                }
+                if (player.getCurrencyPouch().instancetoken_s <= 0) {
+                    emptyFundsError = true;
+                    break;
+                }
+
+                if (player.getCurrencyPouch().instancetoken_s >= amount) {
+                    long longAmount = ((long)inventoryAmount + (long)amount);
+                    if (longAmount > Integer.MAX_VALUE) {
+                        long amountToSubtract = Integer.MAX_VALUE - inventoryAmount;
+                        amount = (int) amountToSubtract;
+                    }
+                    if (amount <= 0) {
+                        break;
+                    }
+                    player.getCurrencyPouch().instancetoken_s -= amount;
+                    player.getInventory().add(new Item(currency, amount));
+                }
+                break;
         }
         if (insufficientFundsError) {
             DialogueManager.sendStatement(player, "You do not have this much to withdraw!");
@@ -418,7 +600,7 @@ public class CurrencyPouch {
                 currency = 5020;
                 break;
             case 3: //Slayer tickets
-                currency = 5023;
+                currency = 9000;
                 break;
             case 4: //Vote scrolls
                 currency = 23020;
@@ -441,6 +623,31 @@ public class CurrencyPouch {
             case 10: //Blue charm
                 currency = BLUE_CHARM;
                 break;
+
+            case 11: //Global boss tokens
+                currency = GLOBAL_BOSS_TOKEN;
+                break;
+
+
+            case 12: //High tier tickets
+                currency = HIGH_TIER_TICKET;
+                break;
+
+
+            case 13: //Celestial Energy
+                currency = CELESTIAL_ENERGY;
+                break;
+
+
+            case 14: //Instance tokens u
+                currency = INSTANCE_TOKEN_U;
+                break;
+
+
+            case 15: //Instance tokens s
+                currency = INSTANCE_TOKEN_S;
+                break;
+
             default:
                 throw new IllegalStateException("Unexpected value: " + type);
         }
@@ -462,7 +669,7 @@ public class CurrencyPouch {
             player.getCurrencyPouch().pvmTickets += amount;
         } else if (currency == 5020) {
             player.getCurrencyPouch().afkTickets += amount;
-        } else if (currency == 5023) {
+        } else if (currency == 9000) {
             player.getCurrencyPouch().slayerTickets += amount;
         } else if (currency == 23020) {
             player.getCurrencyPouch().voteScrolls += amount;
@@ -478,6 +685,16 @@ public class CurrencyPouch {
             player.getCurrencyPouch().crimsonCharms += amount;
         } else if (currency == BLUE_CHARM) {
             player.getCurrencyPouch().blueCharms += amount;
+        } else if (currency == GLOBAL_BOSS_TOKEN) {
+            player.getCurrencyPouch().globalTokens += amount;
+        } else if (currency == HIGH_TIER_TICKET) {
+            player.getCurrencyPouch().highTierTicket += amount;
+        } else if (currency == CELESTIAL_ENERGY) {
+            player.getCurrencyPouch().celestialEnergy += amount;
+        } else if (currency == INSTANCE_TOKEN_U) {
+            player.getCurrencyPouch().instancetokensu += amount;
+        } else if (currency == INSTANCE_TOKEN_S) {
+            player.getCurrencyPouch().instancetoken_s += amount;
         }
         player.getInventory().delete(new Item(currency, amount));
         return insufficientFundsError;
@@ -490,7 +707,7 @@ public class CurrencyPouch {
             depositCurrency(player, 1, used.getAmount());
         } else if (used.getId() == 5020) {
             depositCurrency(player, 2, used.getAmount());
-        } else if (used.getId() == 5023) {
+        } else if (used.getId() == 9000) {
             depositCurrency(player, 3, used.getAmount());
         } else if (used.getId() == 23020) {
             depositCurrency(player, 4, used.getAmount());
@@ -506,6 +723,16 @@ public class CurrencyPouch {
             depositCurrency(player, 9, used.getAmount());
         } else if (used.getId() == BLUE_CHARM) {
             depositCurrency(player, 10, used.getAmount());
+        } else if (used.getId() == GLOBAL_BOSS_TOKEN) {
+            depositCurrency(player, 11, used.getAmount());
+        } else if (used.getId() == HIGH_TIER_TICKET) {
+            depositCurrency(player, 12, used.getAmount());
+        } else if (used.getId() == CELESTIAL_ENERGY) {
+            depositCurrency(player, 13, used.getAmount());
+        } else if (used.getId() == INSTANCE_TOKEN_U) {
+            depositCurrency(player, 14, used.getAmount());
+        } else if (used.getId() == INSTANCE_TOKEN_S) {
+            depositCurrency(player, 15, used.getAmount());
         } else {
             DialogueManager.sendStatement(player, "You can not use this currency on the pouch!");
         }

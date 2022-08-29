@@ -2309,7 +2309,7 @@
         "line1": "Avalon tokens",
         "line2": "Pvm tickets",
         "line3": "Afk tickets",
-        "line4": "Slayer tickets",
+        "line4": "Boss Slayer tickets",
         "line5": "Next",
         "next": 9925,
         "npcId": -1
@@ -2329,12 +2329,25 @@
     {
         "id": 9926,
         "type": "OPTION",
-        "lines": 4,
+        "lines": 5,
         "line1": "Green charms",
         "line2": "Crimson charms",
         "line3": "Blue charms",
-        "line4": "Cancel",
-        "next": -1,
+        "line4": "Global Boss tokens",
+        "line5": "Next",
+        "next": 9826,
+        "npcId": -1
+    },
+    {
+        "id": 9826,
+        "type": "OPTION",
+        "lines": 5,
+        "line1": "High-tier tickets",
+        "line2": "Celestial Energy",
+        "line3": "Instance tokens (u)",
+        "line4": "Instance tokens (s)",
+        "line5": "Cancel",
+        "next": 9926,
         "npcId": -1
     },
     {

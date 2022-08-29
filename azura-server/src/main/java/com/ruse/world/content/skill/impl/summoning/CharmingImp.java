@@ -15,7 +15,6 @@ public class CharmingImp {
 	public static final int GOLD_CHARM = 12158;
 	public static final int CRIM_CHARM = 12160;
 	public static final int BLUE_CHARM = 12163;
-	public static final int PVM_TICKET = 5022;
 
 	public static void changeConfig(Player player, int index, int config) {
 		player.getSummoning().setCharmImpConfig(index, config);

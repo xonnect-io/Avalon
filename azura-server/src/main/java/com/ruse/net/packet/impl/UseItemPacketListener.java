@@ -100,7 +100,106 @@ public class UseItemPacketListener implements PacketListener {
             return;
         }
 
-        if (usedWith.getId() == 1927 && itemUsedWith.getId() == 17572) {
+
+        if (usedWith.getId() == 23309 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23309) {
+            if (player.getInventory().getAmount(23321) < 1000)
+                return;
+            player.getInventory().delete(23309, 1);
+            player.getInventory().delete(23321, 1000);
+            player.getInventory().add(23318, 1);
+            player.getPacketSender().sendMessage("You upgrade your Midnight Helmet!");
+            return;
+        }
+        if (usedWith.getId() == 23310 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23310) {
+            if (player.getInventory().getAmount(23321) < 1000)
+                return;
+            player.getInventory().delete(23310, 1);
+            player.getInventory().delete(23321, 1000);
+            player.getInventory().add(23319, 1);
+            player.getPacketSender().sendMessage("You upgrade your Midnight robe top!");
+            return;
+        }
+        if (usedWith.getId() == 23311 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23311) {
+            if (player.getInventory().getAmount(23321) < 1000)
+                return;
+            player.getInventory().delete(23311, 1);
+            player.getInventory().delete(23321, 1000);
+            player.getInventory().add(23320, 1);
+            player.getPacketSender().sendMessage("You upgrade your Midnight robe bottoms!");
+            return;
+        }
+
+
+
+        if (usedWith.getId() == 23306 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23306) {
+            if (player.getInventory().getAmount(23321) < 1000)
+                return;
+            player.getInventory().delete(23306, 1);
+            player.getInventory().delete(23321, 1000);
+            player.getInventory().add(23315, 1);
+            player.getPacketSender().sendMessage("You upgrade your Hellish Helmet!");
+            return;
+        }
+        if (usedWith.getId() == 23307 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23307) {
+            if (player.getInventory().getAmount(23321) < 1000)
+                return;
+            player.getInventory().delete(23307, 1);
+            player.getInventory().delete(23321, 1000);
+            player.getInventory().add(23316, 1);
+            player.getPacketSender().sendMessage("You upgrade your Hellish body!");
+            return;
+        }
+        if (usedWith.getId() == 23308 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23308) {
+            if (player.getInventory().getAmount(23321) < 1000)
+                return;
+            player.getInventory().delete(23308, 1);
+            player.getInventory().delete(23321, 1000);
+            player.getInventory().add(23317, 1);
+            player.getPacketSender().sendMessage("You upgrade your Hellish leggings!");
+            return;
+        }
+
+
+
+        if (usedWith.getId() == 23303 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23303) {
+            if (player.getInventory().getAmount(23321) < 1000)
+                return;
+            player.getInventory().delete(23303, 1);
+            player.getInventory().delete(23321, 1000);
+            player.getInventory().add(23312, 1);
+            player.getPacketSender().sendMessage("You upgrade your Mystic Helmet!");
+            return;
+        }
+        if (usedWith.getId() == 23304 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23304) {
+            if (player.getInventory().getAmount(23321) < 1000)
+                return;
+            player.getInventory().delete(23304, 1);
+            player.getInventory().delete(23321, 1000);
+            player.getInventory().add(23313, 1);
+            player.getPacketSender().sendMessage("You upgrade your Mystic platebody!");
+            return;
+        }
+
+        if (usedWith.getId() == 23305 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23305) {
+            if (player.getInventory().getAmount(23321) < 1000)
+                return;
+            player.getInventory().delete(23305, 1);
+            player.getInventory().delete(23321, 1000);
+            player.getInventory().add(23314, 1);
+            player.getPacketSender().sendMessage("You upgrade your Mystic platelegs!");
+            return;
+        }
+        if (usedWith.getId() == 1927 && itemUsedWith.getId() == 17572 ||
+                usedWith.getId() == 17572 && itemUsedWith.getId() == 1927) {
             player.getInventory().delete(1927, 1);
             player.getInventory().delete(17572, 1);
             player.getInventory().add(15413, 1);

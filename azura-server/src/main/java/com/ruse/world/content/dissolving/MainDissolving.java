@@ -4,6 +4,7 @@ import com.ruse.model.Animation;
 import com.ruse.model.Item;
 import com.ruse.model.Skill;
 import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.util.Misc;
 import com.ruse.world.entity.impl.player.Player;
 
 public class MainDissolving {
@@ -76,6 +77,10 @@ public class MainDissolving {
 		T4_MAGIC4(22092, new Item[]{new Item(UPG_TOKEN, 20000)}, 60_000, anim),
 		COLLECTOR_RING(4446, new Item[]{new Item(UPG_TOKEN, 75_000)}, 150_000, anim),
 		COLLECTOR_AMULET(19886, new Item[]{new Item(UPG_TOKEN, 75_000)}, 150_000, anim),
+		COLLECTOR_RING_ii(18823, new Item[]{new Item(UPG_TOKEN, 150_000)}, 250_000, anim),
+		COLLECTOR_AMULET_ii(19888, new Item[]{new Item(UPG_TOKEN, 150_000)}, 250_000, anim),
+		COLLECTOR_RING_iiI(18818, new Item[]{new Item(UPG_TOKEN, 250_000)}, 350_000, anim),
+		COLLECTOR_AMULET_iiI(18888, new Item[]{new Item(UPG_TOKEN, 250_000)}, 350_000, anim),
 		CORRUPT_ARCHIE1(18636, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_ARCHIE2(18638, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_ARCHIE3(18748, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
@@ -518,7 +523,7 @@ return amt;
 				player.getInventory().addItemSet(data.getRewards());
 				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
 				player.performAnimation(new Animation(data.getAnimation()));
-				player.getPacketSender().sendMessage("You dissolved " + ItemDefinition.forId(id).getName() +" for x" + data.getRewards()[0].getAmount() +" Upgrade Tokens" );
+				player.getPacketSender().sendMessage("You dissolved " + ItemDefinition.forId(id).getName() +" for " + Misc.insertCommasToNumber(data.getRewards()[0].getAmount()) +" Upgrade Tokens" );
 				break;
 			}
 		}
@@ -531,7 +536,7 @@ return amt;
 				player.getInventory().addItemSet(data.getRewards());
 				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
 				player.performAnimation(new Animation(-1));
-				player.getPacketSender().sendMessage("You dissolved " + ItemDefinition.forId(id).getName() +" for x" + data.getRewards()[0].getAmount() +" Upgrade Tokens" );
+				player.getPacketSender().sendMessage("You dissolved " + ItemDefinition.forId(id).getName() +" for " + Misc.insertCommasToNumber(data.getRewards()[0].getAmount()) +" Upgrade Tokens" );
 				break;
 			}
 		}

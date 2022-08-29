@@ -1483,7 +1483,6 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(2734, 1);
                 Box loot = BoxLoot.getLoot(SlayerCasket.loot);
                 player.getInventory().add(995, 10000 + Misc.getRandom(490000));
-                player.getInventory().add(5023, 10 + Misc.getRandom(40));
                 player.getInventory().add(11137, 1 + Misc.getRandom(2));
                 player.getInventory().add(loot.getId(), loot.getMin() + Misc.getRandom(loot.getMax() - loot.getMin()));
                 break;

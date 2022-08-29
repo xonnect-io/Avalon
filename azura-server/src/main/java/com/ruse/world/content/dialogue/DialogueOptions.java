@@ -78,7 +78,14 @@ public class DialogueOptions {
         if (id == FIRST_OPTION_OF_FIVE) {
             switch (player.getDialogueActionId()) {
 
-
+                case 9826:
+                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(12));
+                    player.getPacketSender().sendEnterAmountPrompt("How many High-tier tickets would you like to withdraw?");
+                    break;
+                case 9926:
+                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(8));
+                    player.getPacketSender().sendEnterAmountPrompt("How many Green charms would you like to withdraw?");
+                    break;
                 case 101:
                     player.getPlayerOwnedShopManager().openMain();
                     break;
@@ -278,6 +285,14 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_FIVE) {
             switch (player.getDialogueActionId()) {
+                case 9826:
+                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(13));
+                    player.getPacketSender().sendEnterAmountPrompt("How many Celestial energy would you like to withdraw?");
+                    break;
+                case 9926:
+                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(9));
+                    player.getPacketSender().sendEnterAmountPrompt("How many Crimson charms would you like to withdraw?");
+                    break;
                 case 101:
                     player.getPlayerOwnedShopManager().openEditor();
                     break;
@@ -446,6 +461,14 @@ public class DialogueOptions {
             }
         } else if (id == THIRD_OPTION_OF_FIVE) {
             switch (player.getDialogueActionId()) {
+                case 9826:
+                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(14));
+                    player.getPacketSender().sendEnterAmountPrompt("How many Instance token (u) would you like to withdraw?");
+                    break;
+                case 9926:
+                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(10));
+                    player.getPacketSender().sendEnterAmountPrompt("How many Blue charms would you like to withdraw?");
+                    break;
                 case 101:
                     player.getPlayerOwnedShopManager().claimEarnings();
                     break;
@@ -597,6 +620,14 @@ public class DialogueOptions {
             }
         } else if (id == FOURTH_OPTION_OF_FIVE) {
             switch (player.getDialogueActionId()) {
+                case 9826:
+                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(15));
+                    player.getPacketSender().sendEnterAmountPrompt("How many Instance token (s) would you like to withdraw?");
+                    break;
+                case 9926:
+                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(11));
+                    player.getPacketSender().sendEnterAmountPrompt("How many Global boss tokens would you like to withdraw?");
+                    break;
                 case 101:
                     player.getPlayerOwnedShopManager().openHistory();
                     break;
@@ -761,6 +792,15 @@ public class DialogueOptions {
             }
         } else if (id == FIFTH_OPTION_OF_FIVE) {
             switch (player.getDialogueActionId()) {
+                case 9826:
+                player.getPacketSender().sendInterfaceRemoval();
+                break;
+
+                case 9926:
+                    player.setDialogueActionId(9826);
+                    DialogueManager.start(player, 9826);
+                    break;
+
                 case 9924:
                 case 9925:
                     player.setDialogueActionId(player.getDialogueActionId() + 1);
@@ -872,10 +912,6 @@ public class DialogueOptions {
                 case 55:
                     TeleportHandler.teleportPlayer(player, new Position(2474, 3437, 0), TeleportType.NORMAL);
                     break;
-                case 9926:
-                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(8));
-                    player.getPacketSender().sendEnterAmountPrompt("How many Green charms would you like to withdraw?");
-                    break;
                 case 8:
                     ShopManager.getShops().get(110).open(player);
                     break;
@@ -957,10 +993,6 @@ public class DialogueOptions {
                     break;
                 case 8221:
                     DialogueManager.start(player, CelestialDialogues.celestialZone(player));
-                    break;
-                case 9926:
-                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(9));
-                    player.getPacketSender().sendEnterAmountPrompt("How many Crimson charms would you like to withdraw?");
                     break;
                 case 8:
                     LoyaltyProgramme.open(player);
@@ -1065,10 +1097,6 @@ public class DialogueOptions {
                     break;
                 case 8221:
                     DialogueManager.start(player, CelestialDialogues.celestialEnergy(player));
-                    break;
-                case 9926:
-                    player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(10));
-                    player.getPacketSender().sendEnterAmountPrompt("How many Blue charms would you like to withdraw?");
                     break;
                 case 8:
                     LoyaltyProgramme.reset(player);
@@ -1192,10 +1220,10 @@ public class DialogueOptions {
                 case 80:
                 case 84:
                 case 87:
-                case 9926:
                 case 4621:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
+
                 case 14:
                     player.setDialogueActionId(14);
                     DialogueManager.start(player, 22);
