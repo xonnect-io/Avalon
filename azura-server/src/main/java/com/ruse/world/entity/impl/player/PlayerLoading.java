@@ -609,6 +609,15 @@ public class PlayerLoading {
             if (reader.has("shadow-magician-killcount")) {
                 player.getPointsHandler().setShadowMagicianKC(reader.get("shadow-magician-killcount").getAsInt(), false);
             }
+            if (reader.has("forest-archer-killcount")) {
+                player.getPointsHandler().setForestArcherKC(reader.get("forest-archer-killcount").getAsInt(), false);
+            }
+            if (reader.has("chaotic-archer-killcount")) {
+                player.getPointsHandler().setChaoticArcherKC(reader.get("chaotic-archer-killcount").getAsInt(), false);
+            }
+            if (reader.has("divine-archer-killcount")) {
+                player.getPointsHandler().setDivineArcherKC(reader.get("divine-archer-killcount").getAsInt(), false);
+            }
             if (reader.has("lesarkus-warrior-killcount")) {
                 player.getPointsHandler().setLesarkusWarriorKC(reader.get("lesarkus-warrior-killcount").getAsInt(), false);
             }

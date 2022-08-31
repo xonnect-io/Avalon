@@ -654,6 +654,25 @@ public class NPCDeathTask extends Task {
         } else if (npc.getId() == 9118) {//  Shadow magician
             killer.getPointsHandler().addShadowMagicianKC(1);
         }
+
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 1508
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addForestArcherKC(2);
+        } else if (npc.getId() == 1508) {// Forest archer
+            killer.getPointsHandler().addForestArcherKC(1);
+        }
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 1458
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addChaoticArcherKC(2);
+        } else if (npc.getId() == 1458) {//  Lotus magician
+            killer.getPointsHandler().addChaoticArcherKC(1);
+        }
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 1457
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addDivineArcherKC(2);
+        } else if (npc.getId() == 1457) {//  Shadow magician
+            killer.getPointsHandler().addDivineArcherKC(1);
+        }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 225
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().addAvalonBeastKC(2);

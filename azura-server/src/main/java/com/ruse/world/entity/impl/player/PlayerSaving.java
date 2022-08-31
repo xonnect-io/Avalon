@@ -155,6 +155,9 @@ public class PlayerSaving {
 			object.addProperty("faceless-magician-killcount", new Integer(player.getPointsHandler().getFacelessMagicianKC()));
 			object.addProperty("lotus-magician-killcount", new Integer(player.getPointsHandler().getLotusMagicianKC()));
 			object.addProperty("shadow-magician-killcount", new Integer(player.getPointsHandler().getShadowMagicianKC()));
+			object.addProperty("forest-archer-killcount", new Integer(player.getPointsHandler().getForestArcherKC()));
+			object.addProperty("chaotic-archer-killcount", new Integer(player.getPointsHandler().getChaoticArcherKC()));
+			object.addProperty("divine-archer-killcount", new Integer(player.getPointsHandler().getDivineArcherKC()));
 			object.addProperty("lesarkus-warrior-killcount", new Integer(player.getPointsHandler().getLesarkusWarriorKC()));
 			object.addProperty("vampire-warrior-killcount", new Integer(player.getPointsHandler().getVampireWarriorKC()));
 			object.addProperty("ancient-warrior-killcount", new Integer(player.getPointsHandler().getAncientWarriorKC()));

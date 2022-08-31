@@ -1951,6 +1951,10 @@ public final class MobDefinition {
 				definition.actions[2] = "Follow on Twitch";
 				definition.actions[3] = "Subscribe ($4.99/mo)";
 				break;
+
+			case 2782:
+				definition.drawYellowDotOnMap = false;
+				break;
 			case 2578:
 				definition.name = "Ima GuYiRL";
 				definition.description = "Will get married for 1m lolzzzz.".getBytes();

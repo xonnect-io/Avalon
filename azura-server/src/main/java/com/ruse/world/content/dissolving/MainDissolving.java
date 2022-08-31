@@ -519,6 +519,13 @@ return amt;
 	public void handle(int id) {
 		for(DissolvingData data : DissolvingData.values()) {
 			if(data.getId() == id) {
+				/*
+				if (sumofdissolves(data.getId()) >= 20000) {
+					DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve " + ItemDefinition.forId(id).getName() + " for "+data.getRewards()[0].getAmount()+" Tokens", "Nevermind", 9828));
+				return;
+				}
+				 */
+
 				player.getInventory().delete(id, 1);
 				player.getInventory().addItemSet(data.getRewards());
 				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
@@ -529,6 +536,7 @@ return amt;
 		}
 		
 	}
+
 	public void handleAll(int id) {
 		for(DissolvingData data : DissolvingData.values()) {
 			if(data.getId() == id) {

@@ -78,6 +78,10 @@ public class PointsHandler {
 	private int groudonkillcount;
 	private int fenrirkillcount;
 	private int avalonBeastKC;
+
+	private int forestArcherKC;
+	private int chaoticArcherKC;
+	private int divineArcherKC;
 	private int facelessMagicianKC;
 	private int lotusMagicianKC;
 	private int shadowMagicianKC;
@@ -697,9 +701,46 @@ private int pengRate;
 		else
 			this.avalonBeastKC = points;
 	}
+	/*
+	Archer Guild
+	 */
+	public int getForestArcherKC() {
+		return forestArcherKC;
+	}
+	public void addForestArcherKC(int amt) {this.forestArcherKC += amt;}
+	public void setForestArcherKC(int points, boolean add) {
+		if (add)
+			this.forestArcherKC += points;
+		else
+			this.forestArcherKC = points;
+	}
+	public int getChaoticArcherKC() {
+		return chaoticArcherKC;
+	}
+	public void addChaoticArcherKC(int amt) {this.chaoticArcherKC += amt;}
+	public void setChaoticArcherKC(int points, boolean add) {
+		if (add)
+			this.chaoticArcherKC += points;
+		else
+			this.chaoticArcherKC = points;
+	}
+	public int getDivineArcherKC() {
+		return divineArcherKC;
+	}
+	public void addDivineArcherKC(int amt) {this.divineArcherKC += amt;}
+	public void setDivineArcherKC(int points, boolean add) {
+		if (add)
+			this.divineArcherKC += points;
+		else
+			this.divineArcherKC = points;
+	}
+	/*
+	End Archer Guild
+	 */
 
-
-	//Warrior Guild
+	/*
+	Start Warrior Guild
+	 */
 	public int getLesarkusWarriorKC() {
 		return lesarkusWarriorKC;
 	}
@@ -730,8 +771,14 @@ private int pengRate;
 		else
 			this.ancientWarriorKC = points;
 	}
-	//
-	//Magic Guild
+	/*
+	End Warrior Guild
+	 */
+
+
+	/*
+	Start Magic Guild
+	 */
 	public int getFacelessMagicianKC() {
 		return facelessMagicianKC;
 	}
@@ -755,9 +802,6 @@ private int pengRate;
 	public int getShadowMagicianKC() {
 		return shadowMagicianKC;
 	}
-	public void setShadowMagicianKC(int shadowMagicianKC) {
-		this.shadowMagicianKC = shadowMagicianKC;
-	}
 	public void addShadowMagicianKC(int amt) {this.shadowMagicianKC += amt;}
 	public void setShadowMagicianKC(int points, boolean add) {
 		if (add)
@@ -765,7 +809,9 @@ private int pengRate;
 		else
 			this.shadowMagicianKC = points;
 	}
-	//
+	/*
+	End Magic Guild
+	 */
 	//
 	public int getGROUDONKILLCount() {
 		return groudonkillcount;

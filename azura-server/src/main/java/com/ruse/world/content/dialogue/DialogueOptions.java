@@ -45,7 +45,8 @@ import com.ruse.world.entity.impl.npc.NpcAggression;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Store;
 
-import static com.ruse.model.Skill.*;
+import static com.ruse.model.Skill.ATTACK;
+import static com.ruse.model.Skill.STRENGTH;
 
 public class DialogueOptions {
 
@@ -1249,6 +1250,15 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+/*
+                case 9828:
+                    for(MainDissolving.DissolvingData data : MainDissolving.DissolvingData.values()) {
+                        if (data.getId() == id) {
+                            player.getMainDissolving().handleAbove20k(player.getInventory().get(id).getId());
+                        }
+                    }
+                    player.getPacketSender().sendInterfaceRemoval();
+                    break;*/
                 case 12112:
                     LotteryEvent.checkpurchaseticket(player);
                     break;

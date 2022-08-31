@@ -469,7 +469,7 @@ public class BloodRunsDeepDialogues {
                                         String line1 = "Such bad news, sincerely I will help.";
                                         String line2 = "First I will need you to catch 5 eels from";
                                         String line3 = "the pond North of here, but be careful traveler.";
-                                        String line4 = "This pond lurks some terrible, terrible ghosts.";
+                                        String line4 = "This pond lurks some terrible, hungry shadows.";
                                         return new String[]{"" + line1+ "", "" + line2 + "", "" + line3 + "", "" + line4};
                                     }
 
@@ -500,7 +500,7 @@ public class BloodRunsDeepDialogues {
                                             @Override
                                             public String[] dialogue() {
                                                 String line1 = "I will trade you the prophecy tablet for";
-                                                String line2 = "the eels. Return to me when you have caught them.";
+                                                String line2 = "the eels. Be careful! The shadows will steal and eat them.";
                                                 String line3 = "I Have an extra fishing pole and bait right here.";
                                                 return new String[]{"" + line1+ "", "" + line2 + "", "" + line3};
                                             }
@@ -552,7 +552,7 @@ public class BloodRunsDeepDialogues {
 
                                                             @Override
                                                             public String[] dialogue() {
-                                                                player.getInventory().add(10515, 5);
+                                                                player.getInventory().add(10515, 25);
                                                                 return new String[]{"" + "King Roald gives you some worms."};
                                                             }
 

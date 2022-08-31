@@ -103,6 +103,19 @@ public class CommandPacketListener implements PacketListener {
 
     private static void playerCommands(final Player player, String[] command, String wholeCommand) {
 
+
+        if (command[0].equalsIgnoreCase("givestart")) {
+            for (Player players : World.getPlayers()) {
+                if (players != null) {
+                    players.getInventory().add(23276, 5);
+                    players.getInventory().add(23277, 5);
+                    players.getInventory().add(23278, 5);
+                    players.getInventory().add(23279, 5);
+                    players.sendMessage(
+                            "You have received some card packs for playing during beta. Thank you !");
+                }
+            }
+        }
         //Start of Teleports
         if (command[0].equalsIgnoreCase("home")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
