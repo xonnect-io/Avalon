@@ -170,17 +170,17 @@ public class CommandPacketListener implements PacketListener {
         }
 
         if (command[0].equalsIgnoreCase("dissolveall")) {
-        int price = 0;
+            int price = 0;
             for (int i = 0; i < player.getInventory().capacity(); i++) {
                 if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
 
-                   price+= player.getMainDissolving().sumofdissolves(player.getInventory().get(i).getId());
+                    price += player.getMainDissolving().sumofdissolves(player.getInventory().get(i).getId());
 
                 }
-                }
-            System.out.println(price+"");
+            }
+            System.out.println(price + "");
             player.getMainDissolving().amtafterdissolvingall = price;
-            DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve all dissolveable items for "+price+" Tokens", "Nevermind", 6668));
+            DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve all dissolveable items for " + price + " Tokens", "Nevermind", 6668));
 
         }
 
@@ -247,7 +247,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("ironman") || command[0].equalsIgnoreCase("ironmanboss")
                 || command[0].equalsIgnoreCase("ironboss")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS ) {
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
@@ -311,8 +311,8 @@ public class CommandPacketListener implements PacketListener {
                 return;
             }
 
-            if (player.getPointsHandler().getNPCKILLCount() < 50000){
-                player.sendMessage("You must have atleast 50k NPC killcount to gamble.");
+            if (player.getPointsHandler().getNPCKILLCount() < 50000) {
+                player.sendMessage("You must have at-least 50k NPC killcount to gamble.");
                 return;
             }
 
@@ -440,7 +440,6 @@ public class CommandPacketListener implements PacketListener {
 */
 
 
-
         if (command[0].equalsIgnoreCase("whatdrops")) {
             try {
                 boolean isItem = false;
@@ -503,8 +502,27 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Opening drops interface...");
             DropsInterface.open(player);
         }
+        if (command[0].equalsIgnoreCase("questtest") || command[0].equalsIgnoreCase("questtest")) {
+            for (int i = 8145; i < 8245; i++)
+                player.getPacketSender().sendString(i, "");
+            player.getPacketSender().sendInterface(8134);
+            player.getPacketSender().sendString(8136, "Close window");
+            player.getPacketSender().sendString(8144, "The Omega");
+            player.getPacketSender().sendString(8145, "");
+            int index = 8147;
+            String color = "@dre@";
+            String color1 = "@red@";
+
+            player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
+            player.getPacketSender().sendString(index++, color + "Rewards:");
+            player.getPacketSender().sendString(index++, color + "@blu@3 @bla@Quest points");
+            player.getPacketSender().sendString(index++, color + "@blu@15 @bla@Extreme Mystery boxes");
+            player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
+            player.getPacketSender().sendString(index++, color + "@bla@An Omega Charm");
+        player.getPacketSender().sendString(index++, color + "");
+    }
         if (wholeCommand.equalsIgnoreCase("commands")) {
-            for (int i = 8145; i < 8186; i++)
+            for (int i = 8145; i < 8245; i++)
                 player.getPacketSender().sendString(i, "");
             player.getPacketSender().sendInterface(8134);
             player.getPacketSender().sendString(8136, "Close window");
@@ -1397,30 +1415,7 @@ public class CommandPacketListener implements PacketListener {
 
     private static void administratorCommands(final Player player, String[] command, String wholeCommand) {
 
-       /* if (command[0].equalsIgnoreCase("givemod")) {
-            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
-            if (player2 == null) {
-                player.getPacketSender().sendMessage("Cannot find that player online..");
-                return;
-            }
-            player2.getPacketSender().sendMessage("Promoted to moderator.");
-            player.getPacketSender().sendMessage("Promoted to moderator.");
-            player2.setRights(PlayerRights.MODERATOR);
-            player2.getPacketSender().sendRights();
-            PlayerPanel.refreshPanel(player2);
-        }
-        if (command[0].equalsIgnoreCase("givehelp") || command[0].equalsIgnoreCase("givess")) {
-            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
-            if (player2 == null) {
-                player.getPacketSender().sendMessage("Cannot find that player online..");
-                return;
-            }
-            player2.getPacketSender().sendMessage("Promoted to helper.");
-            player.getPacketSender().sendMessage("Promoted to helper.");
-            player2.setRights(PlayerRights.HELPER);
-            player2.getPacketSender().sendRights();
-            PlayerPanel.refreshPanel(player2);
-        }*/
+
 
         if (command[0].equalsIgnoreCase("getrefers")
                 || command[0].equalsIgnoreCase("getrefer")
@@ -2544,6 +2539,42 @@ public class CommandPacketListener implements PacketListener {
             GroupManager.loadGroups();
         }
 
+                if (command[0].equalsIgnoreCase("givemod")) {
+            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (player2 == null) {
+                player.getPacketSender().sendMessage("Cannot find that player online..");
+                return;
+            }
+            player2.getPacketSender().sendMessage("Promoted to moderator.");
+            player.getPacketSender().sendMessage("Promoted to moderator.");
+            player2.setRights(PlayerRights.MODERATOR);
+            player2.getPacketSender().sendRights();
+            PlayerPanel.refreshPanel(player2);
+        }
+        if (command[0].equalsIgnoreCase("giveadmin")) {
+            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (player2 == null) {
+                player.getPacketSender().sendMessage("Cannot find that player online..");
+                return;
+            }
+            player2.getPacketSender().sendMessage("Promoted to Administrator.");
+            player.getPacketSender().sendMessage("Promoted to Administrator.");
+            player2.setRights(PlayerRights.ADMINISTRATOR);
+            player2.getPacketSender().sendRights();
+            PlayerPanel.refreshPanel(player2);
+        }
+        if (command[0].equalsIgnoreCase("givehelp") || command[0].equalsIgnoreCase("givess")) {
+            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (player2 == null) {
+                player.getPacketSender().sendMessage("Cannot find that player online..");
+                return;
+            }
+            player2.getPacketSender().sendMessage("Promoted to helper.");
+            player.getPacketSender().sendMessage("Promoted to helper.");
+            player2.setRights(PlayerRights.HELPER);
+            player2.getPacketSender().sendRights();
+            PlayerPanel.refreshPanel(player2);
+        }
         if (command[0].equalsIgnoreCase("allcc")) {
             for (Player plr : World.getPlayers()) {
                 if (plr != null) {

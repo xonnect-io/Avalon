@@ -1083,6 +1083,24 @@ public class TheOmegaDialogues {
                                 player.getInventory().add(egg);
                                 player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your inventory.");
                             }
+                            for (int i = 8145; i < 8245; i++)
+                                player.getPacketSender().sendString(i, "");
+                            player.getPacketSender().sendInterface(8134);
+                            player.getPacketSender().sendString(8136, "Close window");
+                            player.getPacketSender().sendString(8144, "The Omega");
+                            player.getPacketSender().sendString(8145, "");
+                            int index = 8147;
+                            String color = "@dre@";
+                            String color1 = "@red@";
+
+                            player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
+                            player.getPacketSender().sendString(index++, color + "Rewards:");
+                            player.getPacketSender().sendString(index++, color + "@blu@3 @bla@Quest points");
+                            player.getPacketSender().sendString(index++, color + "@blu@15 @bla@Extreme Mystery boxes");
+                            player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
+                            player.getPacketSender().sendString(index++, color + "@bla@An Omega Charm");
+
+                            player.getPacketSender().sendString(index++, color + "");
                             player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@The Omega");
                             player.getPacketSender().sendMessage("<img=832> Your rewarded 3 Quest points");
                             player.getPointsHandler().setQuestPoints(3, true);

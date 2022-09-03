@@ -53,7 +53,7 @@ public class Firemaking {
 		int cycle = 2 + Misc.getRandom(3);
 		if (player.getSkillManager().getMaxLevel(Skill.FIREMAKING) < logData.getLevel()) {
 			player.getPacketSender()
-					.sendMessage("You need a Firemaking level of atleast " + logData.getLevel() + " to light this.");
+					.sendMessage("You need a Firemaking level of at-least " + logData.getLevel() + " to light this.");
 			return;
 		}
 		if (!addingToFire) {

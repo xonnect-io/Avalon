@@ -27,7 +27,7 @@ public class HoverMenuManager {
                 )));
         menus.put(7956, new HoverMenu("Has a chance at low tier weapons and vote scrolls.",
                 Arrays.asList(
-                        19582,14525,11858, 23020,4151,11235,15486,12933,18353,15031,6585,6737,7462
+                        19582,14525,11858,4151,11235,15486,12933,18353,15031,6585,6737,7462
                 )));
 
         menus.put(19115, new HoverMenu("Has a chance to give $1 scrolls, and up to T3 equipment.",

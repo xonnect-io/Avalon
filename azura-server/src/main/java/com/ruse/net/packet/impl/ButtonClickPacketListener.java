@@ -398,38 +398,51 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 77142:
                 if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
-                    player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your light weapons.");
+                    player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your Legends Light staff.");
                     return;
                 }
-                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(5011) && player.getInventory().contains(12537) && player.getInventory().contains(17013)) {
-                    player.getPA().sendMessage("You sacrifice your light weapons and become a Tier 1 Magician in the Guild!");
+                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(17013)) {
+                    player.getPA().sendMessage("You sacrifice your Legends Light staff and become a Tier 1 Magician in the Guild!");
                     World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Magician!");
                     player.setMagicGuildTier1(true);
-                    player.getInventory().delete(5011, 1);
-                    player.getInventory().delete(12537, 1);
                     player.getInventory().delete(17013, 1);
-                    Position magicGuild = new Position(3110, 2990);
+                    Position magicGuild = new Position(2204, 4511);
                     TeleportHandler.teleportPlayer(player, magicGuild, player.getSpellbook().getTeleportType());
                     return;
                 } else
-                    player.getPA().sendMessage("You need to sacrifice x1 of Each Light weapon variant. (Staff, sword, and bow)");
+                    player.getPA().sendMessage("You need to sacrifice x1 Legends Light Staff");
                 break;
-
-            case 71512:
-                if (player.getMagicianMaster() == false) {
-                    player.getPA().sendMessage("You need to be a Magician Master before you can sacrifice x250 Suffered Crystals.");
+            case 88142:
+                if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
+                    player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your Legends Light bow.");
                     return;
                 }
-                if (player.getMagicianMaster() == true && player.getInventory().contains(23321, 250)) {
-                    player.getPA().sendMessage("You sacrifice x250 Suffered Crystals and become a Tier 1 Warrior in the Guild!");
+                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000  && player.getInventory().contains(5011)) {
+                    player.getPA().sendMessage("You sacrifice your Legends Light bow and become a Tier 1 Archer in the Guild!");
+                    World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Archer!");
+                    player.setArcherGuildTier1(true);
+                    player.getInventory().delete(5011, 1);
+                    Position archerGuild = new Position(3356, 4703);
+                    TeleportHandler.teleportPlayer(player, archerGuild, player.getSpellbook().getTeleportType());
+                    return;
+                } else
+                    player.getPA().sendMessage("You need to sacrifice x1 Legends Light bow");
+                break;
+            case 71512:
+                if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
+                    player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your Light Staff of Vitur.");
+                    return;
+                }
+                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000  && player.getInventory().contains(12537)) {
+                    player.getPA().sendMessage("You sacrifice your Light Scythe of Vitur and become a Tier 1 Warrior in the Guild!");
                     World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Warrior!");
                     player.setWarriorGuildTier1(true);
-                    player.getInventory().delete(23321, 250);
-                    Position warriorGuild = new Position(3110, 2990);
+                    player.getInventory().delete(12537, 1);
+                    Position warriorGuild = new Position(1948, 4191);
                     TeleportHandler.teleportPlayer(player, warriorGuild, player.getSpellbook().getTeleportType());
                     return;
                 } else
-                    player.getPA().sendMessage("@red@You need x250 Suffered Crystals in your inventory to sacrifice !");
+                    player.getPA().sendMessage("You need to sacrifice x1 Light Scythe of Vitur");
                 break;
             case -18532:
                 player.getNewSpinner().findReward();
@@ -462,7 +475,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 28178:
-                Position huntingPos = new Position(2788, 2608, 0);
+                Position huntingPos = new Position(2810, 2651, 0);
                 TeleportHandler.teleportPlayer(player, huntingPos, TeleportType.NORMAL);
                 break;
 
@@ -472,22 +485,22 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 71532:
                 if (player.getPointsHandler().getLesarkusWarriorKC() < 25000) {
-                    player.getPA().sendMessage("You need 25,000 Lesarkus Warrior kills before sacrificing x1 Blood Attachment.");
+                    player.getPA().sendMessage("You need 25,000 Lesarkus Warrior kills before sacrificing x1 Dark Scythe of Vitur");
                     return;
                 }
 
                 if (player.getInventory().getFreeSlots() < 1) {
-                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
                     return;
                 }
-                if (player.getInventory().contains(23239, 1)) {
-                    player.getInventory().delete(23239, 1);
+                if (player.getInventory().contains(22115, 1)) {
+                    player.getInventory().delete(22115, 1);
                 }
-                else if (!player.getInventory().contains(23239, 1)) {
-                    player.getPA().sendMessage("You need x1 Blood Attachment to Level up!");
+                else if (!player.getInventory().contains(22115, 1)) {
+                    player.getPA().sendMessage("You need x1 Dark Scythe of Vitur to Level up!");
                     return;
                 }
-                player.getPA().sendMessage("You sacrifice x1 Blood Attachment and Unlock Tier 2 of the Warrior Guild.");
+                player.getPA().sendMessage("You sacrifice your Dark Scythe of Vitur and Unlock Tier 2 of the Warrior Guild.");
                 World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 2 @blu@of the @red@Warrior Guild");
                 player.getPacketSender().sendInterfaceRemoval();
                 player.getPacketSender().sendInterface(71560);
@@ -502,17 +515,17 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
 
                 if (player.getInventory().getFreeSlots() < 1) {
-                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
                     return;
                 }
-                if (player.getInventory().contains(13379, 1)) {
-                    player.getInventory().delete(13379, 1);
+                if (player.getInventory().contains(8136, 1)) {
+                    player.getInventory().delete(8136, 1);
                 }
-                else if (!player.getInventory().contains(13379, 1)) {
-                    player.getPA().sendMessage("You need x1 Owner Fragment to Level up!");
+                else if (!player.getInventory().contains(8136, 1)) {
+                    player.getPA().sendMessage("You need x1 Blood Scythe of Vitur to Level up!");
                     return;
                 }
-                player.getPA().sendMessage("You sacrifice x1 Owner Fragment and Unlock Tier 3 of the Warrior Guild.");
+                player.getPA().sendMessage("You sacrifice your Blood Scythe of Vitur and Unlock Tier 3 of the Warrior Guild.");
                 World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 3 @blu@of the @red@Warrior Guild");
                 player.getPacketSender().sendInterfaceRemoval();
                 player.getPacketSender().sendInterface(80560);
@@ -522,23 +535,23 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 80572:
                 if (player.getPointsHandler().getAncientWarriorKC() < 75_000) {
-                    player.getPA().sendMessage("You need 75,000 Immortal Warrior kills before sacrificing 250,000,000 Upgrade Tokens.");
+                    player.getPA().sendMessage("You need 75,000 Immortal Warrior kills before sacrificing 100,000,000 Upgrade Tokens.");
                     return;
                 }
 
                 if (player.getInventory().getFreeSlots() < 1) {
-                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
                     return;
                 }
 
-                if (player.getInventory().contains(12855, 250_000_000)) {
-                    player.getInventory().delete(13379, 250_000_000);
+                if (player.getInventory().contains(12855, 100_000_000)) {
+                    player.getInventory().delete(12855, 100_000_000);
                 }
-                else if (!player.getInventory().contains(12855, 250_000_000)) {
-                    player.getPA().sendMessage("You need 250,000,000 Upgrade tokens to Level up!");
+                else if (!player.getInventory().contains(12855, 100_000_000)) {
+                    player.getPA().sendMessage("You need 100,000,000 Upgrade tokens to Level up!");
                     return;
                 }
-                player.getPA().sendMessage("You sacrifice 250,000,000 upgrade tokens and Unlock Tier Warrior Master.");
+                player.getPA().sendMessage("You sacrifice 100,000,000 upgrade tokens and Unlock Tier Warrior Master.");
                 World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Warrior Master @blu@of the @red@Warrior Guild");
                 player.getPacketSender().sendInterfaceRemoval();
                 player.setWarriorMaster(true);
@@ -548,28 +561,22 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 77342:
                  if (player.getPointsHandler().getFacelessMagicianKC() < 25000) {
-                     player.getPA().sendMessage("You need 25,000 Faceless Magician kills before sacrificing a Dark weapon.");
+                     player.getPA().sendMessage("You need 25,000 Faceless Magician kills before sacrificing a Legends Dark staff.");
                      return;
                  }
 
                 if (player.getInventory().getFreeSlots() < 1) {
-                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
                     return;
                 }
-                 if (player.getInventory().contains(22113, 1)) {
-                     player.getInventory().delete(22113, 1);
-                 }
-                    else if (player.getInventory().contains(22114, 1)) {
+                if (player.getInventory().contains(22114, 1)) {
                      player.getInventory().delete(22114, 1);
                  }
-                    else if (player.getInventory().contains(22115, 1)) {
-                     player.getInventory().delete(22115, 1);
-                 }
-                 else if (!player.getInventory().containsAny(22113,22114,22115)) {
-                     player.getPA().sendMessage("You need to sacrifice a Dark weapon to Level up!");
+                 else if (!player.getInventory().contains(22114)) {
+                     player.getPA().sendMessage("You need to sacrifice a Legends Dark staff to level up!");
                      return;
                  }
-                    player.getPA().sendMessage("You sacrifice 1 Dark weapon and Unlock Tier 2 of the Magic Guild.");
+                    player.getPA().sendMessage("You sacrifice 1 Legends Dark staff and unlock Tier 2 of the Magic Guild.");
                      World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 2 @blu@of the @red@Magic Guild");
                      player.getPacketSender().sendInterfaceRemoval();
                      player.getPacketSender().sendInterface(77430);
@@ -580,28 +587,22 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 77442:
                 if (player.getPointsHandler().getLotusMagicianKC() < 50_000) {
-                    player.getPA().sendMessage("You need 50,000 Lotus Magician kills before sacrificing a Blood weapon.");
+                    player.getPA().sendMessage("You need 50,000 Lotus Magician kills before sacrificing a Blood Staff.");
                     return;
                 }
 
                 if (player.getInventory().getFreeSlots() < 1) {
-                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
                     return;
                 }
-                if (player.getInventory().contains(23226, 1)) {
-                    player.getInventory().delete(23226, 1);
-                }
-                else if (player.getInventory().contains(23227, 1)) {
+                if (player.getInventory().contains(23227, 1)) {
                     player.getInventory().delete(23227, 1);
                 }
-                else if (player.getInventory().contains(8136, 1)) {
-                    player.getInventory().delete(8136, 1);
-                }
-                else if (!player.getInventory().containsAny(23226,23227,8136)) {
-                    player.getPA().sendMessage("You need to sacrifice a Blood weapon to Level up!");
+                else if (!player.getInventory().contains(23227)) {
+                    player.getPA().sendMessage("You need to sacrifice a Blood Staff to Level up!");
                     return;
                 }
-                player.getPA().sendMessage("You sacrifice 1 Blood weapon and Unlock Tier 2 of the Magic Guild.");
+                player.getPA().sendMessage("You sacrifice a Blood Staff and Unlock Tier 2 of the Magic Guild.");
                 World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 3 @blu@of the @red@Magic Guild");
                 player.getPacketSender().sendInterfaceRemoval();
                 player.getPacketSender().sendInterface(77530);
@@ -617,17 +618,17 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
 
                 if (player.getInventory().getFreeSlots() < 1) {
-                    player.getPA().sendMessage("You need atleast 1 free inventory space to level up!");
+                    player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
                     return;
                 }
-                if (player.getInventory().contains(12855, 250_000_000)) {
-                    player.getInventory().delete(12855, 250_000_000);
+                if (player.getInventory().contains(12855, 100_000_000)) {
+                    player.getInventory().delete(12855, 100_000_000);
                 }
-                else if (!player.getInventory().contains(12855,250_000_000)) {
-                    player.getPA().sendMessage("You need to sacrifice 250,000,000 Upgrade Tokens to level up!");
+                else if (!player.getInventory().contains(12855,100_000_000)) {
+                    player.getPA().sendMessage("You need to sacrifice 100,000,000 Upgrade Tokens to level up!");
                     return;
                 }
-                player.getPA().sendMessage("You sacrifice 250,000,000 upgrade tokens and Unlock Tier Magician Master of the Magic Guild.");
+                player.getPA().sendMessage("You sacrifice 100,000,000 upgrade tokens and Unlock Tier Magician Master of the Magic Guild.");
                 World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Magician Master @blu@of the @red@Magic Guild");
                 player.getPacketSender().sendInterfaceRemoval();
                 player.setMagicianMaster(true);
@@ -635,6 +636,88 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPA().sendMessage("<img=832>x1 Magician Pet scroll was added to your inventory");
                 player.getPA().sendMessage("<img=832> Your account has received a permanent 0.20% Magic Damage increase!");
                 break;
+
+
+
+            case 88342:
+                if (player.getPointsHandler().getForestArcherKC() < 25000) {
+                    player.getPA().sendMessage("You need 25,000 Forest Archer kills before sacrificing a Legends Dark bow.");
+                    return;
+                }
+
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
+                    return;
+                }
+                if (player.getInventory().contains(22113, 1)) {
+                    player.getInventory().delete(22113, 1);
+                }
+                else if (!player.getInventory().contains(22113)) {
+                    player.getPA().sendMessage("You need to sacrifice a Legends Dark bow to level up!");
+                    return;
+                }
+                player.getPA().sendMessage("You sacrifice 1 Legends Dark bow and unlock Tier 2 of the Archer Guild.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 2 @blu@of the @red@Archer Guild");
+                player.getPacketSender().sendInterfaceRemoval();
+                player.getPacketSender().sendInterface(88430);
+                player.setArcherGuildTier2(true);
+                player.getInventory().add(17718, 1);
+                player.getPA().sendMessage("<img=832> x1 Batman bow has been added to your inventory.");
+                break;
+
+            case 88442:
+                if (player.getPointsHandler().getChaoticArcherKC() < 50000) {
+                    player.getPA().sendMessage("You need 50,000 Chaotic Archer kills before sacrificing a Blood gun.");
+                    return;
+                }
+
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
+                    return;
+                }
+                if (player.getInventory().contains(23226, 1)) {
+                    player.getInventory().delete(23226, 1);
+                }
+                else if (!player.getInventory().contains(23226)) {
+                    player.getPA().sendMessage("You need to sacrifice a Blood gun to level up!");
+                    return;
+                }
+                player.getPA().sendMessage("You sacrifice your Blood gun and unlock Tier 3 of the Archer Guild.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 3 @blu@of the @red@Archer Guild");
+                player.getPacketSender().sendInterfaceRemoval();
+                player.getPacketSender().sendInterface(88530);
+                player.setArcherGuildTier3(true);
+                player.getInventory().add(23385, 1);
+                player.getPA().sendMessage("<img=832> x1 Lucky pendant has been added to your inventory.");
+                break;
+
+            case 88542:
+                if (player.getPointsHandler().getDivineArcherKC() < 75_000) {
+                    player.getPA().sendMessage("You need 75,000 Divine archer kills before sacrificing 100,000,000 upgrade tokens");
+                    return;
+                }
+
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
+                    return;
+                }
+                if (player.getInventory().contains(12855, 100_000_000)) {
+                    player.getInventory().delete(12855, 100_000_000);
+                }
+                else if (!player.getInventory().contains(12855,100_000_000)) {
+                    player.getPA().sendMessage("You need to sacrifice 100,000,000 Upgrade Tokens to level up!");
+                    return;
+                }
+                player.getPA().sendMessage("You sacrifice 100,000,000 upgrade tokens and Unlock Tier Archer Master of the Magic Guild.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Archer Master @blu@of the @red@Archer Guild");
+                player.getPacketSender().sendInterfaceRemoval();
+                player.setArcherMaster(true);
+                player.getInventory().add(23409, 1);
+                player.getPA().sendMessage("<img=832>x1 Archer Pet scroll was added to your inventory");
+                player.getPA().sendMessage("<img=832> Your account has received a permanent 0.20% Range Damage increase!");
+                break;
+
+
 
             case 8659:
                 Position smithingPos = new Position(2818,2609,0);
@@ -1077,6 +1160,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 19654:
                 PollCreation.resetPoll(player);
                 break;
+
             case 75003:
                 if (player.getDataGold() != null) {
                     if (player.get3x3() == true) {
@@ -1084,80 +1168,80 @@ public class ButtonClickPacketListener implements PacketListener {
                             player.sendMessage("Avalon lions can only be killed at ::train");
                             return;
                         }
-                        if (player.getData().getNpcid() == 9807 && player.getPointsHandler().getGROUDONKILLCount() <= 24999) {
+                        if (player.getDataGold().getNpcid() == 9807 && player.getPointsHandler().getGROUDONKILLCount() <= 24999) {
                             player.getPacketSender().sendMessage("You need 25,000 Ipotane kills. You currently have @red@"
                                     + player.getPointsHandler().getGROUDONKILLCount() + "@bla@ kills.");
                             return;
                         }
 
-                        if ( player.getData().getNpcid() == 8010 && player.getPointsHandler().getZEUSKILLCount() <= 14999) {
+                        if ( player.getDataGold().getNpcid() == 8010 && player.getPointsHandler().getZEUSKILLCount() <= 14999) {
                             player.getPacketSender().sendMessage("You need 15,000 Zeus kills. You currently have @red@"
                                     + player.getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
                             return;
                         }
 
-                        if (player.getData().getNpcid() == 203 && player.getPointsHandler().getSATANKILLCount() <= 4999) {
+                        if (player.getDataGold().getNpcid() == 203 && player.getPointsHandler().getSATANKILLCount() <= 4999) {
                             player.getPacketSender().sendMessage("You need 5,000 Subzero kills. You currently have @red@"
                                     + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 202 && player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
+                        if (player.getDataGold().getNpcid() == 202 && player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
                             player.getPacketSender().sendMessage("You need 3,500 Shenron kills. You currently have @red@"
                                     + player.getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 201 && player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
+                        if (player.getDataGold().getNpcid() == 201 && player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
                             player.getPacketSender().sendMessage("You need 2,500 Oni kills. You currently have @red@"
                                     + player.getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 3117 && player.getPointsHandler().getANGELKILLCount() <= 1499) {
+                        if (player.getDataGold().getNpcid() == 3117 && player.getPointsHandler().getANGELKILLCount() <= 1499) {
                             player.getPacketSender().sendMessage("You need 1,500 Wyvern kills. You currently have @red@"
                                     + player.getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 3308 &&  player.getPointsHandler().getAVATARKILLCount() <= 1199) {
+                        if (player.getDataGold().getNpcid() == 3308 &&  player.getPointsHandler().getAVATARKILLCount() <= 1199) {
                             player.getPacketSender().sendMessage("You need 1,200 Avatar kills. You currently have @red@"
                                     + player.getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 8008 &&  player.getPointsHandler().getKINGKILLCount() <= 999) {
+                        if (player.getDataGold().getNpcid() == 8008 &&  player.getPointsHandler().getKINGKILLCount() <= 999) {
                             player.getPacketSender().sendMessage("You need 1,000 Ripper kills. You currently have @red@"
                                     + player.getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 13635 && player.getPointsHandler().getBEASTKILLCount() <= 499) {
+                        if (player.getDataGold().getNpcid() == 13635 && player.getPointsHandler().getBEASTKILLCount() <= 499) {
                             player.getPacketSender().sendMessage("You need 500 Shetani kills. You currently have @red@"
                                     + player.getPointsHandler().getBEASTKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 8018 && player.getPointsHandler().getDRAGONKILLCount() <= 399) {
+                        if (player.getDataGold().getNpcid() == 8018 && player.getPointsHandler().getDRAGONKILLCount() <= 399) {
                             player.getPacketSender().sendMessage("You need 400 Golem kills. You currently have @red@"
                                     + player.getPointsHandler().getDRAGONKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 53 && player.getPointsHandler().getDEMONKILLCount() <= 299) {
+                        if (player.getDataGold().getNpcid() == 53 && player.getPointsHandler().getDEMONKILLCount() <= 299) {
                             player.getPacketSender().sendMessage("You need 300 Shadow kills. You currently have @red@"
                                     + player.getPointsHandler().getDEMONKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 12843 && player.getPointsHandler().getLORDKILLCount() <= 199) {
+                        if (player.getDataGold().getNpcid() == 12843 && player.getPointsHandler().getLORDKILLCount() <= 199) {
                             player.getPacketSender().sendMessage("You need 200 Lord kills. You currently have @red@"
                                     + player.getPointsHandler().getLORDKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 603 && player.getPointsHandler().getSPAWNKILLCount() <= 99) {
+                        if (player.getDataGold().getNpcid() == 603 && player.getPointsHandler().getSPAWNKILLCount() <= 99) {
                             player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
                                     + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
                             return;
                         }
-                        if (player.getData().getNpcid() == 9116 && !player.getMagicGuildTier1()) {
+                        if (player.getDataGold().getNpcid() == 9116 && !player.getMagicGuildTier1()) {
                             player.getPA().sendMessage("You need to have unlocked Tier 1 of the magician guild to instance this npc");
                             return;
-                        }		if (player.getData().getNpcid() == 9117 && !player.getMagicGuildTier2()) {
+                        } if (player.getDataGold().getNpcid() == 9117 && !player.getMagicGuildTier2()) {
                             player.getPA().sendMessage("You need to have unlocked Tier 2 of the magician guild to instance this npc");
                             return;
-                        }		if (player.getData().getNpcid() == 9118 && !player.getMagicGuildTier3()) {
+                        } if (player.getDataGold().getNpcid() == 9118 && !player.getMagicGuildTier3()) {
                             player.getPA().sendMessage("You need to have unlocked Tier 3 of the magician guild to instance this npc");
                             return;
                         }
@@ -1181,7 +1265,7 @@ public class ButtonClickPacketListener implements PacketListener {
                                 || player.getDataGold().getNpcid() == 1023
                                 || player.getDataGold().getNpcid() == 1233
                                 || player.getDataGold().getNpcid() == 1234) {
-                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getData().getNpcid(), player) > 500) {
+                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getDataGold().getNpcid(), player) > 500) {
                                 player.sendMessage("This place is for new players with less than 5k npc kills.");
                                 return;
                             }
@@ -1193,8 +1277,6 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPA().sendMessage("Select the boss you'd like to instance.");
                 }
                 break;
-
-
             case 71003:
                 if (player.getDataSlayer() != null) {
                         if (player.getDataSlayer().getNpcid() != player.getSlayer().getSlayerTask().getNpcId()) {

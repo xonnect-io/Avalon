@@ -175,7 +175,7 @@ public class PyramidOutbreak {
 					return 5664;
 				else if (random == 8)
 					return 8162;
-				return 5407;
+				return 8162;
 		}
 		return 76;
 	}

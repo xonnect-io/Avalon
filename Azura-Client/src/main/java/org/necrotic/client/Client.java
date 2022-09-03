@@ -19781,7 +19781,7 @@ public class Client extends GameRenderer {
                     }
                 }
             } else {
-                pushMessage("You need a Prayer level of atleast " + prayerLevelRequirements[index] + " to use " + prayerName[index] + ".", 0, "");
+                pushMessage("You need a Prayer level of at-least " + prayerLevelRequirements[index] + " to use " + prayerName[index] + ".", 0, "");
             }
         } else if (prayerInterfaceType == 32500) {
             if ((maxStats[5] / 10) >= curseLevelRequirements[index]) {
@@ -19805,7 +19805,7 @@ public class Client extends GameRenderer {
                     inputTaken = true;
                 }
             } else {
-                pushMessage("You need a Prayer level of atleast " + curseLevelRequirements[index] + " to use " + curseName[index] + ".", 0, "");
+                pushMessage("You need a Prayer level of at-least " + curseLevelRequirements[index] + " to use " + curseName[index] + ".", 0, "");
             }
         }
     }

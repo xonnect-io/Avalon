@@ -920,7 +920,7 @@ public class ItemDef4 {
 				itemDef.editedModelColor = new int[]{127};
 				break;
 			case 22110:
-				itemDef.name = "@red@Owner's Attachment";
+				itemDef.name = "Owner's Attachment";
 				itemDef2 = ItemDefinition.get(15287);
 				itemDef.modelOffsetX = itemDef2.modelOffsetX;
 				itemDef.modelOffsetY = itemDef2.modelOffsetY;
@@ -929,7 +929,7 @@ public class ItemDef4 {
 				itemDef.rotationX = itemDef2.rotationX;
 				itemDef.modelID = itemDef2.modelID;
 				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				itemDef.actions[4] = "Drop";
 				itemDef.rdc2 = 53921;
 				break;
 			case 22111:
@@ -1126,7 +1126,7 @@ public class ItemDef4 {
 				
 			case 22113:
 				itemDef.copyItem(11235);
-				itemDef.name = "Dark Legends Bow";
+				itemDef.name = "Legends Dark Bow";
 				itemDef.modelID = 17416;
 				itemDef.femaleEquip1 = 17460;
 				itemDef.maleEquip1 = 17460;
@@ -1140,7 +1140,7 @@ public class ItemDef4 {
 				break;
 				
 			case 22114:
-				itemDef.name = "Dark Legends Staff";
+				itemDef.name = "Legends Dark Staff";
 				itemDef.modelID = 17362;
 				itemDef.maleEquip1 = 17369;
 				itemDef.femaleEquip1 = 17369;
@@ -5069,7 +5069,7 @@ public class ItemDef4 {
 			case 12630:// super sayian
 				itemDef.copyItem(12608);
 				itemDef.name = "Donators Aura";
-				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 12610:// super sayian
 				itemDef.name = "SS-BLACK";

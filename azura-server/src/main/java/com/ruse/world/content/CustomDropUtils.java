@@ -318,22 +318,22 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23061)) { //Nephilim bow
             percentBoost += 40;
         }
-        if (player.getEquipment().contains(22114)) { //Dark legends staff
+        if (player.getEquipment().contains(22114)) { //Legends Dark staff
             percentBoost += 35;
         }
-        if (player.getEquipment().contains(22115)) { //Dark legends sword
+        if (player.getEquipment().contains(22115)) { //Legends Dark sword
             percentBoost += 35;
         }
-        if (player.getEquipment().contains(22113)) { //Dark legends bow
+        if (player.getEquipment().contains(22113)) { //Legends Dark bow
             percentBoost += 35;
         }
-        if (player.getEquipment().contains(17013)) { //Light legends staff
+        if (player.getEquipment().contains(17013)) { //Legends Light staff
             percentBoost += 30;
         }
-        if (player.getEquipment().contains(12537)) { //Light legends sword
+        if (player.getEquipment().contains(12537)) { //Legends Light sword
             percentBoost += 30;
         }
-        if (player.getEquipment().contains(5011)) { //Light legends bow
+        if (player.getEquipment().contains(5011)) { //Legends Light bow
             percentBoost += 30;
         }
         if (player.getEquipment().contains(3260)) { //Supreme blade

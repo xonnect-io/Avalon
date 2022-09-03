@@ -175,7 +175,7 @@ public enum Collection {
 
     EXTREME(Player.EXTREME_BOXES_OPENED, LogType.BOXES, "Extreme Mystery Box", new int[] {CollectionLog.EXTREME}, Player.EXTREME_BOX_LOG_CLAIMED, new Item[] { new Item(19114,50) },
             new Item(15442), new Item(15443), new Item(15444), new Item(18351), new Item(18349), new Item(18353),
-            new Item(6500), new Item(13740), new Item(20535), new Item(19136), new Item(6936), new Item(666),
+            new Item(6500), new Item(13740), new Item(22077), new Item(19136), new Item(6936), new Item(666),
             new Item(15424), new Item(674), new Item(8800), new Item(8803), new Item(8806), new Item(8801),
             new Item(8804), new Item(8807), new Item(8802), new Item(8805), new Item(8808), new Item(20549),
             new Item(20173), new Item(8809), new Item(10946)),
@@ -256,7 +256,7 @@ public enum Collection {
             new Item(9479), new Item(9480)),
     RAID_BOX(Player.RAID_BOXES_OPENED, LogType.BOXES, "Raid box", new int[] {CollectionLog.RAID_BOX}, Player.RAID_BOX_LOG_CLAIMED, new Item[] { new Item(23370,5) },
             new Item(12855), new Item(19116), new Item(8800), new Item(8801), new Item(8802), new Item(8803),
-            new Item(8804), new Item(8805), new Item(8806), new Item(8807), new Item(8808), new Item(20535),
+            new Item(8804), new Item(8805), new Item(8806), new Item(8807), new Item(8808), new Item(22077),
             new Item(19136), new Item(6936), new Item(15289), new Item(19115), new Item(8326), new Item(8327),
             new Item(8328), new Item(22084), new Item(8330), new Item(8331), new Item(8332), new Item(22083),
             new Item(8323), new Item(8324),new Item(8325), new Item(22092),new Item(10025), new Item(20488),

@@ -25,7 +25,7 @@ public class SlayerInstanceInterfaceHandler {
 	}
 
 	public void sendBossNames() {
-		int startID = 48071;
+		int startID = 48171;
 		for (SlayerInstanceData dataSlayer : dataSlayer) {
 			player.getPA().sendString(startID++, dataSlayer.getName());
 		}

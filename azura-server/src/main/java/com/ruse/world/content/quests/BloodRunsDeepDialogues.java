@@ -844,25 +844,64 @@ public class BloodRunsDeepDialogues {
                                     player.getBank(0).add(21218, 10);
                                     player.getBank(0).add(19116, 5);
                                     player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@Blood Runs Deep");
-                                    player.getPacketSender().sendMessage("<img=832> Your rewarded 2 Quest points");
                                     player.getPointsHandler().setQuestPoints(2, true);
                                     player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your bank.");
-                                    player.getPacketSender().sendMessage("<img=832> Your @red@Holy Amulet @bla@will now give a @red@25% DR Boost");
+                                    for (int i = 8145; i < 8245; i++)
+                                        player.getPacketSender().sendString(i, "");
+                                    player.getPacketSender().sendInterface(8134);
+                                    player.getPacketSender().sendString(8136, "Close window");
+                                    player.getPacketSender().sendString(8144, "Blood Runs Deep");
+                                    player.getPacketSender().sendString(8145, "");
+                                    int index = 8147;
+                                    String color = "@dre@";
+                                    String color1 = "@red@";
+
+                                    player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
+                                    player.getPacketSender().sendString(index++, color + "Rewards:");
+                                    player.getPacketSender().sendString(index++, color + "@blu@2 @bla@Quest points");
+                                    player.getPacketSender().sendString(index++, color + "@blu@5 @bla@Super Mystery boxes");
+                                    player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
+                                    player.getPacketSender().sendString(index++, color + "@bla@Your Holy Amulet will now give a @blu@25% DR Boost");
+
+                                    if (player.getAmountDonated() < 10 && player.getRights() != PlayerRights.OWNER) {
+                                        player.getPacketSender().sendString(index++, color + "@bla@Your account has been promoted to @blu@Sapphire Donator");
+                                    }
+                                    player.getPacketSender().sendString(index++, color + "");
                                 }
+
                                 if (player.getGameMode().isUltIronman()) {
                                     player.getInventory().add(21218, 10);
                                     player.getInventory().add(19116, 5);
                                     player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@Blood Runs Deep");
-                                    player.getPacketSender().sendMessage("<img=832> Your rewarded 2 Quest points");
                                     player.getPointsHandler().setQuestPoints(2, true);
                                     player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your inventory .");
-                                    player.getPacketSender().sendMessage("<img=832> Your @red@Holy Amulet @bla@will now give a @red@25% DR Boost");
+                                    for (int i = 8145; i < 8245; i++)
+                                        player.getPacketSender().sendString(i, "");
+                                    player.getPacketSender().sendInterface(8134);
+                                    player.getPacketSender().sendString(8136, "Close window");
+                                    player.getPacketSender().sendString(8144, "Blood Runs Deep");
+                                    player.getPacketSender().sendString(8145, "");
+                                    int index = 8147;
+                                    String color = "@dre@";
+                                    String color1 = "@red@";
+
+                                    player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
+                                    player.getPacketSender().sendString(index++, color + "Rewards:");
+                                    player.getPacketSender().sendString(index++, color + "@blu@2 @bla@Quest points");
+                                    player.getPacketSender().sendString(index++, color + "@blu@5 @bla@Super Mystery boxes");
+                                    player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
+                                    player.getPacketSender().sendString(index++, color + "@bla@Your Holy Amulet will now give a @blu@25% DR Boost");
+
+                                    if (player.getAmountDonated() < 10 && player.getRights() != PlayerRights.OWNER) {
+                                        player.getPacketSender().sendString(index++, color + "@bla@Your account has been promoted to @blu@Sapphire Donator");
+                                    }
+                                    player.getPacketSender().sendString(index++, color + "");
                                 }
                                 if (player.getQuestOneStep7() == false) {
                                     if (player.getAmountDonated() < 10 && player.getRights() != PlayerRights.OWNER) {
                                         player.incrementAmountDonated(10);
                                         player.setRights(PlayerRights.SAPPHIRE_DONATOR);
-                                        player.getPacketSender().sendMessage("<img=832> You have obtained free Sapphire Donator rank status for completing a quest.");
+                                        player.getPacketSender().sendMessage("<img=832> You have obtained free Sapphire Donator rank status for completing the quest.");
                                     }
                                 }
                                 player.setQuestOneStep7(true);

@@ -175,7 +175,6 @@ public final class WeaponAnimations {
 		case 15888:
 		case 18750:
 		case 20534:
-		case 20535:
 		case 20536:
 		case 20537:
 		case 20538:

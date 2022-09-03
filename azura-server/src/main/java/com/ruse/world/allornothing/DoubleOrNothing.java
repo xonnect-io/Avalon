@@ -35,7 +35,7 @@ public class DoubleOrNothing {
 	 */
 	public static void open(Player c) {
 		if (c.getInventory().getFreeSlots() == 0) {
-			c.sendMessage("Please have atleast 1 free inventory slot before doing this!");
+			c.sendMessage("Please have at-least 1 free inventory slot before doing this!");
 			return;
 		}
 

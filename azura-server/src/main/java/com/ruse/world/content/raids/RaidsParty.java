@@ -70,17 +70,16 @@ public class RaidsParty {
             getOwner().getPacketSender().sendMessage("You cannot invite anyone right now.");
             return;
         }
+        if (getOwner().getLocation() != null && getOwner().getLocation() == Locations.Location.SOD_LOBBY
+                && p.getPointsHandler().getZombieRaidKC() < 100) {
+            getOwner().getPacketSender().sendMessage("This player does not have 100 Legend Raid KC");
+            return;
+        }
         if (player_members.size() >= 12) {
             getOwner().getPacketSender().sendMessage("Your party is full.");
             return;
         }
-        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY || p.isTeleporting()) {
-            getOwner().getPacketSender().sendMessage("That player is not in Raids.");
-            return;
-        } else if (p.getLocation() != Locations.Location.SOD_LOBBY || p.isTeleporting()) {
-            getOwner().getPacketSender().sendMessage("That player is not in Raids.");
-            return;
-        }
+
         if (player_members.contains(p)) {
             getOwner().getPacketSender().sendMessage("That player is already in your party.");
             return;
@@ -123,9 +122,6 @@ public class RaidsParty {
         }
         if (hasEnteredDungeon) {
             p.getPacketSender().sendMessage("This party has already entered a dungeon.");
-            return;
-        }
-        if (p.getLocation() != Locations.Location.ZOMBIE_LOBBY||p.isTeleporting()) {
             return;
         }
 

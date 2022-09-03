@@ -227,7 +227,7 @@ public class TeleportInterfaceHandler {
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return; }
 		}
-		if (player.getCurrentTeleport().getNpcId() == 1508) {
+		if (player.getCurrentTeleport().getNpcId() == 1458) {
 			if (player.getRights() == PlayerRights.OWNER) {
 				player.setArcherGuildTier1(true);
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
@@ -302,13 +302,13 @@ public class TeleportInterfaceHandler {
 					player.sendMessage("@red@Congratulations, you have unlocked Midnight Goblin's zone!");
 				} else {
 					player.sendMessage(""); player.sendMessage("You do not have the requirements to unlock Midnight Goblins!");
-					player.sendMessage("You need to sacrifice a Legends Light bow, sword, and staff!");
+					player.sendMessage("You need to sacrifice a Legends Light bow, scythe, and staff!");
 					player.sendMessage("@red@Try again with these items in your inventory!");
 					return;
 				}
 			}
 		}
-
+/*
 		if (player.getCurrentTeleport().getNpcId() == 9106) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
@@ -319,7 +319,7 @@ public class TeleportInterfaceHandler {
 				player.sendMessage("You need to have completed x 100 Legend raids to teleport here!");
 			}
 			return;
-		}
+		}*/
 
 		if (player.getCurrentTeleport().getNpcId() == 9012) {
 			if (player.getRights() == PlayerRights.OWNER)

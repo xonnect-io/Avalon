@@ -43,7 +43,7 @@ public class VaultOfWar {
     public static void enterEasternDungeon(Player player) {
         if (player.getPosition().getX() >= 1764 &&
                 !player.getInventory().contains(TOKEN_ID) && player.getInventory().getAmount(TOKEN_ID) < 100) {
-            player.sendMessage("You need atleast 100 tokens to do this!");
+            player.sendMessage("You need at-least 100 tokens to do this!");
             return;
         }
         if (player.getPosition().getX() >= 1764) {

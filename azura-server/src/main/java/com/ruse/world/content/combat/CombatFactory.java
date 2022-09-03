@@ -1542,7 +1542,20 @@ public final class CombatFactory {
                     return false;
                 }
             }
-
+            else if (npc.getId() == 9128) { // Evil cook
+                if (player.getQuestTwoStep4() == false) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You need to warn the Duke Horacio upstairs of Lumbridge first!");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+                else if (player.getQuestTwoStep5() == true) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("You already defeated the Evil Cook! Tell Duke Horacio!");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
             else if (npc.getId() == 587) { // Ironman
                 if (!player.getGameMode().isIronman()) {
                     ((Player) entity).getPacketSender()

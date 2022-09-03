@@ -22,8 +22,12 @@ public class Afking {
 
             player.getCharacterAnimations().setStandingAnimation(chairanimation);
             if (player.getRights() == PlayerRights.OWNER) {
-                player.throneId = 1099;
+                player.throneId = 13671;
             }
+            if (player.getUsername().equalsIgnoreCase("avalon")) {
+                player.throneId = 1105;
+            }
+
             if (player.getRights() == PlayerRights.SUPPORT || player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR) {
                 player.throneId = 1098;
             }

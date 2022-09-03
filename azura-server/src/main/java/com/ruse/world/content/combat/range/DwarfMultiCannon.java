@@ -93,7 +93,7 @@ public class DwarfMultiCannon {
 
 	public static boolean canSetupCannon(Player c) {
 		if (c.getSkillManager().getCurrentLevel(Skill.RANGED) < 75) {
-			c.getPacketSender().sendMessage("You need a Ranged level of atleast 75 to setup the dwarf-cannon.");
+			c.getPacketSender().sendMessage("You need a Ranged level of at-least 75 to setup the dwarf-cannon.");
 			return false;
 		}
 		if (!c.getInventory().contains(CANNON_BASE_ID) || !c.getInventory().contains(CANNON_STAND_ID)

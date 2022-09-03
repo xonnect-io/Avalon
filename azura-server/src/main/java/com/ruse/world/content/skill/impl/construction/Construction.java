@@ -1698,7 +1698,7 @@ public class Construction {
 					portalAmt++;
 			}
 			if (portalAmt < 2) {
-				p.getPacketSender().sendMessage("You need atleast 1 exit portal in your house");
+				p.getPacketSender().sendMessage("You need at-least 1 exit portal in your house");
 				return true;
 			}
 		}
@@ -2137,7 +2137,7 @@ public class Construction {
 				}
 			}
 			if (gardenAmt < 2) {
-				p.getPacketSender().sendMessage("You need atleast 1 garden or formal garden");
+				p.getPacketSender().sendMessage("You need at-least 1 garden or formal garden");
 				p.getPacketSender().sendInterfaceRemoval();
 				return;
 			}

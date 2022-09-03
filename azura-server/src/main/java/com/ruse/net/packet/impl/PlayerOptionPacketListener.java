@@ -89,7 +89,7 @@ public class PlayerOptionPacketListener implements PacketListener {
 
 		}
 
-		if (player.getLocation() == Location.ZOMBIE_LOBBY) {
+		if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
 			player.setEntityInteraction(attacked);
 			if (attacked.getIndex() != player.getIndex()) {
 				if (player.getRaidsParty() != null && player.getRaidsParty().getOwner().equals(player)) {

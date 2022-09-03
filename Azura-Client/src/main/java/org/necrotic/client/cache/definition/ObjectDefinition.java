@@ -224,7 +224,15 @@ public final class ObjectDefinition {
 			definition.name = "AFK Sapphire";
 			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
-		
+		if (definition.type == 13671) {
+			definition.interactive = false;
+			definition.actions = new String[]{null, null, null, null, null};
+		}
+		if (definition.type == 1105) {
+			definition.objectModelIDs = new int[]{19598};
+			definition.interactive = true;
+			definition.name = "Avalon's Throne";
+		}
 		if (definition.type == 22098) {
 			definition.objectModelIDs = new int[]{15574};
 			definition.modelSizeY = 135;

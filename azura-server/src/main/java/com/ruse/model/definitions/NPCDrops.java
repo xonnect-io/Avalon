@@ -211,6 +211,7 @@ public class NPCDrops {
             int reward = 19000;
             int rand = Misc.getRandom(40);
             if (rand == 1) {
+                if (player.dropMessageToggle)
                     player.getPacketSender().sendMessage("X1 Pet Fragment has been sent to your inventory.");
                 player.getInventory().add(reward, 1);
                 }
@@ -219,6 +220,7 @@ public class NPCDrops {
         int reward = 4278;
         int rand = Misc.getRandom(60);
         if (rand == 1) {
+            if (player.dropMessageToggle)
             player.getPacketSender().sendMessage("X1 Instance token has been sent to your inventory.");
             player.getInventory().add(reward, 1);
         }

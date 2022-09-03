@@ -9,7 +9,7 @@ public class InviteRaidsPlayer extends Input {
 
 	@Override
 	public void handleSyntax(Player player, String plrToInvite) {
-		if (player.getLocation() == Locations.Location.ZOMBIE_LOBBY) {
+		if (player.getLocation() == Locations.Location.ZOMBIE_LOBBY || player.getLocation() == Locations.Location.SOD_LOBBY ) {
 
 			player.getPacketSender().sendInterfaceRemoval();
 			Player invite = World.getPlayerByName(plrToInvite);

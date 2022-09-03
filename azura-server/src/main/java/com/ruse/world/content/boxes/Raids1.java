@@ -17,7 +17,7 @@ public class Raids1 {
             new Box(8806, 1, 33),
             new Box(8807, 1, 33),
             new Box(8808, 1, 33),
-            new Box(20535, 1, 33),
+            new Box(22077, 1, 33),
             new Box(19136, 1, 33),
             new Box(6936, 1, 33),
             new Box(15289, 1, 33),

@@ -1727,8 +1727,8 @@ public class RSInterface {
 		addText(71507, "You need requirements for each tier", tda, 1, 0xff8624, false, true);
 		addText(71508, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
 		addText(71509, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
-		addText(71510, "@red@Magician Master", tda, 1, 0xff8624, false, true);
-		addText(71511, "@red@Sacrifice x250 Suffered Crystals", tda, 1, 0xff8624, false, true);
+		addText(71510, "@red@50k Bork KC", tda, 1, 0xff8624, false, true);
+		addText(71511, "@red@Sacrifice x1 Light Scythe of Vitur", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(71512, 1445, 132, 29, "Sacrifice", -1, 71513, 1);
 		addHoveredImageWSpriteLoader(71513, 1446, 132, 29, 71514);
 
@@ -1765,7 +1765,7 @@ public class RSInterface {
 		addText(71525, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
 		addText(71526, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(71527, "@red@- 25,000 Lesarkus Warrior KC", tda, 1, 0xff8624, false, true);
-		addText(71528, "@red@- Sacrifice x1 Blood Attachment", tda, 1, 0xff8624, false, true);
+		addText(71528, "@red@- Sacrifice x1 Dark Scythe of Vitur", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(71538, 1659);
 		addSpriteLoader(71539, 1658);
 		addSpriteLoader(71540, 1658);
@@ -1814,7 +1814,7 @@ public class RSInterface {
 		addText(71565, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
 		addText(71566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(71567, "@red@- 50,000 Fatal Warrior KC", tda, 1, 0xff8624, false, true);
-		addText(71568, "@red@- Sacrifice x1 Owner Fragment", tda, 1, 0xff8624, false, true);
+		addText(71568, "@red@- Sacrifice x1 Blood Scythe of Vitur", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(71578, 1658);
 		addSpriteLoader(71579, 1659);
 		addSpriteLoader(71580, 1658);
@@ -1865,7 +1865,7 @@ public class RSInterface {
 		addText(80565, "Next Tier: @whi@Warrior Master", tda, 1, 0xff8624, false, true);
 		addText(80566, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(80567, "@red@- 75,000 Immortal Warrior KC", tda, 1, 0xff8624, false, true);
-		addText(80568, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
+		addText(80568, "@red@- Sacrifice 100m Upgrade Tokens", tda, 1, 0xff8624, false, true);
 
 
 		addSpriteLoader(80578, 1658);
@@ -1918,8 +1918,8 @@ public class RSInterface {
 		addText(88137, "You need requirements for each tier", tda, 1, 0xff8624, false, true);
 		addText(88138, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
 		addText(88139, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
-		addText(88140, "@red@Warrior Master", tda, 1, 0xff8624, false, true);
-		addText(88141, "@red@Sacrifice 10,000 Celestial Energy", tda, 1, 0xff8624, false, true);
+		addText(88140, "@red@50k Bork KC", tda, 1, 0xff8624, false, true);
+		addText(88141, "@red@Sacrifice x1 Legends Light Bow", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(88142, 1445, 132, 29, "Sacrifice", -1, 88143, 1);
 		addHoveredImageWSpriteLoader(88143, 1446, 132, 29, 88144);
 
@@ -1955,8 +1955,8 @@ public class RSInterface {
 		addText(88334, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(88335, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
 		addText(88336, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(88337, "@red@- 25,000 Faceless Magician KC", tda, 1, 0xff8624, false, true);
-		addText(88338, "@red@- Sacrifice a Dark weapon", tda, 1, 0xff8624, false, true);
+		addText(88337, "@red@- 25,000 Forest Archer KC", tda, 1, 0xff8624, false, true);
+		addText(88338, "@red@- Sacrifice a Legends Dark bow", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(88348, 1659);
 		addSpriteLoader(88349, 1658);
 		addSpriteLoader(88350, 1658);
@@ -2005,8 +2005,8 @@ public class RSInterface {
 		addText(88434, "Reward for Next Tier", tda, 2, 0xff8624, true, true);
 		addText(88435, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
 		addText(88436, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
-		addText(88437, "@red@- 50,000 Lotus Magician KC", tda, 1, 0xff8624, false, true);
-		addText(88438, "@red@- Sacrifice a Blood weapon", tda, 1, 0xff8624, false, true);
+		addText(88437, "@red@- 50,000 Chaotic Arhcer KC", tda, 1, 0xff8624, false, true);
+		addText(88438, "@red@- Sacrifice a Blood gun", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(88448, 1658);
 		addSpriteLoader(88449, 1659);
 		addSpriteLoader(88450, 1658);
@@ -2054,7 +2054,7 @@ public class RSInterface {
 		addText(88535, "Next Tier: @whi@Archer Master", tda, 1, 0xff8624, false, true);
 		addText(88536, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(88537, "@red@- 75,000 Shadow Magician KC", tda, 1, 0xff8624, false, true);
-		addText(88538, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
+		addText(88538, "@red@- Sacrifice 100m Upgrade Tokens", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(88548, 1658);
 		addSpriteLoader(88549, 1658);
 		addSpriteLoader(88550, 1659);
@@ -2103,7 +2103,7 @@ public class RSInterface {
 		addText(77138, "Completing each tier provides rewards", tda, 1, 0xff8624, false, true);
 		addText(77139, "Completing tier 3 provides a bonus.", tda, 1, 0xff8624, false, true);
 		addText(77140, "@red@50k Bork KC", tda, 1, 0xff8624, false, true);
-		addText(77141, "@red@Sacrifice x 1 of EACH Light Weapon", tda, 1, 0xff8624, false, true);
+		addText(77141, "@red@Sacrifice x1 Legends Light staff", tda, 1, 0xff8624, false, true);
 		addHoverButtonWSpriteLoader(77142, 1445, 132, 29, "Sacrifice", -1, 77143, 1);
 		addHoveredImageWSpriteLoader(77143, 1446, 132, 29, 77144);
 
@@ -2140,7 +2140,7 @@ public class RSInterface {
 		addText(77335, "Next Tier: @whi@2", tda, 1, 0xff8624, false, true);
 		addText(77336, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(77337, "@red@- 25,000 Faceless Magician KC", tda, 1, 0xff8624, false, true);
-		addText(77338, "@red@- Sacrifice a Dark weapon", tda, 1, 0xff8624, false, true);
+		addText(77338, "@red@- Sacrifice x1 Legends Dark staff", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(77348, 1659);
 		addSpriteLoader(77349, 1658);
 		addSpriteLoader(77350, 1658);
@@ -2190,7 +2190,7 @@ public class RSInterface {
 		addText(77435, "Next Tier: @whi@3", tda, 1, 0xff8624, false, true);
 		addText(77436, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(77437, "@red@- 50,000 Lotus Magician KC", tda, 1, 0xff8624, false, true);
-		addText(77438, "@red@- Sacrifice a Blood weapon", tda, 1, 0xff8624, false, true);
+		addText(77438, "@red@- Sacrifice x1 Legends Blood staff", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(77448, 1658);
 		addSpriteLoader(77449, 1659);
 		addSpriteLoader(77450, 1658);
@@ -2238,7 +2238,7 @@ public class RSInterface {
 		addText(77535, "Next Tier: @whi@Magic Master", tda, 1, 0xff8624, false, true);
 		addText(77536, "Requirements for next tier:", tda, 1, 0xff8624, false, true);
 		addText(77537, "@red@- 75,000 Shadow Magician KC", tda, 1, 0xff8624, false, true);
-		addText(77538, "@red@- Sacrifice 250m Upgrade Tokens", tda, 1, 0xff8624, false, true);
+		addText(77538, "@red@- Sacrifice 100m Upgrade Tokens", tda, 1, 0xff8624, false, true);
 		addSpriteLoader(77548, 1658);
 		addSpriteLoader(77549, 1658);
 		addSpriteLoader(77550, 1659);
@@ -3256,13 +3256,13 @@ public class RSInterface {
 		int npcList = 13;
 		int y = 1;
 		for (int i = 0; i < npcList; i++) {
-			RSInterface.addText(48071 + i, "boss", tda, 1, ClientConstants.ORANGE, false, false, ClientConstants.WHITE, "Select", 150);
+			RSInterface.addText(48171 + i, "boss", tda, 1, ClientConstants.ORANGE, false, false, ClientConstants.WHITE, "Select", 150);
 
 		}
 		RSInterface.setChildren(npcList, scrollTableft);
 
 		for (int i = 0; i < npcList; i++) {
-			scrollTableft.child(i, 48071 + i, 0, y);
+			scrollTableft.child(i, 48171 + i, 0, y);
 			y += 15;
 		}
 

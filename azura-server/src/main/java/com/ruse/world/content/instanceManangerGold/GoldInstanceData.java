@@ -15,7 +15,7 @@ public enum GoldInstanceData {
 			"Ember Giant",new Position(2758, 4743), RegionInstanceType.KINGS),
 	TREE_BASILISK(125072, 1718, "Tree Basilisk", 35, new int[] { 19624 },
 			"Tree Basilisk",new Position(2758, 4743), RegionInstanceType.KINGS),
-	BAT_OF_LIGHT(125073, 9836, "Bat of light", 35, new int[] { 19624 },
+	AQUANITE(125073, 9172, "Aquanite", 35, new int[] { 19624 },
 			"Bat of light",new Position(2758, 4743), RegionInstanceType.KINGS),
 	GIANT_SPIDER(125074, 117, "Arachne", 35, new int[] { 19624 },
 			"Arachne",new Position(2758, 4743), RegionInstanceType.KINGS),

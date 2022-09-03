@@ -3,7 +3,8 @@ package com.ruse.engine.task.impl;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.engine.task.impl.globalevents.GlobalEventBossTask;
-import com.ruse.model.*;
+import com.ruse.model.Animation;
+import com.ruse.model.DamageDealer;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.motivote3.doMotivote;
@@ -227,7 +228,7 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == 1718) {
                             killer.getAchievementTracker().progress(AchievementData.RANGE_NPCS, 1);
                         }
-                        if (npc.getId() == 9836) {
+                        if (npc.getId() == 9172) {
                             killer.getAchievementTracker().progress(AchievementData.MAGIC_NPCS, 1);
                         }
                         if (npc.getId() == 117) {
@@ -428,6 +429,7 @@ public class NPCDeathTask extends Task {
                         killer.getSlayer().killedNpc(npc);
 
                         if (npc.getId() == killer.getSlayer().getSlayerTask().getNpcId() && Misc.getRandom(25) == 5) {
+                            if (killer.dropMessageToggle)
                             killer.getPacketSender().sendMessage("X1 @mag@<shad=2>Instance token (s) </shad>@bla@has been sent to your inventory.");
                             killer.getInventory().add(23408, 1);
                         }

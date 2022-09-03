@@ -71,7 +71,7 @@ public class Gems {
 			return;
 		if (player.getSkillManager().getMaxLevel(Skill.CRAFTING) < data.getLevelReq()) {
 			player.getPacketSender()
-					.sendMessage("You need a Crafting level of atleast " + data.getLevelReq() + " to craft this gem.");
+					.sendMessage("You need a Crafting level of at-least " + data.getLevelReq() + " to craft this gem.");
 			return;
 		}
 		player.setSelectedSkillingItem(gem);

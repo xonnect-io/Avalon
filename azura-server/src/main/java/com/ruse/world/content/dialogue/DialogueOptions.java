@@ -1507,7 +1507,7 @@ public class DialogueOptions {
                     break;
                 case 67:
                     player.getPacketSender().sendInterfaceRemoval();
-                    if (player.getLocation() == Location.ZOMBIE_LOBBY
+                    if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY
                             && player.getRaidsParty() == null) {
                         if (player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null) {
                             player.getMinigameAttributes().getZombieAttributes().getPartyInvitation().add(player);
@@ -1878,7 +1878,7 @@ public class DialogueOptions {
                     break;
                 case 67:
                     player.getPacketSender().sendInterfaceRemoval();
-                    if (player.getLocation() == Location.ZOMBIE_LOBBY
+                    if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY
                             && player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null
                             && player.getMinigameAttributes().getZombieAttributes().getPartyInvitation()
                             .getOwner() != null) {

@@ -447,7 +447,7 @@ public final class MobDefinition {
 				definition.npcModels = get(12810).npcModels;
 				definition.combatLevel = 0;
 				definition.name = "Boss Slayer Master";
-				definition.actions = new String[]{"Talk-To", null, "Get-Task", "Trade", "Canel-Task"};
+				definition.actions = new String[]{"Talk-To", null, "Get-Task", "Trade", "Cancel-Task"};
 				definition.standAnimation = get(12810).standAnimation;
 				definition.walkAnimation = get(12810).walkAnimation;
 				definition.npcSizeInSquares = 1;
@@ -4988,7 +4988,7 @@ public final class MobDefinition {
 
 				break;
 			case 9172:
-				definition.rdc2 = 9929;
+				//definition.rdc2 = 229929;
 				break;
 			case 4999:
 				definition.name = "Archie @gre@(Ranger)";
@@ -5531,6 +5531,10 @@ public final class MobDefinition {
 				definition.scaleY = 200;
 				definition.name = "Evil cook";
 				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.rdc2 = 800;
+				break;
+
+			case 677:
 				definition.rdc2 = 800;
 				break;
 

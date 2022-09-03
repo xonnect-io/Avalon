@@ -120,7 +120,7 @@ public enum CookingData {
 			return false;
 		if (player.getSkillManager().getMaxLevel(Skill.COOKING) < fish.getLevelReq()) {
 			player.getPacketSender()
-					.sendMessage("You need a Cooking level of atleast " + fish.getLevelReq() + " to cook this.");
+					.sendMessage("You need a Cooking level of at-least " + fish.getLevelReq() + " to cook this.");
 			return false;
 		}
 		if (!player.getInventory().contains(id)) {

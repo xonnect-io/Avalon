@@ -303,6 +303,7 @@ public class SODRaids {
 
                     double amt = drop.getMin() + Misc.getRandom(drop.getMax() - drop.getMin());
 
+                    player.sendMessage("Souls of Suffering raids completed: @red@" + player.getSODRaidsKC());
                     player.getInventory().add(new Item(drop.getId(), (int) amt));
                     player.sendMessage("<shad=1>@yel@You have received X" + (int) amt + " "+ ItemDefinition.forId(drop.getId()).getName() + " for your participation!" );
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {

@@ -375,6 +375,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 break;
                             case 10251:
+                                if (player.getPointsHandler().getZombieRaidKC() < 100) {
+                                    player.getPacketSender().sendMessage("You need 100 Legend Raids Completed before joining Souls of Suffering.");
+                                    return;
+                                }
                                 if (player.getLocation() == Location.SOD_LOBBY) {
                                     CurseHandler.deactivateAll(player);
                                     if (player.getRaidsParty() != null) {
@@ -400,8 +404,8 @@ public class ObjectActionPacketListener implements PacketListener {
                                         DialogueManager.start(player, 7126);
                                     }
                                 }
-                                if (player.getLocation() == Location.ZOMBIE_LOBBY) {
-                                    CurseHandler.deactivateAll(player);
+                                if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
+                                CurseHandler.deactivateAll(player);
                                     if (player.getRaidsParty() != null) {
                                         if (player.getRaidsParty().getOwner().equals(player)) {
                                             player.setDialogueActionId(2012);
@@ -2016,17 +2020,38 @@ public class ObjectActionPacketListener implements PacketListener {
                                 Hunter.lootTrap(player, gameObject);
                                 break;
                             case 13493:
-                                if (!player.getRights().isMember()) {
-                                    player.getPacketSender().sendMessage("You must be a Member to use this.");
-                                    return;
-                                }
                                 double c = Math.random() * 100;
                                 int reward = c >= 70 ? 13003
                                         : c >= 45 ? 4131
                                         : c >= 35 ? 1113
                                         : c >= 25 ? 1147
                                         : c >= 18 ? 1163 : c >= 12 ? 1079 : c >= 5 ? 1201 : 1127;
-                                Stalls.stealFromStall(player, gameObject, 95, 121, new Item(reward), "You stole some rune equipment.");
+                                if (!player.getClickDelay().elapsed(2500))
+                                    return;
+
+                                if (player.getSkillManager().getMaxLevel(Skill.THIEVING) < 99) {
+                                    player.getPacketSender().sendMessage(
+                                            "You need a Thieving level of at least 95 to steal from this stall.");
+                                    return;
+                                }
+                                if (player.getInventory().getFreeSlots() < 1) {
+                                    player.getPacketSender().sendMessage("You don't have enough inventory spaces.");
+                                    return;
+                                }
+                                player.performAnimation(new Animation(881));
+                                player.getPacketSender().sendInterfaceRemoval();
+                                player.getSkillManager().addExperience(Skill.THIEVING, 100);
+                                player.getAchievementTracker().progress(AchievementData.THIEVING, 1);
+                                player.getAchievementTracker().progress(AchievementData.THIEVER, 1);
+                                player.getAchievementTracker().progress(AchievementData.KLEPTOMANIAC, 1);
+                                player.getClickDelay().reset();
+                                player.getInventory().add(reward, 1).add(995, 7500);
+                                player.getPacketSender().sendMessage("You steal a "+ ItemDefinition.forId(reward).getName());
+                                if (Misc.getRandom(100) == 25) {
+                                    player.getSkillManager().addExperience(Skill.THIEVING, player.getSkillManager().getExperience(Skill.THIEVING) / 265);
+                                    player.getPacketSender().sendMessage("You hit the sweet spot and earned " + Misc.insertCommasToNumber(player.getSkillManager().getExperience(Skill.THIEVING) / 2) + " Thieving experience.");
+                                }
+
                                 break;
                             case 22772:
                                 Stalls.stealFromStall(player, gameObject, 1, 50, new Item(ItemDefinition.COIN_ID, 1000 + Misc.getRandom(4000)), "You stole some coins.");
@@ -2329,7 +2354,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getClickDelay().reset();
                                 player.getInventory().add(18199, 1).add(995, 1000);
                                 player.getPacketSender().sendMessage("You steal a banana");
-
+                                if (Misc.getRandom(100) == 25) {
+                                    player.getSkillManager().addExperience(Skill.THIEVING, player.getSkillManager().getExperience(Skill.THIEVING) / 265);
+                                    player.getPacketSender().sendMessage("You hit the sweet spot and earned " + Misc.insertCommasToNumber(player.getSkillManager().getExperience(Skill.THIEVING) / 2) + " Thieving experience.");
+                                }
                                 break;
 
                             case 4874:
@@ -2353,7 +2381,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getClickDelay().reset();
                                 player.getInventory().add(15009, 1).add(995, 2000);
                                 player.getPacketSender().sendMessage("You steal a golden ring");
-                                // Stalls.stealFromStall(player, 30, 34, 15009, "You steal a golden ring.");
+                                if (Misc.getRandom(100) == 25) {
+                                    player.getSkillManager().addExperience(Skill.THIEVING, player.getSkillManager().getExperience(Skill.THIEVING) / 265);
+                                    player.getPacketSender().sendMessage("You hit the sweet spot and earned " + Misc.insertCommasToNumber(player.getSkillManager().getExperience(Skill.THIEVING) / 2) + " Thieving experience.");
+                                }
                                 break;
 
                             case 1333:
@@ -2405,7 +2436,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getClickDelay().reset();
                                 player.getInventory().add(17401, 1).add(995, 3000);
                                 player.getPacketSender().sendMessage("You steal a damaged hammer");
-                                // Stalls.stealFromStall(player, 60, 57, 17401, "You steal a damaged hammer.");
+                                if (Misc.getRandom(100) == 25) {
+                                    player.getSkillManager().addExperience(Skill.THIEVING, player.getSkillManager().getExperience(Skill.THIEVING) / 265);
+                                    player.getPacketSender().sendMessage("You hit the sweet spot and earned " + Misc.insertCommasToNumber(player.getSkillManager().getExperience(Skill.THIEVING) / 2) + " Thieving experience.");
+                                }
                                 break;
                             case 4877:
                                 if (!player.getClickDelay().elapsed(2500))
@@ -2429,13 +2463,16 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getClickDelay().reset();
                                 player.getInventory().add(1389, 1).add(995, 4000);
                                 player.getPacketSender().sendMessage("You steal a staff");
-                                // Stalls.stealFromStall(player, 65, 80, 1389, "You steal a staff.");
+                                if (Misc.getRandom(100) == 25) {
+                                    player.getSkillManager().addExperience(Skill.THIEVING, player.getSkillManager().getExperience(Skill.THIEVING) / 265);
+                                    player.getPacketSender().sendMessage("You hit the sweet spot and earned " + Misc.insertCommasToNumber(player.getSkillManager().getExperience(Skill.THIEVING) / 2) + " Thieving experience.");
+                                }
                                 break;
                             case 4878:
                                 if (!player.getClickDelay().elapsed(2500))
                                     return;
 
-                                if (player.getSkillManager().getMaxLevel(Skill.THIEVING) < 95) {
+                                if (player.getSkillManager().getMaxLevel(Skill.THIEVING) < 90) {
                                     player.getPacketSender().sendMessage(
                                             "You need a Thieving level of at least 95 to steal from this stall.");
                                     return;
@@ -2453,7 +2490,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getClickDelay().reset();
                                 player.getInventory().add(11998, 1).add(995, 5000);
                                 player.getPacketSender().sendMessage("You steal a scimitar");
-                                // Stalls.stealFromStall(player, 80, 101, 11998, "You steal a scimitar.");
+                                if (Misc.getRandom(100) == 25) {
+                                    player.getSkillManager().addExperience(Skill.THIEVING, player.getSkillManager().getExperience(Skill.THIEVING) / 265);
+                                    player.getPacketSender().sendMessage("You hit the sweet spot and earned " + Misc.insertCommasToNumber(player.getSkillManager().getExperience(Skill.THIEVING) / 2) + " Thieving experience.");
+                                }
                                 break;
 
                             case 12100:

@@ -534,8 +534,9 @@ public class Locations {
 			public void enter(Player player) {
 				CurseHandler.deactivateAll(player);
 				PrayerHandler.deactivateAll(player);
-				player.getPacketSender().sendInterfaceRemoval()
-						.sendMessage("@red@<img=832> Prayers have been disabled for this minigame");
+
+				if (player.getSODRaidsKC() < 10)
+				player.getPacketSender().sendInterfaceRemoval().sendMessage("@red@<img=832> Prayers have been disabled for this raid.");
 				player.setRegionInstance(new RegionInstance(player, RegionInstance.RegionInstanceType.SOD));
 				player.getPacketSender().sendInteractionOption("null", 2, true);
 			}

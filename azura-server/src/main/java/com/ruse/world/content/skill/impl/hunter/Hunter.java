@@ -364,7 +364,7 @@ public class Hunter {
 				trap.getOwner().getPacketSender()
 						.sendMessage("You failed to catch the animal because your Hunter level is too low.");
 				trap.getOwner().getPacketSender()
-						.sendMessage("You need atleast " + requiredLevel(npc.getId()) + " Hunter to catch this animal");
+						.sendMessage("You need at-least " + requiredLevel(npc.getId()) + " Hunter to catch this animal");
 				return;
 			}
 			deregister(trap);

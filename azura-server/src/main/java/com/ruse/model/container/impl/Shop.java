@@ -2006,7 +2006,7 @@ public class Shop extends ItemContainer {
                         return new Object[]{5000, "PVM tickets"};
                     case 3324:
                         return new Object[]{7000, "PVM tickets"};
-                    case 20535:
+                    case 22077:
                         return new Object[]{8000, "PVM tickets"};
                     case 20553:
                     case 20555:

@@ -44,7 +44,7 @@ public class UpgradeInterface {
             case 30868:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 15) {
                 player.getPacketSender()
-                        .sendMessage("You need a Invention Level of atleast @blu@15 Invention@bla@ to view this Tier.");
+                        .sendMessage("You need a Invention Level of at-least @blu@15 Invention@bla@ to view this Tier.");
                 return false;
             }
                 openInterface(Upgradeables.UpgradeType.TIER_2);
@@ -53,7 +53,7 @@ public class UpgradeInterface {
             case 30869:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 35) {
                     player.getPacketSender()
-                            .sendMessage("You need a Invention Level of atleast @blu@35 Invention@bla@ to view this Tier.");
+                            .sendMessage("You need a Invention Level of at-least @blu@35 Invention@bla@ to view this Tier.");
                     return false;
                 }
                 openInterface(Upgradeables.UpgradeType.TIER_3);
@@ -62,7 +62,7 @@ public class UpgradeInterface {
             case 30870:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 55) {
                 player.getPacketSender()
-                        .sendMessage("You need a Invention Level of atleast @blu@55 Invention@bla@ to view this Tier.");
+                        .sendMessage("You need a Invention Level of at-least @blu@55 Invention@bla@ to view this Tier.");
                 return false;
             }
                 openInterface(Upgradeables.UpgradeType.TIER_4);
@@ -71,7 +71,7 @@ public class UpgradeInterface {
             case 30871:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 80) {
                 player.getPacketSender()
-                        .sendMessage("You need a Invention Level of atleast @blu@80 Invention@bla@ to view this Tier.");
+                        .sendMessage("You need a Invention Level of at-least @blu@80 Invention@bla@ to view this Tier.");
                 return false;
             }
                 openInterface(Upgradeables.UpgradeType.TIER_5);
@@ -80,7 +80,7 @@ public class UpgradeInterface {
             case 30872:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 90) {
                 player.getPacketSender()
-                        .sendMessage("You need a Invention Level of atleast @blu@90 Invention@bla@ to view this Tier.");
+                        .sendMessage("You need a Invention Level of at-least @blu@90 Invention@bla@ to view this Tier.");
                 return false;
             }
                 openInterface(Upgradeables.UpgradeType.TIER_6);
@@ -89,7 +89,7 @@ public class UpgradeInterface {
             case 30873:
                 if (player.getSkillManager().getMaxLevel(Skill.INVENTION) < 119) {
                     player.getPacketSender()
-                            .sendMessage("You need a Invention Level of atleast @blu@120 Invention@bla@ to view this Tier.");
+                            .sendMessage("You need a Invention Level of at-least @blu@120 Invention@bla@ to view this Tier.");
                     return false;
                 }
                 player.getCustomCombiner().open();

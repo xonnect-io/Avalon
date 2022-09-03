@@ -543,7 +543,7 @@ public class ItemActionPacketListener implements PacketListener {
 
             case 19115:
                 int[] commonextreme = new int[] { 15442, 15443, 15444, 18351, 18349, 18353, 6500, 13740 };
-                int[] uncommonsuper11 = new int[] {20535,19136,6936,666,15424,674};
+                int[] uncommonsuper11 = new int[] {22077,19136,6936,666,15424,674};
                 int[] raresuper11extreme = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808,20549,20173,8809,10946,};
                 player.getMysteryBoxOpener().display(19115, "Extreme Box", commonextreme, uncommonsuper11, raresuper11extreme);
                 break;
@@ -857,7 +857,7 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] commonpvm = new int[] {10350, 10348, 4718, 10346, 14499, 14497, 14501, 4710, 16054,
                         17193, 17339, 4734, 4753, 4757, 4759, 4755,
                         4745, 4749, 4751, 4747, 290};
-                int[] uncommonpvm = new int[] {19582, 14525, 11858, 23020};
+                int[] uncommonpvm = new int[] {19582, 14525, 11858};
                 int[] rarepvm = new int[] {4151,11235,15486,12933,18353,15031,6585,6737,7462};
                 player.getMysteryBoxOpener().display(7956, "Pvm box", commonpvm, uncommonpvm, rarepvm);
                 break;
@@ -1477,7 +1477,7 @@ public class ItemActionPacketListener implements PacketListener {
                 if (player.getInventory().contains(11137))
                     amountNeeded -= 1;
                 if (player.getInventory().getFreeSlots() < amountNeeded) {
-                    player.sendMessage("You need atleast "+amountNeeded+" inventory slots to do this.");
+                    player.sendMessage("You need at-least "+amountNeeded+" inventory slots to do this.");
                     return;
                 }
                 player.getInventory().delete(2734, 1);
