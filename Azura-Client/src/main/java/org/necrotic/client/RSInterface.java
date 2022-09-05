@@ -1523,9 +1523,9 @@ public class RSInterface {
 		rareScroll.width = 136;
 		rareScroll.height = 145;
 		rareScroll.scrollMax = 500;
-		addToItemGroup(48171, 3, 100, 7, 6, true, new String[] {null, null, null, null, null});
+		addToItemGroup(48110, 3, 100, 7, 6, true, new String[] {null, null, null, null, null});
 		rareScroll.totalChildren(1);
-		rareScroll.child(0, 48171, 15, 3);
+		rareScroll.child(0, 48110, 15, 3);
 	}
 	private static void questInterface(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(77830);

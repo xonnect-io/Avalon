@@ -258,6 +258,9 @@ public class PlayerLoading {
             if (reader.has("magic-master")) {
                 player.setMagicianMaster(reader.get("magic-master").getAsBoolean());
             }
+            if (reader.has("double-slayer-xp")) {
+                player.setDoubleSlayerXP(reader.get("double-slayer-xp").getAsBoolean());
+            }
             if (reader.has("celestial-member")) {
                 player.setCelestial(reader.get("celestial-member").getAsBoolean());
             }

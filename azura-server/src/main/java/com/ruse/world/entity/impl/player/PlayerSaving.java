@@ -397,6 +397,7 @@ public class PlayerSaving {
 			object.addProperty("magic2-unlocked", player.getMagicGuildTier2());
 			object.addProperty("magic3-unlocked", player.getMagicGuildTier3());
 			object.addProperty("magic-master", player.getMagicianMaster());
+			object.addProperty("double-slayer-xp", player.getDoubleSlayerXP());
 			object.addProperty("warrior1-unlocked", player.getWarriorGuildTier1());
 			object.addProperty("warrior2-unlocked", player.getWarriorGuildTier2());
 			object.addProperty("warrior3-unlocked", player.getWarriorGuildTier3());

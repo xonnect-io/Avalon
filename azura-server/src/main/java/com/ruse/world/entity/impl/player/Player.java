@@ -2133,6 +2133,23 @@ End new teleport
     /*
     End Archer Guild
      */
+
+
+    /*
+    Start Double Slayer XP
+     */
+    private boolean doubleSlayerXP;
+    public void setDoubleSlayerXP(boolean doubleSlayerXP) {
+        this.doubleSlayerXP = doubleSlayerXP;
+    }
+    public boolean getDoubleSlayerXP() {
+        return doubleSlayerXP;
+    }
+    /*
+    End Double Slayer XP
+     */
+
+
     /*
     Start Fallen Angels
      */
@@ -2148,8 +2165,8 @@ End new teleport
     End Fallen Angels
      */
 
-    /*
 
+    /*
     Start Midnight Goblins
      */
     private boolean darkSupreme;

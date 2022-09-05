@@ -827,12 +827,12 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 14819:
-                if (player.getSlayer().doubleSlayerXP) {
+                if (player.getDoubleSlayerXP() == true) {
                     player.getPacketSender().sendMessage("You already have Double Slayer Points.");
                     return;
                 }
                 player.getInventory().delete(14819, 1);
-                player.getSlayer().doubleSlayerXP = true;
+                player.setDoubleSlayerXP(true);
                 PlayerPanel.refreshPanel(player);
                 player.getPacketSender().sendMessage("You will now permanently receive double Slayer experience.");
                 break;

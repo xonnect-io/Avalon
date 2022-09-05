@@ -1543,7 +1543,7 @@ public final class CombatFactory {
                 }
             }
             else if (npc.getId() == 9128) { // Evil cook
-                if (player.getQuestTwoStep4() == false) {
+                if (player.getQuestTwoStep5() == false) {
                     ((Player) entity).getPacketSender()
                             .sendMessage("You need to warn the Duke Horacio upstairs of Lumbridge first!");
                     entity.getCombatBuilder().reset(true);

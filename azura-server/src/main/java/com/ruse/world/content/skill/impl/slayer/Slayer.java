@@ -172,7 +172,7 @@ public class Slayer {
             slayerTask = SlayerTasks.NO_TASK;
             amountToSlay = 0;
 
-            if (player.getSlayer().doubleSlayerXP = true) {
+            if (player.getDoubleSlayerXP() == true) {
                 player.getSkillManager().addExperience(Skill.SLAYER, xp * 2);
             }
             else player.getSkillManager().addExperience(Skill.SLAYER, xp);

@@ -299,9 +299,6 @@ public class SkillManager {
         if (skill.equals(Skill.SLAYER)) {
             experience = experience / 4; // reduced by 3 times.
         }
-        if (skill.equals(Skill.INVENTION)) {
-            experience = experience * 2; // reduced by 3 times.
-        }
 
         if (player.getGameMode() == GameMode.VETERAN_MODE) {
             experience /= 2;

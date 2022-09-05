@@ -336,7 +336,7 @@ public class CasketOpening {
         }
 
         for (int i = 0; i < rare.size(); i++) {
-                player.getPacketSender().sendItemOnInterface(48171, rare.get(i).getId(),i, rare.get(i).getMax());
+                player.getPacketSender().sendItemOnInterface(48110, rare.get(i).getId(),i, rare.get(i).getMax());
         }
 
     }

@@ -502,6 +502,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Opening drops interface...");
             DropsInterface.open(player);
         }
+   /*
         if (command[0].equalsIgnoreCase("questtest") || command[0].equalsIgnoreCase("questtest")) {
             for (int i = 8145; i < 8245; i++)
                 player.getPacketSender().sendString(i, "");
@@ -520,7 +521,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
             player.getPacketSender().sendString(index++, color + "@bla@An Omega Charm");
         player.getPacketSender().sendString(index++, color + "");
-    }
+    }*/
         if (wholeCommand.equalsIgnoreCase("commands")) {
             for (int i = 8145; i < 8245; i++)
                 player.getPacketSender().sendString(i, "");

@@ -252,7 +252,7 @@ public class MainDissolving {
 		GWDARAMACROSSBOW(22034, new Item[]{new Item(UPG_TOKEN, 240)}, 1240, anim),
 		ABBYWHIP(4151, new Item[]{new Item(UPG_TOKEN, 120)}, 1240, anim),
 		FURY(6585, new Item[]{new Item(UPG_TOKEN, 141)}, 1141, anim),
-		STAFFOFLIGHT(15486, new Item[]{new Item(UPG_TOKEN, 141)}, 14101, anim),
+		STAFFOFLIGHT(15486, new Item[]{new Item(UPG_TOKEN, 141)}, 1141, anim),
 		PVPMORHELMT(13876, new Item[]{new Item(UPG_TOKEN, 169)}, 1169, anim),
 		PVPSTAT(13896, new Item[]{new Item(UPG_TOKEN, 169)}, 1169, anim),
 		PVPSTAT2(13884, new Item[]{new Item(UPG_TOKEN, 169)}, 1169, anim),
