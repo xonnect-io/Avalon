@@ -31,7 +31,19 @@ public class Afking {
             if (player.getRights() == PlayerRights.SUPPORT || player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR) {
                 player.throneId = 1098;
             }
-            final GameObject object3 = new GameObject(player.throneId, new Position(player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ()),10,2);
+            final GameObject object3 = new GameObject(player.throneId, new Position(player.getPosition().getX(),player.getPosition().getZ() == 1 ? player.getPosition().getY()-1 :
+                    player.getPosition().getZ() == 2 ? player.getPosition().getY()-2:
+                    player.getPosition().getZ() == 3 ? player.getPosition().getY()-3:
+                    player.getPosition().getZ() == 4 ? player.getPosition().getY()-4:
+                    player.getPosition().getZ() == 5 ? player.getPosition().getY()-5:
+                    player.getPosition().getZ() == 6 ? player.getPosition().getY()-6:
+                    player.getPosition().getZ() == 7 ? player.getPosition().getY()-7:
+                    player.getPosition().getZ() == 8 ? player.getPosition().getY()-8:
+                    player.getPosition().getZ() == 9 ? player.getPosition().getY()-9:
+                    player.getPosition().getZ() == 10 ? player.getPosition().getY()-10:
+                    player.getPosition().getZ() == 11 ? player.getPosition().getY()-11:
+                    player.getPosition().getZ() == 12 ? player.getPosition().getY()-12:
+                    player.getPosition().getY(), player.getPosition().getZ()),10,2);
 
             player.toRemove.add(object3);
 

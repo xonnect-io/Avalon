@@ -1362,7 +1362,7 @@ public class RSInterface {
 	private static void effectInterface3(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(48500);
 		addSpriteLoader(48501, 1388);
-		addText(48502, "(::opensale)", tda, 0, ColorConstants.ORA, false, true);
+		addClickableText(48502, "View deals", "View deals", fonts, 0, ColorConstants.ORA, 50, 40);
 		addText(48503, "Active Sale", tda, 0, ColorConstants.SNOW_WHITE, false, true);
 
 		main.totalChildren(3);
@@ -1904,7 +1904,46 @@ public class RSInterface {
 		main.child(17, 80576, 355, 38);
 		main.child(18, 80577, 298, 64);
 	}
+	private static void youtubeEvent(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(82350);
+		RSInterface mainScrollBar = RSInterface.addTabInterface(82375);
+		addSpriteLoader(82351, 1748);
 
+		addText(82352, "Youtuber Event", tda, 2, 0xff8624, true, true);
+
+
+		main.totalChildren(3);
+		main.child(0, 82351, 8, 10);
+		main.child(1, 82352, 250, 42);
+
+		main.child(2, 82375, 27, 90);
+
+		mainScrollBar.width = 199 + 5;
+		mainScrollBar.height = 216;
+		mainScrollBar.scrollMax = 300;
+
+		int yters = 10;
+		int y1 = 1;
+		int y2 = 6;
+
+		RSInterface.setChildren(yters * 2, mainScrollBar);
+
+		for (int j = 0; j < yters; j++) {
+			RSInterface.addButton(82361 + j, 1749, 1750 , "Select");
+			mainScrollBar.child(j, 82361 + j, 0, y1);
+			y1 += 33;
+		}
+
+		for (int i = 0; i < yters; i++) {
+			RSInterface.addText(82461 + i, "Youtubers name" + i, tda, i == 0 ? 1 : 1,
+					i == 0 ? ClientConstants.ORANGE : ClientConstants.ORANGE, false, false, ClientConstants.WHITE,
+					"Select", 33);
+			mainScrollBar.child(yters + i, 82461 + i, 7, y2 + 1);
+			y2 += 33;
+
+		}
+
+	}
 	private static void archerUnlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(88130);
 		addSpriteLoader(88131, 1701);
@@ -2812,10 +2851,10 @@ public class RSInterface {
 		RSInterface main = addInterface(57265);
 		addSpriteLoader(57266, 1322);
 
-		addText(57267, "Promotions: @or1@(::Handlerewards)", ColorConstants.ORANGE, false, true, 52, tda, 2);
+		addText(57267, "Promotions: @or1@(::donationdeals)", ColorConstants.ORANGE, false, true, 52, tda, 2);
 		addText(57268, "You need to donate within 24 hours to get the items, Counts from you first donation", ColorConstants.YELLOW, false, true, 52, tda, 0);
 		addText(57269, "NOTE:", 0xd17c15, false, true, 52, tda, 1);
-		addText(57270, "This only counts if you donate directly from ::donate!         of the day!", ColorConstants.YELLOW, false, true, 52, tda, 0);
+		addText(57270, "This only counts if you donate directly from ::donate!", ColorConstants.YELLOW, false, true, 52, tda, 0);
 		addSpriteLoader(57271, 1323);
 		addSpriteLoader(57272, 1325);
 		addText(57277, "$0", ColorConstants.YELLOW, false, true, 52, tda, 0);
@@ -6887,6 +6926,7 @@ public class RSInterface {
 			sufferingChest(textDrawingAreas);
 			magicianUnlock(textDrawingAreas);
 			archerUnlock(textDrawingAreas);
+			youtubeEvent(textDrawingAreas);
 			archerTier1Unlock(textDrawingAreas);
 			archerTier2Unlock(textDrawingAreas);
 			archerTier3Unlock(textDrawingAreas);

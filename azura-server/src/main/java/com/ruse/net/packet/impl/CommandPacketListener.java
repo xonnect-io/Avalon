@@ -171,16 +171,18 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("dissolveall")) {
             int price = 0;
+            int amtofitems = 0;
             for (int i = 0; i < player.getInventory().capacity(); i++) {
-                if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
-
+                if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0
+                        && player.getInventory().get(i).getId() != 12855) {
+                    amtofitems+=player.getInventory().get(i).getAmount();
                     price += player.getMainDissolving().sumofdissolves(player.getInventory().get(i).getId());
 
                 }
             }
-            System.out.println(price + "");
+           // System.out.println(price + "");
             player.getMainDissolving().amtafterdissolvingall = price;
-            DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve all dissolveable items for " + price + " Tokens", "Nevermind", 6668));
+            DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve all dissolveable items for " + amtofitems*price + " Tokens", "Nevermind", 6668));
 
         }
 

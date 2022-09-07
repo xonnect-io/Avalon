@@ -50,6 +50,7 @@ public class PlayerPanel {
                 ? "Ironman boss: @whi@" + IronmanBoss.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
                 "Avalon Guard: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
                 "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
+                "",
         };
 
         for (int i = 0; i < Messages.length; i++) {

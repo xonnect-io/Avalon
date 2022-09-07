@@ -1,10 +1,13 @@
 package com.ruse.world.content.skill.impl.hunter;
 
+import com.ruse.engine.task.TaskManager;
 import com.ruse.engine.task.impl.HunterTrapsTask;
+import com.ruse.engine.task.impl.NPCRespawnTask;
 import com.ruse.model.*;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.model.movement.MovementQueue;
 import com.ruse.util.Misc;
+import com.ruse.world.World;
 import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.skill.impl.hunter.Trap.TrapState;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -381,8 +384,10 @@ public class Hunter {
 										trap.getGameObject().getPosition().getY())),
 						TrapState.CAUGHT, 100, trap.getOwner()));
 			HUNTER_NPC_LIST.remove(npc);
-			npc.setVisible(false);
-			npc.appendDeath();
+			//	npc.setVisible(false);
+			//	npc.appendDeath();
+			World.deregister(npc);
+			TaskManager.submit(new NPCRespawnTask(npc, npc.getDefinition().getRespawnTime(), null));
 		}
 	}
 
