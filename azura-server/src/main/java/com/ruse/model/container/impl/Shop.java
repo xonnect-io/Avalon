@@ -2074,7 +2074,7 @@ public class Shop extends ItemContainer {
 
                         return new Object[]{25, "Archer tickets"};
                     case 11235:
-                    case 16054:
+                    case 3751:
                     case 17193:
                     case 17339:
                     case 15031:
@@ -2328,7 +2328,7 @@ public class Shop extends ItemContainer {
                     case 10346:
                         return new Object[]{110, "Barrows points"};
                     case 4753:
-                    case 16054:
+                    case 3751:
                     case 4724:
                     case 14499:
                         return new Object[]{80, "Barrows points"};

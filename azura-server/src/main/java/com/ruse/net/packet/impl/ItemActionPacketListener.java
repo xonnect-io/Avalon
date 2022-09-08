@@ -214,7 +214,7 @@ public class ItemActionPacketListener implements PacketListener {
             }
 
             int[] items = itemId == 11858 ? new int[]{4151, 10350, 10348, 10346}
-                    : itemId == 19582 ? new int[]{11235, 16054, 17193, 17339}
+                    : itemId == 19582 ? new int[]{11235, 3751, 17193, 17339}
                     : itemId == 14525 ? new int[]{15486, 14499, 14497, 14501}
                     : itemId == 19580 ? new int[]{19308, 19311, 19314, 19317, 19320}
                     : itemId == 11860 ? new int[]{10334, 10330, 10332, 10336}
@@ -644,7 +644,7 @@ public class ItemActionPacketListener implements PacketListener {
                 }
 
                 int[] items = itemId == 11858 ? new int[]{4151, 10350, 10348, 10346}
-                        : itemId == 19582 ? new int[]{11235, 16054, 17193, 17339}
+                        : itemId == 19582 ? new int[]{11235, 3751, 17193, 17339}
                         : itemId == 14525 ? new int[]{15486, 14499, 14497, 14501}
                         : itemId == 19580 ? new int[]{19308, 19311, 19314, 19317, 19320}
                         : itemId == 11860 ? new int[]{10334, 10330, 10332, 10336}
@@ -854,7 +854,7 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 7956:
-                int[] commonpvm = new int[] {10350, 10348, 4718, 10346, 14499, 14497, 14501, 4710, 16054,
+                int[] commonpvm = new int[] {10350, 10348, 4718, 10346, 14499, 14497, 14501, 4710, 3751,
                         17193, 17339, 4734, 4753, 4757, 4759, 4755,
                         4745, 4749, 4751, 4747, 290};
                 int[] uncommonpvm = new int[] {19582, 14525, 11858};
@@ -2127,7 +2127,7 @@ public class ItemActionPacketListener implements PacketListener {
                 }
 
                 int[] items = itemId == 11858 ? new int[]{4151, 10350, 10348, 10346}
-                        : itemId == 19582 ? new int[]{11235, 16054, 17193, 17339}
+                        : itemId == 19582 ? new int[]{11235, 3751, 17193, 17339}
                         : itemId == 14525 ? new int[]{15486, 14499, 14497, 14501}
                         : itemId == 19580 ? new int[]{19308, 19311, 19314, 19317, 19320}
                         : itemId == 11860 ? new int[]{10334, 10330, 10332, 10336}
@@ -2272,7 +2272,7 @@ public class ItemActionPacketListener implements PacketListener {
                         .sendMessage("@blu@You are rewarded " + (amt * 1) + " vote "
                                 + (amt > 1 ? "points, " : "point, ") + (5_000 * amt) + " Upgrade tokens");
                 player.getPacketSender()
-                        .sendMessage("@blu@You received " + minutesDMG + " minutes of 100% Bonus DMG, and " + minutesDR + "minutes of 100% Bonus DR");
+                        .sendMessage("@blu@You received " + minutesDMG + " minutes of 100% Bonus DMG, and " + minutesDR + " minutes of 100% Bonus DR");
                 player.getPointsHandler().incrementVotingPoints(amt * 1);
               //  BonusExperienceTask.addBonusXp(player, minutesEXP);
                 VotingDRBoostTask.addBonusDR(player, minutesDR);

@@ -16,7 +16,7 @@ public enum Upgradeables {
     D_CHAINBODY(TIER_1, new Item(10348, 1), new Item(13913, 1), 125, 60),
     D_PLATESKIRT(TIER_1, new Item(10346, 1), new Item(13919, 1), 125, 60),
     D_BOW(TIER_1, new Item(11235, 1), new Item(18799, 1), 125, 60),
-    X_HELMET(TIER_1, new Item(16054, 1), new Item(18834, 1), 125, 60),
+    X_HELMET(TIER_1, new Item(3751, 1), new Item(18834, 1), 125, 60),
     X_CHESTPLATE(TIER_1, new Item(17193, 1), new Item(18801, 1), 125, 60),
     X_CHAINSKIRT(TIER_1, new Item(17339, 1), new Item(18800, 1), 125, 60),
     SOL(TIER_1, new Item(15486, 1), new Item(5095, 1), 125, 60),

@@ -46,6 +46,7 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dailyTask.DailyTaskHandler;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.dissolving.MainDissolving;
 import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
 import com.ruse.world.content.groupironman.GroupManager;
@@ -171,18 +172,23 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("dissolveall")) {
             int price = 0;
-            int amtofitems = 0;
-            for (int i = 0; i < player.getInventory().capacity(); i++) {
-                if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0
-                        && player.getInventory().get(i).getId() != 12855) {
-                    amtofitems+=player.getInventory().get(i).getAmount();
-                    price += player.getMainDissolving().sumofdissolves(player.getInventory().get(i).getId());
+            player.howmuchdissolveamt = 0;
 
+            for (int i = 0; i < player.getInventory().capacity(); i++) {
+                for(MainDissolving.DissolvingData data : MainDissolving.DissolvingData.values()) {
+                    if(data.getId() == player.getInventory().get(i).getId()) {
+                        if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0
+                                && player.getInventory().get(i).getId() != 12855) {
+                            player.howmuchdissolveamt +=player.getMainDissolving().handleAllAmount(i);
+                        }
+                    }
                 }
+
+
             }
-           // System.out.println(price + "");
+
             player.getMainDissolving().amtafterdissolvingall = price;
-            DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve all dissolveable items for " + amtofitems*price + " Tokens", "Nevermind", 6668));
+            DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve all dissolveable items for " +player.howmuchdissolveamt + " Tokens", "Nevermind", 6668));
 
         }
 
@@ -600,7 +606,7 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("donationdeals") || command[0].equalsIgnoreCase("deals")) {
             player.sendMessage(
-                    "<shad=1>@yel@Please check out the donation deals in our ::Discord - #Donation-deals");
+                    "<shad=1>@yel@Active donation deals are in our ::Discord - #Donation-deals");
         }
 
         if (wholeCommand.equalsIgnoreCase("droprate") || wholeCommand.equalsIgnoreCase("mydr") || wholeCommand.equalsIgnoreCase("dr")) {
@@ -657,7 +663,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("voted")) {
             new Thread(new FoxVote(player)).start();
         }
-        if (command[0].equalsIgnoreCase("testafk")) {
+        if (command[0].equalsIgnoreCase("rest")) {
             Afking.afk(player);
         }
         if (command[0].equalsIgnoreCase("addlottery1")) {
@@ -676,17 +682,7 @@ public class CommandPacketListener implements PacketListener {
             LotteryEvent.setdate(hour,minute);
 
         }
-        if (command[0].equalsIgnoreCase("randomwinner")) {
-            LotteryData wogw = World.getServerData().getTopLottery();
-            ArrayList<Map.Entry<String, Integer>> winners = wogw.getSortedResultsForWinners();
 
-            Map<String, Integer> winnerMap = new HashMap<>();
-            winners.forEach(entry -> winnerMap.put(entry.getKey(), entry.getValue()));
-            for (Map.Entry<String, Integer> entry : winners) {
-                player.sendMessage("The winner is: "+entry.getKey());
-            }
-            wogw.clear();
-        }
         if (command[0].equalsIgnoreCase("claimdonation") || command[0].equalsIgnoreCase("claimdonate")
                 || command[0].equalsIgnoreCase("claim") || command[0].equalsIgnoreCase("donated")) {
             new Thread(new Store(player)).start();
@@ -709,12 +705,19 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("@bla@Melee attack: @or2@" + attack + "@bla@, ranged attack: @or2@"
                     + range + "@bla@, magic attack: @or2@" + magic);
         }
+
+        if (command[0].equalsIgnoreCase("wiki")) {
+            String threadName = String.valueOf(wholeCommand.toString().replace("wiki", "").toLowerCase(Locale.ROOT));
+            player.getPacketSender().sendMessage("Opening Wiki thread: " + threadName);
+            player.getPacketSender().sendString(1, "https://avalonrsps.fandom.com/" + threadName + "");
+        }
+
         if (command[0].equalsIgnoreCase("vote")) {
-            player.getPacketSender().sendString(1, GameSettings.VoteUrl);// "http://Ruseps.com/vote/?user="+player.getUsername());
+            player.getPacketSender().sendString(1, GameSettings.VoteUrl);
             player.getPacketSender().sendMessage("When you vote, do ::voted to redeem votes");
         }
         if (command[0].equalsIgnoreCase("pricelist")) {
-            player.getPacketSender().sendString(1, GameSettings.PriceList);// "http://Ruseps.com/vote/?user="+player.getUsername());
+            player.getPacketSender().sendString(1, GameSettings.PriceList);
             player.getPacketSender().sendMessage("Attempting to open pricelist");
         }
         if (command[0].equalsIgnoreCase("hiscores") || command[0].equalsIgnoreCase("highscores")) {

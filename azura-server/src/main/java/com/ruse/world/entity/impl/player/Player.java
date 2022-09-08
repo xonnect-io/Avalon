@@ -216,7 +216,7 @@ public class Player extends Character {
     public MainDissolving getMainDissolving() {
         return mainDissolving;
     }
-
+public int howmuchdissolveamt = 0;
     private NephilimDisassemble nephilimDissolving = new NephilimDisassemble(this);
 
     public NephilimDisassemble getNephilimDissolving() {

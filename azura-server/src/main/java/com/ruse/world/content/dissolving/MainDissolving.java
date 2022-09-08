@@ -7,6 +7,9 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.entity.impl.player.Player;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainDissolving {
 	
 	private Player player;
@@ -42,11 +45,11 @@ public class MainDissolving {
 		CREEPER_5(9058, new Item[]{new Item(UPG_TOKEN, 8000)}, 18493, anim),
 		CREEPER_6(9059, new Item[]{new Item(UPG_TOKEN, 8000)}, 18493, anim),
 		SWOODOO(19149, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
+		SWOODOO_4(16055, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
 		SWOODOO_NOTE(19150, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
 		SWOODOO_2(12930, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
 		SWOODOO_3(4405, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
 		SWOODOO_3_NOTE(4406, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
-		SWOODOO_4(16055, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
 		SWOODOO_5(16077, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
 		SWOODOO_6(16066, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
 		SWOODOO_7(16114, new Item[]{new Item(UPG_TOKEN, 6000)}, 16000, anim),
@@ -320,7 +323,7 @@ public class MainDissolving {
 		BARROW20(4745, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
 		BARROW21(4749, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
 		BARRO22(4747, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
-		BARROW23(16054, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
+		BARROW23(3751, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
 		BARROW34(4734, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
 		BARROW35(17193, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
 		BARROW37(17339, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
@@ -480,14 +483,10 @@ public class MainDissolving {
 			this.rewards = rewards;
 			this.experience = experience;
 			this.animation = animation;
-		//	this.progressions = progressions;
 		}
-		
-		private int id, experience, animation;
-		private Item[] rewards;
 
-	//	private int[][] progressions;
-		
+		private int id, experience, animation;
+
 		public int getId() {
 			return id;
 		}
@@ -497,41 +496,28 @@ public class MainDissolving {
 		public int getAnimation() {
 			return animation;
 		}
-		public Item[] getRewards() {
-			return rewards;
-		}
-
 		public int getreward() {
 			return rewards[0].getId();
 		}
 		public int getrewardamt() {
 			return rewards[0].getAmount();
 		}
+
+		private Item[] rewards;
+		public Item[] getRewards() {
+			return rewards;
+		}
+
 		public ItemDefinition getDefinition() {
 			return ItemDefinition.forId(id);
 		}
 	}
+
 	public int amtafterdissolvingall = 0;
-	public int sumofdissolves(int id) {
-		int amt = 0;
-		for(DissolvingData data : DissolvingData.values()) {
-			if(data.getId() == id) {
-				amt+=data.getRewards()[0].getAmount();
-				break;
-			}
-		}
-return amt;
-	}
+
 	public void handle(int id) {
 		for(DissolvingData data : DissolvingData.values()) {
 			if(data.getId() == id) {
-				/*
-				if (sumofdissolves(data.getId()) >= 20000) {
-					DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve " + ItemDefinition.forId(id).getName() + " for "+data.getRewards()[0].getAmount()+" Tokens", "Nevermind", 9828));
-				return;
-				}
-				 */
-
 				player.getInventory().delete(id, 1);
 				player.getInventory().addItemSet(data.getRewards());
 				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
@@ -543,14 +529,20 @@ return amt;
 		
 	}
 
+	private static Map<Integer, DissolvingData> dataMap = new HashMap<Integer, DissolvingData>();
+		static {
+			for (DissolvingData data : DissolvingData.values()) {
+				dataMap.put(data.getId(),data);
+			}
+	}
+
 	public void handleAll(int id) {
 		for(DissolvingData data : DissolvingData.values()) {
 			if(data.getId() == id) {
-				//player.getInventory().addItemSet(data.getRewards());
 				player.getInventory().add(data.getreward(),data.getrewardamt() * player.getInventory().getAmount(data.getId()));
 				player.getPacketSender().sendMessage("You dissolved " + ItemDefinition.forId(id).getName() +" for " + Misc.insertCommasToNumber(data.getrewardamt() * player.getInventory().getAmount(data.getId())) +" Upgrade Tokens" );
 				player.getInventory().delete(id, player.getInventory().getAmount(data.getId()));//only 1 gets dissolved is it possible to make it the amount of the stack in inventory
-
+				player.howmuchdissolveamt+=data.getrewardamt() * player.getInventory().getAmount(data.getId());
 				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
 				player.performAnimation(new Animation(-1));
 				break;
@@ -558,5 +550,10 @@ return amt;
 		}
 
 	}
+
+	public int handleAllAmount(int slot) {
+		return dataMap == null ? 0 : dataMap.get(player.getInventory().get(slot).getId()).getrewardamt() * player.getInventory().get(slot).getAmount();
+	}
+
 }
 

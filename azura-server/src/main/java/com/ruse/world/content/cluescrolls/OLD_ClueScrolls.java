@@ -1,8 +1,5 @@
 package com.ruse.world.content.cluescrolls;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.ruse.model.Item;
 import com.ruse.model.Position;
 import com.ruse.model.definitions.ItemDefinition;
@@ -10,6 +7,9 @@ import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public enum OLD_ClueScrolls {
 
@@ -123,7 +123,7 @@ public enum OLD_ClueScrolls {
 			new Item(10350, 1), new Item(10348, 1), new Item(10346, 1), new Item(4718, 1), // dharoks
 			new Item(4724, 1), new Item(4728, 1), new Item(4730, 1), new Item(4726, 1), // guthans
 			new Item(4745, 1), new Item(4749, 1), new Item(4751, 1), new Item(4747, 1), // torags
-			new Item(16054, 1), new Item(4734, 1), new Item(17193, 1), new Item(17339, 1), new Item(4740, 1000), // karil's
+			new Item(3751, 1), new Item(4734, 1), new Item(17193, 1), new Item(17339, 1), new Item(4740, 1000), // karil's
 			new Item(4753, 1), new Item(4757, 1), new Item(4759, 1), new Item(4755, 1), // verac's
 			new Item(2595, 1), new Item(2591, 1), new Item(2593, 1), new Item(2597, 1), new Item(3473, 1), // black (g)
 			new Item(3488, 1), new Item(3486, 1), new Item(3481, 1), new Item(3483, 1), new Item(3485, 1), // gilded

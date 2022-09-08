@@ -87,10 +87,10 @@ public class MysteryBoxOpener {
 			player.getInventory().add(boxId, 1);
 			player.getPacketSender().sendMessage("You kept your " + ItemDefinition.forId(boxId).getName() +" with your Membership status.");
 		}
-		if (player.getInventory().contains(23401)) {
+		if (player.getInventory().contains(23401) && Misc.getRandom(1,10) == 3) {
 			player.getInventory().delete(23401, 1);
 			player.getInventory().add(boxId, 1);
-			player.getPacketSender().sendMessage("You kept your " + ItemDefinition.forId(boxId).getName() +" and an Insurance scroll is consumed.");
+			player.getPacketSender().sendMessage("<img=832>@red@You kept your " + ItemDefinition.forId(boxId).getName() +" and a Scroll of Insurance is consumed.");
 		}
 		player.getInventory().delete(boxId, 1);
 		player.getInventory().add(reward, 1);
@@ -125,9 +125,15 @@ public class MysteryBoxOpener {
 			rewards.merge(reward, 1, Integer::sum);
 
 			BOXES.log(player, boxId, new Item(reward));
+			if (player.getInventory().contains(23401) && Misc.getRandom(1,10) == 3) {
+				player.getInventory().delete(23401, 1);
+				player.getInventory().add(boxId, 1);
+				player.getPacketSender().sendMessage("<img=832>@red@You kept your " + ItemDefinition.forId(boxId).getName() +" and a Scroll of Insurance is consumed.");
+			}
 		}
 
 		player.getInventory().delete(boxId, amount);
+
 		boolean bank = amount <= player.getInventory().getFreeSlots();
 		rewards.forEach((key, value) -> {
 			if (bank) {
@@ -172,6 +178,11 @@ public class MysteryBoxOpener {
 			rewards.merge(reward, 1, Integer::sum);
 
 			BOXES.log(player, boxId, new Item(reward));
+			if (player.getInventory().contains(23401) && Misc.getRandom(1,10) == 3) {
+				player.getInventory().delete(23401, 1);
+				player.getInventory().add(boxId, 1);
+				player.getPacketSender().sendMessage("<img=832>@red@You kept your " + ItemDefinition.forId(boxId).getName() +" and a Scroll of Insurance is consumed.");
+			}
 		}
 
 		player.getInventory().delete(boxId, amount);

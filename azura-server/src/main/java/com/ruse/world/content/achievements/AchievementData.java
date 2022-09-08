@@ -47,7 +47,7 @@ public enum AchievementData {
             new Item[] {new Item(19114, 1)},
             new LoyaltyPointReward(2000)
     ),
-    MAGIC_NPCS(8, AchievementType.EASY, 50, "Magic Npcs","Kill x50 Bats of Light",
+    MAGIC_NPCS(8, AchievementType.EASY, 50, "Magic Npcs","Kill x50 Aquanites",
             new Item[] {new Item(19114, 1)},
             new LoyaltyPointReward(2000)
     ),

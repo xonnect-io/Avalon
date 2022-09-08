@@ -4,6 +4,7 @@ package com.ruse.world.content.seasonpass;
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.world.World;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dialogue.DialogueExpression;
 import com.ruse.world.content.dialogue.DialogueManager;
@@ -109,6 +110,7 @@ public class SeasonPass {
 	 */
 	public void checkafteraddingxp(int xpadded) {
 		if(tier == 50){
+			this.xp = 0;
 			return;
 		}
 
@@ -120,12 +122,29 @@ public class SeasonPass {
 			this.xp =remainderxp;
 			for(int i = 0; i < totaltierstoadvance; i++){
 				this.tier++;
+
+				if(tier == 25) {
+					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Season pass.");
+				}
+
+				if(tier == 50) {
+					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Season pass.");
+					this.xp = 0;
+					giveRewards();
+					return;
+				}
 				giveRewards();
 			}
 		} else if(getXp() + xpadded == 10){
 			addTier(1);
 			this.xp = 0;
 			giveRewards();
+			if(tier == 25) {
+				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Season pass.");
+			}
+			if(tier == 50) {
+				World.sendMessage("<img=832> " + player.getUsername() + " has reached Tier 50 of the Season pass.");
+			}
 		} else {
 			this.xp+=xpadded;
 		}

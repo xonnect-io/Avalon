@@ -137,7 +137,7 @@ public final class CombatFactory {
      */
     public static boolean fullKarils(Character entity) {
         return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals("Karil the Tainted")
-                : ((Player) entity).getEquipment().containsAll(16054, 17193, 17339, 4734);
+                : ((Player) entity).getEquipment().containsAll(3751, 17193, 17339, 4734);
     }
 
     /**

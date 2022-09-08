@@ -1,7 +1,6 @@
 package com.ruse.world.content.newspinner.boxes;
 
 import com.ruse.model.Item;
-import com.ruse.util.Misc;
 
 import java.util.ArrayList;
 
@@ -17,7 +16,7 @@ public class RegularMysteryBox implements MysteryBox {
             add(new Item(4718, 1));
             add(new Item(10348, 1));
             add(new Item(10346, 1));
-            add(new Item(16054, 1));
+            add(new Item(3751, 1));
             add(new Item(4734, 1));
             add(new Item(17193, 1));
             add(new Item(17339, 1));

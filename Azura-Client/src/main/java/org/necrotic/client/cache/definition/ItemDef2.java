@@ -1716,11 +1716,20 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.rdc2 = 10;
 				break;
-			case 16054:
+
+			case 3751:
+				itemDef.copyItem(16054);
 				itemDef.name = "Sagittarian coif";
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.rdc2 = 10;
 				break;
+
+			case 23410:
+				itemDef.name = "Sagittarian coif";
+				itemDef.actions = new String[]{null, null, null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.rdc2 = 10;
+				break;
+
 			case 17193:
 			case 17339:
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};

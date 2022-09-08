@@ -127,56 +127,100 @@ public class Store implements Runnable {
                     case 9:
                         player.getInventory().add(10943, quantity);
                         break;
+                    case 10:
+                        player.getInventory().add(8326, quantity);
+                        player.getInventory().add(8327, quantity);
+                        player.getInventory().add(8328, quantity);
+                        player.getInventory().add(22084, quantity);
+                        break;
+
+                    case 11:
+                        player.getInventory().add(8330, quantity);
+                        player.getInventory().add(8331, quantity);
+                        player.getInventory().add(8332, quantity);
+                        player.getInventory().add(22083, quantity);
+                        break;
+
+
+                    case 12:
+                        player.getInventory().add(8323, quantity);
+                        player.getInventory().add(8324, quantity);
+                        player.getInventory().add(8325, quantity);
+                        player.getInventory().add(22092, quantity);
+                        break;
 
                     //Silver casket
-                    case 10:
+                    case 13:
                         player.getInventory().add(15003, quantity);
                         break;
                     //Ruby casket
-                    case 11:
+                    case 14:
                         player.getInventory().add(15002, quantity);
                         break;
                     //Diamond casket
-                    case 12:
+                    case 15:
                         player.getInventory().add(15004, quantity);
                         break;
                     //Owner cape goodiebag
-                    case 13:
+                    case 16:
                         player.getInventory().add(3578, quantity);
                         break;
                     //1.5x DR BOOSTER
-                    case 14:
+                    case 17:
                         player.getInventory().add(4442, quantity);
                         break;
                     //1.5x DMG BOOSTER
-                    case 15:
+                    case 18:
                         player.getInventory().add(23254, quantity);
                         break;
                     //Onyx casket
-                    case 16:
+                    case 19:
                         player.getInventory().add(14999, quantity);
                         break;
+                    case 20:
+                        player.getInventory().add(4684, quantity);
+                        player.getInventory().add(4685, quantity);
+                        player.getInventory().add(4686, quantity);
+                        player.getInventory().add(8273, quantity);
+                        player.getInventory().add(8274, quantity);
+                        player.getInventory().add(9939, quantity);
+                        break;
                     //Gold Season Pass
-                    case 17:
+                    case 21:
                         player.getInventory().add(23275, quantity);
                         break;
                     //Owner cape goodiebag
-                    case 18:
+                    case 22:
                         player.getInventory().add(23240, quantity);
                         break;
                     //Zenyte casket
-                    case 19:
+                    case 23:
                         player.getInventory().add(23253, quantity);
                         break;
                     //PVM Boxes
-                    case 20:
+                    case 24:
                         player.getInventory().add(7956, quantity * 20_000);
                         break;
                     //Grand mystery box
-                    case 21:
+                    case 25:
                         player.getInventory().add(19114, quantity * 400);
                         break;
-
+                    case 26:
+                        player.getInventory().add(23220, quantity);
+                        player.getInventory().add(23221, quantity);
+                        player.getInventory().add(23222, quantity);
+                        player.getInventory().add(23223, quantity);
+                        player.getInventory().add(23224, quantity);
+                        break;
+                    case 27:
+                        player.getInventory().add(23062, quantity);
+                        break;
+                    case 28:
+                        player.getInventory().add(23061, quantity);
+                        break;
+                    case 29:
+                        player.getInventory().add(23061, quantity);
+                        break;
                     default:
                         player.sendMessage("No donation was found under your name.");
                         return;
@@ -184,17 +228,19 @@ public class Store implements Runnable {
 
                 PlayerLogs.logPlayerDonations(player.getUsername(), "Donated: $" + amount
                         + ", Item: " + ItemDefinition.forId(id).getName() + ", Amount: " + item_number + ", ID: " + id + ", item_number: " + item_number);
-
+                if (amount >= 5) {
+                    World.sendMessage("<img=5><shad=1>@yel@Donation: @blu@" + player.getUsername()
+                            + "@or2@ has donated! @red@::Donate@or2@ now to show support for @red@Avalon!");
+                } else {
+                    player.sendMessage("Your donation message is only displayed for purchases over $5");
+                }
                 player.incrementAmountDonated((int) amount);
                 player.setAmountDonatedToday((int)amount);
                 player.getInventory().add(23174, (int) amount);
                 player.sendMessage("Thanks for donating!");
                 player.sendMessage("You are rewarded " + (int) amount + " Nephilim Tokens!");
                 player.sendMessage("Your total amount donated was increased by " + (int) amount + ". your new total is: " + player.getAmountDonated());
-                if (amount > 250) {
-                    player.getInventory().add(23174, (int) amount);
-                    player.sendMessage("You are rewarded an extra" + (int) amount+ " Nephilim Tokens for donating more than $250");
-                }
+
                 if (GameSettings.ELITE_DONO_DEAL && amount >= 50) {
                     player.getInventory().add(3578, 1);
                     player.sendMessage("You received an Elite Goodiebag for donating 50+");
@@ -209,12 +255,6 @@ public class Store implements Runnable {
                     player.getInventory().add(23240, 1);
                     player.sendMessage("You received x1 Owner jewelry Goodiebag for donating 50+");
                     World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Owner jewelry Goodiebag!");
-                }
-                if (amount >= 5) {
-                    World.sendMessage("<img=5><shad=1>@yel@Donation: @blu@" + player.getUsername()
-                            + "@or2@ has donated! @red@::Donate@or2@ now to show support for @red@Avalon!");
-                } else {
-                    player.sendMessage("Your donation message is only displayed for purchases over $5");
                 }
                 rs.updateInt("claimed", 1);
                 rs.updateRow();

@@ -154,7 +154,7 @@ public enum Collection {
             new Item(18800), new Item(19138), new Item(14915), new Item(14919), new Item(14924)),
     PVM_BOX(Player.PVM_BOXES_OPENED, LogType.BOXES, "Pvm Box", new int[] {CollectionLog.PVM_BOX}, Player.PVM_BOX_LOG_CLAIMED, new Item[] { new Item(22214,1000) },
             new Item(10350), new Item(10348), new Item(4718), new Item(10346), new Item(14499), new Item(14497),
-            new Item(14501), new Item(4710), new Item(16054), new Item(17193), new Item(17339), new Item(4734),
+            new Item(14501), new Item(4710), new Item(3751), new Item(17193), new Item(17339), new Item(4734),
             new Item(4753), new Item(4757), new Item(4759), new Item(4755), new Item(4745), new Item(4749),
             new Item(4751), new Item(4747), new Item(290), new Item(19582), new Item(14525), new Item(11858),
             new Item(23020), new Item(4151), new Item(11235), new Item(15486), new Item(12933), new Item(18353),

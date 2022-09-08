@@ -102,16 +102,24 @@ public class CasketOpening {
     public boolean removeItems() {
         if (player.getInventory().getAmount(getCurrentCasket().getItemID()) >= 1) {
             player.getInventory().delete(getCurrentCasket().getItemID(), 1);
+            if (player.getInventory().contains(23401) && Misc.getRandom(1,10) == 3) {
+                player.getInventory().delete(23401, 1);
+                player.getInventory().add(getCurrentCasket().getItemID(), 1);
+                player.getPacketSender().sendMessage("<img=832>@red@You kept your " + ItemDefinition.forId(getCurrentCasket().getItemID()).getName() +" and a Scroll of Insurance is consumed.");
+            }
         }
         return false;
     }
 
     public boolean removeAllItems() {
-
         int amount = player.getInventory().getAmount(23370);
-
         if (player.getInventory().getAmount(getCurrentCasket().getItemID()) >= 1) {
             player.getInventory().delete(getCurrentCasket().getItemID(), amount);
+            if (player.getInventory().contains(23401) && Misc.getRandom(1,10) == 3) {
+                player.getInventory().delete(23401, 1);
+                player.getInventory().add(getCurrentCasket().getItemID(), 1);
+                player.getPacketSender().sendMessage("<img=832>@red@You kept your " + ItemDefinition.forId(getCurrentCasket().getItemID()).getName() +" and a Scroll of Insurance is consumed.");
+            }
         }
         return false;
     }
