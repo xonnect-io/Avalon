@@ -1,5 +1,6 @@
 package com.ruse.engine.task.impl;
 
+import com.ruse.GameSettings;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.engine.task.impl.globalevents.GlobalEventBossTask;
@@ -478,7 +479,17 @@ public class NPCDeathTask extends Task {
                         }
                         if(killer.npckillsforseasonpass == 500){
                             killer.npckillsforseasonpass = 0;
-                            killer.sendMessage("You receive 1 XP for killing 500 NPCs!");
+                            if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,3) == 2) {
+                                if (Misc.getRandom(10) > 5) {
+                                    killer.getInventory().add(23411, 1);
+                                    killer.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
+                                } else if (Misc.getRandom(10) < 5) {
+                                    killer.getInventory().add(23412, 1);
+                                    killer.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
+                                }
+                            }
+                            killer.getSeasonPass().addXp(1);
+                            killer.sendMessage("You receive 1 Season pass XP for killing 500 NPCs!");
                         }
                     }
                     stop();

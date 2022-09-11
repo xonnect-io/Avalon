@@ -100,6 +100,9 @@ public class CasketOpening {
     }
 
     public boolean removeItems() {
+        if (getCurrentCasket() == Caskets.ETHEREAL_CASE || getCurrentCasket() == Caskets.SERAPHIC_CASE) {
+            player.getInventory().delete(4186, 1);
+        }
         if (player.getInventory().getAmount(getCurrentCasket().getItemID()) >= 1) {
             player.getInventory().delete(getCurrentCasket().getItemID(), 1);
             if (player.getInventory().contains(23401) && Misc.getRandom(1,10) == 3) {
@@ -112,7 +115,7 @@ public class CasketOpening {
     }
 
     public boolean removeAllItems() {
-        int amount = player.getInventory().getAmount(23370);
+        int amount = player.getInventory().getAmount(getCurrentCasket().getItemID());
         if (player.getInventory().getAmount(getCurrentCasket().getItemID()) >= 1) {
             player.getInventory().delete(getCurrentCasket().getItemID(), amount);
             if (player.getInventory().contains(23401) && Misc.getRandom(1,10) == 3) {
@@ -128,7 +131,14 @@ public class CasketOpening {
         if (getCurrentCasket() == null) {
             return;
         }
-
+        if (getCurrentCasket() == Caskets.SERAPHIC_CASE && !player.getInventory().contains(4186)) {
+            player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
+            return;
+        }
+        if (getCurrentCasket() == Caskets.ETHEREAL_CASE && !player.getInventory().contains(4186)) {
+            player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
+            return;
+        }
         if (!canCasketOpening) {
             player.sendMessage("Please finish your current spin.");
             return;
@@ -418,6 +428,8 @@ public class CasketOpening {
         SOSREWARDS(23370, SOSRewards.rewards),
         SUMMER_BOX(23322, SummerBox.rewards),
         SLAYER_U(22123, SlayerU.rewards),
+        ETHEREAL_CASE(23412, Ethereal.rewards),
+        SERAPHIC_CASE(23411, Seraphic.rewards),
         ;
         private int itemID;
         private Box[] loot;

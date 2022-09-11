@@ -9485,6 +9485,7 @@ public class Client extends GameRenderer {
     }
 
     private void dropClient() {
+
         if (anInt1011 > 0) {
             resetLogout();
             return;
@@ -10418,6 +10419,7 @@ public class Client extends GameRenderer {
             if (super.mouseX > anInt1087 + 5 || super.mouseX < anInt1087 - 5 || super.mouseY > anInt1088 + 5 || super.mouseY < anInt1088 - 5) {
                 aBoolean1242 = true;
             }
+            System.out.println(super.mouseY+"");
 
             if (super.getClickMode2() == 0) {
                 if (activeInterfaceType == 3) {
@@ -10439,10 +10441,13 @@ public class Client extends GameRenderer {
                     }
 
                     bankItemDragSprite = null;
-                    int x = GameFrame.isFixed() ? 0 : (getScreenWidth() - 765) / 2;
+                    int x = GameFrame.isFixed() ? 0 : (getScreenWidth() - 765) / 2;//0
                     int y = GameFrame.isFixed() ? 40 : (getScreenHeight() - 503) / 2;
+                //    System.out.println(getScreenHeight()+" screenheight");//771
 
-                    if (modifiedWidgetId == 5382 && super.mouseY >= y && super.mouseY <= y + 37) {// check
+                 //   System.out.println("y value: "+(getScreenHeight() - 503) / 2+"");//134
+                    if (modifiedWidgetId == 5382 && super.mouseY >= (GameFrame.isFixed() ? y : y+42) && super.mouseY <= y + (GameFrame.isFixed() ? 37 :  y+69)) {// issue is here 98+37 is upper bound
+                        //if ur y mouse position is greater than
                         // if
                         // bank
                         // interface
@@ -15076,6 +15081,7 @@ public class Client extends GameRenderer {
                     return true;
 
                 case 109:
+                    toggleSize(ScreenMode.FIXED);
                     resetLogout();
                     pktType = -1;
                     return false;
@@ -17553,7 +17559,7 @@ public class Client extends GameRenderer {
         menuActionName[0] = "Cancel";
         menuActionID[0] = 1107;
         menuActionRow = 1;
-
+//System.out.println((getScreenHeight() - 503) / 2+" inarea");
         int splitBoxX = 495;
         int splitBoxY = 122 + (GameFrame.getScreenMode() == ScreenMode.FIXED ? 0 : 2);
 

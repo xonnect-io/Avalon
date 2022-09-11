@@ -74,8 +74,8 @@ public class ItemActionPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("You cannot use this potion here.");
             return false;
         }
-        if (player.getOverloadPotionTimer() > 0 && player.getOverloadPotionTimer() < 750) {
-            player.getPacketSender().sendMessage("You already have the effect of an Overload or Super/Infinity Overload potion.");
+        if (player.getOverloadPotionTimer() > 0) {
+            player.getPacketSender().sendMessage("You already have the effect of an Overload potion.");
             return false;
         }
         if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < 500) {
@@ -96,8 +96,8 @@ public class ItemActionPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("You cannot use this potion here.");
             return false;
         }
-        if (player.getOverloadPotionTimer() > 0 && player.getOverloadPotionTimer() < 750) {
-            player.getPacketSender().sendMessage("You already have the effect of an Overload or Super/Infinity Overload potion.");
+        if (player.getOverloadPotionTimer() > 0) {
+            player.getPacketSender().sendMessage("You already have the effect of an Overload potion.");
             return false;
         }
         if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < 500) {
@@ -107,7 +107,7 @@ public class ItemActionPacketListener implements PacketListener {
         player.performAnimation(new Animation(829));
         player.getInventory().getItems()[slot] = new Item(replacePotion, 1);
         player.getInventory().refreshItems();
-        player.setOverloadPotionTimer(600);
+        player.setOverloadPotionTimer(55555555);
         player.setPotionUsed("Rage Mode");
         TaskManager.submit(new InfinityRagePotionTask(player));
         return true;
@@ -118,8 +118,8 @@ public class ItemActionPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("You cannot use this potion here.");
             return false;
         }
-        if (player.getOverloadPotionTimer() > 0 && player.getOverloadPotionTimer() < 750) {
-            player.getPacketSender().sendMessage("You already have the effect of an Overload or Rage/Infinity Overload potion.");
+        if (player.getOverloadPotionTimer() > 0) {
+            player.getPacketSender().sendMessage("You already have the effect of an Overload potion.");
             return false;
         }
         if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < 500) {
@@ -129,9 +129,30 @@ public class ItemActionPacketListener implements PacketListener {
         player.performAnimation(new Animation(829));
         player.getInventory().getItems()[slot] = new Item(replacePotion, 1);
         player.getInventory().refreshItems();
-        player.setOverloadPotionTimer(100000);
+        player.setOverloadPotionTimer(55555555);
         player.setPotionUsed("Owner Mode");
         TaskManager.submit(new OwnerPotionTask(player));
+        return true;
+    }
+    public static boolean drinkSeraphicPot(final Player player, int slot, int replacePotion) {
+        if (player.getLocation() == Location.WILDERNESS || player.getLocation() == Location.DUEL_ARENA) {
+            player.getPacketSender().sendMessage("You cannot use this potion here.");
+            return false;
+        }
+        if (player.getOverloadPotionTimer() > 0) {
+            player.getPacketSender().sendMessage("You already have the effect of an Overload potion.");
+            return false;
+        }
+        if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < 500) {
+            player.getPacketSender().sendMessage("You need to have at least 500 Hitpoints to drink this potion.");
+            return false;
+        }
+        player.performAnimation(new Animation(829));
+        player.getInventory().getItems()[slot] = new Item(replacePotion, 1);
+        player.getInventory().refreshItems();
+        player.setOverloadPotionTimer(55555555);
+        player.setPotionUsed("Seraphic Mode");
+        TaskManager.submit(new SeraphicPotionTask(player));
         return true;
     }
 
@@ -313,6 +334,9 @@ public class ItemActionPacketListener implements PacketListener {
             case 23392:
                 player.membershipInterfaceHandler.openBenefitTab();
                 break;
+            case 23393:
+                player.membershipInterfaceHandler.openCosmeticTab();
+                break;
             case 23177:
                 player.getInventory().delete(23177, 1);
                 player.getInventory().add(23139, 1);
@@ -323,14 +347,12 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 23407:
-                player.getInventory().delete(23396, 1);
+                player.getInventory().delete(23407, 1);
+                player.getInventory().add(23396, 1);
                 player.getInventory().add(23397, 1);
                 player.getInventory().add(23398, 1);
                 player.getInventory().add(23399, 1);
                 player.getInventory().add(23400, 1);
-                if (Misc.getRandom(10) > 9)
-                    player.getInventory().add(23393, 1);
-                player.sendMessage("You were extra lucky and have been given a cosmetic pass back for next season!");
                 break;
             case PrayerHandler.HOLY_SCROLL_DESTRUCTION_ITEM:
                 if(!player.isHolyPrayerUnlocked(PrayerHandler.HOLY_DESTRUCTION_IDX)) {
@@ -582,6 +604,22 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getCasketOpening().openInterface();
                 break;
 
+            case 23411:
+                if (!player.getInventory().contains(4186)) {
+                    player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
+                    return;
+                }
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SERAPHIC_CASE);
+                player.getCasketOpening().openInterface();
+                break;
+            case 23412:
+                if (!player.getInventory().contains(4186)) {
+                    player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
+                    return;
+                }
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ETHEREAL_CASE);
+                player.getCasketOpening().openInterface();
+                break;
             case 23322:
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SUMMER_BOX);
                 player.getCasketOpening().openInterface();
@@ -728,7 +766,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.setCastSpell(null);
                 player.getFoodTimer().reset();
                 player.getPotionTimer().reset();
-                player.setOverloadPotionTimer(12000000);
+                player.setOverloadPotionTimer(55555555);
                 if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
                     player.getSkillManager().setCurrentLevel(Skill.PRAYER, 2000);
                     player.getSkillManager().setCurrentLevel(Skill.ATTACK, 200);
@@ -737,9 +775,6 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getSkillManager().setCurrentLevel(Skill.RANGED, 200);
                     player.getSkillManager().setCurrentLevel(Skill.MAGIC, 200);
                     player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 1200);
-                }
-                if (player.getOverloadPotionTimer() > 1) {
-                    player.getPacketSender().sendEffectTimerSeconds(12000000, EffectTimer.INFINITE_RAGE_POTION);
                 }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
@@ -753,7 +788,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.setCastSpell(null);
                 player.getFoodTimer().reset();
                 player.getPotionTimer().reset();
-                player.setOverloadPotionTimer(100000);
+                player.setOverloadPotionTimer(55555555);
                 if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
                     player.getSkillManager().setCurrentLevel(Skill.PRAYER, 2400);
                     player.getSkillManager().setCurrentLevel(Skill.ATTACK, 240);
@@ -763,12 +798,31 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getSkillManager().setCurrentLevel(Skill.MAGIC, 240);
                     player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 2400);
                 }
-                if (player.getOverloadPotionTimer() > 1) {
-                    player.getPacketSender().sendEffectTimerSeconds(12000000, EffectTimer.INFINITE_OWNER_POTION);
-                }
+
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
 
+            case 11465:
+                if (!drinkSeraphicPot(player, slot, 11465))
+                    return;
+                player.getPacketSender().sendInterfaceRemoval();
+                player.getCombatBuilder().incrementAttackTimer(1).cooldown(false);
+                player.getCombatBuilder().setDistanceSession(null);
+                player.setCastSpell(null);
+                player.getFoodTimer().reset();
+                player.getPotionTimer().reset();
+                player.setOverloadPotionTimer(55555555);
+                if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
+                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 2800);
+                    player.getSkillManager().setCurrentLevel(Skill.ATTACK, 280);
+                    player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 280);
+                    player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 280);
+                    player.getSkillManager().setCurrentLevel(Skill.RANGED, 280);
+                    player.getSkillManager().setCurrentLevel(Skill.MAGIC, 280);
+                    player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 2800);
+                }
+                Sounds.sendSound(player, Sound.DRINK_POTION);
+                break;
             case 21218:
                 player.getInventory().delete(21218, 1);
                 int num1 = 60000 / Difficulty.getDifficultyModifier(player, Skill.INVENTION);

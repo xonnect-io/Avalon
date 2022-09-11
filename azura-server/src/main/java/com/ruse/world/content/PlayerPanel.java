@@ -36,7 +36,7 @@ public class PlayerPanel {
                 "Globals",
                 "Terrorstep: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
                 "Hellraiser: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",
-                "Slayer Boss: @whi@" + SlayerBossSystem.getLeft() + " @whi@tasks left.",
+                "Slayer Champion: @whi@" + SlayerBossSystem.getLeft() + " @whi@tasks left.",
                 (VoteBossDrop.currentSpawn == null
                         ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/60 please vote!"
                         : "Vote Boss:@whi@ Alive ::Vboss"),

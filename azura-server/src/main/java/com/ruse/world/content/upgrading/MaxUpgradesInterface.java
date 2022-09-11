@@ -104,7 +104,10 @@ public class MaxUpgradesInterface {
         CELESTIAL_BRACELET(100,new Item(23235,-1),new Item(23292, 1),new Item(23235, 1),new Item(23273, 75000)),
         CELESTIAL_CAPE(100,new Item(22109,-1),new Item(23270, 1),new Item(22109, 1),new Item(23273, 200_000)),
         CELESTIAL_AURA(100,new Item(23241,-1),new Item(23271, 1),new Item(23241, 1),new Item(23273, 150_000)),
-        CELESTIAL_QUIVER(100,new Item(23272,-1),new Item(23300, 1),new Item(23272, 1),new Item(23273, 100_000));
+        CELESTIAL_QUIVER(100,new Item(23272,-1),new Item(23300, 1),new Item(23272, 1),new Item(23273, 100_000)),
+        ETHEREAL_SCROLL(100,new Item(20421,-1),new Item(23413, 1),new Item(20421, 1),new Item(23254, 1),new Item(4442, 1),new Item(12855, 250_000_000)),
+        SERAPHIC_POTION(100,new Item(14705,-1),new Item(11465, 1),new Item(14705, 1),new Item(23242, 1),new Item(12855, 250_000_000));
+
 
 
         ;

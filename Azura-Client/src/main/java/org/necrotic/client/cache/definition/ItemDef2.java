@@ -2679,7 +2679,7 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{56};
 				itemDef.editedModelColor = new int[]{79};
-				itemDef.rdc2 = 46880;
+				//itemDef.rdc2 = 46880;
 				break;
 			case 8324:
 				itemDef.name = "T5 Magic body";
@@ -2697,7 +2697,7 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{56};
 				itemDef.editedModelColor = new int[]{79};
-				itemDef.rdc2 = 46880;
+				//itemDef.rdc2 = 46880;
 				break;
 
 			case 8325:
@@ -2716,7 +2716,7 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{56};
 				itemDef.editedModelColor = new int[]{79};
-				itemDef.rdc2 = 46880;
+				//itemDef.rdc2 = 46880;
 				break;
 				
 			case 8326:
@@ -2732,7 +2732,7 @@ public class ItemDef2 {
 				itemDef.rotationX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				 itemDef.rdc2 = 34333;
+				// itemDef.rdc2 = 34333;
 				break;
 				
 			case 8327:
@@ -2748,7 +2748,7 @@ public class ItemDef2 {
 				itemDef.rotationX = trinity.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				 itemDef.rdc2 = 34333;
+				// itemDef.rdc2 = 34333;
 				break;
 			
 			case 8328:
@@ -2764,7 +2764,7 @@ public class ItemDef2 {
 				itemDef.rotationX = trinity.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				 itemDef.rdc2 = 34333;
+				 //itemDef.rdc2 = 34333;
 				break;
 				
 				case 23184:
@@ -3120,7 +3120,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[]{56};
 				itemDef.editedModelColor = new int[]{68};
 
-				 itemDef.rdc2 = 34343;
+				 //itemDef.rdc2 = 34343;
 				break;
 			case 8331:
 				itemDef.name = "T5 Range body";
@@ -3139,7 +3139,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[]{56};
 				itemDef.editedModelColor = new int[]{68};
 
-				 itemDef.rdc2 = 34343;
+				 //itemDef.rdc2 = 34343;
 				break;
 
 			case 8332:
@@ -3159,7 +3159,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[]{56};
 				itemDef.editedModelColor = new int[]{68};
 
-				 itemDef.rdc2 = 34343;
+				 //itemDef.rdc2 = 34343;
 				break;
 			case 8806:
 				itemDef.name = "Ganopurp visor";

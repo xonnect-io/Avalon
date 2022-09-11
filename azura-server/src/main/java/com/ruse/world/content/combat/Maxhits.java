@@ -75,7 +75,9 @@ public class Maxhits {
                 double bonus = DropUtils.getDamageBonus(playerFamiliar.getSummonNpc().getId());
                 base *= bonus;
             }
-            if (player.getInventory().contains(4442)) {
+            if (player.getInventory().contains(23413))
+                base *= 1.75;
+           else if (player.getInventory().contains(4442)) {
                 base *= 1.5;
             }
             if (player.getEquipment().contains(7539)) {
@@ -336,7 +338,9 @@ public class Maxhits {
                     }
                 }
             }
-            if (player.getInventory().contains(4442)) {
+            if (player.getInventory().contains(23413))
+                maxHit *= 1.75;
+            else if (player.getInventory().contains(4442)) {
                 maxHit *= 1.5;
             }
             if (player.getEquipment().contains(7539)) {
@@ -577,7 +581,9 @@ public class Maxhits {
             if (player.getEquipment().contains(23049)) { //Tier 6 Aura
                 maxHit *= 1.10D;
             }
-            if (player.getInventory().contains(4442)) {
+            if (player.getInventory().contains(23413))
+                maxHit *= 1.75;
+            else if (player.getInventory().contains(4442)) {
                 maxHit *= 1.5;
             }
             if (player.getEquipment().contains(7539)) {

@@ -766,10 +766,12 @@ public class CustomDropUtils {
             }
         }
 
-
-        if (player.getInventory().contains(23254)) {
+        if (player.getInventory().contains(23413)) {
+            percentBoost *= 1.75;
+        } else if (player.getInventory().contains(23254)) {
             percentBoost *= 1.5;
         }
+
         if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DR) {
             percentBoost *= 2;
         }

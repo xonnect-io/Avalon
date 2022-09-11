@@ -147,7 +147,7 @@ public class CommandPacketListener implements PacketListener {
             }
             Position pos = new Position(3488, 4697);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Doom Slayer Boss!");
+            player.getPacketSender().sendMessage("Teleporting you to the Slayer Champion!");
         }
         if (command[0].equalsIgnoreCase("guardian")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
@@ -203,7 +203,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("globals")) {
             player.getPacketSender().sendMessage("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft() + " Steals left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft() + " kills left.");
-            player.getPacketSender().sendMessage("@red@<shad=1>Global Slayer Boss: @yel@" + SlayerBossSystem.getLeft() + " tasks left.");
+            player.getPacketSender().sendMessage("@red@<shad=1>Slayer Champion: @yel@" + SlayerBossSystem.getLeft() + " tasks left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount() + "/60 please vote!");
             player.getPacketSender().sendMessage("@red@<shad=1>Dragon King: @yel@" + DragonKingBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Nightmare boss: @yel@" + NightmareBoss.timeLeft());
@@ -2544,8 +2544,18 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("groupa")) {
             GroupManager.loadGroups();
         }
-
-                if (command[0].equalsIgnoreCase("givemod")) {
+        if (command[0].equalsIgnoreCase("testcase")) {
+            if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,3) == 2) {
+                if (Misc.getRandom(10) > 5) {
+                    player.getInventory().add(23411, 1);
+                    player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
+                } else if (Misc.getRandom(10) < 5) {
+                    player.getInventory().add(23412, 1);
+                    player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
+                }
+            } else player.getPacketSender().sendMessage("Failed to roll a 2!");
+        }
+        if (command[0].equalsIgnoreCase("givemod")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {
                 player.getPacketSender().sendMessage("Cannot find that player online..");

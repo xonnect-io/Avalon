@@ -13,7 +13,7 @@ public class SlayerBossSystem {
 	public static void commandSpawnBoss() {
 		NPC npc = new NPC(9129, new Position(3488, 4704));
 		World.register(npc);
-		World.sendMessage("Slayer Guardian has Arrived! fight him now at ::slayerboss");
+		World.sendMessage("Slayer Champion has Arrived! fight him now at ::slayerboss");
 		slayerTasks = 0;
 	}
 	public static void spawnBoss() {
@@ -23,14 +23,14 @@ public class SlayerBossSystem {
 
 		NPC npc = new NPC(9129, new Position(3488, 4704));
 		World.register(npc);
-		World.sendMessage("Slayer Guardian has Arrived! fight him now at ::slayerboss");
+		World.sendMessage("Slayer Champion has Arrived! fight him now at ::slayerboss");
 		slayerTasks = 0;
 	}
 	public static void callBoss() {
 		if(slayerTasks == 75) {
-		World.sendMessage("<shad=1>@or2@We are 25% to spawning the Slayer boss, keep slaying!");
+		World.sendMessage("<shad=1>@or2@We are 25% to spawning the Slayer Champion, keep slaying!");
 		if(slayerTasks == 150) {
-			World.sendMessage("<img=832> <shad=1>@or2@We are halfway to spawning the Slayer boss, keep slaying!");
+			World.sendMessage("<img=832> <shad=1>@or2@We are halfway to spawning the Slayer Champion, keep slaying!");
 			return;
 				}
 			}

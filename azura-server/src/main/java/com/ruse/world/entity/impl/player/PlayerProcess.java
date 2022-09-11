@@ -60,30 +60,32 @@ public class PlayerProcess {
 		}
 
 		int rank_amount = 0;
-		if (player.getRights() == PlayerRights.SAPPHIRE_DONATOR)
+		if (player.getRights() == PlayerRights.SAPPHIRE_DONATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 1;
-		if (player.getRights() == PlayerRights.EMERALD_DONATOR)
+		if (player.getRights() == PlayerRights.EMERALD_DONATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 1;
-		if (player.getRights() == PlayerRights.RUBY_DONATOR)
+		if (player.getRights() == PlayerRights.RUBY_DONATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 2;
-		if (player.getRights() == PlayerRights.DIAMOND_DONATOR)
+		if (player.getRights() == PlayerRights.DIAMOND_DONATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 2;
-		if (player.getRights() == PlayerRights.ONYX_DONATOR)
+		if (player.getRights() == PlayerRights.ONYX_DONATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 3;
-		if (player.getRights() == PlayerRights.ZENYTE_DONATOR)
+		if (player.getRights() == PlayerRights.ZENYTE_DONATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 3;
-		if (player.getRights() == PlayerRights.TANZANITE_DONATOR)
+		if (player.getRights() == PlayerRights.TANZANITE_DONATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 4;
-		if (player.getRights() == PlayerRights.SUPPORT)
+		if (player.getRights() == PlayerRights.SUPPORT && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 4;
-		if (player.getRights() == PlayerRights.MODERATOR)
+		if (player.getRights() == PlayerRights.MODERATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 4;
-		if (player.getRights() == PlayerRights.ADMINISTRATOR)
+		if (player.getRights() == PlayerRights.ADMINISTRATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 4;
-		if (player.getRights() == PlayerRights.COMMUNITY_MANAGER)
+		if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 4;
-		if (player.getRights() == PlayerRights.OWNER)
+		if (player.getRights() == PlayerRights.OWNER && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 8;
+		if (!player.hasVotedToday)
+			rank_amount = 0;
 		if (!player.isInActive()) {
 			if (loyaltyTick >= 6) {
 				player.getPointsHandler().incrementLoyaltyPoints(1 + rank_amount);

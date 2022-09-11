@@ -208,6 +208,18 @@ public final class ObjectDefinition {
 			definition.name = "AFK Crystal";
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
+		if (definition.type == 15724) {
+			definition.objectModelIDs = new int[]{19599};
+			definition.interactive = true;
+			definition.modelSizeH = 240;
+			definition.modelSizeY = 240;
+			definition.modelSizeX = 240;
+			definition.actions = new String[]{"Open", null, null, null, null};
+		}
+		if (definition.type == 38694) {
+			definition.interactive = true;
+			definition.actions = new String[]{"Mine", null, null, null, null};
+		}
 		if (definition.type == 1817) {
 			definition.name = "Lever";
 			definition.actions = new String[]{"Pull", null, null, null, null};
@@ -371,6 +383,12 @@ public final class ObjectDefinition {
 			definition.name = "Barrel";
 			definition.actions = new String[]{"Inspect", null, null, null, null};
 		}
+
+		if (definition.type == 1293) {
+			definition.castsShadow = false;
+		}
+
+
 		if (definition.type == 41200) {
 			definition.interactive = true;
 			definition.objectModelIDs = new int[]{100081};

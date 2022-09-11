@@ -1,5 +1,6 @@
 package com.ruse.world.content.raids;
 
+import com.ruse.GameSettings;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Locations;
@@ -316,6 +317,15 @@ public class ZombieRaids {
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
                         player.getInventory().add(18404, 1);
                         player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Slayer Perk is active!");
+                    }
+                    if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,10) == 6) {
+                        if (Misc.getRandom(10) > 5) {
+                            player.getInventory().add(23411, 1);
+                            player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
+                        } else 	if (Misc.getRandom(10) < 5) {
+                            player.getInventory().add(23412, 1);
+                            player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
+                        }
                     }
                 }
                 party.getPlayers().clear();

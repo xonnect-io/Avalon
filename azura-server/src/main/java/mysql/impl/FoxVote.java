@@ -54,6 +54,15 @@ public class FoxVote implements Runnable {
 				if (GameSettings.DOUBLE_VOTE) {
 					points *= 2;
 				}
+				if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,2) == 2) {
+					if (Misc.getRandom(10) > 5) {
+						player.getInventory().add(23411, 1);
+						player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from voting");
+					} else 	if (Misc.getRandom(10) < 5) {
+						player.getInventory().add(23412, 1);
+						player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from voting");
+					}
+				}
 				if (points > 2 &&
 						Misc.getRandom(100) == 75 && player.getInventory().getFreeSlots() >= 1) {
 					player.getInventory().add(10942, 1);

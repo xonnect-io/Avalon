@@ -1,5 +1,6 @@
 package com.ruse.world.content.raids;
 
+import com.ruse.GameSettings;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Item;
@@ -288,27 +289,29 @@ public class SODRaids {
 
                 for (Player player : party.getPlayers()) {
                     Box[] loot = SODRaidLoot.LOOT;
-
                     player.setSODRaidsKC(player.getSODRaidsKC() + 1);
                     player.setEnteredSODRaids(false);
                     Box drop = getLoot(loot, party.getPlayers().size());
-
                     player.getSeasonPass().addXp(2);
-
-              /*      if (drop.isAnnounce()) {
-                        String message = "@blu@News: @red@" + player.getUsername() + " @blu@has just received @red@"
-                                + ItemDefinition.forId(drop.getId()).getName() + "@blu@ from @red@Souls of Suffering";
-                        World.sendMessage1(message);
-                    }*/
-
                     double amt = drop.getMin() + Misc.getRandom(drop.getMax() - drop.getMin());
 
                     player.sendMessage("Souls of Suffering raids completed: @red@" + player.getSODRaidsKC());
                     player.getInventory().add(new Item(drop.getId(), (int) amt));
                     player.sendMessage("<shad=1>@yel@You have received X" + (int) amt + " "+ ItemDefinition.forId(drop.getId()).getName() + " for your participation!" );
+
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
                         player.getInventory().add(new Item(drop.getId(), (int) amt));
                         player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Slayer Perk is active!");
+                    }
+
+                    if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,5) == 3) {
+                        if (Misc.getRandom(10) > 5) {
+                            player.getInventory().add(23411, 1);
+                            player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
+                        } else 	if (Misc.getRandom(10) < 5) {
+                            player.getInventory().add(23412, 1);
+                            player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
+                        }
                     }
                 }
 

@@ -138,6 +138,14 @@ public class HoverMenuManager {
                 Arrays.asList(
                         3739,3738,3737,10946,1486,19886,4446,15288,10947,18623,18637,18631,18629,18638
                 )));
+        menus.put(23412, new HoverMenu("Card packs, caskets, and a chance to obtain an Ethereal Urn",
+                Arrays.asList(
+                        20421,23278,23253,14999,23002,15004,15002,15003,20489,20488,19114,19115,19116
+                )));
+        menus.put(23411, new HoverMenu("Card packs, caskets, and a chance to obtain Seraphic dust",
+                Arrays.asList(
+                        14705,23278,23253,14999,23002,15004,15002,15003,20489,20488,19114,19115,19116
+                )));
         System.out.println("loaded " + menus.size() + "x menu hovers.");
     }
 

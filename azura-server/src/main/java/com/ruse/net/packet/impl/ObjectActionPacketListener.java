@@ -2040,7 +2040,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 player.performAnimation(new Animation(881));
                                 player.getPacketSender().sendInterfaceRemoval();
-                                player.getSkillManager().addExperience(Skill.THIEVING, 100);
+                                player.getSkillManager().addExperience(Skill.THIEVING, 130);
                                 player.getAchievementTracker().progress(AchievementData.THIEVING, 1);
                                 player.getAchievementTracker().progress(AchievementData.THIEVER, 1);
                                 player.getAchievementTracker().progress(AchievementData.KLEPTOMANIAC, 1);

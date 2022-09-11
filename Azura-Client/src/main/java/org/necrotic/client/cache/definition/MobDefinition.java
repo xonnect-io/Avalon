@@ -4551,7 +4551,7 @@ public final class MobDefinition {
 				definition.npcModels = new int[]{15159};
 				break;
 			case 9129:
-				definition.name = "@red@Doom Champion";
+				definition.name = "@red@Slayer Champion";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
 				definition.npcSizeInSquares = 1;
@@ -5511,6 +5511,7 @@ public final class MobDefinition {
 				definition.name = "Lost Survivor";
 				definition.actions = new String[]{"Talk-to", null, null, null, null};
 				break;
+
 
 			case 9127:
 				definition.copy(741);

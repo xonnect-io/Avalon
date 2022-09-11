@@ -2197,6 +2197,52 @@ public final class ItemDefinition {
 				itemDef.modelID = 64099;
 				break;
 
+			case 23411:
+				itemDef.name = "Seraphic case";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
+				itemDef.modelOffsetX = -43;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelID = 19601;
+				break;
+			case 14705:
+				itemDef.name = "Seraphic dust";
+				itemDef.actions = new String[]{null, null, null, null, null, null};
+				itemDef.modelZoom = 1025;
+				break;
+			case 11465:
+				itemDef.name = "Seraphic potion";
+				itemDef.actions = new String[]{"Drink", null, null, null, "Drop"};
+				break;
+			case 20421:
+				itemDef.name = "Ethereal urn";
+				itemDef.actions = new String[]{null, null, null, null, null, null};
+				itemDef.modelZoom = 1125;
+				break;
+			case 23412:
+				itemDef.name = "Ethereal case";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
+				itemDef.modelOffsetX = -43;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelID = 19602;
+				break;
+
+			case 4186:
+				itemDef.name = "Case key";
+				itemDef.actions = new String[]{null, null, "<col=C3C0B2>Dissolve", null, null, null};
+				break;
+
 			case 20489:
 				itemDef.name = "Launch Casket";
 				itemDef.actions = new String[5];
@@ -2446,7 +2492,20 @@ public final class ItemDefinition {
 			case 1004:
 				itemDef.name = "Coins";
 				break;
-
+			case 23413:
+				itemDef21 = ItemDefinition.get(19890);
+				itemDef.modelOffsetX = 15;
+				itemDef.rotationZ = itemDef21.rotationZ;
+				itemDef.modelOffsetY = 30;
+				itemDef.modelZoom = 1340;
+				itemDef.rotationY = 340;
+				itemDef.rotationX = 1300;
+				itemDef.modelID = itemDef21.modelID;
+				itemDef.maleEquip1 = itemDef21.maleEquip1;
+				itemDef.femaleEquip1 = itemDef21.femaleEquip1;
+				itemDef.name = "1.75x Ethereal scroll";
+				itemDef.rdc2 = 16151;
+				break;
 			case 4442:
 				itemDef21 = ItemDefinition.get(19890);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
@@ -4994,7 +5053,7 @@ public final class ItemDefinition {
 			itemDef.newModelColor = new int[]{55};
 			itemDef.editedModelColor = new int[]{68};
 			itemDef.stackable = false;
-			 itemDef.rdc2 = 34343;
+			// itemDef.rdc2 = 34343;
 		}
 		if (customId == 22084) { // weapon
 			itemDef.name = "Trinity Hammers";
@@ -5011,7 +5070,7 @@ public final class ItemDefinition {
 			itemDef.stackable = false;
 			itemDef.newModelColor = new int[]{52};
 			itemDef.editedModelColor = new int[]{52};
-			 itemDef.rdc2 = 34333;
+			// itemDef.rdc2 = 34333;
 		}
 		if (customId == 22085) { // weapon
 			itemDef.name = "Karos Scimitar";
@@ -5139,7 +5198,7 @@ public final class ItemDefinition {
 			itemDef.newModelColor = new int[]{52};
 			itemDef.editedModelColor = new int[]{79};
 			itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};	
-			itemDef.rdc2 = 46880;
+			//itemDef.rdc2 = 46880;
 		}
 		if (customId == 12933) { // staff
 			itemDef.name = "Tanker shield";

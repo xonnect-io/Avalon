@@ -170,7 +170,7 @@ public class RSInterface {
 	public static void cosmeticUnlock(TextDrawingArea[] TDA) {
 		RSInterface widget = addInterface(60600);
 		addSprite(60603, 1746);
-		addText(60604, "Avalon's Membership Program", TDA, 2, 0xFF981F, true, true);
+		addText(60604, "Avalon's Cosmetic Program", TDA, 2, 0xFF981F, true, true);
 		addText(60606, "Resets: September, 1st, 2022", TDA, 1, 0xFF981F, false, true);
 		addButton(60607, 1658, 1659, "View Benefits tab");
 		addButton(60608, 1658, 1659, "View Cosmetic tab");

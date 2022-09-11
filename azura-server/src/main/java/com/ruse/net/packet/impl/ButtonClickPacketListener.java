@@ -216,7 +216,7 @@ public class ButtonClickPacketListener implements PacketListener {
             break;
             case -4908:
                 if(player.isCosmeticUnlocked()){
-                    player.sendMessage("You have already Claimed a cosmetic membership this Month");
+                    player.sendMessage("You have already claimed a cosmetic membership this month");
                     return;
 
                 }
