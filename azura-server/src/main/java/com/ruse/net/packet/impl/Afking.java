@@ -21,6 +21,7 @@ public class Afking {
             player.setPositionToFace(new Position(player.getPosition().getX(), player.getPosition().getY() - 1));
 
             player.getCharacterAnimations().setStandingAnimation(chairanimation);
+
             if (player.getRights() == PlayerRights.OWNER) {
                 player.throneId = 13671;
             }

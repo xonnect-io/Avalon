@@ -251,6 +251,19 @@ public final class MobDefinition {
 				definition.scaleY = 150;
 				definition.drawYellowDotOnMap = true;
 				break;
+
+			case 9245:
+				definition.name = "Vorki";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcModels = new int[]{19603};
+				definition.npcSizeInSquares = 2;
+				definition.combatLevel = 200;
+				definition.standAnimation = 8061;
+				definition.walkAnimation = 8061;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.drawYellowDotOnMap = true;
+				break;
 			case 2359:
 				definition.name = "Immortal Warrior";
 				definition.actions = new String[]{null, "Attack", null, null, null};

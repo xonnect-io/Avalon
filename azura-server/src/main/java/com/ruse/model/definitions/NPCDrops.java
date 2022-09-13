@@ -403,7 +403,7 @@ public class NPCDrops {
                 }
             }
             int kills = KillsTracker.getTotalKillsForNpc(npc.getId(), player);
-            if (drop.isAnnounce() || drop.getChance() >= 2000 && item.getId() != 12855) {
+            if (drop.isAnnounce() || drop.getChance() >= 2000 && item.getId() != 12855 && item.getId() != 10025 && item.getId() != 5022) {
                 String itemName = item.getDefinition().getName();
                 String itemMessage = "x" + amount + " " + itemName;
                 String npcName = Misc.formatText(npc.getDefinition().getName());

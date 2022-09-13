@@ -394,18 +394,22 @@ public class Shop extends ItemContainer {
                 player.getPacketSender().sendMessage("You cannot sell this item to this store.");
                 return;
             }
+
         } else {
+
             if (id == EASTER_STORE_2 || id == GLOBAL_BOSS) {
                 player.getPacketSender().sendMessage("You cannot sell items to this store.");
                 return;
             }
         }
-        if (id == SELL_ITEMS) {
-            player.getPacketSender().sendMessage(ItemDefinition.forId(item.getId()).getName() + ": shop will buy for @red@" + (ItemDefinition.forId(item.getId()).getValue())
-                    + " Upgrade Tokens"
-                    );
-            return;
-        }
+        Object[] exchangeItem = ShopManager.getCustomShopData(id, item.getId());
+
+        int excahngeItemValue = 0;
+            if (exchangeItem == null)
+                return;
+            excahngeItemValue = (int) exchangeItem[0];
+
+
         int finalValue = 0;
         String finalString = sellingItem ? "" + ItemDefinition.forId(item.getId()).getName() + ": shop will buy for "
                 : "" + ItemDefinition.forId(shopItem.getId()).getName() + " currently costs @red@";
@@ -478,6 +482,13 @@ public class Shop extends ItemContainer {
             finalString += "" + finalValue + " " + obj[1] + ".";
         }
 
+        if (id == SELL_ITEMS && (item != null && exchangeItem != null)) {
+            player.getPacketSender().sendMessage(ItemDefinition.forId(item.getId()).getName()
+                    + ": @red@shop will buy for @red@" + (Misc.insertCommasToNumber(excahngeItemValue))
+                    + " Upgrade Tokens"
+            );
+            return;
+        }
 
         if (sellingItem && id != 119) {
             for (ReducedSellPrice r : ReducedSellPrice.values()) {
@@ -508,8 +519,17 @@ public class Shop extends ItemContainer {
 
     public void sellItem(Player player, int slot, int amountToSell) {
         this.setPlayer(player);
+
+        Item itemToSell = player.getInventory().getItems()[slot];
+
         if (!player.isShopping() || player.isBanking()) {
             player.getPacketSender().sendInterfaceRemoval();
+            return;
+        }
+        Object[] exchangeItem = ShopManager.getCustomShopData(id, itemToSell.getId());
+
+        if (id == SELL_ITEMS && (itemToSell != null && exchangeItem == null)) {
+            player.getPacketSender().sendMessage( " @red@This item cant be sold to this shop");
             return;
         }
         /*
@@ -527,7 +547,6 @@ public class Shop extends ItemContainer {
                     "<shad=0>@red@You cannot use the shop until you claim your stored Dungeoneering items.");
             return;
         }
-        Item itemToSell = player.getInventory().getItems()[slot];
         if (!itemToSell.sellable() && !(itemToSell.getId() >= 23003 && itemToSell.getId() <= 23007)) {
             player.getPacketSender().sendMessage("This item cannot be sold.");
             return;

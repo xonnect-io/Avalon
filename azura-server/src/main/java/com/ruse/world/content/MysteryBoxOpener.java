@@ -160,6 +160,7 @@ public class MysteryBoxOpener {
 		Map<Integer, Integer> rewards = new HashMap<>();
 		for (int i = 0; i < amount; i++) {
 			int reward = -1;
+			int value = 1;
 			int chance = RandomUtility.inclusiveRandom(0, 500);
 			String name = ItemDefinition.forId(boxId).getName();
 			if (chance > 499) {
@@ -174,9 +175,32 @@ public class MysteryBoxOpener {
 			} else if (chance >= 0) { //0% of 100% = 55% (remainder)
 				reward = common[RandomUtility.exclusiveRandom(0, common.length)]; // ye its correct.
 			}
-
-			rewards.merge(reward, 1, Integer::sum);
-
+			if (reward == 12855) {
+				value = Misc.getRandom(1,5);
+			} else
+			if (reward == 5022) {
+				value = Misc.getRandom(1,100_000);
+			} else
+			if (reward == 7956) {
+				value = Misc.getRandom(1,5000);
+			} else
+			if (reward == 19114) {
+				value = Misc.getRandom(1,50);
+			} else
+			if (reward == 20488) {
+				value = Misc.getRandom(1,5);
+			} else
+			if (reward == 11137) {
+				value = Misc.getRandom(1,75);
+			} else
+			if (reward == 23321) {
+				value = Misc.getRandom(1,20);
+			} else
+			if (reward == 22006) {
+				value = Misc.getRandom(1,25);
+			} else
+				value = 1;
+			rewards.merge(reward, value, Integer::sum);
 			BOXES.log(player, boxId, new Item(reward));
 			if (player.getInventory().contains(23401) && Misc.getRandom(1,10) == 3) {
 				player.getInventory().delete(23401, 1);

@@ -5029,6 +5029,7 @@ public class Client extends GameRenderer {
                     break;
 
                 case 26019: // resizable
+
                     toggleSize(ScreenMode.RESIZABLE);
                     break;
 
@@ -16972,7 +16973,8 @@ public class Client extends GameRenderer {
         if (response == 2) {
             finishLogin(client);
             PlayerHandler.load(client);
-            System.out.println("WHAT ARE MY RIGHTS " + myRights);
+
+          //  System.out.println("WHAT ARE MY RIGHTS " + myRights);
             return false;
         }
 
@@ -17152,7 +17154,9 @@ public class Client extends GameRenderer {
             showTwoFactorAuth = true;
             showCaptcha = true;
             loginScreenCursorPos = 0;
-
+            Varp.getCache()[166].setAnInt709(1);
+            variousSettings[166] = 1;
+            updateConfig(166);
             return;
 
         }
@@ -18376,6 +18380,8 @@ public class Client extends GameRenderer {
 
     @Override
     void startUp() {
+
+        RICH_PRESENCE.initiate();
         // ClientUpdater updater = new ClientUpdater(this);
 
         // if(updater.checkVersion())
@@ -18384,7 +18390,6 @@ public class Client extends GameRenderer {
         isLoading = true;
         super.resetGraphic();
         processLoadingScreen();
-       // RICH_PRESENCE.initiate();
         if (Signlink.sunjava) {
             super.minDelay = 5;
         }
@@ -18939,9 +18944,14 @@ public class Client extends GameRenderer {
             }
 
             int k = variousSettings[configId];
+            System.out.println(j+" and k: "+k);
+            if(j == 8)
+                if(k == 0)
+                    Rasterizer.method372(0.80000000000000004D);
 
             if (j == 1) {
                 if (k == 1) {
+                    System.out.println("here");
                     Rasterizer.method372(0.90000000000000002D);
                 } else if (k == 2) {
                     Rasterizer.method372(0.80000000000000004D);

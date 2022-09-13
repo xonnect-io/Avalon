@@ -146,6 +146,11 @@ public class HoverMenuManager {
                 Arrays.asList(
                         14705,23278,23253,14999,23002,15004,15002,15003,20489,20488,19114,19115,19116
                 )));
+
+        menus.put(23236, new HoverMenu("Has a chance to give Owner cape, and other rewards",
+                Arrays.asList(
+                        7995,12535,5012,17011,12630,20400,3578,19810,18883,18881,18818,15288,10935
+                )));
         System.out.println("loaded " + menus.size() + "x menu hovers.");
     }
 

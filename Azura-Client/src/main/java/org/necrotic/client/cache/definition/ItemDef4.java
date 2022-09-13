@@ -794,7 +794,7 @@ public class ItemDef4 {
 
 			case 23387:
 				itemDef.copyItem(23324);
-				itemDef.modelID = 19578;
+				itemDef.modelID = 19580;
 				itemDef.name = "Lesarkus Warrior pet";
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
@@ -802,7 +802,7 @@ public class ItemDef4 {
 
 			case 23388:
 				itemDef.copyItem(23324);
-				itemDef.modelID = 19579;
+				itemDef.modelID = 19581;
 				itemDef.name = "Fatal Warrior pet";
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
@@ -810,7 +810,7 @@ public class ItemDef4 {
 
 			case 23389:
 				itemDef.copyItem(23324);
-				itemDef.modelID = 19577;
+				itemDef.modelID = 19582;
 				itemDef.name = "Immortal Warrior pet";
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};

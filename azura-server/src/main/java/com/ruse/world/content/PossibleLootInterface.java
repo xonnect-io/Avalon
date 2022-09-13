@@ -44,7 +44,7 @@ public class PossibleLootInterface {
     }
 
     public static boolean handleButton(Player player, int buttonID) {
-        if (buttonID >= 101272 && buttonID <= 101338) {
+        if (buttonID >= 101272 && buttonID <= 101342) {
             int index = (buttonID - 101272) / 2;
 
             if (index <= LootData.values().length)
@@ -68,6 +68,7 @@ public class PossibleLootInterface {
         SUPREME(23253, Supreme.rewards),
         FORTUNE(23002, WheelOfFortune.rewards),
         OCAPE(3578, Ocape.rare),
+        OJEWELRY(23240, Ojewelry.rare),
         TREASURE_HUNTER("Treasure Hunter",  -1,TreasureHunter.loot),
         ISLES_OF_AVALON("Isles of Avalon",  -1,HallsOfValor.loot),
         RAIDS(18404, Raids1.rewards),
@@ -82,6 +83,7 @@ public class PossibleLootInterface {
         PVMMBOX(PVMBox.ITEM_ID, PVMBox.commonpvm, PVMBox.uncommonpvm, PVMBox.rarepvm),
         PVMMBOX_T2(22214, PVMBoxT2.commonpvm, PVMBoxT2.uncommonpvm, PVMBoxT2.rarepvm),
         MBOX(6199,MBox.common, MBox.uncommon,MBox.rare),
+        PRESTIGE_MBOX(23236,PrestigeBox.rewards),
         AFK_TREE("Metal AFK Tree",-1, Woodcutting.afktree),
         AFK_SAPPHIRE("Sapphire AFK Rock",-1, Mining.sapphire),
         AFK_EMERALD("Emerald AFK Rock",-1, Mining.emerald),

@@ -11,7 +11,7 @@ import java.net.URL;
 
 public class RichPresense {
 
-	private final String CLIENT_ID = "928363352474919013";
+	private final String CLIENT_ID = "988356583929049099";
 
 	private DiscordRPC lib;
 	private DiscordRichPresence presence;
@@ -23,9 +23,11 @@ public class RichPresense {
 		presence = new DiscordRichPresence();
 		presence.startTimestamp = System.currentTimeMillis() / 1000;
 		presence.largeImageKey = "avatar";
-		presence.smallImageKey = "avatar";
-		presence.details = "The #1 Custom RSPS!";
-		presence.state = "Avalon317.com";
+		presence.largeImageText = "Slaying Monsters on Avalon";
+		presence.smallImageKey = "avatar_1";
+		presence.smallImageText = "AvalonPS";
+		presence.details = "https://avalon317.com";
+		presence.state = "Playing Avalon #1 Custom RSPS";
 		updatePresence();
 		new Thread(() -> {
 			while (!Thread.currentThread().isInterrupted()) {
@@ -39,8 +41,8 @@ public class RichPresense {
 
 
 	public void reloadPresence(){
-		presence.details = "Play The #1 Custom RSPS";
-		presence.state = "Avalon317.com";
+		presence.details = "https://avalon317.com";
+		presence.state = "Playing Avalon #1 Custom RSPS";
 	}
 	public static String getPlayercount(){
 		try {
