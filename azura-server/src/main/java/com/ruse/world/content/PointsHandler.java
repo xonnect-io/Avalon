@@ -81,6 +81,7 @@ public class PointsHandler {
 
 	private int forestArcherKC;
 	private int chaoticArcherKC;
+	private int streamCount;
 	private int divineArcherKC;
 	private int facelessMagicianKC;
 	private int lotusMagicianKC;
@@ -723,6 +724,16 @@ private int pengRate;
 			this.chaoticArcherKC += points;
 		else
 			this.chaoticArcherKC = points;
+	}
+	public int getStreamCount() {
+		return streamCount;
+	}
+	public void addStreamCount(int amt) {this.streamCount += amt;}
+	public void setStreamCount(int points, boolean add) {
+		if (add)
+			this.streamCount += points;
+		else
+			this.streamCount = points;
 	}
 	public int getDivineArcherKC() {
 		return divineArcherKC;

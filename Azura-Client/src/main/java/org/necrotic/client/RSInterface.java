@@ -1907,20 +1907,61 @@ public class RSInterface {
 	private static void youtubeEvent(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(82350);
 		RSInterface mainScrollBar = RSInterface.addTabInterface(82375);
-		addSpriteLoader(82351, 1748);
+		RSInterface itemScroll = RSInterface.addTabInterface(83275);
+		addSpriteLoader(82351, 1754);
 
-		addText(82352, "Youtuber Event", tda, 2, 0xff8624, true, true);
+		addText(82352, "Youtube Goodiebag", tda, 2, 0xff8624, true, true);
+		addText(82353, "Choose Youtuber", tda, 2, 0xff8624, true, true);
+		addText(82354, "Possible loot", tda, 2, 0xff8624, true, true);
 
+		addText(82355, "Description", tda, 2, 0xff8624, true, true);
 
-		main.totalChildren(3);
-		main.child(0, 82351, 8, 10);
-		main.child(1, 82352, 250, 42);
+		addText(82356, "Youtubername is currently @gre@<img=10> Live", tda, 0, 0xff8624, false, false);
 
-		main.child(2, 82375, 27, 90);
+		addText(82357, "Total Streams: @whi@1", tda, 0, 0xff8624, false, false);
 
-		mainScrollBar.width = 199 + 5;
-		mainScrollBar.height = 216;
-		mainScrollBar.scrollMax = 300;
+		addText(82358, "Claim the youtubername Goodiebag", tda, 1, 0xff8624, false, false);
+
+		addText(82359, "for a 1-20 pick at one of the rewards ", tda, 1, 0xff8624, false, false);
+
+		addText(82360, "displayed above. This goodiebag can", tda, 1, 0xff8624, false, false);
+
+		addText(82349, "only be claimed once per stream.", tda, 1, 0xff8624, false, false);
+		addText(82493, "Claim", tda, 2, 0xff8624, false, false);
+		addText(82494, "Watch", tda, 2, 0xff8624, false, false);
+		addHoverButtonWSpriteLoader(82485, 1665, 67, 28, "Claim", -1, 82486, 1);
+		addHoveredImageWSpriteLoader(82486, 1666, 67, 28, 88144);
+
+		addHoverButtonWSpriteLoader(82488, 1665, 67, 28, "Claim", -1, 82489, 1);
+		addHoveredImageWSpriteLoader(82489, 1666, 67, 28, 88144);
+
+		main.totalChildren(19);
+		main.child(0, 82351, 25, 25);
+		main.child(1, 82352, 255, 29);
+		main.child(2, 82353, 130, 55);
+		main.child(3, 82354, 350, 52);
+
+		main.child(4, 82355, 350, 162);
+
+		main.child(5, 82375, 41, 81);
+		main.child(6, 83275, 221, 77);
+
+		main.child(7, 82356, 250, 184);
+		main.child(8, 82357, 400, 184);
+		main.child(9, 82358, 250, 200);
+		main.child(10, 82359, 250, 213);
+		main.child(11, 82360, 250, 226);
+		main.child(12, 82349, 250, 239);
+		main.child(13, 82485, 365, 261);
+		main.child(14, 82486, 365, 261);
+		main.child(15, 82493, 380, 267);
+		main.child(16, 82488, 276, 261);
+		main.child(17, 82489, 276, 261);
+		main.child(18, 82494, 291, 267);
+
+		mainScrollBar.width = 171;
+		mainScrollBar.height = 210;
+		mainScrollBar.scrollMax = 260;
 
 		int yters = 10;
 		int y1 = 1;
@@ -1929,19 +1970,26 @@ public class RSInterface {
 		RSInterface.setChildren(yters * 2, mainScrollBar);
 
 		for (int j = 0; j < yters; j++) {
-			RSInterface.addButton(82361 + j, 1749, 1750 , "Select");
+			RSInterface.addButton(82361 + j, 1755, 1756 , "Select");
 			mainScrollBar.child(j, 82361 + j, 0, y1);
-			y1 += 33;
+			y1 += 25;
 		}
 
 		for (int i = 0; i < yters; i++) {
 			RSInterface.addText(82461 + i, "Youtubers name" + i, tda, i == 0 ? 1 : 1,
 					i == 0 ? ClientConstants.ORANGE : ClientConstants.ORANGE, false, false, ClientConstants.WHITE,
-					"Select", 33);
+					"Select", 150);
 			mainScrollBar.child(yters + i, 82461 + i, 7, y2 + 1);
-			y2 += 33;
+			y2 += 25;
 
 		}
+
+		itemScroll.width = 221;
+		itemScroll.height = 73;
+		itemScroll.scrollMax = 160;
+		addToItemGroup(48080, 5, 5, 5, 5, true, new String[] {null, null, null, null, null});
+		itemScroll.totalChildren(1);
+		itemScroll.child(0, 48080, 35, 3);
 
 	}
 	private static void archerUnlock(TextDrawingArea[] tda) {
@@ -4978,7 +5026,7 @@ public class RSInterface {
 		main.child(6, STARTING_POINT + 7, 40, 20);
 		main.child(7, STARTING_POINT + 8, 345, 68);
 		main.child(8, STARTING_POINT + 9, 379, 211);
-		main.child(9, STARTING_POINT + 10, 324, 90);
+		main.child(9, STARTING_POINT + 10, 328, 90);
 		main.child(10, STARTING_POINT + 11, 492, 10);
 		main.child(11, STARTING_POINT + 12, 492, 10);
 		main.child(12, STARTING_POINT + 14, 150, 20);

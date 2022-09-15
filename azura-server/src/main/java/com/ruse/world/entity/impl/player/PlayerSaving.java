@@ -163,6 +163,7 @@ public class PlayerSaving {
 			object.addProperty("ancient-warrior-killcount", new Integer(player.getPointsHandler().getAncientWarriorKC()));
 			object.addProperty("seasonpass-xp", new Integer(player.getSeasonPass().getXp()));
 			object.addProperty("seasonpass-tier", new Integer(player.getSeasonPass().getTier()));
+			object.addProperty("stream-count", new Integer(player.getPointsHandler().getStreamCount()));
 			object.addProperty("seasonpass-kc", new Integer(player.getkc500forseasonpass()));
 			object.addProperty("unlockedseasonpass", new Boolean(player.isunlockedseasonpass()));
 			object.addProperty("unlockedMembership", new Boolean(player.isMembershipUnlocked()));

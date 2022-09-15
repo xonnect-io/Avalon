@@ -93,6 +93,8 @@ import com.ruse.world.content.teleport.TeleportCategory;
 import com.ruse.world.content.teleport.TeleportData;
 import com.ruse.world.content.upgrading.MaxUpgradesInterface;
 import com.ruse.world.content.upgrading.UpgradeInterface;
+import com.ruse.world.content.youtube.YoutubeCategory;
+import com.ruse.world.content.youtube.YoutubeData;
 import com.ruse.world.entity.actor.player.controller.ControllerManager;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.mini.MiniPManager;
@@ -1792,6 +1794,42 @@ public int howmuchdissolveamt = 0;
         this.serial_number = serial_number;
         return this;
     }
+
+    /*
+Start new yt interface
+ */
+
+    public YoutubeCategory youtubeType;
+
+    public YoutubeCategory getYoutubeType() {
+        return youtubeType;
+    }
+
+    public void setYoutubeType(YoutubeCategory youtubeType) {
+        this.youtubeType = youtubeType;
+    }
+/*
+End new yt interface
+ */
+public YoutubeData youtubeData;
+
+    public YoutubeData getYoutubeData() {
+        return youtubeData;
+    }
+
+    public void setYoutubeData(YoutubeData youtubeData) {
+        this.youtubeData = youtubeData;
+    }
+
+    public YoutubeData getCurrentData() {
+        return youtubeData;
+    }
+
+    public void setCurrentData(YoutubeData youtubeData) {
+        this.youtubeData = youtubeData;
+    }
+
+
 /*
 Start new teleport
  */
@@ -4254,7 +4292,6 @@ End new teleport
     public SeasonPass getSeasonPass() {
         return seasonPass;
     }
-
     public MembershipManager getMembershipManager() {
         return membershipManager;
     }

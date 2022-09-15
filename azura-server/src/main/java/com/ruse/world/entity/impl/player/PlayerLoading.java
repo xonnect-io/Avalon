@@ -590,6 +590,9 @@ public class PlayerLoading {
             if (reader.has("seasonpass-tier")) {
                 player.getSeasonPass().setTier(reader.get("seasonpass-tier").getAsInt());
             }
+            if (reader.has("stream-count")) {
+                player.getPointsHandler().setStreamCount(reader.get("stream-count").getAsInt(), false);
+            }
             if (reader.has("seasonpass-kc")) {
                 player.set500kcforseasonpass(reader.get("seasonpass-kc").getAsInt());
 

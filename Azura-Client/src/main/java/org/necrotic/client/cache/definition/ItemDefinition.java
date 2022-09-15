@@ -156,6 +156,7 @@ public final class ItemDefinition {
 			case 3107:
 			case 13964:
 			case 15448:
+			case 23417:
 				model.setTexture(126);
 
 				break;
@@ -195,6 +196,7 @@ public final class ItemDefinition {
 				break;
 				
 			case 23225:
+			case 23416:
 				model.setTexture(128);
 				break;
 				
@@ -217,14 +219,16 @@ public final class ItemDefinition {
 
 			case 19886:
 			case 4446:
+			case 23414:
 				model.setTexture(115);
 				break;
 				
 			case 19888:
 			case 18823:
+			case 23415:
 				model.setTexture(129);
 				break;
-				
+
 			case 18888:
 			case 18818:
 			case 16043:

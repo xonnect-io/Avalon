@@ -68,6 +68,8 @@ import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.upgrading.Upgradeables;
+import com.ruse.world.content.youtube.YoutubeData;
+import com.ruse.world.content.youtube.YoutubeInterfaceHandler;
 import com.ruse.world.entity.impl.GroundItemManager;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.npc.NPCMovementCoordinator;
@@ -102,7 +104,7 @@ public class CommandPacketListener implements PacketListener {
     public static int voteCount = 8;
     static HashMap<String, Integer> dissolvables = new HashMap<>();
 
-    private static void playerCommands(final Player player, String[] command, String wholeCommand) {
+    private static void playerCommands(final Player player, String[] command, String wholeCommand) throws IOException {
 
 
         if (command[0].equalsIgnoreCase("givestart")) {
@@ -666,12 +668,10 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("rest")) {
             Afking.afk(player);
         }
-        if (command[0].equalsIgnoreCase("addlottery1")) {
-            World.getServerData().getTopLottery().update(player.getUsername(), 800);
-            World.getServerData().setTopLottery(World.getServerData().getTopLottery());
-            World.getServerData().processQueue();
-            player.sendMessage("total entries: "+World.getServerData().getTopLottery().getEntries().size()+" "+World.getServerData().getTopLottery().getTotalPot());
+        if (command[0].equalsIgnoreCase("youtube")) {
+            new YoutubeInterfaceHandler(player).open();
         }
+
         if (command[0].equalsIgnoreCase("checkwinner")) {
             LotteryEvent.initialdialogue(player);
             player.sendMessage("total entries: "+World.getServerData().getTopLottery().getEntries().size()+" "+World.getServerData().getTopLottery().getTotalPot());
@@ -939,7 +939,80 @@ public class CommandPacketListener implements PacketListener {
         }
     }
 
-    private static void youtuberCommands(final Player player, String[] command, String wholeCommand) {
+    private static void youtuberCommands(final Player player, String[] command, String wholeCommand) throws IOException {
+
+        if (command[0].equalsIgnoreCase("live")) {
+            if (player.getUsername().equalsIgnoreCase("wrecked")) {
+            YoutubeData.WRECKEDYOU.setLive(true);
+            World.sendMessage("<img=10>@red@ " + YoutubeData.WRECKEDYOU.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a goodiebag & watch!");
+            YoutubeData.clear();
+            return;
+             }
+        }
+
+        if (command[0].equalsIgnoreCase("offline")) {
+            if (player.getUsername().equalsIgnoreCase("wrecked")) {
+            YoutubeData.WRECKEDYOU.setLive(false);
+            World.sendMessage("<img=10>@red@ " + YoutubeData.WRECKEDYOU.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
+            YoutubeData.clear();
+            return;
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("live")) {
+            if (player.getUsername().equalsIgnoreCase("inherited")) {
+                YoutubeData.INHERITED.setLive(true);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.INHERITED.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a goodiebag & watch!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("offline")) {
+            if (player.getUsername().equalsIgnoreCase("inherited")) {
+                YoutubeData.INHERITED.setLive(false);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.INHERITED.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("live")) {
+            if (player.getUsername().equalsIgnoreCase("chopper rsps")) {
+                YoutubeData.CHOPPER_RSPS.setLive(true);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.CHOPPER_RSPS.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a goodiebag & watch!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("offline")) {
+            if (player.getUsername().equalsIgnoreCase("chopper rsps")) {
+                YoutubeData.CHOPPER_RSPS.setLive(false);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.CHOPPER_RSPS.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("live")) {
+            if (player.getUsername().equalsIgnoreCase("walkchaos")) {
+                YoutubeData.WALKCHAOS.setLive(true);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.WALKCHAOS.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a goodiebag & watch!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("offline")) {
+            if (player.getUsername().equalsIgnoreCase("walkchaos")) {
+                YoutubeData.WALKCHAOS.setLive(false);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.WALKCHAOS.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
     }
 
     private static void contributorCommands(final Player player, String[] command, String wholeCommand) {
@@ -3789,7 +3862,6 @@ public class CommandPacketListener implements PacketListener {
                     contributorCommands(player, parts, command);
                     ownerCommands(player, parts, command);
                     developerCommands(player, parts, command);
-                    youtuberCommands(player, parts, command);
                     supportCommands(player, parts, command);
                     globalModCommands(player, parts, command);
                     sapphireCommands(player, parts, command);

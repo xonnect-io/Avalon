@@ -2405,7 +2405,24 @@ public class ItemDef3 {
 				itemDef.copyItem(3578);
 				itemDef.name = "Owner Jewelry Goodiebag";
 				break;
-				
+
+			case 23414:
+				itemDef.copyItem(3578);
+				itemDef.name = "WreckedYou's Goodiebag";
+				break;
+			case 23415:
+				itemDef.copyItem(3578);
+				itemDef.name = "Inherited's Goodiebag";
+				break;
+			case 23416:
+				itemDef.copyItem(3578);
+				itemDef.name = "chopper rsps' Goodiebag";
+				break;
+			case 23417:
+				itemDef.copyItem(3578);
+				itemDef.name = "Walkchaos' Goodiebag";
+				break;
+
 			case 17175:
 				itemDef.name = "Leafy body";
 				itemDef.modelOffsetX = 0;

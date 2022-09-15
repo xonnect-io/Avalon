@@ -359,6 +359,15 @@ public class CasketOpening {
 
     }
 
+    public void openYoutbeRewards() {
+        player.getPA().sendInterface(82350);
+
+        for (int i = 0; i < common.size(); i++) {
+            player.getPacketSender().sendItemOnInterface(48080, common.get(i).getId(),i, common.get(i).getMax());
+        }
+    }
+
+
     public void openInterface() {
         player.sendMessage(":resetCasket");
 

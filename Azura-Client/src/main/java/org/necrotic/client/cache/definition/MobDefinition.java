@@ -5279,7 +5279,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 95;
 				definition.scaleY = 95;
 				definition.npcSizeInSquares = 1;
-				break;
+			break;
 			case 13453:
 			case 13451:
 			case 13452:
@@ -5322,12 +5322,15 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				break;
 
-			case 13447://325325325 gold dark purp
-				definition.scaleXZ = 200;
-				definition.scaleY = 200;
-				//	definition.rdc2 = 546546546;
-				definition.name = "<col=ff6f6f>Supreme Nex";
-				definition.npcModels = new int[]{65353};
+			case 13447:
+				definition.name = "Nex";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 565;
+				definition.standAnimation = 6320;
+				definition.walkAnimation = 6319;
+				definition.scaleXZ = 120;
+				definition.scaleY = 120;
+				definition.npcSizeInSquares = 1;
 				break;
 			case 3055:
 				definition.npcModels = new int[]{51852, 51853};

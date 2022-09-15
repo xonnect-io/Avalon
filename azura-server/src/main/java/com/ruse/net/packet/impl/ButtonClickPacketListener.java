@@ -79,6 +79,8 @@ import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
+import com.ruse.world.content.youtube.YoutubeData;
+import com.ruse.world.content.youtube.YoutubeInterfaceHandler;
 import com.ruse.world.entity.impl.player.Player;
 import com.ruse.world.entity.impl.player.StartScreen;
 
@@ -105,6 +107,8 @@ public class ButtonClickPacketListener implements PacketListener {
             28307, 28308, 28309, 28310, 28311, 28312, 28313, 28314, 28315, 28316, 28317, 28318, 28319,
             28320, 28321, 28322, 28323, 28324, 28325, 28326, 28327, 28328, 28329, 28330,
             28331, 28332, 28333, 28334, 28335, 28336, 28337, 28338, 28339);
+    private static final List<Integer> YT_SELECT_BUTTONS = Arrays.asList(
+            82461, 82462, 82463, 82464, 82465, 82466, 82467, 82468, 82469, 82470, 82361, 83262, 83263, 83264, 83265, 83266, 83267, 83268, 83269, 83270);
 
     @Override
     public void handleMessage(Player player, Packet packet) {
@@ -142,25 +146,30 @@ public class ButtonClickPacketListener implements PacketListener {
         if (PossibleLootInterface.handleButton(player, id)) {
             return;
         }
-        if(CollectionLogButtons.onButtonClick(player, id)) {
+        if (CollectionLogButtons.onButtonClick(player, id)) {
             return;
         }
         if (player.getAchievementInterface() != null && player.getAchievementInterface().handleButton(id)) {
             return;
         }
 
-        if (player.getUpgradeInterface().handleButton( id)) {
+        if (player.getUpgradeInterface().handleButton(id)) {
             return;
         }
         if (NEW_TELEPORT_BUTTONS_TAB.contains(id)) {
             new TeleportInterfaceHandler(player).switchTab(id);
-        }   if (NEW_TELEPORT_BUTTONS.contains(id)) {
+        }
+        if (NEW_TELEPORT_BUTTONS.contains(id)) {
             new TeleportInterfaceHandler(player).button(id);
         }
-        if (player.getDonatorShop().handleButton( id)) {
+        if (YT_SELECT_BUTTONS.contains(id)) {
+            new YoutubeInterfaceHandler(player).button(id);
+        }
+
+        if (player.getDonatorShop().handleButton(id)) {
             return;
         }
-        if (player.getPetShop().handleButton( id)) {
+        if (player.getPetShop().handleButton(id)) {
             return;
         }
 
@@ -191,43 +200,43 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.sendMessage("You have selected 3x3 instances.");
                 player.getPacketSender().sendString(135010, "Cost: @whi@750 Upgrade tokens");
                 break;
-                case 135013://4x4
-                    player.set3x3(false);
-                    player.set4x4(true);
-                    player.sendMessage("You have selected 4x4 instances.");
-                    player.getPacketSender().sendString(135010, "Cost: @whi@1,500 Upgrade tokens");
+            case 135013://4x4
+                player.set3x3(false);
+                player.set4x4(true);
+                player.sendMessage("You have selected 4x4 instances.");
+                player.getPacketSender().sendString(135010, "Cost: @whi@1,500 Upgrade tokens");
                 break;
             case 28028:
-            if(player.isMembershipUnlocked()){
-                player.sendMessage("You have already claimed a membership this Month");
-                return;
+                if (player.isMembershipUnlocked()) {
+                    player.sendMessage("You have already claimed a membership this Month");
+                    return;
 
-            }
-            if (player.getInventory().contains(23392)) {
-                player.getInventory().delete(23392,1);
-                player.getPacketSender().removeInterface();
-                player.setUnlockedMembership(true);
-                player.membershipInterfaceHandler.openBenefitTab();
-                player.sendMessage("You have claimed your Monthly Membership");
-                player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
-            } else {
-                player.sendMessage("You do not have a monthly membership pass.");
-            }
-            break;
+                }
+                if (player.getInventory().contains(23392)) {
+                    player.getInventory().delete(23392, 1);
+                    player.getPacketSender().removeInterface();
+                    player.setUnlockedMembership(true);
+                    player.membershipInterfaceHandler.openBenefitTab();
+                    player.sendMessage("You have claimed your Monthly Membership");
+                    player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
+                } else {
+                    player.sendMessage("You do not have a monthly membership pass.");
+                }
+                break;
             case -4908:
-                if(player.isCosmeticUnlocked()){
+                if (player.isCosmeticUnlocked()) {
                     player.sendMessage("You have already claimed a cosmetic membership this month");
                     return;
 
                 }
                 if (player.getInventory().contains(23393)) {
-                    player.getInventory().delete(23393,1);
+                    player.getInventory().delete(23393, 1);
                     player.getPacketSender().removeInterface();
                     player.setUnlockedCosmetic(true);
-                    player.getInventory().add(23404,1);
-                    player.getInventory().add(23405,1);
-                    player.getInventory().add(23406,1);
-                    player.getInventory().add(23407,1);
+                    player.getInventory().add(23404, 1);
+                    player.getInventory().add(23405, 1);
+                    player.getInventory().add(23406, 1);
+                    player.getInventory().add(23407, 1);
                     player.membershipInterfaceHandler.openCosmeticTab();
                     player.sendMessage("You have claimed your Monthly Cosmetic Membership");
                     player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
@@ -255,15 +264,15 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 if (player.getEquipment().getFreeSlots() != player.getEquipment().capacity()) {
                     player.getPacketSender().sendMessage("Please unequip all your items first.");
-                    return ;
+                    return;
                 }
                 if (player.getPointsHandler().getTotalPrestiges() >= 1) {
                     player.getPacketSender().sendMessage("@red@You already are max prestige. Wait until next season to unlock another.");
-                    return ;
+                    return;
                 }
                 if (player.getLocation() == Location.WILDERNESS || player.getCombatBuilder().isBeingAttacked()) {
                     player.getPacketSender().sendMessage("You cannot do this at the moment");
-                    return ;
+                    return;
                 }
                 player.getPointsHandler().incrementTotalPrestiges(1);
                 player.getSkillManager().resetSkill(ATTACK, false);
@@ -292,15 +301,15 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getSkillManager().resetSkill(SUMMONING, false);
                 player.getPointsHandler().setPrestigePoints(1, true);
                 player.getAppearance().setprestigeIcon(player.getPointsHandler().getTotalPrestiges());
-                player.getPacketSender().sendMessage("You have just prestiged to level " + player.getPointsHandler().getTotalPrestiges()+ "!");
-                player.getPacketSender().sendMessage(player.getPointsHandler().getTotalPrestiges()+ " Prestige Mboxes have been added to your inventory as a reward.");
-                World.sendMessage("@blu@<shad=1>[News] @red@"+player.getUsername()+ "@bla@ has just prestiged to level " + player.getPointsHandler().getTotalPrestiges() + "!");
+                player.getPacketSender().sendMessage("You have just prestiged to level " + player.getPointsHandler().getTotalPrestiges() + "!");
+                player.getPacketSender().sendMessage(player.getPointsHandler().getTotalPrestiges() + " Prestige Mboxes have been added to your inventory as a reward.");
+                World.sendMessage("@blu@<shad=1>[News] @red@" + player.getUsername() + "@bla@ has just prestiged to level " + player.getPointsHandler().getTotalPrestiges() + "!");
                 player.getAchievementTracker().progress(AchievementData.PRESTIGE_VETERAN, 1);
                 player.getAchievementTracker().progress(AchievementData.PRESTIGE_MASTER, 1);
                 if (player.getPointsHandler().getTotalPrestiges() == 1)
                     player.getInventory().add(20488, 10);
                 player.getInventory().add(15003, 1);
-                    player.getInventory().add(23236, 1);
+                player.getInventory().add(23236, 1);
                 if (player.getPointsHandler().getTotalPrestiges() == 2)
                     player.getInventory().add(23236, 2);
                 if (player.getPointsHandler().getTotalPrestiges() == 3)
@@ -344,16 +353,16 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 80242:
                 if (player.getInventory().contains(23386)) {
-                    player.getInventory().delete(23386,1);
-                    player.getInventory().add(23387,1);
+                    player.getInventory().delete(23386, 1);
+                    player.getInventory().add(23387, 1);
                     player.getPA().sendMessage("You have chosen the Lesarkus Warrior Pet!");
                 }
                 player.getPacketSender().removeInterface();
                 break;
             case 80245:
                 if (player.getInventory().contains(23386)) {
-                    player.getInventory().delete(23386,1);
-                    player.getInventory().add(23388,1);
+                    player.getInventory().delete(23386, 1);
+                    player.getInventory().add(23388, 1);
                     player.getPA().sendMessage("You have chosen the Fatal Warrior Pet!");
                 }
                 player.getPacketSender().removeInterface();
@@ -361,8 +370,8 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 80248:
                 if (player.getInventory().contains(23386)) {
-                    player.getInventory().delete(23386,1);
-                    player.getInventory().add(23389,1);
+                    player.getInventory().delete(23386, 1);
+                    player.getInventory().add(23389, 1);
                     player.getPA().sendMessage("You have chosen the Immortal Warrior Pet!");
                 }
                 player.getPacketSender().removeInterface();
@@ -371,25 +380,25 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 77242:
                 if (player.getInventory().contains(23367)) {
-                    player.getInventory().delete(23367,1);
-                    player.getInventory().add(23324,1);
+                    player.getInventory().delete(23367, 1);
+                    player.getInventory().add(23324, 1);
                     player.getPA().sendMessage("You have chosen the Faeless Magician Pet!");
                 }
                 player.getPacketSender().removeInterface();
                 break;
             case 77245:
                 if (player.getInventory().contains(23367)) {
-                player.getInventory().delete(23367,1);
-                player.getInventory().add(23325,1);
-                player.getPA().sendMessage("You have chosen the Lotus Magician Pet!");
-            }
+                    player.getInventory().delete(23367, 1);
+                    player.getInventory().add(23325, 1);
+                    player.getPA().sendMessage("You have chosen the Lotus Magician Pet!");
+                }
                 player.getPacketSender().removeInterface();
                 break;
 
             case 77248:
                 if (player.getInventory().contains(23367)) {
-                    player.getInventory().delete(23367,1);
-                    player.getInventory().add(23326,1);
+                    player.getInventory().delete(23367, 1);
+                    player.getInventory().add(23326, 1);
                     player.getPA().sendMessage("You have chosen the Shadow Magician Pet!");
                 }
                 player.getPacketSender().removeInterface();
@@ -417,7 +426,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your Legends Light bow.");
                     return;
                 }
-                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000  && player.getInventory().contains(5011)) {
+                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(5011)) {
                     player.getPA().sendMessage("You sacrifice your Legends Light bow and become a Tier 1 Archer in the Guild!");
                     World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Archer!");
                     player.setArcherGuildTier1(true);
@@ -433,7 +442,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your Light Staff of Vitur.");
                     return;
                 }
-                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000  && player.getInventory().contains(12537)) {
+                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(12537)) {
                     player.getPA().sendMessage("You sacrifice your Light Scythe of Vitur and become a Tier 1 Warrior in the Guild!");
                     World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Warrior!");
                     player.setWarriorGuildTier1(true);
@@ -495,8 +504,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 if (player.getInventory().contains(22115, 1)) {
                     player.getInventory().delete(22115, 1);
-                }
-                else if (!player.getInventory().contains(22115, 1)) {
+                } else if (!player.getInventory().contains(22115, 1)) {
                     player.getPA().sendMessage("You need x1 Dark Scythe of Vitur to Level up!");
                     return;
                 }
@@ -520,8 +528,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 if (player.getInventory().contains(8136, 1)) {
                     player.getInventory().delete(8136, 1);
-                }
-                else if (!player.getInventory().contains(8136, 1)) {
+                } else if (!player.getInventory().contains(8136, 1)) {
                     player.getPA().sendMessage("You need x1 Blood Scythe of Vitur to Level up!");
                     return;
                 }
@@ -546,8 +553,7 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 if (player.getInventory().contains(12855, 100_000_000)) {
                     player.getInventory().delete(12855, 100_000_000);
-                }
-                else if (!player.getInventory().contains(12855, 100_000_000)) {
+                } else if (!player.getInventory().contains(12855, 100_000_000)) {
                     player.getPA().sendMessage("You need 100,000,000 Upgrade tokens to Level up!");
                     return;
                 }
@@ -560,29 +566,28 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPA().sendMessage("<img=832> Your account has received a permanent 0.20% Melee Damage increase!");
                 break;
             case 77342:
-                 if (player.getPointsHandler().getFacelessMagicianKC() < 25000) {
-                     player.getPA().sendMessage("You need 25,000 Faceless Magician kills before sacrificing a Legends Dark staff.");
-                     return;
-                 }
+                if (player.getPointsHandler().getFacelessMagicianKC() < 25000) {
+                    player.getPA().sendMessage("You need 25,000 Faceless Magician kills before sacrificing a Legends Dark staff.");
+                    return;
+                }
 
                 if (player.getInventory().getFreeSlots() < 1) {
                     player.getPA().sendMessage("You need at-least 1 free inventory space to level up!");
                     return;
                 }
                 if (player.getInventory().contains(22114, 1)) {
-                     player.getInventory().delete(22114, 1);
-                 }
-                 else if (!player.getInventory().contains(22114)) {
-                     player.getPA().sendMessage("You need to sacrifice a Legends Dark staff to level up!");
-                     return;
-                 }
-                    player.getPA().sendMessage("You sacrifice 1 Legends Dark staff and unlock Tier 2 of the Magic Guild.");
-                     World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 2 @blu@of the @red@Magic Guild");
-                     player.getPacketSender().sendInterfaceRemoval();
-                     player.getPacketSender().sendInterface(77430);
-                     player.setMagicGuildTier2(true);
-                     player.getInventory().add(3745, 1);
-                     player.getPA().sendMessage("<img=832> x1 Magician staff has been added to your inventory.");
+                    player.getInventory().delete(22114, 1);
+                } else if (!player.getInventory().contains(22114)) {
+                    player.getPA().sendMessage("You need to sacrifice a Legends Dark staff to level up!");
+                    return;
+                }
+                player.getPA().sendMessage("You sacrifice 1 Legends Dark staff and unlock Tier 2 of the Magic Guild.");
+                World.sendMessage("<img=832>@red@" + player.getUsername() + "@blu@ Has leveled up to @red@Tier 2 @blu@of the @red@Magic Guild");
+                player.getPacketSender().sendInterfaceRemoval();
+                player.getPacketSender().sendInterface(77430);
+                player.setMagicGuildTier2(true);
+                player.getInventory().add(3745, 1);
+                player.getPA().sendMessage("<img=832> x1 Magician staff has been added to your inventory.");
                 break;
 
             case 77442:
@@ -597,8 +602,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 if (player.getInventory().contains(23227, 1)) {
                     player.getInventory().delete(23227, 1);
-                }
-                else if (!player.getInventory().contains(23227)) {
+                } else if (!player.getInventory().contains(23227)) {
                     player.getPA().sendMessage("You need to sacrifice a Blood Staff to Level up!");
                     return;
                 }
@@ -623,8 +627,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 if (player.getInventory().contains(12855, 100_000_000)) {
                     player.getInventory().delete(12855, 100_000_000);
-                }
-                else if (!player.getInventory().contains(12855,100_000_000)) {
+                } else if (!player.getInventory().contains(12855, 100_000_000)) {
                     player.getPA().sendMessage("You need to sacrifice 100,000,000 Upgrade Tokens to level up!");
                     return;
                 }
@@ -636,7 +639,6 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPA().sendMessage("<img=832>x1 Magician Pet scroll was added to your inventory");
                 player.getPA().sendMessage("<img=832> Your account has received a permanent 0.20% Magic Damage increase!");
                 break;
-
 
 
             case 88342:
@@ -651,8 +653,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 if (player.getInventory().contains(22113, 1)) {
                     player.getInventory().delete(22113, 1);
-                }
-                else if (!player.getInventory().contains(22113)) {
+                } else if (!player.getInventory().contains(22113)) {
                     player.getPA().sendMessage("You need to sacrifice a Legends Dark bow to level up!");
                     return;
                 }
@@ -677,8 +678,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 if (player.getInventory().contains(23226, 1)) {
                     player.getInventory().delete(23226, 1);
-                }
-                else if (!player.getInventory().contains(23226)) {
+                } else if (!player.getInventory().contains(23226)) {
                     player.getPA().sendMessage("You need to sacrifice a Blood gun to level up!");
                     return;
                 }
@@ -703,8 +703,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 if (player.getInventory().contains(12855, 100_000_000)) {
                     player.getInventory().delete(12855, 100_000_000);
-                }
-                else if (!player.getInventory().contains(12855,100_000_000)) {
+                } else if (!player.getInventory().contains(12855, 100_000_000)) {
                     player.getPA().sendMessage("You need to sacrifice 100,000,000 Upgrade Tokens to level up!");
                     return;
                 }
@@ -718,46 +717,45 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
 
-
             case 8659:
-                Position smithingPos = new Position(2818,2609,0);
+                Position smithingPos = new Position(2818, 2609, 0);
                 TeleportHandler.teleportPlayer(player, smithingPos, TeleportType.NORMAL);
                 break;
 
             case 8671:
-                Position woodcuttingPos = new Position(2802,2665,0);
+                Position woodcuttingPos = new Position(2802, 2665, 0);
                 TeleportHandler.teleportPlayer(player, woodcuttingPos, TeleportType.NORMAL);
                 break;
 
             case 13928:
-                Position farmingPos = new Position(2828,2658,0);
+                Position farmingPos = new Position(2828, 2658, 0);
                 TeleportHandler.teleportPlayer(player, farmingPos, TeleportType.NORMAL);
                 break;
 
             case 12162:
-                Position slayerPos = new Position(3115,2971,0);
+                Position slayerPos = new Position(3115, 2971, 0);
                 TeleportHandler.teleportPlayer(player, slayerPos, TeleportType.NORMAL);
                 break;
 
             case 8672:
-                Position rcPos = new Position(2806,2582,0);
+                Position rcPos = new Position(2806, 2582, 0);
                 TeleportHandler.teleportPlayer(player, rcPos, TeleportType.NORMAL);
                 break;
 
             case 8664:
-                Position thievingPos = new Position(2823,2601,0);
+                Position thievingPos = new Position(2823, 2601, 0);
                 TeleportHandler.teleportPlayer(player, thievingPos, TeleportType.NORMAL);
                 break;
 
             case 8658:
-            DialogueManager.start(player, 55);
-            player.setDialogueActionId(26);
-            break;
+                DialogueManager.start(player, 55);
+                player.setDialogueActionId(26);
+                break;
 
             case 8861:
             case 8667:
             case 8670:
-                Position skillingShopsPos = new Position(2818,2592,0);
+                Position skillingShopsPos = new Position(2818, 2592, 0);
                 TeleportHandler.teleportPlayer(player, skillingShopsPos, TeleportType.NORMAL);
                 break;
             case 12464:
@@ -784,12 +782,12 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendInterfaceRemoval();
                 break;
 
-                // Previous Teleport Button
+            // Previous Teleport Button
             case 1717:
                 if (!player.getClickDelay().elapsed(4500) || player.getMovementQueue().isLockMovement())
                     return;
 
-                if(player.lastTeleport != null) {
+                if (player.lastTeleport != null) {
                     player.sendMessage("You have been teleported to your last teleport location.");
                     TeleportHandler.teleportPlayer(player, player.lastTeleport, player.getSpellbook().getTeleportType());
                 } else {
@@ -837,7 +835,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getMysteryBoxOpener().openAllRaids2Chest(player.getMysteryBoxOpener().getOpenBox());
                 }
                 break;
-                case -17403:
+            case -17403:
                 player.getPacketSender().sendMessage("<img=832> 20% Chance at 2X loot on Rare Rewards with a @blu@Suffering charm @bla@equipped.");
                 break;
             case 110007:
@@ -975,6 +973,29 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111610:
                 player.setInputHandling(new ChangePassword());
                 player.getPacketSender().sendEnterInputPrompt("Enter a new password:");
+                break;
+            case 82488:
+                if (player.getCurrentData().getName().equalsIgnoreCase("wreckedyou") && player.getCurrentData().getLive()) {
+                    player.getPacketSender().sendString(1, player.getCurrentData().getChannel());
+                    player.getPacketSender().sendMessage("Attempting to open <img=10>Wr3ckedyou's Youtube Channel");
+                } else if (player.getCurrentData().getName().equalsIgnoreCase("inheritedrs") && player.getCurrentData().getLive()) {
+                    player.getPacketSender().sendString(1, player.getCurrentData().getChannel());
+                    player.getPacketSender().sendMessage("Attempting to open <img=10>InheritedRS's Youtube Channel");
+                } else if (player.getCurrentData().getName().equalsIgnoreCase("chopper rsps") && player.getCurrentData().getLive()) {
+                    player.getPacketSender().sendString(1, player.getCurrentData().getChannel());
+                    player.getPacketSender().sendMessage("Attempting to open <img=10>chopper rsps's Youtube Channel");
+                } else if (player.getCurrentData().getName().equalsIgnoreCase("walkchaos") && player.getCurrentData().getLive()) {
+                    player.getPacketSender().sendString(1, player.getCurrentData().getChannel());
+                    player.getPacketSender().sendMessage("Attempting to open <img=10>Walkchaos Youtube Channel");
+                } else if (!player.getCurrentData().live) {
+                    player.getPacketSender().sendMessage("This youtuber is not currently live!");
+                } else
+                    player.getPacketSender().sendMessage("Select a Youtuber to view their channel.");
+
+                break;
+
+            case 82485:
+                YoutubeData.handleSyntax(player, player.getCurrentData().getName());
                 break;
             case 111603:
                 player.getPacketSender().sendMessage("Opening drops interface...");

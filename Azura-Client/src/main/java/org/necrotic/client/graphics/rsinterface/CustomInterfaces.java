@@ -963,7 +963,7 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(4, 62205, 60, 67);//select the item you want to upgrade
 		tab.child(5, 62206, 400, 213);
 		tab.child(6, 62208, 39, 92);
-		tab.child(7, 62210, 392, 112);
+		tab.child(7, 62210, 383, 112);
 		tab.child(8, 62211, 180, 283);//how to get pixue	
 		tab.child(9, 62230, 492, 10);
 		tab.child(10, 62231, 403, 170);//dust requred
