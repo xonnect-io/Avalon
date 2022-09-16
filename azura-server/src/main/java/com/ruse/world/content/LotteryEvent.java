@@ -1,5 +1,10 @@
 package com.ruse.world.content;
 
+import ca.momoperes.canarywebhooks.DiscordMessage;
+import ca.momoperes.canarywebhooks.WebhookClient;
+import ca.momoperes.canarywebhooks.WebhookClientBuilder;
+import ca.momoperes.canarywebhooks.embed.DiscordEmbed;
+import com.ruse.GameSettings;
 import com.ruse.model.Item;
 import com.ruse.util.Misc;
 import com.ruse.util.NameUtils;
@@ -13,6 +18,8 @@ import com.ruse.world.entity.impl.player.PlayerLoading;
 import com.ruse.world.entity.impl.player.PlayerSaving;
 import org.apache.commons.lang3.time.DateUtils;
 
+import java.awt.*;
+import java.net.URI;
 import java.util.*;
 
 public class LotteryEvent {
@@ -30,6 +37,7 @@ public class LotteryEvent {
     public static boolean warningannounced = false;
     public static int TICKET_VALUE = 25_000;
 
+    public static int time = 0;
     public static void checkpurchaseticket(Player player) {
         player.getPacketSender().sendInterfaceRemoval();
         if(!player.getInventory().contains(12855,TICKET_VALUE)) {
@@ -214,19 +222,44 @@ public class LotteryEvent {
             }
         });
     }
+
+    public static void broadcastAnnouncement(String msg) {
+        try {
+            String webhook = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
+            WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+            DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("").withColor(Color.orange).withDescription(
+                    "***[Lottery] The lottery will be drawn in 20 minutes!***").build();
+            DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)).withEmbed(embed).withUsername("Broadcast").build();
+            client.sendPayload(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void handleRewards() {
         LotteryData lottery = World.getServerData().getTopLottery();
-
         Calendar calendar = World.getCalendar().getInstance();
         Date date = calendar.getTime();
-        if (calendar.getTime().after(lottery.get20minutedate()) && !warningannounced) {
+        if (time >= 1 && calendar.getTime().after(lottery.get20minutedate()) && !warningannounced) {
             World.sendMessage("[LOTTERY] The lottery will be drawn in 20 minutes!");
+            if (GameSettings.LOCALHOST == true) {
+                broadcastAnnouncement("");
+            }
+
+            for (Player players : World.getPlayers()) {
+                if (players == null) {
+                    continue;
+                }
+                players.getPacketSender().sendBroadCastMessage(
+                        "[LOTTERY] The lottery will be drawn in 20 minutes!", 100);
+            }
+
             warningannounced = true;
             return;
         }
 
         if (calendar.getTime().after(lottery.getDate())) {
-            date = DateUtils.addDays(date, 1);
+            date = DateUtils.addHours(date, 8);
             lottery.setDate(date);
             lottery.setDate20minsbefore(date);
             //    System.out.println(wogw.getDate().toString());
@@ -267,11 +300,12 @@ public class LotteryEvent {
 
                         continue;
                     }
-                    playerToGive.getInventory().add(12855,lottery.getTotalPot());
-                    playerToGive.sendMessage("Congratulations you are the winner of the "+ Misc.insertCommasToNumber(String.valueOf(lottery.getTotalPot()))+" Upgrade tokens!");
+                    playerToGive.getInventory().add(12855,(int) ((lottery.getTotalPot()) * (0.9)));
+                    playerToGive.sendMessage("Congratulations you are the winner of the "+ Misc.insertCommasToNumber(String.valueOf((lottery.getTotalPot()) * (0.9)))+" Upgrade tokens!");
 
                 }
-                World.sendMessage("[LOTTERY] The lottery has ended! Congratulations to "+s+" for winning "+Misc.insertCommasToNumber(String.valueOf(lottery.getTotalPot()))+" Upgrade tokens!");
+                time++;
+                World.sendMessage("[LOTTERY] The lottery has ended! Congratulations to "+s+" for winning "+Misc.insertCommasToNumber(String.valueOf((lottery.getTotalPot()) * (0.9)))+" Upgrade tokens!");
 
 
 //                try(FileWriter fw = new FileWriter("data/lotterywinners/lotterywinners.txt", true);

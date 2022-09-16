@@ -106,7 +106,7 @@ public final class RegionManager {
                 log.error("Failed to load region {} reason: {}", regionId, e.getMessage());
             }
         }
-        System.out.println("Loaded a total of " + count + " region(s)");
+        System.out.println("Loaded " + count + " regions");
         // Pre-find all of the empty region(s) in the world.
         for (int x = SEARCH_MIN_X; x <= SEARCH_MAX_X; x++) {
             for (int y = SEARCH_MIN_Y; y <= SEARCH_MAX_Y; y++) {

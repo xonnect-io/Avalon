@@ -987,6 +987,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 } else if (player.getCurrentData().getName().equalsIgnoreCase("walkchaos") && player.getCurrentData().getLive()) {
                     player.getPacketSender().sendString(1, player.getCurrentData().getChannel());
                     player.getPacketSender().sendMessage("Attempting to open <img=10>Walkchaos Youtube Channel");
+                } else if (player.getCurrentData().getName().equalsIgnoreCase("celestial") && player.getCurrentData().getLive()) {
+                    player.getPacketSender().sendString(1, player.getCurrentData().getChannel());
+                    player.getPacketSender().sendMessage("Attempting to open <img=10>Celestial's Youtube Channel");
                 } else if (!player.getCurrentData().live) {
                     player.getPacketSender().sendMessage("This youtuber is not currently live!");
                 } else

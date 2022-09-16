@@ -260,7 +260,7 @@ public class World {
         }
         if (PRINT_TIMESTAMPS) {
             if (System.currentTimeMillis() - lastTime > 50)
-                System.out.println("Login queues took: " + (System.currentTimeMillis() - lastTime) + " ms");
+               // System.out.println("Login queues took: " + (System.currentTimeMillis() - lastTime) + " ms");
             lastTime = System.currentTimeMillis();
         }
         // Handle queued logouts.
@@ -316,7 +316,7 @@ public class World {
         npcs.forEach(npcUpdate::executePreUpdate);
         if (PRINT_TIMESTAMPS) {
             if (System.currentTimeMillis() - lastTime >= 50)
-                System.out.println("Entities pre-updating took: " + (System.currentTimeMillis() - lastTime) + " ms");
+                //System.out.println("Entities pre-updating took: " + (System.currentTimeMillis() - lastTime) + " ms");
             lastTime = System.currentTimeMillis();
         }
         // Then we execute parallelized updating code.
@@ -337,7 +337,7 @@ public class World {
             }
             lastTime = System.currentTimeMillis();
             if (System.currentTimeMillis() - startTime > 50) {
-                System.out.println("World ticking took: " + (System.currentTimeMillis() - startTime) + " ms");
+               // System.out.println("World ticking took: " + (System.currentTimeMillis() - startTime) + " ms");
             }
         }
     }

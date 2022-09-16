@@ -496,9 +496,9 @@ public class RSInterface {
 		RSInterface.addText(interfaceId + index++, "Health: 5m", tda, 0, 16777215, false);
 		hoverButton(interfaceId + index++, 1417, 1418, "Change", 0, 13150820, "Change");
 		hoverButton(interfaceId + index++, 1417, 1418, "Change", 0, 13150820, "Change");
-		System.out.println("Current id: " + (interfaceId + index));
+		//System.out.println("Current id: " + (interfaceId + index));
 		itemGroup(interfaceId + index++, 7, 5, 8, 12, 14484);
-		System.out.println("Second current id: " + (interfaceId + index));
+		//System.out.println("Second current id: " + (interfaceId + index));
 		(RSInterface.interfaceCache[interfaceId + index - 1]).actions = new String[]{"Remove 1", "Remove 5", "Remove 10", "Remove X", "Remove All"};
 		RSInterface.addText(interfaceId + index++, "All the items above will be dropped to the ground.", tda, 0, 16777215, true);
 		hoverButton(interfaceId + index++, 1417, 1418, "Change", 0, 13150820, "Change");
@@ -1364,7 +1364,6 @@ public class RSInterface {
 		addSpriteLoader(48501, 1388);
 		addClickableText(48502, "View deals", "View deals", fonts, 0, ColorConstants.ORA, 50, 40);
 		addText(48503, "Active Sale", tda, 0, ColorConstants.SNOW_WHITE, false, true);
-
 		main.totalChildren(3);
 		main.child(0, 48501, 35 + 200 - 8 + 220, 275 + 8 + 5);
 		main.child(1, 48502, 11 + 202 + 220, 305 + 5 + 5);
@@ -1910,7 +1909,7 @@ public class RSInterface {
 		RSInterface itemScroll = RSInterface.addTabInterface(83275);
 		addSpriteLoader(82351, 1754);
 
-		addText(82352, "Youtube Goodiebag", tda, 2, 0xff8624, true, true);
+		addText(82352, "Youtube Creator Interface", tda, 2, 0xff8624, true, true);
 		addText(82353, "Choose Youtuber", tda, 2, 0xff8624, true, true);
 		addText(82354, "Possible loot", tda, 2, 0xff8624, true, true);
 
@@ -1920,19 +1919,19 @@ public class RSInterface {
 
 		addText(82357, "Total Streams: @whi@1", tda, 0, 0xff8624, false, false);
 
-		addText(82358, "Claim the youtubername Goodiebag", tda, 1, 0xff8624, false, false);
+		addText(82358, "Claim the youtubername Creator box", tda, 1, 0xff8624, false, false);
 
-		addText(82359, "for a 1-20 pick at one of the rewards ", tda, 1, 0xff8624, false, false);
+		addText(82359, "for a 1/20 pick at one of the rewards ", tda, 1, 0xff8624, false, false);
 
-		addText(82360, "displayed above. This goodiebag can", tda, 1, 0xff8624, false, false);
+		addText(82360, "displayed above. This box can only", tda, 1, 0xff8624, false, false);
 
-		addText(82349, "only be claimed once per stream.", tda, 1, 0xff8624, false, false);
+		addText(82349, "be claimed once per stream.", tda, 1, 0xff8624, false, false);
 		addText(82493, "Claim", tda, 2, 0xff8624, false, false);
 		addText(82494, "Watch", tda, 2, 0xff8624, false, false);
 		addHoverButtonWSpriteLoader(82485, 1665, 67, 28, "Claim", -1, 82486, 1);
 		addHoveredImageWSpriteLoader(82486, 1666, 67, 28, 88144);
 
-		addHoverButtonWSpriteLoader(82488, 1665, 67, 28, "Claim", -1, 82489, 1);
+		addHoverButtonWSpriteLoader(82488, 1665, 67, 28, "Watch ", -1, 82489, 1);
 		addHoveredImageWSpriteLoader(82489, 1666, 67, 28, 88144);
 
 		main.totalChildren(19);

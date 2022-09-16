@@ -2407,20 +2407,39 @@ public class ItemDef3 {
 				break;
 
 			case 23414:
-				itemDef.copyItem(3578);
-				itemDef.name = "WreckedYou's Goodiebag";
+				itemDef.copyItem(6199);
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 19609;
+				itemDef.modelZoom = 2650;
+				itemDef.name = "WreckedYou's Creator Box";
 				break;
+
 			case 23415:
-				itemDef.copyItem(3578);
-				itemDef.name = "Inherited's Goodiebag";
+				itemDef.copyItem(6199);
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 19611;
+				itemDef.modelZoom = 2650;
+				itemDef.name = "Inherited's Creator Box";
 				break;
 			case 23416:
-				itemDef.copyItem(3578);
-				itemDef.name = "chopper rsps' Goodiebag";
+				itemDef.copyItem(6199);
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 19613;
+				itemDef.modelZoom = 2650;
+				itemDef.name = "Celestial's Creator Box";
 				break;
 			case 23417:
-				itemDef.copyItem(3578);
-				itemDef.name = "Walkchaos' Goodiebag";
+				itemDef.copyItem(6199);
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.newModelColor = new int[]{63};
+				itemDef.editedModelColor = new int[]{126};
+				itemDef.modelID = 19612;
+				itemDef.modelZoom = 2650;
+				itemDef.name = "Walkchaos' Creator Box";
 				break;
 
 			case 17175:

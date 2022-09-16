@@ -13,11 +13,6 @@ public class LotteryData implements Serializable {
     private static final long serialVersionUID = -3335621107999346653L;
 
     /**
-     * The total number of winners possible for each draw
-     */
-    private static final int MAXIMUM_WINNERS = 2;
-    private static final int TopPkersOnline = 10;
-    /**
      * Compares the value of an entry
      */
     private static final Comparator<Map.Entry<String, Integer>> HIGHEST_VALUE = Map.Entry.comparingByValue();
@@ -39,7 +34,7 @@ public class LotteryData implements Serializable {
      */
     private Date date = Misc.getFutureDate(2022, Calendar.AUGUST, 29, 20, 0, 0);
 
-    private Date date20minsbefore = Misc.getFutureDate(2022, Calendar.AUGUST, 22, 19, 40, 0);
+    private Date date20minsbefore = Misc.getFutureDate(2022, Calendar.AUGUST, 29, 19, 40, 0);
 
     /**
      * Requests that an update be made on the entries variable.

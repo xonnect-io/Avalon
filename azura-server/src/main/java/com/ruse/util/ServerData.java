@@ -43,8 +43,8 @@ public class ServerData {
         File[] fileList = new File("data/server/").listFiles();
 
         for(File file : fileList) {
-            System.out.println("File name: "+file.getName());
-            System.out.println("File path: "+file.getAbsolutePath());
+            //System.out.println("File name: "+file.getName());
+           // System.out.println("File path: "+file.getAbsolutePath());
 
             System.out.println(" ");
         }

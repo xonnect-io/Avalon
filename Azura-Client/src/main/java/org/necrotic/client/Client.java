@@ -18942,9 +18942,9 @@ public class Client extends GameRenderer {
             if (j == 0) {
                 return;
             }
-
+            //change default brightness
             int k = variousSettings[configId];
-            System.out.println(j+" and k: "+k);
+            //System.out.println(j+" and k: "+k);
             if(j == 8)
                 if(k == 0)
                     Rasterizer.method372(0.80000000000000004D);

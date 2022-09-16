@@ -151,7 +151,7 @@ public class HoverMenuManager {
                 Arrays.asList(
                         7995,12535,5012,17011,12630,20400,3578,19810,18883,18881,18818,15288,10935
                 )));
-        System.out.println("loaded " + menus.size() + "x menu hovers.");
+       // System.out.println("loaded " + menus.size() + "x menu hovers.");
     }
 
     public static int drawType() {

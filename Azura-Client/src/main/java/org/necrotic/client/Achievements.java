@@ -90,7 +90,7 @@ public class Achievements {
         }
         rs.child(frame++, id++, 357, 194);
         addText(11316, "45% | 45/100", fonts, 1, 0xffff00, true, true);
-        System.out.println("Interface id: " + id);
+       // System.out.println("Interface id: " + id);
         rs.child(frame++, 11316, 340, 145);
 
         createList();

@@ -59,7 +59,7 @@ public class ServerPerks {
             WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
             DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("").withColor(Color.orange).withDescription(
                 "***[Perk] "+ activePerk.getName() + " has been activated for 1 hour!***").build();
-            DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)).withEmbed(embed).withUsername("Globals").build();
+            DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)).withEmbed(embed).withUsername("Broadcast").build();
             client.sendPayload(message);
         } catch (Exception e) {
             e.printStackTrace();
@@ -213,7 +213,7 @@ public class ServerPerks {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Loaded: " + contributions);
+        //System.out.println("Loaded: " + contributions);
     }
 
     public void reset() {

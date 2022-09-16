@@ -439,6 +439,10 @@ public class CasketOpening {
         SLAYER_U(22123, SlayerU.rewards),
         ETHEREAL_CASE(23412, Ethereal.rewards),
         SERAPHIC_CASE(23411, Seraphic.rewards),
+        WRECKED_YOU(23414, CreatorBox1.rewards),
+        INHERITED(23415, CreatorBox2.rewards),
+        CELESTIAL(23416, CreatorBox3.rewards),
+        WALKCHAOS(23417, CreatorBox4.rewards),
         ;
         private int itemID;
         private Box[] loot;

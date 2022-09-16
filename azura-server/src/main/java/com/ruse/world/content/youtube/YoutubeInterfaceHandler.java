@@ -28,7 +28,7 @@ public class YoutubeInterfaceHandler {
             player.setYoutubeType(YoutubeCategory.MAIN);
             sendItemsOnInterface(YoutubeData.WRECKEDYOU);
             player.setCurrentData(YoutubeData.WRECKEDYOU);;
-            player.getPA().sendString(82358, "Claim " + YoutubeData.WRECKEDYOU.getName() + "'s Goodiebag");
+            player.getPA().sendString(82358, "Claim " + YoutubeData.WRECKEDYOU.getName() + "'s Creator box");
             player.getPA().sendString(82356, YoutubeData.WRECKEDYOU.getLive() ? "<img=10> Youtuber is @gre@Live" : "<img=10> Youtuber is @red@Offline");
             player.getPA().sendString(82357, "");
         }
@@ -54,7 +54,7 @@ public class YoutubeInterfaceHandler {
 
     public void sendItemsOnInterface(YoutubeData data1) {
         player.getPA().sendScrollableItemsOnInterface(48080, data1.getItems());
-        player.getPA().sendString(82358, "Claim " + data1.getName() + "'s Goodiebag");
+        player.getPA().sendString(82358, "Claim " + data1.getName() + "'s Creator box");
         player.getPA().sendString(82356, data1.live ? "<img=10> Youtuber is @gre@Live" : "<img=10> Youtuber is @red@Offline");
         player.getPA().sendString(82357, "");
     }

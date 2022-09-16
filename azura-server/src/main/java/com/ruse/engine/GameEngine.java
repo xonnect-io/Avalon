@@ -68,7 +68,7 @@ public final class GameEngine implements Runnable {
             World.sequence();
             if (PRINT_TIMESTAMP) {
                 if (System.currentTimeMillis() - lastTime > 150) {
-                    System.out.println("World processing took: " + (System.currentTimeMillis() - lastTime) + " ms");
+                    //System.out.println("World processing took: " + (System.currentTimeMillis() - lastTime) + " ms");
                 }
                 lastTime = System.currentTimeMillis();
             }
@@ -86,7 +86,7 @@ public final class GameEngine implements Runnable {
                 }
                 lastTime = System.currentTimeMillis();
                 if (System.currentTimeMillis() - start > 600) {
-                    System.out.println("Total tick time was " + (System.currentTimeMillis() - start) + " ms");
+                    //System.out.println("Total tick time was " + (System.currentTimeMillis() - start) + " ms");
                 }
             }
         } catch (Throwable e) {

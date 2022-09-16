@@ -289,8 +289,8 @@ public class PlayerHandler {
 
         player.getPacketSender().updateSpecialAttackOrb().sendIronmanMode(player.getGameMode().ordinal());
         player.getClickDelay().reset();
-        System.out.println("Reset click delay");
-        System.out.println("PLAYER RIGHTS: " + player.getRights());
+        //System.out.println("Reset click delay");
+        //System.out.println("PLAYER RIGHTS: " + player.getRights());
         if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() <= Store.SAPPHIRE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=255><img=5> Helper "
                     + player.getUsername() + " has just logged in!"));

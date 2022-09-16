@@ -623,7 +623,7 @@ public int howmuchdissolveamt = 0;
     private int amountDonatedToday;
     private boolean opMode;
     private final BonusXp bonusXp = new BonusXp(this); // instance of BonusXp class
-    private final DonatorDiscount donatordiscount = new DonatorDiscount(this); // instance of BonusXp class
+    private final CofferRewards cofferRewards = new CofferRewards(this); // instance of BonusXp class
     private String mac;
     private String uuid;
     /*** STRINGS ***/
@@ -1314,8 +1314,8 @@ public int howmuchdissolveamt = 0;
         return bonusXp;
     }
 
-    public DonatorDiscount getdonatordiscount() { // getter for that instance.
-        return donatordiscount;
+    public CofferRewards getCofferRewards() { // getter for that instance.
+        return cofferRewards;
     }
 
     public BossEventData getBossevent() {

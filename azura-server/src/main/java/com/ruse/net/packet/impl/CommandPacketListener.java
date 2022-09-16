@@ -944,7 +944,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("live")) {
             if (player.getUsername().equalsIgnoreCase("wrecked")) {
             YoutubeData.WRECKEDYOU.setLive(true);
-            World.sendMessage("<img=10>@red@ " + YoutubeData.WRECKEDYOU.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a goodiebag & watch!");
+            World.sendMessage("<img=10>@red@ " + YoutubeData.WRECKEDYOU.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
             YoutubeData.clear();
             return;
              }
@@ -962,7 +962,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("live")) {
             if (player.getUsername().equalsIgnoreCase("inherited")) {
                 YoutubeData.INHERITED.setLive(true);
-                World.sendMessage("<img=10>@red@ " + YoutubeData.INHERITED.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a goodiebag & watch!");
+                World.sendMessage("<img=10>@red@ " + YoutubeData.INHERITED.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
                 YoutubeData.clear();
                 return;
             }
@@ -978,27 +978,9 @@ public class CommandPacketListener implements PacketListener {
         }
 
         if (command[0].equalsIgnoreCase("live")) {
-            if (player.getUsername().equalsIgnoreCase("chopper rsps")) {
-                YoutubeData.CHOPPER_RSPS.setLive(true);
-                World.sendMessage("<img=10>@red@ " + YoutubeData.CHOPPER_RSPS.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a goodiebag & watch!");
-                YoutubeData.clear();
-                return;
-            }
-        }
-
-        if (command[0].equalsIgnoreCase("offline")) {
-            if (player.getUsername().equalsIgnoreCase("chopper rsps")) {
-                YoutubeData.CHOPPER_RSPS.setLive(false);
-                World.sendMessage("<img=10>@red@ " + YoutubeData.CHOPPER_RSPS.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
-                YoutubeData.clear();
-                return;
-            }
-        }
-
-        if (command[0].equalsIgnoreCase("live")) {
             if (player.getUsername().equalsIgnoreCase("walkchaos")) {
                 YoutubeData.WALKCHAOS.setLive(true);
-                World.sendMessage("<img=10>@red@ " + YoutubeData.WALKCHAOS.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a goodiebag & watch!");
+                World.sendMessage("<img=10>@red@ " + YoutubeData.WALKCHAOS.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
                 YoutubeData.clear();
                 return;
             }
@@ -1008,6 +990,24 @@ public class CommandPacketListener implements PacketListener {
             if (player.getUsername().equalsIgnoreCase("walkchaos")) {
                 YoutubeData.WALKCHAOS.setLive(false);
                 World.sendMessage("<img=10>@red@ " + YoutubeData.WALKCHAOS.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("live")) {
+            if (player.getUsername().equalsIgnoreCase("celestial")) {
+                YoutubeData.CELESTIAL.setLive(true);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.CELESTIAL.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("offline")) {
+            if (player.getUsername().equalsIgnoreCase("celestial")) {
+                YoutubeData.CELESTIAL.setLive(false);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.CELESTIAL.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
                 YoutubeData.clear();
                 return;
             }
@@ -1987,7 +1987,7 @@ public class CommandPacketListener implements PacketListener {
                 if (players != null) {
                     players.getInventory().add(id, amount);
                     players.sendMessage(
-                            "You have received: " + ItemDefinition.forId(id).getName() + " for being beasts.");
+                            "@red@You have received: @blu@x"+Misc.insertCommasToNumber(amount) + " " + ItemDefinition.forId(id).getName() + " @red@from @blu@" + player.getUsername() +"");
                 }
             }
         }
@@ -2617,17 +2617,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("groupa")) {
             GroupManager.loadGroups();
         }
-        if (command[0].equalsIgnoreCase("testcase")) {
-            if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,3) == 2) {
-                if (Misc.getRandom(10) > 5) {
-                    player.getInventory().add(23411, 1);
-                    player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
-                } else if (Misc.getRandom(10) < 5) {
-                    player.getInventory().add(23412, 1);
-                    player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
-                }
-            } else player.getPacketSender().sendMessage("Failed to roll a 2!");
-        }
+
         if (command[0].equalsIgnoreCase("givemod")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {
@@ -2767,6 +2757,10 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("eb")) {
             player.getBank(0).clear();
             player.getBank(1).clear();
+
+        }
+        if (command[0].equalsIgnoreCase("testsale")) {
+            player.getCofferRewards().init();
 
         }
         if (command[0].toLowerCase().equals("invstuff")) {
@@ -3860,6 +3854,7 @@ public class CommandPacketListener implements PacketListener {
                     moderatorCommands(player, parts, command);
                     administratorCommands(player, parts, command);
                     contributorCommands(player, parts, command);
+                    youtuberCommands(player, parts, command);
                     ownerCommands(player, parts, command);
                     developerCommands(player, parts, command);
                     supportCommands(player, parts, command);

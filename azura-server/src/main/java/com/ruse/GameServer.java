@@ -27,7 +27,6 @@ public class GameServer {
             logger.info("Initializing the loader...");
             loader.init();
             loader.finish();
-            logger.info("The loader has finished loading utility tasks.");
             logger.info(GameSettings.RSPS_NAME + " is now online on port " + GameSettings.GAME_PORT + "!");
         } catch (Exception ex) {
             logger.log(Level.SEVERE, "Could not start " + GameSettings.RSPS_NAME + "! Program terminated.", ex);
