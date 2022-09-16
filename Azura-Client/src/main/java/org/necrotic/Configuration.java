@@ -9,7 +9,7 @@ public class Configuration {
 		return localHost ? "127.0.0.1" : "51.81.49.184";
 	}
 
-	public final static int SERVER_PORT = 9420;
+	public final static int SERVER_PORT = 43594;
 
 	public final static int CLIENT_VERSION = 3;
 
