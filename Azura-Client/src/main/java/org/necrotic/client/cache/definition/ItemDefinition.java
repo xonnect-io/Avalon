@@ -2248,13 +2248,12 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelZoom = 1050;
 				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelOffsetY = -4;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
-				itemDef.modelID = 19527;
-				itemDef.rdc2 = 92111;
+				itemDef.modelID = 19530;
 				break;
 
 			case 15003:
@@ -2262,9 +2261,9 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelZoom = 1050;
 				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelOffsetY = -4;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
 				itemDef.modelID = 19526;
@@ -2275,9 +2274,9 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelZoom = 1050;
 				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelOffsetY = -4;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
 				itemDef.modelID = 19527;
@@ -2288,9 +2287,9 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelZoom = 1050;
 				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelOffsetY = -4;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
 				itemDef.modelID = 19528;
@@ -2301,9 +2300,9 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelZoom = 1050;
 				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelOffsetY = -4;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
 				itemDef.modelID = 19529;
@@ -2314,9 +2313,9 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
+				itemDef.modelZoom = 1050;
 				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
-				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelOffsetY = -4;
 				itemDef.rotationY = 100;
 				itemDef.rotationX = 90;
 				itemDef.modelID = 19531;
