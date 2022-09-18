@@ -397,7 +397,7 @@ public class Shop extends ItemContainer {
 
         } else {
 
-            if (id == EASTER_STORE_2 || id == GLOBAL_BOSS) {
+            if (id == EASTER_STORE_2) {
                 player.getPacketSender().sendMessage("You cannot sell items to this store.");
                 return;
             }
