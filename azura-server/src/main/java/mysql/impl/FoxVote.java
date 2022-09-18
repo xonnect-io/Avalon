@@ -33,13 +33,12 @@ public class FoxVote implements Runnable {
 				return;
 			}
 			System.out.println("connected to vote database");
-
+			player.getPacketSender().sendMessage("Checking for votes...");
 			String name = player.getUsername().replace("_", " ");
 			ResultSet rs = executeQuery("SELECT * FROM fx_votes WHERE username='"+name+
 					"' AND claimed=0 AND callback_date IS NOT NULL");
 
 			int points = 2;
-int claimedvote = 0;
 			while (rs.next()) {
 				String timestamp = rs.getTimestamp("callback_date").toString();
 				String ipAddress = rs.getString("ip_address");
