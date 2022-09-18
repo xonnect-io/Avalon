@@ -115,35 +115,42 @@ public class SeasonPass {
 		}
 
 		if(getXp() + xpadded > 10){
-			int totaltierstoadvance = xpadded / 10; //2
-			int xptotier = 10 - getXp();
-			int howmuchxpleft = xpadded - xptotier;
-			int remainderxp = howmuchxpleft % 10;
-			this.xp =remainderxp;
-			for(int i = 0; i < totaltierstoadvance; i++){
+
+			int tiersToAdvance = xpadded / 10; //2
+			int expTillTier = 10 - getXp();
+			int expLeft = xpadded - expTillTier;
+			int remainderExp = expLeft % 10;
+			this.xp =remainderExp;
+
+			for(int i = 0; i < tiersToAdvance; i++){
 				this.tier++;
 
-				if(tier == 25) {
-					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Season pass.");
+				if(tier == 25 && player.isunlockedseasonpass()) {
+					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Gold Season pass.");
+				} else if (tier == 25 && !player.isunlockedseasonpass()) {
+					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Silver Season pass.");
+				}
+				if(tier == 50 && player.isunlockedseasonpass()) {
+					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Gold Season pass.");
+				} else if (tier == 50 && !player.isunlockedseasonpass()) {
+					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Silver Season pass.");
 				}
 
-				if(tier == 50) {
-					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Season pass.");
-					this.xp = 0;
-					giveRewards();
-					return;
-				}
 				giveRewards();
 			}
 		} else if(getXp() + xpadded == 10){
 			addTier(1);
 			this.xp = 0;
 			giveRewards();
-			if(tier == 25) {
-				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Season pass.");
+			if(tier == 25 && player.isunlockedseasonpass()) {
+				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Gold Season pass.");
+			} else if (tier == 25 && !player.isunlockedseasonpass()) {
+				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Silver Season pass.");
 			}
-			if(tier == 50) {
-				World.sendMessage("<img=832> " + player.getUsername() + " has reached Tier 50 of the Season pass.");
+			if(tier == 50 && player.isunlockedseasonpass()) {
+				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Gold Season pass.");
+			} else if (tier == 50 && !player.isunlockedseasonpass()) {
+				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Silver Season pass.");
 			}
 		} else {
 			this.xp+=xpadded;

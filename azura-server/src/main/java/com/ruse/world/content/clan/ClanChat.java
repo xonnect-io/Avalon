@@ -68,12 +68,14 @@ public class ClanChat {
 	}
 
 	public String getOwnerName() {
+
 		if (name.equalsIgnoreCase("help")) {
 			return "Support";
 		}
-		if (name.equalsIgnoreCase("solak")) {
+		if (name.equalsIgnoreCase("avalon")) {
 			return "Support";
 		}
+
 		return ownerName;
 	}
 

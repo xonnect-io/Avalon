@@ -39,7 +39,7 @@ public class FoxVote implements Runnable {
 					"' AND claimed=0 AND callback_date IS NOT NULL");
 
 			int points = 2;
-
+int claimedvote = 0;
 			while (rs.next()) {
 				String timestamp = rs.getTimestamp("callback_date").toString();
 				String ipAddress = rs.getString("ip_address");
@@ -78,10 +78,16 @@ public class FoxVote implements Runnable {
 					World.sendMessage("Vote on both top-lists for a chance to win an Owner jewelry bag when claiming!");
 				}
 				player.getInventory().add(23020, points);
-				player.getPacketSender().sendMessage("Thank you for voting!");
 				player.getDailyRewards().handleVote();
 				player.lastVoteTime = System.currentTimeMillis();
 				player.setVoteCount(doMotivote.getVoteCount() + points);
+
+				if (siteId == 2) {
+					World.sendMessage(
+							"<img=5>@cya@<shad=1>" + player.getUsername() + "<shad=0><col=bb43df> has just voted for the server");
+							World.sendMessage(" Remember you can support us every 12 hours by typing the command ::vote");
+				}
+
 				player.getAchievementTracker().progress(AchievementData.SUPPORT_AVALON, 1);
 				player.getAchievementTracker().progress(AchievementData.SUPPORTER, 1);
 				player.getAchievementTracker().progress(AchievementData.MEGA_SUPPORTER, 1);
@@ -97,9 +103,7 @@ public class FoxVote implements Runnable {
 
 				rs.updateInt("claimed", 1); // do not delete otherwise they can reclaim!
 				rs.updateRow();
-				if (points > 2)
-				World.sendMessage("<img=5>" + player.getUsername() + " has voted for " + points * 2
-						+ " Vote scrolls! ::vote now to support the server.");
+
 			}
 			destroy();
 		} catch (Exception e) {
