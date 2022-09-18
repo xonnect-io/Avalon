@@ -943,25 +943,26 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("live")) {
             if (player.getUsername().equalsIgnoreCase("wrecked")) {
-            YoutubeData.WRECKEDYOU.setLive(true);
-            World.sendMessage("<img=10>@red@ " + YoutubeData.WRECKEDYOU.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
-            YoutubeData.clear();
-            return;
-             }
+                YoutubeData.WRECKEDYOU.setLive(true);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.WRECKEDYOU.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
+                YoutubeData.clear();
+                return;
+            }
         }
 
         if (command[0].equalsIgnoreCase("offline")) {
             if (player.getUsername().equalsIgnoreCase("wrecked")) {
-            YoutubeData.WRECKEDYOU.setLive(false);
-            World.sendMessage("<img=10>@red@ " + YoutubeData.WRECKEDYOU.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
-            YoutubeData.clear();
-            return;
+                YoutubeData.WRECKEDYOU.setLive(false);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.WRECKEDYOU.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
+                YoutubeData.clear();
+                return;
             }
         }
 
+
         if (command[0].equalsIgnoreCase("live")) {
             if (player.getUsername().equalsIgnoreCase("inherited")) {
-                YoutubeData.INHERITED.setLive(true);
+                YoutubeData.WRECKEDYOU.setLive(true);
                 World.sendMessage("<img=10>@red@ " + YoutubeData.INHERITED.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
                 YoutubeData.clear();
                 return;
@@ -970,7 +971,7 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("offline")) {
             if (player.getUsername().equalsIgnoreCase("inherited")) {
-                YoutubeData.INHERITED.setLive(false);
+                YoutubeData.WRECKEDYOU.setLive(false);
                 World.sendMessage("<img=10>@red@ " + YoutubeData.INHERITED.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
                 YoutubeData.clear();
                 return;
@@ -2624,9 +2625,33 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("Promoted to moderator.");
-            player.getPacketSender().sendMessage("Promoted to moderator.");
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to moderator.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to moderator.");
             player2.setRights(PlayerRights.MODERATOR);
+            player2.getPacketSender().sendRights();
+            PlayerPanel.refreshPanel(player2);
+        }
+        if (command[0].equalsIgnoreCase("givecm")) {
+            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (player2 == null) {
+                player.getPacketSender().sendMessage("Cannot find that player online..");
+                return;
+            }
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Community manager.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Community manager.");
+            player2.setRights(PlayerRights.COMMUNITY_MANAGER);
+            player2.getPacketSender().sendRights();
+            PlayerPanel.refreshPanel(player2);
+        }
+        if (command[0].equalsIgnoreCase("giveyt")) {
+            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (player2 == null) {
+                player.getPacketSender().sendMessage("Cannot find that player online..");
+                return;
+            }
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Youtuber.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Youtuber.");
+            player2.setRights(PlayerRights.YOUTUBER);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
         }
@@ -2636,8 +2661,8 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("Promoted to Administrator.");
-            player.getPacketSender().sendMessage("Promoted to Administrator.");
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Administrator.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Administrator.");
             player2.setRights(PlayerRights.ADMINISTRATOR);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
@@ -2648,8 +2673,8 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("Promoted to helper.");
-            player.getPacketSender().sendMessage("Promoted to helper.");
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Server support.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Server support.");
             player2.setRights(PlayerRights.HELPER);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
@@ -3610,40 +3635,39 @@ public class CommandPacketListener implements PacketListener {
             }
         }
 
-
-        if (command[0].equalsIgnoreCase("giveadmin")) {
+        if (command[0].equalsIgnoreCase("givetanzanite")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("Promoted to administrator.");
-            player.getPacketSender().sendMessage("Promoted to administrator.");
-            player2.setRights(PlayerRights.ADMINISTRATOR);
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Tanzanite donator rank.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Tanzanite donator rank.");
+            player2.setRights(PlayerRights.TANZANITE_DONATOR);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
         }
-        if (command[0].equalsIgnoreCase("givediamond")) {
+        if (command[0].equalsIgnoreCase("givezenyte")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("Promoted to Diamond Donator.");
-            player.getPacketSender().sendMessage("Promoted to Diamond Donator.");
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Zenyte donator rank.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Zenyte donator rank.");
+            player2.setRights(PlayerRights.ZENYTE_DONATOR);
+            player2.getPacketSender().sendRights();
+            PlayerPanel.refreshPanel(player2);
+        }
+        if (command[0].equalsIgnoreCase("giveonyx")) {
+            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (player2 == null) {
+                player.getPacketSender().sendMessage("Cannot find that player online..");
+                return;
+            }
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Onyx donator rank.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Onyx donator rank.");
             player2.setRights(PlayerRights.ONYX_DONATOR);
-            player2.getPacketSender().sendRights();
-            PlayerPanel.refreshPanel(player2);
-        }
-        if (command[0].equalsIgnoreCase("giveyt")) {
-            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
-            if (player2 == null) {
-                player.getPacketSender().sendMessage("Cannot find that player online..");
-                return;
-            }
-            player2.getPacketSender().sendMessage("Promoted to youtuber.");
-            player.getPacketSender().sendMessage("Promoted to youtubers.");
-            player2.setRights(PlayerRights.YOUTUBER);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
         }
@@ -3653,56 +3677,56 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("demoted to player.");
-            player.getPacketSender().sendMessage("demoted to player.");
+            player2.getPacketSender().sendMessage(player.getUsername() + " demoted you to player rank.");
+            player.getPacketSender().sendMessage("Demoted " + player2.getUsername()+ " to player rank.");
             player2.setRights(PlayerRights.PLAYER);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
         }
-        if (command[0].equalsIgnoreCase("givedon")) {
+        if (command[0].equalsIgnoreCase("givesapphire")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("You have been given donator.");
-            player.getPacketSender().sendMessage("donator.");
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Sapphire donator rank.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Sapphire donator rank.");
             player2.setRights(PlayerRights.SAPPHIRE_DONATOR);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
         }
-        if (command[0].equalsIgnoreCase("givedon2")) {
+        if (command[0].equalsIgnoreCase("giveemerald")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("You have been given super.");
-            player.getPacketSender().sendMessage("super.");
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Emerald donator rank.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Emerald donator rank.");
             player2.setRights(PlayerRights.EMERALD_DONATOR);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
         }
-        if (command[0].equalsIgnoreCase("givedon3")) {
+        if (command[0].equalsIgnoreCase("giveruby")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("You have been given exreme.");
-            player.getPacketSender().sendMessage("extreme.");
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Ruby donator rank.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Ruby donator rank.");
             player2.setRights(PlayerRights.RUBY_DONATOR);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
         }
-        if (command[0].equalsIgnoreCase("givedon4")) {
+        if (command[0].equalsIgnoreCase("givediamond")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {
                 player.getPacketSender().sendMessage("Cannot find that player online..");
                 return;
             }
-            player2.getPacketSender().sendMessage("You have been given sponsor.");
-            player.getPacketSender().sendMessage("sponsor.");
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Diamond donator rank.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Diamond donator rank.");
             player2.setRights(PlayerRights.DIAMOND_DONATOR);
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
