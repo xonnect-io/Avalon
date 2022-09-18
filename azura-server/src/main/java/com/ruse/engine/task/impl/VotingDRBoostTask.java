@@ -13,10 +13,10 @@ public class VotingDRBoostTask extends Task {
 	}
 
 	final Player player;
-	int msg;
-
 	@Override
 	public void execute() {
+		int drMinutes = player.getMinutesVotingDR();
+
 		if (player == null || !player.isRegistered()) {
 			stop();
 			return;
@@ -27,15 +27,10 @@ public class VotingDRBoostTask extends Task {
 			player.getPacketSender().sendMessage("<img=5> <col=330099>Your bonus x2 DR has run out.");
 			player.setMinutesVotingDR(-1, false);
 			stop();
-		} else if (msg == 2 && newMinutes < 10) {
+		} else if(String.valueOf(drMinutes).endsWith(String.valueOf(0)) && drMinutes != 0) {
 			player.getPacketSender().sendMessage("<img=5> <col=330099>You have "
-					+ Misc.format(player.getMinutesVotingDR()) + " minutes of bonus x2 DR left.");
-		} else if (msg == 4) {
-			player.getPacketSender().sendMessage("<img=5> <col=330099>You have "
-					+ Misc.format(player.getMinutesVotingDR()) + " minutes of bonus x2 DR left.");
-			msg = 0;
+					+ Misc.format(drMinutes) + " minutes of bonus x2 DR left.");
 		}
-		msg++;
 	}
 
 	public static void addBonusDR(final Player p, int minutes) {

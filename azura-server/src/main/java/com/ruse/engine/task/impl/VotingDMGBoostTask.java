@@ -13,7 +13,6 @@ public class VotingDMGBoostTask extends Task {
 	}
 
 	final Player player;
-	int msg;
 
 	@Override
 	public void execute() {
@@ -27,15 +26,11 @@ public class VotingDMGBoostTask extends Task {
 			player.getPacketSender().sendMessage("<img=5> <col=330099>Your bonus x2 DMG has run out.");
 			player.setMinutesVotingDMG(-1, false);
 			stop();
-		} else if (msg == 2 && newMinutes < 10) {
+		} else if(String.valueOf(newMinutes).endsWith(String.valueOf(0)) && newMinutes != 0) {
 			player.getPacketSender().sendMessage("<img=5> <col=330099>You have "
 					+ Misc.format(player.getMinutesVotingDMG()) + " minutes of bonus x2 DMG left.");
-		} else if (msg == 4) {
-			player.getPacketSender().sendMessage("<img=5> <col=330099>You have "
-					+ Misc.format(player.getMinutesVotingDMG()) + " minutes of bonus x2 DMG left.");
-			msg = 0;
 		}
-		msg++;
+
 	}
 
 	public static void addBonusDMG(final Player p, int minutes) {
