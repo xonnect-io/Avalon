@@ -373,6 +373,15 @@ public enum CombatSpecial {
 			return new CombatContainer(player, target, 1, CombatType.MELEE, true);
 		}
 	},
+	NEPHILIM_SWORD(new int[] { 23063 }, 30, 1.75, 1, CombatType.MELEE, WeaponInterface.SWORD) {
+		@Override
+		public CombatContainer container(Player player, Character target) {
+			player.performAnimation(new Animation(1667));
+			player.performGraphic(new Graphic(337, GraphicHeight.HIGH));
+			player.getCombatBuilder().setAttackTimer(1);
+			return new CombatContainer(player, target, 2, CombatType.MELEE, true);
+		}
+	},
 	SCYTHE(new int[] { 1419 }, 50, 1, 1, CombatType.MELEE, WeaponInterface.HALBERD) {
 		@Override
 		public CombatContainer container(Player player, Character target) {

@@ -1,5 +1,6 @@
 package com.ruse.world.content.combat;
 
+import com.ruse.model.Locations;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Equipment;
@@ -235,6 +236,10 @@ public class Maxhits {
                     && player.getEquipment().contains(8840) && player.getEquipment().contains(8842)) {
                 maxHit *= 1.2;
             }
+
+            if (player.getLocation() == Locations.Location.FREE_FOR_ALL_ARENA) {
+                maxHit = Misc.getRandom(0,30);
+            }
         }
 
         // Dharoks effect
@@ -346,6 +351,7 @@ public class Maxhits {
             if (player.getEquipment().contains(7539)) {
                 maxHit *= 1.5;
             }
+
             if (player.getEquipment().contains(23230) || player.getEquipment().contains(23231) ||
                     player.getEquipment().contains(23232) || player.getEquipment().contains(23233) ||
                     player.getEquipment().contains(23234) || player.getEquipment().contains(23235) ||
@@ -489,7 +495,9 @@ public class Maxhits {
                     && player.getEquipment().contains(8840) && player.getEquipment().contains(8842)) {
                 maxHit *= 1.2;
             }
-
+            if (player.getLocation() == Locations.Location.FREE_FOR_ALL_ARENA) {
+                maxHit = Misc.getRandom(0,25);
+            }
         }
 
         maxHit *= 10;
@@ -717,7 +725,9 @@ public class Maxhits {
                     && player.getEquipment().contains(8840) && player.getEquipment().contains(8842)) {
                 maxHit *= 1.2;
             }
-
+            if (player.getLocation() == Locations.Location.FREE_FOR_ALL_ARENA) {
+                maxHit = Misc.getRandom(0,28);
+            }
         }
 
         maxHit *= 10;

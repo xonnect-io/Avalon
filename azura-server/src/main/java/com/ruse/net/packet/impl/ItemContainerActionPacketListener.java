@@ -558,6 +558,20 @@ public class ItemContainerActionPacketListener implements PacketListener {
 						DialogueManager.start(player, 101);
 						player.setDialogueActionId(60);
 						break;
+
+					case 23063:
+						if (player.getNephSwordCharges() > 0) {
+							if (player.getCombatBuilder().isAttacking()) {
+								CombatFactory.handleNephilimSword(player, player.getCombatBuilder().getVictim());
+							} else {
+								player.getPacketSender().sendMessage("You can only use this in combat.");
+							}
+						} else {
+							player.getPacketSender().sendMessage("Your sword doesn't have enough power yet. It has "
+									+ player.getNephSwordCharges() + "/20 nephilim charges.");
+						}
+						break;
+
 					case 22052:
 					case 14019:
 					case 14022:

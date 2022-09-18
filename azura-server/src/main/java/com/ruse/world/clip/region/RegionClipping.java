@@ -304,7 +304,6 @@ public final class RegionClipping {
 				|| loc != null && loc == Location.BARROWS;
 		boolean catherbyAquariums = id == 10091 && pos.getX() >= 2829 && pos.getX() <= 2832 && pos.getY() >= 3441
 				&& pos.getY() <= 3447;
-		boolean freeForAllPortal = id == 38700 && pos.getX() == 2814 && pos.getY() == 5509;
 		boolean warriorsGuild = id == 15653 && pos.getX() == 2877 && pos.getY() == 3546
 				|| loc == Location.WARRIORS_GUILD;
 		boolean fightPit = id == 9369 && pos.getX() == 2399 && pos.getY() == 5176
@@ -329,7 +328,7 @@ public final class RegionClipping {
 		boolean draynor = (id == 135 && pos.getX() == 3109 && pos.getY() == 3353)
 				|| (id == 134 && pos.getX() == 3108 && pos.getY() == 3353);
 		if (well || mageBankLever || lawAltar || trees || chaosTunnels || lunar || barrows || rfd || lumbridgeCastle
-				|| barbCourseRopeswing || catherbyAquariums || freeForAllPortal || warriorsGuild || fightPit || godwars
+				|| barbCourseRopeswing || catherbyAquariums || warriorsGuild || fightPit || godwars
 				|| barrows || waterRcAltar || draynor)
 			return true;
 		int[] info = getObjectInformation(object.getPosition());

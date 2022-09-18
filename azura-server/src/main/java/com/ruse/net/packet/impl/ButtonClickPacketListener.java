@@ -1735,9 +1735,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }*/
                 break;
             case 28180:
-                player.getPacketSender().sendMessage("<shad=1>@red@Teleporting to PVP Arena!");
-                TeleportHandler.teleportPlayer(player, new Position(2375, 4021), player.getSpellbook().getTeleportType());
-
+                TeleportHandler.teleportPlayer(player, new Position(2815, 5511), player.getSpellbook().getTeleportType());
                 break;
             case 14176:
                 player.setUntradeableDropItem(null);

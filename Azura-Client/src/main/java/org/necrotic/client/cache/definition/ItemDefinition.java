@@ -2122,8 +2122,9 @@ public final class ItemDefinition {
 				break;*/
 
 			case 17291:
-				itemDef.name = "Naturespawn necklace";
-				itemDef.rdc = 85060;
+				itemDef.name = "Webby necklace";
+				itemDef.rdc = 85266;
+				//itemDef.rotationX = 700;
 				itemDef.actions = new String[]{null, "Wear", null, null, null, null};
 				
 

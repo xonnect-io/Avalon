@@ -182,6 +182,9 @@ public class ObjectActionPacketListener implements PacketListener {
                             }
                         }
                         switch (id) {
+                            case 13623:
+                                player.moveTo(GameSettings.DEFAULT_POSITION.copy());
+                                break;
                             case 172:
                                 int[] COMMON = new int[] {1149,1249,3204,1305,1215,1377,1434,7158,7956};
                                 int[] UNCOMMON = new int[] {6739, 11728, 15259, 6570,3320,3318,4888,18332,14377};

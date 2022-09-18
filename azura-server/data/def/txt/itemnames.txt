@@ -62375,11 +62375,11 @@ name: Seeker's charm
 finish
 
 Item Id: 17291
-name: Naturespawn necklace
+name: Webby necklace
 finish
 
 Item Id: 17292
-name: Naturespawn necklace
+name: Webby necklace
 finish
 
 Item Id: 17293

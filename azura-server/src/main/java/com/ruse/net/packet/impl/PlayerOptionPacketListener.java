@@ -174,8 +174,9 @@ public class PlayerOptionPacketListener implements PacketListener {
 		 * player.getEquipment().contains(22075)||//
 		 * player.getEquipment().contains(22075)||//
 		 * player.getEquipment().contains(20171) &&
-		 */player.getLocation() == Location.FREE_FOR_ALL_ARENA) {
-			player.getPacketSender().sendMessage("No safe pvp area :) Teleport to ::PVP");
+		 */
+				player.getLocation() != Location.FREE_FOR_ALL_ARENA) {
+			player.getPacketSender().sendMessage("This is not a pvp area");
 			player.getMovementQueue().reset();
 			return;
 		}

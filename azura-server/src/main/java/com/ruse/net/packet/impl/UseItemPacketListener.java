@@ -99,7 +99,28 @@ public class UseItemPacketListener implements PacketListener {
         if (!player.getControllerManager().canUseItemOnItem(usedWith, itemUsedWith)) {
             return;
         }
+         int crystalAmount = player.getInventory().getAmount(23321);
+        int chargeAmount = player.getNephSwordCharges();
 
+        if (usedWith.getId() == 23063 && itemUsedWith.getId() == 23321 ||
+                usedWith.getId() == 23321 && itemUsedWith.getId() == 23063) {
+            if (chargeAmount > 0) {
+                player.getPacketSender().sendMessage("You have to use your current charges before adding more");
+                return;
+            }
+            if (crystalAmount > 100 ) {
+                player.getInventory().delete(23321, 100);
+                player.setNephSwordCharges(100);
+                player.getPacketSender().sendMessage("You can only add 100 charges to the Nephilim sword.");
+                return;
+            }
+            player.getInventory().delete(23321, crystalAmount);
+            player.setNephSwordCharges(crystalAmount);
+            player.getPacketSender().sendMessage("Your Nephilim sword is now at @red@"+ crystalAmount +"/100@bla@ charges.");
+            return;
+
+
+        }
 
         if (usedWith.getId() == 23309 && itemUsedWith.getId() == 23321 ||
                 usedWith.getId() == 23321 && itemUsedWith.getId() == 23309) {

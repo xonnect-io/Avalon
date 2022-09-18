@@ -2600,7 +2600,39 @@ public final class CombatFactory {
     public static void sendFireMessage(Player player) {
         player.getPacketSender().sendMessage("Your shield protects against some of the dragon's fire.");
     }
+    public static void handleNephilimSword(final Player player, final Character target) {
+        if (player == null || target == null || target.getConstitution() <= 0 || player.getConstitution() <= 0)
+            return;
+        if (!player.getLastDfsTimer().elapsed(120000)) {
+            player.getPacketSender().sendMessage("Your sword is not ready yet.");
+            return;
+        }
+        player.getCombatBuilder().cooldown(false);
+        player.setEntityInteraction(target);
+        player.performAnimation(new Animation(1060));
+        player.performGraphic(new Graphic(1207));
+        TaskManager.submit(new Task(1, player, false) {
+            int ticks = 0;
 
+            @Override
+            public void execute() {
+                switch (ticks) {
+                    case 2:
+                        Hit h = new Hit(Maxhits.melee(player, player) * Misc.getRandom(2,4), Hitmask.RED, CombatIcon.MELEE);
+                        target.dealDamage(h);
+                        target.getCombatBuilder().addDamage(player, h.getDamage());
+                        target.getLastCombat().reset();
+                        stop();
+                        break;
+                }
+                ticks++;
+            }
+        });
+        player.getLastNephSwordTimer().reset();
+        player.setNephSwordCharges(player.getNephSwordCharges() - 1);
+        player.getPacketSender().sendMessage("Your sword has " + player.getNephSwordCharges() + "/20 charges remaining.");
+        BonusManager.update(player);
+    }
     public static void handleDragonFireShield(final Player player, final Character target) {
         if (player == null || target == null || target.getConstitution() <= 0 || player.getConstitution() <= 0)
             return;

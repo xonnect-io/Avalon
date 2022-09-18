@@ -1296,9 +1296,9 @@ public final class ObjectDefinition {
 				definition.actions[0] = "Teleport to";
 				break;
 			case 13623:
-				definition.name = "<shad=1><col=255>[Single PVP]";
+				definition.name = "Exit Portal";
 				definition.actions = new String[5];
-				definition.actions[0] = "Teleport to";
+				definition.actions[0] = "Enter";
 				break;
 			case 4387:
 				definition.name = "<col=3F596F>[Points Portal]";

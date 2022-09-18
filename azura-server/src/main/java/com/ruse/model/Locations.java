@@ -2116,7 +2116,7 @@ for (Item item : player.getInventory().getItems()) {
 
 			@Override
 			public void onDeath(Player player) {
-				player.moveTo(new Position(2375, 4021));
+				player.moveTo(new Position(2818, 5511));
 			}
 
 			@Override
@@ -2138,6 +2138,13 @@ for (Item item : player.getInventory().getItems()) {
 
 		},
 		FREE_FOR_ALL_WAIT(new int[] { 2755, 2876 }, new int[] { 5507, 5627 }, false, false, true, false, false, true) {
+
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.ATTACK) {
+					player.getPacketSender().sendMessage("Welcome to the free-for-all arena, all items are kept on death!");
+				}
+			}
 			@Override
 			public boolean canTeleport(Player player) {
 				player.getPacketSender()

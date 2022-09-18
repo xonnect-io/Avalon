@@ -428,6 +428,7 @@ public int howmuchdissolveamt = 0;
     private final Stopwatch tolerance = new Stopwatch();
     private final Stopwatch lougoutTimer = new Stopwatch();
     private final Stopwatch lastDfsTimer = new Stopwatch();
+    private final Stopwatch lastNephSwordTimer = new Stopwatch();
     /*** INSTANCES ***/
     private final CopyOnWriteArrayList<KillsEntry> killsTracker = new CopyOnWriteArrayList<KillsEntry>();
     private final CopyOnWriteArrayList<DropLogEntry> dropLog = new CopyOnWriteArrayList<DropLogEntry>();
@@ -729,6 +730,9 @@ public int howmuchdissolveamt = 0;
     private int shadowState;
     private int effigy;
     private int dfsCharges;
+    private int nephSwordCharges;
+    private int nephStaffCharges;
+    private int nephBowCharges;
     private int nephilimBonus;
     private int guardianBonus;
     private int playerViewingIndex;
@@ -3265,7 +3269,6 @@ End new teleport
     public int getDfsCharges() {
         return dfsCharges;
     }
-
     public void setDfsCharges(int amount) {
         this.dfsCharges = amount;
     }
@@ -3273,6 +3276,38 @@ End new teleport
     public void incrementDfsCharges(int amount) {
         this.dfsCharges += amount;
     }
+    public int getNephSwordCharges() {
+        return nephSwordCharges;
+    }
+    public void setNephSwordCharges(int amount) {
+        this.nephSwordCharges = amount;
+    }
+
+    public void incrementNephSwordCharges(int amount) {
+        this.nephSwordCharges += amount;
+    }
+
+
+    public int getNephStaffCharges() {
+        return nephStaffCharges;
+    }
+    public void setNephStaffCharges(int amount) {
+        this.nephStaffCharges = amount;
+    }
+    public void incrementNephStaffCharges(int amount) {
+        this.nephStaffCharges += amount;
+    }
+
+    public int getNephBowCharges() {
+        return nephBowCharges;
+    }
+    public void setNephBowCharges(int amount) {
+        this.nephBowCharges = amount;
+    }
+    public void incrementNephBowCharges(int amount) {
+        this.nephBowCharges += amount;
+    }
+
 
 
     public int getGuardianBonus() {
@@ -4026,7 +4061,9 @@ End new teleport
     public Stopwatch getLastDfsTimer() {
         return lastDfsTimer;
     }
-
+    public Stopwatch getLastNephSwordTimer() {
+        return lastNephSwordTimer;
+    }
     public String getSalt() {
         return salt;
     }
