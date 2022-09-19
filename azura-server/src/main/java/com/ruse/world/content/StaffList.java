@@ -1,11 +1,11 @@
 package com.ruse.world.content;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.ruse.model.PlayerRights;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class StaffList {
 
@@ -27,6 +27,9 @@ public class StaffList {
 		}
 		if (player.getRights() == PlayerRights.MODERATOR) {
 			return "<img=1>";
+		}
+		if (player.getRights() == PlayerRights.COMMUNITY_MANAGER) {
+			return "<img=856>";
 		}
 		if (player.getRights() == PlayerRights.ADMINISTRATOR) {
 			return "<img=2>";
