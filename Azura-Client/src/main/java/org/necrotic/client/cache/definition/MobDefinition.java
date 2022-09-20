@@ -3364,7 +3364,7 @@ public final class MobDefinition {
 			case 9312:
 				definition.name = "Nephilim Warrior";
 				MobDefinition Shinda = MobDefinition.get(2292);
-				definition.npcModels = new int[]{19627};
+				definition.npcModels = new int[]{18446,18486,18511,18516,18519,18520,18525,18527,18528};
 				definition.combatLevel = Shinda.combatLevel;
 				definition.standAnimation = Shinda.standAnimation;
 				definition.walkAnimation = Shinda.walkAnimation;

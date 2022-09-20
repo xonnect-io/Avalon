@@ -2251,7 +2251,7 @@ public final class ItemDefinition {
 				itemDef.modelOffsetY = 4;
 				itemDef.rotationY = 43;
 				itemDef.rotationX = 107;
-				itemDef.modelID = 19622;
+				itemDef.modelID = 19619;
 				break;
 
 			case 15003:
@@ -2264,7 +2264,7 @@ public final class ItemDefinition {
 				itemDef.modelOffsetY = 4;
 				itemDef.rotationY = 43;
 				itemDef.rotationX = 107;
-				itemDef.modelID = 19621;
+				itemDef.modelID = 19620;
 				break;
 
 			case 15002:
@@ -2277,7 +2277,7 @@ public final class ItemDefinition {
 				itemDef.modelOffsetY = 4;
 				itemDef.rotationY = 43;
 				itemDef.rotationX = 107;
-				itemDef.modelID = 19623;
+				itemDef.modelID = 19621;
 				break;
 
 			case 15004:
@@ -2290,7 +2290,7 @@ public final class ItemDefinition {
 				itemDef.modelOffsetY = 4;
 				itemDef.rotationY = 43;
 				itemDef.rotationX = 107;
-				itemDef.modelID = 19624;
+				itemDef.modelID = 19622;
 				break;
 
 			case 14999:
@@ -2303,7 +2303,7 @@ public final class ItemDefinition {
 				itemDef.modelOffsetY = 4;
 				itemDef.rotationY = 43;
 				itemDef.rotationX = 107;
-				itemDef.modelID = 19626;
+				itemDef.modelID = 19623;
 				break;
 
 			case 23253:
@@ -2316,7 +2316,7 @@ public final class ItemDefinition {
 				itemDef.modelOffsetY = 4;
 				itemDef.rotationY = 43;
 				itemDef.rotationX = 107;
-				itemDef.modelID = 19625;
+				itemDef.modelID = 19624;
 				break;
 
 			case 15355:
@@ -2389,7 +2389,7 @@ public final class ItemDefinition {
 				itemDef.name = "Ruby Mystery Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.modelID = 19620;
+				itemDef.modelID = 19617;
 				itemDef.modelZoom = 400;
 				itemDef.modelOffsetY = 0;
 				break;
@@ -2408,7 +2408,7 @@ public final class ItemDefinition {
 				itemDef.name = "Emerald Mystery Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.modelID = 19619;
+				itemDef.modelID = 19618;
 				itemDef.modelZoom = 400;
 				itemDef.modelOffsetY = 0;
 				break;
