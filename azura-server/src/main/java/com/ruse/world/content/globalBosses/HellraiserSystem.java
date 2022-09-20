@@ -1,6 +1,6 @@
 package com.ruse.world.content.globalBosses;
+
 import com.ruse.model.Position;
-import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.npc.NPC;
 
@@ -14,7 +14,7 @@ public class HellraiserSystem {
 	public static void commandSpawnBoss() {
 		NPC npc = new NPC(187, new Position(3100, 5536));
 		World.register(npc);
-		World.sendMessage("Hellraiser has Arrived! fight him now at ::hellraiser");
+		World.sendMessage("@red@<shad=1>Hellraiser has Arrived! fight him now at @blu@::hellraiser");
 		npckills = 0;
 	}
 	public static void spawnBoss() {
@@ -24,7 +24,7 @@ public class HellraiserSystem {
 
 		NPC npc = new NPC(187, new Position(3100, 5536));
 		World.register(npc);
-		World.sendMessage("Hellraiser has Arrived! fight him now at ::hellraiser");
+		World.sendMessage("@or2@<shad=1>Hellraiser has Arrived! fight him now at @blu@::hellraiser");
 		npckills = 0;
 	}
 	public static void callBoss() {

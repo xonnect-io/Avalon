@@ -65,7 +65,18 @@ public class ServerPerks {
             e.printStackTrace();
         }
     }
-
+    public static void discordBroadcastEnd(String msg) {
+        try {
+            String webhook = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
+            WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+            DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("").withColor(Color.orange).withDescription(
+                    "***[Perk] "+ activePerk.getName() + " has been deactivated***").build();
+            DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)).withEmbed(embed).withUsername("Broadcast").build();
+            client.sendPayload(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public void open(Player player) {
         player.getPacketSender().sendInterface(INTERFACE_ID);
@@ -124,8 +135,8 @@ public class ServerPerks {
         updateOverlay();
         World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has just been activated!");
 
-        World.sendBroadcastMessage(activePerk.getName() + " has just been activated for 1 hour");
-        GameSettings.broadcastMessage = "The Nephilim Warrior has appeared ::Nephilim";
+        World.sendBroadcastMessage(""+ activePerk.getName() + " has just been activated for 1 hour");
+        GameSettings.broadcastMessage = activePerk.getName() + " has just been activated for 1 hour";
         GameSettings.broadcastTime = 100;
         if (GameSettings.LOCALHOST == false)
         discordBroadcast("");
@@ -138,7 +149,12 @@ public class ServerPerks {
         active = false;
         contributions.put(activePerk, 0);
         World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has ended!");
-        discordBroadcast("");
+
+        World.sendBroadcastMessage(""+ activePerk.getName() + " has ended!");
+        GameSettings.broadcastMessage = activePerk.getName() + " has ended!";
+        GameSettings.broadcastTime = 100;
+        if (GameSettings.LOCALHOST == false)
+        discordBroadcastEnd("");
         activePerk = null;
         resetInterface();
     }

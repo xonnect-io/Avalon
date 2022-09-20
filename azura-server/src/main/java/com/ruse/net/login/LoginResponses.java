@@ -17,6 +17,9 @@ public final class LoginResponses {
         if (GameServer.isUpdating()) {
             return LOGIN_GAME_UPDATE;
         }
+        if (LoginDecoder.currentversion != msg.getUid()) {
+            return OUTDATED_CLIENT;
+        }
         if (!NameUtils.isValidName(player.getUsername())) {
             return LOGIN_INVALID_CREDENTIALS;
         }
@@ -155,6 +158,8 @@ public final class LoginResponses {
      * This login opcode is used when the game has been or is being updated.
      */
     public static final int LOGIN_GAME_UPDATE = 6;
+
+    public static final int OUTDATED_CLIENT = 800;
 
     /**
      * This login opcode is used when server is launching.

@@ -141,7 +141,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Teleporting you to the Summer Event!");
         }
 
-        if (command[0].equalsIgnoreCase("doom") || command[0].equalsIgnoreCase("doomboss")) {
+        if (command[0].equalsIgnoreCase("slayerchampion") || command[0].equalsIgnoreCase("slayerboss")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -962,7 +962,7 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("live")) {
             if (player.getUsername().equalsIgnoreCase("inherited")) {
-                YoutubeData.WRECKEDYOU.setLive(true);
+                YoutubeData.INHERITED.setLive(true);
                 World.sendMessage("<img=10>@red@ " + YoutubeData.INHERITED.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
                 YoutubeData.clear();
                 return;
@@ -971,7 +971,7 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("offline")) {
             if (player.getUsername().equalsIgnoreCase("inherited")) {
-                YoutubeData.WRECKEDYOU.setLive(false);
+                YoutubeData.INHERITED.setLive(false);
                 World.sendMessage("<img=10>@red@ " + YoutubeData.INHERITED.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
                 YoutubeData.clear();
                 return;

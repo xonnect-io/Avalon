@@ -7,6 +7,7 @@ import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.dailytasks_new.DailyTask;
+import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.HashMap;
@@ -26,12 +27,25 @@ public class TreasureHunter {
 
 
     public static boolean combineKeys(Player player, Item used, Item usedWith) {
+
         if (used.getId() >= KEY_1 && used.getId() <= KEY_4 && usedWith.getId() >= KEY_1 && usedWith.getId() <= KEY_4) {
             if (player.getInventory().contains(new Item[]{new Item(KEY_1), new Item(KEY_2), new Item(KEY_3), new Item(KEY_4)})) {
                 player.getInventory().deleteItemSet(new Item[]{new Item(KEY_1), new Item(KEY_2), new Item(KEY_3), new Item(KEY_4)});
-                if (Misc.getRandom(100) <= 75){
+                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                        player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAMMUS_PET.npcId ||
+                        player.getSummoning() != null && player.getSummoning().getFamiliar() != null && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DEMON_PET.npcId ||
+                        player.getSummoning() != null && player.getSummoning().getFamiliar() != null && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.GOLEM_PET.npcId ||
+                        player.getSummoning() != null && player.getSummoning().getFamiliar() != null && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DRAGON_PET.npcId) {
+                            if (Misc.getRandom(100) <= 95) {
+                                player.getInventory().add(MASTER_KEY);
+                                player.sendMessage("You've successfully created the Master Key.");
+                                System.out.println("Hitting here with pet");
+                    }
+                }
+                else if (Misc.getRandom(100) <= 75){
                     player.getInventory().add(MASTER_KEY);
                     player.sendMessage("You've successfully created the Master Key.");
+                    System.out.println("Hitting here with no pet");
                 }else{
                     player.sendMessage("You've failed the Master Key creation.");
                 }

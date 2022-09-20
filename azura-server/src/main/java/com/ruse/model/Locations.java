@@ -257,7 +257,7 @@ public class Locations {
 			public void process(Player player) {
 			}
 		},
-		PROGRESSION_ZONES(new int[] { 2774, 2791}, new int[] { 9487, 9619},
+		PROGRESSION_ZONES(new int[] { 3022, 3042}, new int[] { 4112, 4130},
 				false, true, true, false, false, true) {
 			@Override
 			public void process(Player player) {
@@ -1139,7 +1139,7 @@ public class Locations {
 				}
 			}
 		},
-		RUBY_ZONE(new int[] { 2180, 2240 }, new int[] { 4230, 4290 }, false, true, true, false, true, false) {
+		RUBY_ZONE(new int[] { 2180, 2240 }, new int[] { 4230, 4290 }, true, true, true, false, true, false) {
 
 			@Override
 			public void enter(Player player) {
@@ -1269,7 +1269,6 @@ public class Locations {
 		},
 		NARAKU(new int[] { 3412, 3433 }, new int[] { 9555, 9580 }, true, true, true, false, false, false) {
 		},
-
 		SKELETAL(new int[] { 3323, 3357 }, new int[] { 3162, 3188 }, true, true, true, false, false, false) {
 		},
 

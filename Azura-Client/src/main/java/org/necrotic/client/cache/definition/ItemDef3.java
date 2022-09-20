@@ -122,7 +122,7 @@ public class ItemDef3 {
 				break;
 				
 			case 23002:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Fortune Chest";
 				itemDef.modelID = 100054;
 				itemDef.modelZoom = 936;
@@ -615,7 +615,7 @@ public class ItemDef3 {
 				break;
 
 			case 23040:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.modelZoom = 3000;
 				itemDef.name = "Chest";
 				itemDef.modelID = 100122;
@@ -2317,7 +2317,7 @@ public class ItemDef3 {
 				break;
 
 			case 23177:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Starter box";
 				itemDef.rdc2 = 3455;//15888 - 45366
 				break;
@@ -2407,7 +2407,7 @@ public class ItemDef3 {
 				break;
 
 			case 23414:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 19609;
@@ -2416,7 +2416,7 @@ public class ItemDef3 {
 				break;
 
 			case 23415:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 19611;
@@ -2424,7 +2424,7 @@ public class ItemDef3 {
 				itemDef.name = "Inherited's Creator Box";
 				break;
 			case 23416:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 19613;
@@ -2432,7 +2432,7 @@ public class ItemDef3 {
 				itemDef.name = "Celestial's Creator Box";
 				break;
 			case 23417:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.newModelColor = new int[]{63};
@@ -2726,7 +2726,7 @@ public class ItemDef3 {
 				break;
 				
 			case 21221:
-				ItemDefinition itemdefyogipic100 = ItemDefinition.get(6199);
+				ItemDefinition itemdefyogipic100 = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemdefyogipic100.modelOffsetX;
 				itemDef.modelOffsetY = itemdefyogipic100.modelOffsetY;
 				itemDef.modelZoom = itemdefyogipic100.modelZoom;
@@ -2742,7 +2742,7 @@ public class ItemDef3 {
 				break;
 				
 			case 21222:		
-				ItemDefinition itemdefyogipic1001 = ItemDefinition.get(6199);
+				ItemDefinition itemdefyogipic1001 = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemdefyogipic1001.modelOffsetX;
 				itemDef.modelOffsetY = itemdefyogipic1001.modelOffsetY;
 				itemDef.modelZoom = itemdefyogipic1001.modelZoom;

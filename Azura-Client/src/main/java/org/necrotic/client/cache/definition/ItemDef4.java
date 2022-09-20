@@ -3114,7 +3114,7 @@ public class ItemDef4 {
 				itemDef.name = "Starter Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
+				itemDef21 = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -3327,7 +3327,7 @@ public class ItemDef4 {
 				itemDef.name = "Maxiblood Package";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
+				itemDef21 = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -3343,7 +3343,7 @@ public class ItemDef4 {
 				itemDef.name = "Moonlight Package";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
+				itemDef21 = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -3359,7 +3359,7 @@ public class ItemDef4 {
 				itemDef.name = "Archie Package";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
+				itemDef21 = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;

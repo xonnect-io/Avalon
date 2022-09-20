@@ -157,7 +157,7 @@ public enum Collection {
             new Item(14501), new Item(4710), new Item(3751), new Item(17193), new Item(17339), new Item(4734),
             new Item(4753), new Item(4757), new Item(4759), new Item(4755), new Item(4745), new Item(4749),
             new Item(4751), new Item(4747), new Item(290), new Item(19582), new Item(14525), new Item(11858),
-            new Item(23020), new Item(4151), new Item(11235), new Item(15486), new Item(12933), new Item(18353),
+            new Item(4151), new Item(11235), new Item(15486), new Item(12933), new Item(18353),
             new Item(15031), new Item(6585), new Item(6737), new Item(7462)),
     PVM_BOX_T2(Player.PVM_BOXES_T2_OPENED, LogType.BOXES, "Pvm Box (t2)", new int[] {CollectionLog.PVM_BOX_T2}, Player.PVM_BOX_T2_LOG_CLAIMED, new Item[] { new Item(20488,20) },
             new Item(19582), new Item(14525), new Item(11858), new Item(4151), new Item(11235), new Item(15486),

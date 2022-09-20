@@ -827,7 +827,7 @@ public class ItemDef2 {
 				itemDef.modelID = 64050;
 				itemDef.maleEquip1 = 64050;
 				itemDef.femaleEquip1 = 64050;
-				def = ItemDefinition.get(6199);
+				def = ItemDefinition.get(290);
 				itemDef.modelOffsetX = def.modelOffsetX;
 				itemDef.modelOffsetY = def.modelOffsetY;
 				itemDef.modelZoom = 2300;
@@ -1013,7 +1013,7 @@ public class ItemDef2 {
 
 				
 			case 10025:	
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Progressive Reward Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
@@ -4198,14 +4198,14 @@ public class ItemDef2 {
 				itemDef.rotationZ = 13;
 				break;
 			case 13802:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "St. Patrick's Box";
 				itemDef.newModelColor = new int[]{2999, 926, 22410};
 				itemDef.editedModelColor = new int[]{19197, 20386, 20386};
 				break;
 
 			case 23322:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Summer Box";
 				itemDef.newModelColor = new int[]{2999, 926, 22410};
 				itemDef.editedModelColor = new int[]{19197, 20386, 20386};
@@ -4497,7 +4497,7 @@ public class ItemDef2 {
 				itemDef.rdc2 = 259252;
 				break;
 			case 7956:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "PvM Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
@@ -4506,14 +4506,14 @@ public class ItemDef2 {
 				itemDef.modelID = 65284;
 				break;
 			case 7120:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Slayer Box";
 				itemDef.newModelColor = new int[]{63};
 				itemDef.editedModelColor = new int[]{122};
 				itemDef.modelID = 65284;
 				break;
 			case 22123:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Slayer Box (u)";
 				itemDef.newModelColor = new int[]{63};
 				itemDef.editedModelColor = new int[]{123};
@@ -4525,7 +4525,7 @@ public class ItemDef2 {
 				itemDef.name = "<col=c497fc>Boss Event Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemdefyogipic = ItemDefinition.get(6199);
+				itemdefyogipic = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
 				//itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
@@ -5073,7 +5073,7 @@ public class ItemDef2 {
 				break;
 				
 			case 22214:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.newModelColor = new int[]{63};
 				itemDef.editedModelColor = new int[]{63};
 				itemDef.name = "PvM Box (t2)";

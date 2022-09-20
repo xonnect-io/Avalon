@@ -543,10 +543,10 @@ public class MainDissolving {
 		for(DissolvingData data : DissolvingData.values()) {
 			if(data.getId() == id) {
 				player.getInventory().add(data.getreward(),data.getrewardamt() * player.getInventory().getAmount(data.getId()));
+				player.howmuchdissolveamt+=data.getrewardamt() * player.getInventory().getAmount(data.getId());
+				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience() * player.getInventory().getAmount(data.getId()));
 				player.getPacketSender().sendMessage("You dissolved " + ItemDefinition.forId(id).getName() +" for " + Misc.insertCommasToNumber(data.getrewardamt() * player.getInventory().getAmount(data.getId())) +" Upgrade Tokens" );
 				player.getInventory().delete(id, player.getInventory().getAmount(data.getId()));//only 1 gets dissolved is it possible to make it the amount of the stack in inventory
-				player.howmuchdissolveamt+=data.getrewardamt() * player.getInventory().getAmount(data.getId());
-				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
 				player.performAnimation(new Animation(-1));
 				break;
 			}

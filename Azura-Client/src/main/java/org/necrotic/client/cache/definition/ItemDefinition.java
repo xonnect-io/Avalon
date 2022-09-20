@@ -2132,11 +2132,6 @@ public final class ItemDefinition {
 			case 20084:
 				itemDef.name = "Golden Maul";
 				break;
-			case 6199:
-				itemDef.name = "Mystery Box";
-				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Open";
-				break;
 
 			case 290:
 				itemDef.name = "Loot box";
@@ -2145,10 +2140,10 @@ public final class ItemDefinition {
 				break;
 			case 6198:
 				itemDef.name = "3% Droprate Pet";
-				itemDef21 = ItemDefinition.get(6199);
+				itemDef21 = ItemDefinition.get(290);
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
+				itemDef21 = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -2188,7 +2183,7 @@ public final class ItemDefinition {
 				itemDef.name = "Vote Mystery Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
+				itemDef21 = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.rotationZ = itemDef21.rotationZ;
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
@@ -2241,7 +2236,9 @@ public final class ItemDefinition {
 
 			case 4186:
 				itemDef.name = "Case key";
-				itemDef.actions = new String[]{null, null, "<col=C3C0B2>Dissolve", null, null, null};
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 20489:
@@ -2249,12 +2246,12 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelZoom = 1050;
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = -4;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 19530;
+				itemDef.modelZoom = 1452;
+				itemDef.modelOffsetX = -2;
+				itemDef.modelOffsetY = 4;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 107;
+				itemDef.modelID = 19622;
 				break;
 
 			case 15003:
@@ -2262,12 +2259,12 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelZoom = 1050;
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = -4;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 19526;
+				itemDef.modelZoom = 1452;
+				itemDef.modelOffsetX = -2;
+				itemDef.modelOffsetY = 4;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 107;
+				itemDef.modelID = 19621;
 				break;
 
 			case 15002:
@@ -2275,12 +2272,12 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelZoom = 1050;
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = -4;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 19527;
+				itemDef.modelZoom = 1452;
+				itemDef.modelOffsetX = -2;
+				itemDef.modelOffsetY = 4;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 107;
+				itemDef.modelID = 19623;
 				break;
 
 			case 15004:
@@ -2288,12 +2285,12 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelZoom = 1050;
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = -4;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 19528;
+				itemDef.modelZoom = 1452;
+				itemDef.modelOffsetX = -2;
+				itemDef.modelOffsetY = 4;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 107;
+				itemDef.modelID = 19624;
 				break;
 
 			case 14999:
@@ -2301,12 +2298,12 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelZoom = 1050;
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = -4;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 19529;
+				itemDef.modelZoom = 1452;
+				itemDef.modelOffsetX = -2;
+				itemDef.modelOffsetY = 4;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 107;
+				itemDef.modelID = 19626;
 				break;
 
 			case 23253:
@@ -2314,12 +2311,12 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef21 = ItemDefinition.get(6199);
-				itemDef.modelZoom = 1050;
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = -4;
-				itemDef.rotationY = 100;
-				itemDef.rotationX = 90;
-				itemDef.modelID = 19531;
+				itemDef.modelZoom = 1452;
+				itemDef.modelOffsetX = -2;
+				itemDef.modelOffsetY = 4;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 107;
+				itemDef.modelID = 19625;
 				break;
 
 			case 15355:
@@ -2361,7 +2358,7 @@ public final class ItemDefinition {
 				itemDef.name = "@bla@<shad=0>Dan's Present<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef21 = ItemDefinition.get(6199);
+				itemDef21 = ItemDefinition.get(290);
 				itemDef.modelOffsetX = 2;
 				itemDef.modelOffsetY = 1;
 				itemDef.modelZoom = itemDef21.modelZoom;
@@ -2371,25 +2368,62 @@ public final class ItemDefinition {
 				break;
 
 			case 19659:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Super Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 64099;
 				itemDef.rdc2 = 32521;
 				break;
-				
-			case 19114:
-				itemDef.copyItem(6199);
-				itemDef.name = "Grand Mystery Box";
+
+			case 6199:
+				itemDef.name = "Beginner Mystery Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{66};
-				itemDef.modelID = 65284;
+				itemDef.modelID = 19614;
+				itemDef.modelZoom = 400;
+				itemDef.modelOffsetY = 0;
 				break;
-			case 19117:
+			case 19114:
 				itemDef.copyItem(6199);
+				itemDef.name = "Ruby Mystery Box";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 19620;
+				itemDef.modelZoom = 400;
+				itemDef.modelOffsetY = 0;
+				break;
+
+			case 20488:
+				itemDef.copyItem(6199);
+				itemDef.name = "OP Mystery Box";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 19615;
+				itemDef.modelZoom = 400;
+				itemDef.modelOffsetY = 0;
+				break;
+			case 19115:
+				itemDef.copyItem(6199);
+				itemDef.name = "Emerald Mystery Box";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 19619;
+				itemDef.modelZoom = 400;
+				itemDef.modelOffsetY = 0;
+				break;
+			case 19116:
+				itemDef.copyItem(6199);
+				itemDef.name = "Sapphire Mystery Box";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 19616;
+				itemDef.modelZoom = 400;
+				itemDef.modelOffsetY = 0;
+				break;
+
+			case 19117:
+				itemDef.copyItem(290);
 				itemDef.name = "Execution Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
@@ -2398,22 +2432,9 @@ public final class ItemDefinition {
 				itemDef.modelID = 65284;
 				break;
 
-			case 20488:
-				itemDef.copyItem(6199);
-				itemDef.name = "<col=2299099><shad=12992>OP Chest<shad-1>";
-				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Open";
-				itemDef.modelZoom = 3000;
-				itemDef.rotationX = 120;
-				itemDef.rotationZ = 25;
-				itemDef.modelOffsetY = -50;
-				itemDef.editedModelColor = new int[] { 62 ,60,64};
-				itemDef.newModelColor = new int[] { 100,102,100 };
-				itemDef.modelID = 64050;
-				break;
 
 			case 18404:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Legends Raids Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
@@ -2422,17 +2443,10 @@ public final class ItemDefinition {
 				itemDef.modelID = 65284;
 				break;
 				
-			case 19115:
-				itemDef.copyItem(6199);
-				itemDef.name = "Extreme Mystery Box";
-				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{64};
-				itemDef.modelID = 65284;
-				break;
+
+
 			case 23407:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Season 1 Cosmetic set";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
@@ -2440,18 +2454,9 @@ public final class ItemDefinition {
 				itemDef.editedModelColor = new int[]{98};
 				itemDef.modelID = 65284;
 				break;
-			case 19116:
-				itemDef.copyItem(6199);
-				itemDef.name = "Super Mystery Box";
-				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[] { 63 };
-				itemDef.editedModelColor = new int[] { 65 };
-				itemDef.modelID = 65284;
-				break;
-				
+
 			case 23236:
-				itemDef.copyItem(6199);
+				itemDef.copyItem(290);
 				itemDef.name = "Prestige Mystery Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";

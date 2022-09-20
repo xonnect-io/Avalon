@@ -153,17 +153,19 @@ public final class Signlink implements Runnable {
 
 	private Signlink() {
 	}
-
+	public static int getuid() {
+		return Configuration.clientversion;//change to version number
+	}
 	@Override
 	public void run() {
 		active = true;
 		File s = new File(getCacheDirectory());
 		/*try {
 			uid = getIdentifier();
-		} catch (Exception e) {
+		} catch (Exception e) {//thats discord
 			e.printStackTrace();
 		}*/
-
+		uid = getuid();
 		try {
 			cache_dat = new RandomAccessFile(s + "/main_file_cache.dat", "rw");
 

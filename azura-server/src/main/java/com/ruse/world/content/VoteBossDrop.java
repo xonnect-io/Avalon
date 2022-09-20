@@ -15,23 +15,24 @@ import java.util.Map.Entry;
 public class VoteBossDrop {
 
 	public static NPC currentSpawn;
-
+public static int spawned = 0;
 
 	public static void handleSpawn() {
-
-		for (Player players : World.getPlayers()) {
-			if (players == null) {
-				continue;
+		if (spawned < 1) {
+			for (Player players : World.getPlayers()) {
+				if (players == null) {
+					continue;
+				}
+				players.getPacketSender().sendBroadCastMessage("Vote boss has spawned at ::Vboss", 100);
 			}
-			players.getPacketSender().sendBroadCastMessage("Vote boss has spawned at ::Vboss", 100);
+			World.sendBroadcastMessage("Vote boss has spawned at ::Vboss");
+			World.sendMessage(
+					"<img=28><shad=f9f6f6>Vote boss has spawned at ::Vboss <shad=-1>");
+			if (GameSettings.LOCALHOST == false)
+				DiscordMessager.sendVoteBossLog("");
+			spawned++;
 		}
-		World.sendBroadcastMessage("Vote boss has spawned at ::Vboss");
-		World.sendMessage(
-				"<img=28><shad=f9f6f6>Vote boss has spawned at ::Vboss <shad=-1>");
-		if (GameSettings.LOCALHOST == false)
-		DiscordMessager.sendVoteBossLog("");
 	}
-
 	
 	public static void handleDrop(NPC npc) {
 		if (npc.getCombatBuilder().getDamageMap().size() == 0) {
@@ -67,8 +68,8 @@ public class VoteBossDrop {
 			iterator.remove();
 		}
 
-
 		currentSpawn = null;
+		spawned = 0;
 	}
 
 

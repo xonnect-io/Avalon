@@ -34,7 +34,7 @@ public final class LoginDecoder extends FrameDecoder {
 
     private static final int HANDSHAKE_STATE = 0;
     private static final int LOGGING_IN_STATE = 1;
-
+    public static final int currentversion = 12;
     private static final int LOGIN_REQUEST_OPCODE = 14;
     private static final int MAGIC_ID = 0xFF;
     private static final int HIGH_MEMORY_STATUS = 0;
@@ -160,6 +160,9 @@ public final class LoginDecoder extends FrameDecoder {
                         seed[i] += 50;
 
                     final int uid = securityBuffer.readInt();
+                  if(uid != currentversion){
+
+                  }
                     String username = Misc.readString(securityBuffer);
                     final String password = Misc.readString(securityBuffer);
                     final String serial = Misc.readString(securityBuffer);

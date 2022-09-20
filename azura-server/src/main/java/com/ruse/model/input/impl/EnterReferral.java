@@ -1,6 +1,5 @@
 package com.ruse.model.input.impl;
 
-import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.input.Input;
 import com.ruse.world.entity.impl.player.Player;
 import lombok.SneakyThrows;
@@ -29,7 +28,7 @@ public class EnterReferral extends Input {
             "fpk", "fewb",   "fpk merk",
             "runescapeorig", "stable", "stabletv",
             "didyscape", "didy", "Jetman", "Treumer", "ceraxy",
-    "runelist", "runelocus", "rsps-list", "rspslist", "rsps", "wet", "eggy", "sixx",
+    "runelist", "runelocus", "rsps-list", "rspslist", "rsps", "wet", "eggy", "sixx","inheritedrs",
             "morgen"
     }; // codes here
 

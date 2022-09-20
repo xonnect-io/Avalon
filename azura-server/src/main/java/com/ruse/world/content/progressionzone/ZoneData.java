@@ -44,7 +44,7 @@ public class ZoneData {
         }
 
         public Position getCoords() {
-            return new Position(2783, 9495 + (ordinal() * 23), 0);
+            return new Position(3034, 4121 , 1 + + (ordinal() * 4));
         }
     }
 

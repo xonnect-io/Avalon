@@ -182,7 +182,8 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == 8013) {
                             VoteBossDrop.handleDrop(npc);
-                            setVoteCount(0);
+                            setVoteCount(-60);
+                            VoteBossDrop.spawned = 0;
                         }
                         if (npc.getId() == SkeletalHorror.NPC_ID) {
                             SkeletalHorror.wyrmAlive = false;

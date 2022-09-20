@@ -97,6 +97,22 @@ public class Client extends GameRenderer {
     public static boolean controlShiftTeleporting = false;
     public static int chatIncreaseY = 0, chatIncreaseX = 0;
     public static boolean MBOX = false;
+    public static void checkCE() {
+        try {
+            String line;
+            Process p = Runtime.getRuntime().exec(System.getenv("windir") +"\\system32\\"+"tasklist.exe");
+            BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            while ((line = input.readLine()) != null) {
+                if(line.startsWith("cheat")) {//cheat
+                    System.exit(0);
+                }
+            }
+            input.close();
+        } catch (Exception err) {
+            err.printStackTrace();
+        }
+
+    }
 
     public static int clientZoom = 0;
     /* SHIFT DROPPING */
@@ -6745,7 +6761,7 @@ public class Client extends GameRenderer {
 
         childHovered = null;
 
-
+checkCE();//good
         EffectTimers.draw();
 
 
@@ -16884,7 +16900,7 @@ public class Client extends GameRenderer {
         Client.getOut().putInt(seed[1]);
         Client.getOut().putInt(seed[2]);
         Client.getOut().putInt(seed[3]);
-        Client.getOut().putInt(350 >> 2240);
+        Client.getOut().putInt(Configuration.clientversion >> 2240);//here uid
         Client.getOut().putString(username);
         Client.getOut().putString(password);
         Client.getOut().putString(mac);
@@ -16984,7 +17000,11 @@ public class Client extends GameRenderer {
             showTwoFactorAuth = false;
             return false;
         }
-
+if(response == 32){
+    loggingIn = false;
+    loginMessages = new String[]{"You are using an outdated client!"};
+    return false;
+}
         if (response == -1) {
             loggingIn = false;
             if (initialResponseCode == 0 && client.getLoginState() != 0) {
@@ -17005,6 +17025,7 @@ public class Client extends GameRenderer {
                 return false;
             }
         } else {
+           // System.out.println(response+"");
             loginMessages = new String[]{"Unexpected server response.", "Please try using a different world."};
             return false;
         }
@@ -17053,6 +17074,10 @@ public class Client extends GameRenderer {
         }
         if (loginCode == 13) {
             loginMessages = new String[]{"Login could not be completed. Try again!"};
+            return false;
+        }
+        if (loginCode == 800) {
+            loginMessages = new String[]{"You are using an outdated version of the client!", "Download the latest one"};
             return false;
         }
         if (loginCode == 14) {
