@@ -218,7 +218,7 @@ public enum TeleportData {
 
 
 	VBOSS(28309, 28309, 28309, 28233, "Vote boss", "Vote boss",
-			"@or1@Health:@whi@ 1,500,000,000","@or1@To Spawn: @whi@" + (VoteBossDrop.currentSpawn == null ?  doMotivote.getVoteCount() + "/50 please vote!"
+			"@or1@Health:@whi@ 1,500,000,000","@or1@To Spawn: @whi@" + (VoteBossDrop.currentSpawn == null ?  doMotivote.getVoteCount() + "/40 please vote!"
 			: "Alive ::Vboss"),"", TeleportCategory.GLOBALS, new Position(3428, 4115, 0), 79, false, 8013, -1,
 			new int[][] {{23229, 2}, {23020, 1}, {15501, 1},{11137, 1},{2026, 25},{10025, 5},{15290, 1},{20488, 1},{15358, 1},{15359, 1}, {11316, 1}, {20489, 1}, {15003, 1}, {15002, 1}, {4446, 1}, {19886, 1}, {10946, 1}},1600),
 

@@ -1533,9 +1533,9 @@ public final class CombatFactory {
                 }
             }
             else if (npc.getId() == 8013) { // Voting
-                if (doMotivote.getVoteCount() < 60) {
+                if (doMotivote.getVoteCount() < 40) {
                     ((Player) entity).getPacketSender()
-                            .sendMessage("Players need to reach a total of 60 votes. We're currently at @red@" + doMotivote.getVoteCount() + " @bla@votes.");
+                            .sendMessage("Players need to reach a total of 40 votes. We're currently at @red@" + doMotivote.getVoteCount() + " @bla@votes.");
                     ((Player) entity).getPacketSender()
                             .sendMessage("Everyone should @red@::vote @bla@ to contribute towards Vote Boss.");
                     entity.getCombatBuilder().reset(true);

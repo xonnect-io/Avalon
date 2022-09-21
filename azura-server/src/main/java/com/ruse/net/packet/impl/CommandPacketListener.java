@@ -206,7 +206,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft() + " Steals left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft() + " kills left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Slayer Champion: @yel@" + SlayerBossSystem.getLeft() + " tasks left.");
-            player.getPacketSender().sendMessage("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount() + "/60 please vote!");
+            player.getPacketSender().sendMessage("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount() + "/40 please vote!");
             player.getPacketSender().sendMessage("@red@<shad=1>Dragon King: @yel@" + DragonKingBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Nightmare boss: @yel@" + NightmareBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Naraku boss: @yel@" + NarakuBoss.timeLeft());
@@ -1789,7 +1789,7 @@ public class CommandPacketListener implements PacketListener {
         }
 
         if (command[0].equals("spawnvoteboss")) {
-            doMotivote.setVoteCount(60);
+            doMotivote.setVoteCount(40);
             VoteBossDrop.handleSpawn();
         }
 
@@ -2926,7 +2926,7 @@ public class CommandPacketListener implements PacketListener {
             int amt = Integer.parseInt(command[1]);
             doMotivote.setVoteCount(doMotivote.getVoteCount() + amt);
 
-            if (doMotivote.getVoteCount() >= 50) {
+            if (doMotivote.getVoteCount() >= 40) {
                 VoteBossDrop.handleSpawn();
             }
 
