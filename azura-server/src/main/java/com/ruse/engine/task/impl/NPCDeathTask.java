@@ -182,7 +182,7 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == 8013) {
                             VoteBossDrop.handleDrop(npc);
-                            setVoteCount(-60);
+                            setVoteCount(0);
                             VoteBossDrop.spawned = 0;
                         }
                         if (npc.getId() == SkeletalHorror.NPC_ID) {
