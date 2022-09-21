@@ -276,6 +276,10 @@ public class Locations {
 				player.getPacketSender().sendWalkableInterface(112000, false);
 			}
 		},
+
+		SLAYER_CHAMPION(new int[] { 3469, 3520}, new int[] { 4688, 4745},
+				true, true, true, false, false, true) {},
+
 		ZOMBIE(new int[]{2239, 2266}, new int[]{4097, 4130}, true, false, true, false, true, false) {
 			@Override
 			public void logout(Player player) {
