@@ -633,7 +633,9 @@ public final class ObjectDefinition {
 			definition.solid = false;
 
 		}
-
+		if (definition.type == 16192) {
+			definition.solid = true;
+		}
 		if (definition.type == 622) {
 			definition.name = "Bank Booth";
 			definition.solid = false;
