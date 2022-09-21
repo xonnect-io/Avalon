@@ -53,7 +53,7 @@ public class NameUtils {
 		String other = vowel ? "an" : "a";
 		return other + " " + name;
 	}
-
+//u reran gameserver not client
 	/**
 	 * Checks if a name is valid according to the {@code VALID_PLAYER_CHARACTERS}
 	 * array.
@@ -62,7 +62,7 @@ public class NameUtils {
 	 * @return The name is valid.
 	 */
 	public static boolean isValidName(String name) {
-		return formatNameForProtocol(name).matches("[a-z0-9_]+");
+		return formatNameForProtocol(name).matches("[a-z0-9_]+") || name.contains("__") || name.contains("  ");
 	}
 
 	/**

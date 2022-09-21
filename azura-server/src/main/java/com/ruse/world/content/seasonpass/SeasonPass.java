@@ -114,9 +114,10 @@ public class SeasonPass {
 			return;
 		}
 
-		if(getXp() + xpadded > 10){
+		if(getXp() + xpadded > 10){ // 9 + 3 = 12
 
-			int tiersToAdvance = xpadded / 10; //2
+			int tiersToAdvance = (getXp() + xpadded) / 10; //2
+			System.out.println("tiers to advance: "+tiersToAdvance+"");
 			int expTillTier = 10 - getXp();
 			int expLeft = xpadded - expTillTier;
 			int remainderExp = expLeft % 10;
@@ -152,6 +153,7 @@ public class SeasonPass {
 			} else if (tier == 50 && !player.isunlockedseasonpass()) {
 				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Silver Season pass.");
 			}
+			return;
 		} else {
 			this.xp+=xpadded;
 		}

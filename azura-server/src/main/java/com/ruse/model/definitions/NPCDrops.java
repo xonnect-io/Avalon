@@ -287,6 +287,7 @@ public class NPCDrops {
         }
         if (!finalDropList.isEmpty()) {
             sendDrop(player, npc);
+            System.out.println("here drop");
         }
 
         if (npc.getId() == VaultOfWar.AVATAR_ID

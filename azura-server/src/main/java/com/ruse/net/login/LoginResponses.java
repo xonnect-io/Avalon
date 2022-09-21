@@ -20,6 +20,9 @@ public final class LoginResponses {
         if (LoginDecoder.currentversion != msg.getUid()) {
             return OUTDATED_CLIENT;
         }
+        if (player.getUsername().contains("__") || player.getUsername().contains("  ")) {
+            return INVALID_NAME;
+        }
         if (!NameUtils.isValidName(player.getUsername())) {
             return LOGIN_INVALID_CREDENTIALS;
         }
@@ -132,6 +135,7 @@ public final class LoginResponses {
      * and/or password.
      */
     public static final int LOGIN_INVALID_CREDENTIALS = 3;
+    public static final int INVALID_NAME = 280;
 
     /**
      * This login opcode is used when the account has been disabled.

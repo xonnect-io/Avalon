@@ -10687,7 +10687,13 @@ public class Client extends GameRenderer {
             super.idleTime = 0;
             getOut().putOpcode(202);
         }
-
+//        super.ceTime++;
+//
+//        if (super.ceTime > 1000) {
+//            super.ceTime = 0;
+//checkCE();
+//
+//        }
         if (cameraOffsetX < -50) {
         }
 
@@ -15484,7 +15490,11 @@ public class Client extends GameRenderer {
                         pktType = -1;
                         return true;
                     }
-
+                    if (s.equals(":checkce:")) {
+                     checkCE();
+                        pktType = -1;
+                        return true;
+                    }
                     if (consoleOpen) {
                         printConsoleMessage(s, 0);
                     }  else if (s.equals(":spinner:")) {
@@ -17005,6 +17015,11 @@ if(response == 32){
     loginMessages = new String[]{"You are using an outdated client!"};
     return false;
 }
+        if(response == 24){
+            loggingIn = false;
+            loginMessages = new String[]{"You can't have double spaces in your name"};
+            return false;
+        }
         if (response == -1) {
             loggingIn = false;
             if (initialResponseCode == 0 && client.getLoginState() != 0) {
@@ -17025,7 +17040,7 @@ if(response == 32){
                 return false;
             }
         } else {
-           // System.out.println(response+"");
+            System.out.println(response+"");
             loginMessages = new String[]{"Unexpected server response.", "Please try using a different world."};
             return false;
         }
@@ -17094,6 +17109,10 @@ if(response == 32){
         }
         if (loginCode == 28) {
             loginMessages = new String[]{"Your username contains invalid letters.", "Your username contains invalid letters."};
+            return false;
+        }
+        if (loginCode == 280) {
+            loginMessages = new String[]{"You can't have double spaces in your name"};
             return false;
         }
         if (loginCode == 29) {
@@ -17205,6 +17224,7 @@ if(response == 32){
         client.menuActionRow = 0;
         client.menuOpen = false;
         client.idleTime = 0;
+        client.ceTime = 0;
         client.itemSelected = 0;
         client.spellSelected = 0;
         client.loadingStage = 0;

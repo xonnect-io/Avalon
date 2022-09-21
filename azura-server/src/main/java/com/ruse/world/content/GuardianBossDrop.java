@@ -44,6 +44,8 @@ public class GuardianBossDrop {
 
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 
+			KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
+			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
 			killer.setGuardianBonus(0);
 			NPCDrops.handleDrops(killer, npc);
 			iterator.remove();

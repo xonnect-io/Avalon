@@ -34,7 +34,7 @@ public class FoxVote implements Runnable {
 			}
 			System.out.println("connected to vote database");
 			player.getPacketSender().sendMessage("Checking for votes...");
-			String name = player.getUsername().replace("_", " ");
+			String name = player.getUsername().replace(" ", "_");
 			ResultSet rs = executeQuery("SELECT * FROM fx_votes WHERE username='"+name+
 					"' AND claimed=0 AND callback_date IS NOT NULL");
 

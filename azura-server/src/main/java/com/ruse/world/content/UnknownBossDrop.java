@@ -1,19 +1,13 @@
 package com.ruse.world.content;
 
-import java.util.*;
-import java.util.Map.Entry;
-
-import com.ruse.GameSettings;
-import com.ruse.model.Item;
-import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
-import com.ruse.util.Misc;
-import com.ruse.world.World;
 import com.ruse.world.content.combat.CombatBuilder;
-import com.ruse.world.content.combat.CombatBuilder.CombatDamageCache;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.*;
+import java.util.Map.Entry;
 
 public class UnknownBossDrop {
 
@@ -51,6 +45,8 @@ public class UnknownBossDrop {
 			killer.getPointsHandler().setMG1Count(0); //resets players minigame kc to 0
 			killer.getPointsHandler().setMG2Count(0); //resets players minigame kc to 0
 			killer.getPointsHandler().setMG3Count(0); //resets players minigame kc to 0
+			KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
+			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
 			NPCDrops.handleDrops(killer, npc);
 			killer.unknownZone.refreshInterface();
 			iterator.remove();

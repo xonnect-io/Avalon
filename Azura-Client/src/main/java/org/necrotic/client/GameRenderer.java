@@ -29,6 +29,7 @@ public class GameRenderer extends Applet implements Runnable, MouseListener, Mou
 	int fps;
 	RSImageProducer fullGameScreen;
 	public int idleTime;
+	public int ceTime;
 	final int[] keyArray;
 	GameShell gameFrame;//mainframe
 	int minDelay;

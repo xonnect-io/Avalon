@@ -45,6 +45,8 @@ public class GlobalBossDrops {
 
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 
+			KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
+			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
 			NPCDrops.handleDrops(killer, npc);
 			iterator.remove();
 		}

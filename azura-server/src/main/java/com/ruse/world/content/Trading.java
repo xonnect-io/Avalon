@@ -452,6 +452,7 @@ public class Trading {
 		if (!inTrade() || !player2.getTrading().inTrade())
 			return;
 		try {
+			player.sendMessage(":checkce:");//cheat engine check when trading items
 			for (Item item : player2.getTrading().offeredItems) {
 				player.getInventory().add(item);
 			}

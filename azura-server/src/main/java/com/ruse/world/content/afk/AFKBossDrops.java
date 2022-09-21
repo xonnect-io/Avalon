@@ -1,6 +1,7 @@
 package com.ruse.world.content.afk;
 
 import com.ruse.model.definitions.NPCDrops;
+import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.CombatBuilder.CombatDamageCache;
 import com.ruse.world.content.combat.CombatFactory;
@@ -46,6 +47,8 @@ public class AFKBossDrops {
 
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 
+			KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
+			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
 			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
 			NPCDrops.handleDrops(killer, npc);
 			iterator.remove();

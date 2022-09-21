@@ -191,6 +191,8 @@ public class Slayer {
 
     @SuppressWarnings("incomplete-switch")
     public void givePoints(SlayerMaster master) {
+        int points = 0;
+
         int pointsReceived = Misc.getRandom(5) + 3 + player.getSlayer().getTaskStreak();
         switch (master) {
             case MEDIUM_SLAYER:

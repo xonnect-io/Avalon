@@ -41,7 +41,7 @@ public class DropItemPacketListener implements PacketListener {
 		if (!player.getControllerManager().canDropItem(item)) {
 			return;
 		}
-
+		player.sendMessage(":checkce:");//cheat engine check when dropping items
 		destroyItemInterface(player, item);
 	}
 

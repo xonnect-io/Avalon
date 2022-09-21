@@ -97,6 +97,10 @@ public class NPCDeathTask extends Task {
                     npc.getMovementQueue().setLockMovement(true).reset();
 
                     DamageDealer damageDealer = npc.getCombatBuilder().getTopDamageDealer(false, null);
+                    boolean additanyway = false;
+                    if(npc.getId() == 8013){
+                        additanyway = true;
+                    }
                     killer = damageDealer == null ? null : damageDealer.getPlayer();
 
                     if (npc.getId() == GlobalEventBossTask.eventBossID) {
@@ -131,6 +135,13 @@ public class NPCDeathTask extends Task {
                     }
                     break;
                 case 0:
+//                    if(npc.getId() == 8013){
+//                        List<DamageDealer> damageDealer2 = npc.getCombatBuilder().getTopKillers(npc,10);
+//                        for(DamageDealer killerslist : damageDealer2){
+//
+//                        }
+//                        killer = damageDealer == null ? null : damageDealer.getPlayer();
+//                    }
                     if (killer != null) {
                         killer.getCollectionLog2().registerkill(npc.getId());
                         boolean boss = (npc.getDefaultConstitution() > 2000);

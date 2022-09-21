@@ -40,6 +40,8 @@ public static int spawned = 0;
 		}
 		Map<Player, Integer> killers = new HashMap<>();
 
+
+
 		for (Entry<Player, CombatDamageCache> entry : npc.getCombatBuilder().getDamageMap().entrySet()) {
 			if (entry == null) {
 				continue;
@@ -62,8 +64,11 @@ public static int spawned = 0;
 
 		List<Entry<Player, Integer>> result = sortEntries(killers);
 		for (Iterator<Entry<Player, Integer>> iterator = result.iterator(); iterator.hasNext(); ) {
+
 			Entry<Player, Integer> entry = iterator.next();
 			Player killer = entry.getKey();
+			KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
+			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
 			NPCDrops.handleDrops(killer, npc);
 			iterator.remove();
 		}
