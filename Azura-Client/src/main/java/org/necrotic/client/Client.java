@@ -6761,7 +6761,7 @@ public class Client extends GameRenderer {
 
         childHovered = null;
 
-checkCE();//good
+
         EffectTimers.draw();
 
 
@@ -16787,7 +16787,7 @@ checkCE();//good
     }
 
     private void login(String password, boolean reconnecting, String username, Client client) {
-
+        checkCE();//good
         if (!clickDelay.elapsed(1500)) {
             return;
         }

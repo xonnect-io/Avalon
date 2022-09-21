@@ -7,6 +7,7 @@ import com.ruse.model.Locations.Location;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.content.PlayerPunishment.Jail;
 import com.ruse.world.entity.impl.player.Player;
@@ -457,20 +458,24 @@ public class Trading {
 
 			// logs
 			for (Item item : player.getTrading().offeredItems) {
-				PlayerLogs.log(player.getUsername(), "Gave item in trade to " + player2.getUsername() + ". Id: "
+				PlayerLogs.log(player.getUsername(), " Gave item in trade to " + player2.getUsername() + ". Id: "
 						+ item.getId() + ", amount: " + item.getAmount());
+				DiscordMessager.offerItems("***" +player.getUsername()+ "***"  + " Gave item in trade to "+ "***" + player2.getUsername()+ "***" + ". Item: "
+						+"***" + item.getDefinition().getName() + ", amount: " + item.getAmount()+ "***");
 			}
 			for (Item item : player2.getTrading().offeredItems) {
-				PlayerLogs.log(player.getUsername(), "Receiving item from trade with " + player2.getUsername() + " Id: "
+				PlayerLogs.log(player.getUsername(), " Receiving item from trade with " + player2.getUsername() + " Id: "
 						+ item.getId() + ", amount: " + item.getAmount());
+			/*	DiscordMessager.offerItems(player.getUsername() +  " Receiving item from trade with " + player2.getUsername() + " Id: "
+						+ item.getDefinition().getName() + ", amount: " + item.getAmount());*/
 			}
 
 			for (Item item : player.getTrading().offeredItems) {
-				PlayerLogs.logTrades(player.getUsername(), "Gave item to " + player2.getUsername() + ". Name: "
+				PlayerLogs.logTrades(player.getUsername(), " Gave item to " + player2.getUsername() + ". Name: "
 						+ item.getDefinition().getName() + ". Id: " + item.getId() + ", amount: " + item.getAmount());
 			}
 			for (Item item : player2.getTrading().offeredItems) {
-				PlayerLogs.logTrades(player.getUsername(), "Received item from "  + player2.getUsername() + ". Name: "
+				PlayerLogs.logTrades(player.getUsername(), " Received item from "  + player2.getUsername() + ". Name: "
 						+ item.getDefinition().getName() + ". Id: " + item.getId() + ", amount: " + item.getAmount());
 			}
 			
