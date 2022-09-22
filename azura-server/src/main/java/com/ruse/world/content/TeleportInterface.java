@@ -13,6 +13,7 @@ import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.content.minigames.impl.PyramidOutbreak;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.progressionzone.ProgressionZone;
+import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -47,8 +48,16 @@ public class TeleportInterface {
             case 71517:
             case 77147:
             case 88147:
-                new TeleportInterfaceHandler(player).open();
-                return true;
+                if (!player.busy() && !player.getCombatBuilder().isBeingAttacked()
+                        && !Dungeoneering.doingOldDungeoneering(player)) {
+                    player.getSkillManager().stopSkilling();
+                    new TeleportInterfaceHandler(player).open();
+                    return true;
+                } else {
+                    player.getPacketSender().sendMessage("You cannot open this right now.");
+                    return false;
+                }
+                
             case 122005:
             case 5519:
                 TeleportInterface.sendMonsterTab(player);
