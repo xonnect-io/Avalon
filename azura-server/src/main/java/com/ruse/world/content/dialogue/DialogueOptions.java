@@ -2022,9 +2022,10 @@ public class DialogueOptions {
                             && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
                         SlayerMaster.changeSlayerMaster(player, SlayerMaster.EASY_SLAYER);
                     }
-                    if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER))
+                    if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER)) {
                         player.getSlayer().assignTask();
-                    else {
+                    return;
+            } else {
                         SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
                         String yourMastersName = "";
                         String thisMasterName = "";
@@ -2035,7 +2036,7 @@ public class DialogueOptions {
                         if (player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
                             DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName + ".");
                             return;
-                        } else {
+                        } else if (!player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)){
                             DialogueManager.sendStatement(player, "You currently have an " + yourMastersName + ", complete it first!");
                         }
                     }
@@ -2214,9 +2215,10 @@ public class DialogueOptions {
                             && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
                         SlayerMaster.changeSlayerMaster(player, SlayerMaster.MEDIUM_SLAYER);
                     }
-                    if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER))
+                    if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER)) {
                         player.getSlayer().assignTask();
-                    else {
+                        return;
+                    }  else {
                         SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
                         String yourMastersName = "";
                         String thisMasterName = "";
@@ -2227,7 +2229,7 @@ public class DialogueOptions {
                         if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
                             DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
                             return;
-                        } else {
+                        } else if (!player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)){
                             DialogueManager.sendStatement(player, "You currently have an " + yourMastersName + ", complete it first!");
                         }
                     }
@@ -2429,9 +2431,10 @@ public class DialogueOptions {
                             && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
                         SlayerMaster.changeSlayerMaster(player, SlayerMaster.HARD_SLAYER);
                     }
-                    if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER))
+                    if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER)) {
                         player.getSlayer().assignTask();
-                    else {
+                        return;
+                    }  else {
                         SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
                         String yourMastersName = "";
                         String thisMasterName = "";
@@ -2442,7 +2445,7 @@ public class DialogueOptions {
                         if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
                             DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
                             return;
-                        } else {
+                        } else if (!player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)){
                             DialogueManager.sendStatement(player, "You currently have an " + yourMastersName + ", complete it first!");
                         }
                     }

@@ -32,7 +32,7 @@ public class Store implements Runnable {
     public static final int EMERALD_DONATION_AMOUNT = 50;
     public static final int RUBY_DONATION_AMOUNT = 250;
     public static final int DIAMOND_DONATION_AMOUNT = 500;
-    public static final int ONYX_DONATION_AMOUNT = 2500;
+    public static final int ONYX_DONATION_AMOUNT = 1000;
     public static final int ZENYTE_DONATION_AMOUNT = 5000;
     public static final int TANZANITE_DONATION_AMOUNT = 10000;
 
@@ -264,6 +264,11 @@ public class Store implements Runnable {
                     player.sendMessage("You received x1 Owner jewelry Goodiebag for donating 50+");
                     World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Owner jewelry Goodiebag!");
                 }
+                if (GameSettings.B2GO == true && GameSettings.B2GOFLASHSALE == true) {
+                    GameSettings.B2GO = false;
+                    GameSettings.B2GOFLASHSALE = false;
+                }
+
                 rs.updateInt("claimed", 1);
                 rs.updateRow();
             }

@@ -1896,7 +1896,13 @@ public final class CombatFactory {
                                                 context.getHit()
                                                         .incrementAbsorbedDamage((int) (context.getHit().getDamage()
                                                                 - (context.getHit().getDamage() * 0.75)));
-                                                if (victim.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() != 1486) {
+                                                if (victim.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() != 1486 ||
+                                                        victim.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() != 7995 ||
+                                                        victim.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() != 23133 ||
+                                                        victim.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() != 22109 ||
+                                                        victim.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() != 23270 ||
+                                                        victim.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() != 20591 ||
+                                                        victim.getEquipment().getItems()[Equipment.CAPE_SLOT].getId() != 20400 ) {
                                                     victim.getSkillManager().setCurrentLevel(Skill.PRAYER, victim.getSkillManager()
                                                             .getCurrentLevel(Skill.PRAYER) - prayerLost);
                                                 }
@@ -2376,7 +2382,14 @@ public final class CombatFactory {
                     }
                 });
             }
-                if (CurseHandler.isActivated(p, CurseHandler.SOUL_SPLIT) || ((Player) attacker).getEquipment().contains(1486) || ((Player) attacker).getEquipment().contains(12608) && damage > 0  ) {
+                if (CurseHandler.isActivated(p, CurseHandler.SOUL_SPLIT) || ((Player) attacker).getEquipment().contains(1486)
+                        || ((Player) attacker).getEquipment().contains(23133)
+                        || ((Player) attacker).getEquipment().contains(7995)
+                        || ((Player) attacker).getEquipment().contains(22109)
+                        || ((Player) attacker).getEquipment().contains(23270)
+                        || ((Player) attacker).getEquipment().contains(20591)
+                        || ((Player) attacker).getEquipment().contains(20400)
+                        || ((Player) attacker).getEquipment().contains(12608) && damage > 0  ) {
                 final int form = damage / 4;
                 new Projectile(attacker, target, 2263, 44, 3, 43, 31, 0).sendProjectile();
                 TaskManager.submit(new Task(1, p, false) {
