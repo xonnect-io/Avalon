@@ -2847,7 +2847,12 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("donodeal")) {
             GameSettings.B2GO = !GameSettings.B2GO;
+            GameSettings.B2GOFLASHSALE = !GameSettings.B2GOFLASHSALE;
             player.sendMessage("B2GO: " + GameSettings.B2GO);
+            if (GameSettings.B2GO == false && GameSettings.B2GOFLASHSALE == false)
+            World.sendMessage("<img=832>@red@The Flash sale is now over");
+            if (GameSettings.B2GO == true && GameSettings.B2GOFLASHSALE == true)
+                World.sendMessage("<img=832>@red@[FLASH-SALE] <shad=1>@or2@Buy 1 get 1 has been activated for the next donation!");
         }
 
 
@@ -3864,7 +3869,8 @@ public class CommandPacketListener implements PacketListener {
                     sapphireCommands(player, parts, command);
                     emeraldCommands(player, parts, command);
                     supportCommands(player, parts, command);
-                    globalModCommands(player, parts, command);                    rubyCommands(player, parts, command);
+                    globalModCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
                     diamondCommands(player, parts, command);
                     onyxCommands(player, parts, command);
                     zenyteCommands(player, parts, command);

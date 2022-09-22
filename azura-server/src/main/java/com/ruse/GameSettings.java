@@ -15,6 +15,7 @@ public class GameSettings {
     public static boolean CASES_ACTIVE = true;
     public static boolean BOGO = false;
     public static boolean B2GO = false;
+    public static boolean B2GOFLASHSALE = false;
     public static boolean ELITE_DONO_DEAL = false;
     public static boolean OWNER_JEWELRY_DONO_DEAL = true;
     public static boolean OWNER_CAPE_DONO_DEAL = false;
@@ -134,7 +135,7 @@ public class GameSettings {
      */
     public static final Position DEFAULT_POSITION = new Position(3110, 2990, 0);
     public static final Position PYRAMID_LOBBY = new Position(3488, 9243, 0);
-    public static final Position STARTER = new Position(2783, 9495, 0);
+    public static final Position STARTER = new Position(3034, 4121, 1);
     public static final Position CORP_CORDS = new Position(2900, 4384);
     public static final Position MARKET = new Position(2660, 4044, 0);
     public static final Position HOME_CORDS = new Position(3110, 2990, 0);

@@ -560,21 +560,21 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] commonsuper1 = new int[] {12855, 989, 4888, 18332, 14377,13902,13899 ,11730};
                 int[] uncommonsuper1 = new int[] {13922,13952,13940,13910,13946,13934,13916,13949,13937,14915,14919,14924};
                 int[] raresuper1 = new int[] {16140,2021,12860,12565,12634,22077,19136,6936,14008,14009,14010,455};
-                player.getMysteryBoxOpener().display(19116, "Super Box", commonsuper1, uncommonsuper1, raresuper1);
+                player.getMysteryBoxOpener().display(19116, "Sapphire Box", commonsuper1, uncommonsuper1, raresuper1);
                 break;
 
             case 19115:
                 int[] commonextreme = new int[] { 15442, 15443, 15444, 18351, 18349, 18353, 6500, 13740 };
                 int[] uncommonsuper11 = new int[] {22077,19136,6936,666,15424,674};
                 int[] raresuper11extreme = new int[] {8800, 8803, 8806, 8801, 8804, 8807, 8802, 8805, 8808,20549,20173,8809,10946,};
-                player.getMysteryBoxOpener().display(19115, "Extreme Box", commonextreme, uncommonsuper11, raresuper11extreme);
+                player.getMysteryBoxOpener().display(19115, "Emerald Box", commonextreme, uncommonsuper11, raresuper11extreme);
                 break;
 
             case 19114:// grandmbox
                 int[] commongrand = new int[] { 13740, 15290};
                 int[] uncommongrand = new int[] {20549, 20173, 8809,8834,8835,8860,8861,8862,15830,3318,15418};
                 int[] raresgrand = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325,22084,22083,22092,10946,10942,6769};
-                player.getMysteryBoxOpener().display(19114, "Grand Box", commongrand, uncommongrand, raresgrand);
+                player.getMysteryBoxOpener().display(19114, "Ruby Box", commongrand, uncommongrand, raresgrand);
                 break;
 
             case 5021:
@@ -1561,10 +1561,10 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(loot.getId(), loot.getMin() + Misc.getRandom(loot.getMax() - loot.getMin()));
                 break;
             case 6199:
-                int[] common = new int[] {12855,1149,1249,3204,1305,1215,1377,1434,7158,989,536};
+                int[] common = new int[] {1149,1249,3204,1305,1215,1377,1434,7158,989,536};
                 int[] uncommon = new int[] {6739, 11728, 15259, 6570,3320,3318,4888,18332,14377};
                 int[] rare = new int[] {18686,18799,5095,13996,18834,19140,13913,18801,19139,13919,18800,19138,14915,14919,14924};
-                player.getMysteryBoxOpener().display(6199, "Mystery Box", common, uncommon, rare);
+                player.getMysteryBoxOpener().display(6199, "Beginner Box", common, uncommon, rare);
                 break;
 
             case 15682:

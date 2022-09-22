@@ -98,7 +98,13 @@ public class BestDRItems {
 			add(14052);
 			add(14051);
 			add(14050);
-
+			add(23418);
+			add(23419);
+			add(23420);
+			add(23421);
+			add(23422);
+			add(23423);
+			add(23424);
 
 		}
 	};

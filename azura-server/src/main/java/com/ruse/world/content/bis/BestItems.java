@@ -1,12 +1,12 @@
 package com.ruse.world.content.bis;
 
+import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.world.entity.impl.player.Player;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import com.ruse.model.definitions.ItemDefinition;
-import com.ruse.world.entity.impl.player.Player;
 
 public class BestItems {
 	public BestItems(Player player) {
@@ -112,6 +112,13 @@ public class BestItems {
 			add(14051);
 			add(14050);
 
+			add(23418);
+			add(23419);
+			add(23420);
+			add(23421);
+			add(23422);
+			add(23423);
+			add(23424);
 
 		}
 	};

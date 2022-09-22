@@ -314,6 +314,13 @@ public class BestItemsInterface {
             add(18790);//Tsutsaroth spear
             add(17728);//COL shield I
             add(17999);//COL Torva helm
+            add(23418);
+            add(23419);
+            add(23420);
+            add(23421);
+            add(23422);
+            add(23423);
+            add(23424);
 
         }
     };

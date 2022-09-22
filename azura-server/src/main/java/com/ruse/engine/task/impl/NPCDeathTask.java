@@ -459,12 +459,17 @@ public class NPCDeathTask extends Task {
                             if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,3) == 2) {
                                 if (Misc.getRandom(10) > 5) {
                                     killer.getInventory().add(23411, 1);
-                                    killer.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
+                                    killer.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory for your total kc!");
                                 } else if (Misc.getRandom(10) < 5) {
                                     killer.getInventory().add(23412, 1);
-                                    killer.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
+                                    killer.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory for your total kc!");
                                 }
                             }
+                                if (Misc.getRandom(5) > 4) {
+                                    killer.getInventory().add(23401, 1);
+                                    killer.getPacketSender().sendMessage("@blu@ x1 Scroll of Insurance was added to your inventory!");
+                                }
+
                             killer.getSeasonPass().addXp(1);
                             killer.sendMessage("You receive 1 Season pass XP for killing 500 NPCs!");
                         }
