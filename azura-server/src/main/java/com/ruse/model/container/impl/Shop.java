@@ -2400,6 +2400,8 @@ public class Shop extends ItemContainer {
                         return new Object[] { 15, "Donation Points  @bla@- <shad=1>@red@AOE Melee Weapon" };
                     case 4186: //case key
                         return new Object[] { 15, "Donation Points  @bla@- <shad=1>@red@Used to open Cases" };
+                    case 23401: //scroll of insurance
+                        return new Object[] { 15, "Donation Points  @bla@- <shad=1>@red@Chance to keep boxes/caskets" };
                     case 11319: // Goku
                         return new Object[] { 50, "Donation Points @bla@- <shad=1>@red@50% DR pet" };
                     case 11314: // Raichu

@@ -1,5 +1,6 @@
 package com.ruse.world.content;
 
+import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -116,15 +117,22 @@ public class TriviaSystem {
 			player.sendMessage("@red@There is no trivia going on at the moment");
 			return;
 		}
-		if(answer.equalsIgnoreCase(currentQuestion.getAnswer())) {
+		if(answer.equalsIgnoreCase(currentQuestion.getAnswer()) && Misc.getRandom(20) <= 19) {
 			player.getInventory().add(6833, 1);
 			active = false;
 			World.sendMessage("<img=1396>@red@[TRIVIA]<img=1396> @blu@" + player.getUsername() + "@bla@ has received a @red@Goodiebag @bla@from Trivia");
 			World.sendMessage("<img=1396>@red@[TRIVIA]<img=1396> @bla@ The answer for the trivia to the question was @red@" + currentQuestion.answer);
 			currentQuestion = null;
-			World.getPlayers().forEach(PlayerPanel::refreshPanel);//soz ok is there anything else u need or is that all
+			World.getPlayers().forEach(PlayerPanel::refreshPanel);
 			player.sendMessage("@bla@congrats, you've guessed correctly and received a@blu@ Goodie bag@bla@!");
-			
+		}else if (answer.equalsIgnoreCase(currentQuestion.getAnswer())) {
+			player.getInventory().add(23401, 1);
+			active = false;
+			World.sendMessage("<img=1396>@red@[TRIVIA]<img=1396> @blu@" + player.getUsername() + "@bla@ has received a @red@Scroll of Insurance @bla@from Trivia");
+			World.sendMessage("<img=1396>@red@[TRIVIA]<img=1396> @bla@ The answer for the trivia to the question was @red@" + currentQuestion.answer);
+			currentQuestion = null;
+			World.getPlayers().forEach(PlayerPanel::refreshPanel);
+			player.sendMessage("@bla@congrats, you've guessed correctly and received a@blu@ Scroll of Insurance@bla@!");
 		} else {
 			player.sendMessage("@bla@Incorrect answer - your answer was: @red@" + answer);
 		}
