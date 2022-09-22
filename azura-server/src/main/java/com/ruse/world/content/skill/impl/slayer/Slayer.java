@@ -193,13 +193,13 @@ public class Slayer {
     public void givePoints(SlayerMaster master) {
         int points = 0;
 
-        int pointsReceived = Misc.getRandom(5) + 3 + player.getSlayer().getTaskStreak();
+        int pointsReceived = Misc.getRandom(5) + 3;
         switch (master) {
             case MEDIUM_SLAYER:
-                pointsReceived = Misc.getRandom(10) + 6 + player.getSlayer().getTaskStreak();
+                pointsReceived = Misc.getRandom(10) + 6;
                 break;
             case HARD_SLAYER:
-                pointsReceived = Misc.getRandom(15) + 10 + player.getSlayer().getTaskStreak();
+                pointsReceived = Misc.getRandom(15) + 10;
                 break;
 
         }
