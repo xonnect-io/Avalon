@@ -57,7 +57,7 @@ public class BronzeCardPack {
     );
 
     public static List<Box> silverRewards = Arrays.asList(
-            new Box(15359, 300_000, 750_000, 33,false, "silver"),
+            new Box(12855, 300_000, 750_000, 33,false, "silver"),
             new Box(15359, 1, 5, 33,false, "silver"),
             new Box(15358, 1, 3, 33,false, "silver"),
             new Box(15358, 1, 5, 33,false, "silver"),

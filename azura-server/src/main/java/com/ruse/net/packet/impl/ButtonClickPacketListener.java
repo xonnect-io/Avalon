@@ -1983,7 +1983,13 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getSummoning().toInventory();
                 break;
             case 1042:
+                if (!player.busy() && !player.getCombatBuilder().isBeingAttacked()
+                    && !Dungeoneering.doingOldDungeoneering(player)) {
+                player.getSkillManager().stopSkilling();
                 player.getPacketSender().sendInterface(57350);
+            } else {
+                player.getPacketSender().sendMessage("You cannot open this right now.");
+            }
                 break;
 
              case 1037:
