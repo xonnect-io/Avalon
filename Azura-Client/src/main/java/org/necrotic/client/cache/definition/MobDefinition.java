@@ -3208,7 +3208,7 @@ public final class MobDefinition {
 				break;
 
 			case 4285:
-				definition.name = "Item Exchange";
+				definition.name = "Ironman Item Exchange";
 				definition.scaleXZ = 130;
 				definition.drawYellowDotOnMap = true;
 				definition.scaleY = 130;

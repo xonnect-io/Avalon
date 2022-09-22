@@ -386,7 +386,122 @@ public final class ItemDefinition {
 		}
 
 		switch (customId) {
+			case 23418:
+				itemDef.copyItem(6585);
+				itemDef.name = "Diyos helm";
+				itemDef.modelID = 19625;
+				itemDef.maleEquip1 = 19626;
+				itemDef.femaleEquip1 = 19626;
+				itemDef.modelZoom = 704;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 687;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = -5;
+				itemDef.modelOffsetX = -2;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 51;
+				itemDef.editedModelColor[0] = 98;
+				break;
 
+			case 23419:
+				itemDef.name = "Diyos body";
+				itemDef.modelID = 19627;
+				itemDef.maleEquip1 = 19628;
+				itemDef.femaleEquip1 = 19628;
+				itemDef.modelZoom = 1400;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 540;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = -1;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 51;
+				itemDef.editedModelColor[0] = 98;
+				break;
+
+			case 23420:
+				itemDef.name = "Diyos legs";
+				itemDef.modelID = 19629;
+				itemDef.maleEquip1 = 19630;
+				itemDef.femaleEquip1 = 19630;
+				itemDef.modelZoom = 1765;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 450;
+				itemDef.modelOffsetY = -1;
+				itemDef.modelOffsetX = 1;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 51;
+				itemDef.editedModelColor[0] = 98;
+				break;
+
+			case 23421:
+				itemDef.name = "Diyos gloves";
+				itemDef.modelOffsetX = 1;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelZoom = 739;
+				itemDef.rotationY = 530;
+				itemDef.rotationZ = 652;
+				itemDef.rotationX = 843;
+				itemDef.modelID = 19631;
+				itemDef.maleEquip1 = 19632;
+				itemDef.femaleEquip1 = 19632;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 51;
+				itemDef.editedModelColor[0] = 98;
+				break;
+
+			case 23422:
+				itemDef.name = "Diyos boots";
+				itemDef.modelID = 19633;
+				itemDef.maleEquip1 = 19633;
+				itemDef.femaleEquip1 = 19633;
+				itemDef.modelZoom = 670;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				itemDef.stackable = false;
+				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.newModelColor = new int[1]; // same here
+				itemDef.newModelColor[0] = 51;
+				itemDef.editedModelColor[0] = 98;
+				break;
+
+			case 23423:
+				itemDef.name = "Diyos bow";
+				itemDef.modelID = 19637;
+				itemDef.femaleEquip1 = 19636;
+				itemDef.maleEquip1 = 19636;
+				itemDef.modelZoom = 1800;
+				itemDef.rotationX = 235;
+				itemDef.rotationY = 652;
+				itemDef.modelOffsetY = 25;
+				itemDef.modelOffsetX = 60;
+				itemDef.stackable = false;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
+				break;
+
+			case 23424:
+				itemDef.copyItem(7995);
+				itemDef.modelID = 19634;
+				itemDef.femaleEquip1 = 19635;
+				itemDef.maleEquip1 = 19635;
+				itemDef.name = "Diyos cape";
+				break;
 			case 19000:
 				itemDef.copyItem(14639);
 				itemDef.name = "Pet fragment";
