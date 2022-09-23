@@ -990,6 +990,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 } else if (player.getCurrentData().getName().equalsIgnoreCase("celestial") && player.getCurrentData().getLive()) {
                     player.getPacketSender().sendString(1, player.getCurrentData().getChannel());
                     player.getPacketSender().sendMessage("Attempting to open <img=10>Celestial's Youtube Channel");
+                } else if (player.getCurrentData().getName().equalsIgnoreCase("lano") && player.getCurrentData().getLive()) {
+                    player.getPacketSender().sendString(1, player.getCurrentData().getChannel());
+                    player.getPacketSender().sendMessage("Attempting to open <img=10>Lano's Youtube Channel");
                 } else if (!player.getCurrentData().live) {
                     player.getPacketSender().sendMessage("This youtuber is not currently live!");
                 } else
@@ -1053,7 +1056,7 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 player.getPacketSender().sendString(index++, color1 + "Main Commands:");
                 player.getPacketSender().sendString(index++, color + "::home - Teleports you home");
-                player.getPacketSender().sendString(index++, color + "::traim - Teleports you to training zone");
+                player.getPacketSender().sendString(index++, color + "::train - Teleports you to training zone");
                 player.getPacketSender().sendString(index++, color + "::melee - Teleports you to Ember Giants");
                 player.getPacketSender().sendString(index++, color + "::range - Teleports you to Tree Basilisk");
                 player.getPacketSender().sendString(index++, color + "::mage - Teleports you to Bat of Light");
@@ -2235,6 +2238,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case -11504:
                 SummoningTab.handleDismiss(player, true);
+                break;
             case 1771:
                 if (player.getWeapon() == WeaponInterface.SHORTBOW) {
                     player.setFightType(FightType.SHORTBOW_RAPID);
