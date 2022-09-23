@@ -2442,6 +2442,17 @@ public class ItemDef3 {
 				itemDef.name = "Walkchaos' Creator Box";
 				break;
 
+			case 23425:
+				itemDef.copyItem(290);
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.newModelColor = new int[]{63};
+				itemDef.editedModelColor = new int[]{126};
+				itemDef.modelID = 19612;
+				itemDef.modelZoom = 2650;
+				itemDef.name = "Lano's Creator Box";
+				break;
+
 			case 17175:
 				itemDef.name = "Leafy body";
 				itemDef.modelOffsetX = 0;

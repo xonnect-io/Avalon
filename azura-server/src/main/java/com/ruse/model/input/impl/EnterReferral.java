@@ -29,7 +29,7 @@ public class EnterReferral extends Input {
             "runescapeorig", "stable", "stabletv",
             "didyscape", "didy", "Jetman", "Treumer", "ceraxy",
     "runelist", "runelocus", "rsps-list", "rspslist", "rsps", "wet", "eggy", "sixx","inheritedrs",
-            "morgen"
+            "morgen","inherited","perplexi","topg","runeserver"
     }; // codes here
 
     private static List<String> addValue(List<String> lines, String username) {

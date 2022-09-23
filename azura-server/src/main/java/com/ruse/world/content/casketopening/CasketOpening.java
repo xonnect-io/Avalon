@@ -443,6 +443,7 @@ public class CasketOpening {
         INHERITED(23415, CreatorBox2.rewards),
         CELESTIAL(23416, CreatorBox3.rewards),
         WALKCHAOS(23417, CreatorBox4.rewards),
+        LANO(23425, CreatorBox5.rewards),
         ;
         private int itemID;
         private Box[] loot;

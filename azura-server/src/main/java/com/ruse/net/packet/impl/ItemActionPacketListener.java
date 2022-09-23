@@ -645,6 +645,11 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getCasketOpening().openInterface();
                 break;
 
+            case 23425:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.LANO);
+                player.getCasketOpening().openInterface();
+                break;
+
             case 15003:
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.AZURE);
                 player.getCasketOpening().openInterface();
