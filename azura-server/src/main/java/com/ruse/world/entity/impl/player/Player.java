@@ -1603,6 +1603,9 @@ public int howmuchdissolveamt = 0;
             getPacketSender().sendMessage("You cannot log out at the moment.");
             return false;
         }
+        if (getSummoning().getFamiliar() != null && getInventory().getFreeSlots() > 0) {
+            getSummoning().unsummon(true, true);
+        }
         // new Thread(new Hiscores(this)).start();
         return true;
     }

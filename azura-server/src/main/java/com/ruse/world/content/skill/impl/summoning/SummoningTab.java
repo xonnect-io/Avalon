@@ -1,10 +1,10 @@
 package com.ruse.world.content.skill.impl.summoning;
 
-import java.util.concurrent.TimeUnit;
-
 import com.ruse.util.Misc;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.concurrent.TimeUnit;
 
 public class SummoningTab {
 
@@ -30,6 +30,8 @@ public class SummoningTab {
 			c.setDialogueActionId(4);
 		}
 	}
+
+
 
 	public static void handleSpecialAttack(Player c) {
 		/*

@@ -64,6 +64,7 @@ import com.ruse.world.content.skill.SkillManager;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.crafting.Jewelry;
 import com.ruse.world.content.skill.impl.fletching.BoltData;
+import com.ruse.world.content.skill.impl.summoning.SummoningTab;
 import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
@@ -117,7 +118,7 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");
         }
-        if (command[0].equalsIgnoreCase("summer")) {
+     /*   if (command[0].equalsIgnoreCase("summer")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -126,7 +127,7 @@ public class CommandPacketListener implements PacketListener {
             Position pos = new Position(2910, 4699);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Summer Event!");
-        }
+        }*/
 
         if (command[0].equalsIgnoreCase("slayerchampion") || command[0].equalsIgnoreCase("slayerboss")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
@@ -284,7 +285,9 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, new Position(3420, 9563, 0), player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to Naraku Global boss");
         }
-
+        if (command[0].equalsIgnoreCase("dismiss")) {
+            SummoningTab.handleDismiss(player, true);
+        }
         if (command[0].equalsIgnoreCase("nm") || command[0].equalsIgnoreCase("nightmare")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
@@ -532,7 +535,7 @@ public class CommandPacketListener implements PacketListener {
 
             player.getPacketSender().sendString(index++, color1 + "Main Commands:");
             player.getPacketSender().sendString(index++, color + "::home - Teleports you home");
-            player.getPacketSender().sendString(index++, color + "::traim - Teleports you to training zone");
+            player.getPacketSender().sendString(index++, color + "::train - Teleports you to training zone");
             player.getPacketSender().sendString(index++, color + "::melee - Teleports you to Ember Giants");
             player.getPacketSender().sendString(index++, color + "::range - Teleports you to Tree Basilisk");
             player.getPacketSender().sendString(index++, color + "::mage - Teleports you to Bat of Light");
@@ -701,7 +704,7 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("vote")) {
             player.getPacketSender().sendString(1, GameSettings.VoteUrl);
-            player.getPacketSender().sendMessage("When you vote, do ::voted to redeem votes");
+            player.getPacketSender().sendMessage("After you are done voting use command ::voted to redeem your points!");
         }
         if (command[0].equalsIgnoreCase("pricelist")) {
             player.getPacketSender().sendString(1, GameSettings.PriceList);
@@ -966,7 +969,7 @@ public class CommandPacketListener implements PacketListener {
         }
 
         if (command[0].equalsIgnoreCase("live")) {
-            if (player.getUsername().equalsIgnoreCase("walkchaos")) {
+            if (player.getUsername().equalsIgnoreCase("walkchaos") && !YoutubeData.WALKCHAOS.getLive()) {
                 YoutubeData.WALKCHAOS.setLive(true);
                 World.sendMessage("<img=10>@red@ " + YoutubeData.WALKCHAOS.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
                 YoutubeData.clear();
@@ -975,7 +978,7 @@ public class CommandPacketListener implements PacketListener {
         }
 
         if (command[0].equalsIgnoreCase("offline")) {
-            if (player.getUsername().equalsIgnoreCase("walkchaos")) {
+            if (player.getUsername().equalsIgnoreCase("walkchaos")&& YoutubeData.WALKCHAOS.getLive()) {
                 YoutubeData.WALKCHAOS.setLive(false);
                 World.sendMessage("<img=10>@red@ " + YoutubeData.WALKCHAOS.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
                 YoutubeData.clear();
@@ -996,6 +999,27 @@ public class CommandPacketListener implements PacketListener {
             if (player.getUsername().equalsIgnoreCase("celestial")) {
                 YoutubeData.CELESTIAL.setLive(false);
                 World.sendMessage("<img=10>@red@ " + YoutubeData.CELESTIAL.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
+
+
+
+        if (command[0].equalsIgnoreCase("live")) {
+            if (player.getUsername().equalsIgnoreCase("lano")) {
+                YoutubeData.LANO.setLive(true);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.LANO.getName() + " @yel@<shad=1>is now live on Youtube, type @red@::youtube @yel@to claim a Creator box & watch!");
+                YoutubeData.clear();
+                return;
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("offline")) {
+            if (player.getUsername().equalsIgnoreCase("lano")) {
+                YoutubeData.LANO.setLive(false);
+                World.sendMessage("<img=10>@red@ " + YoutubeData.LANO.getName() + " @yel@<shad=1>is now @red@offline @yel@thanks for the love and support!");
                 YoutubeData.clear();
                 return;
             }
