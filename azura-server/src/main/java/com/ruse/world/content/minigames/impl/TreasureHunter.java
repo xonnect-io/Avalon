@@ -58,7 +58,6 @@ public class TreasureHunter {
     public static void useKeyOnChest(Player player, Item item) {
         if (item.getId() == MASTER_KEY.getId() && player.getInventory().contains(MASTER_KEY.getId())) {
             player.getInventory().delete(MASTER_KEY);
-            player.getAchievementTracker().progress(AchievementData.TREASURE_HUNTER, 1);
             handleRewards(player);
         }
     }
@@ -67,7 +66,9 @@ public class TreasureHunter {
         Box box = BoxLoot.getLoot(loot, player);
         player.getInventory().add(box.getId(), box.getAmount());
         player.getPointsHandler().incrementTreasureHunterKC(1);
+        player.getAchievementTracker().progress(AchievementData.TREASURE_HUNTER, 1);
         DailyTask.TREASURE_HUNTER.tryProgress(player);
+        player.getClickDelay().reset();
     }
 
 

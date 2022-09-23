@@ -346,6 +346,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 break;
                             case 41207:
+                                if (!player.getClickDelay().elapsed(1000)) {
+                                    player.sendMessage("Please wait a second before trying to open another key.");
+                                    return;
+                                }
                                 if (player.getInventory().contains(TreasureHunter.MASTER_KEY.getId())) {
                                     player.getInventory().delete(TreasureHunter.MASTER_KEY);
                                     TreasureHunter.handleRewards(player);
