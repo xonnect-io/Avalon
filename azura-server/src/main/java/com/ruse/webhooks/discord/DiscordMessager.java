@@ -14,6 +14,40 @@ public class DiscordMessager extends JSONObject {
 
 	public static boolean active = true;
 
+	public static void posLogs(String msg) {
+		try {
+
+			String webhook = "https://discord.com/api/webhooks/1022874842325856266/jkQHdhjg1W6XZPqFFwW2FckcUu0evIXqK4ksoTm_KFiLv1jjq-bjBnwWzIAPPSOJoyIm";
+
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+			// client
+
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Necrotic - RSPS") // The title of the embed
+					// element
+					.withURL("http://necrotic.org/") // The URL of the embed element
+					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
+					.withDescription(
+							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
+					// description
+					// of
+					// the
+					// embed
+					// object
+					.build(); // Build the embed element
+
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
+					// message
+					// .withEmbed(embed) // Add our embed object
+					.withUsername("Player Owned Shop Logs") // Override the username of the bot
+					.build(); // Build the message
+
+			client.sendPayload(message);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void offerItems(String msg) {
 		try {
 

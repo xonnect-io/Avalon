@@ -16,7 +16,7 @@ public enum GoldInstanceData {
 	TREE_BASILISK(125072, 1718, "Tree Basilisk", 35, new int[] { 19624 },
 			"Tree Basilisk",new Position(2758, 4743), RegionInstanceType.KINGS),
 	AQUANITE(125073, 9172, "Aquanite", 35, new int[] { 19624 },
-			"Bat of light",new Position(2758, 4743), RegionInstanceType.KINGS),
+			"Aquanite",new Position(2758, 4743), RegionInstanceType.KINGS),
 	GIANT_SPIDER(125074, 117, "Arachne", 35, new int[] { 19624 },
 			"Arachne",new Position(2758, 4743), RegionInstanceType.KINGS),
 	CASH_DRAGONS(125075, 500, "Cash Dragon", 35, new int[] { 19624 },

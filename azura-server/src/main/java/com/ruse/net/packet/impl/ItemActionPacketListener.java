@@ -2163,7 +2163,7 @@ public class ItemActionPacketListener implements PacketListener {
                     String msg = "@blu@<img=5>[CREATION]<img=5>@red@ " + player.getUsername() + " has created an Infinity Rage potion!";
                     World.sendMessage(msg);
                 } else {
-                    player.sendMessage("You need 50m Avalon tokens to upgrade.");
+                    player.sendMessage("You need 50m Upgrade tokens to upgrade.");
                 }
                 break;*/
             case 22108:
@@ -2175,7 +2175,7 @@ public class ItemActionPacketListener implements PacketListener {
                     int amount = player.getInventory().getAmount(19000);
                     player.getInventory().delete(19000, amount);
                     player.getInventory().add(ItemDefinition.MILL_ID, amount * 100);
-                    player.sendMessage("You have exchanged X" + amount + " Pet fragments for X" + amount * 100 + " Avalon tokens!");
+                    player.sendMessage("You have exchanged X" + amount + " Pet fragments for X" + amount * 100 + " Upgrade tokens!");
                 }
                 break;*/
 

@@ -30,7 +30,7 @@ public class SlayerInstanceManager {
 		} else {
 			player.getPA()
 					.sendMessage("You need an instance token (s), these can be obtained from killing slayer npcs!");
-			player.getPA().sendMessage("You need 2,500 Avalon tokens in your inventory to start a 2x2 Slayer instance.");
+			player.getPA().sendMessage("You need 2,500 Upgrade tokens in your inventory to start a 2x2 Slayer instance.");
 			return;
 		}
 		if (player.getRegionInstance() != null) {

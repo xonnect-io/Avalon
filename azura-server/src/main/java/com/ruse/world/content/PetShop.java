@@ -23,28 +23,28 @@ public class PetShop {
             case 23041://damage
             case 23042:
             case 23043:
-                return new Object[]{350000, "Avalon tokens"};
+                return new Object[]{350000, "Upgrade tokens"};
             case 23114://kil
-                return new Object[]{500000, "Avalon tokens"};
+                return new Object[]{500000, "Upgrade tokens"};
             case 23115:
-                return new Object[]{250000, "Avalon tokens"};
+                return new Object[]{250000, "Upgrade tokens"};
             case 23116:
-                return new Object[]{500000, "Avalon tokens"};
+                return new Object[]{500000, "Upgrade tokens"};
             case 23117:
-                return new Object[]{700000, "Avalon tokens"};
+                return new Object[]{700000, "Upgrade tokens"};
             case 23164:
-                return new Object[]{1000000, "Avalon tokens"};
+                return new Object[]{1000000, "Upgrade tokens"};
             case 23108:
             case 23109:
-                return new Object[]{400000, "Avalon tokens"};
+                return new Object[]{400000, "Upgrade tokens"};
             case 23110:
-                return new Object[]{500000, "Avalon tokens"};
+                return new Object[]{500000, "Upgrade tokens"};
             case 23112:
-                return new Object[]{1500000, "Avalon tokens"};
+                return new Object[]{1500000, "Upgrade tokens"};
             case 23111:
-                return new Object[]{5000000, "Avalon tokens"};
+                return new Object[]{5000000, "Upgrade tokens"};
         }
-        return new Object[]{100000000, "Avalon tokens"};
+        return new Object[]{100000000, "Upgrade tokens"};
     }
 
     public boolean handleButton(int buttonId) {

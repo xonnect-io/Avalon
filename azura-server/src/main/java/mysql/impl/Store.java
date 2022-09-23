@@ -201,7 +201,7 @@ public class Store implements Runnable {
                     case 24:
                         player.getInventory().add(7956, quantity * 20_000);
                         break;
-                    //Grand mystery box
+                    //Ruby mystery box
                     case 25:
                         player.getInventory().add(19114, quantity * 400);
                         break;

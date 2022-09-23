@@ -1419,7 +1419,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 4650:
 //                        player.sendMessage("@bla@There are currently @red@" + LotterySystem.getCurrentTicketAmount()
 //                                + " @bla@Lottery tickets- Winner pot is@red@: " + LotterySystem.getTotalPrizepool()
-//                                + "@bla@ Avalon tokens");
+//                                + "@bla@ Upgrade tokens");
                         LotteryEvent.whenwinnersdrawn(player);
                         break;
                     case 5382:

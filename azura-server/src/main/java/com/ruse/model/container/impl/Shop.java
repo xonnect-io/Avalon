@@ -1860,7 +1860,7 @@ public class Shop extends ItemContainer {
             } else if (shop == EASTER_STORE_2) {
                 switch (item) {
                     case 23003:
-                        return new Object[]{118, "Avalon tokens"};
+                        return new Object[]{118, "Upgrade tokens"};
                 }
             } else if (shop == DUNGEONEERING_STORE_NEW) {
                 switch (item) {

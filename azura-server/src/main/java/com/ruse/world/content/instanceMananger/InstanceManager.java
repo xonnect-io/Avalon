@@ -38,7 +38,7 @@ public class InstanceManager {
 		} else {
 			player.getPA()
 					.sendMessage("You need an instance token, these can be obtained from killing any npc in-game!");
-			player.getPA().sendMessage("You need 750 Avalon tokens in your inventory to start a 3x3 instance.");
+			player.getPA().sendMessage("You need 750 Upgrade tokens in your inventory to start a 3x3 instance.");
 			return;
 		}
 		if (player.getRegionInstance() != null) {
@@ -108,7 +108,7 @@ public class InstanceManager {
 		} else {
 			player.getPA()
 					.sendMessage("You need an instance token, these can be obtained from killing any npc in-game!");
-			player.getPA().sendMessage("You need 1,500 Avalon tokens in your inventory to start a 4x4 instance.");
+			player.getPA().sendMessage("You need 1,500 Upgrade tokens in your inventory to start a 4x4 instance.");
 			return;
 		}
 		if (player.getRegionInstance() != null) {

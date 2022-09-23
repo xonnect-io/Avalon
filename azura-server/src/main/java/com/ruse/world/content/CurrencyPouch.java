@@ -41,7 +41,7 @@ public class CurrencyPouch {
         String currency;
 
         amount = player.getCurrencyPouch().upgradeTokens;
-        currency = "Avalon tokens";
+        currency = "Upgrade tokens";
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
 
@@ -123,7 +123,7 @@ public class CurrencyPouch {
         int inventoryAmount;
 
         switch (type) {
-            case 0: //Avalon tokens
+            case 0: //Upgrade tokens
                 currency = ItemDefinition.UPGRADE_TOKEN_ID;
                 inventoryAmount = player.getInventory().getAmount(currency);
 
@@ -590,7 +590,7 @@ public class CurrencyPouch {
         boolean insufficientFundsError = false;
         int currency;
         switch (type) {
-            case 0: //Avalon tokens
+            case 0: //Upgrade tokens
                 currency = ItemDefinition.UPGRADE_TOKEN_ID;
                 break;
             case 1: //Pvm Tickets

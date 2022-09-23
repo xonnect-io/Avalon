@@ -9,6 +9,7 @@ import com.ruse.model.input.impl.PosItemInput;
 import com.ruse.model.input.impl.PosPlayerInput;
 import com.ruse.net.packet.PacketBuilder;
 import com.ruse.util.Misc;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dialogue.DialogueExpression;
@@ -679,7 +680,7 @@ public class PlayerOwnedShopManager {
             if (definiton != null) {
                 String formatPrice = Misc.sendCashToString(item.getPrice());
                 player.sendMessage("<col=FF0000>" + definiton.getName() + "</col> costs " + formatPrice
-                        + " Avalon tokens each in <col=FF0000>" + current.username + "</col>'s shop.");
+                        + " Upgrade tokens each in <col=FF0000>" + current.username + "</col>'s shop.");
             }
             return;
         }
@@ -736,7 +737,7 @@ public class PlayerOwnedShopManager {
                     }
                 }
                 if (amount == 0) {
-                    player.sendMessage("You do not have enough Avalon tokens in your pouch.");
+                    player.sendMessage("You do not have enough Upgrade tokens in your pouch.");
                 } else {
                     if (amount >= item.getAmount()) {
                         amount = item.getAmount();
@@ -768,7 +769,7 @@ public class PlayerOwnedShopManager {
                     }
                 }
             } else
-                player.sendMessage("You do not have enough Avalon tokens in your inventory.");
+                player.sendMessage("You do not have enough Upgrade tokens in your inventory.");
         } else {
 
             if (amount >= item.getAmount()) {
@@ -805,15 +806,21 @@ public class PlayerOwnedShopManager {
                 current.addEarnings(item.getPrice() * removed);
                 new Thread(new CheckPrice(player, item.getId(), item.getAmount(), cashAmount)).run();
 
+
+                DiscordMessager.posLogs("***" +player.getUsername() + "*** bought ***" + item.getDefinition().getName() + "*** x " + removed + " from ***"
+                        + current.username + "'s *** pos shop for ***" + Misc.insertCommasToNumber(cashAmount) + "*** Upgrade tokens");
                 PlayerLogs.log(player.getUsername(), "Player bought " + item.getId() + " x " + removed + " from "
-                        + current.username + "'s pos shop for " + cashAmount + " Avalon tokens");
+                        + current.username + "'s pos shop for " + cashAmount + " Upgrade tokens");
                 PlayerLogs.log(current.username, "Player sold " + item.getId() + " x " + removed + " to "
-                        + player.getUsername() + " for " + cashAmount + " Avalon tokens in their pos shop");
+                        + player.getUsername() + " for " + cashAmount + " Upgrade tokens in their pos shop");
+
+                DiscordMessager.posLogs("***" +player.getUsername() +" ***sold ***"  + item.getDefinition().getName() + " ***x " + removed + " to ***"
+                        + player.getUsername() + "*** for ***" + Misc.insertCommasToNumber(cashAmount) + "*** Upgrade tokens in their pos");
                 if (current.getOwner() != null) {
                     current.getOwner().getPacketSender()
                             .sendMessage(player.getUsername() + " bought " + item.getAmount() + "x "
                                     + ItemDefinition.getDefinitions()[item.getId()].getName() + " for " + cashAmount
-                                    + " Avalon tokens from your shop");
+                                    + " Upgrade tokens from your shop");
                 }
             }
 
@@ -841,7 +848,7 @@ public class PlayerOwnedShopManager {
             if (definiton != null) {
                 String formatPrice = Misc.sendCashToString(item.getPrice());
                 player.sendMessage("<col=FF0000>" + definiton.getName() + "</col> is set to cost " + formatPrice
-                        + " Avalon tokens in your shop.");
+                        + " Upgrade tokens in your shop.");
             }
             return;
         }
@@ -901,7 +908,7 @@ public class PlayerOwnedShopManager {
                 return;
             }
             if (id == ItemDefinition.UPGRADE_TOKEN_ID) {
-                player.sendMessage("You cannot store Avalon tokens in your shop.");
+                player.sendMessage("You cannot store Upgrade tokens in your shop.");
                 return;
             }
 
@@ -951,7 +958,7 @@ public class PlayerOwnedShopManager {
                     }
 
                 });
-                player.getPacketSender().sendEnterLongAmountPrompt("Enter the price you want to sell this for: (currency: Avalon tokens)");
+                player.getPacketSender().sendEnterLongAmountPrompt("Enter the price you want to sell this for: (currency: Upgrade tokens)");
 
                 return;
 
@@ -1011,7 +1018,7 @@ public class PlayerOwnedShopManager {
             item.setPrice(price);
             String formatPrice = Misc.sendCashToString(price);
             player.sendMessage("You have set <col=FF0000>" + definiton.getName() + "</col> to cost <col=FF0000>"
-                    + formatPrice + "</col> Avalon tokens in your shop.");
+                    + formatPrice + "</col> Upgrade tokens in your shop.");
             myShop.save();
 
             for (int i = 0; i < ITEMS.size(); i++) {
@@ -1128,8 +1135,9 @@ public class PlayerOwnedShopManager {
         //player.getPacketSender().sendString(8135, "" + player.getMoneyInPouch());
         myShop.setEarnings(0);
         player.getPlayerOwnedShopManager().getMyShop().setEarnings(0);
-        player.sendMessage("@red@You have claimed " + formatPrice + " Avalon tokens into your inventory.");
-        PlayerLogs.log(player.getUsername(), "Played claimed " + formatPrice + " Avalon tokens from pos");
+        player.sendMessage("@red@You have claimed " + formatPrice + " Upgrade tokens into your inventory.");
+        PlayerLogs.log(player.getUsername(), "Played claimed " + formatPrice + " Upgrade tokens from pos");
+        DiscordMessager.posLogs("***" +player.getUsername()+ "***"  + " has just claimed "+ "***" + Misc.insertCommasToNumber(formatPrice)+ "***" + " Upgrade tokens from POS");
     }
 
     public PlayerOwnedShop getCurrent() {

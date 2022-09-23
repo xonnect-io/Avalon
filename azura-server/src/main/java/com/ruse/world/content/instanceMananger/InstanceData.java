@@ -16,7 +16,7 @@ public enum InstanceData {
 	TREE_BASILISK(-30464, 1718, "Tree Gorgon", 35, new int[] { 19624 },
 			"Tree Basilisk",new Position(2758, 4743), RegionInstanceType.KINGS),
 	AQUANITE(-30463, 9172, "Aquanite", 35, new int[] { 19624 },
-			"Bat of light",new Position(2758, 4743), RegionInstanceType.KINGS),
+			"Aquanite",new Position(2758, 4743), RegionInstanceType.KINGS),
 	GIANT_SPIDER(-30462, 117, "Arachne", 35, new int[] { 19624 },
 			"Arachne",new Position(2758, 4743), RegionInstanceType.KINGS),
 	CASH_DRAGONS(-30461, 500, "Cash Dragon", 35, new int[] { 19624 },

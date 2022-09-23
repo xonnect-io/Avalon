@@ -1059,7 +1059,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendString(index++, color + "::train - Teleports you to training zone");
                 player.getPacketSender().sendString(index++, color + "::melee - Teleports you to Ember Giants");
                 player.getPacketSender().sendString(index++, color + "::range - Teleports you to Tree Basilisk");
-                player.getPacketSender().sendString(index++, color + "::mage - Teleports you to Bat of Light");
+                player.getPacketSender().sendString(index++, color + "::mage - Teleports you to Aquanite");
                 player.getPacketSender().sendString(index++, color + "::shops - Teleports you to all shops");
                 player.getPacketSender().sendString(index++, color + "");
                 player.getPacketSender().sendString(index++, color1 + "Interface Commands:");

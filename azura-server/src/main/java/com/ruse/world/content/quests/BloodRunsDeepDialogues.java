@@ -859,7 +859,7 @@ public class BloodRunsDeepDialogues {
                                     player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
                                     player.getPacketSender().sendString(index++, color + "Rewards:");
                                     player.getPacketSender().sendString(index++, color + "@blu@2 @bla@Quest points");
-                                    player.getPacketSender().sendString(index++, color + "@blu@5 @bla@Super Mystery boxes");
+                                    player.getPacketSender().sendString(index++, color + "@blu@5 @bla@Sapphire Mystery boxes");
                                     player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
                                     player.getPacketSender().sendString(index++, color + "@bla@Your Holy Amulet will now give a @blu@25% DR Boost");
 
@@ -888,7 +888,7 @@ public class BloodRunsDeepDialogues {
                                     player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
                                     player.getPacketSender().sendString(index++, color + "Rewards:");
                                     player.getPacketSender().sendString(index++, color + "@blu@2 @bla@Quest points");
-                                    player.getPacketSender().sendString(index++, color + "@blu@5 @bla@Super Mystery boxes");
+                                    player.getPacketSender().sendString(index++, color + "@blu@5 @bla@Sapphire Mystery boxes");
                                     player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
                                     player.getPacketSender().sendString(index++, color + "@bla@Your Holy Amulet will now give a @blu@25% DR Boost");
 

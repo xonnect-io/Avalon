@@ -32,7 +32,7 @@ public class WellForGlobalBosses {
 			amount = getMissingAmount();
 		}
 		if (player.getInventory().getAmount(ItemDefinition.UPGRADE_TOKEN_ID) < amount) {
-			DialogueManager.sendStatement(player, "You Don't have that many Avalon tokens in your inventory.");
+			DialogueManager.sendStatement(player, "You Don't have that many Upgrade tokens in your inventory.");
 			return;
 		}
 

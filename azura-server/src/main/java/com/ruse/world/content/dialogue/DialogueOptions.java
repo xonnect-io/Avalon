@@ -92,7 +92,7 @@ public class DialogueOptions {
                     break;
                 case 9924:
                     player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(0));
-                    player.getPacketSender().sendEnterAmountPrompt("How many Avalon tokens would you like to withdraw?");
+                    player.getPacketSender().sendEnterAmountPrompt("How many Upgrade tokens would you like to withdraw?");
                     break;
                 case 9925:
                     player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(4));
@@ -1498,7 +1498,7 @@ public class DialogueOptions {
                         int amount = player.getInventory().getAmount(19000);
                         player.getInventory().delete(19000, amount);
                         player.getInventory().add(ItemDefinition.MILL_ID, amount * 100);
-                        player.sendMessage("You exchanged x" + amount + " Pet fragements for " + (amount * 100) + " Avalon tokens.");
+                        player.sendMessage("You exchanged x" + amount + " Pet fragements for " + (amount * 100) + " Upgrade tokens.");
                     }
                     player.getPacketSender().sendInterfaceRemoval();
                     break;*/

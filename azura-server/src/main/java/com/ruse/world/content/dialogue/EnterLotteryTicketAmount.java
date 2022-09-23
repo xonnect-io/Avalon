@@ -35,7 +35,7 @@ public class EnterLotteryTicketAmount extends Input {
 		player.getInventory().delete(ItemDefinition.MILL_ID, amount);
 		LotterySystem.addUser(player, amount);
 		if (lotteryNPC != null) {
-			lotteryNPC.forceChat("Total pot is now: " + Misc.formatNumber(LotterySystem.getTotalPrizepool()) + " Avalon tokens!");
+			lotteryNPC.forceChat("Total pot is now: " + Misc.formatNumber(LotterySystem.getTotalPrizepool()) + " Upgrade tokens!");
 		}
 
 	}

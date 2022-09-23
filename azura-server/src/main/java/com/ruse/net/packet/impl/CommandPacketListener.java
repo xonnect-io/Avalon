@@ -517,7 +517,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
             player.getPacketSender().sendString(index++, color + "Rewards:");
             player.getPacketSender().sendString(index++, color + "@blu@3 @bla@Quest points");
-            player.getPacketSender().sendString(index++, color + "@blu@15 @bla@Extreme Mystery boxes");
+            player.getPacketSender().sendString(index++, color + "@blu@15 @bla@Emerald Mystery boxes");
             player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
             player.getPacketSender().sendString(index++, color + "@bla@An Omega Charm");
         player.getPacketSender().sendString(index++, color + "");
@@ -538,7 +538,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendString(index++, color + "::train - Teleports you to training zone");
             player.getPacketSender().sendString(index++, color + "::melee - Teleports you to Ember Giants");
             player.getPacketSender().sendString(index++, color + "::range - Teleports you to Tree Basilisk");
-            player.getPacketSender().sendString(index++, color + "::mage - Teleports you to Bat of Light");
+            player.getPacketSender().sendString(index++, color + "::mage - Teleports you to Aquanite");
             player.getPacketSender().sendString(index++, color + "::shops - Teleports you to all shops");
             player.getPacketSender().sendString(index++, color + "");
             player.getPacketSender().sendString(index++, color1 + "Interface Commands:");

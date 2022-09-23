@@ -31,7 +31,7 @@ public class GoldInstanceManager {
 		} else {
 			player.getPA()
 					.sendMessage("You need an instance token (u), these can be obtained from upgrading instance tokens");
-			player.getPA().sendMessage("You need 1,500 Avalon tokens in your inventory to start a 3x3 instance.");
+			player.getPA().sendMessage("You need 1,500 Upgrade tokens in your inventory to start a 3x3 instance.");
 			return;
 		}
 		if (player.getRegionInstance() != null) {
@@ -100,7 +100,7 @@ public class GoldInstanceManager {
 		} else {
 			player.getPA()
 					.sendMessage("You need an instance token, these can be obtained from killing any npc in-game!");
-			player.getPA().sendMessage("You need 3000 Avalon tokens in your inventory to start a 4x4 instance.");
+			player.getPA().sendMessage("You need 3000 Upgrade tokens in your inventory to start a 4x4 instance.");
 			return;
 		}
 		if (player.getRegionInstance() != null) {

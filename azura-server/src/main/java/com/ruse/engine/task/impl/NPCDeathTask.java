@@ -185,7 +185,7 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == 3779) {
                             AFKBossDrops.handleDrop(npc);
-                            AfkSystem.thievedCount -= 80000;
+                            AfkSystem.thievedCount = 0;
                         }
                         if (npc.getId() == 9312) {
                             NephilimBossDrop.handleDrop(npc);

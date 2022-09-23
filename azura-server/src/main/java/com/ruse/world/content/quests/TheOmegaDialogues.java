@@ -1096,7 +1096,7 @@ public class TheOmegaDialogues {
                             player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
                             player.getPacketSender().sendString(index++, color + "Rewards:");
                             player.getPacketSender().sendString(index++, color + "@blu@3 @bla@Quest points");
-                            player.getPacketSender().sendString(index++, color + "@blu@15 @bla@Extreme Mystery boxes");
+                            player.getPacketSender().sendString(index++, color + "@blu@15 @bla@Emerald Mystery boxes");
                             player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
                             player.getPacketSender().sendString(index++, color + "@bla@An Omega Charm");
 

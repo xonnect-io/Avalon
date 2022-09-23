@@ -113,7 +113,7 @@ public enum PetUpgrading {
 
             @Override
             public String[] dialogue() {
-                return new String[]{"Sell x" + player.getInventory().getAmount(19000) + " Pet fragments for 100 Avalon tokens each ("
+                return new String[]{"Sell x" + player.getInventory().getAmount(19000) + " Pet fragments for 100 Upgrade tokens each ("
                         + (player.getInventory().getAmount(19000)  * 100)+" total)",  "Cancel"
                 };
             }
