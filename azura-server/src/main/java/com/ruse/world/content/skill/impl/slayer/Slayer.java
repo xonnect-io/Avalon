@@ -192,14 +192,38 @@ public class Slayer {
     @SuppressWarnings("incomplete-switch")
     public void givePoints(SlayerMaster master) {
         int points = 0;
-
         int pointsReceived = Misc.getRandom(5) + 3;
+        int s = player.getSlayer().taskStreak;
+        if (s > 25 && s < 99)
+            pointsReceived = Misc.getRandom(5) + 3 + Misc.getRandom(3-6);
+       else if (s > 100 && s < 199)
+            pointsReceived = Misc.getRandom(5) + 3 + Misc.getRandom(5-10);
+        else if (s > 200 && s < 299)
+            pointsReceived = Misc.getRandom(5) + 3 + Misc.getRandom(10-20);
+        else if (s > 300 && s < 499)
+            pointsReceived = Misc.getRandom(5) + 3 + Misc.getRandom(20-30);
         switch (master) {
             case MEDIUM_SLAYER:
                 pointsReceived = Misc.getRandom(10) + 6;
+                if (s > 25 && s < 99)
+                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(3-6);
+                else if (s > 100 && s < 199)
+                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(5-10);
+                else if (s > 200 && s < 299)
+                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(10-20);
+                else if (s > 300 && s < 499)
+                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(20-30);
                 break;
             case HARD_SLAYER:
                 pointsReceived = Misc.getRandom(15) + 10;
+                if (s > 25 && s < 99)
+                    pointsReceived = Misc.getRandom(15) + 10 + Misc.getRandom(3-6);
+                else if (s > 100 && s < 199)
+                    pointsReceived = Misc.getRandom(15) + 10 + Misc.getRandom(5-10);
+                else if (s > 200 && s < 299)
+                    pointsReceived = Misc.getRandom(15) + 10 + Misc.getRandom(10-20);
+                else if (s > 300 && s < 499)
+                    pointsReceived = Misc.getRandom(15) + 10 + Misc.getRandom(20-30);
                 break;
 
         }
