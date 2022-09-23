@@ -238,12 +238,27 @@ public final class ObjectDefinition {
 		}
 		if (definition.type == 13671) {
 			definition.interactive = false;
+			definition.solid = false;
 			definition.actions = new String[]{null, null, null, null, null};
+			definition.name = "Owner's Throne";
 		}
 		if (definition.type == 1105) {
 			definition.objectModelIDs = new int[]{19598};
 			definition.interactive = true;
+			definition.solid = false;
 			definition.name = "Avalon's Throne";
+		}
+
+		if (definition.type == 1097) {
+			definition.interactive = false;
+			definition.solid = false;
+			definition.name = "Afk Throne";
+		}
+
+		if (definition.type == 1098) {
+			definition.interactive = false;
+			definition.solid = false;
+			definition.name = "Staff Throne";
 		}
 		if (definition.type == 22098) {
 			definition.objectModelIDs = new int[]{15574};

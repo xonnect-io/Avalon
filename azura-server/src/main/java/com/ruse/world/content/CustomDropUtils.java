@@ -131,7 +131,9 @@ public class CustomDropUtils {
         //End rings
 
         // Start boots
-
+        if (player.getEquipment().contains(23422)) { //Diyos gloves
+            percentBoost += 40;
+        }
         if (player.getEquipment().contains(23285)) { //Avalon boots
             percentBoost += 40;
         }
@@ -165,6 +167,10 @@ public class CustomDropUtils {
         //End boots
 
         //Start gloves
+        if (player.getEquipment().contains(23421)) { //Diyos gloves
+            percentBoost += 75;
+        }
+
         if (player.getEquipment().contains(23292)) { //Celestial bracelet
             percentBoost += 75;
         }
@@ -217,6 +223,9 @@ public class CustomDropUtils {
 
         if (player.getEquipment().contains(23268)) { //Cloak of Summer
             percentBoost += 80;
+        }
+        if (player.getEquipment().contains(23424)) {//Diyos cape
+            percentBoost += 75;
         }
         if (player.getEquipment().contains(23270)) { //Celestial cape
             percentBoost += 75;
@@ -381,6 +390,9 @@ public class CustomDropUtils {
         //end weapons
 
         //start platelegs
+        if (player.getEquipment().contains(23420)) {//Diyos platelegs
+            percentBoost += 30;
+        }
         if (player.getEquipment().contains(23283)) { //Avalon platelegs
             percentBoost += 30;
         }
@@ -460,7 +472,9 @@ public class CustomDropUtils {
 
 
         //start platebody
-
+        if (player.getEquipment().contains(23419)) {//Diyos platebody
+            percentBoost += 30;
+        }
         if (player.getEquipment().contains(23282)) { //Avalon platebody
             percentBoost += 30;
         }
@@ -540,7 +554,11 @@ public class CustomDropUtils {
         }
         //end platebody
 
+
         //start helmet
+        if (player.getEquipment().contains(23418)) {//Diyos helmet
+            percentBoost += 30;
+        }
         if (player.getEquipment().contains(23281)) { //Avalon helmet
             percentBoost += 30;
         }
