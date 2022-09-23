@@ -145,7 +145,7 @@ public enum Collection {
             new Item(15289), new Item(15290), new Item(20488), new Item(7956), new Item(19114), new Item(19115), new Item(19116)),
 
     //Boxes
-    MYSTERY_BOX(Player.MYSTERY_BOXES_OPENED, LogType.BOXES, "Mystery Box", new int[] {CollectionLog.MYSTERY_BOX}, Player.MYSTERY_BOX_LOG_CLAIMED, new Item[] { new Item(19116,15) },
+    MYSTERY_BOX(Player.MYSTERY_BOXES_OPENED, LogType.BOXES, "Beginner Mystery Box", new int[] {CollectionLog.MYSTERY_BOX}, Player.MYSTERY_BOX_LOG_CLAIMED, new Item[] { new Item(19116,15) },
             new Item(12855), new Item(1149), new Item(1249), new Item(3204), new Item(1305), new Item(1215),
             new Item(1377), new Item(1434), new Item(7158), new Item(989), new Item(536), new Item(6739),
             new Item(11728), new Item(15259), new Item(6570), new Item(3320), new Item(3318), new Item(4888),
@@ -165,7 +165,7 @@ public enum Collection {
             new Item(18686), new Item(18799), new Item(5095), new Item(13996), new Item(18834), new Item(19140),
             new Item(13913), new Item(18801), new Item(19139), new Item(13919), new Item(18800), new Item(19138)),
 
-    SUPER(Player.SUPER_BOXES_OPENED, LogType.BOXES, "Super Mystery Box", new int[] {CollectionLog.SUPER}, Player.SUPER_BOX_LOG_CLAIMED, new Item[] { new Item(19115,40) },
+    SUPER(Player.SUPER_BOXES_OPENED, LogType.BOXES, "Sapphire Mystery Box", new int[] {CollectionLog.SUPER}, Player.SUPER_BOX_LOG_CLAIMED, new Item[] { new Item(19115,40) },
             new Item(12855), new Item(989), new Item(4888), new Item(18332), new Item(14377), new Item(13902),
             new Item(13899), new Item(11730), new Item(13922), new Item(13952), new Item(13940), new Item(13910),
             new Item(13946), new Item(13934), new Item(13916), new Item(13949), new Item(13937), new Item(14915),
@@ -173,14 +173,14 @@ public enum Collection {
             new Item(12634), new Item(22077), new Item(19136), new Item(6936), new Item(14008), new Item(14009),
             new Item(14010), new Item(455)),
 
-    EXTREME(Player.EXTREME_BOXES_OPENED, LogType.BOXES, "Extreme Mystery Box", new int[] {CollectionLog.EXTREME}, Player.EXTREME_BOX_LOG_CLAIMED, new Item[] { new Item(19114,50) },
+    EXTREME(Player.EXTREME_BOXES_OPENED, LogType.BOXES, "Emerald Mystery Box", new int[] {CollectionLog.EXTREME}, Player.EXTREME_BOX_LOG_CLAIMED, new Item[] { new Item(19114,50) },
             new Item(15442), new Item(15443), new Item(15444), new Item(18351), new Item(18349), new Item(18353),
             new Item(6500), new Item(13740), new Item(22077), new Item(19136), new Item(6936), new Item(666),
             new Item(15424), new Item(674), new Item(8800), new Item(8803), new Item(8806), new Item(8801),
             new Item(8804), new Item(8807), new Item(8802), new Item(8805), new Item(8808), new Item(20549),
             new Item(20173), new Item(8809), new Item(10946)),
 
-    GRAND(Player.GRAND_BOXES_OPENED, LogType.BOXES, "Grand Mystery Box", new int[] {CollectionLog.GRAND}, Player.GRAND_BOX_LOG_CLAIMED, new Item[] { new Item(20488,40) },
+    GRAND(Player.GRAND_BOXES_OPENED, LogType.BOXES, "Ruby Mystery Box", new int[] {CollectionLog.GRAND}, Player.GRAND_BOX_LOG_CLAIMED, new Item[] { new Item(20488,40) },
             new Item(13740), new Item(15290), new Item(20549), new Item(20173), new Item(8809), new Item(8834),
             new Item(8835), new Item(8860), new Item(8861), new Item(8862), new Item(15830), new Item(3318),
             new Item(15418), new Item(8326), new Item(8330), new Item(8323), new Item(8327), new Item(8331),
