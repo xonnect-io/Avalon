@@ -4,6 +4,7 @@ import com.ruse.model.Item;
 import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.model.RegionInstance;
+import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.world.World;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.Box;
@@ -20,12 +21,12 @@ public class HallsOfValor {
     public static Box[] loot = { //
             new Box(12855, 2_500, 10_000, 33D),
             new Box(5022, 1_000, 3_000, 33D),
-            new Box(23165, 1, 0.285D, true),
-            new Box(23166, 1, 0.36D, true),
-            new Box(23167, 1, 0.33D, true),
-            new Box(23168, 1, 0.4D, true),
-            new Box(23169, 1, 0.285D, true),
-            new Box(23170, 1, 0.2D, true),
+                new Box(23165, 1, 0.1D, true),
+            new Box(23166, 1, 0.1D, true),
+            new Box(23167, 1, 0.1D, true),
+            new Box(23168, 1, 0.1D, true),
+            new Box(23169, 1, 0.1D, true),
+            new Box(23170, 1, 0.1D, true),
 
             new Box(23092, 1, 0.2D, true),
             new Box(23093, 1, 0.2D, true),
@@ -61,6 +62,7 @@ public class HallsOfValor {
             Box box = BoxLoot.getLoot(loot,player);
             player.getInventory().delete(KEY_REWARD.getId(), 1);
             player.getInventory().add(box.getId(), box.getAmount());
+            player.getPacketSender().sendMessage("You were rewarded @red@x" + box.getAmount() + " "+ ItemDefinition.forId(box.getId()).getName() + ".");
             DailyTask.HALLS_OF_VALOR.tryProgress(player);
         } else {
             player.getPacketSender().sendMessage("You do not have the Isles Key!");
