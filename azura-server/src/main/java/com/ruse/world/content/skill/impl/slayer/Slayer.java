@@ -182,6 +182,17 @@ public class Slayer {
             if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER))
                 player.getInventory().add(9000, Misc.getRandom(10, 30));
 
+            int s = player.getSlayer().taskStreak;
+
+            if (s > 25 && s < 99)
+                player.getInventory().add(9000, Misc.getRandom(3, 6));
+            else if (s > 100 && s < 199)
+                player.getInventory().add(9000, Misc.getRandom(5, 10));
+            else if (s > 200 && s < 299)
+                player.getInventory().add(9000, Misc.getRandom(10, 15));
+            else if (s > 300)
+                player.getInventory().add(9000, Misc.getRandom(15, 20));
+
             givePoints(player.getSlayer().getLastTask().getTaskMaster());
 
         }
@@ -200,7 +211,7 @@ public class Slayer {
             pointsReceived = Misc.getRandom(5) + 3 + Misc.getRandom(5-10);
         else if (s > 200 && s < 299)
             pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(10-15);
-        else if (s > 300 && s < 499)
+        else if (s > 300)
             pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(15-20);
         switch (master) {
             case MEDIUM_SLAYER:
@@ -211,7 +222,7 @@ public class Slayer {
                     pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(5-10);
                 else if (s > 200 && s < 299)
                     pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(10-15);
-                else if (s > 300 && s < 499)
+                else if (s > 300)
                     pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(15-20);
                 break;
             case HARD_SLAYER:
@@ -222,7 +233,7 @@ public class Slayer {
                     pointsReceived = Misc.getRandom(15) + 10 + Misc.getRandom(5-10);
                 else if (s > 200 && s < 299)
                     pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(10-15);
-                else if (s > 300 && s < 499)
+                else if (s > 300)
                     pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(15-20);
                 break;
 
