@@ -38,6 +38,8 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import lombok.Getter;
+import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
@@ -126,6 +128,14 @@ public class World {
 
         return playerByNames.get(NameUtils.stringToLong(username));
     }
+
+    @Getter
+    @Setter
+    public static boolean nephActive = false;
+
+    @Getter
+    @Setter
+    public static boolean guardianActive = false;
 
     public final static LoginService LOGIN_SERVICE = new LoginService();
     private final static ConcurrentLinkedQueue<Function0<Unit>> gameThreadJobs = new ConcurrentLinkedQueue<>();

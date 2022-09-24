@@ -560,6 +560,9 @@ public final class ItemDefinition {
 				itemDef.editedModelColor = new int[]{5409, 920, 914, 929, 10452, 10293};
 				itemDef.newModelColor = new int[]{943, 3866, 914, 3866, 943, 943};
 				break;
+			case 15378:
+				itemDef.name = "Supreme appendage";
+				break;
 
 			case 23044:
 				itemDef.name = "Aura (T1)";

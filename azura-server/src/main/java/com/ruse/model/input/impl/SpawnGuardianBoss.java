@@ -20,6 +20,11 @@ public class SpawnGuardianBoss extends EnterAmount {
 		if (highTierTickets > amount) {
 			highTierTickets = amount;
 		}
+		if (World.isGuardianActive()) {
+			player.getPacketSender().sendMessage("@red@Avalon guardian is already active!");
+			return;
+		}
+
 		if (highTierTickets <= 0) {
 			player.getPacketSender().sendMessage("You don't have any High-tier tickets in your Inventory!");
 			return;
@@ -42,6 +47,8 @@ public class SpawnGuardianBoss extends EnterAmount {
 		}  if (GuardianSpawnSystem.highTierCount == 100) {
 			String message = "The Avalon Guardian has appeared ::Guardian";
 			NPC npc = new NPC(3830, new Position(3445, 4113, 1)); //NPC npc = new NPC(3830, new Position(3491, 2782));
+
+			World.setGuardianActive(true);
 			World.register(npc);
 			GuardianSpawnSystem.highTierCount = 0;
 			World.sendMessage("<col=4141ff><img=1463>[Avalon Guardian]<img=1463> @or2@" + player.getUsername() + " has contributed " + highTierTickets + " High-Tier Tickets.");

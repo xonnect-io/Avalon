@@ -316,7 +316,7 @@ public class ZombieRaids {
                     }
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
                         player.getInventory().add(18404, 1);
-                        player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Slayer Perk is active!");
+                        player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Raids Perk is active!");
                     }
                     if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,10) == 6) {
                         if (Misc.getRandom(10) > 5) {

@@ -66,7 +66,11 @@ public class PlayerDeathTask extends Task {
 
                     if (player.currentInstanceAmount < 1) {
                     player.performAnimation(new Animation(0x900));
-                    player.getPacketSender().sendMessage("Oh dear, you are dead!")
+                    player.getPacketSender().sendMessage("Oh dear, you are dead!");
+                        if (player.getLocation() == Locations.Location.SUPREME_LAIR && player.getInventory().contains(23426)) {
+                            player.getInventory().delete(23426, player.getInventory().getAmount(23426));
+                            player.getPA().sendMessage("@red@Your Supreme Energy was lost");
+                        }
                     ;player.getClickDelay().reset();
                         CurseHandler.deactivateAll(player);
                         PrayerHandler.deactivateAll(player);

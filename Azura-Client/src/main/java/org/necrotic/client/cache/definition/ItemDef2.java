@@ -659,7 +659,6 @@ public class ItemDef2 {
 				itemDef.femaleEquip1 = 65295;
 				itemDef21 = ItemDefinition.get(19146);
 				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
 				itemDef.modelZoom = 2700;
 				itemDef.rotationY = itemDef21.rotationY;

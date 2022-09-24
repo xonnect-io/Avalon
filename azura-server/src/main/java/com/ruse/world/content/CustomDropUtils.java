@@ -669,11 +669,25 @@ public class CustomDropUtils {
         }
 
         if (npc == 9312) {
-            percentBoost += player.getNephilimBonus();
+            if (player.getNephilimBonus() > 0) {
+                percentBoost = +player.getNephilimBonus();
+            } else {
+                percentBoost = 0;
+            }
         }
         if (npc == 3830) {
-            percentBoost += player.getGuardianBonus();
+            if (player.getGuardianBonus() > 0) {
+                percentBoost = +player.getGuardianBonus();
+            } else {
+                percentBoost = 0;
+            }
         }
+        if (npc == 3830 || npc == 3779 || npc == 187|| npc == 8013|| npc == 9017|| npc == 3305
+                || npc == 4972|| npc == 587|| npc == 9318|| npc == 9319|| npc == 9129) {
+                percentBoost = 0;
+                System.out.println("0 Droprate on globals");
+            }
+
         if (npc == player.getSlayer().getSlayerTask().getNpcId()) {
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23071) {
                 percentBoost += 5;

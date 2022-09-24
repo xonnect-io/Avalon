@@ -101,7 +101,8 @@ public class UseItemPacketListener implements PacketListener {
         }
          int crystalAmount = player.getInventory().getAmount(23321);
         int chargeAmount = player.getNephSwordCharges();
-
+        int supremeEnergy = player.getInventory().getAmount(23426);
+        int charges = player.getSupremeCharges();
         if (usedWith.getId() == 23063 && itemUsedWith.getId() == 23321 ||
                 usedWith.getId() == 23321 && itemUsedWith.getId() == 23063) {
             if (chargeAmount > 0) {
@@ -121,6 +122,31 @@ public class UseItemPacketListener implements PacketListener {
 
 
         }
+
+        if (usedWith.getDefinition().isWeapon() && itemUsedWith.getId() == 23426 ||
+                usedWith.getId() == 23426 && itemUsedWith.getDefinition().isWeapon()) {
+
+            if (supremeEnergy + charges <= 500 - charges) {
+                player.setSupremeCharges(supremeEnergy + charges);
+                player.getPacketSender().sendMessage("Your weapon has @red@" + charges + "/500@bla@ charges.");
+                return;
+            } else if (supremeEnergy + charges > 500 - charges) {
+                player.getInventory().delete(23426, (500 - charges));
+                player.incrementSupremeCharges((500 - charges));
+                if (charges < 500)
+                player.getPacketSender().sendMessage("You added " + (500 - charges) + " Supreme charges to your weapon.");
+                else if (charges == 500)
+                player.getPacketSender().sendMessage("@red@You can only add a total of 500 charges to your weapon");
+            return;
+        }
+            player.getInventory().delete(23426, supremeEnergy);
+            player.incrementSupremeCharges(supremeEnergy);
+            player.getPacketSender().sendMessage("Your weapon is now at @red@"+ supremeEnergy +"/500@bla@ charges.");
+            return;
+
+
+        }
+
 
         if (usedWith.getId() == 23309 && itemUsedWith.getId() == 23321 ||
                 usedWith.getId() == 23321 && itemUsedWith.getId() == 23309) {

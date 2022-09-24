@@ -171,6 +171,8 @@ public class PlayerSaving {
 			object.addProperty("mini-lucifer-killcount", player.getPointsHandler().getMiniLuciferkillcount());
 			object.addProperty("lucifer-killcount", player.getPointsHandler().getLuciferkillcount());
 			object.addProperty("celestial-member", new Boolean(player.getCelestial()));
+			object.addProperty("supreme-member", new Boolean(player.getSupreme()));
+			object.addProperty("supreme-charges", player.getSupremeCharges());
 			object.addProperty("fallen-warrior-unlocked", new Boolean(player.getFallenWarrior()));
 			object.addProperty("mini-lucifer", new Boolean(player.getMiniLucifer()));
 			object.addProperty("dark-supreme", new Boolean(player.getDarkSupreme()));

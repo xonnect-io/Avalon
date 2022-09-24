@@ -13,7 +13,7 @@ public class SlayerBossSystem {
 	public static void commandSpawnBoss() {
 		NPC npc = new NPC(9129, new Position(3488, 4704));
 		World.register(npc);
-		World.sendMessage("Slayer Champion has Arrived! fight him now at ::slayerboss");
+		World.sendMessage("<img=832>@or2@<shad=1>Slayer Champion has Arrived! fight him now at @blu@::slayerboss");
 		slayerTasks = 0;
 	}
 	public static void spawnBoss() {
@@ -23,7 +23,7 @@ public class SlayerBossSystem {
 
 		NPC npc = new NPC(9129, new Position(3488, 4704));
 		World.register(npc);
-		World.sendMessage("Slayer Champion has Arrived! fight him now at ::slayerboss");
+		World.sendMessage("<img=832>@or2@<shad=1>Slayer Champion has Arrived! fight him now at @blu@::slayerboss");
 		slayerTasks = 0;
 	}
 	public static void callBoss() {

@@ -1369,7 +1369,13 @@ public final class CombatFactory {
                     return false;
                 }
             }
-
+            else if (npc.getId() == 13479) { // Shadow magician
+                if (!((Player) entity).isCanKillSlayerBoss()) {
+                    entity.getCombatBuilder().reset(true);
+                    player.getPacketSender().sendMessage("@red@This is not your Supreme Slayer Monster!");
+                    return false;
+                }
+            }
             else if (npc.getId() == 9116) {
                 if (player.getPointsHandler().getSPAWNKILLCount() <= 99) {
                     player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"

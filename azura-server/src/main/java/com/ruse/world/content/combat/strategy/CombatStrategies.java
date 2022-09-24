@@ -169,6 +169,7 @@ public class CombatStrategies {
 		STRATEGIES.put(2782, new Shadow());
 		//STRATEGIES.put(9017, new GolemOfSolak());
 		STRATEGIES.put(3305, new PantherOfSolak());
+		STRATEGIES.put(3242, new DefaultMagicCombatStrategy());
 		STRATEGIES.put(9020, new ArmouredBunnyCombatScript());
 		//STRATEGIES.put(9014, new SolakTheGreat());
 		//STRATEGIES.put(9017, new SolakTheGreat());

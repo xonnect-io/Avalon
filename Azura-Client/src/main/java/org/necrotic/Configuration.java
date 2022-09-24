@@ -4,7 +4,7 @@ public class Configuration {
 
 
 	public static boolean localHost = false;
-	public static int clientversion = 13;//change this to match the one in LoginDecoder
+	public static int clientversion = 14;//change this to match the one in LoginDecoder
 	public final static String SERVER_HOST() {
 		return localHost ? "127.0.0.1" : "51.81.49.184";
 	}

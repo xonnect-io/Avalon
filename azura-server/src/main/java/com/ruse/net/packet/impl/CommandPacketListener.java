@@ -128,7 +128,15 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Summer Event!");
         }*/
-
+        if (command[0].equalsIgnoreCase("supreme")) {
+            if (!player.getSupreme()) {
+                player.getPacketSender().sendMessage("You are not supreme enough to do this.");
+                return;
+            }
+            Position supremeZone = new Position(1891, 5406);
+            TeleportHandler.teleportPlayer(player, supremeZone, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Supreme Lair");
+        }
         if (command[0].equalsIgnoreCase("slayerchampion") || command[0].equalsIgnoreCase("slayerboss")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
@@ -2161,7 +2169,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage(
                     "Total gold in economy right now: \"" + gold + "\", went through " + plrLoops + " players.");
         }
-        if (command[0].equalsIgnoreCase("bank")) {
+        if (command[0].equalsIgnoreCase("bank") && player.getLocation() != Location.SUPREME_LAIR) {
             player.getBank(player.getCurrentBankTab()).open();
         }
         if (command[0].equalsIgnoreCase("findnpc")) {
@@ -2550,7 +2558,7 @@ public class CommandPacketListener implements PacketListener {
             }
             if (player.getLocation() == Location.WILDERNESS || player.getLocation() == Location.DUNGEONEERING
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS
-                    || player.getLocation() == Location.DUEL_ARENA || player.getLocation() == Location.JAIL) {
+                    || player.getLocation() == Location.DUEL_ARENA || player.getLocation() == Location.JAIL ||player.getLocation() == Location.SUPREME_LAIR) {
                 player.getPacketSender().sendMessage("You cannot open your bank here.");
                 return;
             }

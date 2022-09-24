@@ -84,7 +84,33 @@ public class Maxhits {
             if (player.getEquipment().contains(7539)) {
                 base *= 1.5;
             }
+            int charges = player.getSupremeCharges();
 
+            if (charges > 0) {
+                base *= 1.20;
+                player.decrementSupremeCharges(1);
+                if (charges == 25) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 5%");
+                } else if (charges == 50) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 10%");
+                }else if (charges == 100) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 20%");
+                }else if (charges == 200) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 40%");
+                }else if (charges == 250) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 50%");
+                }else if (charges == 300) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 60%");
+                }else if (charges == 350) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 70%");
+                }else if (charges == 400) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 80%");
+                }else if (charges == 450) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 90%");
+                }else {
+                }
+
+            }
             int MeleeDamage = Misc.getRandom(1,100);
             if (player.isMembershipUnlocked() == true && MeleeDamage > 90) {
                 base *= 2;
@@ -351,7 +377,34 @@ public class Maxhits {
             if (player.getEquipment().contains(7539)) {
                 maxHit *= 1.5;
             }
+            int charges = player.getSupremeCharges();
+            if (charges > 0) {
+                maxHit *= 1.20;
+                player.decrementSupremeCharges(1);
+                if (charges == 0) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge has ran out!");
+                } else if (charges == 25) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 5%");
+                } else if (charges == 50) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 10%");
+                }else if (charges == 100) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 20%");
+                }else if (charges == 200) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 40%");
+                }else if (charges == 250) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 50%");
+                }else if (charges == 300) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 60%");
+                }else if (charges == 350) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 70%");
+                }else if (charges == 400) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 80%");
+                }else if (charges == 450) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 90%");
+                }else {
+                }
 
+            }
             if (player.getEquipment().contains(23230) || player.getEquipment().contains(23231) ||
                     player.getEquipment().contains(23232) || player.getEquipment().contains(23233) ||
                     player.getEquipment().contains(23234) || player.getEquipment().contains(23235) ||
@@ -597,6 +650,36 @@ public class Maxhits {
             if (player.getEquipment().contains(7539)) {
                 maxHit *= 1.5;
             }
+            int charges = player.getSupremeCharges();
+
+
+            if (charges > 0) {
+                maxHit *= 1.20;
+                player.decrementSupremeCharges(1);
+                 if (charges == 25) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 5%");
+                } else if (charges == 50) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 10%");
+                }else if (charges == 100) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 20%");
+                }else if (charges == 200) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 40%");
+                }else if (charges == 250) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 50%");
+                }else if (charges == 300) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 60%");
+                }else if (charges == 350) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 70%");
+                }else if (charges == 400) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 80%");
+                }else if (charges == 450) {
+                    player.getPacketSender().sendMessage("Your weapons Supreme charge is now at @red@ 90%");
+                }else {
+                }
+
+            }
+
+
             int MagicDamage = Misc.getRandom(1, 100);
             if (player.isMembershipUnlocked() == true && MagicDamage > 90) {
                 maxHit *= 2;

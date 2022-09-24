@@ -19,6 +19,11 @@ public class SpawnNephilimBoss extends EnterAmount {
 			ticketAmount = amount;
 		}
 
+		NPC npc = new NPC(9312, new Position(2145, 3302));
+		if (World.isNephActive()) {
+			player.getPacketSender().sendMessage("@red@Nephilim warrior is already active!");
+			return;
+		}
 		if (ticketAmount <= 0) {
 			player.getPacketSender().sendMessage("You don't have any Nephilim tokens in your Inventory!");
 			return;
@@ -38,10 +43,12 @@ public class SpawnNephilimBoss extends EnterAmount {
 			return;
 
 		}  if (NephilimSpawnSystem.sacrificedCount == 250) {
+
 			String message = "The Nephilim Warrior has appeared ::Nephilim";
-			NPC npc = new NPC(9312, new Position(2145, 3302));
 			World.register(npc);
 			NephilimSpawnSystem.sacrificedCount = 0;
+			World.setNephActive(true);
+
 			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
 			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");
 

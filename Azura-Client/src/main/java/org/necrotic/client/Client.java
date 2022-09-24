@@ -19156,7 +19156,7 @@ if(response == 32){
                             spritesMap.get(364).drawSprite(spriteDrawX - 12, spriteDrawY - 30);
 
                         }
-                        if (entityDef.id == 3112) {
+                        if (entityDef.id == 3112 ||entityDef.id == 13479) {
                             spritesMap.get(1229).drawSprite(spriteDrawX - 12, spriteDrawY - 30);
 
                         }

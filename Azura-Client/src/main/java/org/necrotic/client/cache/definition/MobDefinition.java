@@ -388,6 +388,11 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = false;
 				break;
 
+			case 3242:
+				definition.drawYellowDotOnMap = false;
+				definition.scaleXZ = 250;
+				definition.scaleY = 250;
+				break;
 			case 9123:
 				definition.name = "Shadow Magician";
 				definition.actions = new String[5];
@@ -2115,9 +2120,18 @@ public final class MobDefinition {
 				break;
 				
 			case 13479:
+				definition.name = "Supreme Dark beast";
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
+				definition.rdc2 = 385238;
 				definition.combatLevel = 301;
 				break;
-				
+
+			case 1007:
+				definition.name = "Supreme wizard";
+				definition.actions = new String[]{"Talk-to", null, null, null, null, null, null};
+				break;
+
 			case 519:
 				definition.actions = new String[]{"Talk-to", null, null, null, null, null, null};
 				break;

@@ -8037,6 +8037,12 @@ public class ItemDef4 {
 				break;
 
 
+			case 23426:
+				itemDef.copyItem(14859);
+				itemDef.name = "@red@Supreme Energy";
+				itemDef.rdc2 = 388238;
+				break;
+
 
 			case 23273:
 				itemDef.copyItem(14859);

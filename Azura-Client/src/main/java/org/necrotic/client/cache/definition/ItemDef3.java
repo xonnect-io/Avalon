@@ -1583,20 +1583,29 @@ public class ItemDef3 {
 				break;
 			case 23367:
 				itemDef.copyItem(14808);
-				itemDef.name = "Magician pet Scroll";
+				itemDef.name = "Magician pet scroll";
 				itemDef.rdc2 = 67606;
 				break;
 
 			case 23386:
 				itemDef.copyItem(14808);
-				itemDef.name = "Warrior pet Scroll";
+				itemDef.name = "Warrior pet scroll";
 				itemDef.rdc2 = 77606;
 				break;
 
 			case 23409:
 				itemDef.copyItem(14808);
-				itemDef.name = "Archers pet Scroll";
+				itemDef.name = "Archers pet scroll";
 				itemDef.rdc2 = 44226;
+				break;
+			case 23427:
+				itemDef.copyItem(14808);
+				itemDef.name = "Supreme unlock scroll";
+				itemDef.rdc2 = 388238;
+				break;
+
+			case 17474:
+				itemDef.name = "Supreme essence";
 				break;
 
 			case 23095:

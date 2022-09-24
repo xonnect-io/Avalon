@@ -812,10 +812,10 @@ public class PlayerOwnedShopManager {
                 PlayerLogs.log(player.getUsername(), "Player bought " + item.getId() + " x " + removed + " from "
                         + current.username + "'s pos shop for " + cashAmount + " Upgrade tokens");
                 PlayerLogs.log(current.username, "Player sold " + item.getId() + " x " + removed + " to "
-                        + player.getUsername() + " for " + cashAmount + " Upgrade tokens in their pos shop");
+                        + current.username + " for " + cashAmount + " Upgrade tokens in their pos shop");
 
                 DiscordMessager.posLogs("***" +player.getUsername() +" ***sold ***"  + item.getDefinition().getName() + " ***x " + removed + " to ***"
-                        + player.getUsername() + "*** for ***" + Misc.insertCommasToNumber(cashAmount) + "*** Upgrade tokens in their pos");
+                        + current.username + "*** for ***" + Misc.insertCommasToNumber(cashAmount) + "*** Upgrade tokens in their pos");
                 if (current.getOwner() != null) {
                     current.getOwner().getPacketSender()
                             .sendMessage(player.getUsername() + " bought " + item.getAmount() + "x "
@@ -1137,7 +1137,7 @@ public class PlayerOwnedShopManager {
         player.getPlayerOwnedShopManager().getMyShop().setEarnings(0);
         player.sendMessage("@red@You have claimed " + formatPrice + " Upgrade tokens into your inventory.");
         PlayerLogs.log(player.getUsername(), "Played claimed " + formatPrice + " Upgrade tokens from pos");
-        DiscordMessager.posLogs("***" +player.getUsername()+ "***"  + " has just claimed "+ "***" + Misc.insertCommasToNumber(formatPrice)+ "***" + " Upgrade tokens from POS");
+        DiscordMessager.posLogs("***" +player.getUsername()+ "***"  + " has just claimed "+ "***" + formatPrice+ "***" + " Upgrade tokens from POS");
     }
 
     public PlayerOwnedShop getCurrent() {

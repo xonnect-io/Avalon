@@ -29,6 +29,7 @@ public class Hit {
 		this.combatIcon = combatIcon;
 		this.absorb = 0;
 		this.modify();
+
 	}
 
 	/**

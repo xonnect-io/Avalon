@@ -30,7 +30,7 @@ public class SlayerInstanceManager {
 		} else {
 			player.getPA()
 					.sendMessage("You need an instance token (s), these can be obtained from killing slayer npcs!");
-			player.getPA().sendMessage("You need 2,500 Upgrade tokens in your inventory to start a 2x2 Slayer instance.");
+			player.getPA().sendMessage("You need 2,500 Upgrade tokens in your inventory to start a 3x2 Slayer instance.");
 			return;
 		}
 		if (player.getRegionInstance() != null) {
@@ -53,15 +53,15 @@ public class SlayerInstanceManager {
 		player.lastInstanceNpc = npcId;
 		player.moveTo(new Position(2785, 4771 ,
 				player.getIndex() * 4));
-		for (int i = 0; i < 2; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 1 + (i * 2),
+		for (int i = 0; i < 3; i++) {
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
 					player.getPosition().getY() - 6 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
-		for (int i = 0; i < 2; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 1 + (i * 2),
+		for (int i = 0; i < 3; i++) {
+			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
 					player.getPosition().getY() - 4 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);

@@ -4,6 +4,7 @@ import com.ruse.GameSettings;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.engine.task.impl.BonusExperienceTask;
+import com.ruse.engine.task.impl.SupremeLairTask;
 import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.container.impl.Shop.ShopManager;
@@ -1462,6 +1463,17 @@ public class DialogueOptions {
                     }
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
+                case 6618: //yes
+                    for (int i = 0; i < player.getInventory().capacity(); i++) {
+                        if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
+                            player.getSupremeDissolving().handleAll(player.getInventory().get(i).getId());
+                        }
+                    }
+                    player.isSupremeTbed(true);
+                    player.getPacketSender().sendMessage("You have been teleblocked! The only exit is the portal south.");
+                    SupremeLairTask.spawnSupremeWizards();
+                    player.getPacketSender().sendInterfaceRemoval();
+                    break;
                 case 666:
                     VaultOfWar.forgeGloves(player);
                     break;
@@ -1843,6 +1855,10 @@ public class DialogueOptions {
 
         } else if (id == SECOND_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+                case 6668:
+                case 6618:
+                player.getPacketSender().sendInterfaceRemoval();
+                break;
                 case 12112:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;

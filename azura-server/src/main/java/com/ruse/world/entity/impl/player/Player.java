@@ -58,6 +58,7 @@ import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dissolving.MainDissolving;
 import com.ruse.world.content.dissolving.NephilimDisassemble;
 import com.ruse.world.content.dissolving.OwnerDisassemble;
+import com.ruse.world.content.dissolving.SupremeDissolving;
 import com.ruse.world.content.eventboss.EventBossManager;
 import com.ruse.world.content.gamblinginterface.GamblingInterface;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
@@ -152,7 +153,7 @@ public class Player extends Character {
             PYRAMID_OUTBREAK_LOG_CLAIMED
             ;
     private final CollectionLog collectionLog2 = new CollectionLog(this);
-
+public boolean setSlayerBoss;
     public CollectionLog getCollectionLog2() {
         return collectionLog2;
     }
@@ -218,6 +219,14 @@ public class Player extends Character {
     public MainDissolving getMainDissolving() {
         return mainDissolving;
     }
+
+    private SupremeDissolving supremeDissolving = new SupremeDissolving(this);
+
+    public SupremeDissolving getSupremeDissolving() {
+        return supremeDissolving;
+    }
+
+
 public int howmuchdissolveamt = 0;
     private NephilimDisassemble nephilimDissolving = new NephilimDisassemble(this);
 
@@ -730,6 +739,7 @@ public int howmuchdissolveamt = 0;
     private int shadowState;
     private int effigy;
     private int dfsCharges;
+    private int supremeCharges;
     private int nephSwordCharges;
     private int nephStaffCharges;
     private int nephBowCharges;
@@ -794,6 +804,7 @@ public int howmuchdissolveamt = 0;
     private boolean newPlayer;
     private boolean openBank;
     private boolean inActive;
+    private boolean supremeTbed;
     private boolean inConstructionDungeon;
     private boolean isBuildingMode;
     private boolean voteMessageSent;
@@ -865,6 +876,23 @@ public int howmuchdissolveamt = 0;
     public boolean getFallenWarrior() {
         return hasFallenWarrior;
     }
+
+
+
+    public boolean hasSupreme;
+
+    public boolean isSupreme() {
+        return hasSupreme;
+    }
+
+    public void setSupreme(boolean hasSupreme) {
+        this.hasSupreme = hasSupreme;
+    }
+
+    public boolean getSupreme() {
+        return hasSupreme;
+    }
+
 
 
     public boolean hasCelestial;
@@ -3279,6 +3307,21 @@ End new teleport
     public void incrementDfsCharges(int amount) {
         this.dfsCharges += amount;
     }
+
+    public int getSupremeCharges() {
+        return supremeCharges;
+    }
+    public void setSupremeCharges(int amount) {
+        this.supremeCharges = amount;
+    }
+
+    public void incrementSupremeCharges(int amount) {
+        this.supremeCharges += amount;
+    }
+    public void decrementSupremeCharges(int amount) {
+        this.supremeCharges -= amount;
+    }
+
     public int getNephSwordCharges() {
         return nephSwordCharges;
     }
@@ -3332,10 +3375,14 @@ End new teleport
 
     public void setNephilimBonus(int amount) {
         this.nephilimBonus = amount;
+        if (this.nephilimBonus > 250)
+            this.nephilimBonus = 250;
     }
 
     public void incrementNephilimBonus(int amount) {
         this.nephilimBonus += amount;
+        if (this.nephilimBonus > 250)
+            this.nephilimBonus = 250;
     }
 
     public void setNewPlayer(boolean newPlayer) {
@@ -3410,6 +3457,15 @@ End new teleport
 
     public boolean isInActive() {
         return inActive;
+    }
+
+
+    public void setSupremeTbed(boolean supremeTbed) {
+        this.supremeTbed = supremeTbed;
+    }
+
+    public boolean isSupremeTbed(boolean supremeTbed) {
+        return supremeTbed;
     }
 
     public int getMinutesVotingDR() {
@@ -4344,6 +4400,10 @@ End new teleport
 
     @Getter
     @Setter
+    private boolean canKillSlayerBoss = false;
+
+    @Getter
+    @Setter
     private int attemptDissolve;
 
     @Getter
@@ -4395,4 +4455,6 @@ End new teleport
     public AchievementTracker getAchievementTracker() {
         return this.achievementTracker;
     }
+
+
 }

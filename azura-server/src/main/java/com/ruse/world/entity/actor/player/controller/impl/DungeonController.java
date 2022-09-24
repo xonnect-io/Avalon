@@ -2,10 +2,7 @@ package com.ruse.world.entity.actor.player.controller.impl;
 
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
-import com.ruse.model.Animation;
-import com.ruse.model.GroundItem;
-import com.ruse.model.Hit;
-import com.ruse.model.Position;
+import com.ruse.model.*;
 import com.ruse.world.content.combat.CombatContainer;
 import com.ruse.world.content.combat.CombatType;
 import com.ruse.world.content.combat.prayer.CurseHandler;
@@ -122,6 +119,10 @@ public class DungeonController extends Controller {
                     player.getPA().sendMessage("Oh dear, you are dead!");
                     CurseHandler.deactivateAll(player);
                     PrayerHandler.deactivateAll(player);
+                    if (player.getLocation() == Locations.Location.SUPREME_LAIR && player.getInventory().contains(23426)) {
+                        player.getInventory().delete(23426, player.getInventory().getAmount(23426));
+                        player.getPA().sendMessage("@red@Your Supreme Energy was lost");
+                    }
                     if (dungeon != null) {
                         for (Player p2 : dungeon.getGroup().getPlayers()) {
                             if (p2 == player)

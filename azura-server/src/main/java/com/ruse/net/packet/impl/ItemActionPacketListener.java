@@ -346,6 +346,18 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(23143, 1);
                 break;
 
+            case 23427:
+                if (!player.getSupreme()) {
+                    player.setSupreme(true);
+                    Position supremeZone = new Position(1891, 5406);
+                    TeleportHandler.teleportPlayer(player, supremeZone, player.getSpellbook().getTeleportType());
+                    player.getPacketSender().sendMessage("You have unlocked the Supreme lair, use can now use the command ::supreme");
+                    player.getPacketSender().sendMessage("Teleporting you to the Supreme lair");
+                    player.getInventory().delete(23427, 1);
+                } else
+                    player.getPacketSender().sendMessage("You already have unlocked the supreme lair, use the command ::supreme");
+                break;
+
             case 23407:
                 player.getInventory().delete(23407, 1);
                 player.getInventory().add(23396, 1);

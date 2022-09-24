@@ -89,7 +89,7 @@ public class MainDissolving {
 		CORRUPT_ARCHIE3(18748, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_ARCHIE4(18749, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_MOONLIGHT1(18623, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
-		CORRUPT_MOONLIGHT2(18620, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
+		CORRUPT_MOONLIGHT2(18629, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_MOONLIGHT3(18631, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_MOONLIGHT4(18637, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_MAXIBLOOD1(18750, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),

@@ -17,10 +17,10 @@ import com.ruse.net.packet.PacketListener;
 import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.clip.region.RegionClipping;
-import com.ruse.world.content.celestial.CelestialPortal;
 import com.ruse.world.content.*;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.CasketOpening;
+import com.ruse.world.content.celestial.CelestialPortal;
 import com.ruse.world.content.combat.magic.Autocasting;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
@@ -28,6 +28,7 @@ import com.ruse.world.content.combat.range.DwarfMultiCannon;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.impl.GuardianTokenExchange;
+import com.ruse.world.content.dissolving.SupremeDissolving;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.holidayevents.christmas2016;
 import com.ruse.world.content.holidayevents.easter2017data;
@@ -357,6 +358,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.sendMessage("You don't have the Master Key.");
                                 }
                                 break;
+
 
                             case 22973:
                                 player.setPoisonDamage(0);
@@ -1421,8 +1423,27 @@ public class ObjectActionPacketListener implements PacketListener {
                                 player.getMinigameAttributes().getGodwarsDungeonAttributes().getKillcount()[index] = 0;
                                 player.getPacketSender().sendString(16216 + index, "0");
                                 break;
-                            case 26289:
                             case 26286:
+                                int price = 0;
+                                player.howmuchdissolveamt = 0;
+
+                                for (int i = 0; i < player.getInventory().capacity(); i++) {
+                                    for(SupremeDissolving.DissolvingData data : SupremeDissolving.DissolvingData.values()) {
+                                        if(data.getId() == player.getInventory().get(i).getId()) {
+                                            if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0
+                                                    && player.getInventory().get(i).getId() != 12855) {
+                                                player.howmuchdissolveamt +=player.getSupremeDissolving().handleAllAmount(i);
+                                            }
+                                        }
+                                    }
+
+
+                                }
+
+                                player.getSupremeDissolving().amtafterdissolvingall = price;
+                                DialogueManager.start(player, new DissolveAllDialogue(player, "Sacrifce all available items for " +player.howmuchdissolveamt + " Supreme Energy", "Nevermind", 6618));
+                                break;
+                            case 26289:
                             case 26288:
                             case 26287:
                                 if (System.currentTimeMillis() - player.getMinigameAttributes()

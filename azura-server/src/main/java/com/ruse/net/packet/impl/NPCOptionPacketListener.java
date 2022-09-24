@@ -115,6 +115,15 @@ public class NPCOptionPacketListener implements PacketListener {
                         player.questInterface.openQuestOne();
                         break;
 */
+                    case 1007:
+                        player.setSupremeTbed(false);
+                        player.performGraphic(new Graphic(189));
+                        npc.performAnimation(new Animation(811));
+                        npc.performGraphic(new Graphic(433));
+                        npc.forceChat("By the Sons of Supreme!");
+                        player.moveTo(GameSettings.DEFAULT_POSITION);
+                        player.getPacketSender().sendMessage("The wizard has broke the teleblock and sends you home!");
+                        break;
                     case 927:
                         player.setEntityInteraction(npc);
                         Fishing.setupFishing(player, Fishing.forSpot(npc.getId(), true));

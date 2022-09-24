@@ -563,6 +563,20 @@ public class Locations {
 			}
 
 		},
+
+
+
+		SUPREME_LAIR(new int[]{1872, 1912}, new int[]{5395, 5435}, true, false, true, false, true, false) {
+
+			@Override
+			public void logout(Player player) {
+				player.getPacketSender().sendMessage("You can not log out while in the supreme lair.");
+
+			}
+		},
+
+
+
 		SOD_LOBBY(new int[]{3742, 3766}, new int[]{9360, 9380}, true, false, true, false, true, false) {
 			@Override
 			public void leave(Player player) {

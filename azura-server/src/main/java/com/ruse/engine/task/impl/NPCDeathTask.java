@@ -6,7 +6,9 @@ import com.ruse.engine.task.TaskManager;
 import com.ruse.engine.task.impl.globalevents.GlobalEventBossTask;
 import com.ruse.model.Animation;
 import com.ruse.model.DamageDealer;
+import com.ruse.model.Graphic;
 import com.ruse.model.Locations.Location;
+import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.motivote3.doMotivote;
 import com.ruse.util.Misc;
@@ -187,9 +189,13 @@ public class NPCDeathTask extends Task {
                             AFKBossDrops.handleDrop(npc);
                             AfkSystem.thievedCount = 0;
                         }
+                        if (npc.getId() == 9129) {
+                            GlobalBossDrops.handleDrop(npc);
+                        }
                         if (npc.getId() == 9312) {
                             NephilimBossDrop.handleDrop(npc);
                             NephilimSpawnSystem.sacrificedCount = 0;
+                            World.setNephActive(false);
                         }
                         if (npc.getId() == 8013) {
                             VoteBossDrop.handleDrop(npc);
@@ -213,6 +219,7 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == 3830) {
                             GuardianBossDrop.handleDropReward(npc);
                             GuardianSpawnSystem.highTierCount = 0;
+                            World.setGuardianActive(false);
                         }
                         if (npc.getId() == 823) { //unknown Boss room
                             UnknownBossDrop.handleDrop(npc);
@@ -440,12 +447,27 @@ public class NPCDeathTask extends Task {
 
                         /** SLAYER **/
                         killer.getSlayer().killedNpc(npc);
-
                         if (npc.getId() == killer.getSlayer().getSlayerTask().getNpcId() && Misc.getRandom(25) == 5) {
                             if (killer.dropMessageToggle)
-                            killer.getPacketSender().sendMessage("X1 @mag@<shad=2>Instance token (s) </shad>@bla@has been sent to your inventory.");
+                                killer.getPacketSender().sendMessage("X1 @mag@<shad=2>Instance token (s) </shad>@bla@has been sent to your inventory.");
                             killer.getInventory().add(23408, 1);
+                        } else
+                        if (npc.getId() == killer.getSlayer().getSlayerTask().getNpcId() && Misc.getRandom(1,1000) == 575) {
+                            NPC npc = new NPC(13479, new Position(killer.getPosition().getX() + 1, killer.getPosition().getY() + 1, killer.getPosition().getZ()));
+                           killer.setCanKillSlayerBoss(true);
+                            killer.getPacketSender().sendMessage("@red@ A Supreme Dark beast has spawned near you, kill it for rewards!");
+                           System.out.println("npc:" + npc);
+                            World.register(npc);
+                            npc.performGraphic(new Graphic(189));
                         }
+
+                        if (npc.getId() == 13749) {
+                            NPC npc = new NPC(13479, new Position(killer.getLocation().getX().length + 1, killer.getLocation().getX().length + 1, killer.getLocation().getX().length));
+                            killer.setCanKillSlayerBoss(false);
+                            World.deregister(npc);
+                        }
+
+
 
                         npc.getCombatBuilder().getDamageMap().clear();
 

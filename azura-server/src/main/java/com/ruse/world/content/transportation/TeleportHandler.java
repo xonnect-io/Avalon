@@ -5,8 +5,10 @@ import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Animation;
 import com.ruse.model.Graphic;
+import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.world.content.Kraken;
+import com.ruse.world.content.PlayerPunishment;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -15,17 +17,23 @@ import com.ruse.world.instance.MapInstance;
 
 public class TeleportHandler {
 
-	public static void teleportPlayer(final Player player, final Position targetLocation,
-			final TeleportType teleportType) {
+	public static void teleportPlayer(final Player player, final Position targetLocation, final TeleportType teleportType) {
+
+		if (player.isSupremeTbed(true) && player.getLocation() == Locations.Location.SUPREME_LAIR) {
+			player.getPacketSender().sendMessage("You are teleblocked! Exit the lair using the south portal!");
+			return;
+		}
+
 		if (teleportType != TeleportType.LEVER) {
 			if (!checkReqs(player, targetLocation)) {
 				return;
 			}
 		}
-		/*if (PlayerPunishment.Jail.isJailed(player.getUsername())) {
+
+		if (PlayerPunishment.Jail.isJailed(player.getUsername())) {
 			player.getPacketSender().sendMessage("As a jailed person. You cannot do this.");
 			return;
-		}*/
+		}
 
 		MapInstance instance = player.getMapInstance();
 		if (instance != null && !instance.canTeleport(player, targetLocation)) {

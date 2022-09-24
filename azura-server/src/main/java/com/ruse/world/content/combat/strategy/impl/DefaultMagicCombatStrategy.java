@@ -1,6 +1,5 @@
 package com.ruse.world.content.combat.strategy.impl;
 
-import com.ruse.model.container.impl.Equipment;
 import com.ruse.util.Misc;
 import com.ruse.world.content.AutoCastSpell;
 import com.ruse.world.content.combat.CombatContainer;
@@ -130,11 +129,12 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 						victim);
 				break;
 			case 3496:
-				npc.prepareSpell(Misc.randomElement(new CombatSpells[] { CombatSpells.BLOOD_BARRAGE,
+				case 3242:
+					npc.prepareSpell(Misc.randomElement(new CombatSpells[] { CombatSpells.BLOOD_BARRAGE,
 						CombatSpells.BLOOD_BURST, CombatSpells.BLOOD_BLITZ, CombatSpells.BLOOD_RUSH }).getSpell(),
 						victim);
 				break;
-			case 3491:
+				case 3491:
 				npc.prepareSpell(Misc.randomElement(new CombatSpells[] { CombatSpells.ICE_BARRAGE,
 						CombatSpells.ICE_BLITZ, CombatSpells.ICE_BURST, CombatSpells.ICE_RUSH }).getSpell(), victim);
 				break;
@@ -198,6 +198,10 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 			case 13454:
 				distance = 40;
 				break;
+
+				case 3242:
+					distance *= 2;
+					break;
 			}
 		}
 		return distance;
