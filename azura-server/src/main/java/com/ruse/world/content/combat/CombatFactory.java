@@ -2390,6 +2390,7 @@ public final class CombatFactory {
             }
                 if (CurseHandler.isActivated(p, CurseHandler.SOUL_SPLIT) || ((Player) attacker).getEquipment().contains(1486)
                         || ((Player) attacker).getEquipment().contains(23133)
+                        || ((Player) attacker).getEquipment().contains(23424)
                         || ((Player) attacker).getEquipment().contains(7995)
                         || ((Player) attacker).getEquipment().contains(22109)
                         || ((Player) attacker).getEquipment().contains(23270)
