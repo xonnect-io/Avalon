@@ -144,7 +144,8 @@ public class Consumables {
         LOBSTER(new Item(379), 120), BASS(new Item(365), 130), SWORDFISH(new Item(373), 140),
         MEAT_PIZZA(new Item(2293), 145), MONKFISH(new Item(7946), 160), SHARK(new Item(385), 200),
         SEA_TURTLE(new Item(397), 210), MANTA_RAY(new Item(391), 220), CAVEFISH(new Item(15266), 230),
-        ROCKTAIL(new Item(15272), 230),
+        ROCKTAIL(new Item(15272), 230), FURYSHARK(new Item(17817), 500),
+        CANDY(new Item(13557), 200),
         /*
          * Baked goods food types a player can make with the cooking skill.
          */

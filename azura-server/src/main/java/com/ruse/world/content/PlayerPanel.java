@@ -38,7 +38,7 @@ public class PlayerPanel {
                 "Hellraiser: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",
                 "Slayer Champion: @whi@" + SlayerBossSystem.getLeft() + " @whi@tasks left.",
                 (VoteBossDrop.currentSpawn == null
-                        ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/60 please vote!"
+                        ? "Vote Boss: @whi@" + doMotivote.getVoteCount() + "/40 please vote!"
                         : "Vote Boss:@whi@ Alive ::Vboss"),
                 (DragonKingBoss.currentBoss == null
                 ? "Dragon King: @whi@" + DragonKingBoss.timeLeft() : "Dragon King: @whi@Alive ::dk"),
