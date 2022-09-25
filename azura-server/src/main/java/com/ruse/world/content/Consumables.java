@@ -311,7 +311,7 @@ public class Consumables {
                     player.performAnimation(new Animation(829));
                     player.getInventory().getItems()[slot] = new Item(127, 1);
                     player.getInventory().refreshItems();
-                    for (int i = 0; i <= 24; i++) {
+                    for (int i = 0; i < 24; i++) {
                         if (i == 3 || i == 5)
                             continue;
                         if (player.getSkillManager().getCurrentLevel(Skill.forId(i)) < player.getSkillManager()
@@ -330,7 +330,7 @@ public class Consumables {
                     player.performAnimation(new Animation(829));
                     player.getInventory().getItems()[slot] = new Item(129, 1);
                     player.getInventory().refreshItems();
-                    for (int i = 0; i <= 24; i++) {
+                    for (int i = 0; i < 24; i++) {
                         if (i == 3 || i == 5)
                             continue;
                         if (player.getSkillManager().getCurrentLevel(Skill.forId(i)) < player.getSkillManager()
@@ -349,7 +349,7 @@ public class Consumables {
                     player.performAnimation(new Animation(829));
                     player.getInventory().getItems()[slot] = new Item(131, 1);
                     player.getInventory().refreshItems();
-                    for (int i = 0; i <= 24; i++) {
+                    for (int i = 0; i < 24; i++) {
                         if (i == 3 || i == 5)
                             continue;
                         if (player.getSkillManager().getCurrentLevel(Skill.forId(i)) < player.getSkillManager()
@@ -368,7 +368,7 @@ public class Consumables {
                     player.performAnimation(new Animation(829));
                     player.getInventory().getItems()[slot] = new Item(-1, 0);
                     player.getInventory().refreshItems();
-                    for (int i = 0; i <= 24; i++) {
+                    for (int i = 0; i < 24; i++) {
                         if (i == 3 || i == 5)
                             continue;
                         if (player.getSkillManager().getCurrentLevel(Skill.forId(i)) < player.getSkillManager()
