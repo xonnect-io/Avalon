@@ -19,18 +19,18 @@ import com.ruse.world.entity.impl.player.Player;
 public class HallsOfValor {
 
     public static Box[] loot = { //
-            new Box(12855, 2_500, 10_000, 33D),
-            new Box(5022, 1_000, 3_000, 33D),
-                new Box(23165, 1, 0.1D, true),
-            new Box(23166, 1, 0.1D, true),
-            new Box(23167, 1, 0.1D, true),
-            new Box(23168, 1, 0.1D, true),
-            new Box(23169, 1, 0.1D, true),
-            new Box(23170, 1, 0.1D, true),
+            new Box(12855, 2_500, 10_000, 50),
+            new Box(5022, 1_000, 3_000, 50),
+                new Box(23165, 1, 0.1, true),
+            new Box(23166, 1, 0.1, true),
+            new Box(23167, 1, 0.1, true),
+            new Box(23168, 1, 0.1, true),
+            new Box(23169, 1, 0.1, true),
+            new Box(23170, 1, 0.1, true),
 
-            new Box(23092, 1, 0.2D, true),
-            new Box(23093, 1, 0.2D, true),
-            new Box(23094, 1, 0.2D, true),
+            new Box(23092, 1, 0.2, true),
+            new Box(23093, 1, 0.2, true),
+            new Box(23094, 1, 0.2, true),
     };
     
     public static final Position TELEPORT_AREA = new Position(2195, 5037, 0);

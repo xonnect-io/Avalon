@@ -814,8 +814,8 @@ public class PlayerOwnedShopManager {
                 PlayerLogs.log(current.username, "Player sold " + item.getId() + " x " + removed + " to "
                         + current.username + " for " + cashAmount + " Upgrade tokens in their pos shop");
 
-                DiscordMessager.posLogs("***" +player.getUsername() +" ***sold ***"  + item.getDefinition().getName() + " ***x " + removed + " to ***"
-                        + current.username + "*** for ***" + Misc.insertCommasToNumber(cashAmount) + "*** Upgrade tokens in their pos");
+                DiscordMessager.posLogs("***" +current.username +" ***sold ***"  + item.getDefinition().getName() + " ***x " + removed + " to ***"
+                        + player.getUsername() + "*** for ***" + Misc.insertCommasToNumber(cashAmount) + "*** Upgrade tokens in their pos");
                 if (current.getOwner() != null) {
                     current.getOwner().getPacketSender()
                             .sendMessage(player.getUsername() + " bought " + item.getAmount() + "x "

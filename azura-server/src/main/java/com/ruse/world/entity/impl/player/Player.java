@@ -154,6 +154,8 @@ public class Player extends Character {
             ;
     private final CollectionLog collectionLog2 = new CollectionLog(this);
 public boolean setSlayerBoss;
+    public Object incrementMiniLuciferkillcount;
+
     public CollectionLog getCollectionLog2() {
         return collectionLog2;
     }

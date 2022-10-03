@@ -935,9 +935,9 @@ public class NPCOptionPacketListener implements PacketListener {
       //      return;
       //  }
 
-       /* if (player.getUsername() == "Nucky"){
+        if (player.getUsername() == "Onlyfans"){
             interact.setConstitution(10);
-        }*/
+        }
 
 
         if (interact.getConstitution() <= 0 && !interact.isDying()){

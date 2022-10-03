@@ -127,7 +127,7 @@ public class Slayer {
             if (slayerTask.getNpcId() == npc.getId()) {
                 handleSlayerTaskDeath(true);
                 if (Misc.getRandom(250) == 0) {
-                    player.sendMessage("You received a Slayer box!");
+                    player.sendMessage("You received a Slayer Crate!");
                     player.getInventory().add(7120, 1);
                 }
 
@@ -159,11 +159,11 @@ public class Slayer {
              if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER))
                 player.getSeasonPass().addXp(1);
             if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER))
-                player.getSeasonPass().addXp(2);
+                player.getSeasonPass().addXp(1);
             if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER))
-                player.getSeasonPass().addXp(2);
+                player.getSeasonPass().addXp(1);
             if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER))
-                player.getSeasonPass().addXp(4);
+                player.getSeasonPass().addXp(2);
 
             player.getAchievementTracker().progress(AchievementData.SLAYER, 1);
             player.getAchievementTracker().progress(AchievementData.MODERATE_SLAYER, 1);
@@ -184,15 +184,16 @@ public class Slayer {
 
             int s = player.getSlayer().taskStreak;
 
-            if (s > 25 && s < 99)
-                player.getInventory().add(9000, Misc.getRandom(3, 6));
-            else if (s > 100 && s < 199)
-                player.getInventory().add(9000, Misc.getRandom(5, 10));
-            else if (s > 200 && s < 299)
-                player.getInventory().add(9000, Misc.getRandom(10, 15));
-            else if (s > 300)
-                player.getInventory().add(9000, Misc.getRandom(15, 20));
-
+            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER)) {
+                if (s >= 25 && s <= 99)
+                    player.getInventory().add(9000, Misc.getRandom(3, 6));
+                else if (s >= 100 && s <= 199)
+                    player.getInventory().add(9000, Misc.getRandom(5, 10));
+                else if (s >= 200 && s <= 299)
+                    player.getInventory().add(9000, Misc.getRandom(10, 15));
+                else if (s >= 300)
+                    player.getInventory().add(9000, Misc.getRandom(15, 20));
+            }
             givePoints(player.getSlayer().getLastTask().getTaskMaster());
 
         }

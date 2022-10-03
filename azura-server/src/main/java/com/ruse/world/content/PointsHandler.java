@@ -1057,10 +1057,13 @@ private int pengRate;
 		this.miniLuciferkillcount = miniLuciferkillcount;
 	}
 
+	public void incrementMiniLuciferkillcount() {
+		this.miniLuciferkillcount++;
+	}
+
 	public int getLuciferkillcount() {
 		return luciferkillcount;
 	}
-
 	public void setLuciferkillcount(int luciferkillcount) {
 		this.luciferkillcount = luciferkillcount;
 	}

@@ -324,8 +324,7 @@ public class TeleportInterfaceHandler {
 		if (player.getCurrentTeleport().getNpcId() == 9012) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if ((player.isUnlockedLucifers() &&
-					player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.OWNER) {
+			if (player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 || player.getRights() == PlayerRights.OWNER) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				boolean contains = false;

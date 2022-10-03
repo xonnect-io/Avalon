@@ -700,7 +700,7 @@ public class NPCDeathTask extends Task {
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9011
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().incrementMiniLuciferKillCount(2);
-        } else if (npc.getId() == 9011) {// zeus
+        } else if (npc.getId() == 9011) {
             killer.getPointsHandler().incrementMiniLuciferKillCount(1);
         }
 

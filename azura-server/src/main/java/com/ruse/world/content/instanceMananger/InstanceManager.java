@@ -18,10 +18,7 @@ public class InstanceManager {
 	public InstanceManager(Player player) {
 		this.player = player;
 	}
-
 	public int pos = 4;
-
-	boolean smallgrid = true;
 	private static final InstanceData[] values = InstanceData.values();
 
 	public void create3X3Instance(int npcId, RegionInstanceType type) {
@@ -88,10 +85,6 @@ public class InstanceManager {
 				player.setCurrentInstanceAmount(60);
 				player.setCurrentInstanceNpcId(data.getNpcid());
 				player.setCurrentInstanceNpcName(data.getName());
-				if (data.getNpcid() == 6260) {
-					player.getPA().sendMessage(
-							"We have instanced the home area for you, to leave the instance simply teleport out.");
-				}
 			}
 		}
 		player.getPA().sendMessage("You have instanced yourself " + player.getCurrentInstanceAmount() + " "
@@ -177,7 +170,6 @@ public class InstanceManager {
 		player.getPA().sendInterfaceRemoval();
 	}
 
-
 	public void death(Player player, NPC npc, String NpcName) {
 		if (npc.getId() != player.getCurrentInstanceNpcId()) {
 			return;
@@ -187,8 +179,8 @@ public class InstanceManager {
 		}
 		player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
 		String tasks = String.valueOf(player.getCurrentInstanceAmount());
-		if (tasks.endsWith(String.valueOf(1))) {
-			player.getPA().sendMessage("You currently need to kill " + (player.getCurrentInstanceAmount() - 1) + " " + NpcName);
+		if (tasks.endsWith(String.valueOf(0)) && player.getCurrentInstanceAmount() > 0) {
+			player.getPA().sendMessage("You currently need to kill " + (player.getCurrentInstanceAmount()) + " " + NpcName);
 
 		} else 	if (player.getCurrentInstanceAmount() <= 0) {
 			player.getPA().sendMessage("You have used up the total instance count!");
@@ -196,11 +188,6 @@ public class InstanceManager {
 			return;
 		}
 	}
-
-
-
-
-
 
 	public void finish() {
 		player.getPA().sendMessage("to leave the instance simply teleport out.");

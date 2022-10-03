@@ -1537,8 +1537,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendString(interfaceId++, "@re1@" + "Every 500 npc kills - 1xp");
                 player.getPacketSender().sendString(interfaceId++, "@re1@" + "1HR Playtime - 1xp");
                 player.getPacketSender().sendString(interfaceId++, "@re1@" + "Easy Slayer task - 1xp");
-                player.getPacketSender().sendString(interfaceId++, "@re1@" + "Medium Slayer task - 2xp");
-                player.getPacketSender().sendString(interfaceId++, "@re1@" + "Hard Slayer task - 3xp");
+                player.getPacketSender().sendString(interfaceId++, "@re1@" + "Medium Slayer task - 1xp");
+                player.getPacketSender().sendString(interfaceId++, "@re1@" + "Hard Slayer task - 1xp");
+                player.getPacketSender().sendString(interfaceId++, "@re1@" + "Boss Slayer task - 2xp");
                 player.getPacketSender().sendString(interfaceId++, "@re1@" + "Complete an achievement - 2xp");
                 player.getPacketSender().sendString(interfaceId++, "@re1@" + "Complete a raid - 2xp");
                 player.getPacketSender().sendString(interfaceId++, "@re1@" + "");
@@ -1655,7 +1656,7 @@ public class ButtonClickPacketListener implements PacketListener {
                             + player.getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
                     return;
                 }
-                Position ipotane = new Position(2893, 5469, 0);
+                Position ipotane = new Position(2993, 3114, 0);
                 TeleportHandler.teleportPlayer(player, ipotane, TeleportType.NORMAL);
                 break;
 

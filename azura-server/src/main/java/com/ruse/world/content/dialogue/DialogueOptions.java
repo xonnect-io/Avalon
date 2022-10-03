@@ -1534,14 +1534,10 @@ public class DialogueOptions {
                     break;
 
                 case 2012:
-                    player.getInventory().add(15272, 50);
-                    player.getInventory().add(3024, 2);
                     ZombieRaids.start(player.getRaidsParty());
                     break;
 
                 case 7056:
-                    player.getInventory().add(15272, 50);
-                    player.getInventory().add(3024, 2);
                     SODRaids.start(player.getRaidsParty());
                     break;
 

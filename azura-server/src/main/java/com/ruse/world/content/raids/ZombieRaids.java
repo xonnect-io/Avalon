@@ -300,7 +300,12 @@ public class ZombieRaids {
                 party.sendMessage("@red@Your party has completed the League of Legends Raids!");
 
                 for (Player player : party.getPlayers()) {
-                    player.getInventory().add(18404, 1);
+                    if (player.getInventory().getFreeSlots() > 0) {
+                        player.getInventory().add(18404, 1);
+                    } else {
+                        player.getBank(0).add(18404, 1);
+                        party.sendMessage("@red@Your inventory is full, your raids rewards were banked!");
+                    }
                     player.getSeasonPass().addXp(2);
                     player.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     player.getPointsHandler().incrementZombieRaidKC(1);
@@ -315,16 +320,29 @@ public class ZombieRaids {
                         player.sendMessage("You left your Raids party.");
                     }
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
-                        player.getInventory().add(18404, 1);
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(18404, 1);
+                        } else {
+                            player.getBank(0).add(18404, 1);
+                        }
                         player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Raids Perk is active!");
                     }
                     if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,10) == 6) {
                         if (Misc.getRandom(10) > 5) {
+                            if (player.getInventory().getFreeSlots() > 0) {
                             player.getInventory().add(23411, 1);
-                            player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
-                        } else 	if (Misc.getRandom(10) < 5) {
-                            player.getInventory().add(23412, 1);
-                            player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
+                        } else {
+                                player.getBank(0).add(23411, 1);
+                                player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was rewarded from completing the raid.");
+                            }
+
+                            } else 	if (Misc.getRandom(10) < 5) {
+                            if (player.getInventory().getFreeSlots() > 0) {
+                                player.getInventory().add(23412, 1);
+                            }
+                        } else {
+                            player.getBank(0).add(23412, 1);
+                            player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was rewarded from completing the raid.");
                         }
                     }
                 }

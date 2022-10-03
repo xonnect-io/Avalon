@@ -296,7 +296,14 @@ public class SODRaids {
                     double amt = drop.getMin() + Misc.getRandom(drop.getMax() - drop.getMin());
 
                     player.sendMessage("Souls of Suffering raids completed: @red@" + player.getSODRaidsKC());
-                    player.getInventory().add(new Item(drop.getId(), (int) amt));
+
+                    if (player.getInventory().getFreeSlots() > 0) {
+                        player.getInventory().add(new Item(drop.getId(), (int) amt));
+                    } else {
+                        player.getBank(0).add(new Item(drop.getId(), (int) amt));
+                        party.sendMessage("@red@Your inventory is full, your raids rewards were banked!");
+                    }
+
                     player.sendMessage("<shad=1>@yel@You have received X" + (int) amt + " "+ ItemDefinition.forId(drop.getId()).getName() + " for your participation!" );
 
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
@@ -304,13 +311,22 @@ public class SODRaids {
                         player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Raids Perk is active!");
                     }
 
-                    if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,5) == 3) {
+                    if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,10) == 6) {
                         if (Misc.getRandom(10) > 5) {
-                            player.getInventory().add(23411, 1);
-                            player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
+                            if (player.getInventory().getFreeSlots() > 0) {
+                                player.getInventory().add(23411, 1);
+                            } else {
+                                player.getBank(0).add(23411, 1);
+                                player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was rewarded from completing the raid.");
+                            }
+
                         } else 	if (Misc.getRandom(10) < 5) {
-                            player.getInventory().add(23412, 1);
-                            player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
+                            if (player.getInventory().getFreeSlots() > 0) {
+                                player.getInventory().add(23412, 1);
+                            }
+                        } else {
+                            player.getBank(0).add(23412, 1);
+                            player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was rewarded from completing the raid.");
                         }
                     }
                 }
