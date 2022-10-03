@@ -39,20 +39,20 @@ public class GameSettings {
      */
     public static final String DomainUrl = "https://Avalon317.com/";
     public static final String ForumUrl = "https://Avalon317.com/forums";
-    public static final String UpdateUrl = "https://discord.gg/Jv4F7YEK9k";
+    public static final String UpdateUrl = "https://discord.com/invite/EWbMsxdm78";
     public static final String StoreUrl = "https://Avalon317.com/store";
     public static final String sprad = "https://www.youtube.com/channel/UCL5_jd65woKzjKfXhbBIuJQ";
     public static final String morgen = "https://www.youtube.com/channel/UCIFSpy1z7aMWZnQJlDF1Wcg";
     public static final String effigy = "https://www.youtube.com/channel/UCR-GGPuNM7V51JYWVbcDURQ";
     public static final String Stable = "https://www.youtube.com/channel/UCIFSpy1z7aMWZnQJlDF1Wcg";
     public static final String VoteUrl = "https://Avalon317.com/vote";
-    public static final String PriceList = "https://discord.gg/Jv4F7YEK9k";
+    public static final String PriceList = "https://discord.com/invite/EWbMsxdm78";
     public static final String HiscoreUrl = "https://Avalon317.com/store";
-    public static final String ReportUrl = "https://discord.gg/Jv4F7YEK9k";
-    public static final String RuleUrl = "https://discord.gg/Jv4F7YEK9k";
-    public static final String IronManModesUrl = "https://discord.gg/Jv4F7YEK9k";
-    public static final String DiscordUrl = "https://discord.gg/Jv4F7YEK9k";
-    public static final String DifficultyUrl =  "https://discord.gg/Jv4F7YEK9k";
+    public static final String ReportUrl = "https://discord.com/invite/EWbMsxdm78";
+    public static final String RuleUrl = "https://discord.com/invite/EWbMsxdm78";
+    public static final String IronManModesUrl = "https://discord.com/invite/EWbMsxdm78";
+    public static final String DiscordUrl = "https://discord.com/invite/EWbMsxdm78";
+    public static final String DifficultyUrl =  "https://discord.com/invite/EWbMsxdm78";
     public static final int BaseImplingExpMultiplier = 2;
     /**
      * Shop Buy Limit (at one time)
