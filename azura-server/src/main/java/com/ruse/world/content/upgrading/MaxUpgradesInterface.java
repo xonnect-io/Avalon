@@ -48,7 +48,7 @@ public class MaxUpgradesInterface {
 
         //ROW 5
         DARK_EXECUTION_TBOW(35,new Item(5011,-1),new Item(22113, 1),new Item(5011, 1), new Item(22112, 5), new Item(5022, 10_000_000), new Item(12855, 20_000_000)),
-        DARK_EXECUTION_VITUR(35,new Item(12535,-1),new Item(22115, 1),new Item(12535, 1), new Item(22112, 5), new Item(5022, 10_000_000), new Item(12855, 20_000_000)),
+        DARK_EXECUTION_VITUR(35,new Item(12537,-1),new Item(22115, 1),new Item(12537, 1), new Item(22112, 5), new Item(5022, 10_000_000), new Item(12855, 20_000_000)),
         DARK_STAFF_OF_EXECUTION(35,new Item(17013,-1),new Item(22114, 1),new Item(17013, 1), new Item(22112, 5), new Item(5022, 10_000_000), new Item(12855, 20_000_000)),
         BLOOD_BOW(30,new Item(22113,-1),new Item(23226, 1),new Item(22113, 1),new Item(5011, 1), new Item(23239, 1), new Item(5022, 10_000_000), new Item(12855, 35_000_000)),
         BLOOD_VITUR(30,new Item(22115,-1),new Item(8136, 1),new Item(22115, 1),new Item(12537, 1), new Item(23239, 1), new Item(5022, 10_000_000), new Item(12855, 35_000_000)),
