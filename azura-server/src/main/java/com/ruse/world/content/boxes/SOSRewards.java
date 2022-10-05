@@ -22,7 +22,7 @@ public class SOSRewards {
 
 			new Box(15288, 1,2,66,false), // x2 100k token pack
 			new Box(5022, 10_000, 100_000,66,false), // Pvm tickets
-			new Box(7956, 100,5000,66,false), // pvm box t1
+			new Box(7956, 100,5000,66,false), // PvM crate t1
 			new Box(19114, 5,50,50,false), // Ruby mystery box
 			new Box(20488, 1,5,50,false), // Ruby mystery box
 			new Box(11137, 25,75,50,false), // xp lamps

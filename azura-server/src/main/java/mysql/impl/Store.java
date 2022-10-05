@@ -197,7 +197,7 @@ public class Store implements Runnable {
                     case 23:
                         player.getInventory().add(23253, quantity);
                         break;
-                    //PVM Boxes
+                    //PvM cratees
                     case 24:
                         player.getInventory().add(7956, quantity * 20_000);
                         break;

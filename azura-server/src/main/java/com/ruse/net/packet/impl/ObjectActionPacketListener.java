@@ -201,8 +201,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 break;
                             case 25214:
                                 if (!player.isMembershipUnlocked()) {
-                                    //player.getPacketSender().sendMessage("You need to be a monthly member to enter this zone!");
-                                    player.getPacketSender().sendMessage("Check back next update!");
+                                    player.getPacketSender().sendMessage("You need to be a monthly member to enter this dungeon minigame!");
                                     return;
                                 } else
                                 if (player.isMembershipUnlocked())

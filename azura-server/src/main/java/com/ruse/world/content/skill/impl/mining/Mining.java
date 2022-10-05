@@ -30,7 +30,7 @@ public class Mining {
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 2, 6, 100),  //Orbs
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 6, 12, 60),  //Orbs
             new Box(6199, 1, 3, 0.4D),  //mystery box
-            new Box(7956, 1,3, 0.3D),  //Pvm box
+            new Box(7956, 1,3, 0.3D),  //PvM crate
             new Box(19116, 0.05D), //Super mbox
             new Box(10946, 0.01D,true), //$1 Scroll
             new Box(15002, 0.001D,true), //Elite casket
@@ -44,7 +44,7 @@ public class Mining {
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 2, 12, 100),  //Orbs
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 12, 24, 60),  //Orbs
             new Box(6199, 1, 7, 0.4D),  //mystery box
-            new Box(7956, 1,7, 0.3D),  //Pvm box
+            new Box(7956, 1,7, 0.3D),  //PvM crate
             new Box(19114, 0.05D), //Super mbox
             new Box(10946, 0.01D,true), //$1 Scroll
             new Box(6769, 0.005D,true), //$5 BBond
@@ -59,7 +59,7 @@ public class Mining {
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 2, 16, 100),  //Orbs
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 14, 32, 60),  //Orbs
             new Box(6199, 1, 7, 0.4D),  //mystery box
-            new Box(7956, 1,7, 0.3D),  //Pvm box
+            new Box(7956, 1,7, 0.3D),  //PvM crate
             new Box(19114, 0.05D), //Super mbox
             new Box(10946, 0.01D,true), //$1 Scroll
             new Box(6769, 0.005D,true), //$5 BBond
@@ -74,7 +74,7 @@ public class Mining {
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 8, 20, 100),  //Orbs
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 20, 40, 60),  //Orbs
             new Box(6199, 1, 9, 0.4D),  //mystery box
-            new Box(7956, 1,9, 0.3D),  //Pvm box
+            new Box(7956, 1,9, 0.3D),  //PvM crate
             new Box(20488, 0.05D), //Super mbox
             new Box(6769, 0.005D,true), //$5 BBond
             new Box(10942, 0.005D,true), //$5 BBond
@@ -89,7 +89,7 @@ public class Mining {
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 8, 24, 100),  //Orbs
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 20, 44, 60),  //Orbs
             new Box(6199, 1, 10, 0.4D),  //mystery box
-            new Box(7956, 1,10, 0.3D),  //Pvm box
+            new Box(7956, 1,10, 0.3D),  //PvM crate
             new Box(20488, 0.05D), //Super mbox
             new Box(6769, 0.005D,true), //$5 BBond
             new Box(10942, 0.005D,true), //$5 BBond
@@ -104,7 +104,7 @@ public class Mining {
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 8, 28, 100),  //Orbs
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 20, 48, 60),  //Orbs
             new Box(6199, 1, 10, 0.4D),  //mystery box
-            new Box(7956, 1,10, 0.3D),  //Pvm box
+            new Box(7956, 1,10, 0.3D),  //PvM crate
             new Box(20488, 0.05D), //Super mbox
             new Box(6769, 0.005D,true), //$5 BBond
             new Box(10942, 0.005D,true), //$5 BBond
@@ -120,7 +120,7 @@ public class Mining {
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 8, 30, 100),  //Orbs
             new Box(ItemDefinition.UPGRADE_TOKEN_ID, 20, 50, 60),  //Orbs
             new Box(6199, 1, 10, 0.4D),  //mystery box
-            new Box(7956, 1,10, 0.3D),  //Pvm box
+            new Box(7956, 1,10, 0.3D),  //PvM crate
             new Box(20488, 0.05D), //Super mbox
             new Box(6769, 0.005D,true), //$5 BBond
             new Box(10942, 0.005D,true), //$5 BBond

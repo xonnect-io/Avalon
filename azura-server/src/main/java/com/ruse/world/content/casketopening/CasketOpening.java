@@ -323,7 +323,7 @@ public class CasketOpening {
     public static List<Item> common = Arrays.asList(
             new Item(15288, 1,2,50,false), // x2 100k token pack
             new Item(5022, 10_000, 100_000,50,false), // Pvm tickets
-            new Item(7956, 100,5000,50,false), // pvm box t1
+            new Item(7956, 100,5000,50,false), // PvM crate t1
             new Item(19114, 5,50,50,false), // Ruby mystery box
             new Item(20488, 1,5,50,false), // Ruby mystery box
             new Item(11137, 25,75,50,false), // xp lamps

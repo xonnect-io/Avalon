@@ -734,8 +734,8 @@ public class Locations {
 			@Override
 			public void logout(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-						new InstanceManager(player).onLogout();
-						new GoldInstanceManager(player).onLogout();
+					new InstanceManager(player).onLogout();
+					new GoldInstanceManager(player).onLogout();
 					new SlayerInstanceManager(player).onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
@@ -749,6 +749,7 @@ public class Locations {
 					new SlayerInstanceManager(player).onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
+				player.getLastRunRecovery().reset();
 			}
 
 			@Override
@@ -779,17 +780,19 @@ public class Locations {
 					new InstanceManager(player).onLogout();
 					new GoldInstanceManager(player).onLogout();
 					new SlayerInstanceManager(player).onLogout();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
-				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
-				player.moveTo(GameSettings.DEFAULT_POSITION.copy());
 			}
 
 			@Override
 			public void leave(Player player) {
-				new InstanceManager(player).onLogout();
-				new GoldInstanceManager(player).onLogout();
-				new SlayerInstanceManager(player).onLogout();
-				player.getPA().sendMessage("Your instance was destroyed.");
+				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
+					new InstanceManager(player).onLogout();
+					new GoldInstanceManager(player).onLogout();
+					new SlayerInstanceManager(player).onLogout();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
+				}
+				player.getLastRunRecovery().reset();
 			}
 
 			@Override
@@ -798,8 +801,8 @@ public class Locations {
 					new InstanceManager(player).onLogout();
 					new GoldInstanceManager(player).onLogout();
 					new SlayerInstanceManager(player).onLogout();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
-				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
 				player.moveTo(GameSettings.DEFAULT_POSITION.copy());
 			}
 
@@ -809,10 +812,11 @@ public class Locations {
 					new InstanceManager(player).onLogout();
 					new GoldInstanceManager(player).onLogout();
 					new SlayerInstanceManager(player).onLogout();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
-				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
 			}
 			},
+
 		ZONES1(new int[] { 2948, 3007 }, new int[] { 9473, 9510 }, true, true, true, false, false, false) {
 		},
 		ZONES2(new int[] { 2295, 2410 }, new int[] { 3876, 3906 }, true, true, true, false, false, false) {

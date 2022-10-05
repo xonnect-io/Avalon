@@ -101,6 +101,23 @@ public class Misc {
             ret = "0" + ret;
         return ret;
     }
+    public static String getTimeTillReset() {
+        ZonedDateTime time = ZonedDateTime.now();
+        int hour = time.getHour();
+        int minute = time.getMinute();
+
+        if (minute > 0) {
+            hour = 24 - hour - 1;
+            minute = 60 - minute;
+        } else {
+            hour = 24 - hour;
+            minute = 0;
+        }
+
+        String hourPrefix = hour + "";
+        String minutePrefix = minute + "";
+        return "" + hourPrefix + "h " + minutePrefix + "m";
+    }
 
     public static String get_duration(Date date1, Date date2)
     {

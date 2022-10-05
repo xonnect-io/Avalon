@@ -33,7 +33,7 @@ public class Woodcutting {
 			new Box(ItemDefinition.UPGRADE_TOKEN_ID, 2, 4, 100),  //Orbs
 			new Box(ItemDefinition.UPGRADE_TOKEN_ID, 4, 6, 60),  //Orbs
 			new Box(6199, 1, 0.4D),  //mystery box
-			new Box(7956, 1, 0.3D),  //Pvm box
+			new Box(7956, 1, 0.3D),  //PvM crate
 			new Box(19116, 0.05D), //Super mbox
 			new Box(15003, 0.001D), //Azure casket
 	};
