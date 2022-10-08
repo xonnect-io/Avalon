@@ -30,10 +30,12 @@ public abstract class ItemContainer {
      * Player who owns the item container.
      */
     private Player player;
+
     /**
      * The items located in the container.
      */
-    private Item[] items = new Item[capacity()];
+    public Item[] items = new Item[capacity()];
+
 
     /**
      * ItemContainer constructor to create a new instance and to define the player.
@@ -183,7 +185,6 @@ public abstract class ItemContainer {
         items[slot] = item;
         return this;
     }
-
     /**
      * Checks if the slot contains an item.
      *

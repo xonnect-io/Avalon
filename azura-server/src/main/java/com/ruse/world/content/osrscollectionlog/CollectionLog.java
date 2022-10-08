@@ -52,7 +52,7 @@ public class CollectionLog {
 
 
     public static final int HANTO = 250;
-    public static final int RADITZ = 225;
+    public static final int RADITZ = 449;
     public static final int GOKU = 452;
     public static final int BOTANIC = 2342;
     public static final int ENRAGED_GUARDIAN = 2949;

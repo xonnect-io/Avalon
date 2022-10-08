@@ -7,6 +7,13 @@
     }
   },
   {
+  "npc-id": 4593,
+  "face": "SOUTH",
+  "position": { "x": 2909, "y": 4715, "z": 0 },
+  "walking-policy": {"coordinate": false,"radius": 0
+  }
+},
+  {
     "npc-id": 1007,
     "face": "NORTH",
     "position": { "x": 1889, "y": 5394, "z": 0 },

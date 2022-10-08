@@ -79,7 +79,9 @@ public class PlayerSaving {
 			object.addProperty("current-daily-task-y-pos", player.getyPostDailyTask());
 			object.addProperty("current-daily-task-z-pos", player.getzPosDailyTask());
 			object.addProperty("current-daily-task-reward", player.getRewardDailyTask());
-			
+			object.addProperty("unlocked-rammernaut", player.isUnlockedRammernaut());
+			object.addProperty("travelling-day", player.getTravelingMerchantDay());
+			object.add("travelling-merchant", builder.toJsonTree(player.getMerchantItems()));
 			object.add("uim-bank", builder.toJsonTree(player.getUimBankItems()));
 			
 			object.addProperty("dg-floor", player.getDungeoneeringFloor());
@@ -91,6 +93,7 @@ public class PlayerSaving {
 			object.addProperty("longestDaysVoted", player.getLongestDaysVoted());
 			object.addProperty("timeUntilNextReward", player.getTimeUntilNextReward());
 			object.addProperty("lastVoted", player.getLastVoted());
+			object.addProperty("last-voted", player.getLastVotedDay());
 			object.addProperty("current-voting-streak", player.getCurrentVotingStreak());
 			object.addProperty("entriesCurrency", player.getEntriesCurrency());
 			object.addProperty("amount-donated-today", player.getAmountDonatedToday());
@@ -146,7 +149,7 @@ public class PlayerSaving {
 			object.addProperty("satan-killcount", new Integer(player.getPointsHandler().getSATANKILLCount()));
 			object.addProperty("zeus-killcount", new Integer(player.getPointsHandler().getZEUSKILLCount()));
 			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
-			object.addProperty("ab-killcount", new Integer(player.getPointsHandler().getAvalonBeastBKC()));
+			object.addProperty("ab-killcount", new Integer(player.getPointsHandler().getBorkKC()));
 			object.addProperty("quest-one-dream-kc", new Integer(player.getPointsHandler().getQuestOneDreamKC()));
 			object.addProperty("zombie-raid-kc", new Integer(player.getPointsHandler().getZombieRaidKC()));
 			object.addProperty("isles-kc", new Integer(player.getPointsHandler().getIslesKC()));
@@ -214,6 +217,9 @@ public class PlayerSaving {
 			object.addProperty("double-dr-timer", new Integer(player.getDoubleDRTimer()));
 			object.addProperty("double-ddr-timer", new Integer(player.getDoubleDDRTimer()));
 			object.addProperty("double-dmg-timer", new Integer(player.getDoubleDMGTimer()));
+			object.add("days-voted", builder.toJsonTree(player.getVotingStreak().getDaysVoted()));
+			object.addProperty("daily-reward-day", player.getVotingStreak().getCurrentDay());
+			object.addProperty("daily-reward-epoch", player.getVotingStreak().getEpochDay());
 
 			object.addProperty("fire-immunity", new Integer(player.getFireImmunity()));
 			object.addProperty("fire-damage-mod", new Integer(player.getFireDamageModifier()));

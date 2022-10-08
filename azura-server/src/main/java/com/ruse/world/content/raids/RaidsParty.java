@@ -1,10 +1,9 @@
 package com.ruse.world.content.raids;
 
 
-import com.ruse.model.GameMode;
+import com.ruse.model.Locations;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
-import com.ruse.model.Locations;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -99,7 +98,7 @@ public class RaidsParty {
             return;
         }
 
-
+/*
         if (getOwner().getGameMode() == GameMode.GROUP_IRONMAN && !getOwner().getIronmanGroup().equals(p.getIronmanGroup())){
             p.getPacketSender().sendMessage("You are not a part of this players ironman group.");
             return;
@@ -108,7 +107,7 @@ public class RaidsParty {
             p.getPacketSender().sendMessage("You are not a part of this players ironman group.");
             return;
         }
-
+*/
         getOwner().getMinigameAttributes().getSODAttributes().setLastInvitation(System.currentTimeMillis());
         getOwner().getMinigameAttributes().getZombieAttributes().setLastInvitation(System.currentTimeMillis());
         DialogueManager.start(p, new RaidsPartyInvitation(getOwner(), p));

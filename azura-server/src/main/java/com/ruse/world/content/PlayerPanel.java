@@ -50,7 +50,8 @@ public class PlayerPanel {
                 ? "Ironman boss: @whi@" + IronmanBoss.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
                 "Avalon Guard: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
                 "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
-                "",
+                (PennywiseSpawn.bossAlive == false
+                        ? "Spirit of Scorpius: @whi@" + PennywiseSpawn.getTimeLeft() : "Spirit of Scorpius: @whi@Alive ::hween"),
         };
 
         for (int i = 0; i < Messages.length; i++) {
@@ -125,6 +126,7 @@ public class PlayerPanel {
         player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Item Stats");
         player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Drop Rate Items");
         player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Season Pass");
+        player.getPacketSender().sendString(interfaceID++, "@whi@View @yel@Voting Streak");
         player.getPacketSender().sendString(interfaceID++, "@yel@Change @yel@Password");
         player.getPacketSender().sendString(interfaceID++, "@yel@Edit @yel@Pin");
 

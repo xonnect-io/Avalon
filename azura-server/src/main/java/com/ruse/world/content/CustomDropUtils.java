@@ -578,6 +578,18 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23318)) { //Midnight helmet (u)
             percentBoost += 30;
         }
+        if (player.getEquipment().contains(23440)) {//Purple Pennywise mask
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23441)) {//Black Pennywise mask
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23442)) {//Orange Pennywise mask
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23439)) {//Pennywise mask
+            percentBoost += 25;
+        }
         if (player.getEquipment().contains(23303)) { //Mystic helmet
             percentBoost += 25;
         }
@@ -795,6 +807,18 @@ public class CustomDropUtils {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 percentBoost += 70;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.VINDICTA_PET.npcId) {
+                percentBoost += 50;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SPIRIT_OF_SCORPIUS.npcId) {
+                percentBoost += 70;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {
+                percentBoost += 80;
             }
         }
 

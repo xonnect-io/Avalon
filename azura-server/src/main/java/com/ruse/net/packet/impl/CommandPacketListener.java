@@ -118,7 +118,7 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");
         }
-     /*   if (command[0].equalsIgnoreCase("summer")) {
+        if (command[0].equalsIgnoreCase("hween")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -126,8 +126,8 @@ public class CommandPacketListener implements PacketListener {
             }
             Position pos = new Position(2910, 4699);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Summer Event!");
-        }*/
+            player.getPacketSender().sendMessage("Teleporting you to the Halloween Event!");
+        }
         if (command[0].equalsIgnoreCase("supreme")) {
             if (!player.getSupreme()) {
                 player.getPacketSender().sendMessage("You are not supreme enough to do this.");
@@ -156,6 +156,18 @@ public class CommandPacketListener implements PacketListener {
             Position position = new Position(3445, 4105, 1);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
 
+        }
+        if (command[0].equalsIgnoreCase("fakevote")) {
+            Calendar cal = Calendar.getInstance();
+            int day = cal.get(Calendar.DAY_OF_YEAR);
+
+            player.setLastVotedDay(day);
+            player.getVotingStreak().vote();
+        }
+
+        if (command[0].equalsIgnoreCase("setd")) {
+            VotingStreak.setDayInYear(VotingStreak.getDayInYear() + 1);
+            player.getVotingStreak().openInterface();
         }
 
         if (command[0].equalsIgnoreCase("donodeals")) {
@@ -604,6 +616,11 @@ public class CommandPacketListener implements PacketListener {
             return;
         }
 
+        if (command[0].equalsIgnoreCase("membermessage") || command[0].equalsIgnoreCase("membermessages")) {
+            player.membershipMessages = !player.membershipMessages;
+            player.sendMessage("Show Membership messages currently set to: " + player.membershipMessages);
+            return;
+        }
         if (command[0].equalsIgnoreCase("donationdeals") || command[0].equalsIgnoreCase("deals")) {
             player.sendMessage(
                     "<shad=1>@yel@Active donation deals are in our ::Discord - #Donation-deals");
@@ -660,8 +677,18 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("<shad=1>@cya@Magic Maxhit: " + (Maxhits.magic(player, player) / 10));
         }
 
-        if (command[0].equalsIgnoreCase("voted")) {
+        if (command[0].startsWith("reward") || command[0].startsWith("voted") || command[0].startsWith("claimvote")) {
+
+
+            if (!player.getLastVoteClaim().elapsed(250)) {
+                player.getPacketSender()
+                        .sendMessage("You must wait at least 1 second before using " + command[0] + " again.");
+                return;
+            }
+            player.getPacketSender().sendMessage("Checking for votes...");
             new Thread(new FoxVote(player)).start();
+
+
         }
         if (command[0].equalsIgnoreCase("rest")) {
             Afking.afk(player);
@@ -1767,6 +1794,34 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("finishraid")) {
             ZombieRaids.finishRaid(player.getRaidsParty());
+        }
+        if (command[0].equals("trav")) {
+            TravellingMerchant.dayInYear += 1;
+            TravellingMerchant.resetItems();
+        }
+        if (command[0].equalsIgnoreCase("hweenspawn")) {
+            PennywiseSpawn.spawn();
+        }
+        if (command[0].equals("trav1")) {
+            TravellingMerchant.dayInYear += 1;
+            World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
+            TravellingMerchant.resetItems();
+        }
+        if (command[0].equalsIgnoreCase("setstreak")) {
+            int amount = Integer.parseInt(command[1]) - 1;
+            String name = wholeCommand.substring(command[0].length() + command[1].length() + 2);
+            Player target = World.getPlayerByName(name);
+
+            if (target == null) {
+                player.getPacketSender().sendMessage("Player is not online");
+            } else {
+                target.getVotingStreak().setCurrentDay(amount);
+                target.getVotingStreak().setDaysVoted(new boolean[30]);
+                for (int i = 0; i < amount; i++)
+                    target.getVotingStreak().getDaysVoted()[i] = true;
+
+                player.getPacketSender().sendMessage("Gave " + name + " " + (amount + 1) + " voting streak.");
+            }
         }
         if (command[0].equals("dumpspawns")) {
             for (NPC npc : World.getNpcs()) {

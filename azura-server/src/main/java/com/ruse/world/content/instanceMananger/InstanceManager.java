@@ -2,6 +2,7 @@ package com.ruse.world.content.instanceMananger;
 
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
+import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.model.RegionInstance;
 import com.ruse.model.RegionInstance.RegionInstanceType;
@@ -104,6 +105,10 @@ public class InstanceManager {
 			player.getPA().sendMessage("You need 1,500 Upgrade tokens in your inventory to start a 4x4 instance.");
 			return;
 		}
+
+		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE1, player.getIndex() * pos));
+		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE2, player.getIndex() * pos));
+
 		if (player.getRegionInstance() != null) {
 			for (NPC n : player.getRegionInstance().getNpcsList()) {
 				if (n != null) {
@@ -190,7 +195,9 @@ public class InstanceManager {
 	}
 
 	public void finish() {
+		player.getPA().sendMessage("You have used up all your kills inside the instance.");
 		player.getPA().sendMessage("to leave the instance simply teleport out.");
+		player.getLastRunRecovery().reset();
 		if (player != null) {
 			onLogout();
 		}

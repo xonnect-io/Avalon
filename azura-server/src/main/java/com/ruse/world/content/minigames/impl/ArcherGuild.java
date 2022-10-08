@@ -9,7 +9,7 @@ public class ArcherGuild {
 
     public void openMain() {
         player.getPacketSender().sendInterface(88130);
-        player.getPacketSender().sendString(88140,  player.getPointsHandler().getAvalonBeastBKC() >= 50000
+        player.getPacketSender().sendString(88140,  player.getPointsHandler().getBorkKC() >= 50000
                 ? "@gre@- 50,000 Bork KC"
                 : "@red@- 50,000 Bork KC");
 

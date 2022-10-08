@@ -159,6 +159,58 @@ public class CustomInterfaces extends RSInterface {
 		widget.child(36, 30939, 443, 294);//unlocks at
 	}
 
+
+	public static void dailyLoginInterface() {
+		int interID = 149000;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 60;
+		int y = 7;
+		tab.totalChildren(96);
+
+		addSpriteLoader(id, 1751);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 367 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 367 + x, 3 + y);
+		id++;
+
+		addText(id, "Vote Streak Rewards", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 194 + x, 3 + y);
+
+		addText(id, "Time till reset: 23h 35m", tda, 0, 0xFFffff, true, true);
+		tab.child(c++, id++, 325 + x, 24 + y);
+
+
+		addText(id, "Vote everyday to get rewards", tda, 1, 0xFF981F, false, true);
+		tab.child(c++, id++, 11 + x, 21 + y);
+
+		int day = 1;
+		x += 11;
+		y += 39;
+
+		for (int z = 0; z < 5; z++) {
+			for (int r = 0; r < 6; r++) {
+
+				addSpriteLoader(id, day <= 5 ? 1753 : day == 6 ? 1752 : 1759);
+				tab.child(c++, id++, 0 + x, 0 + y);
+
+				addText(id, "Day " + (day++), tda, 2, 0xFF981F, true, true);
+				tab.child(c++, id++, 29 + x, 0 + y);
+
+				dropGroup(id, 1, 1, 1, 1); //
+				tab.child(c++, id++, 14 + x, 17 + y);
+				x += 62;
+			}
+			y += 55;
+			x = 72;
+		}
+	}
+
+
 	public static void allOrNothing(TextDrawingArea[] TDA) {
 		RSInterface widget = addInterface(22087);
 		int childId = 22088;
@@ -6935,6 +6987,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addStreamBoss(tda);
 		worldMap();
 		progressionInterface();
+		dailyLoginInterface();
 		posInterface();
 		posListingInterface();
 		DissolvablesInterface.handle(tda);

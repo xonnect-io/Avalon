@@ -765,7 +765,7 @@ public class Consumables {
                     player.getInventory().getItems()[slot] = new Item(3026, 1);
                     player.getInventory().refreshItems();
                     for (int i = 0; i < 24; i++) {
-                        if (i == 3 || i == 5)
+                        if (i == 3)
                             continue;
                         if (player.getSkillManager().getCurrentLevel(Skill.forId(i)) < player.getSkillManager()
                                 .getMaxLevel(i)) {
@@ -785,7 +785,7 @@ public class Consumables {
                     player.getInventory().getItems()[slot] = new Item(3028, 1);
                     player.getInventory().refreshItems();
                     for (int i = 0; i < 24; i++) {
-                        if (i == 3 || i == 5)
+                        if (i == 3)
                             continue;
                         if (player.getSkillManager().getCurrentLevel(Skill.forId(i)) < player.getSkillManager()
                                 .getMaxLevel(i)) {
@@ -805,7 +805,7 @@ public class Consumables {
                     player.getInventory().getItems()[slot] = new Item(3030, 1);
                     player.getInventory().refreshItems();
                     for (int i = 0; i < 24; i++) {
-                        if (i == 3 || i == 5)
+                        if (i == 3)
                             continue;
                         if (player.getSkillManager().getCurrentLevel(Skill.forId(i)) < player.getSkillManager()
                                 .getMaxLevel(i)) {
@@ -825,7 +825,7 @@ public class Consumables {
                     player.getInventory().getItems()[slot] = new Item(-1, 0);
                     player.getInventory().refreshItems();
                     for (int i = 0; i < 24; i++) {
-                        if (i == 3 || i == 5)
+                        if (i == 3)
                             continue;
                         if (player.getSkillManager().getCurrentLevel(Skill.forId(i)) < player.getSkillManager()
                                 .getMaxLevel(i)) {

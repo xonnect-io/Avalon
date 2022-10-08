@@ -345,7 +345,22 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(23142, 1);
                 player.getInventory().add(23143, 1);
                 break;
-
+            case 23429:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SPRING);
+                player.getCasketOpening().openInterface();
+                break;
+            case 23322:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SUMMER);
+                player.getCasketOpening().openInterface();
+                break;
+            case 23428:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.AUTUMN);
+                player.getCasketOpening().openInterface();
+                break;
+            case 1959:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.PUMPKIN);
+                player.getCasketOpening().openInterface();
+                break;
             case 23427:
                 if (!player.getSupreme()) {
                     player.setSupreme(true);
@@ -533,6 +548,45 @@ public class ItemActionPacketListener implements PacketListener {
                 player.setDoubleDDRTimer(6000);
                 TaskManager.submit(new DoubleDDRTask(player));
                 break;
+            case 4564:
+                if (player.getDoubleDDRTimer() > 0) {
+                    player.sendMessage("You already have a double DDR scroll active.");
+                    return;
+                }
+                player.getInventory().delete(4564, 1);
+                player.setDoubleDDRTimer(1500);
+                TaskManager.submit(new DoubleDDRTask(player));
+                break;
+            case 14084:
+                if (player.getDoubleDMGTimer() > 0) {
+                    player.sendMessage("You already have a double DMG scroll active.");
+                    return;
+                }
+                player.getInventory().delete(14084, 1);
+                player.setDoubleDMGTimer(1500);
+                TaskManager.submit(new DoubleDMGTask(player));
+                break;
+
+            case 23755:
+                if (player.getInventory().contains(23755)) {
+                    if (player.isUnlockedRammernaut()){
+                        player.sendMessage("@red@You already have Crimson unlocked.");
+                        return;
+                    }
+                    player.getInventory().delete(23755, 1);
+                    player.setUnlockedRammernaut(true);
+                    World.sendMessage("@blu@<img=1463>[News]<img=1463><col=ff0000>" + player.getUsername() + " has just unlocked Crimson boss!");
+                }
+                break;
+            case 1973:
+                if (player.getDoubleDRTimer() > 0) {
+                    player.sendMessage("You already have a double DR scroll active.");
+                    return;
+                }
+                player.getInventory().delete(1973, 1);
+                    player.setDoubleDRTimer(1500);
+                TaskManager.submit(new DoubleDRTask(player));
+                break;
             case 15357:
                 if (player.getDoubleDMGTimer() > 0) {
                     player.sendMessage("You already have a double DMG scroll active.");
@@ -632,8 +686,9 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.ETHEREAL_CASE);
                 player.getCasketOpening().openInterface();
                 break;
-            case 23322:
-                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SUMMER_BOX);
+
+            case 23812:
+                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.MONEY_CASE);
                 player.getCasketOpening().openInterface();
                 break;
 
@@ -950,7 +1005,7 @@ public class ItemActionPacketListener implements PacketListener {
                         4745, 4749, 4751, 4747, 290};
                 int[] uncommonpvm = new int[] {19582, 14525, 11858};
                 int[] rarepvm = new int[] {4151,11235,15486,12933,18353,15031,6585,6737,7462};
-                player.getMysteryBoxOpener().display(7956, "Pvm box", commonpvm, uncommonpvm, rarepvm);
+                player.getMysteryBoxOpener().display(7956, "PvM crate", commonpvm, uncommonpvm, rarepvm);
                 break;
 
             case 10025:
@@ -972,7 +1027,7 @@ public class ItemActionPacketListener implements PacketListener {
                         13640,15448,21934,19918,19913,13964,3107,15401
                 };
 
-                player.getMysteryBoxOpener().display(10025, "Progressive Box", commonpro, uncommonpro, rarepro);
+                player.getMysteryBoxOpener().display(10025, "Reward Crate", commonpro, uncommonpro, rarepro);
                 break;
             case 455:
                 player.getScratchCard().open();
@@ -982,17 +1037,17 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(22215, amount3).add(5022, 5_000 * amount3);
                 break;
 
-            case 22214: //Pvm box t2
+            case 22214: //PvM crate t2
                 int[] pvmcommon = new int[] {19582,14525,11858 };
                 int[] pvmuncommon = new int[] {4151,11235,15486,12933,18353,15031,6585,6737,7462 };
                 int[] pvmrare = new int[] {18686,18799,5095,13996,18834,19140,13913,18801,19139,13919,18800,19138 };
-                player.getMysteryBoxOpener().display(22214, "PVM Box (t2)", pvmcommon, pvmuncommon, pvmrare);
+                player.getMysteryBoxOpener().display(22214, "PvM crate (t2)", pvmcommon, pvmuncommon, pvmrare);
                 break;
-            case 7120:// slayer box
+            case 7120:// Slayer Crate
                 int[] commonSlayer = new int[] {671, 4411,14415,14395,14405,672,673,22075,677,678,679,19471,19470,19469,666,15424,674,22078,4369,15877,16269,15943,675,700,702,701,17708,5095,19140,19139,19138,15922,16021,15933,17600,19944};
                 int[] uncommonSlayer = new int[] {17714,17686,15924,16023,15935,15888,15818,12994,16272,8809,8806,8807,8808,12284,15005,15006,15007,15008,15100,15200,15201,20549,8800,8801,8802,17712,17638,17640,15593,16140,2021,12860,12565,20173,8803,8804,8805,8812 };
                 int[] rareSlayer = new int[] {20542,13300,13301,13304,18683,15511,13306,18817,13302,13305,15230,15231,15232,15233,15234,17662,15235,15236,21031,21032,21033,21034,21035,13640,15448,21934,19918,19913,13964,3107,15401 };
-                player.getMysteryBoxOpener().display(7120, "Slayer Box", commonSlayer, uncommonSlayer, rareSlayer);
+                player.getMysteryBoxOpener().display(7120, "Slayer Crate", commonSlayer, uncommonSlayer, rareSlayer);
                 break;
             case 18768:// Dragonball box
                 int[] commondbz = new int[] {2025,6199,18686,18799,5095,15290,7956};
@@ -1000,7 +1055,7 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] raredbz = new int[] {15289,6769,9481,9482,9483,9478,9479,9480};
                 player.getMysteryBoxOpener().display(18768, "Dragonball Box", commondbz, uncommondbz, raredbz);
                 break;
-            case 22123:// slayer box
+            case 22123:// Slayer Crate
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SLAYER_U);
                 player.getCasketOpening().openInterface();
                 break;
@@ -1533,7 +1588,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(7956, 5);
                 player.getInventory().add(989, 10);
                 player.sendMessage(
-                        "<shad=1>@blu@You swapped your @red@key@blu@ for @red@X5@blu@ PVM Box, @red@X10@blu@ Ckeys, @red@X2@blu@ Super Mbox");
+                        "<shad=1>@blu@You swapped your @red@key@blu@ for @red@X5@blu@ PvM crate, @red@X10@blu@ Ckeys, @red@X2@blu@ Super Mbox");
                 break;
             case 14471:
                 player.getInventory().delete(14471, 1);
@@ -1541,7 +1596,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(7956, 5);
                 player.getInventory().add(989, 10);
                 player.sendMessage(
-                        "<shad=1>@blu@You swapped your @red@key@blu@ for @red@X5@blu@ PVM Box, @red@X10@blu@ Ckeys, @red@X2@blu@ Super Mbox");
+                        "<shad=1>@blu@You swapped your @red@key@blu@ for @red@X5@blu@ PvM crate, @red@X10@blu@ Ckeys, @red@X2@blu@ Super Mbox");
                 break;
             case 9662:
                 player.getInventory().delete(9662, 1);
@@ -1549,7 +1604,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(7956, 5);
                 player.getInventory().add(989, 10);
                 player.sendMessage(
-                        "<shad=1>@blu@You swapped your @red@key@blu@ for @red@X5@blu@ PVM Box, @red@X10@blu@ Ckeys, @red@X2@blu@ Super Mbox");
+                        "<shad=1>@blu@You swapped your @red@key@blu@ for @red@X5@blu@ PvM crate, @red@X10@blu@ Ckeys, @red@X2@blu@ Super Mbox");
                 break;
             case 3468:
                 player.getInventory().delete(3468, 1);
@@ -1557,7 +1612,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(7956, 5);
                 player.getInventory().add(989, 10);
                 player.sendMessage(
-                        "<shad=1>@blu@You swapped your @red@key@blu@ for @red@X5@blu@ PVM Box, @red@X10@blu@ Ckeys, @red@X2@blu@ Super Mbox");
+                        "<shad=1>@blu@You swapped your @red@key@blu@ for @red@X5@blu@ PvM crate, @red@X10@blu@ Ckeys, @red@X2@blu@ Super Mbox");
                 break;
             case 2734:
                 int amountNeeded = 4;

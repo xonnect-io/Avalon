@@ -1,6 +1,5 @@
 package com.ruse.engine.task.impl;
 
-import com.ruse.GameSettings;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.engine.task.impl.globalevents.GlobalEventBossTask;
@@ -115,7 +114,7 @@ public class NPCDeathTask extends Task {
 
                     if (BOSSES.contains(npc.getId())) {
                         killer.getPointsHandler().incrementBossPoints(1);
-                        if (bosspoints.endsWith(String.valueOf(0))) {
+                        if (bosspoints.endsWith(String.valueOf(9))) {
                             killer.sendMessage("<img=99>You now have @red@" + killer.getPointsHandler().getBossPoints()
                                     + " Boss Points!");
                         }
@@ -236,6 +235,12 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == 9837) {
                             killer.getAchievementTracker().progress(AchievementData.MIDNIGHT_ACHIEVER, 1);
                         }
+
+                        if (npc.getId() == PennywiseSpawn.NPC_ID) {
+                            PennywiseSpawn.bossAlive = false;
+                            PennywiseSpawn.handleDrop(npc);
+                        }
+
                         if (npc.getId() == 9813) {
                             killer.getAchievementTracker().progress(AchievementData.BLOOD_MASTER, 1);
                         }
@@ -415,6 +420,7 @@ public class NPCDeathTask extends Task {
                             killer.getAchievementTracker().progress(AchievementData.REACH_500K_KILLS, 1);
                             killer.getAchievementTracker().progress(AchievementData.ONE_MILLION, 1);
                             HellraiserSystem.npckills++;
+                            if (killer.membershipMessages)
                             killer.getPacketSender().sendMessage("You received x2 KC from your Membership status.");
                         }
                         if (npc instanceof GlobalBoss) {
@@ -476,21 +482,12 @@ public class NPCDeathTask extends Task {
                             killer.sendMessage(" You now have: @red@" + KillsTracker.getTotalKillsForNpc(npc.getDefinition().getId(), killer) + " " + (npc.getDefinition().getName()) + " kills.");
                         }
 
+                        if (KillsTracker.getTotalKills(killer) % 500 == 0){
+                            Cases.grantCasket(killer, 3);
+                        }
+
                         if(killer.npckillsforseasonpass == 500){
                             killer.npckillsforseasonpass = 0;
-                            if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,3) == 2) {
-                                if (Misc.getRandom(10) > 5) {
-                                    killer.getInventory().add(23411, 1);
-                                    killer.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory for your total kc!");
-                                } else if (Misc.getRandom(10) < 5) {
-                                    killer.getInventory().add(23412, 1);
-                                    killer.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory for your total kc!");
-                                }
-                            }
-                                if (Misc.getRandom(5) > 4) {
-                                    killer.getInventory().add(23401, 1);
-                                    killer.getPacketSender().sendMessage("@blu@ x1 Scroll of Insurance was added to your inventory!");
-                                }
 
                             killer.getSeasonPass().addXp(1);
                             killer.sendMessage("You receive 1 Season pass XP for killing 500 NPCs!");
@@ -690,13 +687,18 @@ public class NPCDeathTask extends Task {
         } else if (npc.getId() == 1457) {//  Shadow magician
             killer.getPointsHandler().addDivineArcherKC(1);
         }
-        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 225
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9807
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-            killer.getPointsHandler().addAvalonBeastKC(2);
-        } else if (npc.getId() == 225) {// zeus
-            killer.getPointsHandler().addAvalonBeastKC(1);
+            killer.getPointsHandler().incrementFENRIRKILLCount(2);
+        } else if (npc.getId() == 9807) {// zeus
+            killer.getPointsHandler().incrementFENRIRKILLCount(1);
         }
-
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 7134
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().addBorkKC(2);
+        } else if (npc.getId() == 7134) {// zeus
+            killer.getPointsHandler().addBorkKC(1);
+        }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9011
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().incrementMiniLuciferKillCount(2);

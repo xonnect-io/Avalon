@@ -1,4 +1,4 @@
-package com.ruse.world.content.boxes;
+package com.ruse.world.content.casketopening.impl;
 
 import com.ruse.world.content.casketopening.Box;
 

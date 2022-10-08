@@ -1,9 +1,6 @@
 package com.ruse.engine.task.impl;
 
 import com.ruse.engine.task.Task;
-import com.ruse.model.*;
-import com.ruse.model.Locations.Location;
-import com.ruse.world.content.Consumables;
 import com.ruse.world.content.EffectTimer;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -31,6 +28,10 @@ public class DoubleDRTask extends Task {
 		}
 		if (timer == 24000) {
 			player.getPacketSender().sendEffectTimerSeconds(14400, EffectTimer.X2_DR_4HR);
+		}
+
+		if (timer == 1500) {
+			player.getPacketSender().sendEffectTimerSeconds(900, EffectTimer.X2_DR_15MIN);
 		}
 		player.setDoubleDRTimer(timer - 1);
 

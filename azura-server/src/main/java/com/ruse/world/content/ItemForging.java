@@ -91,6 +91,10 @@ public class ItemForging {
         MEGA2(new Item[]{new Item(18881), new Item(9080, 1), new Item(9081, 1), new Item(9082, 1)}, new Item(18887), new int[]{21, 0, 0}),
         MEGA3(new Item[]{new Item(19810), new Item(9080, 1), new Item(9081, 1), new Item(9082, 1)}, new Item(18889), new int[]{21, 0, 0}),
 
+        PENNYWISE_PURPLE(new Item[]{new Item(23439), new Item(23430, 1)}, new Item(23440), new int[]{0, 0, 0}),
+        PENNYWISE_BLACK(new Item[]{new Item(23439), new Item(23431)}, new Item(23441), new int[]{0, 0, 0}),
+        PENNYWISE_ORANGE(new Item[]{new Item(23439), new Item(23432)}, new Item(23442), new int[]{0, 0, 0}),
+
         ;
 
         private Item[] requiredItems;

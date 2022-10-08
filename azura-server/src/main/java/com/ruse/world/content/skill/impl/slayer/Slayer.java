@@ -1,6 +1,5 @@
 package com.ruse.world.content.skill.impl.slayer;
 
-import com.ruse.GameSettings;
 import com.ruse.model.Item;
 import com.ruse.model.Locations;
 import com.ruse.model.Position;
@@ -9,6 +8,7 @@ import com.ruse.model.container.impl.Shop.ShopManager;
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
+import com.ruse.world.content.Cases;
 import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.NpcRequirements;
 import com.ruse.world.content.PlayerPanel;
@@ -246,41 +246,14 @@ public class Slayer {
             pointsReceived *= 2;
         }
 
-        if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,25) == 15 && player.getSlayer().slayerMaster == SlayerMaster.EASY_SLAYER) {
-            if (Misc.getRandom(10) > 5) {
-                player.getInventory().add(23411, 1);
-                player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
-            } else 	if (Misc.getRandom(10) < 5) {
-                player.getInventory().add(23412, 1);
-                player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
-            }
-        }
-        if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,20) == 11 && player.getSlayer().slayerMaster == SlayerMaster.MEDIUM_SLAYER) {
-            if (Misc.getRandom(10) > 5) {
-                player.getInventory().add(23411, 1);
-                player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
-            } else 	if (Misc.getRandom(10) < 5) {
-                player.getInventory().add(23412, 1);
-                player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
-            }
-        }
-        if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,15) == 8 && player.getSlayer().slayerMaster == SlayerMaster.HARD_SLAYER) {
-            if (Misc.getRandom(10) > 5) {
-                player.getInventory().add(23411, 1);
-                player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
-            } else 	if (Misc.getRandom(10) < 5) {
-                player.getInventory().add(23412, 1);
-                player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
-            }
-        }
-        if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,10) == 5 && player.getSlayer().slayerMaster == SlayerMaster.BOSS_SLAYER) {
-            if (Misc.getRandom(10) > 5) {
-                player.getInventory().add(23411, 1);
-                player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory from completing a raid.");
-            } else 	if (Misc.getRandom(10) < 5) {
-                player.getInventory().add(23412, 1);
-                player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory from completing a raid.");
-            }
+        if (player.getSlayer().slayerMaster == SlayerMaster.EASY_SLAYER) {
+            Cases.grantCasket(player, 25);
+        } else if (player.getSlayer().slayerMaster == SlayerMaster.MEDIUM_SLAYER) {
+            Cases.grantCasket(player, 20);
+        } else if (player.getSlayer().slayerMaster == SlayerMaster.HARD_SLAYER) {
+            Cases.grantCasket(player, 15);
+        } else if (player.getSlayer().slayerMaster == SlayerMaster.BOSS_SLAYER) {
+            Cases.grantCasket(player, 10);
         }
 
         player.getPacketSender().sendMessage("You have completed your Slayer task");

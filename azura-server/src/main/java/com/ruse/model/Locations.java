@@ -724,6 +724,26 @@ public class Locations {
 		PENGUINZONE(new int[] { 3027, 3072 }, new int[] { 9533, 9558 }, true, true, true, false, false, false) {
 		},
 
+		HWEEN(new int[]{2880, 2943}, new int[]{4671, 4735},
+				true, true, true, false, false, true) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPosition().getZ() % 4 == 0) {
+					for (Player p : World.getPlayers()) {
+						if (p == null)
+							continue;
+						if (!player.equals(p) && player.getHostAddress().equals(p.getHostAddress())) {
+							if (p.getLocation().equals(HWEEN)) {
+								player.getPacketSender().sendMessage("You already have an account at the Halloween Event.");
+								player.moveTo(GameSettings.DEFAULT_POSITION);
+								return;
+							}
+						}
+					}
+				}
+				//   EggSpawns.loadEggs(player);
+			}
+		},
 		// 3340 3351
 		// 3364 3333
 		GALVEKMULTI(new int[] { 3340, 3364 }, new int[] { 3333, 3351 }, true, true, true, false, false, false) {

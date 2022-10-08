@@ -1,8 +1,11 @@
 package com.ruse.world.content;
 
 public enum EffectTimer {
-	
+
 	X2_DR_1HR(15355),
+	X2_DMG_15MIN(14084),
+	X2_DDR_15MIN(4564),
+	X2_DR_15MIN(1973),
 	X2_DR_4HR(4277),
 	X2_DMG_4HR(15675),
 	X2_DDR_1HR(15356),

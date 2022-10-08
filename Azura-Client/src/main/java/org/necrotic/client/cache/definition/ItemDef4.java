@@ -49,6 +49,13 @@ public class ItemDef4 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
+			case 23755:
+				itemDef.copyItem(15360);
+				itemDef.name = "Crimson Scroll";
+				itemDef.rdc2 = 88724262;
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				break;
+
 			case 23401:
 				itemDef.copyItem(14808);
 				itemDef.name = "Scroll of Insurance";
@@ -768,7 +775,30 @@ public class ItemDef4 {
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
+			case 23436:
+				itemDef.name = "Spirit of Scorpius pet";
+				itemDef.modelID = 21155;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelZoom = 2800;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
 
+			case 23437:
+				itemDef.name = "Evil Spirit of Scorpius pet";
+				itemDef.modelID = 21155;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelZoom = 2800;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.rdc3 = 1;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
 			case 23382:
 				itemDef.name = "Cthulu offspring";
 				itemDef.modelID = 19256;
@@ -1123,7 +1153,23 @@ public class ItemDef4 {
 				itemDef.actions = itemDef21.actions;
 				itemDef.rdc3 = 900;
 				break;
-				
+			case 23438:
+				itemDef.name = "<shad=1>@bla@Halloween Attachment";
+				itemDef21 = ItemDefinition.get(12159);
+				itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.rotationZ = itemDef21.rotationZ;
+				itemDef.modelOffsetY = itemDef21.modelOffsetY;
+				itemDef.modelZoom = itemDef21.modelZoom;
+				itemDef.modelID = itemDef21.modelID;
+				itemDef.rotationY = itemDef21.rotationY;
+				itemDef.rotationX = itemDef21.rotationX;
+				itemDef.actions = itemDef21.actions;
+				itemDef.rdc3 = 1454787;
+				break;
+
+			case 11235:
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
+				break;
 			case 22113:
 				itemDef.copyItem(11235);
 				itemDef.name = "Legends Dark Bow";
@@ -1796,6 +1842,7 @@ public class ItemDef4 {
 			case 15418:
 				itemDef.name = "Ice Fury";
 				itemDef.rdc2 = 407740;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 3791:
@@ -3993,7 +4040,6 @@ public class ItemDef4 {
 
 			case 3320:
 				itemDef.name = "Runner hat (i)";
-
 				itemDef21 = ItemDefinition.get(10549);
 				itemDef.modelID = itemDef21.modelID;
 				itemDef.maleEquip1 = itemDef21.maleEquip1;
@@ -4004,7 +4050,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = itemDef21.actions;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.rdc2 = 98241;
 				itemDef.stackable = false;
 
@@ -4268,22 +4314,27 @@ public class ItemDef4 {
 			case 15877:
 				itemDef.name = "Nuetron Dagger";
 				itemDef.rdc2 = 24326;// 24326
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 15921:
 				itemDef.name = "Nuetron helmet";
 				itemDef.rdc2 = 24326;// 24326
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 16269:
 				itemDef.name = "Nuetron boots";
 				itemDef.rdc2 = 24326;// 24326
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 15943:
 				itemDef.name = "Nuetron gauntlets";
 				itemDef.rdc2 = 24326;// 24326
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 15815:
 				itemDef.name = "Nuetron shield";
 				itemDef.rdc2 = 24326;// 24326
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 19924:
@@ -5767,8 +5818,11 @@ public class ItemDef4 {
 				itemDef.rotationX = itemGWD11111.rotationX;
 				itemDef.actions = itemGWD11111.actions;
 				itemDef.name = "Kree'arra crossbow";
-
 				itemDef.rdc2 = 10135;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
 			case 18798:
 				ItemDefinition itemBando = ItemDefinition.get(11696);
@@ -8036,6 +8090,10 @@ public class ItemDef4 {
 				itemDef.rdc2 = 21708;
 				break;
 
+			case 19864:
+				itemDef.name = "Halloween Token";
+				itemDef.rdc2 = 466708;
+				break;
 
 			case 23426:
 				itemDef.copyItem(14859);
@@ -8052,7 +8110,7 @@ public class ItemDef4 {
 
 			case 23268:
 				itemDef.copyItem(4407);
-				itemDef.name = "Summer Cloak";
+				itemDef.name = "Autumn Cloak";
 				itemDef.modelID = 18553;
 				itemDef.maleEquip1 = 18554;
 				itemDef.femaleEquip1 = 18554;

@@ -444,6 +444,12 @@ public class CasketOpening {
         CELESTIAL(23416, CreatorBox3.rewards),
         WALKCHAOS(23417, CreatorBox4.rewards),
         LANO(23425, CreatorBox5.rewards),
+        SPRING(23429, SpringBox.loot),
+        SUMMER(23826, SummerBox.rewards),
+        AUTUMN(23428, AutumnBox.loot),
+        PUMPKIN(1959, Pumpkin.loot),
+
+        MONEY_CASE(23812, MoneyCase.loot),
         ;
         private int itemID;
         private Box[] loot;

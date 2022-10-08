@@ -79,6 +79,7 @@ public class PointsHandler {
 	private int fenrirkillcount;
 	private int avalonBeastKC;
 
+	private int borkKC;
 	private int forestArcherKC;
 	private int chaoticArcherKC;
 	private int streamCount;
@@ -686,7 +687,21 @@ private int pengRate;
 		this.midnightgoblinkillcount += amt;
 	}
 
+	//
+	public int getBorkKC() {
+		return borkKC;
+	}
 
+	public void addBorkKC(int amt) {
+		this.borkKC += amt;
+	}
+
+	public void setBorkKC(int points, boolean add) {
+		if (add)
+			this.borkKC += points;
+		else
+			this.borkKC = points;
+	}
 	//
 	public int getAvalonBeastBKC() {
 		return avalonBeastKC;

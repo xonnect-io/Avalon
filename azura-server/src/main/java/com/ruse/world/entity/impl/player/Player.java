@@ -370,6 +370,85 @@ public int howmuchdissolveamt = 0;
         this.perkIndex = perkIndex;
     }
 
+
+    @Getter
+    @Setter
+    private long sanctumEasyTimer;
+    @Getter
+    @Setter
+    private long sanctumHardTimer;
+    @Getter
+    @Setter
+    private long animaEasyTimer;
+    @Getter
+    @Setter
+    private long animaHardTimer;
+    @Getter
+    @Setter
+    private long isleEasyTimer;
+    @Getter
+    @Setter
+    private long isleMedTimer;
+    @Getter
+    @Setter
+    private long isleHardTimer;
+
+    @Getter
+    @Setter
+    private double isleDropRate;
+
+    @Getter
+    private ArrayList<Item> godsCoffer = new ArrayList<>();
+
+
+    @Getter
+    @Setter
+    private boolean receivedSharkCostume;
+
+    @Getter
+    @Setter
+    private boolean receivedBattlegearCostume;
+
+    @Setter
+    @Getter
+    private boolean unlockedRammernaut;
+
+    @Setter
+    @Getter
+    private int travelingMerchantDay;
+    @Getter
+    private ArrayList<Item> travelingMerchantItems = new ArrayList<>();
+
+    public Item[] getMerchantItems() {
+        return merchantItems;
+    }
+
+    public void setMerchantItems(Item[] merchantItems) {
+        this.merchantItems = merchantItems;
+    }
+
+    @Setter
+    private Item[] merchantItems = new Item[250];
+
+    @Getter
+    @Setter
+    private long discordUser;
+    @Getter
+    @Setter
+    private int discordPoints;
+
+    public void increaseDiscordPoints(int amount) {
+        discordPoints += amount;
+    }
+    @Getter
+    @Setter
+    private String discordTag;
+
+    @Getter
+    @Setter
+    private Stopwatch epochDay;
+
+
     @Getter
     @Setter
     private int groupInvitationId;
@@ -390,6 +469,9 @@ public int howmuchdissolveamt = 0;
         return this;
     }
 
+
+    @Getter
+    private final Stopwatch easterDelay = new Stopwatch();
 
     @Getter
     @Setter
@@ -535,6 +617,9 @@ public int howmuchdissolveamt = 0;
     public String lastVoted;
     public int currentVotingStreak;
     public int currentVotes;
+
+    /**;
+    public int currentVotes;
     /**
      * Instance Manager variables.
      */
@@ -584,6 +669,7 @@ public int howmuchdissolveamt = 0;
     public GameModes selectedGameMode;
     public boolean dropMessageToggle = false;
     public boolean motivationalToggle = true;
+    public boolean membershipMessages = true;
     public boolean hasReferral;
     public long lastDonationClaim;
     private boolean placeholders = true;
@@ -1149,6 +1235,7 @@ public int howmuchdissolveamt = 0;
         this.minsPlayed = minsPlayed;
     }
 
+
     public String getLastVoted() {
         return lastVoted;
     }
@@ -1462,6 +1549,11 @@ public int howmuchdissolveamt = 0;
 
     @Override
     public int getAttackSpeed() {
+        int speed = weapon.getSpeed();
+        String weapon = equipment.get(Equipment.WEAPON_SLOT).getDefinition().getName();
+        if (equipment.get(Equipment.WEAPON_SLOT).getId() == 22006){
+            return 2;
+        }
         return 1;
     }
 
@@ -2240,7 +2332,9 @@ End new teleport
     End Fallen Angels
      */
 
-
+    @Getter
+    @Setter
+    private int lastVotedDay = 0;
     /*
     Start Midnight Goblins
      */
@@ -2273,6 +2367,9 @@ End new teleport
         this.teleportData = teleportData;
     }
 
+
+    @Getter
+    private VotingStreak votingStreak = new VotingStreak(this);
     /*
 End new teleport
  */

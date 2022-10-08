@@ -11,17 +11,26 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Handles a custom region instance for a player
- * 
+ *
  * @author Gabriel
  */
 public class RegionInstance {
 
 	public enum RegionInstanceType {
-		HALLS_OF_VALOR, BARROWS, THE_SIX, GRAVEYARD, RAID1, FIGHT_CAVE, WARRIORS_GUILD, NOMAD, RECIPE_FOR_DISASTER, CONSTRUCTION_HOUSE,
+		ANIMA_CHAMBERS,
+		BARROWS, THE_SIX, GRAVEYARD, RAID1, FIGHT_CAVE, WARRIORS_GUILD, NOMAD, RECIPE_FOR_DISASTER, CONSTRUCTION_HOUSE,
 		CONSTRUCTION_DUNGEON, TRIO, KRAKEN, CORPOREAL_BEAST, KRIL_TSUTSAROTH, GENERAL_GRAARDOR, COMMANDER_ZILYANA,
 		KREE_ARRA, ETERNAL, TORMENTED_DEMON, KING_BLACK_DRAGON, CHAOS_ELEMENTAL, SLASH_BASH, FLOREOX_BIRD,
 		BANDOS_AVATAR, DAG_PRIME, DAG_SUPREME, DAG_REX, CALLISTO, VETION, VENENATIS, GALVEK, REV_TARRAGON, NEX, KINGS,
-		ZULRAH, ZOMBIE, INSTANCE, DUNGEONEERING, VOID_OF_DARKNESS, SOD;
+		ZULRAH, ZOMBIE, INSTANCE,
+		SPOOKY_KRAKEN,
+		TREASURE_HUNTER,
+		HALLS_OF_VALOR, VOTING_MINIGAME,
+		DEATH_SANCTUM, VORKATH
+		,KALPHITE_KING,
+		WAVE_MINIGAME,
+		ZEMOUREGAL, DUNGEONEERING, VOID_OF_DARKNESS, SOD;
+		;
 	}
 
 	private Player owner;
@@ -41,7 +50,7 @@ public class RegionInstance {
 	public void destruct() {
 		for (NPC n : npcsList) {
 			if (n != null) { //&& n.getConstitution() > 0 && World.getNpcs().get(n.getIndex()) != null && !n.isDying()) {
-			//	// System.out.println("okkk");
+				//	// System.out.println("okkk");
 				if (type == RegionInstanceType.WARRIORS_GUILD) {
 
 					if (n.getId() >= 4278 && n.getId() <= 4284) {
@@ -54,7 +63,7 @@ public class RegionInstance {
 						Barrows.killBarrowsNpc(owner, n, false);
 					}
 
-				} else if (type == RegionInstanceType.HALLS_OF_VALOR) {
+				}else if (type == RegionInstanceType.HALLS_OF_VALOR) {
 					owner.hov.killBarrowsNpc(n, false);
 				}
 				World.deregister(n);
@@ -71,14 +80,14 @@ public class RegionInstance {
 			return;
 		player.getPA().sendMessage("You have been kicked from instance");
 		player.getRegionInstance().destruct();
-		player.setData(null);
+		//player.getInstanceManager().selectedInstance = (null);
 		player.setCurrentInstanceAmount(-1);
 		player.setCurrentInstanceNpcId(-1);
 		player.setCurrentInstanceNpcName("");
 		player.moveTo(GameSettings.HOME_CORDS);
-
+		player.setData(null);
 	}
-	
+
 	public void add(Character c) {
 		if (type == RegionInstanceType.CONSTRUCTION_HOUSE) {
 			if (c.isPlayer()) {

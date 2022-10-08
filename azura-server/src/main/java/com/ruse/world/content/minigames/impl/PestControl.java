@@ -1,6 +1,5 @@
 package com.ruse.world.content.minigames.impl;
 
-import com.ruse.GameSettings;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.*;
@@ -10,6 +9,7 @@ import com.ruse.model.movement.MovementQueue;
 import com.ruse.model.movement.PathFinder;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
+import com.ruse.world.content.Cases;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -274,15 +274,7 @@ public class PestControl {
 					p.getPointsHandler().setCommendations(4, true);
 					PlayerPanel.refreshPanel(p);
 					p.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, Misc.getRandom(50_000) + 25_000);
-					if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,5) == 3) {
-						if (Misc.getRandom(10) > 5) {
-							p.getInventory().add(23411, 1);
-							p.getPacketSender().sendMessage("@blu@ x1 Seraphic case was added to your inventory for guarding the void knight.");
-						} else 	if (Misc.getRandom(10) < 5) {
-							p.getInventory().add(23412, 1);
-							p.getPacketSender().sendMessage("@blu@ x1 Ethereal case was added to your inventory for guarding the void knight");
-						}
-					}
+					Cases.grantCasket(p, 5);
 					p.restart();
 				} else if (won)
 					p.getPacketSender().sendMessage("You didn't participate enough to receive a reward.");

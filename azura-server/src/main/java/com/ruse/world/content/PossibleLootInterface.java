@@ -6,6 +6,7 @@ import com.ruse.util.Misc;
 import com.ruse.world.content.boxes.WheelOfFortune;
 import com.ruse.world.content.boxes.*;
 import com.ruse.world.content.casketopening.Box;
+import com.ruse.world.content.casketopening.impl.*;
 import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.skill.impl.mining.Mining;
@@ -92,6 +93,7 @@ public class PossibleLootInterface {
         AFK_ONYX("Onyx AFK Rock",-1, Mining.onyx),
         AFK_ZENYTE("Zenyte AFK Rock",-1, Mining.zenyte),
         AFK_TANZANITE("Tanzanite AFK Rock",-1, Mining.tanzanite),
+        TRAVELLING_MERCHANT(-1, TravellingMerchant.FIRST_ITEMS, "Travelling Merchant"),
         ;
 
         private int itemId;

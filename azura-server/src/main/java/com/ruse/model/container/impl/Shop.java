@@ -9,6 +9,7 @@ import com.ruse.engine.task.impl.ShopRestockTask;
 import com.ruse.model.GameMode;
 import com.ruse.model.Item;
 import com.ruse.model.Locations.Location;
+import com.ruse.model.Position;
 import com.ruse.model.Skill;
 import com.ruse.model.container.ItemContainer;
 import com.ruse.model.container.StackType;
@@ -19,24 +20,20 @@ import com.ruse.util.JsonLoader;
 import com.ruse.util.Misc;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
-import com.ruse.world.content.DonatorShop;
-import com.ruse.world.content.PetShop;
-import com.ruse.world.content.PlayerLogs;
-import com.ruse.world.content.PlayerPanel;
+import com.ruse.world.content.*;
+import com.ruse.world.content.globalBosses.GuardianSpawnSystem;
 import com.ruse.world.content.minigames.impl.RecipeForDisaster;
 import com.ruse.world.content.osrscollectionlog.CollectionLog;
 import com.ruse.world.content.skill.impl.old_dungeoneering.UltimateIronmanHandler;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
+import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static com.ruse.world.content.osrscollectionlog.LogType.MINIGAMES;
@@ -49,6 +46,7 @@ import static com.ruse.world.content.osrscollectionlog.LogType.MINIGAMES;
 
 public class Shop extends ItemContainer {
 
+    public static final int TRAVELLING_MERCHANT = 3001;
     /**
      * The shop interface id.
      */
@@ -73,6 +71,7 @@ public class Shop extends ItemContainer {
      * Declared shops
      */
     private static final int EASTER_STORE_1 = 150;
+    private static final int HWEEN_STORE = 550;
     private static final int EASTER_STORE_2 = 151;
     private static final int GLOBAL_BOSS = 123;
     private static final int SAPPHIRE_STORE = 131;
@@ -179,7 +178,7 @@ public class Shop extends ItemContainer {
     }
 
     public static boolean shopBuysItem(int shopId, Item item) {
-        if (shopId == GENERAL_STORE || shopId == SELL_ITEMS)
+        if (shopId == GENERAL_STORE || shopId == SELL_ITEMS || shopId == TRAVELLING_MERCHANT)
             return true;
         if (shopId == DUNGEONEERING_STORE || shopId == DUNGEONEERING_STORE_NEW || shopId == KOL_STORE || shopId == PKING_REWARDS_STORE || shopId == BOSS_SHOP
                 || shopId == EVENT_SHOP
@@ -245,6 +244,7 @@ public class Shop extends ItemContainer {
                     && id != BOSS_SHOP && id != AFK && id != PVM && id != SHILLINGS && id != 9 && id != 10 && id != 8
                     && id != 6 && id != 1 && id != 43 && id != 79 && id != 85 // trader shop
                     && id != 31 && id != 119 // member druid
+                    && id != TRAVELLING_MERCHANT
                     && id != TRAIN_MELEE // member druid
                     && id != TRAIN_RANGED // member druid
                     && id != TRAIN_MAGIC // member druid
@@ -267,7 +267,7 @@ public class Shop extends ItemContainer {
                     && id != 33 && id != 39 && id != 11 && id != 34 && id != 14 && id != 13 && id != 18 && id != 15
                     && id != 21 && id != 44
                     && id != 22 && id != 42 && id != 35 && id != 32 && id != 23 && id != 38 && id != 91 && id != 92 && id != 0
-                    && id != 93 && id != 94 && id != 95 && id != 96 && id != 97 && id != 98 && id != 30 && id != 117 && id != EASTER_STORE_1 && id != SAPPHIRE_STORE  && id != GLOBAL_BOSS  && id != EMERALD_STORE  && id != RUBY_STORE  && id != ONYX_STORE  && id != DIAMOND_STORE   && id != ZENYTE_STORE  && id != HIGH_TIER_STORE && id != EASTER_STORE_2 && id != DUNGEONEERING_STORE_NEW) { // 22 + 23 ==
+                    && id != 93 && id != 94 && id != 95 && id != 96 && id != 97 && id != 98 && id != 30 && id != 117 && id != EASTER_STORE_1 && id != HWEEN_STORE && id != SAPPHIRE_STORE  && id != GLOBAL_BOSS  && id != EMERALD_STORE  && id != RUBY_STORE  && id != ONYX_STORE  && id != DIAMOND_STORE   && id != ZENYTE_STORE  && id != HIGH_TIER_STORE && id != EASTER_STORE_2 && id != DUNGEONEERING_STORE_NEW) { // 22 + 23 ==
                 // pikkupstix's
                 // materials,
                 // 38 =
@@ -283,7 +283,13 @@ public class Shop extends ItemContainer {
         }
         setPlayer(player);
         getPlayer().getPacketSender().sendInterfaceRemoval().sendClientRightClickRemoval();
-        getPlayer().setShop(ShopManager.getShops().get(id)).setInterfaceId(getInterfaceId()).setShopping(true);
+
+            getPlayer().setShop(ShopManager.getShops().get(id)).setInterfaceId(getInterfaceId()).setShopping(true);
+        if (id == TRAVELLING_MERCHANT) {
+            getPlayer().setShop(this);
+        } else {
+            getPlayer().setShop(ShopManager.getShops().get(id));
+        }
         refreshItems();
 
         if (Misc.getMinutesPlayed(getPlayer()) <= 190)
@@ -316,13 +322,13 @@ public class Shop extends ItemContainer {
                 currencyicon = 1;
                 player.getPacketSender().sendString(35613 + i, (finalValue) + "," + currencyicon);
             }
-            else if (shop.getId() == 119) {
+            else if (shop.getId() == 119 || shop.getId() == TRAVELLING_MERCHANT) {
                 currencyicon = 0;
                 player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
             } else if (shop.getId() == 24) {
                 currencyicon = 2;
                 player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
-            } else if (shop.getId() == 137) {
+            } else if (shop.getId() == 137 || shop.getId() == HWEEN_STORE) {
                     currencyicon = 1;
                     player.getPacketSender().sendString(35613 + i, finalValue + "," + currencyicon);
             } else if (shop.getId() == 123) {
@@ -355,15 +361,19 @@ public class Shop extends ItemContainer {
      * Refreshes a shop for every player who's viewing it
      */
     public void publicRefresh() {
-        Shop publicShop = ShopManager.getShops().get(id);
+        Shop publicShop = this;
         if (publicShop == null)
             return;
-        publicShop.setItems(getItems());
-        for (Player player : World.getPlayers()) {
-            if (player == null)
-                continue;
-            if (player.getShop() != null && player.getShop().id == id && player.isShopping())
-                player.getShop().setItems(publicShop.getItems());
+
+        if (id == TRAVELLING_MERCHANT) {
+        } else {
+            publicShop.setItems(getItems());
+            for (Player player : World.getPlayers()) {
+                if (player == null)
+                    continue;
+                if (player.getShop() != null && player.getShop().id == id && player.isShopping())
+                    player.getShop().setItems(publicShop.getItems());
+            }
         }
     }
 
@@ -401,6 +411,17 @@ public class Shop extends ItemContainer {
                 player.getPacketSender().sendMessage("You cannot sell items to this store.");
                 return;
             }
+
+            if (id == TRAVELLING_MERCHANT) {
+                return;
+            }
+
+
+
+            if (id == TRAVELLING_MERCHANT && item.getAmount() == 0) {
+                player.sendMessage("There are none of this item left in the stock.");
+                return;
+            }
         }
         Object[] exchangeItem = ShopManager.getCustomShopData(id, item.getId());
 
@@ -431,8 +452,9 @@ public class Shop extends ItemContainer {
                     || id == TRAIN_MELEE
                     || id == TRAIN_RANGED
                     || id == TRAIN_MAGIC || id == KOL_STORE
+                    || id == TRAVELLING_MERCHANT
                     || id == SAPPHIRE_STORE || id == GLOBAL_BOSS || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE || id == HIGH_TIER_STORE
-                    || id == EASTER_STORE_1 || id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW
+                    || id == EASTER_STORE_1 ||  id == HWEEN_STORE ||id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW
                     || id == ENERGY_FRAGMENT_STORE || id == AGILITY_TICKET_STORE
                     || id == PYRAMID_OUTBREAK_SHOP || id == BARROWS_STORE || id == MEMBERS_STORE_I || id == MEMBERS_STORE_II
                     || id == DONATOR_STORE_1 || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4
@@ -526,6 +548,10 @@ public class Shop extends ItemContainer {
             player.getPacketSender().sendInterfaceRemoval();
             return;
         }
+
+        if (id == TRAVELLING_MERCHANT) {
+            return;
+        }
         Object[] exchangeItem = ShopManager.getCustomShopData(id, itemToSell.getId());
 
         if (id == SELL_ITEMS && (itemToSell != null && exchangeItem == null)) {
@@ -609,6 +635,26 @@ public class Shop extends ItemContainer {
         if (itemValue <= 0) {
             itemValue = 1;
         }
+
+        if (id == HIGH_TIER_STORE) {
+            int amount = (itemValue * amountToSell);
+            if ((GuardianSpawnSystem.highTierCount + amount) >= 100) {
+                amount = 100 - GuardianSpawnSystem.highTierCount;
+            }
+            GuardianSpawnSystem.highTierCount += amount;
+            if (amount >= 10) {
+                World.sendMessage("<img=1463><col=0f9be9>[Avalon Guardian]<img=1463> <col=e77507>" + player.getUsername() + " has sacrificed " + amount + " High-Tier Tickets");
+            }
+            if (GuardianSpawnSystem.highTierCount >= 100) {
+                String message = "The Avalon Guardian has appeared ::Guardian";
+                NPC npc = new NPC(3830, new Position(3445, 4113, 1)); //NPC npc = new NPC(3830, new Position(3491, 2782));
+                World.setGuardianActive(true);
+                World.register(npc);
+                World.sendMessage(message);
+                World.sendBroadcastMessage(message);
+                GuardianSpawnSystem.highTierCount = 0;
+            }
+        }
         for (int i = amountToSell; i > 0; i--) {
             itemToSell = new Item(itemId);
             if (this.full(itemToSell.getId()) || !player.getInventory().contains(itemToSell.getId())
@@ -688,14 +734,14 @@ public class Shop extends ItemContainer {
         }
         if (!shopSellsItem(item))
             return this;
-        if (getItems()[slot].getAmount() <= 1 && id != GENERAL_STORE && id != SELL_ITEMS) {
+        if (getItems()[slot].getAmount() <= 1 && id != GENERAL_STORE && id != SELL_ITEMS && id != TRAVELLING_MERCHANT) {
             player.getPacketSender().sendMessage("The shop has run out of stock for this item.");
             return this;
         }
         if (item.getAmount() > getItems()[slot].getAmount())
             item.setAmount(getItems()[slot].getAmount());
         int amountBuying = item.getAmount();
-        if (amountBuying == getItems()[slot].getAmount() && id != GENERAL_STORE && id != SELL_ITEMS) {
+        if (amountBuying == getItems()[slot].getAmount() && id != GENERAL_STORE && id != SELL_ITEMS && id != TRAVELLING_MERCHANT) {
             amountBuying = getItems()[slot].getAmount() - 1;
             player.getPacketSender().sendMessage("You buy the maximum amount you can from the shop.");
         }
@@ -743,7 +789,7 @@ public class Shop extends ItemContainer {
                         || id == TRAIN_MELEE
                         || id == TRAIN_RANGED
                         || id == SAPPHIRE_STORE || id == GLOBAL_BOSS || id == EMERALD_STORE || id == RUBY_STORE || id == DIAMOND_STORE || id == ONYX_STORE || id == ZENYTE_STORE || id == HIGH_TIER_STORE
-                        || id == EASTER_STORE_1 || id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW || id == KOL_STORE
+                        || id == EASTER_STORE_1 ||  id == HWEEN_STORE|| id == EASTER_STORE_2 || id == DUNGEONEERING_STORE_NEW || id == KOL_STORE
                         || id == TRAIN_MAGIC
                         || id == STARDUST_EXCHANGE_STORE
                         || id == SHILLINGS || id == ENERGY_FRAGMENT_STORE || id == AGILITY_TICKET_STORE
@@ -751,7 +797,9 @@ public class Shop extends ItemContainer {
                         || id == MEMBERS_STORE_II || id == DONATOR_STORE_1 || id == DONATOR_STORE_2 || id == DONATOR_STORE_3 || id == DONATOR_STORE_4
                         || id ==  PET_STORE_1 || id ==  PET_STORE_2 || id ==  PET_STORE_3 || id == PET_STORE_4) {
                     value = (int) ShopManager.getCustomShopData(id, item.getId())[0];
-            }
+                } else if (id == TRAVELLING_MERCHANT) {
+                    value = (int) Objects.requireNonNull(ShopManager.getCustomShopData(id, item.getId()))[0];
+                }
         } else {
             Object[] obj = ShopManager.getCustomShopData(id, item.getId());
             if (obj == null)
@@ -960,7 +1008,7 @@ public class Shop extends ItemContainer {
             if (!shopSellsItem(item)) {
                 break;
             }
-            if (getItems()[slot].getAmount() <= 1 && id != GENERAL_STORE && id != SELL_ITEMS) {
+            if (getItems()[slot].getAmount() <= 1 && id != GENERAL_STORE && id != SELL_ITEMS && id != TRAVELLING_MERCHANT) {
                 player.getPacketSender().sendMessage("The shop has run out of stock for this item.");
                 break;
             }
@@ -1137,6 +1185,85 @@ public class Shop extends ItemContainer {
     public int capacity() {
         return 100;
     }
+    @Override
+    public Item[] getItems() {
+        if (id == TRAVELLING_MERCHANT && getPlayer() != null) {
+            return getPlayer().getMerchantItems();
+        }
+        return items;
+    }
+
+    @Override
+    public ItemContainer setItems(Item[] items) {
+        if (id == TRAVELLING_MERCHANT) {
+            getPlayer().setMerchantItems(items);
+            //this.items = getPlayer().getMerchantItems();
+            return this;
+        }
+        this.items = items;
+        return this;
+    }
+
+    @Override
+    public int getSlot(int id) {
+        for (int i = 0; i < capacity(); i++) {
+            if (getItems()[i].getId() > 0 && getItems()[i].getId() == id) {
+                if (getItems()[i].getAmount() > 0 || (this instanceof Shop) && getItems()[i].getAmount() == 0) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    public int getAmount(int id) {
+        int totalAmount = 0;
+        for (Item item : getItems()) {
+            if (item.getId() == id) {
+                totalAmount += item.getAmount();
+            }
+        }
+        return totalAmount;
+    }
+    @Override
+    public ItemContainer delete(Item item, int slot, boolean refresh, ItemContainer toContainer) {
+        if (item == null || slot < 0)
+            return this;
+
+        boolean leavePlaceHolder = this instanceof Shop;
+        if (item.getAmount() > getAmount(item.getId()))
+            item.setAmount(getAmount(item.getId()));
+        if (item.getDefinition().isStackable() || stackType() == StackType.STACKS) {
+            if (toContainer != null && !item.getDefinition().isStackable()
+                    && item.getAmount() > toContainer.getFreeSlots() && !(this instanceof Shop))
+                item.setAmount(toContainer.getFreeSlots());
+
+            getItems()[slot].setAmount(getItems()[slot].getAmount() - item.getAmount());
+
+            if (getItems()[slot].getAmount() < 1) {
+                getItems()[slot].setAmount(0);
+                if (!leavePlaceHolder) {
+                    getItems()[slot].setId(-1);
+                }
+            }
+        } else {
+            int amount = item.getAmount();
+            while (amount > 0) {
+                if (slot == -1 || (toContainer != null && toContainer.isFull()))
+                    break;
+                if (!leavePlaceHolder) {
+                    getItems()[slot].setId(-1);
+                }
+                getItems()[slot].setAmount(0);
+                slot = getSlot(item.getId());
+                amount--;
+            }
+        }
+        if (refresh)
+            refreshItems();
+        return this;
+    }
 
     @Override
     public StackType stackType() {
@@ -1152,6 +1279,9 @@ public class Shop extends ItemContainer {
         for (Player player : World.getPlayers()) {
             if (player == null || !player.isShopping() || player.getShop() == null || player.getShop().id != id)
                 continue;
+            if (id == TRAVELLING_MERCHANT && getPlayer() != null && !getPlayer().equals(player)) {
+                continue;
+            }
 
             int scrollAmount = 5 + ((getValidItemsArray().length / 8) * 56);
             if (getValidItemsArray().length % 8 != 0)
@@ -1163,15 +1293,49 @@ public class Shop extends ItemContainer {
             player.getPacketSender().setScrollBar(29995, scrollAmount);
 
             player.getPacketSender().sendItemContainer(player.getInventory(), INVENTORY_INTERFACE_ID);
-
-            player.getPacketSender().sendItemContainer(ShopManager.getShops().get(id), getItemChildId());
-
+            player.getPacketSender().sendItemContainer(this, ITEM_CHILD_ID);
             player.getPacketSender().sendString(NAME_INTERFACE_CHILD_ID, name);
             if (player.getInputHandling() == null || !(player.getInputHandling() instanceof EnterAmountToSellToShop
                     || player.getInputHandling() instanceof EnterAmountToBuyFromShop))
+                player.getPacketSender().sendInterfaceSet(INTERFACE_ID, INVENTORY_INTERFACE_ID - 1);
 
-                player.getPacketSender().sendInterfaceSet(getInterfaceId(), INVENTORY_INTERFACE_ID - 1);
+            String name = "";
+            int points = 0;
 
+            if (id == SLAYER_SHOP) {
+                name = "Slayer Points:";
+                points = player.getPointsHandler().getSlayerPoints();
+            } else if (id == VOTE_STORE) {
+                name = "Vote Points:";
+                points = player.getPointsHandler().getVotingPoints();
+            } else if (id == LOYALTY_POINT_SHOP) {
+                name = "Loyalty Points:";
+                points = player.getPointsHandler().getLoyaltyPoints();
+            } else if (id == DONATOR_STORE_1) {
+                name = "Donator Points:";
+                points = player.getPointsHandler().getDonatorPoints();
+            } else if (id == BOSS_SHOP) {
+                name = "Boss Points:";
+                points = player.getPointsHandler().getBossPoints();
+            } else if (id == PEST_CONTROL) {
+                name = "Pest Control Points:";
+                points = player.getPointsHandler().getCommendations();
+            }
+
+            if (id == SELL_ITEMS){
+                player.getPacketSender().sendString(3903, "Items can only be sold to this store");
+            }else if (id == TRAVELLING_MERCHANT){
+                player.getPacketSender().sendString(3903, "Store items will change in: @whi@" + Misc.getTimeTillReset());
+            }else{
+                if (id == HIGH_TIER_STORE || id == PVM) {
+                    player.getPacketSender().sendString(3903, "You can exchange items to this shop for half the price");
+                } else {
+                    if (name.equals(""))
+                        player.getPacketSender().sendString(3903, "");
+                    else
+                        player.getPacketSender().sendString(3903, name + " " + points);
+                }
+            }
         }
         return this;
     }
@@ -1223,6 +1387,9 @@ public class Shop extends ItemContainer {
     }
 
     public boolean fullyRestocked() {
+        if (id == TRAVELLING_MERCHANT) {
+        return true;
+    }
         if (id == GENERAL_STORE) {
             return getValidItems().size() == 0;
         } else if (id == RECIPE_FOR_DISASTER_STORE) {
@@ -1307,7 +1474,9 @@ public class Shop extends ItemContainer {
         }
 
         public static Object[] getCustomShopData(int shop, int item) {
-            if (shop == VOTE_STORE) {
+                if (shop == TRAVELLING_MERCHANT) {
+                    return new Object[]{TravellingMerchant.getPrice(item), "Upgrade tokens"};
+                } else if (shop == VOTE_STORE) {
                 switch (item) {
                     case 21218:
                         return new Object[] { 10, "Vote points" };
@@ -1752,6 +1921,16 @@ public class Shop extends ItemContainer {
                     case 23007:
                         return new Object[]{1000, "Easter ticket"};
                 }
+            } else if (shop == HWEEN_STORE) {
+                    switch (item) {
+                        case 4564:
+                        case 14084:
+                        case 1973:
+                            return new Object[]{250, "Halloween tokens"};
+
+                        case 23428:
+                            return new Object[]{2500, "Halloween tokens"};
+                    }
             } else if (shop == PEST_CONTROL) {
                 switch (item) {
                     case 11674:

@@ -406,11 +406,11 @@ public class ButtonClickPacketListener implements PacketListener {
 
 
             case 77142:
-                if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
+                if (player.getPointsHandler().getBorkKC() < 50000) {
                     player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your Legends Light staff.");
                     return;
                 }
-                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(17013)) {
+                if (player.getPointsHandler().getBorkKC() >= 50000 && player.getInventory().contains(17013)) {
                     player.getPA().sendMessage("You sacrifice your Legends Light staff and become a Tier 1 Magician in the Guild!");
                     World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Magician!");
                     player.setMagicGuildTier1(true);
@@ -422,11 +422,11 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPA().sendMessage("You need to sacrifice x1 Legends Light Staff");
                 break;
             case 88142:
-                if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
+                if (player.getPointsHandler().getBorkKC() < 50000) {
                     player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your Legends Light bow.");
                     return;
                 }
-                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(5011)) {
+                if (player.getPointsHandler().getBorkKC() >= 50000 && player.getInventory().contains(5011)) {
                     player.getPA().sendMessage("You sacrifice your Legends Light bow and become a Tier 1 Archer in the Guild!");
                     World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Archer!");
                     player.setArcherGuildTier1(true);
@@ -438,11 +438,11 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPA().sendMessage("You need to sacrifice x1 Legends Light bow");
                 break;
             case 71512:
-                if (player.getPointsHandler().getAvalonBeastBKC() < 50000) {
+                if (player.getPointsHandler().getBorkKC() < 50000) {
                     player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your Light Staff of Vitur.");
                     return;
                 }
-                if (player.getPointsHandler().getAvalonBeastBKC() >= 50000 && player.getInventory().contains(12537)) {
+                if (player.getPointsHandler().getBorkKC() >= 50000 && player.getInventory().contains(12537)) {
                     player.getPA().sendMessage("You sacrifice your Light Scythe of Vitur and become a Tier 1 Warrior in the Guild!");
                     World.sendMessage("<img=832> @red@" + player.getUsername() + " has just became a Tier 1 Warrior!");
                     player.setWarriorGuildTier1(true);
@@ -970,7 +970,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendInterfaceRemoval();
                 KillTrackerInterface.open(player);
                 break;
-            case 111610:
+            case 111611:
                 player.setInputHandling(new ChangePassword());
                 player.getPacketSender().sendEnterInputPrompt("Enter a new password:");
                 break;
@@ -1010,7 +1010,12 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111606:
                 PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[0]);
                 break;
-            case 111611:
+
+            case 111610:
+                player.getVotingStreak().openInterface();
+                break;
+
+            case 111612:
                 player.setInputHandling(new SetPinPacketListener());
                 player.getPacketSender().sendEnterInputPrompt("Enter the pin that you want to set$pin");
                 break;

@@ -47,6 +47,8 @@ import java.util.Objects;
 public class NPC extends Character {
 
 
+    public int totalAttacks;
+
     @Getter
     @Setter
     private Character leader;

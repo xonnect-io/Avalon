@@ -382,9 +382,13 @@ public final class CombatFactory {
 
     public static boolean npcsDeathDartDontWork(NPC npc) {
         int id = npc.getId();
-        return id == 8013 || id == 9106 || id == 9108 || id == 9129 ||  id == 13479 ||id == 9111 || id == 9109 || id == 8712 || id == 8009 || id == 3830 || id == 187 || id == 3779 || id == 12239 || id == 7553 || id == 3305 || id == 9017 || id == 4972 || id == 9020 || id == 9312 || id == 587 ;
+        return id == 8013 || id == 9106 || id == 492 ||id == 9108 ||
+                id == 9129 ||  id == 13479 ||id == 9111 || id == 9109 ||
+                id == 8712 || id == 8009 || id == 3830 || id == 187 || id == 3779 ||
+                id == 12239 || id == 7553 || id == 3305 || id == 9017 || id == 4972 ||
+                id == 9020 || id == 9312 || id == 587
 
-    }
+                ;}
 
     /**
      * A flag that determines if the entity's attack will be successful based on the
@@ -1511,6 +1515,22 @@ public final class CombatFactory {
                     ((Player) entity).getPacketSender()
                             .sendMessage("You need 15,000 Zeus kills. You currently have @red@"
                                     + ((Player) entity).getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+            else if (npc.getId() == 9807) { //
+                if  (((Player) entity).getPointsHandler().getGROUDONKILLCount() <= 24999) {
+                    player.getPacketSender().sendMessage("You need 25,000 Ipotane kills. You currently have @red@"
+                            + player.getPointsHandler().getGROUDONKILLCount() + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+            else if (npc.getId() == 7134) { //
+                if  (((Player) entity).getPointsHandler().getFENRIRKILLCount() <= 49999) {
+                    player.getPacketSender().sendMessage("You need 50,000 Vindicta kills. You currently have @red@"
+                            + player.getPointsHandler().getFENRIRKILLCount() + "@bla@ kills.");
                     entity.getCombatBuilder().reset(true);
                     return false;
                 }

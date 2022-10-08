@@ -398,6 +398,7 @@ public class PlayerHandler {
             player.sendMessage("<col=FF0000>You have unclaimed earnings in your player owned shop!");
         }
 
+        player.getVotingStreak().login();
 
         Item weapon = player.getEquipment().get(Equipment.WEAPON_SLOT);
 

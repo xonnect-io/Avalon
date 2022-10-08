@@ -130,6 +130,10 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 1208://GLOVES_NPC
                         break;
+
+                    case 9222:
+                        TravellingMerchant.openShop(player);
+                        break;
                     case 649: //ARCHER GUILD
                         if (player.getArcherMaster() == true) {
                             DialogueManager.sendStatement(player, "You Already have mastered this minigame!");
@@ -210,6 +214,11 @@ public class NPCOptionPacketListener implements PacketListener {
                         ShopManager.getShops().get(123).open(player);
                         player.getPacketSender().sendString(3903,
                                 "Spend your Global boss tokens on items");
+                        break;
+                    case 4593:
+                        ShopManager.getShops().get(550).open(player);
+                        player.getPacketSender().sendString(3903,
+                                "Trick or Treat!");
                         break;
                     case GroupConfig.NPC_ID:
                         if (player.getGameMode() == GameMode.GROUP_IRONMAN) {

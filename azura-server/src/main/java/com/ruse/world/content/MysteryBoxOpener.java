@@ -85,6 +85,7 @@ public class MysteryBoxOpener {
 		int rngRoll = Misc.getRandom(1, 100);
 		if (player.isMembershipUnlocked() && rngRoll > 90) {
 			player.getInventory().add(boxId, 1);
+			if (player.membershipMessages)
 			player.getPacketSender().sendMessage("You kept your " + ItemDefinition.forId(boxId).getName() +" with your Membership status.");
 		}
 		if (player.getInventory().contains(23401) && Misc.getRandom(1,10) == 3) {

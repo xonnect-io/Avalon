@@ -89,6 +89,7 @@ public final class GameLoader {
 		serviceLoader.execute(ConnectionHandler::init);
 		serviceLoader.execute(PlayerPunishment::init);
 
+		serviceLoader.execute(VotingStreak::loadRewards);
 		serviceLoader.execute(RegionClipping::init);
 		serviceLoader.execute(CustomObjects::init);
 		serviceLoader.execute(RegionManager::initialise);

@@ -9,7 +9,7 @@ public class WarriorGuild {
 
     public void openMain() {
         player.getPacketSender().sendInterface(71500);
-        player.getPacketSender().sendString(71510,  player.getPointsHandler().getAvalonBeastBKC() >= 50000
+        player.getPacketSender().sendString(71510,  player.getPointsHandler().getBorkKC() >= 50000
                 ? "@gre@- 50,000 Bork KC"
                 : "@red@- 50,000 Bork KC");
 

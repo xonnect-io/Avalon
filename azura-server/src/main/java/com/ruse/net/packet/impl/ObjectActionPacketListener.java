@@ -29,6 +29,7 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.impl.GuardianTokenExchange;
 import com.ruse.world.content.dissolving.SupremeDissolving;
+import com.ruse.world.content.globalBosses.PumpkinSpawns;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.holidayevents.christmas2016;
 import com.ruse.world.content.holidayevents.easter2017data;
@@ -209,7 +210,9 @@ public class ObjectActionPacketListener implements PacketListener {
                                             player.getSpellbook().getTeleportType());
                                 player.getPacketSender().sendMessage("You enter the Member's Dungeon.");
                                 break;
-
+                            case 400:
+                                PumpkinSpawns.claimEgg(player, gameObject);
+                                break;
                             case 11354:
 
                                 if (player.getQuestOneStep6() == true) {
@@ -346,10 +349,6 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 break;
                             case 41207:
-                                if (!player.getClickDelay().elapsed(1000)) {
-                                    player.sendMessage("Please wait a second before trying to open another key.");
-                                    return;
-                                }
                                 if (player.getInventory().contains(TreasureHunter.MASTER_KEY.getId())) {
                                     player.getInventory().delete(TreasureHunter.MASTER_KEY);
                                     TreasureHunter.handleRewards(player);
@@ -357,7 +356,6 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.sendMessage("You don't have the Master Key.");
                                 }
                                 break;
-
 
                             case 22973:
                                 player.setPoisonDamage(0);

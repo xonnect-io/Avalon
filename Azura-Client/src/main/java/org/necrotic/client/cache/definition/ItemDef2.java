@@ -180,7 +180,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 
@@ -195,7 +195,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17674:
@@ -209,7 +209,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17676:
@@ -223,7 +223,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17678:
@@ -237,7 +237,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17680:
@@ -251,7 +251,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17682:
@@ -265,7 +265,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17684:
@@ -279,7 +279,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -298,7 +298,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 			
 				break;
@@ -313,7 +313,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17688:
@@ -327,7 +327,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17714:
@@ -341,7 +341,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -356,7 +356,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17692:
@@ -370,7 +370,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 			case 17694:
@@ -463,7 +463,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
 				itemDef.editedModelColor[0] = 66;
@@ -481,7 +481,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = 1400;
 				itemDef.rotationY = 700;
 				itemDef.rotationX = 1;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
 				itemDef.editedModelColor[0] = 66;
@@ -499,7 +499,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = 1800;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
 				itemDef.editedModelColor[0] = 66;
@@ -517,7 +517,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = 1000;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = 120;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
 				itemDef.editedModelColor[0] = 66; // the new texture u want it to have
@@ -561,7 +561,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = 850;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = 90;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -576,7 +576,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -591,7 +591,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
 				
@@ -607,7 +607,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
@@ -626,7 +626,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
@@ -645,7 +645,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 40; // the texture that it currently has
@@ -1011,14 +1011,15 @@ public class ItemDef2 {
 				break;
 
 				
-			case 10025:	
+			case 10025:
 				itemDef.copyItem(290);
-				itemDef.name = "Progressive Reward Box";
+				itemDef.name = "Reward Crate";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{125};
-				itemDef.modelID = 65284;
+				itemDef.modelID = 19645;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 100;
 				break;
 				
 			case 10027:
@@ -1042,11 +1043,7 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
-			case 1959:
-				itemDef.name = "Halloween Token";
-				itemDef.stackable = true;
-				itemDef.actions = new String[]{null, null, null, null, "Drop"};
-				break;
+
 			case 18189:
 				itemDef.name = "Baby web spiders";
 				itemDef.stackable = true;
@@ -2011,7 +2008,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 57; // the texture that it currently has
 				itemDef.editedModelColor[0] = 126; // the new texture u want it to have
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 16021:
 				itemDef.name = "Ripper body";
@@ -2022,7 +2019,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 57; // the texture that it currently has
 				itemDef.editedModelColor[0] = 126; // the new texture u want it to have
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 15933:
 				itemDef.name = "Ripper legs";
@@ -2033,7 +2030,7 @@ public class ItemDef2 {
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 57; // the texture that it currently has
 				itemDef.editedModelColor[0] = 126; // the new texture u want it to have
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 7885:
 				itemDef.name = "Mac's blade";
@@ -3450,7 +3447,6 @@ public class ItemDef2 {
 				itemDef.femaleEquip1 = 65402;
 				itemdefyogipic = ItemDefinition.get(4900);
 				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				//	itemDef.modelOffsetX = itemDef2.modelOffsetX;
 				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
 				itemDef.modelZoom = 1700;
 				itemDef.rotationY = itemdefyogipic.rotationY;
@@ -3559,6 +3555,7 @@ public class ItemDef2 {
 				itemDef.actions = itemdefyogipic.actions;
 				itemDef.modelID = itemdefyogipic.modelID;
 				break;
+
 			case 5156:
 				itemDef.name = "Multiplier @cya@+10000";
 				itemdefyogipic = ItemDefinition.get(12845);
@@ -3571,6 +3568,7 @@ public class ItemDef2 {
 				itemDef.actions = itemdefyogipic.actions;
 				itemDef.modelID = itemdefyogipic.modelID;
 				break;
+
 			case 5500:
 				itemDef.name = "<img=15>Multiplier +1";
 				itemdefyogipic = ItemDefinition.get(12845);
@@ -3584,6 +3582,7 @@ public class ItemDef2 {
 				itemDef.modelID = itemdefyogipic.modelID;
 				itemDef.rdc2 = 292;
 				break;
+
 			case 2023:
 				itemDef.name = "Lazycat Bones";
 				itemDef.newModelColor = new int[]{63};//old
@@ -3593,6 +3592,7 @@ public class ItemDef2 {
 				itemDef.modelID = 65285;
 				itemDef.modelZoom = 1500;
 				break;
+
 			case 2025:
 				itemDef.name = "Dragonballz Bones";
 				itemDef.newModelColor = new int[]{63};//old
@@ -3602,6 +3602,7 @@ public class ItemDef2 {
 				itemDef.modelID = 65285;
 				itemDef.modelZoom = 1500;
 				break;
+
 			case 2026:
 				itemDef.name = "Special Bones";
 				itemDef.newModelColor = new int[]{63};//old
@@ -3611,6 +3612,7 @@ public class ItemDef2 {
 				itemDef.modelID = 65285;
 				itemDef.modelZoom = 1500;
 				break;
+
 			case 20481:
 				itemDef.name = "Summoning charm box";
 				itemdefyogipic = ItemDefinition.get(7630);
@@ -3620,6 +3622,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemdefyogipic.modelZoom;
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
+
 			case 13172:
 				itemDef.name = "Inferno cat mask";
 				itemDef.rdc2 = 852661;
@@ -3629,30 +3632,37 @@ public class ItemDef2 {
 				itemDef.name = "Brown sheep mask";
 				itemDef.rdc2 = 3256;
 				break;
+
 			case 10721:
 				itemDef.name = "Black frog mask";
 				itemDef.rdc2 = 46234;
 				break;
+
 			case 19278:
 				itemDef.name = "Golden unicorn mask";
 				itemDef.rdc2 = 9924;
 				break;
+
 			case 9920:
 				itemDef.name = "Haunted jack lantern mask";
 				itemDef.rdc2 = 34563;//1242
 				break;
+
 			case 14824:
 				itemDef.name = "Octo mask ";
 				itemDef.rdc2 = 24242;
 				break;
+
 			case 14825:
 				itemDef.name = "Ray mask";
 				itemDef.rdc2 = 24242;
 				break;
+
 			case 14826:
 				itemDef.name = "Manta mask";
 				itemDef.rdc2 = 24242;
 				break;
+
 			case 8809:
 				itemDef.name = "Ganopurp staff";
 				itemDef.modelID = 65383;
@@ -3660,7 +3670,6 @@ public class ItemDef2 {
 				itemDef.femaleEquip1 = 65384;
 				itemdefyogipic = ItemDefinition.get(19146);
 				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				//	itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
 				itemDef.modelZoom = 2700;
 				itemDef.rotationY = itemdefyogipic.rotationY;
@@ -3670,9 +3679,9 @@ public class ItemDef2 {
 				itemDef.editedModelColor = new int[]{54};
 				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.actions[1] = "Wear";
-				
 				itemDef.stackable = false;
 				break;
+
 			case 15830:
 				itemDef.name = "Diabolical boots";
 				itemDef.modelID = 65226;
@@ -3728,9 +3737,8 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				itemDef.newModelColor = new int[]{55};
 				itemDef.editedModelColor = new int[]{71};
-				
-
 				break;
+
 			case 8810:
 				itemdefyogipic = ItemDefinition.get(12634);
 				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
@@ -3747,14 +3755,14 @@ public class ItemDef2 {
 				itemDef.newModelColor[0] = 100; // the texture that it currently has
 				itemDef.editedModelColor[0] = 71; //
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-
 				break;
+
 			case 11195:
 				itemDef.name = "<col=39383a>Shadow Necklace";
 				itemDef.rdc2 = 7262;
-				
-
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
+
 			case 8813:
 				itemDef.name = "Shukarhazh helm";
 				itemDef.modelID = 65272;
@@ -3762,16 +3770,15 @@ public class ItemDef2 {
 				itemDef.femaleEquip1 = 65273;
 				itemdefyogipic = ItemDefinition.get(4882);
 				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				
 				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
 				itemDef.modelZoom = itemdefyogipic.modelZoom;
 				itemDef.rotationY = itemdefyogipic.rotationY;
 				itemDef.rotationX = itemdefyogipic.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				
 				itemDef.rdc2 = 452;
 				break;
+
 			case 8814:
 				itemDef.name = "Shukarhazh body";
 				itemDef.modelID = 65274;
@@ -4415,7 +4422,7 @@ public class ItemDef2 {
 				itemDef.modelZoom = itemdefyogipic.modelZoom;
 				itemDef.rotationY = itemdefyogipic.rotationY;
 				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.newModelColor = new int[1]; // same here
 				itemDef.newModelColor[0] = 60; // the texture that it currently has
@@ -4487,7 +4494,6 @@ public class ItemDef2 {
 				itemDef.actions[0] = "Open";
 				itemdefyogipic = ItemDefinition.get(290);
 				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				//	itemDef.modelOffsetX = itemDef21.modelOffsetX;
 				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
 				itemDef.modelZoom = itemdefyogipic.modelZoom;
 				itemDef.modelID = itemdefyogipic.modelID;
@@ -4497,26 +4503,35 @@ public class ItemDef2 {
 				break;
 			case 7956:
 				itemDef.copyItem(290);
-				itemDef.name = "PvM Box";
+				itemDef.name = "PvM Crate";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.newModelColor = new int[]{63};
 				itemDef.editedModelColor = new int[]{67};
-				itemDef.modelID = 65284;
+				itemDef.modelID = 19641;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 100;
 				break;
 			case 7120:
 				itemDef.copyItem(290);
-				itemDef.name = "Slayer Box";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{122};
-				itemDef.modelID = 65284;
+				itemDef.name = "Slayer Crate";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 19643;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 100;
 				break;
 			case 22123:
 				itemDef.copyItem(290);
-				itemDef.name = "Slayer Box (u)";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{123};
-				itemDef.modelID = 65284;
+				itemDef.name = "Slayer Crate (u)";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.modelID = 19644;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 100;
 				break;
 
 				
@@ -4551,10 +4566,8 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 101922;
-				
-
-
 				break;
+
 			case 18817:
 				itemDef.name = "Ring of sauron (hell)";
 				itemDef.groundActions = new String[5];
@@ -5073,12 +5086,19 @@ public class ItemDef2 {
 				
 			case 22214:
 				itemDef.copyItem(290);
+				itemDef.name = "PvM Crate (t2)";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
 				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{63};
-				itemDef.name = "PvM Box (t2)";
-				itemDef.modelID = 65284;
+				itemDef.editedModelColor = new int[]{67};
+				itemDef.modelID = 19642;
+				itemDef.modelZoom = 2000;
+				//itemDef.modelOffsetX = -2;
+				//itemDef.modelOffsetY = 4;
+				itemDef.rotationY = 43;
+				itemDef.rotationX = 100;
+				//itemDef.modelID = 19619;
 				break;
-
 				
 			case 21220:
 				itemDef.name = "Pvm ticket pack (1k)";

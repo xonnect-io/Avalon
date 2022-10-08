@@ -12,9 +12,7 @@ import com.ruse.util.GameCalendar;
 import com.ruse.util.NameUtils;
 import com.ruse.util.ServerData;
 import com.ruse.webhooks.discord.DiscordMessager;
-import com.ruse.world.content.PlayerLogs;
-import com.ruse.world.content.Reminders;
-import com.ruse.world.content.TriviaSystem;
+import com.ruse.world.content.*;
 import com.ruse.world.content.celestial.CelestialZoneTask;
 import com.ruse.world.content.discordbot.Bot;
 import com.ruse.world.content.globalBosses.*;
@@ -305,7 +303,10 @@ public class World {
         CelestialZoneTask.startTask();
         Bot.updatePlayers();
         TriviaSystem.tick();
-
+        PennywiseSpawn.initialize();
+        PumpkinSpawns.initialize();
+        VotingStreak.sequence();
+        TravellingMerchant.sequence();
         ServerPerks.getInstance().tick();
         CharacterBackup.sequence();
         if (PRINT_TIMESTAMPS) {

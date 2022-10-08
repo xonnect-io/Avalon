@@ -84,7 +84,66 @@ public final class MobDefinition {
 				definition.scaleY = 130;
 				definition.drawYellowDotOnMap = true;
 				break;
-				
+			case 492:
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.scaleXZ = 400;
+				definition.scaleY = 400;
+				definition.combatLevel = 1031;
+				definition.npcSizeInSquares = 2;
+				break;
+			case 4593:
+				definition.npcModels = new int[]{21155};
+				definition.name = "@yel@Halloween Shop";
+				definition.actions = new String[]{"Trade",null, null, null, null};
+				definition.scaleXZ = 150;
+				definition.scaleY = 150;
+				definition.standAnimation = MobDefinition.get(492).standAnimation;
+				definition.walkAnimation = MobDefinition.get(492).walkAnimation;
+				definition.combatLevel = 0;
+				definition.npcSizeInSquares = 1;
+				break;
+
+			case 4594:
+				definition.npcModels = new int[]{21155};
+				definition.name = "Spirit of Scorpius pet";
+				definition.standAnimation = MobDefinition.get(492).standAnimation;
+				definition.walkAnimation = MobDefinition.get(492).walkAnimation;
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.combatLevel = 0;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.npcSizeInSquares = 1;
+				definition.drawYellowDotOnMap = false;
+				break;
+			case 4592:
+				definition.npcModels = new int[]{21155};
+				definition.name = "Evil Spirit of Scorpius pet";
+				definition.standAnimation = MobDefinition.get(492).standAnimation;
+				definition.walkAnimation = MobDefinition.get(492).walkAnimation;
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.combatLevel = 0;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.npcSizeInSquares = 1;
+				definition.rdc3 = 10;
+				definition.drawYellowDotOnMap = false;
+				break;
+			case 9222:
+				definition.setDefault();
+				definition.npcModels = new int[]{163, 254, 292, 320, 230, 247, 176, 181, };
+				definition.originalModelColours = new int[]{25238, 8741, 9104, 4626,  };
+				definition.changedModelColours = new int[]{0, 0, 20, 0,  };
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.combatLevel = 0;
+				definition.name = "Travelling Merchant";
+				definition.scaleXZ = 128;
+				definition.scaleY = 128;
+				definition.npcSizeInSquares = 1;
+				definition.actions = new String[]{"Trade",null,  "Items", null, null};
+				break;
 			case 9002:
 				definition.name = "Phase [2]";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -3668,6 +3727,12 @@ public final class MobDefinition {
 				definition.actions[0] = null;
 				break;
 
+			case 7134:
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.npcSizeInSquares = 1;
+				break;
+
 			case 225:
 				definition.copy(7134);
 				definition.name = "Bork pet";
@@ -3682,8 +3747,8 @@ public final class MobDefinition {
 				definition.walkRightAnimation = -1;
 				definition.configChild = -1;
 				definition.varBitChild = -1;
-				definition.scaleXZ = 70;
-				definition.scaleY = 70;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
 				definition.modelLightning = 0;
 				definition.modelShadowing = 0;
 				definition.drawYellowDotOnMap = false;
@@ -3716,7 +3781,6 @@ public final class MobDefinition {
 				break;
 			case 449:
 				definition.name = "Raditz";
-				definition.description = "Cell.".getBytes();
 				definition.npcModels = new int[]{15172,15174,15176,15177,15178};
 				definition.combatLevel = 200;
 				definition.standAnimation = 808;

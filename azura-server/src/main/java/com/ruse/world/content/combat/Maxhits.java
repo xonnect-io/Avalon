@@ -120,45 +120,65 @@ public class Maxhits {
                 base *= 1.2;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.RAICHU_PET.npcId) {
                 base *= 1.15;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {// admin pet
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
                 base *= 1.25;
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {// admin pet
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
                 base *= 1.20;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {// admin pet
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 base *= 1.30;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {// admin pet
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
                 base *= 1.25;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {// admin pet
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {
                 base *= 1.25;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {// admin pet
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {
                 base *= 1.25;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.LESARKUS_WARRIOR.npcId) {// admin pet
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.LESARKUS_WARRIOR.npcId) {
                 base *= 1.25D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.VAMPIRE_WARRIOR.npcId) {// admin pet
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.VAMPIRE_WARRIOR.npcId) {
                 base *= 1.25D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {// admin pet
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {
                 base *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.SPIRIT_OF_SCORPIUS.npcId) {
+                base *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {// admin pet
+                base *= 1.35D;
             }
             if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
                 base *= 2;
@@ -238,18 +258,21 @@ public class Maxhits {
                     }
                 }
             }
-
-            if (player.getEquipment().contains(23230) || player.getEquipment().contains(23231) ||
-                    player.getEquipment().contains(23232) || player.getEquipment().contains(23233) ||
-                    player.getEquipment().contains(23234) || player.getEquipment().contains(23235) ||
-                    player.getEquipment().contains(7995) || player.getEquipment().contains(22109)) {
-                maxHit *= 1.2;
+            /*
+            Halloween Seasonal items
+             */
+            if (player.getEquipment().contains(23439)) {
+                maxHit *= 1.05;
+            } else if (player.getEquipment().contains(23440)) {
+                maxHit *= 1.10;
+            }else if (player.getEquipment().contains(23441)) {
+                maxHit *= 1.10;
+            }else if (player.getEquipment().contains(23442)) {
+                maxHit *= 1.10;
+            }else if (player.getEquipment().contains(15509)) {
+                maxHit *= 2;
             }
 
-            if (player.getEquipment().contains(23280) || player.getEquipment().contains(23292) ||
-                    player.getEquipment().contains(23293) || player.getEquipment().contains(23270)) {
-                maxHit *= 1.35;
-            }
 
             if (player.getDoubleDMGTimer() > 0) {
                 maxHit *= 2;
@@ -405,17 +428,21 @@ public class Maxhits {
                 }
 
             }
-            if (player.getEquipment().contains(23230) || player.getEquipment().contains(23231) ||
-                    player.getEquipment().contains(23232) || player.getEquipment().contains(23233) ||
-                    player.getEquipment().contains(23234) || player.getEquipment().contains(23235) ||
-                    player.getEquipment().contains(7995) || player.getEquipment().contains(22109)) {
-                maxHit *= 1.2;
+            /*
+            Halloween Seasonal items
+             */
+            if (player.getEquipment().contains(23439)) {
+                maxHit *= 1.05;
+            } else if (player.getEquipment().contains(23440)) {
+                maxHit *= 1.10;
+            }else if (player.getEquipment().contains(23441)) {
+                maxHit *= 1.10;
+            }else if (player.getEquipment().contains(23442)) {
+                maxHit *= 1.10;
+            }else if (player.getEquipment().contains(15509)) {
+                maxHit *= 2;
             }
 
-            if (player.getEquipment().contains(23280) || player.getEquipment().contains(23292) ||
-                    player.getEquipment().contains(23293) || player.getEquipment().contains(23270)) {
-                maxHit *= 1.35;
-            }
             int RangeDamage = Misc.getRandom(1, 100);
             if (player.isMembershipUnlocked() == true && RangeDamage > 90) {
                 maxHit *= 2;
@@ -463,6 +490,14 @@ public class Maxhits {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {// admin pet
                 maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SPIRIT_OF_SCORPIUS.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {// admin pet
+                maxHit *= 1.35D;
             }
             if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
                 maxHit *= 2;
@@ -625,17 +660,22 @@ public class Maxhits {
                     }
                 }
             }
-            if (player.getEquipment().contains(23230) || player.getEquipment().contains(23231) ||
-                    player.getEquipment().contains(23232) || player.getEquipment().contains(23233) ||
-                    player.getEquipment().contains(23234) || player.getEquipment().contains(23235) ||
-                    player.getEquipment().contains(7995) || player.getEquipment().contains(22109)) {
-                maxHit *= 1.2;
+            /*
+            Halloween Seasonal items
+             */
+            if (player.getEquipment().contains(23439)) {
+                maxHit *= 1.05;
+            } else if (player.getEquipment().contains(23440)) {
+                maxHit *= 1.10;
+            }else if (player.getEquipment().contains(23441)) {
+                maxHit *= 1.10;
+            }else if (player.getEquipment().contains(23442)) {
+                maxHit *= 1.10;
+            }else if (player.getEquipment().contains(15509)) {
+                maxHit *= 2;
             }
 
-            if (player.getEquipment().contains(23280) || player.getEquipment().contains(23292) ||
-                    player.getEquipment().contains(23293) || player.getEquipment().contains(23270)) {
-                maxHit *= 1.35;
-            }
+
             if (player.getEquipment().contains(23048)) { //Tier 5 Aura
                 maxHit *= 1.05D;
             }
@@ -729,6 +769,14 @@ public class Maxhits {
                 maxHit *= 1.25D;
             }
 
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SPIRIT_OF_SCORPIUS.npcId) {// admin pet
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {// admin pet
+                maxHit *= 1.35D;
+            }
             if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
                 maxHit *= 2;
             }

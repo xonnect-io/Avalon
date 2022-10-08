@@ -1,12 +1,12 @@
 package com.ruse.world.content.raids;
 
-import com.ruse.GameSettings;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
+import com.ruse.world.content.Cases;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.combat.prayer.CurseHandler;
@@ -327,24 +327,7 @@ public class ZombieRaids {
                         }
                         player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Raids Perk is active!");
                     }
-                    if (GameSettings.CASES_ACTIVE && Misc.getRandom(1,10) == 6) {
-                        if (Misc.getRandom(10) > 5) {
-                            if (player.getInventory().getFreeSlots() > 0) {
-                            player.getInventory().add(23411, 1);
-                        } else {
-                                player.getBank(0).add(23411, 1);
-                                player.getPacketSender().sendMessage("@blu@ x1 Seraphic case was rewarded from completing the raid.");
-                            }
-
-                            } else 	if (Misc.getRandom(10) < 5) {
-                            if (player.getInventory().getFreeSlots() > 0) {
-                                player.getInventory().add(23412, 1);
-                            }
-                        } else {
-                            player.getBank(0).add(23412, 1);
-                            player.getPacketSender().sendMessage("@blu@ x1 Ethereal case was rewarded from completing the raid.");
-                        }
-                    }
+                    Cases.grantCasket(player, 10);
                 }
                 party.getPlayers().clear();
                 stop();

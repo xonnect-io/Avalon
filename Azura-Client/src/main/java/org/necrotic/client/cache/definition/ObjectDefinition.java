@@ -228,6 +228,13 @@ public final class ObjectDefinition {
 			definition.name = "Celestial Zone";
 			definition.actions = new String[]{"Enter", null, null, null, null};
 		}
+		if (definition.type == 400) {
+			definition.name = "Pumpkin";
+			definition.objectModelIDs = new int[]{2591};
+			definition.modelSizeY = 150;
+			definition.modelSizeX = 150;
+			definition.actions = new String[]{"Take", null, null, null, null};
+		}
 		if (definition.type == 22099) {
 			definition.objectModelIDs = new int[]{15573};
 			definition.modelSizeY = 135;

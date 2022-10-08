@@ -32,9 +32,9 @@ import java.util.logging.Logger;
 
 public final class LoginDecoder extends FrameDecoder {
 
+    public static final int currentversion = 15;
     private static final int HANDSHAKE_STATE = 0;
     private static final int LOGGING_IN_STATE = 1;
-    public static final int currentversion = 14;
     private static final int LOGIN_REQUEST_OPCODE = 14;
     private static final int MAGIC_ID = 0xFF;
     private static final int HIGH_MEMORY_STATUS = 0;

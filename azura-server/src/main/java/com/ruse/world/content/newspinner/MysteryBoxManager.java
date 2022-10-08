@@ -146,6 +146,7 @@ public class MysteryBoxManager {
         int rngRoll = Misc.getRandom(1, 100);
         if (player.isMembershipUnlocked() && rngRoll > 90) {
             player.getInventory().add(mysteryBox.getId(), 1);
+            if (player.membershipMessages)
             player.getPacketSender().sendMessage("You kept your " + mysteryBox.getName() +" with your Membership status.");
         }
         if (player.getInventory().contains(23401)) {

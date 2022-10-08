@@ -299,6 +299,35 @@ public class PlayerLoading {
                 player.lastDonation = reader.get("last-time-reset").getAsLong();
             }
 
+            if (reader.has("unlocked-rammernaut")) {
+                player.setUnlockedRammernaut(reader.get("unlocked-rammernaut").getAsBoolean());
+            }
+            if (reader.has("travelling-day")) {
+                player.setTravelingMerchantDay(reader.get("travelling-day").getAsInt());
+            }
+
+            if (reader.has("travelling-merchant")) {
+                player.setMerchantItems(builder.fromJson(reader.get("travelling-merchant").getAsJsonArray(), Item[].class));
+            }
+
+
+            if (reader.has("days-voted")) {
+                boolean[] completed = builder.fromJson(reader.get("days-voted").getAsJsonArray(),
+                        boolean[].class);
+                player.getVotingStreak().setDaysVoted(completed);
+            }
+            if (reader.has("daily-reward-day")) {
+                player.getVotingStreak().setCurrentDay(reader.get("daily-reward-day").getAsInt());
+            }
+            if (reader.has("last-voted")) {
+                player.setLastVotedDay(reader.get("last-voted").getAsInt());
+            }
+            if (reader.has("current-voting-streak")) {
+                player.setCurrentVotingStreak(reader.get("current-voting-streak").getAsInt());
+            }
+            if (reader.has("daily-reward-epoch")) {
+                player.getVotingStreak().setEpochDay(reader.get("daily-reward-epoch").getAsLong());
+            }
             if (reader.has("email")) {
                 player.setEmailAddress(reader.get("email").getAsString());
             }

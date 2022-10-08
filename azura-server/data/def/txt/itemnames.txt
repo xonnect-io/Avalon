@@ -25859,7 +25859,7 @@ name: Cannon ball
 finish
 
 Item Id: 7120
-name: Slayer Box
+name: Slayer Crate
 finish
 
 Item Id: 7121
@@ -29155,7 +29155,7 @@ name: Burnt shrimp
 finish
 
 Item Id: 7956
-name: PvM Box
+name: PvM crate
 finish
 
 Item Id: 7957
@@ -35927,11 +35927,11 @@ name: Falconer's glove
 finish
 
 Item Id: 10025
-name: Progressive Reward Box
+name: Reward Crate
 finish
 
 Item Id: 10026
-name: Progressive Reward Box
+name: Reward Crate
 finish
 
 Item Id: 10027
@@ -80783,7 +80783,7 @@ name: Staff of light
 finish
 
 Item Id: 22214
-name: PvM Box (t2)
+name: PvM crate (t2)
 finish
 
 Item Id: 22215
