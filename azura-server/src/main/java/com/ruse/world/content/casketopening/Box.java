@@ -10,16 +10,14 @@ public class Box {
     private int max;
     private double rate;
     private boolean announce;
-
     public ItemRarity rarity;
 
-    public Box(int id, int min, int max, double rate, boolean announce) {
-        this.id = id;
-        this.min = min;
-        this.max = max;
-        this.rate = rate;
-        this.announce = announce;
+    public String getRarityofItem() {
+        return rarityofitem;
     }
+
+    private String rarityofitem;
+
     public Box(int id, int min, int max, double rate, boolean announce, String rarity) {
         this.id = id;
         this.min = min;
@@ -28,6 +26,14 @@ public class Box {
         this.announce = announce;
         this.rarityofitem = rarity;
     }
+    public Box(int id, int min, int max, double rate, boolean announce) {
+        this.id = id;
+        this.min = min;
+        this.max = max;
+        this.rate = rate;
+        this.announce = announce;
+    }
+
     public Box(int id, int min, int max, double rate) {
         this.id = id;
         this.min = min;
@@ -107,14 +113,7 @@ public class Box {
         this.max = max;
     }
 
-    public String getRarityofItem() {
-        return rarityofitem;
-    }
-
-    private String rarityofitem;
-
     public int getAmount() {
         return min + Misc.getRandom(max - min);
     }
-
 }

@@ -149,8 +149,13 @@ public class Locations {
 				true, true, true, false, false, true) {},
 		PRIME(new int[] { 2437, 2492}, new int[] { 10113, 10171},
 				true, true, true, false, false, true) {},
+
+		SEASONPASS_ZONE(new int[] { 2880, 2940}, new int[] { 2640, 2690},
+				true, true, true, false, false, true) {},
 		NEPHILIM(new int[] { 2137, 2153}, new int[] { 3291, 3308},
+
 				true, true, true, false, false, true) {
+
 
 			@Override
 			public void enter(Player player) {
