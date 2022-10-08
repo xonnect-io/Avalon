@@ -65,7 +65,7 @@ public class PumpkinSpawns {
         objects.clear();
         positions.clear();
 
-        while (objects.size() < 100) {
+        while (objects.size() < 50) {
             int random = 1;
             TurkeySpawnLocation location = LOCATIONS[random];
 

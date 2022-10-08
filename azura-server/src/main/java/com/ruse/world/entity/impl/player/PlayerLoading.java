@@ -597,6 +597,12 @@ public class PlayerLoading {
             if (reader.has("zeus-killcount")) {
                 player.getPointsHandler().setZEUSKILLCount(reader.get("zeus-killcount").getAsInt(), false);
             }
+            if (reader.has("groudon-killcount")) {
+                player.getPointsHandler().setGROUDONKILLCount(reader.get("groudon-killcount").getAsInt(), false);
+            }
+            if (reader.has("vindicta-killcount")) {
+                player.getPointsHandler().setFENRIRKILLCount(reader.get("vindicta-killcount").getAsInt(), false);
+            }
             if (reader.has("midnight-killcount")) {
                 player.getPointsHandler().setMIDNIGHTKILLCount(reader.get("midnight-killcount").getAsInt(), false);
             }

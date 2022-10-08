@@ -687,6 +687,12 @@ public class NPCDeathTask extends Task {
         } else if (npc.getId() == 1457) {//  Shadow magician
             killer.getPointsHandler().addDivineArcherKC(1);
         }
+        if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 8010
+                && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+            killer.getPointsHandler().incrementGROUDONKILLCount(2);
+        } else if (npc.getId() == 8010) {// zeus
+            killer.getPointsHandler().incrementGROUDONKILLCount(1);
+        }
         if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null && npc.getId() == 9807
                 && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
             killer.getPointsHandler().incrementFENRIRKILLCount(2);

@@ -10,7 +10,7 @@ public class GameSettings {
 
     public static final int GAME_VERSION = 3;
     public static final int GAME_PORT = 43594;
-    public static boolean LOCALHOST = false;
+    public static boolean LOCALHOST = true;
     public static boolean BETA_ACTIVE = false;
     public static boolean BOGO = false;
     public static boolean B2GO = false;

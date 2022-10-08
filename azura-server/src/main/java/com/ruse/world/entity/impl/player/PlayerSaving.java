@@ -148,6 +148,8 @@ public class PlayerSaving {
 			object.addProperty("hercules-killcount", new Integer(player.getPointsHandler().getHERCULESKILLCount()));
 			object.addProperty("satan-killcount", new Integer(player.getPointsHandler().getSATANKILLCount()));
 			object.addProperty("zeus-killcount", new Integer(player.getPointsHandler().getZEUSKILLCount()));
+			object.addProperty("vindicta-killcount", new Integer(player.getPointsHandler().getFENRIRKILLCount()));
+			object.addProperty("groudon-killcount", new Integer(player.getPointsHandler().getGROUDONKILLCount()));
 			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
 			object.addProperty("ab-killcount", new Integer(player.getPointsHandler().getBorkKC()));
 			object.addProperty("quest-one-dream-kc", new Integer(player.getPointsHandler().getQuestOneDreamKC()));
