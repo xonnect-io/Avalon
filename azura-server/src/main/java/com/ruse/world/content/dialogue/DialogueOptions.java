@@ -1455,6 +1455,19 @@ public class DialogueOptions {
                         }
                     }
                     break;
+                case 6121: //yes
+                    for (OwnerDisassemble.DisassembleData data : OwnerDisassemble.DisassembleData.values()) {
+                        if (player.getInventory().contains(data.getId(), 1)) {
+                            player.getPacketSender().sendInterfaceRemoval();
+                            player.getInventory().delete(data.getId(), 1);
+                            player.getInventory().addItemSet(data.getRewards());
+                            player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
+                            player.performAnimation(new Animation(data.getAnimation()));
+                            player.getPacketSender().sendMessage("You Disassembled the " + ItemDefinition.forId(data.getId()).getName() + " for x" + data.getRewards()[0].getAmount() + " Halloween Tokens");
+                            break;
+                        }
+                    }
+                    break;
                     case 6668: //yes
                     for (int i = 0; i < player.getInventory().capacity(); i++) {
                         if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
@@ -1878,6 +1891,7 @@ public class DialogueOptions {
                 case 8102:
                 case 6118:
                 case 6120:
+                case 6121:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 568:

@@ -109,6 +109,9 @@ public class FoxVote implements Runnable {
 					player.getAchievementTracker().progress(AchievementData.SUPPORTER, 1);
 					player.getAchievementTracker().progress(AchievementData.MEGA_SUPPORTER, 1);
 					player.getAchievementTracker().progress(AchievementData.VETERAN_VOTER, 1);
+
+					player.setVoteCount(doMotivote.getVoteCount() + amount);
+
 					if (doMotivote.getVoteCount() >= 40) {
 						VoteBossDrop.handleSpawn();
 					}

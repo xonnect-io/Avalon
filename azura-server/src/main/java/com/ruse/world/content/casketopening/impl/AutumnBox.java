@@ -5,12 +5,12 @@ import com.ruse.world.content.casketopening.Box;
 public class AutumnBox {
 
     public static Box[] loot = { //
-            new Box(12855, 500_000, 60),
-            new Box(5022, 250_000, 60),
-            new Box(19114, 100, 60),
-            new Box(20488, 25, 60),
-            new Box(20489, 2, 60),
-            new Box(15003, 1, 60),
+            new Box(12855, 500_000, 100),
+            new Box(5022, 250_000, 100),
+            new Box(19114, 100, 100),
+            new Box(20488, 25, 100),
+            new Box(20489, 2, 100),
+            new Box(15003, 1, 100),
 
             new Box(15002, 1, 10),
 

@@ -308,7 +308,6 @@ public enum JarData {
 	KINGLY_IMPLING_JAR(15517,
 			new Item(995).setRarity(ItemRarity.UNCOMMON).setAmount(7200000),
 			new Item(15511).setRarity(ItemRarity.VERY_RARE),
-			new Item(15509).setRarity(ItemRarity.VERY_RARE),
 			new Item(15507).setRarity(ItemRarity.VERY_RARE),
 			new Item(15505).setRarity(ItemRarity.VERY_RARE),
 			new Item(15503).setRarity(ItemRarity.VERY_RARE),

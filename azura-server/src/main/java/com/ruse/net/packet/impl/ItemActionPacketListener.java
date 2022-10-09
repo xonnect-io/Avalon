@@ -688,8 +688,13 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 23812:
+                if (!player.getInventory().contains(4186)) {
+                    player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
+                    return;
+                }
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.MONEY_CASE);
                 player.getCasketOpening().openInterface();
+                player.getInventory().delete(4186, 1);
                 break;
 
             case 23414:
@@ -2071,6 +2076,23 @@ public class ItemActionPacketListener implements PacketListener {
             case 23232:
                 player.getOwnerDissolving().handleDialogue(itemId);
                 break;
+
+            case 23439:
+                player.getOwnerDissolving().handleHweenDialogue150(itemId);
+                break;
+
+            case 23430:
+            case 23431:
+            case 23432:
+                player.getOwnerDissolving().handleHweenDialogue50(itemId);
+                break;
+
+            case 23440:
+            case 23441:
+            case 23442:
+                player.getOwnerDissolving().handleHweenDialogue200(itemId);
+                break;
+
             case 23246:
             DialogueManager.start(player, new DisassembleValue(player,
                     "Disassemble for x1 Legends Light Blade", "Cancel", 4200));
