@@ -239,7 +239,6 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == PennywiseSpawn.NPC_ID) {
                             PennywiseSpawn.bossAlive = false;
                             PennywiseSpawn.handleDrop(npc);
-                            GlobalBossDrops.handleDrop(npc);
                         }
 
                         if (npc.getId() == 9813) {
