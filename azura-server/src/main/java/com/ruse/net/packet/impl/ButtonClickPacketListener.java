@@ -1674,7 +1674,16 @@ public class ButtonClickPacketListener implements PacketListener {
                 Position fenrir = new Position(2893, 5469, 0);
                 TeleportHandler.teleportPlayer(player, fenrir, TeleportType.NORMAL);
                 break;
-
+            case -32235:
+            case -32285:
+                player.setIncludeDR(!player.isIncludeDR());
+                player.getPacketSender().sendConfig(2451, player.isIncludeDR() ? 1 : 0);
+                player.sendMessage("Include Drop rate: " + (player.isIncludeDR() ? "Enabled" : "Disabled"));
+                player.getPacketSender().sendString(33300, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player)+"%@or1@)");
+                player.getPacketSender().sendString(33250, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player)+"%@or1@)");
+                if (player.getDropInterfaceNPC() > 0)
+                    DropsInterface.buildRightSide(player, player.getDropInterfaceNPC());
+                break;
             case 142280:// Beast
                 if (player.getPointsHandler().getFENRIRKILLCount() <= 49999) {
                     player.getPacketSender().sendMessage("You need 50,000 Vindicta kills. You currently have @red@"

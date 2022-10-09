@@ -195,6 +195,14 @@ public boolean setSlayerBoss;
     public Skill theskill;
 
     @Getter
+    @Setter
+    private int dropInterfaceNPC;
+
+    @Getter
+    @Setter
+    private boolean includeDR = false;
+
+    @Getter
     private final ArrayList<BossPets.BossPet> obtainedPets = new ArrayList<>();
 
     @Getter

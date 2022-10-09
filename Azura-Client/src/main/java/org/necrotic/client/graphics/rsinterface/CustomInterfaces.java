@@ -2189,7 +2189,7 @@ public class CustomInterfaces extends RSInterface {
 		addText(35014, "", tda, 1, 15781715, false, true);
 
 		int x = 7, y = 7;
-		tab.totalChildren(14);
+		tab.totalChildren(16);
 		tab.child(0, 33001, 0+x, 0+y);
 		tab.child(1, 33002, 474+x, 9+y);
 		tab.child(2, 33003, 474+x, 9+y);
@@ -2204,7 +2204,11 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(11, 35013, 346+x, 40+y);
 		tab.child(12, 35014, 410+x, 40+y);
 		tab.child(13, 35010, 74+x, 42+y);
+		addText(33250, "Include DR Bonus", tda, 0, 0xFFA500, false, true);
+		tab.child(14, 33250, 26 + x, 13 + y);
 
+		addConfigButtonWSpriteLoader(33251, 33000, 1333, 1332, 15, 15, "Select", 0, 4, 2451);
+		tab.child(15, 33251, 7 + x, 10 + y);
 		final RSInterface results = addInterface(33007);
 		results.width = 136;
 		results.height = 261;

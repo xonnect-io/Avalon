@@ -139,6 +139,11 @@ public class CasketOpening {
             player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
             return;
         }
+
+        if (getCurrentCasket() == Caskets.MONEY_CASE && !player.getInventory().contains(4186)) {
+            player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
+            return;
+        }
         if (!canCasketOpening) {
             player.sendMessage("Please finish your current spin.");
             return;
@@ -294,7 +299,7 @@ public class CasketOpening {
                     + ItemDefinition.forId(SlotPrize.getId()).getName() + "<col=ff812f> from a @red@" +
                     ItemDefinition.forId(getCurrentCasket().getItemID()).getName() + "!";
             World.sendNewsMessage(message);
-            if (SlotPrize.isAnnounce() && player.getEquipment().contains(23403) && Misc.getRandom(5) == 1) {
+            if (SlotPrize.isAnnounce() && player.getEquipment().contains(23403) && Misc.getRandom(5) == 1 && getCurrentCasket() == Caskets.SOSREWARDS) {
                 player.getPacketSender().sendMessage("Your Suffering charm has doubled your rare reward!");
                 player.getInventory().add(SlotPrize.getId(), SlotPrize.getAmount());
             }

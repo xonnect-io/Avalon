@@ -40,6 +40,7 @@ public class DropsInterface {
 	}
 
 	public static void buildRightSide(Player player, int npcId) {
+		player.setDropInterfaceNPC(npcId);
 		player.getPacketSender().sendString(SEARCHED_STRING,  NpcDefinition.forId(npcId).getName()); // Search
 		// button
 		player.getPacketSender().sendString(STRING_AMOUNT, "");
@@ -54,6 +55,10 @@ public class DropsInterface {
 			}
 		}
 		player.getPacketSender().setScrollMax(34000, 37 * scrollAmount);
+		player.getPacketSender().sendConfig(2451, player.isIncludeDR() ? 1 : 0);
+		player.getPacketSender().sendString(33300, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player)+"%@or1@)");
+		player.getPacketSender().sendString(33250, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player)+"%@or1@)");
+
 		for (int i = 0; i < 80; i++) {
 			if (i > NPCDrops.forId(npcId).getDropList().length - 1) {
 				// System.out.println(player + "opening Drop table");
@@ -76,6 +81,17 @@ public class DropsInterface {
 				// item models
 				player.getPacketSender().sendString(ITEM_NAME + i, item.getDefinition().getName()); // remove all item
 				// names
+				if (player.isIncludeDR()) {
+					double drBoost = (double) (100 + CustomDropUtils.drBonus(player)) / 100D;
+					int possible = (int) ((chance - 1) / drBoost);
+
+					if (possible <= 2 && chance >= 3) {
+						possible = 2;
+					}
+
+					if (!NPCDrops.globalNpcs.contains(npcId) && npcId != 8162)
+						chance = possible;
+				}
 				player.getPacketSender().sendString(ITEM_AMOUNT + i, (min == amount ? Misc.formatNumber(amount) : ( Misc.formatNumber(min) + "-" + Misc.formatNumber(amount))));
 				player.getPacketSender().sendString(ITEM_CHANCE + i, "1/" + (chance == 0 ? "1" : chance));
 				player.getPacketSender().sendString(ITEM_VALUE + i,"Amount:");
