@@ -694,7 +694,6 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.MONEY_CASE);
                 player.getCasketOpening().openInterface();
-                player.getInventory().delete(4186, 1);
                 break;
 
             case 23414:

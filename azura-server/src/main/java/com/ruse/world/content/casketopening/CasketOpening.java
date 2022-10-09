@@ -100,7 +100,7 @@ public class CasketOpening {
     }
 
     public boolean removeItems() {
-        if (getCurrentCasket() == Caskets.ETHEREAL_CASE || getCurrentCasket() == Caskets.SERAPHIC_CASE) {
+        if (getCurrentCasket() == Caskets.ETHEREAL_CASE || getCurrentCasket() == Caskets.SERAPHIC_CASE|| getCurrentCasket() == Caskets.MONEY_CASE) {
             player.getInventory().delete(4186, 1);
         }
         if (player.getInventory().getAmount(getCurrentCasket().getItemID()) >= 1) {
@@ -164,6 +164,19 @@ public class CasketOpening {
 
     public void quickSpin() {
         if (getCurrentCasket() == null) {
+            return;
+        }
+        if (getCurrentCasket() == Caskets.SERAPHIC_CASE && !player.getInventory().contains(4186)) {
+            player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
+            return;
+        }
+        if (getCurrentCasket() == Caskets.ETHEREAL_CASE && !player.getInventory().contains(4186)) {
+            player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
+            return;
+        }
+
+        if (getCurrentCasket() == Caskets.MONEY_CASE && !player.getInventory().contains(4186)) {
+            player.getPacketSender().sendMessage("@blu@You need x1 Case key to open this.");
             return;
         }
         if (!canCasketOpening) {

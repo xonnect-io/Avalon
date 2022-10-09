@@ -233,6 +233,7 @@ public final class ObjectDefinition {
 			definition.objectModelIDs = new int[]{2591};
 			definition.modelSizeY = 150;
 			definition.modelSizeX = 150;
+			definition.isSolidObject = false;
 			definition.actions = new String[]{"Take", null, null, null, null};
 		}
 		if (definition.type == 22099) {
