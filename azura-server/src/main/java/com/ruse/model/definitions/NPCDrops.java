@@ -42,7 +42,7 @@ import static com.ruse.world.content.osrscollectionlog.LogType.*;
  */
 public class NPCDrops {
     public static final HashSet<Integer> globalNpcs = new HashSet<Integer>(Arrays.asList(
-            3779, 8013
+            3779, 8013,187,9017,3305,4972,3830,587,9318,9319,9312,492
     ));
     public static final HashSet<Integer> multiKillNpcs = new HashSet<Integer>(Arrays.asList(
             TreasureHunter.NPC_1, TreasureHunter.NPC_2,

@@ -1807,6 +1807,43 @@ public class ItemActionPacketListener implements PacketListener {
                     player.sendMessage("You need 500k Tokens and 500 Slayer points to upgrade the helm to t2.");
                 }
                 break;
+            case 23439:
+                player.getInventory().delete(23439, 1);
+                player.getInventory().add(19864, 150);
+                player.sendMessage("You dissolved the Pennywise mask for x150 Halloween tokens");
+                break;
+
+            case 23430:
+                player.getInventory().delete(23430, 1);
+                player.getInventory().add(19864, 50);
+                player.sendMessage("You dissolved the Purple'Ween Dye for x50 Halloween tokens");
+                break;
+            case 23431:
+                player.getInventory().delete(23431, 1);
+                player.getInventory().add(19864, 50);
+                player.sendMessage("You dissolved the Black'Ween Dye for x50 Halloween tokens");
+                break;
+            case 23432:
+                player.getInventory().delete(23432, 1);
+                player.getInventory().add(19864, 50);
+                player.sendMessage("You dissolved the Orange'Ween Dye for x50 Halloween tokens");
+                break;
+
+            case 23440:
+                player.getInventory().delete(23440, 1);
+                player.getInventory().add(19864, 200);
+                player.sendMessage("You dissolved the Purple Pennywise Mask for x200 Halloween tokens");
+                break;
+            case 23441:
+                player.getInventory().delete(23441, 1);
+                player.getInventory().add(19864, 200);
+                player.sendMessage("You dissolved the Black Pennywise Mask for x200 Halloween tokens");
+                break;
+            case 23442:
+                player.getInventory().delete(23442, 1);
+                player.getInventory().add(19864, 200);
+                player.sendMessage("You dissolved the Orange Pennywise Mask for x200 Halloween tokens");
+                break;
             case 23070:
                 if (player.getInventory().contains(23070) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 2_500_000 && player.getPointsHandler().getSlayerPoints() > 2500) {
                     player.getInventory().delete(ItemDefinition.MILL_ID, 2_500_000);
@@ -2076,21 +2113,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getOwnerDissolving().handleDialogue(itemId);
                 break;
 
-            case 23439:
-                player.getOwnerDissolving().handleHweenDialogue150(itemId);
-                break;
 
-            case 23430:
-            case 23431:
-            case 23432:
-                player.getOwnerDissolving().handleHweenDialogue50(itemId);
-                break;
-
-            case 23440:
-            case 23441:
-            case 23442:
-                player.getOwnerDissolving().handleHweenDialogue200(itemId);
-                break;
 
             case 23246:
             DialogueManager.start(player, new DisassembleValue(player,

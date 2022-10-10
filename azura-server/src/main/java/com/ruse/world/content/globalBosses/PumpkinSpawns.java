@@ -82,12 +82,20 @@ public class PumpkinSpawns {
                 CustomObjects.spawnGlobalObject(gameObject);
             }
         }
-
+        String message = "Pumpkins have spawned around ::hween - Find them for rewards!";
+        World.sendMessage("<img=1760>@blu@[Halloween]<img=1760> <col=674ea7>" + "Pumpkins have spawned around @blu@::hween"
+                + "<col=674ea7> - Find them for rewards!");
         World.sendBroadcastMessage("Pumpkins have spawned around ::hween - Find them for rewards!");
         GameSettings.broadcastMessage = "Pumpkins have spawned around ::hween - Find them for rewards!";
         GameSettings.broadcastTime = 100;
-        World.sendMessage("<img=1760>@blu@[Halloween]<img=1760> <col=674ea7>" + "Pumpkins have spawned around @blu@::hween"
-                + "<col=674ea7> - Find them for rewards!");
+        for (Player players : World.getPlayers()) {
+            if (players == null) {
+                continue;
+            }
+            players.getPacketSender().sendBroadCastMessage(message, 100);
+        }
+        GameSettings.broadcastMessage = "Pumpkins have spawned around ::hween - Find them for rewards!";
+        GameSettings.broadcastTime = 100;
 
 
         for (Player p : World.getPlayers()) {
@@ -135,7 +143,7 @@ public class PumpkinSpawns {
         }
 
         if (objects.size() <= 0){
-            World.sendMessage("<img=862>@blu@[Halloween]<img=862> <col=674ea7>All of the pumpkins have been found!");
+            World.sendMessage("<img=1760>@blu@[Halloween]<img=1760> <col=674ea7>All of the pumpkins have been found!");
         }
     }
 

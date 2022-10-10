@@ -263,6 +263,10 @@ public enum TeleportData {
 			"@or1@Health:@whi@ 4,000,000,000","@or1@To Spawn: @whi@" + NephilimSpawnSystem.getLeft() + " tokens left","",
 			TeleportCategory.GLOBALS, new Position(2144, 3294, 0), 79, false, 9312, -1,
 			new int[][] {{23229, 3}, {19114, 3}, {11137, 10},{12855, 20_000},{15288, 1},{10946, 1},{6769, 1},{10942, 1},{15002, 1},{15004, 1}, {14999, 1}, {23253, 1}, {23220, 1}, {23221, 1}, {23222, 1}, {23223, 1}, {23224, 1}},1550),
+	SLAYER_CHAMPION(28318, 28318, 28318, 28242, "Slayer Champion", "Slayer Champion",
+			"@or1@Health:@whi@ 2,000,000,000","@or1@To Spawn: @whi@" + SlayerBossSystem.getLeft() + " tasks left","",
+			TeleportCategory.GLOBALS, new Position(3488, 4700, 0), 79, false, 9129, -1,
+			new int[][] {{23229, 1}, {12855, 10000}, {21219, 10},{7120, 5},{22123, 3},{19116, 15},{19115, 10},{19114, 5},{20488, 2},{4446, 1}, {19886, 1}, {15003, 1}, {14999, 1}, {23253, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1200),
 
 
 	/*

@@ -1575,7 +1575,7 @@ public final class CombatFactory {
                     entity.getCombatBuilder().reset(true);
                     return false;
                 }
-                else if (player.getQuestTwoStep5() == true) {
+                else if (player.getQuestTwoStep6() == true) {
                     ((Player) entity).getPacketSender()
                             .sendMessage("You already defeated the Evil Cook! Tell Duke Horacio!");
                     entity.getCombatBuilder().reset(true);

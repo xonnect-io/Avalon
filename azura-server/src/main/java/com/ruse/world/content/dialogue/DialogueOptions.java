@@ -1455,19 +1455,7 @@ public class DialogueOptions {
                         }
                     }
                     break;
-                case 6121: //yes
-                    for (OwnerDisassemble.DisassembleData data : OwnerDisassemble.DisassembleData.values()) {
-                        if (player.getInventory().contains(data.getId(), 1)) {
-                            player.getPacketSender().sendInterfaceRemoval();
-                            player.getInventory().delete(data.getId(), 1);
-                            player.getInventory().addItemSet(data.getRewards());
-                            player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
-                            player.performAnimation(new Animation(data.getAnimation()));
-                            player.getPacketSender().sendMessage("You Disassembled the " + ItemDefinition.forId(data.getId()).getName() + " for x" + data.getRewards()[0].getAmount() + " Halloween Tokens");
-                            break;
-                        }
-                    }
-                    break;
+                    
                     case 6668: //yes
                     for (int i = 0; i < player.getInventory().capacity(); i++) {
                         if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
@@ -1866,11 +1854,54 @@ public class DialogueOptions {
             switch (player.getDialogueActionId()) {
                 case 6668:
                 case 6618:
-                player.getPacketSender().sendInterfaceRemoval();
-                break;
+                case 568:
+                case 9928:
+                case 666:
+                case 668://no
+                case 8102:
+                case 6118:
+                case 6120:
+                case 6121:
+                case 6122:
+                case 6123:
+                case 8001:
+                case 6969:
+                case 9923:
+                case 71260:
+                case 2012:
+                case 522:
+                case 523:
+                case 103:
+                case 524:
                 case 12112:
+                case 211:
+                case 210:
+                case 198:
+                case 189:
+                case 187:
+                case 180:
+                case 4:
+                case 16:
+                case 20:
+                case 23:
+                case 33:
+                case 37:
+                case 39:
+                case 42:
+                case 44:
+                case 46:
+                case 57:
+                case 71:
+                case 72:
+                case 73:
+                case 74:
+                case 76:
+                case 78:
+                case 81:
+                case 102:
+                case 7:
                     player.getPacketSender().sendInterfaceRemoval();
-                    break;
+                break;
                 case 4622:
                     DialogueManager.start(player, TheOmegaDialogues.PubDecline(player));
                     break;
@@ -1887,18 +1918,6 @@ public class DialogueOptions {
                 case 99928:
                     ExperienceLamps.confirmoneorall(player,2);
                     break;
-                case 668://no
-                case 8102:
-                case 6118:
-                case 6120:
-                case 6121:
-                    player.getPacketSender().sendInterfaceRemoval();
-                    break;
-                case 568:
-                case 9928:
-                case 666:
-                    player.getPacketSender().sendInterfaceRemoval();
-                    break;
                 case 8002:
                     player.getBank(player.getCurrentBankTab()).open();
                     break;
@@ -1913,17 +1932,6 @@ public class DialogueOptions {
                                 .sendMessage("" + player.getUsername() + " has declined your invitation.");
                         player.getMinigameAttributes().getZombieAttributes().setPartyInvitation(null);
                     }
-                    break;
-                case 8001:
-                case 6969:
-                case 9923:
-                case 71260:
-                case 2012:
-                case 522:
-                case 523:
-                case 103:
-                case 524:
-                    player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 920:
                     player.getPacketSender().sendInterfaceRemoval();
@@ -1960,34 +1968,6 @@ public class DialogueOptions {
                     return;
                 case 3:
                     ShopManager.getShops().get(23).open(player);
-                    break;
-                case 211:
-                case 210:
-                case 198:
-                case 189:
-                case 187:
-                case 180:
-                case 4:
-                case 16:
-                case 20:
-                case 23:
-                case 33:
-                case 37:
-                case 39:
-                case 42:
-                case 44:
-                case 46:
-                case 57:
-                case 71:
-                case 72:
-                case 73:
-                case 74:
-                case 76:
-                case 78:
-                case 81:
-                case 102:
-                case 7:
-                    player.getPacketSender().sendInterfaceRemoval();
                     break;
                 case 8:
                     player.getPacketSender().sendInterfaceRemoval();

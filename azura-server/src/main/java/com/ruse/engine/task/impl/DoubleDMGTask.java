@@ -23,9 +23,6 @@ public class DoubleDMGTask extends Task {
 		if (timer == 6000) {
 			player.getPacketSender().sendEffectTimerSeconds(3600, EffectTimer.X2_DMG_1HR);
 		}
-		if (timer == 1500) {
-			player.getPacketSender().sendEffectTimerSeconds(900, EffectTimer.X2_DMG_15MIN);
-		}
 		if (timer == 3000) {
 			player.getPacketSender().sendEffectTimerSeconds(1800, EffectTimer.X2_DMG_30MIN);
 		}

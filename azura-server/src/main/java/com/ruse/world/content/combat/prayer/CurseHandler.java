@@ -315,7 +315,7 @@ public class CurseHandler {
 				if(player.getAmountDonated() >=500) {
 					drain = 0;
 				}
-				if(	player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 7995
+				if(	player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 22105 || player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 7995
 						|| player.getEquipment().get(Equipment.AURA_SLOT).getId() == 12608 || player.getEquipment().get(Equipment.AURA_SLOT).getId() == 22105
 						||player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 22109|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20591
 						|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20400 || player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23270) {

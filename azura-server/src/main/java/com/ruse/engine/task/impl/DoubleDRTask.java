@@ -30,9 +30,6 @@ public class DoubleDRTask extends Task {
 			player.getPacketSender().sendEffectTimerSeconds(14400, EffectTimer.X2_DR_4HR);
 		}
 
-		if (timer == 1500) {
-			player.getPacketSender().sendEffectTimerSeconds(900, EffectTimer.X2_DR_15MIN);
-		}
 		player.setDoubleDRTimer(timer - 1);
 
 		if (player.getDoubleDRTimer() <= 0) {

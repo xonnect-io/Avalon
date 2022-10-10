@@ -24,9 +24,6 @@ public class DoubleDDRTask extends Task {
 			player.getPacketSender().sendEffectTimerSeconds(3600, EffectTimer.X2_DDR_1HR);
 		}
 
-		if (timer == 1500) {
-			player.getPacketSender().sendEffectTimerSeconds(900, EffectTimer.X2_DMG_15MIN);
-		}
 		player.setDoubleDDRTimer(timer - 1);
 
 		if (player.getDoubleDDRTimer() <= 0) {

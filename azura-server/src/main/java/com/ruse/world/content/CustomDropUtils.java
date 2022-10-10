@@ -1771,6 +1771,10 @@ public class CustomDropUtils {
                 percentBoost += 50;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BORK_PET.npcId) {
+                percentBoost += 60;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SPIRIT_OF_SCORPIUS.npcId) {
                 percentBoost += 70;
             }

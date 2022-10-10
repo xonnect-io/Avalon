@@ -20,6 +20,11 @@ public class MainDissolving {
 	static int anim = 11904;
 	static int UPG_TOKEN = 12855;
 	public enum DissolvingData {
+		BORK_HELMET(17594, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
+		BORK_BODY(17596, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
+		BORK_LEGS(17598, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
+		BORK_BOOTS(19776, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
+		BORK_GAUNTLENTS(23099, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
 		PURIFIER_STAFF(8089, new Item[]{new Item(UPG_TOKEN, 125_000)}, 900_000, anim),
 		JUDICATOR_BOW(8088, new Item[]{new Item(UPG_TOKEN, 125_000)}, 900_000, anim),
 		DRAGON_LANCE(8087, new Item[]{new Item(UPG_TOKEN, 125_000)}, 900_000, anim),
@@ -258,6 +263,7 @@ public class MainDissolving {
 		GWDSRARROBE2(16863, new Item[]{new Item(UPG_TOKEN, 240)}, 1240, anim),
 		GWDARAMACROSSBOW(22034, new Item[]{new Item(UPG_TOKEN, 240)}, 1240, anim),
 		ABBYWHIP(4151, new Item[]{new Item(UPG_TOKEN, 120)}, 1240, anim),
+		ABBYWHIP2(4152, new Item[]{new Item(UPG_TOKEN, 120)}, 1240, anim),
 		FURY(6585, new Item[]{new Item(UPG_TOKEN, 141)}, 1141, anim),
 		STAFFOFLIGHT(15486, new Item[]{new Item(UPG_TOKEN, 141)}, 1141, anim),
 		STAFFOFLIGHTNOTE(15487, new Item[]{new Item(UPG_TOKEN, 141)}, 1141, anim),
@@ -337,6 +343,7 @@ public class MainDissolving {
 		TANKER_SHIELD(12933, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
 
 		DARK_BOW(11235, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
+		DARK_BOW2(11236, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
 		TANKER_BOOTS(15031, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),
 
 		BARROW1_NOTE(14500, new Item[]{new Item(UPG_TOKEN, 50)}, 150, anim),

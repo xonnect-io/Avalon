@@ -270,7 +270,7 @@ public class Maxhits {
             }else if (player.getEquipment().contains(23442)) {
                 maxHit *= 1.10;
             }else if (player.getEquipment().contains(15509)) {
-                maxHit *= 2;
+                maxHit *= 1.25;
             }
 
 
@@ -440,7 +440,7 @@ public class Maxhits {
             }else if (player.getEquipment().contains(23442)) {
                 maxHit *= 1.10;
             }else if (player.getEquipment().contains(15509)) {
-                maxHit *= 2;
+                maxHit *= 1.25;
             }
 
             int RangeDamage = Misc.getRandom(1, 100);
@@ -672,7 +672,7 @@ public class Maxhits {
             }else if (player.getEquipment().contains(23442)) {
                 maxHit *= 1.10;
             }else if (player.getEquipment().contains(15509)) {
-                maxHit *= 2;
+                maxHit *= 1.25;
             }
 
 

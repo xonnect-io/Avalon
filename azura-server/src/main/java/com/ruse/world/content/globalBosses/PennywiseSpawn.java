@@ -52,11 +52,17 @@ public class PennywiseSpawn extends NPC {
         World.register(instance);
         bossAlive = true;
 
-
+        String message = "Spirit of Scorpius has appeared ::hween";
+        World.sendMessage("<col=d9570a>[Spirit of Scorpius]<shad=1> <col=c38e0e>Spirit of Scorpius has appeared @bla@::hween" );
         World.sendBroadcastMessage("Spirit of Scorpius has appeared ::hween");
         GameSettings.broadcastMessage = "Spirit of Scorpius has appeared ::hween";
         GameSettings.broadcastTime = 100;
-        World.sendMessage("<col=d90c9e>[Spirit of Scorpius] <col=1e56ad>Spirit of Scorpius has appeared <shad=1>@gre@::hween" );
+        for (Player players : World.getPlayers()) {
+            if (players == null) {
+                continue;
+            }
+            players.getPacketSender().sendBroadCastMessage(message, 100);
+        }
 
     }
 
