@@ -58,8 +58,8 @@ import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.osrscollectionlog.CollectionLogButtons;
 import com.ruse.world.content.polling.PollCreation;
 import com.ruse.world.content.polling.PollManager;
-import com.ruse.world.content.raids.RaidsParty;
-import com.ruse.world.content.raids.ZombieRaidData;
+import com.ruse.world.content.raids.legends.ZombieRaidsParty;
+import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.rewardsList.RewardsHandler;
 import com.ruse.world.content.serverperks.ServerPerkContributionInput;
 import com.ruse.world.content.serverperks.ServerPerks;
@@ -859,12 +859,25 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 break;
             case 111703:
+
                 if (player.getSkillManager().getMaxLevel(Skill.SLAYER) < 98) {
                     player.getPacketSender().sendMessage("<shad=1>@or2@You must be 99+ Slayer to do Legend Raids.");
                     return;
                 }
 
-                if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
+                if (player.getLocation() == Location.ZOMBIE_LOBBY) {
+                    if (player.getZombieRaidsParty() != null) {
+                        if (player.getZombieRaidsParty().getOwner() != player) {
+                            player.getPacketSender().sendMessage("Only the party leader can invite other players.");
+                        } else {
+                            player.setInputHandling(new InviteRaidsPlayer());
+                            player.getPacketSender().sendEnterInputPrompt("Invite Player");
+                        }
+                    } else {
+                        if (player.getLocation() == Location.ZOMBIE_LOBBY )
+                        new ZombieRaidsParty(player).create();
+                    }
+                } else if (player.getLocation() == Location.SOD_LOBBY) {
                     if (player.getRaidsParty() != null) {
                         if (player.getRaidsParty().getOwner() != player) {
                             player.getPacketSender().sendMessage("Only the party leader can invite other players.");
@@ -873,23 +886,22 @@ public class ButtonClickPacketListener implements PacketListener {
                             player.getPacketSender().sendEnterInputPrompt("Invite Player");
                         }
                     } else {
-                        new RaidsParty(player).create();
+                        if (player.getLocation() == Location.SOD_LOBBY )
+                            new RaidsParty(player).create();
                     }
                 } else {
-                    player.sendMessage("You must be in a raid to do this.");
+                    player.sendMessage("You must be in a raid lobby to do this.");
                 }
                 return;
 
             case 111706:
-                if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.SOD) {
+                if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.SOD ||
+                        player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
                     if (player.getRaidsParty() != null) {
                         player.getRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
-                    }
-                    player.moveTo(ZombieRaidData.lobbyPosition);
-                } else if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
-                    if (player.getRaidsParty() != null) {
-                        player.getRaidsParty().remove(player, true);
+                    } else if (player.getZombieRaidsParty() != null) {
+                        player.getZombieRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
                     }
                 } else {
@@ -1674,6 +1686,32 @@ public class ButtonClickPacketListener implements PacketListener {
                 Position fenrir = new Position(2893, 5469, 0);
                 TeleportHandler.teleportPlayer(player, fenrir, TeleportType.NORMAL);
                 break;
+
+       /*     case 19137:
+                DiscordIntegration.buttonClick(player);
+                break;
+            case 19125:
+                player.getPacketSender().sendString(1, GameSettings.DiscordUrl);
+                player.getPacketSender().sendMessage("Attempting to open our Discord Server");
+                break;
+            case 19122:
+                if (player.getDiscordUser() <= 0) {
+                    player.setInputHandling(new DiscordIntegrationPrompt());
+                    player.getPA().sendEnterInputPrompt("Please enter the unique code you received on discord.");
+                } else {
+                    player.setDiscordTag(null);
+                    player.setDiscordUser(-1);
+                    player.sendMessage("You have successfully diconnected your discord account!");
+                    DiscordIntegration.updateDiscordInterface(player);
+                    if (DiscordIntegration.connectedAccounts.containsKey(player.getUsername()))
+                        DiscordIntegration.connectedAccounts.remove(player.getUsername());
+                }
+                break;
+
+            case 111613:
+                player.getPA().sendInterface(19130);
+                DiscordIntegration.updateDiscordInterface(player);
+                break;*/
             case -32235:
             case -32285:
                 player.setIncludeDR(!player.isIncludeDR());

@@ -56,7 +56,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
-import com.ruse.world.content.raids.ZombieRaids;
+import com.ruse.world.content.raids.legends.ZombieRaids;
 import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
@@ -156,18 +156,6 @@ public class CommandPacketListener implements PacketListener {
             Position position = new Position(3445, 4105, 1);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
 
-        }
-        if (command[0].equalsIgnoreCase("fakevote")) {
-            Calendar cal = Calendar.getInstance();
-            int day = cal.get(Calendar.DAY_OF_YEAR);
-
-            player.setLastVotedDay(day);
-            player.getVotingStreak().vote();
-        }
-
-        if (command[0].equalsIgnoreCase("setd")) {
-            VotingStreak.setDayInYear(VotingStreak.getDayInYear() + 1);
-            player.getVotingStreak().openInterface();
         }
 
         if (command[0].equalsIgnoreCase("donodeals")) {
@@ -1062,12 +1050,6 @@ public class CommandPacketListener implements PacketListener {
 
     }
 
-    private static void contributorCommands(final Player player, String[] command, String wholeCommand) {
-    }
-
-    private static void helperCommands(final Player player, String[] command, String wholeCommand) {
-
-    }
 
     private static void supportCommands(final Player player, String[] command, String wholeCommand) {
 
@@ -1793,7 +1775,19 @@ public class CommandPacketListener implements PacketListener {
             NPC npc = new NPC(9017, new Position(2980, 2776,0));
         }
         if (command[0].equalsIgnoreCase("finishraid")) {
-            ZombieRaids.finishRaid(player.getRaidsParty());
+            ZombieRaids.finishRaid(player.getZombieRaidsParty());
+        }
+        if (command[0].equalsIgnoreCase("fakevote")) {
+            Calendar cal = Calendar.getInstance();
+            int day = cal.get(Calendar.DAY_OF_YEAR);
+
+            player.setLastVotedDay(day);
+            player.getVotingStreak().vote();
+        }
+
+        if (command[0].equalsIgnoreCase("setd")) {
+            VotingStreak.setDayInYear(VotingStreak.getDayInYear() + 1);
+            player.getVotingStreak().openInterface();
         }
         if (command[0].equals("trav")) {
             TravellingMerchant.dayInYear += 1;
@@ -2926,7 +2920,7 @@ public class CommandPacketListener implements PacketListener {
             if (GameSettings.B2GO == false && GameSettings.B2GOFLASHSALE == false)
             World.sendMessage("<img=832>@red@The Flash sale is now over");
             if (GameSettings.B2GO == true && GameSettings.B2GOFLASHSALE == true)
-                World.sendMessage("<img=832>@red@[FLASH-SALE] <shad=1>@or2@Buy 1 get 1 has been activated for the next donation!");
+                World.sendMessage("<img=832>@red@[FLASH-SALE] <shad=1>@or2@Buy 2 get 1 has been activated for the next donation!");
         }
 
 
@@ -3498,7 +3492,6 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("saveall")) {
             World.savePlayers();
             player.getPacketSender().sendMessage("Saved all players.");
-
         }
 
         if (command[0].equalsIgnoreCase("npc")) {
@@ -3903,47 +3896,66 @@ public class CommandPacketListener implements PacketListener {
         try {
             switch (player.getRights()) {
 
-                case YOUTUBER:
-                    youtuberCommands(player, parts, command);
-                    playerCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    break;
-
                 case PLAYER:
                     playerCommands(player, parts, command);
                     break;
 
-                case SUPPORT:
-                case HELPER:
+                case SAPPHIRE_DONATOR:
                     playerCommands(player, parts, command);
                     memberCommands(player, parts, command);
-                    helperCommands(player, parts, command);
-                    supportCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
                     break;
 
-                case MODERATOR:
+                case EMERALD_DONATOR:
                     playerCommands(player, parts, command);
                     memberCommands(player, parts, command);
-                    helperCommands(player, parts, command);
-                    moderatorCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    supportCommands(player, parts, command);
-                    break;
-
-                case ADMINISTRATOR:
-                case COMMUNITY_MANAGER:
-                    playerCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    helperCommands(player, parts, command);
-                    moderatorCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    administratorCommands(player, parts, command);
                     sapphireCommands(player, parts, command);
                     emeraldCommands(player, parts, command);
-                    supportCommands(player, parts, command);
-                    globalModCommands(player, parts, command);
+                    break;
+
+                case RUBY_DONATOR:
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    break;
+
+                case DIAMOND_DONATOR:
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    break;
+
+                case ONYX_DONATOR:
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    break;
+
+                case ZENYTE_DONATOR:
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    zenyteCommands(player, parts, command);
+                    break;
+
+                case TANZANITE_DONATOR:
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
                     rubyCommands(player, parts, command);
                     diamondCommands(player, parts, command);
                     onyxCommands(player, parts, command);
@@ -3951,13 +3963,40 @@ public class CommandPacketListener implements PacketListener {
                     tanzaniteCommands(player, parts, command);
                     break;
 
+                case SUPPORT:
+                case HELPER:
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    supportCommands(player, parts, command);
+                    break;
+
+                case YOUTUBER:
+                    youtuberCommands(player, parts, command);
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    break;
+
+                case MODERATOR:
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    moderatorCommands(player, parts, command);
+                    supportCommands(player, parts, command);
+                    break;
+
+                case ADMINISTRATOR:
+                case COMMUNITY_MANAGER:
+                    playerCommands(player, parts, command);
+                    supportCommands(player, parts, command);
+                    moderatorCommands(player, parts, command);
+                    administratorCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    break;
+
                 case OWNER:
                     playerCommands(player, parts, command);
                     memberCommands(player, parts, command);
-                    helperCommands(player, parts, command);
                     moderatorCommands(player, parts, command);
                     administratorCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
                     youtuberCommands(player, parts, command);
                     ownerCommands(player, parts, command);
                     developerCommands(player, parts, command);
@@ -3972,75 +4011,6 @@ public class CommandPacketListener implements PacketListener {
                     tanzaniteCommands(player, parts, command);
                     break;
 
-                case TANZANITE_DONATOR:
-                    playerCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    sapphireCommands(player, parts, command);
-                    emeraldCommands(player, parts, command);
-                    rubyCommands(player, parts, command);
-                    diamondCommands(player, parts, command);
-                    onyxCommands(player, parts, command);
-                    zenyteCommands(player, parts, command);
-                    tanzaniteCommands(player, parts, command);
-                    break;
-
-                case ZENYTE_DONATOR:
-                    playerCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    sapphireCommands(player, parts, command);
-                    emeraldCommands(player, parts, command);
-                    rubyCommands(player, parts, command);
-                    diamondCommands(player, parts, command);
-                    onyxCommands(player, parts, command);
-                    zenyteCommands(player, parts, command);
-                    break;
-
-                case ONYX_DONATOR:
-                    playerCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    sapphireCommands(player, parts, command);
-                    emeraldCommands(player, parts, command);
-                    rubyCommands(player, parts, command);
-                    diamondCommands(player, parts, command);
-                    onyxCommands(player, parts, command);
-                    break;
-
-                case DIAMOND_DONATOR:
-                    playerCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    sapphireCommands(player, parts, command);
-                    emeraldCommands(player, parts, command);
-                    rubyCommands(player, parts, command);
-                    diamondCommands(player, parts, command);
-                    break;
-
-                case RUBY_DONATOR:
-                    playerCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    sapphireCommands(player, parts, command);
-                    emeraldCommands(player, parts, command);
-                    rubyCommands(player, parts, command);
-                    break;
-
-                case EMERALD_DONATOR:
-                    playerCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    sapphireCommands(player, parts, command);
-                    emeraldCommands(player, parts, command);
-                    break;
-
-                case SAPPHIRE_DONATOR:
-                    playerCommands(player, parts, command);
-                    contributorCommands(player, parts, command);
-                    memberCommands(player, parts, command);
-                    sapphireCommands(player, parts, command);
-                    break;
 
                 default:
                     break;

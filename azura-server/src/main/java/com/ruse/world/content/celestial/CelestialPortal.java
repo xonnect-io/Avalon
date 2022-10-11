@@ -3,7 +3,6 @@ package com.ruse.world.content.celestial;
 import com.ruse.GameSettings;
 import com.ruse.model.Animation;
 import com.ruse.model.GameObject;
-import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.util.Misc;
 import com.ruse.util.Stopwatch;
@@ -159,10 +158,6 @@ public final class CelestialPortal {
 					p.getPacketSender().sendClientRightClickRemoval();
 					p.getSkillManager().stopSkilling();
 					p.getPacketSender().sendInterfaceRemoval();
-					if (p.getLocation() == Locations.Location.CELESTIAL_ZONE) {
-						p.moveTo(GameSettings.HOME_CORDS);
-						p.getPacketSender().sendMessage("The Celestial zone closed, you have been moved home.");
-					}
 				}
 			}
 			World.sendMessage("<img=832> The Celestial Zone is now closed and will open again in 2 hours.");

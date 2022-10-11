@@ -1,7 +1,8 @@
 package com.ruse.world.content.minigames;
 
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
-import com.ruse.world.content.raids.RaidsParty;
+import com.ruse.world.content.raids.system.RaidsParty;
+import com.ruse.world.content.raids.legends.ZombieRaidsParty;
 
 /**
  * Holds different minigame attributes for a player
@@ -85,17 +86,17 @@ public class MinigameAttributes {
 
 
 	public class ZombieAttributes {
-		private RaidsParty party;
-		private RaidsParty invitation;
+		private ZombieRaidsParty party;
+		private ZombieRaidsParty invitation;
 		private long lastInvitation;
 		private int points;
 		private int deaths;
 
-		public RaidsParty getParty() {
+		public ZombieRaidsParty getParty() {
 			return party;
 		}
 
-		public void setParty(RaidsParty raidsParty) {
+		public void setParty(ZombieRaidsParty raidsParty) {
 			this.party = raidsParty;
 		}
 
@@ -107,11 +108,11 @@ public class MinigameAttributes {
 			this.lastInvitation = lastInvitation;
 		}
 
-		public RaidsParty getPartyInvitation() {
+		public ZombieRaidsParty getPartyInvitation() {
 			return invitation;
 		}
 
-		public void setPartyInvitation(RaidsParty partyInvitation) {
+		public void setPartyInvitation(ZombieRaidsParty partyInvitation) {
 			this.invitation = partyInvitation;
 		}
 

@@ -256,7 +256,7 @@ public class Shop extends ItemContainer {
                     && id != DONATOR_STORE_2 && id != DONATOR_STORE_3 && id != DONATOR_STORE_4
                     && id != PET_STORE_1
                     && id != PET_STORE_2 && id != PET_STORE_3 && id != PET_STORE_4
-            
+                    && id != 110
                     && id != 106
                     && id != BOSS_SLAYER_SHOP
                     && id != SLAYER_SHOP

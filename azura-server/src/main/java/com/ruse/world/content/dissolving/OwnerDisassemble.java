@@ -81,12 +81,12 @@ public class OwnerDisassemble {
 
 	public void handleHweenDialogue150(int id) {
 		DialogueManager.start(player, new DisassembleValue(player,
-				"Disassemble for x 150 Halloween Token", "Nevermind", 6121));
+				"Disassemble for x 150 Halloween Token", "Nevermind", 6122));
 		;
 	}
 	public void handleHweenDialogue200(int id) {
 		DialogueManager.start(player, new DisassembleValue(player,
-				"Disassemble for x 200 Halloween Token", "Nevermind", 6121));
+				"Disassemble for x 200 Halloween Token", "Nevermind", 6123));
 		;
 	}
 }

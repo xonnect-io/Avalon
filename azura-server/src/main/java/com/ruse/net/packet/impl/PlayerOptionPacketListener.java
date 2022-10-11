@@ -89,7 +89,20 @@ public class PlayerOptionPacketListener implements PacketListener {
 
 		}
 
-		if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
+		if (player.getLocation() == Location.ZOMBIE_LOBBY) {
+			player.setEntityInteraction(attacked);
+			if (attacked.getIndex() != player.getIndex()) {
+				if (player.getZombieRaidsParty() != null && player.getZombieRaidsParty().getOwner().equals(player)) {
+					player.sendMessage("Sent invite to " + attacked.getUsername());
+					player.getZombieRaidsParty().invite(attacked);
+				} else {
+					player.sendMessage("You must be the leader of a party to do this.");
+				}
+			}
+			return;
+		}
+
+		if (player.getLocation() == Location.SOD_LOBBY) {
 			player.setEntityInteraction(attacked);
 			if (attacked.getIndex() != player.getIndex()) {
 				if (player.getRaidsParty() != null && player.getRaidsParty().getOwner().equals(player)) {
@@ -101,7 +114,6 @@ public class PlayerOptionPacketListener implements PacketListener {
 			}
 			return;
 		}
-
 		if (player.getLocation() == Location.DUEL_ARENA && player.getDueling().duelingStatus == 0) {
 			player.getDueling().challengePlayer(attacked);
 			return;

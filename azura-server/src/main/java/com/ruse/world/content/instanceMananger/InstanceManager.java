@@ -39,6 +39,10 @@ public class InstanceManager {
 			player.getPA().sendMessage("You need 750 Upgrade tokens in your inventory to start a 3x3 instance.");
 			return;
 		}
+
+		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE1, player.getIndex() * pos));
+		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE2, player.getIndex() * pos));
+
 		if (player.getRegionInstance() != null) {
 			for (NPC n : player.getRegionInstance().getNpcsList()) {
 				if (n != null) {

@@ -272,8 +272,9 @@ public class Maxhits {
             }else if (player.getEquipment().contains(15509)) {
                 maxHit *= 1.25;
             }
-
-
+            if (player.getEquipment().contains(23418)) {
+                maxHit *= 1.25;
+            }
             if (player.getDoubleDMGTimer() > 0) {
                 maxHit *= 2;
             }
@@ -443,6 +444,9 @@ public class Maxhits {
                 maxHit *= 1.25;
             }
 
+            if (player.getEquipment().contains(23418)) {
+                maxHit *= 1.25;
+            }
             int RangeDamage = Misc.getRandom(1, 100);
             if (player.isMembershipUnlocked() == true && RangeDamage > 90) {
                 maxHit *= 2;
@@ -675,6 +679,9 @@ public class Maxhits {
                 maxHit *= 1.25;
             }
 
+            if (player.getEquipment().contains(23418)) {
+                maxHit *= 1.25;
+            }
 
             if (player.getEquipment().contains(23048)) { //Tier 5 Aura
                 maxHit *= 1.05D;

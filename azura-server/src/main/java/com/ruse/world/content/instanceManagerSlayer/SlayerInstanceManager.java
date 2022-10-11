@@ -2,6 +2,7 @@ package com.ruse.world.content.instanceManagerSlayer;
 
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
+import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.model.RegionInstance;
 import com.ruse.model.RegionInstance.RegionInstanceType;
@@ -33,6 +34,10 @@ public class SlayerInstanceManager {
 			player.getPA().sendMessage("You need 2,500 Upgrade tokens in your inventory to start a 3x2 Slayer instance.");
 			return;
 		}
+
+		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE1, player.getIndex() * pos));
+		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE2, player.getIndex() * pos));
+
 		if (player.getRegionInstance() != null) {
 			for (NPC n : player.getRegionInstance().getNpcsList()) {
 				if (n != null) {

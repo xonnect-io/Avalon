@@ -28,9 +28,9 @@ import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.quests.BloodRunsDeepDialogues;
 import com.ruse.world.content.quests.TheOmegaDialogues;
-import com.ruse.world.content.raids.SODRaids;
-import com.ruse.world.content.raids.ZombieRaidData;
-import com.ruse.world.content.raids.ZombieRaids;
+import com.ruse.world.content.raids.suffering.SODRaids;
+import com.ruse.world.content.raids.legends.ZombieRaidData;
+import com.ruse.world.content.raids.legends.ZombieRaids;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.mining.Mining;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -232,7 +232,11 @@ public class DialogueOptions {
                     DialogueManager.start(player, 102);
                     break;
                 case 67:
-                    player.getRaidsParty().add(player);
+                    if (player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.SOD) {
+                        player.getRaidsParty().add(player);
+                    } else if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.ZOMBIE) {
+                    player.getZombieRaidsParty().add(player);
+                    }
                     break;
                 case 68:
                     player.getPacketSender().sendInterfaceRemoval();
@@ -1455,7 +1459,7 @@ public class DialogueOptions {
                         }
                     }
                     break;
-                    
+
                     case 6668: //yes
                     for (int i = 0; i < player.getInventory().capacity(); i++) {
                         if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0) {
@@ -1520,14 +1524,21 @@ public class DialogueOptions {
                     break;
                 case 67:
                     player.getPacketSender().sendInterfaceRemoval();
-                    if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY
+                    if (player.getLocation() == Location.SOD_LOBBY
                             && player.getRaidsParty() == null) {
+                        if (player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null) {
+                            player.getMinigameAttributes().getZombieAttributes().getPartyInvitation().add(player);
+                        }
+                        player.getMinigameAttributes().getZombieAttributes().setPartyInvitation(null);
+                    } else if (player.getLocation() == Location.ZOMBIE_LOBBY
+                            && player.getZombieRaidsParty() == null) {
                         if (player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null) {
                             player.getMinigameAttributes().getZombieAttributes().getPartyInvitation().add(player);
                         }
                         player.getMinigameAttributes().getZombieAttributes().setPartyInvitation(null);
                     }
                     break;
+
                 case 71260:
                     player.getPacketSender().sendInterfaceRemoval();
                     player.moveTo(ZombieRaidData.lobbyPosition);
@@ -1535,7 +1546,7 @@ public class DialogueOptions {
                     break;
 
                 case 2012:
-                    ZombieRaids.start(player.getRaidsParty());
+                    ZombieRaids.start(player.getZombieRaidsParty());
                     break;
 
                 case 7056:

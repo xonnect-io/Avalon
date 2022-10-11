@@ -410,10 +410,23 @@ public class ObjectActionPacketListener implements PacketListener {
                                         DialogueManager.start(player, 7126);
                                     }
                                 }
-                                if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
+                                if (player.getLocation() == Location.SOD_LOBBY) {
                                 CurseHandler.deactivateAll(player);
                                     if (player.getRaidsParty() != null) {
                                         if (player.getRaidsParty().getOwner().equals(player)) {
+                                            player.setDialogueActionId(2012);
+                                            DialogueManager.start(player, 2012);
+                                        } else {
+                                            player.sendMessage("Only the party leader can start the Raid.");
+                                        }
+                                    } else {
+                                        player.sendMessage("You must be in a party to start the Raid.");
+                                    }
+                                } else
+                                    if (player.getLocation() == Location.ZOMBIE_LOBBY) {
+                                    CurseHandler.deactivateAll(player);
+                                    if (player.getZombieRaidsParty() != null) {
+                                        if (player.getZombieRaidsParty().getOwner().equals(player)) {
                                             player.setDialogueActionId(2012);
                                             DialogueManager.start(player, 2012);
                                         } else {
