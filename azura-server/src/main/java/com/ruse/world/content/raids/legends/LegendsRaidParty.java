@@ -11,7 +11,7 @@ import com.ruse.world.entity.impl.player.Player;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 
-public class ZombieRaidsParty {
+public class LegendsRaidParty {
 
     private Player owner;
     private CopyOnWriteArrayList<Player> player_members;
@@ -24,7 +24,7 @@ public class ZombieRaidsParty {
     private int phaseAmount;
     private int deathCount;
 
-    public ZombieRaidsParty(Player owner) {
+    public LegendsRaidParty(Player owner) {
         this.owner = owner;
         player_members = new CopyOnWriteArrayList<Player>();
         player_members.add(owner);
@@ -99,7 +99,7 @@ public class ZombieRaidsParty {
         }
 
         getOwner().getMinigameAttributes().getZombieAttributes().setLastInvitation(System.currentTimeMillis());
-        DialogueManager.start(p, new ZombieRaidsPartyInvitation(getOwner(), p));
+        DialogueManager.start(p, new LegendsRaidsPartyInvitation(getOwner(), p));
         getOwner().getPacketSender().sendMessage("An invitation has been sent to " + p.getUsername() + ".");
     }
 
@@ -176,7 +176,7 @@ public class ZombieRaidsParty {
             destruct = false;
         }
         if (getPlayers().size() <= 0 || destruct) {
-            ZombieRaids.destroyInstance(this);
+            Legends.destroyInstance(this);
         }
     }
 
@@ -204,7 +204,7 @@ public class ZombieRaidsParty {
         }
 
         if (owner.getZombieRaidsParty() == null)
-            owner.setZombieRaidsParty(new ZombieRaidsParty(owner));
+            owner.setZombieRaidsParty(new LegendsRaidParty(owner));
 
         owner.getPacketSender().sendMessage("<col=660000>You've created a Raids party.");
 
@@ -270,9 +270,9 @@ public class ZombieRaidsParty {
     }
 
     public void startLegendsRaid() {
-        ZombieRaids.firstWave(this);
+        Legends.firstWave(this);
     }
     public void endLegendsRaid() {
-        ZombieRaids.finishRaid(this);
+        Legends.finishRaid(this);
     }
 }

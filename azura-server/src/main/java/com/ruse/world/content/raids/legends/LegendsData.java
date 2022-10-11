@@ -2,7 +2,7 @@ package com.ruse.world.content.raids.legends;
 
 import com.ruse.model.Position;
 
-public class ZombieRaidData {
+public class LegendsData {
 
 	public static final Position lobbyPosition = new Position(2222, 4115, 0);
 	public static final int firstWaveNpc = 3712;

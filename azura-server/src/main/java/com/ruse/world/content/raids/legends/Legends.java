@@ -17,9 +17,9 @@ import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
 
-public class ZombieRaids {
+public class Legends {
 
-    public static void start(ZombieRaidsParty party) {
+    public static void start(LegendsRaidParty party) {
 
         Player p = party.getOwner();
         p.getPacketSender().sendInterfaceRemoval();
@@ -89,22 +89,22 @@ public class ZombieRaids {
 
     }
 
-    public static NPC addNpc(ZombieRaidsParty party, int npcId, double mult) {
+    public static NPC addNpc(LegendsRaidParty party, int npcId, double mult) {
         NPC npc = (new NPC(npcId, new Position(2244 + Misc.getRandom(16), 4104 + Misc.getRandom(19), party.getHeight())));
         npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         return npc;
     }
 
-    public static void firstWave(ZombieRaidsParty party) {
+    public static void firstWave(LegendsRaidParty party) {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 2500;
 
         for (int i = 0; i < 8; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.firstWaveNpc, mult));
+            npcs.add(addNpc(party, LegendsData.firstWaveNpc, mult));
         }
         for (int i = 0; i < (party.getPlayers().size() - 1) * 2; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.firstWaveNpc, mult));
+            npcs.add(addNpc(party, LegendsData.firstWaveNpc, mult));
         }
         TaskManager.submit(new Task(10, false) {
 
@@ -116,16 +116,16 @@ public class ZombieRaids {
         });
     }
 
-    public static void secondWave(ZombieRaidsParty party) {
+    public static void secondWave(LegendsRaidParty party) {
 
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 5000;
 
         for (int i = 0; i < 6; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.secondWaveNpc, mult));
+            npcs.add(addNpc(party, LegendsData.secondWaveNpc, mult));
         }
         for (int i = 0; i < (party.getPlayers().size() - 1) * 2; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.secondWaveNpc, mult));
+            npcs.add(addNpc(party, LegendsData.secondWaveNpc, mult));
         }
         TaskManager.submit(new Task(10, false) {
 
@@ -137,16 +137,16 @@ public class ZombieRaids {
         });
     }
 
-    public static void thirdWave(ZombieRaidsParty party) {
+    public static void thirdWave(LegendsRaidParty party) {
 
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 10000;
 
         for (int i = 0; i < 5; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.thirdWaveNpc, mult));
+            npcs.add(addNpc(party, LegendsData.thirdWaveNpc, mult));
         }
         for (int i = 0; i < (party.getPlayers().size() - 1) * 1; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.thirdWaveNpc, mult));
+            npcs.add(addNpc(party, LegendsData.thirdWaveNpc, mult));
         }
         TaskManager.submit(new Task(10, false) {
 
@@ -158,16 +158,16 @@ public class ZombieRaids {
         });
     }
 
-    public static void fourthWave(ZombieRaidsParty party) {
+    public static void fourthWave(LegendsRaidParty party) {
 
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 20000;
 
         for (int i = 0; i < 4; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.fourthWaveNpc, mult));
+            npcs.add(addNpc(party, LegendsData.fourthWaveNpc, mult));
         }
         for (int i = 0; i < (party.getPlayers().size() - 1) * 1; i++) {
-            npcs.add(addNpc(party, ZombieRaidData.fourthWaveNpc, mult));
+            npcs.add(addNpc(party, LegendsData.fourthWaveNpc, mult));
         }
         TaskManager.submit(new Task(10, false) {
 
@@ -179,13 +179,13 @@ public class ZombieRaids {
         });
     }
 
-    public static void fifthWave(ZombieRaidsParty party) {
+    public static void fifthWave(LegendsRaidParty party) {
 
         ArrayList<NPC> npcs = new ArrayList<NPC>();
 
         double mult = 100000;
 
-        NPC npc = new NPC(ZombieRaidData.fifthWaveNpc, new Position(2257, 4115, party.getHeight()));
+        NPC npc = new NPC(LegendsData.fifthWaveNpc, new Position(2257, 4115, party.getHeight()));
         npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npcs.add(npc);
@@ -200,7 +200,7 @@ public class ZombieRaids {
         });
     }
 
-    public static void startLegendTask(ZombieRaidsParty party, ArrayList<NPC> npcs, int wave) {
+    public static void startLegendTask(LegendsRaidParty party, ArrayList<NPC> npcs, int wave) {
         TaskManager.submit(new Task(1, false) {
 
             @Override
@@ -269,24 +269,24 @@ public class ZombieRaids {
 
     }
 
-    public static void spawnNpc(ZombieRaidsParty party, NPC npc) {
+    public static void spawnNpc(LegendsRaidParty party, NPC npc) {
         World.register(npc);
         Player player = randomPlayer(party);
         npc.getMovementQueue().setFollowCharacter(player);
         npc.getCombatBuilder().attack(player);
     }
 
-    public static void handleDeath(ZombieRaidsParty party, Player player) {
+    public static void handleDeath(LegendsRaidParty party, Player player) {
         party.getPlayers().remove(player);
         party.remove(player, true);
         player.sendMessage("@red@You died and were removed from the raid party.");
     }
 
-    public static Player randomPlayer(ZombieRaidsParty party) {
+    public static Player randomPlayer(LegendsRaidParty party) {
         return party.getPlayers().get(Misc.getRandom(party.getPlayers().size() - 1));
     }
 
-    public static void finishRaid(ZombieRaidsParty party) {
+    public static void finishRaid(LegendsRaidParty party) {
         party.enteredDungeon(false);
 
         for (Player member : party.getPlayers()) {
@@ -306,8 +306,11 @@ public class ZombieRaids {
                         member.getSeasonPass().addXp(2);
                         member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                         member.getPointsHandler().incrementZombieRaidKC(1);
+                        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
+                            member.getInventory().add(18404, 1);
+                        }
                     }
-                    party.moveTo(ZombieRaidData.lobbyPosition);
+                    party.moveTo(LegendsData.lobbyPosition);
                     player.getRaidsParty().enteredDungeon(false);
                     party.setDeathCount(0);
                     party.setKills(0);
@@ -317,14 +320,6 @@ public class ZombieRaids {
                     if (player.getRaidsParty() != null) {
                         player.getRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
-                    }
-                    if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
-                        if (player.getInventory().getFreeSlots() > 0) {
-                            player.getInventory().add(18404, 1);
-                        } else {
-                            player.getBank(0).add(18404, 1);
-                        }
-                        player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Raids Perk is active!");
                     }
                     Cases.grantCasket(player, 10);
                 }
@@ -352,12 +347,12 @@ public class ZombieRaids {
         }
     }
 
-    public static void destroyInstance(ZombieRaidsParty party) {
+    public static void destroyInstance(LegendsRaidParty party) {
 
         for (Player member : party.getPlayers()) {
             member.setEnteredZombieRaids(false);
         }
-        party.moveTo(ZombieRaidData.lobbyPosition);
+        party.moveTo(LegendsData.lobbyPosition);
         party.enteredDungeon(false);
         party.getPlayers().clear();
 

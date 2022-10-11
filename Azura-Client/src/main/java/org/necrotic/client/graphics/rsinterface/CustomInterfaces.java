@@ -2172,7 +2172,78 @@ public class CustomInterfaces extends RSInterface {
 
 	}
 
+	public void discordComponents() {
+		addSpriteLoader(19120, 1761);
 
+		addText(19121, "Discord Integration", 16750643, true, true, 52, tda, 2);
+
+
+		hoverButton(19122, 1762, 1763, "Link Account", 2, 0xff8624, "Link Account");
+
+
+		hoverButton(19125, 1762, 1763, "Open Channel", 2, 0xff8624, "Open Channel");
+
+	}
+
+	public void discordConnect() {
+
+		addText(19136, "How to Link your Discord:", tda, 1, 0xff8624, true, true);
+
+		addText(19131,
+				"1. Click the Open Channel button"
+						+ "\\n2. Type !connect in #discord-connect for code"
+						+ "\\n3. Click the Link button and enter the code"
+				,
+				0xf0aa37, true, true, 52, tda, 0);
+
+
+		addText(19132, "Discord Account:", tda, 2, 16750643, true, true);
+
+		addText(19133, "N/A", tda, 2, 16750643, true, true);
+
+
+		addText(19134, "Benefits:", tda, 1, 0xff8624, true, true);
+
+
+		addText(19135, "- Receive free Donator rank for linking"
+				+ "\\n- Receive 1 point every 5 minutes once linked"
+				+ "\\n- Receive 2 additional points by:"
+				+ "\\nHaving \"Avalon\" in your custom status", tda, 0, 0xf0aa37, true, true);
+
+
+		addToggleButton(19137, 1337, 3244, 15, 15, "Auto Retaliate");
+
+		addText(19138, "Recieve message when Avalon updates", tda, 0, 0xf0aa37, true, true);
+
+
+		RSInterface main = addInterface(19130);
+
+		main.totalChildren(14);
+		int c = 0;
+		int x = 124, y = 40;
+		main.child(c++, 19120, 0 + x, 0 + y);
+
+		main.child(c++, 19121, 135 + x, 5 + y);
+
+		main.child(c++, 19122, 13 + x, 227 + y);
+		main.child(c++, 19125, 138 + x, 227 + y);
+
+		main.child(c++, 33002, 247 + x, 4 + y);
+		main.child(c++, 33003, 247 + x, 4 + y);
+
+		main.child(c++, 19136, 135 + x, 29 + y);
+		main.child(c++, 19131, 135 + x, 44 + y);
+
+		main.child(c++, 19134, 135 + x, 85 + y);
+		main.child(c++, 19135, 135 + x, 100 + y);
+
+		main.child(c++, 19132, 135 + x, 148 + y);
+		main.child(c++, 19133, 135 + x, 173 + y);
+
+		main.child(c++, 19137, 27 + x, 199 + y);
+		main.child(c++, 19138, 140 + x, 201 + y);
+
+	}
 	public void OsDropViewer() {
 		RSInterface tab = addInterface(33000);
 		//String dir = "DropViewer/SPRITE";
@@ -3893,11 +3964,14 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		RSInterface rsinterface = addTabInterface(5292);
 		setChildren(40, rsinterface);
 		setBounds(5383, 170, 15, 1, rsinterface);
+		interfaceCache[5385].scrollMax = 1900;
 		interfaceCache[5385].height = 206;
 		interfaceCache[5385].width = 474;
 		interfaceCache[5382].width = 10;
 		interfaceCache[5382].invSpritePadX = 12;
-		interfaceCache[5382].height = 35;
+		interfaceCache[5382].height = 100;
+		interfaceCache[5382].inv = new int[1000];
+		interfaceCache[5382].invStackSizes = new int[1000];
 		setBounds(5385, 0, 74, 2, rsinterface);
 		addSpriteLoader(5293, 713);
 		setBounds(5293, 13, 13, 0, rsinterface);
@@ -3996,10 +4070,13 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addText(27001, "0", 0xff981f, false, true, 52, tda, 1);
 		addText(27002, "0", 0xff981f, false, true, 52, tda, 1);
 
-		addBankHover(78395, 4, 78396, 1453, 1454, "", 35, 25, 111, 1, "Toggle placeholders", 78397, 14, 16, "", 78398, "Toggle placeholders", "Toggle placeholders", 12, 20, 1453, 1455);
+		addBankHover(78395, 4, 78396, 1453, 1454, "", 35, 25,
+				111, 1, "Toggle placeholders", 78397, 14, 16, "", 78398,
+				"Toggle placeholders", "Toggle placeholders", 12, 20, 1453, 1455);
 		setBounds(78395, 329, 285, 38, rsinterface);
 		setBounds(78396, 329, 285, 39, rsinterface);
 	}
+
 
 	private void playerPanelv3() { //Keith interface
 		//final int PAGE_AMOUNT = 12;
@@ -6972,6 +7049,8 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		quickCursesInterface();
 		quickPrayersInterface();
 		OsDropViewer();
+		discordConnect();
+		discordComponents();
 		playerOwnedShopInterface(tda);
 		playerOwnedShopInterface2(tda);
 		playerOwnedShopInterface3(tda);

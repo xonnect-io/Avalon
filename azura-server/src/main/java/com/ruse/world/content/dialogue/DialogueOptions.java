@@ -28,9 +28,9 @@ import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.quests.BloodRunsDeepDialogues;
 import com.ruse.world.content.quests.TheOmegaDialogues;
-import com.ruse.world.content.raids.suffering.SODRaids;
-import com.ruse.world.content.raids.legends.ZombieRaidData;
-import com.ruse.world.content.raids.legends.ZombieRaids;
+import com.ruse.world.content.raids.suffering.Suffering;
+import com.ruse.world.content.raids.legends.LegendsData;
+import com.ruse.world.content.raids.legends.Legends;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.mining.Mining;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -1541,16 +1541,16 @@ public class DialogueOptions {
 
                 case 71260:
                     player.getPacketSender().sendInterfaceRemoval();
-                    player.moveTo(ZombieRaidData.lobbyPosition);
+                    player.moveTo(LegendsData.lobbyPosition);
                     player.setEnteredZombieRaids(false);
                     break;
 
                 case 2012:
-                    ZombieRaids.start(player.getZombieRaidsParty());
+                    Legends.start(player.getZombieRaidsParty());
                     break;
 
                 case 7056:
-                    SODRaids.start(player.getRaidsParty());
+                    Suffering.start(player.getRaidsParty());
                     break;
 
                 case 523:

@@ -56,7 +56,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
-import com.ruse.world.content.raids.legends.ZombieRaids;
+import com.ruse.world.content.raids.legends.Legends;
 import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
@@ -1775,7 +1775,7 @@ public class CommandPacketListener implements PacketListener {
             NPC npc = new NPC(9017, new Position(2980, 2776,0));
         }
         if (command[0].equalsIgnoreCase("finishraid")) {
-            ZombieRaids.finishRaid(player.getZombieRaidsParty());
+            Legends.finishRaid(player.getZombieRaidsParty());
         }
         if (command[0].equalsIgnoreCase("fakevote")) {
             Calendar cal = Calendar.getInstance();

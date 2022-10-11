@@ -22,6 +22,7 @@ import com.ruse.world.content.combat.magic.CombatSpells;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.discordbot.DiscordIntegration;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupConfig;
 import com.ruse.world.content.groupironman.GroupManager;
@@ -131,6 +132,10 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 1208://GLOVES_NPC
                         break;
 
+                    case 10006:
+                        player.getPA().sendInterface(19130);
+                        DiscordIntegration.updateDiscordInterface(player);
+                        break;
                     case 9222:
                         TravellingMerchant.openShop(player);
                         break;

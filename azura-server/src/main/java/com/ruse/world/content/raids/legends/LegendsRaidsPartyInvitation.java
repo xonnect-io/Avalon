@@ -10,9 +10,9 @@ import com.ruse.world.entity.impl.player.Player;
  * @author Gabriel Hannason
  */
 
-public class ZombieRaidsPartyInvitation extends Dialogue {
+public class LegendsRaidsPartyInvitation extends Dialogue {
 	
-	public ZombieRaidsPartyInvitation(Player inviter, Player p) {
+	public LegendsRaidsPartyInvitation(Player inviter, Player p) {
 		this.inviter = inviter;
 		this.p = p;
 	}

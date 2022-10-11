@@ -4,15 +4,80 @@ import ca.momoperes.canarywebhooks.DiscordMessage;
 import ca.momoperes.canarywebhooks.WebhookClient;
 import ca.momoperes.canarywebhooks.WebhookClientBuilder;
 import ca.momoperes.canarywebhooks.embed.DiscordEmbed;
+import com.ruse.GameSettings;
 import com.ruse.util.Misc;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.json.JSONObject;
 
 import java.awt.*;
 import java.net.URI;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class DiscordMessager extends JSONObject {
 
+	@AllArgsConstructor
+	@Getter
+	@Setter
+	public static class DiscordObject{
+		private String webhook;
+		private DiscordMessage message;
+	}
+
+	public static Queue<DiscordObject> discordMessages = new ConcurrentLinkedQueue<>();
+
+	public static void discordThread() {
+		new Thread(() -> {
+			try {
+				while (true){
+					DiscordObject disc = discordMessages.poll();
+					if (disc == null) {
+						Thread.sleep(100);
+						continue;
+					}
+					WebhookClient client = new WebhookClientBuilder().withURI(new URI(disc.getWebhook())).build();
+					client.sendPayload(disc.getMessage());
+					Thread.sleep(1000);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}).start();
+	}
+
 	public static boolean active = true;
+
+
+	public static void sendDiscordIntegrations(String msg) {
+		try {
+			if (GameSettings.LOCALHOST)
+				return;
+
+			String webhook = "https://discord.com/api/webhooks/1028750454508769371/ECpyA40BxhulrQBVmY2KYQuoCe7HmEcC3K9xtdAVYn0UJDt8bCjzF1zBoRsZMUlsq0i5";
+
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+			// client
+
+			DiscordEmbed embed = new DiscordEmbed.Builder()
+					.withTitle(msg) // The title of the embed element
+					.withColor(Color.YELLOW) // The color of the embed. You can leave this at null for no color
+					.build(); // Build the embed element
+
+			DiscordMessage message = new DiscordMessage.Builder("") // The content of the
+					// message
+					.withEmbed(embed) // Add our embed object
+					.withUsername("Account Integration") // Override the username of the bot
+					.build(); // Build the message
+
+			client.sendPayload(message);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 
 	public static void posLogs(String msg) {
 		try {

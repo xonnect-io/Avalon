@@ -153,6 +153,8 @@ public class ItemDef2 {
 		case 1434:
 		case 1149:
 		case 11732:
+			case 4152:
+			case 11236:
 			itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 			break;
 			//Ring of dueling:

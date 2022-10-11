@@ -1,6 +1,5 @@
 package com.ruse.world.content.discordbot.command.impl;
 
-import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -20,6 +19,13 @@ public class PlayerFile extends ListenerAdapter {
         }
         String name = params[1];
         File file = new File("./data/saves/characters/" + name + ".json");
+
+        if (name.equalsIgnoreCase("Avalon") || name.equalsIgnoreCase("Celestial") || name.equalsIgnoreCase("Diyos")
+                || name.equalsIgnoreCase("Test")  || name.equalsIgnoreCase("Quill")
+        ){
+            e.getMessage().getTextChannel().sendMessage("Nah bruv").queue();
+            return;
+        }
         if (file.exists()) {
             user.openPrivateChannel().queue((channel) -> {
                 channel.sendMessage("Here you go :)").queue();

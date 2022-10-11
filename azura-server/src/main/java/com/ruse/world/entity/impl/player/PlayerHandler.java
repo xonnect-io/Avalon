@@ -30,6 +30,7 @@ import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.pvp.BountyHunter;
 import com.ruse.world.content.combat.range.DwarfMultiCannon;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
+import com.ruse.world.content.discordbot.DiscordIntegration;
 import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.Barrows;
 import com.ruse.world.content.minigames.impl.VoidOfDarkness;
@@ -399,7 +400,9 @@ public class PlayerHandler {
         }
 
         player.getVotingStreak().login();
+        DiscordIntegration.setIntegration(player);
 
+       // player.sendMessage("<img=5> @blu@Dont forget to do ::Discord for Discord points and free Donator rank!");
         Item weapon = player.getEquipment().get(Equipment.WEAPON_SLOT);
 
         if (weapon != null) {

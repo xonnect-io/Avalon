@@ -3734,26 +3734,15 @@ public final class MobDefinition {
 				break;
 
 			case 225:
-				definition.copy(7134);
+				definition.npcModels = new int[]{19542};
 				definition.name = "Bork pet";
-				definition.description = "Bork offspring.".getBytes();
-				definition.degreesToTurn = 32;
-				definition.headIcon = -1;
+				definition.scaleXZ = 40;
+				definition.scaleY = 40;
 				definition.npcSizeInSquares = 1;
-				definition.standAnimation = 808;
-				definition.walkAnimation = 819;
-				definition.walkingBackwardsAnimation = -1;
-				definition.walkLeftAnimation = -1;
-				definition.walkRightAnimation = -1;
-				definition.configChild = -1;
-				definition.varBitChild = -1;
-				definition.scaleXZ = 60;
-				definition.scaleY = 60;
-				definition.modelLightning = 0;
-				definition.modelShadowing = 0;
-				definition.drawYellowDotOnMap = false;
-				definition.disableRightClick = true;
-				definition.visibilityOrRendering = false;
+				definition.actions = new String[5];
+				definition.actions[0] = null;
+				definition.standAnimation = MobDefinition.get(7134).standAnimation;
+				definition.walkAnimation = MobDefinition.get(7134).walkAnimation;
 				break;
 				
 			case 450:

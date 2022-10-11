@@ -58,7 +58,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.osrscollectionlog.CollectionLogButtons;
 import com.ruse.world.content.polling.PollCreation;
 import com.ruse.world.content.polling.PollManager;
-import com.ruse.world.content.raids.legends.ZombieRaidsParty;
+import com.ruse.world.content.raids.legends.LegendsRaidParty;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.rewardsList.RewardsHandler;
 import com.ruse.world.content.serverperks.ServerPerkContributionInput;
@@ -875,7 +875,7 @@ public class ButtonClickPacketListener implements PacketListener {
                         }
                     } else {
                         if (player.getLocation() == Location.ZOMBIE_LOBBY )
-                        new ZombieRaidsParty(player).create();
+                        new LegendsRaidParty(player).create();
                     }
                 } else if (player.getLocation() == Location.SOD_LOBBY) {
                     if (player.getRaidsParty() != null) {

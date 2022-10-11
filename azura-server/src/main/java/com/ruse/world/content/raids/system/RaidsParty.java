@@ -5,8 +5,8 @@ import com.ruse.model.Locations;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
 import com.ruse.world.content.dialogue.DialogueManager;
-import com.ruse.world.content.raids.legends.ZombieRaidsPartyInvitation;
-import com.ruse.world.content.raids.suffering.SODRaids;
+import com.ruse.world.content.raids.legends.LegendsRaidsPartyInvitation;
+import com.ruse.world.content.raids.suffering.Suffering;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -116,7 +116,7 @@ public class RaidsParty {
         if (p.getLocation() == Locations.Location.SOD_LOBBY || p.getLocation() == Locations.Location.SOD) {
             DialogueManager.start(p, new RaidsPartyInvitation(getOwner(), p));
         } else if (p.getLocation() == Locations.Location.ZOMBIE_LOBBY || p.getLocation() == Locations.Location.ZOMBIE) {
-            DialogueManager.start(p, new ZombieRaidsPartyInvitation(getOwner(), p));
+            DialogueManager.start(p, new LegendsRaidsPartyInvitation(getOwner(), p));
         }
         getOwner().getPacketSender().sendMessage("An invitation has been sent to " + p.getUsername() + ".");
     }
@@ -194,7 +194,7 @@ public class RaidsParty {
             destruct = false;
         }
         if (getPlayers().size() <= 0 || destruct) {
-            SODRaids.destroyInstance(this);
+            Suffering.destroyInstance(this);
         }
     }
 
@@ -311,7 +311,7 @@ public class RaidsParty {
     }
 
     public void startSODRaid() {
-        SODRaids.firstWave(this);
+        Suffering.firstWave(this);
     }
 
 }

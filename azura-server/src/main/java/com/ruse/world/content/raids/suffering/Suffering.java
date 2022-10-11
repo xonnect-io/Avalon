@@ -18,7 +18,7 @@ import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
 
-public class SODRaids {
+public class Suffering {
 
     public static void start(RaidsParty party) {
 
@@ -96,7 +96,7 @@ public class SODRaids {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 2500;
 
-            NPC npc = new NPC(SODRaidData.firstWaveNpc, new Position(3422, 3978, party.getHeight()));
+            NPC npc = new NPC(SufferingData.firstWaveNpc, new Position(3422, 3978, party.getHeight()));
             npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
             npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
             npcs.add(npc);
@@ -114,7 +114,7 @@ public class SODRaids {
 
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 5000;
-            NPC npc = new NPC(SODRaidData.secondWaveNpc, new Position(3402, 3986, party.getHeight()));
+            NPC npc = new NPC(SufferingData.secondWaveNpc, new Position(3402, 3986, party.getHeight()));
             npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
             npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
             npcs.add(npc);
@@ -132,7 +132,7 @@ public class SODRaids {
 
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 10000;
-            NPC npc = new NPC(SODRaidData.thirdWaveNpc, new Position(3403, 4017, party.getHeight()));
+            NPC npc = new NPC(SufferingData.thirdWaveNpc, new Position(3403, 4017, party.getHeight()));
             npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
             npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
             npcs.add(npc);
@@ -152,7 +152,7 @@ public class SODRaids {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
         double mult = 20000;
 
-            NPC npc = new NPC(SODRaidData.fourthWaveNpc, new Position(3435, 4017, party.getHeight()));
+            NPC npc = new NPC(SufferingData.fourthWaveNpc, new Position(3435, 4017, party.getHeight()));
             npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
             npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
             npcs.add(npc);
@@ -172,7 +172,7 @@ public class SODRaids {
 
         double mult = 100000;
 
-        NPC npc = new NPC(SODRaidData.fifthWaveNpc, new Position(3420, 3998, party.getHeight()));
+        NPC npc = new NPC(SufferingData.fifthWaveNpc, new Position(3420, 3998, party.getHeight()));
         npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
         npcs.add(npc);
@@ -290,24 +290,19 @@ public class SODRaids {
                 for (Player member : party.getPlayers()) {
                     member.getInventory().add(23370, 1);
                     member.getSeasonPass().addXp(2);
+                    Cases.grantCasket(player, 10);
+                    if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
+                        member.getInventory().add(23370, 1);
+                    }
                     member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     member.getPointsHandler().incrementSufferingKC(1);
                 }
-                party.moveTo(SODRaidData.lobbyPosition);
+                party.moveTo(SufferingData.lobbyPosition);
                 player.getZombieRaidsParty().enteredDungeon(false);
                 party.setDeathCount(0);
                 party.setKills(0);
                 party.setCurrentPhase(1);
 
-                if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
-                    if (player.getInventory().getFreeSlots() > 0) {
-                        player.getInventory().add(23370, 1);
-                    } else {
-                        player.getBank(0).add(23370, 1);
-                    }
-                    player.sendMessage("<col=005fbe>You received x2 loot whilst X2 Raids Perk is active!");
-                }
-                Cases.grantCasket(player, 10);
             }
             party.getPlayers().clear();
             stop();
@@ -339,7 +334,7 @@ public class SODRaids {
         for (Player member : party.getPlayers()) {
             member.setEnteredSODRaids(false);
         }
-        party.moveTo(SODRaidData.lobbyPosition);
+        party.moveTo(SufferingData.lobbyPosition);
         party.enteredDungeon(false);
         party.getPlayers().clear();
 

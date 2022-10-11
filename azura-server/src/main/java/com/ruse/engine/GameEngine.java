@@ -5,8 +5,10 @@ import com.ruse.GameSettings;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.container.impl.Shop.ShopManager;
 import com.ruse.util.playerSavingTimer;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 import com.ruse.world.content.clan.ClanChatManager;
+import com.ruse.world.content.discordbot.DiscordIntegration;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
@@ -98,6 +100,7 @@ public final class GameEngine implements Runnable {
             GrandExchangeOffers.save();
             ClanChatManager.save();
             PlayerOwnedShopManager.saveShops();
+            DiscordIntegration.saveConnectedAccounts();
         }
     }
 
@@ -118,9 +121,11 @@ public final class GameEngine implements Runnable {
                 GrandExchangeOffers.save();
                 ClanChatManager.save();
                 PlayerOwnedShopManager.saveShops();
+                DiscordIntegration.saveConnectedAccounts();
             }
         }, "GameEngine Exception Handler");
         exceptionHandlerThread.start();
+        DiscordMessager.discordThread();
     }
 
     /**

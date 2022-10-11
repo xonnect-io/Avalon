@@ -462,6 +462,15 @@ public class PlayerLoading {
             if (reader.has("current-daily-task-reward")) {
                 player.setRewardDailyTask(reader.get("current-daily-task-reward").getAsInt());
             }
+            if (reader.has("discord-user")) {
+                player.setDiscordUser(reader.get("discord-user").getAsLong());
+            }
+            if (reader.has("discord-tag")) {
+                player.setDiscordTag(reader.get("discord-tag").getAsString());
+            }
+            if (reader.has("discord-points")) {
+                player.setDiscordPoints(reader.get("discord-points").getAsInt());
+            }
 
             if (reader.has("daysVoted")) {
                 player.setDaysVoted(reader.get("daysVoted").getAsInt());

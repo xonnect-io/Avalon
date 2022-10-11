@@ -19,7 +19,7 @@ import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
-import com.ruse.world.content.raids.legends.ZombieRaids;
+import com.ruse.world.content.raids.legends.Legends;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.Entity;
@@ -390,7 +390,7 @@ public class Locations {
 			@Override
 			public void onDeath(Player player) {
 				if (player.getZombieRaidsParty() != null) {
-					ZombieRaids.handleDeath(player.getZombieRaidsParty(),
+					Legends.handleDeath(player.getZombieRaidsParty(),
 							player);
 				}
 				player.getPacketSender().sendCameraNeutrality();

@@ -83,7 +83,10 @@ public class PlayerSaving {
 			object.addProperty("travelling-day", player.getTravelingMerchantDay());
 			object.add("travelling-merchant", builder.toJsonTree(player.getMerchantItems()));
 			object.add("uim-bank", builder.toJsonTree(player.getUimBankItems()));
-			
+
+			object.addProperty("discord-user", player.getDiscordUser());
+			object.addProperty("discord-tag", player.getDiscordTag());
+			object.addProperty("discord-points", player.getDiscordPoints());
 			object.addProperty("dg-floor", player.getDungeoneeringFloor());
 			object.addProperty("dg-prestige", player.getDungeoneeringPrestige());
 			object.addProperty("clue-task", player.getCurrentClue().getCurrentTask().name());

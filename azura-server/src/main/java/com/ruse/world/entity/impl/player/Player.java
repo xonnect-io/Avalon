@@ -78,7 +78,7 @@ import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.properscratchcard.Scratchcard;
 import com.ruse.world.content.quests.QuestInterfaceHandler;
 import com.ruse.world.content.raids.system.RaidsParty;
-import com.ruse.world.content.raids.legends.ZombieRaidsParty;
+import com.ruse.world.content.raids.legends.LegendsRaidParty;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.scratchcards.ScratchCard;
 import com.ruse.world.content.seasonpass.SeasonPass;
@@ -688,7 +688,7 @@ public int howmuchdissolveamt = 0;
     private boolean enteredSODRaids;
     private int sodRaidsKC;
     private RaidsParty raidsParty;
-    private ZombieRaidsParty zombieRaidsParty;
+    private LegendsRaidParty zombieRaidsParty;
     private boolean insideRaids;
     private int afkTree;
     private int afkSapphire;
@@ -1047,11 +1047,11 @@ public int howmuchdissolveamt = 0;
         this.raidsParty = raidsParty;
     }
 
-    public ZombieRaidsParty getZombieRaidsParty() {
+    public LegendsRaidParty getZombieRaidsParty() {
         return zombieRaidsParty;
     }
 
-    public void setZombieRaidsParty(ZombieRaidsParty zombieRaidsParty) {
+    public void setZombieRaidsParty(LegendsRaidParty zombieRaidsParty) {
         this.zombieRaidsParty = zombieRaidsParty;
     }
 
