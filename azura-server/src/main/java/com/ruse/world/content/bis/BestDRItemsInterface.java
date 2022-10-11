@@ -14,7 +14,13 @@ public class BestDRItemsInterface {
             "Boots", "Ring", "Auras", "Pets", "Misc"};
     public static List<Integer> itemsToIgnore = new ArrayList() {
         {
-            add(5424); //add custom items ids here
+            add(23418); //add custom items ids here
+            add(23419); //add custom items ids here
+            add(23420); //add custom items ids here
+            add(23421); //add custom items ids here
+            add(23422); //add custom items ids here
+            add(23423); //add custom items ids here
+            add(23424); //add custom items ids here
 
         }
     };
