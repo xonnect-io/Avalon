@@ -303,10 +303,10 @@ public class ZombieRaids {
 
                     for (Player member : party.getPlayers()) {
                         member.getInventory().add(18404, 1);
+                        member.getSeasonPass().addXp(2);
+                        member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
+                        member.getPointsHandler().incrementZombieRaidKC(1);
                     }
-                    player.getSeasonPass().addXp(2);
-                    player.getAchievementTracker().progress(AchievementData.RAIDER, 1);
-                    player.getPointsHandler().incrementZombieRaidKC(1);
                     party.moveTo(ZombieRaidData.lobbyPosition);
                     player.getRaidsParty().enteredDungeon(false);
                     party.setDeathCount(0);
