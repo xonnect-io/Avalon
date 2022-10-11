@@ -1,5 +1,6 @@
 package com.ruse.world.content.raids.system;
 
+import com.ruse.model.Locations;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dialogue.DialogueExpression;
 import com.ruse.world.content.dialogue.DialogueType;
@@ -60,7 +61,11 @@ public class RaidsPartyInvitation extends Dialogue {
 			
 			@Override
 			public void specialAction() {
-				p.getMinigameAttributes().getZombieAttributes().setPartyInvitation(inviter.getZombieRaidsParty());
+				if (p.getLocation() == Locations.Location.SOD_LOBBY) {
+					p.getMinigameAttributes().getSODAttributes().setPartyInvitation(inviter.getRaidsParty());
+				} else if (p.getLocation() == Locations.Location.ZOMBIE_LOBBY) {
+					p.getMinigameAttributes().getZombieAttributes().setPartyInvitation(inviter.getZombieRaidsParty());
+				}
 				p.setDialogueActionId(67);
 			}
 			

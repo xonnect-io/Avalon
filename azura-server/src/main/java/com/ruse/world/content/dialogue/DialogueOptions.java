@@ -1526,10 +1526,10 @@ public class DialogueOptions {
                     player.getPacketSender().sendInterfaceRemoval();
                     if (player.getLocation() == Location.SOD_LOBBY
                             && player.getRaidsParty() == null) {
-                        if (player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null) {
-                            player.getMinigameAttributes().getZombieAttributes().getPartyInvitation().add(player);
+                        if (player.getMinigameAttributes().getSODAttributes().getPartyInvitation() != null) {
+                            player.getMinigameAttributes().getSODAttributes().getPartyInvitation().add(player);
                         }
-                        player.getMinigameAttributes().getZombieAttributes().setPartyInvitation(null);
+                        player.getMinigameAttributes().getSODAttributes().setPartyInvitation(null);
                     } else if (player.getLocation() == Location.ZOMBIE_LOBBY
                             && player.getZombieRaidsParty() == null) {
                         if (player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null) {
