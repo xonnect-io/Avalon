@@ -287,11 +287,12 @@ public class SODRaids {
             party.sendMessage("@red@Your party has defeated the Souls of Suffering!");
 
             for (Player player : party.getPlayers()) {
-
-                player.getInventory().add(23370, 1);
-                player.getSeasonPass().addXp(2);
-                player.getAchievementTracker().progress(AchievementData.RAIDER, 1);
-                player.getPointsHandler().incrementSufferingKC(1);
+                for (Player member : party.getPlayers()) {
+                    member.getInventory().add(23370, 1);
+                    member.getSeasonPass().addXp(2);
+                    member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
+                    member.getPointsHandler().incrementSufferingKC(1);
+                }
                 party.moveTo(SODRaidData.lobbyPosition);
                 player.getZombieRaidsParty().enteredDungeon(false);
                 party.setDeathCount(0);
