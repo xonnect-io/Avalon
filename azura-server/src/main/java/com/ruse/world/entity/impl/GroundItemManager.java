@@ -1,9 +1,5 @@
 package com.ruse.world.entity.impl;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import com.ruse.engine.task.impl.GroundItemsTask;
 import com.ruse.model.GroundItem;
 import com.ruse.model.Item;
@@ -17,6 +13,12 @@ import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.skill.impl.old_dungeoneering.UltimateIronmanHandler;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class GroundItemManager {
 	/**
@@ -118,8 +120,8 @@ public class GroundItemManager {
 			}
 		}
 		if (listGItem) {
-//			if (Location.getLocation(groundItem) == Location.DUNGEONEERING)
-//				groundItem.setShouldProcess(false);
+			if (Location.getLocation(groundItem) == Location.DUNGEONEERING)
+				groundItem.setShouldProcess(false);
 			addItemToPile(groundItem);
 
 			GroundItemsTask.fireTask();

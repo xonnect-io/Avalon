@@ -22,6 +22,136 @@ public class CustomInterfaces extends RSInterface {
 	}
 
 
+	public static void serverPerks() {
+		int interID = 42050;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 140;
+		int y = 55;
+		tab.totalChildren(12);
+
+		addSpriteLoader(id, 1769);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 208 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 208 + x, 3 + y);
+		id++;
+
+		addText(id, "Server-Wide Perks", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 117 + x, 4 + y);
+
+
+		addText(id, "The perk will be activated once filled", tda, 0, 16746020, true, true);
+		tab.child(c++, id++, 116 + x, 71 + y);
+
+		addProgressBar(id, 213, 20, 50, 16711680, 5492557);
+		tab.child(c++, id++, 10 + x, 46 + y);
+
+		addText(id, "25m/50m", tda, 1, 16777215, true, true);
+		tab.child(c++, id++, 117 + x, 48 + y);
+
+
+		hoverButton(id, 1770, 1771, "Contribute", 2, 0xff8624, "Contribute");
+		tab.child(c++, id++, 57 + x, 92 + y);
+
+
+		addSpriteLoader(id, 1772);
+		tab.child(c++, id++, 8 + x, 26 + y);
+
+		addText(id, "No Cooldown", tda, 0, 16746020, false, true);
+		tab.child(c++, id++, 19 + x, 27 + y);
+
+		addText(id, "Current Perk", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 117 + x, 131 + y);
+
+		tab.child(c++, 42100, 12 + x, 150 + y);
+
+		interID = 42100;
+		RSInterface list = addTabInterface(interID);
+		list.totalChildren(4);
+		list.width = 211 - 16;
+		list.height = 153;
+		list.scrollMax = 153;
+		id = interID + 1;
+		x = 11;
+		y = 11;
+		c = 0;
+		for (int i = 0; i < 1; i++) {
+			addSpriteLoader(id, 1766);
+			list.child(c++, id++, 0 + x, 0 + y);
+
+			addText(id, "Double Drops", tda, 2, 0xFFA500, true, true);
+			list.child(c++, id++, 93 + x, 12 + y);
+
+			addSpriteLoader(id, 1523);
+			list.child(c++, id++, 2 + x, 7 + y);
+			addSpriteLoader(id, 1523);
+			list.child(c++, id++, 157 + x, 7 + y);
+			y += 43;
+		}
+
+
+	}
+
+	private static void customServerPerks(TextDrawingArea[] font) {
+		int STARTING_POINT = 42050;
+		RSInterface main = addInterface(STARTING_POINT);
+		addSpriteLoader(STARTING_POINT + 1, 1764); // 1229
+		addText(STARTING_POINT + 2, "Server Perks", font, 2, 16746020, true, true);
+		addText(STARTING_POINT + 4, "Once the well has been filled up,", font, 0, 16746020, true, true);
+		addText(STARTING_POINT + 5, "perk will be activated Worldwide!", font, 0, 16746020, true, true);
+		addHoverButtonWSpriteLoader(STARTING_POINT + 6, 1767, 90, 35, "Contribute", -1, STARTING_POINT + 7, 1);
+		addHoveredImageWSpriteLoader(STARTING_POINT + 7, 1768, 90, 35, STARTING_POINT + 8);
+		addText(STARTING_POINT + 9, "Contribute!", font, 0, 16746020, true, true);
+		addProgressBar(STARTING_POINT + 10, 165, 40, 75, 16711680, 5492557);
+		addText(STARTING_POINT + 11, "250Q / 250Q", font, 1, 16777215, true, true);
+		main.totalChildren(10);
+		main.child(0, STARTING_POINT + 1, 155, 10);
+		main.child(1, STARTING_POINT + 2, 254, 20);
+		main.child(2, STARTING_POINT + 4, 254, 235);
+		main.child(3, STARTING_POINT + 5, 254, 245);
+		main.child(4, STARTING_POINT + 6, 210, 263);
+		main.child(5, STARTING_POINT + 7, 210, 263);
+		main.child(6, STARTING_POINT + 9, 254, 270);
+		main.child(7, STARTING_POINT + 15, 120, 49);
+		main.child(8, STARTING_POINT + 10, 173, 189);
+		main.child(9, STARTING_POINT + 11, 254, 200);
+		RSInterface perkScroll = addInterface(STARTING_POINT + 15);
+		perkScroll.totalChildren(18);
+		int idStart = STARTING_POINT + 16;
+		int yPos = 0;
+
+		for (int i = 0; i < 6; i++) {
+			addHoverableConfigSprite(idStart + i, 1765, 1766, true, "Select", i, 4000);
+			perkScroll.child(i, idStart + i, 53, yPos);
+			yPos += 42;
+		}
+
+		String[] PERK_NAMES = {"X2 Bonds Donations", "X1.5 Damage", "X2 Npc kills", "X1.5 DR", "X3 XP", "Double Drops"};
+		int child = 6;
+		int index = 0;
+		yPos = 5;
+		idStart = STARTING_POINT + 50;
+		for (int j = 0; j < 12; j += 2) {
+			addText(idStart + j, PERK_NAMES[index], font, 2, 16746020, true, true);
+			addText(idStart + j + 1, "@gre@Perk", font, 1, 32768, false, true);
+			perkScroll.child(child, idStart + j, 125, yPos);
+			perkScroll.child(child + 1, idStart + j + 1, 110, yPos + 14);
+			child += 2;
+			yPos += 42;
+			index++;
+		}
+		perkScroll.width = 200;
+		perkScroll.height = 137;
+		perkScroll.scrollMax = 252;
+	}
+
+
+
+
 	private static void worldMap() {
 		RSInterface map = addInterface(57350);
 		map.totalChildren(3);
@@ -3304,7 +3434,7 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(7, 37208, 435, 315);
 	}
 
-	private static void pestControlInterfaces() {
+	private void pestControlInterfaces() {
 		RSInterface rsinterface = addTabInterface(21100);
 		addSpriteLoader(21101, 680);
 		addSpriteLoader(21102, 681);
@@ -3312,45 +3442,48 @@ public class CustomInterfaces extends RSInterface {
 		addSpriteLoader(21104, 683);
 		addSpriteLoader(21105, 684);
 		addSpriteLoader(21106, 685);
-		addText(21107, "W", 0xcc00cc, false, true, 52, fonts, 1);
-		addText(21108, "E", 0x0000FF, false, true, 52, fonts, 1);
-		addText(21109, "S", 0xffff44, false, true, 52, fonts, 1);
-		addText(21110, "N", 0xcc0000, false, true, 52, fonts, 1);
-		addText(21111, "250", 0x99ff33, false, true, 52, fonts, 1);
-		addText(21112, "250", 0x99ff33, false, true, 52, fonts, 1);
-		addText(21113, "250", 0x99ff33, false, true, 52, fonts, 1);
-		addText(21114, "250", 0x99ff33, false, true, 52, fonts, 1);
-		addText(21115, "***", 0x99ff33, false, true, 52, fonts, 1);
-		addText(21116, "***", 0x99ff33, false, true, 52, fonts, 1);
-		addText(21117, "Time Remaining:", 0xffffff, false, true, 52, fonts, 0);
-		addText(21118, "", 0xffffff, false, true, 52, fonts, 0);
+		addText(21107, "W", 0xcc00cc, true, true, 52, tda, 1);
+		addText(21108, "E", 0x0000FF, true, true, 52, tda, 1);
+		addText(21109, "S", 0xffff44, true, true, 52, tda, 1);
+		addText(21110, "N", 0xcc0000, true, true, 52, tda, 1);
+		addText(21111, "250", 0x99ff33, true, true, 52, tda, 1);
+		addText(21112, "250", 0x99ff33, true, true, 52, tda, 1);
+		addText(21113, "250", 0x99ff33, true, true, 52, tda, 1);
+		addText(21114, "250", 0x99ff33, true, true, 52, tda, 1);
+		addText(21115, "***", 0x99ff33, false, true, 52, tda, 1);
+		addText(21116, "***", 0x99ff33, false, true, 52, tda, 1);
+		addText(21117, "Time Remaining:", 0xffffff, false, true, 52, tda, 0);
+		addText(21118, "", 0xffffff, false, true, 52, tda, 0);
 		byte byte0 = 18;
 		rsinterface.children = new int[byte0];
 		rsinterface.childX = new int[byte0];
 		rsinterface.childY = new int[byte0];
-		setBounds(21101, 361, 26, 0, rsinterface);
-		setBounds(21102, 396, 26, 1, rsinterface);
-		setBounds(21103, 436, 26, 2, rsinterface);
-		setBounds(21104, 474, 26, 3, rsinterface);
+		setBounds(21101, 355, 26, 0, rsinterface);
+		setBounds(21102, 395, 26, 1, rsinterface);
+		setBounds(21103, 435, 26, 2, rsinterface);
+		setBounds(21104, 475, 26, 3, rsinterface);
 		setBounds(21105, 3, 21, 4, rsinterface);
 		setBounds(21106, 3, 50, 5, rsinterface);
-		setBounds(21107, 371, 60, 6, rsinterface);
-		setBounds(21108, 409, 60, 7, rsinterface);
-		setBounds(21109, 443, 60, 8, rsinterface);
-		setBounds(21110, 479, 60, 9, rsinterface);
-		setBounds(21111, 362, 10, 10, rsinterface);
-		setBounds(21112, 398, 10, 11, rsinterface);
-		setBounds(21113, 436, 10, 12, rsinterface);
-		setBounds(21114, 475, 10, 13, rsinterface);
-		setBounds(21115, 32, 32, 14, rsinterface);
-		setBounds(21116, 32, 62, 15, rsinterface);
+
+		setBounds(21107, 367, 57, 6, rsinterface);
+		setBounds(21108, 407, 57, 7, rsinterface);
+		setBounds(21109, 447, 57, 8, rsinterface);
+		setBounds(21110, 487, 57, 9, rsinterface);
+
+		setBounds(21111, 367, 10, 10, rsinterface);
+		setBounds(21112, 407, 10, 11, rsinterface);
+		setBounds(21113, 447, 10, 12, rsinterface);
+		setBounds(21114, 487, 10, 13, rsinterface);
+
+		setBounds(21115, 32, 26, 14, rsinterface);
+		setBounds(21116, 32, 56, 15, rsinterface);
 		setBounds(21117, 8, 88, 16, rsinterface);
 		setBounds(21118, 87, 88, 17, rsinterface);
 		RSInterface rsinterface2 = addTabInterface(21005);
-		addText(21006, "Next Departure:", 0xCCCBCB, false, true, 52, fonts, 1);
-		addText(21007, "Players Ready:", 0x5BD230, false, true, 52, fonts, 1);
-		addText(21008, "(Need 5 to 25 players)", 0xDED36A, false, true, 52, fonts, 1);
-		addText(21009, "Commendations:", 0x99FFFF, false, true, 52, fonts, 1);
+		addText(21006, "Next Departure:", 0xCCCBCB, false, true, 52, tda, 1);
+		addText(21007, "Players Ready:", 0x5BD230, false, true, 52, tda, 1);
+		addText(21008, "(Need 5 to 25 players)", 0xDED36A, false, true, 52, tda, 1);
+		addText(21009, "Commendations:", 0x99FFFF, false, true, 52, tda, 1);
 		byte0 = 4;
 		rsinterface2.children = new int[byte0];
 		rsinterface2.childX = new int[byte0];
@@ -3375,7 +3508,7 @@ public class CustomInterfaces extends RSInterface {
 
 		addButtonWSpriteLoader(18728, 689, "Close Window", 16, 16);
 
-		addText(18729, "", fonts, 0, 0xFFA500, false, true);
+		addText(18729, "", tda, 0, 0xFFA500, false, true);
 
 		// addButton(18776, 0, "PestControl/X", 102, 22, "extra", 1);
 		tab1.totalChildren(13);
@@ -3394,7 +3527,7 @@ public class CustomInterfaces extends RSInterface {
 		tab1.child(11, 18729, 370, 47);
 		tab1.child(12, 18745, 338, 274);
 
-		// tab1.child(17, 18776, 334, 46);
+		//tab1.child(17, 18776, 334, 46);
 		/* Equipment Tab Void */
 		RSInterface tab2 = addTabInterface(18746);
 
@@ -3403,16 +3536,28 @@ public class CustomInterfaces extends RSInterface {
 
 		addButtonWSpriteLoader(18749, 687, "Purchase", 142, 14);
 		addButtonWSpriteLoader(18750, 687, "Purchase", 142, 14);
-
+		addButtonWSpriteLoader(18751, 687, "Purchase", 142, 14);
+		addButtonWSpriteLoader(18752, 687, "Purchase", 142, 14);
+		addButtonWSpriteLoader(18753, 687, "Purchase", 142, 14);
+		addButtonWSpriteLoader(18754, 687, "Purchase", 142, 14);
+		addButtonWSpriteLoader(18755, 687, "Purchase", 142, 14);
+		addButtonWSpriteLoader(18756, 687, "Purchase", 142, 14);
 		addButtonWSpriteLoader(18728, 689, "Close Window", 16, 16);
+
 		// addButton(18776, 0, "PestControl/X", 102, 22, "extra", 1);
-		tab2.totalChildren(6);
+		tab2.totalChildren(12);
 		tab2.child(0, 18747, 4, 16);
 		tab2.child(1, 18748, 56, 231);
 		tab2.child(2, 18749, 30, 127);
 		tab2.child(3, 18750, 184, 127);
-		tab2.child(4, 18728, 480, 20);
-		tab2.child(5, 18729, 370, 47);
+		tab2.child(4, 18751, 340, 127);
+		tab2.child(5, 18752, 29, 209);
+		tab2.child(6, 18753, 184, 209);
+		tab2.child(7, 18754, 339, 209);
+		tab2.child(8, 18755, 185, 277);
+		tab2.child(9, 18756, 340, 277);
+		tab2.child(10, 18728, 480, 20);
+		tab2.child(11, 18729, 370, 47);
 
 	}
 
@@ -3737,6 +3882,73 @@ public class CustomInterfaces extends RSInterface {
 		scroll.height = 243;
 		scroll.scrollMax = 750;
 	}
+	static void partyChest() {
+		int interID = 146000;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 63;
+		int y = 13;
+		tab.totalChildren(18);
+
+		addSpriteLoader(id, 1773);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addText(id, "Party Drop Chest", tda, 2, 16750643, true, true);
+		tab.child(c++, id++, 192 + x, 4 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 359 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 359 + x, 3 + y);
+		id++;
+
+
+		addText(id, "Chest Dropping items in: 1hr 20mins", tda, 1, 16750643, true, true);
+		tab.child(c++, id++, 192 + x, 23 + y);
+
+		addText(id, "Items Being Dropped", tda, 1, 16750643, true, true);
+		tab.child(c++, id++, 185 + x, 44 + y);
+		addText(id, "Contribute to Chest", tda, 1, 16750643, true, true);
+		tab.child(c++, id++, 185 + x, 229 + y);
+		addText(id, "(Once you press Accept items can't be taken out of the chest)", tda, 0, 0x999896, true, true);
+		tab.child(c++, id++, 185 + x, 285 + y);
+
+
+		hoverButton(id, 1774, 1775, "Accept", 2, 0xff8624, "Accept");
+		tab.child(c++, id++, 299 + x, 254 + y);
+
+		tab.child(c++, 146050, 12 + x, 62 + y);
+
+		for (int r = 0; r < 8; r++) {
+			addToItemGroup(id, 1, 1, 1, 1, true, new String[]{"Remove", null, null, null, null}); //
+			tab.child(c++, id++, 15 + x, 253 + y);
+			x += 35;
+		}
+
+		interID = 146050;
+		RSInterface scroll1 = addInterface(interID);
+		scroll1.width = 358 - 16;
+		scroll1.height = 157;
+		scroll1.scrollMax = 1000;
+		scroll1.totalChildren(400);
+		id = interID + 1;
+		c = 0;
+		x = 0;
+		y = 0;
+
+		for (int i = 0; i < 50; i++) {
+			for (int r = 0; r < 8; r++) {
+				addToItemGroup(id, 1, 1, 1, 1, false, new String[]{null, null, null, null, null}); //
+				scroll1.child(c++, id++, 5 + x, 3 + y);
+				x += 43;
+			}
+			x = 0;
+			y += 40;
+		}
+
+	}
+
 	private void redoSpellBooks() {
 		RSInterface newInterface = addTabInterface(11000);
 		RSInterface spellButtons = interfaceCache[1151];
@@ -4076,7 +4288,6 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		setBounds(78395, 329, 285, 38, rsinterface);
 		setBounds(78396, 329, 285, 39, rsinterface);
 	}
-
 
 	private void playerPanelv3() { //Keith interface
 		//final int PAGE_AMOUNT = 12;
@@ -6986,6 +7197,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		casketInterface();
 		BossEventInterfaceTracker(tda);
 		combiner(tda);
+		serverPerks();
 		GoldenScratchCardNew(tda);
 		BoxRewardList(tda);
 		examineTab(tda);
@@ -7072,6 +7284,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		progressionInterface();
 		dailyLoginInterface();
 		posInterface();
+		partyChest();
 		posListingInterface();
 		DissolvablesInterface.handle(tda);
 		posHistoryInterface();

@@ -1,12 +1,16 @@
 package com.ruse.world.entity.impl.player;
 
 import com.ruse.GameSettings;
-import com.ruse.model.*;
+import com.ruse.model.Locations;
 import com.ruse.model.Locations.Location;
+import com.ruse.model.PlayerRights;
+import com.ruse.model.Position;
 import com.ruse.model.RegionInstance.RegionInstanceType;
+import com.ruse.model.Skill;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.PlayerPunishment;
 import com.ruse.world.content.combat.pvp.BountyHunter;
+import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.construction.House;
 import com.ruse.world.entity.impl.GroundItemManager;
 
@@ -134,7 +138,9 @@ public class PlayerProcess {
 			player.sendMessage("You are eligible for parole! You may leave.");
 			PlayerPunishment.Jail.unJail(player.getUsername());
 		}
-
+		if (player.getInterfaceId() == 42050) {
+			ServerPerks.getInstance().updateInterface(player);
+		}
 		if (PlayerPunishment.Jail.isJailed(player.getUsername()) && !Locations.Location.inLocation(player, Location.JAIL)) {
 			player.moveTo(new Position(2510, 9326));
 		}

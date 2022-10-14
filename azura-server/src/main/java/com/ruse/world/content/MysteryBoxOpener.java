@@ -99,10 +99,7 @@ public class MysteryBoxOpener {
 	}
 
 	public void openAll(int boxId) {
-		if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
-			player.getPacketSender().sendMessage("You can not do this as an Ultimate Ironman.");
-			return;
-		}
+
 		int amount = player.getInventory().getAmount(boxId);
 		Map<Integer, Integer> rewards = new HashMap<>();
 		for (int i = 0; i < amount; i++) {
@@ -141,6 +138,8 @@ public class MysteryBoxOpener {
 				player.getInventory().add(new Item(key, value), false);
 			} else {
 				Item item = new Item(key, value);
+				if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN)
+				player.getUimBank().deposit(key, value);
 				player.depositItemBank(item, false);
 			}
 		});
@@ -153,10 +152,6 @@ public class MysteryBoxOpener {
 	}
 
 	public void openAllRaids2Chest(int boxId) {
-		if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
-			player.getPacketSender().sendMessage("You can not do this as an Ultimate Ironman.");
-			return;
-		}
 		int amount = player.getInventory().getAmount(boxId);
 		Map<Integer, Integer> rewards = new HashMap<>();
 		for (int i = 0; i < amount; i++) {

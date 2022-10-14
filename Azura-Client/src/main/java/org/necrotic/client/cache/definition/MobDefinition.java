@@ -89,7 +89,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 400;
 				definition.scaleY = 400;
 				definition.combatLevel = 1031;
-				definition.npcSizeInSquares = 2;
+				definition.npcSizeInSquares = 3;
 				break;
 			case 4593:
 				definition.npcModels = new int[]{21155};
@@ -102,6 +102,7 @@ public final class MobDefinition {
 				definition.combatLevel = 0;
 				definition.npcSizeInSquares = 1;
 				break;
+
 
 			case 4594:
 				definition.npcModels = new int[]{21155};
@@ -7467,6 +7468,7 @@ public final class MobDefinition {
 		}
 	}
 
+	public double maleModelScale = 1;
 	public String[] actions;
 	public int scaleXZ;
 	public int scaleY;

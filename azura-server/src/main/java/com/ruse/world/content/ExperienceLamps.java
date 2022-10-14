@@ -53,6 +53,10 @@ public class ExperienceLamps {
 	public static boolean handleButton(Player player, int button) {
 		player.skilllampxp  = 0;
 		if (button == -27451) {
+			if (!player.getClickDelay().elapsed(3000)) {
+				player.getPacketSender().sendMessage("Please wait 3 seconds before doing that.");
+				return false;
+			}
 			try {
 				player.getPacketSender().sendInterfaceRemoval();
 				player.getPacketSender().sendString(38006, "Choose XP type...");
@@ -73,6 +77,7 @@ public class ExperienceLamps {
 							player.theskill = skill;
 							thelamp = lamp;
 							System.out.println("skill: "+player.theskill.getFormatName()+" "+player.skilllampxp+"");
+							player.getClickDelay().reset();
 							if (player.getInventory().getAmount(lamp.getItemId()) > 1){
 
 								DialogueManager.start(player, new Dialogue() {

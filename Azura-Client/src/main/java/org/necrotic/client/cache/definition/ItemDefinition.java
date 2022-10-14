@@ -27,6 +27,8 @@ public final class ItemDefinition {
 	public static int totalItems;
 
 
+	public double maleModelScale = 1;
+
 	public static void applyTexturing(Model model, int id) {
 		switch (id) {
 			case 299:
@@ -621,7 +623,8 @@ public final class ItemDefinition {
 				itemDef.name = "@yel@Upgrade Tokens";
 				itemDef.modelID = 19538;
 				itemDef.modelZoom = 1000;
-				itemDef.actions = new String[]{"Activate", null, null, null, "Drop"};
+				itemDef.actions = new String[]{"Activate", null, "Exchange", "Exchange X", "Destroy"};
+				//#427743 #242323
 				break;
 				
 			case 1563:
@@ -2117,7 +2120,7 @@ public final class ItemDefinition {
 				itemDef.copyItem(12855);
 				itemDef.name = "Suffering charm";
 				itemDef.modelZoom = 950;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				itemDef.modelID = 19517;
 				itemDef.rdc2 = 96252;
 				break;
@@ -6143,6 +6146,9 @@ public final class ItemDefinition {
 			}
 		}
 
+		if (maleModelScale != 1) {
+			model.scaleT((int)(128D / maleModelScale), (int)(128D /maleModelScale), (int)(128D /maleModelScale));
+		}
 		if (i == 0 && (maleWieldX != 0 || maleWieldY != 0 || maleWieldZ != 0)) {
 			model.translate(maleWieldX, maleWieldY, maleWieldZ);
 		}
@@ -6325,6 +6331,7 @@ public final class ItemDefinition {
 		equipOptions[1] = "Operate";
 		modelID = 0;
 		name = null;
+		maleModelScale = 1;
 		description = null;
 		editedModelColor = null;
 		newModelColor = null;

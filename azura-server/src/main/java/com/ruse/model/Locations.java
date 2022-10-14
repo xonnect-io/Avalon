@@ -13,6 +13,8 @@ import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.strategy.impl.Scorpia;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.events.EventManager;
+import com.ruse.world.content.events.PartyChest;
 import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceManager;
 import com.ruse.world.content.instanceMananger.InstanceManager;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
@@ -59,6 +61,35 @@ public class Locations {
 	public static int PLAYERS_IN_DUEL_ARENA;
 
 	public enum Location {
+
+		EVENTS_ROOM(new int[]{1684, 1708}, new int[]{4247, 4269}, true, true, true, false, false, true) {
+			@Override
+			public void process(Player player) {
+				EventManager.locationProcess(player);
+			}
+
+			@Override
+			public void enter(Player player) {
+				if (player.getPosition().getZ() % 4 == 0) {
+					for (Player p : World.getPlayers()) {
+						if (p == null)
+							continue;
+						if (!player.equals(p) && player.getHostAddress().equals(p.getHostAddress())&& player.getRights() != PlayerRights.OWNER) {
+							if (p.getLocation().equals(EVENTS_ROOM)) {
+								player.getPacketSender().sendMessage("You already have an account at the Event zone.");
+								player.moveTo(GameSettings.DEFAULT_POSITION);
+								return;
+							}
+						}
+					}
+				}
+
+				PartyChest.loadBalloons(player);
+			}
+
+		},
+
+
 		CELESTIAL_ZONE(new int[] { 4220, 4266 }, new int[] { 5575, 5625 }, false, false, true, false, true, false) {
 			@Override
 			public void logout(Player player) {
@@ -1364,7 +1395,7 @@ public class Locations {
 		HALLS_OF_VALOR(new int[] { 2175, 2239}, new int[] { 4998, 5053 }, true, true, true, false, false, false) {
 			@Override
 			public void enter(Player player) {
-				HallsOfValor.resetBarrows(player);
+				HallsOfAmmo.resetBarrows(player);
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.HALLS_OF_VALOR)) {
 					player.getRegionInstance().destruct();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.HALLS_OF_VALOR, player.getIndex() * 4));
@@ -1383,7 +1414,7 @@ public class Locations {
 					player.getRegionInstance().destruct();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.HALLS_OF_VALOR, player.getIndex() * 4));
 				}
-				HallsOfValor.resetBarrows(player);
+				HallsOfAmmo.resetBarrows(player);
 				player.getPacketSender().sendCameraNeutrality();
 			}
 

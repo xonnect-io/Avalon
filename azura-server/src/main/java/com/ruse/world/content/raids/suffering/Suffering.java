@@ -291,7 +291,7 @@ public class Suffering {
                     member.getInventory().add(23370, 1);
                     member.getSeasonPass().addXp(2);
                     Cases.grantCasket(player, 10);
-                    if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
+                    if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
                         member.getInventory().add(23370, 1);
                     }
                     member.getAchievementTracker().progress(AchievementData.RAIDER, 1);

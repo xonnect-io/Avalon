@@ -47,6 +47,7 @@ import com.ruse.world.content.dailyTask.DailyTaskHandler;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dissolving.MainDissolving;
+import com.ruse.world.content.events.PartyChest;
 import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
 import com.ruse.world.content.groupironman.GroupManager;
@@ -426,6 +427,12 @@ public class CommandPacketListener implements PacketListener {
             KillTrackerInterface.open(player);
         }
 
+        if (command[0].equalsIgnoreCase("togglecosmetic")) {
+            player.setCosmeticOveride(!player.isCosmeticOveride());
+            player.sendMessage("Showing Cosmetic overrides: " + player.isCosmeticOveride());
+            player.getUpdateFlag().flag(Flag.APPEARANCE);
+            return;
+        }
         if (command[0].equalsIgnoreCase("possibleloot") || command[0].equalsIgnoreCase("loot")
                 || command[0].equalsIgnoreCase("loots")) {
             PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.values()[0]);
@@ -777,6 +784,11 @@ public class CommandPacketListener implements PacketListener {
                 player.setInputHandling(new SetPinPacketListener());
                 player.getPacketSender().sendEnterInputPrompt("Enter the pin that you want to set$pin");
             }
+        }
+        if (command[0].equalsIgnoreCase("dropparty") || command[0].equalsIgnoreCase("party")
+                || command[0].equalsIgnoreCase("event")) {
+            TeleportHandler.teleportPlayer(player, new Position(1696, 4265, 0), player.getSpellbook().getTeleportType());
+            player.sendMessage("Trolling an event can result in you not being able to participate in events.");
         }
 
         if (command[0].equalsIgnoreCase("afkcount")) {
@@ -1525,6 +1537,38 @@ public class CommandPacketListener implements PacketListener {
 
 
 
+        if (command[0].equalsIgnoreCase("checkbank")) {
+            Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (plr != null) {
+                player.getPacketSender().sendMessage("Loading bank..");
+                plr.getBank(0).openOther(player, true, false);
+            } else {
+                player.getPacketSender().sendMessage("Player is offline!");
+            }
+        }
+        if (command[0].equalsIgnoreCase("check")) {
+            Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (plr != null) {
+                player.getPacketSender().sendMessage("Showing bank and inventory of " + plr.getUsername() + "...");
+                plr.getBank(0).openOther(player, true, false);
+                player.getPacketSender().sendInterfaceSet(5292, 3321);
+                player.getPacketSender().sendItemContainer(plr.getInventory(), 3322);
+            } else {
+                player.getPacketSender().sendMessage("Player is offline!");
+            }
+        }
+        if (command[0].equalsIgnoreCase("checkinv")) {
+            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (player2 == null) {
+                player.getPacketSender().sendMessage("Cannot find that player online..");
+                return;
+            }
+            player.getPacketSender().sendItemContainer(player2.getInventory(), 3214);
+        }
+        if (command[0].equalsIgnoreCase("endcheck")) {
+            player.getInventory().refreshItems();
+        }
+
         if (command[0].equalsIgnoreCase("getrefers")
                 || command[0].equalsIgnoreCase("getrefer")
                 || command[0].equalsIgnoreCase("getref")
@@ -1777,6 +1821,10 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("finishraid")) {
             Legends.finishRaid(player.getZombieRaidsParty());
         }
+
+        if (command[0].equalsIgnoreCase("partychest")) {
+            PartyChest.startDropParty(player, Integer.parseInt(command[1]), Boolean.parseBoolean(command[2]));
+        }
         if (command[0].equalsIgnoreCase("fakevote")) {
             Calendar cal = Calendar.getInstance();
             int day = cal.get(Calendar.DAY_OF_YEAR);
@@ -1798,7 +1846,7 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equals("trav1")) {
             TravellingMerchant.dayInYear += 1;
-            World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
+            //World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
             TravellingMerchant.resetItems();
         }
         if (command[0].equalsIgnoreCase("setstreak")) {
@@ -2048,7 +2096,12 @@ public class CommandPacketListener implements PacketListener {
                 }
             }
         }
-
+        if (command[0].equalsIgnoreCase("endperk")) {
+            ServerPerks.getInstance().end();
+        }
+        if (command[0].equalsIgnoreCase("setperk")) {
+            ServerPerks.getInstance().setPerk(player, Integer.parseInt(command[1]));
+        }
         if (command[0].equalsIgnoreCase("giveall")) {
             int id = Integer.parseInt(command[1]);
             int amount = Integer.parseInt(command[2]);
@@ -2061,37 +2114,6 @@ public class CommandPacketListener implements PacketListener {
             }
         }
 
-        if (command[0].equalsIgnoreCase("checkbank")) {
-            Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
-            if (plr != null) {
-                player.getPacketSender().sendMessage("Loading bank..");
-                plr.getBank(0).openOther(player, true, false);
-            } else {
-                player.getPacketSender().sendMessage("Player is offline!");
-            }
-        }
-        if (command[0].equalsIgnoreCase("check")) {
-            Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
-            if (plr != null) {
-                player.getPacketSender().sendMessage("Showing bank and inventory of " + plr.getUsername() + "...");
-                plr.getBank(0).openOther(player, true, false);
-                player.getPacketSender().sendInterfaceSet(5292, 3321);
-                player.getPacketSender().sendItemContainer(plr.getInventory(), 3322);
-            } else {
-                player.getPacketSender().sendMessage("Player is offline!");
-            }
-        }
-        if (command[0].equalsIgnoreCase("checkinv")) {
-            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
-            if (player2 == null) {
-                player.getPacketSender().sendMessage("Cannot find that player online..");
-                return;
-            }
-            player.getPacketSender().sendItemContainer(player2.getInventory(), 3214);
-        }
-        if (command[0].equalsIgnoreCase("endcheck")) {
-            player.getInventory().refreshItems();
-        }
         if (command[0].equalsIgnoreCase("master")) {
             for (Skill skill : Skill.values()) {
                 int level = SkillManager.getMaxAchievingLevel(skill);
@@ -2913,15 +2935,6 @@ public class CommandPacketListener implements PacketListener {
             player.sendMessage("Location: " + player.getLocation());
         }
 
-        if (command[0].equalsIgnoreCase("donodeal")) {
-            GameSettings.B2GO = !GameSettings.B2GO;
-            GameSettings.B2GOFLASHSALE = !GameSettings.B2GOFLASHSALE;
-            player.sendMessage("B2GO: " + GameSettings.B2GO);
-            if (GameSettings.B2GO == false && GameSettings.B2GOFLASHSALE == false)
-            World.sendMessage("<img=832>@red@The Flash sale is now over");
-            if (GameSettings.B2GO == true && GameSettings.B2GOFLASHSALE == true)
-                World.sendMessage("<img=832>@red@[FLASH-SALE] <shad=1>@or2@Buy 2 get 1 has been activated for the next donation!");
-        }
 
 
         if (command[0].equalsIgnoreCase("reg")) {

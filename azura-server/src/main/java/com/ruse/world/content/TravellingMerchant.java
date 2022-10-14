@@ -3,7 +3,6 @@ package com.ruse.world.content;
 import com.ruse.model.Item;
 import com.ruse.model.container.impl.Shop;
 import com.ruse.util.Misc;
-import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.time.ZonedDateTime;
@@ -62,14 +61,14 @@ public class TravellingMerchant {
         }
         if (shopItems.size() == 0){
             resetItems();
-            World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
+           // World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
         }
         if (ZonedDateTime.now().getHour() == 0 && ZonedDateTime.now().getMinute() == 0) {
             if (ZonedDateTime.now().getSecond() == 1 && !updatingTask) {
                 updatingTask = true;
                 dayInYear += 1;
                 resetItems();
-                World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
+               // World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
             } else if (ZonedDateTime.now().getSecond() == 2 && updatingTask) {
                 updatingTask = false;
             }

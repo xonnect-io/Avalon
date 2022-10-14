@@ -7,7 +7,7 @@ import com.ruse.world.content.boxes.WheelOfFortune;
 import com.ruse.world.content.boxes.*;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.impl.*;
-import com.ruse.world.content.minigames.impl.HallsOfValor;
+import com.ruse.world.content.minigames.impl.HallsOfAmmo;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.skill.impl.mining.Mining;
 import com.ruse.world.content.skill.impl.woodcutting.Woodcutting;
@@ -71,7 +71,7 @@ public class PossibleLootInterface {
         OCAPE(3578, Ocape.rare),
         OJEWELRY(23240, Ojewelry.rare),
         TREASURE_HUNTER("Treasure Hunter",  -1,TreasureHunter.loot),
-        ISLES_OF_AVALON("Isles of Avalon",  -1,HallsOfValor.loot),
+        ISLES_OF_AVALON("Isles of Avalon",  -1, HallsOfAmmo.loot),
         RAIDS(18404, Raids1.rewards),
         BRONZE_CARD_PACK(23276, CardPackRewards.bronze),
         SILVER_CARD_PACK(23277, CardPackRewards.silver),

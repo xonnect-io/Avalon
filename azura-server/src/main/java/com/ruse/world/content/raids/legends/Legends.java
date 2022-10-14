@@ -306,7 +306,7 @@ public class Legends {
                         member.getSeasonPass().addXp(2);
                         member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                         member.getPointsHandler().incrementZombieRaidKC(1);
-                        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_RAIDS) {
+                        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
                             member.getInventory().add(18404, 1);
                         }
                     }

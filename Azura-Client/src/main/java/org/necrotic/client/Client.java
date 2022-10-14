@@ -3056,6 +3056,8 @@ public class Client extends GameRenderer {
         }
         for (RSInterface widget : this.parallelWidgetList) {
             if (widget != null) {
+                int xPosition = 512 / 2 - widget.width / 2;
+                int yPosition = 334 / 2 - widget.height / 2;
 
                 // Only works on main window interfaces! if widget.height = 700
                 if (widget.xOffset + widget.width > 512)
@@ -3084,6 +3086,18 @@ public class Client extends GameRenderer {
                     case 48300:
                     case 48400:
                         widget.xOffset = getScreenWidth() - 765 - (GameFrame.getScreenMode() != ScreenMode.FIXED ? 30 : 0);
+                        break;
+                        case 42400:
+                        //439 : 293
+                        xPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 460 : Client.clientWidth - 278 + 21;
+                        yPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 240 : Client.clientHeight - 170+31;
+
+                        if (GameFrame.getScreenMode() != GameFrame.ScreenMode.FIXED && Client.instance.getWidth() >= 1000) {
+                            yPosition = Client.clientHeight - 86 - 15;
+                        }
+                        DrawingArea.method338(yPosition + 0, 60, 150, 0, 52, xPosition - 3);
+                        DrawingArea.method335(0x433A32, yPosition + 1, 50, 58, 150, xPosition - 2);
+
                         break;
                 }
                 drawInterface(0, widget.xOffset, widget, widget.yOffset);

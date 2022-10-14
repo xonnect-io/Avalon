@@ -16,6 +16,7 @@ import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.globalBosses.SlayerBossSystem;
 import com.ruse.world.content.serverperks.ServerPerks;
+import com.ruse.world.content.skill.impl.summoning.Familiar;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -148,23 +149,19 @@ public class Slayer {
     }
 
     public void handleSlayerTaskDeath(boolean giveXp) {
-        int xp = slayerTask.getXP();
+        int xp = (int) (NpcDefinition.forId(slayerTask.getNpcId()).getHitpoints() / 2);
+
+        if (slayerTask.getNpcId() == 1160) {
+            xp += NpcDefinition.forId(1158).getHitpoints();
+        }
+
         if (amountToSlay > 1) {
             amountToSlay--;
         } else {
-
+            player.getPacketSender().sendMessage("")
+                    .sendMessage("You've completed your Slayer task! Return to a Slayer master for another one.");
             taskStreak++;
             player.getPointsHandler().incrementSlayerSpree(1);
-
-             if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER))
-                player.getSeasonPass().addXp(1);
-            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER))
-                player.getSeasonPass().addXp(1);
-            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER))
-                player.getSeasonPass().addXp(1);
-            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER))
-                player.getSeasonPass().addXp(2);
-
             player.getAchievementTracker().progress(AchievementData.SLAYER, 1);
             player.getAchievementTracker().progress(AchievementData.MODERATE_SLAYER, 1);
             player.getAchievementTracker().progress(AchievementData.RAMBO_SLAYER, 1);
@@ -173,29 +170,28 @@ public class Slayer {
             slayerTask = SlayerTasks.NO_TASK;
             amountToSlay = 0;
 
-            if (player.getDoubleSlayerXP() == true) {
-                player.getSkillManager().addExperience(Skill.SLAYER, xp * 2);
-            }
-            else player.getSkillManager().addExperience(Skill.SLAYER, xp);
-
-
-            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER))
-                player.getInventory().add(9000, Misc.getRandom(10, 30));
-
-            int s = player.getSlayer().taskStreak;
-
             if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER)) {
-                if (s >= 25 && s <= 99)
-                    player.getInventory().add(9000, Misc.getRandom(3, 6));
-                else if (s >= 100 && s <= 199)
-                    player.getInventory().add(9000, Misc.getRandom(5, 10));
-                else if (s >= 200 && s <= 299)
-                    player.getInventory().add(9000, Misc.getRandom(10, 15));
-                else if (s >= 300)
-                    player.getInventory().add(9000, Misc.getRandom(15, 20));
-            }
-            givePoints(player.getSlayer().getLastTask().getTaskMaster());
+                player.getSeasonPass().addXp(4);
 
+                Cases.grantCasket(player, 10);
+
+
+                if (player.getSlayer().getTaskStreak() % 10 == 0) {
+                    player.getInventory().add(621, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 50 : 25);
+                    player.sendMessage("You received 10 extra boss slayer tickets for your slayer streak.");
+                } else if (player.getSlayer().getTaskStreak() % 5 == 0) {
+                    player.getInventory().add(621, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 40 : 20);
+                    player.sendMessage("You received 5 extra boss slayer tickets for your slayer streak.");
+                } else {
+                    player.getInventory().add(621, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 30 : 15);
+                }
+            } else {
+                givePoints(player.getSlayer().getLastTask().getTaskMaster());
+            }
+        }
+
+        if (giveXp) {
+            player.getSkillManager().addExperience(Skill.SLAYER, doubleSlayerXP ? xp * 2 : xp);
         }
 
         PlayerPanel.refreshPanel(player);
@@ -203,58 +199,34 @@ public class Slayer {
 
     @SuppressWarnings("incomplete-switch")
     public void givePoints(SlayerMaster master) {
-        int points = 0;
-        int pointsReceived = Misc.getRandom(5) + 3;
-        int s = player.getSlayer().taskStreak;
-        if (s > 25 && s < 99)
-            pointsReceived = Misc.getRandom(5) + 3 + Misc.getRandom(3-6);
-       else if (s > 100 && s < 199)
-            pointsReceived = Misc.getRandom(5) + 3 + Misc.getRandom(5-10);
-        else if (s > 200 && s < 299)
-            pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(10-15);
-        else if (s > 300)
-            pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(15-20);
+        int pointsReceived = 10;
         switch (master) {
+            case EASY_SLAYER:
+                pointsReceived = 10;
+                player.getSeasonPass().addXp(1);
+                Cases.grantCasket(player, 25);
+                System.out.println("TEST EASY: " +pointsReceived);
+                break;
             case MEDIUM_SLAYER:
-                pointsReceived = Misc.getRandom(10) + 6;
-                if (s > 25 && s < 99)
-                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(3-6);
-                else if (s > 100 && s < 199)
-                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(5-10);
-                else if (s > 200 && s < 299)
-                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(10-15);
-                else if (s > 300)
-                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(15-20);
+                pointsReceived = 15;
+                player.getSeasonPass().addXp(2);
+                Cases.grantCasket(player, 20);
                 break;
             case HARD_SLAYER:
-                pointsReceived = Misc.getRandom(15) + 10;
-                if (s > 25 && s < 99)
-                    pointsReceived = Misc.getRandom(15) + 10 + Misc.getRandom(3-6);
-                else if (s > 100 && s < 199)
-                    pointsReceived = Misc.getRandom(15) + 10 + Misc.getRandom(5-10);
-                else if (s > 200 && s < 299)
-                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(10-15);
-                else if (s > 300)
-                    pointsReceived = Misc.getRandom(10) + 6 + Misc.getRandom(15-20);
+                pointsReceived = 25;
+                player.getSeasonPass().addXp(3);
+                Cases.grantCasket(player, 15);
                 break;
-
         }
-        int per5 = pointsReceived * 3;
-        int per10 = pointsReceived * 5;
+        Familiar playerFamiliar = player.getSummoning().getFamiliar();
 
-        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_SLAYER) {
-            pointsReceived *= 2;
+        if (playerFamiliar != null && playerFamiliar.getSummonNpc() != null) {
+            if (playerFamiliar.getSummonNpc().getId() == 22030)
+                pointsReceived = (int)((double)pointsReceived*1.5d);
         }
+        int per5 = pointsReceived * 2;
+        int per10 = pointsReceived * 3;
 
-        if (player.getSlayer().slayerMaster == SlayerMaster.EASY_SLAYER) {
-            Cases.grantCasket(player, 25);
-        } else if (player.getSlayer().slayerMaster == SlayerMaster.MEDIUM_SLAYER) {
-            Cases.grantCasket(player, 20);
-        } else if (player.getSlayer().slayerMaster == SlayerMaster.HARD_SLAYER) {
-            Cases.grantCasket(player, 15);
-        } else if (player.getSlayer().slayerMaster == SlayerMaster.BOSS_SLAYER) {
-            Cases.grantCasket(player, 10);
-        }
 
         player.getPacketSender().sendMessage("You have completed your Slayer task");
 
@@ -262,7 +234,16 @@ public class Slayer {
 
         SlayerBossSystem.spawnBoss();
         SlayerBossSystem.callBoss();
-        player.getPointsHandler().setSlayerPoints(pointsReceived, true);
+        if (player.getSlayer().getTaskStreak() % 10 == 0) {
+            player.getPointsHandler().setSlayerPoints(per10, true);
+            player.getPacketSender().sendMessage("You received " + per5 + " Slayer points.");
+        } else if (player.getSlayer().getTaskStreak() % 5 == 0) {
+            player.getPointsHandler().setSlayerPoints(per5, true);
+            player.getPacketSender().sendMessage("You received " + per5 + " Slayer points.");
+        } else {
+            player.getPointsHandler().setSlayerPoints(pointsReceived, true);
+            player.getPacketSender().sendMessage("You received " + pointsReceived + " Slayer points.");
+        }
         PlayerPanel.refreshPanel(player);
     }
 

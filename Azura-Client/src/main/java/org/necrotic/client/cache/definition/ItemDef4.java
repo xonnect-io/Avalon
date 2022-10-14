@@ -7,7 +7,144 @@ public class ItemDef4 {
 		ItemDefinition itemDef21;
 		ItemDefinition finity;
 		switch (id) {
+			case 23230:
+				itemDef.copyItem(6585);
+				itemDef.name = "Owner Amulet";
+				itemDef.modelID = 19670;
+				itemDef.maleEquip1 = 19669;
+				itemDef.femaleEquip1 = 19669;
+				itemDef.maleWieldY = 3;
+				itemDef.maleWieldZ = 3;
+				itemDef.modelZoom = 340;
+				itemDef.modelOffsetY = 0;
+				itemDef.rotationY = 280;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, null};
+				break;
+			case 23231:
+				itemDef.copyItem(6737);
+				itemDef.name = "Owner Ring";
+				itemDef.modelID = 19671;
+				itemDef.maleEquip1 = -1;
+				itemDef.femaleEquip1 = -1;
+				itemDef.scaleX = 32;
+				itemDef.scaleY = 32;
+				itemDef.scaleZ = 32;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, null};
+				break;
 
+
+			case 23232:
+				itemDef.copyItem(6737);
+				itemDef.name = "Owner Bracelet";
+				itemDef.modelID = 19672;
+				itemDef.maleEquip1 = 19673;
+				itemDef.femaleEquip1 = 19673;
+				itemDef.maleModelScale = 4;
+				itemDef.maleWieldY = 4;
+				itemDef.maleWieldZ = -1;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, null};
+				break;
+			case 23233:
+				itemDef.copyItem(6585);
+				itemDef.name = "Owner Amulet (u)";
+				itemDef.modelID = 19676;
+				itemDef.maleEquip1 = 19675;
+				itemDef.femaleEquip1 = 19675;
+				itemDef.maleWieldY = 3;
+				itemDef.maleWieldZ = 3;
+				itemDef.modelZoom = 340;
+				itemDef.modelOffsetY = 0;
+				itemDef.rotationY = 280;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+			case 23234:
+				itemDef.copyItem(6737);
+				itemDef.name = "Owner Ring (u)";
+				itemDef.modelID = 19677;
+				itemDef.maleEquip1 = -1;
+				itemDef.femaleEquip1 = -1;
+				itemDef.scaleX = 32;
+				itemDef.scaleY = 32;
+				itemDef.scaleZ = 32;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+
+			case 23235:
+				itemDef.copyItem(6737);
+				itemDef.name = "Owner Bracelet (u)";
+				itemDef.modelID = 19678;
+				itemDef.maleEquip1 = 19679;
+				itemDef.femaleEquip1 = 19679;
+				itemDef.maleModelScale = 4;
+				itemDef.maleWieldY = 4;
+				itemDef.maleWieldZ = -1;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 23293:
+				itemDef.copyItem(6585);
+				itemDef.name = "Celestial Amulet";
+				itemDef.modelID = 19676;
+				itemDef.maleEquip1 = 19675;
+				itemDef.femaleEquip1 = 1975;
+				itemDef.maleWieldY = 3;
+				itemDef.maleWieldZ = 3;
+				itemDef.modelZoom = 340;
+				itemDef.modelOffsetY = 0;
+				itemDef.rotationY = 280;
+				itemDef.rdc2 = 562521;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 23280:
+				itemDef.copyItem(6737);
+				itemDef.name = "Celestial Ring";
+				itemDef.modelID = 19677;
+				itemDef.maleEquip1 = -1;
+				itemDef.femaleEquip1 = -1;
+				itemDef.scaleX = 32;
+				itemDef.scaleY = 32;
+				itemDef.scaleZ = 32;
+				itemDef.rdc2 = 562521;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 23292:
+				itemDef.copyItem(6737);
+				itemDef.name = "Celestial Bracelet";
+				itemDef.modelID = 19678;
+				itemDef.maleEquip1 = 19679;
+				itemDef.femaleEquip1 = 19679;
+				itemDef.maleModelScale = 4;
+				itemDef.maleWieldY = 4;
+				itemDef.maleWieldZ = -1;
+				itemDef.rdc2 = 562521;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+
+			case 24390: //Costume Box
+				itemDef.modelZoom = 2695;
+				itemDef.rotationX = 1576;
+				itemDef.rotationY = 42;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 9;
+				itemDef.modelOffsetY = -93;
+				break;
+
+			case 23457:
+				itemDef.copyItem(23282);
+				itemDef.name = "Avalon Costume";
+				break;
+			case 23458:
+				itemDef.copyItem(23457);
+				itemDef.certID = 23282;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Avalon Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
 			case 14667:
 				itemDef.name = "Mummy fragment";
 				itemDef.modelID = ItemDefinition.get(14639).modelID;
@@ -939,15 +1076,12 @@ public class ItemDef4 {
 				itemDef.modelID = 100_006;
 				itemDef.maleEquip1 = 100_007;
 				itemDef.femaleEquip1 = 100_007;
-				itemDef21 = ItemDefinition.get(2414);
-				itemDef.actions = itemDef21.actions;
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = 1000;
-				itemDef.newModelColor = new int[]{55};
-				itemDef.editedModelColor = new int[]{127};
+				itemDef.modelZoom = 1947;
+				itemDef.rotationX = 1254;
+				itemDef.rotationY = 400;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 6;
 				break;
 			case 22110:
 				itemDef.name = "Owner's Attachment";
@@ -980,8 +1114,6 @@ public class ItemDef4 {
 				itemDef.modelID = 100_008;
 				itemDef.maleEquip1 = 100_009;
 				itemDef.femaleEquip1 = 100_009;
-				itemDef.newModelColor = new int[]{55};
-				itemDef.editedModelColor = new int[]{127};
 				break;
 
 			case 779:
@@ -3187,36 +3319,7 @@ public class ItemDef4 {
 				itemDef.editedModelColor = new int[]{67};
 				itemDef.modelID = 65285;
 				break;
-			case 23280:
-				itemDef.modelID = 18910;
-				itemDef.modelZoom = 287;
-				itemDef.name = "Celestial Ring";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 1765;
-				itemDef.rotationZ = 0;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 0;
-				break;
 
-			case 23293:
-				itemDef.copyItem(12855);
-				itemDef.modelID = 18911;
-				itemDef.maleEquip1 = 18912;
-				itemDef.femaleEquip1 = 18912;
-				itemDef.modelZoom = 478;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 160;
-				itemDef.rotationZ = 0;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = -18;
-				itemDef.name = "Celestial Amulet";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				break;
 				case 23294:
 				itemDef.copyItem(18639);
 				itemDef.name = "Celestial scales";
@@ -5409,87 +5512,6 @@ public class ItemDef4 {
 				itemDef.actions = itemFury.actions;
 				itemDef.name = "Amulet of Gluttony (u)";
 				break;
-			case 23230:
-				itemDef.copyItem(12855);
-				itemDef.modelID = 17746;
-				itemDef.maleEquip1 = 17773;
-				itemDef.femaleEquip1 = 17773;
-				itemDef.modelZoom = 478;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 160;
-				itemDef.rotationZ = 0;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = -18;
-				itemDef.name = "Owner Amulet";
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
-				break;
-			case 23231:
-				itemDef.modelID = 17600;
-				itemDef.modelZoom = 287;
-				itemDef.name = "Owner Ring";
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 1765;
-				itemDef.rotationZ = 0;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 0;
-				break;
-
-			case 23232:
-				itemDef.copyItem(11126);
-				itemDef.modelID = 17802;
-				itemDef.name = "Owner Bracelet";
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
-				break;
-			case 23233:
-				itemDef.copyItem(12855);
-				itemDef.modelID = 17746;
-				itemDef.maleEquip1 = 17773;
-				itemDef.femaleEquip1 = 17773;
-				itemDef.modelZoom = 478;
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 160;
-				itemDef.rotationZ = 0;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = -18;
-				itemDef.name = "Owner Amulet (u)";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.rdc2 = 1;
-				break;
-			case 23234:
-				itemDef.modelID = 17600;
-				itemDef.modelZoom = 287;
-				itemDef.name = "Owner Ring (u)";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.rotationX = 0;
-				itemDef.rotationY = 1765;
-				itemDef.rotationZ = 0;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.rdc2 = 1;
-				break;
-			case 23235:
-				itemDef.copyItem(11126);
-				itemDef.modelID = 17802;
-				itemDef.name = "Owner Bracelet (u)";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.rdc2 = 1;
-				break;
-
-			case 23292:
-				itemDef.copyItem(11126);
-				itemDef.modelID = 18913;
-				itemDef.name = "Celestial Bracelet";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				break;
 
 			case 23299:
 				itemDef.copyItem(18829);
@@ -5544,7 +5566,7 @@ public class ItemDef4 {
 				ItemDefinition itemFury22 = ItemDefinition.get(1635);
 				itemDef.modelOffsetX = itemFury22.modelOffsetX;
 				itemDef.modelOffsetY = itemFury22.modelOffsetY;
-				itemDef.modelZoom = itemFury22.modelZoom;
+				itemDef.modelZoom = 500;
 				itemDef.rotationY = itemFury22.rotationY;
 				itemDef.rotationX = itemFury22.rotationX;
 				itemDef.name = "Ring of Gluttony";

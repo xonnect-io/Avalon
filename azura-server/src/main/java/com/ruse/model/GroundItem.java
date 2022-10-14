@@ -5,7 +5,7 @@ import com.ruse.world.entity.Entity;
 public class GroundItem extends Entity {
 
 	public GroundItem(Item item, Position pos, String owner, boolean isGlobal, int showDelay, boolean goGlobal,
-			int globalTimer) {
+					  int globalTimer) {
 		super(pos);
 		this.setItem(item);
 		this.owner = owner;
@@ -17,7 +17,7 @@ public class GroundItem extends Entity {
 	}
 
 	public GroundItem(Item item, Position pos, String owner, String fromIP, boolean isGlobal, int showDelay,
-			boolean goGlobal, int globalTimer) {
+					  boolean goGlobal, int globalTimer) {
 		super(pos);
 		this.setItem(item);
 		this.owner = owner;

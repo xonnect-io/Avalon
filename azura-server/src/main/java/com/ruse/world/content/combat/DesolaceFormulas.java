@@ -12,7 +12,6 @@ import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.range.CombatRangedAmmo.RangedWeaponData;
 import com.ruse.world.content.combat.weapon.FightType;
-import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.DropUtils;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Familiar;
@@ -156,10 +155,6 @@ public class DesolaceFormulas {
                 
             }
 
-            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
-                base *= 2;
-            }
-
             maxHit = (base *= 10);
             if (plr.getInventory().contains(4442)) {
             	maxHit *=1.5;
@@ -194,9 +189,6 @@ public class DesolaceFormulas {
                 maxHit *= 1.25D;
             }
 
-            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
-                maxHit *= 2;
-            }
 
             if(plr.getRights() == PlayerRights.OWNER) {
                 maxHit *= 5.5D;
@@ -778,10 +770,6 @@ public class DesolaceFormulas {
         if (p.getSummoning() != null && p.getSummoning().getFamiliar() != null
                 && p.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {// admin pet
             maxHit *= 1.25D;
-        }
-
-        if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
-            maxHit *= 2;
         }
 
         if(p.getRights() == PlayerRights.OWNER) {

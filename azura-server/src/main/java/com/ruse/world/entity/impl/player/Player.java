@@ -170,6 +170,32 @@ public boolean setSlayerBoss;
     }
     public LogType logtype;
     public boolean idleEventUsed;
+
+    @Setter
+    @Getter
+    private long serverPerksContributions;
+
+    @Getter
+    private ArrayList<Item> partyChestCoffer = new ArrayList<>();
+
+    /*** LONGS **/
+    private Long longUsername;
+    private long moneyInPouch;
+    private long soulInPouch;
+    private long totalPlayTime;
+
+    public long getMoneyInPouch() {
+        return moneyInPouch;
+    }
+
+    public void setMoneyInPouch(long moneyInPouch) {
+        this.moneyInPouch = moneyInPouch;
+    }
+
+    public int getMoneyInPouchAsInt() {
+        return moneyInPouch > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) moneyInPouch;
+    }
+
     /**
      * This si the throne id, depending on what the donator chose.
      */
@@ -243,6 +269,11 @@ public int howmuchdissolveamt = 0;
 
     public NephilimDisassemble getNephilimDissolving() {
         return nephilimDissolving;
+    }
+    private CharmDisassemble charmDissolving = new CharmDisassemble(this);
+
+    public CharmDisassemble getCharmDissolving() {
+        return charmDissolving;
     }
 
     private OwnerDisassemble ownerDissolving = new OwnerDisassemble(this);
@@ -334,7 +365,7 @@ public int howmuchdissolveamt = 0;
 
     public ClueScrollTask currentClue = new ClueScrollTask(this);
 
-    public HallsOfValor hov = new HallsOfValor(this);
+    public HallsOfAmmo hov = new HallsOfAmmo(this);
     public VoidOfDarkness vod = new VoidOfDarkness(this);
     public int lastTGloveIndex = -1;
     private final WheelOfFortune wheelOfFortune = new WheelOfFortune(this);
@@ -745,10 +776,6 @@ public int howmuchdissolveamt = 0;
     private String yellHex;
     private String strippedJewelryName;
     private String yellTitle;
-    /*** LONGS **/
-    private Long longUsername;
-    private long soulInPouch;
-    private long totalPlayTime;
     private ArrayList<HouseFurniture> houseFurniture = new ArrayList<HouseFurniture>();
     private ArrayList<Portal> housePortals = new ArrayList<>();
     private final PlayerSession session;
@@ -1077,6 +1104,11 @@ public int howmuchdissolveamt = 0;
     public void set4x4(boolean fourbyfour) {
         this.fourbyfour = fourbyfour;
     }
+
+
+    @Getter
+    @Setter
+    private long[] posInfo = new long[4];
 
 
     public int getAfkSapphire() {
@@ -1791,6 +1823,64 @@ public int howmuchdissolveamt = 0;
     	if (this instanceof MiniPlayer)
 			return false;
         return interfaceId > 0 || isBanking || shopping || trading.inTrade() || dueling.inDuelScreen || isResting || spawningMiniPlayer;
+    }
+
+    @Getter
+    @Setter
+    private boolean cosmeticOveride = true;
+
+    @Getter
+    @Setter
+    private boolean renderPlayerEquipment = true;
+
+    public String getTitle(int i) {
+        switch (i) {
+            case 1:
+                return "Killer";
+            case 2:
+                return "Slaughterer";
+            case 3:
+                return "Genocidal";
+            case 4:
+                return "Immortal";
+            case 5:
+                return "Skiller";
+            case 6:
+                return "Combatant";
+            case 7:
+                return "Maxed";
+            case 8:
+                return "Godslayer";
+            case 9:
+                return "Loyalist";
+            case 10:
+                return "Veteran";
+            case 11:
+                return "Looter";
+            case 12:
+                return "King";
+            case 13:
+                return "Queen";
+            case 14:
+                return "Lord";
+            case 15:
+                return "Duke";
+            case 16:
+                return "Duchess";
+            case 17:
+                return "Baron";
+            case 18:
+                return "Baroness";
+            case 19:
+                return "Sir";
+            case 20:
+                return "Lady";
+            case 21:
+                return "Evil";
+            case 22:
+                return "Good";
+        }
+        return "";
     }
 
     public UIMBank getUimBank() {

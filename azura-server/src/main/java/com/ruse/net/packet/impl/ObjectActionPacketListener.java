@@ -29,6 +29,7 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.impl.GuardianTokenExchange;
 import com.ruse.world.content.dissolving.SupremeDissolving;
+import com.ruse.world.content.events.EventManager;
 import com.ruse.world.content.globalBosses.PumpkinSpawns;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.holidayevents.christmas2016;
@@ -138,6 +139,8 @@ public class ObjectActionPacketListener implements PacketListener {
                         if (!player.getControllerManager().processObjectClick1(gameObject)) {
                             return;
                         }
+
+                        EventManager.objectClick(player, gameObject);
 
                         if (player.getFarming().click(player, x, y, 1))
                             return;
@@ -2020,7 +2023,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                         break;
                                     case 2:
                                         if (player.getPosition().getX() == 2846) {
-                                            if (player.getInventory().getAmount(8851) < 70) {
+                                            if (player.getInventory().getAmount(23749) < 70) {
                                                 player.getPacketSender()
                                                         .sendMessage("You need at least 70 tokens to enter this area.");
                                                 return;

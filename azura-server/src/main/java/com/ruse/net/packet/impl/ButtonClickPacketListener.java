@@ -1,7 +1,7 @@
 package com.ruse.net.packet.impl;
 
 import com.ruse.GameSettings;
-import com.ruse.model.GameMode;
+import com.ruse.model.Flag;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.Position;
 import com.ruse.model.RegionInstance;
@@ -41,6 +41,7 @@ import com.ruse.world.content.combat.weapon.FightType;
 import com.ruse.world.content.dailyTask.DailyTaskInterface;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.DialogueOptions;
+import com.ruse.world.content.events.EventManager;
 import com.ruse.world.content.goldenscratch.ScratchCard;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupManager;
@@ -133,6 +134,7 @@ public class ButtonClickPacketListener implements PacketListener {
         if (checkHandlers(player, id))
             return;
 
+        EventManager.buttonClick(player, id);
         player.getGambling().handleChoice(id);
 
 
@@ -826,11 +828,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getCasketOpening().quickSpin();
                 break;
             case -17397:
-                // example for mbox with random data. - open all
-                if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
-                    player.sendMessage("@red@As an Ultimate ironman you can't do this.");
-                    return;
-                }
+
                 if (player.getInventory().contains(player.getMysteryBoxOpener().getOpenBox())) {
                     player.getMysteryBoxOpener().openAllRaids2Chest(player.getMysteryBoxOpener().getOpenBox());
                 }
@@ -1146,10 +1144,6 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case -17497: // example for mbox with random data. - open all
-                if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
-                    player.sendMessage("@red@As an Ultimate ironman you can't do this.");
-                    return;
-                }
                 if (player.getInventory().contains(player.getMysteryBoxOpener().getOpenBox())) {
                     player.getMysteryBoxOpener().openAll(player.getMysteryBoxOpener().getOpenBox());
                 }
@@ -1501,6 +1495,12 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 break;
 
+            case 15009:
+                player.setCosmeticOveride(!player.isCosmeticOveride());
+                player.sendMessage("Showing Cosmetic overrides: " + player.isCosmeticOveride());
+                player.getUpdateFlag().flag(Flag.APPEARANCE);
+                break;
+
             case 142266:// Dustclaws
                 if (player.getPointsHandler().getNPCKILLCount() <= 49){
                     player.getPacketSender().sendMessage("You need 50 npc kill Count. You currently have @red@"
@@ -1686,7 +1686,10 @@ public class ButtonClickPacketListener implements PacketListener {
                 Position fenrir = new Position(2893, 5469, 0);
                 TeleportHandler.teleportPlayer(player, fenrir, TeleportType.NORMAL);
                 break;
-
+            case -23477:
+                player.getPacketSender().sendEnterAmountPrompt("How much would you like to contribute?");
+                player.setInputHandling(new ServerPerkContributionInput());
+                break;
        /*     case 19137:
                 DiscordIntegration.buttonClick(player);
                 break;
@@ -1717,8 +1720,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.setIncludeDR(!player.isIncludeDR());
                 player.getPacketSender().sendConfig(2451, player.isIncludeDR() ? 1 : 0);
                 player.sendMessage("Include Drop rate: " + (player.isIncludeDR() ? "Enabled" : "Disabled"));
-                player.getPacketSender().sendString(33300, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player)+"%@or1@)");
-                player.getPacketSender().sendString(33250, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player)+"%@or1@)");
+                player.getPacketSender().sendString(33300, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonusCheck(player)+"%@or1@)");
+                player.getPacketSender().sendString(33250, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonusCheck(player)+"%@or1@)");
                 if (player.getDropInterfaceNPC() > 0)
                     DropsInterface.buildRightSide(player, player.getDropInterfaceNPC());
                 break;
@@ -1728,7 +1731,7 @@ public class ButtonClickPacketListener implements PacketListener {
                             + player.getPointsHandler().getFENRIRKILLCount() + "@bla@ kills.");
                     return;
                 }
-                Position bork = new Position(2893, 5469, 0);
+                Position bork = GameSettings.CYAN;
                 TeleportHandler.teleportPlayer(player, bork, TeleportType.NORMAL);
                 break;
 
@@ -2137,9 +2140,10 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.setNoteWithdrawal(!player.withdrawAsNote());
                 break;
             case 21000:
-                if (!player.isBanking() || player.getInterfaceId() != 5292)
+                if (!player.isBanking() || (player.getInterfaceId() != 106000 && player.getInterfaceId() != 5292))
                     return;
                 player.setSwapMode(!player.swapMode());
+                player.getPacketSender().sendConfig(304, player.swapMode() ? 1 : 0);
                 break;
             case 27009:
                 player.sendMessage("This option has been disabled");

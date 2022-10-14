@@ -560,6 +560,7 @@ public class PlayerUpdating {
 			for (int i = 0; i < equipment.capacity(); i++) {
 				equip[i] = equipment.getItems()[i].getId();
 			}
+
 			if (equip[Equipment.HEAD_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.HEAD_SLOT]);
 			} else {

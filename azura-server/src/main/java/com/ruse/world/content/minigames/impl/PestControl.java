@@ -12,23 +12,28 @@ import com.ruse.world.World;
 import com.ruse.world.content.Cases;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Pest control minigame
- * 
+ *
  * @author Gabriel Hannason
  */
 public class PestControl {
 
+	public static int activePortal = -1;
+	private static ArrayList<Integer> portalsLeft = new ArrayList<>();
+
 	public static int TOTAL_PLAYERS = 0;
 	private static int PLAYERS_IN_BOAT = 0;
+	public static final int WAIT_TIMER = 60;
+	public static final int MIN_PLAYERS = 3;
+	public static final int MIN_DAMAGE = 500_000;
 
 	/**
 	 * @note Stores player and State
@@ -53,6 +58,8 @@ public class PestControl {
 	public static final String PLAYING = "PLAYING";
 	public static final String WAITING = "WAITING";
 
+	public static final String[] DIRECTIONS = new String[]{"West", "East", "South", "North"};
+
 	/**
 	 * Is a game running?
 	 */
@@ -60,7 +67,7 @@ public class PestControl {
 
 	/**
 	 * Moves a player in to the boat (waiting area) and adds the player to the map.
-	 * 
+	 *
 	 * @param p The player entering
 	 */
 	public static void boardBoat(Player p) {
@@ -68,27 +75,23 @@ public class PestControl {
 			p.getPacketSender().sendMessage("Familiars are not allowed on the boat.");
 			return;
 		}
-		if (p.getSkillManager().getCombatLevel() < 30) {
-			p.getPacketSender().sendMessage("You must have a combat level of at least 30 to play this minigame.");
-			return;
-		}
 		if (getState(p) == null) {
 			playerMap.put(p, WAITING);
 			TOTAL_PLAYERS++;
 			PLAYERS_IN_BOAT++;
 		}
-		p.getSession().clearMessages();
+		//p.getSession().clearMessages();
 		p.moveTo(new Position(2661, 2639, 0));
 		p.getPacketSender().sendString(21117, "");
 		p.getPacketSender().sendString(21118, "");
-		p.getPacketSender().sendString(21008, "(Need 2 to 25 players)");
+		p.getPacketSender().sendString(21008, "(Need "+MIN_PLAYERS+" to 100 players)");
 		p.getMovementQueue().setLockMovement(false).reset();
 	}
 
 	/**
 	 * Moves the player out of the boat (waiting area) and removes the player from
 	 * the map.
-	 * 
+	 *
 	 * @param p The player leaving
 	 */
 	public static void leave(Player p, boolean fromList) {
@@ -103,10 +106,11 @@ public class PestControl {
 			}
 		}
 		p.getPacketSender().sendInterfaceRemoval();
-		p.getSession().clearMessages();
+		//p.getSession().clearMessages();
 		p.moveTo(new Position(2657, 2639, 0));
 		p.getMovementQueue().setLockMovement(false).reset();
-		p.getPacketSender().sendInterfaceRemoval();
+		p.getPacketSender().sendWalkableInterface(21100, false);
+		p.getPacketSender().sendWalkableInterface(21005, false);
 	}
 
 	/**
@@ -136,7 +140,7 @@ public class PestControl {
 		}
 		if (gameRunning) {
 			updateIngameInterface();
-			if (Math.random() < 0.1)
+			if (Math.random() < 0.05)
 				spawnRandomNPC();
 			processNPCs();
 			if (knight == null || (knight != null && knight.getConstitution() <= 0)) {
@@ -146,6 +150,30 @@ public class PestControl {
 				endGame(true);
 				waitTimer = WAIT_TIMER;
 			}
+			if (playerMap.size() <= 0){
+				endGame(false);
+				waitTimer = WAIT_TIMER;
+			}
+
+			if (portalsLeft.size() >= 1){
+				if (activePortal != -1) {
+					if (portals[activePortal].getConstitution() <= 0) {
+						activePortal = -1;
+					}
+				}
+				if (activePortal == -1){
+					activePortal = portalsLeft.get(0);
+					portalsLeft.remove(0);
+					sendMessage("The " + DIRECTIONS[activePortal] + " portal shield has been deactivated.");
+				}
+			}
+		}
+	}
+
+	private static void sendMessage(String message) {
+		for (Player player : playerMap.keySet()){
+			if (player != null && player.getLocation() == Location.PEST_CONTROL_GAME)
+				player.sendMessage(message);
 		}
 	}
 
@@ -167,28 +195,7 @@ public class PestControl {
 			}
 		}
 	}
-	private static void removeBoatInterface() {
-		for (Player p : playerMap.keySet()) {
-				p.getPacketSender().sendString(21006, "");
-				p.getPacketSender().sendString(21007, "");
-				p.getPacketSender().sendString(21009, "");
-			p.getPacketSender().sendString(21008, "");
-		}
-	}
 
-	private static void removeGameInterface() {
-		for (Player p : playerMap.keySet()) {
-			if (p == null)
-				continue;
-				p.getPacketSender().sendString(21111, "");
-				p.getPacketSender().sendString(21112, "");
-				p.getPacketSender().sendString(21113, "");
-				p.getPacketSender().sendString(21114, "");
-			p.getPacketSender().sendString(21115, "");
-				p.getPacketSender().sendString(21116, "");
-				p.getPA().removeInterface();
-			}
-	}
 	/**
 	 * Updates the game interface for every player.
 	 */
@@ -203,16 +210,16 @@ public class PestControl {
 				p.getPacketSender().sendString(21113, getPortalText(2));
 				p.getPacketSender().sendString(21114, getPortalText(3));
 				String prefix = knight.getConstitution() < 500 ? "@red@"
-						: knight.getConstitution() < 800 ? "@yel@" : "@gre@";
+						: knight.getConstitution() < 1000 ? "@yel@" : "@gre@";
 				p.getPacketSender().sendString(21115,
 						knight != null && knight.getConstitution() > 0
 								? prefix + "Knight's health: " + knight.getConstitution()
 								: "Dead");
 				prefix = p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() == 0 ? "@red@"
-						: p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() < 100 ? "@yel@"
-								: "@gre@";
+						: p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() < MIN_DAMAGE ? "@yel@"
+						: "@gre@";
 				p.getPacketSender().sendString(21116, prefix + "Your damage : "
-						+ p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() + "/100");
+						+ Misc.formatNumber(p.getMinigameAttributes().getPestControlAttributes().getDamageDealt()) + "/" + Misc.formatNumber(MIN_DAMAGE));
 			}
 		}
 	}
@@ -221,7 +228,14 @@ public class PestControl {
 	 * Starts a game and moves players in to the game.
 	 */
 	private static void startGame() {
-		boolean startGame = !gameRunning && PLAYERS_IN_BOAT >= 3;
+		boolean startGame = !gameRunning && PLAYERS_IN_BOAT >= MIN_PLAYERS;
+		portalsLeft.clear();
+		portalsLeft.add(0);
+		portalsLeft.add(1);
+		portalsLeft.add(2);
+		portalsLeft.add(3);
+		Collections.shuffle(portalsLeft);
+
 		if (startGame) {
 			gameRunning = true;
 			spawnMainNPCs();
@@ -235,7 +249,7 @@ public class PestControl {
 						playerMap.put(player, PLAYING);
 					} else
 						player.getPacketSender()
-								.sendMessage("There must be at least 3 players in the boat before a game can start.");
+								.sendMessage("There must be at least "+MIN_PLAYERS+" players in the boat before a game can start.");
 				}
 			}
 		}
@@ -245,9 +259,9 @@ public class PestControl {
 	 * Teleports the player in to the game
 	 */
 	private static void movePlayerToIsland(Player p) {
-		removeBoatInterface();
-		p.getSession().clearMessages();
-		p.moveTo(new Position(2655 + Misc.getRandom(1), 2591 + Misc.getRandom(1), 0));
+		p.getPacketSender().sendInterfaceRemoval();
+		//p.getSession().clearMessages();
+		p.moveTo(new Position(2655, 2586, 0));
 		p.getMovementQueue().setLockMovement(false).reset();
 		DialogueManager.start(p, 26);
 		PLAYERS_IN_BOAT--;
@@ -255,10 +269,11 @@ public class PestControl {
 
 	/**
 	 * Ends a game and rewards players.
-	 * 
+	 *
 	 * @param won Did the players manage to win the game?
 	 */
-	private static void endGame(boolean won) {
+	public static void endGame(boolean won) {
+		activePortal = -1;
 		for (Iterator<Player> it = playerMap.keySet().iterator(); it.hasNext();) {
 			Player p = (Player) it.next();
 			if (p == null)
@@ -266,15 +281,47 @@ public class PestControl {
 			String state = getState(p);
 			if (state != null && state.equals(PLAYING)) {
 				leave(p, false);
-				removeGameInterface();
-				if (won && p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() >= 5000) {
+				if (won && p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() >= MIN_DAMAGE) {
+					int points = 10;
+
+					if (p.getAmountDonated() >= 25000) {
+						points = 25;
+					} else if (p.getAmountDonated() >= 10000) {
+						points = 20;
+					} else if (p.getAmountDonated() >= 5000) {
+						points = 18;
+					} else if (p.getAmountDonated() >= 1000) {
+						points = 16;
+					} else if (p.getAmountDonated() >= 500) {
+						points = 14;
+					} else if (p.getAmountDonated() >= 250) {
+						points = 13;
+					} else if (p.getAmountDonated() >= 50) {
+						points = 12;
+					} else if (p.getAmountDonated() >= 10) {
+						points = 11;
+					}
+
+					if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.PEST_CONTROL) {
+						points *= 2;
+					}
+					int tokens =  125000;
+
+					if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.PEST_CONTROL) {
+						tokens *= 2;
+					}
+
+
 					p.getPacketSender()
 							.sendMessage("The portals were successfully closed. You've been rewarded for your effort.");
-					p.getPacketSender().sendMessage("You've received 4 Commendations and some upgrade tokens.");
-					p.getPointsHandler().setCommendations(4, true);
+					p.getPacketSender().sendMessage("You've received "+points+" Commendations and "+Misc.insertCommasToNumber(tokens)+" Upgrade tokens.");
+					p.getPointsHandler().setCommendations(points, true);
 					PlayerPanel.refreshPanel(p);
-					p.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, Misc.getRandom(50_000) + 25_000);
+					p.getInventory().add(12855, tokens);
+					p.getSeasonPass().addXp(2);
+
 					Cases.grantCasket(p, 5);
+
 					p.restart();
 				} else if (won)
 					p.getPacketSender().sendMessage("You didn't participate enough to receive a reward.");
@@ -319,41 +366,53 @@ public class PestControl {
 	 * Spawns the game's key/main NPC's on to the map
 	 */
 	private static void spawnMainNPCs() {
-		int knightHealth = 3000 - (PLAYERS_IN_BOAT * 14);
-		int portalHealth = 2500000 + (PLAYERS_IN_BOAT * 1000000);
-		knight = spawnPCNPC(3782, new Position(2656, 2592), knightHealth); // knight
-		portals[0] = spawnPCNPC(6142, new Position(2630, 2591), portalHealth); // purple
-		portals[1] = spawnPCNPC(6145, new Position(2655, 2615), portalHealth); // red
-		portals[2] = spawnPCNPC(6143, new Position(2679, 2590), portalHealth); // blue
-		portals[3] = spawnPCNPC(6144, new Position(2654, 2566), portalHealth); // yellow
+		int knightHealth = 5000 - (PLAYERS_IN_BOAT * 50);
+		if (knightHealth <= 1000)
+			knightHealth = 1000;
+		int portalHealth = getDefaultPortalConstitution();
+		knight = spawnPCNPC(3782, new Position(2655, 2591), knightHealth); // knight
+
+		portals[0] = spawnPCNPC(6142, new Position(2630, 2591), portalHealth); // west
+		portals[1] = spawnPCNPC(6143, new Position(2680, 2591), portalHealth); // east
+		portals[2] = spawnPCNPC(6144, new Position(2655, 2566), portalHealth); // south
+		portals[3] = spawnPCNPC(6145, new Position(2655, 2616), portalHealth); // north
+
 		npcList.add(knight);
 		for (NPC n : portals) {
 			npcList.add(n);
 		}
 	}
 
+
+	public static boolean canAttack(Player player, int id) {
+		int i = id - 6142;
+		if (activePortal == i){
+			return true;
+		}
+		player.sendMessage("This portal has a shield. The " + DIRECTIONS[activePortal] + " portal has no shield");
+		return false;
+	}
+
 	public static int getDefaultPortalConstitution() {
-		return 5600 + (PLAYERS_IN_BOAT * 190);
+		return 15_000_000 + (PLAYERS_IN_BOAT * 6_000_000);
 	}
 
 	/**
 	 * Gets the text which shall be sent on to a player's interface
-	 * 
-	 * @param i The portal index to get sendInformation about
+	 *
+	 * @param i The portal index to get information about
 	 * @return Information about the portal with the index specified
 	 */
 	private static String getPortalText(int i) {
-		if (gameRunning == true) {
-			return (portals[i] != null && (portals[i].getConstitution() > 0 && portals[i].getConstitution() > 0))
-					? "@gre@Alive"
-					: "@red@Dead";
-		} else return ("");
+		return (portals[i] != null && (portals[i].getConstitution() > 0 && portals[i].getConstitution() > 0))
+				? Misc.formatNumber(portals[i].getConstitution())
+				: "Dead";
 	}
 
 	/**
 	 * Checks if all portals are dead (if true, the game will end and the players
 	 * will win)
-	 * 
+	 *
 	 * @return true if all portals are dead, otherwise false
 	 */
 	private static boolean allPortalsDead() {
@@ -399,9 +458,9 @@ public class PestControl {
 						.values()[((int) (Math.random() * PestControlNPC.values().length))];
 				if (luckiest != null) {
 					npcList.add(spawnPCNPC(luckiest.getLowestNPCID()
-							+ ((int) (Math.random() * (luckiest.getHighestNPCID() - luckiest.getLowestNPCID()))),
+									+ ((int) (Math.random() * (luckiest.getHighestNPCID() - luckiest.getLowestNPCID()))),
 							new Position(portals[i].getPosition().getX(), portals[i].getPosition().getY() - 1, 0),
-							400));
+							500_000));
 				}
 			}
 		}
@@ -411,25 +470,25 @@ public class PestControl {
 		if (knight == null || npc == null || _npc == null)
 			return;
 		switch (_npc) {
-		case SPINNER:
-			processSpinner(npc);
-			break;
-		case SHIFTER:
-			processShifter(npc, _npc);
-			break;
-		case TORCHER:
-			processDefiler(npc, _npc);
-			break;
-		case DEFILER:
-			processDefiler(npc, _npc);
-			break;
+			case SPINNER:
+				processSpinner(npc);
+				break;
+			case SHIFTER:
+				processShifter(npc, _npc);
+				break;
+			case TORCHER:
+				processDefiler(npc, _npc);
+				break;
+			case DEFILER:
+				processDefiler(npc, _npc);
+				break;
 		}
 	}
 
 	/**
 	 * Processes the spinner NPC Finds the closest portal, walks to it and heals it
 	 * if injured.
-	 * 
+	 *
 	 * @param npc The Spinner NPC
 	 */
 	private static void processSpinner(NPC npc) {
@@ -470,7 +529,7 @@ public class PestControl {
 							knight.getPosition().getY() + Misc.getRandom(2), npc.getPosition().getZ());
 					World.deregister(npc);
 					npcList.remove(npc);
-					npcList.add(spawnPCNPC(npcId, pos, 200));
+					npcList.add(spawnPCNPC(npcId, pos, 500_000));
 				} else {
 					if (distance(npc.getPosition().getX(), npc.getPosition().getY(), knight.getPosition().getX(),
 							knight.getPosition().getY()) > 1) {
@@ -590,7 +649,6 @@ public class PestControl {
 
 	}
 
-	public static final int WAIT_TIMER = 20;
 
 	public static int waitTimer = WAIT_TIMER;
 	private static NPC[] portals = new NPC[4];
@@ -598,7 +656,7 @@ public class PestControl {
 
 	/**
 	 * Handles the shop
-	 * 
+	 *
 	 * @param p      The player buying something from the shop
 	 * @param item   The item which the player is buying
 	 * @param id     The id of the item/skill which the player is buying
@@ -667,69 +725,69 @@ public class PestControl {
 	public static boolean handleInterface(Player player, int id) {
 		if (player.getInterfaceId() == 18730 || player.getInterfaceId() == 18746) {
 			switch (id) {
-			/**
-			 * Pest control reward interface
-			 */
-			// PC Equipment Tab
-			case 18733:
-				PestControl.buyFromShop(player, true, 11665, 1, 200);
-				return true;// melee helm
-			case 18735:
-				PestControl.buyFromShop(player, true, 11664, 1, 200);
-				return true;// ranger helm
-			case 18741:
-				PestControl.buyFromShop(player, true, 11663, 1, 200);
-				return true;// mage helm
-			case 18734:
-				PestControl.buyFromShop(player, true, 8839, 1, 250);
-				return true;// top
-			case 18737:
-				PestControl.buyFromShop(player, true, 8840, 1, 250);
-				return true;// robes
-			case 18742:
-				PestControl.buyFromShop(player, true, 8842, 1, 150);
-				return true;// gloves
-			case 18740:
-				PestControl.buyFromShop(player, true, 19712, 1, 350);
-				return true;// deflector
-			case 18745:
-				PestControl.buyFromShop(player, true, 19780, 1, 2000);
-				return true;// korasi
-			// ENCHANCE
-			case 18749:
-				PestControl.buyFromShop(player, true, 9361, 1, 450);
-				return true;// master top
-			case 18750:
-				PestControl.buyFromShop(player, true, 9362, 1, 450);
-				return true;// master legs
-			case 18751:
-				PestControl.buyFromShop(player, true, 9363, 1, 300);
-				return true;// helm
-			case 18752:
-				PestControl.buyFromShop(player, true, 19784, 1, 4500);
-				return true;// korasi
-			case 18753:
-				PestControl.buyFromShop(player, true, 9360, 1, 300);
-				return true;// helm
-			case 18754:
-				PestControl.buyFromShop(player, true, 9364, 1, 300);
-				return true;// helm
-			case 18755:
-				PestControl.buyFromShop(player, true, 19785, 1, 175);
-				return true;// helm
-			case 18756:
-				PestControl.buyFromShop(player, true, 19786, 1, 175);
-				return true;// helm
-			// INTERFACE
-			case 18743:
-				player.getPacketSender().sendInterface(18746);
-				return true;
-			case 18748:
-				player.getPacketSender().sendInterface(18730);
-				return true;
-			case 18728:
-				player.getPacketSender().sendInterfaceRemoval();
-				return true;
+				/**
+				 * Pest control reward interface
+				 */
+				// PC Equipment Tab
+				case 18733:
+					PestControl.buyFromShop(player, true, 11665, 1, 200);
+					return true;// melee helm
+				case 18735:
+					PestControl.buyFromShop(player, true, 11664, 1, 200);
+					return true;// ranger helm
+				case 18741:
+					PestControl.buyFromShop(player, true, 11663, 1, 200);
+					return true;// mage helm
+				case 18734:
+					PestControl.buyFromShop(player, true, 8839, 1, 250);
+					return true;// top
+				case 18737:
+					PestControl.buyFromShop(player, true, 8840, 1, 250);
+					return true;// robes
+				case 18742:
+					PestControl.buyFromShop(player, true, 8842, 1, 150);
+					return true;// gloves
+				case 18740:
+					PestControl.buyFromShop(player, true, 19712, 1, 350);
+					return true;// deflector
+				case 18745:
+					PestControl.buyFromShop(player, true, 19780, 1, 2000);
+					return true;// korasi
+				// ENCHANCE
+				case 18749:
+					PestControl.buyFromShop(player, true, 9361, 1, 450);
+					return true;// master top
+				case 18750:
+					PestControl.buyFromShop(player, true, 9362, 1, 450);
+					return true;// master legs
+				case 18751:
+					PestControl.buyFromShop(player, true, 9363, 1, 300);
+					return true;// helm
+				case 18752:
+					PestControl.buyFromShop(player, true, 19784, 1, 4500);
+					return true;// korasi
+				case 18753:
+					PestControl.buyFromShop(player, true, 9360, 1, 300);
+					return true;// helm
+				case 18754:
+					PestControl.buyFromShop(player, true, 9364, 1, 300);
+					return true;// helm
+				case 18755:
+					PestControl.buyFromShop(player, true, 19785, 1, 175);
+					return true;// helm
+				case 18756:
+					PestControl.buyFromShop(player, true, 19786, 1, 175);
+					return true;// helm
+				// INTERFACE
+				case 18743:
+					player.getPacketSender().sendInterface(18746);
+					return true;
+				case 18748:
+					player.getPacketSender().sendInterface(18730);
+					return true;
+				case 18728:
+					player.getPacketSender().sendInterfaceRemoval();
+					return true;
 			}
 		}
 		return false;

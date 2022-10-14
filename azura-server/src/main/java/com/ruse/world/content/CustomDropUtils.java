@@ -33,6 +33,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23384)) {
             percentBoost += 25;
         }
+        if (player.getEquipment().contains(23403)) {
+            percentBoost += 25;
+        }
         if (player.getEquipment().contains(23385)) {
             percentBoost += 30;
         }
@@ -222,7 +225,7 @@ public class CustomDropUtils {
         //Start capes
 
         if (player.getEquipment().contains(23268)) { //Cloak of Summer
-            percentBoost += 60;
+            percentBoost += 50;
         }
         if (player.getEquipment().contains(23424)) {//Diyos cape
             percentBoost += 80;
@@ -562,6 +565,10 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23281)) { //Avalon helmet
             percentBoost += 30;
         }
+
+        if (player.getEquipment().contains(15509)) { //Autumn coronet
+            percentBoost += 25;
+        }
         if (player.getEquipment().contains(23220)) { //Nephilim helmet
             percentBoost += 30;
         }
@@ -579,16 +586,16 @@ public class CustomDropUtils {
             percentBoost += 30;
         }
         if (player.getEquipment().contains(23440)) {//Purple Pennywise mask
-            percentBoost += 30;
+            percentBoost += 20;
         }
         if (player.getEquipment().contains(23441)) {//Black Pennywise mask
-            percentBoost += 30;
+            percentBoost += 20;
         }
         if (player.getEquipment().contains(23442)) {//Orange Pennywise mask
-            percentBoost += 30;
+            percentBoost += 20;
         }
         if (player.getEquipment().contains(23439)) {//Pennywise mask
-            percentBoost += 25;
+            percentBoost += 15;
         }
         if (player.getEquipment().contains(23303)) { //Mystic helmet
             percentBoost += 25;
@@ -599,9 +606,7 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23309)) { //Midnight helmet
             percentBoost += 25;
         }
-        if (player.getEquipment().contains(7539)) { //Crab helmet
-            percentBoost += 20;
-        }
+
         if (player.getEquipment().contains(22100)) { //Fallen angel's helmet
             percentBoost += 20;
         }
@@ -830,8 +835,8 @@ public class CustomDropUtils {
             percentBoost *= 1.5;
         }
 
-        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DR) {
-            percentBoost *= 2;
+        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.DR) {
+            percentBoost *= 1.5;
         }
         /**
          * Donator Rank bonusses
@@ -906,7 +911,7 @@ public class CustomDropUtils {
         if (npc == 8013 && System.currentTimeMillis() + 43200000 > player.lastVoteTime) {
             percentBoost = +100;
         }
-        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DROPS) {
+        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.DOUBLE_DROPS) {
             percentBoost = +100;
         }
 
@@ -1003,7 +1008,7 @@ public class CustomDropUtils {
     }
 
 
-    public static int drBonus(Player player) {
+    public static int drBonusCheck(Player player) {
         int percentBoost = 0;
 
                 /*
@@ -1016,6 +1021,10 @@ public class CustomDropUtils {
             percentBoost += 15;
         }
         if (player.getEquipment().contains(23384)) {
+            percentBoost += 25;
+        }
+
+        if (player.getEquipment().contains(23403)) {
             percentBoost += 25;
         }
         if (player.getEquipment().contains(23385)) {
@@ -1207,7 +1216,7 @@ public class CustomDropUtils {
         //Start capes
 
         if (player.getEquipment().contains(23268)) { //Cloak of Summer
-            percentBoost += 60;
+            percentBoost += 50;
         }
         if (player.getEquipment().contains(23424)) {//Diyos cape
             percentBoost += 80;
@@ -1547,6 +1556,10 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23281)) { //Avalon helmet
             percentBoost += 30;
         }
+
+        if (player.getEquipment().contains(15509)) { //Autumn coronet
+            percentBoost += 25;
+        }
         if (player.getEquipment().contains(23220)) { //Nephilim helmet
             percentBoost += 30;
         }
@@ -1564,16 +1577,16 @@ public class CustomDropUtils {
             percentBoost += 30;
         }
         if (player.getEquipment().contains(23440)) {//Purple Pennywise mask
-            percentBoost += 30;
+            percentBoost += 20;
         }
         if (player.getEquipment().contains(23441)) {//Black Pennywise mask
-            percentBoost += 30;
+            percentBoost += 20;
         }
         if (player.getEquipment().contains(23442)) {//Orange Pennywise mask
-            percentBoost += 30;
+            percentBoost += 20;
         }
         if (player.getEquipment().contains(23439)) {//Pennywise mask
-            percentBoost += 25;
+            percentBoost += 15;
         }
         if (player.getEquipment().contains(23303)) { //Mystic helmet
             percentBoost += 25;
@@ -1584,9 +1597,7 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23309)) { //Midnight helmet
             percentBoost += 25;
         }
-        if (player.getEquipment().contains(7539)) { //Crab helmet
-            percentBoost += 20;
-        }
+
         if (player.getEquipment().contains(22100)) { //Fallen angel's helmet
             percentBoost += 20;
         }
@@ -1780,7 +1791,10 @@ public class CustomDropUtils {
             percentBoost *= 1.5;
         }
 
-        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DR) {
+        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.DR) {
+            percentBoost *= 1.5;
+        }
+        if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.DOUBLE_DROPS) {
             percentBoost *= 2;
         }
         /**

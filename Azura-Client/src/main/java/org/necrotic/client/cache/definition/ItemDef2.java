@@ -186,6 +186,10 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				break;
 
+			case 8851:
+				itemDef.actions = new String[]{"Exchange", null, "Exchange-X", null, null};
+				itemDef.name = "1k Token";
+				break;
 			case 17672:
 				itemDef.name = "Doomicia bow";
 				itemDef.modelID = 64018;

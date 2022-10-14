@@ -27,6 +27,38 @@ public class DiscordMessager extends JSONObject {
 	}
 
 	public static Queue<DiscordObject> discordMessages = new ConcurrentLinkedQueue<>();
+	private static String serverPerks = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
+
+
+	public static void setServerPerks(String msg) {
+		try {
+			if (GameSettings.LOCALHOST)
+				return;
+
+			String webhook = serverPerks;
+
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+			// client
+
+			DiscordEmbed embed = new DiscordEmbed.Builder()
+					.withTitle(msg) // The title of the embed element
+					.withColor(Color.YELLOW) // The color of the embed. You can leave this at null for no color
+					.build(); // Build the embed element
+
+			DiscordMessage message = new DiscordMessage.Builder("") // The content of the
+					// message
+					.withEmbed(embed) // Add our embed object
+					.withUsername("Server Perks") // Override the username of the bot
+					.build(); // Build the message
+
+			client.sendPayload(message);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
 
 	public static void discordThread() {
 		new Thread(() -> {

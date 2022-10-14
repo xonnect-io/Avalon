@@ -5,6 +5,7 @@ import com.ruse.model.Skill;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.input.impl.EnterAmountOfBarsToSmelt;
 import com.ruse.util.Misc;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.entity.impl.player.Player;
 
 public class SmithingData {
@@ -97,6 +98,7 @@ public class SmithingData {
 
 			return false;
 		}
+		player.getAchievementTracker().progress(AchievementData.SMITHING, 1);
 		return true;
 	}
 

@@ -1780,6 +1780,7 @@ public class ItemDef3 {
 				itemDef.rotationY = 520;
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = 0;
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 				
@@ -2505,8 +2506,7 @@ public class ItemDef3 {
 
 			case 19776:
 				itemDef.name = "Bork boots";
-				itemDef.modelID = 19551;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.modelID = 19551;itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 
 			case 17043:

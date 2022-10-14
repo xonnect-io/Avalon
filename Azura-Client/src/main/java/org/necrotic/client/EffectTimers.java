@@ -43,7 +43,7 @@ public class EffectTimers {
 	 * Draws all of our timers onto the game screen.
 	 */
 	public static void draw() {
-		int xDraw = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? Client.clientWidth - 325 : Client.clientWidth - 276;
+		int xDraw = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? Client.clientWidth - 326 : Client.clientWidth - 278;
 		int yDraw = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? Client.clientHeight - 210 : Client.clientHeight - 170;
 
 		if (GameFrame.getScreenMode() != GameFrame.ScreenMode.FIXED && Client.instance.getWidth() >= 1000) {
@@ -51,6 +51,10 @@ public class EffectTimers {
 		} else if (GameFrame.getScreenMode() != GameFrame.ScreenMode.FIXED && Client.instance.getWidth() >= 800) {
 			yDraw = Client.clientHeight - 86;
 		}
+
+		if (Client.instance.parallelWidgetList.contains(RSInterface.interfaceCache[42400]))
+			yDraw-= 62;
+
 		Iterator<EffectTimer> it = timers.iterator();
 		while (it.hasNext()) {
 			EffectTimer timer = it.next();
@@ -63,18 +67,20 @@ public class EffectTimers {
 				Sprite sprite = ItemDefinition.getSprite(timer.getItemId(), 1, 0, 1.25D, true);
 
 				String string = formatMinutes(timer.getSecondsTimer().secondsRemaining());
+				if (timer.getSecondsTimer().secondsRemaining() == 65036)
+					string = "Infinite";
 
 				if (sprite != null) {
 					if (GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED) {
-						DrawingArea.method338(yDraw - 21, 28, 150, 0, 63, xDraw + 5);
-						DrawingArea.method335(0x433A32, yDraw - 20, 61, 26, 150, xDraw + 6);
+						DrawingArea.method338(yDraw - 21, 28, 150, 0, 65, xDraw + 5);
+						DrawingArea.method335(0x433A32, yDraw - 20, 63, 26, 150, xDraw + 6);
 
 						Client.instance.newSmallFont.drawBasicString(string, xDraw + 32, yDraw - 1, 0xFFFFFF, 1);
 
 						sprite.drawSprite1(xDraw + 2, yDraw - 23);
 					} else {
-						DrawingArea.method338(yDraw - 21, 28, 150, 0, 63, xDraw + 5);
-						DrawingArea.method335(0x433A32, yDraw - 20, 61, 26, 150, xDraw + 6);
+						DrawingArea.method338(yDraw - 21, 28, 150, 0, 65, xDraw + 5);
+						DrawingArea.method335(0x433A32, yDraw - 20, 63, 26, 150, xDraw + 6);
 
 						Client.instance.newSmallFont.drawBasicString(string, xDraw + 32, yDraw - 1, 0xFFFFFF, 1);
 

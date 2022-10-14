@@ -27,14 +27,14 @@ public class OwnerDisassemble {
 
 
 
-		PENNYWISE(23439, new Item[]{new Item(hweentoken, 150)}, 25000, anim),
+		PENNYWISE(23439, new Item[]{new Item(hweentoken, 250)}, 25000, anim),
 		PURPLE_DYE(23430, new Item[]{new Item(hweentoken, 50)}, 25000, anim),
 		BLACK_DYE(23431, new Item[]{new Item(hweentoken, 50)}, 25000, anim),
 		ORANGE_DYE(23432, new Item[]{new Item(hweentoken, 50)}, 25000, anim),
 
-		PURPLE_PENNYWISE(23440, new Item[]{new Item(hweentoken, 200)}, 50000, anim),
-		BLACK_PENNYWISE(23441, new Item[]{new Item(hweentoken, 200)}, 50000, anim),
-		ORANGE_PENNYWISE(23442, new Item[]{new Item(token, 200)}, 50000, anim);
+		PURPLE_PENNYWISE(23440, new Item[]{new Item(hweentoken, 500)}, 50000, anim),
+		BLACK_PENNYWISE(23441, new Item[]{new Item(hweentoken, 500)}, 50000, anim),
+		ORANGE_PENNYWISE(23442, new Item[]{new Item(token, 500)}, 50000, anim);
 
 		DisassembleData(int id, Item[] rewards, int experience, int animation) {
 			this.id = id;
@@ -70,23 +70,6 @@ public class OwnerDisassemble {
 	public void handleDialogue(int id) {
 		DialogueManager.start(player, new DisassembleValue(player,
 				"Disassemble for x 1 Owner Fragment", "Nevermind", 6120));
-		;
-	}
-
-	public void handleHweenDialogue50(int id) {
-		DialogueManager.start(player, new DisassembleValue(player,
-				"Disassemble for x 50 Halloween Token", "Nevermind", 6121));
-		;
-	}
-
-	public void handleHweenDialogue150(int id) {
-		DialogueManager.start(player, new DisassembleValue(player,
-				"Disassemble for x 150 Halloween Token", "Nevermind", 6122));
-		;
-	}
-	public void handleHweenDialogue200(int id) {
-		DialogueManager.start(player, new DisassembleValue(player,
-				"Disassemble for x 200 Halloween Token", "Nevermind", 6123));
 		;
 	}
 }

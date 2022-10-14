@@ -101,7 +101,9 @@ public class PlayerLoading {
                 player.setSavedPin(reader.get("saved-pin2").getAsString());
             }
 
-
+            if (reader.has("money-pouch")) {
+                player.setMoneyInPouch(reader.get("money-pouch").getAsLong());
+            }
             if (reader.has("saved-ip")) {
                 player.setSavedIp(reader.get("saved-ip").getAsString());
             }
@@ -616,7 +618,7 @@ public class PlayerLoading {
                 player.getPointsHandler().setMIDNIGHTKILLCount(reader.get("midnight-killcount").getAsInt(), false);
             }
             if (reader.has("ab-killcount")) {
-                player.getPointsHandler().setAvalonBeastKC(reader.get("ab-killcount").getAsInt(), false);
+                player.getPointsHandler().setBorkKC(reader.get("ab-killcount").getAsInt(), false);
             }
             if (reader.has("quest-one-dream-kc")) {
                 player.getPointsHandler().setQuestOneDreamKC(reader.get("quest-one-dream-kc").getAsInt(), false);
@@ -627,6 +629,10 @@ public class PlayerLoading {
             }
             if (reader.has("isles-kc")) {
                 player.getPointsHandler().setIslesKC(reader.get("isles-kc").getAsInt(), false);
+            }
+
+            if (reader.has("cosmetic-override")) {
+                player.setCosmeticOveride(reader.get("cosmetic-override").getAsBoolean());
             }
             if (reader.has("treasure-hunter-kc")) {
                 player.getPointsHandler().setTreasureHunterKC(reader.get("treasure-hunter-kc").getAsInt(), false);
@@ -645,6 +651,10 @@ public class PlayerLoading {
             }
             if (reader.has("seasonpass-kc")) {
                 player.set500kcforseasonpass(reader.get("seasonpass-kc").getAsInt());
+
+            }
+            if (reader.has("pumpkins-collected")) {
+                player.setSoulInPouch(reader.get("pumpkins-collected").getAsInt());
 
             }
             if (reader.has("unlockedseasonpass")) {

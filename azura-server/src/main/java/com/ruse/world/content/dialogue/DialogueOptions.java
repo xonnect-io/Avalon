@@ -1255,6 +1255,11 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+
+                case 10000:
+                    player.getPlayerOwnedShopManager().handleStore((int)player.getPosInfo()[0],(int)player.getPosInfo()[1],(int)player.getPosInfo()[2],player.getPosInfo()[3]);
+                    break;
+
 /*
                 case 9828:
                     for(MainDissolving.DissolvingData data : MainDissolving.DissolvingData.values()) {
@@ -1362,7 +1367,7 @@ public class DialogueOptions {
                     player.setQuestOneStep1(true);
                     break;
                 case 8102:
-                    if (player.getCelestial() == false && player.getSODRaidsKC() >= 50 && player.getInventory().contains(13379, 2)) {
+                    if (player.getCelestial() == false && player.getInventory().contains(13379, 2)) {
                         player.getInventory().delete(13379, 2);
                         player.setCelestial(true);
                         player.getPacketSender().sendMessage("<img=832> You have achieved Celestial Status!");
@@ -1446,6 +1451,19 @@ public class DialogueOptions {
                         }
                     }
                     break;
+                case 6338: //yes
+                    for (CharmDisassemble.CharmData data : CharmDisassemble.CharmData.values()) {
+                        if (player.getInventory().contains(data.getId(), 1)) {
+                            player.getPacketSender().sendInterfaceRemoval();
+                            player.getInventory().delete(data.getId(), 1);
+                            player.getInventory().addItemSet(data.getRewards());
+                            player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
+                            player.performAnimation(new Animation(data.getAnimation()));
+                            player.getPacketSender().sendMessage("You Disassembled the " + ItemDefinition.forId(data.getId()).getName() + " for x" + data.getRewards()[0].getAmount() + " Suffered crystals");
+                            break;
+                        }
+                    }
+                    break;
                 case 6120: //yes
                     for (OwnerDisassemble.DisassembleData data : OwnerDisassemble.DisassembleData.values()) {
                         if (player.getInventory().contains(data.getId(), 1)) {
@@ -1483,6 +1501,7 @@ public class DialogueOptions {
                     VaultOfWar.forgeGloves(player);
                     break;
                 case 99928:
+                    player.getClickDelay().equals(200);
                     ExperienceLamps.confirmoneorall(player,1);
                     break;
                 case 103:
@@ -1871,6 +1890,7 @@ public class DialogueOptions {
                 case 668://no
                 case 8102:
                 case 6118:
+                case 6338:
                 case 6120:
                 case 6121:
                 case 6122:

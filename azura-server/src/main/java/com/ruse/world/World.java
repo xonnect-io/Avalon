@@ -15,6 +15,7 @@ import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.content.*;
 import com.ruse.world.content.celestial.CelestialZoneTask;
 import com.ruse.world.content.discordbot.Bot;
+import com.ruse.world.content.events.PartyChest;
 import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.minigames.impl.FightPit;
 import com.ruse.world.content.minigames.impl.KeepersOfLight;
@@ -307,8 +308,9 @@ public class World {
         PumpkinSpawns.initialize();
         VotingStreak.sequence();
         TravellingMerchant.sequence();
-        ServerPerks.getInstance().tick();
         CharacterBackup.sequence();
+        ServerPerks.getInstance().tick();
+        PartyChest.sequence();
         if (PRINT_TIMESTAMPS) {
             if (System.currentTimeMillis() - lastTime > 50)
                 System.out.println("Content tickers took: " + (System.currentTimeMillis() - lastTime) + " ms");
@@ -352,6 +354,97 @@ public class World {
             }
         }
     }
+    public static void sendBroadcastMessage(String message, int time) {
+        for (Player p : getPlayers()) {
+            if (p == null)
+                continue;
+            p.getPacketSender().sendBroadCastMessage(removeColors(message), time);
+            p.getPacketSender().sendMessage("<col=ff0000>Server Message: <col=047a9c>" + message);
+        }
+    }
+
+    public static String removeColors(String text) {
+        //System.out.println(text);
+        text = replace(text, "@red@", "");
+        text = replace(text, "@gre@", "");
+        text = replace(text, "@blu@", "");
+        text = replace(text, "@yel@", "");
+        text = replace(text, "@cya@", "");
+        text = replace(text, "@mag@", "");
+        text = replace(text, "@whi@", "");
+        text = replace(text, "@lre@", "");
+        text = replace(text, "@dre@", "");
+        text = replace(text, "@bla@", "");
+        text = replace(text, "@or1@", "");
+        text = replace(text, "@or2@", "");
+        text = replace(text, "@pr2@", "");
+        text = replace(text, "@or3@", "");
+        text = replace(text, "@gr1@", "");
+        text = replace(text, "@gr2@", "");
+        text = replace(text, "@gr3@", "");
+        text = replace(text, "@cr1@", "");
+        text = replace(text, "@cr2@", "");
+        text = replace(text, "@cr3@", "");
+        text = replace(text, "@dev@", "");
+        text = replace(text, "@des@", "");
+        text = replace(text, "@vet@", "");
+        text = replace(text, "@don@", "");
+        text = replace(text, "@or2@", "");
+        text = replace(text, "@purp@", "");
+
+        text = replace(text, "@vea@", "");
+        text = replace(text, "@eas@", "");
+        text = replace(text, "@med@", "");
+        text = replace(text, "@har@", "");
+        text = replace(text, "@vha@", "");
+        text = replace(text, "@bl2@", "");
+        text = replace(text, "@gry@", "");
+        text = replace(text, "@pnk@", "");
+        text = replace(text, "@pr3@", "");
+        text = replace(text, "@skb@", "");
+        if (text != null) {
+            while (text.contains("<")) {
+                if (text.contains("<")) {
+                    int index = text.indexOf("<");
+                    int index1 = text.indexOf(">");
+                    text = text.substring(0, index) + text.substring(index1 + 1);
+                }
+            }
+        }
+
+        return text;
+    }
+
+    private static String replace(String s, String from, String to) {
+        if (from == "=D" && s.contains("col"))
+            return s;
+        return replaceAllString(s, from, to);
+
+    }
+    public static String replaceAllString(String strOrig, String strFind, String strReplace) {
+        if (strOrig == null) {
+            return null;
+        }
+        StringBuffer sb = new StringBuffer(strOrig);
+        String toReplace = "";
+
+        if (strReplace == null)
+            toReplace = "";
+        else
+            toReplace = strReplace;
+
+        int pos = strOrig.length();
+
+        while (pos > -1) {
+            pos = strOrig.lastIndexOf(strFind, pos);
+            if (pos > -1)
+                sb.replace(pos, pos + strFind.length(), toReplace);
+            pos = pos - strFind.length();
+        }
+
+        return sb.toString();
+    }
+
 
     public static void submitGameThreadJob(@NotNull Function0<Unit> function) {
         gameThreadJobs.offer(function);

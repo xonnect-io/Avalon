@@ -2,6 +2,7 @@ package com.ruse.net.packet.impl;
 
 import com.ruse.model.Animation;
 import com.ruse.model.Flag;
+import com.ruse.model.GameMode;
 import com.ruse.model.Item;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.container.impl.*;
@@ -19,6 +20,8 @@ import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.combat.magic.Autocasting;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.events.EventManager;
+import com.ruse.world.content.events.PartyChest;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.grandexchange.GrandExchangeOffer;
 import com.ruse.world.content.minigames.impl.Dueling;
@@ -45,6 +48,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		int id = packet.readShortA();
 		Item item = new Item(id);
 		System.out.println(id + ", " + slot + ", " + interfaceId);
+		EventManager.itemContainerClick(player, interfaceId);
 		if (player.getRights().isDeveloperOnly()) {
 			player.getPacketSender()
 					.sendMessage("firstAction itemContainer. IF: " + interfaceId + " slot: " + slot + ", id: " + id);
@@ -187,7 +191,12 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				player.getGroupIronmanBank().open(player);
 				break;
 			case Bank.INVENTORY_INTERFACE_ID:
-				if (player.isBanking() && player.getInterfaceId() == 106000 && player.getInventory().contains(item.getId())){
+				PartyChest.interfaceAction(player, 1, item);
+
+				if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+					return;
+				}
+				if (player.isBanking() && player.getInterfaceId() == 106000 && player.getInventory().contains(item.getId())) {
 					player.getInventory().switchItem(player.getGroupIronmanBank(), item, slot, false, true);
 					player.getGroupIronmanBank().refreshItems(player);
 					return;
@@ -356,9 +365,13 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				player.getGroupIronmanBank().open(player);
 				break;
 			case Bank.INVENTORY_INTERFACE_ID:
-
 				item = player.getInventory().forSlot(slot).copy().setAmount(5).copy();
-				if (player.isBanking() && player.getInterfaceId() == 106000 && player.getInventory().contains(item.getId())){
+				PartyChest.interfaceAction(player, 2, item);
+
+				if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+					return;
+				}
+				if (player.isBanking() && player.getInterfaceId() == 106000 && player.getInventory().contains(item.getId())) {
 					player.getInventory().switchItem(player.getGroupIronmanBank(), item, slot, false, true);
 					player.getGroupIronmanBank().refreshItems(player);
 					return;
@@ -623,8 +636,14 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				player.getGroupIronmanBank().open(player);
 				break;
 			case Bank.INVENTORY_INTERFACE_ID:
+				if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+					return;
+				}
 				Item item = player.getInventory().forSlot(slot).copy().setAmount(10).copy();
-				if (player.isBanking() && player.getInterfaceId() == 106000 && player.getInventory().contains(item.getId())){
+
+				PartyChest.interfaceAction(player, 3, item);
+
+				if (player.isBanking() && player.getInterfaceId() == 106000 && player.getInventory().contains(item.getId())) {
 					player.getInventory().switchItem(player.getGroupIronmanBank(), item, slot, false, true);
 					player.getGroupIronmanBank().refreshItems(player);
 					return;
@@ -839,12 +858,19 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				player.getGroupIronmanBank().open(player);
 				break;
 			case Bank.INVENTORY_INTERFACE_ID:
+				if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+					return;
+				}
 				Item item = player.getInventory().forSlot(slot).copy().setAmount(player.getInventory().getAmount(id));
-				if (player.isBanking() && player.getInterfaceId() == 106000 && player.getInventory().contains(item.getId())){
+				PartyChest.interfaceAction(player, 4, item);
+				if (player.isBanking() && player.getInterfaceId() == 106000 && player.getInventory().contains(item.getId())) {
 					player.getInventory().switchItem(player.getGroupIronmanBank(), item, slot, false, true);
 					player.getGroupIronmanBank().refreshItems(player);
 					return;
 				}
+				if (!player.isBanking() || item.getId() != id || !player.getInventory().contains(item.getId())
+						|| player.getInterfaceId() != 5292)
+					return;
 				player.setCurrentBankTab(Bank.getTabForItem(player, item.getId()));
 				player.getInventory().switchItem(player.getBank(player.getCurrentBankTab()), item, slot, false, true);
 				break;
@@ -977,23 +1003,28 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				break;
 			case Bank.INVENTORY_INTERFACE_ID: // BANK X
 			case 12:
+				if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+					return;
+				}
 				/*
 				 * if(player.isBanking()) { player.setInputHandling(new EnterAmountToBank(id,
 				 * slot)); player.getPacketSender().
 				 * sendEnterAmountPrompt("How many would you like to bank?"); }
 				 */
-				Item item = player.getInventory().forSlot(slot).copy().setAmount(player.getInventory().getAmount(id));
-				if (player.isBanking() && player.getInterfaceId() == 106000 && player.getInventory().contains(item.getId())){
-					player.setInputHandling(new EnterAmountToGroupBank(id, slot));
-					player.getPacketSender().sendEnterAmountPrompt("How many would you like to bank?");
-					return;
-				}
-
 				if (interfaceId == 12) {
-					player.setInputHandling(new EnterAmountToBank(id, slot));
-					player.getPacketSender().sendEnterAmountPrompt("How many would you like to bank?");
+
+					if (player.getInterfaceId() == 146000){
+						Item item = player.getInventory().forSlot(slot).copy()
+								.setAmount(player.getInventory().getAmount(id) - 1);
+						item.setSlot(slot);
+						PartyChest.interfaceAction(player, 5, item);
+						return;
+					}else {
+						player.setInputHandling(new EnterAmountToBank(id, slot));
+						player.getPacketSender().sendEnterAmountPrompt("How many would you like to bank?");
+					}
 				} else {
-					item = player.getInventory().forSlot(slot).copy()
+					Item item = player.getInventory().forSlot(slot).copy()
 							.setAmount(player.getInventory().getAmount(id) - 1);
 					if (!player.isBanking() || item.getId() != id || !player.getInventory().contains(item.getId())
 							|| player.getInterfaceId() != 5292)

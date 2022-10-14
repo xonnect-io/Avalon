@@ -1054,9 +1054,6 @@ public final class CombatFactory {
             maxHit *= 1.25D;
         }
 
-        if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
-            maxHit *= 2;
-        }
 
         if(player.getRights() == PlayerRights.OWNER) {
             maxHit *= 5.5D;

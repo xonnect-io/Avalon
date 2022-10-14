@@ -305,16 +305,17 @@ public class CasketOpening {
         BOXES.log(player, getCurrentCasket().getItemID(), new Item(SlotPrize.getId()));
 
         player.getInventory().add(SlotPrize.getId(), SlotPrize.getAmount());
-
+        int amount = SlotPrize.getAmount();
         if (announce) {
+
             String message = "@red@" + player.getUsername() + " <col=ff812f>has just received @red@"
-                    + (SlotPrize.getMax() > 1 ? "x" + SlotPrize.getAmount() : "") + " "
+                    + (amount > 1 ? "x" + amount : "") + " "
                     + ItemDefinition.forId(SlotPrize.getId()).getName() + "<col=ff812f> from a @red@" +
                     ItemDefinition.forId(getCurrentCasket().getItemID()).getName() + "!";
             World.sendNewsMessage(message);
             if (SlotPrize.isAnnounce() && player.getEquipment().contains(23403) && Misc.getRandom(5) == 1 && getCurrentCasket() == Caskets.SOSREWARDS) {
                 player.getPacketSender().sendMessage("Your Suffering charm has doubled your rare reward!");
-                player.getInventory().add(SlotPrize.getId(), SlotPrize.getAmount());
+                player.getInventory().add(SlotPrize.getId(), amount);
             }
         }
 

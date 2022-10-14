@@ -19,6 +19,18 @@ import org.necrotic.client.world.Model;
 
 public class RSInterface {
 
+	private static void perkOverlays(TextDrawingArea[] tda) {
+		int STARTING_POINT = 42400;
+		RSInterface main = addInterface(STARTING_POINT);
+		addSpriteLoader(STARTING_POINT + 1, 1521);
+		addText(STARTING_POINT + 2, "0:00 min", tda, 0, ColorConstants.ORANGE, true, true);
+		addText(STARTING_POINT + 3, "Double Slayer", tda, 0, ColorConstants.SNOW_WHITE, true, true);
+
+		main.totalChildren(3);
+		main.child(0, STARTING_POINT + 1, 468, 248);
+		main.child(1, STARTING_POINT + 2, 480, 275);
+		main.child(2, STARTING_POINT + 3, 480, 286);
+	}
 	public static void mysteryBoxSpinner(TextDrawingArea[] tda) {
 
 		RSInterface base = addTabInterface(47000);
@@ -438,19 +450,7 @@ public class RSInterface {
 	protected int firstColor;
 	protected int secondColor;
 
-	private static void perkOverlays(TextDrawingArea[] tda) {
-		int STARTING_POINT = 42112;
-		RSInterface main = addInterface(STARTING_POINT);
-		addSpriteLoader(STARTING_POINT + 1, 1521);
-		addText(STARTING_POINT + 2, "0:00 min", tda, 0, ColorConstants.ORANGE, false, true);
-		addText(STARTING_POINT + 3, "X2 DMG", tda, 0, ColorConstants.SNOW_WHITE, true, true);
-		addTransparentSpriteWSpriteLoader1(STARTING_POINT + 4, 1648, 125);
-		main.totalChildren(4);
-		main.child(0, STARTING_POINT + 4, 456, 254);
-		main.child(1, STARTING_POINT + 1, 465, 258);
-		main.child(2, STARTING_POINT + 2, 465, 285);
-		main.child(3, STARTING_POINT + 3, 480, 296);
-	}
+
 
 
 	public static void addToItemGroup(int id, int w, int h, int x, int y, boolean hasActions, boolean displayAmount, String[] actions, boolean displayExamine) {
@@ -6053,7 +6053,7 @@ public class RSInterface {
 		rsi.invSpritePadY = 24;
 		rsi.height = 5;
 		rsi.width = 6;
-		rsi.parentID = 5382;
+		rsi.parentID = 5292;
 		rsi.id = index;
 		rsi.type = 2;
 	}
@@ -7003,8 +7003,8 @@ public class RSInterface {
 			scratchCardInterface(textDrawingAreas);
 			mysteryBoxSpinner(textDrawingAreas);
 			customServerPerks(textDrawingAreas);
-			customZones(textDrawingAreas);
 			perkOverlays(textDrawingAreas);
+			customZones(textDrawingAreas);
 			Achievements.unpack(textDrawingAreas);
 			customInterfaces = new CustomInterfaces(textDrawingAreas);
 			customInterfaces.loadCustoms();

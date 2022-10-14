@@ -93,6 +93,14 @@ public class Misc {
         calendar.set(year, month, day, hour, minute, second);
         return calendar.getTime();
     }
+    public static String getHoursLeft(long totalPlayTime) {
+
+        return  String.format("%dh %dm %ds",
+                TimeUnit.MILLISECONDS.toHours(totalPlayTime),
+                TimeUnit.MILLISECONDS.toMinutes(totalPlayTime) -                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toHours(totalPlayTime)),
+                TimeUnit.MILLISECONDS.toSeconds(totalPlayTime) -                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(totalPlayTime))
+        );
+    }
     public static String fill2(int value)
     {
         String ret = String.valueOf(value);

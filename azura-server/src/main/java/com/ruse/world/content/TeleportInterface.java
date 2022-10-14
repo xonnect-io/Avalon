@@ -9,7 +9,7 @@ import com.ruse.world.World;
 import com.ruse.world.content.boxes.Raids1;
 import com.ruse.world.content.boxes.Starter;
 import com.ruse.world.content.casketopening.Box;
-import com.ruse.world.content.minigames.impl.HallsOfValor;
+import com.ruse.world.content.minigames.impl.HallsOfAmmo;
 import com.ruse.world.content.minigames.impl.PyramidOutbreak;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.progressionzone.ProgressionZone;
@@ -694,7 +694,7 @@ public class TeleportInterface {
         OUTBREAK("Pyramid Outbreak", 4476, new int[]{3487, 9235, 0}, PyramidOutbreak.loot, 600),
         UNKNOWN("Unknown Crypt", 823, new int[]{1754, 5133, 0}, 1250),
         DUNG("Legends Raids", 585, new int[]{2222, 4115, 0}, Raids1.rewards, 1450),
-        IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfValor.loot, 1200),
+        IOA("Isles of Avalon", 9024, new int[]{2195, 5037, 0}, HallsOfAmmo.loot, 1200),
         //VOD("Void of Deception", 9028, new int[]{1954, 5010, 0}, VoidOfDarkness.loot, 600),
         TH("Treasure Hunter", 9816, new int[]{2015, 5022, 0}, TreasureHunter.loot, 3000),
        // KOL("Keepers of Light", 9835, new int[]{2322, 5028, 0}, KeepersOfLight.loot, 1200),

@@ -276,10 +276,6 @@ public class Store implements Runnable {
                     player.sendMessage("You received x1 Owner jewelry Goodiebag for donating 50+");
                     World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Owner jewelry Goodiebag!");
                 }
-                if (GameSettings.B2GO == true && GameSettings.B2GOFLASHSALE == true) {
-                    GameSettings.B2GO = false;
-                    GameSettings.B2GOFLASHSALE = false;
-                }
 
                 rs.updateInt("claimed", 1);
                 rs.updateRow();

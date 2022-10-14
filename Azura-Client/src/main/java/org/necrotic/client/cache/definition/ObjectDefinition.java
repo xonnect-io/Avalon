@@ -220,6 +220,11 @@ public final class ObjectDefinition {
 			definition.interactive = true;
 			definition.actions = new String[]{"Mine", null, null, null, null};
 		}
+		if (definition.type == 26744) {
+			definition.name = "Party Chest";
+			definition.actions = new String[]{"Open", null, null, null, null};
+		}
+
 		if (definition.type == 1817) {
 			definition.name = "Lever";
 			definition.actions = new String[]{"Pull", null, null, null, null};

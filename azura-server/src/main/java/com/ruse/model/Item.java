@@ -12,7 +12,6 @@ import com.ruse.world.content.Effigies;
  */
 
 public class Item {
-
 	public Item(int id, double rate, boolean announce) {
 		this.id = id;
 		this.min = 1;
@@ -35,6 +34,52 @@ public class Item {
 		this.rate = rate;
 		this.announce = false;
 	}
+	public String getRarityofItem() {
+		return rarityofitem;
+	}
+	public Item(int id, int min, int max, double rate, boolean announce) {
+		this.id = id;
+		this.min = min;
+		this.max = max;
+		this.rate = rate;
+		this.announce = announce;
+	}
+	public Item(int id, int min, int max,boolean announce, String rarity) {
+		this.id = id;
+		this.min = min;
+		this.max = max;
+		this.announce = announce;
+		this.rarityofitem = rarity;
+	}
+	public int getMin() {
+		return min;
+	}
+
+	public void setMin(int min) {
+		this.min = min;
+	}
+
+	public int getMax() {
+		return max;
+	}
+
+	public void setMax(int max) {
+		this.max = max;
+	}
+
+	@Override
+	public String toString() {
+		return "Item{" +
+				"id=" + id +
+				", amount=" + amount +
+				'}';
+	}
+	private int min;
+	private int max;
+	private double rate;
+	private boolean announce;
+
+	private String rarityofitem;
 	/**
 	 * An Item object constructor.
 	 *
@@ -45,11 +90,7 @@ public class Item {
 		this.id = id;
 		this.amount = amount;
 	}
-	public Item(int id, int amount, String rarity) {
-		this.id = id;
-		this.amount = amount;
-		this.rarityofitem = rarity;
-	}
+
 	/**
 	 * An Item object constructor.
 	 *
@@ -64,21 +105,13 @@ public class Item {
 	 */
 	private int id;
 
-	private int min;
-	private int max;
-	private double rate;
-	private boolean announce;
-
-	private String rarityofitem;
 	/**
 	 * Gets the item's id.
 	 */
 	public int getId() {
 		return id;
 	}
-	public String getRarityofItem() {
-		return rarityofitem;
-	}
+
 	/**
 	 * Sets the item's id.
 	 *
@@ -127,15 +160,37 @@ public class Item {
 	}
 
 	public boolean tradeable() {
-		String name = getDefinition().getName().toLowerCase();
-		/*if (name.contains("clue scroll"))
+		if (id == 23569)
 			return false;
-		if (name.contains("overload") && !name.contains("infinite"))
+		if (id == 23536)
+			return true;
+		if (id == 17580)
+			return true;
+		String name = getDefinition().getName().toLowerCase();
+		if (name.contains("clue scroll"))
+			return false;
+		if (name.contains("overload"))
 			return false;
 		if (name.toLowerCase().contains("(deg)") || name.toLowerCase().contains("brawling"))
 			return false;
 		if (name.toLowerCase().contains("pet"))
-			return false;*/
+			return false;
+
+		if (id == 11789)
+			return true;
+		if (id == 23307)
+			return true;
+		if (id >= 23737  && id <= 23742)
+			return false;
+		if (id >= 779  && id <= 781)
+			return false;
+		if (id >= 23113  && id <= 23116)
+			return false;
+
+		if (id == 4441)
+			return false;
+		if (id == 13556)
+			return false;
 
 		for (int i : GameSettings.UNTRADEABLE_ITEMS) {
 			if (id == i)
@@ -167,6 +222,8 @@ public class Item {
 			if (id == i)
 				return false;
 		}
+		if (id >= 13730 && id <= 13750)
+			return true;
 		for (int i : GameSettings.UNSELLABLE_ITEMS) {
 			if (id == i)
 				return false;
@@ -271,42 +328,5 @@ public class Item {
 	public Item setRarity(ItemRarity rarity) {
 		this.rarity = rarity;
 		return this;
-	}
-	public Item(int id, int min, int max, double rate, boolean announce) {
-		this.id = id;
-		this.min = min;
-		this.max = max;
-		this.rate = rate;
-		this.announce = announce;
-	}
-	public Item(int id, int min, int max,boolean announce, String rarity) {
-		this.id = id;
-		this.min = min;
-		this.max = max;
-		this.announce = announce;
-		this.rarityofitem = rarity;
-	}
-	public int getMin() {
-		return min;
-	}
-
-	public void setMin(int min) {
-		this.min = min;
-	}
-
-	public int getMax() {
-		return max;
-	}
-
-	public void setMax(int max) {
-		this.max = max;
-	}
-
-	@Override
-	public String toString() {
-		return "Item{" +
-				"id=" + id +
-				", amount=" + amount +
-				'}';
 	}
 }

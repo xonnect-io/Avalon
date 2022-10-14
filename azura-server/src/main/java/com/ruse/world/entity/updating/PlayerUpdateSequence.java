@@ -1,11 +1,12 @@
 package com.ruse.world.entity.updating;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Phaser;
-
 import com.ruse.world.World;
+import com.ruse.world.content.events.PartyChest;
 import com.ruse.world.entity.impl.npc.NpcAggression;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Phaser;
 
 public class PlayerUpdateSequence implements UpdateSequence<Player> {
 
@@ -29,12 +30,36 @@ public class PlayerUpdateSequence implements UpdateSequence<Player> {
 	@Override
 	public void executePreUpdate(Player t) {
 		try {
+			long lastTime = System.currentTimeMillis();
+			long firstTime = System.currentTimeMillis();
+			boolean sessionlag = false;
+
 			t.getSession().handleQueuedMessages();
+			if (t!= null && System.currentTimeMillis() - firstTime > 75) {
+				sessionlag=  true;
+				firstTime = System.currentTimeMillis();
+			}
+
 			t.process();
+
 			if (t.getWalkToTask() != null)
 				t.getWalkToTask().tick();
+
+
+
 			t.getMovementQueue().sequence();
+
+
+
+			PartyChest.updateRequired = false;
 			NpcAggression.target(t);
+
+
+			if (t!= null && System.currentTimeMillis() - lastTime > 100 && !sessionlag) {
+				System.out.println(t.getUsername() + " - time took: " + (System.currentTimeMillis() - lastTime) + " ms");
+
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			World.deregister(t);

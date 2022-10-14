@@ -1,16 +1,13 @@
 package com.ruse.world.content;
 
-import com.ruse.GameServer;
 import com.ruse.GameSettings;
 import com.ruse.engine.GameEngine;
 import com.ruse.model.Position;
 import com.ruse.util.Misc;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
 
 public class PlayerLogs {
 
@@ -47,7 +44,27 @@ public class PlayerLogs {
 			}
 		});
 	}
+	public static void logPartyChest(String file, String writable) {
+		if (!GameSettings.LOG_DONATIONS)
+			return;
 
+		new Thread(() -> {
+			try {
+				Misc.createFilesIfNotExist(FILE_PATH + "partychest/" + file + ".txt", false);
+				FileWriter fw = new FileWriter(FILE_PATH + "partychest/" + file + ".txt", true);
+				fw.write(getTime() + writable + "\t");
+				fw.write(System.lineSeparator());
+				fw.close();
+				Misc.createFilesIfNotExist(WORLD_FILE_PATH + "partychest.txt", false);
+				FileWriter world = new FileWriter(WORLD_FILE_PATH + "partychest.txt", true);
+				world.write(getTime() + " [ " + file + " ] " + writable + "\t");
+				world.write(System.lineSeparator());
+				world.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}).start();
+	}
 	public static void logPlayerGambles(String file, String writable) {
 		if (!GameSettings.LOG_SPINSWIP)
 			return;

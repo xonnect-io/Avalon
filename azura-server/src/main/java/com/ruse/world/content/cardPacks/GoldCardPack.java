@@ -224,12 +224,13 @@ public class GoldCardPack {
             }
 
             reward = getRandomItem(rewardstype);
+            int amount = reward.getAmount();
             player.getPacketSender().sendSpriteChange(23694+i, getRarityColor(reward));
-            player.getPacketSender().sendItemOnInterface(23687+i, reward.getId(), reward.getAmount());
-            player.getInventory().add(reward.getId(),reward.getAmount());
+            player.getPacketSender().sendItemOnInterface(23687+i, reward.getId(), amount);
+            player.getInventory().add(reward.getId(),amount);
             if (rewardstype == tanzaniteRewards) {
                 World.sendMessage("<img=832> @red@" +player.getUsername() + " <col=ff812f>has just received @red@"
-                        + "x" + (reward.getAmount()) + " "
+                        + "x" + (amount) + " "
                         + ItemDefinition.forId(reward.getId()).getName() + "<col=ff812f> from a @red@ Celestial's Card Pack!");
             }
 

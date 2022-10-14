@@ -3,13 +3,13 @@ package com.ruse.world.content.combat;
 import com.ruse.model.Locations;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Skill;
+import com.ruse.model.container.impl.Costumes;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.util.Misc;
 import com.ruse.world.content.combat.effect.EquipmentBonus;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.weapon.FightStyle;
-import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.DropUtils;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Familiar;
@@ -129,7 +129,10 @@ public class Maxhits {
                     .getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
                 base *= 1.25;
             }
-
+            for (Costumes costume : Costumes.values()) {
+                if (player.getEquipment().contains(costume.getItemId()))
+                    base += costume.getDamageBoost();
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
@@ -179,9 +182,6 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {// admin pet
                 base *= 1.35D;
-            }
-            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
-                base *= 2;
             }
 
             if(player.getRights() == PlayerRights.OWNER) {
@@ -261,15 +261,7 @@ public class Maxhits {
             /*
             Halloween Seasonal items
              */
-            if (player.getEquipment().contains(23439)) {
-                maxHit *= 1.05;
-            } else if (player.getEquipment().contains(23440)) {
-                maxHit *= 1.10;
-            }else if (player.getEquipment().contains(23441)) {
-                maxHit *= 1.10;
-            }else if (player.getEquipment().contains(23442)) {
-                maxHit *= 1.10;
-            }else if (player.getEquipment().contains(15509)) {
+            if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
                 maxHit *= 1.25;
             }
             if (player.getEquipment().contains(23418)) {
@@ -432,15 +424,7 @@ public class Maxhits {
             /*
             Halloween Seasonal items
              */
-            if (player.getEquipment().contains(23439)) {
-                maxHit *= 1.05;
-            } else if (player.getEquipment().contains(23440)) {
-                maxHit *= 1.10;
-            }else if (player.getEquipment().contains(23441)) {
-                maxHit *= 1.10;
-            }else if (player.getEquipment().contains(23442)) {
-                maxHit *= 1.10;
-            }else if (player.getEquipment().contains(15509)) {
+            if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
                 maxHit *= 1.25;
             }
 
@@ -453,6 +437,10 @@ public class Maxhits {
             }
             if (player.getArcherMaster() == true) {
                 maxHit *= 1.2;
+            }
+            for (Costumes costume : Costumes.values()) {
+                if (player.getEquipment().contains(costume.getItemId()))
+                    maxHit += costume.getDamageBoost();
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
@@ -503,9 +491,7 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {// admin pet
                 maxHit *= 1.35D;
             }
-            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
-                maxHit *= 2;
-            }
+
             if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
                 maxHit *= 1.75D;
             }
@@ -675,9 +661,9 @@ public class Maxhits {
                 maxHit *= 1.10;
             }else if (player.getEquipment().contains(23442)) {
                 maxHit *= 1.10;
-            }else if (player.getEquipment().contains(15509)) {
-                maxHit *= 1.25;
-            }
+            } else if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
+                    maxHit *= 1.30;
+                }
 
             if (player.getEquipment().contains(23418)) {
                 maxHit *= 1.25;
@@ -697,6 +683,12 @@ public class Maxhits {
             if (player.getEquipment().contains(7539)) {
                 maxHit *= 1.5;
             }
+
+            for (Costumes costume : Costumes.values()) {
+                if (player.getEquipment().contains(costume.getItemId()))
+                    maxHit += costume.getDamageBoost();
+            }
+
             int charges = player.getSupremeCharges();
 
 
@@ -784,9 +776,7 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {// admin pet
                 maxHit *= 1.35D;
             }
-            if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.X2_DMG) {
-                maxHit *= 2;
-            }
+
             if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
                 maxHit *= 1.75D;
             }

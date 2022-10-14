@@ -4,83 +4,67 @@ import ca.momoperes.canarywebhooks.DiscordMessage;
 import ca.momoperes.canarywebhooks.WebhookClient;
 import ca.momoperes.canarywebhooks.WebhookClientBuilder;
 import ca.momoperes.canarywebhooks.embed.DiscordEmbed;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.ruse.GameSettings;
-import com.ruse.engine.GameEngine;
-import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
-import com.ruse.util.StringUtils;
+import com.ruse.util.Stopwatch;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.awt.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URI;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
+
+import static com.ruse.util.StringUtils.usToSpace;
 
 public class ServerPerks {
 
-    private static ServerPerks instance = null;
-    private final Map<Perk, Integer> contributions = new HashMap<>();
+    @Getter
+    @AllArgsConstructor
+    public enum Perk {
+        DR("x1.5 DR boost", "x1.5 DR", 1524, 60_000_000),// DONE
+        XP("x2 EXP Boost", "x2 EXP", 529, 30_000_000),// DONE
+        DOUBLE_DROPS("Double Drops", "x2 Drops", 1525, 90_000_000),// DONE
+        PEST_CONTROL("x2 PC Points", "x2 PC", 1521, 50_000_000),// DONE
+        SLAYER_POINTS("x1.5 Slayer Points", "x1.5 Slay", 1522, 60_000_000),// DONE
+        RAIDS_LOOT("x2 Raids Loot", "x2 Raids", 1521, 90_000_000),// DONE
+        ;
+
+        private final String name;
+        private final String smallName;
+        private final int spriteId;
+        private final int cost;
+    }
+
     private final int TIME = 6000; // 1 hour
-    public static final int INTERFACE_ID = 42050;
-    public static final int OVERLAY_ID = 42112;
-    private final Perk[] PERKS = Perk.values();
-    private final Path FILE_PATH = Paths.get("./data/serverperks.txt");
-    private static Perk activePerk;
+    private final int INTERFACE_ID = 42050;
+    private final int OVERLAY_ID = 42400;
+    public Perk CURRENT_PERK = Perk.values()[0];
+    private Perk activePerk;
     private int currentTime = 0;
     private boolean active = false;
+    public int COST = 100_000_000;
+    private final Stopwatch stopwatch = new Stopwatch();
+    public int contributed = 0;
 
-    private ServerPerks() {
-
-    }
-
-    public static ServerPerks getInstance() {
-        if (instance == null) {
-            instance = new ServerPerks();
-        }
-        return instance;
-    }
+    private long COOL_DOWN = 60 * 60 * 1000;
 
     public Perk getActivePerk() {
         return activePerk;
     }
 
-    public static void discordBroadcast(String msg) {
-        try {
-            String webhook = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
-            WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-            DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("").withColor(Color.orange).withDescription(
-                "***[Perk] "+ activePerk.getName() + " has been activated for 1 hour!***").build();
-            DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)).withEmbed(embed).withUsername("Broadcast").build();
-            client.sendPayload(message);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static void discordBroadcastEnd(String msg) {
-        try {
-            String webhook = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
-            WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
-            DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("").withColor(Color.orange).withDescription(
-                    "***[Perk] "+ activePerk.getName() + " has been deactivated***").build();
-            DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)).withEmbed(embed).withUsername("Broadcast").build();
-            client.sendPayload(message);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void open(Player player) {
         player.getPacketSender().sendInterface(INTERFACE_ID);
-        player.setPerkIndex(0);
         updateInterface(player);
     }
 
@@ -89,26 +73,82 @@ public class ServerPerks {
             player.sendMessage("@red@A perk is already active");
             return;
         }
-        if (!player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, amount)) {
-            amount = player.getInventory().getAmount(ItemDefinition.UPGRADE_TOKEN_ID);
-        }
-        int index = player.getPerkIndex();
-        Perk perk = PERKS[index];
-        int current = contributions.getOrDefault(perk, 0);
-        int necessary = perk.getAmount();
-        amount = Math.min(amount, necessary - current);
 
-        player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, amount);
-        int total = contributions.merge(perk, amount, Integer::sum);
+        if (!player.getInventory().contains(12855, amount)) {
+            amount = player.getInventory().getAmount(12855);
+        }
+
+        if (amount <= 0) {
+            player.sendMessage("@red@You do not have any tokens to contribute!");
+            return;
+        }
+
+        amount = Math.min(amount, COST - contributed);
+
+
+        long cooldown = stopwatch.elapsed();
+        if (cooldown != 0) {
+            if (cooldown < COOL_DOWN) {
+                player.sendMessage("You cannot contribute to the server perks while there is a cool down.");
+                return;
+            }
+        }
+
+        player.getInventory().delete(12855, amount);
+        contributed += amount;
         updateInterface(player);
 
-        save();
+
+        player.setServerPerksContributions(player.getServerPerksContributions() + amount);
+
+
         if (amount >= 1000000) {
-            World.sendMessage("<img=16><shad=1>@or2@[" + player.getUsername() + "] @yel@has just donated @gre@" + amount + " @yel@Upgrade tokens to the Server Perk!");
+            World.sendMessage("<img=16><shad=1>@or2@[" + player.getUsername() + "] @yel@has just donated @gre@" + Misc.insertCommasToNumber(amount)
+                    + " @yel@Upgrade Tokens to the Server Perks!");
         }
-        if (total >= necessary) {
-            start(perk);
+        if (contributed >= COST) {
+            start(CURRENT_PERK);
         }
+        save();
+    }
+
+
+    public void contribute(int amount) {
+        if (active) {
+            return;
+        }
+
+        amount = Math.min(amount, COST - contributed);
+
+
+        contributed += amount;
+
+        if (contributed >= COST) {
+            start(CURRENT_PERK);
+        }
+        save();
+    }
+
+
+    public void setPerk(Perk perk) {
+       CURRENT_PERK = perk;
+       COST  = perk.getCost();
+    }
+
+
+    public void setPerk(Player player, int index) {
+        if (active) {
+            player.sendMessage("@red@A perk is already active");
+            return;
+        }
+        int amount = COST - contributed;
+        contributed += COST - contributed;
+
+        World.sendMessage("<img=16><shad=1>@or2@[" + player.getUsername() + "] @yel@has just donated @gre@" + amount + " @yel@Upgrade Tokens to the Server-Wide Perks!");
+        if (contributed >= COST) {
+            start(Perk.values()[index]);
+        }
+        save();
     }
 
     public void tick() {
@@ -133,44 +173,45 @@ public class ServerPerks {
 
         activePerk = perk;
         updateOverlay();
-        World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has just been activated!");
 
-        World.sendBroadcastMessage(""+ activePerk.getName() + " has just been activated for 1 hour");
-        GameSettings.broadcastMessage = activePerk.getName() + " has just been activated for 1 hour";
-        GameSettings.broadcastTime = 100;
-        if (GameSettings.LOCALHOST == false)
-        discordBroadcast("");
-        //reset();
-        // Erase file contents
-        deleteTypeFromLog(perk);
+        World.sendBroadcastMessage("[Perk] " + perk.getName() + " has been activated for 1 hour!", 500);
+
+        if (!GameSettings.LOCALHOST)
+            discordBroadcast("");
     }
 
-    private void end() {
+    public void end() {
         active = false;
-        contributions.put(activePerk, 0);
-        World.sendMessage("@red@Server Message: <col=005fbe>[Perk] " + activePerk.getName() + " has ended!");
-
-        World.sendBroadcastMessage(""+ activePerk.getName() + " has ended!");
-        GameSettings.broadcastMessage = activePerk.getName() + " has ended!";
-        GameSettings.broadcastTime = 100;
-        if (GameSettings.LOCALHOST == false)
+        contributed = 0;
+        stopwatch.reset();
         discordBroadcastEnd("");
         activePerk = null;
         resetInterface();
+
+        if (CURRENT_PERK.ordinal() >= Perk.values().length - 1){
+            setPerk(Perk.values()[0]);
+        }else
+            setPerk(Perk.values()[CURRENT_PERK.ordinal() + 1]);
+
     }
 
     private void updateOverlay() {
+        World.getPlayers().forEach(player -> {
+            updateOverlay(player);
+        });
+    }
+
+    public void updateOverlay(Player player) {
         if (activePerk == null) {
+            player.getPacketSender().sendWalkableInterface(OVERLAY_ID, false);
             return;
         }
-        World.getPlayers().forEach(player -> {
-            int minutes = (int) QuickUtils.tickToMin(currentTime);
-            player.getPacketSender().sendSpriteChange(OVERLAY_ID + 1, activePerk.getSpriteId());
-            player.getPacketSender().sendWalkableInterface(OVERLAY_ID, true);
-            player.getPacketSender()
-                    .sendString(OVERLAY_ID + 3, StringUtils.usToSpace(activePerk.toString()));
-            player.getPacketSender().sendString(OVERLAY_ID + 2, minutes + " min");
-        });
+        int minutes = (int) QuickUtils.tickToMin(currentTime);
+        player.getPacketSender().sendSpriteChange(OVERLAY_ID + 1, activePerk.getSpriteId());
+        player.getPacketSender().sendWalkableInterface(OVERLAY_ID, true);
+        player.getPacketSender()
+                .sendString(OVERLAY_ID + 3, usToSpace(activePerk.getSmallName()));
+        player.getPacketSender().sendString(OVERLAY_ID + 2, minutes + " min");
     }
 
     private void resetInterface() {
@@ -180,14 +221,31 @@ public class ServerPerks {
         });
     }
 
-    private void updateInterface(Player player) {
-        int index = player.getPerkIndex();
-        Perk perk = PERKS[index];
-        int current = contributions.getOrDefault(perk, 0);
-        int required = perk.getAmount();
-        int percentage = getPercentage(current, required);
-        player.getPacketSender().updateProgressBar(INTERFACE_ID + 10, percentage);
-        player.getPacketSender().sendString(INTERFACE_ID + 11, Misc.formatNumber(current) + " / " + Misc.formatNumber(required) + "");
+    public void updateInterface(Player player) {
+        loadList(player);
+        int percentage = getPercentage(contributed, COST);
+        player.getPacketSender().updateProgressBar(INTERFACE_ID + 7, percentage);
+        player.getPacketSender().sendString(INTERFACE_ID + 8, Misc.insertCommasToNumber(contributed) + "/" + Misc.insertCommasToNumber(COST) + "");
+
+        long cooldown = stopwatch.elapsed();
+
+        if ((COOL_DOWN) - cooldown <= 0) {
+            cooldown = 0;
+        }
+
+        if (cooldown == 0)
+            player.getPacketSender().sendString(INTERFACE_ID + 11, "No Cooldown");
+        else
+            player.getPacketSender().sendString(INTERFACE_ID + 11, Misc.getHoursLeft((COOL_DOWN) - cooldown) + " Cooldown");
+    }
+
+    private void loadList(Player player) {
+        player.getPacketSender().sendString(42062, active ? "Current Perk" : "Next Perk");
+
+        int interID = 42102;
+        player.getPacketSender().sendString(interID++, CURRENT_PERK.getName());
+        player.getPacketSender().sendSpriteChange(interID++, CURRENT_PERK.getSpriteId());
+        player.getPacketSender().sendSpriteChange(interID++, CURRENT_PERK.getSpriteId());
     }
 
     private int getPercentage(int n, int total) {
@@ -196,111 +254,96 @@ public class ServerPerks {
     }
 
     public boolean handleButton(Player player, int id) {
-        if (id > -23465 || id < -23470) {
-            return false;
+        if (id >= -23435 && id <= -23405) {
+            updateInterface(player);
+            return true;
         }
 
-        int index = 23470 + id;
-        player.setPerkIndex(index);
-        updateInterface(player);
-        return true;
-    }
-
-    public void save() {
-        List<String> data = new ArrayList<>();
-        contributions.forEach((k, v) -> {
-            data.add(k.toString() + ", " + v);
-        });
-
-        try {
-            Files.write(FILE_PATH, data);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void load() {
-        try (Stream<String> lines = Files.lines(FILE_PATH)) {
-            lines.forEach(line -> {
-                String[] split = line.split(", ");
-                if(split.length == 2)
-                contributions.put(Perk.valueOf(split[0]), Integer.parseInt(split[1]));
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        //System.out.println("Loaded: " + contributions);
+        return false;
     }
 
     public void reset() {
-        contributions.clear();
+        contributed = 0;
         World.getPlayers().forEach(this::updateInterface);
     }
-    public void deleteTypeFromLog(Perk name) {
-        GameEngine.submit(() -> {
-            try {
-                BufferedReader r = new BufferedReader(new FileReader(FILE_PATH.toString()));
-                ArrayList<String> contents = new ArrayList<String>();
-                while (true) {
-                    String line = r.readLine();
-                    String lineUser = line;
-                    if (line == null) {
-                        break;
-                    } else {
-                        line = line.trim();
-                        lineUser = line.substring(0, line.indexOf(","));
-                    }
-                    if (!lineUser.equalsIgnoreCase(name.name())) {
-                        contents.add(line);
-                    }
-                }
-                r.close();
-                BufferedWriter w = new BufferedWriter(new FileWriter(FILE_PATH.toString()));
-                for (String line : contents) {
-                    w.write(line, 0, line.length());
-                    w.write(System.lineSeparator());
-                }
-                w.flush();
-                w.close();
-            } catch (Exception e) {
-            }
-        });
+
+    private static ServerPerks instance = null;
+
+    public static ServerPerks getInstance() {
+        if (instance == null) {
+            instance = new ServerPerks();
+        }
+        return instance;
     }
-    public enum Perk {
-        //DOUBLE_BONDS(0, 100000000, 1521), // TO DO
-        // NPC_KILLS(2, 25000000, 1523),// DONE
-        X2_DMG("2X DMG", 0, 20_000_000, 1523),// DONE
-        X2_DR("2X DR", 0, 20_000_000, 1524),// DONE
-        X2_DROPS("X2 Drops", 1, 20_000_000, 1525),// DONE
-        X2_EXP("x2 EXP", 2, 1000000, 529),// DONE
-        X2_SLAYER("X2 Slayer", 3, 10_000_000, 1522),// DONE
-        X2_RAIDS("x2 Raid Loot", 3, 25_000_000, 1521),// DONE
 
-        ;
+    private ServerPerks() {
 
-        private final int index;
-        private final int amount;
-        private final int spriteId;
-        @Getter
-        private String name;
+    }
 
-        Perk(String name, int index, int amount, int spriteId) {
-            this.name = name;
-            this.index = index;
-            this.amount = amount;
-            this.spriteId = spriteId;
+
+    public void save() {
+        Path path = Paths.get("./data/saves/saved-info.json");
+        File file = path.toFile();
+        file.getParentFile().setWritable(true);
+
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        public int getIndex() {
-            return index;
-        }
+        try (FileWriter writer = new FileWriter(file)) {
+            Gson builder = new GsonBuilder().setPrettyPrinting().create();
+            JsonObject object = new JsonObject();
 
-        public int getAmount() {
-            return amount;
-        }
+            object.addProperty("contributed", contributed);
+            object.addProperty("current-perk", CURRENT_PERK.ordinal());
 
-        public int getSpriteId() {
-            return spriteId;
+            writer.write(builder.toJson(object));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void discordBroadcast(String msg) {
+        try {
+            String webhook = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
+            WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+            DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("").withColor(Color.orange).withDescription(
+                    "***[Perk] "+ ServerPerks.getInstance().CURRENT_PERK.getName() + " has been activated for 1 hour!***").build();
+            DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)).withEmbed(embed).withUsername("Broadcast").build();
+            client.sendPayload(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void discordBroadcastEnd(String msg) {
+        try {
+            String webhook = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
+            WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+            DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("").withColor(Color.orange).withDescription(
+                    "***[Perk] "+ ServerPerks.getInstance().CURRENT_PERK.getName() + " has been deactivated***").build();
+            DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)).withEmbed(embed).withUsername("Broadcast").build();
+            client.sendPayload(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void load() {
+        try (FileReader fileReader = new FileReader("./data/saves/saved-info.json")) {
+            JsonParser fileParser = new JsonParser();
+            JsonObject reader = (JsonObject) fileParser.parse(fileReader);
+
+            if (reader.has("contributed"))
+                contributed = reader.get("contributed").getAsInt();
+            if (reader.has("current-perk"))
+                setPerk(Perk.values()[reader.get("current-perk").getAsInt()]);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

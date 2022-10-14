@@ -155,10 +155,12 @@ public class PlayerSaving {
 			object.addProperty("groudon-killcount", new Integer(player.getPointsHandler().getGROUDONKILLCount()));
 			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
 			object.addProperty("ab-killcount", new Integer(player.getPointsHandler().getBorkKC()));
+			object.addProperty("cosmetic-override", player.isCosmeticOveride());
 			object.addProperty("quest-one-dream-kc", new Integer(player.getPointsHandler().getQuestOneDreamKC()));
 			object.addProperty("zombie-raid-kc", new Integer(player.getPointsHandler().getZombieRaidKC()));
 			object.addProperty("isles-kc", new Integer(player.getPointsHandler().getIslesKC()));
 			object.addProperty("suffering-kc", new Integer(player.getPointsHandler().getSufferingKC()));
+			object.addProperty("pumpkins-collected", new Integer(player.getSoulInPouchAsInt()));
 			object.addProperty("treasure-hunter-kc", new Integer(player.getPointsHandler().getTreasureHunterKC()));
 			object.addProperty("faceless-magician-killcount", new Integer(player.getPointsHandler().getFacelessMagicianKC()));
 			object.addProperty("lotus-magician-killcount", new Integer(player.getPointsHandler().getLotusMagicianKC()));

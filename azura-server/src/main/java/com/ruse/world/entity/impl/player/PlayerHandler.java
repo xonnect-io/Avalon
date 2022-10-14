@@ -82,7 +82,7 @@ public class PlayerHandler {
         if (player.getWalkableInterfaceId() == 29050) {
             player.getPacketSender().sendWalkableInterface(29050, false);
         }
-        player.getPacketSender().sendWalkableInterface(ServerPerks.OVERLAY_ID, ServerPerks.getInstance().getActivePerk() != null);
+        ServerPerks.getInstance().updateOverlay(player);
         player.getPacketSender().sendString(29053, "").sendString(29054, "");
 
         for (int i = 0; i < 10; i++) {
@@ -123,10 +123,9 @@ public class PlayerHandler {
         player.getPacketSender().sendConfig(172, player.isAutoRetaliate() ? 1 : 0)
                 .sendTotalXp(player.getSkillManager().getTotalGainedExp())
                 .sendConfig(player.getFightType().getParentId(), player.getFightType().getChildId()).sendRunStatus()
-                .sendRunEnergy(player.getRunEnergy()).sendRights()
+                .sendRunEnergy(player.getRunEnergy()).sendRights().sendString(8135, "" + player.getMoneyInPouch())
                 .sendInteractionOption("Follow", 3, false).sendInteractionOption("Trade With", 4, false);
-        //   .sendInteractionOption("Gamble With", 6, false);
-        player.getPacketSender().sendConfig(663, player.levelNotifications ? 1 : 0);
+
         if (player.getHasPin() == true && !player.getSavedIp().equalsIgnoreCase(player.getHostAddress())) {
             player.setInputHandling(new EnterPinPacketListener());
             player.getPacketSender().sendEnterInputPrompt("Enter your pin to play#confirmstatus");
@@ -245,6 +244,8 @@ public class PlayerHandler {
             player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Jewelry Goodiebag!");
         if (GameSettings.OWNER_CAPE_DONO_DEAL == true)
             player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Cape Goodiebag!");
+        if (GameSettings.B2GO == true)
+            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Buy 2 of the same item and get 1 free!");
 
         if (GameSettings.BCRYPT_HASH_PASSWORDS && Misc.needsNewSalt(player.getSalt())) {
             player.setSalt(BCrypt.gensalt(GameSettings.BCRYPT_ROUNDS));

@@ -1,6 +1,7 @@
 package com.ruse.world.content.pos;
 
-import com.ruse.GameSettings;
+import com.ruse.engine.task.Task;
+import com.ruse.engine.task.TaskManager;
 import com.ruse.model.GameMode;
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
@@ -19,7 +20,6 @@ import com.ruse.world.content.pos.PlayerOwnedShop.ShopItem;
 import com.ruse.world.entity.impl.player.Player;
 import lombok.Getter;
 import lombok.Setter;
-import mysql.impl.CheckPrice;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -33,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * A management class for all player owned shops and sendInformation related to a
+ * A management class for all player owned shops and information related to a
  * player owned shop on player instance basis.
  *
  * @author Nick Hartskeerl <apachenick@hotmail.com>
@@ -67,7 +67,7 @@ public class PlayerOwnedShopManager {
     /**
      * A reference to the player instance.
      */
-    private final Player player;
+    private Player player;
 
     /**
      * The current player owned shop being visited by the player.
@@ -87,7 +87,7 @@ public class PlayerOwnedShopManager {
     /**
      * A collection of the shops filtered for this player's instance.
      */
-    private final List<PlayerOwnedShop.HistoryItem> filtered = new ArrayList<>();
+    private List<PlayerOwnedShop.HistoryItem> filtered = new ArrayList<>();
 
     private List<PlayerOwnedShop.HistoryItem> recentHistory = new ArrayList<>();
 
@@ -136,7 +136,7 @@ public class PlayerOwnedShopManager {
 
     public static void loadShops() {
         loadHistory();
-        
+
         File[] files = DIRECTORY.listFiles();
 
         for (File file : files) {
@@ -144,49 +144,49 @@ public class PlayerOwnedShopManager {
             Path path = Paths.get(DIRECTORY + File.separator, file.getName());
             PlayerOwnedShop shop = new PlayerOwnedShop();
 
-            shop.setUsername(file.getName().replaceAll(".txt", ""));
-            shop.getHistoryItems().clear();
-            try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+            if (file.length() > 0) {
+                shop.setUsername(file.getName().replaceAll(".txt", ""));
+                shop.getHistoryItems().clear();
+                try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+                    String line;
+                    int offset = 0;
 
-                String line;
-                int offset = 0;
+                    shop.setEarnings(Long.parseLong(reader.readLine()));
 
-                shop.setEarnings(Long.parseLong(reader.readLine()));
+                    while ((line = reader.readLine()) != null) {
 
-                while ((line = reader.readLine()) != null) {
+                        String[] split = line.split(" - ");
+                        if (split.length == 4) {
 
-                    String[] split = line.split(" - ");
-                    if (split.length == 4) {
+                            int id = Integer.parseInt(split[0]);
+                            int amount = Integer.parseInt(split[1]);
+                            long price = Long.parseLong(split[2]);
+                            int maxAmount = Integer.parseInt(split[3]);
 
-                        int id = Integer.parseInt(split[0]);
-                        int amount = Integer.parseInt(split[1]);
-                        long price = Long.parseLong(split[2]);
-                        int maxAmount = Integer.parseInt(split[3]);
+                                shop.getItems()[offset++] = new ShopItem(id, amount, price, maxAmount);
 
-                        shop.getItems()[offset++] = new ShopItem(id, amount, price, maxAmount);
+                        }
+
+                        String[] splitHistory = line.split(" _ ");
+                        if (splitHistory.length == 4) {
+
+                            int id = Integer.parseInt(splitHistory[0]);
+                            int amount = Integer.parseInt(splitHistory[1]);
+                            long price = Long.parseLong(splitHistory[2]);
+                            String buyer = splitHistory[3];
+
+                            shop.getHistoryItems().add(new PlayerOwnedShop.HistoryItem(id, amount, price, buyer));
+                        }
 
                     }
 
-                    String[] splitHistory = line.split(" _ ");
-                    if (splitHistory.length == 4) {
-
-                        int id = Integer.parseInt(splitHistory[0]);
-                        int amount = Integer.parseInt(splitHistory[1]);
-                        long price = Long.parseLong(splitHistory[2]);
-                        String buyer = splitHistory[3];
-
-                        shop.getHistoryItems().add(new PlayerOwnedShop.HistoryItem(id, amount, price, buyer));
-                    }
-
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    continue;
                 }
 
-            } catch (IOException e) {
-                e.printStackTrace();
-                continue;
+                SHOPS.add(shop);
             }
-
-            SHOPS.add(shop);
-
         }
 
     }
@@ -256,14 +256,13 @@ public class PlayerOwnedShopManager {
             player.getPacketSender().sendInterfaceRemoval();
             return;
         }
-        if (GameSettings.BETA_ACTIVE) {
-            player.getPacketSender().sendMessage("The POS is disabled during beta.");
-            player.getPacketSender().removeInterface();
-            return;
-        }
-        player.getPacketSender().sendString(113006, "" + Misc.insertCommasToNumber(player.getInventory().getAmount(ItemDefinition.UPGRADE_TOKEN_ID)));
+
+        player.getPacketSender().sendString(113006, "" + Misc.insertCommasToNumber(player.getInventory().getAmount(12855)));
 
         int length = getMyShop() != null && getMyShop().getHistoryItems() != null && getMyShop().getHistoryItems().size() >= 4 ? getMyShop().getHistoryItems().size()  : 4;
+
+        if (length >= 50)
+            length = 50;
 
         player.getPacketSender().setScrollBar(113100, length * 37);
         int interfaceID = 113151;
@@ -343,7 +342,7 @@ public class PlayerOwnedShopManager {
                     PlayerOwnedShop.HistoryItem item = filtered.get(i);
                     player.getPacketSender().sendItemOnInterface(interfaceID++, item.getId(), item.getAmount());
                     player.getPacketSender().sendString(interfaceID++, item.getDefinition().getName());
-                    player.getPacketSender().sendString(interfaceID++, "" + item.getPrice());
+                    player.getPacketSender().sendString(interfaceID++, "" + Misc.insertCommasToNumber(item.getPrice()));
                     player.getPacketSender().sendString(interfaceID++, "" + item.getBuyer());
                     player.getPacketSender().sendString(interfaceID++, "Open");
                 } else {
@@ -368,7 +367,7 @@ public class PlayerOwnedShopManager {
                     PlayerOwnedShop.HistoryItem item = recentHistory.get(i);
                     player.getPacketSender().sendItemOnInterface(interfaceID++, item.getId(), item.getAmount());
                     player.getPacketSender().sendString(interfaceID++, item.getDefinition().getName());
-                    player.getPacketSender().sendString(interfaceID++, "" + item.getPrice());
+                    player.getPacketSender().sendString(interfaceID++, "" + Misc.insertCommasToNumber(item.getPrice()));
                     player.getPacketSender().sendString(interfaceID++, "" + item.getBuyer());
                     player.getPacketSender().sendString(interfaceID++, "Open");
                 } else {
@@ -426,11 +425,7 @@ public class PlayerOwnedShopManager {
 
 
     public void options() {
-        if (GameSettings.BETA_ACTIVE) {
-            player.getPacketSender().sendMessage("The POS is disabled during beta.");
-            player.getPacketSender().removeInterface();
-            return;
-        }
+
         DialogueManager.start(player, new Dialogue() {
 
             @Override
@@ -680,7 +675,7 @@ public class PlayerOwnedShopManager {
             if (definiton != null) {
                 String formatPrice = Misc.sendCashToString(item.getPrice());
                 player.sendMessage("<col=FF0000>" + definiton.getName() + "</col> costs " + formatPrice
-                        + " Upgrade tokens each in <col=FF0000>" + current.username + "</col>'s shop.");
+                        + " Upgrade Tokens each in <col=FF0000>" + current.username + "</col>'s shop.");
             }
             return;
         }
@@ -705,17 +700,12 @@ public class PlayerOwnedShopManager {
             return;
         }
 
-        if (System.currentTimeMillis() - player.lastPurchase < 1500) {
-            player.getPacketSender().sendMessage("Please wait a few seconds between purchases.");
-            return;
-        }
-
-        int currency = player.getInventory().getAmount(ItemDefinition.UPGRADE_TOKEN_ID);
+        int upgradeOrbs = player.getInventory().getAmount(12855);
         int prevamount = amount;
-        long coin = 0;
-        if (((long) amount * item.getPrice()) > currency) {
+        long coin = player.getMoneyInPouch();
+        if (((long) amount * item.getPrice()) > upgradeOrbs) {
 
-            amount = (int) Math.round(((double) currency / item.getPrice()) - 0.3);
+            amount = (int) Math.round((double) (((double) upgradeOrbs / item.getPrice()) - 0.3));
 
             if (amount < 0) {
                 amount = 0;
@@ -726,18 +716,18 @@ public class PlayerOwnedShopManager {
         if (amount == 0) {
             // check if money pouch is helpful by checking if it has more than
             // in inv
-            if (-1 > currency) {
+            if (-1 > upgradeOrbs) {
                 amount = prevamount;
                 if (((long) amount * item.getPrice()) > coin) {
 
-                    amount = (int) Math.round(((double) coin / item.getPrice()) - 0.3);
+                    amount = (int) Math.round((double) (((double) coin / item.getPrice()) - 0.3));
 
                     if (amount < 0) {
                         amount = 0;
                     }
                 }
                 if (amount == 0) {
-                    player.sendMessage("You do not have enough Upgrade tokens in your pouch.");
+                    player.sendMessage("You do not have enough Upgrade Tokens in your pouch.");
                 } else {
                     if (amount >= item.getAmount()) {
                         amount = item.getAmount();
@@ -755,21 +745,29 @@ public class PlayerOwnedShopManager {
                         int inventoryAmount = player.getInventory().getAmount(id);
 
                         if ((long) (amount + inventoryAmount) > Integer.MAX_VALUE) {
-                            amount = Integer.MAX_VALUE - inventoryAmount;
+                            amount = (int) (Integer.MAX_VALUE - inventoryAmount);
                         }
 
                     }
                     // else, check off his pouch
-                    if (-1 > (item.getPrice() * amount)) {
-                        HISTORY_OF_BOUGHT.add(new PlayerOwnedShop.HistoryItem(id, amount, item.getPrice(), player.getUsername()));
+                    if (-1 > ((long) item.getPrice() * amount)) {
+
+                        //   for (int i = 0 ; i < amount; i ++){
+                        POSItemPrice.addPrice(id, (int) item.getPrice(), amount);
+                        // }
+
+                        HISTORY_OF_BOUGHT.add(new PlayerOwnedShop.HistoryItem(id, amount,item.getPrice(), player.getUsername()));
                         current.getHistoryItems().add(new PlayerOwnedShop.HistoryItem(id, amount, item.getPrice(), player.getUsername()));
                         int removed = current.remove(slot, amount);
+                        player.setMoneyInPouch(player.getMoneyInPouch() - ((long) item.getPrice() * removed));
+                        player.getPacketSender().sendString(8135, "" + player.getMoneyInPouch());
                         player.getInventory().add(item.getId(), removed);
                         current.addEarnings(item.getPrice() * removed);
+
                     }
                 }
             } else
-                player.sendMessage("You do not have enough Upgrade tokens in your inventory.");
+                player.sendMessage("You do not have enough Upgrade Tokens in your inventory.");
         } else {
 
             if (amount >= item.getAmount()) {
@@ -789,41 +787,42 @@ public class PlayerOwnedShopManager {
                 int inventoryAmount = player.getInventory().getAmount(id);
 
                 if ((long) (amount + inventoryAmount) > Integer.MAX_VALUE) {
-                    amount = Integer.MAX_VALUE - inventoryAmount;
+                    amount = (int) (Integer.MAX_VALUE - inventoryAmount);
                 }
 
             }
 
             // if player has enough in his inv proceed
-            if (player.getInventory().getAmount(ItemDefinition.UPGRADE_TOKEN_ID) >= (item.getPrice() * amount)) {
-                player.lastPurchase = System.currentTimeMillis();
-                HISTORY_OF_BOUGHT.add(new PlayerOwnedShop.HistoryItem(id, amount, item.getPrice(), player.getUsername()));
+            if (player.getInventory().getAmount(12855) >= ((long) item.getPrice() * amount)) {
+
+                // for (int i = 0 ; i < amount; i ++) {
+                POSItemPrice.addPrice(id, (int) item.getPrice(), amount);
+                // }
+
+                HISTORY_OF_BOUGHT.add(new PlayerOwnedShop.HistoryItem(id, amount,item.getPrice(), player.getUsername()));
                 current.getHistoryItems().add(new PlayerOwnedShop.HistoryItem(id, amount, item.getPrice(), player.getUsername()));
                 int removed = current.remove(slot, amount);
                 int cashAmount = (int) item.getPrice() * removed;
-                player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, cashAmount);
+                player.getInventory().delete(12855, cashAmount);
                 player.getInventory().add(item.getId(), removed);
                 current.addEarnings(item.getPrice() * removed);
-                new Thread(new CheckPrice(player, item.getId(), item.getAmount(), cashAmount)).run();
-
-
+                PlayerLogs.log(player.getUsername(), "Player bought " + item.getId() + " x" + removed + " from "
+                        + current.username + "'s pos shop for " + cashAmount + " Upgrade Tokens");
+                PlayerLogs.log(current.username, "Player sold " + item.getId() + " x " + removed + " to "
+                        + player.getUsername() + " for " + cashAmount + " Upgrade Tokens in their pos shop");
                 DiscordMessager.posLogs("***" +player.getUsername() + "*** bought ***" + item.getDefinition().getName() + "*** x " + removed + " from ***"
                         + current.username + "'s *** pos shop for ***" + Misc.insertCommasToNumber(cashAmount) + "*** Upgrade tokens");
-                PlayerLogs.log(player.getUsername(), "Player bought " + item.getId() + " x " + removed + " from "
-                        + current.username + "'s pos shop for " + cashAmount + " Upgrade tokens");
-                PlayerLogs.log(current.username, "Player sold " + item.getId() + " x " + removed + " to "
-                        + current.username + " for " + cashAmount + " Upgrade tokens in their pos shop");
 
-                DiscordMessager.posLogs("***" +current.username +" ***sold ***"  + item.getDefinition().getName() + " ***x " + removed + " to ***"
-                        + player.getUsername() + "*** for ***" + Misc.insertCommasToNumber(cashAmount) + "*** Upgrade tokens in their pos");
+                PlayerLogs.logPOS(player.getUsername(), "BOUGHT item from " + current.username + ". Item: " + ItemDefinition.forId(item.getId()).getName() + ", Id: " + item.getId() + ", amount: " + removed + ", price: " + cashAmount + " Upgrade tokens");
+                PlayerLogs.logPOS( current.username, "SOLD item to " + player.getUsername() + ". Item: " +  ItemDefinition.forId(item.getId()).getName() + ", Id: " + item.getId() + ", amount: " + removed + ", price: " + cashAmount + " Upgrade tokens");
+
                 if (current.getOwner() != null) {
                     current.getOwner().getPacketSender()
-                            .sendMessage(player.getUsername() + " bought " + item.getAmount() + "x "
+                            .sendMessage(player.getUsername() + " bought x" + removed + " "
                                     + ItemDefinition.getDefinitions()[item.getId()].getName() + " for " + cashAmount
-                                    + " Upgrade tokens from your shop");
+                                    + " Upgrade Tokens from your shop");
                 }
             }
-
         }
         current.save();
     }
@@ -842,13 +841,17 @@ public class PlayerOwnedShopManager {
         }
 
         ShopItem item = current.getItem(slot);
+
+        if (item == null) {
+            return;
+        }
         ItemDefinition definiton = item.getDefinition();
 
         if (amount == -1) {
             if (definiton != null) {
                 String formatPrice = Misc.sendCashToString(item.getPrice());
                 player.sendMessage("<col=FF0000>" + definiton.getName() + "</col> is set to cost " + formatPrice
-                        + " Upgrade tokens in your shop.");
+                        + " Upgrade Tokens in your shop.");
             }
             return;
         }
@@ -870,7 +873,7 @@ public class PlayerOwnedShopManager {
             int inventoryAmount = player.getInventory().getAmount(id);
 
             if ((long) (amount + inventoryAmount) > Integer.MAX_VALUE) {
-                amount = Integer.MAX_VALUE - inventoryAmount;
+                amount = (int) (Integer.MAX_VALUE - inventoryAmount);
             }
 
         }
@@ -891,8 +894,13 @@ public class PlayerOwnedShopManager {
     public void handleStore(int slot, int id, int amount) {
         handleStore(slot, id, amount, -1);
     }
-
     public void handleStore(int slot, int id, int amount, long price) {
+        handleStore(slot, id, amount, price, false);
+    }
+
+    public void handleStore(int slot, int id, int amount, long price, boolean x) {
+        if (player.isPlayerLocked())
+            return;
 
         if (player.getInventory().get(slot) == null) {
             return;
@@ -903,12 +911,8 @@ public class PlayerOwnedShopManager {
 
         if (itemId == id) {
 
-            if (id == ItemDefinition.COIN_ID) {
-                player.sendMessage("You cannot store Avalon coins in your shop.");
-                return;
-            }
-            if (id == ItemDefinition.UPGRADE_TOKEN_ID) {
-                player.sendMessage("You cannot store Upgrade tokens in your shop.");
+            if (id == 12855) {
+                player.sendMessage("You cannot store Upgrade Tokens in your shop.");
                 return;
             }
 
@@ -949,17 +953,77 @@ public class PlayerOwnedShopManager {
             if (currentAmount == 0 && price == -1) {
 
                 final int amount2 = amount;
+                if (x){
+                    TaskManager.submit(new Task(1) {
+                        @Override
+                        protected void execute() {
+                            player.setInputHandling(new Input() {
+                                @Override
+                                public void handleAmount(Player player, int amount) {
+                                    DialogueManager.start(player, new Dialogue() {
 
-                player.setInputHandling(new Input() {
+                                        @Override
+                                        public DialogueType type() {
+                                            return DialogueType.OPTION;
+                                        }
 
-                    @Override
-                    public void handleLongAmount(Player player, long value) {
-                        handleStore(slot, id, amount2, value);
-                    }
+                                        @Override
+                                        public DialogueExpression animation() {
+                                            return null;
+                                        }
 
-                });
-                player.getPacketSender().sendEnterLongAmountPrompt("Enter the price you want to sell this for: (currency: Upgrade tokens)");
+                                        @Override
+                                        public String[] dialogue() {
+                                            return new String[]{"Confirm: @blu@" +Misc.insertCommasToNumber(amount), "Cancel"};
+                                        }
 
+                                        @Override
+                                        public void specialAction() {
+                                          //  handleStore(slot, id, amount2, amount);
+                                            player.setDialogueActionId(10000);
+                                        }
+
+                                    });
+                                }
+                            });
+                            player.getPacketSender().sendEnterAmountPrompt("Enter the price you want to sell this for: (currency: Upgrade Tokens)");
+                            stop();
+                        }
+                    });
+                }else{
+                    player.setInputHandling(new Input() {
+                        @Override
+                        public void handleAmount(Player player, int amount) {
+
+                            DialogueManager.start(player, new Dialogue() {
+
+                                @Override
+                                public DialogueType type() {
+                                    return DialogueType.OPTION;
+                                }
+
+                                @Override
+                                public DialogueExpression animation() {
+                                    return null;
+                                }
+
+                                @Override
+                                public String[] dialogue() {
+                                    return new String[]{"Confirm: @blu@" +Misc.insertCommasToNumber(amount), "Cancel"};
+                                }
+
+                                @Override
+                                public void specialAction() {
+                                    player.setPosInfo(new long[]{slot, id, amount2, amount});
+                                 //   handleStore(slot, id, amount2, amount);
+                                    player.setDialogueActionId(10000);
+                                }
+
+                            });
+                        }
+                    });
+                    player.getPacketSender().sendEnterAmountPrompt("Enter the price you want to sell this for: (currency: Upgrade Tokens)");
+                }
                 return;
 
             }
@@ -977,7 +1041,7 @@ public class PlayerOwnedShopManager {
             long total = ((long) currentAmount + (long) amount);
 
             if (total > Integer.MAX_VALUE) {
-                amount = Integer.MAX_VALUE - currentAmount;
+                amount = (int) (Integer.MAX_VALUE - currentAmount);
             }
 
             if (price == -1) {
@@ -1018,7 +1082,7 @@ public class PlayerOwnedShopManager {
             item.setPrice(price);
             String formatPrice = Misc.sendCashToString(price);
             player.sendMessage("You have set <col=FF0000>" + definiton.getName() + "</col> to cost <col=FF0000>"
-                    + formatPrice + "</col> Upgrade tokens in your shop.");
+                    + formatPrice + "</col> Upgrade Tokens in your shop.");
             myShop.save();
 
             for (int i = 0; i < ITEMS.size(); i++) {
@@ -1097,7 +1161,7 @@ public class PlayerOwnedShopManager {
         if (filtered.size() == 0){
             player.sendMessage("@red@No results found. Displaying recent listings instead.");
         }
-        
+
         openListing();
     }
 
@@ -1129,15 +1193,28 @@ public class PlayerOwnedShopManager {
             player.sendMessage("@red@You do not currently have any available earnings.");
             return;
         }
-        String formatPrice = Misc.sendCashToString(myShop.getEarnings());
-        //player.setMoneyInPouch(player.getMoneyInPouch() + myShop.getEarnings());
-        player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, (int) myShop.getEarnings());
-        //player.getPacketSender().sendString(8135, "" + player.getMoneyInPouch());
+
+        long amount = myShop.getEarnings();
+        long tax = (long) ((double)amount * TaxCollection.TAX_PERCENT);
+        TaxCollection.increaseTax(tax, true);
+        amount -= tax;
+
+        int ktokens = (int) (amount / 1000);
+        int upgrades = (int) (amount % 1000);
+
+        player.getInventory().add(8851, (int) (ktokens));
+        player.getInventory().add(12855, (int) (upgrades));
         myShop.setEarnings(0);
         player.getPlayerOwnedShopManager().getMyShop().setEarnings(0);
-        player.sendMessage("@red@You have claimed " + formatPrice + " Upgrade tokens into your inventory.");
-        PlayerLogs.log(player.getUsername(), "Played claimed " + formatPrice + " Upgrade tokens from pos");
-        DiscordMessager.posLogs("***" +player.getUsername()+ "***"  + " has just claimed "+ "***" + formatPrice+ "***" + " Upgrade tokens from POS");
+
+        player.sendMessage("A tax has been taken from your earnings.");
+
+        player.sendMessage("@red@You have claimed @blu@" + Misc.insertCommasToNumber(ktokens)+ "@red@ 1k Tokens"
+                + (upgrades > 0 ? " and @blu@" + upgrades + "@red@ Upgrade tokens" : "."));
+        DiscordMessager.posLogs("***" +player.getUsername()+ "***"  + " has just claimed "+ "***" + Misc.insertCommasToNumber(ktokens)+ "***" + " 1k tokens from POS and "+ "***" + Misc.insertCommasToNumber((ktokens / 10))+ "***" + " 1k tokens were added to the server perk" );
+
+        PlayerLogs.log(player.getUsername(), "Played claimed " + Misc.insertCommasToNumber(ktokens)+ " 1k Tokens"
+                + (upgrades > 0 ? " and " + upgrades + " Upgrade tokens" : "."));
     }
 
     public PlayerOwnedShop getCurrent() {

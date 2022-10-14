@@ -142,7 +142,7 @@ public class PlayerOwnedShop {
                 String itemName = item.getDefinition().getName();
                 owner.sendMessage("You have set <col=FF0000>" + (itemName == null ? "the merchandise" : itemName)
                         + "</col> to cost <col=FF0000>" + Misc.sendCashToString(item.price)
-                        + "</col> Upgrade tokens in your shop.");
+                        + "</col> Upgrade Tokens in your shop.");
 
                 PlayerOwnedShopManager.addItem(item, owner.getUsername());
             }
@@ -350,7 +350,6 @@ public class PlayerOwnedShop {
      *
      * }
      */
-
     public void saveHistory() {
 
         Path path = Paths.get("./data/saves/", "posHistory.txt");

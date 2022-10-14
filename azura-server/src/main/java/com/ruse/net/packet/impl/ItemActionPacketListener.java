@@ -6,6 +6,8 @@ import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.container.impl.Bank;
 import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.model.input.ExchangeX1kTokens;
+import com.ruse.model.input.ExchangeXUpgradeTokens;
 import com.ruse.net.packet.Packet;
 import com.ruse.net.packet.PacketListener;
 import com.ruse.util.Misc;
@@ -35,7 +37,6 @@ import com.ruse.world.content.instanceMananger.InstanceManager;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceInterfaceHandler;
 import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.minigames.impl.DisassembleValue;
-import com.ruse.world.content.minigames.impl.HallsOfValor;
 import com.ruse.world.content.skill.impl.herblore.Herblore;
 import com.ruse.world.content.skill.impl.herblore.ingredientsBook;
 import com.ruse.world.content.skill.impl.hunter.*;
@@ -330,6 +331,17 @@ public class ItemActionPacketListener implements PacketListener {
 
             case 12855:
                 player.getUpgradeInterface().openInterface(Upgradeables.UpgradeType.TIER_1);
+                break;
+            case 8851:
+                int total = player.getInventory().getAmount(8851) ;
+                if (total >= 2147000)
+                    total = 2147000;
+                if ((total* 1000) + player.getInventory().getAmount(12855) >= Integer.MAX_VALUE || (total* 1000) + player.getInventory().getAmount(12855) <= 0){
+                    total = (Integer.MAX_VALUE - player.getInventory().getAmount(12855)) / 1000;
+                }
+                player.getInventory().delete(8851, total );
+                player.getInventory().add(12855, total* 1000);
+                player.sendMessage("You just exchanged 1k tokens into Upgrade tokens.");
                 break;
             case 23392:
                 player.membershipInterfaceHandler.openBenefitTab();
@@ -756,9 +768,6 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("The casket contained 50M Gold Coins and some mystery boxes!");
                 break;
 
-            case 23086:
-                HallsOfValor.handleReward(player);
-                break;
             case 11858:
             case 11860:
             case 11862:
@@ -1785,6 +1794,11 @@ public class ItemActionPacketListener implements PacketListener {
                 DialogueManager.start(player, 101);
                 player.setDialogueActionId(60);
                 break;
+
+            case 12855:
+                player.setInputHandling(new ExchangeXUpgradeTokens());
+                player.getPA().sendEnterAmountPrompt("How many 1k tokens would you like to receive?");
+                break;
             case 23071:
                 if (player.getInventory().contains(23071) && player.getInventory().getAmount(ItemDefinition.MILL_ID) >= 250000 && player.getPointsHandler().getSlayerPoints() > 250) {
                     player.getInventory().delete(ItemDefinition.MILL_ID, 250000);
@@ -1809,8 +1823,8 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
             case 23439:
                 player.getInventory().delete(23439, 1);
-                player.getInventory().add(19864, 150);
-                player.sendMessage("You dissolved the Pennywise mask for x150 Halloween tokens");
+                player.getInventory().add(19864, 250);
+                player.sendMessage("You dissolved the Pennywise mask for x250 Halloween tokens");
                 break;
 
             case 23430:
@@ -1831,17 +1845,17 @@ public class ItemActionPacketListener implements PacketListener {
 
             case 23440:
                 player.getInventory().delete(23440, 1);
-                player.getInventory().add(19864, 200);
+                player.getInventory().add(19864, 500);
                 player.sendMessage("You dissolved the Purple Pennywise Mask for x200 Halloween tokens");
                 break;
             case 23441:
                 player.getInventory().delete(23441, 1);
-                player.getInventory().add(19864, 200);
+                player.getInventory().add(19864, 500);
                 player.sendMessage("You dissolved the Black Pennywise Mask for x200 Halloween tokens");
                 break;
             case 23442:
                 player.getInventory().delete(23442, 1);
-                player.getInventory().add(19864, 200);
+                player.getInventory().add(19864, 500);
                 player.sendMessage("You dissolved the Orange Pennywise Mask for x200 Halloween tokens");
                 break;
             case 23070:
@@ -2095,6 +2109,11 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getSkillManager().setCurrentLevel(Skill.PRAYER, 1200);
                 player.sendMessage("<shad=1>@red@Your potato heals you");
                 break;
+
+            case 8851:
+                player.setInputHandling(new ExchangeX1kTokens());
+                player.getPA().sendEnterAmountPrompt("How many 1k tokens would you like to exchange?");
+                break;
             case 23061:
             case 23062:
             case 23063:
@@ -2105,6 +2124,17 @@ public class ItemActionPacketListener implements PacketListener {
             case 23224:
                 player.getNephilimDissolving().handleDialogue(itemId);
                 break;
+            case 23403:
+                player.getCharmDissolving().handleDialogue(itemId);
+                break;
+
+            case 12855:
+                int total = player.getInventory().getAmount(12855) / 1000;
+                player.getInventory().delete(12855, total * 1000);
+                player.getInventory().add(8851, total);
+                player.sendMessage("You just exchanged Upgrade tokens into 1k tokens.");
+                break;
+
             case 7995:
             case 22111:
             case 23230:
