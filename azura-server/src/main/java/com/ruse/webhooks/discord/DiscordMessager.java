@@ -188,8 +188,24 @@ public class DiscordMessager extends JSONObject {
 
 			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
 					//.withURL("http://Avalon317.com")
-					 .withTitle("1. Flaming, Disrespect, Harassment, and Inappropriate Content.") // The title of the embed element
-					.withDescription("- The use of inappropriate or disrespectful language towards another player’s (Race, Religion, Beliefs and Harassing) IS NOT TOLERATED.\n - Accusing other players of breaking rules. (Scamming, Hacking, Botting, Fake Giveaways, Fake Drop Parties or anything regarding this). If you have evidence of a rule being broke make a report.\n - Advertising fake giveaways, drop parties and events.\n - Content that is advertised on all chat channels (Discord, In-game and Forums) if deemed inappropriate per staff member’s decision.\n - Harassing and disrespecting staff members, whether it’s asking information or requesting ranks.")
+					 .withTitle("1. Account Policies") // The title of the embed element
+					.withDescription("***-You may*** have ***(1)*** main account that is regular, ironman, or veteran AND ***(1)*** secondary account at global bosses/events as long as your secondary account is an ironman, hardcore ironman, or a group ironman.\n" +
+							"\n" +
+							"***-You may*** have a total of ***(3)*** accounts logged in at once but like the notion above you can only have two engaging in PVM if one of them is an ironman, hardcore ironman, or group ironman. If you decide to just have ***(1)*** main you have have ***(2)*** alternate accounts at ::afk and you may trade over any bonds/afk tickets you receive to your main.\n" +
+							"\n" +
+							"***-You may not*** use your alternate accounts to collect drops from any event or global boss. An example of this would be our Halloween event that drops pumpkins.\n" +
+							"\n" +
+							"***-You may not*** create an account that suggests you are a staff member or another member of the community\n" +
+							"\n" +
+							"***-You may not*** create accounts in order to avoid punishments. (Mutes,bans,or jail times)\n" +
+							"\n" +
+							"***-You may not*** afk PVM for any reason.\n" +
+							"\n" +
+							"***-You may not*** use multiple accounts to farm achievements and move the bonds/rewards over to your main account.\n" +
+							"\n" +
+							"***-You may not*** use multiple accounts to farm season pass rewards and transfer them to your main.\n" +
+							"\n" +
+							"***-You may not*** farm collection log rewards on multiple accounts and transfer over rewards to your main.")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
@@ -213,8 +229,18 @@ public class DiscordMessager extends JSONObject {
 
 			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
 					//.withURL("http://Avalon317.com")
-					.withTitle("2. Advertising") // The title of the embed element
-					.withDescription("- Known links (YouTube, Social Media, Information) are allowed, links that lead to anything other than Avalon based information/videos etc are NOT allowed.\n - YOU are not allowed to advertise other RSPS related material.")
+					.withTitle("2. Flaming, Disrespect, Harassment, and Inappropriate Content.") // The title of the embed element
+					.withDescription("***-You may*** express yourself individually by using certain language as it is not offensive, discriminatory, degrading, or disrespectful.\n" +
+							"\n" +
+							"***-You may*** use swear words as long as it is not excessive or used in derogatory fashion towards another community member.\n" +
+							"\n" +
+							"***-You may not*** target an individual based off of their lifestyle, sexual preference, race, gender, or lack of, age, or any other defining factors.\n" +
+							"\n" +
+							"***-You may not*** engage in hot-button topics inside of our discord or server. This includes but is not limited to: racial arguments, politics, and abortion.\n" +
+							"\n" +
+							"***-You may not*** share inappropriate memes inside of our discord or server. This includes but is not limited to: pornographic material, images of death or anything macabre, and unsettling images.\n" +
+							"\n" +
+							"***-You may not*** blatantly disrespect  community members or staff members in any fashion. There are times in an internet setting where you will have a disagreement. Take it to a private message, use the \"report a player\" channel in our discord or move on. Bringing these arguments or discussions to a public thread will not be tolerated.")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
@@ -237,8 +263,22 @@ public class DiscordMessager extends JSONObject {
 
 			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
 					//.withURL("http://Avalon317.com")
-					.withTitle("3. Spamming") // The title of the embed element
-					.withDescription("- Any act of spamming that will affect the gameplay of other players.\n - You are not allowed to abuse Yell take your time between sending messages\n - Auto-Typers are not allowed to be used.")
+					.withTitle("3. Server/Discord Etiquette") // The title of the embed element
+					.withDescription("***-You may not*** use the ::yell feature to troll,spam, or in a general sense: be disruptive\n" +
+							"\n" +
+							"***-You may not*** use the ::yell feature to excessive spam any advertisement which includes but is not limited to: Youtube links, same question over and over, selling or buying items, and requesting free/reduced price items.\n" +
+							"\n" +
+							"***-You may not*** break any of the rules mentioned in the above rules while participating in the server support chat.\n" +
+							"\n" +
+							"***-You may not*** abuse bugs, dupes, exploits or any type of offenses that will hurt the game-play of others or Avalon RSPS itself.\n" +
+							"\n" +
+							"***-You may not*** use a 3rd party/vpn to vote multiple times on your account. This hurts the server more than it helps and will not be allowed.\n" +
+							"\n" +
+							"***-You may not*** crash other players during PVM. If the room is full please claim up to ***(2)*** NPC's and share. Or take advantage of the instance system if the NPC is listed.\n" +
+							"\n" +
+							"***-You may not*** participate in any gambling on the server\n" +
+							"\n" +
+							"***-You may not*** use third party software to gain an advantage over another player (Auto-clickers/AHK/Macros)")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
@@ -262,8 +302,18 @@ public class DiscordMessager extends JSONObject {
 
 			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
 					//.withURL("http://Avalon317.com")
-					.withTitle("4. Misleading Links, Hacking and Threats") // The title of the embed element
-					.withDescription("- Misleading links are NOT allowed. \n - Hacking in any shape/form.\n - Threatening members that will put their life, security and reputation at risk.\n - Sharing private/personal information. WILL not be tolerated")
+					.withTitle("4. Other things to consider") // The title of the embed element
+					.withDescription("***-You may not*** engage in any type of scams which is including but not limited to: deceiving other players, impersonation, bug exploitation, or abuse of position. If you are scammed by any other players, we would require SOLID proof that you have been scammed to receive your refund. Refunds are not guaranteed and will be depending on the situation. If you are ever concerned make sure to use a staff member as a middle man.\n" +
+							"\n" +
+							"***-You may not*** engage in account sharing\n" +
+							"\n" +
+							"***-You may not*** engage in RWT (Real World Trading). Purchasing or selling any accounts, items, gold tickets, or whatever has value in Avalon for ANY payment methods or items on another server or game.\n" +
+							"\n" +
+							"***-You may not*** display or give any misleading links, phish, or use any other method to obtain private information from another community member.\n" +
+							"\n" +
+							"***-You may not*** use any sort of hack to your advantage in game, or to obtain any personal and private information from another community member.\n" +
+							"\n" +
+							"***-You may not*** advertise other RSPS materials.")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))

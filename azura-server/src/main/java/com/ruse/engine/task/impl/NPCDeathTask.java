@@ -749,5 +749,10 @@ public class NPCDeathTask extends Task {
         if (Nex.nexMob(npc.getId())) {
             Nex.death(npc.getId());
         }
+        if (killer.getRegionInstance() != null) {
+            if (npc.getLocation() == killer.getLocation()) {
+                killer.getRegionInstance().getNpcsList().remove(npc);
+            }
+        }
     }
 }

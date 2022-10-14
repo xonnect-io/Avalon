@@ -23,7 +23,7 @@ public class NPCRespawnTask extends Task {
 	@Override
 	public void execute() {
 		NPC npc_ = new NPC(npc.getId(), npc.getDefaultPosition());
-		if (killer != null && killer.getLocation() != null && (killer.getLocation()  == Location.INSTANCE1 || killer.getLocation()  == Location.INSTANCE2) && killer.getCurrentInstanceAmount() == -1) {
+		if (killer != null && killer.getLocation() != null && (killer.getLocation()  == Location.INSTANCE1 || killer.getLocation()  == Location.INSTANCE2) && killer.getCurrentInstanceAmount() <= 0) {
 			World.deregister(npc_);
 			stop();
 			return;
