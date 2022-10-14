@@ -5,8 +5,10 @@ import com.ruse.model.GameMode;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
+import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
+import com.ruse.world.content.skill.impl.summoning.Familiar;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Store;
 
@@ -704,7 +706,17 @@ public class CustomDropUtils {
             percentBoost = 0;
             System.out.println("0 Droprate on globals");
         }
-
+        if (npc == TreasureHunter.NPC_1 || npc == TreasureHunter.NPC_2
+                || npc == TreasureHunter.NPC_3 || npc  == TreasureHunter.NPC_4) {
+            Familiar playerFamiliar = player.getSummoning().getFamiliar();
+            if (playerFamiliar != null && playerFamiliar.getSummonNpc() != null) {
+                int summonNpc = playerFamiliar.getSummonNpc().getId();
+                if (summonNpc == BossPets.BossPet.GOLEM_PET.npcId || summonNpc == BossPets.BossPet.DRAGON_PET.npcId
+                        || summonNpc == BossPets.BossPet.DEMON_PET.npcId || summonNpc == BossPets.BossPet.RAMMUS_PET.npcId) {
+                    percentBoost = 1000;
+                }
+            }
+        }
         if (npc == player.getSlayer().getSlayerTask().getNpcId()) {
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23071) {
                 percentBoost += 5;

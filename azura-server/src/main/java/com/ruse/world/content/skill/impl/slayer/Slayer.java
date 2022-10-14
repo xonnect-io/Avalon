@@ -177,10 +177,10 @@ public class Slayer {
 
 
                 if (player.getSlayer().getTaskStreak() % 10 == 0) {
-                    player.getInventory().add(621, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 50 : 25);
+                    player.getInventory().add(9000, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 50 : 25);
                     player.sendMessage("You received 10 extra boss slayer tickets for your slayer streak.");
                 } else if (player.getSlayer().getTaskStreak() % 5 == 0) {
-                    player.getInventory().add(621, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 40 : 20);
+                    player.getInventory().add(9000, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 40 : 20);
                     player.sendMessage("You received 5 extra boss slayer tickets for your slayer streak.");
                 } else {
                     player.getInventory().add(621, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 30 : 15);

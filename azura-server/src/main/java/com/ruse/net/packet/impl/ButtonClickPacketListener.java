@@ -220,6 +220,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.setUnlockedMembership(true);
                     player.membershipInterfaceHandler.openBenefitTab();
                     player.sendMessage("You have claimed your Monthly Membership");
+                    World.sendMessage("@red@<img=832>[News] @blu@" + player.getUsername() +" @red@claimed a Monthly Membership!");
                     player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
                 } else {
                     player.sendMessage("You do not have a monthly membership pass.");
@@ -241,6 +242,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getInventory().add(23407, 1);
                     player.membershipInterfaceHandler.openCosmeticTab();
                     player.sendMessage("You have claimed your Monthly Cosmetic Membership");
+                    World.sendMessage("@red@<img=832>[News] @blu@" + player.getUsername() +" @red@claimed a Cosmetic Membership!");
                     player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
                 } else {
                     player.sendMessage("You do not have a Monthly Cosmetic pass.");

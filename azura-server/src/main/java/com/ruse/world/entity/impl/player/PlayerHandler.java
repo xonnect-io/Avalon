@@ -246,7 +246,8 @@ public class PlayerHandler {
             player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Cape Goodiebag!");
         if (GameSettings.B2GO == true)
             player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Buy 2 of the same item and get 1 free!");
-
+        if (GameSettings.AUTUMN_DEAL == true)
+            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x5 Autumn boxes!");
         if (GameSettings.BCRYPT_HASH_PASSWORDS && Misc.needsNewSalt(player.getSalt())) {
             player.setSalt(BCrypt.gensalt(GameSettings.BCRYPT_ROUNDS));
         }
@@ -471,7 +472,15 @@ public class PlayerHandler {
         if (GameSettings.B2GO) {
             player.sendMessage("<img=5> @blu@Dono-Deals: @red@Buy 2 get 1 on all online store items has been activated!");
         }
-
+        int AMOUNTS = player.getInventory().getAmount(621);
+        if (player.getBank(0).contains(621)) {
+            player.getBank(0).add(9000, AMOUNTS);
+            player.getBank(0).delete(621, AMOUNTS);
+        }
+        if (player.getInventory().contains(621)) {
+            player.getInventory().delete(9000, AMOUNTS);
+            player.getInventory().delete(621, AMOUNTS);
+        }
         if (player instanceof MiniPlayer) {
             MiniPlayer miniPlayer = (MiniPlayer) player;
             TaskManager.submit(new Task(2) {

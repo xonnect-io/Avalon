@@ -260,27 +260,27 @@ public class CollectionLog {
         player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : kills - 1));
 
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("souls of suffering"))
-            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : player.getPointsHandler().getSufferingKC()));
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getPointsHandler().getSufferingKC())));
 
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("unknown crypt"))
-            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Completed: " + "@whi@" + (kills == null ? "0" : player.getPointsHandler().getUnknownCompleted()));
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Completed: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getPointsHandler().getUnknownCompleted())));
 
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("treasure hunter"))
-            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : player.getPointsHandler().getTreasureHunterKC()));
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getPointsHandler().getTreasureHunterKC())));
 
 
 
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("pyramid outbreak"))
-            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Purchased: " + "@whi@" + (kills == null ? "0" : kills));
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Purchased: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(kills)));
 
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("isles of avalon"))
-            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Completed: " + "@whi@" + (kills == null ? "0" : player.getPointsHandler().getIslesKC()));
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Completed: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getPointsHandler().getIslesKC())));
 
         else if(collection.getLogType() == LogType.MONSTERS || collection.getLogType() == LogType.ZONES || collection.getLogType() == LogType.BOSSES)
             player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Kills: @whi@" +
             Misc.insertCommasToNumber(String.valueOf(KillsTracker.getTotalKillsForNpc(Arrays.stream(collection.getKey()).sum(), player))));
 
-        player.getPacketSender().sendString(NAME_STRING, "@lre@" + collection.getName());
+        player.getPacketSender().sendString(NAME_STRING,  ("@lre@" + collection.getName()));
         player.getPacketSender().sendString(OBTAINED_STRING, "@lre@Obtained: " + getColor(obtained, obtainables) + obtained + "/" + obtainables);
 
         int pos = 0;
