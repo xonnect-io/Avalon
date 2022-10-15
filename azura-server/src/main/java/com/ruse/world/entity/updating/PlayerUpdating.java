@@ -3,6 +3,7 @@ package com.ruse.world.entity.updating;
 import com.ruse.model.*;
 import com.ruse.model.ChatMessage.Message;
 import com.ruse.model.Locations.Location;
+import com.ruse.model.container.impl.Costumes;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.movement.MovementQueue;
@@ -560,18 +561,27 @@ public class PlayerUpdating {
 			for (int i = 0; i < equipment.capacity(); i++) {
 				equip[i] = equipment.getItems()[i].getId();
 			}
+			int headSlot = Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride() ? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.HEAD_SLOT) : equip[Equipment.HEAD_SLOT];
+			int bodySlot = Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.BODY_SLOT) : equip[Equipment.BODY_SLOT];
+			int legsSlot = Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.LEG_SLOT) : equip[Equipment.LEG_SLOT];
+			int glovesSlot = Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.HANDS_SLOT) : equip[Equipment.HANDS_SLOT];
+			int bootsSlot =Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.FEET_SLOT) :  equip[Equipment.FEET_SLOT];
 
-			if (equip[Equipment.HEAD_SLOT] > -1) {
+
+			if (headSlot > -1 && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
+				properties.putShort(0x200 + headSlot);
+			} else if (equip[Equipment.HEAD_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.HEAD_SLOT]);
 			} else {
 				properties.put(0);
 			}
+
 			if (equip[Equipment.CAPE_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.CAPE_SLOT]);
 			} else {
 				properties.put(0);
 			}
-			
+
 			if (equip[Equipment.AURA_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.AURA_SLOT]);
 			} else {
@@ -587,11 +597,15 @@ public class PlayerUpdating {
 			} else {
 				properties.put(0);
 			}
-			if (equip[Equipment.BODY_SLOT] > -1) {
+
+			if (ItemDefinition.forId(bodySlot).isFullBody() && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
+				properties.putShort(0x200 + bodySlot);
+			}else if (equip[Equipment.BODY_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.BODY_SLOT]);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.CHEST]);
 			}
+
 			if (equip[Equipment.SHIELD_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.SHIELD_SLOT]);
 			} else {
@@ -604,11 +618,15 @@ public class PlayerUpdating {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.ARMS]);
 			}
 
-			if (equip[Equipment.LEG_SLOT] > -1) {
+			if (legsSlot > -1 && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
+				properties.putShort(0x200 + legsSlot);
+			}
+			else if (equip[Equipment.LEG_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.LEG_SLOT]);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.LEGS]);
 			}
+
 
 			if (ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm() ||
 					ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm1()) {
@@ -616,12 +634,18 @@ public class PlayerUpdating {
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.HEAD]);
 			}
-			if (equip[Equipment.HANDS_SLOT] > -1) {
+
+			if (glovesSlot > -1 && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
+				properties.putShort(0x200 + glovesSlot);
+			}else if (equip[Equipment.HANDS_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.HANDS_SLOT]);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.HANDS]);
 			}
-			if (equip[Equipment.FEET_SLOT] > -1) {
+			if (bootsSlot > -1 && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
+				properties.putShort(0x200 + bootsSlot);
+			}
+			else if (equip[Equipment.FEET_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.FEET_SLOT]);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.FEET]);

@@ -686,7 +686,9 @@ public class CommandPacketListener implements PacketListener {
 
         }
         if (command[0].equalsIgnoreCase("rest")) {
-            Afking.afk(player);
+            if (player.getPosition().getRegionId() != 11082 ) {//vod
+                Afking.afk(player);
+            }else return;
         }
         if (command[0].equalsIgnoreCase("youtube")) {
             new YoutubeInterfaceHandler(player).open();
@@ -1936,6 +1938,9 @@ public class CommandPacketListener implements PacketListener {
             Misc.listUntradeables();
         }
 
+        if (command[0].equalsIgnoreCase("customtp")) {
+            player.getCustomTeleportInterface().open();
+        }
         if (command[0].equalsIgnoreCase("rule1")) {
             DiscordMessager.test1("");
         }if (command[0].equalsIgnoreCase("rule2")) {

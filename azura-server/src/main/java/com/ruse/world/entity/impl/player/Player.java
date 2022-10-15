@@ -1829,6 +1829,12 @@ public int howmuchdissolveamt = 0;
     @Setter
     private boolean cosmeticOveride = true;
 
+    private CustomTeleportInterface customTeleportInterface = new CustomTeleportInterface(this);
+
+    public CustomTeleportInterface getCustomTeleportInterface() {
+        return customTeleportInterface;
+    }
+
     @Getter
     @Setter
     private boolean renderPlayerEquipment = true;

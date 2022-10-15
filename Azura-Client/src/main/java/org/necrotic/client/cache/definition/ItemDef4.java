@@ -125,23 +125,129 @@ public class ItemDef4 {
 
 
 			case 24390: //Costume Box
+				itemDef.copyItem(3062);
+				itemDef.stackable = false;
+				itemDef.name = "Costume Box";
 				itemDef.modelZoom = 2695;
 				itemDef.rotationX = 1576;
 				itemDef.rotationY = 42;
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetX = 9;
 				itemDef.modelOffsetY = -93;
+				itemDef.actions = new String[]{null, null, null, null, null};
 				break;
 
 			case 23457:
 				itemDef.copyItem(23282);
 				itemDef.name = "Avalon Costume";
+				itemDef.rdc2 = 44442;
 				break;
 			case 23458:
 				itemDef.copyItem(23457);
-				itemDef.certID = 23282;
+				itemDef.certID = 23457;
 				itemDef.certTemplateID = 24390;
 				itemDef.name = "Avalon Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+			case 23459:
+				itemDef.copyItem(23221);
+				itemDef.name = "Nephilim Costume";
+				break;
+			case 23460:
+				itemDef.copyItem(23459);
+				itemDef.certID = 23459;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Nephilim Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+			case 24391:
+				itemDef.modelID = 15177;
+				itemDef.maleEquip1 = 15177;
+				itemDef.femaleEquip1 = 15177;
+				break;
+			case 24392:
+				itemDef.modelID = 15178;
+				itemDef.maleEquip1 = 15178;
+				itemDef.femaleEquip1 = 15178;
+				break;
+			case 24393:
+				itemDef.modelID = 15188;
+				itemDef.maleEquip1 = 15188;
+				itemDef.femaleEquip1 = 15188;
+				break;
+
+			case 23461:
+				itemDef.copyItem(11764);
+				itemDef.name = "Hanto Costume";
+				break;
+			case 23462:
+				itemDef.copyItem(23461);
+				itemDef.certID = 23461;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Hanto Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+			case 23463:
+				itemDef.copyItem(9482);
+				itemDef.name = "Raditz Costume";
+				break;
+			case 23464:
+				itemDef.copyItem(23463);
+				itemDef.certID = 23463;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Raditz Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23465:
+				itemDef.copyItem(9479);
+				itemDef.name = "Goku Costume";
+				break;
+			case 23466:
+				itemDef.copyItem(23465);
+				itemDef.certID = 23465;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Goku Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+			case 23467:
+				itemDef.copyItem(5069);
+				itemDef.name = "Inuyasha Costume";
+				break;
+			case 23468:
+				itemDef.copyItem(23467);
+				itemDef.certID = 23467;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Inuyasha Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+				case 23469:
+				itemDef.copyItem(22101);
+				itemDef.name = "Fallen Angel Costume";
+				break;
+			case 23470:
+				itemDef.copyItem(23469);
+				itemDef.certID = 23469;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Fallen Angel Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+			case 23471:
+				itemDef.copyItem(14069);
+				itemDef.name = "Garfield Costume";
+				break;
+			case 23472:
+				itemDef.copyItem(23471);
+				itemDef.certID = 23471;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Garfield Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;

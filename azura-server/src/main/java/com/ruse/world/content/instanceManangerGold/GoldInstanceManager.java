@@ -57,26 +57,26 @@ public class GoldInstanceManager {
 		}
 		player.setRegionInstance(new RegionInstance(player, type));
 		player.lastInstanceNpc = npcId;
-		player.moveTo(new Position(2785, 4771 ,
+		player.moveTo(new Position(2784, 4759,
 				player.getIndex() * 4));
 
 		for (int i = 0; i < 3; i++) {
 			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
-					player.getPosition().getY() - 8 , player.getIndex() * pos));
+					player.getPosition().getY() + 8 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 3; i++) {
 			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
-					player.getPosition().getY() - 6 , player.getIndex() * pos));
+					player.getPosition().getY() + 6 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 3; i++) {
 			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
-					player.getPosition().getY() - 4 , player.getIndex() * pos));
+					player.getPosition().getY() + 4 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
@@ -130,34 +130,34 @@ public class GoldInstanceManager {
 		}
 		player.setRegionInstance(new RegionInstance(player, type));
 		player.lastInstanceNpc = npcId;
-		player.moveTo(new Position(2785, 4771 ,
+		player.moveTo(new Position(2786, 4759,
 				player.getIndex() * 4));
 
 
 		for (int i = 0; i < 4; i++) {
 			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
-					player.getPosition().getY() - 10 , player.getIndex() * pos));
+					player.getPosition().getY() + 10 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 4; i++) {
 			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
-					player.getPosition().getY() - 8 , player.getIndex() * pos));
+					player.getPosition().getY() + 8 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 4; i++) {
 			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
-					player.getPosition().getY() - 6 , player.getIndex() * pos));
+					player.getPosition().getY() + 6 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);
 		}
 		for (int i = 0; i < 4; i++) {
 			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
-					player.getPosition().getY() - 4 , player.getIndex() * pos));
+					player.getPosition().getY() + 4 , player.getIndex() * pos));
 			npc_.setSpawnedFor(player);
 			player.getRegionInstance().getNpcsList().add(npc_);
 			World.register(npc_);

@@ -1,6 +1,5 @@
 package com.ruse.net.packet.impl;
 
-import com.ruse.model.PlayerRights;
 import com.ruse.net.packet.Packet;
 import com.ruse.net.packet.PacketListener;
 import com.ruse.world.entity.impl.player.Player;
@@ -11,10 +10,11 @@ public class IdleLogoutPacketListener implements PacketListener {
 
 	@Override
 	public void handleMessage(Player player, Packet packet) {
-		Afking.afk(player);
-		if (player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR
-			 || player.getRights() == PlayerRights.OWNER)
-			return;
+
+		if (player.getPosition().getRegionId() != 11082 ) {//vod
+			Afking.afk(player);
+		} else return;
+
 		/*
 		 * if(player.logout() &&
 		 * (player.getSkillManager().getSkillAttributes().getCurrentTask() == null ||
