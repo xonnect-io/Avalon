@@ -10,21 +10,22 @@ import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
 public class NPCRespawnTask extends Task {
+
+	public NPCRespawnTask(NPC npc, int respawn, Player killer) {
+		super(respawn);
+		this.npc = npc;
+		this.killer = killer;
+	}
 	public NPCRespawnTask(NPC npc, int respawn, Player killer, boolean instanceNPC) {
 		super(respawn);
 		this.npc = npc;
 		this.killer = killer;
 		this.instanceNPC = instanceNPC;
 	}
-	boolean instanceNPC = false;
-	public NPCRespawnTask(NPC npc, int respawn, Player killer) {
-		super(respawn);
-		this.npc = npc;
-		this.killer = killer;
-	}
 
 	final Player killer;
 	final NPC npc;
+	boolean instanceNPC = false;
 
 	@Override
 	public void execute() {

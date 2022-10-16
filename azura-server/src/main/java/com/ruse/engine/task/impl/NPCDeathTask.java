@@ -510,6 +510,7 @@ public class NPCDeathTask extends Task {
         npc.setDying(false);
         PlayerPanel.refreshPanel(killer);
         // respawn
+        /*
         if (npc.getDefinition().getRespawnTime() > 0
                 && npc.getLocation() != Location.PYRAMID
                 && npc.getLocation() != Location.DUNGEONEERING
@@ -518,10 +519,11 @@ public class NPCDeathTask extends Task {
             if (npc.respawn)
                 TaskManager.submit(new NPCRespawnTask(npc, npc.getDefinition().getRespawnTime(), killer));
         }
-
+*/
         if (npc.isEventBoss()) {
             EventBossDropHandler.death(killer, npc);
         }
+
         if (npc.getDefinition().getRespawnTime() > 0 && npc.getLocation() != Location.PYRAMID
                 && npc.getLocation() != Location.DUNGEONEERING && !npc.isEventBoss()) {
 
