@@ -2463,40 +2463,40 @@ public class CustomInterfaces extends RSInterface {
 
 	}
 	public void OsDropViewer() {
-		RSInterface tab = addInterface(33000);
+		RSInterface tab = addInterface(93000);
 		//String dir = "DropViewer/SPRITE";
-		addSprite(33001, 1217); //changeid
-		addHoverButton(33002, 55, 16, 16,"Close", 0, 33003, 1); //changeid
-		addHoveredButton(33003, 90, 16, 16, 33004); //changeid
-		addText(33005, "Loot Viewer", tda, 2, ColorConstants.ORANGE, true, true);
-		addHoverButton(35009, "b", 1, 130, 25, "Search NPC", -1, 35010, 1);
-		addHoverButton(35008, "b", 1, 130, 25, "Search NPC", -1, 35009, 1);
-		addText(35010, "Search for an NPC", tda, 0, ColorConstants.WHITE, true, true);
-		addText(35011, "", tda, 1, ColorConstants.YELLOW, true, true);
-		addText(35012, "", tda, 1, 15781715, false, true);
-		addText(35013, "", tda, 1, 15781715, false, true);
-		addText(35014, "", tda, 1, 15781715, false, true);
+		addSprite(133001, 1217); //changeid
+		addHoverButton(133002, 55, 16, 16,"Close", 0, 33003, 1); //changeid
+		addHoveredButton(133003, 90, 16, 16, 133004); //changeid
+		addText(133005, "Loot Viewer", tda, 2, ColorConstants.ORANGE, true, true);
+		addHoverButton(135009, "b", 1, 130, 25, "Search NPC", -1, 135010, 1);
+		addHoverButton(135008, "b", 1, 130, 25, "Search NPC", -1, 135009, 1);
+		addText(135010, "Search for an NPC", tda, 0, ColorConstants.WHITE, true, true);
+		addText(135011, "", tda, 1, ColorConstants.YELLOW, true, true);
+		addText(135012, "", tda, 1, 15781715, false, true);
+		addText(135013, "", tda, 1, 15781715, false, true);
+		addText(135014, "", tda, 1, 15781715, false, true);
 
 		int x = 7, y = 7;
 		tab.totalChildren(16);
-		tab.child(0, 33001, 0+x, 0+y);
-		tab.child(1, 33002, 474+x, 9+y);
-		tab.child(2, 33003, 474+x, 9+y);
-		tab.child(3, 35008, 8+x, 37+y);
-		tab.child(4, 35009, 8+x, 37+y);
-		tab.child(5, 33005, 250+x, 10+y);
+		tab.child(0, 133001, 0+x, 0+y);
+		tab.child(1, 133002, 474+x, 9+y);
+		tab.child(2, 133003, 474+x, 9+y);
+		tab.child(3, 135008, 8+x, 37+y);
+		tab.child(4, 135009, 8+x, 37+y);
+		tab.child(5, 133005, 250+x, 10+y);
 		tab.child(6, 33006, 91+x, 43+y);
 		tab.child(7, 34000, 152+x, 32+y);
 		tab.child(8, 33007, 0, 57+y);
-		tab.child(9, 35011, 81+x, 71+y);
-		tab.child(10, 35012, 220+x, 40+y);
-		tab.child(11, 35013, 346+x, 40+y);
-		tab.child(12, 35014, 410+x, 40+y);
-		tab.child(13, 35010, 74+x, 42+y);
+		tab.child(9, 135011, 81+x, 71+y);
+		tab.child(10, 135012, 220+x, 40+y);
+		tab.child(11, 135013, 346+x, 40+y);
+		tab.child(12, 135014, 410+x, 40+y);
+		tab.child(13, 135010, 74+x, 42+y);
 		addText(33250, "Include DR Bonus", tda, 0, 0xFFA500, false, true);
 		tab.child(14, 33250, 26 + x, 13 + y);
 
-		addConfigButtonWSpriteLoader(33251, 33000, 1333, 1332, 15, 15, "Select", 0, 4, 2451);
+		addConfigButtonWSpriteLoader(33251, 93000, 1333, 1332, 15, 15, "Select", 0, 4, 2451);
 		tab.child(15, 33251, 7 + x, 10 + y);
 		final RSInterface results = addInterface(33007);
 		results.width = 136;

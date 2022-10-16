@@ -787,6 +787,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendConfig(427, player.motivationalToggle ? 0 : 1);
                 break;
             case 21360:
+            case 133002:
             case -17490:
             case -12286:
             case 28133:
@@ -820,6 +821,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 28005:
             case 26003:
             case 5384:
+            case -13390:
 
                 player.getPacketSender().sendInterfaceRemoval();
                 break;
@@ -1667,9 +1669,6 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 DialogueManager.start(player, 60);
                 player.setDialogueActionId(27);
-                break;
-            case -13390:
-                player.getPacketSender().sendInterfaceRemoval();
                 break;
             case 29455:
                 if (player.getInterfaceId() > 0) {
