@@ -480,13 +480,12 @@ public class PlayerHandler {
         }
 
         int AMOUNTS = player.getInventory().getAmount(621);
-        if (player.getBank(0).contains(621)) {
-            player.getBank(0).add(9000, AMOUNTS);
-            player.getBank(0).delete(621, AMOUNTS);
-        }
+
         if (player.getInventory().contains(621)) {
-            player.getInventory().delete(9000, AMOUNTS);
+            player.getInventory().add(9000, AMOUNTS);
             player.getInventory().delete(621, AMOUNTS);
+            player.getPacketSender()
+                    .sendMessage("Your light tickets were automatically exchanged for boss slayer tickets.");
         }
         if (player instanceof MiniPlayer) {
             MiniPlayer miniPlayer = (MiniPlayer) player;
