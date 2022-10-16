@@ -30,12 +30,8 @@ import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.impl.NephilimTokenExchange;
 import com.ruse.world.content.holidayevents.easter2017;
-import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceInterfaceHandler;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
-import com.ruse.world.content.instanceMananger.InstanceManager;
-import com.ruse.world.content.instanceManangerGold.GoldInstanceInterfaceHandler;
-import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.minigames.impl.DisassembleValue;
 import com.ruse.world.content.skill.impl.herblore.Herblore;
 import com.ruse.world.content.skill.impl.herblore.ingredientsBook;
@@ -296,21 +292,7 @@ public class ItemActionPacketListener implements PacketListener {
             case 5733:
                 player.getPacketSender().sendMessage("This is a powerful potato! Do not eat it!");
                 break;
-            case 23408:
-                if (player.getLocation() == Location.JAIL) {
-                    player.sendMessage("<shad=1>@red@You can't start an instance while your in jail.");
-                    return;
-                }
-                if (player.currentInstanceAmount >= 1) {
-                    player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
-                    return;
-                }
-                if (!player.getClickDelay().elapsed(5000)) {
-                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
-                    return;
-                }
-                new SlayerInstanceInterfaceHandler(player).open();
-                break;
+
             case 989:
                 Position crystalChest = new Position(3100, 2979, 0);
                 TeleportHandler.teleportPlayer(player, crystalChest, TeleportType.NORMAL);
@@ -1083,35 +1065,25 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 4278:
-                if (player.getLocation() == Location.JAIL) {
-                    player.sendMessage("<shad=1>@red@You can't start an instance while your in jail.");
-                    return;
-                }
-                if (player.currentInstanceAmount >= 1) {
-                    player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
-                    return;
-                }
-                if (!player.getClickDelay().elapsed(5000)) {
-                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
-                    return;
-                }
-                new InstanceInterfaceHandler(player).open();
-                break;
             case 23264:
                 if (player.getLocation() == Location.JAIL) {
-                    player.sendMessage("<shad=1>@red@You can't start an instance while your in jail.");
+                    player.sendMessage("<shad=1>@cya@You can't start an instance while your in jail.");
                     return;
                 }
                 if (player.currentInstanceAmount >= 1) {
                     player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
                     return;
                 }
-                if (!player.getClickDelay().elapsed(5000)) {
-                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
+                if (!player.getLastRunRecovery().elapsed(5000)) {
+                    player.sendMessage("Please wait 5 seconds before doing this again.");
                     return;
                 }
-                new GoldInstanceInterfaceHandler(player).open();
+                player.getInstanceManager().ticketID = itemId;
+                new InstanceInterfaceHandler(player).open();
                 break;
+
+
+
             case 2150:
                 player.getInventory().delete(2150, 1);
                 player.getInventory().add(2152, 1);
@@ -2109,7 +2081,42 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getSkillManager().setCurrentLevel(Skill.PRAYER, 1200);
                 player.sendMessage("<shad=1>@red@Your potato heals you");
                 break;
+            case 4278:
+            case 23264:
+                if (player.getLocation() == Location.JAIL) {
+                    player.sendMessage("<shad=1>@cya@You can't start an instance while your in jail.");
+                    return;
+                }
 
+                if (player.currentInstanceAmount >= 1) {
+                    player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
+                    return;
+                }
+
+                if (player.lastInstanceNpc == -1) {
+                    player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
+                    return;
+                }
+                if (!player.getLastRunRecovery().elapsed(5000)) {
+                    player.sendMessage("Please wait 5 seconds before doing this again.");
+                    return;
+                }
+
+                boolean validNpc = false;
+                for (InstanceData data : InstanceData.values()) {
+                    if (data.getNpcId() == player.lastInstanceNpc) {
+                        validNpc = true;
+                        break;
+                    }
+                }
+
+                if (!validNpc) {
+                    player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
+                    return;
+                }
+
+                player.getInstanceManager().createInstance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
+                break;
             case 8851:
                 player.setInputHandling(new ExchangeX1kTokens());
                 player.getPA().sendEnterAmountPrompt("How many 1k tokens would you like to exchange?");
@@ -2210,80 +2217,6 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(15288, amount10).add(12855, 100_000 * amount10);
                 break;
 
-            case 4278:
-                if (player.getLocation() == Location.JAIL) {
-                    player.sendMessage("<shad=1>@cya@You can't start an instance while your in jail.");
-                    return;
-                }
-
-                if (player.currentInstanceAmount >= 1) {
-                    player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
-                    return;
-                }
-
-                if (player.lastInstanceNpc == -1) {
-                    player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
-                    return;
-                }
-
-                if (!player.getClickDelay().elapsed(5000)) {
-                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
-                    return;
-                }
-                boolean validNpc = false;
-                for (InstanceData data : InstanceData.values()) {
-                    if (data.getNpcid() == player.lastInstanceNpc) {
-                        validNpc = true;
-                        break;
-                    }
-                }
-
-                if (!validNpc) {
-                    player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
-                    return;
-                }
-                if (player.get4x4() == true)
-                new InstanceManager(player).create4X4Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
-                else
-                    new InstanceManager(player).create3X3Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
-                break;
-            case 23264:
-                if (player.getLocation() == Location.JAIL) {
-                    player.sendMessage("<shad=1>@cya@You can't start an instance while your in jail.");
-                    return;
-                }
-
-                if (player.currentInstanceAmount >= 1) {
-                    player.sendMessage("<shad=1>@red@You can't start a new instance until this one ends");
-                    return;
-                }
-
-                if (player.lastInstanceNpc == -1) {
-                    player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
-                    return;
-                }
-
-                if (!player.getClickDelay().elapsed(5000)) {
-                    player.sendMessage("Please wait 5 seconds before trying to start another instance.");
-                    return;
-                }
-                boolean valid = false;
-                for (InstanceData data : InstanceData.values()) {
-                    if (data.getNpcid() == player.lastInstanceNpc) {
-                        valid = true;
-                        break;
-                    }
-                }
-
-                if (!valid) {
-                    player.sendMessage("<shad=1>@red@You need a valid last instance before doing this!");
-                    return;
-                }
-                if (player.get4x4() == true)
-                    new GoldInstanceManager(player).create4X4Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
-                else
-                    new GoldInstanceManager(player).create3X3Instance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
-                break;
             case 23014:
             case 23015:
             case 23016:

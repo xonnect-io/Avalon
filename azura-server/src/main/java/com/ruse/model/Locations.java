@@ -15,9 +15,6 @@ import com.ruse.world.content.combat.strategy.impl.Scorpia;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.events.EventManager;
 import com.ruse.world.content.events.PartyChest;
-import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceManager;
-import com.ruse.world.content.instanceMananger.InstanceManager;
-import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
@@ -789,13 +786,10 @@ public class Locations {
 		},
 		BULWARK(new int[] { 2409, 2439 }, new int[] { 3512, 3532 }, true, true, true, false, false, false) {
 		},
-		INSTANCE1(new int[] { 2628, 2685 }, new int[] { 4750, 4790 }, true, true, true, false, false, false) {
+		INSTANCE1(new int[]{2628, 2685}, new int[]{4750, 4790}, true, true, true, false, false, false) {
 			@Override
 			public void logout(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-					new InstanceManager(player).onLogout();
-					new GoldInstanceManager(player).onLogout();
-					new SlayerInstanceManager(player).onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
 			}
@@ -803,9 +797,7 @@ public class Locations {
 			@Override
 			public void leave(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-					new InstanceManager(player).onLogout();
-					new GoldInstanceManager(player).onLogout();
-					new SlayerInstanceManager(player).onLogout();
+					player.getInstanceManager().onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
 				player.getLastRunRecovery().reset();
@@ -814,9 +806,7 @@ public class Locations {
 			@Override
 			public void login(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-					new InstanceManager(player).onLogout();
-					new GoldInstanceManager(player).onLogout();
-					new SlayerInstanceManager(player).onLogout();
+					player.getInstanceManager().onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
 				player.moveTo(GameSettings.DEFAULT_POSITION.copy());
@@ -825,57 +815,47 @@ public class Locations {
 			@Override
 			public void onDeath(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-					new InstanceManager(player).onLogout();
-					new GoldInstanceManager(player).onLogout();
-					new SlayerInstanceManager(player).onLogout();
+					player.getInstanceManager().onLogout();
 					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
 				}
 			}
 		},
-		INSTANCE2(new int[] { 2753, 2814 }, new int[] { 4736, 4800 }, true, true, true, false, false, false) {
+		INSTANCE2(new int[]{2753, 2814}, new int[]{4736, 4800}, true, true, true, false, false, false) {
 			@Override
 			public void logout(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-					new InstanceManager(player).onLogout();
-					new GoldInstanceManager(player).onLogout();
-					new SlayerInstanceManager(player).onLogout();
-					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
+					player.getInstanceManager().onLogout();
 				}
+				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
+				player.moveTo(GameSettings.DEFAULT_POSITION.copy());
 			}
 
 			@Override
 			public void leave(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-					new InstanceManager(player).onLogout();
-					new GoldInstanceManager(player).onLogout();
-					new SlayerInstanceManager(player).onLogout();
-					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
+					player.getInstanceManager().onLogout();
 				}
+				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
 				player.getLastRunRecovery().reset();
 			}
 
 			@Override
 			public void login(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-					new InstanceManager(player).onLogout();
-					new GoldInstanceManager(player).onLogout();
-					new SlayerInstanceManager(player).onLogout();
-					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
+					player.getInstanceManager().onLogout();
 				}
+				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
 				player.moveTo(GameSettings.DEFAULT_POSITION.copy());
 			}
 
 			@Override
 			public void onDeath(Player player) {
 				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE)) {
-					new InstanceManager(player).onLogout();
-					new GoldInstanceManager(player).onLogout();
-					new SlayerInstanceManager(player).onLogout();
-					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE1, player.getIndex() * 4, player));
+					player.getInstanceManager().onLogout();
 				}
+				World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.INSTANCE2, player.getIndex() * 4, player));
 			}
-			},
-
+		},
 		ZONES1(new int[] { 2948, 3007 }, new int[] { 9473, 9510 }, true, true, true, false, false, false) {
 		},
 		ZONES2(new int[] { 2295, 2410 }, new int[] { 3876, 3906 }, true, true, true, false, false, false) {

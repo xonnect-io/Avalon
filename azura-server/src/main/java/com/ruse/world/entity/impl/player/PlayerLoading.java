@@ -630,7 +630,9 @@ public class PlayerLoading {
             if (reader.has("isles-kc")) {
                 player.getPointsHandler().setIslesKC(reader.get("isles-kc").getAsInt(), false);
             }
-
+            if (reader.has("lastInstanceNpc")) {
+                player.lastInstanceNpc = reader.get("lastInstanceNpc").getAsInt();
+            }
             if (reader.has("cosmetic-override")) {
                 player.setCosmeticOveride(reader.get("cosmetic-override").getAsBoolean());
             }

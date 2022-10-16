@@ -85,8 +85,9 @@ public class RegionInstance {
 		player.setCurrentInstanceNpcId(-1);
 		player.setCurrentInstanceNpcName("");
 		player.moveTo(GameSettings.HOME_CORDS);
-		player.setData(null);
+
 	}
+
 
 	public void add(Character c) {
 		if (type == RegionInstanceType.CONSTRUCTION_HOUSE) {

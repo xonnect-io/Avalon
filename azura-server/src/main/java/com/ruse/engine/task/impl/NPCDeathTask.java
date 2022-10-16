@@ -26,7 +26,6 @@ import com.ruse.world.content.dailyTask.DailyTaskHandler;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.content.eventboss.EventBossDropHandler;
 import com.ruse.world.content.globalBosses.*;
-import com.ruse.world.content.instanceMananger.InstanceManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -448,7 +447,7 @@ public class NPCDeathTask extends Task {
 
                         /** BOSS EVENT **/
                         new BossEventHandler().death(killer, npc, npc.getDefinition().getName());
-                        new InstanceManager(killer).death(killer, npc, npc.getDefinition().getName());
+                        killer.getInstanceManager().death(killer, npc, npc.getDefinition().getName());
                         new DailyTaskHandler(killer).death(npc.getDefinition().getName());
 
                         /** SLAYER **/
@@ -522,6 +521,14 @@ public class NPCDeathTask extends Task {
 
         if (npc.isEventBoss()) {
             EventBossDropHandler.death(killer, npc);
+        }
+        if (npc.getDefinition().getRespawnTime() > 0 && npc.getLocation() != Location.PYRAMID
+                && npc.getLocation() != Location.DUNGEONEERING && !npc.isEventBoss()) {
+
+            boolean instanceNPC = npc.getLocation()  == Location.INSTANCE1
+                    || npc.getLocation()  == Location.INSTANCE2;
+
+            TaskManager.submit(new NPCRespawnTask(npc, instanceNPC ? 6 : npc.getDefinition().getRespawnTime(), killer, instanceNPC));
         }
 
         World.deregister(npc);

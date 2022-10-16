@@ -47,6 +47,10 @@ import java.util.Objects;
 public class NPC extends Character {
 
 
+    @Getter
+    @Setter
+    private int instanceID;
+
     public int totalAttacks;
 
     @Getter

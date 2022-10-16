@@ -45,12 +45,7 @@ import com.ruse.world.content.events.EventManager;
 import com.ruse.world.content.goldenscratch.ScratchCard;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupManager;
-import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceInterfaceHandler;
-import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceManager;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
-import com.ruse.world.content.instanceMananger.InstanceManager;
-import com.ruse.world.content.instanceManangerGold.GoldInstanceInterfaceHandler;
-import com.ruse.world.content.instanceManangerGold.GoldInstanceManager;
 import com.ruse.world.content.loyalty_streak.LoyaltyStreakManager;
 import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.Dueling;
@@ -179,8 +174,6 @@ public class ButtonClickPacketListener implements PacketListener {
         new DailyTaskInterface(player).button(id);
         new DailyTaskInterface(player).tabClicking(id);
         new InstanceInterfaceHandler(player).handleButtons(id);
-        new GoldInstanceInterfaceHandler(player).handleButtons(id);
-        new SlayerInstanceInterfaceHandler(player).handleButtons(id);
         new WellForGlobalBossesInterface(player).button(id);
 
         switch (id) {
@@ -224,6 +217,32 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
                 } else {
                     player.sendMessage("You do not have a monthly membership pass.");
+                }
+                break;
+            case -30520:
+                if (player.getInstanceManager().selectedInstance != null) {
+                    if (player.getInstanceManager().selectedInstance.getNpcId() == 1265) {
+                        player.sendMessage("Lunite lions can only be killed at ::train");
+                        return;
+                    }
+
+                    if (!player.getLastRunRecovery().elapsed(5000)) {
+                        player.sendMessage("Please wait 5 seconds before doing this again.");
+                        return;
+                    }
+
+                    if (player.getInstanceManager().selectedInstance.getNpcId() == 1265
+                            || player.getInstanceManager().selectedInstance.getNpcId() == 1023
+                            || player.getInstanceManager().selectedInstance.getNpcId() == 1233
+                            || player.getInstanceManager().selectedInstance.getNpcId() == 1234) {
+                        if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getInstanceManager().selectedInstance.getNpcId(), player) > 500) {
+                            player.sendMessage("This place is for new players with less than 5k npc kills.");
+                            return;
+                        }
+                    }
+                    player.getInstanceManager().createInstance(player.getInstanceManager().selectedInstance.getNpcId(), RegionInstance.RegionInstanceType.INSTANCE);
+                } else {
+                    player.getPA().sendMessage("Select the boss you'd like to instance.");
                 }
                 break;
             case -4908:
@@ -783,6 +802,25 @@ public class ButtonClickPacketListener implements PacketListener {
             case 88446:
             case 88546:
             case 88146:
+
+            case 106005:
+            case -8305:
+
+
+            case -13233:
+
+            case -27454:
+            case -27534:
+            case -16534:
+            case 36002:
+            case 32606:
+            case -31929:
+            case -8255:
+            case 19705:
+            case 28005:
+            case 26003:
+            case 5384:
+
                 player.getPacketSender().sendInterfaceRemoval();
                 break;
 
@@ -1200,285 +1238,12 @@ public class ButtonClickPacketListener implements PacketListener {
             case 19654:
                 PollCreation.resetPoll(player);
                 break;
-
-            case 75003:
-                if (player.getDataGold() != null) {
-                    if (player.get3x3() == true) {
-                        if (player.getDataGold().getNpcid() == 1265) {
-                            player.sendMessage("Avalon lions can only be killed at ::train");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 9807 && player.getPointsHandler().getGROUDONKILLCount() <= 24999) {
-                            player.getPacketSender().sendMessage("You need 25,000 Ipotane kills. You currently have @red@"
-                                    + player.getPointsHandler().getGROUDONKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-
-                        if ( player.getDataGold().getNpcid() == 8010 && player.getPointsHandler().getZEUSKILLCount() <= 14999) {
-                            player.getPacketSender().sendMessage("You need 15,000 Zeus kills. You currently have @red@"
-                                    + player.getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-
-                        if (player.getDataGold().getNpcid() == 203 && player.getPointsHandler().getSATANKILLCount() <= 4999) {
-                            player.getPacketSender().sendMessage("You need 5,000 Subzero kills. You currently have @red@"
-                                    + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 202 && player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
-                            player.getPacketSender().sendMessage("You need 3,500 Shenron kills. You currently have @red@"
-                                    + player.getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 201 && player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
-                            player.getPacketSender().sendMessage("You need 2,500 Oni kills. You currently have @red@"
-                                    + player.getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 3117 && player.getPointsHandler().getANGELKILLCount() <= 1499) {
-                            player.getPacketSender().sendMessage("You need 1,500 Wyvern kills. You currently have @red@"
-                                    + player.getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 3308 &&  player.getPointsHandler().getAVATARKILLCount() <= 1199) {
-                            player.getPacketSender().sendMessage("You need 1,200 Avatar kills. You currently have @red@"
-                                    + player.getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 8008 &&  player.getPointsHandler().getKINGKILLCount() <= 999) {
-                            player.getPacketSender().sendMessage("You need 1,000 Ripper kills. You currently have @red@"
-                                    + player.getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 13635 && player.getPointsHandler().getBEASTKILLCount() <= 499) {
-                            player.getPacketSender().sendMessage("You need 500 Shetani kills. You currently have @red@"
-                                    + player.getPointsHandler().getBEASTKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 8018 && player.getPointsHandler().getDRAGONKILLCount() <= 399) {
-                            player.getPacketSender().sendMessage("You need 400 Golem kills. You currently have @red@"
-                                    + player.getPointsHandler().getDRAGONKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 53 && player.getPointsHandler().getDEMONKILLCount() <= 299) {
-                            player.getPacketSender().sendMessage("You need 300 Shadow kills. You currently have @red@"
-                                    + player.getPointsHandler().getDEMONKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 12843 && player.getPointsHandler().getLORDKILLCount() <= 199) {
-                            player.getPacketSender().sendMessage("You need 200 Lord kills. You currently have @red@"
-                                    + player.getPointsHandler().getLORDKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 603 && player.getPointsHandler().getSPAWNKILLCount() <= 99) {
-                            player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
-                                    + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 9116 && !player.getMagicGuildTier1()) {
-                            player.getPA().sendMessage("You need to have unlocked Tier 1 of the magician guild to instance this npc");
-                            return;
-                        } if (player.getDataGold().getNpcid() == 9117 && !player.getMagicGuildTier2()) {
-                            player.getPA().sendMessage("You need to have unlocked Tier 2 of the magician guild to instance this npc");
-                            return;
-                        } if (player.getDataGold().getNpcid() == 9118 && !player.getMagicGuildTier3()) {
-                            player.getPA().sendMessage("You need to have unlocked Tier 3 of the magician guild to instance this npc");
-                            return;
-                        }
-                        if (player.getDataGold().getNpcid() == 1265
-                                || player.getDataGold().getNpcid() == 1023
-                                || player.getDataGold().getNpcid() == 1233
-                                || player.getDataGold().getNpcid() == 1234) {
-                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getDataGold().getNpcid(), player) > 500) {
-                                player.sendMessage("This place is for new players with less than 5k npc kills.");
-                                return;
-                            }
-                        }
-                        new GoldInstanceManager(player).create3X3Instance(player.getDataGold().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
-                    } else if (player.get4x4() == true) {
-                        if (player.getDataGold().getNpcid() == 1265) {
-                            player.sendMessage("Avalon lions can only be killed at ::train");
-                            return;
-                        }
-
-                        if (player.getDataGold().getNpcid() == 1265
-                                || player.getDataGold().getNpcid() == 1023
-                                || player.getDataGold().getNpcid() == 1233
-                                || player.getDataGold().getNpcid() == 1234) {
-                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getDataGold().getNpcid(), player) > 500) {
-                                player.sendMessage("This place is for new players with less than 5k npc kills.");
-                                return;
-                            }
-                        }
-                        new GoldInstanceManager(player).create4X4Instance(player.getDataGold().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
-                    }
-                }
-                else {
-                    player.getPA().sendMessage("Select the boss you'd like to instance.");
-                }
-                break;
-            case 71003:
-                if (player.getDataSlayer() != null) {
-                        if (player.getDataSlayer().getNpcid() != player.getSlayer().getSlayerTask().getNpcId()) {
-                            player.getPacketSender().sendMessage("@red@This is not your current slayer task!");
-                            return;
-                        }
-                        new SlayerInstanceManager(player).create2X2Instance(player.getDataSlayer().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
-                    }
-                else {
-                    player.getPA().sendMessage("Select the slayer npc you'd like to instance.");
-                }
-                break;
-
-
-
-            case -30533:
-                if (player.getData() != null) {
-                    if (player.get3x3() == true) {
-                        if (player.getData().getNpcid() == 1265) {
-                            player.sendMessage("Avalon lions can only be killed at ::train");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 9807 && player.getPointsHandler().getGROUDONKILLCount() <= 24999) {
-                            player.getPacketSender().sendMessage("You need 25,000 Ipotane kills. You currently have @red@"
-                                    + player.getPointsHandler().getGROUDONKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-
-                        if ( player.getData().getNpcid() == 8010 && player.getPointsHandler().getZEUSKILLCount() <= 14999) {
-                            player.getPacketSender().sendMessage("You need 15,000 Zeus kills. You currently have @red@"
-                                    + player.getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-
-                        if (player.getData().getNpcid() == 203 && player.getPointsHandler().getSATANKILLCount() <= 4999) {
-                            player.getPacketSender().sendMessage("You need 5,000 Subzero kills. You currently have @red@"
-                                    + player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 202 && player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
-                            player.getPacketSender().sendMessage("You need 3,500 Shenron kills. You currently have @red@"
-                                    + player.getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 201 && player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
-                            player.getPacketSender().sendMessage("You need 2,500 Oni kills. You currently have @red@"
-                                    + player.getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 3117 && player.getPointsHandler().getANGELKILLCount() <= 1499) {
-                            player.getPacketSender().sendMessage("You need 1,500 Wyvern kills. You currently have @red@"
-                                    + player.getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 3308 &&  player.getPointsHandler().getAVATARKILLCount() <= 1199) {
-                            player.getPacketSender().sendMessage("You need 1,200 Avatar kills. You currently have @red@"
-                                    + player.getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 8008 &&  player.getPointsHandler().getKINGKILLCount() <= 999) {
-                            player.getPacketSender().sendMessage("You need 1,000 Ripper kills. You currently have @red@"
-                                    + player.getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 13635 && player.getPointsHandler().getBEASTKILLCount() <= 499) {
-                            player.getPacketSender().sendMessage("You need 500 Shetani kills. You currently have @red@"
-                                    + player.getPointsHandler().getBEASTKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 8018 && player.getPointsHandler().getDRAGONKILLCount() <= 399) {
-                            player.getPacketSender().sendMessage("You need 400 Golem kills. You currently have @red@"
-                                    + player.getPointsHandler().getDRAGONKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 53 && player.getPointsHandler().getDEMONKILLCount() <= 299) {
-                            player.getPacketSender().sendMessage("You need 300 Shadow kills. You currently have @red@"
-                                    + player.getPointsHandler().getDEMONKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 12843 && player.getPointsHandler().getLORDKILLCount() <= 199) {
-                            player.getPacketSender().sendMessage("You need 200 Lord kills. You currently have @red@"
-                                    + player.getPointsHandler().getLORDKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 603 && player.getPointsHandler().getSPAWNKILLCount() <= 99) {
-                            player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
-                                    + player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 9116 && !player.getMagicGuildTier1()) {
-                            player.getPA().sendMessage("You need to have unlocked Tier 1 of the magician guild to instance this npc");
-                            return;
-                        } if (player.getData().getNpcid() == 9117 && !player.getMagicGuildTier2()) {
-                            player.getPA().sendMessage("You need to have unlocked Tier 2 of the magician guild to instance this npc");
-                            return;
-                        } if (player.getData().getNpcid() == 9118 && !player.getMagicGuildTier3()) {
-                            player.getPA().sendMessage("You need to have unlocked Tier 3 of the magician guild to instance this npc");
-                            return;
-                        }
-                        if (player.getData().getNpcid() == 1265
-                                || player.getData().getNpcid() == 1023
-                                || player.getData().getNpcid() == 1233
-                                || player.getData().getNpcid() == 1234) {
-                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getData().getNpcid(), player) > 500) {
-                                player.sendMessage("This place is for new players with less than 5k npc kills.");
-                                return;
-                            }
-                        }
-                        new InstanceManager(player).create3X3Instance(player.getData().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
-                    } else if (player.get4x4() == true) {
-                        if (player.getData().getNpcid() == 1265) {
-                            player.sendMessage("Avalon lions can only be killed at ::train");
-                            return;
-                        }
-
-                        if (player.getData().getNpcid() == 1265
-                                || player.getData().getNpcid() == 1023
-                                || player.getData().getNpcid() == 1233
-                                || player.getData().getNpcid() == 1234) {
-                            if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(player.getData().getNpcid(), player) > 500) {
-                                player.sendMessage("This place is for new players with less than 5k npc kills.");
-                                return;
-                            }
-                        }
-                        new InstanceManager(player).create4X4Instance(player.getData().getNpcid(), RegionInstance.RegionInstanceType.INSTANCE);
-                    }
-                }
-                    else {
-                    player.getPA().sendMessage("Select the boss you'd like to instance.");
-                }
-                break;
             case -8254:
                 player.getPacketSender().sendString(1, GameSettings.StoreUrl);
                 player.getPacketSender().sendMessage("Attempting to open the store");
                 break;
             case -11438:
                 player.getPlayerOwnedShopManager().openEditor();
-                break;
-
-            case 106005:
-            case -8305:
-                player.getPacketSender().sendInterfaceRemoval();
-                break;
-
-
-            case -13233:
-                player.getPacketSender().sendInterfaceRemoval();
-                break;
-
-            case -27454:
-            case -27534:
-            case -16534:
-            case 36002:
-            case 32606:
-            case -31929:
-            case -8255:
-            case 19705:
-            case 28005:
-            case 26003:
-            case 5384:
-
-                player.getPacketSender().sendInterfaceRemoval();
                 break;
             case 29133:
                 player.getPacketSender().sendMessage("::leave to leave room");
@@ -1493,8 +1258,6 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPacketSender().sendString(29095 + i, ""); // this should be the final thing., added UI check for every place now.
 
                 }
-
-
                 break;
 
             case 15009:

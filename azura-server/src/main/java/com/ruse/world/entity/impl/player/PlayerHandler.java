@@ -472,6 +472,13 @@ public class PlayerHandler {
         if (GameSettings.B2GO) {
             player.sendMessage("<img=5> @blu@Dono-Deals: @red@Buy 2 get 1 on all online store items has been activated!");
         }
+
+        if (player.getCurrentInstanceNpcName() != null) {
+            player.moveTo(GameSettings.HOME_CORDS);
+            player.getPacketSender()
+                    .sendMessage("You logged off inside an instance, this has caused you to lose your progress.");
+        }
+
         int AMOUNTS = player.getInventory().getAmount(621);
         if (player.getBank(0).contains(621)) {
             player.getBank(0).add(9000, AMOUNTS);

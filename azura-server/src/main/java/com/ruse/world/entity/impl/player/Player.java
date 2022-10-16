@@ -63,9 +63,8 @@ import com.ruse.world.content.eventboss.EventBossManager;
 import com.ruse.world.content.gamblinginterface.GamblingInterface;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
 import com.ruse.world.content.groupironman.IronmanGroup;
-import com.ruse.world.content.instanceManagerSlayer.SlayerInstanceData;
 import com.ruse.world.content.instanceMananger.InstanceData;
-import com.ruse.world.content.instanceManangerGold.GoldInstanceData;
+import com.ruse.world.content.instanceMananger.InstanceManager;
 import com.ruse.world.content.membership.MembershipInterfaceHandler;
 import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.MinigameAttributes;
@@ -77,8 +76,8 @@ import com.ruse.world.content.osrscollectionlog.LogType;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.properscratchcard.Scratchcard;
 import com.ruse.world.content.quests.QuestInterfaceHandler;
-import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
+import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.scratchcards.ScratchCard;
 import com.ruse.world.content.seasonpass.SeasonPass;
@@ -183,6 +182,18 @@ public boolean setSlayerBoss;
     private long moneyInPouch;
     private long soulInPouch;
     private long totalPlayTime;
+
+
+    @Getter
+    public InstanceManager instanceManager = new InstanceManager(this);
+
+    /**
+     * Instance Manager variables.
+     */
+
+    public String currentInstanceNpcName;
+    public int currentInstanceNpcId;
+    public int currentInstanceAmount;
 
     public long getMoneyInPouch() {
         return moneyInPouch;
@@ -665,11 +676,6 @@ public int howmuchdissolveamt = 0;
      */
 
     public InstanceData data;
-    public GoldInstanceData dataGold;
-    public SlayerInstanceData dataSlayer;
-    public String currentInstanceNpcName;
-    public int currentInstanceNpcId;
-    public int currentInstanceAmount;
     /**
      * Stores the players current daily tasks
      */
@@ -1334,23 +1340,6 @@ public int howmuchdissolveamt = 0;
         this.data = data;
     }
 
-    public GoldInstanceData getDataGold() {
-        return dataGold;
-    }
-
-    public void setDataGold(GoldInstanceData dataGold) {
-        this.dataGold = dataGold;
-    }
-
-
-    public SlayerInstanceData getDataSlayer() {
-        return dataSlayer;
-    }
-
-    public void setDataSlayer(SlayerInstanceData dataSlayer) {
-        this.dataSlayer = dataSlayer;
-    }
-
     public String getCurrentInstanceNpcName() {
         return currentInstanceNpcName;
     }
@@ -1815,6 +1804,7 @@ public int howmuchdissolveamt = 0;
         getMovementQueue().setLockMovement(false).reset();
 
         getUpdateFlag().flag(Flag.APPEARANCE);
+        getUpdateFlag().flag(Flag.APPEARANCE);
     }
     public void updateAppearance() {
         getUpdateFlag().flag(Flag.APPEARANCE);
@@ -1828,6 +1818,10 @@ public int howmuchdissolveamt = 0;
     @Getter
     @Setter
     private boolean cosmeticOveride = true;
+
+    @Getter
+    @Setter
+    private int instanceID;
 
     private CustomTeleportInterface customTeleportInterface = new CustomTeleportInterface(this);
 
@@ -3582,6 +3576,8 @@ End new teleport
     }
 
 
+    public int lastInstanceNpc = -1;
+
     public int getNephilimBonus() {
         return nephilimBonus;
     }
@@ -4604,8 +4600,6 @@ End new teleport
     public MembershipManager getMembershipManager() {
         return membershipManager;
     }
-
-    public int lastInstanceNpc = -1;
 
     @Getter
     @Setter

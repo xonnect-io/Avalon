@@ -21,7 +21,95 @@ public class CustomInterfaces extends RSInterface {
 		CustomInterfaces.tda = tda;
 	}
 
+	public static void instanceManager() {
+		int interID = 35000;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 75;
+		int y = 10;
+		tab.totalChildren(17);
 
+		addSpriteLoader(id, 1776);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addText(id, "Instance Manager", tda, 2, 0xff8624, true, true);
+		tab.child(c++, id++, 182 + x, 4 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 340 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 340 + x, 3 + y);
+		id++;
+
+		addText(id, "Monsters", tda, 1, 0xff8624, true, true);
+		tab.child(c++, id++, 92 + x, 29 + y);
+
+		addText(id, "Preview", tda, 1, 0xff8624, true, true);
+		tab.child(c++, id++, 264 + x, 29 + y);
+
+		dropGroup(id, 1, 1, 1, 1);
+		tab.child(c++, id++, 185 + x, 179 + y);
+
+		addText(id, "Instance token", tda, 1, 0xff8624, false, true);
+		tab.child(c++, id++, 223 + x, 178 + y);
+
+		addText(id, "Spawns: 45", tda, 1, 0xff8624, false, true);
+		tab.child(c++, id++, 223 + x, 194 + y);
+
+		addText(id, "Cost: 5k Upgrade tokens", tda, 1, 0xff8624, true, true);
+		tab.child(c++, id++, 263 + x, 217 + y);
+
+
+		addConfigButtonWSpriteLoader(id, interID, 1777, 1778, 72, 32, "Select", 0, 5, 1355);
+		tab.child(c++, id++, 188 + x, 236 + y);
+		addConfigButtonWSpriteLoader(id, interID, 1777, 1778, 72, 32, "Select", 1, 5, 1355);
+		tab.child(c++, id++, 268 + x, 236 + y);
+
+
+		addText(id, "3x3 Grid", tda, 2, 0xff8624, true, true);
+		tab.child(c++, id++, 188 + 36 + x, 236 + 8 + y);
+
+		addText(id, "4x4 Grid", tda, 2, 0xff8624, true, true);
+		tab.child(c++, id++, 268 + 36 + x, 236 + 8 + y);
+
+		hoverButton(id, 1779, 1780, "Start Instance", 2, 0xff8624, "Start Instance");
+		tab.child(c++, id++, 199 + x, 277 + y);
+
+		addNpcOld(id, 252);
+//        RSInterface.drawNpcOnInterface(id, 100, 1000);
+		tab.child(c++, id++, 195 + x, 60 + y);
+
+		tab.child(c++, 35070, 12 + x, 47 + y);
+
+
+		interID = 35070;
+		RSInterface list = addInterface(interID);
+		list.width = 160 - 16;
+		list.height = 256;
+		list.scrollMax = 500;
+		id = interID + 1;
+		c = 0;
+		x = 0;
+		y = 0;
+		list.totalChildren(200);
+
+		id = 35171;
+		for (int i = 0; i < 100; i++) {
+			addSpriteLoader(id, 1781);
+			list.child(c++, id++, 0 + x, 0 + y);
+			y += 36;
+		}
+
+		y = 0;
+		id = 35071;
+		for (int i = 0; i < 100; i++) {
+			teleportText(id, "", "Select", fonts, 1, 0xFF9900, false, true, 169, 17);
+			list.child(c++, id++, 2 + x, 2 + y);
+			y += 18;
+		}
+
+	}
 	public static void serverPerks() {
 		int interID = 42050;
 		RSInterface tab = addInterface(interID);
@@ -7267,10 +7355,8 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		playerOwnedShopInterface2(tda);
 		playerOwnedShopInterface3(tda);
 		SlayerDuo(tda);
+		instanceManager();
 		DailyTaskInterface(tda);
-		InstanceManager(tda);
-		InstanceManagerGold(tda);
-		InstanceManagerSlayer(tda);
 		WellOfGoodWill(tda);
 		DailyMboxes(tda);
 		commands(tda);

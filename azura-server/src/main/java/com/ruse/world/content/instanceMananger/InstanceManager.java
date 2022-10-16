@@ -1,235 +1,184 @@
 package com.ruse.world.content.instanceMananger;
 
-import com.ruse.engine.task.Task;
-import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Locations;
 import com.ruse.model.Position;
 import com.ruse.model.RegionInstance;
 import com.ruse.model.RegionInstance.RegionInstanceType;
-import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.definitions.NpcDefinition;
+import com.ruse.util.Misc;
 import com.ruse.world.World;
+import com.ruse.world.content.KillsTracker;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
 public class InstanceManager {
 
-	private final Player player;
+    private final Player player;
 
-	public InstanceManager(Player player) {
-		this.player = player;
-	}
-	public int pos = 4;
-	private static final InstanceData[] values = InstanceData.values();
+    public InstanceManager(Player player) {
+        this.player = player;
+    }
 
-	public void create3X3Instance(int npcId, RegionInstanceType type) {
-		if (npcId == 9116 && !player.getMagicGuildTier1()) {
-			player.getPA().sendMessage("You need to have unlocked Tier 1 of the magician guild to instance this npc");
-		}		if (npcId == 9117 && !player.getMagicGuildTier2()) {
-			player.getPA().sendMessage("You need to have unlocked Tier 2 of the magician guild to instance this npc");
-		}		if (npcId == 9118 && !player.getMagicGuildTier3()) {
-			player.getPA().sendMessage("You need to have unlocked Tier 3 of the magician guild to instance this npc");
-		}
-		if (player.getInventory().contains(4278) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 750)) {
-			player.getInventory().delete(4278, 1);
-			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 750);
-		} else {
-			player.getPA()
-					.sendMessage("You need an instance token, these can be obtained from killing any npc in-game!");
-			player.getPA().sendMessage("You need 750 Upgrade tokens in your inventory to start a 3x3 instance.");
-			return;
-		}
+    public int pos = 4;
+    public int ticketID;
+    public int grid = 3;
+    public InstanceData selectedInstance;
 
-		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE1, player.getIndex() * pos));
-		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE2, player.getIndex() * pos));
+    private static final InstanceData[] values = InstanceData.values();
 
-		if (player.getRegionInstance() != null) {
-			for (NPC n : player.getRegionInstance().getNpcsList()) {
-				if (n != null) {
-					World.deregister(n);
-				}
-			}
-			player.getRegionInstance().getNpcsList().clear();
-		} else {
-			for (NPC n : World.getNpcs()) {
-				if (n != null) {
-					if (n.getPosition().getRegionId() == 11082 && n.getPosition().getZ() == (player.getIndex() * pos)) {
-						World.deregister(n);
-					}
-				}
-			}
-		}
-		player.setRegionInstance(new RegionInstance(player, type));
-		player.lastInstanceNpc = npcId;
-		player.moveTo(new Position(2786, 4759,
-				player.getIndex() * 4));
+    public int getCost() {
+        if (selectedInstance != null)
+            if (selectedInstance.ordinal() < InstanceData.ZEUS.ordinal()) {
+                return (grid == 4 ? 1000 : 500);
+            }
 
-		for (int i = 0; i < 3; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
-					player.getPosition().getY() + 8 , player.getIndex() * pos));
-			npc_.setSpawnedFor(player);
-			player.getRegionInstance().getNpcsList().add(npc_);
-			World.register(npc_);
-		}
-		for (int i = 0; i < 3; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
-					player.getPosition().getY() + 6 , player.getIndex() * pos));
-			npc_.setSpawnedFor(player);
-			player.getRegionInstance().getNpcsList().add(npc_);
-			World.register(npc_);
-		}
-		for (int i = 0; i < 3; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 2 + (i * 2),
-					player.getPosition().getY() + 4 , player.getIndex() * pos));
-			npc_.setSpawnedFor(player);
-			player.getRegionInstance().getNpcsList().add(npc_);
-			World.register(npc_);
-		}
-		for (InstanceData data : values) {
-			if (npcId == data.getNpcid() || NpcDefinition.forId(npcId).getName() == data.getName()) {
-				player.setCurrentInstanceAmount(60);
-				player.setCurrentInstanceNpcId(data.getNpcid());
-				player.setCurrentInstanceNpcName(data.getName());
-			}
-		}
-		player.getPA().sendMessage("You have instanced yourself " + player.getCurrentInstanceAmount() + " "
-				+ player.getCurrentInstanceNpcName());
-		player.getPA().sendInterfaceRemoval();
-	}
+        return (grid == 4 ? 10000 : 2500);
+    }
 
+    public void createInstance(int npcId, RegionInstanceType type) {
 
-	public void create4X4Instance(int npcId, RegionInstanceType type) {
+        if (npcId == 9807) {
+            int total = KillsTracker.getTotalKillsForNpc(8010, player);
 
-		if (player.getInventory().contains(4278) && player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID, 1500)) {
-			player.getInventory().delete(4278, 1);
-			player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID, 1500);
-		} else {
-			player.getPA()
-					.sendMessage("You need an instance token, these can be obtained from killing any npc in-game!");
-			player.getPA().sendMessage("You need 1,500 Upgrade tokens in your inventory to start a 4x4 instance.");
-			return;
-		}
+            if (total < 25000 && !player.getRights().isDeveloperOnly()) {
+                player.sendMessage("You don't have the requirements to do this.");
+                return;
+            }
+        }
+        if (npcId == 7134) {
+            int total = player.getPointsHandler().getFENRIRKILLCount();
 
-		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE1, player.getIndex() * pos));
-		World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE2, player.getIndex() * pos));
+            if (total < 50000 && !player.getRights().isDeveloperOnly()) {
+                player.sendMessage("You don't have the requirements to do this.");
+                return;
+            }
+        }
+        if (npcId == 9116 && player.getMagicGuildTier1()) {
+            player.sendMessage("You need to be at least a level 1 Magician to do this.");
+            return;
+        }
+        if (npcId == 9117 && player.getMagicGuildTier2()) {
+            player.sendMessage("You need to be at least a level 2 Magician to do this.");
+            return;
+        }
+        if (npcId == 9118 && player.getMagicGuildTier3()) {
+            player.sendMessage("You need to be at least a level 3 Magician to do this.");
+            return;
+        }
 
-		if (player.getRegionInstance() != null) {
-			for (NPC n : player.getRegionInstance().getNpcsList()) {
-				if (n != null) {
-					World.deregister(n);
-				}
-			}
-			player.getRegionInstance().getNpcsList().clear();
-		} else {
-			for (NPC n : World.getNpcs()) {
-				if (n != null) {
-					if (n.getPosition().getRegionId() == 11082 && n.getPosition().getZ() == (player.getIndex() * pos)) {
-						World.deregister(n);
-					}
-				}
-			}
-		}
-		player.setRegionInstance(new RegionInstance(player, type));
-		player.lastInstanceNpc = npcId;
-		player.moveTo(new Position(2784, 4759,
-				player.getIndex() * 4));
+        if (player.getInventory().contains(ticketID) && player.getInventory().contains(12855, getCost())) {
+            player.getInventory().delete(ticketID, 1);
+            player.getInventory().delete(12855, getCost());
+        } else {
+            player.getPA()
+                    .sendMessage("You need an instance token, these can be obtained from killing any npc ingame!");
+            player.getPA().sendMessage("You need to have " + Misc.insertCommasToNumber(getCost()) + " Upgrade Tokens in your inventory");
+            return;
+        }
+
+        World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE1, player.getIndex() * pos));
+        World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.INSTANCE2, player.getIndex() * pos));
+
+        if (player.getRegionInstance() != null) {
+            for (NPC n : player.getRegionInstance().getNpcsList()) {
+                if (n != null) {
+                    World.deregister(n);
+                }
+            }
+            player.getRegionInstance().getNpcsList().clear();
+        } else {
+            for (NPC n : World.getNpcs()) {
+                if (n != null) {
+                    if (n.getPosition().getRegionId() == 11082 && n.getPosition().getZ() == (player.getIndex() * pos)) {
+                        World.deregister(n);
+                    }
+                }
+            }
+        }
+
+        player.setInstanceID(player.getInstanceID() + 1);
 
 
-		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
-					player.getPosition().getY() + 10 , player.getIndex() * pos));
-			npc_.setSpawnedFor(player);
-			player.getRegionInstance().getNpcsList().add(npc_);
-			World.register(npc_);
-		}
-		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
-					player.getPosition().getY() + 8 , player.getIndex() * pos));
-			npc_.setSpawnedFor(player);
-			player.getRegionInstance().getNpcsList().add(npc_);
-			World.register(npc_);
-		}
-		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
-					player.getPosition().getY() + 6 , player.getIndex() * pos));
-			npc_.setSpawnedFor(player);
-			player.getRegionInstance().getNpcsList().add(npc_);
-			World.register(npc_);
-		}
-		for (int i = 0; i < 4; i++) {
-			NPC npc_ = new NPC(npcId, new Position(player.getPosition().getX() - 3 + (i * 2),
-					player.getPosition().getY() + 4 , player.getIndex() * pos));
-			npc_.setSpawnedFor(player);
-			player.getRegionInstance().getNpcsList().add(npc_);
-			World.register(npc_);
-		}
-		for (InstanceData data : values) {
-			if (npcId == data.getNpcid() || NpcDefinition.forId(npcId).getName() == data.getName()) {
-				player.setCurrentInstanceAmount(60);
-				player.setCurrentInstanceNpcId(data.getNpcid());
-				player.setCurrentInstanceNpcName(data.getName());
-				if (data.getNpcid() == 6260) {
-					player.getPA().sendMessage(
-							"We have instanced the home area for you, to leave the instance simply teleport out.");
-				}
-			}
-		}
-		player.getPA().sendMessage("You have instanced yourself " + player.getCurrentInstanceAmount() + " "
-				+ player.getCurrentInstanceNpcName());
-		player.getPA().sendInterfaceRemoval();
-	}
+        player.setRegionInstance(new RegionInstance(player, type));
+        player.lastInstanceNpc = npcId;
 
-	public void death(Player player, NPC npc, String NpcName) {
-		if (npc.getId() != player.getCurrentInstanceNpcId()) {
-			return;
-		}
-		if (player.currentInstanceNpcId == -1 || player.currentInstanceNpcName == "") {
-			return;
-		}
-		player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
-		String tasks = String.valueOf(player.getCurrentInstanceAmount());
-		if (tasks.endsWith(String.valueOf(0)) && player.getCurrentInstanceAmount() > 0) {
-			player.getPA().sendMessage("You currently need to kill " + (player.getCurrentInstanceAmount()) + " " + NpcName);
+        for (GridSpawns gridSpawns : GridSpawns.values()) {
+            if (grid == gridSpawns.getGridSize() && NpcDefinition.forId(npcId).getSize() == gridSpawns.getNpcSize()) {
+                player.moveTo(new Position(gridSpawns.getPlayerPosition().getX(), gridSpawns.getPlayerPosition().getY(),
+                        gridSpawns.getPlayerPosition().getZ() + (player.getIndex() * 4)));
+                for (int r = 0; r < gridSpawns.getGridSize(); r++) {
+                    for (int c = 0; c < gridSpawns.getGridSize(); c++) {
+                        NPC npc_ = new NPC(npcId == 9810 ? npcId + Misc.getRandom(2) : npcId,
+                                new Position(gridSpawns.getStart().getX() + (gridSpawns.getOffset() * r)
+                                        + (gridSpawns == GridSpawns.THREE_4 && r == 3 ? -1 : 0)
+                                        ,
+                                        gridSpawns.getStart().getY() + (gridSpawns.getOffset() * c) + (gridSpawns == GridSpawns.THREE_4 ? -1 : 0),
+                                        gridSpawns.getStart().getZ() + (player.getIndex() * 4)));
+                        npc_.setInstanceID(player.getInstanceID());
+                        npc_.setSpawnedFor(player);
+                        player.getRegionInstance().getNpcsList().add(npc_);
+                        World.register(npc_);
+                    }
+                }
+            }
+        }
 
-		} else 	if (player.getCurrentInstanceAmount() <= 0) {
-			player.getPA().sendMessage("You have used up the total instance count!");
-			finish();
-			return;
-		}
-	}
 
-	public void finish() {
-		player.getPA().sendMessage("You have used up all your kills inside the instance.");
-		player.getPA().sendMessage("to leave the instance simply teleport out.");
-		player.getLastRunRecovery().reset();
-		if (player != null) {
-			onLogout();
-		}
-	}
+        for (InstanceData data : values) {
+            if (npcId == data.getNpcId() || NpcDefinition.forId(npcId).getName() == data.getName()) {
+                player.setCurrentInstanceAmount(ticketID == 23264 ? 120 : 60);
+                player.setCurrentInstanceNpcId(data.getNpcId());
+                player.setCurrentInstanceNpcName(data.getName());
+                if (data.getNpcId() == 6260) {
+                    player.getPA().sendMessage(
+                            "We have instanced the home area for you, to leave the instance simply teleport out.");
+                    player.getLastRunRecovery().reset();
+                }
+            }
+        }
+        player.getPA().sendMessage("You have instanced yourself " + player.getCurrentInstanceAmount() + " "
+                + player.getCurrentInstanceNpcName());
+        player.getPA().sendInterfaceRemoval();
+    }
 
-	public static int tick = 0;
-	public void onLogout() {
-		player.getClickDelay().reset();
-		if (player.getRegionInstance() != null)
-			player.getRegionInstance().destruct();
-		player.setData(null);
-		player.setCurrentInstanceAmount(-1);
-		player.setCurrentInstanceNpcId(-1);
-		player.setCurrentInstanceNpcName("");
-	}
+    public void death(Player player, NPC npc, String NpcName) {
+        if (!(player.getCurrentInstanceNpcId() == 9810 && npc.getId() >= 9810 && npc.getId() <= 9812)) {
+            if (npc.getId() != player.getCurrentInstanceNpcId()) {
+                return;
+            }
+        }
+        if (player.currentInstanceNpcId == -1 || player.currentInstanceNpcName == "") {
+            return;
+        }
+        player.setCurrentInstanceAmount(player.getCurrentInstanceAmount() - 1);
 
-	public void startTask() {
-		TaskManager.submit(new Task(1,false) {
-			@Override
-			public void execute() {
-				player.getClickDelay().equals(5000);
-				if(tick == 5) {
-					player.getClickDelay().reset();
-					stop();
-				}
-				tick++;
-			}
-		});
-	}
 
+        if (player.getCurrentInstanceAmount() % 15 == 0)
+            player.getPA().sendMessage("You need to kill " + player.getCurrentInstanceAmount() + " more " + NpcName);
+
+
+        if (player.getCurrentInstanceAmount() <= 0) {
+            player.getPA().sendMessage("You have used up the total instance count!");
+            finish();
+            return;
+        }
+    }
+
+    public void finish() {
+        player.getPA().sendMessage("You have used up all your kills inside the instance.");
+        player.getPA().sendMessage("to leave the instance simply teleport out.");
+        player.getLastRunRecovery().reset();
+        if (player != null) {
+            onLogout();
+        }
+    }
+
+    public void onLogout() {
+        if (player.getRegionInstance() != null)
+            player.getRegionInstance().destruct();
+        //player.getInstanceManager().selectedInstance = (null);
+        player.setCurrentInstanceAmount(-1);
+        player.setCurrentInstanceNpcId(-1);
+        player.setCurrentInstanceNpcName("");
+    }
 }

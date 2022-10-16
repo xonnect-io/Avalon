@@ -10,7 +10,13 @@ import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
 public class NPCRespawnTask extends Task {
-
+	public NPCRespawnTask(NPC npc, int respawn, Player killer, boolean instanceNPC) {
+		super(respawn);
+		this.npc = npc;
+		this.killer = killer;
+		this.instanceNPC = instanceNPC;
+	}
+	boolean instanceNPC = false;
 	public NPCRespawnTask(NPC npc, int respawn, Player killer) {
 		super(respawn);
 		this.npc = npc;
@@ -23,11 +29,30 @@ public class NPCRespawnTask extends Task {
 	@Override
 	public void execute() {
 		NPC npc_ = new NPC(npc.getId(), npc.getDefaultPosition());
-		if (killer != null && killer.getLocation() != null && (killer.getLocation()  == Location.INSTANCE1 || killer.getLocation()  == Location.INSTANCE2) && killer.getCurrentInstanceAmount() <= 0) {
+		if (killer != null && killer.getLocation() != null &&
+				(killer.getLocation()  == Location.INSTANCE1
+						|| killer.getLocation()  == Location.INSTANCE2) && killer.getCurrentInstanceAmount() == -1) {
 			World.deregister(npc_);
 			stop();
 			return;
 		}
+
+		if (killer != null && instanceNPC && (!(killer.getLocation()  == Location.INSTANCE1
+				|| killer.getLocation()  == Location.INSTANCE2) ||
+				killer.getCurrentInstanceAmount() == (killer.getInstanceManager().ticketID == 23264 ? 120 : 60))){
+
+			World.deregister(npc_);
+			stop();
+			return;
+		}
+		npc_.setInstanceID(npc.getInstanceID());
+
+		if (killer != null && instanceNPC && killer.getInstanceID() != npc_.getInstanceID()){
+			World.deregister(npc_);
+			stop();
+			return;
+		}
+
 		npc_.getMovementCoordinator().setCoordinator(npc.getMovementCoordinator().getCoordinator());
 
 		if (npc_.getId() == 8022 || npc_.getId() == 8028) { // Desospan, respawn at random locations
@@ -35,10 +60,10 @@ public class NPCRespawnTask extends Task {
 		} else if (npc_.getId() > 5070 && npc_.getId() < 5081) {
 			Hunter.HUNTER_NPC_LIST.add(npc_);
 		}
-
 		if (killer != null) {
 			if (killer.getRegionInstance() != null) {
-				if ((killer.getLocation()  == Location.INSTANCE1 || killer.getLocation()  == Location.INSTANCE2) && npc_.getLocation() == killer.getLocation()) {
+				if ((killer.getLocation()  == Location.INSTANCE1 || killer.getLocation()  == Location.INSTANCE2)
+						&& npc_.getLocation() == killer.getLocation()) {
 					killer.getRegionInstance().getNpcsList().add(npc_);
 				}
 			}

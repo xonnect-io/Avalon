@@ -1,60 +1,65 @@
 package com.ruse.world.content.instanceMananger;
 
+import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.util.Misc;
 import com.ruse.world.entity.impl.player.Player;
 
 public class InstanceInterfaceHandler {
 
-	private Player player;
+    private Player player;
 
-	private static final InstanceData[] data = InstanceData.values();
+    private static final InstanceData data[] = InstanceData.values();
 
-	public InstanceInterfaceHandler(Player player) {
-		this.player = player;
-	}
+    public InstanceInterfaceHandler(Player player) {
+        this.player = player;
+    }
 
-	public void open() {
-		sendBossNames();
-		player.getPA().sendInterface(35000);
-		if (player.get3x3())
-		player.getPacketSender().sendConfig(1085, 0);
-		if (player.get4x4())
-			player.getPacketSender().sendConfig(1085, 1);
-		player.getPacketSender().sendItemOnInterface(35006, 4278, 0, 1);
-		player.getPacketSender().sendString(135009, "Spawns: @whi@60");
-		player.getPacketSender().sendString(135011, "@yel@Upgrade token");
-		player.getPacketSender().sendString(135010, "Cost: @whi@750 Upgrade tokens");
-	}
+    public void open() {
+        if (player.getInstanceManager().selectedInstance == null)
+            player.getInstanceManager().selectedInstance = InstanceData.values()[0];
+        sendBossNames();
+        player.getPA().sendInterface(35000);
+    }
 
-	public void sendBossNames() {
-		int startID = 35071;
-		for (InstanceData data : data) {
-			player.getPA().sendString(startID++, data.getName());
-		}
-	}
+    public void sendBossNames() {
+        int startID = 35071;
+        for (InstanceData data : data) {
+            player.getPA().sendString(startID++,(player.getInstanceManager().selectedInstance == data ? "@whi@" : "") +  data.getName() );
+        }
+        player.getPacketSender().setScrollBar(35070, data.length * 18);
+        player.getPacketSender().sendNpcOnInterface(35017, player.getInstanceManager().selectedInstance.getNpcId(), player.getInstanceManager().selectedInstance.getZoom());
+        sendInfo();
+    }
 
-	public void sendItems() {
-		resetItems();
-		for (InstanceData data : data) {
-			for (int i = 0; i < data.getRewards().length; i++) {
-			}
-		}
-	}
+    public void sendInfo() {
+        player.getPacketSender().sendItemOnInterface(35008, player.getInstanceManager().ticketID, 1);
+        player.getPacketSender().sendString(35009, "@yel@" + ItemDefinition.forId(player.getInstanceManager().ticketID).getName());
+        player.getPacketSender().sendString(35010, "Spawns: @whi@" + (player.getInstanceManager().ticketID == 23264 ? 120 : 60));
+        player.getPacketSender().sendString(35011, "Cost: @whi@" + Misc.sendCashToString(player.getInstanceManager().getCost()) + " Upgrade tokens");
 
-	public void handleButtons(int id) {
-		for (InstanceData data : data) {
-			
-			if ( id == data.getButtonid()) {
-				player.setData(data);
-				sendItems();
-				player.getPA().sendNpcIdToDisplayPacket(data.getNpcid(), 35004);
-			}
-		}
-	}
+        if (player.getInstanceManager().grid == 3) {
+            player.getPacketSender().sendConfig(1355, 0);
+        }else {
+            player.getPacketSender().sendConfig(1355, 1);
+        }
+    }
 
-	public void resetItems() {
-		int interfaceId = 35007;
-		for (int index = 0; index < 10; index++) {
-			player.getPA().sendItemOnInterface(interfaceId, -1, -1);
-		}
-	}
+    public void handleButtons(int id) {
+        if (id == -30524) {
+            player.getInstanceManager().grid = (3);
+            sendInfo();
+        }
+        if (id == -30523) {
+            player.getInstanceManager().grid = (4);
+            sendInfo();
+        }
+
+        for (InstanceData data : data) {
+            if (id == -30465 + data.ordinal()) {
+                player.getInstanceManager().selectedInstance = (data);
+                sendBossNames();
+            }
+        }
+    }
+
 }

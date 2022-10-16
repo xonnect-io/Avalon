@@ -715,6 +715,9 @@ public class CommandPacketListener implements PacketListener {
             new DailyTaskHandler(player).resetTasks();
         }
 
+        if (command[0].equalsIgnoreCase("destroyinstance")) {
+            player.getInstanceManager().onLogout();
+        }
 
         if (wholeCommand.equalsIgnoreCase("changepass") || wholeCommand.equalsIgnoreCase("changepassword")) {
             player.setInputHandling(new ChangePassword());

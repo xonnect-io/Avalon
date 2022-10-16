@@ -63,32 +63,30 @@ public class PlayerDeathTask extends Task {
                     player.getMovementQueue().setLockMovement(true).reset();
                     break;
                 case 3:
+                    if (player.getLocation() == Locations.Location.SUPREME_LAIR && player.getInventory().contains(23426)) {
+                        player.getInventory().delete(23426, player.getInventory().getAmount(23426));
+                        player.getPA().sendMessage("@red@Your Supreme Energy was lost");
+                    };
+                    player.getClickDelay().reset();
 
                     if (player.currentInstanceAmount < 1) {
-                    player.performAnimation(new Animation(0x900));
-                    player.getPacketSender().sendMessage("Oh dear, you are dead!");
-                        if (player.getLocation() == Locations.Location.SUPREME_LAIR && player.getInventory().contains(23426)) {
-                            player.getInventory().delete(23426, player.getInventory().getAmount(23426));
-                            player.getPA().sendMessage("@red@Your Supreme Energy was lost");
-                        }
-                    ;player.getClickDelay().reset();
-                        CurseHandler.deactivateAll(player);
-                        PrayerHandler.deactivateAll(player);
-                    this.death = getDeathNpc(player);
+                        player.performAnimation(new Animation(0x900));
+                        player.getPacketSender().sendMessage("Oh dear, you are dead!");
+                        this.death = getDeathNpc(player);
                     }
                     if (player.currentInstanceAmount >= 1) {
-            		player.getPA().sendMessage("You have been kicked from instance");
-            		player.getRegionInstance().destruct();
-            		player.setData(null);
-            		player.setCurrentInstanceAmount(-1);
-            		player.setCurrentInstanceNpcId(-1);
-            		player.setCurrentInstanceNpcName("");
-                        player.getClickDelay().reset();
-            		player.performAnimation(new Animation(0x900));
-        			Position[] locations = new Position[] { new Position(2656, 4016, 0), new Position(2656, 4016, 0) };
-        			Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
-        			TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
+                        player.getPA().sendMessage("You have been kicked from instance");
+                        player.getRegionInstance().destruct();
+                        //player.getInstanceManager().selectedInstance = (null);
+                        player.setCurrentInstanceAmount(-1);
+                        player.setCurrentInstanceNpcId(-1);
+                        player.setCurrentInstanceNpcName("");
+                        player.performAnimation(new Animation(0x900));
+                        Position[] locations = new Position[]{GameSettings.HOME_CORDS, GameSettings.HOME_CORDS};
+                        Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
+                        TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
                     }
+
                     break;
                 case 1:
                     this.oldPosition = player.getPosition().copy();
