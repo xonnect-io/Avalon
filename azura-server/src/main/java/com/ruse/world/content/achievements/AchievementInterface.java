@@ -166,7 +166,7 @@ public class AchievementInterface {
 
         if (player.getInventory().getFreeSlots() > selected.itemRewards.length) {
             player.sendMessage("Your achievement rewards have been placed in your inventory!");
-            player.getInventory().add(selected.itemRewards);
+            player.getInventory().add(Arrays.asList(selected.itemRewards));
         } else {
             player.getBank(player.getCurrentBankTab()).add(selected.itemRewards);
             player.sendMessage("Your achievement rewards have been placed in your bank!");

@@ -714,7 +714,7 @@ public int howmuchdissolveamt = 0;
     //	public GameModes selectedGameMode;
     public GameModes selectedGameMode;
     public boolean dropMessageToggle = false;
-    public boolean motivationalToggle = true;
+    public boolean motivationalToggle = false;
     public boolean membershipMessages = true;
     public boolean hasReferral;
     public long lastDonationClaim;

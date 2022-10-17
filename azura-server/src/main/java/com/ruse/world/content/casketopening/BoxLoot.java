@@ -33,8 +33,6 @@ public class BoxLoot {
 				double rate = drop.getRate() * 100;
 				if (Misc.getRandom(10000) <= rate) {
 					possibleDrops[possibleDropsCount++] = drop;
-					MINIGAMES.log(player, CollectionLog.TREASURE_HUNTER, new Item(drop.getId()));
-					MINIGAMES.log(player, CollectionLog.ISLES_OF_AVALON, new Item(drop.getId()));
 				}
 			}
 			if (possibleDropsCount > 0) {

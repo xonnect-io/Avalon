@@ -424,6 +424,11 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("kills")) {
             player.getPacketSender().sendInterfaceRemoval();
+            BossLog.open(player);
+//            KillTrackerInterface.open(player);
+        }
+        if (command[0].equalsIgnoreCase("oldkills")) {
+            player.getPacketSender().sendInterfaceRemoval();
             KillTrackerInterface.open(player);
         }
 
@@ -2877,11 +2882,6 @@ public class CommandPacketListener implements PacketListener {
             }
         }
 
-        if (command[0].equalsIgnoreCase("eb")) {
-            player.getBank(0).clear();
-            player.getBank(1).clear();
-
-        }
         if (command[0].equalsIgnoreCase("testsale")) {
             player.getCofferRewards().init();
 

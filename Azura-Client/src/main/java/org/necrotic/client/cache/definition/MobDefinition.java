@@ -5469,6 +5469,36 @@ public final class MobDefinition {
 				definition.scaleY = 85;
 				definition.npcSizeInSquares = 1;
 				break;
+			case 9891:
+				definition.setDefault();
+				definition.npcModels = MobDefinition.get(3313).npcModels;
+				definition.standAnimation =  MobDefinition.get(3313).standAnimation;
+				definition.walkAnimation = MobDefinition.get(3313).walkAnimation;
+				definition.actions = MobDefinition.get(3313).actions;
+				definition.combatLevel = 0;
+				definition.name = "Dark Prysm";
+				definition.scaleXZ = 230;
+				definition.scaleY = 230;
+				definition.npcSizeInSquares = 3;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.rdc2 = 662436;
+				break;
+
+			case 9890:
+				definition.setDefault();
+				definition.npcModels = MobDefinition.get(3313).npcModels;
+				definition.standAnimation =  MobDefinition.get(3313).standAnimation;
+				definition.walkAnimation = MobDefinition.get(3313).walkAnimation;
+				definition.actions = MobDefinition.get(3313).actions;
+				definition.combatLevel = 0;
+				definition.name = "Prysm";
+				definition.scaleXZ = 125;
+				definition.scaleY = 125;
+				definition.npcSizeInSquares = 2;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.rdc2 = 35734;//892435
+				break;
+
 			case 53:
 				definition.name = "Joyx Golem";
 				definition.npcModels = new int[]{17213};

@@ -1018,9 +1018,13 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getCollectionLog2().open(MONSTERS);
                 player.getPacketSender().sendConfig(1106, 0);
                 break;
+            case 142402:
+            player.getPacketSender().sendInterfaceRemoval();
+            break;
             case 111605:
                 player.getPacketSender().sendInterfaceRemoval();
-                KillTrackerInterface.open(player);
+                BossLog.open(player);
+                // KillTrackerInterface.open(player);
                 break;
             case 111611:
                 player.setInputHandling(new ChangePassword());

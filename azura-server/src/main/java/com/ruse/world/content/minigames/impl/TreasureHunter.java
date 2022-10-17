@@ -7,11 +7,14 @@ import com.ruse.world.World;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
+import com.ruse.world.content.osrscollectionlog.CollectionLog;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+
+import static com.ruse.world.content.osrscollectionlog.LogType.MINIGAMES;
 
 public class TreasureHunter {
 
@@ -65,6 +68,7 @@ public class TreasureHunter {
         player.getInventory().add(box.getId(), box.getAmount());
         player.getPointsHandler().incrementTreasureHunterKC(1);
         player.getAchievementTracker().progress(AchievementData.TREASURE_HUNTER, 1);
+            MINIGAMES.log(player, CollectionLog.TREASURE_HUNTER, new Item(box.getId()));
         player.getClickDelay().reset();
 
         if (box.isAnnounce()) {

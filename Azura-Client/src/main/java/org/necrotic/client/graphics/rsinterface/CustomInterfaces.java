@@ -2551,6 +2551,68 @@ public class CustomInterfaces extends RSInterface {
 
 	}
 
+	private static void bossLog() {
+		RSInterface Interface = addTabInterface(142400);
+		RSInterface logs = addInterface(142415);
+
+		setChildren(6, Interface);
+		int x = 85;
+		int y = 17;
+		int c = 0;
+		int id = 142401;
+		addSpriteLoader(id, 1670);
+		setBounds(id++, 0 + x, 0 + y, c++, Interface);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 1);
+		setBounds(id++, 321 + x, 10 + y, c++, Interface);
+
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		setBounds(id++, 321 + x, 10 + y, c++, Interface);
+
+		id++;
+
+		addText(id, "Boss Kill Log", tda, 2, 0xFFA500, true, true);
+		setBounds(id++, 174 + x, 10 + y, c++, Interface);
+
+		addText(id, "Total Npc Kills: ", tda, 2, 0xFFA500, true, true);
+		setBounds(id++, 174 + x, 273 + y, c++, Interface);
+
+		setBounds(142415, 10 + x, 37 + y, c++, Interface);
+
+		logs.width = 311;
+		logs.height = 235;
+		logs.scrollMax = 486;// 1790
+
+		setChildren(404, logs);
+		id = 142416;
+		int xx = 0;
+		y = 0;
+		c = 0;
+		addSpriteLoader(id, 1671);
+		setBounds(id++, xx, y, c++, logs);
+
+		addText(id, "Monster", tda, 2, 0xFFA500, false, true);
+		setBounds(id++, xx, y + 0, c++, logs);
+		addTextRight(id, "Kills", tda, 2, 0xFFA500, true);
+		setBounds(id++, xx + 275 + 31, y + 0, c++, logs);
+		addTextRight(id, "Best Time", tda, 2, 0xFFA500, true);
+		setBounds(id++, xx + 365 + 66, y + 0, c++, logs);
+
+		for (int i = 0; i < 200; i++) {
+			addText(id, "", tda, 1, 0xFFA500, false, true);
+			setBounds(id++, xx + 1, y + 22, c++, logs);
+
+			addTextRight(id, "0", tda, 1, 0xFFA500, true);
+			setBounds(id++, xx + 303, y + 22, c++, logs);
+
+			xx = 0;
+			y += 18;
+		}
+
+	}
+
+
+
 	private void equipmentTab() {
 		int[] remove = {
 				1672, 1669, 1670, 1671,
@@ -7316,6 +7378,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		equipmentScreenInterface();
 		itemsKeptOnDeathInterface();
 		clanChatTabInterface();
+		bossLog();
 		configureLunar();
 		redoSpellBooks();
 		collectionLog(tda);

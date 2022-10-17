@@ -51,6 +51,12 @@ public class BossPets {
 			this.npcId = npcId;
 			this.itemId = itemId;
 		}
+
+		BossPet(int npcId, int spawnNpcId, int itemId) {
+			this.npcId = npcId;
+			this.spawnNpcId = spawnNpcId;
+			this.itemId = itemId;
+		}
 		BossPet(int npcId, int itemId, String boost) {
 			this.npcId = npcId;
 			this.itemId = itemId;
@@ -63,7 +69,7 @@ public class BossPets {
 			this.boost = boost;
 		}
 
-		public int npcId, itemId, zoom = 800;
+		public int npcId,spawnNpcId, itemId, zoom = 800;
 		public String boost = "None";
 
 		public static BossPet forId(int itemId) {

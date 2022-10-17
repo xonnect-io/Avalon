@@ -1,13 +1,11 @@
 package com.ruse.model.container;
 
 import com.google.common.collect.Iterables;
+import com.ruse.GameSettings;
 import com.ruse.model.GroundItem;
 import com.ruse.model.Item;
 import com.ruse.model.PlayerRights;
-import com.ruse.model.container.impl.Bank;
-import com.ruse.model.container.impl.GroupIronmanBank;
-import com.ruse.model.container.impl.Inventory;
-import com.ruse.model.container.impl.Shop;
+import com.ruse.model.container.impl.*;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.world.entity.impl.GroundItemManager;
 import com.ruse.world.entity.impl.player.Player;
@@ -27,15 +25,26 @@ import java.util.stream.Collectors;
 public abstract class ItemContainer {
 
     /**
-     * Player who owns the item container.
+     * The amount of items the container can hold, such as 28 for inventory.
      */
-    private Player player;
+    public abstract int capacity();
 
     /**
-     * The items located in the container.
+     * The container's type enum, see enum for information.
      */
-    public Item[] items = new Item[capacity()];
+    public abstract StackType stackType();
 
+    /**
+     * The refresh method to send the container's interface on addition or deletion
+     * of an item.
+     */
+    public abstract ItemContainer refreshItems();
+
+    /**
+     * The full method which contains the content a player will receive upon
+     * container being full, such as a message when inventory is full.
+     */
+    public abstract ItemContainer full();
 
     /**
      * ItemContainer constructor to create a new instance and to define the player.
@@ -63,26 +72,9 @@ public abstract class ItemContainer {
     }
 
     /**
-     * The amount of items the container can hold, such as 28 for inventory.
+     * Player who owns the item container.
      */
-    public abstract int capacity();
-
-    /**
-     * The container's type enum, see enum for sendInformation.
-     */
-    public abstract StackType stackType();
-
-    /**
-     * The refresh method to send the container's interface on addition or deletion
-     * of an item.
-     */
-    public abstract ItemContainer refreshItems();
-
-    /**
-     * The full method which contains the content a player will receive upon
-     * container being full, such as a message when inventory is full.
-     */
-    public abstract ItemContainer full();
+    private Player player;
 
     /**
      * Gets the owner's player instance.
@@ -102,42 +94,30 @@ public abstract class ItemContainer {
     }
 
     /**
+     * The items located in the container.
+     */
+    public Item[] items = new Item[capacity()];
+
+    /**
      * Gets the items in the container.
      *
      * @return items.
      */
     public Item[] getItems() {
-        if (this instanceof GroupIronmanBank) {
-            if (items.length != capacity()) {
+        if (this instanceof GroupIronmanBank){
+            if (items.length != capacity()){
                 Item[] newItems = new Item[capacity()];
 
                 for (int i = 0; i < capacity(); i++) {
                     newItems[i] = new Item(-1, 0);
                 }
-                for (int i = 0; i < 100; i++) {
+                for (int i = 0 ; i < 100; i ++){
                     newItems[i] = items[i];
                 }
                 setItems(newItems);
             }
         }
         return items;
-    }
-
-    /**
-     * Sets all the items in the container.
-     *
-     * @param items The item array to which set the container to hold.
-     */
-    public ItemContainer setItems(Item[] items) {
-
-        if (!(this instanceof Shop)) { // Fixes an exploit
-            if (items.length != capacity()) {
-                return this;
-            }
-        }
-
-        this.items = items;
-        return this;
     }
 
     public Item[] getCopiedItems() {
@@ -157,7 +137,7 @@ public abstract class ItemContainer {
         List<Item> items = new ArrayList<Item>();
         for (Item item : this.items) {
             if (item != null && item.getId() > 0) {
-                if (item.getAmount() > 0 || (this instanceof Bank || this instanceof Shop) && (item.getAmount() == 0 || item.getAmount() == -1)) {
+                if (item.getAmount() > 0 || (this instanceof Bank || this instanceof GroupIronmanBank || this instanceof Shop) && (item.getAmount() == 0 || item.getAmount() == -1)) {
                     items.add(item);
                 }
             }
@@ -176,6 +156,23 @@ public abstract class ItemContainer {
     }
 
     /**
+     * Sets all the items in the container.
+     *
+     * @param items The item array to which set the container to hold.
+     */
+    public ItemContainer setItems(Item[] items) {
+
+        if (!(this instanceof Shop)) { // Fixes an exploit
+            if (items.length != capacity()) {
+                return this;
+            }
+        }
+
+        this.items = items;
+        return this;
+    }
+
+    /**
      * Sets the item in said slot.
      *
      * @param slot Slot to set item for.
@@ -185,6 +182,7 @@ public abstract class ItemContainer {
         items[slot] = item;
         return this;
     }
+
     /**
      * Checks if the slot contains an item.
      *
@@ -217,7 +215,7 @@ public abstract class ItemContainer {
             return this;
         int tempFrom = fromSlot;
 
-        for (int tempTo = toSlot; tempFrom != tempTo; ) {
+        for (int tempTo = toSlot; tempFrom != tempTo;) {
             if (tempFrom > tempTo) {
                 swap(tempFrom, tempFrom - 1);
                 tempFrom--;
@@ -229,7 +227,6 @@ public abstract class ItemContainer {
 
         return this;
     }
-
     /**
      * Gets the amount of free slots the container has.
      *
@@ -308,7 +305,7 @@ public abstract class ItemContainer {
      */
     public int getEmptySlot() {
         for (int i = 0; i < capacity(); i++) {
-            if (items[i].getId() <= 0 || !(this instanceof Bank || this instanceof Shop) && items[i].getAmount() <= 0) {
+            if (items[i].getId() <= 0 || !(this instanceof Bank || this instanceof GroupIronmanBank || this instanceof Shop) && items[i].getAmount() <= 0) {
                 return i;
             }
         }
@@ -324,7 +321,7 @@ public abstract class ItemContainer {
     public int getSlot(int id) {
         for (int i = 0; i < capacity(); i++) {
             if (items[i].getId() > 0 && items[i].getId() == id) {
-                if (items[i].getAmount() > 0 || (this instanceof Bank || this instanceof Shop) && items[i].getAmount() == 0) {
+                if (items[i].getAmount() > 0 || (this instanceof Bank ||this instanceof GroupIronmanBank || this instanceof Shop) && items[i].getAmount() == 0) {
                     return i;
                 }
             }
@@ -505,7 +502,7 @@ public abstract class ItemContainer {
         if (items == null)
             return;
         for (Item item : items) {
-            if (item.getId() > 0 && (item.getAmount() > 0 || (item.getAmount() == 0 && (this instanceof Bank || this instanceof Shop)))) {
+            if (item.getId() > 0 && (item.getAmount() > 0 || (item.getAmount() == 0 && (this instanceof Bank || this instanceof GroupIronmanBank || this instanceof Shop)))) {
                 this.add(item, refresh);
             }
         }
@@ -550,21 +547,6 @@ public abstract class ItemContainer {
         return add(new Item(id, amount));
     }
 
-    public ItemContainer addDropIfFull(int id, int amount) {
-        boolean stackable = false;
-        ItemDefinition def = ItemDefinition.forId(id);
-        if (def != null) {
-            stackable = def.isStackable();
-        }
-        if (!isFull() || (isFull() && contains(id) && stackable)) {
-            return add(new Item(id, amount));
-        } else {
-            GroundItemManager.spawnGroundItem(player, new GroundItem(new Item(id, amount),
-                    player.getPosition(), player.getUsername(), false, 120, false, 120));
-            return null;
-        }
-    }
-
     /**
      * Adds an item to the item container.
      *
@@ -574,45 +556,71 @@ public abstract class ItemContainer {
      * @return The ItemContainer instance.
      */
     public ItemContainer add(Item item, boolean refresh) {
-        if (item == null || item.getId() <= 0 || (item.getAmount() <= 0 && !(this instanceof Shop || this instanceof Bank))) {
+        if (item == null || item.getId() <= 0 || (item.getAmount() <= 0 && !(this instanceof Shop || this instanceof Bank || this instanceof GroupIronmanBank))) {
             return this;
         }
 
-        if (item.getId() == ItemDefinition.COIN_ID && this instanceof Inventory) {
-            if (getAmount(item.getId()) + item.getAmount() >= Integer.MAX_VALUE
-                    || getAmount(item.getId()) + item.getAmount() <= -1) {
-                if (item.getAmount() >= 1_000) {
-                    Item newItem = new Item(ItemDefinition.MILL_ID, item.getAmount() / 1_000);
-                    if (!isFull()) {
-                        add(newItem);
-                    } else {
-                        getPlayer().depositItemBank(newItem);
+        if (getPlayer() != null) {
+            if (item != null) {
+                if (getPlayer().getRights() != PlayerRights.OWNER) {
+                    String container = null;
+                    if (this instanceof Inventory)
+                        container = "Inventory : ";
+                    else if (this instanceof Bank)
+                        container = "Bank : ";
+                    else if (this instanceof Equipment)
+                        container = "Equipment : ";
+                    else if (this instanceof PriceChecker)
+                        container = "PriceChecker : ";
+                    else if (this instanceof Shop)
+                        container = "Shop : ";
+                    else if (this instanceof BeastOfBurden)
+                        container = "BeastOfBurden : ";
+
+                    if (container != null && getPlayer().getPosition() != null && item.getDefinition() != null  && item.getDefinition().getName() != null
+                            && getPlayer().getRights() != PlayerRights.YOUTUBER && !GameSettings.LOCALHOST) {
+                        if (item.getId() != 995 && item.getId() != 10835 && item.getId() != 5021&& item.getId() != 5020 && item.getId() != 18016
+                                && item.getId() != 7936  && item.getId() != 7956  && item.getId() != 12858
+                                && item.getId() != 12657 && !(item.getId() >= 555 && item.getId() <= 566)) {
+                            if ((item.getId() == 12855 && item.getAmount() >= 500_000_000) || (item.getId() == 5022 && item.getAmount() >= 100_000_000)) {
+								/*DiscordMessager.sendWebhook(getPlayer().getUsername() + " - Added to " + container + "Name: " + item.getDefinition().getName() +
+												", Id: " + item.getId() + ", Amount: " + Misc.insertCommasToNumber(item.getAmount() + "") + ", Position: " + getPlayer().getPosition().toString()
+										, Color.RED, "https://discord.com/api/webhooks/954116874898133112/kyimy5UU7drsJYiY0N6r8BP6H-fnifMYidsIB39CiMnQiGofGTiwQ_cX7sPXMWwNsqbU");
+							*/}
+                        }
                     }
-                    getPlayer().getPacketSender().sendMessage(
-                            "The coins that you could not hold in your inventory have been converted into tokens.");
-                    return this;
-                }else{
-                    int amount = getAmount(item.getId())  / 1_000;
-                    Item newItem = new Item(ItemDefinition.MILL_ID, amount);
-                    delete(item.getId(), amount * 1_000);
-                    if (!isFull()) {
-                        add(newItem);
-                    } else {
-                        getPlayer().depositItemBank(newItem);
-                    }
-                    getPlayer().getPacketSender().sendMessage(
-                            "The coins that you had have been converted into tokens.");
                 }
             }
         }
+
+        if (item.getId() == 995 && this instanceof Inventory) {
+            if (getAmount(item.getId()) + item.getAmount() >= Integer.MAX_VALUE
+                    || getAmount(item.getId()) + item.getAmount() <= -1) {
+                getPlayer().setMoneyInPouch(getPlayer().getMoneyInPouch() + item.getAmount());
+                getPlayer().getPacketSender().sendString(8135, "" + player.getMoneyInPouch() + "");
+                getPlayer().getPacketSender().sendMessage(
+                        "The coins that you could not hold in your inventory have been placed in your pouch.");
+                return this;
+            }
+        }if (item.getId() == 12855 && this instanceof Inventory) {
+            if (getAmount(item.getId()) + item.getAmount() >= Integer.MAX_VALUE
+                    || getAmount(item.getId()) + item.getAmount() <= -1) {
+                getPlayer().getPacketSender().sendMessage(
+                        "The do not have enough space in your inventory for this item.");
+                return this;
+            }
+        }
+
         if (ItemDefinition.forId(item.getId()).isStackable() || stackType() == StackType.STACKS) {
+
             int slot = getSlot(item.getId());
+
             if (slot == -1)
                 slot = getEmptySlot();
+
             if (slot == -1) {
                 if (getPlayer() != null) {
-                    if (getPlayer().getRights() != PlayerRights.ADMINISTRATOR
-                            && getPlayer().getRights() != PlayerRights.OWNER) {
+                    if ( getPlayer().getRights() != PlayerRights.OWNER) {
                         GroundItemManager.spawnGroundItem(player, new GroundItem(item, player.getPosition().copy(),
                                 player.getUsername(), player.getHostAddress(), false, 120,
                                 player.getPosition().getZ() >= 0 && player.getPosition().getZ() < 4,
@@ -621,10 +629,18 @@ public abstract class ItemContainer {
                                 .sendMessage("The item which you couldn't hold has been placed beneath you.");
                         if (refresh)
                             refreshItems();
+                    }else{
+                        if (refresh)
+                            refreshItems();
+                        return this;
                     }
                 }
                 return this;
             }
+
+            if (items[slot].getId() == -1 && items[slot].getAmount() > 0)
+                items[slot].setAmount(0);
+
             long totalAmount = items[slot].getAmount() + item.getAmount();
             items[slot].setId(item.getId());
             items[slot].setAmount(items[slot].getAmount() + item.getAmount());
@@ -634,6 +650,9 @@ public abstract class ItemContainer {
                 int slot = getEmptySlot();
                 if (slot == -1) {
                     if (getPlayer().getRights() != PlayerRights.ADMINISTRATOR
+                            && getPlayer().getRights() != PlayerRights.COMMUNITY_MANAGER
+                            && getPlayer().getRights() != PlayerRights.ONYX_DONATOR
+                            && getPlayer().getRights() != PlayerRights.ZENYTE_DONATOR
                             && getPlayer().getRights() != PlayerRights.OWNER) {
                         GroundItemManager.spawnGroundItem(player, new GroundItem(Item.getNoted(item.getId(), amount),
                                 player.getPosition().copy(), player.getUsername(), false, 120,
@@ -644,8 +663,15 @@ public abstract class ItemContainer {
                         if (refresh)
                             refreshItems();
                         return this;
+                    }else{
+                        if (refresh)
+                            refreshItems();
+                        return this;
                     }
                 } else {
+                    if (items[slot].getId() == -1 && items[slot].getAmount() > 0)
+                        items[slot].setAmount(0);
+
                     items[slot].setId(item.getId());
                     items[slot].setAmount(1);
                 }
@@ -656,11 +682,6 @@ public abstract class ItemContainer {
             refreshItems();
         return this;
     }
-
-    public boolean isBank() {
-        return this instanceof Bank || this instanceof GroupIronmanBank;
-    }
-
     /**
      * Deletes an item from the item container.
      *
@@ -723,10 +744,10 @@ public abstract class ItemContainer {
     /**
      * Deletes an item from the item container.
      *
-     * @param id     The item to delete.
+     * @param id The item to delete.
      * @param amount The item amount to delete.
-     * @param slot   The slot of the item (used to delete the item from said slot, not
-     *               the first one found).
+     * @param slot The slot of the item (used to delete the item from said slot, not
+     *             the first one found).
      * @return The ItemContainer instance.
      */
     public ItemContainer delete(int id, int amount, int slot) {
@@ -747,13 +768,13 @@ public abstract class ItemContainer {
     public ItemContainer delete(Item item, int slot, boolean refresh, ItemContainer toContainer) {
         if (item == null || slot < 0)
             return this;
-        boolean leavePlaceHolder = (toContainer instanceof Inventory && this instanceof Bank
+        boolean leavePlaceHolder = (toContainer instanceof Inventory && (this instanceof Bank || this instanceof GroupIronmanBank)
                 && getPlayer().isPlaceholders()) || this instanceof Shop;
         if (item.getAmount() > getAmount(item.getId()))
             item.setAmount(getAmount(item.getId()));
         if (item.getDefinition().isStackable() || stackType() == StackType.STACKS) {
             if (toContainer != null && !item.getDefinition().isStackable()
-                    && item.getAmount() > toContainer.getFreeSlots() && !(this instanceof Bank) && !(this instanceof Shop))
+                    && item.getAmount() > toContainer.getFreeSlots() && !(this instanceof Bank)&& !(this instanceof GroupIronmanBank) && !(this instanceof Shop))
                 item.setAmount(toContainer.getFreeSlots());
             items[slot].setAmount(items[slot].getAmount() - item.getAmount());
             if (items[slot].getAmount() < 1) {
@@ -875,38 +896,34 @@ public abstract class ItemContainer {
     }
 
 
-    public int slotOf(Item item) {
-        return getSlot(item);
+    public int getSpaceFor(int id) {
+        ItemDefinition definition = ItemDefinition.forId(id);
+        if (definition.isStackable()) {
+            return getFreeSlots() > 0 || contains(id) ? Integer.MAX_VALUE - getAmount(id) : getFreeSlots();
+        } else {
+            return getFreeSlots();
+        }
     }
 
-    public int getSlot(Item item) {
-        for (int i = 0; i < capacity(); i++) {
-            if (items[i].getId() > 0 && items[i].getId() == item.getId()) {
-                if (items[i].getAmount() > 0 || (this instanceof Bank) && items[i].getAmount() <= 1) {
-                    return i;
-                }
+    public boolean hasSpaceFor(int id, int amount) {
+        return getSpaceFor(id) >= amount;
+    }
+
+    public boolean hasFreeSlots(int amount) {
+        if (freeSlots() < amount) {
+            return false;
+        }
+
+        return true;
+    }
+    public int freeSlots() {
+        int space = 0;
+        for (Item item : items) {
+            if (item.getId() == -1) {
+                space++;
             }
         }
-        return -1;
+        return space;
     }
 
-    public void clear() {
-        for (int i = 0; i < items.length; i++) {
-            items[i] = new Item(-1, 0);
-        }
-        refreshItems();
-    }
-
-    public boolean canHold(Item item) {
-        int inventorySpacesNeeded = item.getAmount();
-        if (item.getDefinition().isStackable() || item.getDefinition().isNoted())
-            inventorySpacesNeeded = 1;
-        if (contains(item.getId()))
-            inventorySpacesNeeded = 0;
-
-        if (getFreeSlots() >= inventorySpacesNeeded)
-            return true;
-
-        return false;
-    }
 }

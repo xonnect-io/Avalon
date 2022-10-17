@@ -435,6 +435,7 @@ public class RSInterface {
 	public boolean hoverable;
 	public boolean selected;
 
+	public boolean rightText;
 
 	public static void addProgressBar(int id, int width, int height, int currentPercent, int firstColor, int secondColor) {
 		RSInterface rsi = addInterface(id);
@@ -984,7 +985,29 @@ public class RSInterface {
 		}
 	}
 
-
+	public static RSInterface addTextRight(int id, String text, TextDrawingArea tda[], int idx, int color, boolean shadow) {
+		RSInterface tab = addTabInterface(id);
+		tab.parentID = id;
+		tab.id = id;
+		tab.type = 4;
+		tab.atActionType = 0;
+		tab.width = 0;
+		tab.height = 11;
+		tab.contentType = 0;
+		tab.opacity = 0;
+		tab.hoverType = -1;
+		tab.centerText = false;
+		tab.rightText = true;
+		tab.textShadow = shadow;
+		tab.textDrawingAreas = tda[idx];
+		tab.message = text;
+		tab.enabledMessage = "";
+		tab.disabledColor = color;
+		tab.enabledColor = 0;
+		tab.disabledMouseOverColor = 0;
+		tab.enabledMouseOverColor = 0;
+		return tab;
+	}
 
 
 	static void bestItems(TextDrawingArea[] tda) {

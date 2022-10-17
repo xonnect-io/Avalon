@@ -1,10 +1,12 @@
 package com.ruse.world.content;
 
-import java.util.Collections;
-import java.util.Comparator;
-
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.world.entity.impl.player.Player;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Collections;
+import java.util.Comparator;
 
 public class KillsTracker {
 
@@ -17,6 +19,7 @@ public class KillsTracker {
 
 	public static void submit(Player player, KillsEntry kill) {
 		int index = getIndex(player, kill);
+
 		if (index >= 0) {
 			player.getKillsTracker().get(index).amount += kill.amount;
 		} else {
@@ -82,8 +85,8 @@ public class KillsTracker {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 
 	public static void resetInterface(Player player) {
 		for (int i = 8145; i < 8196; i++)
@@ -95,19 +98,23 @@ public class KillsTracker {
 
 	public static int getIndex(Player player, KillsEntry kill) {
 		for (int i = 0; i < player.getKillsTracker().size(); i++) {
-			if (player.getKillsTracker().get(i).npcName.equals(kill.npcName)) {
+			if (player.getKillsTracker().get(i).getNpcId() == kill.getNpcId()) {
 				return i;
 			}
 		}
 		return -1;
 	}
 	public static void submitById(Player player, int npcId, boolean runningTotal, boolean boss) {
+		submitById(player, npcId, runningTotal, boss, 1);
+	}
+	public static void submitById(Player player, int npcId, boolean runningTotal, boolean boss, int amount) {
 		KillsEntry entry = entryForID(player, npcId, boss);
 
-		int amount = 1;
-		if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-				&& player.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
-			amount = 2;
+		if (npcId != 8501 && npcId != 14210 && npcId != 9019){
+			if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+					&& player.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+				amount *= 2;
+			}
 		}
 
 		if(runningTotal)
@@ -118,7 +125,7 @@ public class KillsTracker {
 	public static KillsEntry entryForID(final Player player, final int npcId, boolean boss) {
 		//If the task tracker contains a entry for the npc return the entry.
 		for (KillsEntry killsEntry : player.getKillsTracker()) {
-			if(killsEntry.getId() == npcId)
+			if(killsEntry.getNpcId() == npcId)
 				return killsEntry;
 		}
 		//If the kill tracker does not contain a entry for the npc return a new entry with 0 kills.
@@ -127,6 +134,8 @@ public class KillsTracker {
 		return entry;
 	}
 
+	@Getter
+	@Setter
 	public static class KillsEntry {
 
 		public KillsEntry(int npcId, int amount, boolean boss) {
@@ -135,23 +144,6 @@ public class KillsTracker {
 			this.runningTotal = amount;
 			this.boss = boss;
 			this.npcId = npcId;
-		}
-
-		public int getId() {
-			return npcId;
-		}
-		public int getAmount() {
-			return amount;
-		}
-		public int getRunningTotal() {
-			return this.runningTotal;
-		}
-
-		public void setAmount(int amount) {
-			this.amount = amount;
-		}
-		public void setRunningTotal(int amount) {
-			this.runningTotal = amount;
 		}
 
 		public int runningTotal;
@@ -164,17 +156,41 @@ public class KillsTracker {
 
 
 	public static int getTotalKills(Player player) {
-        int totalKills = 0;
-        for(KillsEntry entry : player.getKillsTracker()) {
-            totalKills += entry.getRunningTotal();
-        }
-        return totalKills;
-    }
-	
+		int totalKills = 0;
+		for(KillsEntry entry : player.getKillsTracker()) {
+			totalKills += entry.getRunningTotal();
+		}
+		return totalKills;
+	}
+
 	public static int getTotalKillsForNpc(int npcId, Player player) {
 		int total = 0;
 		for (KillsEntry entry : player.getKillsTracker()) {
-			if (entry.getId() != npcId) {
+			if (entry.getNpcId() != npcId) {
+				continue;
+			}
+			total += entry.getAmount();
+		}
+		return total;
+	}
+
+	public static int getFenrirKills(Player player) {
+		int total = 0;
+		for (KillsEntry entry : player.getKillsTracker()) {
+			if (entry.getNpcId() != 9810 && entry.getNpcId() != 9811 && entry.getNpcId() != 9812) {
+				continue;
+			}
+			total += entry.getAmount();
+		}
+		return total;
+	}
+
+	public static int getGemstoneKills(Player player) {
+		if (player.getUsername().equalsIgnoreCase("test"))
+			return 40000;
+		int total = 0;
+		for (KillsEntry entry : player.getKillsTracker()) {
+			if (entry.getNpcId() != 9892 && entry.getNpcId() != 9893 && entry.getNpcId() != 9894) {
 				continue;
 			}
 			total += entry.getAmount();

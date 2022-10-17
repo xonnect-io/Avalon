@@ -620,6 +620,9 @@ public final class TextDrawingArea extends DrawingArea {
 		}
 		method395(abyte0, i1, k1, DrawingArea.raster, j2, k, i2, l1, j1, i);
 	}
+	public void drawRightAlignedString(String s, int x, int y, int color, boolean shadow) {
+		drawRegularText(shadow,  x - method384(s), color, s, y);
+	}
 
 	private void method395(byte abyte0[], int i, int j, int ai[], int l, int i1, int j1, int k1, int l1, int i2) {
 		l1 = ((l1 & 0xff00ff) * i2 & 0xff00ff00) + ((l1 & 0xff00) * i2 & 0xff0000) >> 8;

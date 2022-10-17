@@ -8248,7 +8248,10 @@ public class Client extends GameRenderer {
                         }
                         if (childInterface.centerText) {
                             textDrawingArea.drawCenteredText(i4, childX + childInterface.width / 2 + xOffset, s1, l6, childInterface.textShadow);
+                        } else if (childInterface.rightText) {
+                            textDrawingArea.drawRightAlignedString(s1, childX + childInterface.width / 2 + xOffset, l6, i4, childInterface.textShadow);
                         } else {
+
                             textDrawingArea.drawRegularText(childInterface.textShadow, childX + xOffset, i4, s1, l6);
                         }
                     }

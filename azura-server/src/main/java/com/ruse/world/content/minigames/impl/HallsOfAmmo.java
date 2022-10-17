@@ -11,12 +11,15 @@ import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
+import com.ruse.world.content.osrscollectionlog.CollectionLog;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.npc.impl.HoVMobs.*;
 import com.ruse.world.entity.impl.player.Player;
+
+import static com.ruse.world.content.osrscollectionlog.LogType.MINIGAMES;
 
 public class HallsOfAmmo {
 
@@ -125,6 +128,7 @@ public class HallsOfAmmo {
                 int boxAmount = ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.DOUBLE_DROPS ?
                         box.getAmount() * 4 :   box.getAmount() * 2;
                 player.getInventory().add(box.getId(), boxAmount);
+                MINIGAMES.log(player, CollectionLog.ISLES_OF_AVALON, new Item(box.getId()));
                 player.getAchievementTracker().progress(AchievementData.CLEAR_THE_ISLES, 1);
                 player.getPointsHandler().incrementIslesKC(1);
                 player.sendMessage("You received x" + boxAmount + " " + ItemDefinition.forId(box.getId()).getName());

@@ -1,19 +1,19 @@
 package com.ruse.model.container.impl;
 
-import java.util.Objects;
-import java.util.Optional;
-
 import com.ruse.model.Item;
 import com.ruse.model.container.ItemContainer;
 import com.ruse.model.container.StackType;
 import com.ruse.model.container.impl.Bank.BankSearchAttributes;
 import com.ruse.model.definitions.ItemDefinition;
-import com.ruse.world.content.eventboss.EventBossManager;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Represents a player's inventory item container.
- * 
+ *
  * @author relex lawl
  */
 
@@ -21,7 +21,7 @@ public class Inventory extends ItemContainer {
 
 	/**
 	 * The Inventory constructor.
-	 * 
+	 *
 	 * @param player The player who's inventory is being represented.
 	 */
 	public Inventory(Player player) {
@@ -35,8 +35,8 @@ public class Inventory extends ItemContainer {
 		if (to.getFreeSlots() <= 0 && !to.contains(item.getId())) {
 			//if (!item.getDefinition().isStackable())
 			//if (!(to instanceof Bank)) {
-				to.full();
-				return this;
+			to.full();
+			return this;
 			//}
 		}
 		if (to instanceof BeastOfBurden || to instanceof PriceChecker) {
@@ -51,8 +51,21 @@ public class Inventory extends ItemContainer {
 				}
 			}
 		}
-		if (to.isBank()) {
+		if (to instanceof Bank) {
 			int checkId = ItemDefinition.forId(item.getId()).isNoted() ? item.getId() - 1 : item.getId();
+
+			if (item.getDefinition().isStackable() && item.getAmount() >= getItems()[slot].getAmount()){
+				item.setAmount(getItems()[slot].getAmount());
+			}
+
+			if ((item.getId() >= 23460 && item.getId() <= 23462)
+					|| (item.getId() >= 23748 && item.getId() <= 23751 )
+					|| (item.getId() ==  15111)
+			){
+				getPlayer().getPacketSender().sendMessage("You cannot deposit this item into your bank.");
+				return this;
+			}
+
 			if (to.getAmount(checkId) + item.getAmount() >= Integer.MAX_VALUE
 					|| to.getAmount(checkId) + item.getAmount() <= 0) {
 				int canBank = (Integer.MAX_VALUE - to.getAmount(checkId));
@@ -71,7 +84,7 @@ public class Inventory extends ItemContainer {
 			}
 		}
 		delete(item, slot, refresh, to);
-		if (to.isBank() && ItemDefinition.forId(item.getId()).isNoted()
+		if (to instanceof Bank && ItemDefinition.forId(item.getId()).isNoted()
 				&& !ItemDefinition.forId(item.getId() - 1).isNoted())
 			item.setId(item.getId() - 1);
 		to.add(item);
@@ -109,7 +122,17 @@ public class Inventory extends ItemContainer {
 		getPlayer().getPacketSender().sendMessage("Not enough space in your inventory.");
 		return this;
 	}
+	public boolean canHold(Item item) {
+		int inventorySpacesNeeded = item.getAmount();
+		if (item.getDefinition().isStackable() || item.getDefinition().isNoted())
+			inventorySpacesNeeded = 1;
+		if (contains(item.getId()))
+			inventorySpacesNeeded = 0;
 
+		if (getFreeSlots() >= inventorySpacesNeeded)
+			return true;
+		return false;
+	}
 	/**
 	 * Adds a set of items into the inventory.
 	 *
@@ -141,13 +164,16 @@ public class Inventory extends ItemContainer {
 		}
 	}
 
-	public static final int INTERFACE_ID = 3214;
 
-	public void add(Item[] items) {
+
+	public void add(List<Item> items) {
 		for (Item item : items) {
 			if (Objects.nonNull(item)) {
 				add(item);
 			}
 		}
 	}
+
+
+	public static final int INTERFACE_ID = 3214;
 }
