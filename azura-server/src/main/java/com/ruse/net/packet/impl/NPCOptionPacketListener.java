@@ -218,7 +218,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 241:
                         ShopManager.getShops().get(123).open(player);
                         player.getPacketSender().sendString(3903,
-                                "Spend your Global boss tokens on items");
+                                "Spend your Global tickets on items");
                         break;
                     case 4593:
                         ShopManager.getShops().get(550).open(player);

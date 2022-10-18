@@ -323,8 +323,9 @@ public final class ObjectDefinition {
 			definition.name = "AFK Tanzanite"; //#7a37b3
 			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
-		if (definition.type == 4004) {
-			definition.actions = new String[]{"Sacrifice", null, null, null, null};
+		if (definition.type == 4004 ||definition.type == 27306 ) {
+			definition.castsShadow = false;
+			definition.actions = new String[]{"Sacrifice", "Pray-at", null, null, null};
 		}
 
 		if (definition.type == 3769) {
@@ -1184,7 +1185,7 @@ public final class ObjectDefinition {
 			definition.actions = new String[5];
 			definition.actions[0] = "Study";
 		}
-		if (definition.type == 27339 || definition.type == 27306) {
+		if (definition.type == 27339) {
 			definition.interactive = true;
 			definition.name = "Mystical Monolith";
 			definition.actions = new String[5];

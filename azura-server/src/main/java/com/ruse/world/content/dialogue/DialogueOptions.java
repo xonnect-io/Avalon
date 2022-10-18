@@ -82,7 +82,7 @@ public class DialogueOptions {
 
                 case 9826:
                     player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(12));
-                    player.getPacketSender().sendEnterAmountPrompt("How many High-tier tickets would you like to withdraw?");
+                    player.getPacketSender().sendEnterAmountPrompt("How many Premium tickets would you like to withdraw?");
                     break;
                 case 9926:
                     player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(8));
@@ -632,7 +632,7 @@ public class DialogueOptions {
                     break;
                 case 9926:
                     player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(11));
-                    player.getPacketSender().sendEnterAmountPrompt("How many Global boss tokens would you like to withdraw?");
+                    player.getPacketSender().sendEnterAmountPrompt("How many Global tickets would you like to withdraw?");
                     break;
                 case 101:
                     player.getPlayerOwnedShopManager().openHistory();

@@ -308,6 +308,30 @@ public class TeleportInterfaceHandler {
 				}
 			}
 		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.DONATION_BOSS.getNpcId()) {
+			int roll = Misc.getRandom(3);
+			if (roll == 0) {
+				Position position = new Position(2656, 3812, 0);
+				TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+				System.out.println("Rolled : 0");
+			}
+			else if (roll == 1) {
+				Position position = new Position(2656, 3794, 0);
+				TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+				System.out.println("Rolled : 1");
+			}
+			else if (roll == 2) {
+				Position position = new Position(2667, 3805, 0);
+				TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+				System.out.println("Rolled : 2");
+			}
+			else {
+				Position position = new Position(2645, 3805, 0);
+				TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+				System.out.println("Rolled : 3");
+			}
+		}
 /*
 		if (player.getCurrentTeleport().getNpcId() == 9106) {
 			if (player.getRights() == PlayerRights.OWNER)

@@ -148,15 +148,33 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Slayer Champion!");
         }
-        if (command[0].equalsIgnoreCase("guardian")) {
+        if (command[0].equalsIgnoreCase("Vozzath")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(3445, 4105, 1);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-
+            int roll = Misc.getRandom(3);
+            if (roll == 0) {
+                Position position = new Position(2656, 3812, 0);
+                TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+                System.out.println("Rolled : 0");
+            }
+            else if (roll == 1) {
+                Position position = new Position(2656, 3794, 0);
+                TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+                System.out.println("Rolled : 1");
+            }
+            else if (roll == 2) {
+                Position position = new Position(2667, 3805, 0);
+                TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+                System.out.println("Rolled : 2");
+            }
+            else {
+                Position position = new Position(2645, 3805, 0);
+                TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+                System.out.println("Rolled : 3");
+            }
         }
 
         if (command[0].equalsIgnoreCase("donodeals")) {
@@ -208,7 +226,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("@red@<shad=1>Nightmare boss: @yel@" + NightmareBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Naraku boss: @yel@" + NarakuBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Ironman boss: @yel@" + IronmanBoss.timeLeft());
-            player.getPacketSender().sendMessage("@red@<shad=1>Avalon Guardian @yel@" + GuardianSpawnSystem.getLeft() + " tickets left");
+            player.getPacketSender().sendMessage("@red@<shad=1>Vozzath @yel@" + GuardianSpawnSystem.getLeft() + " tickets left");
             player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft() + " tokens left");
         }
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")

@@ -765,7 +765,7 @@ public class TeleportInterface {
         TELE0("Nightmare", 9017, new int[]{2980, 2771, 0}, 1500),
         TELE1("Naraku", 3305, new int[]{3420, 9563, 0}, 1350),
         TELE2("Dragon King", 4972, new int[]{2139, 5019, 0}, 1800),
-        TELE3("Avalon Guardian", 3830, new int[]{3491, 2772, 0}, 1900),
+        TELE3("Vozzath", 3830, new int[]{3491, 2772, 0}, 1900),
         TELE4("Iron", 587, new int[]{3808, 2842, 0}, 1500),
         TELE5("Nephilim Warrior", 9312, new int[]{2144, 3294, 0}, 1100),
         ;

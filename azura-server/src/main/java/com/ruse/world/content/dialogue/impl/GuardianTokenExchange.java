@@ -1,7 +1,6 @@
 package com.ruse.world.content.dialogue.impl;
 
 import com.ruse.model.input.impl.SpawnGuardianBoss;
-import com.ruse.model.input.impl.SpawnNephilimBoss;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dialogue.DialogueExpression;
 import com.ruse.world.content.dialogue.DialogueType;
@@ -31,14 +30,14 @@ public class GuardianTokenExchange {
 
 			@Override
 			public String[] dialogue() {
-				return new String[] { "Sacrifice High-Tier Tickets to spawn the Avalon Guardian" };
+				return new String[] { "Sacrifice Premium Tickets to spawn Vozzath" };
 			}
 
 			@Override
 			public void specialAction() {
 				player.getPacketSender().sendInterfaceRemoval();
 				player.setInputHandling(new SpawnGuardianBoss());
-				player.getPacketSender().sendEnterAmountPrompt("Sacrifice High-Tier Tickets");
+				player.getPacketSender().sendEnterAmountPrompt("Sacrifice Premium Tickets");
 			}
 		};
 	}

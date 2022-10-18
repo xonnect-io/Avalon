@@ -20,7 +20,9 @@ public class BonesOnAltar {
 				.sendInterfaceModel(1746, itemId, 150).sendChatboxInterface(4429);
 		player.getPacketSender().sendString(2800, "How many would you like to offer?");
 	}
-
+	public static void offerAllBones(Player player) {
+		offerBones(player, player.getInventory().getAmount(player.getSelectedSkillingItem()));
+	}
 	public static void offerBones(final Player player, final int amount) {
 		final int boneId = player.getSelectedSkillingItem();
 		player.getSkillManager().stopSkilling();

@@ -2724,10 +2724,12 @@ public final class ItemDefinition {
 
 			case 23271:// super sayian
 				itemDef.copyItem(12608);
+				itemDef.modelID = 19698;
+				itemDef.maleEquip1 = 19698;
+				itemDef.femaleEquip1 = 19698;
 				itemDef.name = "Celestial Aura";
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.newModelColor = new int[]{56};
-				itemDef.editedModelColor = new int[]{130};
+
 				break;
 				
 			case 23272:// super sayian

@@ -1845,7 +1845,7 @@ public final class MobDefinition {
 				break;
 			case 5838:
 				definition.combatLevel = 0;
-				definition.name = "High-Tier Exchange";
+				definition.name = "Premium Exchange";
 				definition.actions = new String[]{"Trade", null, null, null, null};
 				break;
 			case 3001:
@@ -4344,15 +4344,17 @@ public final class MobDefinition {
 				break;
 
 			case 3830:
+				definition.setDefault();
+				definition.npcModels = new int[]{19688};
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.actions = MobDefinition.get(1).actions;
+				definition.combatLevel = 0;
+				definition.name = "Vozzath";
+				definition.scaleXZ = 230;
+				definition.scaleY = 230;
+				definition.npcSizeInSquares = 3;
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.name = "Avalon Guardian";
-				definition.npcModels = new int[]{18007};
-				definition.combatLevel = 785;
-				definition.npcSizeInSquares = 4;
-				definition.standAnimation = 808;
-				definition.walkAnimation = 819;
-				definition.scaleXZ = 360;
-				definition.scaleY = 360;
 				break;
 				
 			case 3831:
@@ -5468,6 +5470,58 @@ public final class MobDefinition {
 				definition.scaleXZ = 85;
 				definition.scaleY = 85;
 				definition.npcSizeInSquares = 1;
+				break;
+			case 9893:
+				definition.setDefault();
+				definition.npcModels = new int[]{19684};
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.actions = MobDefinition.get(1).actions;
+				definition.combatLevel = 0;
+				definition.name = "Evil Witch";
+				definition.scaleXZ = 230;
+				definition.scaleY = 230;
+				definition.npcSizeInSquares = 3;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				break;
+			case 9894:
+				definition.setDefault();
+				definition.npcModels = new int[]{19688};
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.actions = MobDefinition.get(1).actions;
+				definition.combatLevel = 0;
+				definition.name = "Range NPC";
+				definition.scaleXZ = 230;
+				definition.scaleY = 230;
+				definition.npcSizeInSquares = 3;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				break;
+			case 9895:
+				definition.setDefault();
+				definition.npcModels = new int[]{19686};
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.actions = MobDefinition.get(1).actions;
+				definition.combatLevel = 0;
+				definition.name = "Melee NPC";
+				definition.scaleXZ = 230;
+				definition.scaleY = 230;
+				definition.npcSizeInSquares = 3;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				break;
+			case 9896:
+				definition.setDefault();
+				definition.npcModels = new int[]{19694};
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.actions = MobDefinition.get(1).actions;
+				definition.combatLevel = 0;
+				definition.name = "Magic NPC";
+				definition.scaleXZ = 230;
+				definition.scaleY = 230;
+				definition.npcSizeInSquares = 3;
+				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 			case 9891:
 				definition.setDefault();

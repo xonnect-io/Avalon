@@ -37,9 +37,9 @@ public class SpawnNephilimBoss extends EnterAmount {
 
 		player.incrementNephilimBonus(ticketAmount);
 		if (NephilimSpawnSystem.sacrificedCount <= 249 && amount > 0) {
-			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
-			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> @blu@" + NephilimSpawnSystem.getLeft() + " @epi@more Nephilim tokens left for Nephilim Warrior spawn.");
-			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");
+			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> <col=c80101><shad=500202>" + player.getUsername() + " <col=191919>has contributed <col=c80101>" + ticketAmount + " <col=191919>Nephilim tokens.");
+			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> <col=c80101><shad=500202>" + NephilimSpawnSystem.getLeft() + " <col=191919>more Nephilim tokens left for Nephilim Warrior spawn.");
+			player.getPacketSender().sendMessage("<img=832><col=3a0101> <shad=500202>You will receive a @red@<col=c80101>" + player.getNephilimBonus() + "% <col=3a0101>Drop rate bonus your next Nephilim kill");
 			return;
 
 		}  if (NephilimSpawnSystem.sacrificedCount == 250) {
@@ -49,8 +49,8 @@ public class SpawnNephilimBoss extends EnterAmount {
 			NephilimSpawnSystem.sacrificedCount = 0;
 			World.setNephActive(true);
 
-			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> @epi@" + player.getUsername() + " has contributed " + ticketAmount + " Nephilim tokens.");
-			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");
+			World.sendMessage("<img=1463>[Nephilim Warrior]<img=1463> <col=c80101><shad=500202>" + player.getUsername() + "<col=191919> has contributed <col=c80101>" + ticketAmount + " <col=191919>Nephilim tokens.");
+			player.getPacketSender().sendMessage("<img=832><col=191919><shad=500202>You will receive a <col=c80101>" + player.getNephilimBonus() + "% <col=191919>Drop rate bonus your next Nephilim kill");
 
 			if (GameSettings.LOCALHOST == false)
 			DiscordMessager.sendNephilimBossLog("");

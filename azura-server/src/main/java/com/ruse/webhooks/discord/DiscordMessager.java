@@ -871,7 +871,7 @@ public class DiscordMessager extends JSONObject {
 			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
 					//.withURL("http://Avalon317.com")
 					.withColor(Color.orange)
-					.withDescription("The Avalon Guardian has spawned at ::guardian")
+					.withDescription("Vozzath has spawned at ::Vozzath")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))

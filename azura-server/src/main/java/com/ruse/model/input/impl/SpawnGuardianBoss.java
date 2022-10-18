@@ -1,6 +1,7 @@
 package com.ruse.model.input.impl;
 
 import com.ruse.GameSettings;
+import com.ruse.model.Animation;
 import com.ruse.model.Position;
 import com.ruse.model.input.EnterAmount;
 import com.ruse.webhooks.discord.DiscordMessager;
@@ -21,12 +22,12 @@ public class SpawnGuardianBoss extends EnterAmount {
 			highTierTickets = amount;
 		}
 		if (World.isGuardianActive()) {
-			player.getPacketSender().sendMessage("@red@Avalon guardian is already active!");
+			player.getPacketSender().sendMessage("@red@Vozzath is already active!");
 			return;
 		}
 
 		if (highTierTickets <= 0) {
-			player.getPacketSender().sendMessage("You don't have any High-tier tickets in your Inventory!");
+			player.getPacketSender().sendMessage("You don't have any Premium tickets in your Inventory!");
 			return;
 		}
 
@@ -39,25 +40,26 @@ public class SpawnGuardianBoss extends EnterAmount {
 
 		player.incrementGuardianBonus(highTierTickets);
 		if (GuardianSpawnSystem.highTierCount <= 99 && amount > 0) {
-			World.sendMessage("<col=4141ff><img=1463>[Avalon Guardian]<img=1463> @or2@" + player.getUsername() + " has contributed " + highTierTickets + " High-Tier Tickets.");
-			World.sendMessage("<col=4141ff><img=1463>[Avalon Guardian]<img=1463> @blu@" + GuardianSpawnSystem.getLeft() + " @or2@more High-Tier Tickets left for Avalon Guardian spawn.");
-			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getGuardianBonus() + "% @blu@Drop rate bonus your next Guardian kill");
+			player.performAnimation(new Animation(645));
+			World.sendMessage("<col=4141ff><img=1463>[Vozzath]<img=1463> <col=c80101><shad=500202>" + player.getUsername() + " <col=191919>has contributed <col=c80101>" + highTierTickets + " <col=191919>Premium Tickets.");
+			World.sendMessage("<col=4141ff><img=1463>[Vozzath]<img=1463> <col=c80101><shad=500202>" + GuardianSpawnSystem.getLeft() + " <col=191919>more Premium Tickets left for Vozzath spawn.");
+			player.getPacketSender().sendMessage("<img=832><col=c80101><shad=500202> You will receive a " + player.getGuardianBonus() + "% <col=191919>Drop rate bonus your next Vozzath kill");
 			return;
 
 		}  if (GuardianSpawnSystem.highTierCount == 100) {
-			String message = "The Avalon Guardian has appeared ::Guardian";
-			NPC npc = new NPC(3830, new Position(3445, 4113, 1)); //NPC npc = new NPC(3830, new Position(3491, 2782));
-
+			player.performAnimation(new Animation(645));
+			String message = "Vozzath has appeared ::Vozzath";
+			NPC npc = new NPC(3830, new Position(2655, 3803, 0)); //NPC npc = new NPC(3830, new Position(3491, 2782));
 			World.setGuardianActive(true);
 			World.register(npc);
 			GuardianSpawnSystem.highTierCount = 0;
-			World.sendMessage("<col=4141ff><img=1463>[Avalon Guardian]<img=1463> @or2@" + player.getUsername() + " has contributed " + highTierTickets + " High-Tier Tickets.");
-			player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getGuardianBonus() + "% @blu@Drop rate bonus your next Guardian kill");
+			World.sendMessage("<col=4141ff><img=1463>[Vozzath]<img=1463> <col=c80101><shad=500202>" + player.getUsername() + " <col=191919>has contributed <col=c80101>" + highTierTickets + " <col=191919>Premium Tickets.");
+			player.getPacketSender().sendMessage("<img=832> <col=191919><shad=500202>You will receive a <col=c80101><shad=500202>" + player.getGuardianBonus() + "% <col=191919>Drop rate bonus your next Vozzath kill");
 
 			if (GameSettings.LOCALHOST == false)
 			DiscordMessager.sendDonationBossLog("");
-			World.sendBroadcastMessage("@bla@The Avalon Guardian has appeared ::Guardian");
-			GameSettings.broadcastMessage = "The Avalon Guardian has appeared ::guardian";
+			World.sendBroadcastMessage("@bla@Vozzath has appeared ::Vozzath");
+			GameSettings.broadcastMessage = "Vozzath has appeared ::Vozzath";
 			GameSettings.broadcastTime = 100;
 			for (Player players : World.getPlayers()) {
 				if (players == null) {

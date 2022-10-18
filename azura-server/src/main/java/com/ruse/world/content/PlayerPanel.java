@@ -48,7 +48,7 @@ public class PlayerPanel {
                 ? "Naraku boss: @whi@" + NarakuBoss.timeLeft() : "Naraku boss : @whi@Alive ::naraku"),
                 (IronmanBoss.currentBoss == null
                 ? "Ironman boss: @whi@" + IronmanBoss.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
-                "Avalon Guard: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
+                "Vozzath: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
                 "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
                 (PennywiseSpawn.bossAlive == false
                         ? "Spirit of Scorpius: @whi@" + PennywiseSpawn.getTimeLeft() : "Spirit of Scorpius: @whi@Alive ::hween"),

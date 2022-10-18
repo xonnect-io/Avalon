@@ -385,7 +385,14 @@ public class ItemDef3 {
 				itemDef.modelID = 100050;
 				itemDef.modelZoom = 4000;
 				break;
-
+			case 24394:
+				itemDef.copyItem(5074);
+				itemDef.name = "Vozzath Costume";
+				itemDef.modelID = 19688;
+				itemDef.modelZoom = 5000;
+				itemDef.maleEquip1 = 19688;
+				itemDef.femaleEquip1 = 19688;
+				break;
 			case 23020:
 				itemDef.copyItem(19670);
 				itemDef.name = "Vote Scroll";
@@ -801,54 +808,86 @@ public class ItemDef3 {
 				itemDef.name = "Aura 6";
 				itemDef.modelID = 100128;
 				break;
-
 			case 23281:
-				itemDef.copyItem(4708);
-				itemDef.name = "Avalon helm";
-				itemDef.modelZoom = 1000;
-				itemDef.modelID = 18720;
-				itemDef.maleEquip1 = 18735;
-				itemDef.femaleEquip1 = 18735;
-				itemDef.rdc2 = 44442;
+				itemDef.copyItem(6585);
+				itemDef.name = "Vozzath helm";
+				itemDef.modelID = 19689;
+				itemDef.maleEquip1 = 19689;
+				itemDef.femaleEquip1 = 19689;
+				itemDef.modelZoom = 850;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 90;
+				itemDef.modelOffsetX = 0;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+			case 22473:
+				itemDef.copyItem(6585);
+				itemDef.name = "Pumpkin head";
+				itemDef.modelID = 19697;
+				itemDef.maleEquip1 = 19697;
+				itemDef.femaleEquip1 = 19697;
+				itemDef.modelZoom = 850;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 90;
+				itemDef.modelOffsetX = 0;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 23282:
 				itemDef.copyItem(4712);
-				itemDef.name = "Avalon body";
-				itemDef.modelZoom = 1500;
-				itemDef.modelID = 18721;
-				itemDef.maleEquip1 = 18722;
-				itemDef.femaleEquip1 = 18722;
-				itemDef.rdc2 = 44442;
+				itemDef.name = "Vozzath body";
+				itemDef.modelID = 19690;
+				itemDef.maleEquip1 = 19690;
+				itemDef.femaleEquip1 = 19690;
+				itemDef.modelZoom = 1380;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 45;
+				itemDef.modelOffsetX = 0;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 23283:
-				itemDef.copyItem(4714);
-				itemDef.name = "Avalon legs";
-				itemDef.modelZoom = 1800;
-				itemDef.modelID = 18723;
-				itemDef.maleEquip1 = 18724;
-				itemDef.femaleEquip1 = 18724;
-				itemDef.rdc2 = 44442;
+				itemDef.name = "Vozzath legs";
+				itemDef.modelID = 19691;
+				itemDef.maleEquip1 = 19691;
+				itemDef.femaleEquip1 = 19691;
+				itemDef.modelZoom = 1560;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 20;
+				itemDef.modelOffsetY = 10;
+				itemDef.modelOffsetX = 0;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
 				break;
 
 			case 23284:
-				itemDef.copyItem(4708);
-				itemDef.name = "Avalon gloves";
-				itemDef.modelID = 18725;
-				itemDef.modelZoom = 1000;
-				itemDef.maleEquip1 = 18731;
-				itemDef.femaleEquip1 = 18731;
-				itemDef.rdc2 = 44442;
+				itemDef.copyItem(23281);
+				itemDef.name = "Vozzath gloves";
+				itemDef.modelID = 19692;
+				itemDef.maleEquip1 = 19692;
+				itemDef.femaleEquip1 = 19692;
+				itemDef.modelZoom = 1680;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 65;
+				itemDef.modelOffsetX = 0;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 23285:
-				itemDef.copyItem(20456);
-				itemDef.name = "Avalon boots";
-				itemDef.modelID = 18733;
-				itemDef.maleEquip1 = 18733;
-				itemDef.femaleEquip1 = 18733;
-				itemDef.rdc2 = 44442;
+				itemDef.name = "Vozzath boots";
+				itemDef.modelID = 19693;
+				itemDef.maleEquip1 = 19693;
+				itemDef.femaleEquip1 = 19693;
+				itemDef.modelZoom = 800;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = 1;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 
@@ -2424,9 +2463,9 @@ public class ItemDef3 {
 				break;
 				
 			case 23174:
-				itemDef.copyItem(10936);
-				itemDef.name = "High-tier ticket";
-				itemDef.rdc2 = 28643;
+				itemDef.copyItem(2996);
+				itemDef.name = "Premium ticket";
+				itemDef.rdc3 = 6626262;
 				itemDef.actions = new String[5];
 				break;
 

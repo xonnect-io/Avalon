@@ -822,6 +822,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 26003:
             case 5384:
             case -13390:
+            case 142402:
 
                 player.getPacketSender().sendInterfaceRemoval();
                 break;
@@ -1018,9 +1019,6 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getCollectionLog2().open(MONSTERS);
                 player.getPacketSender().sendConfig(1106, 0);
                 break;
-            case 142402:
-            player.getPacketSender().sendInterfaceRemoval();
-            break;
             case 111605:
                 player.getPacketSender().sendInterfaceRemoval();
                 BossLog.open(player);

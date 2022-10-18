@@ -404,6 +404,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 break;
 
                             case 4004:
+                            case 27306:
                                 DialogueManager.start(player, GuardianTokenExchange.getDialogue(player));
                                 break;
                             case 31435:
@@ -2379,6 +2380,20 @@ public class ObjectActionPacketListener implements PacketListener {
                                 PrayerHandler.startDrain(player);
                                 break;
 
+                            case 27306:
+                                if (player.getGuardianBonus() < 1) {
+                                    player.getPacketSender()
+                                            .sendMessage("You can only pray at this altar if you participated in the latest sacrifice.");
+                                    return;
+                                }
+                                player.performAnimation(new Animation(645));
+                                if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+                                        .getMaxLevel(Skill.PRAYER)) {
+                                    player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+                                            player.getSkillManager().getMaxLevel(Skill.PRAYER), true);
+                                    player.getPacketSender().sendMessage("You recharge your Prayer points.");
+                                }
+                                break;
                             case 4875:
                                 if (!player.getClickDelay().elapsed(2500))
                                     return;

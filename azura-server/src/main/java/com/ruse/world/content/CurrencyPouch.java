@@ -46,7 +46,7 @@ public class CurrencyPouch {
 
 
         amount = player.getCurrencyPouch().upgradeTokens;
-        currency = "Global boss token";
+        currency = "Global ticket";
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
         amount = player.getCurrencyPouch().pvmTickets;
@@ -90,11 +90,11 @@ public class CurrencyPouch {
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
         amount = player.getCurrencyPouch().globalTokens;
-        currency = "Global boss tokens";
+        currency = "Global tickets";
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
         amount = player.getCurrencyPouch().highTierTicket;
-        currency = "High-tier tickets";
+        currency = "Premium tickets";
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
         amount = player.getCurrencyPouch().celestialEnergy;
@@ -432,7 +432,7 @@ public class CurrencyPouch {
                 break;
 
 
-            case 11: //Global boss tokens
+            case 11: //Global tickets
                 currency = GLOBAL_BOSS_TOKEN;
                 inventoryAmount = player.getInventory().getAmount(currency);
 
@@ -460,7 +460,7 @@ public class CurrencyPouch {
                 }
                 break;
 
-            case 12: //High-tier tickets
+            case 12: //Premium tickets
                 currency = HIGH_TIER_TICKET;
                 inventoryAmount = player.getInventory().getAmount(currency);
 
@@ -624,7 +624,7 @@ public class CurrencyPouch {
                 currency = BLUE_CHARM;
                 break;
 
-            case 11: //Global boss tokens
+            case 11: //Global tickets
                 currency = GLOBAL_BOSS_TOKEN;
                 break;
 

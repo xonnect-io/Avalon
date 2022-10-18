@@ -19,15 +19,26 @@ public class ChatboxInterfaceSkillAction {
 			player.getPacketSender().sendInterfaceRemoval();
 			return;
 		}
+
+		if (!player.getClickDelay().elapsed(3000)
+				|| player.getInputHandling() != null && handleMakeXInterfaces(player, buttonId))
+			return;
+		if (player.getInputHandling() == null || amount <= 0) {
+			player.getPacketSender().sendInterfaceRemoval();
+			return;
+		}
 		if (player.getInputHandling() instanceof EnterAmountOfGemsToCut)
 			Gems.cutGem(player, amount, player.getSelectedSkillingItem());
 		else if (player.getInputHandling() instanceof EnterAmountToCook)
 			Cooking.cook(player, player.getSelectedSkillingItem(), amount);
 		else if (player.getInputHandling() instanceof EnterAmountToSpin)
 			Flax.spinFlax(player, amount);
-		else if (player.getInputHandling() instanceof EnterAmountOfBonesToSacrifice)
-			BonesOnAltar.offerBones(player, amount);
-		else if (player.getInputHandling() instanceof EnterAmountOfBowsToString)
+		else if (player.getInputHandling() instanceof EnterAmountOfBonesToSacrifice) {
+			if (buttonId == 1747)
+				BonesOnAltar.offerAllBones(player);
+			else
+				BonesOnAltar.offerBones(player, amount);
+		} else if (player.getInputHandling() instanceof EnterAmountOfBowsToString)
 			Fletching.stringBow(player, amount);
 		else if (player.getInputHandling() instanceof EnterGemAmount)
 			Fletching.crushGems(player, amount, player.getSelectedSkillingItem());

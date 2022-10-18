@@ -200,14 +200,14 @@ public class Locations {
 				player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");			}
 
 		},
-		GUARDIAN(new int[] { 3430, 3460}, new int[] { 4090, 4115},
+		GUARDIAN(new int[] { 2634, 2680}, new int[] { 3780, 3830},
 				true, true, true, false, false, true) {
 
 			@Override
 			public void enter(Player player) {
 				System.err.println("Called enter");
 				if (player.getGuardianBonus() > 0)
-				player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getGuardianBonus() + "% @blu@Drop rate bonus your next Guardian kill");
+				player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getGuardianBonus() + "% @blu@Drop rate bonus your next Vozzath kill");
 			}
 		},
 		VOTE_BOSS(new int[] { 3410, 3440}, new int[] { 4110, 4140},

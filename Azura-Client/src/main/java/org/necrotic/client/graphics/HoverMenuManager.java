@@ -103,12 +103,12 @@ public class HoverMenuManager {
                         9083,20591,10943,23240,3578,23253,22006,12630,22113,22114,22115,4684,4685,4686
                 )));
 
-        menus.put(23278, new HoverMenu("Has a chance to give you a wide-variety of high-tier items.",
+        menus.put(23278, new HoverMenu("Has a chance to give you a wide-variety of Premium items.",
                 Arrays.asList(
                         23254,4442,7995,22110,23225,23240,3578,23174,23239,23253,22121,10935,10943
                 )));
 
-        menus.put(23279, new HoverMenu("Has a chance to give you a wide-variety of high-tier items.",
+        menus.put(23279, new HoverMenu("Has a chance to give you a wide-variety of Premium items.",
                 Arrays.asList(
                         23254,4442,7995,22110,23225,23240,3578,23174,23239,23253,22121,10935,10943
                 )));

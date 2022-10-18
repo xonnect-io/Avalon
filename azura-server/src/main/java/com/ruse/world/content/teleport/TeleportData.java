@@ -238,7 +238,7 @@ public enum TeleportData {
 			?  DragonKingBoss.timeLeft() : "@whi@Alive ::dk"),"", TeleportCategory.GLOBALS, new Position(2139, 5019, 0), 79, false, 4972, -1,
 			new int[][] {{23229, 1}, {12855, 5000}, {5022, 1000},{989, 2},{20488, 10},{19114, 5},{10942, 1},{6769, 1},{10946, 1},{14176, 1}, {14172, 1}, {14174, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1800),
 
-	DONATION_BOSS(28313, 28313, 28313, 28237, "Avalon Guardian", "Avalon Guardian",
+	DONATION_BOSS(28313, 28313, 28313, 28237, "Vozzath", "Vozzath",
 			"@or1@Health:@whi@ 3,000,000,000","@or1@To Spawn: @whi@" + GuardianSpawnSystem.getLeft() + " tickets left","",
 			TeleportCategory.GLOBALS, new Position(3445, 4105, 1), 79, false, 3830, -1,
 			new int[][] {{23229, 2}, {19114, 2}, {11137, 10},{12855, 10_000},{15289, 1},{15288, 1},{15003, 1},{15002, 1},{10946, 1},{6769, 1}, {10942, 1}, {14999, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1900),

@@ -643,10 +643,10 @@ public class Shop extends ItemContainer {
             }
             GuardianSpawnSystem.highTierCount += amount;
             if (amount >= 10) {
-                World.sendMessage("<img=1463><col=0f9be9>[Avalon Guardian]<img=1463> <col=e77507>" + player.getUsername() + " has sacrificed " + amount + " High-Tier Tickets");
+                World.sendMessage("<img=1463><col=0f9be9>[Vozzath]<img=1463> <col=e77507>" + player.getUsername() + " has sacrificed " + amount + " Premium Tickets");
             }
             if (GuardianSpawnSystem.highTierCount >= 100) {
-                String message = "The Avalon Guardian has appeared ::Guardian";
+                String message = "Vozzath has appeared ::Vozzath";
                 NPC npc = new NPC(3830, new Position(3445, 4113, 1)); //NPC npc = new NPC(3830, new Position(3491, 2782));
                 World.setGuardianActive(true);
                 World.register(npc);
@@ -1956,29 +1956,29 @@ public class Shop extends ItemContainer {
                 switch (item) {
                     case 15290:
                     case 19116:
-                        return new Object[] { 2, "Global Boss Tokens" };
+                        return new Object[] { 2, "Global tickets" };
 
                     case 19115:
-                        return new Object[] { 4, "Global Boss Tokens" };
+                        return new Object[] { 4, "Global tickets" };
                     case 19114:
-                        return new Object[] { 6, "Global Boss Tokens" };
+                        return new Object[] { 6, "Global tickets" };
                     case 20488:
-                        return new Object[] { 10, "Global Boss Tokens" };
+                        return new Object[] { 10, "Global tickets" };
                     case 20489:
-                        return new Object[] { 100, "Global Boss Tokens" };
+                        return new Object[] { 100, "Global tickets" };
                     case 4446:
                     case 19886:
-                        return new Object[] { 250, "Global Boss Tokens" };
+                        return new Object[] { 250, "Global tickets" };
                     case 15358:
                     case 15359:
-                        return new Object[] { 200, "Global Boss Tokens" };
+                        return new Object[] { 200, "Global tickets" };
                     case 1486:
-                        return new Object[] { 500, "Global Boss Tokens" };
+                        return new Object[] { 500, "Global tickets" };
                     case 10947:
-                        return new Object[] { 750, "Global Boss Tokens" };
+                        return new Object[] { 750, "Global tickets" };
                     case 9084:
                     case 10946:
-                        return new Object[] { 1000, "Global Boss Tokens" };
+                        return new Object[] { 1000, "Global tickets" };
                 }
             } else if (shop == SAPPHIRE_STORE) {
                 switch (item) {
@@ -2016,25 +2016,25 @@ public class Shop extends ItemContainer {
                     case 9080:
                     case 9081:
                     case 9082:
-                        return new Object[]{20, "High-Tier Tickets"};
+                        return new Object[]{20, "Premium Tickets"};
                     case 12630:
-                        return new Object[]{75, "High-Tier Tickets"};
+                        return new Object[]{75, "Premium Tickets"};
                     case 20591:
-                        return new Object[]{90, "High-Tier Tickets"};
+                        return new Object[]{90, "Premium Tickets"};
                     case 9083:
-                        return new Object[]{100, "High-Tier Tickets"};
+                        return new Object[]{100, "Premium Tickets"};
                     case 20400:
-                        return new Object[]{200, "High-Tier Tickets"};
+                        return new Object[]{200, "Premium Tickets"};
                     case 7995:
-                        return new Object[]{350, "High-Tier Tickets"};
+                        return new Object[]{350, "Premium Tickets"};
                     case 23231:
                     case 23232:
                     case 23230:
                     case 22110:
-                        return new Object[]{400, "High-Tier Tickets"};
+                        return new Object[]{400, "Premium Tickets"};
                     case 23254:
                     case 4442:
-                        return new Object[]{725, "High-Tier Tickets"};
+                        return new Object[]{725, "Premium Tickets"};
                 }
             } else if (shop == EASTER_STORE_2) {
                 switch (item) {

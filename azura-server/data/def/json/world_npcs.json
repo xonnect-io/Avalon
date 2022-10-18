@@ -2553,6 +2553,88 @@
   {
     "npc-id": 9012,
     "face": "SOUTH",
+    "position": { "x": 2323, "y": 3985, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },  {
+  "npc-id": 9012,
+  "face": "SOUTH",
+  "position": { "x": 2334, "y": 4018, "z": 0 },
+  "walking-policy": {"coordinate": false,"radius": 1
+  }
+},  {
+  "npc-id": 9012,
+  "face": "SOUTH",
+  "position": { "x": 2315, "y": 3998, "z": 0 },
+  "walking-policy": {"coordinate": false,"radius": 1
+  }
+},
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
+    "position": { "x": 2328, "y": 4010, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
+    "position": { "x": 2340, "y": 4005, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
+    "position": { "x": 2346, "y": 4001, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
+    "position": { "x": 2355, "y": 4007, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
+    "position": { "x": 2350, "y": 3985, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
+    "position": { "x": 2336, "y": 3988, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
+    "position": { "x": 2323, "y": 3985, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
+    "position": { "x": 2332, "y": 4012, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
+    "position": { "x": 2325, "y": 3996, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9012,
+    "face": "SOUTH",
     "position": { "x": 2318, "y": 3993, "z": 0 },
     "walking-policy": {"coordinate": false,"radius": 1
     }

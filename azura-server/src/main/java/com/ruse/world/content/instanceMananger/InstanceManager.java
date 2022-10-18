@@ -53,15 +53,15 @@ public class InstanceManager {
                 return;
             }
         }
-        if (npcId == 9116 && player.getMagicGuildTier1()) {
+        if (npcId == 9116 && !player.getMagicGuildTier1()) {
             player.sendMessage("You need to be at least a level 1 Magician to do this.");
             return;
         }
-        if (npcId == 9117 && player.getMagicGuildTier2()) {
+        if (npcId == 9117 && !player.getMagicGuildTier2()) {
             player.sendMessage("You need to be at least a level 2 Magician to do this.");
             return;
         }
-        if (npcId == 9118 && player.getMagicGuildTier3()) {
+        if (npcId == 9118 && !player.getMagicGuildTier3()) {
             player.sendMessage("You need to be at least a level 3 Magician to do this.");
             return;
         }

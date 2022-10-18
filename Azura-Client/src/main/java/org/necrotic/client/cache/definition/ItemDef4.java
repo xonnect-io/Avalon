@@ -138,15 +138,15 @@ public class ItemDef4 {
 				break;
 
 			case 23457:
-				itemDef.copyItem(23282);
-				itemDef.name = "Avalon Costume";
-				itemDef.rdc2 = 44442;
+				itemDef.copyItem(24394);
+				itemDef.name = "Vozzath Costume";
+				//itemDef.rdc2 = 44442;
 				break;
 			case 23458:
 				itemDef.copyItem(23457);
 				itemDef.certID = 23457;
 				itemDef.certTemplateID = 24390;
-				itemDef.name = "Avalon Costume";
+				itemDef.name = "Vozzath Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
@@ -8213,9 +8213,9 @@ public class ItemDef4 {
 				break;
 
 			case 23229:
-				itemDef.copyItem(19864);
-				itemDef.name = "@yel@Global Boss Token";
-				itemDef.rdc2 = 21708;
+				itemDef.copyItem(10936);
+				itemDef.name = "@yel@Global ticket";
+				itemDef.rdc2 = 2170811;
 				break;
 
 			case 19864:

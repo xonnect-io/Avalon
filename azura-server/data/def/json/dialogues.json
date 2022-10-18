@@ -2333,7 +2333,7 @@
         "line1": "Green charms",
         "line2": "Crimson charms",
         "line3": "Blue charms",
-        "line4": "Global Boss tokens",
+        "line4": "Global tickets",
         "line5": "Next",
         "next": 9826,
         "npcId": -1
@@ -2342,7 +2342,7 @@
         "id": 9826,
         "type": "OPTION",
         "lines": 5,
-        "line1": "High-tier tickets",
+        "line1": "Premium tickets",
         "line2": "Celestial Energy",
         "line3": "Instance tokens (u)",
         "line4": "Instance tokens (s)",
