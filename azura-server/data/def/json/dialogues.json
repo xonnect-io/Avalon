@@ -2455,5 +2455,14 @@
         "line2": "Cancel",
         "next": -1,
         "npcId": 9085
+    },
+    {
+        "id": 13054,
+        "type": "OPTION",
+        "lines": 2,
+        "line1": "Start Raids",
+        "line2": "Cancel",
+        "next": -1,
+        "npcId": 9085
     }
 ]

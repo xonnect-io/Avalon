@@ -1527,7 +1527,7 @@ public class RSInterface {
 		main.child(9, 48140, 325, 61);
 		main.child(10, 48142, 260, 68);
 		main.child(11, 48143, 382, 68);
-		main.child(12, 48144, 255, 33);
+		main.child(12, 48144, 252, 33);
 		main.child(13, 48145, 58, 58);
 		main.child(14, 48146, 435, 32);
 		main.child(15, 48133, 325, 271);

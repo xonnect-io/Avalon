@@ -1,8 +1,9 @@
 package com.ruse.world.content.minigames;
 
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
-import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
+import com.ruse.world.content.raids.shadows.ShadowRaidParty;
+import com.ruse.world.content.raids.system.RaidsParty;
 
 /**
  * Holds different minigame attributes for a player
@@ -27,6 +28,8 @@ public class MinigameAttributes {
 	private final ZulrahAttributes zulrahAttributes = new ZulrahAttributes();
 	private final ZombieAttributes zombieAttributes = new ZombieAttributes();
 	private final SODAttributes sodAttributes = new SODAttributes();
+
+	private final ShadowAttributes shadowAttributes = new ShadowAttributes();
 
 	public class SODAttributes {
 		private RaidsParty party;
@@ -141,6 +144,63 @@ public class MinigameAttributes {
 		}
 	}
 
+
+
+	public class ShadowAttributes {
+		private ShadowRaidParty party;
+		private ShadowRaidParty invitation;
+		private long lastInvitation;
+		private int points;
+		private int deaths;
+
+		public ShadowRaidParty getParty() {
+			return party;
+		}
+
+		public void setParty(ShadowRaidParty raidsParty) {
+			this.party = raidsParty;
+		}
+
+		public long getLastInvitation() {
+			return lastInvitation;
+		}
+
+		public void setLastInvitation(long lastInvitation) {
+			this.lastInvitation = lastInvitation;
+		}
+
+		public ShadowRaidParty getPartyInvitation() {
+			return invitation;
+		}
+
+		public void setPartyInvitation(ShadowRaidParty partyInvitation) {
+			this.invitation = partyInvitation;
+		}
+
+		public void incrementDamageDealt(int damage) {
+			this.points += damage;
+		}
+
+		public void setDamageDealt(int damage) {
+			this.points = damage;
+		}
+
+		public int getDamageDealt() {
+			return this.points;
+		}
+
+		public void setDeaths(int deaths) {
+			this.deaths = deaths;
+		}
+
+		public void incrementDeaths() {
+			this.deaths++;
+		}
+
+		public int getDeaths() {
+			return deaths;
+		}
+	}
 
 	public class GraveyardAttributes {
 
@@ -579,6 +639,9 @@ public class MinigameAttributes {
 	}
 	public ZombieAttributes getZombieAttributes() {
 		return zombieAttributes;
+	}
+	public ShadowAttributes getShadowAttributes() {
+		return shadowAttributes;
 	}
 	public SODAttributes getSODAttributes() {
 		return sodAttributes;

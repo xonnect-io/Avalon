@@ -168,7 +168,8 @@ public class LegendsRaidParty {
         boolean destruct = true;
         if (hasEnteredRaids()) {
             for (Player player : getPlayers()) {
-                if (player.getLocation() == Locations.Location.ZOMBIE || player.getLocation() == Locations.Location.SOD)
+                if (player.getLocation() == Locations.Location.ZOMBIE || player.getLocation() == Locations.Location.SOD
+                        || player.getLocation() == Locations.Location.SHADOWS_OF_DARKNESS)
                     destruct = false;
             }
 

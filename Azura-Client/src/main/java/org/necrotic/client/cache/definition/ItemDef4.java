@@ -84,7 +84,7 @@ public class ItemDef4 {
 
 			case 23293:
 				itemDef.copyItem(6585);
-				itemDef.name = "Celestial Amulet";
+				itemDef.name = "<col=89584A>Fantasy Amulet";
 				itemDef.modelID = 19676;
 				itemDef.maleEquip1 = 19675;
 				itemDef.femaleEquip1 = 1975;
@@ -99,7 +99,7 @@ public class ItemDef4 {
 
 			case 23280:
 				itemDef.copyItem(6737);
-				itemDef.name = "Celestial Ring";
+				itemDef.name = "<col=89584A>Fantasy Ring";
 				itemDef.modelID = 19677;
 				itemDef.maleEquip1 = -1;
 				itemDef.femaleEquip1 = -1;
@@ -112,7 +112,7 @@ public class ItemDef4 {
 
 			case 23292:
 				itemDef.copyItem(6737);
-				itemDef.name = "Celestial Bracelet";
+				itemDef.name = "<col=89584A>Fantasy Bracelet";
 				itemDef.modelID = 19678;
 				itemDef.maleEquip1 = 19679;
 				itemDef.femaleEquip1 = 19679;
@@ -166,6 +166,18 @@ public class ItemDef4 {
 				itemDef.modelID = 15177;
 				itemDef.maleEquip1 = 15177;
 				itemDef.femaleEquip1 = 15177;
+				break;
+			case 23858:
+				itemDef.copyItem(13379);
+				itemDef.name = "Darkness Key Shards";
+				itemDef.actions = new String[]{"Combine", null, null, null, null};
+				itemDef.rdc2 = 21444442;
+				break;
+			case 23859:
+				itemDef.copyItem(18665);
+				itemDef.name = "Darkness Key";
+				itemDef.actions = new String[]{"Teleport", null, null, null, null};
+				itemDef.rdc2 = 21444442;
 				break;
 			case 24392:
 				itemDef.modelID = 15178;
@@ -3428,12 +3440,12 @@ public class ItemDef4 {
 
 				case 23294:
 				itemDef.copyItem(18639);
-				itemDef.name = "Celestial scales";
+				itemDef.name = "<col=89584A>Fantasy scales";
 				itemDef.modelID = 18814;
 				break;
 			case 23295:
 				itemDef.copyItem(18639);
-				itemDef.name = "Celestial rocks";
+				itemDef.name = "<col=89584A>Fantasy rocks";
 				itemDef.modelID = 18878;
 				itemDef.rotationX = 0;
 				itemDef.modelZoom = 1900;
@@ -3528,7 +3540,7 @@ public class ItemDef4 {
 				break;
 			case 2893:
 				itemDef.modelID = 18871;
-				itemDef.name = "Celestial bar";
+				itemDef.name = "<col=89584A>Fantasy bar";
 				break;
 			case 23276:
 				itemDef.copyItem(23275);
@@ -8232,8 +8244,10 @@ public class ItemDef4 {
 
 			case 23273:
 				itemDef.copyItem(14859);
-				itemDef.name = "@cya@Celestial Energy";
-				itemDef.rdc2 = 27333;
+				itemDef.name = "<col=89584A>Dark Matter";
+				itemDef.modelID = 19711;
+				itemDef.modelZoom = 500;
+				itemDef.rotationZ = 189;//189
 				break;
 
 			case 23268:

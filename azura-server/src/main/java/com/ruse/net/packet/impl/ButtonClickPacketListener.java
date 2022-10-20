@@ -55,6 +55,8 @@ import com.ruse.world.content.osrscollectionlog.CollectionLogButtons;
 import com.ruse.world.content.polling.PollCreation;
 import com.ruse.world.content.polling.PollManager;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
+import com.ruse.world.content.raids.shadows.ShadowRaidParty;
+import com.ruse.world.content.raids.shadows.ShadowRewards;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.rewardsList.RewardsHandler;
 import com.ruse.world.content.serverperks.ServerPerkContributionInput;
@@ -868,15 +870,23 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case -17400:
             case 110008:
+                if (player.getLocation() == Location.DARKNESS_LOBBY)
+                    ShadowRewards.open(player);
+                else
                 player.getCasketOpening().quickSpin();
                 break;
             case -17397:
-
+                if (player.getLocation() == Location.DARKNESS_LOBBY)
+                    ShadowRewards.openAll(player);
+                else
                 if (player.getInventory().contains(player.getMysteryBoxOpener().getOpenBox())) {
                     player.getMysteryBoxOpener().openAllRaids2Chest(player.getMysteryBoxOpener().getOpenBox());
                 }
                 break;
             case -17403:
+                if (player.getLocation() == Location.DARKNESS_LOBBY)
+                    player.getPacketSender().sendMessage("You can sacrifice Souls of Suffering armour to the chest to increase your chances.");
+                else
                 player.getPacketSender().sendMessage("<img=832> 20% Chance at 2X loot on Rare Rewards with a @blu@Suffering charm @bla@equipped.");
                 break;
             case 110007:
@@ -905,8 +915,19 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("<shad=1>@or2@You must be 99+ Slayer to do Legend Raids.");
                     return;
                 }
-
-                if (player.getLocation() == Location.ZOMBIE_LOBBY) {
+                if (player.getLocation() == Location.DARKNESS_LOBBY) {
+                    if (player.getShadowRaidsParty() != null) {
+                        if (player.getShadowRaidsParty().getOwner() != player) {
+                            player.getPacketSender().sendMessage("Only the party leader can invite other players.");
+                        } else {
+                            player.setInputHandling(new InviteRaidsPlayer());
+                            player.getPacketSender().sendEnterInputPrompt("Invite Player");
+                        }
+                    } else {
+                        if (player.getLocation() == Location.DARKNESS_LOBBY)
+                            new ShadowRaidParty(player).create();
+                    }
+                }else if (player.getLocation() == Location.ZOMBIE_LOBBY) {
                     if (player.getZombieRaidsParty() != null) {
                         if (player.getZombieRaidsParty().getOwner() != player) {
                             player.getPacketSender().sendMessage("Only the party leader can invite other players.");
@@ -937,12 +958,16 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 111706:
                 if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.SOD ||
-                        player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY) {
+                        player.getLocation() == Location.SHADOWS_OF_DARKNESS || player.getLocation() == Location.ZOMBIE_LOBBY ||
+                        player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY) {
                     if (player.getRaidsParty() != null) {
                         player.getRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
                     } else if (player.getZombieRaidsParty() != null) {
                         player.getZombieRaidsParty().remove(player, true);
+                        player.sendMessage("You left your Raids party.");
+                    } else if (player.getShadowRaidsParty() != null) {
+                        player.getShadowRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
                     }
                 } else {
@@ -972,8 +997,9 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111743:
             case 111746:
             case 111749:
-                if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.ZOMBIE_LOBBY
-                        || player.getLocation() == Location.SOD || player.getLocation() == Location.SOD_LOBBY) {
+                if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.SOD ||
+                        player.getLocation() == Location.SHADOWS_OF_DARKNESS || player.getLocation() == Location.ZOMBIE_LOBBY ||
+                        player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY) {
                     if (player.getRaidsParty() != null) {
                         if (player.equals(player.getRaidsParty().getOwner())) {
                             if (player.getRaidsParty().getPlayers()

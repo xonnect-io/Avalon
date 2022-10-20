@@ -98,7 +98,7 @@ public class CurrencyPouch {
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
         amount = player.getCurrencyPouch().celestialEnergy;
-        currency = "Celestial Energy";
+        currency = "Dark Matter";
         player.sendMessage("Your pouch contains @red@" + Misc.formatNumber(amount) + " @bla@" + currency);
 
         amount = player.getCurrencyPouch().instancetokensu;
@@ -488,7 +488,7 @@ public class CurrencyPouch {
                 }
                 break;
 
-            case 13: //Celestial energy
+            case 13: //Dark Matter
                 currency = CELESTIAL_ENERGY;
                 inventoryAmount = player.getInventory().getAmount(currency);
 
@@ -634,7 +634,7 @@ public class CurrencyPouch {
                 break;
 
 
-            case 13: //Celestial Energy
+            case 13: //Dark Matter
                 currency = CELESTIAL_ENERGY;
                 break;
 

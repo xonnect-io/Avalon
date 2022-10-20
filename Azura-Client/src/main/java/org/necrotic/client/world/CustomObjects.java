@@ -96,7 +96,7 @@ public class CustomObjects {
 
 			{41203, 1954, 5006, 0, 2},//vod chest
 
-			{3769, 2528, 4572, 4, 4}, // Celestial fire
+			{3769, 2528, 4572, 4, 4}, // Fantasy fire
 
 			{41206, 2074, 4423, 0, 1}, // HoV Portal At Home
 
@@ -261,13 +261,7 @@ public class CustomObjects {
 			/**Regular Donor Zone*/
 			{5551, 2918, 4107, 0, 0},   //willow tree
 
-			{1306, 2910, 4114, 0, 0},    //magic tree
 
-			{1306, 2905, 4100, 0, 0},    //magic tree
-
-			{1309, 2935, 4116, 0, 0},    //yew tree
-
-			{1309, 2915, 4102, 0, 0},    //yew tree
 			/**Regular Donor Zone*/
 
 

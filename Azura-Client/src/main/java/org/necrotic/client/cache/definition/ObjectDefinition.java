@@ -229,8 +229,8 @@ public final class ObjectDefinition {
 			definition.name = "Lever";
 			definition.actions = new String[]{"Pull", null, null, null, null};
 		}
-		if (definition.type == 4389) {
-			definition.name = "Celestial Zone";
+		if (definition.type == 4388) {
+			definition.name = "<col=89584A>Realm of Fantasy";
 			definition.actions = new String[]{"Enter", null, null, null, null};
 		}
 		if (definition.type == 400) {
@@ -332,9 +332,10 @@ public final class ObjectDefinition {
 			definition.actions = new String[]{"Burn-Resources", null, null, null, null};
 		}
 		if (definition.type == 12006) {
-			definition.name = "Celestial Mushroom"; //#7a37b3
+			definition.name = "<col=89584A>Fantasy Mushroom"; //#7a37b3
 			definition.modelSizeY = 85;
 			definition.modelSizeX = 85;
+			definition.objectModelIDs = new int[]{19710};
 			definition.actions = new String[]{"Pick", null, null, null, null};
 		}
 		
@@ -372,6 +373,14 @@ public final class ObjectDefinition {
 			definition.objectModelIDs = new int[]{19462}; //19458
 		}
 
+		if (definition.type == 29577) {
+			definition.name = "Chest of Darkness";
+			definition.modelSizeH = 300;
+			definition.modelSizeY = 300;
+			definition.modelSizeX = 300;
+			definition.actions = new String[]{"Open", null, null, null, null};
+			definition.objectModelIDs = new int[]{19700}; //19458
+		}
 		if (definition.type == 13634) {
 			definition.name = "Portal";
 			definition.modelSizeH = 200;
@@ -598,7 +607,7 @@ public final class ObjectDefinition {
 			definition.width = 1;
 		}
 		if (definition.type == 2110) {
-			definition.name = "Celestial Rock";
+			definition.name = "<col=89584A>Fantasy Rock";
 			definition.objectModelIDs = new int[]{18878};
 			definition.length = 1;
 			definition.width = 1;
@@ -1093,9 +1102,9 @@ public final class ObjectDefinition {
 		}
 		if (definition.type == 172) {
 			definition.objectModelIDs = new int[]{64300};
-			definition.modelSizeX = 250;
-			definition.modelSizeH = 250;
-			definition.modelSizeY = 250;
+			definition.modelSizeX = 300;
+			definition.modelSizeH = 300;
+			definition.modelSizeY = 300;
 			definition.name = "Crystal Chest";
 			definition.actions = new String[]{"Open", null, null, null, "Check rewards"};
 		}
@@ -1318,9 +1327,6 @@ public final class ObjectDefinition {
 				break;
 			case 2:
 				definition.name = "Entrance";
-				break;
-			case 4388:
-				definition.name = "<col=89584A>[Tier Portal]";
 				break;
 			case 13626:
 				definition.name = "<shad=1><col=FF0000>[Multi PVP]";

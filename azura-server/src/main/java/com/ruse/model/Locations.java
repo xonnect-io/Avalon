@@ -19,6 +19,7 @@ import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.raids.legends.Legends;
+import com.ruse.world.content.raids.shadows.ShadowData;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.Entity;
@@ -100,9 +101,9 @@ public class Locations {
 
 			@Override
 			public void process(Player player) {
-				if (player.getLocation() == Locations.Location.CELESTIAL_ZONE && CelestialZoneTask.tick < 18000) {
+				if (player.getLocation() == Locations.Location.CELESTIAL_ZONE && CelestialZoneTask.tick < 18000 && player.getRights() != PlayerRights.OWNER) {
 					player.moveTo(GameSettings.HOME_CORDS);
-					player.getPacketSender().sendMessage("The Celestial zone closed, you have been moved home.");
+					player.getPacketSender().sendMessage("The Realm of Fantasy closed, you have been moved home.");
 				}
 			}
 			},
@@ -186,6 +187,169 @@ public class Locations {
 		PRIME(new int[] { 2437, 2492}, new int[] { 10113, 10171},
 				true, true, true, false, false, true) {},
 
+		SHADOWS_OF_DARKNESS(new int[]{3199, 3248}, new int[]{2881, 2921}, true, false, true, false, true, false) {
+			@Override
+			public void logout(Player player) {
+
+				if (player.getRegionInstance() != null
+						&& player.getRegionInstance().equals(RegionInstanceType.SHADOW_OF_DARKNESS)) {
+					player.getRegionInstance().destruct();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SHADOWS_OF_DARKNESS, player.getPosition().getZ(), player));
+
+				}
+				if (player.getRegionInstance() != null)
+					player.getRegionInstance().destruct();
+
+				if (player.getShadowRaidsParty() != null) {
+					player.getShadowRaidsParty().remove(player, true);
+				}
+
+				player.moveTo(ShadowData.lobbyPosition);
+
+				if (player.getShadowRaidsParty() != null)
+					player.getShadowRaidsParty().getPlayers()
+							.remove(player);
+
+				player.getMovementQueue().setLockMovement(false);
+				player.getPacketSender().sendCameraNeutrality();
+
+			}
+
+			@Override
+			public void leave(Player player) {
+
+				player.getPacketSender().sendCameraNeutrality();
+				if (player.getRegionInstance() != null
+						&& player.getRegionInstance().equals(RegionInstanceType.SHADOW_OF_DARKNESS)) {
+					player.getRegionInstance().destruct();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SHADOWS_OF_DARKNESS, player.getPosition().getZ(), player));
+				}
+
+				if (player.getShadowRaidsParty() != null) {
+					if (player.getShadowRaidsParty().getOwner().equals(player)) {
+						World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SHADOWS_OF_DARKNESS, player.getIndex() * 4, player));
+					}
+				}
+				player.moveTo(ShadowData.lobbyPosition);
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public void login(Player player) {
+				player.getPacketSender().sendCameraNeutrality();
+				if (player.getRegionInstance() != null
+						&& player.getRegionInstance().equals(RegionInstanceType.SHADOW_OF_DARKNESS)) {
+					player.getRegionInstance().destruct();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SHADOWS_OF_DARKNESS, player.getPosition().getZ(), player));
+				}
+
+				if (player.getShadowRaidsParty() != null) {
+					if (player.getShadowRaidsParty().getOwner().equals(player)) {
+						World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.SHADOWS_OF_DARKNESS, player.getIndex() * 4, player));
+					}
+				}
+
+				if (player.getShadowRaidsParty() != null)
+					player.getShadowRaidsParty().remove(player, true);
+
+				if (player.getShadowRaidsParty() != null)
+					player.getShadowRaidsParty().getPlayers()
+							.remove(player);
+
+				player.moveTo(ShadowData.lobbyPosition);
+
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public boolean canTeleport(Player player) {
+				player.sendMessage("You cannot teleport while in a raid");
+				return false;
+			}
+
+			@Override
+			public void enter(Player player) {
+				CurseHandler.deactivateAll(player);
+				PrayerHandler.deactivateAll(player);
+				player.setRegionInstance(new RegionInstance(player, RegionInstance.RegionInstanceType.SHADOW_OF_DARKNESS));
+				player.getPacketSender().sendInteractionOption("null", 2, true);
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.moveTo(new Position(3253, 2931 , player.getShadowRaidsParty().getHeight()));
+				player.sendMessage("@red@You died and were sent to beginning of the shadows.");
+			}
+
+			@Override
+			public void process(Player player) {
+				if (player.getShadowRaidsParty() != null)
+				player.getShadowRaidsParty().refreshInterface();
+			}
+
+		},
+
+		DARKNESS_LOBBY(new int[]{3242, 3263}, new int[]{2924, 2943}, true, false, true, false, true, false) {
+			@Override
+			public void leave(Player player) {
+				player.getPacketSender().sendCameraNeutrality();
+
+				if (player.getShadowRaidsParty() != null)
+					player.getShadowRaidsParty().remove(player, true);
+
+				if (player.getShadowRaidsParty() != null)
+					player.getShadowRaidsParty().getPlayers()
+							.remove(player);
+
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.INVITE)
+					player.getPacketSender().sendInteractionOption("Invite", 2, false);
+
+				if (player.getShadowRaidsParty() != null)
+					player.getShadowRaidsParty().refreshInterface();
+				else {
+					int id = 111716;
+					for (int i = 111716; i < 111737; i++) {
+						player.getPacketSender().sendString(id++, "---");
+						player.getPacketSender().sendString(id++, "--");
+						player.getPacketSender().sendString(id++, "-");
+					}
+					player.getPacketSender().sendString(111709, "Create");
+					player.getPacketSender().sendString(111702, "Raiding Party: @whi@0");
+
+					player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111700);
+					player.getPacketSender().sendConfig(6000, 4);
+					player.getPacketSender().sendTab(GameSettings.QUESTS_TAB);
+				}
+
+			}
+
+			@Override
+			public void login(Player player) {
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.INVITE)
+					player.getPacketSender().sendInteractionOption("Invite", 2, false);
+			}
+
+			@Override
+			public void process(Player player) {
+				if (player.getShadowRaidsParty() != null)
+					player.getShadowRaidsParty().refreshInterface();
+				else{
+					int id = 111716;
+					for (int i = 111716; i < 111737; i++) {
+						player.getPacketSender().sendString(id++, "---");
+						player.getPacketSender().sendString(id++, "--");
+						player.getPacketSender().sendString(id++, "-");
+					}
+					player.getPacketSender().sendString(111709, "Create");
+					player.getPacketSender().sendString(111702, "Raiding Party: @whi@0");
+				}
+			}
+		},
 		SEASONPASS_ZONE(new int[] { 2880, 2940}, new int[] { 2640, 2690},
 				true, true, true, false, false, true) {},
 		NEPHILIM(new int[] { 2137, 2153}, new int[] { 3291, 3308},
@@ -2464,7 +2628,9 @@ for (Item item : player.getInventory().getItems()) {
 				if ((prev == Location.ZOMBIE_LOBBY && newLocation == Location.ZOMBIE)
 						|| (prev == Location.ZOMBIE && newLocation == Location.ZOMBIE_LOBBY)
 				|| (prev == Location.SOD_LOBBY && newLocation == Location.SOD)
-						|| (prev == Location.SOD && newLocation == Location.SOD_LOBBY)) {
+						|| (prev == Location.SOD && newLocation == Location.SOD_LOBBY)
+						|| (prev == Location.DARKNESS_LOBBY && newLocation == Location.SHADOWS_OF_DARKNESS)
+						|| (prev == Location.SHADOWS_OF_DARKNESS && newLocation == Location.DARKNESS_LOBBY)) {
 
 				} else {
 					prev.leave(((Player) gc));

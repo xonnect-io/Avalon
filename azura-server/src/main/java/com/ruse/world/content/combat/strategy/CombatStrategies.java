@@ -176,6 +176,9 @@ public class CombatStrategies {
 
 		STRATEGIES.put(6047, new PantherWolf());
 
+		STRATEGIES.put(9896, new RaidsFirstBoss());
+
+		STRATEGIES.put(9810, new RaidsSecondBoss());
 
 		STRATEGIES.put(9106, new CthuluStrategy());
 		STRATEGIES.put(9111, new HellishBull());

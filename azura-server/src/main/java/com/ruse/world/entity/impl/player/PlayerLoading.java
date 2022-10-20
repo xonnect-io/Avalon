@@ -642,6 +642,12 @@ public class PlayerLoading {
             if (reader.has("suffering-kc")) {
                 player.getPointsHandler().setSufferingKC(reader.get("suffering-kc").getAsInt(), false);
             }
+            if (reader.has("shadow-drop-rate")) {
+                player.setShadowRareDropBoost(reader.get("shadow-drop-rate").getAsInt());
+            }
+            if (reader.has("shadow-key-opened")) {
+                player.setShadowKeysOpened(reader.get("shadow-key-opened").getAsInt());
+            }
             if (reader.has("seasonpass-xp")) {
                 player.getSeasonPass().setXp(reader.get("seasonpass-xp").getAsInt());
             }

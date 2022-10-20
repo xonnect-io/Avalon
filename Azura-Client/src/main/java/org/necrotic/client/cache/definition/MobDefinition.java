@@ -1204,10 +1204,16 @@ public final class MobDefinition {
 				definition.scaleXZ = 128;
 				definition.scaleY = 128;
 				break;
+			case 13458:
+				definition.npcModels = new int[]{19695};
+				definition.npcSizeInSquares = 3;
+				definition.scaleXZ = 238;
+				definition.scaleY = 238;
+				break;
 			case 9802:
 				definition.setDefault();
 				definition.name = "Nymora";
-				definition.npcModels = new int[]{100146};
+				definition.npcModels = new int[]{19699};
 				definition.combatLevel = MobDefinition.get(2292).combatLevel;
 				definition.standAnimation = MobDefinition.get(2292).standAnimation;
 				definition.walkAnimation = MobDefinition.get(2292).walkAnimation;
@@ -1338,16 +1344,16 @@ public final class MobDefinition {
 				break;
 			case 9812:
 				definition.setDefault();
-				definition.name = "Red Fenrir";
-				definition.npcModels = new int[]{100197};
+				definition.name = "Midnight Fenrir";
+				definition.npcModels = new int[]{19705};
 				definition.combatLevel = MobDefinition.get(95).combatLevel;
 				definition.standAnimation = MobDefinition.get(95).standAnimation;
 				definition.walkAnimation = MobDefinition.get(95).walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 128;
-				definition.scaleY = 128;
+				definition.npcSizeInSquares = 2;
+				definition.scaleXZ = 178;
+				definition.scaleY = 178;
 				break;
 				
 			case 9813:
@@ -2535,20 +2541,17 @@ public final class MobDefinition {
 				definition.changedModelColours[0] = 40; // the texture that it currently has
 				definition.originalModelColours[0] = 52; // the new texture u want it to have
 				break;
+
 			case 1821:
-				definition.name = "@cya@Celestial Being";
-				definition.description = "a God from the Celestial Zone".getBytes();
-				definition.npcModels = new int[]{19520,19521,19522,19518,19519};
+				definition.name = "<col=89584A>Fantasy Being";
+				definition.description = "a God from the Realm of Fantasy".getBytes();
+				definition.npcModels = new int[]{19712};
 				definition.standAnimation = 808;
-				definition.rdc2 = 37664;
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 120;
 				definition.scaleY = 120;
-				definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				definition.changedModelColours = new int[1]; // same here
-				definition.changedModelColours[0] = 40; // the texture that it currently has
-				definition.originalModelColours[0] = 52; // the new texture u want it to have
 				break;
+
 			case 200:
 				definition.name = "Venefica";
 				definition.description = "Thanks for the memories.".getBytes();
@@ -5451,10 +5454,10 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 2;
 				break;
 			case 4677:
-				definition.name = "Celestial dragon";
+				definition.name = "<col=89584A>Fantasy dragon";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 79;
-				definition.rdc2 = 23315;
+				definition.rdc2 = 34233;
 				definition.scaleXZ = 70;
 				definition.scaleY = 70;
 				definition.npcSizeInSquares = 2;
@@ -5499,31 +5502,31 @@ public final class MobDefinition {
 				break;
 			case 9895:
 				definition.setDefault();
-				definition.npcModels = new int[]{19686};
+				definition.npcModels = new int[]{19704};
 				definition.standAnimation =  MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = MobDefinition.get(1).actions;
 				definition.combatLevel = 0;
 				definition.name = "Melee NPC";
-				definition.scaleXZ = 230;
-				definition.scaleY = 230;
-				definition.npcSizeInSquares = 3;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
+				definition.npcSizeInSquares = 2;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 			case 9896:
 				definition.setDefault();
-				definition.npcModels = new int[]{19694};
+				definition.npcModels = new int[]{19708};
 				definition.standAnimation =  MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = MobDefinition.get(1).actions;
 				definition.combatLevel = 0;
-				definition.name = "Magic NPC";
-				definition.scaleXZ = 230;
-				definition.scaleY = 230;
-				definition.npcSizeInSquares = 3;
+				definition.name = "Dreamfoot";
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
+				definition.npcSizeInSquares = 2;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
-			case 9891:
+			case 9891://2880 4096
 				definition.setDefault();
 				definition.npcModels = MobDefinition.get(3313).npcModels;
 				definition.standAnimation =  MobDefinition.get(3313).standAnimation;

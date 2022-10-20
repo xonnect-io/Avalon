@@ -115,6 +115,16 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
+            Position pos = new Position(2929, 4116);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you home!");
+        }
+        if (command[0].equalsIgnoreCase("newhome")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
             Position pos = new Position(3110, 2990);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");

@@ -272,7 +272,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.getPacketSender().sendMessage("You don't have enough free inventory space.");
                                     return;
                                 }
-                                String object = "Celestial Mushrooms";
+                                String object = "Fantasy Mushrooms";
                                 player.performAnimation(new Animation(827));
                                 player.getInventory().add(17821, 1);
                                 player.getPacketSender().sendMessage("You pick some " + object + "..");
@@ -383,6 +383,21 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                 }
                                 break;
+                            case 13405:
+                                if (player.getLocation() == Location.DARKNESS_LOBBY) {
+                                    CurseHandler.deactivateAll(player);
+                                    if (player.getShadowRaidsParty() != null) {
+                                        if (player.getShadowRaidsParty().getOwner().equals(player)) {
+                                            player.setDialogueActionId(13054);
+                                            DialogueManager.start(player, 13054);
+                                        } else {
+                                            player.sendMessage("Only the party leader can start the Raid.");
+                                        }
+                                    } else {
+                                        player.sendMessage("You must be in a party to start the Raid.");
+                                    }
+                                }
+                                break;
                             case 10251:
                                 if (player.getPointsHandler().getZombieRaidKC() < 100) {
                                     player.getPacketSender().sendMessage("You need 100 Legend Raids Completed before joining Souls of Suffering.");
@@ -402,7 +417,10 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                 }
                                 break;
-
+                            case 29577:
+                                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SOSREWARDS);
+                                player.getCasketOpening().openShadowRewardInterface();
+                                break;
                             case 4004:
                             case 27306:
                                 DialogueManager.start(player, GuardianTokenExchange.getDialogue(player));

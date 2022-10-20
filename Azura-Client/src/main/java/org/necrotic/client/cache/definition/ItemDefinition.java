@@ -2706,7 +2706,7 @@ public final class ItemDefinition {
 				break;
 			case 23270:
 				itemDef.modelID = 65333;
-				itemDef.name = "Celestial Cape";
+				itemDef.name = "<col=89584A>Fantasy Cape";
 				itemDef.description = "A cape worn by those who've achieved greatness.".getBytes();
 				itemDef.modelZoom = 1485;
 				itemDef.modelOffsetX = 0;
@@ -2724,10 +2724,13 @@ public final class ItemDefinition {
 
 			case 23271:// super sayian
 				itemDef.copyItem(12608);
-				itemDef.modelID = 19698;
-				itemDef.maleEquip1 = 19698;
-				itemDef.femaleEquip1 = 19698;
-				itemDef.name = "Celestial Aura";
+				itemDef.modelID = 19706;
+				itemDef.modelZoom = 1700;
+				itemDef.maleEquip1 = 19706;
+				itemDef.femaleEquip1 = 19706;
+				itemDef.modelOffsetX = -15;
+				itemDef.modelOffsetY = 60;
+				itemDef.name = "<col=89584A>Fantasy Aura";
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 
 				break;
@@ -2742,7 +2745,7 @@ public final class ItemDefinition {
 
 			case 23300:// super sayian
 				itemDef.copyItem(12855);
-				itemDef.name = "Celestial Symbol";
+				itemDef.name = "<col=89584A>Fantasy Symbol";
 				itemDef.modelZoom = 950;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.modelID = 19517;

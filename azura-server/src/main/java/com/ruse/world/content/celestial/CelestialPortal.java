@@ -42,13 +42,13 @@ public final class CelestialPortal {
 				TeleportHandler.teleportPlayer(player, new Position(4257, 5598),
 						player.getSpellbook().getTeleportType());
 			} else
-				DialogueManager.sendStatement(player, "The Celestial Zone is currently closed.");
+				DialogueManager.sendStatement(player, "The Realm of Fantasy is currently closed.");
 		}
 
 		if (player.getCelestial() == false && player.getInventory().contains(13379, 2)) {
 			DialogueManager.start(player, CelestialDialogues.sacrifice(player));
 		}	else if (player.getCelestial() == false) {
-			DialogueManager.sendStatement(player, "You need to first unlock Celestial Status!");
+			DialogueManager.sendStatement(player, "You need to first unlock the Realm of Fantasy!");
 		}
 	}
 
@@ -74,7 +74,7 @@ public final class CelestialPortal {
 
 	public static enum CelestialZoneDef {
 
-		CELESTIAL_PORTAL("Celestial Portal", 4389);
+		CELESTIAL_PORTAL("Realm of Fantasy", 4388);
 
 		private String chestName;
 		private int id;
@@ -126,11 +126,11 @@ public final class CelestialPortal {
 	public static void spawn() {
 
 		if (PORTAL == null) {
-		PORTAL = new PortalSpawn(new GameObject(4389, new Position(2651, 4002) ), PREVIOUS_LOC);
+		PORTAL = new PortalSpawn(new GameObject(4388, new Position(2651, 4002) ), PREVIOUS_LOC);
 		CustomObjects.spawnGlobalObject(PORTAL.object);
 			if (GameSettings.LOCALHOST == false)
 		DiscordMessager.sendCelestialLog("");
-		World.sendMessage("<img=832> The Celestial Zone Portal has opened for 1 hour (Celestials only)");
+		World.sendMessage("<img=832> The Realm of Fantasy has opened for 1 hour (Realm of Fantasy members only)");
 		}
 
 	}
@@ -160,7 +160,7 @@ public final class CelestialPortal {
 					p.getPacketSender().sendInterfaceRemoval();
 				}
 			}
-			World.sendMessage("<img=832> The Celestial Zone is now closed and will open again in 2 hours.");
+			World.sendMessage("<img=832> The Realm of Fantasy is now closed and will open again in 2 hours.");
 			CelestialZoneTask.startTask();
 			tick = 0;
 			PORTAL = null;

@@ -160,6 +160,8 @@ public class PlayerSaving {
 			object.addProperty("zombie-raid-kc", new Integer(player.getPointsHandler().getZombieRaidKC()));
 			object.addProperty("isles-kc", new Integer(player.getPointsHandler().getIslesKC()));
 			object.addProperty("suffering-kc", new Integer(player.getPointsHandler().getSufferingKC()));
+			object.addProperty("shadow-drop-rate", player.getShadowRareDropBoost());
+			object.addProperty("shadow-key-opened", player.getShadowKeysOpened());
 			object.addProperty("lastInstanceNpc", player.lastInstanceNpc);
 			object.addProperty("pumpkins-collected", new Integer(player.getSoulInPouchAsInt()));
 			object.addProperty("treasure-hunter-kc", new Integer(player.getPointsHandler().getTreasureHunterKC()));

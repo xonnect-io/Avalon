@@ -77,6 +77,7 @@ import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.properscratchcard.Scratchcard;
 import com.ruse.world.content.quests.QuestInterfaceHandler;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
+import com.ruse.world.content.raids.shadows.ShadowRaidParty;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.scratchcards.ScratchCard;
@@ -723,9 +724,11 @@ public int howmuchdissolveamt = 0;
     private int zombieRaidsKC;
     private int islesKC;
     private boolean enteredSODRaids;
+    private boolean enteredShadowRaids;
     private int sodRaidsKC;
     private RaidsParty raidsParty;
     private LegendsRaidParty zombieRaidsParty;
+    private ShadowRaidParty shadowRaidsParty;
     private boolean insideRaids;
     private int afkTree;
     private int afkSapphire;
@@ -738,6 +741,12 @@ public int howmuchdissolveamt = 0;
     @Getter
     @Setter
     private int godModeTimer;
+    @Getter
+    @Setter
+    private int shadowRareDropBoost;
+    @Getter
+    @Setter
+    private int shadowKeysOpened;
     @Getter
     private final BestItems bestItems = new BestItems(this);
     private final GoodieBag goodieBag = new GoodieBag(this);
@@ -1064,6 +1073,14 @@ public int howmuchdissolveamt = 0;
         this.sodRaidsKC = sodRaidsKC;
     }
 
+    public boolean isEnteredShadowRaids() {
+        return enteredShadowRaids;
+    }
+
+    public void setEnteredShadowRaids(boolean enteredShadowRaids) {
+        this.enteredShadowRaids = enteredShadowRaids;
+    }
+
     public boolean isEnteredSODRaids() {
         return enteredSODRaids;
     }
@@ -1086,6 +1103,14 @@ public int howmuchdissolveamt = 0;
 
     public void setZombieRaidsParty(LegendsRaidParty zombieRaidsParty) {
         this.zombieRaidsParty = zombieRaidsParty;
+    }
+
+    public ShadowRaidParty getShadowRaidsParty() {
+        return shadowRaidsParty;
+    }
+
+    public void setShadowRaidsParty(ShadowRaidParty shadowRaidsParty) {
+        this.shadowRaidsParty = shadowRaidsParty;
     }
 
     public int getAfkTree() {

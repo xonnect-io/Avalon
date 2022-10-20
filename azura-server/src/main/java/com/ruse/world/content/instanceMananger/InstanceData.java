@@ -43,6 +43,14 @@ public enum InstanceData {
 	LOTUS_MAGICIAN(9117, "Lotus Magician", 1100),
 	SHADOW_MAGICIAN(9118, "Shadow Magician", 1100),
 
+	IMMORTAL_WARRIOR(2359, "Immortal Warrior", 1100),
+	LESARKUS_WARRIOR(277, "Lesarkus Warrior", 1100),
+	FATAL_WARRIOR(1914, "Fatal Warrior", 1100),
+
+	FOREST_ARCHER(1508, "Forest Archer", 1100),
+	CHAOTIC_ARCHER(1458, "Chaotic Archer", 1100),
+	DIVINE_ARCHER(1457, "Divine Archer", 1100),
+
 	;
 
 	private int npcId;

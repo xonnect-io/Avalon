@@ -34,7 +34,7 @@ public class CelestialDialogues {
 
             @Override
             public String[] dialogue() {
-                return new String[] { "How to become a Celestial?", "What is the Celestial Zone?",
+                return new String[] { "How to become a Celestial?", "What is the Realm of Fantasy?",
                         "What is the Celestial Energy?", "Cancel" };
             }
 
@@ -93,7 +93,7 @@ public class CelestialDialogues {
 
                     @Override
                     public String[] dialogue() {
-                        return new String[] { "How to become a Celestial?", "What is the Celestial Zone?",
+                        return new String[] { "How to become a Celestial?", "What is the Realm of Fantasy?",
                                 "What is Celestial Energy?", "Cancel" };
                     }
 
@@ -126,8 +126,8 @@ public class CelestialDialogues {
 
             @Override
             public String[] dialogue() {
-                String line1 = "The Celestial zone opens for 1 hour every 3 hours.";
-                String line2 = "Complete tasks in the Celestial Zone to get Celestial Energy";
+                String line1 = "The Realm of Fantasy opens for 1 hour every 3 hours.";
+                String line2 = "Complete tasks in the Realm of Fantasy to get Celestial Energy";
                 return new String[] { "" + line1 + "", "" + line2 + ""};
             }
 
@@ -152,7 +152,7 @@ public class CelestialDialogues {
 
                     @Override
                     public String[] dialogue() {
-                        return new String[] { "How to become a Celestial?", "What is the Celestial Zone?",
+                        return new String[] { "How to become a Celestial?", "What is the Realm of Fantasy?",
                                 "What is Celestial Energy?", "Cancel" };
                     }
 
@@ -185,7 +185,7 @@ public class CelestialDialogues {
 
             @Override
             public String[] dialogue() {
-                String line1 = "Celestial Energy can only be obtained from the Celestial Zone.";
+                String line1 = "Celestial Energy can only be obtained from the Realm of Fantasy.";
                 String line2 = "Celestial Energy is used to craft Celestial items.";
                 return new String[] { "" + line1 + "", "" + line2 + ""};
             }
@@ -211,7 +211,7 @@ public class CelestialDialogues {
 
                     @Override
                     public String[] dialogue() {
-                        return new String[] { "How to become a Celestial?", "What is the Celestial Zone?",
+                        return new String[] { "How to become a Celestial?", "What is the Realm of Fantasy?",
                                 "What is Celestial Energy?", "Cancel" };
                     }
 

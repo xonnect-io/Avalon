@@ -18,6 +18,7 @@ import java.util.List;
 
 import static com.ruse.world.content.osrscollectionlog.LogType.BOXES;
 import static com.ruse.world.content.osrscollectionlog.LogType.MINIGAMES;
+import static com.ruse.world.content.raids.shadows.ShadowRewards.getRareRate;
 
 public class CasketOpening {
 
@@ -322,6 +323,66 @@ public class CasketOpening {
         canCasketOpening = true;
     }
 
+
+    public static List<Item> shadowRareRewards = Arrays.asList( // 1/1000
+            new Item(23303, 1, 1, 0.02, true), // Mystic helmet
+            new Item(23304, 1, 1, 0.02, true), // Mystic body
+            new Item(23305, 1, 1, 0.02, true), // Mystic legs
+            new Item(23306, 1, 1, 0.02, true), // Mystic legs
+            new Item(23307, 1, 1, 0.02, true), // Mystic legs
+            new Item(23308, 1, 1, 0.02, true), // Mystic legs
+            new Item(23309, 1, 1, 0.02, true), // Mystic legs
+            new Item(23310, 1, 1, 0.02, true), // Mystic legs
+            new Item(23311, 1, 1, 0.02, true), // Mystic legs
+            new Item(14999, 1, 1, 0.02, true), // Onyx casket
+            new Item(23276, 1, 1, 0.02, true), // Starter Card pack
+            new Item(23403, 1, 1, 0.02, true), // Suffering charm
+            new Item(15288, 10, 250, 0.02, true) // Upgrade token packs
+
+    );
+
+    public static List<Item> shadowCommonRewards = Arrays.asList(
+            new Item(15288, 1,4,50,false), // x2 100k token pack
+            new Item(5022, 10_000, 250_000,50,false), // Pvm tickets
+            new Item(7956, 100,7500,50,false), // PvM crate t1
+            new Item(19114, 5,75,50,false), // Ruby mystery box
+            new Item(20488, 1,10,50,false), // Ruby mystery box
+            new Item(11137, 25,75,50,false), // xp lamps
+            new Item(20489, 1,1,50,false), // Launch casket
+            new Item(15358, 1,1,50,false), // 30min effect scroll
+            new Item(15359, 1,1,50,false), // 30min effect scroll
+            new Item(15288, 3,10,33,false), // x5 100k token packs
+            new Item(10946, 1,1,20,false), // $1 scroll
+            new Item(4446, 1,1,20,false), // $1 scroll
+            new Item(19886, 1,1,20,false), // $1 scroll
+            new Item(8087, 1,1,5,false), // $1 scroll
+            new Item(8088, 1,1,5,false), // $1 scroll
+            new Item(8089, 1,1,5,false), // $1 scroll
+            new Item(22006, 5,50,5,false), // Deathtouch darts
+            new Item(15003, 1,1,5,false), // Silver chest
+            new Item(6769, 1,1,1,true) // $5 bond
+    );
+
+    public void openShadowRewardInterface() {
+        player.sendMessage(":resetCasket");
+        player.getPA().sendInterface(48130);
+        player.getPacketSender().sendString(48144, "Shadows of Darkness");
+        player.getPacketSender().sendString(48135, "Key of Darkness");
+        player.getPacketSender().sendString(48133, "Increase Chances");
+        player.getPacketSender().sendItemOnInterface(48145, 23859, 0, 1);
+        player.getPacketSender().sendString(48134, "Rare: (1/" + getRareRate(player) + ")");
+
+        for (int i = 0; i < common.size(); i++) {
+            player.getPacketSender().sendItemOnInterface(48151, shadowCommonRewards.get(i).getId(),i, shadowCommonRewards.get(i).getMax());
+        }
+
+        for (int i = 0; i < rare.size(); i++) {
+            player.getPacketSender().sendItemOnInterface(48110, shadowRareRewards.get(i).getId(),i, shadowRareRewards.get(i).getMax());
+        }
+
+    }
+
+
     public static List<Item> rare = Arrays.asList( // 1/1000
             new Item(23303, 1, 1, 0.02, true), // Mystic helmet
             new Item(23304, 1, 1, 0.02, true), // Mystic body
@@ -364,7 +425,9 @@ public class CasketOpening {
     public void openSOSInterface() {
         player.sendMessage(":resetCasket");
         player.getPA().sendInterface(48130);
+        player.getPacketSender().sendString(48144, "Souls of Suffering");
         player.getPacketSender().sendString(48135, "Suffering key");
+        player.getPacketSender().sendString(48133, "Earn X2 Rewards");
         player.getPacketSender().sendItemOnInterface(48145, 23370, 0, 1);
             player.getPacketSender().sendString(48134, "Rare (1/500)");
 
@@ -378,7 +441,7 @@ public class CasketOpening {
 
     }
 
-    public void openYoutbeRewards() {
+        public void openYoutbeRewards() {
         player.getPA().sendInterface(82350);
 
         for (int i = 0; i < common.size(); i++) {

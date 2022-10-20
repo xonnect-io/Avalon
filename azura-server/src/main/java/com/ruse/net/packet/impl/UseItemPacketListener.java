@@ -26,6 +26,7 @@ import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.WarriorsGuild;
 import com.ruse.world.content.quests.TheOmegaDialogues;
+import com.ruse.world.content.raids.shadows.ShadowRewards;
 import com.ruse.world.content.skill.impl.cooking.Cooking;
 import com.ruse.world.content.skill.impl.cooking.CookingData;
 import com.ruse.world.content.skill.impl.crafting.Flax;
@@ -633,6 +634,28 @@ public class UseItemPacketListener implements PacketListener {
                         }
                         switch (objectId) {
 
+
+                            case 29577:
+                                if (player.getInventory().contains(itemId) && itemId >= 23312 && itemId <= 23320) {
+                                    if (player.getShadowRareDropBoost() >= ShadowRewards.MAX - 1) {
+                                        player.sendMessage("@blu@You already reached the lowest drop rate possible.");
+                                        return;
+                                    }
+                                    player.getInventory().delete(itemId, 1);
+                                    player.setShadowRareDropBoost(player.getShadowRareDropBoost() + 2);
+                                    player.sendMessage("@blu@Your rare drop table is now at 1/" + ShadowRewards.getRareRate(player));
+                                } else if (player.getInventory().contains(itemId) && itemId >= 23303 && itemId <= 23312) {
+                                    if (player.getShadowRareDropBoost() >= ShadowRewards.MAX) {
+                                        player.sendMessage("@blu@You already reached the lowest drop rate possible.");
+                                        return;
+                                    }
+                                    player.getInventory().delete(itemId, 1);
+                                    player.setShadowRareDropBoost(player.getShadowRareDropBoost() + 1);
+                                    player.sendMessage("@blu@Your rare drop table is now at 1/" + ShadowRewards.getRareRate(player));
+                                } else {
+                                    player.sendMessage("You can only sacrifice Souls of suffering items to the chest.");
+                                }
+                                break;
                             case 16135://betrayed
 
                                 if (itemId == 8868 || itemId == 21201 || itemId == 21202 || itemId == 21203 || itemId == 21204) {

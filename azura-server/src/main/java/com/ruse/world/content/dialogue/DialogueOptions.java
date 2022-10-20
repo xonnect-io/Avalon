@@ -28,9 +28,10 @@ import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.quests.BloodRunsDeepDialogues;
 import com.ruse.world.content.quests.TheOmegaDialogues;
-import com.ruse.world.content.raids.suffering.Suffering;
-import com.ruse.world.content.raids.legends.LegendsData;
 import com.ruse.world.content.raids.legends.Legends;
+import com.ruse.world.content.raids.legends.LegendsData;
+import com.ruse.world.content.raids.shadows.Shadows;
+import com.ruse.world.content.raids.suffering.Suffering;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.mining.Mining;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
@@ -237,6 +238,10 @@ public class DialogueOptions {
                     } else if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.ZOMBIE) {
                     player.getZombieRaidsParty().add(player);
                     }
+                    break;
+
+                case 6762:
+                        player.getShadowRaidsParty().add(player);
                     break;
                 case 68:
                     player.getPacketSender().sendInterfaceRemoval();
@@ -861,6 +866,7 @@ public class DialogueOptions {
                 case 67:
                 case 68:
                 case 88:
+                case 6762:
                 case 101:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
@@ -1370,8 +1376,8 @@ public class DialogueOptions {
                     if (player.getCelestial() == false && player.getInventory().contains(13379, 2)) {
                         player.getInventory().delete(13379, 2);
                         player.setCelestial(true);
-                        player.getPacketSender().sendMessage("<img=832> You have achieved Celestial Status!");
-                        World.sendMessage("<img=832>@red@ " + player.getUsername() + " @blu@achieved Celestial Status!");
+                        player.getPacketSender().sendMessage("<img=832> You have unlocked the Realm of Fantasy!");
+                        World.sendMessage("<img=832>@red@ " + player.getUsername() + " @blu@unlocked the Realm of Fantasy!");
                         TeleportHandler.teleportPlayer(player, new Position(4257, 5598),
                                 player.getSpellbook().getTeleportType());
                     }
@@ -1557,7 +1563,15 @@ public class DialogueOptions {
                         player.getMinigameAttributes().getZombieAttributes().setPartyInvitation(null);
                     }
                     break;
-
+                case 6762:
+                    player.getPacketSender().sendInterfaceRemoval();
+                    if (player.getShadowRaidsParty() == null) {
+                        if (player.getMinigameAttributes().getShadowAttributes().getPartyInvitation() != null) {
+                            player.getMinigameAttributes().getShadowAttributes().getPartyInvitation().add(player);
+                        }
+                        player.getMinigameAttributes().getShadowAttributes().setPartyInvitation(null);
+                    }
+                    break;
                 case 71260:
                     player.getPacketSender().sendInterfaceRemoval();
                     player.moveTo(LegendsData.lobbyPosition);
@@ -1570,6 +1584,10 @@ public class DialogueOptions {
 
                 case 7056:
                     Suffering.start(player.getRaidsParty());
+                    break;
+
+                case 13054:
+                    Shadows.start(player.getShadowRaidsParty());
                     break;
 
                 case 523:
@@ -1900,6 +1918,8 @@ public class DialogueOptions {
                 case 9923:
                 case 71260:
                 case 2012:
+                case 7056:
+                case 13054:
                 case 522:
                 case 523:
                 case 103:
@@ -1954,7 +1974,7 @@ public class DialogueOptions {
                     break;
                 case 67:
                     player.getPacketSender().sendInterfaceRemoval();
-                    if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY
+                    if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY
                             && player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null
                             && player.getMinigameAttributes().getZombieAttributes().getPartyInvitation()
                             .getOwner() != null) {

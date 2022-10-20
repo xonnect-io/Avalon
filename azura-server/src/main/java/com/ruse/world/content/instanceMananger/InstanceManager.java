@@ -65,7 +65,30 @@ public class InstanceManager {
             player.sendMessage("You need to be at least a level 3 Magician to do this.");
             return;
         }
-
+        if (npcId == 2359 && !player.getWarriorGuildTier1()) {
+            player.sendMessage("You need to be at least a level 1 Warrior to do this.");
+            return;
+        }
+        if (npcId == 277 && !player.getWarriorGuildTier2()) {
+            player.sendMessage("You need to be at least a level 2 Warrior to do this.");
+            return;
+        }
+        if (npcId == 1914 && !player.getWarriorGuildTier3()) {
+            player.sendMessage("You need to be at least a level 3 Warrior to do this.");
+            return;
+        }
+        if (npcId == 1508 && !player.getArcherGuildTier1()) {
+            player.sendMessage("You need to be at least a level 1 Archer to do this.");
+            return;
+        }
+        if (npcId == 1458 && !player.getArcherGuildTier2()) {
+            player.sendMessage("You need to be at least a level 2 Archer to do this.");
+            return;
+        }
+        if (npcId == 1457 && !player.getArcherGuildTier3()) {
+            player.sendMessage("You need to be at least a level 3 Archer to do this.");
+            return;
+        }
         if (player.getInventory().contains(ticketID) && player.getInventory().contains(12855, getCost())) {
             player.getInventory().delete(ticketID, 1);
             player.getInventory().delete(12855, getCost());

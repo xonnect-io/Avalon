@@ -104,7 +104,7 @@ public class Suffering {
 
             @Override
             public void execute() {
-                startSODTask(party, npcs, 1);
+                startTask(party, npcs, 1);
                 stop();
             }
         });
@@ -122,7 +122,7 @@ public class Suffering {
 
             @Override
             public void execute() {
-                startSODTask(party, npcs, 2);
+                startTask(party, npcs, 2);
                 stop();
             }
         });
@@ -141,7 +141,7 @@ public class Suffering {
 
             @Override
             public void execute() {
-                startSODTask(party, npcs, 3);
+                startTask(party, npcs, 3);
                 stop();
             }
         });
@@ -160,7 +160,7 @@ public class Suffering {
 
             @Override
             public void execute() {
-                startSODTask(party, npcs, 4);
+                startTask(party, npcs, 4);
                 stop();
             }
         });
@@ -181,13 +181,13 @@ public class Suffering {
 
             @Override
             public void execute() {
-                startSODTask(party, npcs, 5);
+                startTask(party, npcs, 5);
                 stop();
             }
         });
     }
 
-    public static void startSODTask(RaidsParty party, ArrayList<NPC> npcs, int wave) {
+    public static void startTask(RaidsParty party, ArrayList<NPC> npcs, int wave) {
         TaskManager.submit(new Task(1, false) {
 
             @Override
