@@ -623,7 +623,7 @@ public final class ObjectDefinition {
 			definition.actions = new String[5];
 			definition.actions[0] = "Mine";
 		}
-		if (definition.type == 13129 || definition.type == 26940) {
+		if (definition.type == 13129) {
 			definition.name = "";
 			// definition.objectModelIDs = new int[] { 62525 };
 			//   definition.modelSizeH = 300;
@@ -635,23 +635,6 @@ public final class ObjectDefinition {
 			definition.actions[0] = null;
 			definition.actions[1] = null;
 		}
-
-		if (definition.type == 28140) {
-			definition.actions = new String[5];
-			definition.actions[0] = "Enter";
-			definition.name = "Gods Portal";
-		}
-
-
-		if (definition.type == 52299) {
-			definition.modelSizeH = 250;
-			definition.modelSizeX = 240;
-			definition.modelSizeY = 280;
-			definition.actions = new String[5];
-			definition.actions[0] = "Open";
-			definition.name = "God Chest";
-		}
-
 		if (definition.type == 714) {
 			definition.actions = new String[5];
 			definition.actions[0] = "Investigate";

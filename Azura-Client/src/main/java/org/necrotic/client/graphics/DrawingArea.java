@@ -553,7 +553,6 @@ public class DrawingArea extends NodeSub {
 		}
 	}
 
-
 	private static void method340(int i, int j, int k, int l, int i1) {
 		if (k < topY || k >= clipBottom) {
 			return;

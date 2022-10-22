@@ -15,8 +15,6 @@ import com.ruse.world.content.combat.strategy.impl.Scorpia;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.events.EventManager;
 import com.ruse.world.content.events.PartyChest;
-import com.ruse.world.content.gods.GodsRaids;
-import com.ruse.world.content.gods.GodsRaidsData;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
@@ -1293,7 +1291,7 @@ public class Locations {
 		},
 		MEMBER_ZONE(new int[] { 3415, 3435 }, new int[] { 2900, 2926 }, false, true, true, false, false, true) {
 		},
-		HOME_BANK(new int[] { 2880, 2943}, new int[] { 4096, 4135 }, false, true, true, false, true, true) {
+		HOME_BANK(new int[] { 2640, 3960}, new int[] { 2680, 4070 }, false, true, true, false, true, true) {
 			@Override
 			public void enter(Player player) {
 				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
@@ -1301,13 +1299,13 @@ public class Locations {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
 					player.getPacketSender()
-							.sendMessage("As you enter the home area, your health regenerates to full.");
+							.sendMessage("As you enter the home bank, your health regenerates to full.");
 				}
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
 							player.getSkillManager().getMaxLevel(Skill.PRAYER));
-					player.getPacketSender().sendMessage("As you enter the area bank, the gods restore your prayer.");
+					player.getPacketSender().sendMessage("As you enter the home bank, the gods restore your prayer.");
 				}
 			}
 
@@ -1318,13 +1316,13 @@ public class Locations {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
 					player.getPacketSender()
-							.sendMessage("As you leave the home area, your health regenerates to full.");
+							.sendMessage("As you leave the home bank, your health regenerates to full.");
 				}
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
 							player.getSkillManager().getMaxLevel(Skill.PRAYER));
-					player.getPacketSender().sendMessage("As you leave the home area, the gods restore your prayer.");
+					player.getPacketSender().sendMessage("As you leave the home bank, the gods restore your prayer.");
 				}
 			}
 		},
@@ -1346,239 +1344,6 @@ public class Locations {
 					player.getPacketSender().sendMessage("As you enter the Sapphire Donator Zone, the gods restore your prayer.");
 				}
 			}
-		},
-
-
-
-		GODS_LOBBY(new int[]{2642, 2668}, new int[]{4498, 4515}, true, false, true, false, true, false) {
-			@Override
-			public void leave(Player player) {
-				player.getPacketSender().sendCameraNeutrality();
-
-				if (player.getGodsRaidsParty() != null)
-					player.getGodsRaidsParty().remove(player);
-
-				if (player.getGodsRaidsParty() != null)
-					player.getGodsRaidsParty().getPlayers()
-							.remove(player);
-
-				player.getMovementQueue().setLockMovement(false);
-			}
-
-			@Override
-			public void enter(Player player) {
-				player.getPacketSender().sendWalkableInterface(144900, false);
-
-				for (Player p : World.getPlayers()) {
-					if (p == null)
-						continue;
-					if (!player.equals(p) && (player.getSerialNumber() != null && p.getSerialNumber() != null ?
-							player.getSerialNumber().equals(p.getSerialNumber())
-							: player.getHostAddress().equals(p.getHostAddress()))) {
-						if (player.getMac() != null && p.getMac() != null &&
-								!player.getMac().equals(p.getMac())) {
-							continue;
-						} else {
-							if (p.getLocation().equals(GODS_LOBBY) && p.getPosition().getZ() == player.getPosition().getZ()) {
-								player.getPacketSender().sendMessage("You already have an account at Isle of the Gods.");
-								player.moveTo(GameSettings.DEFAULT_POSITION);
-								continue;
-							}
-						}
-					}
-				}
-
-				if (player.getPlayerInteractingOption() != PlayerInteractingOption.INVITE)
-					player.getPacketSender().sendInteractionOption("Invite", 2, false);
-
-				if (player.getGodsRaidsParty() == null) {
-					int id = 111716;
-					for (int i = 111716; i < 111737; i++) {
-						player.getPacketSender().sendString(id++, "---");
-						player.getPacketSender().sendString(id++, "--");
-						player.getPacketSender().sendString(id++, "-");
-					}
-					player.getPacketSender().sendString(111709, "Create");
-					player.getPacketSender().sendString(111702, "Isle of the Gods Party: @whi@0");
-				}
-
-				player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111700);
-				player.getPacketSender().sendTabInterface(GameSettings.ACHIEVEMENT_TAB, 111700);
-				player.getPacketSender().sendConfig(6000, 4);
-				player.getPacketSender().sendTab(GameSettings.QUESTS_TAB);
-			}
-
-			@Override
-			public void login(Player player) {
-				if (player.getPlayerInteractingOption() != PlayerInteractingOption.INVITE)
-					player.getPacketSender().sendInteractionOption("Invite", 2, false);
-			}
-
-			@Override
-			public void process(Player player) {
-				if (player.getGodsRaidsParty() != null) {
-					player.getGodsRaidsParty().refreshInterface();
-				} else {
-					int id = 111716;
-					for (int i = 111716; i < 111737; i++) {
-						player.getPacketSender().sendString(id++, "---");
-						player.getPacketSender().sendString(id++, "--");
-						player.getPacketSender().sendString(id++, "-");
-					}
-					player.getPacketSender().sendString(111709, "Create");
-					player.getPacketSender().sendString(111702, "Isle of the Gods Party: @whi@0");
-				}
-			}
-		},
-		ISLE_GODS(new int[]{2580, 2605}, new int[]{4435, 4452}, true, true, true,
-				false, true, false) {
-			@Override
-			public void logout(Player player) {
-				if (player.getRegionInstance() != null
-						&& player.getRegionInstance().equals(RegionInstanceType.KALPHITE_KING)) {
-					player.getRegionInstance().destruct();
-					World.getNpcs()
-							.forEach(n -> n.removeInstancedNpcs(Location.ISLE_GODS, player.getPosition().getZ()));
-				}
-				if (player.getRegionInstance() != null)
-					player.getRegionInstance().destruct();
-
-				if (player.getGodsRaidsParty() != null) {
-					player.getGodsRaidsParty().remove(player);
-				}
-
-				player.moveTo(GodsRaidsData.LOBBY_POSITION);
-
-				if (player.getGodsRaidsParty() != null)
-					player.getGodsRaidsParty().getPlayersInRaid().remove(player);
-
-				player.getMovementQueue().setLockMovement(false);
-				player.getPacketSender().sendCameraNeutrality();
-			}
-
-			@Override
-			public void leave(Player player) {
-				player.getPacketSender().sendCameraNeutrality();
-				if (player.getRegionInstance() != null
-						&& player.getRegionInstance().equals(RegionInstanceType.KALPHITE_KING)) {
-					player.getRegionInstance().destruct();
-					World.getNpcs()
-							.forEach(n -> n.removeInstancedNpcs(Location.ISLE_GODS, player.getPosition().getZ()));
-				}
-
-				if (player.getGodsRaidsParty() != null) {
-					if (player.getGodsRaidsParty().getOwner().equals(player)) {
-						World.getNpcs()
-								.forEach(n -> n.removeInstancedNpcs(Location.ISLE_GODS, player.getIndex() * 4));
-					}
-				}
-
-				if (player.getGodsRaidsParty() != null)
-					player.getGodsRaidsParty().remove(player);
-
-				if (player.getGodsRaidsParty() != null)
-					player.getGodsRaidsParty().getPlayersInRaid().remove(player);
-
-				player.getMovementQueue().setLockMovement(false);
-
-				int id = 111716;
-				for (int i = 111716; i < 111737; i++) {
-					player.getPacketSender().sendString(id++, "---");
-					player.getPacketSender().sendString(id++, "--");
-					player.getPacketSender().sendString(id++, "-");
-				}
-				player.getPacketSender().sendString(111709, "Create");
-				player.getPacketSender().sendString(111702, "---");
-			}
-
-			@Override
-			public void login(Player player) {
-
-				player.getPacketSender().sendCameraNeutrality();
-				if (player.getRegionInstance() != null
-						&& player.getRegionInstance().equals(RegionInstance.RegionInstanceType.KALPHITE_KING)) {
-					player.getRegionInstance().destruct();
-					World.getNpcs()
-							.forEach(n -> n.removeInstancedNpcs(Location.ISLE_GODS, player.getPosition().getZ()));
-				}
-
-				if (player.getGodsRaidsParty() != null) {
-					if (player.getGodsRaidsParty().getOwner().equals(player)) {
-						World.getNpcs()
-								.forEach(n -> n.removeInstancedNpcs(Location.ISLE_GODS, player.getIndex() * 4));
-					}
-				}
-
-				if (player.getGodsRaidsParty() != null)
-					player.getGodsRaidsParty().remove(player);
-
-				if (player.getGodsRaidsParty() != null)
-					player.getGodsRaidsParty().getPlayersInRaid().remove(player);
-
-				player.moveTo(GodsRaidsData.LOBBY_POSITION);
-
-				player.getMovementQueue().setLockMovement(false);
-			}
-
-			@Override
-			public boolean canTeleport(Player player) {
-				if (player.getGodsRaidsParty() != null) {
-					player.sendMessage("You cannot teleport while in a party");
-					return false;
-				}
-				return true;
-			}
-
-			@Override
-			public void enter(Player player) {
-
-				int id = 111716;
-				for (int i = 151716; i < 111737; i++) {
-					player.getPacketSender().sendString(id++, "---");
-					player.getPacketSender().sendString(id++, "--");
-					player.getPacketSender().sendString(id++, "-");
-				}
-				player.getPacketSender().sendString(111709, "Create");
-				player.getPacketSender().sendString(111702, "Isle of the Gods Party: @whi@0");
-
-				if (GodsRaidsData.LOBBY_AREA.inside(player.getPosition(), player.getPosition().getZ())) {
-					player.getPacketSender().sendInteractionOption("Invite", 2, false);
-				}
-
-				player.setRegionInstance(new RegionInstance(player, RegionInstanceType.KALPHITE_KING));
-                /*  player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111700)
-                       .sendTab(GameSettings.QUESTS_TAB);*/
-			}
-
-			@Override
-			public void onDeath(Player player) {
-				if (player.getGodsRaidsParty() != null) {
-					GodsRaids.handleDeath(player.getGodsRaidsParty(), player);
-				}
-				player.getPacketSender().sendCameraNeutrality();
-				player.setInsideGodsRaids(false);
-				player.getMovementQueue().setLockMovement(false);
-			}
-
-			@Override
-			public void process(Player player) {
-				if (player.getGodsRaidsParty() != null) {
-					player.getGodsRaidsParty().refreshInterface();
-				}
-
-			}
-
-		},
-
-
-		MAGICIANS_GUILD(new int[] { 2180, 2230 }, new int[] { 4489, 4535 }, true, true, true, false, true, true) {
-
-		},
-		MELEE_GUILD(new int[] { 1923, 1975 }, new int[] { 4166, 4215 }, true, true, true, false, true, true) {
-
-		},
-		ARCHERS_GUILD(new int[] { 3333, 3383 }, new int[] { 4682, 4727 }, true, true, true, false, true, true) {
-
 		},
 		EMERALD_ZONE(new int[] { 2580, 2622 }, new int[] { 2760, 2785 }, false, true, true, false, true, false) {
 
@@ -2865,8 +2630,7 @@ for (Item item : player.getInventory().getItems()) {
 				|| (prev == Location.SOD_LOBBY && newLocation == Location.SOD)
 						|| (prev == Location.SOD && newLocation == Location.SOD_LOBBY)
 						|| (prev == Location.DARKNESS_LOBBY && newLocation == Location.SHADOWS_OF_DARKNESS)
-						|| (prev == Location.SHADOWS_OF_DARKNESS && newLocation == Location.DARKNESS_LOBBY)
-						|| (prev == Location.ISLE_GODS && newLocation == Location.GODS_LOBBY)) {
+						|| (prev == Location.SHADOWS_OF_DARKNESS && newLocation == Location.DARKNESS_LOBBY)) {
 
 				} else {
 					prev.leave(((Player) gc));

@@ -126,19 +126,6 @@ public class PlayerOptionPacketListener implements PacketListener {
 			}
 			return;
 		}
-
-		if (player.getLocation() == Location.GODS_LOBBY) {
-			player.setEntityInteraction(attacked);
-			if (attacked.getIndex() != player.getIndex()) {
-				if (player.getGodsRaidsParty() != null && player.getGodsRaidsParty().getOwner().equals(player)) {
-					player.sendMessage("Sent invite to " + attacked.getUsername());
-					player.getGodsRaidsParty().invite(attacked);
-				} else {
-					player.sendMessage("You must be the leader of a party to do this.");
-				}
-			}
-			return;
-		}
 		if (player.getLocation() == Location.DUEL_ARENA && player.getDueling().duelingStatus == 0) {
 			player.getDueling().challengePlayer(attacked);
 			return;

@@ -61,7 +61,6 @@ import com.ruse.world.content.dissolving.OwnerDisassemble;
 import com.ruse.world.content.dissolving.SupremeDissolving;
 import com.ruse.world.content.eventboss.EventBossManager;
 import com.ruse.world.content.gamblinginterface.GamblingInterface;
-import com.ruse.world.content.gods.GodsRaidsParty;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
 import com.ruse.world.content.groupironman.IronmanGroup;
 import com.ruse.world.content.instanceMananger.InstanceData;
@@ -79,7 +78,6 @@ import com.ruse.world.content.properscratchcard.Scratchcard;
 import com.ruse.world.content.quests.QuestInterfaceHandler;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
 import com.ruse.world.content.raids.shadows.ShadowRaidParty;
-import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.randomevents.Genie;
 import com.ruse.world.content.scratchcards.ScratchCard;
@@ -454,18 +452,6 @@ public int howmuchdissolveamt = 0;
     @Getter
     private ArrayList<Item> godsCoffer = new ArrayList<>();
 
-    @Getter
-    @Setter
-    private GodsRaidsParty godsRaidsParty, godsPartyInvitation;
-
-
-    @Getter
-    @Setter
-    private boolean insideGodsRaids;
-    @Getter
-    @Setter
-    private boolean enteredGodsRaids;
-
 
     @Getter
     @Setter
@@ -761,17 +747,6 @@ public int howmuchdissolveamt = 0;
     @Getter
     @Setter
     private int shadowKeysOpened;
-
-
-
-    @Getter
-    @Setter
-    private RaidDifficulty lastDifficulty;
-
-    @Getter
-    @Setter
-    private int easyIsleGodKC,medIsleGodKC,hardIsleGodKC;
-
     @Getter
     private final BestItems bestItems = new BestItems(this);
     private final GoodieBag goodieBag = new GoodieBag(this);

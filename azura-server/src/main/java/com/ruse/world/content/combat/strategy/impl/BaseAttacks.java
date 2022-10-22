@@ -26,9 +26,6 @@ public class BaseAttacks {
         if (p.getShadowRaidsParty() != null && p.getLocation() == Locations.Location.SHADOWS_OF_DARKNESS) {
             return p.getShadowRaidsParty().getPlayers();
         }
-        if (p.getShadowRaidsParty() != null && p.getLocation() == Locations.Location.ISLE_GODS) {
-            return p.getGodsRaidsParty().getPlayers();
-        }
         return Misc.getCombinedPlayerList(p);
     }
 

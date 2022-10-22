@@ -32,6 +32,7 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.combat.weapon.FightStyle;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringBossNpc;
+import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
@@ -2045,21 +2046,6 @@ public final class CombatFactory {
                 container.allHits(context -> {
                     context.setAccurate(false);
                 });
-            } else if (builder.getVictim().isNpc() && builder.getCharacter().isPlayer()) {
-                if (npc.getId() == 406
-                        || npc.getId() == 7553) {
-                    if (attacker.getGodsRaidsParty() != null){
-                        if ((!attacker.getGodsRaidsParty().isSaradominAttackable() && npc.getId() == 406 )
-                                || (attacker.getGodsRaidsParty().isSaradominAttackable() && npc.getId() == 7553)) {
-                            attacker.sendMessage(npc.getDefinition().getName() + " has a shield currently.");
-                            container.allHits(context -> {
-                                long hit = context.getHit().getDamage();
-                                context.getHit().incrementAbsorbedDamage((int) (hit));
-                                context.setAccurate(false);
-                            });
-                        }
-                    }
-                }
             } else if ((npc.getId() == DungeoneeringBossNpc.Constants.BOSS_PROT_MELEE && npc.getTransformationId() == -1 || npc.getTransformationId() == DungeoneeringBossNpc.Constants.BOSS_PROT_MELEE) && container.getCombatType() == CombatType.MELEE) {
                 container.allHits(context -> {
                     int hit = context.getHit().getDamage();

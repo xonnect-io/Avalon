@@ -155,7 +155,6 @@ public class PlayerSaving {
 			object.addProperty("groudon-killcount", new Integer(player.getPointsHandler().getGROUDONKILLCount()));
 			object.addProperty("midnight-killcount", new Integer(player.getPointsHandler().getMIDNIGHTKILLCount()));
 			object.addProperty("ab-killcount", new Integer(player.getPointsHandler().getBorkKC()));
-			object.add("gods-coffer", builder.toJsonTree(player.getGodsCoffer().toArray()));
 			object.addProperty("cosmetic-override", player.isCosmeticOveride());
 			object.addProperty("quest-one-dream-kc", new Integer(player.getPointsHandler().getQuestOneDreamKC()));
 			object.addProperty("zombie-raid-kc", new Integer(player.getPointsHandler().getZombieRaidKC()));
@@ -163,7 +162,6 @@ public class PlayerSaving {
 			object.addProperty("suffering-kc", new Integer(player.getPointsHandler().getSufferingKC()));
 			object.addProperty("shadow-drop-rate", player.getShadowRareDropBoost());
 			object.addProperty("shadow-key-opened", player.getShadowKeysOpened());
-			object.addProperty("difficulty", player.getDifficulty().name());
 			object.addProperty("lastInstanceNpc", player.lastInstanceNpc);
 			object.addProperty("pumpkins-collected", new Integer(player.getSoulInPouchAsInt()));
 			object.addProperty("treasure-hunter-kc", new Integer(player.getPointsHandler().getTreasureHunterKC()));

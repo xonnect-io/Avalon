@@ -1,6 +1,7 @@
 package com.ruse.model;
 
 import com.ruse.util.Misc;
+import com.ruse.model.Position;
 
 /**
  * Represents a single world tile position.
@@ -9,10 +10,6 @@ import com.ruse.util.Misc;
  */
 
 public class Position {
-
-    public Position(Position center, int distance) {
-
-    }
 
     public long longPacked() {
         return ((long) z << 28L) | ((long) x << 14L) | (long) y;
@@ -41,8 +38,10 @@ public class Position {
         this(x, y, 0);
     }
 
-    public Position(Position tile) {
-        this(tile.x, tile.y, tile.z);
+    public Position(Position tile, int randomize) {
+        this.x = (short) (tile.x + Misc.random(randomize * 2 + 1) - randomize);
+        this.y = (short) (tile.y + Misc.random(randomize * 2 + 1) - randomize);
+        this.z = tile.z;
     }
 
     /**

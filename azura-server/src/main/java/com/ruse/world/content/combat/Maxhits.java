@@ -2,12 +2,10 @@ package com.ruse.world.content.combat;
 
 import com.ruse.model.Locations;
 import com.ruse.model.PlayerRights;
-import com.ruse.model.Position;
 import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Costumes;
 import com.ruse.model.container.impl.Equipment;
 import com.ruse.util.Misc;
-import com.ruse.world.content.SetBonuses;
 import com.ruse.world.content.combat.effect.EquipmentBonus;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
@@ -21,244 +19,6 @@ import com.ruse.world.entity.impl.player.Player;
 
 public class Maxhits {
 
-    public static NPC baseNPC = new NPC(1, new Position(1,1,0));
-
-    public static double getDamageBoost(Player player, Character victim, CombatType combatType) {
-        double maxHit = 1;
-
-        if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23688 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23827 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23883 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23512 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23459 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23403 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916) {
-            maxHit *= 2;
-        }
-
-        if (player.getInventory().contains(23781)) {
-            maxHit *=  1.75;
-        } else if (player.getInventory().contains(4442)) {
-            maxHit *=  1.5;
-        }
-
-        if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23544
-                || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23627
-                || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23628) {
-            maxHit *=  1.1;
-        }
-        if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23013) {
-            maxHit *=  1.05;
-        }
-        if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23014
-                || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23015
-                || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23016
-                || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23017) {
-            maxHit *=  1.1;
-        }
-        if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23814
-                || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 1037
-                || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23621) {
-            maxHit *=  1.2;
-        }
-
-        maxHit *= SetBonuses.getDamageBoost(player);
-
-
-        return maxHit;
-    }
-
-    public static double getMaxHit(Player player, Character victim, CombatType combatType, boolean slayerNPC) {
-        int percent = 0;
-
-        if (victim.isNpc()) {
-            if (((NPC) victim).getId() == player.getSlayer().getSlayerTask().getNpcId()
-                    || slayerNPC) {
-                if (player.getInventory().contains(23413))
-                    percent += 75;
-                else if (player.getInventory().contains(4442)) {
-                    percent += 50;
-                }
-                if (player.getEquipment().contains(7539)) {
-                    percent += 50;
-                }
-                int charges = player.getSupremeCharges();
-
-                }
-                if (player.getWarriorMaster() == true) {
-                    percent += 20;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.RAICHU_PET.npcId) {
-                    percent += 15;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.FALLEN_ANGEL_PET.npcId) {
-                    percent += 25;
-                }
-                for (Costumes costume : Costumes.values()) {
-                    if (player.getEquipment().contains(costume.getItemId()))
-                        percent += costume.getDamageBoost();
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
-                    percent += 20;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
-                    percent += 30;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
-                    percent += 25;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.LOTUS_MAGICIAN.npcId) {
-                    percent += 25;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.SHADOW_MAGICIAN.npcId) {
-                    percent += 25;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.LESARKUS_WARRIOR.npcId) {
-                    percent += 25;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.VAMPIRE_WARRIOR.npcId) {
-                    percent += 25;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {
-                    percent += 25;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.SPIRIT_OF_SCORPIUS.npcId) {
-                    percent += 25;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc()
-                        .getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {// admin pet
-                    percent += 35;
-                }
-
-                if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
-                    percent += 75;
-                }
-                if (player.getRights() == PlayerRights.ZENYTE_DONATOR) {
-                    percent += 50;
-                }
-                if (player.getRights() == PlayerRights.ONYX_DONATOR) {
-                    percent += 35;
-                }
-                if (player.getRights() == PlayerRights.DIAMOND_DONATOR) {
-                    percent += 25;
-                }
-                if (player.getRights() == PlayerRights.RUBY_DONATOR) {
-                    percent += 15;
-                }
-                if (player.getRights() == PlayerRights.EMERALD_DONATOR) {
-                    percent += 10;
-                }
-                if(player.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
-                    percent += 10;
-                }
-                if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
-                        player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916 ||
-                        player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 13800) {
-                    percent += 100;
-                }
-
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc().getId() == 1906) {
-                    percent += 10;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc().getId() == 1801) {// admin pet
-                    percent += 15;
-                }
-
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc().getId() == 9013) {// admin pet
-                    percent += 25;
-                }
-                if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                        && player.getSummoning().getFamiliar().getSummonNpc().getId() == 9016) {// admin pet
-                    percent += 25;
-                }
-                }
-            /*
-            Halloween Seasonal items
-             */
-                    /*
-            Halloween Seasonal items
-             */
-        if (player.getEquipment().contains(23439)) {
-            percent += 05;
-        }
-        if (player.getEquipment().contains(23440)) {
-            percent += 10;
-        }
-        if (player.getEquipment().contains(23441)) {
-            percent += 10;
-        }
-        if (player.getEquipment().contains(23442)) {
-            percent += 10;
-        }
-        if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
-            percent += 30;
-        }
-                if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
-                    percent += 25;
-                }
-                if (player.getEquipment().contains(23418)) {
-                    percent += 25;
-                }
-                if (player.getDoubleDMGTimer() > 0) {
-                    percent *= 2;
-                }
-                if (player.getMinutesVotingDMG() > 0) {
-                    percent *= 2;
-                }
-
-                if (player.getEquipment().contains(11676) && player.getEquipment().contains(8839)
-                        && player.getEquipment().contains(8840) && player.getEquipment().contains(8842)) {
-                    percent *= 20;
-                }
-
-
-        if (player.getAmountDonated() >= 25000) {
-            percent += 90;
-        } else   if (player.getAmountDonated() >= 10000) {
-            percent += 70;
-        } else  if (player.getAmountDonated() >= 5000) {
-            percent += 50;
-        } else if (player.getAmountDonated() >= 1000) {
-            percent += 35;
-        } else if (player.getAmountDonated() >= 500) {
-            percent += 25;
-        } else if (player.getAmountDonated() >= 250) {
-            percent += 15;
-        } else if (player.getAmountDonated() >= 50) {
-            percent += 10;
-        } else if (player.getAmountDonated() >= 10) {
-            percent += 5;
-        }       // percent += 50;
-
-        return percent;
-    }
     public static int melee(Character entity, Character victim) {
         double maxHit = 0;
         if (entity.isNpc()) {
@@ -501,21 +261,6 @@ public class Maxhits {
             /*
             Halloween Seasonal items
              */
-            if (player.getEquipment().contains(23439)) {
-                maxHit *= 1.05;
-            }
-            if (player.getEquipment().contains(23440)) {
-                maxHit *= 1.10;
-            }
-            if (player.getEquipment().contains(23441)) {
-                maxHit *= 1.10;
-            }
-            if (player.getEquipment().contains(23442)) {
-                maxHit *= 1.10;
-            }
-            if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
-                maxHit *= 1.30;
-            }
             if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
                 maxHit *= 1.25;
             }
@@ -679,21 +424,6 @@ public class Maxhits {
             /*
             Halloween Seasonal items
              */
-            if (player.getEquipment().contains(23439)) {
-                maxHit *= 1.05;
-            }
-            if (player.getEquipment().contains(23440)) {
-                maxHit *= 1.10;
-            }
-            if (player.getEquipment().contains(23441)) {
-                maxHit *= 1.10;
-            }
-            if (player.getEquipment().contains(23442)) {
-                maxHit *= 1.10;
-            }
-            if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
-                maxHit *= 1.30;
-            }
             if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
                 maxHit *= 1.25;
             }
@@ -925,17 +655,13 @@ public class Maxhits {
              */
             if (player.getEquipment().contains(23439)) {
                 maxHit *= 1.05;
-            }
-            if (player.getEquipment().contains(23440)) {
+            } else if (player.getEquipment().contains(23440)) {
                 maxHit *= 1.10;
-            }
-            if (player.getEquipment().contains(23441)) {
+            }else if (player.getEquipment().contains(23441)) {
                 maxHit *= 1.10;
-            }
-            if (player.getEquipment().contains(23442)) {
+            }else if (player.getEquipment().contains(23442)) {
                 maxHit *= 1.10;
-            }
-            if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
+            } else if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
                     maxHit *= 1.30;
                 }
 

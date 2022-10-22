@@ -100,7 +100,7 @@ public class CombatContainer {
 	private final ContainerHit[] prepareHits(int hitAmount) {
 
 		// Check the hit amounts.
-		if (hitAmount > 4) {
+		if (hitAmount > 4) {	
 			throw new IllegalArgumentException("Illegal number of hits! The maximum number of hits per turn is 4.");
 		} else if (hitAmount < 0) {
 			throw new IllegalArgumentException("Illegal number of hits! The minimum number of hits per turn is 0.");
@@ -124,25 +124,10 @@ public class CombatContainer {
 		}
 
 		if(attacker instanceof NPC) {
-			NPC npc = null;
-			for (int i = 0; i < array.length; i++) {
-				boolean accuracy = !checkAccuracy || CombatFactory.rollAccuracy(attacker, victim, combatType);
-				array[i] = new ContainerHit(CombatFactory.getHit(attacker, victim, combatType), accuracy);
-				npc = (NPC) attacker;
-				Player player = (Player) attacker;
-				if (npc.getId() == 406
-						|| npc.getId() == 7553) {
-					if (player.getGodsRaidsParty() != null) {
-						if ((!player.getGodsRaidsParty().isSaradominAttackable() && npc.getId() == 406)
-								|| (player.getGodsRaidsParty().isSaradominAttackable() && npc.getId() == 7553)) {
-							array[i].getHit().setDamage(0);
-							//  player.sendMessage(npc.getDefinition().getName() + " has a shield currently.");
-						}
-					}
-				}
-			}
+			NPC npc = (NPC) attacker;
+
 			// The wolf should do 10 damage every attack
-			if (npc.getId() == 6047) {
+			if(npc.getId() == 6047) {
 				for (int i = 0; i < hitAmount; i++) {
 					array[i].getHit().setDamage(100);
 					array[i].setAccurate(true);

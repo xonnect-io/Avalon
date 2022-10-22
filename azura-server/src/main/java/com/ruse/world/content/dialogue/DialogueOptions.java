@@ -1975,7 +1975,6 @@ public class DialogueOptions {
                 case 67:
                     player.getPacketSender().sendInterfaceRemoval();
                     if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY
-                            || player.getLocation() == Location.GODS_LOBBY
                             && player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null
                             && player.getMinigameAttributes().getZombieAttributes().getPartyInvitation()
                             .getOwner() != null) {
