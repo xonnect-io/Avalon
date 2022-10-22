@@ -85,41 +85,38 @@ public class ItemDef4 {
 			case 23293:
 				itemDef.copyItem(6585);
 				itemDef.name = "<col=89584A>Fantasy Amulet";
-				itemDef.modelID = 19676;
-				itemDef.maleEquip1 = 19675;
+				itemDef.modelID = 19718;
+				itemDef.maleEquip1 = 19719;
 				itemDef.femaleEquip1 = 1975;
 				itemDef.maleWieldY = 3;
 				itemDef.maleWieldZ = 3;
 				itemDef.modelZoom = 340;
 				itemDef.modelOffsetY = 0;
 				itemDef.rotationY = 280;
-				itemDef.rdc2 = 562521;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
 			case 23280:
 				itemDef.copyItem(6737);
 				itemDef.name = "<col=89584A>Fantasy Ring";
-				itemDef.modelID = 19677;
+				itemDef.modelID = 19720;
 				itemDef.maleEquip1 = -1;
 				itemDef.femaleEquip1 = -1;
 				itemDef.scaleX = 32;
 				itemDef.scaleY = 32;
 				itemDef.scaleZ = 32;
-				itemDef.rdc2 = 562521;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
 			case 23292:
 				itemDef.copyItem(6737);
 				itemDef.name = "<col=89584A>Fantasy Bracelet";
-				itemDef.modelID = 19678;
-				itemDef.maleEquip1 = 19679;
-				itemDef.femaleEquip1 = 19679;
+				itemDef.modelID = 19721;
+				itemDef.maleEquip1 = 19722;
+				itemDef.femaleEquip1 = 19722;
 				itemDef.maleModelScale = 4;
 				itemDef.maleWieldY = 4;
 				itemDef.maleWieldZ = -1;
-				itemDef.rdc2 = 562521;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
@@ -8246,8 +8243,10 @@ public class ItemDef4 {
 				itemDef.copyItem(14859);
 				itemDef.name = "<col=89584A>Dark Matter";
 				itemDef.modelID = 19711;
-				itemDef.modelZoom = 500;
+				itemDef.modelZoom = 550;
 				itemDef.rotationZ = 189;//189
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = null;
 				break;
 
 			case 23268:

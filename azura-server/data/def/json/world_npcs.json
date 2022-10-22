@@ -11885,8 +11885,8 @@
     "npc-id": 961,
     "face": "SOUTH",
     "position": {
-      "x": 2658,
-      "y": 4029,
+      "x": 2908,
+      "y": 4114,
       "z": 0
     },
     "walking-policy": {
@@ -12390,10 +12390,10 @@
   },
   {
     "npc-id": 2676,
-    "face": "WEST",
+    "face": "NORTH",
     "position": {
-      "x": 3128,
-      "y": 2982,
+      "x": 2929,
+      "y": 4112,
       "z": 0
     },
     "walking-policy": {
@@ -13823,13 +13823,13 @@
     "npc-id": 4653,
     "face": "SOUTH",
     "position": {
-      "x": 2982,
-      "y": 2506,
+      "x": 2899,
+      "y": 4127,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": 1
+      "coordinate": true,
+      "radius": 2
     }
   },
   {

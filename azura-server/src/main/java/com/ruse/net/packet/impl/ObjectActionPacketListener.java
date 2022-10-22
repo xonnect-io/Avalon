@@ -31,6 +31,7 @@ import com.ruse.world.content.dialogue.impl.GuardianTokenExchange;
 import com.ruse.world.content.dissolving.SupremeDissolving;
 import com.ruse.world.content.events.EventManager;
 import com.ruse.world.content.globalBosses.PumpkinSpawns;
+import com.ruse.world.content.gods.GodsInterfaces;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.holidayevents.christmas2016;
 import com.ruse.world.content.holidayevents.easter2017data;
@@ -641,6 +642,9 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.moveTo(new Position(3003, 10354, player.getPosition().getZ()));
                                     player.getPacketSender().sendMessage("You escape from the spikes.");
                                 }
+                                break;
+                            case 28140:
+                                GodsInterfaces.openStartScreen(player);
                                 break;
                             case 4387://
                                 player.setDialogueActionId(214);

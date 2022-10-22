@@ -1270,13 +1270,15 @@ public class CustomInterfaces extends RSInterface {
 		// addBackground(21173, 488, 324, false);
 		addSpriteLoader(21173, 696);// TODO change to transparent box?
 
-		addText(21181, "", fonts, 2, 0xFF8900, true, true);
+		//  addText(21181, "asd", fonts, 2, 0xff981f, true, true);
 
-		addCloseButtonSmall(21174, 21175, 21176);
-		addText(21177, "Equipment Bonuses", fonts, 2, 0xFF8900, true, true);
+		addCloseButton(21174, 21175, 21176);
+		addText(21177, "Equipment Bonuses", fonts, 2, 0xff981f, true, true);
+
 		addText(21178, "Attack bonuses", fonts, 2, 0xFF8900, false, true);
 		addText(21179, "Defence bonuses", fonts, 2, 0xFF8900, false, true);
-		addText(21180, "Other bonuses", fonts, 2, 0xFF8900, false, true);
+		addText(21180, "Strength bonuses", fonts, 2, 0xFF8900, false, true);
+		addText(21181, "Damage modifiers", fonts, 2, 0xFF8900, false, true);
 
 		setChildren(33, tab);
 		int index = 0;
@@ -1284,39 +1286,47 @@ public class CustomInterfaces extends RSInterface {
 		setBounds(21174, 477, 8, index++, tab);
 		setBounds(21175, 477, 8, index++, tab);
 		setBounds(21177, 258, 8, index++, tab);
-		setBounds(21178, 26, 32, index++, tab);
-		setBounds(21179, 26, 112, index++, tab);
-		setBounds(21180, 26, 244, index++, tab);
-		setBounds(21181, 179, 28, index++, tab);
+
+		setBounds(21178, 25, 28, index++, tab);
+		setBounds(21179, 25, 110, index++, tab);
+		setBounds(21180, 25, 194, index++, tab);
+		setBounds(21181, 25, 253, index++, tab);
 
 		for (int i = 0; i < 5; i++) {
 			addText(21190 + i, "", fonts, 1, 0xFF9200, false, true);
-			setBounds(21190 + i, 31, 46 + (i * 13), index++, tab);
+			setBounds(21190 + i, 29, 42 + (i * 13), index++, tab);
 		}
 
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 5; i++) {
 			addText(21195 + i, "", fonts, 1, 0xFF9200, false, true);
-			setBounds(21195 + i, 31, 126 + (i * 13), index++, tab);
+			setBounds(21195 + i, 29, 125 + (i * 13), index++, tab);
 		}
 
 		for (int i = 0; i < 4; i++) {
 			addText(21204 + i, "", fonts, 1, 0xFF9200, false, true);
-			setBounds(21204 + i, 31, 258 + (i * 13), index++, tab);
+			setBounds(21204 + i, 29, 209 + (i * 13), index++, tab);
 		}
+
+		for (int i = 0; i < 4; i++) {
+			addText(21200 + i, "", fonts, 1, 0xFF9200, false, true);
+			setBounds(21200 + i, 29, 267 + (i * 13), index++, tab);
+		}
+
+
 		addCharEquipment(21208);
 		setBounds(21208, 190, 200, index++, tab);
 		setBounds(1644, 321, 55, index++, tab);
 
-		addText(66106, "Attack Speed:", fonts, 0, 0xFF9200, true, true);// 19153
-		tab.child(index++, 66106, 415, 257);
-		addText(66107, "Drop Rate Bonus:", fonts, 0, 0xFF9200, true, true);// 19153
-		tab.child(index++, 66107, 415, 269);
-		addText(66108, "Melee Max Hit:", fonts, 0, 0xFF9200, true, true);// 19153
-		tab.child(index++, 66108, 415, 281);
-		addText(66109, "Ranged Max Hit:", fonts, 0, 0xFF9200, true, true);// 19153
-		tab.child(index++, 66109, 415, 293);
-		addText(66110, "Magic Max Hit:", fonts, 0, 0xFF9200, true, true);// 19153
-		tab.child(index++, 66110, 415, 305);
+		addText(66106, "Attack Speed:", fonts, 1, 0xFF9200, true, true);// 19153
+		tab.child(index++, 66106, 415, 260);
+		addText(66107, "", fonts, 1, 0xFF9200, true, true);// 19153
+		tab.child(index++, 66107, 415, 270);
+		addText(66108, "Melee Maxhit:", fonts, 0, 0xFF9200, true, true);// 19153
+		tab.child(index++, 66108, 415, 284);
+		addText(66109, "Ranged Maxhit:", fonts, 0, 0xFF9200, true, true);// 19153
+		tab.child(index++, 66109, 415, 296);
+		addText(66110, "Magic Maxhit:", fonts, 0, 0xFF9200, true, true);// 19153
+		tab.child(index++, 66110, 415, 308);
 
 	}
 
@@ -6801,13 +6811,261 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 
 	}
 
+
+
+	static void godsInterface() {
+		int interID = 144000;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 130;
+		int y = 13;
+		tab.totalChildren(18);
+
+		addSpriteLoader(id, 1791);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addText(id, "Gods Interface", tda, 2, 16750643, true, true);
+		tab.child(c++, id++, 129 + x, 4 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 233 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 233 + x, 3 + y);
+		id++;
+
+		String[] tabs = new String[]{"Easy", "Medium", "Hard"};
+
+		for (int i = 0; i < tabs.length; i++) {
+			addConfigButtonWSpriteLoader(id, interID, 1792, 1793, 79, 20, tabs[i], i, 5, 4511);
+			tab.child(c++, id++, 10 + x, 25 + y);
+			addText(id, tabs[i], 0xFFA500, false, true, 100, tda, 1);
+			tab.child(c++, id++, 15 + x, 28 + y);
+			x += 79;
+		}
+		x = 130;
+
+		addText(id, "Information:", tda, 2, 16750643, false, true);
+		tab.child(c++, id++, 16 + x, 58 + y);
+
+		addText(id, "- Boss hitpoints scale per difficulty \\n- Different loot tables per difficulty \\n- No respawns on death \\n", tda, 1, 0xEECB38, false, true);
+		tab.child(c++, id++, 18 + x, 73 + y);
+
+		addText(id, "Restrictions:", tda, 2, 16750643, false, true);
+		tab.child(c++, id++, 16 + x, 117 + y);
+
+		addText(id, "- Maximum Party size: 6 \\n- No Soulsplit allowed \\n- No Pets allowed \\n- AOE won't work", tda, 1, 0xEECB38, false, true);
+		tab.child(c++, id++, 18 + x, 132 + y);
+
+		addText(id, "Requirements", tda, 2, 16750643, true, true);
+		tab.child(c++, id++, 129 + x, 190 + y);
+
+		addText(id, "10,000 Blood demon kills", tda, 1, 0xFFFFFF, true, true);
+		tab.child(c++, id++, 129 + x, 211 + y);
+
+		addText(id, "100k Upgrade Tokens", tda, 1, 0xFFFFFF, true, true);
+		tab.child(c++, id++, 129 + x, 226 + y);
+
+
+		hoverButton(id, 1794, 1796, "Start Fight", 2, 0xff8624, "Start Fight");
+		tab.child(c++, id++, 68 + x, 263 + y);
+
+	}
+
+
+	static void godsCoffer() {
+		int interID = 144100;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 63;
+		int y = 13;
+		tab.totalChildren(12);
+
+		addSpriteLoader(id, 1586);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addText(id, "Isle of the Gods Coffer", tda, 2, 16750643, true, true);
+		tab.child(c++, id++, 192 + x, 4 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 362 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 362 + x, 3 + y);
+		id++;
+
+		String[] tabs = new String[]{"Coffer", "Rewards"};
+
+		for (int i = 0; i < tabs.length; i++) {
+			addConfigButtonWSpriteLoader(id, interID, 1506, 1507, 79, 20, tabs[i], i, 5, 4511);
+			tab.child(c++, id++, 10 + x, 25 + y);
+			addText(id, tabs[i], 0xFFA500, false, true, 100, tda, 1);
+			tab.child(c++, id++, 15 + x, 28 + y);
+			x += 79;
+		}
+		x = 63;
+
+		hoverButton(id, 1457, 1458, "Take All", 2, 0xff8624, "Take All");
+		tab.child(c++, id++, 60 + x, 267 + y);
+
+		hoverButton(id, 1457, 1458, "Bank All", 2, 0xff8624, "Bank All");
+		tab.child(c++, id++, 201 + x, 267 + y);
+
+		addText(id, "Drop Rate", tda, 1, 0xFFA500, true, true);
+		tab.child(c++, id++, 275 + x, 26 + y);
+
+		tab.child(c++, 144150, 12 + x, 57 + y);
+
+		interID = 144150;
+		RSInterface scroll1 = addInterface(interID);
+		scroll1.width = 360 - 16;
+		scroll1.height = 204;
+		scroll1.scrollMax = 1000;
+		scroll1.totalChildren(160);
+		id = interID + 1;
+		c = 0;
+		x = 0;
+		y = 0;
+
+		for (int i = 0; i < 20; i++) {
+			for (int r = 0; r < 8; r++) {
+				addToItemGroup(id, 1, 1, 1, 1, true, new String[]{"Take", null, null, null, null}); //
+				scroll1.child(c++, id++, 3 + x, 3 + y);
+				x += 43;
+			}
+			x = 0;
+			y += 41;
+		}
+
+	}
+
+
+	static void godsRewards() {
+		int interID = 144500;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 63;
+		int y = 13;
+		tab.totalChildren(16);
+
+		addSpriteLoader(id, 1586);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addText(id, "Isle of the Gods Rewards", tda, 2, 16750643, true, true);
+		tab.child(c++, id++, 192 + x, 4 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 362 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 362 + x, 3 + y);
+		id++;
+
+		String[] tabs = new String[]{"Coffer", "Rewards"};
+
+		for (int i = 0; i < tabs.length; i++) {
+			addConfigButtonWSpriteLoader(id, interID, 1506, 1507, 79, 20, tabs[i], i, 5, 4511);
+			tab.child(c++, id++, 10 + x, 25 + y);
+			addText(id, tabs[i], 0xFFA500, false, true, 100, tda, 1);
+			tab.child(c++, id++, 15 + x, 28 + y);
+			x += 79;
+		}
+		x = 63;
+
+
+		addConfigButtonWSpriteLoader(id, interID, 1457, 1458, 118, 28, "Easy Rewards", 0, 5, 4512);
+		tab.child(c++, id++, 10 + x, 267 + y);
+		addText(id, "Easy Rewards", tda, 2, 0xFFA500, true, true);
+		tab.child(c++, id++, 69 + x, 273 + y);
+		//  hoverButton(id, 1457, 1458, "Easy Rewards", 2, 0xff8624, "Easy Rewards");
+		// tab.child(c++, id++, 10 + x, 267 + y);
+
+
+		addConfigButtonWSpriteLoader(id, interID, 1457, 1458, 118, 28, "Medium Rewards", 1, 5, 4512);
+		tab.child(c++, id++, 133 + x, 267 + y);
+		addText(id, "Medium Rewards", tda, 2, 0xFFA500, true, true);
+		tab.child(c++, id++, 192 + x, 273 + y);
+		//hoverButton(id, 1457, 1458, "Medium Rewards", 2, 0xff8624, "Medium Rewards");
+		// tab.child(c++, id++, 133 + x, 267 + y);
+
+
+		addConfigButtonWSpriteLoader(id, interID, 1457, 1458, 118, 28, "Hard Rewards", 2, 5, 4512);
+		tab.child(c++, id++, 256 + x, 267 + y);
+		addText(id, "Hard Rewards", tda, 2, 0xFFA500, true, true);
+		tab.child(c++, id++, 315 + x, 273 + y);
+		// hoverButton(id, 1457, 1458, "Hard Rewards", 2, 0xff8624, "Hard Rewards");
+		// tab.child(c++, id++, 256 + x, 267 + y);
+
+
+		addText(id, "Drop Rate", tda, 1, 0xFFA500, true, true);
+		tab.child(c++, id++, 275 + x, 26 + y);
+
+		tab.child(c++, 144550, 12 + x, 57 + y);
+
+		interID = 144550;
+		RSInterface scroll1 = addInterface(interID);
+		scroll1.width = 360 - 16;
+		scroll1.height = 204;
+		scroll1.scrollMax = 1000;
+		scroll1.totalChildren(320);
+		id = interID + 1;
+		c = 0;
+		x = 0;
+		y = 0;
+
+		for (int i = 0; i < 20; i++) {
+			for (int r = 0; r < 8; r++) {
+				addToItemGroup(id, 1, 1, 1, 1, false, new String[]{null, null, null, null, null}); //
+				scroll1.child(c++, id++, 5 + x, 3 + y);
+				addText(id, "1/100", tda, 0, 16750643, true, true);
+				scroll1.child(c++, id++, 22 + x, 35 + y);
+				x += 43;
+			}
+			x = 0;
+			y += 51;
+		}
+
+	}
+	static void godsHitpoints() {
+		int interID = 144900;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 32;
+		int y = 21;
+		tab.totalChildren(7);
+
+		addSpriteLoader(id, 1786);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addSpriteLoader(id, 1788);
+		tab.child(c++, id++, 14 + x, 7 + y);
+
+		addSpriteLoader(id, 1787);
+		tab.child(c++, id++, 407 + x, 7 + y);
+
+		addSpriteLoader(id, 1789);
+		tab.child(c++, id++, 43 + x, 2 + y);
+
+		addSpriteLoader(id, 1790);
+		tab.child(c++, id++, 227 + x, 2 + y);
+
+		addText(id, "100%", tda, 1, 0xffffff, true, true);
+		tab.child(c++, id++, 127 + x, 6 + y);
+
+		addText(id, "100%", tda, 1, 0xffffff, true, true);
+		tab.child(c++, id++, 311 + x, 6 + y);
+
+
+	}
+
 	public static void TeleportInterfaceNewest(TextDrawingArea[] tda) {
 		int yOffset = -8;
 
 		RSInterface tab = RSInterface.addInterface(28200);
 		RSInterface scrollInterface = RSInterface.addTabInterface(28230);
 		RSInterface rightscroll = RSInterface.addTabInterface(118230);
-		RSInterface.addSprite(28201, 1655);
+		RSInterface.addSprite(28201, 1444);
 		RSInterface.addHoverButton(28202, 1016, 16, 16, "Close", 250, 28203, 3);
 		RSInterface.addHoveredButton(28203, 1017, 16, 16, 28204);
 		RSInterface.addText(28205, "Teleports", tda, 2, ClientConstants.ORANGE, true, true);
@@ -6819,13 +7077,15 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 							|| bossText[i].equalsIgnoreCase("Boss Information")) ? 2: 2, ClientConstants.ORANGE, true, true);
 		}
 
+		RSInterface.addText(28208, "Rewards", tda, 2, ClientConstants.ORANGE, false, true);
+		RSInterface.addText(28209, "NPC Display", tda, 2, ClientConstants.ORANGE, false, true);
 		RSInterface.addButton(28210, 1660, 1661, "Teleport");
-		RSInterface.addText(28211, "", tda, 2, ClientConstants.ORANGE, true, true);
+		RSInterface.addText(60000 + 54, "", tda, 1, ClientConstants.ORANGE, true, true);
 		RSInterface.addText(28212, "Teleport", tda, 2, ClientConstants.ORANGE, true, true);
 		RSInterface.addText(28213, "", tda, 2, ClientConstants.ORANGE, true, true);
 		RSInterface.drawNpcOnInterface(28214, 1719, 600);
-		RSInterface.addText(28208, "Rewards", tda, 2, ClientConstants.ORANGE, false, true);
-		RSInterface.addText(28209, "NPC Display", tda, 2, ClientConstants.ORANGE, true, true);
+
+		addText(60000 + 50, "Tier: ", tda, 3, 0xb9a888, false, true);
 		RSInterface.addText(64110, "Description", tda, 2, ClientConstants.ORANGE, true, true);
 		RSInterface.addText(64112, "", tda, 1, ClientConstants.ORANGE, false, true);
 		RSInterface.addText(64113, "", tda, 1, ClientConstants.ORANGE, false, true);
@@ -6840,43 +7100,44 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 			RSInterface.addText(28221 + i, text[i], tda, 1, 0xFF9900, true, true);
 		}
 		
-		RSInterface.setChildren(32, tab);
+		RSInterface.setChildren(33, tab);
 		tab.child(0, 28201, 7, 10);
-		tab.child(1, 28202, 479, 13);
-		tab.child(2, 28203, 479, 13);
-		tab.child(3, 28205,  90, 69);
-		tab.child(4, 28230, 27 - 8, 95 + yOffset);
-		tab.child(5, 28206, 260, 15);
-		tab.child(6, 28207, 115, 69);
-		tab.child(7, 28208, 394, 69);
-		tab.child(8, 28209, 260, 69);
-		tab.child(9, 28210, 366, 283);
-		tab.child(10, 28211, 341-150, 287);
-		tab.child(11, 28212, 402 + 22, 290);
+		tab.child(1, 28202, 478, 17);
+		tab.child(2, 28203, 478, 17);
+		tab.child(3, 28205,  90, 72);
+		tab.child(4, 28230, 27 - 8, 102 + yOffset);
+		tab.child(5, 28206, 260, 19);
+		tab.child(6, 28207, 115, 70);
+		tab.child(7, 28208, 398, 75);
+		tab.child(8, 28209, 220, 75);
+		tab.child(9, 28210, 363, 211);
+		tab.child(10, 60000 + 54, 415, 267);
+		tab.child(11, 28212, 10 * 40 + 21, 216);
 		tab.child(12, 28213, 383 -170+10, 294);
 		tab.child(13, 28214, 200, 128 - 6);
-		tab.child(14, 28215, 18, 32);
-		tab.child(15, 28216, 97, 32);
-		tab.child(16, 28217, 97+79, 32);
-		tab.child(17, 28218, 97+79+79, 32);
-		tab.child(18, 28219, 97+79+79+79, 32);
-		tab.child(19, 28220, 97+79+79+79+79, 32);
-		tab.child(20, 28221, 57, 36);
-		tab.child(21, 28222, 135, 36);
-		tab.child(22, 28223, 214, 36);
-		tab.child(23, 28224, 291, 36);
-		tab.child(24, 28225, 372, 36);
-		tab.child(25, 28226, 446, 36);
+		tab.child(14, 28215, 18, 45);
+		tab.child(15, 28216, 97, 45);
+		tab.child(16, 28217, 97+79, 45);
+		tab.child(17, 28218, 97+79+79, 45);
+		tab.child(18, 28219, 97+79+79+79, 45);
+		tab.child(19, 28220, 97+79+79+79+79, 45);
+		tab.child(20, 28221, 57, 49);
+		tab.child(21, 28222, 135, 49);
+		tab.child(22, 28223, 214, 49);
+		tab.child(23, 28224, 291, 49);
+		tab.child(24, 28225, 372, 49);
+		tab.child(25, 28226, 446, 49);
 		tab.child(26, 28227, 112, 165);
 		//tab.child(27, 28228, 360, 90);
-		tab.child(27, 64110, 260, 244);
+		tab.child(27, 64110, 255, 246);
 		tab.child(28, 64112, 182, 269);
 		tab.child(29, 64113, 182, 285);
 		tab.child(30, 64114, 182, 340);
-		tab.child(31, 118230, 360, 95 + yOffset);
+		tab.child(31, 118230, 360, 103 + yOffset);
+		tab.child(32, 60000 + 50, 386, 247);
 		//Scoll bar size, witdh and scrolling size.
 		scrollInterface.width = 129 + 5;
-		scrollInterface.height = 224;
+		scrollInterface.height = 218;
 		scrollInterface.scrollMax = 400;
 
 
@@ -6885,7 +7146,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		rightscroll.totalChildren(1);
 		rightscroll.child(0, 28229, 1, 1);
 		rightscroll.width = 109 + 5;
-		rightscroll.height = 184;
+		rightscroll.height = 112;
 		rightscroll.scrollMax = 400;
 		
 		int npcList = 75;
@@ -6895,16 +7156,16 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		RSInterface.setChildren(npcList * 2, scrollInterface);
 		
 		for (int j = 0; j < npcList; j++) {
-			RSInterface.addButton(28231 + j, 1367, 1368 , "Select");
+			RSInterface.addButton(28231 + j, 1450, 1451 , "Select");
 			scrollInterface.child(j, 28231 + j, 0, y1);
 			y1 += 25;
 		}
-		
+
 		for (int i = 0; i < npcList; i++) {
 			RSInterface.addText(28307 + i, "Vorkath " + i, tda, i == 0 ? 1 : 1,
 					i == 0 ? ClientConstants.ORANGE : ClientConstants.ORANGE, false, false, ClientConstants.WHITE,
-					"Select", 150);
-			scrollInterface.child(npcList + i, 28307 + i, 7, y2);
+					"Select", 100);
+			scrollInterface.child(npcList + i, 28307 + i, 10, y2);
 			y2 += 25;
 
 		}
@@ -7444,6 +7705,8 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		achievements();
 		donatorShop();
 		petShop();
+		godsHitpoints();
+		godsInterface();
 		teleportInterface();
 		minigameInterface();
 		vodOverlay(tda);

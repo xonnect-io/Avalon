@@ -257,6 +257,8 @@ public class PlayerHandler {
                     + "] Double EXP has been activated. It stacks with Vote scrolls, Enjoy!");
         }
 
+        player.getPacketSender().sendWalkableInterface(144900, false);
+
         if (Wildywyrm.wyrmAlive) {
             Wildywyrm.sendHint(player);
         }

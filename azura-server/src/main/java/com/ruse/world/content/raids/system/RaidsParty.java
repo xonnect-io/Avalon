@@ -5,6 +5,7 @@ import com.ruse.model.Locations;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.gods.GodsRaidsInvitation;
 import com.ruse.world.content.raids.legends.LegendsRaidsPartyInvitation;
 import com.ruse.world.content.raids.shadows.ShadowRaidsPartyInvitation;
 import com.ruse.world.content.raids.suffering.Suffering;
@@ -120,6 +121,8 @@ public class RaidsParty {
             DialogueManager.start(p, new LegendsRaidsPartyInvitation(getOwner(), p));
         }else if (p.getLocation() == Locations.Location.DARKNESS_LOBBY || p.getLocation() == Locations.Location.SHADOWS_OF_DARKNESS) {
             DialogueManager.start(p, new ShadowRaidsPartyInvitation(getOwner(), p));
+        }else if (p.getLocation() == Locations.Location.GODS_LOBBY || p.getLocation() == Locations.Location.ISLE_GODS) {
+            DialogueManager.start(p, new GodsRaidsInvitation(getOwner(), p));
         }
         getOwner().getPacketSender().sendMessage("An invitation has been sent to " + p.getUsername() + ".");
     }
@@ -190,7 +193,7 @@ public class RaidsParty {
         if (hasEnteredRaids()) {
             for (Player player : getPlayers()) {
                 if (player.getLocation() == Locations.Location.ZOMBIE || player.getLocation() == Locations.Location.SOD
-                        || player.getLocation() == Locations.Location.SHADOWS_OF_DARKNESS)
+                        || player.getLocation() == Locations.Location.SHADOWS_OF_DARKNESS|| player.getLocation() == Locations.Location.ISLE_GODS)
                     destruct = false;
             }
 

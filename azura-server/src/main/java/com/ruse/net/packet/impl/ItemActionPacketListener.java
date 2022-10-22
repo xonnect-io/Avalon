@@ -294,7 +294,7 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 989:
-                Position crystalChest = new Position(3100, 2979, 0);
+                Position crystalChest = new Position(2923, 4118, 0);
                 TeleportHandler.teleportPlayer(player, crystalChest, TeleportType.NORMAL);
                 break;
             case 18813:

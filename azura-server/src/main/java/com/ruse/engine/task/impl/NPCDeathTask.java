@@ -452,11 +452,6 @@ public class NPCDeathTask extends Task {
 
                         /** SLAYER **/
                         killer.getSlayer().killedNpc(npc);
-                        if (npc.getId() == killer.getSlayer().getSlayerTask().getNpcId() && Misc.getRandom(25) == 5) {
-                            if (killer.dropMessageToggle)
-                                killer.getPacketSender().sendMessage("X1 @mag@<shad=2>Instance token (s) </shad>@bla@has been sent to your inventory.");
-                            killer.getInventory().add(23408, 1);
-                        } else
                         if (npc.getId() == killer.getSlayer().getSlayerTask().getNpcId() && Misc.getRandom(1,1000) == 575) {
                             NPC npc = new NPC(13479, new Position(killer.getPosition().getX() + 1, killer.getPosition().getY() + 1, killer.getPosition().getZ()));
                            killer.setCanKillSlayerBoss(true);

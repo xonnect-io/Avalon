@@ -42,6 +42,9 @@ import com.ruse.world.content.dailyTask.DailyTaskInterface;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.DialogueOptions;
 import com.ruse.world.content.events.EventManager;
+import com.ruse.world.content.gods.GodsInterfaces;
+import com.ruse.world.content.gods.GodsRaids;
+import com.ruse.world.content.gods.GodsRaidsParty;
 import com.ruse.world.content.goldenscratch.ScratchCard;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupManager;
@@ -57,6 +60,7 @@ import com.ruse.world.content.polling.PollManager;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
 import com.ruse.world.content.raids.shadows.ShadowRaidParty;
 import com.ruse.world.content.raids.shadows.ShadowRewards;
+import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.rewardsList.RewardsHandler;
 import com.ruse.world.content.serverperks.ServerPerkContributionInput;
@@ -492,7 +496,7 @@ public class ButtonClickPacketListener implements PacketListener {
 
 
             case 8666:
-                Position prayerAlter = new Position(3093, 2985, 0);
+                Position prayerAlter = new Position(2937, 4129, 0);
                 TeleportHandler.teleportPlayer(player, prayerAlter, TeleportType.NORMAL);
                 break;
 
@@ -758,7 +762,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 12162:
-                Position slayerPos = new Position(3115, 2971, 0);
+                Position slayerPos = new Position(2935, 4101, 0);
                 TeleportHandler.teleportPlayer(player, slayerPos, TeleportType.NORMAL);
                 break;
 
@@ -951,15 +955,42 @@ public class ButtonClickPacketListener implements PacketListener {
                         if (player.getLocation() == Location.SOD_LOBBY )
                             new RaidsParty(player).create();
                     }
+                } else if (player.getLocation() == Location.GODS_LOBBY) {
+                    if (player.getGodsRaidsParty() != null) {
+                        if (player.getGodsRaidsParty().getOwner() != player) {
+                            player.getPacketSender().sendMessage("Only the party leader can invite other players.");
+                        } else {
+                            player.setInputHandling(new InviteRaidsPlayer());
+                            player.getPacketSender().sendEnterInputPrompt("Invite Player");
+                        }
+                    } else {
+                        if (player.getLocation() == Location.GODS_LOBBY )
+                            new GodsRaidsParty(player).create();
+                    }
                 } else {
                     player.sendMessage("You must be in a raid lobby to do this.");
                 }
                 return;
-
+            case 144006:
+                player.getGodsRaidsParty().setDifficulty(RaidDifficulty.EASY);
+                GodsInterfaces.openStartScreen(player);
+                break;
+            case 144008:
+                player.getGodsRaidsParty().setDifficulty(RaidDifficulty.INTERMEDIATE);
+                GodsInterfaces.openStartScreen(player);
+                break;
+            case 144010:
+                player.getGodsRaidsParty().setDifficulty(RaidDifficulty.ADVANCED);
+                GodsInterfaces.openStartScreen(player);
+                break;
+            case 144019:
+                GodsRaids.start(player.getGodsRaidsParty(), player);
+                break;
             case 111706:
                 if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.SOD ||
-                        player.getLocation() == Location.SHADOWS_OF_DARKNESS || player.getLocation() == Location.ZOMBIE_LOBBY ||
-                        player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY) {
+                        player.getLocation() == Location.SHADOWS_OF_DARKNESS || player.getLocation() == Location.ISLE_GODS|| player.getLocation() == Location.ZOMBIE_LOBBY ||
+                        player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY
+                        || player.getLocation() == Location.GODS_LOBBY) {
                     if (player.getRaidsParty() != null) {
                         player.getRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
@@ -968,6 +999,9 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.sendMessage("You left your Raids party.");
                     } else if (player.getShadowRaidsParty() != null) {
                         player.getShadowRaidsParty().remove(player, true);
+                        player.sendMessage("You left your Raids party.");
+                    }else if (player.getGodsRaidsParty() != null) {
+                        player.getGodsRaidsParty().remove(player);
                         player.sendMessage("You left your Raids party.");
                     }
                 } else {
@@ -999,7 +1033,8 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111749:
                 if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.SOD ||
                         player.getLocation() == Location.SHADOWS_OF_DARKNESS || player.getLocation() == Location.ZOMBIE_LOBBY ||
-                        player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY) {
+                        player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY ||
+                player.getLocation() == Location.GODS_LOBBY || player.getLocation() == Location.ISLE_GODS) {
                     if (player.getRaidsParty() != null) {
                         if (player.equals(player.getRaidsParty().getOwner())) {
                             if (player.getRaidsParty().getPlayers()

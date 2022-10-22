@@ -2705,21 +2705,15 @@ public final class ItemDefinition {
 				itemDef.actions[1] = "Wear";
 				break;
 			case 23270:
-				itemDef.modelID = 65333;
+				itemDef.modelID = 19716;
 				itemDef.name = "<col=89584A>Fantasy Cape";
 				itemDef.description = "A cape worn by those who've achieved greatness.".getBytes();
-				itemDef.modelZoom = 1485;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 24;
-				itemDef.rotationY = 279;
-				itemDef.rotationX = 200;
-				itemDef.maleEquip1 = 65334;
-				itemDef.femaleEquip1 = 65334;
+				itemDef.maleEquip1 = 19716;
+				itemDef.femaleEquip1 = 19716;
 				itemDef.groundActions = new String[5];
 				itemDef.groundActions[2] = "Take";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
-				itemDef.rdc2 = 99252;
 				break;
 
 			case 23271:// super sayian
@@ -2746,9 +2740,9 @@ public final class ItemDefinition {
 			case 23300:// super sayian
 				itemDef.copyItem(12855);
 				itemDef.name = "<col=89584A>Fantasy Symbol";
-				itemDef.modelZoom = 950;
+				itemDef.modelZoom = 500;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.modelID = 19517;
+				itemDef.modelID = 19714;
 				//itemDef.rdc2 = 99252;
 				break;
 			case 14020:

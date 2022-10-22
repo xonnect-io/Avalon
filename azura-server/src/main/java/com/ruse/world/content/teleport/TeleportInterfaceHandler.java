@@ -43,7 +43,9 @@ public class TeleportInterfaceHandler {
 			sendItemsOnInterface(TeleportData.MINOTAUR);
 			player.setCurrentTeleport(TeleportData.MINOTAUR);
 			switchData();
+			player.getPacketSender().sendString(60000 + 50, "Tier: 1");
 			player.getPacketSender().sendString(64112, "Health: @whi@" + "2,500");
+			player.getPacketSender().sendString(60000 + 54, "Max hit: @whi@"+ "620");
 		}
 	}
 
@@ -113,8 +115,8 @@ public class TeleportInterfaceHandler {
 				if (buttonId == data.getTextButtonId() || buttonId == data.getBackgroundButtonId()) {
 					player.setCurrentTeleport(data);
 					sendItemsOnInterface(data);
-					if (!data.getFullName().isEmpty()) {
-						player.getPA().sendString(28209, data.getFullName());
+					if (!data.getName().isEmpty()) {
+						player.getPA().sendString(28209, data.getName());
 					} else {
 						player.getPA().sendString(28209, data.getName());
 					}
@@ -123,6 +125,10 @@ public class TeleportInterfaceHandler {
 					player.getPA().sendString(64114, data.getReq2());
 					player.getPacketSender().sendString(64112, "Health: @whi@"+
 							Misc.insertCommasToNumber(NpcDefinition.forId(data.getNpcId()).getHitpoints()));
+
+					player.getPacketSender().sendString(60000 + 50, "Tier: " + data.getTier());
+					player.getPacketSender().sendString(60000 + 54, "Max hit: @whi@"+
+							Misc.insertCommasToNumber(NpcDefinition.forId(data.getNpcId()).getMaxHit()));
 
 					player.getPA().sendNpcOnInterface(28214, data.getNpcId(), data.getAdjustedZoom());
 					System.err.println("" + data.getNpcId());

@@ -394,9 +394,9 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(2655, 3988, 0);
+            Position position = new Position(2895, 4125, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-            player.getPacketSender().sendMessage("<shad=1>@gre@Welcome to the afk zone!");
+            player.getPacketSender().sendMessage("<shad=1>@gre@Welcome to the afk area!");
 
         }
 
@@ -407,7 +407,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(3124, 2985, 0);
+            Position position = new Position(2911, 4111, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
         }
 
@@ -3262,6 +3262,13 @@ public class CommandPacketListener implements PacketListener {
          */
         if (command[0].equalsIgnoreCase("tasks")) {
             player.getPacketSender().sendMessage("Found " + TaskManager.getTaskAmount() + " tasks.");
+        }
+
+        if (command[0].equalsIgnoreCase("testgodinterface")) {
+            player.getPacketSender().sendWalkableInterface(144900, true);
+        }
+        if (command[0].equalsIgnoreCase("endtestgodinterface")) {
+            player.getPacketSender().sendWalkableInterface(144900, false);
         }
         if (command[0].equals("reload")) {
             NpcDefinition.parseNpcs().load();

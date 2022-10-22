@@ -3,16 +3,19 @@ package com.ruse.world.content;
 import com.ruse.model.Item;
 import com.ruse.model.Prayerbook;
 import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.world.content.combat.CombatType;
 import com.ruse.world.content.combat.Maxhits;
 import com.ruse.world.content.combat.prayer.CurseHandler;
-import com.ruse.world.content.combat.prayer.PrayerHandler;
-import com.ruse.world.content.skill.impl.prayer.Prayer;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.text.DecimalFormat;
 
 public class BonusManager {
 	public static final String[] BONUS_NAMES = new String[]{"Stab", "Slash", "Crush", "Magic", "Ranged", "Stab",
 			"Slash", "Crush", "Magic", "Ranged", "Summoning", "Absorb Melee", "Absorb Magic", "Absorb Ranged",
-			"Strength", "Ranged Strength", "Prayer", "Magic Damage"};
+			"Melee", "Ranged", "Magic", "Magic"};
+
+
 
 	public static void update(Player player) {
 		double[] bonuses = new double[18];
@@ -25,7 +28,7 @@ public class BonusManager {
 		for (int i = 0; i < STRING_ID.length; i++) {
 			if (i <= 4) {
 				player.getBonusManager().attackBonus[i] = bonuses[i];
-			} else if (i <= 13) {
+			} else if (i <= 9) {
 				int index = i - 5;
 				player.getBonusManager().defenceBonus[index] = bonuses[i];
 				/*
@@ -34,23 +37,48 @@ public class BonusManager {
 				 * player.getBonusManager().defenceBonus[index] += player.getDfsCharges();
 				 * bonuses[i] += player.getDfsCharges(); } }
 				 */
-			} else if (i <= 17) {
+			} else if (i >= 14 && i <= 17 && i != 16) {
 				int index = i - 14;
 				player.getBonusManager().otherBonus[index] = bonuses[i];
 			}
 			player.getPacketSender().sendString(21190 + i,
-					BONUS_NAMES[i] + ": " + ((int) bonuses[i] > 0 ? "+" + (int) bonuses[i] : (int) bonuses[i]));
-		//	player.getPacketSender().sendString(Integer.valueOf(STRING_ID[i][0]), STRING_ID[i][1] + ": " + bonuses[i]);
+					BONUS_NAMES[i] + ": @whi@" + ((int) bonuses[i] > 0 ? "+" + (int) bonuses[i] : (int) bonuses[i]));
+			//	player.getPacketSender().sendString(Integer.valueOf(STRING_ID[i][0]), STRING_ID[i][1] + ": " + bonuses[i]);
 		}
 
-		player.getPacketSender().sendString(66106, "Drop Rate Bonus: " + CustomDropUtils.drBonus(player, player.getSlayer().getSlayerTask().getNpcId()));
-		player.getPacketSender().sendString(66107, "Attack Speed: " + player.getAttackSpeed());
 
-		player.getPacketSender().sendString(66108, "Melee Maxhit: " +  (Maxhits.melee(player, player) / 10));
-		player.getPacketSender().sendString(66109, "Ranged Maxhit: " +  (Maxhits.ranged(player, player) / 10));
-		player.getPacketSender().sendString(66110, "Magic Maxhit: " +  (Maxhits.magic(player, player) / 10));
+		player.getPacketSender().sendString(21206, BONUS_NAMES[17] + ": @whi@" + ((int) bonuses[17] > 0 ? "+" + (int) bonuses[17] : (int) bonuses[17]));
+		player.getPacketSender().sendString(21207, "");
+
+		player.getPacketSender().sendString(21200, "Melee: @whi@"
+				+ (int) Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.MELEE, false)
+				+
+				(Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.MELEE, true) != (int) Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.MELEE, false)
+						? "% (Slay: " + (int) Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.MELEE, true) + "%)" : "%"));
+		player.getPacketSender().sendString(21201, "Ranged: @whi@"
+				+ (int) Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.RANGED, false)
+				+
+				(Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.RANGED, true) != (int) Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.RANGED, false)
+						? "% (Slay: " + (int) Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.RANGED, true) + "%)" : "%"));
+
+		player.getPacketSender().sendString(21202, "Magic: @whi@"
+				+ (int) Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.MAGIC, false)
+				+
+				(Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.MAGIC, true) != (int) Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.MAGIC, false)
+						? "% (Slay: " + (int) Maxhits.getMaxHit(player, Maxhits.baseNPC, CombatType.MAGIC, true) + "%)" : "%"));
+
+		player.getPacketSender().sendString(21203, "Overall: @whi@x"
+				+ df.format(Maxhits.getDamageBoost(player, Maxhits.baseNPC, CombatType.MAGIC)));
+
+
+		player.getPacketSender().sendString(66106, "Drop Rate Bonus: @whi@" + CustomDropUtils.drBonusCheck(player));
+
+		player.getPacketSender().sendString(66108, "Melee Maxhit: @whi@" + (Maxhits.melee(player, player) / 10));
+		player.getPacketSender().sendString(66109, "Ranged Maxhit: @whi@" + (Maxhits.ranged(player, player) / 10));
+		player.getPacketSender().sendString(66110, "Magic Maxhit: @whi@" + (Maxhits.magic(player, player) / 10));
 
 	}
+	private static final DecimalFormat df = new DecimalFormat("0.00");
 
 	public double[] getAttackBonus() {
 		return attackBonus;
@@ -70,39 +98,41 @@ public class BonusManager {
 
 	private double[] otherBonus = new double[4];
 
-	private static final String[][] STRING_ID = { { "1675", "Stab" }, // 0
-			{ "1676", "Slash" }, // 1
-			{ "1677", "Crush" }, // 2
-			{ "1678", "Magic" }, // 3
-			{ "1679", "Range" }, // 4
+	private static final String[][] STRING_ID = {{"1675", "Stab"}, // 0
+			{"1676", "Slash"}, // 1
+			{"1677", "Crush"}, // 2
+			{"1678", "Magic"}, // 3
+			{"1679", "Range"}, // 4
 
-			{ "1680", "Stab" }, // 5
-			{ "1681", "Slash" }, // 6
-			{ "1682", "Crush" }, // 7
-			{ "1683", "Magic" }, // 8
-			{ "1684", "Range" }, // 9
-			{ "15115", "Summoning" }, // 10
-			{ "15116", "Absorb Melee" }, // 11
-			{ "15117", "Absorb Magic" }, // 12
-			{ "15118", "Absorb Ranged" }, // 13
+			{"1680", "Stab"}, // 5
+			{"1681", "Slash"}, // 6
+			{"1682", "Crush"}, // 7
+			{"1683", "Magic"}, // 8
+			{"1684", "Range"}, // 9
+			{"15115", "Summoning"}, // 10
+			{"15116", "Absorb Melee"}, // 11
+			{"15117", "Absorb Magic"}, // 12
+			{"15118", "Absorb Ranged"}, // 13
 
-			{ "1686", "Strength" }, // 14
-			{ "15119", "Ranged Strength" }, // 15
-			{ "1687", "Prayer" }, // 16
-			{ "15120", "Magic Damage" } // 17
+			{"1686", "Strength"}, // 14
+			{"15119", "Ranged Strength"}, // 15
+			{"1687", "Prayer"}, // 16
+			{"15120", "Magic Damage"} // 17
 	};
 
 	public static final int ATTACK_STAB = 0, ATTACK_SLASH = 1, ATTACK_CRUSH = 2, ATTACK_MAGIC = 3, ATTACK_RANGE = 4,
 
-			DEFENCE_STAB = 0, DEFENCE_SLASH = 1, DEFENCE_CRUSH = 2, DEFENCE_MAGIC = 3, DEFENCE_RANGE = 4,
+	DEFENCE_STAB = 0, DEFENCE_SLASH = 1, DEFENCE_CRUSH = 2, DEFENCE_MAGIC = 3, DEFENCE_RANGE = 4,
 			DEFENCE_SUMMONING = 5, ABSORB_MELEE = 6, ABSORB_MAGIC = 7, ABSORB_RANGED = 8,
 
-			BONUS_STRENGTH = 0, RANGED_STRENGTH = 1, BONUS_PRAYER = 2, MAGIC_DAMAGE = 3;
+	BONUS_STRENGTH = 0, RANGED_STRENGTH = 1, BONUS_PRAYER = 2, MAGIC_DAMAGE = 3;
 
-	/** CURSES **/
+	/**
+	 * CURSES
+	 **/
 
 	public static void sendCurseBonuses(final Player p) {
-		if (p.getPrayerbook() == Prayerbook.CURSES || p.getPrayerbook() == p.getPrayerbook().HOLY) {
+		if (p.getPrayerbook() == Prayerbook.CURSES) {
 			sendAttackBonus(p);
 			sendDefenceBonus(p);
 			sendStrengthBonus(p);
@@ -116,10 +146,6 @@ public class BonusManager {
 		int bonus = 0;
 		if (p.getCurseActive()[CurseHandler.LEECH_ATTACK]) {
 			bonus = 5;
-		}if (p.getPrayerActive()[PrayerHandler.FURY_SWIPE]) {
-			bonus = 20;
-		}if (p.getPrayerActive()[PrayerHandler.DESTRUCTION]) {
-				bonus = 20;
 		} else if (p.getCurseActive()[CurseHandler.TURMOIL])
 			bonus = 15;
 		bonus += boost;
@@ -131,13 +157,7 @@ public class BonusManager {
 	public static void sendRangedBonus(Player p) {
 		double boost = p.getLeechedBonuses()[4];
 		int bonus = 0;
-		if (p.getPrayerActive()[PrayerHandler.HUNTERS_EYE]) {
-			bonus = 30;
-		}
-		if (p.getPrayerActive()[PrayerHandler.DESTRUCTION]) {
-			bonus = 20;
-		}
-		if (p.getCurseActive()[CurseHandler.LEECH_RANGED]){
+		if (p.getCurseActive()[CurseHandler.LEECH_RANGED]) {
 			bonus = 5;
 		} else if (p.getCurseActive()[CurseHandler.TURMOIL])
 			bonus = 23;
@@ -152,10 +172,6 @@ public class BonusManager {
 		int bonus = 0;
 		if (p.getCurseActive()[CurseHandler.LEECH_MAGIC]) {
 			bonus = 5;
-		}
-			if (p.getPrayerActive()[PrayerHandler.DESTRUCTION]){
-				bonus = 20;
-
 		} else if (p.getCurseActive()[CurseHandler.TURMOIL])
 			bonus = 23;
 		bonus += boost;
@@ -167,14 +183,6 @@ public class BonusManager {
 	public static void sendDefenceBonus(Player p) {
 		double boost = p.getLeechedBonuses()[1];
 		int bonus = 0;
-		if (p.getPrayerActive()[PrayerHandler.FURY_SWIPE])
-			bonus = 15;
-		if (p.getPrayerActive()[PrayerHandler.FORTITUDE])
-			bonus = 15;
-		if (p.getPrayerActive()[PrayerHandler.HUNTERS_EYE])
-			bonus = 20;
-		if (p.getPrayerActive()[PrayerHandler.DESTRUCTION])
-			bonus = 20;
 		if (p.getCurseActive()[CurseHandler.LEECH_DEFENCE])
 			bonus = 5;
 		else if (p.getCurseActive()[CurseHandler.TURMOIL])
@@ -190,10 +198,6 @@ public class BonusManager {
 		int bonus = 0;
 		if (p.getCurseActive()[CurseHandler.LEECH_STRENGTH])
 			bonus = 5;
-		if (p.getPrayerActive()[PrayerHandler.DESTRUCTION])
-			bonus = 20;
-		if (p.getPrayerActive()[PrayerHandler.FURY_SWIPE])
-			bonus = 30;
 		else if (p.getCurseActive()[CurseHandler.TURMOIL])
 			bonus = 23;
 		bonus += boost;

@@ -3058,39 +3058,30 @@ public class Client extends GameRenderer {
             if (widget != null) {
                 int xPosition = 512 / 2 - widget.width / 2;
                 int yPosition = 334 / 2 - widget.height / 2;
-
-                // Only works on main window interfaces! if widget.height = 700
-                if (widget.xOffset + widget.width > 512)
-                    widget.xOffset = 512 - widget.width;
-                if (widget.yOffset + widget.height > 334)
-                    widget.yOffset = 334 - widget.height;
-                if (widget.yOffset < 0)
-                    widget.yOffset = 0;
-                if (widget.xOffset < 0)
-                    widget.xOffset = 0;
                 switch (widget.id) {
-                    case 112000:
-                        widget.xOffset = GameFrame.getScreenMode() != ScreenMode.FIXED ? 0 : 0;
-                        widget.yOffset = GameFrame.getScreenMode() != ScreenMode.FIXED ? clientHeight - 500 : 0;
+                    case 156000:
+                        xPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 385 : clientWidth - 350; // 392
+                        yPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 5 : 5;
+
+                        int boxWidth = 122;
+                        int boxLength = 78;
+
+                        DrawingArea.method338(yPosition + 0, boxLength, 150, 0, boxWidth, xPosition - 1);
+                        DrawingArea.method335(0x433A32, yPosition + 1, boxWidth - 2, boxLength - 2, 200, xPosition - 0);
                         break;
-                    case 28710:
-                        if (RSInterface.interfaceCache[28714].message.length() < 1)
-                            continue;
-                        widget.xOffset = GameFrame.getScreenMode() == ScreenMode.FIXED ? 392 : clientWidth - 150;
-                        if (RSInterface.interfaceCache[28740].interfaceShown) {
-                            widget.yOffset = GameFrame.getScreenMode() == ScreenMode.FIXED ? 280 : 180;
-                        } else {
-                            widget.yOffset = GameFrame.getScreenMode() == ScreenMode.FIXED ? 163 : 180;
-                        }
+                    case 21005:
+                        xPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 0 : clientWidth - 730; // 392
+                        yPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 0 : 5;
                         break;
-                    case 48300:
-                    case 48400:
-                        widget.xOffset = getScreenWidth() - 765 - (GameFrame.getScreenMode() != ScreenMode.FIXED ? 30 : 0);
+                    case 21100:
+                        xPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 0 : clientWidth - 730; // 392
+                        yPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 0 : 5;
                         break;
-                        case 42400:
+                    case 42400:
+
                         //439 : 293
-                        xPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 460 : Client.clientWidth - 278 + 21;
-                        yPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 240 : Client.clientHeight - 170+31;
+                        xPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 460 : Client.clientWidth - 325;
+                        yPosition = GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED ? 240 : Client.clientHeight - 170+61;
 
                         if (GameFrame.getScreenMode() != GameFrame.ScreenMode.FIXED && Client.instance.getWidth() >= 1000) {
                             yPosition = Client.clientHeight - 86 - 15;
@@ -3099,11 +3090,26 @@ public class Client extends GameRenderer {
                         DrawingArea.method335(0x433A32, yPosition + 1, 50, 58, 150, xPosition - 2);
 
                         break;
+                    case 28710:
+                        if (RSInterface.interfaceCache[28714].message.length() < 1) {
+                            continue;
+                        }
+                        xPosition = GameFrame.getScreenMode() == ScreenMode.FIXED ? 392 : clientWidth - 150; // 392
+                        yPosition = GameFrame.getScreenMode() == ScreenMode.FIXED ? 280 : 180;
+                        break;
+                    case 25347:
+                        yPosition += 185;
+                        break;
+                    case 48300:
+                    case 48400:
+                        xPosition = getScreenWidth() - 765 - (GameFrame.getScreenMode() != ScreenMode.FIXED ? 30 : 0);
+                        break;
                 }
-                drawInterface(0, widget.xOffset, widget, widget.yOffset);
+                drawInterface(0, xPosition, widget, yPosition);
             }
         }
     }
+
 
     private void buildFriendChat(int yOffset) {
         int count = 0;
@@ -6708,16 +6714,14 @@ public class Client extends GameRenderer {
     }
 
     private void draw3dScreen() {
+        EffectTimers.draw();
+
         if (!chatArea.componentHidden()) {
             drawSplitPrivateChat();
         }
 
         alertHandler.processAlerts();
         alertManager.processAlerts();
-
-        if (spin) {
-            startSpinner();
-        }
 
         if (crossType == 1) {
             crosses[crossIndex / 100].drawSprite(crossX - 8 - 4, crossY - 8 - 4);
@@ -6735,14 +6739,34 @@ public class Client extends GameRenderer {
             drawInterface(0, 0, RSInterface.interfaceCache[39670], 0);
         }
 
-        if (getWalkableInterfaceId() > 0) {
+        if (GameFrame.getScreenMode() != ScreenMode.FIXED && (walkableInterfaceId == 21119 || walkableInterfaceId == 21100)) {
+            processInterfaceAnimation(anInt945, walkableInterfaceId);
+            drawInterface(0, 0,
+                    RSInterface.interfaceCache[getWalkableInterfaceId()], 0);
+        } else  if (getWalkableInterfaceId() > 0) {
             processInterfaceAnimation(anInt945, getWalkableInterfaceId());
-            if (getWalkableInterfaceId() == 15892 && GameFrame.getScreenMode() != ScreenMode.FIXED) {
-                drawInterface(0, getScreenWidth() / 2 - RSInterface.interfaceCache[getWalkableInterfaceId()].width + 20, RSInterface.interfaceCache[getWalkableInterfaceId()], 0);
-            } else if ((getWalkableInterfaceId() == 201 || getWalkableInterfaceId() == 197) && GameFrame.getScreenMode() != ScreenMode.FIXED) {
-                drawInterface(0, getScreenWidth() - 765 + 15, RSInterface.interfaceCache[getWalkableInterfaceId()], -255 + 10 + 4);
+
+            if (walkableInterfaceId == 16210 || walkableInterfaceId == 21005) {
+                int interfaceX = (int) (clientWidth / 1.6) - (clientWidth <= 396 ? 600
+                        : clientWidth <= 735 ? 500 : clientWidth < 944 ? 400 : clientWidth <= 998 ? 350 : 200);
+                int  interfaceY = clientHeight / 25;
+                drawInterface(0, interfaceX,
+                        RSInterface.interfaceCache[getWalkableInterfaceId()], interfaceY);
+            } else if (walkableInterfaceId == 21100) {
+                int  interfaceX = clientWidth - clientWidth - 330 - 1;
+                int  interfaceY = clientHeight - clientHeight + 30;
+                drawInterface(0, interfaceX,
+                        RSInterface.interfaceCache[getWalkableInterfaceId()], interfaceY);
+            }else if (getWalkableInterfaceId() == 15892 && GameFrame.getScreenMode() != ScreenMode.FIXED) {
+                drawInterface(0, getScreenWidth() / 2 - RSInterface.interfaceCache[getWalkableInterfaceId()].width + 20,
+                        RSInterface.interfaceCache[getWalkableInterfaceId()], 0);
+            } else if ((getWalkableInterfaceId() == 201 || getWalkableInterfaceId() == 197)
+                    && GameFrame.getScreenMode() != ScreenMode.FIXED) {
+                drawInterface(0, getScreenWidth() - 765 + 15, RSInterface.interfaceCache[getWalkableInterfaceId()],
+                        -255 + 10 + 4);
             } else if (getWalkableInterfaceId() == 197) {
-                drawInterface(0, getScreenWidth() - 765 - (GameFrame.getScreenMode() != ScreenMode.FIXED ? 30 : 0), RSInterface.interfaceCache[42020], 10);
+                drawInterface(0, getScreenWidth() - 765 - (GameFrame.getScreenMode() != ScreenMode.FIXED ? 30 : 0),
+                        RSInterface.interfaceCache[42020], 10);
             } else {
                 drawInterface(0, 0, RSInterface.interfaceCache[getWalkableInterfaceId()], 0);
             }
@@ -6763,12 +6787,13 @@ public class Client extends GameRenderer {
             }
 
             if (openInterfaceID == 5292) {
-                drawOnBankInterface();
                 if (bankItemDragSprite != null) {
                     bankItemDragSprite.drawSprite(bankItemDragSpriteX, bankItemDragSpriteY);
                 }
             }
-            getGrandExchange().drawGrandExchange();
+        }
+        if (openInterfaceID == 5292) {
+            drawOnBankInterface();
         }
 
         // method70();
@@ -6776,7 +6801,6 @@ public class Client extends GameRenderer {
         childHovered = null;
 
 
-        EffectTimers.draw();
 
 
         if (!menuOpen) {
@@ -6787,10 +6811,12 @@ public class Client extends GameRenderer {
         }
 
         if (drawMultiwayIcon == 1) {
-            multiOverlay.drawSprite(GameFrame.getScreenMode() == ScreenMode.FIXED ? 472 : getScreenWidth() - 40, GameFrame.getScreenMode() == ScreenMode.FIXED ? 296 : 175);
+            multiOverlay.drawSprite(GameFrame.getScreenMode() == ScreenMode.FIXED ? 472 : getScreenWidth() - 40,
+                    GameFrame.getScreenMode() == ScreenMode.FIXED ? 296 : 175);
         }
         if (drawXPwayIcon == 1) {
-            XPOverlay.drawSprite(GameFrame.getScreenMode() == ScreenMode.FIXED ? 472 : getScreenWidth() - 40, GameFrame.getScreenMode() == ScreenMode.FIXED ? 296 : 175);
+            XPOverlay.drawSprite(GameFrame.getScreenMode() == ScreenMode.FIXED ? 472 : getScreenWidth() - 40,
+                    GameFrame.getScreenMode() == ScreenMode.FIXED ? 296 : 175);
         }
 
         if (Objects.nonNull(currentTarget)) {
@@ -6812,7 +6838,8 @@ public class Client extends GameRenderer {
             normalText.method385(textColor, "Mem: " + memory + "k", 299 - minus, 5);
             normalText.method385(0xffff00, "Mouse X: " + super.mouseX + " , Mouse Y: " + super.mouseY, 314 - minus, 5);
             normalText.method385(0xffff00, "Coords: " + x + ", " + y, 329 - minus, 5);
-            normalText.method385(0xffff00, "Client resolution: " + getScreenWidth() + "x" + getScreenHeight(), 344 - minus, 5);
+            normalText.method385(0xffff00, "Client resolution: " + getScreenWidth() + "x" + getScreenHeight(),
+                    344 - minus, 5);
             normalText.method385(0xffff00, "Object Maps: " + objectMaps + ";", 359 - minus, 5);
             normalText.method385(0xffff00, "Floor Maps: " + floorMaps + ";", 374 - minus, 5);
         }
@@ -6847,9 +6874,11 @@ public class Client extends GameRenderer {
             j %= 60;
 
             if (j < 10) {
-                normalText.method385(0xffff00, "System update in: " + l + ":0" + j, GameFrame.isFixed() ? 329 : getScreenHeight() - 168, 4);
+                normalText.method385(0xffff00, "System update in: " + l + ":0" + j,
+                        GameFrame.isFixed() ? 329 : getScreenHeight() - 168, 4);
             } else {
-                normalText.method385(0xffff00, "System update in: " + l + ":" + j, GameFrame.isFixed() ? 329 : getScreenHeight() - 168, 4);
+                normalText.method385(0xffff00, "System update in: " + l + ":" + j,
+                        GameFrame.isFixed() ? 329 : getScreenHeight() - 168, 4);
             }
 
             if (++anInt849 > 75) {
@@ -19023,8 +19052,8 @@ if(response == 32){
                     Rasterizer.method372(0.59999999999999998D);
                 }
 
-                ItemDefinition.mruNodes1.unlinkAll();
                 ItemDefinition.spriteCacheEffectTimers.clear();
+                ItemDefinition.mruNodes1.unlinkAll();
                 welcomeScreenRaised = true;
             } else if (j == 3) {
                 int volume = 0;
@@ -20061,6 +20090,10 @@ if(response == 32){
                 hpBarXPps = (xPos + 13);
                 height = 25 + getYPosAddition(npc.damageDealers.size());
                 width = 125;
+            }
+
+            if (parallelWidgetList.contains(RSInterface.interfaceCache[144900])){
+                yPos += 30;
             }
             drawCombatBox(xPos, yPos, width, height, currentHp, maxHp, hpBarXPps);
             if (npc.definitionOverride == null) {

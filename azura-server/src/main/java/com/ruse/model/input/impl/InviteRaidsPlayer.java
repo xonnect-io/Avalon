@@ -40,7 +40,21 @@ public class InviteRaidsPlayer extends Input {
 			player.sendMessage("Sent invite to " + plrToInvite);
 
 			player.getZombieRaidsParty().invite(invite);
+		} else if ( player.getLocation() == Locations.Location.GODS_LOBBY ) {
 
+			player.getPacketSender().sendInterfaceRemoval();
+			Player invite = World.getPlayerByName(plrToInvite);
+			if (invite == null) {
+				player.getPacketSender().sendMessage("That player is currently not online.");
+				return;
+			}
+			if (player.getGodsRaidsParty().getPlayers().contains(invite)) {
+				player.getPacketSender().sendMessage("That player is already in your party.");
+				return;
+			}
+			player.sendMessage("Sent invite to " + plrToInvite);
+
+			player.getGodsRaidsParty().invite(invite);
 		} else if ( player.getLocation() == Locations.Location.DARKNESS_LOBBY ) {
 
 		player.getPacketSender().sendInterfaceRemoval();

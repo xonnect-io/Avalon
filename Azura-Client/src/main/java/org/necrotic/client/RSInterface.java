@@ -27,10 +27,11 @@ public class RSInterface {
 		addText(STARTING_POINT + 3, "Double Slayer", tda, 0, ColorConstants.SNOW_WHITE, true, true);
 
 		main.totalChildren(3);
-		main.child(0, STARTING_POINT + 1, 468, 248);
-		main.child(1, STARTING_POINT + 2, 480, 275);
-		main.child(2, STARTING_POINT + 3, 480, 286);
+		main.child(0, STARTING_POINT + 1, 10, 5);
+		main.child(1, STARTING_POINT + 2, 23, 33);
+		main.child(2, STARTING_POINT + 3, 23, 43);
 	}
+
 	public static void mysteryBoxSpinner(TextDrawingArea[] tda) {
 
 		RSInterface base = addTabInterface(47000);
