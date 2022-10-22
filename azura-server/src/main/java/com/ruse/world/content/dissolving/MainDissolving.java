@@ -106,6 +106,7 @@ public class MainDissolving {
 		CASE_KEY(4186, new Item[]{new Item(UPG_TOKEN, 50000)}, 100_000, anim),
 		SERAPHIC_CASE(23411, new Item[]{new Item(UPG_TOKEN, 50000)}, 100_000, anim),
 		ETHEREAL_CASE(23412, new Item[]{new Item(UPG_TOKEN, 50000)}, 100_000, anim),
+		MONEY_CASE(23812, new Item[]{new Item(UPG_TOKEN, 50000)}, 100_000, anim),
 		AGONY_WINGS(8810, new Item[]{new Item(UPG_TOKEN, 7000)}, 20_000, anim),
 		WOOS_CAPE(4367, new Item[]{new Item(UPG_TOKEN, 20000)}, 60_000, anim),
 		WOOS_CAPE_NOTED(4368, new Item[]{new Item(UPG_TOKEN, 20000)}, 60_000, anim),

@@ -3732,8 +3732,8 @@ public final class MobDefinition {
 				break;
 
 			case 7134:
-				definition.scaleXZ = 80;
-				definition.scaleY = 80;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
 				definition.npcSizeInSquares = 1;
 				break;
 

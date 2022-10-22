@@ -109,7 +109,7 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23231)) { //Owner ring
             percentBoost += 50;
         }
-        if (player.getEquipment().contains(23258)) { //Plutonic ring
+        if (player.getEquipment().contains(22005)) { //Plutonic ring
             percentBoost += 40;
         }
         if (player.getEquipment().contains(18818)) { //Collecter ring III

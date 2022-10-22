@@ -141,6 +141,11 @@ public enum Upgradeables {
     INSTANCE_TOKEN(TIER_6, new Item(4278, 1), new Item(23264, 1), 2500, 25),
     XP_LAMP(TIER_6, new Item(11137, 1), new Item(21218, 1), 10_000, 20),
     CREEPER_CAPE(TIER_6, new Item(1486, 1), new Item(23133, 1), 1_000_000, 20),
+
+    RUBY_CASKET(TIER_6, new Item(15003, 1), new Item(15002, 1), 2000000, 100),
+    DIAMOND_CASKET(TIER_6, new Item(15002, 2), new Item(15004, 1), 0, 100),
+    ONYX_CASKET(TIER_6, new Item(15004, 2), new Item(14999, 1), 0,100),
+    ZENYTE_CASKET(TIER_6, new Item(14999, 2), new Item(23253, 1), 0,100),
     //END TIER 6 (SIX)
 
     ;

@@ -2,11 +2,10 @@ package com.ruse.world.content.transportation;
 
 import com.ruse.model.Animation;
 import com.ruse.model.Graphic;
-import com.ruse.util.Misc;
 
 public enum TeleportType {
 
-	NORMAL(3, new Animation(4381), new Animation(8941), new Graphic(1521), null),
+	NORMAL(3, new Animation(3412), new Animation(8941), new Graphic(1521), null),
 	ANCIENT(5, new Animation(4381), new Animation(8941), new Graphic(1521, 0), null),
 	LUNAR(4, new Animation(4381), new Animation(9013), new Graphic(1521), null),
 	TELE_TAB(2, new Animation(4381), Animations.DEFAULT_RESET_ANIMATION, new Graphic(1521), null),
@@ -36,7 +35,7 @@ public enum TeleportType {
 	}
 
 	public Graphic getStartGraphic() {
-		return this == NORMAL ? new Graphic(1521) : startGraphic;
+		return this == NORMAL ? new Graphic(342) : startGraphic;
 	}
 
 	public Graphic getEndGraphic() {
