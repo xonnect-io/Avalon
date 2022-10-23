@@ -1,5 +1,8 @@
 package com.ruse.world.content;
 
+import com.ruse.model.Item;
+import com.ruse.model.definitions.ItemDefinition;
+import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.Random;
@@ -18,15 +21,13 @@ public class GoodieBag {
     //  public static final int[] REWARDS = { 1050, 14484, 4151, 20054, 4565, 1053, 1055, 1057, 1042, 1044, 1046, 1048,
     //  4777, 11694, 19055, 6199, 15373, 5206, 455, 10835 };
 
-    public int[] rewards = {1050, 14484, 4151, 20054, 4565, 1053, 1055, 1057, 1042, 1044, 1046, 1048,
-            4777, 11694, 19055, 6199, 15373, 5206, 455};
+    public Item[] rewards = new Item[20];
 
     public void setRewards(int[] rewards) {
-        this.rewards = rewards;
-    }
-
-    public void GetRewards(int[] rewards) {
-        this.rewards = rewards;
+        this.rewards = new Item[20];
+        for (int i = 0 ; i < rewards.length ; i ++){
+            this.rewards[i] = new Item(rewards[i], 1);
+        }
     }
 
     public void open() {
@@ -35,18 +36,18 @@ public class GoodieBag {
         shuffle(rewards);
         claimed = false;
         player.selectedGoodieBag = -1;
-       
+
         for (int i = 1; i <= 20; i++) {
             player.getPacketSender().sendString(49232 + i, String.valueOf(i));
         }
 
     }
 
-    private void shuffle(int[] array) {
+    private void shuffle(Item[] array) {
         Random rnd = new Random();
         for (int i = array.length - 1; i > 0; i--) {
             int index = rnd.nextInt(i + 1);
-            int a = array[index];
+            Item a = array[index];
             array[index] = array[i];
             array[i] = a;
         }
@@ -59,7 +60,7 @@ public class GoodieBag {
         }
 
         for (int i = 0; i < rewards.length; i++) {
-            player.getPacketSender().sendItemOnInterface(49270, rewards[i], i, 1);
+            player.getPacketSender().sendItemOnInterface(49270, rewards[i].getId(), i, rewards[i].getAmount());
         }
     }
 
@@ -67,11 +68,11 @@ public class GoodieBag {
         if (!(buttonId >= -16325 && buttonId <= -16306)) {
             return false;
         }
-        
+
         if(claimed) {
-        	return false;
+            return false;
         }
-        
+
         int index = -1;
 
         if (buttonId >= -16325) {
@@ -100,22 +101,29 @@ public class GoodieBag {
         if (!claimed) {
             if (player.getInventory().contains(boxId)) { // gg this is guaranteed to work
                 showRewards();
+
+                Item reward = rewards[player.selectedGoodieBag];
+
                 player.getInventory().delete(boxId, 1);
-                player.getInventory().add(rewards[player.selectedGoodieBag], 1);
+                player.getInventory().add(reward);
+
+
+                if (reward.getId() == 7995 && boxId == 3578) {
+                    String message = "@blu@News: @red@" + player.getUsername() + " @blu@has received @red@"
+                            + reward.getDefinition().getName() + "@blu@ from a @red@"+ItemDefinition.forId(boxId).getName();
+                    World.sendMessage1(message);
+                }
+
+                if (boxId == 23446|| (boxId == 23240 && reward.getId() != 10934 )) {
+                    String message = "@blu@News: @red@" + player.getUsername() + " @blu@has received @red@"
+                            + (reward.getAmount() > 1 ? "x" + reward.getAmount() +" " : "")
+                            + reward.getDefinition().getName() + "@blu@ from a @red@"+ItemDefinition.forId(boxId).getName();
+                    World.sendMessage1(message);
+                }
+
+
                 claimed = true;
                 boxId = -1;
-                if (rewards[player.selectedGoodieBag] == 7995) {
-                    player.sendMessage("@red@<img=832>" + player.getUsername() + " @or2@has just received @red@Owner cape @or2@from a goodiebag" );
-                }
-                if (rewards[player.selectedGoodieBag] == 23230) {
-                    player.sendMessage("@red@<img=832>" + player.getUsername() + " @or2@has just received @red@Owner amulet @or2@from a goodiebag" );
-                }
-                if (rewards[player.selectedGoodieBag] == 23231) {
-                    player.sendMessage("@red@<img=832>" + player.getUsername() + " @or2@has just received @red@Owner ring @or2@from a goodiebag" );
-                }
-                if (rewards[player.selectedGoodieBag] == 23232) {
-                    player.sendMessage("@red@<img=832>" + player.getUsername() + " @or2@has just received @red@Owner bracelet @or2@from a goodiebag" );
-                }
             } else {
                 player.sendMessage("@red@You need a goodiebag box to claim the reward");
             }

@@ -2577,6 +2577,11 @@ public class ItemDef3 {
 				itemDef.copyItem(3578);
 				itemDef.name = "Owner Jewelry Goodiebag";
 				break;
+			case 23446:
+				itemDef.copyItem(3578);
+				itemDef.name = "Elite Goodiebag";
+				break;
+
 
 			case 23414:
 				itemDef.copyItem(290);

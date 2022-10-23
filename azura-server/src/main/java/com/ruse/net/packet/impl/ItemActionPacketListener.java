@@ -325,6 +325,17 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(12855, total* 1000);
                 player.sendMessage("You just exchanged 1k tokens into Upgrade tokens.");
                 break;
+            case 23446:
+                player.getGoodieBag().boxId = itemId;
+                player.getGoodieBag().rewards = new Item[]{
+                        new Item(15002, 2), new Item(7995), new Item(23240, 2), new Item(23240), new Item(3578, 1),
+                        new Item(22121, 1), new Item(12630), new Item(23254), new Item(4442), new Item(23002, 2),
+                        new Item(15004, 2), new Item(4186, 10), new Item(23253), new Item(4186, 25), new Item(14999, 1),
+                        new Item(23275), new Item(23275), new Item(10943), new Item(10935), new Item(10934, 3),
+                };
+                player.getGoodieBag().open();
+                break;
+
             case 23392:
                 player.membershipInterfaceHandler.openBenefitTab();
                 break;
@@ -1097,29 +1108,27 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You Blew on the whistle and the King summons you!");
                 break;
 
+
             case 6833:
                 player.getGoodieBag().boxId = itemId;
-                player.getGoodieBag().rewards = new int[]{455, 6199,6199, 19116, 10946, 15290, 16045, 15785, 19331,
-                        18686, 15501, 989, 962, 3318, 3907, 11137, 4151, 12790, 15332, 7956};
+                player.getGoodieBag().setRewards(new int[]{6199, 6199, 6199, 19116, 10946, 15290, 16045, 15785, 19331,
+                        18686, 15501, 989, 962, 3318, 3907, 11137, 4151, 12790, 15332, 7956});
                 player.getGoodieBag().open();
                 break;
-            case 23274:
-                player.getGoodieBag().boxId = itemId;
-                player.getGoodieBag().rewards = new int[]{23275, 14999, 23002, 10943,15004,12630,10942,9084,22121,9083
-                        ,20591,23253,10934,10935,22121,15002,7995,3578,23240,10934
-                };
-                player.getGoodieBag().open();
-                break;
-
             case 3578:
                 player.getGoodieBag().boxId = itemId;
-                player.getGoodieBag().rewards = new int[]{10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 7995, 10934};
+                player.getGoodieBag().setRewards(new int[]{10934, 10934, 10934, 7995, 10934, 10934, 10934,
+                        10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 7995, 10934});
                 player.getGoodieBag().open();
                 break;
 
             case 23240:
                 player.getGoodieBag().boxId = itemId;
-                player.getGoodieBag().rewards = new int[]{10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 10934, 15004, 15003, 15002, 23232, 23231, 7995, 23230};
+                player.getGoodieBag().setRewards(new int[]{
+                        23232, 23231, 23230, 3578, 10934,
+                        10934, 10934, 15004, 15004, 14999,
+                        10934, 10934, 10934, 10934, 10934,
+                        10934, 10934, 10934, 10934, 10934,});
                 player.getGoodieBag().open();
                 break;
 

@@ -4238,6 +4238,7 @@ public final class ItemDefinition {
 				itemDef.rdc3 = 73403;//666455
 				itemDef.actions = new String[]{ "Claim",null, null, null, "Drop"};
 				itemDef.name = "Gold Season Pass";
+				itemDef.stackable = false;
 				break;
 
 			case 23392:
