@@ -3730,7 +3730,29 @@ public class ItemDef3 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				break;
-				
+
+
+
+			case 23443:
+				itemDef.copyItem(14050);
+				itemDef.name = "Fantasy helmet";
+				itemDef.newModelColor = new int[]{52};
+				itemDef.editedModelColor = new int[]{98};
+			break;
+
+			case 23444:
+				itemDef.copyItem(14051);
+				itemDef.name = "Fantasy body";
+				itemDef.newModelColor = new int[]{52};
+				itemDef.editedModelColor = new int[]{98};
+				break;
+			case 23445:
+				itemDef.copyItem(14052);
+				itemDef.name = "Fantasy legs";
+				itemDef.newModelColor = new int[]{52};
+				itemDef.editedModelColor = new int[]{98};
+				break;
+
 			case 14050:
 				itemDef.name = "Dragon Rider helm";
 				itemDef.modelID = 65385;

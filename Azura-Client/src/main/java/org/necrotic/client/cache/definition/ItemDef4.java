@@ -7962,15 +7962,15 @@ public class ItemDef4 {
 			case 23228:
 				itemDef.copyItem(11235);
 				itemDef.name = "Icyenic Bow";
-				itemDef.modelID = 18543;
-				itemDef.femaleEquip1 = 18544;
-				itemDef.maleEquip1 = 18544;
-				itemDef.modelOffsetX = 15;
-				itemDef.modelOffsetY = -15;
+				itemDef.modelID = 19723;
+				itemDef.femaleEquip1 = 19723;
+				itemDef.maleEquip1 = 19723;
+				itemDef.modelOffsetX = 68;
+				itemDef.modelOffsetY = 78;
 				itemDef.modelZoom = 3000;
-				itemDef.rotationY = 500;
-				itemDef.rotationX = 120;
-				itemDef.rotationZ = 20;
+				itemDef.rotationY = 1539;
+				itemDef.rotationX = 1765;
+				itemDef.rotationZ = 583;
 				break;
 			case 23267:
 				itemDef.copyItem(11235);

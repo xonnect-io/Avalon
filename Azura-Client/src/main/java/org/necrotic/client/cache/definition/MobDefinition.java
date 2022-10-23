@@ -1847,7 +1847,7 @@ public final class MobDefinition {
 				definition.npcModels[4] = 185; //BOOT
 				definition.scaleXZ = 128;
 				definition.scaleY = 128;
-				definition.rdc2 = 91291;
+				definition.rdc2 = 75297;
 				break;
 			case 5838:
 				definition.combatLevel = 0;

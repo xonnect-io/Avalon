@@ -623,7 +623,7 @@ public final class ObjectDefinition {
 			definition.actions = new String[5];
 			definition.actions[0] = "Mine";
 		}
-		if (definition.type == 13129) {
+		if (definition.type == 13129|| definition.type == 26940) {
 			definition.name = "";
 			// definition.objectModelIDs = new int[] { 62525 };
 			//   definition.modelSizeH = 300;

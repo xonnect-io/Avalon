@@ -304,7 +304,7 @@ public class CollectionLog {
             player.getPacketSender().sendString(NAMES_STARTING_LINE + index, "");
         }
         for (int index = 0; index < total; index++) {
-            player.getPacketSender().sendString((NAMES_STARTING_LINE) + index, log.get(index).getName());
+            player.getPacketSender().sendString(NAMES_STARTING_LINE + index, log.get(index).getName());
         }
         player.setLogtoCheck(log.get(0));
         sendInterface(log.get(0));

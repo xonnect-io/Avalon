@@ -2705,11 +2705,17 @@ public final class ItemDefinition {
 				itemDef.actions[1] = "Wear";
 				break;
 			case 23270:
-				itemDef.modelID = 19716;
-				itemDef.name = "<col=89584A>Fantasy Cape";
+				itemDef.modelID = 19729;
+				itemDef.name = "<col=89584A>Fantasy Wings";
 				itemDef.description = "A cape worn by those who've achieved greatness.".getBytes();
-				itemDef.maleEquip1 = 19716;
-				itemDef.femaleEquip1 = 19716;
+				itemDef.maleEquip1 = 19730;
+				itemDef.femaleEquip1 = 19730;
+				itemDef.modelZoom = 3850;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 357;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
 				itemDef.groundActions = new String[5];
 				itemDef.groundActions[2] = "Take";
 				itemDef.actions = new String[5];
