@@ -183,7 +183,7 @@ public class Slayer {
                     player.getInventory().add(9000, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 40 : 20);
                     player.sendMessage("You received 5 extra boss slayer tickets for your slayer streak.");
                 } else {
-                    player.getInventory().add(621, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 30 : 15);
+                    player.getInventory().add(9000, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 30 : 15);
                 }
             } else {
                 givePoints(player.getSlayer().getLastTask().getTaskMaster());

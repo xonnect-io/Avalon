@@ -492,7 +492,7 @@ public class ButtonClickPacketListener implements PacketListener {
 
 
             case 8666:
-                Position prayerAlter = new Position(3093, 2985, 0);
+                Position prayerAlter = new Position(2937, 4129, 0);
                 TeleportHandler.teleportPlayer(player, prayerAlter, TeleportType.NORMAL);
                 break;
 
@@ -758,7 +758,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 12162:
-                Position slayerPos = new Position(3115, 2971, 0);
+                Position slayerPos = new Position(2935, 4101, 0);
                 TeleportHandler.teleportPlayer(player, slayerPos, TeleportType.NORMAL);
                 break;
 

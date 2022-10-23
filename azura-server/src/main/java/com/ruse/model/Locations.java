@@ -1291,7 +1291,16 @@ public class Locations {
 		},
 		MEMBER_ZONE(new int[] { 3415, 3435 }, new int[] { 2900, 2926 }, false, true, true, false, false, true) {
 		},
-		HOME_BANK(new int[] { 2640, 3960}, new int[] { 2680, 4070 }, false, true, true, false, true, true) {
+		MAGICIANS_GUILD(new int[] { 2180, 2230 }, new int[] { 4489, 4535 }, true, true, true, false, true, true) {
+
+		},
+		MELEE_GUILD(new int[] { 1923, 1975 }, new int[] { 4166, 4215 }, true, true, true, false, true, true) {
+
+		},
+		ARCHERS_GUILD(new int[] { 3333, 3383 }, new int[] { 4682, 4727 }, true, true, true, false, true, true) {
+
+		},
+		HOME_BANK(new int[] { 2880, 2943}, new int[] { 4096, 4135 }, false, true, true, false, true, true) {
 			@Override
 			public void enter(Player player) {
 				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
@@ -1299,13 +1308,13 @@ public class Locations {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
 					player.getPacketSender()
-							.sendMessage("As you enter the home bank, your health regenerates to full.");
+							.sendMessage("As you enter the home area, your health regenerates to full.");
 				}
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
 							player.getSkillManager().getMaxLevel(Skill.PRAYER));
-					player.getPacketSender().sendMessage("As you enter the home bank, the gods restore your prayer.");
+					player.getPacketSender().sendMessage("As you enter the home area, the gods restore your prayer.");
 				}
 			}
 
