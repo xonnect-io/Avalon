@@ -187,7 +187,7 @@ public class Locations {
 		PRIME(new int[] { 2437, 2492}, new int[] { 10113, 10171},
 				true, true, true, false, false, true) {},
 
-		SHADOWS_OF_DARKNESS(new int[]{3199, 3248}, new int[]{2881, 2921}, true, false, true, false, true, false) {
+		SHADOWS_OF_DARKNESS(new int[]{1796, 1851}, new int[]{4234, 4284}, true, false, true, false, true, false) {
 			@Override
 			public void logout(Player player) {
 
@@ -263,7 +263,7 @@ public class Locations {
 
 			@Override
 			public boolean canTeleport(Player player) {
-				player.sendMessage("You cannot teleport while in a raid");
+				player.sendMessage("You cannot teleport while fighting Necromancer!");
 				return false;
 			}
 
@@ -277,8 +277,8 @@ public class Locations {
 
 			@Override
 			public void onDeath(Player player) {
-				player.moveTo(new Position(3253, 2931 , player.getShadowRaidsParty().getHeight()));
-				player.sendMessage("@red@You died and were sent to beginning of the shadows.");
+				player.moveTo(new Position(1820, 4247 , player.getShadowRaidsParty().getHeight()));
+				player.sendMessage("@red@You died and have respawned.");
 			}
 
 			@Override
@@ -319,7 +319,7 @@ public class Locations {
 						player.getPacketSender().sendString(id++, "-");
 					}
 					player.getPacketSender().sendString(111709, "Create");
-					player.getPacketSender().sendString(111702, "Raiding Party: @whi@0");
+					player.getPacketSender().sendString(111702, "Necromancer Party: @whi@0");
 
 					player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111700);
 					player.getPacketSender().sendConfig(6000, 4);
@@ -346,7 +346,7 @@ public class Locations {
 						player.getPacketSender().sendString(id++, "-");
 					}
 					player.getPacketSender().sendString(111709, "Create");
-					player.getPacketSender().sendString(111702, "Raiding Party: @whi@0");
+					player.getPacketSender().sendString(111702, "Necromancer Party: @whi@0");
 				}
 			}
 		},

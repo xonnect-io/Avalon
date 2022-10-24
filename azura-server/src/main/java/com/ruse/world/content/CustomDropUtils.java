@@ -820,7 +820,7 @@ public class CustomDropUtils {
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
-                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BORK_PET.npcId) {
                 percentBoost += 60;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
@@ -1776,7 +1776,7 @@ public class CustomDropUtils {
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
-                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BORK_PET.npcId) {
                 percentBoost += 60;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&

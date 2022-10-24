@@ -232,7 +232,12 @@ public class NPCDeathTask extends Task {
 
                         }
                         if (npc.getId() == 9837) {
+                            if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null
+                                    && killer.getSummoning().getFamiliar().getSummonNpc().getId() == 302) {
+                                killer.getPointsHandler ().incrementMIDNIGHTKILLCount (2);
+                            } else
                             killer.getAchievementTracker().progress(AchievementData.MIDNIGHT_ACHIEVER, 1);
+                            killer.getPointsHandler().incrementMIDNIGHTKILLCount(1);
                         }
 
                         if (npc.getId() == PennywiseSpawn.NPC_ID) {
