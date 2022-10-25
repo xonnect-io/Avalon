@@ -643,11 +643,11 @@ public class Shop extends ItemContainer {
             }
             GuardianSpawnSystem.highTierCount += amount;
             if (amount >= 10) {
-                World.sendMessage("<img=1463><col=0f9be9>[Vozzath]<img=1463> <col=e77507>" + player.getUsername() + " has sacrificed " + amount + " Premium Tickets");
+                World.sendMessage("<col=4141ff><img=1463>[Vozzath]<img=1463> <col=c80101><shad=500202>" + player.getUsername() + " <col=191919>has contributed <col=c80101>" + amount + " <col=191919>Premium Tickets.");
             }
             if (GuardianSpawnSystem.highTierCount >= 100) {
                 String message = "Vozzath has appeared ::Vozzath";
-                NPC npc = new NPC(3830, new Position(3445, 4113, 1)); //NPC npc = new NPC(3830, new Position(3491, 2782));
+                NPC npc = new NPC(3830, new Position(2655, 3803, 0)); //NPC npc = new NPC(3830, new Position(3491, 2782));
                 World.setGuardianActive(true);
                 World.register(npc);
                 World.sendMessage(message);
@@ -1154,6 +1154,13 @@ public class Shop extends ItemContainer {
                                 "AFK Tickets in Inventory: " + player.getInventory().getAmount(5020) + "");
                     }
                     super.switchItem(to, new Item(item.getId(), canBeBought), slot, false, false);
+
+                    if (id == PYRAMID_OUTBREAK_SHOP) {
+                        MINIGAMES.log(player, CollectionLog.PYRAMID_OUTBREAK, new Item(item.getId()));
+                    }
+                    if (id == PEST_CONTROL) {
+                        MINIGAMES.log(player, CollectionLog.PEST_CONTROL, new Item(item.getId()));
+                    }
                     playerCurrencyAmount -= value;
                     break;
                 } else {
