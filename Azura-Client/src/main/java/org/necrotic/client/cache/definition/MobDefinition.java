@@ -5489,33 +5489,34 @@ public final class MobDefinition {
 				break;
 			case 9894:
 				definition.setDefault();
-				definition.npcModels = new int[]{19688};
+				definition.npcModels = new int[]{19731};
 				definition.standAnimation =  MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = MobDefinition.get(1).actions;
-				definition.combatLevel = 0;
-				definition.name = "Range NPC";
+				definition.combatLevel = 666;
+				definition.name = "Necromancer";
 				definition.scaleXZ = 230;
 				definition.scaleY = 230;
 				definition.npcSizeInSquares = 3;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
+
 			case 9895:
 				definition.setDefault();
-				definition.npcModels = new int[]{19704};
+				definition.npcModels = new int[]{19731};
 				definition.standAnimation =  MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = MobDefinition.get(1).actions;
-				definition.combatLevel = 0;
-				definition.name = "Melee NPC";
-				definition.scaleXZ = 130;
-				definition.scaleY = 130;
-				definition.npcSizeInSquares = 2;
-				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 666;
+				definition.name = "Necromancer pet";
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
+				definition.npcSizeInSquares = 1;
+				definition.actions = new String[]{null, null, null, null, null};
 				break;
 			case 9896:
 				definition.setDefault();
-				definition.npcModels = new int[]{19708};
+				definition.npcModels = new int[]{19707};
 				definition.standAnimation =  MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = MobDefinition.get(1).actions;

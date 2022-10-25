@@ -47,6 +47,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23395)) {
             percentBoost += 50;
         }
+        if (player.getEquipment().contains(23550)) {
+            percentBoost += 60;
+        }
         /*
         End charms
          */
@@ -308,9 +311,6 @@ public class CustomDropUtils {
 
         //start weapons
 
-        if (player.getEquipment().contains(23228)) { //Icyenic bow
-            percentBoost += 50;
-        }
         if (player.getEquipment().contains(23267)) { //Infernal Bow
             percentBoost += 50;
         }
@@ -325,6 +325,15 @@ public class CustomDropUtils {
         }
         if (player.getEquipment().contains(23062)) { //Nephilim staff
             percentBoost += 40;
+        }
+        if (player.getEquipment().contains(17694)) { //Necromancer hammer
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(23228)) { //Necromancer bow
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(23302)) { //Necromancer staff
+            percentBoost += 75;
         }
         if (player.getEquipment().contains(23063)) { //Nephilim sword
             percentBoost += 40;
@@ -1048,6 +1057,10 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23395)) {
             percentBoost += 50;
         }
+
+        if (player.getEquipment().contains(23550)) {
+            percentBoost += 60;
+        }
         /*
         End charms
          */
@@ -1309,9 +1322,6 @@ public class CustomDropUtils {
 
         //start weapons
 
-        if (player.getEquipment().contains(23228)) { //Icyenic bow
-            percentBoost += 50;
-        }
         if (player.getEquipment().contains(23267)) { //Infernal Bow
             percentBoost += 50;
         }
@@ -1326,6 +1336,15 @@ public class CustomDropUtils {
         }
         if (player.getEquipment().contains(23062)) { //Nephilim staff
             percentBoost += 40;
+        }
+        if (player.getEquipment().contains(17694)) { //Necromancer hammer
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(23228)) { //Necromancer bow
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(23302)) { //Necromancer staff
+            percentBoost += 75;
         }
         if (player.getEquipment().contains(23063)) { //Nephilim sword
             percentBoost += 40;
@@ -1782,6 +1801,10 @@ public class CustomDropUtils {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 percentBoost += 70;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.NECROMANCER.npcId) {
+                percentBoost += 100;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.VINDICTA_PET.npcId) {

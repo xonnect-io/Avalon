@@ -130,6 +130,10 @@ public class UpgradeInterface {
                         }
                         int amount = player.getInventory().getAmount(selectedUpgrade.getRequired().getId()) +
                                 (noted ? player.getInventory().getAmount(val.getRequired().getId() + 1) : 0);
+                        if (val.getReward().getDefinition ().getId () == 15004 || val.getReward().getDefinition ().getId () == 14999 ||
+                        val.getReward().getDefinition ().getId () == 23253)
+                            amount = (amount / 2);
+
                         int failed = 0, success = 0;
                         for (int i = 0; i < amount; i++) {
                             if (player.getInventory().contains(ItemDefinition.UPGRADE_TOKEN_ID,

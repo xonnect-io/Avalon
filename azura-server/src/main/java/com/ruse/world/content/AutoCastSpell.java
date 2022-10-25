@@ -39,6 +39,7 @@ public enum AutoCastSpell {
     DARK(22114, CombatSpells.DARK),
     BLOOD(23227, CombatSpells.BLOOD),
     NEPHILIM(23062, CombatSpells.NEPHILIM),
+    NECROMANCER(23302, CombatSpells.NECROMANCER),
     MAGICIAN_STAFF(3745, CombatSpells.MEDIUM),
     MAGIC(23026,CombatSpells.MEDIUM)
     ;

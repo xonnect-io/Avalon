@@ -21,6 +21,7 @@ public class CustomInterfaces extends RSInterface {
 		CustomInterfaces.tda = tda;
 	}
 
+
 	public static void instanceManager() {
 		int interID = 35000;
 		RSInterface tab = addInterface(interID);
@@ -6825,7 +6826,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addSpriteLoader(id, 1791);
 		tab.child(c++, id++, 0 + x, 0 + y);
 
-		addText(id, "Gods Interface", tda, 2, 16750643, true, true);
+		addText(id, "Necromancer Interface", tda, 2, 16750643, true, true);
 		tab.child(c++, id++, 129 + x, 4 + y);
 
 		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
@@ -6882,10 +6883,10 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		int y = 13;
 		tab.totalChildren(12);
 
-		addSpriteLoader(id, 1586);
+		addSpriteLoader(id, 1800);
 		tab.child(c++, id++, 0 + x, 0 + y);
 
-		addText(id, "Isle of the Gods Coffer", tda, 2, 16750643, true, true);
+		addText(id, "Necromancer Coffer", tda, 2, 16750643, true, true);
 		tab.child(c++, id++, 192 + x, 4 + y);
 
 		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
@@ -6897,7 +6898,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		String[] tabs = new String[]{"Coffer", "Rewards"};
 
 		for (int i = 0; i < tabs.length; i++) {
-			addConfigButtonWSpriteLoader(id, interID, 1506, 1507, 79, 20, tabs[i], i, 5, 4511);
+			addConfigButtonWSpriteLoader(id, interID, 1801, 1802, 79, 20, tabs[i], i, 5, 4511);
 			tab.child(c++, id++, 10 + x, 25 + y);
 			addText(id, tabs[i], 0xFFA500, false, true, 100, tda, 1);
 			tab.child(c++, id++, 15 + x, 28 + y);
@@ -6905,10 +6906,10 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		}
 		x = 63;
 
-		hoverButton(id, 1457, 1458, "Take All", 2, 0xff8624, "Take All");
+		hoverButton(id, 1803, 1804, "Take All", 2, 0xff8624, "Take All");
 		tab.child(c++, id++, 60 + x, 267 + y);
 
-		hoverButton(id, 1457, 1458, "Bank All", 2, 0xff8624, "Bank All");
+		hoverButton(id, 1803, 1804, "Bank All", 2, 0xff8624, "Bank All");
 		tab.child(c++, id++, 201 + x, 267 + y);
 
 		addText(id, "Drop Rate", tda, 1, 0xFFA500, true, true);
@@ -6949,10 +6950,10 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		int y = 13;
 		tab.totalChildren(16);
 
-		addSpriteLoader(id, 1586);
+		addSpriteLoader(id, 1800);
 		tab.child(c++, id++, 0 + x, 0 + y);
 
-		addText(id, "Isle of the Gods Rewards", tda, 2, 16750643, true, true);
+		addText(id, "Necromancer Rewards", tda, 2, 16750643, true, true);
 		tab.child(c++, id++, 192 + x, 4 + y);
 
 		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
@@ -6964,7 +6965,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		String[] tabs = new String[]{"Coffer", "Rewards"};
 
 		for (int i = 0; i < tabs.length; i++) {
-			addConfigButtonWSpriteLoader(id, interID, 1506, 1507, 79, 20, tabs[i], i, 5, 4511);
+			addConfigButtonWSpriteLoader(id, interID, 1801, 1802, 79, 20, tabs[i], i, 5, 4511);
 			tab.child(c++, id++, 10 + x, 25 + y);
 			addText(id, tabs[i], 0xFFA500, false, true, 100, tda, 1);
 			tab.child(c++, id++, 15 + x, 28 + y);
@@ -6973,7 +6974,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		x = 63;
 
 
-		addConfigButtonWSpriteLoader(id, interID, 1457, 1458, 118, 28, "Easy Rewards", 0, 5, 4512);
+		addConfigButtonWSpriteLoader(id, interID, 1803, 1804, 118, 28, "Easy Rewards", 0, 5, 4512);
 		tab.child(c++, id++, 10 + x, 267 + y);
 		addText(id, "Easy Rewards", tda, 2, 0xFFA500, true, true);
 		tab.child(c++, id++, 69 + x, 273 + y);
@@ -6981,7 +6982,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		// tab.child(c++, id++, 10 + x, 267 + y);
 
 
-		addConfigButtonWSpriteLoader(id, interID, 1457, 1458, 118, 28, "Medium Rewards", 1, 5, 4512);
+		addConfigButtonWSpriteLoader(id, interID, 1803, 1804, 118, 28, "Medium Rewards", 1, 5, 4512);
 		tab.child(c++, id++, 133 + x, 267 + y);
 		addText(id, "Medium Rewards", tda, 2, 0xFFA500, true, true);
 		tab.child(c++, id++, 192 + x, 273 + y);
@@ -6989,7 +6990,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		// tab.child(c++, id++, 133 + x, 267 + y);
 
 
-		addConfigButtonWSpriteLoader(id, interID, 1457, 1458, 118, 28, "Hard Rewards", 2, 5, 4512);
+		addConfigButtonWSpriteLoader(id, interID, 1803, 1804, 118, 28, "Hard Rewards", 2, 5, 4512);
 		tab.child(c++, id++, 256 + x, 267 + y);
 		addText(id, "Hard Rewards", tda, 2, 0xFFA500, true, true);
 		tab.child(c++, id++, 315 + x, 273 + y);
@@ -7138,7 +7139,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		//Scoll bar size, witdh and scrolling size.
 		scrollInterface.width = 129 + 5;
 		scrollInterface.height = 218;
-		scrollInterface.scrollMax = 400;
+		scrollInterface.scrollMax = 432;
 
 
 		/** This handles the scrollable Items On Interface **/
@@ -7706,7 +7707,9 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		donatorShop();
 		petShop();
 		godsHitpoints();
-		godsInterface();
+		godsCoffer();
+		godsRewards();
+		godsInterface ();
 		teleportInterface();
 		minigameInterface();
 		vodOverlay(tda);

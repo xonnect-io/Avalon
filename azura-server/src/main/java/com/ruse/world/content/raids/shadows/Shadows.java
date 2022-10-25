@@ -3,14 +3,17 @@ package com.ruse.world.content.raids.shadows;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.Locations;
+import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.Cases;
+import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
+import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -19,29 +22,91 @@ import java.util.ArrayList;
 
 public class Shadows {
 
+
+
+    public static boolean canEnter(Player player, ShadowRaidParty party) {
+
+        if (!hasRequirements(party))
+            return false;
+
+        if (party.hasTradeOpen())
+            return false;
+
+        if (player.getLocation() != Locations.Location.DARKNESS_LOBBY) {
+            player.sendMessage("You are not in the Necromancer lobby.");
+            return false;
+        }
+
+        return true;
+    }
+
+    public static boolean hasRequirements(ShadowRaidParty party) {
+        for (Player player : party.getPlayers()) {
+
+            if (((party.getDifficulty().equals(RaidDifficulty.INTERMEDIATE)
+                    && player.getEasyIsleGodKC() < party.getDifficulty().getGodsRequirement().getPreviousDifficultyAmount())
+
+                    || (party.getDifficulty().equals(RaidDifficulty.ADVANCED)
+                    && player.getMedIsleGodKC() < 200))
+
+                    && !player.getRights().isDeveloperOnly() && player.getRights() != PlayerRights.YOUTUBER) {
+                party.sendMessage(player.getUsername() + " does not have the correct kill requirements to do this.");
+                party.sendMessage("Every party member must have at least " + party.getDifficulty().getGodsRequirement().getPreviousDifficultyAmount() + " completions of the previous difficulty.");
+                return false;
+            }
+
+            int total = KillsTracker.getTotalKillsForNpc(9813, player);
+
+            if (total < 10000 && !player.getRights().isDeveloperOnly() && player.getRights() != PlayerRights.YOUTUBER) {
+                party.sendMessage(player.getUsername() + " does not have the Blood Demon kill requirement to do this.");
+                player.sendMessage("@red@You need 10,000 Blood v kills to do the Necromancer!");
+                return false;
+            }
+
+            if (player.getInventory().getAmount(12855) < party.getDifficulty().getGodsRequirement().getCost()) {
+                party.sendMessage(player.getUsername() + " does not have " + Misc.insertCommasToNumber(party.getDifficulty().getGodsRequirement().getCost()) + " Upgrade tokens.");
+                player.sendMessage("@red@You need " + Misc.insertCommasToNumber(party.getDifficulty().getGodsRequirement().getCost()) + " Upgrade tokens to do the Necromancer!");
+                return false;
+            }
+
+        }
+        return true;
+    }
+
+    public static void removeTokens(ShadowRaidParty party) {
+        for (Player player : party.getPlayers()) {
+            player.getInventory().delete(12855, party.getDifficulty().getGodsRequirement().getCost());
+        }
+    }
     public static void start(ShadowRaidParty party) {
 
         Player p = party.getOwner();
         p.getPacketSender().sendInterfaceRemoval();
 
+        if (!canEnter(p, party))
+            return;
+
         if (party.hasEnteredRaids()) {
-            p.getPacketSender().sendMessage("your party is already in a raids!");
+            p.getPacketSender().sendMessage("your party is already in fighting Necromancer!");
             return;
         }
-
+        if (party.getPlayers().size() <= 0) {
+            return;
+        }
         if (party.getOwner() != p) {
             p.getPacketSender().sendMessage("Only the party leader can start the raid.");
             return;
         }
 
+        removeTokens(party);
         for (Player member : party.getPlayers()) {
             if (member != null) {
                 member.getPacketSender().sendInterfaceRemoval();
                 if (member.getSummoning().getFamiliar() != null) {
                     member.getPacketSender()
-                            .sendMessage("You must dismiss your familiar before being allowed to enter a dungeon.");
+                            .sendMessage("You must dismiss your familiar before being allowed to fight Necromancer.");
                     p.getPacketSender().sendMessage(
-                            "" + p.getUsername() + " has to dismiss their familiar before you can enter the dungeon.");
+                            "" + p.getUsername() + " has to dismiss their familiar before you can fight Necromancer.");
                     return;
                 }
             }
@@ -52,11 +117,12 @@ public class Shadows {
         World.getNpcs().forEach(n -> n.removeInstancedNpcs(Locations.Location.SHADOWS_OF_DARKNESS, height, null));
 
         for (Player member : party.getPlayers()) {
+            member.setLastDifficulty(party.getDifficulty());
             member.getPacketSender().sendInterfaceRemoval();
             member.setRegionInstance(null);
             member.getMovementQueue().reset();
             member.getClickDelay().reset();
-            member.moveTo(new Position(3216, 2887, height));
+            member.moveTo(new Position(1820, 4247, height));
             PrayerHandler.deactivateAll(member);
             CurseHandler.deactivateAll(member);
             TaskManager.submit(new Task(2, false) {
@@ -77,7 +143,7 @@ public class Shadows {
         }
         party.setDeathCount(0);
         party.setKills(0);
-        party.sendMessage("You arrive in a cold, empty, dungeon of darkness.");
+        party.sendMessage("You arrive on a cold island of darkness.");
         party.setCurrentPhase(1);
         party.setHeight(height);
         party.startShadowRaid();
@@ -85,72 +151,16 @@ public class Shadows {
     }
     public static void firstWave(ShadowRaidParty party) {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
-        double mult = 25000000;
 
-            NPC npc = new NPC(ShadowData.firstWaveNpc, new Position(3216, 2891, party.getHeight()));
-            npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
-            npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
+            NPC npc = new NPC(9894, new Position(1821, 4255, party.getHeight()));
+            npc.setDefaultConstitution((int) ((double) (npc.getConstitution()  * (party.getDifficulty().ordinal() + 1))));
+            npc.setConstitution((int) ((double) (npc.getConstitution()  * (party.getDifficulty().ordinal() + 1))));
             npcs.add(npc);
         TaskManager.submit(new Task(5, false) {
 
             @Override
             public void execute() {
                 startTask(party, npcs, 1);
-                stop();
-            }
-        });
-    }
-
-    public static void secondWave(ShadowRaidParty party) {
-
-        ArrayList<NPC> npcs = new ArrayList<NPC>();
-        double mult = 25000000;
-            NPC npc = new NPC(ShadowData.secondWaveNpc, new Position(3237, 2891, party.getHeight()));
-            npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
-            npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
-            npcs.add(npc);
-        TaskManager.submit(new Task(5, false) {
-
-            @Override
-            public void execute() {
-                startTask(party, npcs, 2);
-                stop();
-            }
-        });
-    }
-
-    public static void thirdWave(ShadowRaidParty party) {
-
-        ArrayList<NPC> npcs = new ArrayList<NPC>();
-        double mult = 25000000;
-            NPC npc = new NPC(ShadowData.thirdWaveNpc, new Position(3225, 2907, party.getHeight()));
-            npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
-            npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
-            npcs.add(npc);
-
-        TaskManager.submit(new Task(5, false) {
-
-            @Override
-            public void execute() {
-                startTask(party, npcs, 3);
-                stop();
-            }
-        });
-    }
-    public static void finalWave(ShadowRaidParty party) {
-
-        ArrayList<NPC> npcs = new ArrayList<NPC>();
-        double mult = 25000000;
-        NPC npc = new NPC(ShadowData.finalWaveNpc, new Position(3206, 2913, party.getHeight()));
-        npc.setDefaultConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
-        npc.setConstitution((int) (npc.getConstitution() + (party.getPlayers().size() * mult)));
-        npcs.add(npc);
-
-        TaskManager.submit(new Task(5, false) {
-
-            @Override
-            public void execute() {
-                startTask(party, npcs, 4);
                 stop();
             }
         });
@@ -169,7 +179,7 @@ public class Shadows {
                     protected void execute() {
                         if ((party.getOwner().getLocation() != Locations.Location.SHADOWS_OF_DARKNESS)
                                 || party.getPlayers().size() <= 0) {
-                            party.sendMessage("@red@Your party has failed to complete the Shadows of Darkness Raid!");
+                            party.sendMessage("@red@Your party has failed to kill Necromancer!");
                             destroyInstance(party);
                             stop();
                             
@@ -186,25 +196,15 @@ public class Shadows {
                         }
                         if (count >= npcs.size()) {
                             if (wave == 1)
-                                secondWave(party);
-                            else if (wave == 2)
-                                thirdWave(party);
-                            else if (wave == 3)
-                                finalWave(party);
-                            else
                                 finishRaid(party);
                             stop();
                         }
 
                         if (tick == 3) {
                             if (wave == 1)
-                                party.sendMessage("@red@The first wave has started!");
-                            else if (wave == 2)
-                                party.sendMessage("@red@The second wave has started!");
-                            else if (wave == 3)
-                                party.sendMessage("@red@The third wave has started!");
-                            else if (wave == 4)
-                                party.sendMessage("@red@The final wave has started!");
+                                party.sendMessage("@red@Necromancer has appeared!");
+                            if (wave == 2)
+                                party.sendMessage("@red@You defeated Necromancer!");
                             for (NPC npc : npcs) {
                                 spawnNpc(party, npc);
                             }
@@ -229,8 +229,17 @@ public class Shadows {
     }
 
     public static void handleDeath(ShadowRaidParty party, Player player) {
-        player.moveTo(new Position(3280, 2891 , party.getHeight()));
-        player.sendMessage("@red@You died and were sent to beginning of the shadows.");
+        player.getPacketSender().sendWalkableInterface(144900, false);
+        party.getPlayers().remove(player);
+        player.moveTo(ShadowData.lobbyPosition);
+        party.remove(player, true);
+
+        player.sendMessage("@red@Your Necromancer Drop rate has been halved because you died.");
+        player.setIsleDropRate( player.getIsleDropRate() / 2);
+
+        if (party.hasEnteredRaids() && party.getPlayers ().size () <= 0) {
+            destroyInstance(party);
+        }
     }
 
     public static Player randomPlayer(ShadowRaidParty party) {
@@ -249,21 +258,78 @@ public class Shadows {
 
         @Override
         public void execute() {
-            party.sendMessage("@red@Your party has defeated the Shadows of Darkness!");
-
+            long timerElapsed = party.getTimer().elapsed();
+            String timeString = Misc.formatTime(timerElapsed);
+            String prefix = "Easy";
+            if (party.getDifficulty() == RaidDifficulty.INTERMEDIATE) {
+                prefix = "Medium";
+            } else if (party.getDifficulty() == RaidDifficulty.ADVANCED) {
+                prefix = "Hard";
+            }
+            party.sendMessage("Necromancer ("+prefix+") completion time: @red@" + timeString);
             for (Player player : party.getPlayers()) {
                 for (Player member : party.getPlayers()) {
-                    member.getInventory().add(23370, 1);
+                        if (member.getIsleDropRate() + 0.25D >= 100D)
+                            member.setIsleDropRate( 100D);
+                        else
+                    if (party.getDifficulty() == RaidDifficulty.EASY) {
+                        if (member.getIsleDropRate() + 0.25D >= 100D)
+                            member.setIsleDropRate( 100D);
+                        else
+                            member.setIsleDropRate(member.getIsleDropRate() + 0.25D);
+
+                        if (member.getIsleEasyTimer() <= 0
+                                || timerElapsed < member.getIsleEasyTimer()) {
+                            member.setIsleEasyTimer(timerElapsed);
+                        }
+                        member.sendMessage("Personal Best ("+prefix+"): " + Misc.formatTime(member.getIsleEasyTimer()));
+                    } else if (party.getDifficulty() == RaidDifficulty.INTERMEDIATE) {
+                        if (member.getIsleDropRate() + 0.5D >= 100D)
+                            member.setIsleDropRate( 100D);
+                        else
+                            member.setIsleDropRate(member.getIsleDropRate() + 0.5D);
+
+                        if (member.getIsleMedTimer() <= 0
+                                || timerElapsed < member.getIsleMedTimer()) {
+                            member.setIsleMedTimer(timerElapsed);
+                        }
+                        member.sendMessage("Personal Best ("+prefix+"): " + Misc.formatTime(member.getIsleMedTimer()));
+                    } else if (party.getDifficulty() == RaidDifficulty.ADVANCED) {
+
+                        if (member.getIsleDropRate() + 1D >= 100D)
+                            member.setIsleDropRate( 100D);
+                        else
+                            member.setIsleDropRate(member.getIsleDropRate() + 1D);
+
+                        if (member.getIsleHardTimer() <= 0
+                                || timerElapsed < member.getIsleHardTimer()) {
+                            member.setIsleHardTimer(timerElapsed);
+                        }
+                        member.sendMessage("Personal Best ("+prefix+"): " + Misc.formatTime(member.getIsleHardTimer()));
+                    }
+                    if (party.getDifficulty() == RaidDifficulty.EASY) {
+                        member.setEasyIsleGodKC(member.getEasyIsleGodKC() + 1);
+                        member.sendMessage("@blu@Necromancer (Easy) KC: " + member.getEasyIsleGodKC());
+                    } else if (party.getDifficulty() == RaidDifficulty.INTERMEDIATE) {
+                        member.setMedIsleGodKC(member.getMedIsleGodKC() + 1);
+                        member.sendMessage("@blu@Necromancer (Medium) KC: " + member.getMedIsleGodKC());
+                    } else if (party.getDifficulty() == RaidDifficulty.ADVANCED) {
+                        member.setHardIsleGodKC(member.getHardIsleGodKC() + 1);
+                        member.sendMessage("@blu@Necromancer (Hard) KC: " + member.getHardIsleGodKC());
+                    }
+
+                    KillsTracker.submitById(member, 9894, true, true);
+                    NecromancerLoot.handleLoot(member, party.getDifficulty());
                     member.getSeasonPass().addXp(2);
                     Cases.grantCasket(player, 10);
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
-                        member.getInventory().add(23370, 1);
+                        NecromancerLoot.handleLoot(member, party.getDifficulty());
                     }
                     member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
-                    member.getPointsHandler().incrementSufferingKC(1);
+                    member.getPointsHandler().incrementNecromancerKC(1);
                 }
                 party.moveTo(ShadowData.lobbyPosition);
-                player.getShadowRaidsParty().enteredDungeon(false);
+                player.getZombieRaidsParty ().enteredDungeon(false);
                 party.setDeathCount(0);
                 party.setKills(0);
                 party.setCurrentPhase(1);

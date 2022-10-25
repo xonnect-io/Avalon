@@ -75,6 +75,7 @@ public class CollectionLog {
     public static final int PEST_CONTROL = 100003;
     public static final int BARROWS_KEY = 120_000;
     public static final int SUFFERING_KEY = 23370;
+    public static final int NECROMANCER_KEY = 23447;
     public static final int MYSTERY_BOX = 6199;
     public static final int PVM_BOX = 7956;
     public static final int PVM_BOX_T2 = 22214;
@@ -258,6 +259,10 @@ public class CollectionLog {
 
         if (collection.getLogType() == LogType.BOXES)
         player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : kills - 1));
+
+        else if(collection.getLogType() == LogType.BOSSES && collection.getName().equalsIgnoreCase("necromancer"))
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getShadowKeysOpened())));
+
 
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("souls of suffering"))
             player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getPointsHandler().getSufferingKC())));

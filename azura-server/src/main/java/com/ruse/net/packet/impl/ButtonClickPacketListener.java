@@ -55,8 +55,11 @@ import com.ruse.world.content.osrscollectionlog.CollectionLogButtons;
 import com.ruse.world.content.polling.PollCreation;
 import com.ruse.world.content.polling.PollManager;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
+import com.ruse.world.content.raids.shadows.NecromancerLoot;
 import com.ruse.world.content.raids.shadows.ShadowRaidParty;
 import com.ruse.world.content.raids.shadows.ShadowRewards;
+import com.ruse.world.content.raids.shadows.Shadows;
+import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.rewardsList.RewardsHandler;
 import com.ruse.world.content.serverperks.ServerPerkContributionInput;
@@ -87,6 +90,7 @@ import java.util.List;
 
 import static com.ruse.model.Skill.*;
 import static com.ruse.world.content.osrscollectionlog.LogType.MONSTERS;
+import static com.ruse.world.content.raids.shadows.NecromancerInterfaces.*;
 
 /**
  * This packet listener manages a button that the player has clicked upon.
@@ -224,7 +228,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case -30520:
                 if (player.getInstanceManager().selectedInstance != null) {
                     if (player.getInstanceManager().selectedInstance.getNpcId() == 1265) {
-                        player.sendMessage("Lunite lions can only be killed at ::train");
+                        player.sendMessage("Avalon lions can only be killed at ::train");
                         return;
                     }
 
@@ -1931,6 +1935,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     return;
                 player.setNoteWithdrawal(!player.withdrawAsNote());
                 break;
+
             case 21000:
                 if (!player.isBanking() || (player.getInterfaceId() != 106000 && player.getInterfaceId() != 5292))
                     return;
@@ -1939,6 +1944,45 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 27009:
                 player.sendMessage("This option has been disabled");
+                break;
+
+            case 144006:
+                player.getShadowRaidsParty().setDifficulty(RaidDifficulty.EASY);
+                openStartScreen(player);
+                break;
+            case 144008:
+                player.getShadowRaidsParty().setDifficulty(RaidDifficulty.INTERMEDIATE);
+                openStartScreen(player);
+                break;
+            case 144010:
+                player.getShadowRaidsParty().setDifficulty(RaidDifficulty.ADVANCED);
+                openStartScreen(player);
+                break;
+            case 144019:
+                Shadows.start(player.getShadowRaidsParty());
+                break;
+
+            case 144506:
+                openCoffer(player);
+                break;
+            case 144108:
+            case 144510:
+                openRewards(player, NecromancerLoot.EASY);
+                player.getPacketSender().sendConfig(4512, 0);
+                break;
+            case 144512:
+                openRewards(player, NecromancerLoot.MEDIUM);
+                player.getPacketSender().sendConfig(4512, 1);
+                break;
+            case 144514:
+                openRewards(player, NecromancerLoot.HARD);
+                player.getPacketSender().sendConfig(4512, 2);
+                break;
+            case 144110:
+                takeCoffer(player);
+                break;
+            case 144111:
+                bankCoffer(player);
                 break;
             case 27014:
             case 27015:

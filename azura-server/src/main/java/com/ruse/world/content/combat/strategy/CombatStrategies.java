@@ -179,6 +179,7 @@ public class CombatStrategies {
 		STRATEGIES.put(9896, new RaidsFirstBoss());
 
 		STRATEGIES.put(9810, new RaidsSecondBoss());
+		STRATEGIES.put(9894, new NecromancerBoss ());
 
 		STRATEGIES.put(9106, new CthuluStrategy());
 		STRATEGIES.put(9111, new HellishBull());

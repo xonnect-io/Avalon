@@ -642,6 +642,36 @@ public class PlayerLoading {
             if (reader.has("suffering-kc")) {
                 player.getPointsHandler().setSufferingKC(reader.get("suffering-kc").getAsInt(), false);
             }
+            if (reader.has("isle-easy-timer")) {
+                player.setIsleEasyTimer(reader.get("isle-easy-timer").getAsLong());
+            }
+            if (reader.has("isle-med-timer")) {
+                player.setIsleMedTimer(reader.get("isle-med-timer").getAsLong());
+            }
+            if (reader.has("isle-hard-timer")) {
+                player.setIsleHardTimer(reader.get("isle-hard-timer").getAsLong());
+            }
+            if (reader.has("isle-dr")) {
+                player.setIsleDropRate(reader.get("isle-dr").getAsDouble());
+            }
+            if (reader.has("gods-coffer")) {
+                player.getGodsCoffer().clear();
+                for (Item item : builder.fromJson(reader.get("gods-coffer").getAsJsonArray(), Item[].class)) {
+                    player.getGodsCoffer().add(item);
+                }
+            }
+            if (reader.has("easy-isle-god-kc")) {
+                player.setEasyIsleGodKC(reader.get("easy-isle-god-kc").getAsInt());
+            }
+            if (reader.has("med-isle-god-kc")) {
+                player.setMedIsleGodKC(reader.get("med-isle-god-kc").getAsInt());
+            }
+            if (reader.has("hard-isle-god-kc")) {
+                player.setHardIsleGodKC(reader.get("hard-isle-god-kc").getAsInt());
+            }
+            if (reader.has("necromancer-kc")) {
+                player.getPointsHandler().setNecromancerKC(reader.get("necromancer-kc").getAsInt(), false);
+            }
             if (reader.has("shadow-drop-rate")) {
                 player.setShadowRareDropBoost(reader.get("shadow-drop-rate").getAsInt());
             }

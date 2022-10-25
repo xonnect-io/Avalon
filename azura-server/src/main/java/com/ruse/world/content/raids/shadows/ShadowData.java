@@ -4,7 +4,7 @@ import com.ruse.model.Position;
 
 public class ShadowData {
 
-	public static final Position lobbyPosition = new Position(3253, 2931, 0);
+	public static final Position lobbyPosition = new Position(3235, 2914, 0);
 	public static final int firstWaveNpc = 9896;
 	public static final int secondWaveNpc = 9810;
 	public static final int thirdWaveNpc = 9894;

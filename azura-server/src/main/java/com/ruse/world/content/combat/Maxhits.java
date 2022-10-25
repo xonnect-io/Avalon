@@ -113,6 +113,12 @@ public class Maxhits {
                     .getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 percent += 30;
             }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.NECROMANCER.npcId) {
+                percent += 50;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
@@ -380,6 +386,11 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 base *= 1.30;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.NECROMANCER.npcId) {
+                base *= 1.50;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
@@ -715,6 +726,10 @@ public class Maxhits {
                 maxHit *= 1.30D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.NECROMANCER.npcId) {// admin pet
+                maxHit *= 1.50D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {// admin pet
                 maxHit *= 1.25D;
             }
@@ -997,6 +1012,10 @@ public class Maxhits {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {// admin pet
                 maxHit *= 1.30D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.NECROMANCER.npcId) {// admin pet
+                maxHit *= 1.50D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {// admin pet

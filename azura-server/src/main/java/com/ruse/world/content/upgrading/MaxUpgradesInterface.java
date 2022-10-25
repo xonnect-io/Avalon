@@ -109,8 +109,11 @@ public class MaxUpgradesInterface {
         SERAPHIC_POTION(100,new Item(14705,-1),new Item(11465, 1),new Item(14705, 1),new Item(23242, 1),new Item(12855, 250_000_000)),
         SUPREME_SCROLL(66,new Item(15378,-1),new Item(23427, 1),new Item(15378, 1),new Item(17474, 25),new Item(12855, 5_000_000)),
         SCORPIUS(100,new Item(23438,-1),new Item(23436, 1),new Item(23438, 1),new Item(4564, 100),new Item(14084, 100),new Item(1973, 100)),
-        EVIL_SCORPIUS(100,new Item(23436,-1),new Item(23437, 1),new Item(23436, 1),new Item(23438, 3));
+        EVIL_SCORPIUS(100,new Item(23436,-1),new Item(23437, 1),new Item(23436, 1),new Item(23438, 3)),
 
+        NECROMANCER_BOW(100,new Item(22953,-1),new Item(23228, 1),new Item(22953, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(23226,1)),
+        NECROMANCER_SWORD(100,new Item(22952,-1),new Item(17694, 1),new Item(22952, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(8136, 1)),
+        NECROMANCER_STAFF(100,new Item(22951,-1),new Item(23302, 1),new Item(22951, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(23227, 1)),
 
 
         ;

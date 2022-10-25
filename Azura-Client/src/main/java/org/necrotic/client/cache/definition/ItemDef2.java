@@ -381,7 +381,7 @@ public class ItemDef2 {
 				break;
 			case 17694:
 				itemDef21 = ItemDefinition.get(18953);
-				itemDef.name = "Icyenic Hammer";
+				itemDef.name = "Necromancer Hammer";
 				itemDef.modelID = 19725;
 				itemDef.maleEquip1 = 19725;
 				itemDef.femaleEquip1 = 19725;
@@ -444,7 +444,7 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				break;
 			case 23302:
-				itemDef.name = "Icyenic Staff";
+				itemDef.name = "Necromancer staff";
 				itemDef.modelID = 19724;
 				itemDef.maleEquip1 = 19724;
 				itemDef.femaleEquip1 = 19724;
@@ -457,6 +457,59 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
+			case 22951:
+				itemDef.name = "Necromancer crystal";
+				itemDef.modelID = 19724;
+				itemDef.maleEquip1 = 19724;
+				itemDef.femaleEquip1 = 19724;
+				itemDef.modelOffsetX = -78;
+				itemDef.modelOffsetY = -148;
+				itemDef.modelZoom = 2096;
+				itemDef.rotationY = 391;
+				itemDef.rotationZ = 0;
+				itemDef.rotationX = 1191;
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+			case 22952:
+				itemDef.name = "Necromancer hammer head";
+				itemDef.modelID = 19725;
+				itemDef.maleEquip1 = 19725;
+				itemDef.femaleEquip1 = 19725;
+				itemDef.modelZoom = 2426;
+				itemDef.rotationX = 1070;
+				itemDef.rotationY = 339;
+				itemDef.rotationZ = 1574;
+				itemDef.modelOffsetX = 61;
+				itemDef.modelOffsetY = -322;
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+			case 22953:
+				itemDef.copyItem(11235);
+				itemDef.name = "Necromancer Bow staff";
+				itemDef.modelID = 19723;
+				itemDef.femaleEquip1 = 19723;
+				itemDef.maleEquip1 = 19723;
+				itemDef.modelOffsetX = 9;
+				itemDef.modelOffsetY = 26;
+				itemDef.modelZoom = 1574;
+				itemDef.rotationY = 0;
+				itemDef.rotationX = 1626;
+				itemDef.rotationZ = 0;
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				break;
+			case 22954:
+				itemDef.copyItem(5074);
+				itemDef.name = "Necromancer Pet";
+				itemDef.modelID = 19731;
+				itemDef.modelZoom = 4000;
+				break;
+			case 13653:
+				itemDef.name = "Death fragments";
+				itemDef.rdc2 = 45895;
+				break;
+
 			case 18753:
 				itemDef.name = "<col=eed81d><shad=9283>Corrupt Maxiblood helm<shad-1>";
 				itemDef.modelID = 65130;

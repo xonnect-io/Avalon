@@ -38,6 +38,7 @@ import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.Dueling.DuelRule;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.portal.portal;
+import com.ruse.world.content.raids.shadows.NecromancerInterfaces;
 import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.skill.impl.agility.Agility;
 import com.ruse.world.content.skill.impl.construction.Construction;
@@ -384,7 +385,8 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 break;
                             case 13405:
-                                if (player.getLocation() == Location.DARKNESS_LOBBY) {
+                                NecromancerInterfaces.openStartScreen(player);
+                                /*if (player.getLocation() == Location.DARKNESS_LOBBY) {
                                     CurseHandler.deactivateAll(player);
                                     if (player.getShadowRaidsParty() != null) {
                                         if (player.getShadowRaidsParty().getOwner().equals(player)) {
@@ -396,7 +398,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     } else {
                                         player.sendMessage("You must be in a party to start the Raid.");
                                     }
-                                }
+                                }*/
                                 break;
                             case 10251:
                                 if (player.getPointsHandler().getZombieRaidKC() < 100) {
@@ -418,8 +420,8 @@ public class ObjectActionPacketListener implements PacketListener {
                                 }
                                 break;
                             case 29577:
-                                player.getCasketOpening().setCurrentCasket(CasketOpening.Caskets.SOSREWARDS);
-                                player.getCasketOpening().openShadowRewardInterface();
+                            case 52299:
+                                NecromancerInterfaces.openCoffer(player);
                                 break;
                             case 4004:
                             case 27306:

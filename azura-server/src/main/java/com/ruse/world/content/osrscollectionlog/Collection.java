@@ -143,6 +143,8 @@ public enum Collection {
     BLOOD_DEMON(Player.BLOOD_DEMON_KILLED, LogType.BOSSES, "Blood Demon", new int[] {CollectionLog.BLOOD_DEMON}, Player.BLOOD_DEMON_LOG_CLAIMED, new Item[] { new Item(15004,2) },
             new Item(23238), new Item(23239), new Item(23252), new Item(15288),
             new Item(15289), new Item(15290), new Item(20488), new Item(7956), new Item(19114), new Item(19115), new Item(19116)),
+    NECROMANCER(Player.NECROMANCER_COMPLETED, LogType.BOSSES, "Necromancer", new int[] {CollectionLog.NECROMANCER_KEY}, Player.NECROMANCER_LOG_CLAIMED, new Item[] { new Item(23279) },
+            new Item(22953),new Item(22952), new Item(22951), new Item(22954)),
 
     //Boxes
     MYSTERY_BOX(Player.MYSTERY_BOXES_OPENED, LogType.BOXES, "Beginner Mystery Box", new int[] {CollectionLog.MYSTERY_BOX}, Player.MYSTERY_BOX_LOG_CLAIMED, new Item[] { new Item(19116,15) },
@@ -319,7 +321,8 @@ public enum Collection {
     SUFFERING_RAIDS(Player.SUFFERING_COMPLETED, LogType.MINIGAMES, "Souls of Suffering", new int[] {CollectionLog.SUFFERING_KEY}, Player.SUFFERING_LOG_CLAIMED, new Item[] { new Item(14999) },
             new Item(23303), new Item(23304), new Item(23305), new Item(23306), new Item(23307),
             new Item(23308), new Item(23309), new Item(23310), new Item(23311), new Item(14999),
-            new Item(23276), new Item(23403), new Item(15288));
+            new Item(23276), new Item(23403), new Item(15288)),
+    ;
 
     private int attributeKey;
     private final LogType logType;

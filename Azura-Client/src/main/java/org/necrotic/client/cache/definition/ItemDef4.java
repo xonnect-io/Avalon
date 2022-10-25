@@ -164,18 +164,21 @@ public class ItemDef4 {
 				itemDef.maleEquip1 = 15177;
 				itemDef.femaleEquip1 = 15177;
 				break;
-			case 23858:
+			case 22950:
 				itemDef.copyItem(13379);
-				itemDef.name = "Darkness Key Shards";
+				itemDef.name = "Necromancer Shards";
 				itemDef.actions = new String[]{"Combine", null, null, null, null};
-				itemDef.rdc2 = 21444442;
+				itemDef.rdc2 = 1177442;
+				itemDef.stackable = true;
 				break;
-			case 23859:
+
+			case 23447:
 				itemDef.copyItem(18665);
-				itemDef.name = "Darkness Key";
+				itemDef.name = "Necromancer Key";
 				itemDef.actions = new String[]{"Teleport", null, null, null, null};
-				itemDef.rdc2 = 21444442;
+				itemDef.rdc2 = 807999;
 				break;
+
 			case 24392:
 				itemDef.modelID = 15178;
 				itemDef.maleEquip1 = 15178;
@@ -7961,7 +7964,7 @@ public class ItemDef4 {
 				break;
 			case 23228:
 				itemDef.copyItem(11235);
-				itemDef.name = "Icyenic Bow";
+				itemDef.name = "Necromancer Bow";
 				itemDef.modelID = 19723;
 				itemDef.femaleEquip1 = 19723;
 				itemDef.maleEquip1 = 19723;

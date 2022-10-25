@@ -32,7 +32,6 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.combat.weapon.FightStyle;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringBossNpc;
-import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
@@ -1820,7 +1819,8 @@ public final class CombatFactory {
         if (builder.getVictim().isPlayer()) {
             Player victim = (Player) builder.getVictim();
             if (victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13740
-                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13742) {
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13742
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810) {
 
                 if (PrayerHandler.isActivated(victim, PrayerHandler.getProtectingPrayer(container.getCombatType()))
                         || CurseHandler.isActivated(victim,
@@ -1894,7 +1894,8 @@ public final class CombatFactory {
                         } else {
                             // now that we know they're praying, check if they also have the spirit shield.
                             if (victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13740
-                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13742) {
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13742
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810) {
                                 if (victim.isSpiritDebug()) {
                                     victim.getPacketSender()
                                             .sendMessage("Original DMG: " + context.getHit().getDamage());

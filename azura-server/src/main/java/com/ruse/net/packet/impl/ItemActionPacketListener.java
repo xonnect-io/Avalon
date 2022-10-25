@@ -335,7 +335,16 @@ public class ItemActionPacketListener implements PacketListener {
                 };
                 player.getGoodieBag().open();
                 break;
-
+            case 22950:
+                if (player.getInventory().getAmount(22950) >= 100) {
+                    int amount = player.getInventory().getAmount(22950) / 100;
+                    player.getInventory().delete(22950, amount * 100);
+                    player.getInventory().add(23447, amount * 1);
+                    player.sendMessage("You created x" + amount + " Necromancer keys!");
+                } else {
+                    player.sendMessage("You need at least 100 Necromancer Key shards to make a Necromancer key.");
+                }
+                break;
             case 23392:
                 player.membershipInterfaceHandler.openBenefitTab();
                 break;

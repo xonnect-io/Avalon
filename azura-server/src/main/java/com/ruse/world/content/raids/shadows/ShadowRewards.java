@@ -94,7 +94,7 @@ public class ShadowRewards {
             if (chance == 1) {
                 reward = CasketOpening.getLoot1(rare);
                 String message = "@blu@News: @red@" + player.getUsername() + " @blu@has received @red@"
-                        + ItemDefinition.forId(reward.getId()).getName() + "@blu@ from the @red@Shadows of Darkness"
+                        + ItemDefinition.forId(reward.getId()).getName() + "@blu@ from the @red@Necromancer Chest"
                         + "@cya@ - <col=ff4f4f>KC: " +player.getShadowKeysOpened();
                 World.sendMessage1(message);
             } else {
@@ -127,7 +127,7 @@ public class ShadowRewards {
                 if (chance == 1) {
                     reward = CasketOpening.getLoot1(rare);
                     String message = "@blu@News: @red@" + player.getUsername() + " @blu@has received @red@"
-                            + ItemDefinition.forId(reward.getId()).getName() + "@blu@ from the @red@Shadows of Darkness"
+                            + ItemDefinition.forId(reward.getId()).getName() + "@blu@ from the @red@Necromancer Chest"
                             + "@cya@ - <col=ff4f4f>KC: " +player.getShadowKeysOpened();
                     World.sendMessage1(message);
                 } else {

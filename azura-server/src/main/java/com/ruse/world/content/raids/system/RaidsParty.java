@@ -4,12 +4,15 @@ package com.ruse.world.content.raids.system;
 import com.ruse.model.Locations;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
+import com.ruse.util.Stopwatch;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.raids.legends.LegendsRaidsPartyInvitation;
 import com.ruse.world.content.raids.shadows.ShadowRaidsPartyInvitation;
 import com.ruse.world.content.raids.suffering.Suffering;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -40,7 +43,12 @@ public class RaidsParty {
     public void setDeathCount(int deathCount) {
         this.deathCount = deathCount;
     }
-
+    /**
+     * Stopwatch that can be used to time completion of a wave or raid.
+     */
+    @Getter
+    @Setter
+    private Stopwatch timer;
     public int getHeight() {
         return height;
     }

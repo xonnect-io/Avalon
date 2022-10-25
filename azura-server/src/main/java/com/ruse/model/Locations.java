@@ -20,6 +20,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.raids.legends.Legends;
 import com.ruse.world.content.raids.shadows.ShadowData;
+import com.ruse.world.content.raids.shadows.Shadows;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.Entity;
@@ -277,8 +278,13 @@ public class Locations {
 
 			@Override
 			public void onDeath(Player player) {
-				player.moveTo(new Position(1820, 4247 , player.getShadowRaidsParty().getHeight()));
-				player.sendMessage("@red@You died and have respawned.");
+				if (player.getShadowRaidsParty () != null) {
+					Shadows.handleDeath(player.getShadowRaidsParty(),
+							player);
+				}
+				player.getPacketSender().sendCameraNeutrality();
+				player.setInsideRaids(false);
+				player.getMovementQueue().setLockMovement(false);
 			}
 
 			@Override
@@ -289,7 +295,7 @@ public class Locations {
 
 		},
 
-		DARKNESS_LOBBY(new int[]{3242, 3263}, new int[]{2924, 2943}, true, false, true, false, true, false) {
+		DARKNESS_LOBBY(new int[]{3217, 3249}, new int[]{2901, 2926}, true, false, true, false, true, false) {
 			@Override
 			public void leave(Player player) {
 				player.getPacketSender().sendCameraNeutrality();

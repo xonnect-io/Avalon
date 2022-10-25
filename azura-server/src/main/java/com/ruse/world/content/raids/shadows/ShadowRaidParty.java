@@ -3,9 +3,14 @@ package com.ruse.world.content.raids.shadows;
 import com.ruse.model.Locations;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
+import com.ruse.util.Stopwatch;
+import com.ruse.world.content.KillsTracker;
 import com.ruse.world.content.dialogue.DialogueManager;
+import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -25,6 +30,7 @@ public class ShadowRaidParty {
 
     public ShadowRaidParty(Player owner) {
         this.owner = owner;
+        timer = new Stopwatch();
         player_members = new CopyOnWriteArrayList<Player>();
         player_members.add(owner);
     }
@@ -68,9 +74,11 @@ public class ShadowRaidParty {
             getOwner().getPacketSender().sendMessage("You cannot invite anyone right now.");
             return;
         }
+        int total = KillsTracker.getTotalKillsForNpc(9813, p);
+
         if (getOwner().getLocation() != null && getOwner().getLocation() == Locations.Location.DARKNESS_LOBBY
-                && p.getPointsHandler().getSufferingKC() < 1000) {
-            getOwner().getPacketSender().sendMessage("This player does not have 1000 Soul of Suffering Raids completed");
+                && total < 10_000) {
+            getOwner().getPacketSender().sendMessage("This player does not have 10,000 Blood Demon kills.");
             return;
         }
         if (player_members.size() >= 12) {
@@ -133,7 +141,7 @@ public class ShadowRaidParty {
             p.getPacketSender().sendString(id++, "--");
             p.getPacketSender().sendString(id++, "-");
         }
-        p.getPacketSender().sendString(111702, "Raiding Party: @whi@0");
+        p.getPacketSender().sendString(111702, "Necromancer Party: @whi@0");
 
         if (p.getPosition().getY() >= 5709) {
             if (fromParty) {
@@ -178,6 +186,40 @@ public class ShadowRaidParty {
             Shadows.destroyInstance(this);
         }
     }
+    /**
+     * Difficulty of the raid.
+     */
+    @Getter
+    @Setter
+    private RaidDifficulty difficulty;
+
+
+    @Getter
+    @Setter
+    private NPC neromancer;
+
+
+    @Getter
+    @Setter
+    private boolean neromancerAttacking;
+
+    @Getter
+    @Setter
+    private int neromancerHP;
+
+    /**
+     * Checks to see if players have trade open
+     * @return
+     */
+    public boolean hasTradeOpen() {
+        for(Player playerInParty : getPlayers()) {//Check for smuggling owner items into raid
+            if(playerInParty.getTrading().inTrade()) {
+                sendMessage(("Can't start the raid while " + playerInParty.getUsername().toLowerCase() + " is in a trade"));
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void sendMessage(String message) {
         for (Player member : getPlayers()) {
@@ -194,7 +236,12 @@ public class ShadowRaidParty {
             }
         }
     }
-
+    /**
+     * Stopwatch that can be used to time completion of a wave or raid.
+     */
+    @Getter
+    @Setter
+    private Stopwatch timer;
     public void create() {
 
         if (owner.getShadowRaidsParty() != null) {
@@ -205,7 +252,7 @@ public class ShadowRaidParty {
         if (owner.getShadowRaidsParty() == null)
             owner.setShadowRaidsParty(new ShadowRaidParty(owner));
 
-        owner.getPacketSender().sendMessage("<col=660000>You've created a Raids party.");
+        owner.getPacketSender().sendMessage("<col=660000>You've created a Necromancer party.");
 
         owner.setShadowRaidsParty(this);
 
@@ -231,7 +278,7 @@ public class ShadowRaidParty {
                     member.getPacketSender().sendString(start++, "-");
                 }
 
-                member.getPacketSender().sendString(111702, "Raiding Party: @whi@" + getPlayers().size());
+                member.getPacketSender().sendString(111702, "Necromancer Party: @whi@" + getPlayers().size());
             }
         }
     }

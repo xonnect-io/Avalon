@@ -45,6 +45,7 @@ public class BossPets {
 		BORK_PET(225,225, 23381),
 		SPIRIT_OF_SCORPIUS(4594,4594, 23436),
 		EVIL_SCORPIUS(4592,4592, 23437),
+		NECROMANCER(9895,9895, 22954),
 		;
 
 		BossPet(int npcId, int itemId) {

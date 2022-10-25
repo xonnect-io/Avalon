@@ -27,6 +27,7 @@ import com.ruse.world.content.grandexchange.GrandExchangeOffer;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.Dueling.DuelRule;
 import com.ruse.world.content.minigames.impl.YesNoDialogue;
+import com.ruse.world.content.raids.shadows.NecromancerInterfaces;
 import com.ruse.world.content.skill.impl.crafting.Jewelry;
 import com.ruse.world.content.skill.impl.smithing.EquipmentMaking;
 import com.ruse.world.content.skill.impl.smithing.SmithingData;
@@ -52,6 +53,9 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		if (player.getRights().isDeveloperOnly()) {
 			player.getPacketSender()
 					.sendMessage("firstAction itemContainer. IF: " + interfaceId + " slot: " + slot + ", id: " + id);
+		}
+		if (interfaceId >= 13079 && interfaceId <= 13200){
+			NecromancerInterfaces.clickCofferItem(player, interfaceId, id);
 		}
 		switch (interfaceId) {
 			case 31510:
@@ -541,6 +545,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 					// case 13738:
 					case 13740:
 					case 4566:
+					case 19810:
 						player.performAnimation(new Animation(451));
 						break;
 					case 1704:

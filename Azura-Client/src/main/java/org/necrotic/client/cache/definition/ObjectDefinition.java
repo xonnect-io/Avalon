@@ -374,10 +374,10 @@ public final class ObjectDefinition {
 		}
 
 		if (definition.type == 29577) {
-			definition.name = "Chest of Darkness";
-			definition.modelSizeH = 300;
-			definition.modelSizeY = 300;
-			definition.modelSizeX = 300;
+			definition.name = "Necromancer Chest";
+			definition.modelSizeH = 200;
+			definition.modelSizeY = 200;
+			definition.modelSizeX = 200;
 			definition.actions = new String[]{"Open", null, null, null, null};
 			definition.objectModelIDs = new int[]{19700}; //19458
 		}

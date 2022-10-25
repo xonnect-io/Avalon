@@ -245,6 +245,16 @@
     "interface": "LONGSWORD"
   },
   {
+    "hash": 17694,
+    "item-id": 17694,
+    "interface": "WARHAMMER"
+  },
+  {
+    "hash": 23228,
+    "item-id": 23228,
+    "interface": "WARHAMMER"
+  },
+  {
     "hash": 20551,
     "item-id": 20551,
     "interface": "LONGSWORD"
@@ -327,7 +337,7 @@
   {
     "hash": 23061,
     "item-id": 23061,
-    "interface": "BOW"
+    "interface": "SHORTBOW"
   },
     {
     "hash": 17011,
@@ -372,6 +382,11 @@
   {
     "hash": 23062,
     "item-id": 23062,
+    "interface": "SHORTBOW"
+  },
+  {
+    "hash": 23302,
+    "item-id": 23302,
     "interface": "STAFF"
   },
   {

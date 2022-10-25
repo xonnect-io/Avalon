@@ -274,7 +274,7 @@ public class NPCDrops {
         for (double dropRate : dropRates.keySet()) {
             double roll_chance = new SecureRandom().nextDouble() / divider;
 
-            double divide = (CustomDropUtils.drBonus(player, npc.getId()) > 0 ? (CustomDropUtils.drBonus(player, npc.getId()) / 80.0) + 1 : 1);
+            double divide = (CustomDropUtils.drBonus(player, npc.getId()) > 0 ? (CustomDropUtils.drBonus(player, npc.getId()) / 70.0) + 1 : 1);
 
             double required = 1 / dropRate;
             if (roll_chance / divide <= required) {

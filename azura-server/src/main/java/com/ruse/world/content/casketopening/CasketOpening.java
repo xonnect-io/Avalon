@@ -9,6 +9,7 @@ import com.ruse.world.World;
 import com.ruse.world.content.boxes.*;
 import com.ruse.world.content.casketopening.impl.*;
 import com.ruse.world.content.osrscollectionlog.CollectionLog;
+import com.ruse.world.content.raids.shadows.ShadowRewards;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -16,8 +17,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.ruse.world.content.osrscollectionlog.LogType.BOXES;
-import static com.ruse.world.content.osrscollectionlog.LogType.MINIGAMES;
+import static com.ruse.world.content.osrscollectionlog.LogType.*;
 import static com.ruse.world.content.raids.shadows.ShadowRewards.getRareRate;
 
 public class CasketOpening {
@@ -303,6 +303,8 @@ public class CasketOpening {
             return;
         }
         MINIGAMES.log(player, CollectionLog.SUFFERING_KEY, new Item(SlotPrize.getId()));
+        if (getCurrentCasket() == Caskets.NECROMANCER) {
+        }
         BOXES.log(player, getCurrentCasket().getItemID(), new Item(SlotPrize.getId()));
 
         player.getInventory().add(SlotPrize.getId(), SlotPrize.getAmount());
@@ -366,10 +368,10 @@ public class CasketOpening {
     public void openShadowRewardInterface() {
         player.sendMessage(":resetCasket");
         player.getPA().sendInterface(48130);
-        player.getPacketSender().sendString(48144, "Shadows of Darkness");
-        player.getPacketSender().sendString(48135, "Key of Darkness");
+        player.getPacketSender().sendString(48144, "Necromancer Chest");
+        player.getPacketSender().sendString(48135, "Necromancer Key");
         player.getPacketSender().sendString(48133, "Increase Chances");
-        player.getPacketSender().sendItemOnInterface(48145, 23859, 0, 1);
+        player.getPacketSender().sendItemOnInterface(48145, 23447, 0, 1);
         player.getPacketSender().sendString(48134, "Rare: (1/" + getRareRate(player) + ")");
 
         for (int i = 0; i < common.size(); i++) {
@@ -517,6 +519,7 @@ public class CasketOpening {
         RAIDS(18404, Raids1.rewards),
         SUPREME(23253, Supreme.rewards),
         SOSREWARDS(23370, SOSRewards.rewards),
+        NECROMANCER(23447, ShadowRewards.rare),
         SUMMER_BOX(23322, SummerBox.rewards),
         SLAYER_U(22123, SlayerU.rewards),
         ETHEREAL_CASE(23412, Ethereal.rewards),

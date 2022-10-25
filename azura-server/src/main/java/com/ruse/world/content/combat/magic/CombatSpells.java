@@ -272,7 +272,7 @@ public enum CombatSpells {
 			return 1154;
 		}
 	}),
-	
+
 SORCEBLAST(new CombatNormalSpell() {
 	@Override
 	public Optional<Animation> castAnimation() {
@@ -1204,6 +1204,57 @@ ICEYBLAST(new CombatNormalSpell() {
 		@Override
 		public int maximumHit() {
 			return 35000; // x10 hits - change later
+		}
+
+		@Override
+		public Optional<Graphic> startGraphic() {
+			return Optional.of(new Graphic(-1));
+		}
+
+		@Override
+		public int baseExperience() {
+			return 0;
+		}
+
+		@Override
+		public Optional<Item[]> equipmentRequired(Player player) {
+			return Optional.empty();
+		}
+
+		@Override
+		public Optional<Item[]> itemsRequired(Player player) {
+			return Optional.of(new Item[] {});
+		}
+
+		@Override
+		public int levelRequired() {
+			return 1;
+		}
+
+		@Override
+		public int spellId() {
+			return 1154;
+		}
+	}),
+	NECROMANCER(new CombatNormalSpell() {
+		@Override
+		public Optional<Animation> castAnimation() {
+			return Optional.of(new Animation(811));
+		}
+
+		@Override
+		public Optional<Projectile> castProjectile(Character cast, Character castOn) {
+			return Optional.of(new Projectile(cast, castOn, 1067,  44, 2, 43, 35, 0));
+		}
+
+		@Override
+		public Optional<Graphic> endGraphic() {
+			return Optional.of(new Graphic(-1, GraphicHeight.MIDDLE));
+		}
+
+		@Override
+		public int maximumHit() {
+			return 45000; // x10 hits - change later
 		}
 
 		@Override
