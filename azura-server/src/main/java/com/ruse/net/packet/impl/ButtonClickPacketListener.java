@@ -56,9 +56,9 @@ import com.ruse.world.content.polling.PollCreation;
 import com.ruse.world.content.polling.PollManager;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
 import com.ruse.world.content.raids.shadows.NecromancerLoot;
-import com.ruse.world.content.raids.shadows.ShadowRaidParty;
+import com.ruse.world.content.raids.shadows.NecromancerRaidParty;
 import com.ruse.world.content.raids.shadows.ShadowRewards;
-import com.ruse.world.content.raids.shadows.Shadows;
+import com.ruse.world.content.raids.shadows.NecromancerRaid;
 import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.rewardsList.RewardsHandler;
@@ -929,7 +929,7 @@ public class ButtonClickPacketListener implements PacketListener {
                         }
                     } else {
                         if (player.getLocation() == Location.DARKNESS_LOBBY)
-                            new ShadowRaidParty(player).create();
+                            new NecromancerRaidParty (player).create();
                     }
                 }else if (player.getLocation() == Location.ZOMBIE_LOBBY) {
                     if (player.getZombieRaidsParty() != null) {
@@ -1959,7 +1959,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 openStartScreen(player);
                 break;
             case 144019:
-                Shadows.start(player.getShadowRaidsParty());
+                NecromancerRaid.start(player.getShadowRaidsParty());
                 break;
 
             case 144506:

@@ -77,7 +77,7 @@ import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.properscratchcard.Scratchcard;
 import com.ruse.world.content.quests.QuestInterfaceHandler;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
-import com.ruse.world.content.raids.shadows.ShadowRaidParty;
+import com.ruse.world.content.raids.shadows.NecromancerRaidParty;
 import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.randomevents.Genie;
@@ -737,7 +737,7 @@ public int howmuchdissolveamt = 0;
     private int sodRaidsKC;
     private RaidsParty raidsParty;
     private LegendsRaidParty zombieRaidsParty;
-    private ShadowRaidParty shadowRaidsParty;
+    private NecromancerRaidParty shadowRaidsParty;
     private boolean insideRaids;
     private int afkTree;
     private int afkSapphire;
@@ -1114,11 +1114,11 @@ public int howmuchdissolveamt = 0;
         this.zombieRaidsParty = zombieRaidsParty;
     }
 
-    public ShadowRaidParty getShadowRaidsParty() {
+    public NecromancerRaidParty getShadowRaidsParty() {
         return shadowRaidsParty;
     }
 
-    public void setShadowRaidsParty(ShadowRaidParty shadowRaidsParty) {
+    public void setShadowRaidsParty(NecromancerRaidParty shadowRaidsParty) {
         this.shadowRaidsParty = shadowRaidsParty;
     }
 

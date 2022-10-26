@@ -261,7 +261,7 @@ public class CollectionLog {
         player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : kills - 1));
 
         else if(collection.getLogType() == LogType.BOSSES && collection.getName().equalsIgnoreCase("necromancer"))
-            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getShadowKeysOpened())));
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Killed: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getShadowKeysOpened())));
 
 
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("souls of suffering"))
@@ -282,7 +282,7 @@ public class CollectionLog {
             player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Completed: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getPointsHandler().getIslesKC())));
 
         else if(collection.getLogType() == LogType.MONSTERS || collection.getLogType() == LogType.ZONES || collection.getLogType() == LogType.BOSSES)
-            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Kills: @whi@" +
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Killed: @whi@" +
             Misc.insertCommasToNumber(String.valueOf(KillsTracker.getTotalKillsForNpc(Arrays.stream(collection.getKey()).sum(), player))));
 
         player.getPacketSender().sendString(NAME_STRING,  ("@lre@" + collection.getName()));

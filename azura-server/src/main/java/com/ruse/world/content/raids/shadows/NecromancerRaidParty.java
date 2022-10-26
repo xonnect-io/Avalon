@@ -15,7 +15,7 @@ import lombok.Setter;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 
-public class ShadowRaidParty {
+public class NecromancerRaidParty {
 
     private Player owner;
     private CopyOnWriteArrayList<Player> player_members;
@@ -28,7 +28,7 @@ public class ShadowRaidParty {
     private int phaseAmount;
     private int deathCount;
 
-    public ShadowRaidParty(Player owner) {
+    public NecromancerRaidParty(Player owner) {
         this.owner = owner;
         timer = new Stopwatch();
         player_members = new CopyOnWriteArrayList<Player>();
@@ -106,7 +106,7 @@ public class ShadowRaidParty {
         }
 
         getOwner().getMinigameAttributes().getZombieAttributes().setLastInvitation(System.currentTimeMillis());
-        DialogueManager.start(p, new ShadowRaidsPartyInvitation(getOwner(), p));
+        DialogueManager.start(p, new NecromancerRaidsPartyInvitation (getOwner(), p));
         getOwner().getPacketSender().sendMessage("An invitation has been sent to " + p.getUsername() + ".");
     }
 
@@ -183,7 +183,7 @@ public class ShadowRaidParty {
             destruct = false;
         }
         if (getPlayers().size() <= 0 || destruct) {
-            Shadows.destroyInstance(this);
+            NecromancerRaid.destroyInstance(this);
         }
     }
     /**
@@ -250,7 +250,7 @@ public class ShadowRaidParty {
         }
 
         if (owner.getShadowRaidsParty() == null)
-            owner.setShadowRaidsParty(new ShadowRaidParty(owner));
+            owner.setShadowRaidsParty(new NecromancerRaidParty (owner));
 
         owner.getPacketSender().sendMessage("<col=660000>You've created a Necromancer party.");
 
@@ -316,10 +316,17 @@ public class ShadowRaidParty {
         return npc_members;
     }
 
+    public static boolean isAllowedSoulsplit(Player player) {
+        if (player.getShadowRaidsParty () != null) {
+            return true;
+        }
+        return true;
+    }
+
     public void startShadowRaid() {
-        Shadows.firstWave(this);
+        NecromancerRaid.firstWave(this);
     }
     public void endShadowRaid() {
-        Shadows.finishRaid(this);
+        NecromancerRaid.finishRaid(this);
     }
 }

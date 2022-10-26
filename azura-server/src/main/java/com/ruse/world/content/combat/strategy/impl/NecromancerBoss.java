@@ -8,7 +8,7 @@ import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.combat.CombatContainer;
 import com.ruse.world.content.combat.CombatType;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
-import com.ruse.world.content.raids.shadows.ShadowRaidParty;
+import com.ruse.world.content.raids.shadows.NecromancerRaidParty;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -69,7 +69,7 @@ public class NecromancerBoss implements CombatStrategy {
         return new Position(1821, 4255, getParty().getHeight());
     }
 
-    public ShadowRaidParty getParty() {
+    public NecromancerRaidParty getParty() {
         return getParty();
     }
 

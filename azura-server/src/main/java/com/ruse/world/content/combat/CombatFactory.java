@@ -1820,7 +1820,12 @@ public final class CombatFactory {
             Player victim = (Player) builder.getVictim();
             if (victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13740
                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13742
-                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810) {
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 7554
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 15832
+                    || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23228
+                    || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23302
+                    || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 17694) {
 
                 if (PrayerHandler.isActivated(victim, PrayerHandler.getProtectingPrayer(container.getCombatType()))
                         || CurseHandler.isActivated(victim,
@@ -1895,7 +1900,12 @@ public final class CombatFactory {
                             // now that we know they're praying, check if they also have the spirit shield.
                             if (victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13740
                                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13742
-                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810) {
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 7554
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 15832
+                                    || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23228
+                                    || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23302
+                                    || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 17694) {
                                 if (victim.isSpiritDebug()) {
                                     victim.getPacketSender()
                                             .sendMessage("Original DMG: " + context.getHit().getDamage());

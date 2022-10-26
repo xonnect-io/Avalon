@@ -54,43 +54,14 @@ public class NecromancerLoot {
     }
 
 
-    public static Box[] SARADOMIN = {
-            new Box(23629, 1, 0.2, true),
-            new Box(23627, 1, 0.1, true),
-            new Box(23632, 1, 0.02, true),
-            new Box(23634, 1, 0.02, true),
-            new Box(23636, 1, 0.02, true),
-            new Box(23658, 1, 0.01, true),
+    public static Box[] NECROMANCER = {
+            new Box(23551, 1, 0.2, true),
+            new Box(23552, 1, 0.2, true),
+            new Box(22951, 1, 0.02, true),
+            new Box(22952, 1, 0.02, true),
+            new Box(22953, 1, 0.02, true),
+            new Box(22954, 1, 0.01, true),
     };
-    public static Box[] ZAMORAK = {
-            new Box(23630, 1, 0.2, true),
-            new Box(23628, 1, 0.1, true),
-            new Box(23633, 1, 0.02, true),
-            new Box(23635, 1, 0.02, true),
-            new Box(23637, 1, 0.02, true),
-            new Box(23659, 1, 0.01, true),
-    };
-
-    public static Box[] ALL_LOOT = {
-            new Box(13653, 1, 100),
-
-            new Box(23629, 1, 0.2, true),
-            new Box(23630, 1, 0.2, true),
-
-            new Box(23627, 1, 0.1, true),
-            new Box(23628, 1, 0.1, true),
-            new Box(23644, 1, 100),
-
-            new Box(23632, 1, 0.02, true),
-            new Box(23634, 1, 0.02, true),
-            new Box(23636, 1, 0.02, true),
-            new Box(23633, 1, 0.02, true),
-            new Box(23635, 1, 0.02, true),
-            new Box(23637, 1, 0.02, true),
-            new Box(23658, 1, 0.01, true),
-            new Box(23659, 1, 0.01, true),
-    };
-
 
     public static Box[] EASY = {
             new Box(13653, 2, 100),
@@ -115,8 +86,9 @@ public class NecromancerLoot {
 
             new Box(15003, 1, 0.4, true),
 
-            new Box(23629, 1, 0.2, true),
-            new Box(23630, 1, 0.2, true),
+            new Box(6769, 1, 0.4, true),
+
+            new Box(23551, 1, 0.2, true),
     };
 
 
@@ -147,8 +119,7 @@ public class NecromancerLoot {
 
             new Box(15002, 1, 0.4, true),
 
-            new Box(23627, 1, 0.2, true),
-            new Box(23628, 1, 0.2, true),
+            new Box(23550, 1, 0.2, true),
     };
 
 
@@ -180,20 +151,15 @@ public class NecromancerLoot {
 
             new Box(6769, 1, 1, true),
 
-            new Box(23644, 1, 1, true),
+            new Box(17544, 1, 1, true),
 
             new Box(15004, 1, 0.25, true),
 
-            new Box(23632, 1, 0.05, true),
-            new Box(23634, 1, 0.05, true),
-            new Box(23636, 1, 0.05, true),
-            new Box(23633, 1, 0.05, true),
-            new Box(23635, 1, 0.05, true),
-            new Box(23637, 1, 0.05, true),
+            new Box(22951, 1, 0.05, true),
+            new Box(22952, 1, 0.05, true),
+            new Box(22953, 1, 0.05, true),
 
-
-            new Box(23658, 1, 0.02, true),
-            new Box(23659, 1, 0.02, true),
+            new Box(22954, 1, 0.02, true),
     };
 
 

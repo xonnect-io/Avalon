@@ -37,6 +37,16 @@ public enum CombatSpecial {
 	 * this.combatType = combatType; this.weaponType = weaponType;
 	 */
 
+
+	NACROTIC_LONGSWORD(new int[] { 23551 }, 20, 1, 1, CombatType.MELEE, WeaponInterface.LONGSWORD) {
+		@Override
+		public CombatContainer container(Player player, Character target) {
+			player.performAnimation(new Animation(451));
+			player.performGraphic(new Graphic(1220));
+			return new CombatContainer(player, target, 2, CombatType.MELEE, false);
+		}
+	},
+
 	DRAGON_DAGGER(new int[] { 1215, 1231, 5680, 5698, 22039 }, 25, 1.16, 1.20, CombatType.MELEE,
 			WeaponInterface.DAGGER) {
 		@Override

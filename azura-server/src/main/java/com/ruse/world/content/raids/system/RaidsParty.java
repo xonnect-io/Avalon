@@ -7,7 +7,7 @@ import com.ruse.model.Position;
 import com.ruse.util.Stopwatch;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.raids.legends.LegendsRaidsPartyInvitation;
-import com.ruse.world.content.raids.shadows.ShadowRaidsPartyInvitation;
+import com.ruse.world.content.raids.shadows.NecromancerRaidsPartyInvitation;
 import com.ruse.world.content.raids.suffering.Suffering;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -127,7 +127,7 @@ public class RaidsParty {
         } else if (p.getLocation() == Locations.Location.ZOMBIE_LOBBY || p.getLocation() == Locations.Location.ZOMBIE) {
             DialogueManager.start(p, new LegendsRaidsPartyInvitation(getOwner(), p));
         }else if (p.getLocation() == Locations.Location.DARKNESS_LOBBY || p.getLocation() == Locations.Location.SHADOWS_OF_DARKNESS) {
-            DialogueManager.start(p, new ShadowRaidsPartyInvitation(getOwner(), p));
+            DialogueManager.start(p, new NecromancerRaidsPartyInvitation (getOwner(), p));
         }
         getOwner().getPacketSender().sendMessage("An invitation has been sent to " + p.getUsername() + ".");
     }

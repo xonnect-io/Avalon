@@ -30,7 +30,7 @@ import com.ruse.world.content.quests.BloodRunsDeepDialogues;
 import com.ruse.world.content.quests.TheOmegaDialogues;
 import com.ruse.world.content.raids.legends.Legends;
 import com.ruse.world.content.raids.legends.LegendsData;
-import com.ruse.world.content.raids.shadows.Shadows;
+import com.ruse.world.content.raids.shadows.NecromancerRaid;
 import com.ruse.world.content.raids.suffering.Suffering;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.mining.Mining;
@@ -1587,7 +1587,7 @@ public class DialogueOptions {
                     break;
 
                 case 13054:
-                    Shadows.start(player.getShadowRaidsParty());
+                    NecromancerRaid.start(player.getShadowRaidsParty());
                     break;
 
                 case 523:

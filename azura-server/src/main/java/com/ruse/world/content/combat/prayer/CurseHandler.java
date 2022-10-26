@@ -124,6 +124,13 @@ public class CurseHandler {
 			player.getPacketSender().sendMessage("You need a Defence level of at least 30 to use Turmoil.");
 			return;
 		}
+
+		if (curse == CurseData.SOUL_SPLIT && player.getLocation() == Location.SHADOWS_OF_DARKNESS) {
+			player.getPacketSender().sendMessage("You cannot use soulsplit here.");
+			CurseHandler.deactivateAll(player);
+			PrayerHandler.deactivateAll(player);
+			return;
+		}
 		switch (curse) {
 		case SAP_WARRIOR:
 		case LEECH_ATTACK:

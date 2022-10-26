@@ -222,6 +222,7 @@ public final class WeaponAnimations {
 		case 4153:
 		case 17734:
 		case 13760:
+			case 17694:
 			playerStandIndex = 1662;
 			playerWalkIndex = 1663;
 			playerRunIndex = 1664;
@@ -446,6 +447,7 @@ public final class WeaponAnimations {
 			case 17734:
 			case 16137:
 			case 13760:
+			case 17694:
 				return 1665;
 			case 17726:
 				return 12028;

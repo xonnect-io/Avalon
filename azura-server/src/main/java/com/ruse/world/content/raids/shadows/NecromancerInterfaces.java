@@ -9,7 +9,7 @@ import com.ruse.world.entity.impl.player.Player;
 public class NecromancerInterfaces {
 
     public static void openStartScreen(Player player) {
-        ShadowRaidParty party = player.getShadowRaidsParty();
+        NecromancerRaidParty party = player.getShadowRaidsParty();
         if (party == null || !party.getOwner().equals(player)) {
             player.sendMessage("You must be the leader of your party to do this.");
             return;

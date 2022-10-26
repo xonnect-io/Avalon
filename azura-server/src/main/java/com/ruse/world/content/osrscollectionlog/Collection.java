@@ -144,7 +144,7 @@ public enum Collection {
             new Item(23238), new Item(23239), new Item(23252), new Item(15288),
             new Item(15289), new Item(15290), new Item(20488), new Item(7956), new Item(19114), new Item(19115), new Item(19116)),
     NECROMANCER(Player.NECROMANCER_COMPLETED, LogType.BOSSES, "Necromancer", new int[] {CollectionLog.NECROMANCER_KEY}, Player.NECROMANCER_LOG_CLAIMED, new Item[] { new Item(23279) },
-            new Item(22953),new Item(22952), new Item(22951), new Item(22954)),
+            new Item(23551),new Item(23550),new Item(22953),new Item(22952), new Item(22951), new Item(22954)),
 
     //Boxes
     MYSTERY_BOX(Player.MYSTERY_BOXES_OPENED, LogType.BOXES, "Beginner Mystery Box", new int[] {CollectionLog.MYSTERY_BOX}, Player.MYSTERY_BOX_LOG_CLAIMED, new Item[] { new Item(19116,15) },

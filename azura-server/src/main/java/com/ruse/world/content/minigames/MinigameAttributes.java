@@ -2,7 +2,7 @@ package com.ruse.world.content.minigames;
 
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
-import com.ruse.world.content.raids.shadows.ShadowRaidParty;
+import com.ruse.world.content.raids.shadows.NecromancerRaidParty;
 import com.ruse.world.content.raids.system.RaidsParty;
 
 /**
@@ -147,17 +147,17 @@ public class MinigameAttributes {
 
 
 	public class ShadowAttributes {
-		private ShadowRaidParty party;
-		private ShadowRaidParty invitation;
+		private NecromancerRaidParty party;
+		private NecromancerRaidParty invitation;
 		private long lastInvitation;
 		private int points;
 		private int deaths;
 
-		public ShadowRaidParty getParty() {
+		public NecromancerRaidParty getParty() {
 			return party;
 		}
 
-		public void setParty(ShadowRaidParty raidsParty) {
+		public void setParty(NecromancerRaidParty raidsParty) {
 			this.party = raidsParty;
 		}
 
@@ -169,11 +169,11 @@ public class MinigameAttributes {
 			this.lastInvitation = lastInvitation;
 		}
 
-		public ShadowRaidParty getPartyInvitation() {
+		public NecromancerRaidParty getPartyInvitation() {
 			return invitation;
 		}
 
-		public void setPartyInvitation(ShadowRaidParty partyInvitation) {
+		public void setPartyInvitation(NecromancerRaidParty partyInvitation) {
 			this.invitation = partyInvitation;
 		}
 

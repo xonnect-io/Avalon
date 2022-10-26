@@ -345,6 +345,29 @@ public class ItemActionPacketListener implements PacketListener {
                     player.sendMessage("You need at least 100 Necromancer Key shards to make a Necromancer key.");
                 }
                 break;
+            case 17544:
+                int amount = 1;
+                int minutesEXP1 = 30 * amount;
+                int  minutesDR1 = 15 * amount;
+                int  minutesDMG1 = 5 * amount;
+                if (player.busy()) {
+                    player.getPacketSender().sendMessage("You can not do this right now.");
+                    return;
+                }
+                if (!player.getInventory().contains(itemId)) {
+                    return;
+                }
+                amount = 1;
+                minutesDR1 = 180 * amount;
+                minutesDMG1 = 180 * amount;
+                player.getInventory().delete(itemId, amount);
+                player.getPacketSender()
+                        .sendMessage("@blu@You received " + minutesDR1 + " minutes of +100 DR, " + minutesDMG1 + " minutes of +100% DMG boost!");
+                VotingDRBoostTask.addBonusDR(player, minutesDR1);
+                VotingDMGBoostTask.addBonusDMG(player, minutesDMG1);
+                player.getClickDelay().reset();
+                player.performAnimation(new Animation(829));
+                break;
             case 23392:
                 player.membershipInterfaceHandler.openBenefitTab();
                 break;
@@ -1450,11 +1473,11 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("The casket was empty.");
                 break;
             case 2714:
-                int amount = Misc.getRandom(100000);
+                int randm = Misc.getRandom(100000);
                 player.getInventory().delete(2714, 1);
-                player.getInventory().add(ItemDefinition.COIN_ID, amount);
+                player.getInventory().add(ItemDefinition.COIN_ID, randm);
                 player.getPacketSender().sendMessage(
-                        "Inside the casket you find " + NumberFormat.getInstance(Locale.US).format(amount) + " coins!");
+                        "Inside the casket you find " + NumberFormat.getInstance(Locale.US).format(randm) + " coins!");
                 break;
             case 15084:
                 Gambling.rollDice(player);

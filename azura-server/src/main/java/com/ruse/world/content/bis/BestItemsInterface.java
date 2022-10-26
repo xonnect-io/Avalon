@@ -14,6 +14,7 @@ public class BestItemsInterface {
     public static List<Integer> itemsToIgnore = new ArrayList() {
         {
             add(5424);
+            add(23391);
             add(9253);
             add(22071);
             add(22076);

@@ -20,7 +20,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.raids.legends.Legends;
 import com.ruse.world.content.raids.shadows.ShadowData;
-import com.ruse.world.content.raids.shadows.Shadows;
+import com.ruse.world.content.raids.shadows.NecromancerRaid;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.Entity;
@@ -279,7 +279,7 @@ public class Locations {
 			@Override
 			public void onDeath(Player player) {
 				if (player.getShadowRaidsParty () != null) {
-					Shadows.handleDeath(player.getShadowRaidsParty(),
+					NecromancerRaid.handleDeath(player.getShadowRaidsParty(),
 							player);
 				}
 				player.getPacketSender().sendCameraNeutrality();

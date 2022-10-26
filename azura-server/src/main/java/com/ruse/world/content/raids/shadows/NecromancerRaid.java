@@ -20,11 +20,11 @@ import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
 
-public class Shadows {
+public class NecromancerRaid {
 
 
 
-    public static boolean canEnter(Player player, ShadowRaidParty party) {
+    public static boolean canEnter(Player player, NecromancerRaidParty party) {
 
         if (!hasRequirements(party))
             return false;
@@ -40,7 +40,7 @@ public class Shadows {
         return true;
     }
 
-    public static boolean hasRequirements(ShadowRaidParty party) {
+    public static boolean hasRequirements(NecromancerRaidParty party) {
         for (Player player : party.getPlayers()) {
 
             if (((party.getDifficulty().equals(RaidDifficulty.INTERMEDIATE)
@@ -73,12 +73,12 @@ public class Shadows {
         return true;
     }
 
-    public static void removeTokens(ShadowRaidParty party) {
+    public static void removeTokens(NecromancerRaidParty party) {
         for (Player player : party.getPlayers()) {
             player.getInventory().delete(12855, party.getDifficulty().getGodsRequirement().getCost());
         }
     }
-    public static void start(ShadowRaidParty party) {
+    public static void start(NecromancerRaidParty party) {
 
         Player p = party.getOwner();
         p.getPacketSender().sendInterfaceRemoval();
@@ -149,7 +149,7 @@ public class Shadows {
         party.startShadowRaid();
 
     }
-    public static void firstWave(ShadowRaidParty party) {
+    public static void firstWave(NecromancerRaidParty party) {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
 
             NPC npc = new NPC(9894, new Position(1821, 4255, party.getHeight()));
@@ -166,7 +166,7 @@ public class Shadows {
         });
     }
 
-    public static void startTask(ShadowRaidParty party, ArrayList<NPC> npcs, int wave) {
+    public static void startTask(NecromancerRaidParty party, ArrayList<NPC> npcs, int wave) {
         TaskManager.submit(new Task(1, false) {
 
             @Override
@@ -221,14 +221,14 @@ public class Shadows {
 
     }
 
-    public static void spawnNpc(ShadowRaidParty party, NPC npc) {
+    public static void spawnNpc(NecromancerRaidParty party, NPC npc) {
         World.register(npc);
         Player player = randomPlayer(party);
         npc.getMovementQueue().setFollowCharacter(player);
         npc.getCombatBuilder().attack(player);
     }
 
-    public static void handleDeath(ShadowRaidParty party, Player player) {
+    public static void handleDeath(NecromancerRaidParty party, Player player) {
         player.getPacketSender().sendWalkableInterface(144900, false);
         party.getPlayers().remove(player);
         player.moveTo(ShadowData.lobbyPosition);
@@ -242,11 +242,11 @@ public class Shadows {
         }
     }
 
-    public static Player randomPlayer(ShadowRaidParty party) {
+    public static Player randomPlayer(NecromancerRaidParty party) {
         return party.getPlayers().get(Misc.getRandom(party.getPlayers().size() - 1));
     }
 
-    public static void finishRaid(ShadowRaidParty party) {
+    public static void finishRaid(NecromancerRaidParty party) {
 
         party.enteredDungeon(false);
 
@@ -325,6 +325,19 @@ public class Shadows {
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
                         NecromancerLoot.handleLoot(member, party.getDifficulty());
                     }
+                    int random = Misc.inclusiveRandom(1,100);
+                    if (member.getAmountDonated() >= 25000 && random <= 20
+                            || member.getAmountDonated() >= 10000 && random <= 15
+                            || member.getAmountDonated() >= 5000 && random <= 10
+                            || member.getAmountDonated() >= 1000 && random <= 5) {
+                        member.sendMessage("You received a second drop as a chance from your donator rank.");
+                        NecromancerLoot.handleLoot(member, party.getDifficulty());
+                    }
+                    if (member.getEquipment ().contains (23550) && random == 75) {
+                        member.sendMessage("You received a second drop as a chance from your Necromancer charm.");
+                        NecromancerLoot.handleLoot(member, party.getDifficulty());
+                    }
+
                     member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     member.getPointsHandler().incrementNecromancerKC(1);
                 }
@@ -360,7 +373,7 @@ public class Shadows {
         }
     }
 
-    public static void destroyInstance(ShadowRaidParty party) {
+    public static void destroyInstance(NecromancerRaidParty party) {
 
         for (Player member : party.getPlayers()) {
             member.setEnteredShadowRaids(false);

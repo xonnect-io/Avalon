@@ -326,6 +326,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23062)) { //Nephilim staff
             percentBoost += 40;
         }
+        if (player.getEquipment().contains(23551)) { //Necrotic longsword
+            percentBoost += 30;
+        }
         if (player.getEquipment().contains(17694)) { //Necromancer hammer
             percentBoost += 75;
         }
@@ -1327,6 +1330,10 @@ public class CustomDropUtils {
         }
         if (player.getEquipment().contains(23227)) { //Blood legends sword
             percentBoost += 40;
+        }
+
+        if (player.getEquipment().contains(23551)) { //Necrotic longsword
+            percentBoost += 30;
         }
         if (player.getEquipment().contains(8136)) { //Blood legends sword
             percentBoost += 40;

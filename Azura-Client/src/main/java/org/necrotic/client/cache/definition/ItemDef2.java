@@ -395,6 +395,22 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
+			case 23551:
+				itemDef21 = ItemDefinition.get(18953);
+				itemDef.name = "Necrotic Longsword";
+				itemDef.modelID = 19733;
+				itemDef.maleEquip1 = 19733;
+				itemDef.femaleEquip1 = 19733;
+				itemDef.modelOffsetX = 29;
+				itemDef.rotationZ = 1574;
+				itemDef.modelOffsetY = -200;
+				itemDef.modelZoom = 2300;
+				itemDef.rotationY = 339;
+				itemDef.rotationX = 1243;
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
 			case 1419:
 				itemDef.modelZoom = 2800;
 				break;
@@ -586,7 +602,7 @@ public class ItemDef2 {
 				break;
 
 			case 17544:
-				itemDef.name = "<col=353><shad=272625> Supreme Potion (1)<shad-1>";
+				itemDef.name = "<col=353><shad=272625> Necrotic Potion<shad-1>";
 				itemDef.rdc2 = 5774;
 				itemDef.modelZoom = 600;
 				itemDef.actions = new String[]{"Drink", null, null, null, "Destroy"};

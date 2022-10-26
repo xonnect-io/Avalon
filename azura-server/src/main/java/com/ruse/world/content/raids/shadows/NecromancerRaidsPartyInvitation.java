@@ -10,9 +10,9 @@ import com.ruse.world.entity.impl.player.Player;
  * @author Gabriel Hannason
  */
 
-public class ShadowRaidsPartyInvitation extends Dialogue {
+public class NecromancerRaidsPartyInvitation extends Dialogue {
 	
-	public ShadowRaidsPartyInvitation(Player inviter, Player p) {
+	public NecromancerRaidsPartyInvitation(Player inviter, Player p) {
 		this.inviter = inviter;
 		this.p = p;
 	}
@@ -31,7 +31,7 @@ public class ShadowRaidsPartyInvitation extends Dialogue {
 	
 	@Override
 	public String[] dialogue() {
-		return new String[]{"" + inviter.getUsername() + " has invited you to join their Raids party."};
+		return new String[]{"" + inviter.getUsername() + " has invited you to join their Necromancer party."};
 	}
 	
 	@Override

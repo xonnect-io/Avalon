@@ -6855,7 +6855,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addText(id, "Restrictions:", tda, 2, 16750643, false, true);
 		tab.child(c++, id++, 16 + x, 117 + y);
 
-		addText(id, "- Maximum Party size: 6 \\n- No Soulsplit allowed \\n- No Pets allowed \\n- AOE won't work", tda, 1, 0xEECB38, false, true);
+		addText(id, "- Maximum Party size: 6 \\n- No Soulsplit allowed \\n- No Pets allowed \\n-", tda, 1, 0xEECB38, false, true);
 		tab.child(c++, id++, 18 + x, 132 + y);
 
 		addText(id, "Requirements", tda, 2, 16750643, true, true);
