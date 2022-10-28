@@ -63,8 +63,8 @@ public class PickupItemPacketListener implements PacketListener {
 					player.setQuestTwoStep2(true);
 					player.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Obtain the Omega Egg");
 				}
-				if (itemId == 7546 && !player.getEquipment().contains(4168)) {
-					player.getPacketSender().sendMessage("The rancid smell is too much, try wearing nose plugs first.");
+				if (itemId == 7546 && player.getQuestTwoStarted () ==false) {
+					player.getPacketSender().sendMessage("You need to start the Omega quest first!");
 					return;
 				}
 				if (itemId == 7546 && player.getQuestTwoStep3() == false) {
