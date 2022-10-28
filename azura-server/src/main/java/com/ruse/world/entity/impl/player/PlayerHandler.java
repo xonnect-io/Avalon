@@ -239,7 +239,9 @@ public class PlayerHandler {
 
         player.getPacketSender().sendMessage("<shad=1>@bla@Welcome to " + GameSettings.RSPS_NAME + "!");
         if (GameSettings.ELITE_DONO_DEAL == true)
-            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Elite Goodiebag");
+            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Elite Goodiebag!");
+        if (GameSettings.CASE_KEY_DEAL == true)
+            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x15 Case keys!");
         if (GameSettings.OWNER_JEWELRY_DONO_DEAL == true)
             player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Jewelry Goodiebag!");
         if (GameSettings.OWNER_CAPE_DONO_DEAL == true)

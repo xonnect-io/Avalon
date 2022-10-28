@@ -471,7 +471,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         if (player.getQuestTwoStarted() == true) {
                             DialogueManager.start(player, TheOmegaDialogues.PubIntro(player));
                             return;
-                        }
+                        } else
+                            player.getPA ().sendMessage ("You need to start the Omega quest first");
                         break;
                     case 6040:
 

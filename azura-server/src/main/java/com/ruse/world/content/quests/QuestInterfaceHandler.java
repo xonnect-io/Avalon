@@ -42,7 +42,7 @@ public class QuestInterfaceHandler {
         player.getPacketSender().sendInterface(77830);
         player.getPacketSender().sendString(77833, "The Omega");
         player.getPacketSender().sendString(77836, (player.questTwoStarted == true) ?
-                "@gre@ - I Spoke with the cook and offered my help." : "@red@ - Speak to the Lumbridge Cook");
+                "@gre@ - I Spoke with the cook and offered my help." : "@red@ - Speak to the Cook at home");
         player.getPacketSender().sendString(77837, "");
         player.getPacketSender().sendString(77838, (player.getQuestTwoStep1() == true) ?
                 "@gre@ - Obtain poisoned milk" : "@red@ - Obtain poisoned milk");

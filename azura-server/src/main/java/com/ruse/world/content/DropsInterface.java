@@ -56,8 +56,8 @@ public class DropsInterface {
 		}
 		player.getPacketSender().setScrollMax(34000, 37 * scrollAmount);
 		player.getPacketSender().sendConfig(2451, player.isIncludeDR() ? 1 : 0);
-		player.getPacketSender().sendString(33300, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonusCheck(player)+"%@or1@)");
-		player.getPacketSender().sendString(33250, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonusCheck(player)+"%@or1@)");
+		player.getPacketSender().sendString(33300, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player, player.getSlayer().getSlayerTask().getNpcId())+"%@or1@)");
+		player.getPacketSender().sendString(33250, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player, player.getSlayer().getSlayerTask().getNpcId())+"%@or1@)");
 
 		for (int i = 0; i < 80; i++) {
 			if (i > NPCDrops.forId(npcId).getDropList().length - 1) {
@@ -82,7 +82,7 @@ public class DropsInterface {
 				player.getPacketSender().sendString(ITEM_NAME + i, item.getDefinition().getName()); // remove all item
 				// names
 				if (player.isIncludeDR()) {
-					double drBoost = (double) (100 + CustomDropUtils.drBonusCheck(player)) / 100D;
+					double drBoost = (double) (100 + CustomDropUtils.drBonus(player, player.getSlayer().getSlayerTask().getNpcId())) / 100D;
 					int possible = (int) ((chance - 1) / drBoost);
 
 					if (possible <= 2 && chance >= 3) {

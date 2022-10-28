@@ -1335,10 +1335,10 @@ public class BloodRunsDeepDialogues {
 
                     @Override
                     public String[] dialogue() {
-                        String line1 = "Rumor has it a ghost haunts the Lumbridge Graveyard";
+                        String line1 = "Rumor has it a ghost haunts the hometown graveyard";
                         String line2 = "whom will take you into the Spiritual Realm.";
                         String line3 = "Father Reen has a Ghostspeak amulet for you";
-                        String line4 = "Speak with him at Lumbridge to obtain it.";
+                        String line4 = "Speak with him at home to obtain it.";
                         return new String[]{"" + line1 + "","" + line2+ "","" + line3+ "","" + line4};
                     }
 
@@ -1370,7 +1370,7 @@ public class BloodRunsDeepDialogues {
 
             @Override
             public String[] dialogue() {
-                String line1 = "Hello adventurer, what brings you around Lumbridge?";
+                String line1 = "Hello adventurer, what brings you around Avalon?";
                 return new String[]{"" + line1 };
             }
 
@@ -1730,7 +1730,7 @@ public class BloodRunsDeepDialogues {
                     public String[] dialogue() {
                         String line1 = "A ghost-speak Amulet? You should know";
                         String line2 = "Speaking to ghosts can lead to some terrible";
-                        String line3 = "outcomes, these cheeky ghosts haunt the Lumbridge";
+                        String line3 = "outcomes, these cheeky ghosts haunt the nearby";
                         String line4 = "Graveyard. Some nights you can hear them boo-ing.";
                         return new String[]{"" + line1 + "","" + line2+ "","" + line3+ "","" + line4};
                     }

@@ -119,6 +119,40 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");
         }
+
+        if (command[0].equalsIgnoreCase("hounds1")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(3421, 4777, 4);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to mutated hounds!");
+        }
+
+        if (command[0].equalsIgnoreCase("hounds2")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(3421, 4777, 8);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to mutated hounds!");
+        }
+
+        if (command[0].equalsIgnoreCase("hounds3")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(3421, 4777, 12);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to mutated hounds!");
+        }
+
         if (command[0].equalsIgnoreCase("newhome")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
@@ -395,7 +429,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(2895, 4125, 0);
+            Position position = new Position(2656, 3981, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
             player.getPacketSender().sendMessage("<shad=1>@gre@Welcome to the afk area!");
 
@@ -444,7 +478,9 @@ public class CommandPacketListener implements PacketListener {
         //Start of Interfaces
         if (command[0].equalsIgnoreCase("zones")) {
             player.getPacketSender().sendInterfaceReset();
-            player.getPacketSender().sendInterface(142250);
+        /*    player.getPacketSender().sendInterface(142250);
+         */
+            new TeleportInterfaceHandler(player).quickOpenZones();
         }
 
         if (command[0].equalsIgnoreCase("perks")) {

@@ -373,13 +373,9 @@ public final class ObjectDefinition {
 			definition.objectModelIDs = new int[]{19462}; //19458
 		}
 
-		if (definition.type == 29577) {
-			definition.name = "Necromancer Chest";
-			definition.modelSizeH = 200;
-			definition.modelSizeY = 200;
-			definition.modelSizeX = 200;
-			definition.actions = new String[]{"Open", null, null, null, null};
-			definition.objectModelIDs = new int[]{19700}; //19458
+		if (definition.type == 399) {
+			definition.name = "Necromancer Coffer";
+			definition.actions = new String[]{"Access", null, null, null, null};
 		}
 		if (definition.type == 13634) {
 			definition.name = "Portal";

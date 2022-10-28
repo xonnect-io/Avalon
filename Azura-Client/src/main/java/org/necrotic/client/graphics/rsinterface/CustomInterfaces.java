@@ -6855,7 +6855,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		addText(id, "Restrictions:", tda, 2, 16750643, false, true);
 		tab.child(c++, id++, 16 + x, 117 + y);
 
-		addText(id, "- Maximum Party size: 6 \\n- No Soulsplit allowed \\n- No Pets allowed \\n-", tda, 1, 0xEECB38, false, true);
+		addText(id, "- Maximum Party size: 6 \\n- No Soulsplit allowed \\n- No Pets allowed \\n", tda, 1, 0xEECB38, false, true);
 		tab.child(c++, id++, 18 + x, 132 + y);
 
 		addText(id, "Requirements", tda, 2, 16750643, true, true);
@@ -7092,11 +7092,11 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		RSInterface.addText(64113, "", tda, 1, ClientConstants.ORANGE, false, true);
 		RSInterface.addText(64114, "", tda, 1, ClientConstants.ORANGE, false, true);
 
-		String[] names = { "Monsters", "Bosses", "Minigames", "Dungeons", "Cities", "Globals" };
+		String[] names = { "Monsters", "Bosses", "Minigames", "Dungeons", "Zones", "Globals" };
 		for (int i = 0; i < names.length; i++) {
 			RSInterface.addButton(28215 + i, 1658, 1659, names[i]);
 		}
-		String[] text = { "Monsters", "Bosses", "Minigames", "Dungeons", "Cities", "Globals", "" };
+		String[] text = { "Monsters", "Bosses", "Minigames", "Dungeons", "Zones", "Globals", "" };
 		for (int i = 0; i < text.length; i++) {
 			RSInterface.addText(28221 + i, text[i], tda, 1, 0xFF9900, true, true);
 		}
@@ -7139,7 +7139,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		//Scoll bar size, witdh and scrolling size.
 		scrollInterface.width = 129 + 5;
 		scrollInterface.height = 218;
-		scrollInterface.scrollMax = 432;
+		scrollInterface.scrollMax = 430;
 
 
 		/** This handles the scrollable Items On Interface **/

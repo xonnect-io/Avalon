@@ -1664,9 +1664,9 @@ public final class MobDefinition {
 				definition.walkAnimation = MobDefinition.get(138).walkAnimation;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.drawYellowDotOnMap = true;
-				definition.npcSizeInSquares = 4;
-				definition.scaleXZ = 200;
-				definition.scaleY = 200;
+				definition.npcSizeInSquares = 2;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
 				break;
 
 				//

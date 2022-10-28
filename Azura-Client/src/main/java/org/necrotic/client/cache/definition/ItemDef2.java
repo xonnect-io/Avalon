@@ -1746,7 +1746,7 @@ public class ItemDef2 {
 				//	itemDef.rdc2 = 92942;
 				break;
 			case 17600:
-				itemDef.name = "Vindicta staff";
+				itemDef.name = "Titan staff";
 				itemDef.modelID = 65486;
 				itemDef.maleEquip1 = 65487;
 				itemDef.femaleEquip1 = 65487;

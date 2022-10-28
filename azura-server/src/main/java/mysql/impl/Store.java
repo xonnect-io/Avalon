@@ -263,24 +263,29 @@ public class Store implements Runnable {
 
                 if (GameSettings.ELITE_DONO_DEAL && amount >= 50) {
                     player.getInventory().add(3578, 1);
-                    player.sendMessage("You received an Elite Goodiebag for donating 50+");
-                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Elite Goodie-bag!");
+                    player.sendMessage("You received an Elite Goodiebag for donating $50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated $50+ and received @red@<shad=1>x1 Elite Goodie-bag!");
+                }
+                if (GameSettings.CASE_KEY_DEAL && amount >= 50) {
+                    player.getInventory().add(4186, 15);
+                    player.sendMessage("You received x15 Case keys for donating $50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated $50+ and received @red@<shad=1>x15 Case keys!");
                 }
                 if (GameSettings.OWNER_CAPE_DONO_DEAL && amount >= 50) {
                     player.getInventory().add(3578, 1);
-                    player.sendMessage("You received an Owner cape Goodiebag for donating 50+");
-                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Owner cape Goodie-bag!");
+                    player.sendMessage("You received an Owner cape Goodiebag for donating $50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated $50+ and received @red@<shad=1>x1 Owner cape Goodie-bag!");
                 }
 
                 if (GameSettings.AUTUMN_DEAL && amount >= 50) {
                     player.getInventory().add(23428, 5);
-                    player.sendMessage("You received x5 Autumn boxes for donating 50+");
-                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x5 Autumn boxes!");
+                    player.sendMessage("You received x5 Autumn boxes for donating $50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated $50+ and received @red@<shad=1>x5 Autumn boxes!");
                 }
                 if (GameSettings.OWNER_JEWELRY_DONO_DEAL && amount >= 50) {
                     player.getInventory().add(23240, 1);
-                    player.sendMessage("You received x1 Owner jewelry Goodiebag for donating 50+");
-                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated 50+ and received @red@<shad=1>x1 Owner jewelry Goodie-bag!");
+                    player.sendMessage("You received x1 Owner jewelry Goodiebag for donating $50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated $50+ and received @red@<shad=1>x1 Owner jewelry Goodie-bag!");
                 }
 
                 rs.updateInt("claimed", 1);

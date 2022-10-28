@@ -635,7 +635,7 @@ public class UseItemPacketListener implements PacketListener {
                         switch (objectId) {
 
 
-                            case 29577:
+                           /* case 29577:
                                 if (player.getInventory().contains(itemId) && itemId >= 23312 && itemId <= 23320) {
                                     if (player.getShadowRareDropBoost() >= ShadowRewards.MAX - 1) {
                                         player.sendMessage("@blu@You already reached the lowest drop rate possible.");
@@ -655,7 +655,8 @@ public class UseItemPacketListener implements PacketListener {
                                 } else {
                                     player.sendMessage("You can only sacrifice Souls of suffering items to the chest.");
                                 }
-                                break;
+                                break;*/
+
                             case 16135://betrayed
 
                                 if (itemId == 8868 || itemId == 21201 || itemId == 21202 || itemId == 21203 || itemId == 21204) {

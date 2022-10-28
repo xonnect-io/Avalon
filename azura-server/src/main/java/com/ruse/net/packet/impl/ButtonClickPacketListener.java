@@ -1519,8 +1519,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.setIncludeDR(!player.isIncludeDR());
                 player.getPacketSender().sendConfig(2451, player.isIncludeDR() ? 1 : 0);
                 player.sendMessage("Include Drop rate: " + (player.isIncludeDR() ? "Enabled" : "Disabled"));
-                player.getPacketSender().sendString(33300, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonusCheck(player)+"%@or1@)");
-                player.getPacketSender().sendString(33250, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonusCheck(player)+"%@or1@)");
+                player.getPacketSender().sendString(33300, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player, player.getSlayer().getSlayerTask().getNpcId())+"%@or1@)");
+                player.getPacketSender().sendString(33250, "Include DR Bonus @or1@(@whi@"+ CustomDropUtils.drBonus(player, player.getSlayer().getSlayerTask().getNpcId())+"%@or1@)");
                 if (player.getDropInterfaceNPC() > 0)
                     DropsInterface.buildRightSide(player, player.getDropInterfaceNPC());
                 break;

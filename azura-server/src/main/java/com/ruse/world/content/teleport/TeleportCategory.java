@@ -14,7 +14,7 @@ public enum TeleportCategory {
 	GLOBALS,
 
 	/** Skilling teleport. */
-	CITIES,
+	ZONES,
 
 	/** Monster killing teleport. */
 	BOSSES,

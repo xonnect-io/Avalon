@@ -49,6 +49,22 @@ public class TeleportInterfaceHandler {
 		}
 	}
 
+	public void quickOpenZones() {
+		player.getPacketSender().resetItemsOnInterface(28229 + 20, 20);
+		switchTab(28215);
+		player.getPA().sendInterface(28200);
+		if (player.getTeleportData() == null) {
+			player.setTeleportType(TeleportCategory.ZONES);
+			player.getPA().sendString(28205, "Zones");
+			sendItemsOnInterface(TeleportData.DUST_CLAW);
+			player.setCurrentTeleport(TeleportData.DUST_CLAW);
+			switchData();
+			player.getPacketSender().sendString(60000 + 50, "Tier: 1");
+			player.getPacketSender().sendString(64112, "Health: @whi@" + "4,000");
+			player.getPacketSender().sendString(60000 + 54, "Max hit: @whi@"+ "10");
+		}
+	}
+
 	public void open(TeleportCategory type) {
 		player.setTeleportType(type);
 		switchTab(28215);
@@ -78,9 +94,9 @@ public class TeleportInterfaceHandler {
 				player.getPA().sendString(28205, "Dungeons");
 				break;
 			case 28219:
-				player.setTeleportType(TeleportCategory.CITIES);
+				player.setTeleportType(TeleportCategory.ZONES);
 				switchData();
-				player.getPA().sendString(28205, "Cities");
+				player.getPA().sendString(28205, "Zones");
 				break;
 			case 28220:
 				player.setTeleportType(TeleportCategory.GLOBALS);
@@ -248,6 +264,250 @@ public class TeleportInterfaceHandler {
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return; }
 		}
+
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.DUST_CLAW.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getNPCKILLCount() <= 49){
+				player.getPacketSender().sendMessage("You need 50 npc kill Count. You currently have @red@"
+						+ player.getPointsHandler().getNPCKILLCount() + "@bla@ kills.");
+				player.getPacketSender().sendMessage("@blu@To get Fast NPC KILLS go to ::Starter");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.LORD_TELEPORT.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else  if (player.getPointsHandler().getSPAWNKILLCount() <= 99) {
+				player.getPacketSender().sendMessage("You need 100 Dustclaw kills. You currently have @red@"
+						+ player.getPointsHandler().getSPAWNKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.SHADOW_HUNTER.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else  if (player.getPointsHandler().getLORDKILLCount() <= 199) {
+				player.getPacketSender().sendMessage("You need 200 Lord kills. You currently have @red@"
+						+ player.getPointsHandler().getLORDKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.JOYX_GOLEM.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getDEMONKILLCount() <= 299) {
+				player.getPacketSender().sendMessage("You need 300 Shadow kills. You currently have @red@"
+						+ player.getPointsHandler().getDEMONKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.SHETANI.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getDRAGONKILLCount() <= 399) {
+				player.getPacketSender().sendMessage("You need 400 Golem kills. You currently have @red@"
+						+ player.getPointsHandler().getDRAGONKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.RIPPER.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getBEASTKILLCount() <= 499) {
+				player.getPacketSender().sendMessage("You need 500 Shetani kills. You currently have @red@"
+						+ player.getPointsHandler().getBEASTKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.AVATAR_TITAN.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getKINGKILLCount() <= 999) {
+				player.getPacketSender().sendMessage("You need 1,000 Ripper kills. You currently have @red@"
+						+ player.getPointsHandler().getKINGKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.WYVERNS.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getAVATARKILLCount() <= 1199) {
+				player.getPacketSender().sendMessage("You need 1,200 Avatar kills. You currently have @red@"
+						+ player.getPointsHandler().getAVATARKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.ONI.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getANGELKILLCount() <= 1499) {
+				player.getPacketSender().sendMessage("You need 1,500 Wyvern kills. You currently have @red@"
+						+ player.getPointsHandler().getANGELKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.SHENRON.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getLUCIENKILLCount() <= 2499) {
+				player.getPacketSender().sendMessage("You need 2,500 Oni kills. You currently have @red@"
+						+ player.getPointsHandler().getLUCIENKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.SUBZERO.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getHERCULESKILLCount() <= 3499) {
+				player.getPacketSender().sendMessage("You need 3,500 Shenron kills. You currently have @red@"
+						+ player.getPointsHandler().getHERCULESKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.ZEUS.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getSATANKILLCount() <= 4999) {
+				player.getPacketSender().sendMessage("You need 5,000 Subzero kills. You currently have @red@"
+						+ player.getPointsHandler().getSATANKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.IPOTANE.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getZEUSKILLCount() <= 14999) {
+				player.getPacketSender().sendMessage("You need 15,000 Zeus kills. You currently have @red@"
+						+ player.getPointsHandler().getZEUSKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.VINDICTA.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getGROUDONKILLCount() <= 24999) {
+				player.getPacketSender().sendMessage("You need 25,000 Ipotane kills. You currently have @red@"
+						+ player.getPointsHandler().getGROUDONKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.BORK.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER) {
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getFENRIRKILLCount() <= 49999) {
+				player.getPacketSender().sendMessage("You need 50,000 Vindicta kills. You currently have @red@"
+						+ player.getPointsHandler().getFENRIRKILLCount() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.SEASON_PASS.getNpcId()) {
 			if (player.getRights() == PlayerRights.OWNER) {
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");

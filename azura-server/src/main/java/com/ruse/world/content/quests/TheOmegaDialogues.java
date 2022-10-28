@@ -526,7 +526,7 @@ public class TheOmegaDialogues {
                             @Override
                             public String[] dialogue() {
                                 String line1 = "To poison milk you first need to gather some poison and milk.";
-                                String line2 = "Speak to the Bartender in the Blue Moon Inn South of Varrock";
+                                String line2 = "Speak to the Bartender in the Blue Moon Inn at home";
                                 String line3 = "Also I normally get my milk on the other side of the river.";
                                 return new String[]{"" + line1 + "", "" + line2 + "", "" + line3};
                             }

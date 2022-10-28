@@ -59,13 +59,13 @@ public class NecromancerRaid {
 
             if (total < 10000 && !player.getRights().isDeveloperOnly() && player.getRights() != PlayerRights.YOUTUBER) {
                 party.sendMessage(player.getUsername() + " does not have the Blood Demon kill requirement to do this.");
-                player.sendMessage("@red@You need 10,000 Blood v kills to do the Necromancer!");
+                player.sendMessage("@red@You need 10,000 Blood Demon kills to fight the Necromancer!");
                 return false;
             }
 
             if (player.getInventory().getAmount(12855) < party.getDifficulty().getGodsRequirement().getCost()) {
                 party.sendMessage(player.getUsername() + " does not have " + Misc.insertCommasToNumber(party.getDifficulty().getGodsRequirement().getCost()) + " Upgrade tokens.");
-                player.sendMessage("@red@You need " + Misc.insertCommasToNumber(party.getDifficulty().getGodsRequirement().getCost()) + " Upgrade tokens to do the Necromancer!");
+                player.sendMessage("@red@You need " + Misc.insertCommasToNumber(party.getDifficulty().getGodsRequirement().getCost()) + " Upgrade tokens to fight the Necromancer!");
                 return false;
             }
 
@@ -282,7 +282,7 @@ public class NecromancerRaid {
                                 || timerElapsed < member.getIsleEasyTimer()) {
                             member.setIsleEasyTimer(timerElapsed);
                         }
-                        member.sendMessage("Personal Best ("+prefix+"): " + Misc.formatTime(member.getIsleEasyTimer()));
+                       // member.sendMessage("Personal Best ("+prefix+"): " + Misc.formatTime(member.getIsleEasyTimer()));
                     } else if (party.getDifficulty() == RaidDifficulty.INTERMEDIATE) {
                         if (member.getIsleDropRate() + 0.5D >= 100D)
                             member.setIsleDropRate( 100D);
@@ -293,7 +293,7 @@ public class NecromancerRaid {
                                 || timerElapsed < member.getIsleMedTimer()) {
                             member.setIsleMedTimer(timerElapsed);
                         }
-                        member.sendMessage("Personal Best ("+prefix+"): " + Misc.formatTime(member.getIsleMedTimer()));
+                      //  member.sendMessage("Personal Best ("+prefix+"): " + Misc.formatTime(member.getIsleMedTimer()));
                     } else if (party.getDifficulty() == RaidDifficulty.ADVANCED) {
 
                         if (member.getIsleDropRate() + 1D >= 100D)
@@ -305,7 +305,7 @@ public class NecromancerRaid {
                                 || timerElapsed < member.getIsleHardTimer()) {
                             member.setIsleHardTimer(timerElapsed);
                         }
-                        member.sendMessage("Personal Best ("+prefix+"): " + Misc.formatTime(member.getIsleHardTimer()));
+                       // member.sendMessage("Personal Best ("+prefix+"): " + Misc.formatTime(member.getIsleHardTimer()));
                     }
                     if (party.getDifficulty() == RaidDifficulty.EASY) {
                         member.setEasyIsleGodKC(member.getEasyIsleGodKC() + 1);
@@ -317,7 +317,7 @@ public class NecromancerRaid {
                         member.setHardIsleGodKC(member.getHardIsleGodKC() + 1);
                         member.sendMessage("@blu@Necromancer (Hard) KC: " + member.getHardIsleGodKC());
                     }
-
+                    member.getAchievementTracker().progress(AchievementData.NECROTIC, 1);
                     KillsTracker.submitById(member, 9894, true, true);
                     NecromancerLoot.handleLoot(member, party.getDifficulty());
                     member.getSeasonPass().addXp(2);

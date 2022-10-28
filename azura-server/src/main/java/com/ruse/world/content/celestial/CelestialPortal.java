@@ -8,7 +8,6 @@ import com.ruse.util.Misc;
 import com.ruse.util.Stopwatch;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
-import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.transportation.TeleportHandler;
@@ -126,8 +125,8 @@ public final class CelestialPortal {
 	public static void spawn() {
 
 		if (PORTAL == null) {
-		PORTAL = new PortalSpawn(new GameObject(4388, new Position(2651, 4002) ), PREVIOUS_LOC);
-		CustomObjects.spawnGlobalObject(PORTAL.object);
+		//PORTAL = new PortalSpawn(new GameObject(4388, new Position(2651, 4002) ), PREVIOUS_LOC);
+		//CustomObjects.spawnGlobalObject(PORTAL.object);
 			if (GameSettings.LOCALHOST == false)
 		DiscordMessager.sendCelestialLog("");
 		World.sendMessage("<img=832> The Realm of Fantasy has opened for 1 hour (Realm of Fantasy members only)");

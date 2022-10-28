@@ -71,7 +71,7 @@ public class BonusManager {
 				+ df.format(Maxhits.getDamageBoost(player, Maxhits.baseNPC, CombatType.MAGIC)));
 
 
-		player.getPacketSender().sendString(66106, "Drop Rate Bonus: @whi@" + CustomDropUtils.drBonusCheck(player));
+		player.getPacketSender().sendString(66106, "Drop Rate Bonus: @whi@" + CustomDropUtils.drBonus(player, player.getSlayer().getSlayerTask().getNpcId()));
 
 		player.getPacketSender().sendString(66108, "Melee Maxhit: @whi@" + (Maxhits.melee(player, player) / 10));
 		player.getPacketSender().sendString(66109, "Ranged Maxhit: @whi@" + (Maxhits.ranged(player, player) / 10));

@@ -244,6 +244,9 @@ public class SeasonPass {
 	public void reset() {
 		setTier(0);
 		setXp(0);
+		if (player.isunlockedseasonpass ()) {
+			player.setunlockedseasonpass(false);
+		}
 	}
 	public int getTier() {
 		return tier;
