@@ -14,7 +14,7 @@ public class MembershipManager {
 	 *  change this every month
 	 */
 	public static Calendar endDate = new GregorianCalendar(World.getCalendar().getInstance().get(Calendar.YEAR), Calendar.OCTOBER, 30, 23, 30);
-	public static Calendar startDate = new GregorianCalendar(World.getCalendar().getInstance().get(Calendar.YEAR), Calendar.SEPTEMBER, 1, 0, 30);
+	public static Calendar startDate = new GregorianCalendar(World.getCalendar().getInstance().get(Calendar.YEAR), Calendar.SEPTEMBER, 4, 0, 30);
 
 	public static String theEndDate() {
 		Calendar start = Calendar.getInstance();
