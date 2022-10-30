@@ -7171,7 +7171,87 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 
 		}
 	}
-	
+
+
+	public static void valentinesInterface() {
+		int interID = 143000;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 30;
+		int y = 20;
+		tab.totalChildren(33);
+
+		addSpriteLoader(id, 1805);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 430 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 430 + x, 3 + y);
+		id++;
+
+		addText(id, "Halloween Event", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 227 + x, 4 + y);
+
+		addText(id, "Trick", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 69 + x, 29 + y);
+
+		addText(id, "Treat", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 386 + x, 29 + y);
+
+		addText(id, "Candy Corn", tda, 1, 0xFF981F, true, true);
+		tab.child(c++, id++, 227 + x, 151 + y);
+
+		addText(id, "0", tda, 0, 0xffffff, true, true);
+		tab.child(c++, id++, 227 + x, 167 + y);
+
+		hoverButton(id, 1806, 1807, "Trick", 0, 0xffffff, "Trick");
+		tab.child(c++, id++, 163 + x, 183 + y);
+
+		hoverButton(id, 1806, 1807, "Treat", 0, 0xffffff, "Treat");
+		tab.child(c++, id++, 239 + x, 183 + y);
+
+		new ProgressBar(id, 39, 221, new int[]{0xba5e06}, false, false, "", new int[]{0x473d33});
+		tab.child(c++, id++, 20 + x, 54 + y);
+
+		new ProgressBar(id, 39, 221, new int[]{0x1c1b1a}, false, false, "", new int[]{0x473d33});
+		tab.child(c++, id++, 396 + x, 54 + y);
+
+		dropGroup(id, 1, 1, 1, 1);
+		tab.child(c++, id++, 211 + x, 36 + y);
+
+		addText(id, "1,000", tda, 0, 0xFFffff, true, true);
+		tab.child(c++, id++, 39 + x, 148 + y);
+
+		addText(id, "(max 500)", tda, 0, 0xFFffff, true, true);
+		tab.child(c++, id++, 163 + 26 + x, 199 + y);
+
+		addText(id, "1,000", tda, 0, 0xFFffff, true, true);
+		tab.child(c++, id++, 415 + x, 148 + y);
+
+		addText(id, "(max 500)", tda, 0, 0xFFffff, true, true);
+		tab.child(c++, id++, 239 + 26 + x, 199 + y);
+
+		for (int i = 0; i < 4; i++) {
+			dropGroup(id, 1, 1, 1, 1);
+			tab.child(c++, id++, 82 + x, 57 + y);
+			addText(id, "", tda, 0, 0xFF981F, true, true);
+			tab.child(c++, id++, 82 + 17 + x, 57 + 40 + y);
+			y += 57;
+		}
+
+		y = 20;
+
+		for (int i = 0; i < 4; i++) {
+			dropGroup(id, 1, 1, 1, 1);
+			tab.child(c++, id++, 340 + x, 57 + y);
+			addText(id, "", tda, 0, 0xFF981F, true, true);
+			tab.child(c++, id++, 340 + 17 + x, 57 + 40 + y);
+			y += 57;
+		}
+	}
+
 	static void achievements() {
 		int interID = 117000;
 		RSInterface tab = addInterface(interID);
@@ -7643,6 +7723,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		bossLog();
 		configureLunar();
 		redoSpellBooks();
+		valentinesInterface();
 		collectionLog(tda);
 		shopInterface();
 		bankInterface();

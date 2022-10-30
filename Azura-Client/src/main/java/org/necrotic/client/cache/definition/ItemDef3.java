@@ -821,7 +821,7 @@ public class ItemDef3 {
 				itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
-			case 22473:
+			case 22373:
 				itemDef.copyItem(6585);
 				itemDef.name = "Pumpkin head";
 				itemDef.modelID = 19697;
@@ -833,6 +833,50 @@ public class ItemDef3 {
 				itemDef.modelOffsetY = 90;
 				itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+			case 22374:
+				itemDef.copyItem(6585);
+				itemDef.name = "Chucky doll";
+				itemDef.modelID = 19746;
+				itemDef.maleEquip1 = 19746;
+				itemDef.femaleEquip1 = 19746;
+				itemDef.modelZoom = 1539;
+				itemDef.rotationX = 148;
+				itemDef.rotationY = 0;
+				itemDef.rotationZ = 96;
+				itemDef.modelOffsetX = -26;
+				itemDef.modelOffsetY = 12;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+			case 22376:
+				itemDef.name = "Festival boots";
+				itemDef.modelID = 19693;
+				itemDef.maleEquip1 = 19693;
+				itemDef.femaleEquip1 = 19693;
+				itemDef.modelZoom = 800;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = 1;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.newModelColor = new int[]{57};
+				itemDef.editedModelColor = new int[]{106};
+				break;
+
+			case 22377:
+				itemDef.copyItem(23281);
+				itemDef.name = "Festival gloves";
+				itemDef.modelID = 19749;
+				itemDef.maleEquip1 = 19749;
+				itemDef.femaleEquip1 = 19749;
+				itemDef.modelZoom = 1680;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 65;
+				itemDef.modelOffsetX = 0;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.newModelColor = new int[]{57};
+				itemDef.editedModelColor = new int[]{106};
 				break;
 
 			case 23282:
@@ -3741,6 +3785,9 @@ public class ItemDef3 {
 			case 23443:
 				itemDef.copyItem(14050);
 				itemDef.name = "Fantasy helmet";
+				itemDef.modelID = 19741;
+				itemDef.maleEquip1 = 19741;
+				itemDef.femaleEquip1 = 19741;
 				itemDef.newModelColor = new int[]{52};
 				itemDef.editedModelColor = new int[]{98};
 			break;
@@ -3748,12 +3795,18 @@ public class ItemDef3 {
 			case 23444:
 				itemDef.copyItem(14051);
 				itemDef.name = "Fantasy body";
+				itemDef.modelID = 19742;
+				itemDef.maleEquip1 = 19742;
+				itemDef.femaleEquip1 = 19742;
 				itemDef.newModelColor = new int[]{52};
 				itemDef.editedModelColor = new int[]{98};
 				break;
 			case 23445:
 				itemDef.copyItem(14052);
 				itemDef.name = "Fantasy legs";
+				itemDef.modelID = 19743;
+				itemDef.maleEquip1 = 19743;
+				itemDef.femaleEquip1 = 19743;
 				itemDef.newModelColor = new int[]{52};
 				itemDef.editedModelColor = new int[]{98};
 				break;

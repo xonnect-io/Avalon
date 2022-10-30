@@ -79,6 +79,7 @@ import com.ruse.world.content.skill.impl.summoning.SummoningTab;
 import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
+import com.ruse.world.content.valentine.HweenEvent;
 import com.ruse.world.content.wellForGlobalBosses.WellForGlobalBossesInterface;
 import com.ruse.world.content.youtube.YoutubeData;
 import com.ruse.world.content.youtube.YoutubeInterfaceHandler;
@@ -181,6 +182,7 @@ public class ButtonClickPacketListener implements PacketListener {
         new DailyTaskInterface(player).tabClicking(id);
         new InstanceInterfaceHandler(player).handleButtons(id);
         new WellForGlobalBossesInterface(player).button(id);
+        new HweenEvent(player).handleButton (id);
 
         switch (id) {
             case 75012://3x3
@@ -2386,6 +2388,10 @@ public class ButtonClickPacketListener implements PacketListener {
     private boolean checkHandlers(Player player, int id) {
 
         if (ServerPerks.getInstance().handleButton(player, id)) {
+            return true;
+        }
+
+        if (player.getHweenEvent().handleButton(id)) {
             return true;
         }
         if (player.getCollectionLog().handleButton(id))

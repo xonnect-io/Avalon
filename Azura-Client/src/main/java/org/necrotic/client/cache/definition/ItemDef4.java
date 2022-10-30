@@ -3388,6 +3388,17 @@ public class ItemDef4 {
 				itemDef.editedModelColor[0] = 66;
 				itemDef.stackable = false;
 				break;
+			case 19806:
+				itemDef.name = "Candy Corn";
+				itemDef.modelID = 19754;
+				itemDef.modelZoom = 584;
+				itemDef.rotationY = 774;
+				itemDef.rotationX = 184;
+				itemDef.rotationZ = 217;
+				itemDef.modelOffsetX = 9;
+				itemDef.modelOffsetY = 0;
+				itemDef.actions = new String[]{"Claim", null, "Dissolve", null, null};
+				break;
 			case 18836:
 				itemDef.name = "Moonlight robebottom";
 				itemDef.modelID = 65300;
@@ -3450,26 +3461,28 @@ public class ItemDef4 {
 				itemDef.rotationX = 0;
 				itemDef.modelZoom = 1900;
 				break;
+
 			case 23296:
 				itemDef.copyItem(3791);
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 53835;
-				itemDef.maleEquip1 = 53327;
-				itemDef.femaleEquip1 = 53643;
-				itemDef.name = "Emberkeen boots";
+				itemDef.modelID = 19744;
+				itemDef.maleEquip1 = 19744;
+				itemDef.femaleEquip1 = 19744;
+				itemDef.name = "Frostlight boots";
 				itemDef.modelZoom = 900;
-				itemDef.description = "A pair of Emberkeen boots.".getBytes();
+				itemDef.description = "A pair of Frostlight boots.".getBytes();
 				break;
+
 			case 23297:
 				itemDef.copyItem(23131);
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 19561;
-				itemDef.maleEquip1 = 19561;
-				itemDef.femaleEquip1 = 19561;
+				itemDef.modelID = 19745;
+				itemDef.maleEquip1 = 19745;
+				itemDef.femaleEquip1 = 19745;
 				itemDef.name = "Elderbone boots";
 				itemDef.modelZoom = 700;
 				itemDef.description = "A pair of Flarefrost boots.".getBytes();

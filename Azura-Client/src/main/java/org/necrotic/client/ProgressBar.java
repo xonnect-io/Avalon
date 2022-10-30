@@ -16,7 +16,8 @@ public class ProgressBar extends RSInterface {
 
 	public int defaultColorTypes[];
 
-	public ProgressBar(final int childId, final int width, final int height, final int[] colorTypes, boolean drawHorizontal, boolean shadow, final String tooltip, final int[] defaultColorTypes) {
+	public ProgressBar(final int childId, final int width, final int height, final int[] colorTypes,
+					   boolean drawHorizontal, boolean shadow, final String tooltip, final int[] defaultColorTypes) {
 		this.id = childId;
 		this.type = 554;
 		this.width = width;

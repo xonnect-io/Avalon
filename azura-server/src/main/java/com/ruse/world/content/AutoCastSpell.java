@@ -40,6 +40,7 @@ public enum AutoCastSpell {
     BLOOD(23227, CombatSpells.BLOOD),
     NEPHILIM(23062, CombatSpells.NEPHILIM),
     NECROMANCER(23302, CombatSpells.NECROMANCER),
+    PUMPKIN(22375, CombatSpells.PUMPKIN),
     MAGICIAN_STAFF(3745, CombatSpells.MEDIUM),
     MAGIC(23026,CombatSpells.MEDIUM)
     ;

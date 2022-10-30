@@ -395,6 +395,43 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
+			case 22379:
+				itemDef.copyItem(11235);
+				itemDef.name = "Pumpkin Bow";
+				itemDef.modelID = 19751;
+				itemDef.femaleEquip1 = 19751;
+				itemDef.maleEquip1 = 19751;
+
+				itemDef.modelZoom = 2150;
+				itemDef.rotationY = 362;
+				itemDef.rotationX = 183;
+				itemDef.rotationZ = 391;
+				itemDef.modelOffsetX = 96;
+				itemDef.modelOffsetY = -61;
+				break;
+			case 22380:
+				itemDef.copyItem(12608);
+				itemDef.name = "Bright Spooky Aura";
+				itemDef.modelID = 19756;
+				itemDef.femaleEquip1 = 19756;
+				itemDef.maleEquip1 = 19756;
+				break;
+			case 22375:
+				itemDef21 = ItemDefinition.get(18953);
+				itemDef.name = "Pumpkin Staff";
+				itemDef.modelID = 19750;
+				itemDef.maleEquip1 = 19750;
+				itemDef.femaleEquip1 = 19750;
+				itemDef.modelZoom = 4000;
+				itemDef.rotationY = 513;
+				itemDef.rotationX = 1261;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -43;
+				itemDef.modelOffsetY = 0;
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
 			case 23551:
 				itemDef21 = ItemDefinition.get(18953);
 				itemDef.name = "Necrotic Longsword";

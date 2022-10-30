@@ -266,7 +266,7 @@ public class NecromancerRaid {
             } else if (party.getDifficulty() == RaidDifficulty.ADVANCED) {
                 prefix = "Hard";
             }
-            party.sendMessage("Necromancer ("+prefix+") completion time: @red@" + timeString);
+            //party.sendMessage("Necromancer ("+prefix+") completion time: @red@" + timeString);
             for (Player player : party.getPlayers()) {
                 for (Player member : party.getPlayers()) {
                         if (member.getIsleDropRate() + 0.25D >= 100D)

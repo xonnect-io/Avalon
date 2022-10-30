@@ -599,6 +599,29 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23318)) { //Midnight helmet (u)
             percentBoost += 30;
         }
+
+        if (player.getEquipment().contains(22377)) { //Festival gloves
+            percentBoost += 25;
+        }
+
+        if (player.getEquipment().contains(22376)) { //Festival boots
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(22380)) { //Bright spooky aura
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(22374)) { //Chucky Doll
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(22375)) { //Hween staff
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(22373)) { //Pumpkin head
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(22379)) { //Hween bow
+            percentBoost += 30;
+        }
         if (player.getEquipment().contains(23440)) {//Purple Pennywise mask
             percentBoost += 20;
         }

@@ -422,6 +422,9 @@ public class CommandPacketListener implements PacketListener {
 
         }
 
+        if (command[0].equalsIgnoreCase("hweengift")) {
+            VdayGifting.givePresent();
+        }
         if (command[0].equalsIgnoreCase("afk")) {
 
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS

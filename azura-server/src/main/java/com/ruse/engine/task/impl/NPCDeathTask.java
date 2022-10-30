@@ -65,7 +65,7 @@ public class NPCDeathTask extends Task {
      */
     private Set<Integer> BOSSES = new HashSet<>(Arrays.asList(1999, 440, 2882, 2881, 2883, 7134, 5666, 7286, 4540, 6222, 252,
             449, 452, 6260, 6247, 6203, 8349, 50, 2001, 1158, 8133, 3200, 13447, 8549, 1382, 2000, 2009, 2006, 8000,
-            8002, 6430, 185, 3831, 2342, 2949, 1120, 8015,9837,250,505)); // use
+            8002, 6430, 185, 3831, 2342, 2949, 1120, 8015,9837,250,505,9813)); // use
     /**
      * The amount of ticks on the task.
      */
@@ -113,6 +113,11 @@ public class NPCDeathTask extends Task {
 
                     if (BOSSES.contains(npc.getId())) {
                         killer.getPointsHandler().incrementBossPoints(1);
+                        int hweenRoll = Misc.getRandom (300);
+                        if (hweenRoll == 3) {
+                            killer.getInventory ().add (19806, 1);
+                            killer.sendMessage("<img=1760> Happy Halloween! You obtained a <shad=1>@or2@Candy Corn");
+                        }
                         if (bosspoints.endsWith(String.valueOf(9))) {
                             killer.sendMessage("<img=99>You now have @red@" + killer.getPointsHandler().getBossPoints()
                                     + " Boss Points!");

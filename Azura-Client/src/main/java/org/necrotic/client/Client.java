@@ -8355,7 +8355,7 @@ public class Client extends GameRenderer {
                     Sprite sprite = null;
                     sprite = childInterface.disabledSprite;
                     sprite.drawHoverSprite(childX, childY, childInterface.enabledSprite);
-                } else if (childInterface.type == 554) {//hitsplat range
+                } else if (childInterface.type == 554) {
 
                     ProgressBar inter = (ProgressBar) childInterface;
                     int displayColor = inter.colorTypes[inter.progressBarState];
@@ -8371,10 +8371,15 @@ public class Client extends GameRenderer {
                         //  DrawingArea.fillRect(childX, childY, drawingWidth, inter.height, displayColor);
                         //  DrawingArea.drawRect(childX, childY, inter.width, inter.height, 0);
                     } else {
-                        int drawingWidth = inter.progressBarPercentage;
-                        RSGraphics.fillRect(childX, childY, inter.width, inter.height, defaultBarColor);
-                        RSGraphics.fillRect(childX, childY, inter.width, drawingWidth, displayColor);
+                        int drawingHeight = inter.progressBarPercentage * inter.height / 100;
+
+                        RSGraphics.fillRect(childX, childY, inter.width, inter.height, 0x00000);
+                        RSGraphics.fillRect(childX, childY, inter.width, drawingHeight, displayColor);
                         RSGraphics.drawRect(childX, childY, inter.width, inter.height, 0);
+
+                        DrawingArea.drawPixels(inter.height, childY, childX, defaultBarColor, inter.width);
+                        DrawingArea.drawPixels(drawingHeight,  childY+ inter.height - drawingHeight, childX, displayColor, inter.width);
+                        DrawingArea.fillPixels(childX, inter.width, inter.height, 0, childY);
                     }
                 } else if (childInterface.type == 6) {
 
@@ -8396,7 +8401,8 @@ public class Client extends GameRenderer {
                         model = childInterface.method209(-1, -1, flag2);
                     } else {
                         Animation animation = Animation.cache[i7];
-                        model = childInterface.method209(animation.frameIDs2[childInterface.anInt246], animation.frameIDs[childInterface.anInt246], flag2);
+                        model = childInterface.method209(animation.frameIDs2[childInterface.anInt246],
+                                animation.frameIDs[childInterface.anInt246], flag2);
                     }
                     if (model != null) {
                         Rasterizer.clearDepthBuffer();
@@ -8404,7 +8410,7 @@ public class Client extends GameRenderer {
                     }
                     Rasterizer.centerX = k3;
                     Rasterizer.centerY = j4;
-                } else if (childInterface.type == 42) {
+                } else if (childInterface.type == 42 && childInterface.isVisible()) {
                     if (childInterface.widgetActive) {
                         if (mouseX >= childX && mouseY >= childY && mouseX < childX + childInterface.width && mouseY < childY + childInterface.height) {
                             childInterface.enabledSprite.drawSprite(childX, childY);

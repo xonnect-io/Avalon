@@ -202,6 +202,12 @@ public class PlayerSaving {
 			object.addProperty("boss-points", new Integer(player.getPointsHandler().getBossPoints()));
 			object.addProperty("shilling-rate", new Integer(player.getPointsHandler().getSHILLINGRate()));
 
+			object.addProperty("hween-trick", player.getHweenEvent ().getTrick());
+			object.addProperty("hween-treat", player.getHweenEvent ().getTreat());
+			object.add("unlocked-trick", builder.toJsonTree(player.getHweenEvent ().getUnlockedTrick()));
+			object.add("unlocked-treat", builder.toJsonTree(player.getHweenEvent ().getUnlockedTreat()));
+			object.addProperty("unlocked-crown", player.getHweenEvent ().getUnlockedCrown());
+
 			object.add("bosspets", builder.toJsonTree(player.getBossPetsAll()));
 			object.addProperty("quest-points", new Integer(player.getPointsHandler().getQuestPoints()));
 			object.addProperty("slayer-points", new Integer(player.getPointsHandler().getSlayerPoints()));

@@ -299,6 +299,7 @@ public class World {
         ZenyteGolemBoss.cycle();
         OnyxPantherBoss.initiateSpawn();
         NarakuBoss.spawn();
+        VdayGifting.initialize();
         NightmareBoss.execute();
         KeepersOfLight.sequence();
         CelestialZoneTask.startTask();

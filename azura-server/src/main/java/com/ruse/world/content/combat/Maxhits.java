@@ -43,7 +43,7 @@ public class Maxhits {
             maxHit *=  1.5;
         }
 
-        if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23544
+        if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 22373
                 || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23627
                 || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23628) {
             maxHit *=  1.1;

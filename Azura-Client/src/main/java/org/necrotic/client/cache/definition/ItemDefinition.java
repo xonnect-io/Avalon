@@ -717,7 +717,7 @@ public final class ItemDefinition {
 				break;
 
 			case 20061:
-				itemDef.name = "Welcome Crate";
+				itemDef.name = "Case Key Crate";
 				break;
 			case 15682:
 				itemDef.name = "Vote Crate";

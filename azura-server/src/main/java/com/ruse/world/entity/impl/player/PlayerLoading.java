@@ -1079,6 +1079,24 @@ public class PlayerLoading {
                         .setBoundItems(builder.fromJson(reader.get("dung-items-bound").getAsJsonArray(), int[].class));
             }
 
+
+            if (reader.has("hween-trick")) {
+                player.getHweenEvent ().setTrick(reader.get("hween-trick").getAsInt());
+            }
+            if (reader.has("hween-treat")) {
+                player.getHweenEvent ().setTreat(reader.get("hween-treat").getAsInt());
+            }
+            if (reader.has("unlocked-trick")) {
+                player.getHweenEvent ().setUnlockedTrick(builder.fromJson(reader.get("unlocked-trick"), boolean[].class));
+            }
+            if (reader.has("unlocked-treat")) {
+                player.getHweenEvent ().setUnlockedTreat(builder.fromJson(reader.get("unlocked-treat"), boolean[].class));
+            }
+            if (reader.has("unlocked-crown")) {
+                player.getHweenEvent ().setUnlockedCrown(reader.get("unlocked-crown").getAsBoolean());
+            }
+
+
             if (reader.has("rune-ess")) {
                 player.setStoredRuneEssence((reader.get("rune-ess").getAsInt()));
             }

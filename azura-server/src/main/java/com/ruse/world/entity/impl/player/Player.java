@@ -96,6 +96,7 @@ import com.ruse.world.content.teleport.TeleportCategory;
 import com.ruse.world.content.teleport.TeleportData;
 import com.ruse.world.content.upgrading.MaxUpgradesInterface;
 import com.ruse.world.content.upgrading.UpgradeInterface;
+import com.ruse.world.content.valentine.HweenEvent;
 import com.ruse.world.content.youtube.YoutubeCategory;
 import com.ruse.world.content.youtube.YoutubeData;
 import com.ruse.world.entity.actor.player.controller.ControllerManager;
@@ -172,6 +173,9 @@ public boolean setSlayerBoss;
     public LogType logtype;
     public boolean idleEventUsed;
 
+
+    @Getter
+    private HweenEvent hweenEvent = new HweenEvent (this);
 
     @Getter
     @Setter

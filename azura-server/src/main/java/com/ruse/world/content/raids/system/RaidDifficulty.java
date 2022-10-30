@@ -8,13 +8,13 @@ public enum
 RaidDifficulty {
 
     EASY("Easy",
-            new RaidRequirement(25_000)
+            new RaidRequirement(10_000)
     ),
     INTERMEDIATE("Medium",
-            new RaidRequirement(50_000, 100)
+            new RaidRequirement(20_000, 100)
     ),
     ADVANCED("Hard",
-            new RaidRequirement(75_000, 250)
+            new RaidRequirement(30_000, 250)
     );
 
     @Getter

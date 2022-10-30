@@ -177,6 +177,7 @@ public class ItemActionPacketListener implements PacketListener {
             Prayer.buryBone(player, itemId);
             return;
         }
+
         if (Consumables.isFood(player, itemId, slot))
             return;
         if (Consumables.isPotion(itemId)) {
@@ -266,6 +267,9 @@ public class ItemActionPacketListener implements PacketListener {
 
         switch (itemId) {
 
+            case 19806:
+                player.getHweenEvent ().openInterface(player.getInventory().getAmount(19806));
+                break;
             case 1561:
                 if (!player.getClickDelay().elapsed(10000)) {
                     player.getPacketSender().sendMessage("Please wait 10 seconds before doing that.");
@@ -1270,16 +1274,14 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("Please wait 5 seconds before doing that.");
                     return;
                 }
-                if (player.getInventory().getFreeSlots() < 3) {
-                    player.getPacketSender().sendMessage("You should have at least 3 inventory spaces free.");
+                if (player.getInventory().getFreeSlots() < 1) {
+                    player.getPacketSender().sendMessage("You should have at least 1 inventory spaces free.");
                     return;
                 }
 
-                player.getInventory().add(23020, 1);
-                player.getInventory().add(290, 1);
-                player.getInventory().add(6198, 1);
-                player.getInventory().delete(20061, 1);
-                player.getPacketSender().sendMessage("@red@Enjoy a free voting scroll - ::vote for more.");
+                player.getInventory().delete (20061, 1);
+                player.getInventory().add(4186, 10);
+                player.getPacketSender().sendMessage("@red@Enjoy your x10 Case keys!");
 
                 player.getClickDelay().reset();
                 break;
@@ -2122,6 +2124,12 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getSkillManager().setCurrentLevel(Skill.PRAYER, 1200);
                 player.sendMessage("<shad=1>@red@Your potato heals you");
                 break;
+
+            case 19806:
+                int totalatm = player.getInventory().getAmount(23536);
+                player.getInventory().delete(19806, totalatm).add(5022, totalatm * 1000);
+                break;
+
             case 4278:
             case 23264:
                 if (player.getLocation() == Location.JAIL) {
