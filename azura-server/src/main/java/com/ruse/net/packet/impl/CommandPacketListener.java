@@ -422,8 +422,8 @@ public class CommandPacketListener implements PacketListener {
 
         }
 
-        if (command[0].equalsIgnoreCase("hweengift")) {
-            VdayGifting.givePresent();
+        if (command[0].equalsIgnoreCase("event")) {
+            player.getHweenEvent ().openInterface(player.getInventory().getAmount(19806));
         }
         if (command[0].equalsIgnoreCase("afk")) {
 
@@ -863,12 +863,12 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendEnterInputPrompt("Enter the pin that you want to set$pin");
             }
         }
-        if (command[0].equalsIgnoreCase("dropparty") || command[0].equalsIgnoreCase("party")
+   /*     if (command[0].equalsIgnoreCase("dropparty") || command[0].equalsIgnoreCase("party")
                 || command[0].equalsIgnoreCase("event")) {
             TeleportHandler.teleportPlayer(player, new Position(1696, 4265, 0), player.getSpellbook().getTeleportType());
             player.sendMessage("Trolling an event can result in you not being able to participate in events.");
         }
-
+*/
         if (command[0].equalsIgnoreCase("afkcount")) {
             player.sendMessage("@blu@Current AFK Thieving count: @red@" + AfkSystem.thievedCount);
         }
@@ -1900,6 +1900,9 @@ public class CommandPacketListener implements PacketListener {
             Legends.finishRaid(player.getZombieRaidsParty());
         }
 
+        if (command[0].equalsIgnoreCase("hweengift")) {
+            VdayGifting.givePresent();
+        }
         if (command[0].equalsIgnoreCase("partychest")) {
             PartyChest.startDropParty(player, Integer.parseInt(command[1]), Boolean.parseBoolean(command[2]));
         }
