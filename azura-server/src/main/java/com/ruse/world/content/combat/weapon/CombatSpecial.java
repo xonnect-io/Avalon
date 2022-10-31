@@ -38,12 +38,12 @@ public enum CombatSpecial {
 	 */
 
 
-	NACROTIC_LONGSWORD(new int[] { 23551 }, 20, 1, 1, CombatType.MELEE, WeaponInterface.LONGSWORD) {
+	NECROTIC_LONGSWORD(new int[] { 23551 }, 20, 1, 1, CombatType.MELEE, WeaponInterface.LONGSWORD) {
 		@Override
 		public CombatContainer container(Player player, Character target) {
 			player.performAnimation(new Animation(451));
 			player.performGraphic(new Graphic(1220));
-			return new CombatContainer(player, target, 2, CombatType.MELEE, false);
+			return new CombatContainer(player, target, 3, CombatType.MELEE, false);
 		}
 	},
 
@@ -420,13 +420,13 @@ public enum CombatSpecial {
 			return new CombatContainer(player, target, 1, CombatType.MELEE, true);
 		}
 	},
-	STEEL_TEMPEST(new int[] { 14018 }, 10, 1.62, 1.83, CombatType.MELEE, WeaponInterface.SCIMITAR) {
+	STEEL_TEMPEST(new int[] { 14018 }, 10, 1.50, 1.50, CombatType.MELEE, WeaponInterface.SCIMITAR) {
 		@Override
 		public CombatContainer container(Player player, Character target) {
 			player.performAnimation(new Animation(2876));
 			target.performGraphic(new Graphic(1333, GraphicHeight.LOW));
 
-			return new CombatContainer(player, target, 3, CombatType.MELEE, true);
+			return new CombatContainer(player, target, 2, CombatType.MELEE, true);
 		}
 	},
 	SKULL_SCEPTRE(new int[] { 9013 }, 100, 2, 2, CombatType.MELEE, WeaponInterface.BATTLEAXE) {

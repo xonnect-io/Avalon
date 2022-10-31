@@ -142,6 +142,18 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23422)) { //Diyos boots
             percentBoost += 45;
         }
+
+        if (player.getEquipment().contains(23296)) { //Avalon boots
+            percentBoost += 40;
+        }
+
+        if (player.getEquipment().contains(23297)) { //Avalon boots
+            percentBoost += 40;
+        }
+
+        if (player.getEquipment().contains(23298)) { //Avalon boots
+            percentBoost += 40;
+        }
         if (player.getEquipment().contains(23285)) { //Avalon boots
             percentBoost += 40;
         }
