@@ -113,8 +113,8 @@ public class NPCDeathTask extends Task {
 
                     if (BOSSES.contains(npc.getId())) {
                         killer.getPointsHandler().incrementBossPoints(1);
-                        int hweenRoll = Misc.getRandom (250);
-                        int hweenAmnt = Misc.getRandom ((3) + 1);
+                        int hweenRoll = Misc.getRandom (200);
+                        int hweenAmnt = Misc.getRandom (3) + 1;
                         if (hweenRoll == 3) {
                             killer.getInventory ().add (19806, hweenAmnt);
                             killer.sendMessage("<img=1760> <shad=1>[Halloween]</shad> You were rewarded <shad=1>"+ hweenAmnt +" Candy Corn");

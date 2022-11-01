@@ -108,6 +108,10 @@ public class CommandPacketListener implements PacketListener {
 
     private static void playerCommands(final Player player, String[] command, String wholeCommand) throws IOException {
 
+        if (command[0].equalsIgnoreCase("members")) {
+            player.membershipInterfaceHandler.openBenefitTab ();
+        }
+
         //Start of Teleports
         if (command[0].equalsIgnoreCase("home")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
