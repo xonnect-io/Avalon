@@ -918,8 +918,8 @@ public class ItemDef4 {
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = itemDef21.actions;
-				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions = new String[]{null, null, null, null, "Destroy"};
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc3 = 1;
 				itemDef.stackable = false;
 				break;
@@ -933,8 +933,8 @@ public class ItemDef4 {
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = itemDef21.actions;
-				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions = new String[]{null, null, null, null, "Destroy"};
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc2 = 88800;
 				itemDef.stackable = false;
 				break;
@@ -948,8 +948,8 @@ public class ItemDef4 {
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = itemDef21.actions;
-				itemDef.actions = new String[5];
-				itemDef.actions[4] = "Drop";
+				itemDef.actions = new String[]{null, null, null, null, "Destroy"};
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.rdc3 = 800;
 				itemDef.stackable = false;
 				break;
@@ -3484,8 +3484,8 @@ public class ItemDef4 {
 				itemDef.maleEquip1 = 19745;
 				itemDef.femaleEquip1 = 19745;
 				itemDef.name = "Elderbone boots";
-				itemDef.modelZoom = 700;
-				itemDef.description = "A pair of Flarefrost boots.".getBytes();
+				itemDef.modelZoom = 900;
+				itemDef.description = "A pair of Elderbone boots.".getBytes();
 				break;
 
 			case 1468:

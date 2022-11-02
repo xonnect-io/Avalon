@@ -139973,7 +139973,7 @@
     "combat": 500,
     "size": 5,
     "attackable": true,
-    "aggressive": true,
+    "aggressive": false,
     "retreats": true,
     "poisonous": false,
     "respawn": 5,

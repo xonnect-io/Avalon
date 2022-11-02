@@ -142,7 +142,10 @@ public class MainDissolving {
 		SHADOWAMULET(11195, new Item[]{new Item(UPG_TOKEN, 2500)}, 1240, anim),
 		WINGSHIELD(19749, new Item[]{new Item(UPG_TOKEN, 2500)}, 1240, anim),
 		ARTRING(8335, new Item[]{new Item(UPG_TOKEN, 4000)}, 1240, anim),
-		
+
+		LIGHT_SHARD(14472, new Item[]{new Item(UPG_TOKEN, 250000)}, 25000, anim),
+		DARK_SHARD(14474, new Item[]{new Item(UPG_TOKEN, 750000)}, 100000, anim),
+		BLOOD_SHARD(23238, new Item[]{new Item(UPG_TOKEN, 1500000)}, 200000, anim),
 		ZEUSCAPEFLAG(17662, new Item[]{new Item(UPG_TOKEN, 7493)}, 17493, anim),
 		ZEUSSEIHLD(15234, new Item[]{new Item(UPG_TOKEN, 7493)}, 17493, anim),
 		ZEUSHAMMER(15233, new Item[]{new Item(UPG_TOKEN, 7493)}, 17493, anim),

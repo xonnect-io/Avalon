@@ -127,7 +127,7 @@ public class NecromancerLoot {
             new Box(13653, 6, 100),
 
             new Box(12855, 75000, 50),
-            new Box(15290, 1, 50),
+            new Box(15288, 1, 50),
             new Box(15289, 4, 50),
             new Box(5022, 50000, 50),
             new Box(7956, 1000, 50),

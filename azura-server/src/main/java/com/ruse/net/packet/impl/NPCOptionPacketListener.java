@@ -990,7 +990,7 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
-        if (interact.getId() == 12810 || interact.getId() == 6792) {
+        if (interact.getId() == 12810) {
             if (player.getSlayer().getSlayerTask().getNpcId() != interact.getId()) {
                 player.sendMessage("This can only be attacked whilst he his your assigned boss slayer task.");
                 return;
