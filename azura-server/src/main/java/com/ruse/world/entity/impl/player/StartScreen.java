@@ -120,6 +120,28 @@ public class StartScreen {
         check(player, mode);
         sendStartPackItems(player, mode);
         sendDescription(player, mode);
+
+        if (player.selectedGameMode == GameModes.NORMAL) {
+            player.getPacketSender().sendNpcOnInterface(52799, 1, 1250);
+            player.getPacketSender().sendString(52800, "1x");
+            player.getPacketSender().sendString(52801, "+0%");
+        } else if (player.selectedGameMode == GameModes.IRONMAN) {
+            player.getPacketSender().sendNpcOnInterface(52799, 2, 1250);
+            player.getPacketSender().sendString(52800, "1x");
+            player.getPacketSender().sendString(52801, "+10%");
+        }else if (player.selectedGameMode == GameModes.ULTIMATE_IRONMAN) {
+            player.getPacketSender().sendNpcOnInterface(52799, 3, 1250);
+            player.getPacketSender().sendString(52800, "1x");
+            player.getPacketSender().sendString(52801, "+10%");
+        }else if (player.selectedGameMode == GameModes.GROUP_IRON) {
+            player.getPacketSender().sendNpcOnInterface(52799, 9015, 1250);
+            player.getPacketSender().sendString(52800, "1x");
+            player.getPacketSender().sendString(52801, "+10%");
+        }else if (player.selectedGameMode == GameModes.VETERAN_MODE) {
+            player.getPacketSender().sendNpcOnInterface(52799, 1, 1250);
+            player.getPacketSender().sendString(52800, "10x");
+            player.getPacketSender().sendString(52801, "+15%");
+        }
     }
 
     public static void check(Player player, GameModes mode) {

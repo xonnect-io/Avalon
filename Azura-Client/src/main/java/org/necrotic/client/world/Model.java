@@ -173,7 +173,7 @@ public class Model extends Animable {
 	public int face_render_type[];
 	private int face_render_priorities[];
 	private int faces_alpha[];
-	public int anIntArray1640[];
+	public int face_color[];
 	private int texture_face_x[];
 	private int texture_face_y[];
 	private int texture_face_z[];
@@ -218,12 +218,12 @@ public class Model extends Animable {
 		}
 
 		if (flag) {
-			anIntArray1640 = model.anIntArray1640;
+			face_color = model.face_color;
 		} else {
-			anIntArray1640 = new int[anInt1630];
+			face_color = new int[anInt1630];
 
 			for (int k = 0; k < anInt1630; k++) {
-				anIntArray1640[k] = model.anIntArray1640[k];
+				face_color[k] = model.face_color[k];
 			}
 		}
 
@@ -319,7 +319,7 @@ public class Model extends Animable {
 		verticesParticle = model.verticesParticle;
 		verticesXCoordinate = model.verticesXCoordinate;
 		verticesZCoordinate = model.verticesZCoordinate;
-		anIntArray1640 = model.anIntArray1640;
+		face_color = model.face_color;
 		faces_alpha = model.faces_alpha;
 		face_render_priorities = model.face_render_priorities;
 		anInt1641 = model.anInt1641;
@@ -394,8 +394,8 @@ public class Model extends Animable {
 
 	public void recolour(int i, int j) {
 		for (int k = 0; k < numberOfTriangleFaces; k++) {
-			if (anIntArray1640[k] == i) {
-				anIntArray1640[k] = j;
+			if (face_color[k] == i) {
+				face_color[k] = j;
 			}
 		}
 	}
@@ -467,7 +467,7 @@ public class Model extends Animable {
 			anIntArray1656 = new int[anInt1630];
 		}
 
-		anIntArray1640 = new int[anInt1630];
+		face_color = new int[anInt1630];
 		numberOfVerticeCoordinates = 0;
 		anInt1630 = 0;
 		anInt1642 = 0;
@@ -512,7 +512,7 @@ public class Model extends Animable {
 						anIntArray1656[anInt1630] = model_1.anIntArray1656[j1];
 					}
 
-					anIntArray1640[anInt1630] = model_1.anIntArray1640[j1];
+					face_color[anInt1630] = model_1.face_color[j1];
 					faces_a[anInt1630] = method465(model_1, model_1.faces_a[j1]);
 					faces_b[anInt1630] = method465(model_1, model_1.faces_b[j1]);
 					faces_c[anInt1630] = method465(model_1, model_1.faces_c[j1]);
@@ -562,7 +562,7 @@ public class Model extends Animable {
 					}
 				}
 				flag3 |= model.faces_alpha != null;
-				flag4 |= model.anIntArray1640 != null;
+				flag4 |= model.face_color != null;
 				scaledVertices |= model.scaledVertices;
 			}
 		}
@@ -590,7 +590,7 @@ public class Model extends Animable {
 			faces_alpha = new int[anInt1630];
 		}
 		if (flag4) {
-			anIntArray1640 = new int[anInt1630];
+			face_color = new int[anInt1630];
 		}
 		numberOfVerticeCoordinates = 0;
 		anInt1630 = 0;
@@ -649,8 +649,8 @@ public class Model extends Animable {
 							faces_alpha[anInt1630] = model_1.faces_alpha[i2];
 						}
 					}
-					if (flag4 && model_1.anIntArray1640 != null) {
-						anIntArray1640[anInt1630] = model_1.anIntArray1640[i2];
+					if (flag4 && model_1.face_color != null) {
+						face_color[anInt1630] = model_1.face_color[i2];
 					}
 
 					anInt1630++;
@@ -710,7 +710,7 @@ public class Model extends Animable {
 			}
 		}
 		face_render_type = model.face_render_type;
-		anIntArray1640 = model.anIntArray1640;
+		face_color = model.face_color;
 		face_render_priorities = model.face_render_priorities;
 		anInt1641 = model.anInt1641;
 		triangleSkin = model.triangleSkin;
@@ -1267,8 +1267,8 @@ public class Model extends Animable {
 
 	public void method476(int i, int j) {
 		for (int k = 0; k < anInt1630; k++) {
-			if (anIntArray1640[k] == i) {
-				anIntArray1640[k] = j;
+			if (face_color[k] == i) {
+				face_color[k] = j;
 			}
 		}
 	}
@@ -1309,12 +1309,12 @@ public class Model extends Animable {
 
 		}
 		for (int i2 = 0; i2 < anInt1630; i2++) {
-			if (anIntArray1640 != null && faces_alpha != null) {
-				if (anIntArray1640[i2] == 65535
+			if (face_color != null && faces_alpha != null) {
+				if (face_color[i2] == 65535
 						/*
 						 * || (anIntArray1640[i2] == 0 // Black Triangles 633 // Models
 						 * - Fixes Gwd walls // & Black models )
-						 */ || anIntArray1640[i2] == 16705) {
+						 */ || face_color[i2] == 16705) {
 					faces_alpha[i2] = 255;
 				}
 			}
@@ -1364,7 +1364,7 @@ public class Model extends Animable {
 			} else {
 
 				int l5 = i + (k * l4 + l * i5 + i1 * j5) / (k1 + k1 / 2);
-				anIntArray1634[i2] = method481(anIntArray1640[i2], l5, face_render_type[i2]);
+				anIntArray1634[i2] = method481(face_color[i2], l5, face_render_type[i2]);
 
 			}
 		}
@@ -1410,8 +1410,8 @@ public class Model extends Animable {
 
 			}
 			for (int i2 = 0; i2 < numberOfTriangleFaces; i2++) {
-				if (anIntArray1640 != null && faces_alpha != null) {
-					if (anIntArray1640[i2] == 65535 || anIntArray1640[i2] == 1 || anIntArray1640[i2] == 16705 || anIntArray1640[i2] == 255) {
+				if (face_color != null && faces_alpha != null) {
+					if (face_color[i2] == 65535 || face_color[i2] == 1 || face_color[i2] == 16705 || face_color[i2] == 255) {
 						faces_alpha[i2] = 255;
 					}
 				}
@@ -1462,7 +1462,7 @@ public class Model extends Animable {
 				} else {
 
 					int l5 = i + (k * l4 + l * i5 + i1 * j5) / (k1 + k1 / 2);
-					anIntArray1634[i2] = method481(anIntArray1640[i2], l5, anIntArray1640[i2]);
+					anIntArray1634[i2] = method481(face_color[i2], l5, face_color[i2]);
 
 				}
 			}
@@ -1499,7 +1499,7 @@ public class Model extends Animable {
 			int i2 = faces_b[j1];
 			int j2 = faces_c[j1];
 			if (face_render_type == null) {
-				int i3 = anIntArray1640[j1];
+				int i3 = face_color[j1];
 				Class33 class33 = super.aClass33Array1425[k1];
 				int k2 = i + (k * class33.anInt602 + l * class33.anInt603 + i1 * class33.anInt604) / (j * class33.anInt605);
 				anIntArray1634[j1] = method481(i3, k2, 0);
@@ -1510,7 +1510,7 @@ public class Model extends Animable {
 				k2 = i + (k * class33.anInt602 + l * class33.anInt603 + i1 * class33.anInt604) / (j * class33.anInt605);
 				anIntArray1636[j1] = method481(i3, k2, 0);
 			} else if ((face_render_type[j1] & 1) == 0) {
-				int j3 = anIntArray1640[j1];
+				int j3 = face_color[j1];
 				int k3 = face_render_type[j1];
 				Class33 class33_1 = super.aClass33Array1425[k1];
 				int l2 = i + (k * class33_1.anInt602 + l * class33_1.anInt603 + i1 * class33_1.anInt604) / (j * class33_1.anInt605);
@@ -1536,7 +1536,7 @@ public class Model extends Animable {
 			}
 
 		}
-		anIntArray1640 = null;
+		face_color = null;
 	}
 
 	public final void renderSingle(int j, int k, int l, int i1, int j1, int k1) {
@@ -1945,20 +1945,20 @@ public class Model extends Animable {
 			int l1 = texture_face_x[j1];
 			int j2 = texture_face_y[j1];
 			int l2 = texture_face_z[j1];
-			Rasterizer.drawTexturedTriangle(anIntArray1666[j], anIntArray1666[k], anIntArray1666[l], anIntArray1665[j], anIntArray1665[k], anIntArray1665[l], anIntArray1634[face], anIntArray1635[face], anIntArray1636[face], anIntArray1668[l1], anIntArray1668[j2], anIntArray1668[l2], anIntArray1669[l1], anIntArray1669[j2], anIntArray1669[l2], anIntArray1670[l1], anIntArray1670[j2], anIntArray1670[l2], anIntArray1640[face], vertexPerspectiveDepth[j], vertexPerspectiveDepth[k], vertexPerspectiveDepth[l], key);
+			Rasterizer.drawTexturedTriangle(anIntArray1666[j], anIntArray1666[k], anIntArray1666[l], anIntArray1665[j], anIntArray1665[k], anIntArray1665[l], anIntArray1634[face], anIntArray1635[face], anIntArray1636[face], anIntArray1668[l1], anIntArray1668[j2], anIntArray1668[l2], anIntArray1669[l1], anIntArray1669[j2], anIntArray1669[l2], anIntArray1670[l1], anIntArray1670[j2], anIntArray1670[l2], face_color[face], vertexPerspectiveDepth[j], vertexPerspectiveDepth[k], vertexPerspectiveDepth[l], key);
 
 		} else if (type == 3) {
 			int k1 = face_render_type[face] >> 2;
 			int i2 = texture_face_x[k1];
 			int k2 = texture_face_y[k1];
 			int i3 = texture_face_z[k1];
-			Rasterizer.drawTexturedTriangle(anIntArray1666[j], anIntArray1666[k], anIntArray1666[l], anIntArray1665[j], anIntArray1665[k], anIntArray1665[l], anIntArray1634[face], anIntArray1634[face], anIntArray1634[face], anIntArray1668[i2], anIntArray1668[k2], anIntArray1668[i3], anIntArray1669[i2], anIntArray1669[k2], anIntArray1669[i3], anIntArray1670[i2], anIntArray1670[k2], anIntArray1670[i3], anIntArray1640[face], vertexPerspectiveDepth[j], vertexPerspectiveDepth[k], vertexPerspectiveDepth[l], key);
+			Rasterizer.drawTexturedTriangle(anIntArray1666[j], anIntArray1666[k], anIntArray1666[l], anIntArray1665[j], anIntArray1665[k], anIntArray1665[l], anIntArray1634[face], anIntArray1634[face], anIntArray1634[face], anIntArray1668[i2], anIntArray1668[k2], anIntArray1668[i3], anIntArray1669[i2], anIntArray1669[k2], anIntArray1669[i3], anIntArray1670[i2], anIntArray1670[k2], anIntArray1670[i3], face_color[face], vertexPerspectiveDepth[j], vertexPerspectiveDepth[k], vertexPerspectiveDepth[l], key);
 		}
 	}
 
 	private final void reduce(int i, int bufferOffset) {
-		if (anIntArray1640 != null) {
-			if (anIntArray1640[i] == 65535) {
+		if (face_color != null) {
+			if (face_color[i] == 65535) {
 				return;
 			}
 		}
@@ -2067,13 +2067,13 @@ public class Model extends Animable {
 					int k9 = texture_face_x[j8];
 					int k10 = texture_face_y[j8];
 					int k11 = texture_face_z[j8];
-					Rasterizer.drawTexturedTriangle(i7, j7, k7, j3, j4, j5, anIntArray1680[0], anIntArray1680[1], anIntArray1680[2], anIntArray1668[k9], anIntArray1668[k10], anIntArray1668[k11], anIntArray1669[k9], anIntArray1669[k10], anIntArray1669[k11], anIntArray1670[k9], anIntArray1670[k10], anIntArray1670[k11], anIntArray1640[i], -1f, -1f, -1f, bufferOffset);
+					Rasterizer.drawTexturedTriangle(i7, j7, k7, j3, j4, j5, anIntArray1680[0], anIntArray1680[1], anIntArray1680[2], anIntArray1668[k9], anIntArray1668[k10], anIntArray1668[k11], anIntArray1669[k9], anIntArray1669[k10], anIntArray1669[k11], anIntArray1670[k9], anIntArray1670[k10], anIntArray1670[k11], face_color[i], -1f, -1f, -1f, bufferOffset);
 				} else if (l7 == 3) {
 					int k8 = face_render_type[i] >> 2;
 					int l9 = texture_face_x[k8];
 					int l10 = texture_face_y[k8];
 					int l11 = texture_face_z[k8];
-					Rasterizer.drawTexturedTriangle(i7, j7, k7, j3, j4, j5, anIntArray1634[i], anIntArray1634[i], anIntArray1634[i], anIntArray1668[l9], anIntArray1668[l10], anIntArray1668[l11], anIntArray1669[l9], anIntArray1669[l10], anIntArray1669[l11], anIntArray1670[l9], anIntArray1670[l10], anIntArray1670[l11], anIntArray1640[i], -1f, -1f, -1f, bufferOffset);
+					Rasterizer.drawTexturedTriangle(i7, j7, k7, j3, j4, j5, anIntArray1634[i], anIntArray1634[i], anIntArray1634[i], anIntArray1668[l9], anIntArray1668[l10], anIntArray1668[l11], anIntArray1669[l9], anIntArray1669[l10], anIntArray1669[l11], anIntArray1670[l9], anIntArray1670[l10], anIntArray1670[l11], face_color[i], -1f, -1f, -1f, bufferOffset);
 				}
 			}
 			if (l == 4) {
@@ -2102,8 +2102,8 @@ public class Model extends Animable {
 					int i10 = texture_face_x[i9];
 					int i11 = texture_face_y[i9];
 					int i12 = texture_face_z[i9];
-					Rasterizer.drawTexturedTriangle(i7, j7, k7, j3, j4, j5, anIntArray1680[0], anIntArray1680[1], anIntArray1680[2], anIntArray1668[i10], anIntArray1668[i11], anIntArray1668[i12], anIntArray1669[i10], anIntArray1669[i11], anIntArray1669[i12], anIntArray1670[i10], anIntArray1670[i11], anIntArray1670[i12], anIntArray1640[i], -1f, -1f, -1f, bufferOffset);
-					Rasterizer.drawTexturedTriangle(i7, k7, anIntArray1679[3], j3, j5, anIntArray1678[3], anIntArray1680[0], anIntArray1680[2], anIntArray1680[3], anIntArray1668[i10], anIntArray1668[i11], anIntArray1668[i12], anIntArray1669[i10], anIntArray1669[i11], anIntArray1669[i12], anIntArray1670[i10], anIntArray1670[i11], anIntArray1670[i12], anIntArray1640[i], -1f, -1f, -1f, bufferOffset);
+					Rasterizer.drawTexturedTriangle(i7, j7, k7, j3, j4, j5, anIntArray1680[0], anIntArray1680[1], anIntArray1680[2], anIntArray1668[i10], anIntArray1668[i11], anIntArray1668[i12], anIntArray1669[i10], anIntArray1669[i11], anIntArray1669[i12], anIntArray1670[i10], anIntArray1670[i11], anIntArray1670[i12], face_color[i], -1f, -1f, -1f, bufferOffset);
+					Rasterizer.drawTexturedTriangle(i7, k7, anIntArray1679[3], j3, j5, anIntArray1678[3], anIntArray1680[0], anIntArray1680[2], anIntArray1680[3], anIntArray1668[i10], anIntArray1668[i11], anIntArray1668[i12], anIntArray1669[i10], anIntArray1669[i11], anIntArray1669[i12], anIntArray1670[i10], anIntArray1670[i11], anIntArray1670[i12], face_color[i], -1f, -1f, -1f, bufferOffset);
 					return;
 				}
 				if (i8 == 3) {
@@ -2111,8 +2111,8 @@ public class Model extends Animable {
 					int j10 = texture_face_x[j9];
 					int j11 = texture_face_y[j9];
 					int j12 = texture_face_z[j9];
-					Rasterizer.drawTexturedTriangle(i7, j7, k7, j3, j4, j5, anIntArray1634[i], anIntArray1634[i], anIntArray1634[i], anIntArray1668[j10], anIntArray1668[j11], anIntArray1668[j12], anIntArray1669[j10], anIntArray1669[j11], anIntArray1669[j12], anIntArray1670[j10], anIntArray1670[j11], anIntArray1670[j12], anIntArray1640[i], -1f, -1f, -1f, bufferOffset);
-					Rasterizer.drawTexturedTriangle(i7, k7, anIntArray1679[3], j3, j5, anIntArray1678[3], anIntArray1634[i], anIntArray1634[i], anIntArray1634[i], anIntArray1668[j10], anIntArray1668[j11], anIntArray1668[j12], anIntArray1669[j10], anIntArray1669[j11], anIntArray1669[j12], anIntArray1670[j10], anIntArray1670[j11], anIntArray1670[j12], anIntArray1640[i], -1f, -1f, -1f, bufferOffset);
+					Rasterizer.drawTexturedTriangle(i7, j7, k7, j3, j4, j5, anIntArray1634[i], anIntArray1634[i], anIntArray1634[i], anIntArray1668[j10], anIntArray1668[j11], anIntArray1668[j12], anIntArray1669[j10], anIntArray1669[j11], anIntArray1669[j12], anIntArray1670[j10], anIntArray1670[j11], anIntArray1670[j12], face_color[i], -1f, -1f, -1f, bufferOffset);
+					Rasterizer.drawTexturedTriangle(i7, k7, anIntArray1679[3], j3, j5, anIntArray1678[3], anIntArray1634[i], anIntArray1634[i], anIntArray1634[i], anIntArray1668[j10], anIntArray1668[j11], anIntArray1668[j12], anIntArray1669[j10], anIntArray1669[j11], anIntArray1669[j12], anIntArray1670[j10], anIntArray1670[j11], anIntArray1670[j12], face_color[i], -1f, -1f, -1f, bufferOffset);
 				}
 			}
 		}
@@ -2479,7 +2479,7 @@ public class Model extends Animable {
 				face_render_priorities[i12] = i2;
 			}
 		}
-		anIntArray1640 = triangleColours2;
+		face_color = triangleColours2;
 		numberOfVerticeCoordinates = numVertices;
 		anInt1630 = numTriangles;
 		verticesXCoordinate = vertexX;
@@ -2882,7 +2882,7 @@ public class Model extends Animable {
 				face_render_priorities[i12] = i2;
 			}
 		}
-		anIntArray1640 = triangleColours2;
+		face_color = triangleColours2;
 		numberOfVerticeCoordinates = numVertices;
 		anInt1630 = numTriangles;
 		verticesXCoordinate = vertexX;
@@ -2912,8 +2912,8 @@ public class Model extends Animable {
 		if (face_render_type == null) {
 			face_render_type = new int[foundAmt];
 		}
-		if (anIntArray1640 == null) {
-			anIntArray1640 = new int[foundAmt];
+		if (face_color == null) {
+			face_color = new int[foundAmt];
 		}
 		texture_face_x = new int[foundAmt];
 		texture_face_y = new int[foundAmt];
@@ -2921,10 +2921,10 @@ public class Model extends Animable {
 
 
 		for (int i = 0; i < numberOfTriangleFaces; i++) {
-			if (anIntArray1640[i] >= fromColor && anIntArray1640[i] <= fromcolor) {
+			if (face_color[i] >= fromColor && face_color[i] <= fromcolor) {
 
 
-				anIntArray1640[i] = tex;
+				face_color[i] = tex;
 				face_render_type[i] = 3 + set2;
 				set2 += 4;
 			}
@@ -3029,7 +3029,7 @@ public class Model extends Animable {
 		if (i_335_ >= 0) {
 			anIntArray1656 = new int[i_320_];
 		}
-		anIntArray1640 = new int[i_320_];
+		face_color = new int[i_320_];
 		first.position = i_332_;
 		second.position = i_342_;
 		third.position = i_343_;
@@ -3068,7 +3068,7 @@ public class Model extends Animable {
 		fourth.position = i_338_;
 		fifth.position = i_335_;
 		for (int i_353_ = 0; i_353_ < i_320_; i_353_++) {
-			anIntArray1640[i_353_] = first.readUnsignedWord();
+			face_color[i_353_] = first.readUnsignedWord();
 			if (face_render_type != null) {
 				face_render_type[i_353_] = second.getUnsignedByte();
 			}
@@ -3148,8 +3148,8 @@ public class Model extends Animable {
 	public void setTexture(int fromColor, int tex) {
 		int foundAmt = 0;
 		int set2 = 0;
-		for (int i = 0; i < anIntArray1640.length; i++) {
-			if (fromColor == anIntArray1640[i]) {
+		for (int i = 0; i < face_color.length; i++) {
+			if (fromColor == face_color[i]) {
 				foundAmt++;
 			}
 		}
@@ -3157,16 +3157,16 @@ public class Model extends Animable {
 		if (face_render_type == null) {
 			face_render_type = new int[foundAmt];
 		}
-		if (anIntArray1640 == null) {
-			anIntArray1640 = new int[foundAmt];
+		if (face_color == null) {
+			face_color = new int[foundAmt];
 		}
 		texture_face_x = new int[foundAmt];
 		texture_face_y = new int[foundAmt];
 		texture_face_z = new int[foundAmt];
 		int assigned = 0;
 		for (int i = 0; i < anInt1630; i++) {
-			if (fromColor == anIntArray1640[i]) {
-				anIntArray1640[i] = tex;
+			if (fromColor == face_color[i]) {
+				face_color[i] = tex;
 				face_render_type[i] = 3 + set2;
 				set2 += 4;
 				texture_face_x[assigned] = faces_a[i];
@@ -3183,15 +3183,15 @@ public class Model extends Animable {
 		if (face_render_type == null) {
 			face_render_type = new int[anInt1630];
 		}
-		if (anIntArray1640 == null) {
-			anIntArray1640 = new int[anInt1630];
+		if (face_color == null) {
+			face_color = new int[anInt1630];
 		}
 		texture_face_x = new int[anInt1630];
 		texture_face_y = new int[anInt1630];
 		texture_face_z = new int[anInt1630];
 
 		for (int i = 0; i < anInt1630; i++) {
-			anIntArray1640[i] = tex;
+			face_color[i] = tex;
 			face_render_type[i] = 3 + set2;
 			set2 += 4;
 			texture_face_x[i] = faces_a[i];
@@ -3202,7 +3202,7 @@ public class Model extends Animable {
 
 	public void method1337(int j) {
 		for (int k = 0; k < anInt1630; k++) {
-			anIntArray1640[k] = j;
+			face_color[k] = j;
 		}
 	}
 
@@ -3210,19 +3210,17 @@ public class Model extends Animable {
 		j += 100;
 		int kcolor = 0;
 		for (int k = 0; k < anInt1630; k++) {
-			kcolor = anIntArray1640[k];
-			if (k + j >= 0) {
-				anIntArray1640[k] = kcolor + j;
-			}
+			kcolor = face_color[k];
+			if (k + j >= 0)
+				face_color[k] = kcolor + j;
 		}
 	}
 
 	public void method1339(int j) {
 		j += 1;
 		for (int k = 0; k < anInt1630; k++) {
-			if (k + j >= 0) {
-				anIntArray1640[k] = k + j;
-			}
+			if (k + j >= 0)
+				face_color[k] = k + j;
 		}
 	}
 

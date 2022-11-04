@@ -2482,11 +2482,12 @@ public class RSInterface {
 
 	public static void newStarter(TextDrawingArea[] tda) {
 		RSInterface tab = addInterface(52750);
-		addSpriteLoader(52751, 1341);
+		addSpriteLoader(52751, 1808);
 		addText(52752, "Avalon game mode selection screen", ColorConstants.ORANGE, true, true, 52, tda, 2);
-		addText(52753, "Select a game mode", ColorConstants.ORANGE, true, true, 52, tda, 1);
-		addText(52754, "Starter Pack", ColorConstants.ORANGE, true, true, 52, tda, 1);
-		addText(52755, "Mode Description", ColorConstants.ORANGE, true, true, 52, tda, 1);
+		addText(52753, "Choose Game Mode", ColorConstants.ORANGE, true, true, 52, tda, 2);
+		addText(52754, "Starter Equipment", ColorConstants.ORANGE, true, true, 52,
+				tda, 2);
+		addText(52755, "Mode Description", ColorConstants.ORANGE, true, true, 52, tda, 2);
 		addConfigButtonWSpriteLoader(52756, 51750, 1337, 1338, 150, 25, "Select Normal", 0, 5, 1085);
 		addConfigButtonWSpriteLoader(52757, 51750, 1337, 1338, 150, 25, "Select Ironman", 1, 5, 1085);
 		addConfigButtonWSpriteLoader(52758, 51750, 1337, 1338, 150, 25, "Select Ultimate Ironman", 2, 5, 1085);
@@ -2496,93 +2497,106 @@ public class RSInterface {
 		addSpriteLoader(52760, 839);
 		addSpriteLoader(52775, 838);
 		addSpriteLoader(52777, 1509);
-		addText(52761, "Normal", ColorConstants.ORANGE2, false, true, 52, tda, 2);
-		addText(52762, "  Ironman", ColorConstants.ORANGE2, false, true, 52, tda, 2);
-		addText(52763, "  Ultimate Ironman", ColorConstants.ORANGE2, false, true, 52, tda, 2);
-		addText(52774, "  Veteran", ColorConstants.ORANGE2, false, true, 52, tda, 2);
-		addText(52778, "  Group Ironman", ColorConstants.ORANGE2, false, true, 52, tda, 2);
+		addText(52761, "Normal", ColorConstants.ORANGE2, false, true, 52, tda, 1);
+		addText(52762, "  Ironman", ColorConstants.ORANGE2, false, true, 52, tda, 1);
+		addText(52763, "  Ultimate Ironman", ColorConstants.ORANGE2, false, true, 52, tda, 1);
+		addText(52774, "  Veteran", ColorConstants.ORANGE2, false, true, 52, tda, 1);
+		addText(52778, "  Group Ironman", ColorConstants.ORANGE2, false, true, 52, tda, 1);
 		addText(52764, "Play Avalon as an Iron man.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
-		addText(52765, "You will be restricted from trading, staking and looting items from killed players.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
-		addText(52766, "You will not get a npc drop if another player has done more damage.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
-		addText(52767, "You will have to rely on your starter, skilling, pvming, and shops.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
-		addText(52768, "", ColorConstants.ORANGE2, true, true, 52, tda, 0);
-		addHoverButtonWSpriteLoader(52769, 1457, 118, 28, "Confirm selection", -1, 52770, 1);
-		addHoveredImageWSpriteLoader(52770, 1458, 118, 28, 52771);
+		addText(52765, "You will be restricted from trading, staking and looting items from killed players.", ColorConstants.ORANGE2,
+				true, true, 52, tda, 0);
+		addText(52766, "You will not get a npc drop if another player has done more damage.", ColorConstants.ORANGE2, true, true, 52,
+				tda, 0);
+		addText(52767, "You will have to rely on your starter, skilling, pvming, and shops.", ColorConstants.ORANGE2, true, true, 52,
+				tda, 0);
+		addText(52768, "This game mode is for players that love a challenge.", ColorConstants.ORANGE2, true, true, 52, tda, 0);
+		addHoverButtonWSpriteLoader(52769, 1809, 145, 22, "Confirm selection", -1, 52770, 1);
+		addHoveredImageWSpriteLoader(52770, 1810, 145, 22, 52771);
 		addText(52772, "Confirm", ColorConstants.ORANGE, true, true, 52, tda, 2);
 
 		addText(52798, "", ColorConstants.ORANGE2, true, true, 52, tda, 0);
 
-		tab.totalChildren(55);
+		addNpcOld(52799, 1);
+
+		addText(52800, "10x", ColorConstants.ORANGE, false, true, 52, tda, 1);
+		addText(52801, "+0%", ColorConstants.ORANGE, false, true, 52, tda, 1);
+		addText(52802, "Character Preview", ColorConstants.ORANGE, true, true, 52, tda, 2);
+
+		tab.totalChildren(59);
 		int x = 15;
 		int y = 0;
-		tab.child(0, 52751, 7 + x, 8 + y);
+		tab.child(0, 52751,  0, 8 + y);
 
 		//HEADERS
-		tab.child(1, 52752, 235 + x, 11 + y);
-		tab.child(2, 52753, 105 + x, 38 + y);
-		tab.child(3, 52754, 169 + x, 212 + y);
-		tab.child(4, 52755, 325 + x, 38 + y);
+		tab.child(1, 52752, 253 + x, 18 + y);
+		tab.child(56, 52800, 175 + x, 296 + y);
+		tab.child(57, 52801, 230 + x, 296 + y);
+		tab.child(58, 52802, 71 + x, 53 + y);
+		tab.child(2, 52753, 71 + x, 173 + y);
+		tab.child(3, 52754, 315 + x, 53 + y);
+		tab.child(4, 52755, 315 + x, 165 + y);
 
 		//TEXT
-		tab.child(13, 52764, 325 + x, 60 + y);
-		tab.child(14, 52765, 325 + x, 70 + y);
-		tab.child(15, 52766, 325 + x, 80 + y);
-		tab.child(16, 52767, 325 + x, 90 + y);
-		tab.child(17, 52768, 325 + x, 100 + y);
-		tab.child(54, 52798, 325 + x, 110 + y);
+		tab.child(13, 52764, 310 + x, 192 + y);
+		tab.child(14, 52765, 310 + x, 202 + y);
+		tab.child(15, 52766, 310 + x, 212 + y);
+		tab.child(16, 52767, 310 + x, 222 + y);
+		tab.child(17, 52768, 310 + x, 232 + y);
+		tab.child(54, 52798, 310 + x, 242 + y);
+		tab.child(55, 52799, 5 + x, 65 + y);
 
 
 		//BUTTON
-		tab.child(18, 52769, 330 + x, 247 + y);
-		tab.child(19, 52770, 330 + x, 247 + y);
-		tab.child(20, 52772, 385 + x, 253 + y);
+		tab.child(18, 52769, 327 + x, 292 + y);
+		tab.child(19, 52770, 327 + x, 292 + y);
+		tab.child(20, 52772, 397 + x, 298 + y);
 
 		//SELECTION
 
-		tab.child(5, 52756, 27 + x, 64 + y);
-		tab.child(10, 52761, 50 + x, 64 + y);
+		tab.child(5, 52756, 5 + x, 193 + y);
+		tab.child(10, 52761, 28 + x, 193 + y);
 
-		y += 29;
+		y += 24;
 
-		tab.child(6, 52757, 27 + x, 64 + y);
-		tab.child(8, 52759, 48 + x, 64 + y);
-		tab.child(11, 52762, 64 + x, 64 + y);
+		tab.child(6, 52757, 5 + x, 193 + y);
+		tab.child(8, 52759, 26 + x, 193 + y);
+		tab.child(11, 52762, 42 + x, 193 + y);
 
-		y += 29;
+		y += 24;
 
-		tab.child(7, 52758, 27 + x, 64 + y);
-		tab.child(9, 52760, 48 + x, 64 + y);
-		tab.child(12, 52763, 64 + x, 64 + y);
+		tab.child(7, 52758, 5 + x, 193 + y);
+		tab.child(9, 52760, 26 + x, 193 + y);
+		tab.child(12, 52763, 42 + x, 193 + y);
 
-		y += 29;
+		y += 24;
 
-		tab.child(24, 52776, 27 + x, 64 + y);
-		tab.child(26, 52777, 48 + x, 64 + y);
-		tab.child(25, 52778, 64 + x, 64 + y);
+		tab.child(24, 52776, 5 + x, 193 + y);
+		tab.child(26, 52777, 26 + x, 193 + y);
+		tab.child(25, 52778, 42 + x, 193 + y);
 
-		y += 29;
+		y += 24;
 
-		tab.child(21, 52773, 27 + x, 64 + y);
-		tab.child(23, 52775, 48 + x, 64 + y);
-		tab.child(22, 52774, 64 + x, 64 + y);
+		tab.child(21, 52773, 5 + x, 193 + y);
+		tab.child(23, 52775, 26 + x, 193 + y);
+		tab.child(22, 52774, 42 + x, 193 + y);
 
 		/**
 		 * First row of items
 		 */
 		int child = 27;
-		x = 40;
+		x = 178;
 		for (int i = 59025; i < 59034; i++) {
 			addItemOnInterface(i, 59000, new String[]{});
-			tab.child(child, i, x, 237);
+			tab.child(child, i, x, 80);
 			child++;
 			x += 33;
 		}
 
 		int child2 = 36;
-		int x2 = 40;
+		int x2 = 178;
 		for (int i = 59034; i < 59043; i++) {
 			addItemOnInterface(i, 59000, new String[]{});
-			tab.child(child2, i, x2, 270);
+			tab.child(child2, i, x2, 115);
 			child2++;
 			x2 += 33;
 		}
@@ -7241,7 +7255,7 @@ public class RSInterface {
 		if (model == null) {
 			return null;
 		}
-		if (k == -1 && j == -1 && model.anIntArray1640 == null) {
+		if (k == -1 && j == -1 && model.face_color == null) {
 			return model;
 		}
 		Model model_1 = new Model(true, FrameReader.isNullFrame(k) & FrameReader.isNullFrame(j), false, model);

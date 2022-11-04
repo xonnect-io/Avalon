@@ -341,6 +341,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23551)) { //Necrotic longsword
             percentBoost += 30;
         }
+        if (player.getEquipment().contains(15870)) { //Diyos sword
+            percentBoost += 80;
+        }
         if (player.getEquipment().contains(17694)) { //Necromancer hammer
             percentBoost += 75;
         }

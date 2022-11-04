@@ -947,21 +947,6 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = false;
 
 				break;
-			case 3:
-				definition.name = "<col=ff00fb>Dan's Present";
-				definition.description = "GWD.".getBytes();
-				definition.npcModels = new int[]{64098};
-				definition.combatLevel = MobDefinition.get(2292).combatLevel;
-				definition.standAnimation = MobDefinition.get(2292).standAnimation;
-				definition.walkAnimation = MobDefinition.get(2292).walkAnimation;
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.actions[0] = null;
-				definition.drawYellowDotOnMap = true;
-				definition.rdc2 = 6233;
-				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 30;
-				definition.scaleY = 30;
-				break;
 			case 9019:
 				definition.name = "<col=ff00fb>St. Patrick Leprechaun";
 				definition.npcModels = new int[]{98001};
@@ -1847,7 +1832,37 @@ public final class MobDefinition {
 				definition.npcModels[4] = 185; //BOOT
 				definition.scaleXZ = 128;
 				definition.scaleY = 128;
-				definition.rdc2 = 75297;
+				definition.rdc2 = 91291;
+				break;
+
+			case 1:
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.npcModels = new int[]{100130,100132,100134,179,185};
+				definition.scaleXZ = 128;
+				definition.scaleY = 128;
+				break;
+
+			case 2:
+				definition.combatLevel = MobDefinition.get(1).combatLevel;
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.npcModels = new int[]{80048,80050,80052,179,185};
+				definition.scaleXZ = 128;
+				definition.scaleY = 128;
+				break;
+
+			case 3:
+				definition.combatLevel = MobDefinition.get(1).combatLevel;
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.npcModels = new int[]{65441,65443,65445,179,185};
+				definition.scaleXZ = 128;
+				definition.scaleY = 128;
 				break;
 			case 5838:
 				definition.combatLevel = 0;
