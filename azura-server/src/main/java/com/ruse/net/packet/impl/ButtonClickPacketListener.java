@@ -285,7 +285,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 26070:
                 player.levelNotifications = !player.levelNotifications;
-                player.getPacketSender().sendMessage("Level-up notifications toggled: " + (player.levelNotifications ? "on" : "off") + ".");
+                player.getPacketSender().sendMessage("Level-uap notifications toggled: " + (player.levelNotifications ? "on" : "off") + ".");
                 break;
             case 77944:
                 player.getPacketSender().sendInterfaceRemoval();
@@ -297,7 +297,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("Please unequip all your items first.");
                     return;
                 }
-                if (player.getPointsHandler().getTotalPrestiges() >= 1) {
+                if (player.getPointsHandler().getTotalPrestiges() >= 2) {
                     player.getPacketSender().sendMessage("@red@You already are max prestige. Wait until next season to unlock another.");
                     return;
                 }

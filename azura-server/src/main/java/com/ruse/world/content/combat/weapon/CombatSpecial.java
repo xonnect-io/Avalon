@@ -420,7 +420,7 @@ public enum CombatSpecial {
 			return new CombatContainer(player, target, 1, CombatType.MELEE, true);
 		}
 	},
-	STEEL_TEMPEST(new int[] { 14018 }, 10, 1.50, 1.50, CombatType.MELEE, WeaponInterface.SCIMITAR) {
+	STEEL_TEMPEST(new int[] { 14018 }, 25, 1.50, 1.50, CombatType.MELEE, WeaponInterface.SCIMITAR) {
 		@Override
 		public CombatContainer container(Player player, Character target) {
 			player.performAnimation(new Animation(2876));

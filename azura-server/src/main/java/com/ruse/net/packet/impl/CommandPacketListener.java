@@ -102,7 +102,6 @@ import static com.ruse.world.content.osrscollectionlog.LogType.MONSTERS;
 public class CommandPacketListener implements PacketListener {
 
 
-
     public static int voteCount = 8;
     static HashMap<String, Integer> dissolvables = new HashMap<>();
 
@@ -426,9 +425,6 @@ public class CommandPacketListener implements PacketListener {
 
         }
 
-        if (command[0].equalsIgnoreCase("event")) {
-            player.getHweenEvent ().openInterface(player.getInventory().getAmount(19806));
-        }
         if (command[0].equalsIgnoreCase("afk")) {
 
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
@@ -867,12 +863,12 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendEnterInputPrompt("Enter the pin that you want to set$pin");
             }
         }
-   /*     if (command[0].equalsIgnoreCase("dropparty") || command[0].equalsIgnoreCase("party")
+       if (command[0].equalsIgnoreCase("dropparty") || command[0].equalsIgnoreCase("party")
                 || command[0].equalsIgnoreCase("event")) {
             TeleportHandler.teleportPlayer(player, new Position(1696, 4265, 0), player.getSpellbook().getTeleportType());
             player.sendMessage("Trolling an event can result in you not being able to participate in events.");
         }
-*/
+
         if (command[0].equalsIgnoreCase("afkcount")) {
             player.sendMessage("@blu@Current AFK Thieving count: @red@" + AfkSystem.thievedCount);
         }

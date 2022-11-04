@@ -299,14 +299,14 @@ public class World {
         ZenyteGolemBoss.cycle();
         OnyxPantherBoss.initiateSpawn();
         NarakuBoss.spawn();
-        VdayGifting.initialize();
+        //VdayGifting.initialize();
         NightmareBoss.execute();
         KeepersOfLight.sequence();
         CelestialZoneTask.startTask();
         Bot.updatePlayers();
         TriviaSystem.tick();
-        PennywiseSpawn.initialize();
-        PumpkinSpawns.initialize();
+        //PennywiseSpawn.initialize();
+        //PumpkinSpawns.initialize();
         VotingStreak.sequence();
         TravellingMerchant.sequence();
         CharacterBackup.sequence();
