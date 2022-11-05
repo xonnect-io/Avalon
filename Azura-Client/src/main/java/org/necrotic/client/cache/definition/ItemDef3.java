@@ -3795,35 +3795,36 @@ public class ItemDef3 {
 				itemDef.stackable = false;
 				break;
 
-
+			case 22950:
+			itemDef.copyItem(12159);
+			itemDef.name = "Fantasy Attachment";
+			itemDef.actions = new String[]{null, null, "Disassemble", null, "Destroy"};
+			itemDef.stackable = false;
+			itemDef.newModelColor = new int[]{0, 15556, 16685, 16677, 16565, 16573};
+			itemDef.editedModelColor = new int[]{46700, 45759, 45759, 45759, 46003, 46700};
+			break;
 
 			case 23443:
 				itemDef.copyItem(14050);
 				itemDef.name = "Fantasy helmet";
-				itemDef.modelID = 19741;
-				itemDef.maleEquip1 = 19741;
-				itemDef.femaleEquip1 = 19741;
-				itemDef.newModelColor = new int[]{52};
-				itemDef.editedModelColor = new int[]{98};
+				itemDef.modelID = 19758;
+				itemDef.maleEquip1 = 19759;
+				itemDef.femaleEquip1 = 19759;
 			break;
 
 			case 23444:
 				itemDef.copyItem(14051);
 				itemDef.name = "Fantasy body";
-				itemDef.modelID = 19742;
-				itemDef.maleEquip1 = 19742;
-				itemDef.femaleEquip1 = 19742;
-				itemDef.newModelColor = new int[]{52};
-				itemDef.editedModelColor = new int[]{98};
+				itemDef.modelID = 19760;
+				itemDef.maleEquip1 = 19761;
+				itemDef.femaleEquip1 = 19761;
 				break;
 			case 23445:
 				itemDef.copyItem(14052);
 				itemDef.name = "Fantasy legs";
-				itemDef.modelID = 19743;
-				itemDef.maleEquip1 = 19743;
-				itemDef.femaleEquip1 = 19743;
-				itemDef.newModelColor = new int[]{52};
-				itemDef.editedModelColor = new int[]{98};
+				itemDef.modelID = 19762;
+				itemDef.maleEquip1 = 19763;
+				itemDef.femaleEquip1 = 19763;
 				break;
 
 			case 14050:

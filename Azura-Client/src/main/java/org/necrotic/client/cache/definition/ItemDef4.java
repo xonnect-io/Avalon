@@ -164,13 +164,6 @@ public class ItemDef4 {
 				itemDef.maleEquip1 = 15177;
 				itemDef.femaleEquip1 = 15177;
 				break;
-			case 22950:
-				itemDef.copyItem(13379);
-				itemDef.name = "Necromancer Shards";
-				itemDef.actions = new String[]{"Combine", null, null, null, null};
-				itemDef.rdc2 = 1177442;
-				itemDef.stackable = true;
-				break;
 
 			case 23447:
 				itemDef.copyItem(18665);

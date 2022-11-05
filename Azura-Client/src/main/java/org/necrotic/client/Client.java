@@ -7320,19 +7320,21 @@ public class Client extends GameRenderer {
                 return;
             }
 
-            if (npcDisplay.rdc > 0)
-                model.method1337(npcDisplay.rdc);
-            if (npcDisplay.rdc2 != 0)
-                model.method1338(npcDisplay.rdc2);
-            if (npcDisplay.rdc3 != 0)
-                model.method1339(npcDisplay.rdc3);
 
             if (npc.originalModelColours != null) {
                 for (int k1 = 0; k1 < npc.originalModelColours.length; k1++) {
                     model.method476(npc.originalModelColours[k1], npc.changedModelColours[k1]);
                 }
             }
-
+            if (npc.rdc > 0) {
+                model.method1337(npc.rdc);
+            }
+            if (npc.rdc2 != 0) {
+                model.method1338(npc.rdc2);
+            }
+            if (npc.rdc3 != 0) {
+                model.method1339(npc.rdc3);
+            }
             if (npc.scaleXZ != 128 || npc.scaleY != 128) {
                 model.scaleT(npc.scaleXZ, npc.scaleXZ, npc.scaleY);
             }
@@ -14938,11 +14940,8 @@ public class Client extends GameRenderer {
                     int adjustedZoom = getInputBuffer().getShort();
                     RSInterface npcOnInterface1 = RSInterface.interfaceCache[intId];
                     npcOnInterface1.npcDisplay = npcId;
-                    //  if (adjustedZoom > 999) {
+                    npcOnInterface1.contentId = npcId;
                     npcOnInterface1.modelZoom = adjustedZoom;
-                    //  } else {
-                    //     npcOnInterface1.modelZoom = 1400;
-                    // }
                     pktType = -1;
                     return true;
 

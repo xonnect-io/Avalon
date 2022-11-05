@@ -138,6 +138,18 @@ public class CustomDropUtils {
         }
         //End rings
 
+
+        if (player.getEquipment().contains(23443)) { //Fantasy helmet
+            percentBoost += 35;
+        }
+
+        if (player.getEquipment().contains(23444)) { //Fantasy body
+            percentBoost += 35;
+        }
+
+        if (player.getEquipment().contains(23445)) { //Fantasy legs
+            percentBoost += 35;
+        }
         // Start boots
         if (player.getEquipment().contains(23422)) { //Diyos boots
             percentBoost += 45;

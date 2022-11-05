@@ -98,6 +98,9 @@ public class MaxUpgradesInterface {
         FLAREFROST_BOOTS(100,new Item(9688,-1),new Item(23297, 1),new Item(9688, 1),new Item(22103, 1),new Item(12855, 25_000_000)),
         HAILFIRE_BOOTS(100,new Item(9689,-1),new Item(23298, 1),new Item(9689, 1),new Item(22103, 1),new Item(12855, 25_000_000)),
         ASSASSIN_QUIVER(100,new Item(23299,-1),new Item(23272, 1),new Item(23299, 1),new Item(23249, 1),new Item(23250, 1),new Item(23251, 1),new Item(12855, 50_000_000)),
+        NECROMANCER_BOW(100,new Item(22953,-1),new Item(23228, 1),new Item(22953, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(23226,1)),
+        NECROMANCER_SWORD(100,new Item(22952,-1),new Item(17694, 1),new Item(22952, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(8136, 1)),
+        NECROMANCER_STAFF(100,new Item(22951,-1),new Item(23302, 1),new Item(22951, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(23227, 1)),
 
         CELESTIAL_AMULET(100,new Item(23233,-1),new Item(23293, 1),new Item(23233, 1),new Item(23273, 75000)),
         CELESTIAL_RING(100,new Item(23234,-1),new Item(23280, 1),new Item(23234, 1),new Item(23273, 75000)),
@@ -108,12 +111,11 @@ public class MaxUpgradesInterface {
         ETHEREAL_SCROLL(100,new Item(20421,-1),new Item(23413, 1),new Item(20421, 1),new Item(23254, 1),new Item(4442, 1),new Item(12855, 250_000_000)),
         SERAPHIC_POTION(100,new Item(14705,-1),new Item(11465, 1),new Item(14705, 1),new Item(23242, 1),new Item(12855, 250_000_000)),
         SUPREME_SCROLL(66,new Item(15378,-1),new Item(23427, 1),new Item(15378, 1),new Item(17474, 25),new Item(12855, 5_000_000)),
-        SCORPIUS(100,new Item(23438,-1),new Item(23436, 1),new Item(23438, 1),new Item(4564, 100),new Item(14084, 100),new Item(1973, 100)),
-        EVIL_SCORPIUS(100,new Item(23436,-1),new Item(23437, 1),new Item(23436, 1),new Item(23438, 3)),
+        CELESTIAL_HELMET(100,new Item(23312,-1),new Item(23443, 1),new Item(23312, 1),new Item(23315, 1),new Item(23318, 1),new Item(22950, 1),new Item(23273, 25_000)),
+        CELESTIAL_BODY(100,new Item(23313,-1),new Item(23444, 1),new Item(23313, 1),new Item(23316, 1),new Item(23319, 1),new Item(22950, 1),new Item(23273, 25_000)),
+        CELESTIAL_LEGS(100,new Item(23314,-1),new Item(23445, 1),new Item(23314, 1),new Item(23317, 1),new Item(23320, 1),new Item(22950, 1),new Item(23273, 25_000)),
+        CELESTIAL_ATTACHMENT(100,new Item(10949,-1),new Item(22950, 1),new Item(10949, 10),new Item(22112, 10),new Item(23239, 10),new Item(23273, 25_000)),
 
-        NECROMANCER_BOW(100,new Item(22953,-1),new Item(23228, 1),new Item(22953, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(23226,1)),
-        NECROMANCER_SWORD(100,new Item(22952,-1),new Item(17694, 1),new Item(22952, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(8136, 1)),
-        NECROMANCER_STAFF(100,new Item(22951,-1),new Item(23302, 1),new Item(22951, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(23227, 1)),
 
 
         ;

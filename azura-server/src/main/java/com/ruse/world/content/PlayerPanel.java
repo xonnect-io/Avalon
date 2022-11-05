@@ -50,8 +50,11 @@ public class PlayerPanel {
                 ? "Ironman boss: @whi@" + IronmanBoss.timeLeft(): "Ironman boss : @whi@Alive ::iron"),
                 "Vozzath: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
                 "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
-                (PennywiseSpawn.bossAlive == false
+                "",
+               /* (PennywiseSpawn.bossAlive == false
                         ? "Spirit of Scorpius: @whi@" + PennywiseSpawn.getTimeLeft() : "Spirit of Scorpius: @whi@Alive ::hween"),
+
+                */
         };
 
         for (int i = 0; i < Messages.length; i++) {

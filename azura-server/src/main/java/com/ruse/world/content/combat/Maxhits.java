@@ -42,7 +42,10 @@ public class Maxhits {
         } else if (player.getInventory().contains(4442)) {
             maxHit *=  1.5;
         }
-
+        if (player.getEquipment().contains(23443) && player.getEquipment().contains(23444)
+                && player.getEquipment().contains(23445)) {
+            maxHit *= 1.2;
+        }
         if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 22373
                 || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23627
                 || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23628) {
@@ -241,7 +244,10 @@ public class Maxhits {
             percent *= 20;
         }
 
-
+        if (player.getEquipment().contains(23443) && player.getEquipment().contains(23444)
+                && player.getEquipment().contains(23445)) {
+            percent *= 20;
+        }
         if (player.getAmountDonated() >= 25000) {
             percent += 90;
         } else   if (player.getAmountDonated() >= 10000) {
@@ -516,6 +522,12 @@ public class Maxhits {
             if (player.getEquipment().contains(23441)) {
                 maxHit *= 1.10;
             }
+
+            if (player.getEquipment().contains(23443) && player.getEquipment().contains(23444)
+                    && player.getEquipment().contains(23445)) {
+                maxHit *= 1.2;
+            }
+
             if (player.getEquipment().contains(23442)) {
                 maxHit *= 1.10;
             }
@@ -696,6 +708,10 @@ public class Maxhits {
             }
             if (player.getEquipment().contains(23418)) {
                 maxHit *= 1.30;
+            }
+            if (player.getEquipment().contains(23443) && player.getEquipment().contains(23444)
+                    && player.getEquipment().contains(23445)) {
+                maxHit *= 1.2;
             }
             int RangeDamage = Misc.getRandom(1, 100);
             if (player.isMembershipUnlocked() == true && RangeDamage > 90) {
@@ -938,7 +954,10 @@ public class Maxhits {
             if (player.getEquipment().contains(23418)) {
                 maxHit *= 1.30;
             }
-
+            if (player.getEquipment().contains(23443) && player.getEquipment().contains(23444)
+                    && player.getEquipment().contains(23445)) {
+                maxHit *= 1.2;
+            }
             if (player.getEquipment().contains(23048)) { //Tier 5 Aura
                 maxHit *= 1.05D;
             }
