@@ -174,7 +174,7 @@ public class TeleportInterfaceHandler {
 		if (player.getCurrentTeleport().getNpcId() == 9813) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if (player.getPointsHandler().getMIDNIGHTKILLCount() >= 10_000 || player.getRights() == PlayerRights.OWNER) {
+			if (player.getPointsHandler().getMIDNIGHTKILLCount() >= 10_000 || player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 			}
@@ -185,7 +185,7 @@ public class TeleportInterfaceHandler {
 		if (player.getCurrentTeleport().getNpcId() == 587) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if (player.getGameMode().isIronman() || player.getRights() == PlayerRights.OWNER) {
+			if (player.getGameMode().isIronman() || player.getRights() == PlayerRights.OWNER|| player.getRights() == PlayerRights.YOUTUBER) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 			}
@@ -196,7 +196,7 @@ public class TeleportInterfaceHandler {
 		if (player.getCurrentTeleport().getNpcId() == 9318) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if (player.getRights() == PlayerRights.OWNER || player.getAmountDonated() >= 1000) {
+			if (player.getRights() == PlayerRights.OWNER || player.getAmountDonated() >= 1000|| player.getRights() == PlayerRights.YOUTUBER) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 			}
@@ -207,7 +207,7 @@ public class TeleportInterfaceHandler {
 		if (player.getCurrentTeleport().getNpcId() == 9319) {
 			if (player.getRights() == PlayerRights.OWNER)
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if (player.getRights() == PlayerRights.OWNER || player.getAmountDonated() >= 5000) {
+			if (player.getRights() == PlayerRights.OWNER || player.getAmountDonated() >= 5000|| player.getRights() == PlayerRights.YOUTUBER) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 			}
@@ -217,7 +217,7 @@ public class TeleportInterfaceHandler {
 		}
 		if (player.getCurrentTeleport().getNpcId() == 9116) {
 
-			if (player.getRights() == PlayerRights.OWNER) {
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
 				player.setMagicGuildTier1(true);
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
@@ -233,7 +233,7 @@ public class TeleportInterfaceHandler {
 				return; }
 		}
 		if (player.getCurrentTeleport().getNpcId() == 277) {
-			if (player.getRights() == PlayerRights.OWNER) {
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
 				player.setWarriorGuildTier1(true);
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
@@ -249,7 +249,7 @@ public class TeleportInterfaceHandler {
 				return; }
 		}
 		if (player.getCurrentTeleport().getNpcId() == 1458) {
-			if (player.getRights() == PlayerRights.OWNER) {
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
 				player.setArcherGuildTier1(true);
 				player.sendMessage("Being an Owner nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
@@ -267,8 +267,8 @@ public class TeleportInterfaceHandler {
 
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.DUST_CLAW.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -284,8 +284,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.LORD_TELEPORT.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -300,8 +300,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.SHADOW_HUNTER.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -317,8 +317,8 @@ public class TeleportInterfaceHandler {
 
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.JOYX_GOLEM.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+			player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -333,8 +333,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.SHETANI.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -349,8 +349,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.RIPPER.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -365,8 +365,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.AVATAR_TITAN.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -381,8 +381,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.WYVERNS.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -397,8 +397,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.ONI.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -413,8 +413,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.SHENRON.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -429,8 +429,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.SUBZERO.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -445,8 +445,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.ZEUS.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -461,8 +461,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.IPOTANE.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -477,8 +477,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.VINDICTA.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -493,8 +493,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.BORK.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -509,8 +509,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.SEASON_PASS.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -524,8 +524,8 @@ public class TeleportInterfaceHandler {
 				}
 		}
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.FALLEN_WARRIOR.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -550,8 +550,8 @@ public class TeleportInterfaceHandler {
 		}
 
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.MIDNIGHT_GOBLIN.getNpcId()) {
-			if (player.getRights() == PlayerRights.OWNER) {
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
@@ -611,9 +611,9 @@ public class TeleportInterfaceHandler {
 		}*/
 
 		if (player.getCurrentTeleport().getNpcId() == 9012) {
-			if (player.getRights() == PlayerRights.OWNER)
-				player.sendMessage("Being an Owner nullifies the teleport requirements.");
-			if (player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 || player.getRights() == PlayerRights.OWNER) {
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER)
+				player.sendMessage("Your rank nullifies the teleport requirements.");
+			if (player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 || player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
 				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				boolean contains = false;

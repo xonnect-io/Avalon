@@ -254,7 +254,7 @@ public class TeleportInterface {
 
         if (bossData == Bosses.FALLEN_ANGEL) {
             if ((player.isUnlockedLucifers() &&
-                player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.OWNER) {
+                player.getPointsHandler().getMiniLuciferkillcount() >= 10_000 ) || player.getRights() == PlayerRights.OWNER|| player.getRights() == PlayerRights.YOUTUBER) {
             TeleportHandler.teleportPlayer(player,
                     new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
                     player.getSpellbook().getTeleportType());
@@ -281,7 +281,7 @@ public class TeleportInterface {
     }
 
         if (bossData == Bosses.MIDNIGHT_GOBLIN) {
-            if (player.getRights() == PlayerRights.OWNER)
+            if (player.getRights() == PlayerRights.OWNER|| player.getRights() == PlayerRights.YOUTUBER)
                 player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
             if (!player.isUnlockedDarkSupreme()) {
                 Item[] requirements = new Item[]{ new Item(5011, 1), new Item(12537, 1), new Item(17013, 1)};
@@ -290,7 +290,7 @@ public class TeleportInterface {
                     player.setUnlockedDarkSupreme(true);
                     player.sendMessage("@red@Congratulations, you have unlocked Midnight Goblin's zone!");
                     return;
-                } else  if (player.getRights() == PlayerRights.OWNER) {
+                } else  if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
                     TeleportHandler.teleportPlayer(player,
                             new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
                             player.getSpellbook().getTeleportType());
@@ -313,7 +313,7 @@ public class TeleportInterface {
         if (bossData == Bosses.BLOOD_DEMON) {
             if (player.getRights() == PlayerRights.OWNER)
                 player.sendMessage("@red@Your rank allows you to bypass the teleport requirements!");
-            if (player.getPointsHandler().getMIDNIGHTKILLCount() >= 10_000 || player.getRights() == PlayerRights.OWNER) {
+            if (player.getPointsHandler().getMIDNIGHTKILLCount() >= 10_000 || player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
                 TeleportHandler.teleportPlayer(player,
                         new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
                         player.getSpellbook().getTeleportType());

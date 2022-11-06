@@ -97,6 +97,9 @@ public class MaxUpgradesInterface {
         EMBERKEEN_BOOTS(100,new Item(9687,-1),new Item(23296, 1),new Item(9687, 1),new Item(22103, 1),new Item(12855, 25_000_000)),
         FLAREFROST_BOOTS(100,new Item(9688,-1),new Item(23297, 1),new Item(9688, 1),new Item(22103, 1),new Item(12855, 25_000_000)),
         HAILFIRE_BOOTS(100,new Item(9689,-1),new Item(23298, 1),new Item(9689, 1),new Item(22103, 1),new Item(12855, 25_000_000)),
+
+        CRIMSON_BOOTS(100,new Item(23296,-1),new Item(23760, 1),new Item(23296, 1),new Item(23297, 1), new Item(23298, 1), new Item(23759, 1000)),
+
         ASSASSIN_QUIVER(100,new Item(23299,-1),new Item(23272, 1),new Item(23299, 1),new Item(23249, 1),new Item(23250, 1),new Item(23251, 1),new Item(12855, 50_000_000)),
         NECROMANCER_BOW(100,new Item(22953,-1),new Item(23228, 1),new Item(22953, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(23226,1)),
         NECROMANCER_SWORD(100,new Item(22952,-1),new Item(17694, 1),new Item(22952, 1),new Item(13653, 2500), new Item(12855, 50_000_000), new Item(5022, 20_000_000), new Item(8136, 1)),

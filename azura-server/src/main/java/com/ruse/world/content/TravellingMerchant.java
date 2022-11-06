@@ -3,6 +3,7 @@ package com.ruse.world.content;
 import com.ruse.model.Item;
 import com.ruse.model.container.impl.Shop;
 import com.ruse.util.Misc;
+import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.time.ZonedDateTime;
@@ -21,7 +22,10 @@ public class TravellingMerchant {
             new Item(21218, 5),//50k
             new Item(22006, 25),//50k
             new Item(10947, 5),//100k
+            new Item(3696, 3),//500k
+            new Item(18649, 10),//50k
             new Item(23755, 1),//250m
+            new Item(23759, 25),//250k
             new Item(23411, 5),//200k
             new Item(23412, 5),//200k
             new Item(23812, 5),//200k
@@ -29,26 +33,27 @@ public class TravellingMerchant {
 
     public static int getPrice(int itemID) {
         switch (itemID){
+            case 23776:
+            case 23782:
+                return 200000;
             case 15358:
             case 15359:
-
-            case 23411:
-            case 23412:
                 return 200000;
-
             case 15356:
                 return 1000000;
-
             case 21218:
             case 22006:
                 return 50000;
-
             case 10947:
                 return 100000;
-
+            case 3696:
+                return 500000;
+            case 18649:
+                return 100000;
             case 23755:
                 return 250000000;
-
+            case 23759:
+                return 250000;
         }
         return 10000000;
     }
@@ -61,14 +66,14 @@ public class TravellingMerchant {
         }
         if (shopItems.size() == 0){
             resetItems();
-           // World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
+            World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
         }
         if (ZonedDateTime.now().getHour() == 0 && ZonedDateTime.now().getMinute() == 0) {
             if (ZonedDateTime.now().getSecond() == 1 && !updatingTask) {
                 updatingTask = true;
                 dayInYear += 1;
                 resetItems();
-               // World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
+                World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");
             } else if (ZonedDateTime.now().getSecond() == 2 && updatingTask) {
                 updatingTask = false;
             }

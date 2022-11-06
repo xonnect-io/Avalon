@@ -23,6 +23,30 @@ public class CustomDropUtils {
     public static int drBonus(Player player, int npc) {
         int percentBoost = 0;
 
+
+
+        if (player.getPointsHandler().getTotalPrestiges() == 1)
+            percentBoost += 5;
+        if (player.getPointsHandler().getTotalPrestiges() == 2)
+            percentBoost += 10;
+        if (player.getPointsHandler().getTotalPrestiges() == 3)
+            percentBoost += 15;
+        if (player.getPointsHandler().getTotalPrestiges() == 4)
+            percentBoost += 20;
+        if (player.getPointsHandler().getTotalPrestiges() == 5)
+            percentBoost += 25;
+        if (player.getPointsHandler().getTotalPrestiges() == 6)
+            percentBoost += 30;
+        if (player.getPointsHandler().getTotalPrestiges() == 7)
+            percentBoost += 35;
+        if (player.getPointsHandler().getTotalPrestiges() == 8)
+            percentBoost += 40;
+            if (player.getPointsHandler().getTotalPrestiges() == 9)
+            percentBoost += 45;
+        if (player.getPointsHandler().getTotalPrestiges() == 10)
+            percentBoost += 50;
+
+
                 /*
         Charms
          */
@@ -152,9 +176,11 @@ public class CustomDropUtils {
         }
         // Start boots
         if (player.getEquipment().contains(23422)) { //Diyos boots
-            percentBoost += 45;
+            percentBoost += 50;
         }
-
+        if (player.getEquipment().contains(23760)) { //Crimson boots
+            percentBoost += 50;
+        }
         if (player.getEquipment().contains(23296)) { //Avalon boots
             percentBoost += 40;
         }
@@ -1037,6 +1063,8 @@ public class CustomDropUtils {
             percentBoost += 5;
         }
 
+        if (player.getPointsHandler().getTotalPrestiges() == 10)
+            percentBoost += 10;
 
         if (PrayerHandler.isActivated(player, PrayerHandler.GNOMES_GREED)) {
             percentBoost += 10;

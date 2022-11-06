@@ -1254,7 +1254,19 @@ public final class CombatFactory {
                     return false;
                 }
             }
-
+            if (npc.getId() == 9767) {
+                if (!((Player) entity).isUnlockedRammernaut()
+                        && ((Player) entity).getSlayer().getSlayerTask().getNpcId() != npc.getId()) {
+                    ((Player) entity).sendMessage("You need to claim a Crimson scroll or an assigned task to do this.");
+                    return false;
+                }
+            }
+            if (npc.getId() == 9767){
+                if (((Player) entity).isUnlockedRammernaut() == false){
+                    ((Player) entity).sendMessage("You don't have Crimson unlocked.");
+                    return false;
+                }
+            }
             if (npc.getId() == 3) {
                 int total = KillsTracker.getTotalKillsForNpc(npc.getId(), ((Player) entity));
                 if (total >= 10000) {

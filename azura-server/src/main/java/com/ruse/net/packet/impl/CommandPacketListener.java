@@ -169,7 +169,7 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");
         }
-        if (command[0].equalsIgnoreCase("hween")) {
+     /*   if (command[0].equalsIgnoreCase("hween")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -178,7 +178,7 @@ public class CommandPacketListener implements PacketListener {
             Position pos = new Position(2910, 4699);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Halloween Event!");
-        }
+        }*/
         if (command[0].equalsIgnoreCase("supreme")) {
             if (!player.getSupreme()) {
                 player.getPacketSender().sendMessage("You are not supreme enough to do this.");

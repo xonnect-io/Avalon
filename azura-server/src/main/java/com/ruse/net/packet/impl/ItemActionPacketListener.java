@@ -29,6 +29,7 @@ import com.ruse.world.content.holidayevents.easter2017;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
 import com.ruse.world.content.minigames.impl.DisassembleValue;
+import com.ruse.world.content.skill.SkillManager;
 import com.ruse.world.content.skill.impl.herblore.Herblore;
 import com.ruse.world.content.skill.impl.herblore.ingredientsBook;
 import com.ruse.world.content.skill.impl.hunter.*;
@@ -250,14 +251,45 @@ public class ItemActionPacketListener implements PacketListener {
 
         switch (itemId) {
 
-
+            case 3696:
+                if (player.getInventory().contains(3696)) {
+                    if (player.getIsleDropRate() >= 100){
+                        player.sendMessage("@red@Your Necromancer drop rate is already capped at 100%");
+                        return;
+                    }
+                    player.getInventory().delete(3696, 1);
+                    player.setIsleDropRate(player.getIsleDropRate() + 20);
+                    player.sendMessage("@blu@Your Necromancer drop rate is now " + player.getIsleDropRate() + "%");
+                }
+                break;
             case 23276:
             case 23277:
             case 23278:
             case 23279:
                 player.getCardPack().handleCardClick(itemId);
                 break;
+            case 23552:
+                if (player.getSkillManager ().getTotalLevel () == 2880) {
+                     player.getPacketSender().sendMessage("You already are a master of all skills.");
+                    break;
+                    }
+                player.getInventory().delete (23552, 1);
+            for (Skill skill : Skill.values()) {
+                int level = SkillManager.getMaxAchievingLevel(skill);
 
+                player.getSkillManager().setCurrentLevel(skill, level).setMaxLevel(skill, level).setExperience(skill,
+                        SkillManager.getExperienceForLevel(level == 120 ? 120 : 99));
+            }
+                player.performGraphic(new Graphic(312));
+            player.getPacketSender().sendMessage("You are now a master of all skills.");
+            player.getUpdateFlag().flag(Flag.APPEARANCE);
+            break;
+            case 23553:
+                player.getInventory().delete (23553, 1);
+                player.getPacketSender().sendMessage("You use your Tier Skip Token and are given 10 Season pass xp");
+                player.getSeasonPass ().addXp (10);
+                player.getSeasonPass().openInterface();
+                break;
             case 19806:
                 player.getHweenEvent ().openInterface(player.getInventory().getAmount(19806));
                 break;

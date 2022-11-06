@@ -41,6 +41,8 @@ public enum SlayerTasks {
 	PLUTONIC_DEMON(SlayerMaster.BOSS_SLAYER, 12810, "Plutonic demons can be found by using the Teleport interface.", 250000000 / 2,
 			new Position(2728, 4505, 0)),
 
+	RAMMERNAUT(SlayerMaster.BOSS_SLAYER, 9767, "Rammernaut can be found by using the Teleport interface.", 75000000 / 2,
+			new Position(2326, 9831, 4)),
 
 	// Easy slayer tasks- xp =  half the npcs health
 	SYMBIOTE(SlayerMaster.EASY_SLAYER, 1727, "Easy Slayer Dungeon", 20_000 / 2, new Position(1883, 5222)),

@@ -294,6 +294,10 @@ public class Suffering {
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
                         member.getInventory().add(23370, 1);
                     }
+                    if (player.getInventory().contains(18649)) {
+                        player.getInventory().delete(18649, 1);
+                        member.getInventory().add(23370, 1);
+                    }
                     member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     member.getPointsHandler().incrementSufferingKC(1);
                 }

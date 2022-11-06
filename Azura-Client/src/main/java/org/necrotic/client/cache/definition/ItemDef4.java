@@ -298,12 +298,62 @@ public class ItemDef4 {
 				break;
 
 			case 23755:
-				itemDef.copyItem(15360);
 				itemDef.name = "Crimson Scroll";
-				itemDef.rdc2 = 88724262;
+				itemDef.modelID = 2774;
+				itemDef.maleEquip1 = -1;
+				itemDef.femaleEquip1 = -1;
+				itemDef.modelZoom = 1000;
+				itemDef.rotationY = 255;
+				itemDef.rotationX = 1719;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 50;
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				itemDef.newModelColor = new int[]{5440, 5452, 1938, 5427,};
+				itemDef.editedModelColor = new int[]{85823, 38, 85823, 87823,};
+				break;
+
+			case 23759:
+				itemDef.stackable = true;
+				itemDef.actions = new String[]{null, null, null, null, null};
+				itemDef.name = "Crimson flakes";
+				itemDef.actions[2] = "Disassemble";
+				itemDef.actions[3] = "Disassemble All";
+				itemDef.modelID = 43204;
+				itemDef.maleEquip1 = -1;
+				itemDef.femaleEquip1 = -1;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = 356;
+				itemDef.rotationX = 148;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 18;
+				itemDef.newModelColor = new int[]{13392, 13412,};
+				itemDef.editedModelColor = new int[]{87823, 50,};
+				break;
+
+				case 3696:
+				itemDef.name = "Necromancer DR Booster";
 				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
 				break;
 
+			case 18649:
+				itemDef.name = "Suffering Booster";
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				break;
+
+			case 23552:
+				itemDef.copyItem(15360);
+				itemDef.name = "Max Scroll";
+				itemDef.rdc2 = 41124262;
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				break;
+			case 23553:
+				itemDef.copyItem(7478);
+				itemDef.name = "Tier Skip Token";
+				itemDef.rdc2 = 34124262;
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				break;
 			case 23401:
 				itemDef.copyItem(14808);
 				itemDef.name = "Scroll of Insurance";
@@ -3455,32 +3505,56 @@ public class ItemDef4 {
 				itemDef.modelZoom = 1900;
 				break;
 
+			case 23760:
+				itemDef.name = "Crimson boots";
+				itemDef.modelID = 19780;
+				itemDef.maleEquip1 = 19780;
+				itemDef.femaleEquip1 = 19780;
+				itemDef.modelZoom = 750;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = 1;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+
 			case 23296:
-				itemDef.copyItem(3791);
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 19744;
-				itemDef.maleEquip1 = 19744;
-				itemDef.femaleEquip1 = 19744;
 				itemDef.name = "Frostlight boots";
-				itemDef.modelZoom = 900;
-				itemDef.description = "A pair of Frostlight boots.".getBytes();
+				itemDef.modelID = 19764;
+				itemDef.maleEquip1 = 19764;
+				itemDef.femaleEquip1 = 19764;
+				itemDef.modelZoom = 750;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = 1;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 23297:
-				itemDef.copyItem(23131);
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 19745;
-				itemDef.maleEquip1 = 19745;
-				itemDef.femaleEquip1 = 19745;
 				itemDef.name = "Elderbone boots";
-				itemDef.modelZoom = 900;
-				itemDef.description = "A pair of Elderbone boots.".getBytes();
+				itemDef.modelID = 19765;
+				itemDef.maleEquip1 = 19765;
+				itemDef.femaleEquip1 = 19765;
+				itemDef.modelZoom = 750;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = 1;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
-
+			case 23298:
+				itemDef.name = "Hailfire boots";
+				itemDef.modelID = 19779;
+				itemDef.maleEquip1 = 19779;
+				itemDef.femaleEquip1 = 19779;
+				itemDef.modelZoom = 750;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = 1;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
 			case 1468:
 				itemDef.name = "Drowsy Branches";
 				itemDef.description = "A Drowsy Branch".getBytes();
@@ -3532,18 +3606,7 @@ public class ItemDef4 {
 				itemDef.actions = new String[]{null, null, null, null, "Drop"};
 				itemDef.actions[4] = "Drop";
 				break;
-			case 23298:
-				itemDef.copyItem(3791);
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 18907;
-				itemDef.maleEquip1 = 18907;
-				itemDef.femaleEquip1 = 18907;
-				itemDef.name = "Hailfire boots";
-				itemDef.modelZoom = 900;
-				itemDef.description = "A pair of Hailfire boots.".getBytes();
-				break;
+
 			case 2893:
 				itemDef.modelID = 18871;
 				itemDef.name = "<col=89584A>Fantasy bar";

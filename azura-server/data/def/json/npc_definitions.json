@@ -1,5 +1,27 @@
 
 [
+   {
+    "id": 9767,
+    "name": "Crimson",
+    "examine": "A strong boss",
+    "combat": 500,
+    "size": 3,
+    "attackable": true,
+    "aggressive": false,
+    "retreats": true,
+    "poisonous": false,
+    "respawn": 10,
+    "maxHit": 500,
+    "hitpoints": 7500000,
+    "attackSpeed": 5,
+    "attackAnim": 13703,
+    "defenceAnim": -1,
+    "deathAnim": 13702,
+    "attackBonus": 20000,
+    "defenceMelee": 1000,
+    "defenceRange": 1000,
+    "defenceMage": 1000
+  },
   {
     "id": 0,
     "name": "Hans",
@@ -142024,7 +142046,7 @@
     "poisonous": false,
     "respawn": -1,
     "maxHit": 610,
-    "hitpoints": 50000000,
+    "hitpoints": 500000000,
     "attackSpeed": 7,
     "attackAnim": 403,
     "defenceAnim": 403,
