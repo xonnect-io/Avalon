@@ -313,10 +313,11 @@ public class NPCOptionPacketListener implements PacketListener {
 
 
                     case 4285:
+                        /*
                         if (!player.getGameMode().isIronman()) {
                             player.getPacketSender().sendMessage("Only ironman can sell items to this shop.");
                             return;
-                        }
+                        }*/
                         ShopManager.getShops().get(119).open(player);
                         player.getPacketSender().sendString(3903,
                                 "Items can be sold to this store");

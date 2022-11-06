@@ -7259,6 +7259,9 @@ public class RSInterface {
 			return model;
 		}
 		Model model_1 = new Model(true, FrameReader.isNullFrame(k) & FrameReader.isNullFrame(j), false, model);
+		if (Client.instance.cardPack.getScale() != 128)
+			model_1.scaleT(Client.instance.cardPack.getScale(), Client.instance.cardPack.getScale(), Client.instance.cardPack.getScale());
+
 		if (k != -1 || j != -1) {
 			model_1.createBones();
 		}

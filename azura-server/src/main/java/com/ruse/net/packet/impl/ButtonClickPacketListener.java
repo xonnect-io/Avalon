@@ -177,6 +177,10 @@ public class ButtonClickPacketListener implements PacketListener {
             return;
         }
 
+
+        if (player.getCardPack().handleButton(id)) {
+            return;
+        }
         new ScratchCard(player).reveal(id);
         new DailyTaskInterface(player).button(id);
         new DailyTaskInterface(player).tabClicking(id);
@@ -285,7 +289,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case 26070:
                 player.levelNotifications = !player.levelNotifications;
-                player.getPacketSender().sendMessage("Level-uap notifications toggled: " + (player.levelNotifications ? "on" : "off") + ".");
+                player.getPacketSender().sendMessage("Level-up notifications toggled: " + (player.levelNotifications ? "on" : "off") + ".");
                 break;
             case 77944:
                 player.getPacketSender().sendInterfaceRemoval();

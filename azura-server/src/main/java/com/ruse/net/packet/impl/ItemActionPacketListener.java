@@ -15,10 +15,6 @@ import com.ruse.world.World;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.StarterTasks.StarterTaskData;
-import com.ruse.world.content.cardPacks.BronzeCardPack;
-import com.ruse.world.content.cardPacks.DiamondCardPack;
-import com.ruse.world.content.cardPacks.GoldCardPack;
-import com.ruse.world.content.cardPacks.SilverCardPack;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.casketopening.CasketOpening;
@@ -178,26 +174,13 @@ public class ItemActionPacketListener implements PacketListener {
             return;
         }
 
+        if (player.getCardPack().handleButton(itemId)) {
+            return;
+        }
         if (Consumables.isFood(player, itemId, slot))
             return;
         if (Consumables.isPotion(itemId)) {
             Consumables.handlePotion(player, itemId, slot);
-            return;
-        }
-        if (DiamondCardPack.isCard(itemId)) {
-            DiamondCardPack.useCard(player, itemId);
-            return;
-        }
-        if (BronzeCardPack.isCard(itemId)) {
-            BronzeCardPack.openCard(player, itemId);
-            return;
-        }
-        if (SilverCardPack.isCard(itemId)) {
-            SilverCardPack.openCard(player, itemId);
-            return;
-        }
-        if (GoldCardPack.isCard(itemId)) {
-            GoldCardPack.openCard(player, itemId);
             return;
         }
 
@@ -266,6 +249,14 @@ public class ItemActionPacketListener implements PacketListener {
 
 
         switch (itemId) {
+
+
+            case 23276:
+            case 23277:
+            case 23278:
+            case 23279:
+                player.getCardPack().handleCardClick(itemId);
+                break;
 
             case 19806:
                 player.getHweenEvent ().openInterface(player.getInventory().getAmount(19806));

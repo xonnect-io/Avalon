@@ -174,7 +174,7 @@ public class NecromancerBoss implements CombatStrategy {
                 if (tick == 1) {
                     for (Player partyMember : player.getShadowRaidsParty().getPlayers()) {
                         if (positionList.contains(partyMember.getPosition())) {
-                            partyMember.dealDamage(new Hit(Misc.random(450, 900), Hitmask.DARK_PURPLE, CombatIcon.NONE));
+                            partyMember.dealDamage(new Hit(Misc.random(250, 600), Hitmask.DARK_PURPLE, CombatIcon.NONE));
                         }
                     }
                     npc.setChargingAttack(false);

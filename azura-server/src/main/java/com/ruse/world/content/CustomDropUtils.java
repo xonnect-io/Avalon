@@ -989,25 +989,6 @@ public class CustomDropUtils {
             percentBoost = +100;
         }
 
-        if (player.getEquipment().contains(23044)) { //Tier 1 Aura
-            percentBoost += 5;
-        }
-        if (player.getEquipment().contains(23045)) { //Tier 2 Aura
-            percentBoost += 7;
-        }
-        if (player.getEquipment().contains(23046)) { //Tier 3 Aura
-            percentBoost += 10;
-        }
-        if (player.getEquipment().contains(23047)) { //Tier 4 Aura
-            percentBoost += 15;
-        }
-        if (player.getEquipment().contains(23048)) { //Tier 5 Aura
-            percentBoost += 20;
-        }
-        if (player.getEquipment().contains(23049)) { //Tier 6 Aura
-            percentBoost += 20;
-        }
-
         if (player.getGameMode() == GameMode.IRONMAN || player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
             percentBoost += 5;
         }
@@ -1017,23 +998,6 @@ public class CustomDropUtils {
         if (player.getGameMode() == GameMode.VETERAN_MODE) {
             percentBoost += 7;
         }
-
-        // creator set:
-        if (player.getEquipment().contains(23127))
-            percentBoost += 4;
-        if (player.getEquipment().contains(23128))
-            percentBoost += 4;
-        if (player.getEquipment().contains(23129))
-            percentBoost += 4;
-        if (player.getEquipment().contains(23130))
-            percentBoost += 3;
-        if (player.getEquipment().contains(23131))
-            percentBoost += 3;
-        if (player.getEquipment().contains(23132))
-            percentBoost += 3;
-        if (player.getEquipment().contains(23133))
-            percentBoost += 4;
-        //
 
 
         if (npc == player.getSlayer().getSlayerTask().getNpcId()) {

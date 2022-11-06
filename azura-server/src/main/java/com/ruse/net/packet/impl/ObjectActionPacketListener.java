@@ -76,6 +76,7 @@ import static com.ruse.world.World.getPlayers;
 
 public class ObjectActionPacketListener implements PacketListener {
 
+
     public static final int FIRST_CLICK = 132, SECOND_CLICK = 252, THIRD_CLICK = 70, FOURTH_CLICK = 234,
             FIFTH_CLICK = 228;
 

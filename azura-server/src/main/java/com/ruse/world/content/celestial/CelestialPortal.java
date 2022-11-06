@@ -8,6 +8,7 @@ import com.ruse.util.Misc;
 import com.ruse.util.Stopwatch;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
+import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.transportation.TeleportHandler;
@@ -42,7 +43,26 @@ public final class CelestialPortal {
 						player.getSpellbook().getTeleportType());
 			} else
 				DialogueManager.sendStatement(player, "The Realm of Fantasy is currently closed.");
+		} else
+			DialogueManager.sendStatement(player, "You need to unlock the Realm of Fantasy before using this command!");
+
+		if (player.getCelestial() == false && player.getInventory().contains(13379, 2)) {
+			DialogueManager.start(player, CelestialDialogues.sacrifice(player));
+		}	else if (player.getCelestial() == false) {
+			DialogueManager.sendStatement(player, "You need to first unlock the Realm of Fantasy!");
 		}
+	}
+
+	public static void handleTrueAction(Player player) {
+
+		if (player.getCelestial() == true) {
+			if (PORTAL != null) {
+				TeleportHandler.teleportPlayer(player, new Position(4257, 5598),
+						player.getSpellbook().getTeleportType());
+			} else
+				DialogueManager.sendStatement(player, "The Realm of Fantasy is currently closed.");
+		} else
+			DialogueManager.sendStatement(player, "You need to unlock the Realm of Fantasy before using this command!");
 
 		if (player.getCelestial() == false && player.getInventory().contains(13379, 2)) {
 			DialogueManager.start(player, CelestialDialogues.sacrifice(player));
@@ -125,8 +145,8 @@ public final class CelestialPortal {
 	public static void spawn() {
 
 		if (PORTAL == null) {
-		//PORTAL = new PortalSpawn(new GameObject(4388, new Position(2651, 4002) ), PREVIOUS_LOC);
-		//CustomObjects.spawnGlobalObject(PORTAL.object);
+			PORTAL = new PortalSpawn(new GameObject(4388, new Position(2931, 4124) ), PREVIOUS_LOC);
+			CustomObjects.spawnGlobalObject(PORTAL.object);
 			if (GameSettings.LOCALHOST == false)
 		DiscordMessager.sendCelestialLog("");
 		World.sendMessage("<img=832> The Realm of Fantasy has opened for 1 hour (Realm of Fantasy members only)");

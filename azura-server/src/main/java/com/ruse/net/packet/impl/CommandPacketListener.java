@@ -111,6 +111,9 @@ public class CommandPacketListener implements PacketListener {
             player.membershipInterfaceHandler.openBenefitTab ();
         }
 
+        if (command[0].equalsIgnoreCase("fantasy")) {
+            CelestialPortal.handleTrueAction (player);
+        }
         //Start of Teleports
         if (command[0].equalsIgnoreCase("home")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS

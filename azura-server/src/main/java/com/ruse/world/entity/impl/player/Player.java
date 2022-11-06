@@ -33,6 +33,7 @@ import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.achievements.AchievementTracker;
 import com.ruse.world.content.bis.BestItems;
 import com.ruse.world.content.bossEvents.BossEventData;
+import com.ruse.world.content.cardPacks.CardPack;
 import com.ruse.world.content.casketopening.CasketOpening;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.cluescrolls.ClueScrollTask;
@@ -187,6 +188,9 @@ public boolean setSlayerBoss;
     @Setter
     @Getter
     private long serverPerksContributions;
+
+    @Getter
+    private CardPack cardPack = new CardPack(this);
 
     @Getter
     private ArrayList<Item> partyChestCoffer = new ArrayList<>();

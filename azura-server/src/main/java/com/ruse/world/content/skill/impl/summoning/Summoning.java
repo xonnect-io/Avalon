@@ -6,7 +6,6 @@ import com.ruse.engine.task.impl.FamiliarSpawnTask;
 import com.ruse.model.*;
 import com.ruse.model.Locations.Location;
 import com.ruse.model.container.impl.BeastOfBurden;
-import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.movement.MovementQueue;
 import com.ruse.world.World;
 import com.ruse.world.content.skill.impl.summoning.BossPets.BossPet;
@@ -114,57 +113,59 @@ public class Summoning {
 			return;
 		if (!player.getLocation().isSummoningAllowed()) {
 			player.getPacketSender().sendMessage("You cannot summon familiars here.");
+
+			if (login) {
+				if (player.getInventory().canHold(new Item(bossPet.getItemId(), 1))) {
+					player.getInventory().add(bossPet.getItemId(), 1);
+					player.getPacketSender().sendMessage("@blu@Your pet has been put in your inventory.");
+				} else {
+					player.depositItemBank(new Item(bossPet.getItemId(), 1));
+					player.getPacketSender().sendMessage("@blu@Your pet has been put in your bank.");
+				}
+			}
 			return;
 		}
 		if (!login && !player.getLastSummon().elapsed(1000))
 			return;
 		if (getFamiliar() != null && !login) {
 			SummoningTab.handleDismiss(player, true);
-//			return;
+			//player.getPacketSender().sendMessage("You already have a familiar.");
+			//return;
 		}
 		if (!login) {
 			unsummon(true, false);
 			player.getInventory().delete(bossPet.itemId, 1);
 		}
 		TaskManager.submit(new Task(1, false) {
+							   @Override
+							   protected void execute() {
+								   NPC foll = new NPC (bossPet.npcId, new Position (player.getPosition ().getX (),
+										   player.getPosition ().getY () + 1, player.getPosition ().getZ ()));
 
-			@Override
-			protected void execute() {
+								   if (!player.getObtainedPets ().contains (bossPet)) {
+									   player.getObtainedPets ().add (bossPet);
+								   }
 
-				NPC foll = new NPC(bossPet.spawnNpcId, new Position(player.getPosition().getX(),
-						player.getPosition().getY() + 1, player.getPosition().getZ()));
-				for (int i = 0; i < BossPet.values().length; i++) {
-					if (BossPet.values()[i].spawnNpcId == bossPet.spawnNpcId) {
-						// player.getPacketSender().sendMessage("HEY IT WORKED U FUCKIN RETARD. INDEX:
-						// "+i);
-						if (!player.getBossPet(i)) {
-							player.getPacketSender()
-									.sendMessage("You've unlocked " + ItemDefinition.forId(BossPet.values()[i].itemId).getName()
-											+ ", it can be re-purchased from the Zoo Keeper if lost.");
-							player.setBossPet(i, true);
-						}
-						break;
-					}
-				}
-				foll.performGraphic(new Graphic(1315));
-				foll.setPositionToFace(player.getPosition());
-				foll.setSummoningNpc(true);
-				foll.setEntityInteraction(player);
-				foll.getMovementQueue().setFollowCharacter(player);
-				World.register(foll);
-				setFamiliar(new Familiar(player, foll));
-				processFamiliar();
-				player.getPacketSender().sendString(54028, "" + bossPet.name().replaceAll("_", " "));
-				player.getPacketSender().sendString(54045, " " + player.getSkillManager().getCurrentLevel(Skill.SUMMONING) + "/"
-						+ player.getSkillManager().getMaxLevel(Skill.SUMMONING));
-				player.getPacketSender().sendString(0, "[SUMMOtrue");
-				player.getPacketSender().sendString(54043, "");
-				player.getPacketSender().sendNpcHeadOnInterface(bossPet.npcId, 54021); // 60 = invisable head to remove it
-
-				stop();
-			}
+								   foll.performGraphic (new Graphic (1315));
+								   foll.setPositionToFace (player.getPosition ());
+								   foll.setSummoningNpc (true);
+								   foll.setEntityInteraction (player);
+								   foll.getMovementQueue ().setFollowCharacter (player);
+								   World.register (foll);
+								   setFamiliar (new Familiar (player, foll));
+								   processFamiliar ();
+								   stop();
+							   }
 		});
-	}
+				player.getPacketSender ().sendString (54019, "Boosts:\\n\\n" + bossPet.getBoost ());
+
+				player.getPacketSender ().sendString (54028, "" + bossPet.name ().replaceAll ("_", " "));
+				player.getPacketSender ().sendString (54045, " " + player.getSkillManager ().getCurrentLevel (Skill.SUMMONING) + "/"
+						+ player.getSkillManager ().getMaxLevel (Skill.SUMMONING));
+				player.getPacketSender ().sendString (0, "[SUMMOtrue");
+				player.getPacketSender ().sendString (54043, "");
+				player.getPacketSender ().sendNpcOnInterface (54021, bossPet.npcId, bossPet.getZoom ()); // 60 = invisable head to remove it
+			}
 
 	public void unsummon(boolean full, boolean dropItems) {
 		if (dropItems) {
@@ -291,7 +292,7 @@ public class Summoning {
 				return;
 			}
 			player.performAnimation(new Animation(827));
-			player.setInterfaceId(-BeastOfBurden.INTERFACE_ID);
+			player.setInterfaceId(-BeastOfBurden.INTERFACE_ID);//negative?
 			bob.moveItems(player.getInventory(), false, true);
 			bob.refreshItems();
 			player.getPacketSender().sendInterfaceRemoval();
@@ -350,9 +351,10 @@ public class Summoning {
 	public void clearInterface() {
 		player.getPacketSender().sendString(54045, "");
 		player.getPacketSender().sendString(54043, "");
+		player.getPacketSender().sendString(54019, "");
 		player.getPacketSender().sendString(54028, "");
 		player.getPacketSender().sendString(54024, "0");
-		player.getPacketSender().sendNpcHeadOnInterface(60, 54021); // 60 = invisable head to remove it
+		player.getPacketSender().sendNpcOnInterface(54021, 5090, 6000); // 60 = invisable head to remove it
 		player.getPacketSender().sendString(18045,
 				player.getSkillManager().getMaxLevel(Skill.SUMMONING) < 10
 						? "   " + player.getSkillManager().getCurrentLevel(Skill.SUMMONING) + "/"
@@ -386,7 +388,7 @@ public class Summoning {
 		return bob;
 	}
 
-	private int[] charmImpConfigs = new int[]{0, 0, 0, 0};
+	private int[] charmImpConfigs = new int[] { 0, 0, 0, 0 };
 
 	public void setCharmImpConfig(int index, int config) {
 		this.charmImpConfigs[index] = config;

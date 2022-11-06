@@ -151,6 +151,7 @@ public class Client extends GameRenderer {
     public static boolean mousePressed;
     public static SpritesMap spritesMap = new SpritesMap(1);
     static boolean inputTaken;
+    public CardPack cardPack;
     private static boolean aBoolean475;
     private static boolean aBoolean995;
     private static byte[] aByteArray347;
@@ -747,6 +748,7 @@ public class Client extends GameRenderer {
     public Client() {
         casketOpening = new CasketOpening();
 
+        cardPack = new CardPack();
        // currentParticles = new ArrayList<>();
        // deadParticles = new ArrayList<>();
         accountManager = new AccountManager();
@@ -7266,6 +7268,15 @@ public class Client extends GameRenderer {
             class9.xOffset = 0;
             class9.yOffset = 0;
         }
+
+        if (j == 3501) {
+            class9.modelRotationY = ItemDefinition.get(class9.mediaID).rotationY;
+            class9.modelRotationX = ItemDefinition.get(class9.mediaID).rotationX;
+            class9.modelZoom = (int) (ItemDefinition.get(class9.mediaID).modelZoom / 2.5D);
+            class9.xOffset = 35;
+            class9.yOffset = 35;
+        }
+
         if (j == 3600) {
             RSInterface rsInterface = class9;
             final MobDefinition npc = MobDefinition.get(class9.contentId);
@@ -10415,6 +10426,8 @@ public class Client extends GameRenderer {
             return;
         }
         casketOpening.spin();
+
+        cardPack.spin();
 
         if (((vengTimer != -1)) && (System.currentTimeMillis() - lastUpdate > 1000L)) {
             if (vengTimer != -1) {
@@ -15005,6 +15018,7 @@ public class Client extends GameRenderer {
                     int modelComponentId = getInputBuffer().getShort();
                     int item = getInputBuffer().getShort();
                     RSInterface.interfaceCache[modelComponentId].mediaID = item;
+                    cardPack.startExpand();
                     pktType = -1;
                     return true;
 

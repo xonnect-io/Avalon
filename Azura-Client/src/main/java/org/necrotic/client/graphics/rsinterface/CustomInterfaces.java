@@ -2314,6 +2314,80 @@ public class CustomInterfaces extends RSInterface {
 
 	}
 
+
+	public static void cardPacksRewards() {
+		int interID = 141000;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 130;
+		int y = 30;
+		tab.totalChildren(18);
+
+		addSpriteLoader(id, 1672);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 230 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 230 + x, 3 + y);
+		id++;
+
+		addText(id, "Card Pack", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 127 + x, 4 + y);
+
+		hoverButton(id, 1457, 1458, "Open Again", 2, 0xff8624, "Open Again");
+		tab.child(c++, id++, 67 + x, 225 + y);
+		for (int col = 0; col < 2; col++) {
+			for (int row = 0; row < 3; row++) {
+				addSpriteLoader(id, 1675 + row + col);
+				tab.child(c++, id++, 21 + x, 33 + y);
+				itemGroup(id, 1, 1, 1, 1);
+				tab.child(c++, id++, 21 + 16 + x, 33 + 27 + y);
+				x += 73;
+			}
+			x = 130;
+			y += 96;
+		}
+
+		x = 130;
+		y = 30;
+
+		addModel(25359, 125, 125, 4151, 100, 3501);
+		tab.child(c++, 25359, 29 + x, 26 + y);
+
+
+	}
+
+
+	public static void cardPacks() {
+		int interID = 141500;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 130;
+		int y = 30;
+		tab.totalChildren(6);
+
+		addSpriteLoader(id, 1672);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 230 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 230 + x, 3 + y);
+		id++;
+
+		addText(id, "Card Pack", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 127 + x, 4 + y);
+
+		hoverButton(id, 1457, 1458, "Open Pack", 2, 0xff8624, "Open Pack");
+		tab.child(c++, id++, 67 + x, 225 + y);
+
+		addModel(25358, 125, 125, 4151, 100, 3501);
+		tab.child(c++, 25358, 29 + x, 26 + y);
+
+	}
 	public static void addModel(int interfaceId, int width, int height, int itemId, int zoom, int contentType) {
 		RSInterface rsi = addInterface(interfaceId);
 		rsi.type = 6;
@@ -4687,6 +4761,8 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
         }
 
     }*/
+
+
 	private void summoningTabInterface() {
 		RSInterface rsi = addTabInterface(54017);
 
@@ -7792,6 +7868,8 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		godsRewards();
 		godsInterface ();
 		teleportInterface();
+		cardPacks();
+		cardPacksRewards();
 		minigameInterface();
 		vodOverlay(tda);
 	}
