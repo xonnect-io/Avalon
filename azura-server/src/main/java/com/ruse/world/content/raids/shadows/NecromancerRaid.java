@@ -318,7 +318,6 @@ public class NecromancerRaid {
                         member.sendMessage("@blu@Necromancer (Hard) KC: " + member.getHardIsleGodKC());
                     }
                     member.getAchievementTracker().progress(AchievementData.NECROTIC, 1);
-                    KillsTracker.submitById(member, 9894, true, true);
                     NecromancerLoot.handleLoot(member, party.getDifficulty());
                     member.getSeasonPass().addXp(2);
                     Cases.grantCasket(player, 10);

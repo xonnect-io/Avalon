@@ -24,7 +24,7 @@ public class NecromancerLoot {
 
         Box reward = getLoot(player, difficulty == RaidDifficulty.ADVANCED ? HARD :
                 difficulty == RaidDifficulty.INTERMEDIATE ? MEDIUM : EASY);
-
+        KillsTracker.submitById(player, 9894, true, true);
         BOSSES.log(player, CollectionLog.NECROMANCER_KEY, new Item(reward.getId(), reward.getAmount()));
 
         if (reward.isAnnounce()) {
