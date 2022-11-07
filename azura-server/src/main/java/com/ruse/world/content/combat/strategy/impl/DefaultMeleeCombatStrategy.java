@@ -67,6 +67,15 @@ public class DefaultMeleeCombatStrategy implements CombatStrategy {
 		if (player.getWeapon() == WeaponInterface.HALBERD) {
 			return 2;
 		}
+		if (player.getWeapon() == WeaponInterface.SCIMITAR) {
+			return 2;
+		}
+		if (player.getWeapon() == WeaponInterface.LONGSWORD) {
+			return 2;
+		}
+		if (player.getWeapon() == WeaponInterface.WARHAMMER) {
+			return 2;
+		}
 		return 1;
 	}
 

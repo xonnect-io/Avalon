@@ -77,7 +77,7 @@ public enum TeleportData {
 
 	FALLEN_WARRIOR(28316, 28316, 28316, 28242, "Fallen Warrior",4,
 			"@or1@Health:@whi@ 333,333","","",  TeleportCategory.MONSTERS,
-			new Position(1955, 5154, 0), 10, false, 9011, -1,
+			new Position(1951, 5148, 0), 10, false, 9011, -1,
 			new int[][] {{12855, 500}, {5022, 100},{15288, 1}, {15358, 1}, {15359, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1,1 },
 					{-1,1 }, {-1,1 }, {-1,-1 }, {-1,-1 }, {-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}},500),
 	SEASON_PASS(28317, 28317, 28317, 28243, "Phrin shade",5,

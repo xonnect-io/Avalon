@@ -1099,6 +1099,12 @@ public class NPCOptionPacketListener implements PacketListener {
                 }
                 // if ()
                 switch (npc.getId()) {
+
+
+                    case 9222:
+                        PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.TRAVELLING_MERCHANT);
+                        break;
+
                     case 289: //DAILY TASK
                         DailyTasks.claimReward(player);
                         break;

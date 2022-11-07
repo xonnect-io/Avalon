@@ -42,9 +42,16 @@ public class Maxhits {
         } else if (player.getInventory().contains(4442)) {
             maxHit *=  1.5;
         }
+        //Fantasy armor set
         if (player.getEquipment().contains(23443) && player.getEquipment().contains(23444)
                 && player.getEquipment().contains(23445)) {
             maxHit *= 1.2;
+        }
+
+        //Diyos Custom armor set
+        if (player.getEquipment().contains(23418) && player.getEquipment().contains(23419)
+                && player.getEquipment().contains(23420)) {
+            maxHit *= 1.25;
         }
         if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 22373
                 || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23627
@@ -244,10 +251,18 @@ public class Maxhits {
             percent *= 20;
         }
 
+        //Fantasy armor set
         if (player.getEquipment().contains(23443) && player.getEquipment().contains(23444)
                 && player.getEquipment().contains(23445)) {
             percent *= 20;
         }
+
+        //Diyos Custom armor set
+        if (player.getEquipment().contains(23418) && player.getEquipment().contains(23419)
+                && player.getEquipment().contains(23420)) {
+            percent *= 25;
+        }
+
         if (player.getAmountDonated() >= 25000) {
             percent += 90;
         } else   if (player.getAmountDonated() >= 10000) {

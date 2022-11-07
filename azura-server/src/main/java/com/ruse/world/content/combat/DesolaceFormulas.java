@@ -1044,7 +1044,7 @@ public class DesolaceFormulas {
         else if (s.contains("claw"))
             return 4;
         else if (s.contains("halberd"))
-            return 7;
+            return 4;
 
             // sara sword, 2400ms
         else if (s.equals("granite maul"))
