@@ -3827,6 +3827,52 @@ public class ItemDef3 {
 				itemDef.femaleEquip1 = 19763;
 				break;
 
+
+
+			case 23448:
+				itemDef.copyItem(14050);
+				itemDef.name = "Acrid helmet";
+				itemDef.modelID = 19781;
+				itemDef.maleEquip1 = 19782;
+				itemDef.femaleEquip1 = 19782;
+				break;
+
+			case 23449:
+				itemDef.copyItem(14051);
+				itemDef.name = "Acrid body";
+				itemDef.modelID = 19783;
+				itemDef.maleEquip1 = 19784;
+				itemDef.femaleEquip1 = 19784;
+				break;
+			case 23450:
+				itemDef.copyItem(14052);
+				itemDef.name = "Acrid legs";
+				itemDef.modelID = 19785;
+				itemDef.maleEquip1 = 19786;
+				itemDef.femaleEquip1 = 19786;
+				break;
+			case 23451:
+				itemDef.copyItem(23421);
+				itemDef.name = "Acrid gloves";
+				itemDef.modelID = 19787;
+				itemDef.maleEquip1 = 19789;
+				itemDef.femaleEquip1 = 19789;
+				break;
+			case 23452:
+				itemDef.copyItem(20456);
+				itemDef.name = "Acrid boots";
+				itemDef.modelID = 19788;
+				itemDef.maleEquip1 = 19788;
+				itemDef.femaleEquip1 = 19788;
+				break;
+			case 23453:
+				itemDef.copyItem(19136);
+				itemDef.name = "Acrid minigun";
+				itemDef.modelID = 19790;
+				itemDef.femaleEquip1 = 19791;
+				itemDef.maleEquip1 = 19791;
+				break;
+
 			case 14050:
 				itemDef.name = "Dragon Rider helm";
 				itemDef.modelID = 65385;
