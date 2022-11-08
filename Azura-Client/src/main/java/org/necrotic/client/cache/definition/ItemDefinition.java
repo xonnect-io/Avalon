@@ -371,6 +371,7 @@ public final class ItemDefinition {
 		itemDef = ItemDef2.newIDS(itemDef, id);
 		itemDef = ItemDef3.newIDS1(itemDef, id);
 		itemDef = ItemDef4.newIDS(itemDef, id);
+		itemDef = ItemDef5.newIDS(itemDef, id);
 		if (customId >= 13700 && customId <= 13709) {
 			/*
 			 * final ItemDefinition stat = get(14876); definition.name = "Tier " + (1 +
