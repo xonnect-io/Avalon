@@ -209,7 +209,7 @@ public final class CombatFactory {
         Item item = player.getEquipment().get(Equipment.WEAPON_SLOT);
         if (item == null)
             return false;
-        return item.getDefinition().getName().toLowerCase().contains("dark bow");
+        return item.getDefinition().getName().toLowerCase().contains("dark bow") && item.getDefinition ().getId () != 22113;
     }
 
     /**

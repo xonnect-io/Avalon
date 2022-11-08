@@ -7215,7 +7215,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		//Scoll bar size, witdh and scrolling size.
 		scrollInterface.width = 129 + 5;
 		scrollInterface.height = 218;
-		scrollInterface.scrollMax = 430;
+		scrollInterface.scrollMax = 455;
 
 
 		/** This handles the scrollable Items On Interface **/

@@ -24,10 +24,6 @@ import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
 import com.ruse.world.content.bossEvents.BossEventInterfaceHandler;
-import com.ruse.world.content.cardPacks.BronzeCardPack;
-import com.ruse.world.content.cardPacks.DiamondCardPack;
-import com.ruse.world.content.cardPacks.GoldCardPack;
-import com.ruse.world.content.cardPacks.SilverCardPack;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.clan.Guild;
@@ -1032,22 +1028,6 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.sendMessage("You must be in a raid to do this.");
                 }
                 return;
-            case 23185://open card pack
-            case 23085://open card pack
-                DiamondCardPack.testcard(player);
-                break;
-            case 23385://open card pack
-            case 23285://open card pack
-                BronzeCardPack.testcard(player);
-                break;
-            case 23585://open card pack
-            case 23485://open card pack
-                SilverCardPack.testcard(player);
-                break;
-            case 23785://open card pack
-            case 23685://open card pack
-                GoldCardPack.testcard(player);
-                break;
             /*case 111603:
                 BestItemsInterface.openInterface(player, 0);
                 break;*/

@@ -454,9 +454,6 @@ public class Maxhits {
                 base *= 1.35D;
             }
 
-            if(player.getRights() == PlayerRights.OWNER) {
-                base *= 5.5;
-            }
             if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
                 base *= 1.75;
             }
