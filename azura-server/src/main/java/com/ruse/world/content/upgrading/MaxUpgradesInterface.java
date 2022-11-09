@@ -221,14 +221,13 @@ public class MaxUpgradesInterface {
     }
 
     public void combine() {
-
         if (selectedItem == null) {
             player.sendMessage("@red@You haven't selected an item yet.");
             return;
         }
 
         for (CustomCombinerData data : VALUES) {
-            boolean random =  Misc.getRandomDouble(99) < getBoost(data.getSuccessRate());
+            boolean random =  Misc.getRandomDouble(99) < getBoost(data.getSuccessRate() + player.getScrollBonus());
             if (data.reward.getId() == selectedItem.getId()) {
                 if (player.getInventory().containsAll(data.requirements) && player.getInventory().containsAll(data.upgradedItem)) {
                     if (random == true) {

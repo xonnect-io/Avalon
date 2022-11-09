@@ -466,6 +466,11 @@ public int howmuchdissolveamt = 0;
     @Setter
     private double isleDropRate;
 
+
+    @Getter
+    @Setter
+    private double scrollBonus;
+
     @Getter
     private ArrayList<Item> godsCoffer = new ArrayList<>();
 

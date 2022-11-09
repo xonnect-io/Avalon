@@ -654,6 +654,10 @@ public class PlayerLoading {
             if (reader.has("isle-dr")) {
                 player.setIsleDropRate(reader.get("isle-dr").getAsDouble());
             }
+
+            if (reader.has("upg-dr")) {
+                player.setScrollBonus(reader.get("upg-dr").getAsDouble());
+            }
             if (reader.has("gods-coffer")) {
                 player.getGodsCoffer().clear();
                 for (Item item : builder.fromJson(reader.get("gods-coffer").getAsJsonArray(), Item[].class)) {

@@ -1,7 +1,6 @@
 package com.ruse.world.content.combat;
 
 import com.ruse.model.Locations;
-import com.ruse.model.PlayerRights;
 import com.ruse.model.Position;
 import com.ruse.model.Skill;
 import com.ruse.model.container.impl.Costumes;
@@ -26,16 +25,6 @@ public class Maxhits {
     public static double getDamageBoost(Player player, Character victim, CombatType combatType) {
         double maxHit = 1;
 
-        if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23688 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23827 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23883 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23512 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23459 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23403 ||
-                player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916) {
-            maxHit *= 2;
-        }
 
         if (player.getInventory().contains(23781)) {
             maxHit *=  1.75;
@@ -170,27 +159,6 @@ public class Maxhits {
                 percent += 35;
             }
 
-            if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
-                percent += 75;
-            }
-            if (player.getRights() == PlayerRights.ZENYTE_DONATOR) {
-                percent += 50;
-            }
-            if (player.getRights() == PlayerRights.ONYX_DONATOR) {
-                percent += 35;
-            }
-            if (player.getRights() == PlayerRights.DIAMOND_DONATOR) {
-                percent += 25;
-            }
-            if (player.getRights() == PlayerRights.RUBY_DONATOR) {
-                percent += 15;
-            }
-            if (player.getRights() == PlayerRights.EMERALD_DONATOR) {
-                percent += 10;
-            }
-            if(player.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
-                percent += 10;
-            }
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 13800) {
@@ -236,6 +204,10 @@ public class Maxhits {
         if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
             percent += 1.25;
         }
+
+        if (player.getEquipment().contains(23424) && player.getEquipment().contains(23418)) {
+            percent += 1.25;
+        }
         if (player.getEquipment().contains(23418)) {
             percent += 1.30;
         }
@@ -266,7 +238,7 @@ public class Maxhits {
         if (player.getAmountDonated() >= 25000) {
             percent += 90;
         } else   if (player.getAmountDonated() >= 10000) {
-            percent += 70;
+            percent += 75;
         } else  if (player.getAmountDonated() >= 5000) {
             percent += 50;
         } else if (player.getAmountDonated() >= 1000) {
@@ -454,27 +426,6 @@ public class Maxhits {
                 base *= 1.35D;
             }
 
-            if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
-                base *= 1.75;
-            }
-            if (player.getRights() == PlayerRights.ZENYTE_DONATOR) {
-                base *= 1.5;
-            }
-            if (player.getRights() == PlayerRights.ONYX_DONATOR) {
-                base *= 1.35;
-            }
-            if (player.getRights() == PlayerRights.DIAMOND_DONATOR) {
-                base *= 1.25;
-            }
-            if (player.getRights() == PlayerRights.RUBY_DONATOR) {
-                base *= 1.15;
-            }
-            if (player.getRights() == PlayerRights.EMERALD_DONATOR) {
-                base *= 1.10;
-            }
-            if(player.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
-                base *= 1.10;
-            }
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 13800) {
@@ -546,6 +497,9 @@ public class Maxhits {
             if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
                 maxHit *= 1.30;
             }
+            if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
+                maxHit *= 1.25;
+            }
             if (player.getEquipment().contains(23418)) {
                 maxHit *= 1.25;
             }
@@ -559,6 +513,24 @@ public class Maxhits {
             if (player.getEquipment().contains(11676) && player.getEquipment().contains(8839)
                     && player.getEquipment().contains(8840) && player.getEquipment().contains(8842)) {
                 maxHit *= 1.2;
+            }
+
+            if (player.getAmountDonated() >= 25000) {
+                maxHit *= 1.9D;
+            } else   if (player.getAmountDonated() >= 10000) {
+                maxHit *= 1.75D;
+            } else  if (player.getAmountDonated() >= 5000) {
+                maxHit *= 1.50D;
+            } else if (player.getAmountDonated() >= 1000) {
+                maxHit *= 1.35D;
+            } else if (player.getAmountDonated() >= 500) {
+                maxHit *= 1.25D;
+            } else if (player.getAmountDonated() >= 250) {
+                maxHit *= 1.15D;
+            } else if (player.getAmountDonated() >= 50) {
+                maxHit *= 1.1D;
+            } else if (player.getAmountDonated() >= 10) {
+                maxHit *= 1.05D;
             }
 
             if (player.getLocation() == Locations.Location.FREE_FOR_ALL_ARENA) {
@@ -718,6 +690,10 @@ public class Maxhits {
             if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
                 maxHit *= 1.25;
             }
+
+            if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
+                maxHit *= 1.25;
+            }
             if (player.getEquipment().contains(23418)) {
                 maxHit *= 1.30;
             }
@@ -790,27 +766,6 @@ public class Maxhits {
                 maxHit *= 1.35D;
             }
 
-            if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
-                maxHit *= 1.75D;
-            }
-            if (player.getRights() == PlayerRights.ZENYTE_DONATOR) {
-                maxHit *= 1.5D;
-            }
-            if (player.getRights() == PlayerRights.ONYX_DONATOR) {
-                maxHit *= 1.35D;
-            }
-            if (player.getRights() == PlayerRights.DIAMOND_DONATOR) {
-                maxHit *= 1.25D;
-            }
-            if (player.getRights() == PlayerRights.RUBY_DONATOR) {
-                maxHit *= 1.15D;
-            }
-            if (player.getRights() == PlayerRights.EMERALD_DONATOR) {
-                maxHit *= 1.10D;
-            }
-            if(player.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
-                maxHit *= 1.10D;
-            }
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 13800) {
@@ -837,6 +792,24 @@ public class Maxhits {
                     player.getEquipment().contains(23035) &&
                     player.getEquipment().contains(23036)) {
                 maxHit *= 1.10;
+            }
+
+            if (player.getAmountDonated() >= 25000) {
+                maxHit *= 1.9D;
+            } else   if (player.getAmountDonated() >= 10000) {
+                maxHit *= 1.75D;
+            } else  if (player.getAmountDonated() >= 5000) {
+                maxHit *= 1.50D;
+            } else if (player.getAmountDonated() >= 1000) {
+                maxHit *= 1.35D;
+            } else if (player.getAmountDonated() >= 500) {
+                maxHit *= 1.25D;
+            } else if (player.getAmountDonated() >= 250) {
+                maxHit *= 1.15D;
+            } else if (player.getAmountDonated() >= 50) {
+                maxHit *= 1.1D;
+            } else if (player.getAmountDonated() >= 10) {
+                maxHit *= 1.05D;
             }
 
             if (victim.isNpc()) {
@@ -963,6 +936,10 @@ public class Maxhits {
             if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
                 maxHit *= 1.25;
             }
+
+            if (player.getEquipment().contains(15509) && player.getEquipment().contains(23268)) {
+                maxHit *= 1.25;
+            }
             if (player.getEquipment().contains(23418)) {
                 maxHit *= 1.30;
             }
@@ -1082,26 +1059,22 @@ public class Maxhits {
                 maxHit *= 1.35D;
             }
 
-            if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
+            if (player.getAmountDonated() >= 25000) {
+                maxHit *= 1.9D;
+            } else   if (player.getAmountDonated() >= 10000) {
                 maxHit *= 1.75D;
-            }
-            if (player.getRights() == PlayerRights.ZENYTE_DONATOR) {
-                maxHit *= 1.5D;
-            }
-            if (player.getRights() == PlayerRights.ONYX_DONATOR) {
+            } else  if (player.getAmountDonated() >= 5000) {
+                maxHit *= 1.50D;
+            } else if (player.getAmountDonated() >= 1000) {
                 maxHit *= 1.35D;
-            }
-            if (player.getRights() == PlayerRights.DIAMOND_DONATOR) {
+            } else if (player.getAmountDonated() >= 500) {
                 maxHit *= 1.25D;
-            }
-            if (player.getRights() == PlayerRights.RUBY_DONATOR) {
+            } else if (player.getAmountDonated() >= 250) {
                 maxHit *= 1.15D;
-            }
-            if (player.getRights() == PlayerRights.EMERALD_DONATOR) {
-                maxHit *= 1.10D;
-            }
-            if(player.getRights() == PlayerRights.SAPPHIRE_DONATOR) {
-                maxHit *= 1.10D;
+            } else if (player.getAmountDonated() >= 50) {
+                maxHit *= 1.1D;
+            } else if (player.getAmountDonated() >= 10) {
+                maxHit *= 1.05D;
             }
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 20592 ||
                     player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 15916 ||

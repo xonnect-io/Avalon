@@ -15,8 +15,8 @@ public class Seraphic {
             new Box(23002, 1, 3),
             new Box(14999, 1, 1.5),
             new Box(23253, 1, 1),
-            new Box(23278, 1,1, 1,true),
-            new Box(20421, 1,1,  0.005D, true),
+            new Box(23278, 1, 1,true),
+            new Box(14705, 1,  0.06666D, true),
 
     };
 }
