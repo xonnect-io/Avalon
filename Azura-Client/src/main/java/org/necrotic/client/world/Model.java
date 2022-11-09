@@ -8,6 +8,7 @@ import org.necrotic.client.graphics.DrawingArea;
 import org.necrotic.client.io.ByteBuffer;
 import org.necrotic.client.renderable.Animable;
 
+import java.awt.*;
 import java.io.File;
 import java.util.HashMap;
 
@@ -3239,4 +3240,23 @@ public class Model extends Animable {
 			verticesZCoordinate[i1] = verticesZCoordinate[i1] >> i;
 		}
 	}
+
+
+	public void tint(double[] colorChange) {
+		for (int k = 0; k < anInt1630; k++) {
+			face_color[k] = change(face_color[k], colorChange);
+		}
+	}
+
+	private short change(int hslColor, double[] colorChange) {
+		Color c = JagexColor.RS2HSB_to_RGB1(hslColor);
+
+		double red = (c.getRed() * colorChange[0]);
+		double green = (c.getGreen() * colorChange[1]);
+		double blue = (c.getBlue() * colorChange[2]);
+		short hsl = (short) JagexColor.RGB_to_RS2HSB((int) (red), (int) (green),
+				(int) (blue));
+		return hsl;
+	}
+
 }

@@ -17,11 +17,6 @@ public class ItemDef5 {
 				itemDef.modelOffsetY = -93;
 				itemDef.actions = new String[]{null, null, null, null, null};
 				break;
-			case 23457:
-				itemDef.copyItem(24394);
-				itemDef.name = "Vozzath Costume";
-				//itemDef.rdc2 = 44442;
-				break;
 			case 24391:
 				itemDef.modelID = 15177;
 				itemDef.maleEquip1 = 15177;
@@ -182,6 +177,44 @@ public class ItemDef5 {
 				break;
 
 
+			case 21000:
+				itemDef.copyItem(5074);
+				itemDef.name = "Turkey Pet";
+				itemDef.modelID = MobDefinition.get(8501).npcModels[0];
+				itemDef.scaleX = 32;
+				itemDef.scaleY = 32;
+				itemDef.scaleZ = 32;
+				break;
+			case 21001:
+				itemDef.copyItem(23300);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0.9, 0, 0};
+				break;
+			case 21002:
+				itemDef.copyItem(23300);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0, 0.8, 0};
+				break;
+			case 21003:
+				itemDef.copyItem(23300);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0, 0, 1.2};
+				break;
+			case 21004:
+				itemDef.copyItem(23300);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0.9, 0.5, 0};
+				break;
+			case 21005:
+				itemDef.copyItem(23300);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0.8, 0, 0.8};
+				break;
+			case 21006:
+				itemDef.copyItem(23300);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0.9, 0.9, 0};
+				break;
 		}
 		return itemDef;
 	}

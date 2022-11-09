@@ -1181,7 +1181,7 @@ public class ItemDef4 {
 
 			case 23243:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 17521;
+				itemDef.modelID = 19792;
 				itemDef.name = "Melee Crest (Dark)";
 				itemDef.stackable = false;
 				itemDef.modelZoom = 1150;
@@ -1193,7 +1193,7 @@ public class ItemDef4 {
 				
 			case 23244:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 17491;
+				itemDef.modelID = 19813;
 				itemDef.name = "Magic Crest (Dark)";
 				itemDef.stackable = false;
 				itemDef.modelZoom = 1150;
@@ -1205,7 +1205,7 @@ public class ItemDef4 {
 				
 			case 23245:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 17496;
+				itemDef.modelID = 19816;
 				itemDef.name = "Ranged Crest (Dark)";
 				itemDef.stackable = false;
 				itemDef.modelZoom = 1150;
@@ -1218,7 +1218,7 @@ public class ItemDef4 {
 
 			case 23246: //outside 969696 //inside #a19a99 //bottom to top > #a9a5a4,#b0aeae,#c9c1c0,#cbc3c3  ,#d5cfce
 				itemDef.copyItem(12855);
-				itemDef.modelID = 17461;
+				itemDef.modelID = 19792;
 				itemDef.name = "Melee Crest (Light)";
 				itemDef.stackable = false;
 				itemDef.modelZoom = 1150;
@@ -1226,11 +1226,13 @@ public class ItemDef4 {
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
+				itemDef.newModelColor = new int[]{0, 19, 6, 38, 31, 27, 23, 20};
+				itemDef.editedModelColor = new int[]{0, 19 + 80, 76, 38 + 80, 31 + 80, 27 + 80, 23 + 80, 20 + 80};
 				break;
 				
 			case 23247:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 17527;
+				itemDef.modelID = 19813;
 				itemDef.name = "Magic Crest (Light)";
 				itemDef.stackable = false;
 				itemDef.modelZoom = 1150;
@@ -1238,11 +1240,13 @@ public class ItemDef4 {
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
+				itemDef.newModelColor = new int[]{0, 19, 6, 38, 31, 27, 23, 20};
+				itemDef.editedModelColor = new int[]{0, 19 + 80, 76, 38 + 80, 31 + 80, 27 + 80, 23 + 80, 20 + 80};
 				break;
 				
 			case 23248:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 17531;
+				itemDef.modelID = 19816;
 				itemDef.name = "Ranged Crest (Light)";
 				itemDef.stackable = false;
 				itemDef.modelZoom = 1150;
@@ -1250,45 +1254,50 @@ public class ItemDef4 {
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
+				itemDef.newModelColor = new int[]{0, 19, 6, 38, 31, 27, 23, 20};
+				itemDef.editedModelColor = new int[]{0, 19 + 80, 76, 38 + 80, 31 + 80, 27 + 80, 23 + 80, 20 + 80};
 				break;
 				
 			case 23249:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 17521;
+				itemDef.modelID = 19792;
 				itemDef.name = "Melee Crest (Blood)";
 				itemDef.stackable = false;
 				itemDef.modelZoom = 1150;
-				itemDef.rdc2 = 700;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
+				itemDef.newModelColor = new int[]{0, 19, 6, 38, 31, 27, 23, 20};
+				itemDef.editedModelColor = new int[]{0, 19 + 900, 792, 38 + 900, 31 + 900, 27 + 900, 23 + 900, 20 + 900};
 				break;
 				
 			case 23250:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 17491;
+				itemDef.modelID = 19813;
 				itemDef.name = "Magic Crest (Blood)";
 				itemDef.stackable = false;
 				itemDef.modelZoom = 1150;
-				itemDef.rdc2 = 700;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
+				itemDef.newModelColor = new int[]{0, 19, 6, 38, 31, 27, 23, 20};
+				itemDef.editedModelColor = new int[]{0, 19 + 900, 792, 38 + 900, 31 + 900, 27 + 900, 23 + 900, 20 + 900};
 				break;
 				
 			case 23251:
 				itemDef.copyItem(12855);
-				itemDef.modelID = 17496;
+				itemDef.modelID = 19816;
 				itemDef.name = "Ranged Crest (Blood)";
 				itemDef.stackable = false;
 				itemDef.modelZoom = 1150;
-				itemDef.rdc2 = 700;
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
 				itemDef.actions[2] = "Dissassemble";
 				itemDef.actions[4] = "Drop";
+				itemDef.newModelColor = new int[]{0, 19, 6, 38, 31, 27, 23, 20};
+				itemDef.editedModelColor = new int[]{0, 19 + 900, 792, 38 + 900, 31 + 900, 27 + 900, 23 + 900, 20 + 900};
 				break;
 				
 				
@@ -1316,7 +1325,7 @@ public class ItemDef4 {
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = itemDef21.actions;
-				itemDef.rdc3 = 900;
+				itemDef.colorChange = new double[]{1.1, 0.2, 0.2};
 				break;
 			case 23438:
 				itemDef.name = "<shad=1>@bla@Halloween Attachment";

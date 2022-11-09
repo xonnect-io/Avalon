@@ -11,6 +11,7 @@ import org.necrotic.client.world.Rasterizer;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Objects;
 
 public final class ItemDefinition {
 	public int rdc = 0;
@@ -2350,8 +2351,11 @@ public final class ItemDefinition {
 				itemDef.modelZoom = 1025;
 				break;
 			case 11465:
+				itemDef.copyItem(14277);
 				itemDef.name = "Seraphic potion";
 				itemDef.actions = new String[]{"Drink", null, null, null, "Drop"};
+				itemDef.newModelColor = new int[]{683};
+				itemDef.editedModelColor = new int[]{36142};
 				break;
 			case 20421:
 				itemDef.name = "Ethereal urn";
@@ -5987,6 +5991,10 @@ public final class ItemDefinition {
 		if (rdc3 != 0) {
 			model.method1339(rdc3);
 		}
+
+		if (colorChange != null)
+			Objects.requireNonNull(model).tint(colorChange);
+
 		applyTexturing(model, id);
 		model.light(64 + anInt196, 768 + anInt184, -50, -10, -50, true);
 		model.aBoolean1659 = true;
@@ -6088,6 +6096,8 @@ public final class ItemDefinition {
 			model = new Model(2, models);
 		}
 
+		if (colorChange != null)
+			Objects.requireNonNull(model).tint(colorChange);
 		if (newModelColor != null) {
 			for (int i1 = 0; i1 < newModelColor.length; i1++) {
 				model.method476(newModelColor[i1], editedModelColor[i1]);
@@ -6179,6 +6189,8 @@ public final class ItemDefinition {
 			model.translate(femaleWieldX, femaleWieldY, femaleWieldZ);
 		}
 
+		if (colorChange != null)
+			Objects.requireNonNull(model).tint(colorChange);
 		if (newModelColor != null) {
 			for (int i1 = 0; i1 < newModelColor.length; i1++) {
 				model.method476(newModelColor[i1], editedModelColor[i1]);
@@ -6213,6 +6225,9 @@ public final class ItemDefinition {
 		if (rdc3 != 0) {
 			model.method1339(rdc3);
 		}
+
+		if (colorChange != null)
+			Objects.requireNonNull(model).tint(colorChange);
 		applyTexturing(model, id);
 		if (model == null) {
 			return null;
@@ -6399,6 +6414,7 @@ public final class ItemDefinition {
 		maleWieldX = 0;
 		maleWieldZ = 0;
 		maleWieldY = 0;
+		colorChange = null;
 	}
 
 	private void toLend() {
@@ -6533,4 +6549,5 @@ public final class ItemDefinition {
 		//System.out.println("Dumping Complete!");
 	}
 
+	public double[] colorChange = null;
 }

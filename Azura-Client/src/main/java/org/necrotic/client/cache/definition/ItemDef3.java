@@ -1450,14 +1450,13 @@ public class ItemDef3 {
 
 			case 15870:
 				itemDef.name = "Diyos Sword";
-				itemDef.modelZoom = 1700;
 				itemDef.modelID = 19757;
 				itemDef.maleEquip1 = 19757;
 				itemDef.femaleEquip1 = 19757;
-				itemDef.modelOffsetX = -43;
-				itemDef.modelOffsetY = 26;
-				itemDef.modelZoom = 4200;
-				itemDef.rotationY = 548;
+				itemDef.modelOffsetX = -125;
+				itemDef.modelOffsetY = -4;
+				itemDef.modelZoom = 2200;
+				itemDef.rotationY = 448;
 				itemDef.rotationZ = 96;
 				itemDef.rotationX = 1261;
 				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};

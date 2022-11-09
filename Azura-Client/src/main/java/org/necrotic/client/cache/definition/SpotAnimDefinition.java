@@ -5,6 +5,8 @@ import org.necrotic.client.cache.Archive;
 import org.necrotic.client.io.ByteBuffer;
 import org.necrotic.client.world.Model;
 
+import java.util.Objects;
+
 public final class SpotAnimDefinition {
 
 	public static List list = new List(30);
@@ -59,6 +61,7 @@ public final class SpotAnimDefinition {
 		cache[gfxID].sizeZ = size;
 	}
 
+	public double[] colorChange = null;
 	public Animation animation;
 	private int id;
 	public int modelId;
@@ -77,6 +80,7 @@ public final class SpotAnimDefinition {
 		destColours = new int[6];
 		sizeXY = 128;
 		sizeZ = 128;
+		colorChange = null;
 	}
 
 	public Model getModel() {
@@ -97,6 +101,10 @@ public final class SpotAnimDefinition {
 				model.method476(originalColours[i], destColours[i]);
 			}
 		}
+
+
+		if (colorChange != null)
+			Objects.requireNonNull(model).tint(colorChange);
 
 		list.removeFromCache(model, id);
 		return model;

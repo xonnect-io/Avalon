@@ -9,6 +9,8 @@ import org.necrotic.client.io.ByteBuffer;
 import org.necrotic.client.world.Model;
 
 import java.util.HashMap;
+import java.util.Objects;
+
 //use npc 6208
 public final class MobDefinition {
 	public int rdc = 0;
@@ -5514,6 +5516,129 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 3;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
+
+			case 8499:
+				definition.npcModels = MobDefinition.get(8501).npcModels;
+				definition.standAnimation =  MobDefinition.get(8501).standAnimation;
+				definition.walkAnimation = MobDefinition.get(8501).walkAnimation;
+				definition.actions = MobDefinition.get(8501).actions;
+				definition.npcSizeInSquares = 4;
+				definition.scaleXZ = 350;
+				definition.scaleY = 350;
+				definition.combatLevel = 0;
+				break;
+			case 9861:
+				definition.setDefault();
+				definition.name = "Turkey pet";
+				definition.npcModels = MobDefinition.get(8501).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =  MobDefinition.get(8501).standAnimation;
+				definition.walkAnimation = MobDefinition.get(8501).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 50;
+				definition.scaleY = 50;
+				break;
+			case 9862:
+				definition.setDefault();
+				definition.name = "Turkey pet (Mutated)";
+				definition.npcModels = MobDefinition.get(8501).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =  MobDefinition.get(8501).standAnimation;
+				definition.walkAnimation = MobDefinition.get(8501).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.colorChange = new double[]{0.9, 0, 0};
+				break;
+			case 9863:
+				definition.setDefault();
+				definition.name = "Turkey pet (Mutated)";
+				definition.npcModels = MobDefinition.get(8501).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =  MobDefinition.get(8501).standAnimation;
+				definition.walkAnimation = MobDefinition.get(8501).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.colorChange = new double[]{0, 0.8, 0};
+				break;
+			case 9864:
+				definition.setDefault();
+				definition.name = "Turkey pet (Mutated)";
+				definition.npcModels = MobDefinition.get(8501).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =  MobDefinition.get(8501).standAnimation;
+				definition.walkAnimation = MobDefinition.get(8501).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.colorChange = new double[]{0, 0, 1.2};
+				break;
+			case 9865:
+				definition.setDefault();
+				definition.name = "Turkey pet (Mutated)";
+				definition.npcModels = MobDefinition.get(8501).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =  MobDefinition.get(8501).standAnimation;
+				definition.walkAnimation = MobDefinition.get(8501).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.colorChange = new double[]{0.9, 0.5, 0};
+				break;
+			case 9866:
+				definition.setDefault();
+				definition.name = "Turkey pet (Mutated)";
+				definition.npcModels = MobDefinition.get(8501).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =  MobDefinition.get(8501).standAnimation;
+				definition.walkAnimation = MobDefinition.get(8501).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.colorChange = new double[]{0.8, 0, 0.8};
+				break;
+			case 9867:
+				definition.setDefault();
+				definition.name = "Turkey pet (Mutated)";
+				definition.npcModels = MobDefinition.get(8501).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =  MobDefinition.get(8501).standAnimation;
+				definition.walkAnimation = MobDefinition.get(8501).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.colorChange = new double[]{0.9, 0.9, 0};
+				break;
+			case 9868:
+				definition.setDefault();
+				definition.name = "Turkey pet (Mutated)";
+				definition.npcModels = MobDefinition.get(8501).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =  MobDefinition.get(8501).standAnimation;
+				definition.walkAnimation = MobDefinition.get(8501).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.colorChange = new double[]{3, 3, 4};
+				break;
+
 			case 9894:
 				definition.setDefault();
 				definition.npcModels = new int[]{19731};
@@ -7722,6 +7847,10 @@ public final class MobDefinition {
 		if (rdc3 != 0) {
 			model.method1339(rdc3);
 		}
+
+		if (colorChange != null)
+			Objects.requireNonNull(model).tint(colorChange);
+
 		applyTexturing1(model, id);
 		return model;
 	}
@@ -7810,6 +7939,10 @@ public final class MobDefinition {
 			if (rdc3 != 0) {
 				model.method1339(rdc3);
 			}
+
+			if (colorChange != null)
+				Objects.requireNonNull(model).tint(colorChange);
+
 			applyTexturing1(model, id);
 			model.createBones();
 			model.light(84 + modelLightning, 1000 + modelShadowing, -90, -580, -90, true);
@@ -8029,4 +8162,5 @@ public final class MobDefinition {
 
 	}
 
+	public double[] colorChange = null;
 }

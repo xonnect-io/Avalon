@@ -7294,6 +7294,16 @@ public class Client extends GameRenderer {
             if (model == null) {
                 return;
             }
+            if (npcDisplay != null) {
+                if (npcDisplay.colorChange != null)
+                    Objects.requireNonNull(model).tint(npcDisplay.colorChange);
+                if (npcDisplay.originalModelColours != null) {
+                    for (int k1 = 0; k1 < npcDisplay.originalModelColours.length; k1++) {
+                        model.method476(npcDisplay.originalModelColours[k1], npcDisplay.changedModelColours[k1]);
+                    }
+                }
+            }
+
             model.createBones();
             model.applyTransform(Animation.cache[petDef.getAnimation()].frameIDs[InterfaceNPC.animationFrame]);
             rsInterface.mediaType = 5;
@@ -7331,6 +7341,9 @@ public class Client extends GameRenderer {
                 return;
             }
 
+
+            if (npc.colorChange != null)
+                Objects.requireNonNull(model).tint(npc.colorChange);
 
             if (npc.originalModelColours != null) {
                 for (int k1 = 0; k1 < npc.originalModelColours.length; k1++) {
@@ -7398,6 +7411,9 @@ public class Client extends GameRenderer {
                     model.method1338(npcDisplay.rdc2);
                 if (npcDisplay.rdc3 != 0)
                     model.method1339(npcDisplay.rdc3);
+
+                if (npcDisplay.colorChange != null)
+                    Objects.requireNonNull(model).tint(npcDisplay.colorChange);
 
                 if (npcDisplay.originalModelColours != null) {
                     for (int k1 = 0; k1 < npcDisplay.originalModelColours.length; k1++) {
@@ -18763,6 +18779,7 @@ if(response == 32){
             ItemDefinition.isMembers = isMembers;
             //// drawSmoothLoading(80, "Unpacked config!");
             // ItemDefinition.dumpItemModelsForId(13653);
+            ItemDefinition.printDefinitionsForId(14277);
             // onDemandFetcher.dump();
             //repackCacheIndex(4);
             for (int i : Configuration.REPACK_INDICIES) {
