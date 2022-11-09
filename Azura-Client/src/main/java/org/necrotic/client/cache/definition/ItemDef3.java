@@ -18,10 +18,10 @@ public class ItemDef3 {
 				itemDef.copyItem(18768);
 				itemDef.actions = new String[]{"Open", null, null, null, null};
 				itemDef.name = "Autumn Box";
-				itemDef.editedModelColor = new int[]{
+				itemDef.newColors = new int[]{
 						2999, 926, 22410
 				};
-				itemDef.newModelColor = new int[]{
+				itemDef.oldColors = new int[]{
 						3967,  59314,  59314
 				};
 				break;
@@ -852,8 +852,8 @@ public class ItemDef3 {
 				itemDef.modelOffsetY = 0;
 				itemDef.modelOffsetX = 1;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.newModelColor = new int[]{57};
-				itemDef.editedModelColor = new int[]{106};
+				itemDef.oldColors = new int[]{57};
+				itemDef.newColors = new int[]{106};
 				break;
 
 			case 22377:
@@ -868,8 +868,8 @@ public class ItemDef3 {
 				itemDef.modelOffsetY = 65;
 				itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.newModelColor = new int[]{57};
-				itemDef.editedModelColor = new int[]{106};
+				itemDef.oldColors = new int[]{57};
+				itemDef.newColors = new int[]{106};
 				break;
 
 			case 23282:
@@ -2663,8 +2663,8 @@ public class ItemDef3 {
 				itemDef.copyItem(290);
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{126};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{126};
 				itemDef.modelID = 19612;
 				itemDef.modelZoom = 2650;
 				itemDef.name = "Walkchaos' Creator Box";
@@ -2674,8 +2674,8 @@ public class ItemDef3 {
 				itemDef.copyItem(290);
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{126};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{126};
 				itemDef.modelID = 19612;
 				itemDef.modelZoom = 2650;
 				itemDef.name = "Lano's Creator Box";
@@ -2769,8 +2769,8 @@ public class ItemDef3 {
 				itemDef.modelID = 65333;
 				itemDef.maleEquip1 = 65334;
 				itemDef.femaleEquip1 = 65334;
-				itemDef.newModelColor = new int[]{59};
-				itemDef.editedModelColor = new int[]{66};
+				itemDef.oldColors = new int[]{59};
+				itemDef.newColors = new int[]{66};
 				itemDef.rdc2 = 762432;
 				itemDef.modelZoom = 1385;
 				itemDef.modelOffsetX = 0;
@@ -2819,8 +2819,8 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{95};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{95};
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 				
@@ -2836,8 +2836,8 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.newModelColor = new int[]{57};
-				itemDef.editedModelColor = new int[]{52};
+				itemDef.oldColors = new int[]{57};
+				itemDef.newColors = new int[]{52};
 				break;
 				
 			case 11000:
@@ -2867,12 +2867,12 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 65446;
 				itemDef.femaleEquip1 = 65446;
 				itemDef.actions = itemdefedit.actions;
-				itemDef.editedModelColor = new int[2]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[2]; // same here
-				itemDef.newModelColor[0] = 54; 
-				itemDef.editedModelColor[0] = 88;
-				itemDef.newModelColor[1] = 65; 
-				itemDef.editedModelColor[1] = 88; 
+				itemDef.newColors = new int[2]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[2]; // same here
+				itemDef.oldColors[0] = 54;
+				itemDef.newColors[0] = 88;
+				itemDef.oldColors[1] = 65;
+				itemDef.newColors[1] = 88;
 				itemDef.stackable = false;
 				itemDef.value = 1;
 				break;
@@ -2882,8 +2882,8 @@ public class ItemDef3 {
 				itemDef.modelID = 65333;
 				itemDef.maleEquip1 = 65334;
 				itemDef.femaleEquip1 = 65334;
-				itemDef.newModelColor = new int[]{57};
-				itemDef.editedModelColor = new int[]{78};
+				itemDef.oldColors = new int[]{57};
+				itemDef.newColors = new int[]{78};
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.rdc2 = 36232;
@@ -2920,8 +2920,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{52};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{52};
 				break;
 				
 			case 11321:
@@ -2937,8 +2937,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{52};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{52};
 				break;
 				
 			case 11322:
@@ -2954,8 +2954,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{52};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{52};
 				break;
 				
 			case 18819:
@@ -2975,8 +2975,8 @@ public class ItemDef3 {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 65284;
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{64};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{64};
 				itemDef.animateInventory = true;
 				break;
 				
@@ -2991,8 +2991,8 @@ public class ItemDef3 {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 65284;
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{88};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{88};
 				itemDef.animateInventory = true;
 				break;
 				
@@ -3018,8 +3018,8 @@ public class ItemDef3 {
 				itemDef.femaleEquip1 = 15716;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{51};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{51};
 				break;
 				
 			case 11422:
@@ -3032,8 +3032,8 @@ public class ItemDef3 {
 				itemDef.modelOffsetY = 0;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{51};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{51};
 				break;
 				
 			case 11423:
@@ -3050,8 +3050,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{51};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{51};
 				break;
 				
 			case 11340:
@@ -3641,10 +3641,10 @@ public class ItemDef3 {
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 126;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 40;
+				itemDef.newColors[0] = 126;
 				itemDef.stackable = false;
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
@@ -3662,10 +3662,10 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 126;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 40;
+				itemDef.newColors[0] = 126;
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
 				
@@ -3681,10 +3681,10 @@ public class ItemDef3 {
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 126;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 40;
+				itemDef.newColors[0] = 126;
 				itemDef.stackable = false;
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
@@ -3702,8 +3702,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{52};
-				itemDef.editedModelColor = new int[]{88};
+				itemDef.oldColors = new int[]{52};
+				itemDef.newColors = new int[]{88};
 				break;
 				
 			case 20062:
@@ -3719,8 +3719,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{52};
-				itemDef.editedModelColor = new int[]{88};
+				itemDef.oldColors = new int[]{52};
+				itemDef.newColors = new int[]{88};
 				break;
 				
 			case 20063:
@@ -3736,8 +3736,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{52};
-				itemDef.editedModelColor = new int[]{88};
+				itemDef.oldColors = new int[]{52};
+				itemDef.newColors = new int[]{88};
 				break;
 				
 			case 20073:
@@ -3792,8 +3792,8 @@ public class ItemDef3 {
 			itemDef.name = "Fantasy Attachment";
 			itemDef.actions = new String[]{null, null, "Disassemble", null, "Destroy"};
 			itemDef.stackable = false;
-			itemDef.newModelColor = new int[]{0, 15556, 16685, 16677, 16565, 16573};
-			itemDef.editedModelColor = new int[]{46700, 45759, 45759, 45759, 46003, 46700};
+			itemDef.oldColors = new int[]{0, 15556, 16685, 16677, 16565, 16573};
+			itemDef.newColors = new int[]{46700, 45759, 45759, 45759, 46003, 46700};
 			break;
 
 			case 23443:
@@ -3832,8 +3832,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{52};
-				itemDef.editedModelColor = new int[]{91};
+				itemDef.oldColors = new int[]{52};
+				itemDef.newColors = new int[]{91};
 				break;
 				
 			case 14051:
@@ -3849,8 +3849,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{52};
-				itemDef.editedModelColor = new int[]{91};
+				itemDef.oldColors = new int[]{52};
+				itemDef.newColors = new int[]{91};
 				break;
 				
 			case 14052:
@@ -3866,8 +3866,8 @@ public class ItemDef3 {
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newModelColor = new int[]{52};
-				itemDef.editedModelColor = new int[]{91};
+				itemDef.oldColors = new int[]{52};
+				itemDef.newColors = new int[]{91};
 				break;
 				
 			case 14053:
@@ -4047,12 +4047,12 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 65446;
 				itemDef.femaleEquip1 = 65446;
 				itemDef.actions = itemdefedit.actions;
-				itemDef.editedModelColor = new int[2]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[2]; // same here
-				itemDef.newModelColor[0] = 54; 
-				itemDef.editedModelColor[0] = 56;
-				itemDef.newModelColor[1] = 65; 
-				itemDef.editedModelColor[1] = 56; 
+				itemDef.newColors = new int[2]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[2]; // same here
+				itemDef.oldColors[0] = 54;
+				itemDef.newColors[0] = 56;
+				itemDef.oldColors[1] = 65;
+				itemDef.newColors[1] = 56;
 				itemDef.stackable = false;
 				itemDef.value = 1;
 				break;
@@ -4360,8 +4360,8 @@ public class ItemDef3 {
 				itemDef.modelZoom = 2300;
 				itemDef.stackable = false;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{60};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{60};
 				break;
 				
 			case 8411:
@@ -4378,8 +4378,8 @@ public class ItemDef3 {
 				itemDef.rotationX = 1261;
 				itemDef.stackable = false;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{59};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{59};
 				break;
 				
 			case 8412:
@@ -4395,8 +4395,8 @@ public class ItemDef3 {
 				itemDef.rotationX = 0;
 				itemDef.stackable = false;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.newModelColor = new int[]{40};
-				itemDef.editedModelColor = new int[]{58};
+				itemDef.oldColors = new int[]{40};
+				itemDef.newColors = new int[]{58};
 				break;
 				
 			case 3737:
@@ -4521,10 +4521,10 @@ public class ItemDef3 {
 				itemDef.rotationY = 300;
 				itemDef.rotationX = 1000;
 				itemDef.stackable = false;
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 96;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 40;
+				itemDef.newColors[0] = 96;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 				
@@ -4540,10 +4540,10 @@ public class ItemDef3 {
 				itemDef.rotationY = 300;
 				itemDef.rotationX = 1000;
 				itemDef.stackable = false;
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 97;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 40;
+				itemDef.newColors[0] = 97;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 				
@@ -5071,10 +5071,10 @@ public class ItemDef3 {
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 65;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 40;
+				itemDef.newColors[0] = 65;
 				itemDef.stackable = false;
 				break;
 				
@@ -5256,10 +5256,10 @@ public class ItemDef3 {
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.editedModelColor = new int[1];
-				itemDef.newModelColor = new int[1];
-				itemDef.newModelColor[0] = 40;
-				itemDef.editedModelColor[0] = 65;
+				itemDef.newColors = new int[1];
+				itemDef.oldColors = new int[1];
+				itemDef.oldColors[0] = 40;
+				itemDef.newColors[0] = 65;
 				itemDef.stackable = false;
 				break;
 				
@@ -5465,10 +5465,10 @@ public class ItemDef3 {
 				itemDef.rotationY = 240;
 				itemDef.rotationX = 20;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 40; 
-				itemDef.editedModelColor[0] = 65;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 40;
+				itemDef.newColors[0] = 65;
 				itemDef.stackable = false;
 				break;
 				
@@ -5643,8 +5643,8 @@ public class ItemDef3 {
 				itemDef.modelZoom = itemdefedit.modelZoom;
 				itemDef.rotationY = itemdefedit.rotationY;
 				itemDef.rotationX = itemdefedit.rotationX;
-				itemDef.newModelColor = new int[]{57};
-				itemDef.editedModelColor = new int[]{52};
+				itemDef.oldColors = new int[]{57};
+				itemDef.newColors = new int[]{52};
 //	itemDef.actions[3] = "<col=f8a6c1>Activate god mode";
 
 				//itemDef.rdc2 = 762432;

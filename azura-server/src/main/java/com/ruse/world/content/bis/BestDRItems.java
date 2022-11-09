@@ -18,6 +18,7 @@ public class BestDRItems {
 		{
 			add(5420);
 			add(5422);
+			add(15870);
 			add(5428);
 			add(525);
 			add(524);

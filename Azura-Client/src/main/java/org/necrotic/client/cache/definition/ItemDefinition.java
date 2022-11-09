@@ -351,20 +351,20 @@ public final class ItemDefinition {
 		 * } else { itemDef.readValues(buffer); }
 		 */
 		itemDef.readValues(buffer);
-		if (itemDef.newModelColor != null) {
-			for (int i2 = 0; i2 < itemDef.newModelColor.length; i2++) {
-				if (itemDef.editedModelColor[i2] == 0) {
-					itemDef.editedModelColor[i2] = 1;
+		if (itemDef.oldColors != null) {
+			for (int i2 = 0; i2 < itemDef.oldColors.length; i2++) {
+				if (itemDef.newColors[i2] == 0) {
+					itemDef.newColors[i2] = 1;
 				}
 			}
 		}
 
 		for (int a : BLACK_FIX) {
 			if (itemDef.id == a) {
-				itemDef.newModelColor = new int[1];
-				itemDef.editedModelColor = new int[1];
-				itemDef.newModelColor[0] = 0;
-				itemDef.editedModelColor[0] = 1;
+				itemDef.oldColors = new int[1];
+				itemDef.newColors = new int[1];
+				itemDef.oldColors[0] = 0;
+				itemDef.newColors[0] = 1;
 			}
 		}
 
@@ -407,10 +407,10 @@ public final class ItemDefinition {
 				itemDef.modelOffsetX = -2;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 51;
-				itemDef.editedModelColor[0] = 98;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 51;
+				itemDef.newColors[0] = 98;
 				break;
 
 			case 23419:
@@ -425,10 +425,10 @@ public final class ItemDefinition {
 				itemDef.modelOffsetX = -1;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 51;
-				itemDef.editedModelColor[0] = 98;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 51;
+				itemDef.newColors[0] = 98;
 				break;
 
 			case 23420:
@@ -443,10 +443,10 @@ public final class ItemDefinition {
 				itemDef.modelOffsetX = 1;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 51;
-				itemDef.editedModelColor[0] = 98;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 51;
+				itemDef.newColors[0] = 98;
 				break;
 
 			case 23421:
@@ -462,10 +462,10 @@ public final class ItemDefinition {
 				itemDef.femaleEquip1 = 19632;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 51;
-				itemDef.editedModelColor[0] = 98;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 51;
+				itemDef.newColors[0] = 98;
 				break;
 
 			case 23422:
@@ -480,10 +480,10 @@ public final class ItemDefinition {
 				itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.newModelColor = new int[1]; // same here
-				itemDef.newModelColor[0] = 51;
-				itemDef.editedModelColor[0] = 98;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 51;
+				itemDef.newColors[0] = 98;
 				break;
 
 			case 23423:
@@ -564,8 +564,8 @@ public final class ItemDefinition {
 			case 22006: // Deathtouch darts
 				itemDef.copyItem(11230);
 				itemDef.name = "Deathtouch Darts";
-				itemDef.editedModelColor = new int[]{5409, 920, 914, 929, 10452, 10293};
-				itemDef.newModelColor = new int[]{943, 3866, 914, 3866, 943, 943};
+				itemDef.newColors = new int[]{5409, 920, 914, 929, 10452, 10293};
+				itemDef.oldColors = new int[]{943, 3866, 914, 3866, 943, 943};
 				break;
 			case 15378:
 				itemDef.name = "Supreme appendage";
@@ -988,54 +988,54 @@ public final class ItemDefinition {
 				
 				itemDef.name = "Abyssal tentacle"; // Name
 				itemDef.description = "An Abyssal whip fused with a Kraken tentacle.".getBytes();
-				itemDef.editedModelColor = new int[23];
-				itemDef.newModelColor = new int[23];
-				itemDef.newModelColor[0] = 944;
-				itemDef.editedModelColor[0] = 86933; // green
-				itemDef.newModelColor[1] = 9371;
-				itemDef.editedModelColor[1] = 9583; // cream
-				itemDef.newModelColor[2] = 9255;
-				itemDef.editedModelColor[2] = 9221; // black
-				itemDef.newModelColor[3] = 9240;
-				itemDef.editedModelColor[3] = 9221; // black
-				itemDef.newModelColor[4] = 9385;
-				itemDef.editedModelColor[4] = 9221; // black
-				itemDef.newModelColor[5] = 9395;
-				itemDef.editedModelColor[5] = 9583; // cream
-				itemDef.newModelColor[6] = 9239;
-				itemDef.editedModelColor[6] = 9221; // black
-				itemDef.newModelColor[7] = 9254;
-				itemDef.editedModelColor[7] = 9221; // black
-				itemDef.newModelColor[8] = 9359;
-				itemDef.editedModelColor[8] = 9583; // cream
-				itemDef.newModelColor[9] = 9237;
-				itemDef.editedModelColor[9] = 86933; // green
-				itemDef.newModelColor[10] = 8262;
-				itemDef.editedModelColor[10] = 86933; // green
-				itemDef.newModelColor[11] = 8244;
-				itemDef.editedModelColor[11] = 86933; // green
-				itemDef.newModelColor[12] = 8214;
-				itemDef.editedModelColor[12] = 9583; // cream
-				itemDef.newModelColor[13] = 9372;
-				itemDef.editedModelColor[13] = 9583; // cream
-				itemDef.newModelColor[14] = 9355;
-				itemDef.editedModelColor[14] = 9583; // cream
-				itemDef.newModelColor[15] = 9380;
-				itemDef.editedModelColor[15] = 9583; // cream
-				itemDef.newModelColor[16] = 9409;
-				itemDef.editedModelColor[16] = 9583; // cream
-				itemDef.newModelColor[17] = 9411;
-				itemDef.editedModelColor[17] = 9583; // cream
-				itemDef.newModelColor[18] = 9228;
-				itemDef.editedModelColor[18] = 9221; // black
-				itemDef.newModelColor[19] = 9428;
-				itemDef.editedModelColor[19] = 9583; // cream
-				itemDef.newModelColor[20] = 9412;
-				itemDef.editedModelColor[20] = 9583; // cream
-				itemDef.newModelColor[21] = 9364;
-				itemDef.editedModelColor[21] = 9583; // cream
-				itemDef.newModelColor[22] = 9425;
-				itemDef.editedModelColor[22] = 9583; // cream
+				itemDef.newColors = new int[23];
+				itemDef.oldColors = new int[23];
+				itemDef.oldColors[0] = 944;
+				itemDef.newColors[0] = 86933; // green
+				itemDef.oldColors[1] = 9371;
+				itemDef.newColors[1] = 9583; // cream
+				itemDef.oldColors[2] = 9255;
+				itemDef.newColors[2] = 9221; // black
+				itemDef.oldColors[3] = 9240;
+				itemDef.newColors[3] = 9221; // black
+				itemDef.oldColors[4] = 9385;
+				itemDef.newColors[4] = 9221; // black
+				itemDef.oldColors[5] = 9395;
+				itemDef.newColors[5] = 9583; // cream
+				itemDef.oldColors[6] = 9239;
+				itemDef.newColors[6] = 9221; // black
+				itemDef.oldColors[7] = 9254;
+				itemDef.newColors[7] = 9221; // black
+				itemDef.oldColors[8] = 9359;
+				itemDef.newColors[8] = 9583; // cream
+				itemDef.oldColors[9] = 9237;
+				itemDef.newColors[9] = 86933; // green
+				itemDef.oldColors[10] = 8262;
+				itemDef.newColors[10] = 86933; // green
+				itemDef.oldColors[11] = 8244;
+				itemDef.newColors[11] = 86933; // green
+				itemDef.oldColors[12] = 8214;
+				itemDef.newColors[12] = 9583; // cream
+				itemDef.oldColors[13] = 9372;
+				itemDef.newColors[13] = 9583; // cream
+				itemDef.oldColors[14] = 9355;
+				itemDef.newColors[14] = 9583; // cream
+				itemDef.oldColors[15] = 9380;
+				itemDef.newColors[15] = 9583; // cream
+				itemDef.oldColors[16] = 9409;
+				itemDef.newColors[16] = 9583; // cream
+				itemDef.oldColors[17] = 9411;
+				itemDef.newColors[17] = 9583; // cream
+				itemDef.oldColors[18] = 9228;
+				itemDef.newColors[18] = 9221; // black
+				itemDef.oldColors[19] = 9428;
+				itemDef.newColors[19] = 9583; // cream
+				itemDef.oldColors[20] = 9412;
+				itemDef.newColors[20] = 9583; // cream
+				itemDef.oldColors[21] = 9364;
+				itemDef.newColors[21] = 9583; // cream
+				itemDef.oldColors[22] = 9425;
+				itemDef.newColors[22] = 9583; // cream
 				itemDef.rotationY = 280;
 				itemDef.rotationX = 0;
 				itemDef.modelOffsetX = -1;
@@ -1090,8 +1090,8 @@ public final class ItemDefinition {
 				// itemDef.rotationZ = 229;
 				itemDef.actions[1] = "Wield";
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
-				itemDef.newModelColor = new int[1];
-				itemDef.editedModelColor = new int[1];
+				itemDef.oldColors = new int[1];
+				itemDef.newColors = new int[1];
 				break;
 			case 12904:
 				itemDef.name = "Toxic staff of the dead";
@@ -1329,10 +1329,10 @@ public final class ItemDefinition {
 				itemDef.actions = new String[]{null, null, "Check", "Config", "Drop"};
 				break;
 			case 15332:
-				itemDef.newModelColor = new int[1];
-				itemDef.editedModelColor = new int[1];
-				itemDef.newModelColor[0] = 61;
-				itemDef.editedModelColor[0] = 0;
+				itemDef.oldColors = new int[1];
+				itemDef.newColors = new int[1];
+				itemDef.oldColors[0] = 61;
+				itemDef.newColors[0] = 0;
 				itemDef.modelID = 2789;
 				itemDef.modelOffsetX = 0;
 				itemDef.rotationZ = 0;
@@ -2277,8 +2277,8 @@ public final class ItemDefinition {
 				// itemDef.modelID = itemDef2.modelID;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{66};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{66};
 				itemDef.modelID = 65284;
 				break;
 			case 10947:
@@ -2354,8 +2354,8 @@ public final class ItemDefinition {
 				itemDef.copyItem(14277);
 				itemDef.name = "Seraphic potion";
 				itemDef.actions = new String[]{"Drink", null, null, null, "Drop"};
-				itemDef.newModelColor = new int[]{683};
-				itemDef.editedModelColor = new int[]{36142};
+				itemDef.oldColors = new int[]{683};
+				itemDef.newColors = new int[]{35141};
 				break;
 			case 20421:
 				itemDef.name = "Ethereal urn";
@@ -2569,8 +2569,8 @@ public final class ItemDefinition {
 				itemDef.name = "Execution Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{87};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{87};
 				itemDef.modelID = 65284;
 				break;
 
@@ -2580,8 +2580,8 @@ public final class ItemDefinition {
 				itemDef.name = "Legends Raids Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{120};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{120};
 				itemDef.modelID = 65284;
 				break;
 				
@@ -2592,8 +2592,8 @@ public final class ItemDefinition {
 				itemDef.name = "Season 1 Cosmetic set";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{98};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{98};
 				itemDef.modelID = 65284;
 				break;
 
@@ -2602,16 +2602,16 @@ public final class ItemDefinition {
 				itemDef.name = "Prestige Mystery Box";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{118};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{118};
 				itemDef.modelID = 65284;
 				break;
 				
 			case 6568: // To replace Transparent black with opaque black.
-				itemDef.newModelColor = new int[1];
-				itemDef.editedModelColor = new int[1];
-				itemDef.newModelColor[0] = 0;
-				itemDef.editedModelColor[0] = 2059;
+				itemDef.oldColors = new int[1];
+				itemDef.newColors = new int[1];
+				itemDef.oldColors[0] = 0;
+				itemDef.newColors[0] = 2059;
 				break;
 			case 13262:
 				itemDef.name = "Dragon Defender";
@@ -2830,30 +2830,30 @@ public final class ItemDefinition {
 			case 14004:
 				itemDef.name = "Staff of light";
 				itemDef.modelID = 51845;
-				itemDef.newModelColor = new int[11];
-				itemDef.editedModelColor = new int[11];
-				itemDef.newModelColor[0] = 7860;
-				itemDef.editedModelColor[0] = 38310;
-				itemDef.newModelColor[1] = 7876;
-				itemDef.editedModelColor[1] = 38310;
-				itemDef.newModelColor[2] = 7892;
-				itemDef.editedModelColor[2] = 38310;
-				itemDef.newModelColor[3] = 7884;
-				itemDef.editedModelColor[3] = 38310;
-				itemDef.newModelColor[4] = 7868;
-				itemDef.editedModelColor[4] = 38310;
-				itemDef.newModelColor[5] = 7864;
-				itemDef.editedModelColor[5] = 38310;
-				itemDef.newModelColor[6] = 7880;
-				itemDef.editedModelColor[6] = 38310;
-				itemDef.newModelColor[7] = 7848;
-				itemDef.editedModelColor[7] = 38310;
-				itemDef.newModelColor[8] = 7888;
-				itemDef.editedModelColor[8] = 38310;
-				itemDef.newModelColor[9] = 7872;
-				itemDef.editedModelColor[9] = 38310;
-				itemDef.newModelColor[10] = 7856;
-				itemDef.editedModelColor[10] = 38310;
+				itemDef.oldColors = new int[11];
+				itemDef.newColors = new int[11];
+				itemDef.oldColors[0] = 7860;
+				itemDef.newColors[0] = 38310;
+				itemDef.oldColors[1] = 7876;
+				itemDef.newColors[1] = 38310;
+				itemDef.oldColors[2] = 7892;
+				itemDef.newColors[2] = 38310;
+				itemDef.oldColors[3] = 7884;
+				itemDef.newColors[3] = 38310;
+				itemDef.oldColors[4] = 7868;
+				itemDef.newColors[4] = 38310;
+				itemDef.oldColors[5] = 7864;
+				itemDef.newColors[5] = 38310;
+				itemDef.oldColors[6] = 7880;
+				itemDef.newColors[6] = 38310;
+				itemDef.oldColors[7] = 7848;
+				itemDef.newColors[7] = 38310;
+				itemDef.oldColors[8] = 7888;
+				itemDef.newColors[8] = 38310;
+				itemDef.oldColors[9] = 7872;
+				itemDef.newColors[9] = 38310;
+				itemDef.oldColors[10] = 7856;
+				itemDef.newColors[10] = 38310;
 				itemDef.modelZoom = 2256;
 				itemDef.rotationX = 456;
 				itemDef.rotationY = 513;
@@ -2871,30 +2871,30 @@ public final class ItemDefinition {
 			case 14005:
 				itemDef.name = "Staff of light";
 				itemDef.modelID = 51845;
-				itemDef.newModelColor = new int[11];
-				itemDef.editedModelColor = new int[11];
-				itemDef.newModelColor[0] = 7860;
-				itemDef.editedModelColor[0] = 432;
-				itemDef.newModelColor[1] = 7876;
-				itemDef.editedModelColor[1] = 432;
-				itemDef.newModelColor[2] = 7892;
-				itemDef.editedModelColor[2] = 432;
-				itemDef.newModelColor[3] = 7884;
-				itemDef.editedModelColor[3] = 432;
-				itemDef.newModelColor[4] = 7868;
-				itemDef.editedModelColor[4] = 432;
-				itemDef.newModelColor[5] = 7864;
-				itemDef.editedModelColor[5] = 432;
-				itemDef.newModelColor[6] = 7880;
-				itemDef.editedModelColor[6] = 432;
-				itemDef.newModelColor[7] = 7848;
-				itemDef.editedModelColor[7] = 432;
-				itemDef.newModelColor[8] = 7888;
-				itemDef.editedModelColor[8] = 432;
-				itemDef.newModelColor[9] = 7872;
-				itemDef.editedModelColor[9] = 432;
-				itemDef.newModelColor[10] = 7856;
-				itemDef.editedModelColor[10] = 432;
+				itemDef.oldColors = new int[11];
+				itemDef.newColors = new int[11];
+				itemDef.oldColors[0] = 7860;
+				itemDef.newColors[0] = 432;
+				itemDef.oldColors[1] = 7876;
+				itemDef.newColors[1] = 432;
+				itemDef.oldColors[2] = 7892;
+				itemDef.newColors[2] = 432;
+				itemDef.oldColors[3] = 7884;
+				itemDef.newColors[3] = 432;
+				itemDef.oldColors[4] = 7868;
+				itemDef.newColors[4] = 432;
+				itemDef.oldColors[5] = 7864;
+				itemDef.newColors[5] = 432;
+				itemDef.oldColors[6] = 7880;
+				itemDef.newColors[6] = 432;
+				itemDef.oldColors[7] = 7848;
+				itemDef.newColors[7] = 432;
+				itemDef.oldColors[8] = 7888;
+				itemDef.newColors[8] = 432;
+				itemDef.oldColors[9] = 7872;
+				itemDef.newColors[9] = 432;
+				itemDef.oldColors[10] = 7856;
+				itemDef.newColors[10] = 432;
 				itemDef.modelZoom = 2256;
 				itemDef.rotationX = 456;
 				itemDef.rotationY = 513;
@@ -2912,30 +2912,30 @@ public final class ItemDefinition {
 			case 14006:
 				itemDef.name = "Staff of light";
 				itemDef.modelID = 51845;
-				itemDef.newModelColor = new int[11];
-				itemDef.editedModelColor = new int[11];
-				itemDef.newModelColor[0] = 7860;
-				itemDef.editedModelColor[0] = 24006;
-				itemDef.newModelColor[1] = 7876;
-				itemDef.editedModelColor[1] = 24006;
-				itemDef.newModelColor[2] = 7892;
-				itemDef.editedModelColor[2] = 24006;
-				itemDef.newModelColor[3] = 7884;
-				itemDef.editedModelColor[3] = 24006;
-				itemDef.newModelColor[4] = 7868;
-				itemDef.editedModelColor[4] = 24006;
-				itemDef.newModelColor[5] = 7864;
-				itemDef.editedModelColor[5] = 24006;
-				itemDef.newModelColor[6] = 7880;
-				itemDef.editedModelColor[6] = 24006;
-				itemDef.newModelColor[7] = 7848;
-				itemDef.editedModelColor[7] = 24006;
-				itemDef.newModelColor[8] = 7888;
-				itemDef.editedModelColor[8] = 24006;
-				itemDef.newModelColor[9] = 7872;
-				itemDef.editedModelColor[9] = 24006;
-				itemDef.newModelColor[10] = 7856;
-				itemDef.editedModelColor[10] = 24006;
+				itemDef.oldColors = new int[11];
+				itemDef.newColors = new int[11];
+				itemDef.oldColors[0] = 7860;
+				itemDef.newColors[0] = 24006;
+				itemDef.oldColors[1] = 7876;
+				itemDef.newColors[1] = 24006;
+				itemDef.oldColors[2] = 7892;
+				itemDef.newColors[2] = 24006;
+				itemDef.oldColors[3] = 7884;
+				itemDef.newColors[3] = 24006;
+				itemDef.oldColors[4] = 7868;
+				itemDef.newColors[4] = 24006;
+				itemDef.oldColors[5] = 7864;
+				itemDef.newColors[5] = 24006;
+				itemDef.oldColors[6] = 7880;
+				itemDef.newColors[6] = 24006;
+				itemDef.oldColors[7] = 7848;
+				itemDef.newColors[7] = 24006;
+				itemDef.oldColors[8] = 7888;
+				itemDef.newColors[8] = 24006;
+				itemDef.oldColors[9] = 7872;
+				itemDef.newColors[9] = 24006;
+				itemDef.oldColors[10] = 7856;
+				itemDef.newColors[10] = 24006;
 				itemDef.modelZoom = 2256;
 				itemDef.rotationX = 456;
 				itemDef.rotationY = 513;
@@ -2952,30 +2952,30 @@ public final class ItemDefinition {
 			case 14007:
 				itemDef.name = "Staff of light";
 				itemDef.modelID = 51845;
-				itemDef.newModelColor = new int[11];
-				itemDef.editedModelColor = new int[11];
-				itemDef.newModelColor[0] = 7860;
-				itemDef.editedModelColor[0] = 14285;
-				itemDef.newModelColor[1] = 7876;
-				itemDef.editedModelColor[1] = 14285;
-				itemDef.newModelColor[2] = 7892;
-				itemDef.editedModelColor[2] = 14285;
-				itemDef.newModelColor[3] = 7884;
-				itemDef.editedModelColor[3] = 14285;
-				itemDef.newModelColor[4] = 7868;
-				itemDef.editedModelColor[4] = 14285;
-				itemDef.newModelColor[5] = 7864;
-				itemDef.editedModelColor[5] = 14285;
-				itemDef.newModelColor[6] = 7880;
-				itemDef.editedModelColor[6] = 14285;
-				itemDef.newModelColor[7] = 7848;
-				itemDef.editedModelColor[7] = 14285;
-				itemDef.newModelColor[8] = 7888;
-				itemDef.editedModelColor[8] = 14285;
-				itemDef.newModelColor[9] = 7872;
-				itemDef.editedModelColor[9] = 14285;
-				itemDef.newModelColor[10] = 7856;
-				itemDef.editedModelColor[10] = 14285;
+				itemDef.oldColors = new int[11];
+				itemDef.newColors = new int[11];
+				itemDef.oldColors[0] = 7860;
+				itemDef.newColors[0] = 14285;
+				itemDef.oldColors[1] = 7876;
+				itemDef.newColors[1] = 14285;
+				itemDef.oldColors[2] = 7892;
+				itemDef.newColors[2] = 14285;
+				itemDef.oldColors[3] = 7884;
+				itemDef.newColors[3] = 14285;
+				itemDef.oldColors[4] = 7868;
+				itemDef.newColors[4] = 14285;
+				itemDef.oldColors[5] = 7864;
+				itemDef.newColors[5] = 14285;
+				itemDef.oldColors[6] = 7880;
+				itemDef.newColors[6] = 14285;
+				itemDef.oldColors[7] = 7848;
+				itemDef.newColors[7] = 14285;
+				itemDef.oldColors[8] = 7888;
+				itemDef.newColors[8] = 14285;
+				itemDef.oldColors[9] = 7872;
+				itemDef.newColors[9] = 14285;
+				itemDef.oldColors[10] = 7856;
+				itemDef.newColors[10] = 14285;
 				itemDef.modelZoom = 2256;
 				itemDef.rotationX = 456;
 				itemDef.rotationY = 513;
@@ -2992,14 +2992,14 @@ public final class ItemDefinition {
 			case 14003:
 				itemDef.name = "Robin hood hat";
 				itemDef.modelID = 3021;
-				itemDef.newModelColor = new int[3];
-				itemDef.editedModelColor = new int[3];
-				itemDef.newModelColor[0] = 15009;
-				itemDef.editedModelColor[0] = 30847;
-				itemDef.newModelColor[1] = 17294;
-				itemDef.editedModelColor[1] = 32895;
-				itemDef.newModelColor[2] = 15252;
-				itemDef.editedModelColor[2] = 30847;
+				itemDef.oldColors = new int[3];
+				itemDef.newColors = new int[3];
+				itemDef.oldColors[0] = 15009;
+				itemDef.newColors[0] = 30847;
+				itemDef.oldColors[1] = 17294;
+				itemDef.newColors[1] = 32895;
+				itemDef.oldColors[2] = 15252;
+				itemDef.newColors[2] = 30847;
 				itemDef.modelZoom = 650;
 				itemDef.rotationY = 2044;
 				itemDef.rotationX = 256;
@@ -3019,14 +3019,14 @@ public final class ItemDefinition {
 			case 14001:
 				itemDef.name = "Robin hood hat";
 				itemDef.modelID = 3021;
-				itemDef.newModelColor = new int[3];
-				itemDef.editedModelColor = new int[3];
-				itemDef.newModelColor[0] = 15009;
-				itemDef.editedModelColor[0] = 10015;
-				itemDef.newModelColor[1] = 17294;
-				itemDef.editedModelColor[1] = 7730;
-				itemDef.newModelColor[2] = 15252;
-				itemDef.editedModelColor[2] = 7973;
+				itemDef.oldColors = new int[3];
+				itemDef.newColors = new int[3];
+				itemDef.oldColors[0] = 15009;
+				itemDef.newColors[0] = 10015;
+				itemDef.oldColors[1] = 17294;
+				itemDef.newColors[1] = 7730;
+				itemDef.oldColors[2] = 15252;
+				itemDef.newColors[2] = 7973;
 				itemDef.modelZoom = 650;
 				itemDef.rotationY = 2044;
 				itemDef.rotationX = 256;
@@ -3046,14 +3046,14 @@ public final class ItemDefinition {
 			case 14002:
 				itemDef.name = "Robin hood hat";
 				itemDef.modelID = 3021;
-				itemDef.newModelColor = new int[3];
-				itemDef.editedModelColor = new int[3];
-				itemDef.newModelColor[0] = 15009;
-				itemDef.editedModelColor[0] = 35489;
-				itemDef.newModelColor[1] = 17294;
-				itemDef.editedModelColor[1] = 37774;
-				itemDef.newModelColor[2] = 15252;
-				itemDef.editedModelColor[2] = 35732;
+				itemDef.oldColors = new int[3];
+				itemDef.newColors = new int[3];
+				itemDef.oldColors[0] = 15009;
+				itemDef.newColors[0] = 35489;
+				itemDef.oldColors[1] = 17294;
+				itemDef.newColors[1] = 37774;
+				itemDef.oldColors[2] = 15252;
+				itemDef.newColors[2] = 35732;
 				itemDef.modelZoom = 650;
 				itemDef.rotationY = 2044;
 				itemDef.rotationX = 256;
@@ -3073,14 +3073,14 @@ public final class ItemDefinition {
 			case 14000:
 				itemDef.name = "Robin hood hat";
 				itemDef.modelID = 3021;
-				itemDef.newModelColor = new int[3];
-				itemDef.editedModelColor = new int[3];
-				itemDef.newModelColor[0] = 15009;
-				itemDef.editedModelColor[0] = 3745;
-				itemDef.newModelColor[1] = 17294;
-				itemDef.editedModelColor[1] = 3982;
-				itemDef.newModelColor[2] = 15252;
-				itemDef.editedModelColor[2] = 3988;
+				itemDef.oldColors = new int[3];
+				itemDef.newColors = new int[3];
+				itemDef.oldColors[0] = 15009;
+				itemDef.newColors[0] = 3745;
+				itemDef.oldColors[1] = 17294;
+				itemDef.newColors[1] = 3982;
+				itemDef.oldColors[2] = 15252;
+				itemDef.newColors[2] = 3988;
 				itemDef.modelZoom = 650;
 				itemDef.rotationY = 2044;
 				itemDef.rotationX = 256;
@@ -3283,8 +3283,8 @@ public final class ItemDefinition {
 				itemDef.rotationZ = 1887;
 				itemDef.modelOffsetX = 15;
 				itemDef.modelOffsetY = -19;
-				itemDef.newModelColor = new int[]{24, 40};
-				itemDef.editedModelColor = new int[]{68, 78};
+				itemDef.oldColors = new int[]{24, 40};
+				itemDef.newColors = new int[]{68, 78};
 				itemDef.actions[2] = null;
 				
 				break;
@@ -3293,8 +3293,8 @@ public final class ItemDefinition {
 				itemDef.maleEquip1 = 65342;
 				itemDef.femaleEquip1 = 65342;
 				itemDef.name = "<col=ff6f6f>Nex Glaive";
-				itemDef.newModelColor = new int[]{60, 62};
-				itemDef.editedModelColor = new int[]{66, 66};
+				itemDef.oldColors = new int[]{60, 62};
+				itemDef.newColors = new int[]{66, 66};
 				
 				break;
 			case 20552:
@@ -3302,8 +3302,8 @@ public final class ItemDefinition {
 				itemDef.maleEquip1 = 65342;
 				itemDef.femaleEquip1 = 65342;
 				itemDef.name = "Soul Glaive";
-				itemDef.newModelColor = new int[]{60, 62};
-				itemDef.editedModelColor = new int[]{96, 96};
+				itemDef.oldColors = new int[]{60, 62};
+				itemDef.newColors = new int[]{96, 96};
 				///	itemDef.rdc2 = 5006;
 				break;
 				
@@ -3484,28 +3484,28 @@ public final class ItemDefinition {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.maleDialogue = 62731;
 				itemDef.femaleDialogue = 62727;
-				itemDef.editedModelColor = new int[10];
-				itemDef.newModelColor = new int[10];
-				itemDef.newModelColor[0] = 48543; // NORM (TRIM)
-				itemDef.editedModelColor[0] = 1030; // CHANGE (TRIM)
-				itemDef.newModelColor[1] = 49567; // NORM (TRIM)
-				itemDef.editedModelColor[1] = 1030; // CHANGE (TRIM)
-				itemDef.newModelColor[2] = 8741; // NORM (INV MODEL)
-				itemDef.editedModelColor[2] = 10; // CHANGE (INV MODEL)
-				itemDef.newModelColor[3] = 0; // NORM (FACE)
-				itemDef.editedModelColor[3] = 100; // CHANGE (FACE) -- 25 = grey, 100 = white, 0 = black
-				itemDef.newModelColor[4] = 13; // NORM
-				itemDef.editedModelColor[4] = 1030; // CHANGE
-				itemDef.newModelColor[5] = 11; // NORM
-				itemDef.editedModelColor[5] = 1030; // CHANGE
-				itemDef.newModelColor[6] = 18; // NORM
-				itemDef.editedModelColor[6] = 1030; // CHANGE
-				itemDef.newModelColor[7] = 10; // NORM
-				itemDef.editedModelColor[7] = 1030; // CHANGE
-				itemDef.newModelColor[8] = 16; // NORM
-				itemDef.editedModelColor[8] = 1030; // CHANGE
-				itemDef.newModelColor[8] = 1032; // NORM
-				itemDef.editedModelColor[8] = 16; // CHANGE
+				itemDef.newColors = new int[10];
+				itemDef.oldColors = new int[10];
+				itemDef.oldColors[0] = 48543; // NORM (TRIM)
+				itemDef.newColors[0] = 1030; // CHANGE (TRIM)
+				itemDef.oldColors[1] = 49567; // NORM (TRIM)
+				itemDef.newColors[1] = 1030; // CHANGE (TRIM)
+				itemDef.oldColors[2] = 8741; // NORM (INV MODEL)
+				itemDef.newColors[2] = 10; // CHANGE (INV MODEL)
+				itemDef.oldColors[3] = 0; // NORM (FACE)
+				itemDef.newColors[3] = 100; // CHANGE (FACE) -- 25 = grey, 100 = white, 0 = black
+				itemDef.oldColors[4] = 13; // NORM
+				itemDef.newColors[4] = 1030; // CHANGE
+				itemDef.oldColors[5] = 11; // NORM
+				itemDef.newColors[5] = 1030; // CHANGE
+				itemDef.oldColors[6] = 18; // NORM
+				itemDef.newColors[6] = 1030; // CHANGE
+				itemDef.oldColors[7] = 10; // NORM
+				itemDef.newColors[7] = 1030; // CHANGE
+				itemDef.oldColors[8] = 16; // NORM
+				itemDef.newColors[8] = 1030; // CHANGE
+				itemDef.oldColors[8] = 1032; // NORM
+				itemDef.newColors[8] = 16; // CHANGE
 				break;
 
 			case 22037:
@@ -3520,18 +3520,18 @@ public final class ItemDefinition {
 				itemDef.femaleEquip1 = 6669;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.editedModelColor = new int[5];
-				itemDef.newModelColor = new int[5];
-				itemDef.newModelColor[0] = 14490; // NORM
-				itemDef.editedModelColor[0] = 1030; // CHANGE
-				itemDef.newModelColor[1] = 10396; // NORM
-				itemDef.editedModelColor[1] = 1; // CHANGE
-				itemDef.newModelColor[2] = 10388; // NORM
-				itemDef.editedModelColor[2] = 4; // CHANGE
-				itemDef.newModelColor[3] = 8741; // NORM
-				itemDef.editedModelColor[3] = 1030; // CHANGE
-				itemDef.newModelColor[4] = 16652; // NORM
-				itemDef.editedModelColor[4] = 1; // CHANGE
+				itemDef.newColors = new int[5];
+				itemDef.oldColors = new int[5];
+				itemDef.oldColors[0] = 14490; // NORM
+				itemDef.newColors[0] = 1030; // CHANGE
+				itemDef.oldColors[1] = 10396; // NORM
+				itemDef.newColors[1] = 1; // CHANGE
+				itemDef.oldColors[2] = 10388; // NORM
+				itemDef.newColors[2] = 4; // CHANGE
+				itemDef.oldColors[3] = 8741; // NORM
+				itemDef.newColors[3] = 1030; // CHANGE
+				itemDef.oldColors[4] = 16652; // NORM
+				itemDef.newColors[4] = 1; // CHANGE
 				itemDef.anInt188 = 170;
 				break;
 
@@ -3547,14 +3547,14 @@ public final class ItemDefinition {
 				itemDef.femaleEquip1 = 6659;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.editedModelColor = new int[3];
-				itemDef.newModelColor = new int[3];
-				itemDef.newModelColor[0] = 14490; // NORM
-				itemDef.editedModelColor[0] = 1030; // CHANGE
-				itemDef.newModelColor[1] = 10396; // NORM
-				itemDef.editedModelColor[1] = 1; // CHANGE
-				itemDef.newModelColor[2] = 10388; // NORM
-				itemDef.editedModelColor[2] = 4; // CHANGE
+				itemDef.newColors = new int[3];
+				itemDef.oldColors = new int[3];
+				itemDef.oldColors[0] = 14490; // NORM
+				itemDef.newColors[0] = 1030; // CHANGE
+				itemDef.oldColors[1] = 10396; // NORM
+				itemDef.newColors[1] = 1; // CHANGE
+				itemDef.oldColors[2] = 10388; // NORM
+				itemDef.newColors[2] = 4; // CHANGE
 				break;
 
 			case 22039:
@@ -3569,16 +3569,16 @@ public final class ItemDefinition {
 				itemDef.femaleEquip1 = 539;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wield", null, null, "Drop"};
-				itemDef.editedModelColor = new int[4];
-				itemDef.newModelColor = new int[4];
-				itemDef.newModelColor[0] = 37; // NORM
-				itemDef.editedModelColor[0] = 1030; // CHANGE
-				itemDef.newModelColor[1] = 6036; // NORM
-				itemDef.editedModelColor[1] = 1030; // CHANGE
-				itemDef.newModelColor[2] = 924; // NORM
-				itemDef.editedModelColor[2] = 127; // CHANGE
-				itemDef.newModelColor[3] = 22459; // NORM
-				itemDef.editedModelColor[3] = 924; // CHANGE
+				itemDef.newColors = new int[4];
+				itemDef.oldColors = new int[4];
+				itemDef.oldColors[0] = 37; // NORM
+				itemDef.newColors[0] = 1030; // CHANGE
+				itemDef.oldColors[1] = 6036; // NORM
+				itemDef.newColors[1] = 1030; // CHANGE
+				itemDef.oldColors[2] = 924; // NORM
+				itemDef.newColors[2] = 127; // CHANGE
+				itemDef.oldColors[3] = 22459; // NORM
+				itemDef.newColors[3] = 924; // CHANGE
 				break;
 
 			case 22052:
@@ -3586,42 +3586,42 @@ public final class ItemDefinition {
 				itemDef.modelID = 56785;
 				itemDef.maleEquip1 = 55904;
 				itemDef.femaleEquip1 = 56557;
-				itemDef.editedModelColor = new int[17];
-				itemDef.newModelColor = new int[17];
-				itemDef.newModelColor[0] = 54352; // NORM
-				itemDef.editedModelColor[0] = 11200; // CHANGE
-				itemDef.newModelColor[1] = 54307; // NORM
-				itemDef.editedModelColor[1] = 10; // CHANGE
-				itemDef.newModelColor[2] = 54317; // NORM
-				itemDef.editedModelColor[2] = 20; // CHANGE
-				itemDef.newModelColor[3] = 54312; // NORM
-				itemDef.editedModelColor[3] = 15; // CHANGE
-				itemDef.newModelColor[4] = 54302; // NORM
-				itemDef.editedModelColor[4] = 8; // CHANGE
-				itemDef.newModelColor[5] = 54322; // NORM
-				itemDef.editedModelColor[5] = 28; // CHANGE
-				itemDef.newModelColor[6] = 54315; // NORM
-				itemDef.editedModelColor[6] = 21; // CHANGE
-				itemDef.newModelColor[7] = 54310; // NORM
-				itemDef.editedModelColor[7] = 13; // CHANGE
-				itemDef.newModelColor[8] = 54297; // NORM
-				itemDef.editedModelColor[8] = 1; // CHANGE
-				itemDef.newModelColor[9] = 54292; // NORM
-				itemDef.editedModelColor[9] = 1; // CHANGE
-				itemDef.newModelColor[10] = 54316; // NORM
-				itemDef.editedModelColor[10] = 9; // CHANGE
-				itemDef.newModelColor[11] = 54311; // NORM
-				itemDef.editedModelColor[11] = 4; // CHANGE
-				itemDef.newModelColor[12] = 54318; // NORM
-				itemDef.editedModelColor[12] = 20; // CHANGE
-				itemDef.newModelColor[13] = 54313; // NORM
-				itemDef.editedModelColor[13] = 14; // CHANGE
-				itemDef.newModelColor[14] = 54308; // NORM
-				itemDef.editedModelColor[14] = 11; // CHANGE
-				itemDef.newModelColor[15] = 54319; // NORM
-				itemDef.editedModelColor[15] = 22; // CHANGE
-				itemDef.newModelColor[16] = 54320; // NORM
-				itemDef.editedModelColor[16] = 23; // CHANGE
+				itemDef.newColors = new int[17];
+				itemDef.oldColors = new int[17];
+				itemDef.oldColors[0] = 54352; // NORM
+				itemDef.newColors[0] = 11200; // CHANGE
+				itemDef.oldColors[1] = 54307; // NORM
+				itemDef.newColors[1] = 10; // CHANGE
+				itemDef.oldColors[2] = 54317; // NORM
+				itemDef.newColors[2] = 20; // CHANGE
+				itemDef.oldColors[3] = 54312; // NORM
+				itemDef.newColors[3] = 15; // CHANGE
+				itemDef.oldColors[4] = 54302; // NORM
+				itemDef.newColors[4] = 8; // CHANGE
+				itemDef.oldColors[5] = 54322; // NORM
+				itemDef.newColors[5] = 28; // CHANGE
+				itemDef.oldColors[6] = 54315; // NORM
+				itemDef.newColors[6] = 21; // CHANGE
+				itemDef.oldColors[7] = 54310; // NORM
+				itemDef.newColors[7] = 13; // CHANGE
+				itemDef.oldColors[8] = 54297; // NORM
+				itemDef.newColors[8] = 1; // CHANGE
+				itemDef.oldColors[9] = 54292; // NORM
+				itemDef.newColors[9] = 1; // CHANGE
+				itemDef.oldColors[10] = 54316; // NORM
+				itemDef.newColors[10] = 9; // CHANGE
+				itemDef.oldColors[11] = 54311; // NORM
+				itemDef.newColors[11] = 4; // CHANGE
+				itemDef.oldColors[12] = 54318; // NORM
+				itemDef.newColors[12] = 20; // CHANGE
+				itemDef.oldColors[13] = 54313; // NORM
+				itemDef.newColors[13] = 14; // CHANGE
+				itemDef.oldColors[14] = 54308; // NORM
+				itemDef.newColors[14] = 11; // CHANGE
+				itemDef.oldColors[15] = 54319; // NORM
+				itemDef.newColors[15] = 22; // CHANGE
+				itemDef.oldColors[16] = 54320; // NORM
+				itemDef.newColors[16] = 23; // CHANGE
 				itemDef.modelOffsetX = -1;
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetY = 0;
@@ -3641,8 +3641,8 @@ public final class ItemDefinition {
 				itemDef.rotationX = 1836;
 				itemDef.rotationZ = 2;
 				itemDef.modelOffsetY = 3;
-				itemDef.newModelColor = new int[]{908};
-				itemDef.editedModelColor = new int[]{-21608};
+				itemDef.oldColors = new int[]{908};
+				itemDef.newColors = new int[]{-21608};
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.maleEquip1 = 9347;
@@ -3657,8 +3657,8 @@ public final class ItemDefinition {
 				itemDef.rotationX = 1836;
 				itemDef.rotationZ = 2;
 				itemDef.modelOffsetY = 3;
-				itemDef.newModelColor = new int[]{908};
-				itemDef.editedModelColor = new int[]{15252};
+				itemDef.oldColors = new int[]{908};
+				itemDef.newColors = new int[]{15252};
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.maleEquip1 = 9347;
@@ -3674,12 +3674,12 @@ public final class ItemDefinition {
 				itemDef.rotationY = 516;
 				itemDef.rotationX = 0;
 				itemDef.modelZoom = 730;
-				itemDef.editedModelColor = new int[2];
-				itemDef.newModelColor = new int[2];
-				itemDef.newModelColor[0] = 0; // NORM
-				itemDef.editedModelColor[0] = 11200; // CHANGE --EYES
-				itemDef.newModelColor[1] = 926; // NORM
-				itemDef.editedModelColor[1] = 4; // CHANGE --MASK COLOR
+				itemDef.newColors = new int[2];
+				itemDef.oldColors = new int[2];
+				itemDef.oldColors[0] = 0; // NORM
+				itemDef.newColors[0] = 11200; // CHANGE --EYES
+				itemDef.oldColors[1] = 926; // NORM
+				itemDef.newColors[1] = 4; // CHANGE --MASK COLOR
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.maleEquip1 = 3188;
 				itemDef.femaleEquip1 = 3192;
@@ -3725,16 +3725,16 @@ public final class ItemDefinition {
 				itemDef.femaleEquip1 = 556;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wield", null, null, "Drop"};
-				itemDef.editedModelColor = new int[4];
-				itemDef.newModelColor = new int[4];
-				itemDef.newModelColor[0] = 11177; // NORM
-				itemDef.editedModelColor[0] = 1030; // CHANGE
-				itemDef.newModelColor[1] = 61; // NORM
-				itemDef.editedModelColor[1] = 1030; // CHANGE
-				itemDef.newModelColor[2] = 5018; // NORM
-				itemDef.editedModelColor[2] = 16; // CHANGE
-				itemDef.newModelColor[3] = 10351; // NORM
-				itemDef.editedModelColor[3] = 50; // CHANGE
+				itemDef.newColors = new int[4];
+				itemDef.oldColors = new int[4];
+				itemDef.oldColors[0] = 11177; // NORM
+				itemDef.newColors[0] = 1030; // CHANGE
+				itemDef.oldColors[1] = 61; // NORM
+				itemDef.newColors[1] = 1030; // CHANGE
+				itemDef.oldColors[2] = 5018; // NORM
+				itemDef.newColors[2] = 16; // CHANGE
+				itemDef.oldColors[3] = 10351; // NORM
+				itemDef.newColors[3] = 50; // CHANGE
 				break;
 
 			case 22043:
@@ -3750,16 +3750,16 @@ public final class ItemDefinition {
 				itemDef.femaleEquip1 = 7122;
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
-				itemDef.editedModelColor = new int[4];
-				itemDef.newModelColor = new int[4];
-				itemDef.newModelColor[0] = 6674; // NORM
-				itemDef.editedModelColor[0] = 30; // CHANGE --Yellow Trim = 11200
-				itemDef.newModelColor[1] = 6430; // NORM
-				itemDef.editedModelColor[1] = 933; // CHANGE
-				itemDef.newModelColor[2] = 6554; // NORM
-				itemDef.editedModelColor[2] = 933; // CHANGE
-				itemDef.newModelColor[3] = 6550; // NORM
-				itemDef.editedModelColor[3] = 933; // CHANGE
+				itemDef.newColors = new int[4];
+				itemDef.oldColors = new int[4];
+				itemDef.oldColors[0] = 6674; // NORM
+				itemDef.newColors[0] = 30; // CHANGE --Yellow Trim = 11200
+				itemDef.oldColors[1] = 6430; // NORM
+				itemDef.newColors[1] = 933; // CHANGE
+				itemDef.oldColors[2] = 6554; // NORM
+				itemDef.newColors[2] = 933; // CHANGE
+				itemDef.oldColors[3] = 6550; // NORM
+				itemDef.newColors[3] = 933; // CHANGE
 				break;
 
 			case 14014:
@@ -4095,29 +4095,29 @@ public final class ItemDefinition {
 			case 1513:
 				itemDef.actions = new String[5];
 				
-				itemDef.editedModelColor = new int[2];
-				itemDef.newModelColor = new int[2];
-				itemDef.newModelColor[0] = 127;
-				itemDef.editedModelColor[0] = 8481;
+				itemDef.newColors = new int[2];
+				itemDef.oldColors = new int[2];
+				itemDef.oldColors[0] = 127;
+				itemDef.newColors[0] = 8481;
 				break;
 			case 303:
-				itemDef.editedModelColor = new int[2];
-				itemDef.newModelColor = new int[2];
-				itemDef.newModelColor[0] = 127; // white plague
-				itemDef.editedModelColor[0] = 7100;
+				itemDef.newColors = new int[2];
+				itemDef.oldColors = new int[2];
+				itemDef.oldColors[0] = 127; // white plague
+				itemDef.newColors[0] = 7100;
 			case 305:
-				itemDef.editedModelColor = new int[2];
-				itemDef.newModelColor = new int[2];
-				itemDef.newModelColor[0] = 127; // white plague
-				itemDef.editedModelColor[0] = 7446;
+				itemDef.newColors = new int[2];
+				itemDef.oldColors = new int[2];
+				itemDef.oldColors[0] = 127; // white plague
+				itemDef.newColors[0] = 7446;
 				break;
 			case 10284:
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
-				itemDef.editedModelColor = new int[2];
-				itemDef.newModelColor = new int[2];
-				itemDef.newModelColor[0] = 933;
-				itemDef.editedModelColor[0] = 6;
+				itemDef.newColors = new int[2];
+				itemDef.oldColors = new int[2];
+				itemDef.oldColors[0] = 933;
+				itemDef.newColors[0] = 6;
 				itemDef.modelID = 2537;
 				itemDef.modelZoom = 540;
 				itemDef.rotationY = 72;
@@ -4218,8 +4218,8 @@ public final class ItemDefinition {
 				itemDef.modelID = itemDef21.modelID;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{67};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{67};
 				break;
 			case 5022:
 				itemDef.name = "<col=ff4f4f>PVM ticket";
@@ -4245,8 +4245,8 @@ public final class ItemDefinition {
 				itemDef.modelID = itemDef21.modelID;
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.newModelColor = new int[]{63};
-				itemDef.editedModelColor = new int[]{67};
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{67};
 				break;
 			case 9000:
 				itemDef.copyItem(5023);
@@ -4284,8 +4284,8 @@ public final class ItemDefinition {
 				itemDef.modelOffsetY = 24;
 				itemDef.rotationY = 279;
 				itemDef.rotationX = 948;
-				itemDef.newModelColor = new int[]{65214, 65200, 65186, 62995};
-				itemDef.editedModelColor = new int[]{44988, 44988, 32463, 44988};
+				itemDef.oldColors = new int[]{65214, 65200, 65186, 62995};
+				itemDef.newColors = new int[]{44988, 44988, 32463, 44988};
 				itemDef.maleEquip1 = 65297;
 				itemDef.femaleEquip1 = 65297;
 				itemDef.groundActions = new String[5];
@@ -4375,8 +4375,8 @@ public final class ItemDefinition {
 				itemDef.description = "Some well-cut mahogany logs.".getBytes();
 				itemDef.actions = new String[]{null, null, null, null, null};
 				itemDef.groundActions = new String[]{null, null, "Take", "Light", null};
-				itemDef.editedModelColor = new int[]{6585, 4758, 5006};
-				itemDef.newModelColor = new int[]{5665, 5784, 5559};
+				itemDef.newColors = new int[]{6585, 4758, 5006};
+				itemDef.oldColors = new int[]{5665, 5784, 5559};
 				itemDef.modelID = 7760;
 				itemDef.modelZoom = 1180;
 				itemDef.rotationY = 120;
@@ -4397,8 +4397,8 @@ public final class ItemDefinition {
 				itemDef.description = "Some well-cut mahogany logs.".getBytes();
 				itemDef.actions = new String[]{null, null, null, null, null};
 				itemDef.groundActions = new String[]{null, null, null, null, null};
-				itemDef.editedModelColor = new int[]{6585, 4758, 5006};
-				itemDef.newModelColor = new int[]{5665, 5784, 5559};
+				itemDef.newColors = new int[]{6585, 4758, 5006};
+				itemDef.oldColors = new int[]{5665, 5784, 5559};
 
 				itemDef.certID = 22060;
 				itemDef.certTemplateID = 799;
@@ -4511,12 +4511,12 @@ public final class ItemDefinition {
 		switch (itemDef.id) {
 
 			case 20147:
-				itemDef.newModelColor = new int[2];
-				itemDef.editedModelColor = new int[2];
-				itemDef.newModelColor[0] = 4550;
-				itemDef.editedModelColor[0] = 1;
-				itemDef.newModelColor[1] = 4540;
-				itemDef.editedModelColor[1] = 1;
+				itemDef.oldColors = new int[2];
+				itemDef.newColors = new int[2];
+				itemDef.oldColors[0] = 4550;
+				itemDef.newColors[0] = 1;
+				itemDef.oldColors[1] = 4540;
+				itemDef.newColors[1] = 1;
 				break;
 		}
 		ItemDef2.newIDS(itemDef, id);
@@ -4665,8 +4665,8 @@ public final class ItemDefinition {
 			itemDef.modelOffsetY = 24;
 			itemDef.rotationY = 279;
 			itemDef.rotationX = 948;
-			itemDef.newModelColor = new int[]{65214, 65200, 65186, 62995, 64639};
-			itemDef.editedModelColor = new int[]{1, 6, 1, 5759, 5706};
+			itemDef.oldColors = new int[]{65214, 65200, 65186, 62995, 64639};
+			itemDef.newColors = new int[]{1, 6, 1, 5759, 5706};
 			itemDef.maleEquip1 = 65297;
 			itemDef.femaleEquip1 = 65297;
 			itemDef.groundActions = new String[5];
@@ -5055,13 +5055,13 @@ public final class ItemDefinition {
 			itemDef.stackable = false;
 		}
 		if (customId == 19843) { // weapon
-			itemDef.editedModelColor = new int[2]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-			itemDef.newModelColor = new int[2]; // same here
-			itemDef.newModelColor[0] = 40; // the texture that it currently has
-			itemDef.editedModelColor[0] = 64; // the new texture u want it to have
+			itemDef.newColors = new int[2]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+			itemDef.oldColors = new int[2]; // same here
+			itemDef.oldColors[0] = 40; // the texture that it currently has
+			itemDef.newColors[0] = 64; // the new texture u want it to have
 
-			itemDef.newModelColor[1] = 24; // the texture that it currently has
-			itemDef.editedModelColor[1] = 41; // the new texture u want it to have
+			itemDef.oldColors[1] = 24; // the texture that it currently has
+			itemDef.newColors[1] = 41; // the new texture u want it to have
 			itemDef.name = "Archie minigun";
 			ItemDefinition itemDef2 = ItemDefinition.get(20538);
 			itemDef.modelID = 65210;
@@ -5078,10 +5078,10 @@ public final class ItemDefinition {
 			itemDef.stackable = false;
 		}
 		if (customId == 19137) { // weapon
-			itemDef.editedModelColor = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-			itemDef.newModelColor = new int[1]; // same here
-			itemDef.newModelColor[0] = 40; // the texture that it currently has
-			itemDef.editedModelColor[0] = 60; // the new texture u want it to have
+			itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+			itemDef.oldColors = new int[1]; // same here
+			itemDef.oldColors[0] = 40; // the texture that it currently has
+			itemDef.newColors[0] = 60; // the new texture u want it to have
 			itemDef.name = "Iron minigun";
 			ItemDefinition itemDef2 = ItemDefinition.get(20538);
 			itemDef.modelID = 65210;
@@ -5097,8 +5097,8 @@ public final class ItemDefinition {
 			itemDef.stackable = false;
 		}
 		if (customId == 19135) {
-			itemDef.newModelColor = new int[]{40, 24};
-			itemDef.editedModelColor = new int[]{66, 66};
+			itemDef.oldColors = new int[]{40, 24};
+			itemDef.newColors = new int[]{66, 66};
 			// itemDef.originalModelColors = new int[1]; // if only 1 texture is modified
 			// this has to be 1, if 2 then 2 etc
 			// itemDef.modifiedModelColors = new int[1]; // same here
@@ -5217,8 +5217,8 @@ public final class ItemDefinition {
 			itemDef.modelZoom = 1800;
 			itemDef.rotationY = 1678;
 			itemDef.rotationX = 2043;
-			itemDef.newModelColor = new int[]{55};
-			itemDef.editedModelColor = new int[]{68};
+			itemDef.oldColors = new int[]{55};
+			itemDef.newColors = new int[]{68};
 			itemDef.stackable = false;
 			// itemDef.rdc2 = 34343;
 		}
@@ -5235,8 +5235,8 @@ public final class ItemDefinition {
 			itemDef.rotationX = 1200;
 			itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 			itemDef.stackable = false;
-			itemDef.newModelColor = new int[]{52};
-			itemDef.editedModelColor = new int[]{52};
+			itemDef.oldColors = new int[]{52};
+			itemDef.newColors = new int[]{52};
 			// itemDef.rdc2 = 34333;
 		}
 		if (customId == 22085) { // weapon
@@ -5362,8 +5362,8 @@ public final class ItemDefinition {
 			itemDef.rotationY = itemDef2.rotationY;
 			itemDef.rotationX = itemDef2.rotationX;
 			itemDef.stackable = false;
-			itemDef.newModelColor = new int[]{52};
-			itemDef.editedModelColor = new int[]{79};
+			itemDef.oldColors = new int[]{52};
+			itemDef.newColors = new int[]{79};
 			itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};	
 			//itemDef.rdc2 = 46880;
 		}
@@ -5911,9 +5911,9 @@ public final class ItemDefinition {
 	public int rotationY;
 	public int rotationX;
 	public int modelZoom;
-	public int[] newModelColor;
+	public int[] oldColors;
 	public String name;
-	public int[] editedModelColor;
+	public int[] newColors;
 	public boolean stackable;
 	public int[] stackAmounts;
 	public int[] stackIDs;
@@ -5976,9 +5976,9 @@ public final class ItemDefinition {
 			model.scaleT(scaleX, scaleZ, scaleY);
 		}
 
-		if (newModelColor != null) {
-			for (int l = 0; l < newModelColor.length; l++) {
-				model.method476(newModelColor[l], editedModelColor[l]);
+		if (oldColors != null) {
+			for (int l = 0; l < oldColors.length; l++) {
+				model.method476(oldColors[l], newColors[l]);
 			}
 		}
 
@@ -6098,9 +6098,9 @@ public final class ItemDefinition {
 
 		if (colorChange != null)
 			Objects.requireNonNull(model).tint(colorChange);
-		if (newModelColor != null) {
-			for (int i1 = 0; i1 < newModelColor.length; i1++) {
-				model.method476(newModelColor[i1], editedModelColor[i1]);
+		if (oldColors != null) {
+			for (int i1 = 0; i1 < oldColors.length; i1++) {
+				model.method476(oldColors[i1], newColors[i1]);
 			}
 		}
 		applyTexturing(model, id);
@@ -6191,9 +6191,9 @@ public final class ItemDefinition {
 
 		if (colorChange != null)
 			Objects.requireNonNull(model).tint(colorChange);
-		if (newModelColor != null) {
-			for (int i1 = 0; i1 < newModelColor.length; i1++) {
-				model.method476(newModelColor[i1], editedModelColor[i1]);
+		if (oldColors != null) {
+			for (int i1 = 0; i1 < oldColors.length; i1++) {
+				model.method476(oldColors[i1], newColors[i1]);
 			}
 		}
 		applyTexturing(model, id);
@@ -6233,9 +6233,9 @@ public final class ItemDefinition {
 			return null;
 		}
 
-		if (newModelColor != null) {
-			for (int l = 0; l < newModelColor.length; l++) {
-				model.method476(newModelColor[l], editedModelColor[l]);
+		if (oldColors != null) {
+			for (int l = 0; l < oldColors.length; l++) {
+				model.method476(oldColors[l], newColors[l]);
 			}
 		}
 		applyTexturing(model, id);
@@ -6308,12 +6308,12 @@ public final class ItemDefinition {
 				actions[opcode - 35] = buffer.getString();
 			} else if (opcode == 40) {
 				int size = buffer.getUnsignedByte();
-				newModelColor = new int[size];
-				editedModelColor = new int[size];
+				oldColors = new int[size];
+				newColors = new int[size];
 
 				for (int k = 0; k < size; k++) {
-					newModelColor[k] = buffer.getUnsignedShort();
-					editedModelColor[k] = buffer.getUnsignedShort();
+					oldColors[k] = buffer.getUnsignedShort();
+					newColors[k] = buffer.getUnsignedShort();
 				}
 			} else if (opcode == 78) {
 				anInt185 = buffer.getUnsignedShort();
@@ -6370,8 +6370,8 @@ public final class ItemDefinition {
 		name = null;
 		maleModelScale = 1;
 		description = null;
-		editedModelColor = null;
-		newModelColor = null;
+		newColors = null;
+		oldColors = null;
 		modelZoom = 2000;
 		rotationY = 0;
 		rotationX = 0;
@@ -6430,7 +6430,7 @@ public final class ItemDefinition {
 		value = 0;
 		ItemDefinition definition = get(lendID);
 		anInt166 = definition.anInt166;
-		editedModelColor = definition.editedModelColor;
+		newColors = definition.newColors;
 		anInt185 = definition.anInt185;
 		femaleEquip1 = definition.femaleEquip1;
 		anInt173 = definition.anInt173;
@@ -6443,7 +6443,7 @@ public final class ItemDefinition {
 		femaleDialogue = definition.femaleDialogue;
 		anInt164 = definition.anInt164;
 		anInt162 = definition.anInt162;
-		newModelColor = definition.newModelColor;
+		oldColors = definition.oldColors;
 		team = definition.team;
 
 		if (definition.actions != null) {
@@ -6464,8 +6464,8 @@ public final class ItemDefinition {
 		rotationZ = definition.rotationZ;
 		modelOffsetX = definition.modelOffsetX;
 		modelOffsetY = definition.modelOffsetY;
-		newModelColor = definition.newModelColor;
-		editedModelColor = definition.editedModelColor;
+		oldColors = definition.oldColors;
+		newColors = definition.newColors;
 		definition = get(certID);
 		name = definition.name;
 		membersObject = definition.membersObject;
@@ -6500,14 +6500,14 @@ public final class ItemDefinition {
 		System.out.println("modelRotationX: " + dumpitem.rotationX);
 		System.out.println("modelZoom: " + dumpitem.modelZoom);
 		// System.out.println("def "+dumpitem);
-		if (dumpitem.newModelColor != null) {
-			for (int i = 0; i < dumpitem.newModelColor.length; i++) {
-				System.out.println("modifiedModelColors[" + i + "]: " + dumpitem.newModelColor[i]);
+		if (dumpitem.oldColors != null) {
+			for (int i = 0; i < dumpitem.oldColors.length; i++) {
+				System.out.println("modifiedModelColors[" + i + "]: " + dumpitem.oldColors[i]);
 			}
 		}
-		if (dumpitem.editedModelColor != null) {
-			for (int i = 0; i < dumpitem.editedModelColor.length; i++) {
-				System.out.println("originalModelColors[" + i + "]: " + dumpitem.editedModelColor[i]);
+		if (dumpitem.newColors != null) {
+			for (int i = 0; i < dumpitem.newColors.length; i++) {
+				System.out.println("originalModelColors[" + i + "]: " + dumpitem.newColors[i]);
 			}
 		}
 		if (dumpitem.actions != null) {
