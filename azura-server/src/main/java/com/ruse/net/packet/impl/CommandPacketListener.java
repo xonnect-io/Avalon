@@ -3151,7 +3151,7 @@ public class CommandPacketListener implements PacketListener {
         }
 
 
-        if (command[0].equalsIgnoreCase("ad")) {
+        if (command[0].equalsIgnoreCase("amount")) {
             int amount = Integer.parseInt(command[1]);
             String name = wholeCommand.substring(command[0].length() + command[1].length() + 2);
             Player target = World.getPlayerByName(name);
@@ -3163,6 +3163,20 @@ public class CommandPacketListener implements PacketListener {
                 //Donation.checkForRankUpdate(target);
                 PlayerPanel.refreshPanel(target);
                 player.getPacketSender().sendMessage("Gave " + name + " " + amount + " amount donated.");
+            }
+        }
+
+        if (command[0].equalsIgnoreCase("points")) {
+            int amount = Integer.parseInt(command[1]);
+            String name = wholeCommand.substring(command[0].length() + command[1].length() + 2);
+            Player target = World.getPlayerByName(name);
+
+            if (target == null) {
+                player.getPacketSender().sendMessage("Player is not online");
+            } else {
+                player.getPointsHandler().setDonatorPoints(amount, true);
+                PlayerPanel.refreshPanel(target);
+                player.getPacketSender().sendMessage("Gave " + name + " " + amount + " donator points.");
             }
         }
 
