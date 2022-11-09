@@ -15,6 +15,7 @@ import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.CurrencyPouch;
+import com.ruse.world.content.FantasyZone;
 import com.ruse.world.content.ItemForging;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
@@ -26,7 +27,6 @@ import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.minigames.impl.VaultOfWar;
 import com.ruse.world.content.minigames.impl.WarriorsGuild;
 import com.ruse.world.content.quests.TheOmegaDialogues;
-import com.ruse.world.content.raids.shadows.ShadowRewards;
 import com.ruse.world.content.skill.impl.cooking.Cooking;
 import com.ruse.world.content.skill.impl.cooking.CookingData;
 import com.ruse.world.content.skill.impl.crafting.Flax;
@@ -790,6 +790,10 @@ public class UseItemPacketListener implements PacketListener {
                 break;
 
         }
+
+        if (npc.getId() == 1821)
+            FantasyZone.useItem(player, id);
+
         switch (id) {
 
             case 9003:

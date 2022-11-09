@@ -13,7 +13,6 @@ import com.ruse.util.NameUtils;
 import com.ruse.util.ServerData;
 import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.content.*;
-import com.ruse.world.content.celestial.CelestialZoneTask;
 import com.ruse.world.content.discordbot.Bot;
 import com.ruse.world.content.events.PartyChest;
 import com.ruse.world.content.globalBosses.*;
@@ -302,7 +301,7 @@ public class World {
         //VdayGifting.initialize();
         NightmareBoss.execute();
         KeepersOfLight.sequence();
-        CelestialZoneTask.startTask();
+        FantasyZone.initialize();
         Bot.updatePlayers();
         TriviaSystem.tick();
         //PennywiseSpawn.initialize();

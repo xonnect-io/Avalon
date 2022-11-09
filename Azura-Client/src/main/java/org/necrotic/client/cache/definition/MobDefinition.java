@@ -2561,7 +2561,7 @@ public final class MobDefinition {
 
 			case 1821:
 				definition.name = "<col=89584A>Fantasy Being";
-				definition.description = "a God from the Realm of Fantasy".getBytes();
+				definition.description = "a God from the Fantasy Realm".getBytes();
 				definition.npcModels = new int[]{19712};
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;

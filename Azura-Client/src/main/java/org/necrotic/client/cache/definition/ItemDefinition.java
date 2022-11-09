@@ -395,6 +395,10 @@ public final class ItemDefinition {
 		switch (customId) {
 			case 23418:
 				itemDef.copyItem(6585);
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 51;
+				itemDef.newColors[0] = 98;
 				itemDef.name = "Diyos helm";
 				itemDef.modelID = 19625;
 				itemDef.maleEquip1 = 19626;
@@ -407,13 +411,13 @@ public final class ItemDefinition {
 				itemDef.modelOffsetX = -2;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
+				break;
+
+			case 23419:
 				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.oldColors = new int[1]; // same here
 				itemDef.oldColors[0] = 51;
 				itemDef.newColors[0] = 98;
-				break;
-
-			case 23419:
 				itemDef.name = "Diyos body";
 				itemDef.modelID = 19627;
 				itemDef.maleEquip1 = 19628;
@@ -425,13 +429,13 @@ public final class ItemDefinition {
 				itemDef.modelOffsetX = -1;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
+				break;
+
+			case 23420:
 				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.oldColors = new int[1]; // same here
 				itemDef.oldColors[0] = 51;
 				itemDef.newColors[0] = 98;
-				break;
-
-			case 23420:
 				itemDef.name = "Diyos legs";
 				itemDef.modelID = 19629;
 				itemDef.maleEquip1 = 19630;
@@ -443,13 +447,13 @@ public final class ItemDefinition {
 				itemDef.modelOffsetX = 1;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
+				break;
+
+			case 23421:
 				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.oldColors = new int[1]; // same here
 				itemDef.oldColors[0] = 51;
 				itemDef.newColors[0] = 98;
-				break;
-
-			case 23421:
 				itemDef.name = "Diyos gloves";
 				itemDef.modelOffsetX = 1;
 				itemDef.modelOffsetY = 0;
@@ -462,13 +466,13 @@ public final class ItemDefinition {
 				itemDef.femaleEquip1 = 19632;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
+				break;
+
+			case 23422:
 				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.oldColors = new int[1]; // same here
 				itemDef.oldColors[0] = 51;
 				itemDef.newColors[0] = 98;
-				break;
-
-			case 23422:
 				itemDef.name = "Diyos boots";
 				itemDef.modelID = 19633;
 				itemDef.maleEquip1 = 19633;
@@ -480,26 +484,6 @@ public final class ItemDefinition {
 				itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
-				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.oldColors = new int[1]; // same here
-				itemDef.oldColors[0] = 51;
-				itemDef.newColors[0] = 98;
-				break;
-
-			case 23423:
-				itemDef.name = "Diyos bow";
-				itemDef.modelID = 19637;
-				itemDef.femaleEquip1 = 19636;
-				itemDef.maleEquip1 = 19636;
-				itemDef.modelZoom = 1800;
-				itemDef.rotationX = 235;
-				itemDef.rotationY = 652;
-				itemDef.modelOffsetY = 25;
-				itemDef.modelOffsetX = 60;
-				itemDef.stackable = false;
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 23424:
@@ -2380,7 +2364,6 @@ public final class ItemDefinition {
 				itemDef.name = "Case key";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 20489:

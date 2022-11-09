@@ -230,7 +230,7 @@ public final class ObjectDefinition {
 			definition.actions = new String[]{"Pull", null, null, null, null};
 		}
 		if (definition.type == 4388) {
-			definition.name = "<col=89584A>Realm of Fantasy";
+			definition.name = "<col=89584A>Fantasy Realm";
 			definition.actions = new String[]{"Enter", null, null, null, null};
 		}
 		if (definition.type == 400) {
@@ -338,9 +338,22 @@ public final class ObjectDefinition {
 			definition.objectModelIDs = new int[]{19710};
 			definition.actions = new String[]{"Pick", null, null, null, null};
 		}
-		
+		if (definition.type == 12005) {
+			definition.name = "<col=89584A>Fantasy Mushroom sprout"; //#7a37b3
+			definition.modelSizeY = 35;
+			definition.modelSizeX = 35;
+			definition.modelSizeH = 35;
+			definition.objectModelIDs = new int[]{19710};
+			definition.actions = new String[]{null, null, null, null, null};
+		}
 		if (definition.type == 2469) {
 			definition.actions = new String[]{"Advance", "Back", null, null, null};
+		}
+
+
+		if (definition.type == 12809) {
+			definition.name = "Furnace";
+			definition.actions = new String[]{"Smelt", null, null, null, null};
 		}
 
 		if (definition.type == 22973) {
@@ -1178,8 +1191,7 @@ public final class ObjectDefinition {
 		}
 		if (definition.type == 22721) {
 			definition.interactive = true;
-			definition.actions = new String[5];
-			definition.actions[0] = "Smelt";
+			definition.actions = new String[]{"Smelt", null, null, null, null};
 		}
 		if (definition.type == 7837) {
 			definition.interactive = true;

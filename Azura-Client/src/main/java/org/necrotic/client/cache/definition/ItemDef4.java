@@ -18,7 +18,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 340;
 				itemDef.modelOffsetY = 0;
 				itemDef.rotationY = 280;
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, null};
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 			case 23231:
 				itemDef.copyItem(6737);
@@ -29,7 +29,7 @@ public class ItemDef4 {
 				itemDef.scaleX = 32;
 				itemDef.scaleY = 32;
 				itemDef.scaleZ = 32;
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, null};
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
 
@@ -1136,7 +1136,7 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 100_009;
 				itemDef.rotationX = 1000;
 				itemDef.modelZoom = 2000;
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.oldColors = new int[]{55};
 				itemDef.newColors = new int[]{131};
 				break;

@@ -2830,7 +2830,7 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 65449;
 				itemDef.femaleEquip1 = 65449;
 				itemdefedit = ItemDefinition.get(2414);
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
 				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
 				itemDef.modelZoom = itemdefedit.modelZoom;

@@ -86,34 +86,6 @@ public class Firemaking {
 					if (logData.getLogId() != 23294 || logData.getLogId() != 23294 || logData.getLogId() != 23294) {
 						player.getPacketSender().sendMessage("You add some logs to the fire..");
 					}
-					if (logData.getLogId() == 23294) {
-						player.getPacketSender().sendMessage("You burn Celestial scales for x15 Celestial Energy");
-						player.getInventory().add(23273, 15);
-					} if (logData.getLogId() == 23294 && player.getEquipment().containsAll(14055,14053,14052,14051,14050,18333)) {
-						player.getPacketSender().sendMessage("You get x2 Extra Celestial Energy from your armors bonus");
-						player.getInventory().add(23273, 2);
-					}
-					if (logData.getLogId() == 17821) {
-						player.getPacketSender().sendMessage("You burn Celestial Mushrooms for x12 Celestial Energy");
-						player.getInventory().add(23273, 12);
-					}if (logData.getLogId() == 17821 && player.getEquipment().containsAll(14055,14053,14052,14051,14050,18333)) {
-						player.getPacketSender().sendMessage("You get x2 Extra Celestial Energy from your armors bonus");
-						player.getInventory().add(23273, 2);
-					}
-					if (logData.getLogId() == 2893) {
-						player.getPacketSender().sendMessage("You burn Celestial Bars for x22 Celestial Energy");
-						player.getInventory().add(23273, 22);
-					} if (logData.getLogId() == 2893 && player.getEquipment().containsAll(14055,14053,14052,14051,14050,18333)) {
-						player.getPacketSender().sendMessage("You get x2 Extra Celestial Energy from your armors bonus");
-						player.getInventory().add(23273, 2);
-					}
-					if (logData.getLogId() == 23295) {
-						player.getPacketSender().sendMessage("You burn Celestial Rocks for x22 Celestial Energy");
-						player.getInventory().add(23273, 22);
-					} if (logData.getLogId() == 23295 && player.getEquipment().containsAll(14055,14053,14052,14051,14050,18333)) {
-						player.getPacketSender().sendMessage("You get x2 Extra Celestial Energy from your armors bonus");
-						player.getInventory().add(23273, 2);
-					}
 				} else {
 					if (!player.getMovementQueue().isMoving()) {
 						player.getMovementQueue().setLockMovement(false);

@@ -1930,6 +1930,14 @@ public int howmuchdissolveamt = 0;
         return "";
     }
 
+    @Getter
+    @Setter
+    private boolean fantasy;
+
+    @Getter
+    @Setter
+    private boolean sacrificedFantasyItem;
+
     public UIMBank getUimBank() {
         return uimBank;
     }

@@ -13,6 +13,7 @@ import com.ruse.motivote3.doMotivote;
 import com.ruse.util.Misc;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.BonusManager;
+import com.ruse.world.content.FantasyZone;
 import com.ruse.world.content.ItemDegrading;
 import com.ruse.world.content.ItemDegrading.DegradingItem;
 import com.ruse.world.content.KillsTracker;
@@ -1251,6 +1252,12 @@ public final class CombatFactory {
              */
             if (npc.getId() == 12810) {
                 if (((Player) entity).getSlayer().getSlayerTask().getNpcId() != npc.getId()) {
+                    return false;
+                }
+            }
+            if (npc.getId() == 4677) {
+                if (!FantasyZone.gameActive) {
+                    ((Player) entity).getPacketSender().sendMessage("The Celestial Zone is not open.");
                     return false;
                 }
             }

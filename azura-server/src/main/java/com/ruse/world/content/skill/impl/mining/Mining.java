@@ -7,6 +7,7 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.CustomObjects;
+import com.ruse.world.content.FantasyZone;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.achievements.AchievementData;
@@ -241,6 +242,12 @@ public class Mining {
         final boolean giveGem = o != Ores.Rune_essence && o != Ores.Pure_essence;
         final int reqCycle = o == Ores.Runite ? 6 + Misc.getRandom(2) : Misc.getRandom(o.getTicks() - 1);
         if (o != null) {
+            if (o == Ores.FANTASY) {
+                if (!FantasyZone.gameActive) {
+                    player.getPacketSender().sendMessage("The Fantasy Realm is not open.");
+                    return;
+                }
+            }
             final int pickaxe = MiningData.getPickaxe(player);
             final int miningLevel = player.getSkillManager().getCurrentLevel(Skill.MINING);
             if (pickaxe > 0) {

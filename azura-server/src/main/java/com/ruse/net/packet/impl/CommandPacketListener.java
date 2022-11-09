@@ -32,7 +32,6 @@ import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
-import com.ruse.world.content.celestial.CelestialPortal;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
@@ -111,9 +110,6 @@ public class CommandPacketListener implements PacketListener {
             player.membershipInterfaceHandler.openBenefitTab ();
         }
 
-        if (command[0].equalsIgnoreCase("fantasy")) {
-            CelestialPortal.handleTrueAction (player);
-        }
         //Start of Teleports
         if (command[0].equalsIgnoreCase("home")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
@@ -279,6 +275,9 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("@red@<shad=1>Ironman boss: @yel@" + IronmanBoss.timeLeft());
             player.getPacketSender().sendMessage("@red@<shad=1>Vozzath @yel@" + GuardianSpawnSystem.getLeft() + " tickets left");
             player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft() + " tokens left");
+            player.getPacketSender().sendMessage((FantasyZone.gameActive == false
+                    ? "@red@<shad=1>Fantasy Realm: @yel@" + FantasyZone.getTimeLeft() : "@red@<shad=1> Fantasy Realm : @yel@Open"));
+
         }
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
                 || command[0].equalsIgnoreCase("start") || command[0].equalsIgnoreCase(
@@ -1903,6 +1902,9 @@ public class CommandPacketListener implements PacketListener {
             Legends.finishRaid(player.getZombieRaidsParty());
         }
 
+        if (command[0].equals("rfantasy")) {
+            FantasyZone.spawn();
+        }
         if (command[0].equalsIgnoreCase("hweengift")) {
             VdayGifting.givePresent();
         }
@@ -2548,12 +2550,7 @@ public class CommandPacketListener implements PacketListener {
             LootChest.despawn(true);
             player.getPacketSender().sendMessage("Done spawning loot chest shit");
         }
-        if (command[0].equalsIgnoreCase("celestialdespawn")) {
-            CelestialPortal.despawn(true);
-        }
-        if (command[0].equalsIgnoreCase("celestialrespawn")) {
-            CelestialPortal.spawn();
-        }
+
 
         if (command[0].equalsIgnoreCase("runes")) {
             for (Item t : ShopManager.getShops().get(0).getItems()) {

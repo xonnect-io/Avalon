@@ -34,8 +34,8 @@ public class CelestialDialogues {
 
             @Override
             public String[] dialogue() {
-                return new String[] { "How to become a Celestial?", "What is the Realm of Fantasy?",
-                        "What is the Celestial Energy?", "Cancel" };
+                return new String[] { "How to become a member of the Fantasy Realm?", "What is the Fantasy Realm?",
+                        "What is Dark Matter?", "Cancel" };
             }
 
             @Override
@@ -66,9 +66,9 @@ public class CelestialDialogues {
 
             @Override
             public String[] dialogue() {
-                String line1 = "To become a Celestial you must:";
-                String line2 = "- Complete x50 Souls of Suffering Waves";
-                String line3 = "- Sacrifice x2 Owner Fragments";
+                String line1 = "To become a member of the Fantasy Realm you must:";
+                String line2 = "- Complete x50 Souls of Suffering Raids";
+                String line3 = "- Sacrifice x2 Owner items (Cape, Aura, Bracelet, Ring, or Amulet)";
                 return new String[] { "" + line1 + "", "" + line2 + "", "" + line3 };
             }
 
@@ -93,10 +93,9 @@ public class CelestialDialogues {
 
                     @Override
                     public String[] dialogue() {
-                        return new String[] { "How to become a Celestial?", "What is the Realm of Fantasy?",
-                                "What is Celestial Energy?", "Cancel" };
+                        return new String[] { "How to become a member of the Fantasy Realm?", "What is the Fantasy Realm?",
+                                "What is Dark Matter?", "Cancel" };
                     }
-
                     @Override
                     public void specialAction() {
                         player.setDialogueActionId(8221);
@@ -126,8 +125,8 @@ public class CelestialDialogues {
 
             @Override
             public String[] dialogue() {
-                String line1 = "The Realm of Fantasy opens for 1 hour every 3 hours.";
-                String line2 = "Complete tasks in the Realm of Fantasy to get Celestial Energy";
+                String line1 = "The Fantasy Realm opens for 1 hour every 3 hours.";
+                String line2 = "Complete tasks in the Fantasy Realm to get Dark Matter";
                 return new String[] { "" + line1 + "", "" + line2 + ""};
             }
 
@@ -152,8 +151,8 @@ public class CelestialDialogues {
 
                     @Override
                     public String[] dialogue() {
-                        return new String[] { "How to become a Celestial?", "What is the Realm of Fantasy?",
-                                "What is Celestial Energy?", "Cancel" };
+                        return new String[] { "How to become a member of the Fantasy Realm?", "What is the Fantasy Realm?",
+                                "What is Dark Matter?", "Cancel" };
                     }
 
                     @Override
@@ -185,8 +184,8 @@ public class CelestialDialogues {
 
             @Override
             public String[] dialogue() {
-                String line1 = "Celestial Energy can only be obtained from the Realm of Fantasy.";
-                String line2 = "Celestial Energy is used to craft Celestial items.";
+                String line1 = "Dark Matter can only be obtained from the Fantasy Realm.";
+                String line2 = "Dark Matter is used to craft Fantasy items.";
                 return new String[] { "" + line1 + "", "" + line2 + ""};
             }
 
@@ -211,8 +210,8 @@ public class CelestialDialogues {
 
                     @Override
                     public String[] dialogue() {
-                        return new String[] { "How to become a Celestial?", "What is the Realm of Fantasy?",
-                                "What is Celestial Energy?", "Cancel" };
+                        return new String[] { "How to become a member of the Fantasy Realm?", "What is the Fantasy Realm?",
+                                "What is Dark Matter?", "Cancel" };
                     }
 
                     @Override
@@ -223,37 +222,5 @@ public class CelestialDialogues {
             }
         };
     }
-        public static Dialogue sacrifice(final Player player) {
-            return new Dialogue() {
-
-                @Override
-                public DialogueType type() {
-                    return DialogueType.OPTION;
-                }
-
-                @Override
-                public int npcId() {
-                    return -1;
-                }
-
-                @Override
-                public DialogueExpression animation() {
-                    return DialogueExpression.NORMAL;
-                }
-
-                @Override
-                public String[] dialogue() {
-                    String line1 = "Sacrifice x2 Owner fragments";
-                    String line2 = "No, keep my Owner fragments";
-                    return new String[] { "" + line1 + "", "" + line2 + ""};
-                }
-
-                @Override
-                public void specialAction() {
-                    player.setDialogueActionId(8102);
-                }
-            };
-        }
-
 }
 

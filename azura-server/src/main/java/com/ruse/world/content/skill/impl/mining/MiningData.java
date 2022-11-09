@@ -18,8 +18,10 @@ public class MiningData {
 		Rune(1275, 41, 624, 1.3), // 624
 		Adze(13661, 80, 10226, 1.60), // 10226
 		Dragon(15259, 61, 12188, 1.65), // 12188
-		Speed(19812, 1, 11019, 20.60), // 12003
-		Sacred(14130, 61, 11019, 1.60); // 12003
+		Speed(19812, 1, 11019, 1.65), // 12003
+		Sacred(14130, 61, 11019, 1.60), // 12003
+
+		CRYSTAL(23887, 99, 11019, 1.65); // 12003
 
 		private int id, req, anim;
 		private double speed;
@@ -44,6 +46,8 @@ public class MiningData {
 		}
 
 		public double getSpeed() {
+			if (speed >= 2)
+				return 2;
 			return this.speed;
 		}
 	}
@@ -74,9 +78,12 @@ public class MiningData {
 				50, 80, 447, 6, 11),
 		Adamantite(new int[] { 11941, 11939, 29233, 29235 }, 70, 95, 449, 7, 14),
 		Runite(new int[] { 14859, 4860, 2106, 2107,33079 }, 85, 125, 451, 7, 45),
-		Celestial(new int[] { 2110 }, 1, 500, 23295, 6, 10),
-		AFKMINE(new int[] { 21149,711, 713 }, 1, 1, 17634, 5, -1),
-		CRASHED_STAR(new int[] { 38660 }, 80, 52, 13727, 7, -1);
+
+		WAVES_MINIGAME(new int[] { 6669 }, 90, 125, 451, 6, -1),
+		PATRONUM(new int[] { 49766 }, 1, 100, 23460, 6, 1),
+		FANTASY(new int[] { 2110 }, 1, 100, 23295, 6, 1),
+
+		AFKMINE(new int[] { 14817,39431 }, 1, 1, 17634, 5, -1), CRASHED_STAR(new int[] { 38660 }, 80, 52, 13727, 7, -1);
 
 		private int objid[];
 		private int itemid, req, xp, ticks, respawnTimer;
@@ -143,7 +150,9 @@ public class MiningData {
 
 	public static int getReducedTimer(final Player plr, Pickaxe pickaxe) {
 		int skillReducement = (int) (plr.getSkillManager().getMaxLevel(Skill.MINING) * 0.03);
-		int pickaxeReducement = (int) pickaxe.getSpeed();
+		int pickaxeReducement = 1;
+		if (pickaxeReducement >= 1)
+			pickaxeReducement = 1;
 		return skillReducement + pickaxeReducement;
 	}
 }

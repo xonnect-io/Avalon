@@ -4,11 +4,8 @@ import com.ruse.GameSettings;
 import com.ruse.model.RegionInstance.RegionInstanceType;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.KillsTracker;
-import com.ruse.world.content.PlayerLogs;
+import com.ruse.world.content.*;
 import com.ruse.world.content.PlayerPunishment.Jail;
-import com.ruse.world.content.Zulrah;
-import com.ruse.world.content.celestial.CelestialZoneTask;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.strategy.impl.Scorpia;
@@ -19,8 +16,8 @@ import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.raids.legends.Legends;
-import com.ruse.world.content.raids.shadows.ShadowData;
 import com.ruse.world.content.raids.shadows.NecromancerRaid;
+import com.ruse.world.content.raids.shadows.ShadowData;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.Entity;
@@ -89,25 +86,34 @@ public class Locations {
 		},
 
 
-		CELESTIAL_ZONE(new int[] { 4220, 4266 }, new int[] { 5575, 5625 }, false, false, true, false, true, false) {
+		FANTASY_ZONE(new int[] { 4220, 4266 }, new int[] { 5575, 5625 }, false, false, true, false, true, false) {
 			@Override
-			public void logout(Player player) {
-					player.moveTo(GameSettings.HOME_CORDS);
-				}
-
-				@Override
 			public void login(Player player) {
-				player.moveTo(GameSettings.HOME_CORDS);
-				}
-
-			@Override
-			public void process(Player player) {
-				if (player.getLocation() == Locations.Location.CELESTIAL_ZONE && CelestialZoneTask.tick < 18000 && player.getRights() != PlayerRights.OWNER) {
-					player.moveTo(GameSettings.HOME_CORDS);
-					player.getPacketSender().sendMessage("The Realm of Fantasy closed, you have been moved home.");
+				if (!FantasyZone.gameActive){
+					FantasyZone.movePlayer(player);
 				}
 			}
-			},
+			@Override
+			public void process(Player player) {
+				if (!FantasyZone.gameActive){
+					FantasyZone.movePlayer(player);
+				}
+			}
+			@Override
+			public void leave(Player player) {
+				if (!FantasyZone.gameActive){
+					FantasyZone.movePlayer(player);
+				}
+			}
+			@Override
+			public void enter(Player player) {
+                if (FantasyZone.gameActive && FantasyZone.gameTicks > 0) {
+                    int seconds = (int)((double)FantasyZone.gameTicks*0.6D);
+                    player.getPA().sendEffectTimerSeconds(seconds, EffectTimer.FANTASY_ZONE);
+                }
+			}
+
+		},
 		AFK(new int[] { 3024, 3056 }, new int[] { 4050, 4082 }, false, false, true, false, false, true) {
 		},
 		KEEPERS_OF_LIGHT_LOBBY(new int[] { 2304, 2344 }, new int[] { 4992, 5050 }, false, false, true, false, false, true) {

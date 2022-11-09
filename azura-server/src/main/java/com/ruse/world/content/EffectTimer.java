@@ -18,6 +18,7 @@ public enum EffectTimer {
 	T1_INF_OVERLOAD(23124),
 	T2_INF_OVERLOAD(23125),
 	T3_INF_OVERLOAD(23126),
+	FANTASY_ZONE(23273);
 	;
 	
 	EffectTimer(int clientSprite) {

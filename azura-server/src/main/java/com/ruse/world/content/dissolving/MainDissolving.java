@@ -103,7 +103,6 @@ public class MainDissolving {
 		CORRUPT_MAXIBLOOD2(18751, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_MAXIBLOOD3(18752, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
 		CORRUPT_MAXIBLOOD4(18753, new Item[]{new Item(UPG_TOKEN, 75000)}, 150_000, anim),
-		CASE_KEY(4186, new Item[]{new Item(UPG_TOKEN, 50000)}, 100_000, anim),
 		SERAPHIC_CASE(23411, new Item[]{new Item(UPG_TOKEN, 50000)}, 100_000, anim),
 		ETHEREAL_CASE(23412, new Item[]{new Item(UPG_TOKEN, 50000)}, 100_000, anim),
 		MONEY_CASE(23812, new Item[]{new Item(UPG_TOKEN, 50000)}, 100_000, anim),

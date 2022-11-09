@@ -655,6 +655,12 @@ public class PlayerLoading {
                 player.setIsleDropRate(reader.get("isle-dr").getAsDouble());
             }
 
+            if (reader.has("sacrificed-owner")) {
+                player.setSacrificedFantasyItem(reader.get("sacrificed-owner").getAsBoolean());
+            }
+            if (reader.has("fantasy")) {
+                player.setFantasy(reader.get("fantasy").getAsBoolean());
+            }
             if (reader.has("upg-dr")) {
                 player.setScrollBonus(reader.get("upg-dr").getAsDouble());
             }

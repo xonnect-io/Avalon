@@ -80,7 +80,6 @@ public class DialogueOptions {
         }
         if (id == FIRST_OPTION_OF_FIVE) {
             switch (player.getDialogueActionId()) {
-
                 case 9826:
                     player.setInputHandling(new WithdrawCurrencyFromCurrencyPouch(12));
                     player.getPacketSender().sendEnterAmountPrompt("How many Premium tickets would you like to withdraw?");
@@ -915,6 +914,9 @@ public class DialogueOptions {
             // System.out.println("ID: " + id);
             switch (player.getDialogueActionId()) {
 
+                case 8023:
+                    DialogueManager.start(player, 8024);
+                    break;
                 case 4621:
                     DialogueManager.start(player, TheOmegaDialogues.PoisonedMilk(player));
                     break;
@@ -999,7 +1001,9 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
-
+                case 8023:
+                    DialogueManager.start(player, 8025);
+                    break;
                 case 4621:
                     DialogueManager.start(player, TheOmegaDialogues.OmegaEgg(player));
                     break;
@@ -1103,7 +1107,9 @@ public class DialogueOptions {
             }
         } else if (id == THIRD_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
-
+                case 8023:
+                    DialogueManager.start(player, 8026);
+                    break;
                 case 4621:
                     DialogueManager.start(player, TheOmegaDialogues.RancidFlour(player));
                     break;
@@ -1221,6 +1227,7 @@ public class DialogueOptions {
         } else if (id == FOURTH_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
                 case 8221:
+                case 8023:
                 case 8:
                 case 9:
                 case 17:
@@ -1376,8 +1383,8 @@ public class DialogueOptions {
                     if (player.getCelestial() == false && player.getInventory().contains(13379, 2)) {
                         player.getInventory().delete(13379, 2);
                         player.setCelestial(true);
-                        player.getPacketSender().sendMessage("<img=832> You have unlocked the Realm of Fantasy!");
-                        World.sendMessage("<img=832>@red@ " + player.getUsername() + " @blu@unlocked the Realm of Fantasy!");
+                        player.getPacketSender().sendMessage("<img=832> You have unlocked the Fantasy Realm!");
+                        World.sendMessage("<img=832>@red@ " + player.getUsername() + " @blu@unlocked the Fantasy Realm!");
                         TeleportHandler.teleportPlayer(player, new Position(4257, 5598),
                                 player.getSpellbook().getTeleportType());
                     }
