@@ -188,6 +188,10 @@ public boolean setSlayerBoss;
     @Setter
     @Getter
     private long serverPerksContributions;
+    
+    @Getter
+    private Stopwatch seasonPassPlaytime = new Stopwatch();
+
 
     @Getter
     private CardPack cardPack = new CardPack(this);

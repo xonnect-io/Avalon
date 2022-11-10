@@ -2173,7 +2173,6 @@ public class CustomInterfaces extends RSInterface {
 
 
 	}
-
 	static void seasonalPass(TextDrawingArea[] tda) {
 		int interID = 105000;
 		RSInterface tab = addInterface(interID);
@@ -2185,9 +2184,6 @@ public class CustomInterfaces extends RSInterface {
 
 		addSpriteLoader(id, 1115);
 		tab.child(c++, id++, 0 + x, 0 + y);
-
-		teleportText(77888, "Information", "Information", fonts, 0, 0xff8624, false, true, 60, 20);
-		tab.child(11, 77888, 18 + x, 221 + y);
 
 		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
 		tab.child(c++, id++, 440 + x, 3 + y);
@@ -2211,6 +2207,14 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(c++, id++, 285 + x, 26 + y);
 		addText(id, "Season Ends: 10 days", tda, 0, 0xd4d4d4, true, true);
 		tab.child(c++, id++, 285 + x, 45 + y);
+
+		teleportText(id, "Information", "Select", fonts, 0, 0xFF9900, true, true, 65, 17);
+		//	addText(id, "Information", tda, 0, 0xd4d4d4, true, true);
+		tab.child(c++, id++, 15 + x, 225 + y);
+
+		new ProgressBar(id, 61, 8, new int[]{0x009a1a}, true, false, "", new int[]{0x9a0000});
+		tab.child(c++, id++, 89 + x, 47 + y);
+
 		tab.child(c++, 105100, 89 + x, 61 + y);
 
 		interID = 105100;
@@ -2249,10 +2253,8 @@ public class CustomInterfaces extends RSInterface {
 
 			x += 52;
 		}
-		addSprite(105990, 1690);
-		tab.child(10, 105990, 114,87);
-	}
 
+	}
 	static void groupIronman(TextDrawingArea[] tda) {
 		int interID = 104000;
 		RSInterface tab = addInterface(interID);

@@ -321,7 +321,7 @@ public class PestControl {
 					p.getPointsHandler().setCommendations(points, true);
 					PlayerPanel.refreshPanel(p);
 					p.getInventory().add(12855, tokens);
-					p.getSeasonPass().addXp(2);
+					p.getSeasonPass().addExperience(2);
 
 					Cases.grantCasket(p, 5);
 

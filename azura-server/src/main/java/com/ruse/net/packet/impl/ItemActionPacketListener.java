@@ -189,10 +189,6 @@ public class ItemActionPacketListener implements PacketListener {
             BirdNests.searchNest(player, itemId);
             return;
         }
-        if (player.getSeasonPass().isPass(itemId)) {
-            player.getSeasonPass().UnlockGoldSeasonPass();
-            return;
-        }
         if (Herblore.cleanHerb(player, itemId))
             return;
         if (MemberScrolls.handleScroll(player, itemId, false))
@@ -306,7 +302,7 @@ public class ItemActionPacketListener implements PacketListener {
             case 23553:
                 player.getInventory().delete (23553, 1);
                 player.getPacketSender().sendMessage("You use your Tier Skip Token and are given 10 Season pass xp");
-                player.getSeasonPass ().addXp (10);
+                player.getSeasonPass ().addExperience (10);
                 player.getSeasonPass().openInterface();
                 break;
             case 19806:
@@ -381,16 +377,22 @@ public class ItemActionPacketListener implements PacketListener {
                 };
                 player.getGoodieBag().open();
                 break;
-            case 22950:
-                if (player.getInventory().getAmount(22950) >= 100) {
-                    int amount = player.getInventory().getAmount(22950) / 100;
-                    player.getInventory().delete(22950, amount * 100);
-                    player.getInventory().add(23447, amount * 1);
-                    player.sendMessage("You created x" + amount + " Necromancer keys!");
-                } else {
-                    player.sendMessage("You need at least 100 Necromancer Key shards to make a Necromancer key.");
+            case 23275:
+
+                if (player.isunlockedseasonpass()) {
+                    player.sendMessage("<col=660000>[Season pass]<col=100666>You are already a Season pass gold member.");
+                    return;
                 }
+                if (!player.getInventory().contains(23275))
+                    return;
+
+
+                player.sendMessage("You have claimed a Gold Season Pass!");
+                World.sendMessage1("<col=660000>[Season pass]<col=100666>" + player.getUsername() + " has just claimed a Gold Season Pass!");
+                player.getInventory().delete(23275, 1);
+                player.getSeasonPass().grantMembership();
                 break;
+
             case 17544:
                 int amount = 1;
                 int minutesEXP1 = 30 * amount;
@@ -1419,7 +1421,7 @@ public class ItemActionPacketListener implements PacketListener {
                  int minutesDMG = 5 * amt;
 
                 player.getInventory().delete(23020, amt);
-                player.getSeasonPass().addXp(amt * 3);
+                player.getSeasonPass().addExperience (amt * 3);
                 player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, 5_000 * amt);
                 player.getPacketSender()
                         .sendMessage("@blu@You are rewarded " + (amt * 1) + " vote "
@@ -2511,7 +2513,7 @@ public class ItemActionPacketListener implements PacketListener {
                 int minutesDMG = 5 * amt;
 
                 player.getInventory().delete(23020, amt);
-                player.getSeasonPass().addXp(amt * 3);
+                player.getSeasonPass().addExperience (amt * 3);
                 player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, 5_000  * amt);
                 player.getPacketSender()
                         .sendMessage("@blu@You are rewarded " + (amt * 1) + " vote "

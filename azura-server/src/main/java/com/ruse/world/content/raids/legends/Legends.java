@@ -304,7 +304,7 @@ public class Legends {
 
                     for (Player member : party.getPlayers()) {
                         member.getInventory().add(18404, 1);
-                        member.getSeasonPass().addXp(2);
+                        member.getSeasonPass().addExperience(2);
                         member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                         StarterTasks.doProgress(player, StarterTasks.StarterTask.ISLAND_RAIDS);
                         member.getPointsHandler().incrementZombieRaidKC(1);

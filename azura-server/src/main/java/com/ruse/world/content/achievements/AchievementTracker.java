@@ -34,7 +34,7 @@ public class AchievementTracker {
         int oldProgress = progress.amountDone;
         int newProgress = progress.addAmount(amount, achievement.progressAmount);
         if (oldProgress != newProgress && newProgress >= achievement.progressAmount) {
-            player.getSeasonPass().addXp(2);
+            player.getSeasonPass().addExperience(2);
             player.getPointsHandler().incrementAchievementPoints(1);
             player.sendMessage("@red@<img=832>You have completed the achievement: @blu@" + achievement.toString());
         }

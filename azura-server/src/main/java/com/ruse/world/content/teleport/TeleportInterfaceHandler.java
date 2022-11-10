@@ -7,7 +7,7 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.seasonpass.PassRewards;
+import com.ruse.world.content.seasonpass.SeasonPass;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.npc.NPC;
@@ -519,7 +519,7 @@ public class TeleportInterfaceHandler {
 						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
 				return;
 			} else if (player.getSeasonPass().getTier() < 50) {
-					player.sendMessage("You need to have completed the season " + PassRewards.SEASON + " gold pass to do this.");
+					player.sendMessage("You need to have completed the season " + SeasonPass.SEASON + " gold pass to do this.");
 					return;
 				}
 		}

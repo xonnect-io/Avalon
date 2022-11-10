@@ -461,7 +461,7 @@ public class SkillManager {
 
                 if (skill != Skill.ATTACK && skill != Skill.STRENGTH && skill != Skill.DEFENCE &&
                         skill != Skill.RANGED && skill != Skill.MAGIC && skill != Skill.CONSTITUTION) {
-                    player.getSeasonPass().addXp(2);
+                    player.getSeasonPass().addExperience (2);
                 }
                 World.sendMessage("<shad=15536940><img=5> " + player.getUsername()
                         + " has just achieved the highest possible level in " + skillName + "!");

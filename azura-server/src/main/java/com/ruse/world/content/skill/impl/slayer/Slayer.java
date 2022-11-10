@@ -172,7 +172,7 @@ public class Slayer {
             amountToSlay = 0;
 
             if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER)) {
-                player.getSeasonPass().addXp(4);
+                player.getSeasonPass().addExperience (4);
 
                 Cases.grantCasket(player, 10);
 
@@ -204,19 +204,19 @@ public class Slayer {
         switch (master) {
             case EASY_SLAYER:
                 pointsReceived = 10;
-                player.getSeasonPass().addXp(1);
+                player.getSeasonPass().addExperience (1);
                 Cases.grantCasket(player, 25);
                 System.out.println("TEST EASY: " +pointsReceived);
                 StarterTasks.doProgress(player, StarterTasks.StarterTask.EASY_TASKS);
                 break;
             case MEDIUM_SLAYER:
                 pointsReceived = 15;
-                player.getSeasonPass().addXp(2);
+                player.getSeasonPass().addExperience(2);
                 Cases.grantCasket(player, 20);
                 break;
             case HARD_SLAYER:
                 pointsReceived = 25;
-                player.getSeasonPass().addXp(3);
+                player.getSeasonPass().addExperience(3);
                 Cases.grantCasket(player, 15);
                 break;
         }

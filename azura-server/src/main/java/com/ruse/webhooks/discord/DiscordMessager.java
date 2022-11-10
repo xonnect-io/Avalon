@@ -29,6 +29,33 @@ public class DiscordMessager extends JSONObject {
 	public static Queue<DiscordObject> discordMessages = new ConcurrentLinkedQueue<>();
 	private static String serverPerks = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
 
+	public static void sendWebhook(String msg, Color color, String webhook) {
+		if (GameSettings.LOCALHOST)
+			return;
+		if (msg == null)
+			return;
+		try {
+			System.out.println("sendWebhook: " + msg);
+
+			DiscordEmbed embed = new DiscordEmbed.Builder()
+					.withColor(color) // The color of the embed. You can leave this at null for no color
+					.withDescription(msg) // The description of the embed object
+					.build(); // Build the embed element
+
+			DiscordMessage message = new DiscordMessage.Builder(msg.contains("<@782919638291447819>") ? "<@782919638291447819>" : "") // The content of the
+					// message
+					.withUsername("") // Override the username of the bot
+					.withEmbed(embed) // Add our embed object
+					.build(); // Build the message
+
+
+			discordMessages.add(new DiscordObject(webhook, message));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 
 	public static void setServerPerks(String msg) {
 		try {

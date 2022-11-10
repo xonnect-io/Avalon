@@ -289,7 +289,7 @@ public class Suffering {
             for (Player player : party.getPlayers()) {
                 for (Player member : party.getPlayers()) {
                     member.getInventory().add(23370, 1);
-                    member.getSeasonPass().addXp(2);
+                    member.getSeasonPass().addExperience(2);
                     Cases.grantCasket(player, 10);
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
                         member.getInventory().add(23370, 1);

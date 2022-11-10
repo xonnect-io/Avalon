@@ -1,271 +1,201 @@
 package com.ruse.world.content.seasonpass;
 
 
-import com.ruse.model.Item;
-import com.ruse.model.definitions.ItemDefinition;
-import com.ruse.util.Misc;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
-import com.ruse.world.content.dialogue.Dialogue;
-import com.ruse.world.content.dialogue.DialogueExpression;
-import com.ruse.world.content.dialogue.DialogueManager;
-import com.ruse.world.content.dialogue.DialogueType;
 import com.ruse.world.entity.impl.player.Player;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.awt.*;
+import java.util.Calendar;
 
 public class SeasonPass {
 
-	private Player player;
-	private int tier;
-	private int xp;
-	private boolean member;
-	public SeasonPass(Player player) {
-		this.player = player;
-	}
-	public static final int[] SEASON_PASS = {23275};
+    public static int SEASON;
+    public static int SEASONEND;
 
-	public static boolean isPass(final int itemId) {
-		for (int passes : SEASON_PASS) {
-			if (passes == itemId) {
-				return true;
-			}
-		}
-		return false;
-	}
+    @Getter
+    private Player player;
+    @Getter
+    @Setter
+    private int tier = 1;
+    @Getter
+    @Setter
+    private int xp = 0;
 
-	public void UnlockGoldSeasonPass(){
-		DialogueManager.start(player, new Dialogue() {
+    @Getter
+    @Setter
+    public int currentSeason;
 
-			@Override
-			public DialogueType type() {
-				return DialogueType.OPTION;
-			}
+    @Getter
+    @Setter
+    private boolean received500KCXP;
 
-			@Override
-			public DialogueExpression animation() {
-				return null;
-			}
+    public SeasonPass(Player player) {
+        this.player = player;
+        this.currentSeason = SEASON;
+    }
 
-			@Override
-			public String[] dialogue() {
+    public void openInterface() {
 
-				return new String[]{"Unlock season pass", "Cancel"};
-			}
+        Calendar cal = Calendar.getInstance();
+        int day = cal.get(Calendar.DAY_OF_YEAR);
+        int daysLeft = SEASONEND - day;
 
-			@Override
-			public void specialAction() {
-				player.setDialogueActionId(66668);
-			}
+        int xpNeeded = 10 + ((this.tier / 5) * 2);
 
-		});
-	}
-	/**
-	 * previous tier rewards added when you use the season pass
-	 */
-	public void checkforprevioustiers() {
-		for(int i = 0; i <= getTier(); i++){
-			player.getBank(0).add(PassRewards.memberRewards[i].getId(),PassRewards.memberRewards[i].getAmount());
-		}
-		player.sendMessage("The previous tier rewards have been added to your bank!");
-		openInterface();
-	}
-	public static int getSpriteByXp(int xp){
-		int spriteId = 1690;//blank
-		switch(xp){
-			case 1:
-				spriteId = 1691;
-				break;
-			case 2:
-				spriteId = 1692;
-				break;
-			case 3:
-				spriteId = 1693;
-				break;
-			case 4:
-				spriteId = 1694;
-				break;
-			case 5:
-				spriteId = 1695;
-				break;
-			case 6:
-				spriteId = 1696;
-				break;
-			case 7:
-				spriteId = 1697;
-				break;
-			case 8:
-				spriteId = 1698;
-				break;
-			case 9:
-				spriteId = 1699;
-				break;
-			case 10:
-				spriteId = 1700;
-				break;
-		}
-
-		return spriteId;
-	}
-
-	/**
-	 * after adding xp check if we can go to the next tier or not
-	 */
-	public void checkafteraddingxp(int xpadded) {
-		if(tier == 50){
-			this.xp = 0;
-			return;
-		}
-
-		if(getXp() + xpadded > 10){ // 9 + 3 = 12
-
-			int tiersToAdvance = (getXp() + xpadded) / 10; //2
-			System.out.println("tiers to advance: "+tiersToAdvance+"");
-			int expTillTier = 10 - getXp();
-			int expLeft = xpadded - expTillTier;
-			int remainderExp = expLeft % 10;
-			this.xp =remainderExp;
-
-			for(int i = 0; i < tiersToAdvance; i++){
-				this.tier++;
-
-				if(tier == 25 && player.isunlockedseasonpass()) {
-					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Gold Season pass.");
-				} else if (tier == 25 && !player.isunlockedseasonpass()) {
-					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Silver Season pass.");
-				}
-				if(tier == 50 && player.isunlockedseasonpass()) {
-					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Gold Season pass.");
-				} else if (tier == 50 && !player.isunlockedseasonpass()) {
-					World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Silver Season pass.");
-				}
-
-				giveRewards();
-			}
-		} else if(getXp() + xpadded == 10){
-			addTier(1);
-			this.xp = 0;
-			giveRewards();
-			if(tier == 25 && player.isunlockedseasonpass()) {
-				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Gold Season pass.");
-			} else if (tier == 25 && !player.isunlockedseasonpass()) {
-				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 25 of the Silver Season pass.");
-			}
-			if(tier == 50 && player.isunlockedseasonpass()) {
-				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Gold Season pass.");
-			} else if (tier == 50 && !player.isunlockedseasonpass()) {
-				World.sendMessage("<img=832> " +player.getUsername()+" has reached Tier 50 of the Silver Season pass.");
-			}
-			return;
-		} else {
-			this.xp+=xpadded;
-		}
+        player.getPacketSender().sendString(105007, "XP: " + getXp() + "/" + xpNeeded + "");
+        player.getPacketSender().sendString(105008, "" + (getTier() > 50 ? "Complete" : getTier()));
+        player.getPacketSender().sendString(105009, "SEASON " + SEASON);
+        player.getPacketSender().sendString(105010, "Season Ends: " + daysLeft + " days");
 
 
+        double number = (double) getXp() / (double) xpNeeded * 100;
+        if (number >= 100)
+            number = 100;
 
-	}
-	public void giveRewards() {
-		String itemName = "";
+        player.getPacketSender().sendProgressBar(105012, 0, (int) number, 0);
+
+        int index = 0;
+        int interfaceId = 105105;
+        for (int i = 0; i < 50; i++) {
+            if (PassRewards.defaultRewards.length > index) {
+                player.getPacketSender().sendItemOnInterface(interfaceId++, PassRewards.defaultRewards[index].getId(),
+                        PassRewards.defaultRewards[index].getAmount());
+            } else {
+                player.getPacketSender().sendItemOnInterface(interfaceId++, -1, 1);
+            }
+
+            if (PassRewards.memberRewards.length > index) {
+                player.getPacketSender().sendItemOnInterface(interfaceId++, PassRewards.memberRewards[index].getId(),
+                        PassRewards.memberRewards[index].getAmount());
+            } else {
+                player.getPacketSender().sendItemOnInterface(interfaceId++, -1, 1);
+            }
+
+            player.getPacketSender().sendConfig(1714 + index, tier > i + 1 ? 1 : 0);
+            if (player.isunlockedseasonpass())
+                player.getPacketSender().sendConfig(1814 + index, tier > i + 1 ? 1 : 0);
+            else
+                player.getPacketSender().sendConfig(1814 + index, 0);
+
+            interfaceId += 6;
+            index++;
+        }
+
+        player.getPacketSender().sendInterface(105000);
+
+    }
+
+    public void addExperience(int exp) {
+        if (this.tier > 50)
+            return;
+        this.xp += exp;
+
+        int xpNeeded = 10 + ((this.tier / 5) * 2);
+
+        while (this.xp >= xpNeeded) {
+            this.xp -= xpNeeded;
+            levelUp();
+        }
+    }
+
+    public void levelUp() {
+        if (this.tier <= 0)
+            this.tier = 1;
+
+        if (this.tier < 51) {
+            grantRewards();
+            this.tier += 1;
+
+            if (this.tier == 51) {
+                player.sendMessage("<col=660000>[Season pass]<col=100666>You have completed the Season pass!");
+                World.sendMessage1("<col=660000>[Season pass]<col=100666>" + player.getUsername() + " has just completed the Season pass!");
+
+                if (player != null && player.getMac() != null && player.getHostAddress() != null && player.getGameMode() != null && player.getGameMode().toString() != null)
+                    DiscordMessager.sendWebhook(player.getUsername() + " - " + player.isunlockedseasonpass() + " - " + player.getGameMode().toString() + " - " + player.getHostAddress() + " - " + player.getMac(), Color.CYAN,
+                            "https://discord.com/api/webhooks/1040319027773456424/slGVztoAiLGBvA4h8T8Ooq56s4iwoWTLjilHTRj54MY-oxsqBjNEEn5aQYKZMnTC8XDg");
+                return;
+            }
+
+        }
+
+        if (this.tier == 51) {
+            return;
+        }
+
+        player.sendMessage("<col=660000>[Season pass]<col=100666>You are now Tier " + this.tier);
+
+        if (this.tier == 25) {
+            World.sendMessage1("<col=660000>[Season pass]<col=100666>" + player.getUsername() + " has just reached tier " + this.tier + "!");
+        }
+
+    }
+
+    public void grantRewards() {
+        player.depositItemBank(PassRewards.defaultRewards[tier - 1]);
+        if (player.isunlockedseasonpass())
+            player.depositItemBank(PassRewards.memberRewards[tier - 1]);
+        player.sendMessage("Your rewards have been sent to your bank");
+    }
 
 
-		if(player.isunlockedseasonpass()) {
-			if (player.getGameMode().isUltIronman()) {
-				player.getInventory().add(new Item(PassRewards.memberRewards[getTier() - 1].getId(), PassRewards.memberRewards[getTier() - 1].getAmount()));
-				player.getInventory().add(new Item(PassRewards.defaultRewards[getTier() - 1].getId(), PassRewards.defaultRewards[getTier() - 1].getAmount()));
+    public void grantMembership() {
+        if (player.isunlockedseasonpass()) {
+            player.sendMessage("<col=660000>[Season pass]<col=100666>You are already a Season pass gold member.");
+            return;
+        }
+        player.sendMessage("<col=660000>[Season pass]<col=100666>You are now a Season pass gold member.");
+        player.setunlockedseasonpass(true);
 
-			} else
-			player.getBank(0).add(PassRewards.memberRewards[getTier() - 1 ].getId(),PassRewards.memberRewards[getTier() - 1].getAmount());
-			player.getBank(0).add(PassRewards.defaultRewards[getTier() - 1].getId(),PassRewards.defaultRewards[getTier() - 1].getAmount());
+        if (tier > 1) {
+            for (int i = 0; i < getTier() - 1; i++) {
+                player.depositItemBank(PassRewards.memberRewards[i]);
+            }
 
-			itemName =  Misc.formatText(ItemDefinition.forId(PassRewards.memberRewards[getTier()- 1].getId()).getName())+" and "+Misc.formatText(ItemDefinition.forId(PassRewards.defaultRewards[getTier() - 1].getId()).getName());
-		} else {
-			itemName =  Misc.formatText(ItemDefinition.forId(PassRewards.defaultRewards[getTier() - 1].getId()).getName());
+            player.sendMessage("Your gold pass rewards have been sent to your bank");
+        }
+    }
 
-			if (player.getGameMode().isUltIronman()) {
-				player.getInventory().add(new Item(PassRewards.defaultRewards[getTier() - 1].getId(), PassRewards.defaultRewards[getTier() - 1].getAmount()));
-			} else
-				player.getBank(0).add(PassRewards.defaultRewards[getTier() - 1].getId(),		PassRewards.defaultRewards[getTier() - 1].getAmount());
+    public void handleLogin() {
+        player.getSeasonPassPlaytime().reset();
+        if (SEASON != currentSeason) {
+            player.sendMessage("<col=660000>[Season pass]<col=100666>A new Season pass has begun!");
+            tier = 0;
+            xp = 0;
+            player.setunlockedseasonpass(false);
+            currentSeason = SEASON;
+        }
+        if (this.tier <= 0)
+            this.tier = 1;
+    }
 
-		}
-		player.sendMessage("Congratulations you have advanced to tier "+getTier()+"!");
-		if (player.getGameMode().isUltIronman()) {
-			player.sendMessage("The tier reward " + itemName + " was sent to your inventory.");
-			return;
-		}
-		player.sendMessage("The tier reward "+itemName+" was sent to your bank.");
-	}
-	/**
-	 * checks what items you have unlocked based on whether youre a member or not
-	 */
-	public void unlockConfiguration() {
+    public void information() {
+        for (int i = 8145; i < 8196; i++)
+            player.getPacketSender().sendString(i, "");
 
-		//first reset all sprites
-		for (int i = 0; i < 50; i++) {
-			player.getPacketSender().sendConfig(1714+i,0);
-			player.getPacketSender().sendConfig(1814+i,0);
+        player.getPacketSender().sendInterface(8134);
 
-		}
-		if(player.isunlockedseasonpass()){
-			for(int i = 0; i < getTier(); i++){
-				player.getPacketSender().sendConfig(1714+i,1);
+        player.getPacketSender().sendString(8136, "Close window");
+        player.getPacketSender().sendString(8144, "Season Pass information");
+        player.getPacketSender().sendString(8145, "");
+        int index = 8147;
+        String color = "@dre@";
+        String color1 = "@red@";
 
-				player.getPacketSender().sendConfig(1814+i,1);
-			}
-		} else {
-			for(int i = 0; i < getTier(); i++){
-				player.getPacketSender().sendConfig(1714+i,1);
-			}
-		}
-	}
-	public void openInterface() {
+        player.getPacketSender().sendString(index++, color1 + "Ways to gain Season pass EXP:");
+        player.getPacketSender().sendString(index++, color + "Claiming vote scroll - 3xp");
+        player.getPacketSender().sendString(index++, color + "Every 500 npc kills - 1xp");
+        player.getPacketSender().sendString(index++, color + "1hr playtime (Not in AFK Zone) - 1xp");
+        player.getPacketSender().sendString(index++, color + "Easy Slayer task - 1xp");
+        player.getPacketSender().sendString(index++, color + "Medium Slayer task - 2xp");
+        player.getPacketSender().sendString(index++, color + "Hard Slayer task - 3xp");
+        player.getPacketSender().sendString(index++, color + "Boss Slayer task - 4xp");
+        player.getPacketSender().sendString(index++, color + "Daily achievement - 2xp");
+        player.getPacketSender().sendString(index++, color + "Lvl 120 non-combat skill - 3xp");
+        player.getPacketSender().sendString(index++, color + "Completing a Raid - 2xp");
+        player.getPacketSender().sendString(index++, color + "Pest Control run - 2xp");
+    }
 
-		player.getPacketSender().sendString(105007, "XP: " + getXp() + "/10");
-		player.getPacketSender().sendString(105008, "" + getTier());
-		player.getPacketSender().sendString(105009, "SEASON " + PassRewards.SEASON);
-		player.getPacketSender().sendString(105010, "Last Day: " + PassRewards.theEndDate());
-		unlockConfiguration();
-
-		int index = 0;
-		int interfaceId = 105105;
-		player.getPacketSender().sendSpriteChange(105990, getSpriteByXp(getXp()));
-		for (int i = 0; i < PassRewards.defaultRewards.length; i++) {
-			player.getPacketSender().sendItemOnInterface(interfaceId++, PassRewards.defaultRewards[index].getId(),
-					PassRewards.defaultRewards[index].getAmount());
-			player.getPacketSender().sendItemOnInterface(interfaceId++, PassRewards.memberRewards[index].getId(),
-					PassRewards.memberRewards[index].getAmount());
-
-			player.getPacketSender().sendConfig(interfaceId++, 1714 + index);
-			player.getPacketSender().sendConfig(interfaceId++, 1814 + index);
-
-			interfaceId += 4;
-			index++;
-		}
-
-		player.getPacketSender().sendInterface(105000);
-
-	}
-	public void reset() {
-		setTier(0);
-		setXp(0);
-		if (player.isunlockedseasonpass ()) {
-			player.setunlockedseasonpass(false);
-		}
-	}
-	public int getTier() {
-		return tier;
-	}
-
-	public void setTier(int tier) {
-		this.tier = tier;
-	}
-	public void addTier(int tiertoadd) {
-		this.tier+=tiertoadd;
-	}
-	public int getXp() {
-		return xp;
-	}
-
-	public void setXp(int xp) {
-		this.xp = xp;
-	}
-	public void addXp(int xptoadd) {
-		checkafteraddingxp(xptoadd);
-	}
 }

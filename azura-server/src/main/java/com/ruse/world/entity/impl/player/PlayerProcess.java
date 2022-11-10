@@ -128,6 +128,19 @@ public class PlayerProcess {
 			player.getPacketSender().sendTabInterface(GameSettings.PRAYER_TAB, player.getPrayerbook().getInterfaceId());
 		}*/
 
+		if (player.getSeasonPassPlaytime().elapsed(60000 * 60)) {//1 hr
+			int x = player.getPosition().getX();
+			int y = player.getPosition().getY();
+			if (player.getLocation() == Location.AFK
+					|| player.getLocation() == Location.ZENYTE
+					|| player.getLocation() == Location.TANZANITE_ZONE || player.getLocation() == Location.HOME_BANK) {
+				player.getSeasonPassPlaytime().reset();
+			} else {
+				player.getSeasonPassPlaytime().reset();
+				player.getSeasonPass().addExperience(1);
+			}
+		}
+
 		if(PlayerPunishment.isReadyForUnban(player.getUsername())) {
 			PlayerPunishment.unban(player.getUsername());
 		}

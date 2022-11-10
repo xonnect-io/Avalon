@@ -436,6 +436,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23228)) { //Necromancer bow
             percentBoost += 75;
         }
+        if (player.getEquipment().contains(15872)) { //Necromancer bow
+            percentBoost += 90;
+        }
         if (player.getEquipment().contains(23302)) { //Necromancer staff
             percentBoost += 75;
         }

@@ -36,7 +36,6 @@ import com.ruse.world.content.minigames.impl.Barrows;
 import com.ruse.world.content.minigames.impl.VoidOfDarkness;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.progressionzone.ZoneData;
-import com.ruse.world.content.seasonpass.PassRewards;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.hunter.Hunter;
@@ -228,9 +227,6 @@ public class PlayerHandler {
 //        if(PassRewards.didSeasonEnd()){
 //            player.getSeasonPass().reset();
 //        }
-        if (!PassRewards.isSeasonInProgress()) {
-            player.getSeasonPass().reset();
-        }
         if (!MembershipManager.didMonthEnd()) {
             player.getMembershipManager().reset();
         }

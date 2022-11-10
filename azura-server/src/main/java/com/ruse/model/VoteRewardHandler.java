@@ -20,7 +20,7 @@ public class VoteRewardHandler {
 		int amt = player.getInventory().getAmount(23020);
 
 		player.getInventory().delete(23020, (claimAll ? amt : 1));
-			player.getSeasonPass().addXp(claimAll ? amt : 3);
+			player.getSeasonPass().addExperience(claimAll ? amt : 3);
 		player.getPacketSender()
 				.sendMessage("You are rewarded " + (claimAll ? Misc.format(amt) : 1) + " vote "
 						+ (claimAll && amt > 1 ? "points" : "point") + " " + "and "

@@ -1842,6 +1842,7 @@ public final class CombatFactory {
                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810
                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 7554
                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 15832
+                    || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 15872
                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23228
                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23302
                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 17694) {
@@ -1922,6 +1923,7 @@ public final class CombatFactory {
                                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810
                                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 7554
                                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 15832
+                                    || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 15872
                                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23228
                                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23302
                                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 17694) {

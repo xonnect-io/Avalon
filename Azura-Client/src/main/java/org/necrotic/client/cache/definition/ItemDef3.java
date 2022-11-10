@@ -1462,6 +1462,34 @@ public class ItemDef3 {
 				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				break;
 
+			case 15872:
+				itemDef.name = "Diyos Range Sword";
+				itemDef.modelID = 19942;
+				itemDef.maleEquip1 = 19942;
+				itemDef.femaleEquip1 = 19942;
+				itemDef.modelOffsetX = -125;
+				itemDef.modelOffsetY = -4;
+				itemDef.modelZoom = 2200;
+				itemDef.rotationY = 448;
+				itemDef.rotationZ = 96;
+				itemDef.rotationX = 1261;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				break;
+
+			case 15874:
+				itemDef.name = "Diyos Magic Sword";
+				itemDef.modelID = 19957;
+				itemDef.maleEquip1 = 19957;
+				itemDef.femaleEquip1 = 19957;
+				itemDef.modelOffsetX = -125;
+				itemDef.modelOffsetY = -4;
+				itemDef.modelZoom = 2200;
+				itemDef.rotationY = 448;
+				itemDef.rotationZ = 96;
+				itemDef.rotationX = 1261;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				break;
+
 			case 23064:
 				itemDef.copyItem(4710);
 				itemDef.name = "Avaryss blade";

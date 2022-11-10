@@ -58,6 +58,7 @@ import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.raids.legends.Legends;
 import com.ruse.world.content.randomevents.LootChest;
+import com.ruse.world.content.seasonpass.PassRewards;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.SkillManager;
@@ -1216,12 +1217,7 @@ public class CommandPacketListener implements PacketListener {
                             .sendMessage("Also will fail if they're in duel/wild.");
             }
         }
-        if (command[0].equalsIgnoreCase("addspassxp")) {
-            int xptoadd = Integer.parseInt(command[1]);
 
-            player.getSeasonPass().addXp(xptoadd);
-            player.getSeasonPass().openInterface();
-        }
         if (command[0].equalsIgnoreCase("staffzone")) {
             if (command.length > 1 && command[1].equalsIgnoreCase("all") && player.getRights().OwnerDeveloperOnly()) {
                 player.getPacketSender().sendMessage("Teleporting all staff to staffzone.");
@@ -1901,6 +1897,35 @@ public class CommandPacketListener implements PacketListener {
             SlayerBossSystem.commandSpawnBoss();
         }        if (command[0].equalsIgnoreCase("spawnnm")) {
             NPC npc = new NPC(9017, new Position(2980, 2776,0));
+        }
+
+        if (command[0].equalsIgnoreCase("loadsp")) {
+            PassRewards.init();
+
+            for (Player p : World.getPlayers()) {
+                if (p != null)
+                    p.getSeasonPass().handleLogin();
+            }
+
+        }
+
+        if (command[0].equalsIgnoreCase("spxp")) {
+            int amount = Integer.parseInt(command[1]);
+            String name = wholeCommand.substring(command[0].length() + command[1].length() + 2);
+            Player target = World.getPlayerByName(name);
+
+            if (target == null) {
+                player.getPacketSender().sendMessage("Player is not online");
+            } else {
+                target.getSeasonPass().addExperience(amount);
+                player.getPacketSender().sendMessage("Gave " + name + " " + amount + " season pass exp.");
+            }
+        }
+        if (command[0].equalsIgnoreCase("grantm")) {
+            player.getSeasonPass().grantMembership();
+        }
+        if (command[0].equalsIgnoreCase("addxp")) {
+            player.getSeasonPass().addExperience(Integer.parseInt(command[1]));
         }
         if (command[0].equalsIgnoreCase("finishraid")) {
             Legends.finishRaid(player.getZombieRaidsParty());

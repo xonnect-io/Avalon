@@ -319,7 +319,7 @@ public class NecromancerRaid {
                     }
                     member.getAchievementTracker().progress(AchievementData.NECROTIC, 1);
                     NecromancerLoot.handleLoot(member, party.getDifficulty());
-                    member.getSeasonPass().addXp(2);
+                    member.getSeasonPass().addExperience(2);
                     Cases.grantCasket(player, 10);
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
                         NecromancerLoot.handleLoot(member, party.getDifficulty());

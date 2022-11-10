@@ -13,9 +13,9 @@ public class GameSettings {
     public static boolean LOCALHOST = false;
     public static boolean BETA_ACTIVE = false;
     public static boolean BOGO = false;
-    public static boolean B2GO = false;
+    public static boolean B2GO = true;
     public static boolean ELITE_DONO_DEAL = false;
-    public static boolean CASE_KEY_DEAL = true;
+    public static boolean CASE_KEY_DEAL = false;
     public static boolean OWNER_JEWELRY_DONO_DEAL = false;
     public static boolean OWNER_CAPE_DONO_DEAL = false;
     public static boolean AUTUMN_DEAL = false;

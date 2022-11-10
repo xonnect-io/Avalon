@@ -29,7 +29,6 @@ import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
-import com.ruse.world.entity.impl.GlobalItemSpawner;
 import com.ruse.world.entity.impl.mini.MiniPlayer;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -464,12 +463,9 @@ public class NPCDeathTask extends Task {
                         if (KillsTracker.getTotalKills(killer) % 500 == 0){
                             Cases.grantCasket(killer, 3);
                         }
-
-                        if(killer.npckillsforseasonpass == 500){
-                            killer.npckillsforseasonpass = 0;
-
-                            killer.getSeasonPass().addXp(1);
-                            killer.sendMessage("You receive 1 Season pass XP for killing 500 NPCs!");
+                        if (KillsTracker.getTotalKills(killer) >= 500 && !killer.getSeasonPass().isReceived500KCXP()) {
+                            killer.getSeasonPass().addExperience(1);
+                            killer.getSeasonPass().setReceived500KCXP(true);
                         }
                     }
                     stop();
