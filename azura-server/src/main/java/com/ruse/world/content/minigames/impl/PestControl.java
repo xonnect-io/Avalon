@@ -13,6 +13,7 @@ import com.ruse.world.content.Cases;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.serverperks.ServerPerks;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -311,6 +312,8 @@ public class PestControl {
 						tokens *= 2;
 					}
 
+
+					StarterTasks.doProgress(p, StarterTasks.StarterTask.PEST_CONTROL);
 
 					p.getPacketSender()
 							.sendMessage("The portals were successfully closed. You've been rewarded for your effort.");

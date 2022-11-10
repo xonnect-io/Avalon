@@ -12,8 +12,6 @@ import com.ruse.world.World;
 import com.ruse.world.content.CustomObjects;
 import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
-import com.ruse.world.content.StarterTasks;
-import com.ruse.world.content.StarterTasks.StarterTaskData;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.casketopening.Box;
@@ -193,7 +191,6 @@ public class Woodcutting {
 										}
 									}
 									Sounds.sendSound(player, Sound.WOODCUT);
-									StarterTasks.doProgress(player, StarterTaskData.CUT_1000_LOGS);
 
 								}
 							}

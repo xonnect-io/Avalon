@@ -1389,6 +1389,57 @@ ICEYBLAST(new CombatNormalSpell() {
 			return 1154;
 		}
 	}),
+	GMSTAFFsang(new CombatNormalSpell() {
+		@Override
+		public Optional<Animation> castAnimation() {
+			return Optional.of(new Animation(811));
+		}
+
+		@Override
+		public Optional<Projectile> castProjectile(Character cast, Character castOn) {
+			return Optional.of(new Projectile(cast, castOn, 481,  44, 3, 43, 31, 0));
+		}
+
+		@Override
+		public Optional<Graphic> endGraphic() {
+			return Optional.of(new Graphic(-1, GraphicHeight.MIDDLE));
+		}
+
+		@Override
+		public int maximumHit() {
+			return 35000; // x10 hits - change later
+		}
+
+		@Override
+		public Optional<Graphic> startGraphic() {
+			return Optional.of(new Graphic(-1));
+		}
+
+		@Override
+		public int baseExperience() {
+			return 0;
+		}
+
+		@Override
+		public Optional<Item[]> equipmentRequired(Player player) {
+			return Optional.empty();
+		}
+
+		@Override
+		public Optional<Item[]> itemsRequired(Player player) {
+			return Optional.of(new Item[] {});
+		}
+
+		@Override
+		public int levelRequired() {
+			return 1;
+		}
+
+		@Override
+		public int spellId() {
+			return 1154;
+		}
+	}),
 	GMSTAFF2(new CombatNormalSpell() {
 		@Override
 		public Optional<Animation> castAnimation() {

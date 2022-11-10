@@ -2507,6 +2507,11 @@
     "item-id": 8411,
     "interface": "BSOAT"
   },
+  {
+    "hash": 23785,
+    "item-id": 23785,
+    "interface": "BSOAT"
+  },
    {
     "hash": 21606,
     "item-id": 21606,
@@ -2750,6 +2755,11 @@
   {
     "hash": 8410,
     "item-id": 8410,
+    "interface": "SWORD"
+  },
+  {
+    "hash": 23787,
+    "item-id": 23787,
     "interface": "SWORD"
   },
   {
@@ -3236,11 +3246,6 @@
   {
     "hash": 16383,
     "item-id": 16383,
-    "interface": "LONGSWORD"
-  },
-  {
-    "hash": 8410,
-    "item-id": 8410,
     "interface": "LONGSWORD"
   },
   {

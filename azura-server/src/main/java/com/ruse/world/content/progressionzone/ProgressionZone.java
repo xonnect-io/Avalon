@@ -3,6 +3,7 @@ package com.ruse.world.content.progressionzone;
 import com.ruse.model.Item;
 import com.ruse.model.Locations;
 import com.ruse.model.Position;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportType;
 import com.ruse.world.entity.impl.player.Player;
@@ -88,6 +89,8 @@ public class ProgressionZone {
     public static void handleReward(Player player) {
         ZoneData.Monsters monster = getCurrentZone(player);
 
+        if (monster == ZoneData.Monsters.PHASE_6)
+            StarterTasks.doProgress(player, StarterTasks.StarterTask.COMPLETE_STARTER_ZONE);
         player.sendMessage("You killed x" + monster.getAmountToKill() + " " + monster.getName() + "'s and received a reward.");
         for (Item item : monster.getRewards()) {
             if (!player.getInventory().isFull()) {

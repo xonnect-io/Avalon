@@ -14,7 +14,6 @@ import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
-import com.ruse.world.content.StarterTasks.StarterTaskData;
 import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.casketopening.BoxLoot;
 import com.ruse.world.content.casketopening.CasketOpening;
@@ -44,6 +43,7 @@ import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.CharmingImp;
 import com.ruse.world.content.skill.impl.summoning.SummoningData;
 import com.ruse.world.content.skill.impl.woodcutting.BirdNests;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.content.transportation.JewelryTeleporting;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.content.transportation.TeleportTabs;
@@ -251,6 +251,25 @@ public class ItemActionPacketListener implements PacketListener {
 
         switch (itemId) {
 
+            case 9650:
+                if (player.getInventory().getAmount(9650) >= 10) {
+                    player.getInventory().delete(9650, 10);
+                    player.getInventory().add(23783, 1);
+                    player.sendMessage("You created a Sanguine box!");
+                }else{
+                    player.sendMessage("You need 10 Sanguine seeds to do this.");
+                }
+                break;
+            case 23783:
+                if (player.getInventory().getFreeSlots() >= 9) {
+                    player.getInventory().delete(23783, 1);
+                    for (int i = 0 ; i < 9; i ++)
+                        player.getInventory().add(23785 + i, 1);
+                    player.sendMessage("You opened a Sanguine box!");
+                }else{
+                    player.sendMessage("You need at least 9 free inventory spaces to do this.");
+                }
+                break;
             case 3696:
                 if (player.getInventory().contains(3696)) {
                     if (player.getIsleDropRate() >= 100){
@@ -1411,11 +1430,12 @@ public class ItemActionPacketListener implements PacketListener {
                // BonusExperienceTask.addBonusXp(player, minutesEXP);
                 VotingDRBoostTask.addBonusDR(player, minutesDR);
                 VotingDMGBoostTask.addBonusDMG(player, minutesDMG);
-                StarterTasks.finishTask(player, StarterTaskData.REDEEM_A_VOTE_SCROLL);
 
+                StarterTasks.doProgress(player, StarterTasks.StarterTask.CLAIM_VOTES, amt);
 
                 player.getClickDelay().reset();
                 break;
+
             case 10138:
                 if (player.busy()) {
                     player.getPacketSender().sendMessage("You can not do this right now.");
@@ -2502,8 +2522,8 @@ public class ItemActionPacketListener implements PacketListener {
               //  BonusExperienceTask.addBonusXp(player, minutesEXP);
                 VotingDRBoostTask.addBonusDR(player, minutesDR);
                  VotingDMGBoostTask.addBonusDMG(player, minutesDMG);
-                StarterTasks.finishTask(player, StarterTaskData.REDEEM_A_VOTE_SCROLL);
 
+                StarterTasks.doProgress(player, StarterTasks.StarterTask.CLAIM_VOTES, amt);
                 player.getClickDelay().reset();
                 break;
             case 10138:

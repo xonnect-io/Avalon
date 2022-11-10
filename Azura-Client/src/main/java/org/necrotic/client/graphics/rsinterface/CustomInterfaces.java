@@ -239,7 +239,73 @@ public class CustomInterfaces extends RSInterface {
 	}
 
 
+	public static void starterTasksInterface() {
+		int interID = 148000;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 47;
+		int y = 25;
+		tab.totalChildren(5);
 
+		addSpriteLoader(id, 1811);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 387 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 387 + x, 3 + y);
+		id++;
+
+		addText(id, "Starter Tasks", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 207 + x, 4 + y);
+
+		tab.child(c++, 148050, 12 + x, 27 + y);
+
+
+		interID = 148050;
+		RSInterface scroll = addInterface(interID);
+		scroll.width = 390 - 16;
+		scroll.height = 244;
+		scroll.scrollMax = 500;
+		scroll.totalChildren(180);
+		id = interID + 1;
+		c = 0;
+		x = 4;
+		y = 4;
+
+		for (int z = 0; z < 20; z++) {
+
+			addSpriteLoader(id, 1812);
+			scroll.child(c++, id++, 0 + x, 0 + y);
+
+			hoverButton(id, 1813, 1814, "Claim", 2, 0xff8624, "Claim");
+			scroll.child(c++, id++, 289 + x, 14 + y);
+
+			addText(id, "Claimed", tda, 2, 0x38761d, true, true);
+			scroll.child(c++, id++, 322 + x, 20 + y);
+
+			addText(id, "Kill Stuff", tda, 0, 0xFF981F, true, true);
+			scroll.child(c++, id++, 86 + x, 10 + y);
+
+			new ProgressBar(id, 159, 20, new int[]{0x38761d}, true, true, "asd", new int[]{0x8b0000});
+			scroll.child(c++, id++, 6 + x, 25 + y);
+
+			addText(id, "(0/100)", tda, 0, 0xFFFFFF, true, true);
+			scroll.child(c++, id++, 86 + x, 30 + y);
+
+			for (int r = 0; r < 3; r++) {
+				dropGroup(id, 1, 1, 1, 1); //
+				scroll.child(c++, id++, 172 + x, 12 + y);
+				x += 36;
+			}
+
+			y += 60;
+			x = 4;
+		}
+
+
+	}
 
 	private static void worldMap() {
 		RSInterface map = addInterface(57350);
@@ -7871,6 +7937,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		cardPacks();
 		cardPacksRewards();
 		minigameInterface();
+		starterTasksInterface();
 		vodOverlay(tda);
 	}
 

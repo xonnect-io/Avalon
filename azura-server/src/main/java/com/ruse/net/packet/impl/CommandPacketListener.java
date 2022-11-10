@@ -110,6 +110,10 @@ public class CommandPacketListener implements PacketListener {
             player.membershipInterfaceHandler.openBenefitTab ();
         }
 
+        if (command[0].equalsIgnoreCase("starter")
+                || command[0].equalsIgnoreCase("start")) {
+            player.getStarterTasks().openInterface();
+        }
         //Start of Teleports
         if (command[0].equalsIgnoreCase("home")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS

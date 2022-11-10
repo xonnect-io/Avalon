@@ -5224,7 +5224,7 @@ public class ItemDef2 {
 				itemDef.rotationY = itemdefyogipic11.rotationY;
 				itemDef.rotationX = itemdefyogipic11.rotationX;
 				itemDef.modelZoom = 2000;
-				itemDef.rdc2 = 39477000;
+				itemDef.rdc2 = 123434;
 				break;
 			case 23215:
 				itemDef.name = "PVM ticket pack (5k)";
@@ -5238,7 +5238,7 @@ public class ItemDef2 {
 				itemDef.rotationY = itemdefyogipic111.rotationY;
 				itemDef.rotationX = itemdefyogipic111.rotationX;
 				itemDef.modelZoom = 2000;
-				itemDef.rdc2 = 31155000;
+				itemDef.colorChange = new double[]{1, 0.3, 0.3};
 				break;
 			case 22219:
 				itemDef.name = "PVM ticket pack (10k)";
@@ -5252,7 +5252,7 @@ public class ItemDef2 {
 				itemDef.rotationY = itemdefyogipic1111.rotationY;
 				itemDef.rotationX = itemdefyogipic1111.rotationX;
 				itemDef.modelZoom = 2000;
-				itemDef.rdc2 = 32255111;
+				itemDef.colorChange = new double[]{0.6, 0.1, 0.1};
 				break;
 			case 21060:
 				itemDef.name = "Slayer dualsaber";

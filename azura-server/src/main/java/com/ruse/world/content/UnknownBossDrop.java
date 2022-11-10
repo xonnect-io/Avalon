@@ -1,8 +1,10 @@
 package com.ruse.world.content;
 
 import com.ruse.model.definitions.NPCDrops;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.CombatBuilder;
 import com.ruse.world.content.combat.CombatFactory;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -47,6 +49,8 @@ public class UnknownBossDrop {
 			killer.getPointsHandler().setMG3Count(0); //resets players minigame kc to 0
 			KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
 			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
+			StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
+			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
 			NPCDrops.handleDrops(killer, npc);
 			killer.unknownZone.refreshInterface();
 			iterator.remove();

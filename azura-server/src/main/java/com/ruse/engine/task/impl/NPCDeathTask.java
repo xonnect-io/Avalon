@@ -14,7 +14,6 @@ import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
-import com.ruse.world.content.StarterTasks.StarterTaskData;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.afk.AFKBossDrops;
 import com.ruse.world.content.afk.AfkSystem;
@@ -203,16 +202,7 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == SkeletalHorror.NPC_ID) {
                             SkeletalHorror.wyrmAlive = false;
                         }
-                        if (npc.getId() == 6203 || npc.getId() == 6260 || npc.getId() == 6247 || npc.getId() == 6222) { // done
-                            StarterTasks.doProgress(killer, StarterTaskData.KILL_20_GWD_BOSSES);
-                        }
-                        if (npc.getId() == 1023) { // done
-                            StarterTasks.doProgress(killer, StarterTaskData.KILL_100_STARTER);
-                        }
 
-                        if (!(npc.getId() == 1)) {
-                            StarterTasks.doProgress(killer, StarterTaskData.REACH_1000_TOTAL);
-                        }
                         /** PARSE DROPS **/
                         if (npc.getId() == 3830) {
                             GuardianBossDrop.handleDropReward(npc);
@@ -319,16 +309,6 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == 4972) {
                             DragonKingBoss.handleDrop(npc);
-                            if(killer.getQuestTwoStarted() == true && killer.getQuestTwoStep2() == false) {
-                                if (killer.getEquipment().contains(1580)) {
-                                    killer.getInventory().add(10537, 1);
-                                    World.sendMessage("An Omega egg has been placed in your inventory.");
-                                    killer.setQuestTwoStep2(true);
-                                    killer.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Obtain the Omega Egg");
-                                } else  if (!killer.getEquipment().contains(1580) && killer.getQuestTwoStarted() == true && killer.getQuestTwoStep2() == false) {
-                                    GlobalItemSpawner.spawnEGG(killer);
-                                }
-                            }
                         }
                         if (npc.getId() == 9128 && killer.getQuestTwoStep6() == false) {
                             killer.setQuestTwoStep6(true);

@@ -6,6 +6,7 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.HashMap;
@@ -70,6 +71,7 @@ public class MysteryBoxOpener {
 		int chance = RandomUtility.inclusiveRandom(0, 100);
 		String name = ItemDefinition.forId(boxId).getName();
 
+		StarterTasks.doProgress(player, StarterTasks.StarterTask.OPEN_BOXES);
 		if (chance > 95) {
 			reward = rare[RandomUtility.exclusiveRandom(0, rare.length)];
 			if ( reward == 10942 || reward == 6769 || reward == 10935 || reward == 10934 || reward == 10943) { // OH LOL oh lol
@@ -101,6 +103,7 @@ public class MysteryBoxOpener {
 	public void openAll(int boxId) {
 
 		int amount = player.getInventory().getAmount(boxId);
+		StarterTasks.doProgress(player, StarterTasks.StarterTask.OPEN_BOXES, amount);
 		Map<Integer, Integer> rewards = new HashMap<>();
 		for (int i = 0; i < amount; i++) {
 			int reward = -1;

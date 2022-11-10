@@ -24,6 +24,38 @@ public class CustomDropUtils {
         int percentBoost = 0;
 
 
+        //Sanguine set
+        if (player.getEquipment().contains(23789)) { //Sanguine helmet
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23790)) { //Sanguine body
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23791)) { //Sanguine legs
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23792)) { //Sanguine gloves
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23793)) { //Sanguine boots
+            percentBoost += 10;
+        }
+        //End Sanguine set
+
+
+        //Fantasy set
+        if (player.getEquipment().contains(23443)) { //Fantasy helmet
+            percentBoost += 35;
+        }
+
+        if (player.getEquipment().contains(23444)) { //Fantasy body
+            percentBoost += 35;
+        }
+
+        if (player.getEquipment().contains(23445)) { //Fantasy legs
+            percentBoost += 35;
+        }
+        //End Fantasy set
 
         if (player.getPointsHandler().getTotalPrestiges() == 1)
             percentBoost += 5;
@@ -46,9 +78,8 @@ public class CustomDropUtils {
         if (player.getPointsHandler().getTotalPrestiges() == 10)
             percentBoost += 50;
 
-
-                /*
-        Charms
+         /*
+        Charms slot
          */
         if (player.getEquipment().contains(23390)) {
             percentBoost += 10;
@@ -78,7 +109,9 @@ public class CustomDropUtils {
         End charms
          */
 
-        //Auras
+         /*
+        Aura slot
+         */
         if (player.getEquipment().contains(23271)) { //Celestial Aura
             percentBoost += 60;
         }
@@ -121,11 +154,13 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23044)) { //Tier 1 Aura
             percentBoost += 3;
         }
+        /*
+        End Auras
+         */
 
-        //End Auras
-
-        //Start Rings
-
+         /*
+        Ring slot
+         */
         if (player.getEquipment().contains(23280)) { //Celestial ring
             percentBoost += 75;
         }
@@ -160,21 +195,13 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(2572)) { //Ring of wealth(i)
             percentBoost += 5;
         }
-        //End rings
+        /*
+        End Rings
+         */
 
-
-        if (player.getEquipment().contains(23443)) { //Fantasy helmet
-            percentBoost += 35;
-        }
-
-        if (player.getEquipment().contains(23444)) { //Fantasy body
-            percentBoost += 35;
-        }
-
-        if (player.getEquipment().contains(23445)) { //Fantasy legs
-            percentBoost += 35;
-        }
-        // Start boots
+         /*
+        Boot slot
+         */
         if (player.getEquipment().contains(23422)) { //Diyos boots
             percentBoost += 50;
         }
@@ -222,9 +249,13 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(8274)) { //Legends boots
             percentBoost += 10;
         }
-        //End boots
+        /*
+        End Boots
+         */
 
-        //Start gloves
+         /*
+        Gloves slot
+         */
         if (player.getEquipment().contains(23421)) { //Diyos gloves
             percentBoost += 75;
         }
@@ -275,10 +306,13 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(20091)) { //Cursed gloves
             percentBoost += 10;
         }
-        //End gloves
+        /*
+        End Gloves
+         */
 
-        //Start capes
-
+         /*
+        Capes slot
+         */
         if (player.getEquipment().contains(23268)) { //Cloak of Summer
             percentBoost += 50;
         }
@@ -309,9 +343,13 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(20099)) { //Cursed cape
             percentBoost += 10;
         }
-        //End capes
+        /*
+        End Capes
+         */
 
-        //Start amulets
+         /*
+        Amulet slot
+         */
         if (player.getEquipment().contains(23293)) { //Celestial amulet
             percentBoost += 75;
         }
@@ -336,9 +374,13 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(19886)) { //Collectors amulet I
             percentBoost += 10;
         }
-        //end amulets
+        /*
+        End Amulets
+         */
 
-        //start shield
+         /*
+        Shield slot
+         */
         if (player.getEquipment().contains(22117)) { //Zenyte shield
             percentBoost += 35;
         }
@@ -347,6 +389,9 @@ public class CustomDropUtils {
         }
         if (player.getEquipment().contains(19810)) { //Deity Spirit shield
             percentBoost += 20;
+        }
+        if (player.getEquipment().contains(23788)) { //Sanguine Spirit shield
+            percentBoost += 10;
         }
         if (player.getEquipment().contains(20090)) { //Cursed Spirit shield
             percentBoost += 10;
@@ -357,10 +402,13 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(21610)) { //Custom extreme teddybear
             percentBoost += 10;
         }
-        //end shield
+        /*
+        End Shield
+         */
 
-        //start weapons
-
+         /*
+        Weapon slot
+         */
         if (player.getEquipment().contains(23267)) { //Infernal Bow
             percentBoost += 50;
         }
@@ -433,10 +481,19 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(8410)) { //Elite sword(aoe)
             percentBoost += 20;
         }
+        if (player.getEquipment().contains(23787)) { //Sanguine sword(aoe)
+            percentBoost += 20;
+        }
         if (player.getEquipment().contains(8411)) { //Elite bow(aoe)
             percentBoost += 20;
         }
+        if (player.getEquipment().contains(23785)) { //Sanguine bow(aoe)
+            percentBoost += 20;
+        }
         if (player.getEquipment().contains(8412)) { //Elite staff(aoe)
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(23786)) { //Sanguine staff(aoe)
             percentBoost += 20;
         }
         if (player.getEquipment().contains(8253)) { //Elite staff(aoe)
@@ -457,9 +514,13 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(8089)) { //Purifier staff
             percentBoost += 10;
         }
-        //end weapons
+        /*
+        End Weapons
+         */
 
-        //start platelegs
+         /*
+        Plateleg slot
+         */
         if (player.getEquipment().contains(23420)) {//Diyos platelegs
             percentBoost += 40;
         }
@@ -538,10 +599,14 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(14923)) { //Icey virtus chaps
             percentBoost += 5;
         }
-        //end platelegs
+        /*
+        End Platelegs
+         */
 
 
-        //start platebody
+         /*
+        Platebody slot
+         */
         if (player.getEquipment().contains(23419)) {//Diyos platebody
             percentBoost += 40;
         }
@@ -622,10 +687,16 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(14922)) { //Icey virtus chaps
             percentBoost += 5;
         }
-        //end platebody
+        /*
+        End Platebody
+         */
 
 
-        //start helmet
+
+        /*
+        Helmet Slot
+         */
+
         if (player.getEquipment().contains(23418)) {//Diyos helmet
             percentBoost += 45;
         }
@@ -769,7 +840,14 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(14921)) { //Icey Virtus mask
             percentBoost += 5;
         }
-        //end helmet
+        /*
+        End Helmet
+         */
+
+
+        /*
+        Misc Drop rate
+         */
 
         if (player.getEquipment().contains(23369) && player.getQuestOneStep7() == true) { //Holy amulet
             percentBoost += 25;

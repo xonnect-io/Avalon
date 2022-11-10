@@ -140,6 +140,9 @@ public class ButtonClickPacketListener implements PacketListener {
             return;
         }
 
+        if (player.getStarterTasks().handleButtonClick(id)) {
+            return;
+        }
         if (player.getGoodieBag().handleClick(id)) {
             return;
         }
@@ -1892,15 +1895,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 14882:
                 BankPin.clickedButton(player, id);
                 break;
-            case -12307:
-                if (!StarterTasks.claimReward(player)) {
-                    player.sendMessage("@red@You cannot claim the reward untill all tasks are complete.");
-                    return;
-                }
-                player.getInventory().delete(757, 1);
-                player.getPacketSender().sendInterfaceRemoval();
-                // player.sendMessage("Enjoy your reward");
-                break;
+
             case 27005:
             case 22012:
                 if (!player.isBanking() || player.getInterfaceId() != 5292)
@@ -2440,9 +2435,6 @@ public class ButtonClickPacketListener implements PacketListener {
             return true;
         }
         if (StartScreen.handleButton(player, id)) {
-            return true;
-        }
-        if (StarterTasks.handleButton(player, id)) {
             return true;
         }
 

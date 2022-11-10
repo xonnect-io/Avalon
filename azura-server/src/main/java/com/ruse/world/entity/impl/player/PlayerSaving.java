@@ -130,8 +130,6 @@ public class PlayerSaving {
 			object.addProperty("loyalty-points", new Integer(player.getPointsHandler().getLoyaltyPoints()));
 			object.addProperty("godmodetime", player.getGodModeTimer());
 			object.addProperty("voting-points", new Integer(player.getPointsHandler().getVotingPoints()));
-			object.add("tasks-completion", builder.toJsonTree(player.getStarterTaskAttributes().getCompletion()));
-			object.add("tasks-progress", builder.toJsonTree(player.getStarterTaskAttributes().getProgress()));
 			object.addProperty("total-prestiges", new Integer(player.getPointsHandler().getTotalPrestiges()));
 			object.addProperty("slayer-spree", new Integer(player.getPointsHandler().getSlayerSpree()));
 			object.addProperty("minigame1-killcount", new Integer(player.getPointsHandler().getMG1Count()));
@@ -392,6 +390,8 @@ public class PlayerSaving {
 			object.addProperty("afk-onyx", player.getAfkOnyx());
 			object.addProperty("afk-zenyte", player.getAfkZenyte());
 
+			object.add("starter-task-amount", builder.toJsonTree(player.getStarterTasks().getAmountRemaining()));
+			object.add("starter-task-completed", builder.toJsonTree(player.getStarterTasks().getCompleted()));
 			object.add("progression-zones", builder.toJsonTree(player.getProgressionZones()));
 			object.add("zones-complete", builder.toJsonTree(player.getZonesComplete()));
 

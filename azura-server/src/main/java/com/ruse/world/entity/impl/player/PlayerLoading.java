@@ -336,40 +336,15 @@ public class PlayerLoading {
             if (reader.has("lastTGloveIndex")) {
                 player.lastTGloveIndex = reader.get("lastTGloveIndex").getAsInt();
             }
-            if (reader.has("tasks-progress")) {
-                int[] loadedProgress = builder.fromJson(reader.get("tasks-progress").getAsJsonArray(), int[].class);
-                int defaultLength = player.getStarterTaskAttributes().getProgress().length;
-                if (loadedProgress.length < defaultLength) {
-
-                    for (int index = 0; index < defaultLength - 1; index++) {
-                        if (index < loadedProgress.length) {
-                            player.getStarterTaskAttributes().setProgress(index, loadedProgress[index]);
-                        } else {
-                            player.getStarterTaskAttributes().setProgress(index, 0);
-                        }
-                    }
-                } else {
-                    player.getStarterTaskAttributes().setProgress(loadedProgress);
-                }
+            if (reader.has("starter-task-amount")) {
+                int[] amountRemaining = builder.fromJson(reader.get("starter-task-amount").getAsJsonArray(),
+                        int[].class);
+                player.getStarterTasks().setAmountRemaining(amountRemaining);
             }
-
-            if (reader.has("tasks-completion")) {
-                boolean[] loadedCompletion = builder.fromJson(reader.get("tasks-completion").getAsJsonArray(),
+            if (reader.has("starter-task-completed")) {
+                boolean[] completed = builder.fromJson(reader.get("starter-task-completed").getAsJsonArray(),
                         boolean[].class);
-                int defaultLength = player.getStarterTaskAttributes().getCompletion().length;
-                if (loadedCompletion.length < defaultLength) {
-                    // System.out.println("load length: " + loadedCompletion + " default: " + defaultLength);
-                    for (int index = 0; index < defaultLength - 1; index++) {
-                        if (index < loadedCompletion.length) {
-                            // System.out.println("what is this: " + index);
-                            player.getStarterTaskAttributes().setCompletion(index, loadedCompletion[index]);
-                        } else {
-                            player.getStarterTaskAttributes().setCompletion(index, false);
-                        }
-                    }
-                } else {
-                    player.getStarterTaskAttributes().setCompletion(loadedCompletion);
-                }
+                player.getStarterTasks().setCompleted(completed);
             }
 
             if (reader.has("staff-rights")) {
@@ -654,7 +629,16 @@ public class PlayerLoading {
             if (reader.has("isle-dr")) {
                 player.setIsleDropRate(reader.get("isle-dr").getAsDouble());
             }
-
+            if (reader.has("starter-task-amount")) {
+                int[] amountRemaining = builder.fromJson(reader.get("starter-task-amount").getAsJsonArray(),
+                        int[].class);
+                player.getStarterTasks().setAmountRemaining(amountRemaining);
+            }
+            if (reader.has("starter-task-completed")) {
+                boolean[] completed = builder.fromJson(reader.get("starter-task-completed").getAsJsonArray(),
+                        boolean[].class);
+                player.getStarterTasks().setCompleted(completed);
+            }
             if (reader.has("sacrificed-owner")) {
                 player.setSacrificedFantasyItem(reader.get("sacrificed-owner").getAsBoolean());
             }

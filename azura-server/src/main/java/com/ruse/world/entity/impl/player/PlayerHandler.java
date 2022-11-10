@@ -34,11 +34,14 @@ import com.ruse.world.content.discordbot.DiscordIntegration;
 import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.Barrows;
 import com.ruse.world.content.minigames.impl.VoidOfDarkness;
+import com.ruse.world.content.progressionzone.ProgressionZone;
+import com.ruse.world.content.progressionzone.ZoneData;
 import com.ruse.world.content.seasonpass.PassRewards;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.hunter.Hunter;
 import com.ruse.world.content.skill.impl.slayer.Slayer;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.GlobalItemSpawner;
 import com.ruse.world.entity.impl.mini.MiniPlayer;
@@ -156,6 +159,8 @@ public class PlayerHandler {
         if (player.getTeleblockTimer() > 0) {
             TaskManager.submit(new CombatTeleblockEffect(player));
         }
+        if (ProgressionZone.getCurrentZone(player) == ZoneData.Monsters.PHASE_6)
+            StarterTasks.doProgress(player, StarterTasks.StarterTask.COMPLETE_STARTER_ZONE);
 
         if (player.getDoubleDRTimer() > 0) {
             if (player.getDoubleDRTimer() > 3000) {

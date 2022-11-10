@@ -5,6 +5,126 @@ public class ItemDef5 {
 	public static ItemDefinition newIDS(ItemDefinition itemDef, int id) {
 
 		switch (id) {
+
+
+			case 23785:
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.name = "Sanguine bow";
+				itemDef.modelID = 19921;
+				itemDef.maleEquip1 = 19923;
+				itemDef.femaleEquip1 = 19923;
+				itemDef.modelZoom = 2583;
+				itemDef.rotationY = 391;
+				itemDef.rotationX = 965;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 26;
+				itemDef.modelOffsetY = -26;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+			case 23786:
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.name = "Sanguine Wand";
+				itemDef.modelID = 19937;
+				itemDef.maleEquip1 = 19936;
+				itemDef.femaleEquip1 = 19936;
+				itemDef.modelZoom = 2409;
+				itemDef.rotationY = 391;
+				itemDef.rotationX = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 4;
+				itemDef.modelOffsetY = -4;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+			case 23787:
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.name = "Sanguine Sword";
+				itemDef.modelID = 19938;
+				itemDef.maleEquip1 = 19939;
+				itemDef.femaleEquip1 = 19939;
+				itemDef.modelZoom = 2043;
+				itemDef.rotationY = 391;
+				itemDef.rotationX = 1243;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -4;
+				itemDef.modelOffsetY = 0;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+			case 23783:
+				itemDef.copyItem(15674);
+				itemDef.name = "Sanguine box";
+				itemDef.actions = new String[]{"Open", null, null, null, null};
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+			case 23788:
+				itemDef.copyItem(10666);
+				itemDef.modelOffsetY = 6;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.name = "Sanguine Shield";
+				itemDef.modelID = 19940;
+				itemDef.maleEquip1 = 19941;
+				itemDef.femaleEquip1 = 19941;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+			case 23789:
+				itemDef.copyItem(14050);
+				itemDef.name = "Sanguine helmet";
+				itemDef.modelID = 19850;
+				itemDef.maleEquip1 = 19876;
+				itemDef.femaleEquip1 = 19876;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+
+			case 23790:
+				itemDef.copyItem(14051);
+				itemDef.name = "Sanguine body";
+				itemDef.modelID = 19877;
+				itemDef.maleEquip1 = 19900;
+				itemDef.femaleEquip1 = 19900;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+			case 23791:
+				itemDef.copyItem(14052);
+				itemDef.name = "Sanguine legs";
+				itemDef.modelID = 19901;
+				itemDef.maleEquip1 = 19902;
+				itemDef.femaleEquip1 = 19902;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+
+			case 23792:
+				itemDef.copyItem(14602);
+				itemDef.name = "Sanguine gloves";
+				itemDef.modelID = 19914;
+				itemDef.maleEquip1 = 19915;
+				itemDef.femaleEquip1 = 19915;
+				itemDef.modelZoom = 1000;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+			case 23793:
+				itemDef.name = "Sanguine boots";
+				itemDef.modelID = 19912;
+				itemDef.maleEquip1 = 19912;
+				itemDef.femaleEquip1 = 19912;
+				itemDef.modelZoom = 800;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = 1;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
+				break;
+
+			case 9650:
+				itemDef.name = "Sanguine Seed";
+				itemDef.actions = new String[]{"Combine", null, null, null, null};
+				itemDef.modelID = 19919;
+				itemDef.maleEquip1 = -1;
+				itemDef.femaleEquip1 = -1;
+				itemDef.modelOffsetY = 8;
+				itemDef.colorChange = new double[]{1.5, 0.1, 0.1};
+				break;
+
 			case 24390: //Costume Box
 				itemDef.copyItem(3062);
 				itemDef.stackable = false;

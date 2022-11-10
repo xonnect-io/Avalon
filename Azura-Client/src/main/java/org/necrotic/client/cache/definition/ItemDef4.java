@@ -823,50 +823,29 @@ public class ItemDef4 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
-			case 14474:
-				itemDef.name = "<shad=1>@bla@Dark Shard";
-				itemDef21 = ItemDefinition.get(18016);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.modelID = itemDef21.modelID;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = itemDef21.actions;
-				itemDef.actions = new String[]{null, null, null, null, "Destroy"};
-				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
-				itemDef.rdc3 = 1;
-				itemDef.stackable = false;
-				break;
 			case 14472:
-				itemDef.name = "Light Shard";
-				itemDef21 = ItemDefinition.get(18016);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.modelID = itemDef21.modelID;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = itemDef21.actions;
+				itemDef.copyItem(4082);
+				itemDef.name = "<col=d5d5d5>Light shard</col>";
+				itemDef.rdc = 127;
+				itemDef.modelOffsetY = -2;
 				itemDef.actions = new String[]{null, null, null, null, "Destroy"};
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
-				itemDef.rdc2 = 88800;
-				itemDef.stackable = false;
+				break;
+			case 14474:
+				itemDef.copyItem(4082);
+				itemDef.name = "@bla@Dark shard</col>";
+				itemDef.rdc = 20;
+				itemDef.modelOffsetY = -2;
+				itemDef.actions = new String[]{null, null, null, null, "Destroy"};
+				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				break;
 			case 23238:
-				itemDef.name = "Blood Shard";
-				itemDef21 = ItemDefinition.get(18016);
-				itemDef.modelOffsetX = itemDef21.modelOffsetX;
-				itemDef.modelOffsetY = itemDef21.modelOffsetY;
-				itemDef.modelZoom = itemDef21.modelZoom;
-				itemDef.modelID = itemDef21.modelID;
-				itemDef.rotationY = itemDef21.rotationY;
-				itemDef.rotationX = itemDef21.rotationX;
-				itemDef.actions = itemDef21.actions;
+				itemDef.copyItem(4082);
+				itemDef.name = "<col=9f0808>Blood shard</col>";
+				itemDef.rdc = 946;
+				itemDef.modelOffsetY = -2;
 				itemDef.actions = new String[]{null, null, null, null, "Destroy"};
 				itemDef.actions[3] = "<col=C3C0B2>Dissolve";
-				itemDef.rdc3 = 800;
-				itemDef.stackable = false;
 				break;
 			case 22101:
 				itemDef.copyItem(4712);

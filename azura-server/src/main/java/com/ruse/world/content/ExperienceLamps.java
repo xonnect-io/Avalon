@@ -8,6 +8,7 @@ import com.ruse.world.content.dialogue.DialogueExpression;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.DialogueType;
 import com.ruse.world.content.skill.SkillManager;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.player.Player;
 
 public class ExperienceLamps {
@@ -29,16 +30,18 @@ public class ExperienceLamps {
 	public static void confirmoneorall(Player player, int choice){
 		player.getPacketSender().sendInterfaceRemoval();
 		switch(choice){
+
 			case 1:
 				player.getInventory().delete(thelamp.getItemId(), 1);
+				StarterTasks.doProgress(player, StarterTasks.StarterTask.USE_LAMPS);
 				player.getSkillManager().addExperience(player.theskill, player.skilllampxp);
 				player.getPacketSender().sendMessage("You've received some experience in "
 						+ Misc.formatText(player.theskill.toString().toLowerCase()) + ".");
 				break;
+
 			case 2:
-
 				player.getSkillManager().addExperience(player.theskill, 		player.skilllampxp *player.getInventory().getAmount(thelamp.getItemId()));
-
+				StarterTasks.doProgress(player, StarterTasks.StarterTask.USE_LAMPS,player.getInventory().getAmount(thelamp.getItemId()));
 				player.getPacketSender().sendMessage("You've received some experience in "
 						+ Misc.formatText(player.theskill.toString().toLowerCase()) + ".");
 				player.getInventory().delete(thelamp.getItemId(), player.getInventory().getAmount(thelamp.getItemId()));

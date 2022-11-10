@@ -328,16 +328,6 @@ public class NPCOptionPacketListener implements PacketListener {
                         npc.forceChat("Deep sea fishing!");
                         break;
 
-                    case 783:
-                        npc.forceChat("talk to me for starter tasks!");
-                        StarterTasks.updateInterface(player);
-                        int[] ids = {22074, 6570, 7462, 17273, 19153, 19142, 19141, 19115, 11137, 20000, 6769};
-                        for (int i = 0; i < ids.length; i++) {
-                            player.getPacketSender().sendItemOnInterface(53205, ids[i], i, 1);
-                        }
-                        player.getPacketSender().sendInterfaceReset();
-                        player.getPacketSender().sendInterface(53200);
-                        break;
                     case 3089:
                         ShopManager.getShops().get(104).open(player);
                         player.getPacketSender().sendString(3903,

@@ -28,7 +28,6 @@ import com.ruse.world.content.*;
 import com.ruse.world.content.DropLog.DropLogEntry;
 import com.ruse.world.content.KillsTracker.KillsEntry;
 import com.ruse.world.content.LoyaltyProgramme.LoyaltyTitles;
-import com.ruse.world.content.StarterTasks.StarterTaskAttributes;
 import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.achievements.AchievementTracker;
 import com.ruse.world.content.bis.BestItems;
@@ -93,6 +92,7 @@ import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Pouch;
 import com.ruse.world.content.skill.impl.summoning.Summoning;
+import com.ruse.world.content.startertasks.StarterTaskHandler;
 import com.ruse.world.content.teleport.TeleportCategory;
 import com.ruse.world.content.teleport.TeleportData;
 import com.ruse.world.content.upgrading.MaxUpgradesInterface;
@@ -575,7 +575,6 @@ public int howmuchdissolveamt = 0;
     public static int Amount_Donated;
     private final List<GroundItem> itemsInScene = new CopyOnWriteArrayList<>();
     private final DailyRewards dailyRewards = new DailyRewards(this);
-    private final StarterTaskAttributes starterTaskAttributes = new StarterTaskAttributes();
     private final PlayerOwnedShopManager playerOwnedShopManager = new PlayerOwnedShopManager(this);
     // Timers (Stopwatches)
     private final Stopwatch sqlTimer = new Stopwatch();
@@ -1533,9 +1532,6 @@ public int howmuchdissolveamt = 0;
         this.bossevent = bossevent;
     }
 
-    public StarterTaskAttributes getStarterTaskAttributes() {
-        return starterTaskAttributes;
-    }
 
     public PlayerOwnedShopManager getPlayerOwnedShopManager() {
         return playerOwnedShopManager;
@@ -1780,6 +1776,12 @@ public int howmuchdissolveamt = 0;
         return customCombiner;
     }
 
+    private StarterTaskHandler starterTaskHandler;
+    public StarterTaskHandler getStarterTasks() {
+        if (starterTaskHandler == null)
+            starterTaskHandler = new StarterTaskHandler(this);
+        return starterTaskHandler;
+    }
     /*
      * Getters & Setters
      */

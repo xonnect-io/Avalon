@@ -9,6 +9,7 @@ import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.achievements.AchievementData;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.player.Player;
 import mysql.impl.Store;
 
@@ -151,6 +152,7 @@ public class UpgradeInterface {
                                 player.getInventory().delete(ItemDefinition.UPGRADE_TOKEN_ID,
                                         val.getCost());
 
+                                StarterTasks.doProgress(player, StarterTasks.StarterTask.UPGRADE_ITEMS, success);
                                 player.getAchievementTracker().progress(AchievementData.UPGRADE_A_ITEM, 1);
                               
                                 boolean random =  Misc.getRandomDouble(99) < getBoost(val.getSuccessRate());

@@ -12,6 +12,7 @@ import com.ruse.GameSettings;
 import com.ruse.util.Misc;
 import com.ruse.util.Stopwatch;
 import com.ruse.world.World;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.player.Player;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -94,6 +95,7 @@ public class ServerPerks {
             }
         }
 
+        StarterTasks.doProgress(player, StarterTasks.StarterTask.CONTRIBUTE_PERKS, amount);
         player.getInventory().delete(12855, amount);
         contributed += amount;
         updateInterface(player);

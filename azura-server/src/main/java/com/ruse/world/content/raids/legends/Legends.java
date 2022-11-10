@@ -12,6 +12,7 @@ import com.ruse.world.content.casketopening.Box;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.serverperks.ServerPerks;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -305,6 +306,7 @@ public class Legends {
                         member.getInventory().add(18404, 1);
                         member.getSeasonPass().addXp(2);
                         member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
+                        StarterTasks.doProgress(player, StarterTasks.StarterTask.ISLAND_RAIDS);
                         member.getPointsHandler().incrementZombieRaidKC(1);
                         if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
                             member.getInventory().add(18404, 1);

@@ -17,6 +17,7 @@ import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.globalBosses.SlayerBossSystem;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.summoning.Familiar;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -206,6 +207,7 @@ public class Slayer {
                 player.getSeasonPass().addXp(1);
                 Cases.grantCasket(player, 25);
                 System.out.println("TEST EASY: " +pointsReceived);
+                StarterTasks.doProgress(player, StarterTasks.StarterTask.EASY_TASKS);
                 break;
             case MEDIUM_SLAYER:
                 pointsReceived = 15;

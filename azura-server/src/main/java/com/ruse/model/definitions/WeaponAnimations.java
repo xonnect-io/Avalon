@@ -139,6 +139,7 @@ public final class WeaponAnimations {
 		case 8089:
 		case 16249:
 		case 8412:
+			case 23786:
 			// case 20554:
 		case 18356:
 		case 19331:
@@ -191,7 +192,7 @@ public final class WeaponAnimations {
 		case 22089:
 		case 8001:
 		case 7543:
-	
+			case 23785:
 		case 9929:
 		case 14056:
 			playerStandIndex = 11973;
@@ -254,6 +255,7 @@ public final class WeaponAnimations {
 		case 8087:
 		case 15788:
 		case 8410:
+			case 23787:
 			playerStandIndex = 809;
 			break;
 		case 1419:

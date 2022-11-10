@@ -19,6 +19,7 @@ public enum AutoCastSpell {
     LMOONSTAFF(18629, CombatSpells.LMOONSTAFF),
     MAX(8089, CombatSpells.MAXSTAFF),
     GMSTAFF(8412, CombatSpells.GMSTAFF),
+    SANGUINE(23786, CombatSpells.GMSTAFFsang),
     BUU(16249, CombatSpells.BUUSTAFF),
     ARR0(22092, CombatSpells.ARROWSTAFF),
     ARR01(3739, CombatSpells.ARROWSTAFF),
