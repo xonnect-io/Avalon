@@ -1,6 +1,5 @@
 package com.ruse.world.content.quests;
 
-import com.ruse.model.Item;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dialogue.DialogueExpression;
 import com.ruse.world.content.dialogue.DialogueType;
@@ -1067,44 +1066,18 @@ public class TheOmegaDialogues {
                     public String[] dialogue() {
                         String line1 = "Excellent work " + player.getUsername() + ", take this as a reward.";
                         if (player.getQuestOneStep7() == false) {
-
-                            Item lamp = new Item(21218, 10);
-                            Item lamp2 = new Item(19115, 10);
-                            Item egg = new Item(23390, 1);
-                            if (!player.getGameMode().isUltIronman()) {
-                                player.getBank(0).add(lamp);
-                                player.getBank(0).add(lamp2);
-                                player.getBank(0).add(egg);
-                                player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your bank.");
+                            if (player.getInventory().getFreeSlots() < 3) {
+                                line1 = "You need at least 3 inventory spaces to claim your reward.";
+                                return new String[]{"" + line1};
                             }
-                            else if (player.getGameMode().isUltIronman()) {
-                                player.getInventory().add(lamp);
-                                player.getInventory().add(lamp2);
-                                player.getInventory().add(egg);
+                                player.getInventory().add(21218, 10);
+                                player.getInventory().add(19115, 10);
+                                player.getInventory().add(23390, 1);
                                 player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your inventory.");
-                            }
-                            for (int i = 8145; i < 8245; i++)
-                                player.getPacketSender().sendString(i, "");
-                            player.getPacketSender().sendInterface(8134);
-                            player.getPacketSender().sendString(8136, "Close window");
-                            player.getPacketSender().sendString(8144, "The Omega");
-                            player.getPacketSender().sendString(8145, "");
-                            int index = 8147;
-                            String color = "@dre@";
-                            String color1 = "@red@";
-
-                            player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
-                            player.getPacketSender().sendString(index++, color + "Rewards:");
-                            player.getPacketSender().sendString(index++, color + "@blu@3 @bla@Quest points");
-                            player.getPacketSender().sendString(index++, color + "@blu@15 @bla@Emerald Mystery boxes");
-                            player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
-                            player.getPacketSender().sendString(index++, color + "@bla@An Omega Charm");
-
-                            player.getPacketSender().sendString(index++, color + "");
-                            player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@The Omega");
-                            player.getPacketSender().sendMessage("<img=832> Your rewarded 3 Quest points");
                             player.getPointsHandler().setQuestPoints(3, true);
                             player.setQuestTwoStep7(true);
+                            player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@The Omega");
+                            player.getPacketSender().sendMessage("<img=832> You have been rewarded 3 Quest points");
                         }
                         return new String[]{"" + line1};
                     }

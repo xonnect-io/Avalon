@@ -838,65 +838,17 @@ public class BloodRunsDeepDialogues {
 
                             @Override
                             public String[] dialogue() {
-                                player.getInventory().delete(17510, 1);
-
-                                if (!player.getGameMode().isUltIronman()) {
-                                    player.getBank(0).add(21218, 10);
-                                    player.getBank(0).add(19116, 5);
-                                    player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@Blood Runs Deep");
-                                    player.getPointsHandler().setQuestPoints(2, true);
-                                    player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your bank.");
-                                    for (int i = 8145; i < 8245; i++)
-                                        player.getPacketSender().sendString(i, "");
-                                    player.getPacketSender().sendInterface(8134);
-                                    player.getPacketSender().sendString(8136, "Close window");
-                                    player.getPacketSender().sendString(8144, "Blood Runs Deep");
-                                    player.getPacketSender().sendString(8145, "");
-                                    int index = 8147;
-                                    String color = "@dre@";
-                                    String color1 = "@red@";
-
-                                    player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
-                                    player.getPacketSender().sendString(index++, color + "Rewards:");
-                                    player.getPacketSender().sendString(index++, color + "@blu@2 @bla@Quest points");
-                                    player.getPacketSender().sendString(index++, color + "@blu@5 @bla@Sapphire Mystery boxes");
-                                    player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
-                                    player.getPacketSender().sendString(index++, color + "@bla@Your Holy Amulet will now give a @blu@25% DR Boost");
-
-                                    if (player.getAmountDonated() < 10 && player.getRights() != PlayerRights.OWNER) {
-                                        player.getPacketSender().sendString(index++, color + "@bla@Your account has been promoted to @blu@Sapphire Donator");
-                                    }
-                                    player.getPacketSender().sendString(index++, color + "");
+                                if (player.getInventory().getFreeSlots() < 3) {
+                                    return new String[]{"You need at least 3 inventory spaces to claim your reward."};
                                 }
-
-                                if (player.getGameMode().isUltIronman()) {
+                                player.getInventory().delete(17510, 1);
                                     player.getInventory().add(21218, 10);
                                     player.getInventory().add(19116, 5);
-                                    player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@Blood Runs Deep");
                                     player.getPointsHandler().setQuestPoints(2, true);
                                     player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your inventory .");
-                                    for (int i = 8145; i < 8245; i++)
-                                        player.getPacketSender().sendString(i, "");
-                                    player.getPacketSender().sendInterface(8134);
-                                    player.getPacketSender().sendString(8136, "Close window");
-                                    player.getPacketSender().sendString(8144, "Blood Runs Deep");
-                                    player.getPacketSender().sendString(8145, "");
-                                    int index = 8147;
-                                    String color = "@dre@";
-                                    String color1 = "@red@";
+                                    player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@Blood Runs Deep");
+                                    player.getPacketSender().sendMessage("<img=832> You have been rewarded 3 Quest points");
 
-                                    player.getPacketSender().sendString(index++, color1 + "@red@Quest Complete!");
-                                    player.getPacketSender().sendString(index++, color + "Rewards:");
-                                    player.getPacketSender().sendString(index++, color + "@blu@2 @bla@Quest points");
-                                    player.getPacketSender().sendString(index++, color + "@blu@5 @bla@Sapphire Mystery boxes");
-                                    player.getPacketSender().sendString(index++, color + "@blu@10 @bla@Invention XP Lamps");
-                                    player.getPacketSender().sendString(index++, color + "@bla@Your Holy Amulet will now give a @blu@25% DR Boost");
-
-                                    if (player.getAmountDonated() < 10 && player.getRights() != PlayerRights.OWNER) {
-                                        player.getPacketSender().sendString(index++, color + "@bla@Your account has been promoted to @blu@Sapphire Donator");
-                                    }
-                                    player.getPacketSender().sendString(index++, color + "");
-                                }
                                 if (player.getQuestOneStep7() == false) {
                                     if (player.getAmountDonated() < 10 && player.getRights() != PlayerRights.OWNER) {
                                         player.incrementAmountDonated(10);
