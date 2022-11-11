@@ -79,6 +79,9 @@ public class Maxhits {
                 else if (player.getInventory().contains(4442)) {
                     percent += 50;
                 }
+                if (player.getEquipment().getItems()[Equipment.CHARM_SLOT].getId() == 23482) {
+                    percent += 25;
+                }
                 if (player.getEquipment().contains(7539)) {
                     percent += 50;
                 }
@@ -304,7 +307,10 @@ public class Maxhits {
                         base *= 1.15;
                     } else if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23073) {
                         base *= 1.25;
+                    } else if (player.getEquipment().getItems()[Equipment.CHARM_SLOT].getId() == 23482) {
+                        base *= 1.25;
                     }
+
                 }
             }
             Familiar playerFamiliar = player.getSummoning().getFamiliar();
@@ -636,6 +642,8 @@ public class Maxhits {
                         maxHit *= 1.15;
                     } else if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23073) {
                         maxHit *= 1.25;
+                    } else if (player.getEquipment().getItems()[Equipment.CHARM_SLOT].getId() == 23482) {
+                        maxHit += 1.25;
                     }
                 }
             }
@@ -917,6 +925,8 @@ public class Maxhits {
                     } else if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23072) {
                         maxHit *= 1.15;
                     } else if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23073) {
+                        maxHit *= 1.25;
+                    } else if (player.getEquipment().getItems()[Equipment.CHARM_SLOT].getId() == 23482) {
                         maxHit *= 1.25;
                     }
                 }

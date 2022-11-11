@@ -44,12 +44,20 @@ public class Slayer {
             player.getPacketSender().sendInterfaceRemoval();
             return;
         }
+
         SlayerTaskData taskData = SlayerTasks.getNewTaskData(slayerMaster);
         int slayerTaskAmount = taskData.getSlayerTaskAmount();
         SlayerTasks taskToSet = taskData.getTask();
         if(duoSlayer) {
             slayerTaskAmount *= 2;
         }
+
+        if (taskToSet == SlayerTasks.RAMMERNAUT && !player.isUnlockedRammernaut()) {
+            System.out.println ("Hitting here");
+            assignTask();
+            return;
+        }
+
         if (taskToSet == player.getSlayer().getLastTask() || NpcDefinition.forId(taskToSet.getNpcId())
                 .getSlayerLevel() > player.getSkillManager().getMaxLevel(Skill.SLAYER)) {
             assignTask();

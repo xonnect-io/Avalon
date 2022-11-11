@@ -1993,7 +1993,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendRunStatus();
                 break;
             case 15004:
-                player.getPacketSender().sendMessage("This feature is currently not available.");
+                player.setCosmeticOveride(!player.isCosmeticOveride());
+                player.sendMessage("Showing Cosmetic overrides: " + player.isCosmeticOveride());
+                player.getUpdateFlag().flag(Flag.APPEARANCE);
                 break;
             case 27651:
             case 15001:

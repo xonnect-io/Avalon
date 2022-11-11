@@ -93,6 +93,9 @@ public class MaxUpgradesInterface {
         BLOOD_MELEE_CREST(100,new Item(782,-1),new Item(23249, 1),new Item(782, 1),new Item(8136, 1)),
         BLOOD_MAGIC_CREST(100,new Item(782,-1),new Item(23250, 1),new Item(782, 1),new Item(23227, 1)),
         BLOOD_RANGE_CREST(100,new Item(782,-1),new Item(23251, 1),new Item(782, 1),new Item(23226, 1)),
+        REAPER_SET(100,new Item(23259,-1),new Item(23482, 1),new Item(23259, 1),new Item(23260, 1),new Item(23261, 1),new Item(23262, 1),new Item(23263, 1)),
+        DIVINE_SET(100,new Item(23384,-1),new Item(23395, 1),new Item(23384, 1),new Item(23385, 1),new Item(12855, 25000000)),
+
 
         EMBERKEEN_BOOTS(100,new Item(9687,-1),new Item(23296, 1),new Item(9687, 1),new Item(22103, 1),new Item(12855, 25_000_000)),
         FLAREFROST_BOOTS(100,new Item(9688,-1),new Item(23297, 1),new Item(9688, 1),new Item(22103, 1),new Item(12855, 25_000_000)),

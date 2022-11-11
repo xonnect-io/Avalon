@@ -120,7 +120,7 @@ public class NecromancerLoot {
 
             new Box(15002, 1, 0.4, true),
 
-            new Box(23550, 1, 0.2, true),
+            new Box(23550, 1, 0.1, true),
     };
 
 

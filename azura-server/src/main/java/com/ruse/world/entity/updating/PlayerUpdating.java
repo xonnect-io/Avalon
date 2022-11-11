@@ -570,8 +570,6 @@ public class PlayerUpdating {
 
 			if (headSlot > -1 && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
 				properties.putShort(0x200 + headSlot);
-			} else if (equip[Equipment.HEAD_SLOT] > -1) {
-				properties.putShort(0x200 + equip[Equipment.HEAD_SLOT]);
 			} else {
 				properties.put(0);
 			}
@@ -600,8 +598,8 @@ public class PlayerUpdating {
 
 			if (ItemDefinition.forId(bodySlot).isFullBody() && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
 				properties.putShort(0x200 + bodySlot);
-			}else if (equip[Equipment.BODY_SLOT] > -1) {
-				properties.putShort(0x200 + equip[Equipment.BODY_SLOT]);
+			}else if (bodySlot > -1) {
+				properties.putShort(0x200 + bodySlot);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.CHEST]);
 			}
@@ -612,7 +610,7 @@ public class PlayerUpdating {
 				properties.put(0);
 			}
 
-			if (ItemDefinition.forId(equip[Equipment.BODY_SLOT]).isFullBody()) {
+			if (ItemDefinition.forId(bodySlot).isFullBody()) {
 				properties.put(0);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.ARMS]);
@@ -621,15 +619,15 @@ public class PlayerUpdating {
 			if (legsSlot > -1 && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
 				properties.putShort(0x200 + legsSlot);
 			}
-			else if (equip[Equipment.LEG_SLOT] > -1) {
+			else if (legsSlot > -1) {
 				properties.putShort(0x200 + equip[Equipment.LEG_SLOT]);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.LEGS]);
 			}
 
 
-			if (ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm() ||
-					ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm1()) {
+			if ((ItemDefinition.forId(headSlot).isFullHelm() ||
+					ItemDefinition.forId(headSlot).isFullHelm1()) && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
 				properties.put(0);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.HEAD]);
@@ -637,22 +635,22 @@ public class PlayerUpdating {
 
 			if (glovesSlot > -1 && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
 				properties.putShort(0x200 + glovesSlot);
-			}else if (equip[Equipment.HANDS_SLOT] > -1) {
-				properties.putShort(0x200 + equip[Equipment.HANDS_SLOT]);
+			}else if (glovesSlot > -1) {
+				properties.putShort(0x200 + glovesSlot);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.HANDS]);
 			}
 			if (bootsSlot > -1 && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
 				properties.putShort(0x200 + bootsSlot);
 			}
-			else if (equip[Equipment.FEET_SLOT] > -1) {
-				properties.putShort(0x200 + equip[Equipment.FEET_SLOT]);
+			else if (bootsSlot > -1) {
+				properties.putShort(0x200 + bootsSlot);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.FEET]);
 			}
 			if (appearance.getLook()[Appearance.BEARD] <= 0 || appearance.getGender().equals(Gender.FEMALE)) {
 				properties.put(0);
-			} else if (ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm()) {
+			} else if (ItemDefinition.forId(headSlot).isFullHelm()) {
 				properties.put(0);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.BEARD]);

@@ -6,6 +6,448 @@ public class ItemDef5 {
 
 		switch (id) {
 
+			case 23483:
+				itemDef.copyItem(4685);
+				itemDef.name = "Legends Costume";
+				break;
+
+			case 23484:
+				itemDef.copyItem(23483);
+				itemDef.certID = 23483;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Legends Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23481:
+				itemDef.copyItem(23260);
+				itemDef.name = "Reaper Costume";
+				itemDef.rdc2 = 37664;
+				break;
+
+			case 23482:
+				itemDef.copyItem(23481);
+				itemDef.certID = 23481;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Reaper Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23403:
+				itemDef.copyItem(23477);
+				itemDef.certID = 23477;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Lucifer Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23477:
+				itemDef.copyItem(23810);
+				itemDef.name = "Lucifer Costume";
+				break;
+
+			case 23809:
+				itemDef.copyItem(14050);
+				itemDef.name = "Lucifer helmet";
+				itemDef.modelID = 100000;
+				itemDef.maleEquip1 = 100000;
+				itemDef.femaleEquip1 = 100000;
+				break;
+
+			case 23810:
+				itemDef.copyItem(14051);
+				itemDef.name = "Lucifer body";
+				itemDef.modelID = 100001;
+				itemDef.maleEquip1 = 100001;
+				itemDef.femaleEquip1 = 100001;
+				itemDef.modelZoom = 1380;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 45;
+				itemDef.modelOffsetX = 0;
+				break;
+			case 23811:
+				itemDef.copyItem(14052);
+				itemDef.name = "Lucifer legs";
+				itemDef.modelID = 100002;
+				itemDef.maleEquip1 = 100002;
+				itemDef.femaleEquip1 = 100002;
+				break;
+
+			case 23812:
+				itemDef.copyItem(14602);
+				itemDef.name = "Lucifer gloves";
+				itemDef.modelID = 100003;
+				itemDef.maleEquip1 = 100003;
+				itemDef.femaleEquip1 = 100003;
+				itemDef.modelZoom = 1000;
+				break;
+			case 23813:
+				itemDef.name = "Lucifer boots";
+				itemDef.modelID = 100004;
+				itemDef.maleEquip1 = 100004;
+				itemDef.femaleEquip1 = 100004;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+
+			case 23478:
+				itemDef.copyItem(23815);
+				itemDef.name = "Divine Costume";
+				break;
+
+			case 23395:
+				itemDef.copyItem(23478);
+				itemDef.certID = 23478;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Divine Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23814:
+				itemDef.copyItem(14050);
+				itemDef.name = "Divine helmet";
+				itemDef.modelID = 100289;
+				itemDef.maleEquip1 = 100290;
+				itemDef.femaleEquip1 = 100290;
+				break;
+
+			case 23815:
+				itemDef.copyItem(14051);
+				itemDef.name = "Divine body";
+				itemDef.modelID = 100294;
+				itemDef.maleEquip1 = 100294;
+				itemDef.femaleEquip1 = 100294;
+				itemDef.modelZoom = 1380;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 45;
+				itemDef.modelOffsetX = 0;
+				break;
+			case 23816:
+				itemDef.copyItem(14052);
+				itemDef.name = "Divine legs";
+				itemDef.modelID = 100291;
+				itemDef.maleEquip1 = 100292;
+				itemDef.femaleEquip1 = 100292;
+				break;
+
+			case 23817:
+				itemDef.copyItem(14602);
+				itemDef.name = "Divine gloves";
+				itemDef.modelID = 100287;
+				itemDef.maleEquip1 = 100288;
+				itemDef.femaleEquip1 = 100288;
+				itemDef.modelZoom = 1000;
+				break;
+			case 23818:
+				itemDef.name = "Divine boots";
+				itemDef.modelID = 100286;
+				itemDef.maleEquip1 = 100286;
+				itemDef.femaleEquip1 = 100286;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+
+			case 23479:
+				itemDef.copyItem(23820);
+				itemDef.name = "Kismet Costume";
+				break;
+
+			case 23384:
+				itemDef.copyItem(23479);
+				itemDef.certID = 23479;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Kismet Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23819:
+				itemDef.copyItem(14050);
+				itemDef.name = "Kismet helmet";
+				itemDef.modelID = 20356;
+				itemDef.maleEquip1 = 20356;
+				itemDef.femaleEquip1 = 20356;
+				break;
+
+			case 23820:
+				itemDef.copyItem(14051);
+				itemDef.name = "Kismet body";
+				itemDef.modelID = 20430;
+				itemDef.maleEquip1 = 20430;
+				itemDef.femaleEquip1 = 20430;
+				itemDef.modelZoom = 1380;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 45;
+				itemDef.modelOffsetX = 0;
+				break;
+			case 23821:
+				itemDef.copyItem(14052);
+				itemDef.name = "Kismet legs";
+				itemDef.modelID = 20431;
+				itemDef.maleEquip1 = 20431;
+				itemDef.femaleEquip1 = 20431;
+				break;
+
+			case 23822:
+				itemDef.copyItem(14602);
+				itemDef.name = "Kismet gloves";
+				itemDef.modelID = 20408;
+				itemDef.maleEquip1 = 20408;
+				itemDef.femaleEquip1 = 20408;
+				itemDef.modelZoom = 1000;
+				break;
+			case 23823:
+				itemDef.name = "Kismet boots";
+				itemDef.modelID = 20355;
+				itemDef.maleEquip1 = 20355;
+				itemDef.femaleEquip1 = 20355;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+
+
+			case 23480:
+				itemDef.copyItem(23825);
+				itemDef.name = "Lucky Costume";
+				break;
+
+			case 23385:
+				itemDef.copyItem(23480);
+				itemDef.certID = 23480;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Lucky Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23824:
+				itemDef.copyItem(14050);
+				itemDef.name = "Lucky helmet";
+				itemDef.modelID = 20432;
+				itemDef.maleEquip1 = 20432;
+				itemDef.femaleEquip1 = 20432;
+				break;
+
+			case 23825:
+				itemDef.copyItem(14051);
+				itemDef.name = "Lucky body";
+				itemDef.modelID = 20433;
+				itemDef.maleEquip1 = 20433;
+				itemDef.femaleEquip1 = 20433;
+				itemDef.modelZoom = 1380;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 45;
+				itemDef.modelOffsetX = 0;
+				break;
+			case 23826:
+				itemDef.copyItem(14052);
+				itemDef.name = "Lucky legs";
+				itemDef.modelID = 20434;
+				itemDef.maleEquip1 = 20434;
+				itemDef.femaleEquip1 = 20434;
+				break;
+
+			case 23827:
+				itemDef.copyItem(14602);
+				itemDef.name = "Lucky gloves";
+				itemDef.modelID = 20435;
+				itemDef.maleEquip1 = 20435;
+				itemDef.femaleEquip1 = 20435;
+				itemDef.modelZoom = 1000;
+				break;
+			case 23828:
+				itemDef.name = "Lucky boots";
+				itemDef.modelID = 20436;
+				itemDef.maleEquip1 = 20436;
+				itemDef.femaleEquip1 = 20436;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+
+
+			case 23390:
+				itemDef.copyItem(23473);
+				itemDef.certID = 23473;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Omega Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23473:
+				itemDef.copyItem(23795);
+				itemDef.name = "Omega Costume";
+				break;
+
+			case 23794:
+				itemDef.copyItem(14050);
+				itemDef.name = "Omega helmet";
+				itemDef.modelID = 20128;
+				itemDef.maleEquip1 = 20128;
+				itemDef.femaleEquip1 = 20128;
+				break;
+
+			case 23795:
+				itemDef.copyItem(14051);
+				itemDef.name = "Omega body";
+				itemDef.modelID = 20181;
+				itemDef.maleEquip1 = 20181;
+				itemDef.femaleEquip1 = 20181;
+				itemDef.modelZoom = 1380;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 45;
+				itemDef.modelOffsetX = 0;
+				break;
+			case 23796:
+				itemDef.copyItem(14052);
+				itemDef.name = "Omega legs";
+				itemDef.modelID = 20227;
+				itemDef.maleEquip1 = 20227;
+				itemDef.femaleEquip1 = 20227;
+				break;
+
+			case 23797:
+				itemDef.copyItem(14602);
+				itemDef.name = "Omega gloves";
+				itemDef.modelID = 20278;
+				itemDef.maleEquip1 = 20278;
+				itemDef.femaleEquip1 = 20278;
+				itemDef.modelZoom = 1000;
+				break;
+			case 23798:
+				itemDef.name = "Omega boots";
+				itemDef.modelID = 20296;
+				itemDef.maleEquip1 = 20296;
+				itemDef.femaleEquip1 = 20296;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+
+
+			case 7677:
+				itemDef.copyItem(23476);
+				itemDef.certID = 23476;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Unknown Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23476:
+				itemDef.copyItem(23805);
+				itemDef.name = "Unknown Costume";
+				break;
+
+			case 23804:
+				itemDef.copyItem(14050);
+				itemDef.name = "Unknown helmet";
+				itemDef.modelID = 20297;
+				itemDef.maleEquip1 = 20297;
+				itemDef.femaleEquip1 = 20297;
+				break;
+
+			case 23805:
+				itemDef.copyItem(14051);
+				itemDef.name = "Unknown body";
+				itemDef.modelID = 20299;
+				itemDef.maleEquip1 = 20299;
+				itemDef.femaleEquip1 = 20299;
+				itemDef.modelZoom = 1380;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 45;
+				itemDef.modelOffsetX = 0;
+				break;
+			case 23806:
+				itemDef.copyItem(14052);
+				itemDef.name = "Unknown legs";
+				itemDef.modelID = 20300;
+				itemDef.maleEquip1 = 20300;
+				itemDef.femaleEquip1 = 20300;
+				break;
+
+			case 23807:
+				itemDef.copyItem(14602);
+				itemDef.name = "Unknown gloves";
+				itemDef.modelID = 20343;
+				itemDef.maleEquip1 = 20343;
+				itemDef.femaleEquip1 = 20343;
+				itemDef.modelZoom = 1000;
+				break;
+			case 23808:
+				itemDef.name = "Unknown boots";
+				itemDef.modelID = 20354;
+				itemDef.maleEquip1 = 20354;
+				itemDef.femaleEquip1 = 20354;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+
+
+
+			case 23550:
+				itemDef.copyItem(23800);
+				itemDef.certID = 23800;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Necrotic Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 23799:
+				itemDef.copyItem(14050);
+				itemDef.name = "Necromancer helmet";
+				itemDef.modelID = 20105;
+				itemDef.maleEquip1 = 20107;
+				itemDef.femaleEquip1 = 20107;
+				break;
+
+			case 23800:
+				itemDef.copyItem(14051);
+				itemDef.name = "Necrotic Costume";
+				itemDef.modelID = 20114;
+				itemDef.maleEquip1 = 20115;
+				itemDef.femaleEquip1 = 20115;
+				break;
+
+			case 23801:
+				itemDef.copyItem(14052);
+				itemDef.name = "Necromancer legs";
+				itemDef.modelID = 20116;
+				itemDef.maleEquip1 = 20116;
+				itemDef.femaleEquip1 = 20116;
+				break;
+
+			case 23802:
+				itemDef.copyItem(14602);
+				itemDef.name = "Necromancer gloves";
+				itemDef.modelID = 20117;
+				itemDef.maleEquip1 = 20117;
+				itemDef.femaleEquip1 = 20117;
+				itemDef.modelZoom = 1000;
+				break;
+			case 23803:
+				itemDef.name = "Necromancer boots";
+				itemDef.modelID = 20118;
+				itemDef.maleEquip1 = 20118;
+				itemDef.femaleEquip1 = 20118;
+				itemDef.modelZoom = 800;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.modelOffsetX = 1;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				break;
+
 
 			case 23785:
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
@@ -125,6 +567,10 @@ public class ItemDef5 {
 				itemDef.colorChange = new double[]{1.5, 0.1, 0.1};
 				break;
 
+			case 3062: //Costume Box
+				itemDef.stackable = false;
+				break;
+
 			case 24390: //Costume Box
 				itemDef.copyItem(3062);
 				itemDef.stackable = false;
@@ -225,16 +671,12 @@ public class ItemDef5 {
 				itemDef.stackable = false;
 				break;
 			case 24394:
-				itemDef.copyItem(5074);
+				itemDef.copyItem(23282);
 				itemDef.name = "Vozzath Costume";
-				itemDef.modelID = 19688;
-				itemDef.modelZoom = 5000;
-				itemDef.maleEquip1 = 19688;
-				itemDef.femaleEquip1 = 19688;
 				break;
 			case 23458:
-				itemDef.copyItem(23457);
-				itemDef.certID = 23457;
+				itemDef.copyItem(24394);
+				itemDef.certID = 24394;
 				itemDef.certTemplateID = 24390;
 				itemDef.name = "Vozzath Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};

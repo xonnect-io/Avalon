@@ -144,30 +144,7 @@ public class ItemDef4 {
 				itemDef.name = "Rancid flour";
 				itemDef.rdc2 = 10;
 				break;
-			case 23390:
-				itemDef.copyItem(10537);
-				itemDef.modelZoom = 809;
-				itemDef.modelOffsetX = 0;
-				itemDef.rotationZ = 9;
-				itemDef.modelOffsetY = 0;
-				itemDef.rotationY = 530;
-				itemDef.rotationX = 391;
-				itemDef.modelID = 19564;
-				itemDef.name = "Omega charm";
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				break;
-			case 23394:
-				itemDef.copyItem(10537);
-				itemDef.modelZoom = 617;
-				itemDef.modelOffsetX = 0;
-				itemDef.rotationZ = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.rotationY = 391;
-				itemDef.rotationX = 0;
-				itemDef.modelID = 19565;
-				itemDef.name = "Donators charm";
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				break;
+
 
 			case 23755:
 				itemDef.name = "Crimson Scroll";
@@ -232,22 +209,7 @@ public class ItemDef4 {
 				itemDef.rdc2 = 3262;
 				itemDef.actions = new String[]{null, null, null, null, "Drop"};
 				break;
-			case 23395:
-				itemDef.copyItem(10537);
-				itemDef.modelZoom = 617;
-				itemDef.modelOffsetX = 0;
-				itemDef.rotationZ = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.rotationY = 391;
-				itemDef.rotationX = 0;
-				itemDef.modelID = 19566;
-				itemDef.name = "Divine charm";
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				break;
-			case 7677:
-				itemDef.name = "Unknown charm";
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				break;
+
 			case 17815:
 				itemDef.name = "Raw fury shark";
 				itemDef2 = ItemDefinition.get(20429);

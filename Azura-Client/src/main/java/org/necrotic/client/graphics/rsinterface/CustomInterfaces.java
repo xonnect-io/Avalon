@@ -2782,10 +2782,12 @@ public class CustomInterfaces extends RSInterface {
 		addButtonWSpriteLoader(15001, 618, "Show Equipment Stats", 41, 40);
 		addButtonWSpriteLoader(15002, 307, null, 41, 40);
 		addButtonWSpriteLoader(15003, 620, "Open Items kept on Death", 41, 40);
+		addButtonWSpriteLoader(15004, 1662, "Toggle Cosmetics", 41, 40);
 
-		newTab.totalChildren(5);
+		newTab.totalChildren(6);
 		setBounds(15001, 25, 205, 0, newTab);
 		setBounds(15003, 125, 205, 1, newTab);
+		setBounds(15004, 75, 205, 5, newTab);
 		setBounds(1644, 0, 0, 4, newTab);
 		setBounds(73155, 22,122, 2, newTab);
 		setBounds(73156, 133,122, 3, newTab);

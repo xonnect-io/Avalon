@@ -212,21 +212,6 @@ public class ItemDef3 {
 				itemDef.rdc2 = 35252;
 				break;
 
-			case 23384:
-				itemDef.copyItem(14885);
-				itemDef.name = "Kismet Medallion";
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.rdc2 = 10;
-				break;
-
-			case 23385:
-				itemDef.copyItem(14682);
-				itemDef.name = "Lucky pendant";
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.rdc2 = 17800;
-				break;
-
-
 			case 23005:
 				itemDef.copyItem(23004);
 				itemDef.name = "Cyan Easter Egg";
@@ -580,6 +565,7 @@ public class ItemDef3 {
 			case 23263:
 				itemDef.copyItem(20456);
 				itemDef.name = "Reaper boots";
+				itemDef.rdc2 = 37664;
 				break;
 				
 			case 23021:

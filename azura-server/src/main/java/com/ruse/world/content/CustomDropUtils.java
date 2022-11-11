@@ -23,6 +23,58 @@ public class CustomDropUtils {
     public static int drBonus(Player player, int npc) {
         int percentBoost = 0;
 
+        /*
+        Start Costume Slot
+         */
+
+        if (player.getEquipment().contains(23390)) { //Omega Costume
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23462)) { //Hanto Costume
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23464)) { //Raditz Costume
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23466)) { //Goku Costume
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(23468)) { //Inuyasha Costume
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(23482)) { //Reaper Costume
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(23484)) { //Legends Costume
+            percentBoost += 10;
+        }
+        if (player.getEquipment().contains(7677)) { //Unknown Costume
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(23470)) { //Fallen angel Costume
+            percentBoost += 20;
+        }
+        if (player.getEquipment().contains(23384)) { //Lucifer Costume
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23403)) { //Kismet Costume
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(23385)) { //Lucky Costume
+            percentBoost += 30;
+        }
+        if (player.getEquipment().contains(23458)) { //Vozzath Costume
+            percentBoost += 35;
+        }
+        if (player.getEquipment().contains(23395)) { //Divine Costume
+            percentBoost += 50;
+        }
+        if (player.getEquipment().contains(23550)) { //Necrotic Costume
+            percentBoost += 60;
+        }
+        /*
+        End Costumes
+         */
 
         //Sanguine set
         if (player.getEquipment().contains(23789)) { //Sanguine helmet
@@ -78,36 +130,7 @@ public class CustomDropUtils {
         if (player.getPointsHandler().getTotalPrestiges() == 10)
             percentBoost += 50;
 
-         /*
-        Charms slot
-         */
-        if (player.getEquipment().contains(23390)) {
-            percentBoost += 10;
-        }
-        if (player.getEquipment().contains(7677)) {
-            percentBoost += 15;
-        }
-        if (player.getEquipment().contains(23384)) {
-            percentBoost += 25;
-        }
-        if (player.getEquipment().contains(23403)) {
-            percentBoost += 25;
-        }
-        if (player.getEquipment().contains(23385)) {
-            percentBoost += 30;
-        }
-        if (player.getEquipment().contains(23394)) {
-            percentBoost += 40;
-        }
-        if (player.getEquipment().contains(23395)) {
-            percentBoost += 50;
-        }
-        if (player.getEquipment().contains(23550)) {
-            percentBoost += 60;
-        }
-        /*
-        End charms
-         */
+
 
          /*
         Aura slot

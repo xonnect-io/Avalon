@@ -2105,14 +2105,7 @@ public final class ItemDefinition {
 				itemDef.rotationX = 192;
 				// itemDef.rdc2 = 16368;//this is for you dope :)
 				break;
-			case 23403:
-				itemDef.copyItem(12855);
-				itemDef.name = "Suffering charm";
-				itemDef.modelZoom = 950;
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
-				itemDef.modelID = 19517;
-				itemDef.rdc2 = 96252;
-				break;
+
 			case 6769:
 				itemDef.name = "$5 Bond";
 				itemDef.actions = new String[5];
@@ -2744,18 +2737,7 @@ public final class ItemDefinition {
 				itemDef.modelID = 19714;
 				//itemDef.rdc2 = 99252;
 				break;
-			case 23550:// super sayian
-				itemDef.name = "Necromancer Charm";
-				itemDef.modelZoom = 3750;
-				itemDef.rotationX = 687;
-				itemDef.rotationY = 548;
-				itemDef.rotationZ = 0;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = -8;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.modelID = 19732;
-				//itemDef.rdc2 = 99252;
-				break;
+
 			case 14020:
 				itemDef.name = "Veteran hood";
 				itemDef.description = "A hood worn by Etherear veterans.".getBytes();
