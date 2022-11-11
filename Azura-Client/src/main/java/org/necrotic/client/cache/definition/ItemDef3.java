@@ -1010,7 +1010,7 @@ public class ItemDef3 {
 				itemDef.modelID = 19420;
 				itemDef.maleEquip1 = 19421;
 				itemDef.femaleEquip1 = 19421;
-				itemDef.rdc = 11;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 
 			case 23313:
@@ -1020,7 +1020,7 @@ public class ItemDef3 {
 				itemDef.modelID = 19422;
 				itemDef.maleEquip1 = 19423;
 				itemDef.femaleEquip1 = 19423;
-				itemDef.rdc = 11;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 
 			case 23314:
@@ -1030,7 +1030,7 @@ public class ItemDef3 {
 				itemDef.modelID = 19424;
 				itemDef.maleEquip1 = 19425;
 				itemDef.femaleEquip1 = 19425;
-				itemDef.rdc = 11;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 
 			case 23309:
@@ -1106,7 +1106,7 @@ public class ItemDef3 {
 				itemDef.modelID = 19426;
 				itemDef.maleEquip1 = 19427;
 				itemDef.femaleEquip1 = 19427;
-				itemDef.rdc = 11;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 
 			case 23316:
@@ -1116,7 +1116,7 @@ public class ItemDef3 {
 				itemDef.modelID = 19428;
 				itemDef.maleEquip1 = 19429;
 				itemDef.femaleEquip1 = 19429;
-				itemDef.rdc = 11;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 
 			case 23317:
@@ -1127,7 +1127,7 @@ public class ItemDef3 {
 				itemDef.modelID = 19432;
 				itemDef.maleEquip1 = 19433;
 				itemDef.femaleEquip1 = 19433;
-				itemDef.rdc = 11;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 
 			case 23318:
@@ -1137,7 +1137,7 @@ public class ItemDef3 {
 				itemDef.modelID = 19434;
 				itemDef.maleEquip1 = 19435;
 				itemDef.femaleEquip1 = 19435;
-				itemDef.rdc = 11;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 
 			case 23319:
@@ -1149,7 +1149,7 @@ public class ItemDef3 {
 				itemDef.modelID = 19440;
 				itemDef.maleEquip1 = 19441;
 				itemDef.femaleEquip1 = 19441;
-				itemDef.rdc = 11;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 
 			case 23320:
@@ -1160,7 +1160,7 @@ public class ItemDef3 {
 				itemDef.modelID = 19442;
 				itemDef.maleEquip1 = 19444;
 				itemDef.femaleEquip1 = 19444;
-				itemDef.rdc = 11;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 
 
@@ -1450,16 +1450,16 @@ public class ItemDef3 {
 
 			case 15870:
 				itemDef.name = "Diyos Sword";
-				itemDef.modelID = 19757;
-				itemDef.maleEquip1 = 19757;
-				itemDef.femaleEquip1 = 19757;
+				itemDef.modelID = 19957;
+				itemDef.maleEquip1 = 19957;
+				itemDef.femaleEquip1 = 19957;
 				itemDef.modelOffsetX = -125;
 				itemDef.modelOffsetY = -4;
 				itemDef.modelZoom = 2200;
 				itemDef.rotationY = 448;
 				itemDef.rotationZ = 96;
 				itemDef.rotationX = 1261;
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 15872:
@@ -1473,21 +1473,21 @@ public class ItemDef3 {
 				itemDef.rotationY = 448;
 				itemDef.rotationZ = 96;
 				itemDef.rotationX = 1261;
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 15874:
 				itemDef.name = "Diyos Magic Sword";
-				itemDef.modelID = 19957;
-				itemDef.maleEquip1 = 19957;
-				itemDef.femaleEquip1 = 19957;
+				itemDef.modelID = 19757;
+				itemDef.maleEquip1 = 19757;
+				itemDef.femaleEquip1 = 19757;
 				itemDef.modelOffsetX = -125;
 				itemDef.modelOffsetY = -4;
 				itemDef.modelZoom = 2200;
 				itemDef.rotationY = 448;
 				itemDef.rotationZ = 96;
 				itemDef.rotationX = 1261;
-				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 23064:

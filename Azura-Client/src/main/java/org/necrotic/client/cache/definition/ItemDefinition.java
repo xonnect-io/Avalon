@@ -2361,9 +2361,11 @@ public final class ItemDefinition {
 				break;
 
 			case 4186:
+				itemDef.copyItem(2399);
 				itemDef.name = "Case key";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
+				itemDef.colorChange = new double[]{2, 2, 5};
 				break;
 
 			case 20489:

@@ -7893,6 +7893,7 @@ public class ItemDef4 {
 				break;
 			case 23228:
 				itemDef.copyItem(11235);
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.name = "Necromancer Bow";
 				itemDef.modelID = 19723;
 				itemDef.femaleEquip1 = 19723;

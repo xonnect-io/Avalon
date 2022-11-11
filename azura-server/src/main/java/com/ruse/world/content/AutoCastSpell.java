@@ -39,6 +39,7 @@ public enum AutoCastSpell {
     LIGHT(17013, CombatSpells.LIGHT),
     DARK(22114, CombatSpells.DARK),
     BLOOD(23227, CombatSpells.BLOOD),
+    DIYOS(15874, CombatSpells.DIYOS),
     NEPHILIM(23062, CombatSpells.NEPHILIM),
     NECROMANCER(23302, CombatSpells.NECROMANCER),
     PUMPKIN(22375, CombatSpells.PUMPKIN),

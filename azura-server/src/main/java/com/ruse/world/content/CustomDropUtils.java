@@ -415,6 +415,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23227)) { //Blood legends sword
             percentBoost += 40;
         }
+        if (player.getEquipment().contains(15874)) { //Diyos sword
+            percentBoost += 80;
+        }
         if (player.getEquipment().contains(8136)) { //Blood legends sword
             percentBoost += 40;
         }
@@ -436,8 +439,8 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23228)) { //Necromancer bow
             percentBoost += 75;
         }
-        if (player.getEquipment().contains(15872)) { //Necromancer bow
-            percentBoost += 90;
+        if (player.getEquipment().contains(15872)) { //Diyos bow
+            percentBoost += 80;
         }
         if (player.getEquipment().contains(23302)) { //Necromancer staff
             percentBoost += 75;
