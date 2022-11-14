@@ -37,7 +37,10 @@ public enum Costumes {
             new int[]{23819,23820, 23821, 23822, 23823}),
     LUCKY(23385, 5, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{23824,23825, 23826, 23827, 23828}),
-
+    TURKEY(23454, 5, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
+            new int[]{23448,23449, 23450, 23451, 23452}),
+    GRANDMASTER(23509, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT},
+            new int[]{23497, 23498, 23499}),
     LEGENDS(23484, 5, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{4684,4685, 4686, 8273, 8274}),
     REAPER(23482, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},

@@ -220,10 +220,10 @@ public class NPCOptionPacketListener implements PacketListener {
                         player.getPacketSender().sendString(3903,
                                 "Spend your Global tickets on items");
                         break;
-                    case 4593:
+                    case 3643:
                         ShopManager.getShops().get(550).open(player);
                         player.getPacketSender().sendString(3903,
-                                "Trick or Treat!");
+                                "Happy Thanksgiving!");
                         break;
                     case GroupConfig.NPC_ID:
                         if (player.getGameMode() == GameMode.GROUP_IRONMAN) {

@@ -64,9 +64,9 @@ public class MaxUpgradesInterface {
         LUCIFER_BOOTS(100,new Item(18887,-1),new Item(22103, 1),new Item(18887, 1), new Item(22106, 2)),
 
         //ROW 7
-        LIGHT_ATTACHMENT(33,new Item(14472,-1),new Item(10949, 1),new Item(14472, 1), new Item(10947, 5), new Item(12855, 500_000)),
-        DARK_ATTACHMENT(33,new Item(14474,-1),new Item(22112, 1),new Item(14474, 1), new Item(10947, 20), new Item(12855, 2_000_000)),
-        BLOOD_ATTACHMENT(33,new Item(23238,-1),new Item(23239, 1),new Item(23238, 1), new Item(10947, 30), new Item(12855, 4_000_000)),
+        LIGHT_ATTACHMENT(33,new Item(14472,0),new Item(10949, 1),new Item(14472, 1), new Item(10947, 5), new Item(12855, 500_000)),
+        DARK_ATTACHMENT(33,new Item(14474,0),new Item(22112, 1),new Item(14474, 1), new Item(10947, 20), new Item(12855, 2_000_000)),
+        BLOOD_ATTACHMENT(33,new Item(23238,0),new Item(23239, 1),new Item(23238, 1), new Item(10947, 30), new Item(12855, 4_000_000)),
         ANGEL_PET(30,new Item(22106,-1),new Item(22107, 1),new Item(22106, 1), new Item(19000, 10_000), new Item(5022, 10_000_000), new Item(12855, 10_000_000)),
         OWNER__JEWELRY_GOODIEBAG(100,new Item(7995,-1),new Item(23240, 2),new Item(7995, 1)),
         OWNER_CAPE(25,new Item(22105,-1),new Item(7995, 1),new Item(22105, 1), new Item(12855, 100_000_000)),
@@ -93,6 +93,8 @@ public class MaxUpgradesInterface {
         BLOOD_MELEE_CREST(100,new Item(782,-1),new Item(23249, 1),new Item(782, 1),new Item(8136, 1)),
         BLOOD_MAGIC_CREST(100,new Item(782,-1),new Item(23250, 1),new Item(782, 1),new Item(23227, 1)),
         BLOOD_RANGE_CREST(100,new Item(782,-1),new Item(23251, 1),new Item(782, 1),new Item(23226, 1)),
+        GRANDMASTER_SET(100,new Item(23497,-1),new Item(23509, 1),new Item(23497, 1),new Item(23498, 1),new Item(23499)),
+
         REAPER_SET(100,new Item(23259,-1),new Item(23482, 1),new Item(23259, 1),new Item(23260, 1),new Item(23261, 1),new Item(23262, 1),new Item(23263, 1)),
         DIVINE_SET(100,new Item(23384,-1),new Item(23395, 1),new Item(23384, 1),new Item(23385, 1),new Item(12855, 25000000)),
 
@@ -202,19 +204,6 @@ public class MaxUpgradesInterface {
             percentBoost += 1;
         if (player.getEquipment().contains(23133))
             percentBoost += 1;
-        //
-/*
-        if(!player.isInsideRaids()) {
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAMMUS_PET.npcId) {
-                percentBoost += 20;
-            }
-        }
-        if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ODIN_PET.npcId) {
-            percentBoost += 25;
-        }
-*/
 
         double multiplier = 1 + (percentBoost / 100D);
 

@@ -57,6 +57,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23384)) { //Lucifer Costume
             percentBoost += 25;
         }
+        if (player.getEquipment().contains(23454)) { //Turkey Costume
+            percentBoost += 25;
+        }
         if (player.getEquipment().contains(23403)) { //Kismet Costume
             percentBoost += 25;
         }
@@ -75,6 +78,21 @@ public class CustomDropUtils {
         /*
         End Costumes
          */
+
+        //Grandmaster set
+        if (player.getEquipment().contains(23497)) { //Grandmaster helmet
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(23498)) { //Grandmaster body
+            percentBoost += 15;
+        }
+        if (player.getEquipment().contains(23499)) { //Grandmaster legs
+            percentBoost += 15;
+        }
+        //End Grandmaster set
+
+
+
 
         //Sanguine set
         if (player.getEquipment().contains(23789)) { //Sanguine helmet
@@ -1033,6 +1051,38 @@ public class CustomDropUtils {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {
                 percentBoost += 80;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY.npcId) {
+                percentBoost += 60;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY1.npcId) {
+                percentBoost += 70;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY2.npcId) {
+                percentBoost += 70;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY3.npcId) {
+                percentBoost += 70;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY4.npcId) {
+                percentBoost += 70;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY5.npcId) {
+                percentBoost += 70;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY6.npcId) {
+                percentBoost += 70;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY7.npcId) {
+                percentBoost += 70;
             }
         }
 

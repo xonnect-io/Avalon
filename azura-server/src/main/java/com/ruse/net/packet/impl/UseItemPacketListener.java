@@ -180,7 +180,38 @@ public class UseItemPacketListener implements PacketListener {
             return;
         }
 
+        if ((usedWith.getId() == 17580 && itemUsedWith.getId() == 23511)
+                || (itemUsedWith.getId() == 17580 && usedWith.getId() == 23511)) {
+            if (player.getInventory().contains(17580) && player.getInventory().contains(23511)) {
+                int[] rewards = new int[]{23512, 23513, 23514, 23515, 23516, 23517};
 
+                boolean containsAll = true;
+                for (int i = 0; i < 7; i++) {
+                    if (!player.getTurkeysMutated()[i]) {
+                        containsAll = false;
+                    }
+                }
+
+                if (containsAll) {
+                    player.sendMessage("@red@You already have all the Turkey pet mutations.");
+                    return;
+                }
+
+                int i = Misc.getRandom(5);
+                while (player.getTurkeysMutated()[i]) {
+                    i = Misc.getRandom(5);
+                }
+
+                player.getTurkeysMutated()[i] = true;
+                player.getInventory().delete(17580, 1);
+                player.getInventory().delete(23511, 1);
+                player.getInventory().add(rewards[i], 1);
+
+                World.sendMessage("<img=862>@blu@[Thanksgiving]<img=862> @mag@" + player.getUsername()
+                        + "@or2@ created a @red@Turkey pet (Mutated)");
+                return;
+            }
+        }
 
         if (usedWith.getId() == 23306 && itemUsedWith.getId() == 23321 ||
                 usedWith.getId() == 23321 && itemUsedWith.getId() == 23306) {

@@ -1691,7 +1691,7 @@ public class CustomInterfaces extends RSInterface {
 		c = 0;
 		x = -5;
 		y = 3;
-		info.totalChildren(18);
+		info.totalChildren(19);
 
 		addText(id, "Main", tda, 2, 0xFF981F, true, true);
 		info.child(c++, id++, 85 + x, 0 + y);
@@ -1718,7 +1718,7 @@ public class CustomInterfaces extends RSInterface {
 		info.child(c++, id++, 85 + x, 0 + y);
 		y += 20;
 
-		for (int i = 0; i < 11; i++) {
+		for (int i = 0; i < 12; i++) {
 			addText(id, "id: " + id, tda, 0, 0xFF981F, false, true);
 			info.child(c++, id++, 10 + x, 0 + y);
 			y += 17;

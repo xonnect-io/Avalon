@@ -93,19 +93,10 @@ public final class MobDefinition {
 				definition.combatLevel = 1031;
 				definition.npcSizeInSquares = 3;
 				break;
-			case 4593:
-				definition.npcModels = new int[]{21155};
-				definition.name = "@yel@Halloween Shop";
+			case 3643:
+				definition.name = "@yel@Thanksgiving Shop";
 				definition.actions = new String[]{"Trade",null, null, null, null};
-				definition.scaleXZ = 150;
-				definition.scaleY = 150;
-				definition.standAnimation = MobDefinition.get(492).standAnimation;
-				definition.walkAnimation = MobDefinition.get(492).walkAnimation;
-				definition.combatLevel = 0;
-				definition.npcSizeInSquares = 1;
 				break;
-
-
 			case 4594:
 				definition.npcModels = new int[]{21155};
 				definition.name = "Spirit of Scorpius pet";

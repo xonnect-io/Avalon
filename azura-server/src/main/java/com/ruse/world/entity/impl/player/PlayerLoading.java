@@ -648,6 +648,9 @@ public class PlayerLoading {
             if (reader.has("upg-dr")) {
                 player.setScrollBonus(reader.get("upg-dr").getAsDouble());
             }
+            if (reader.has("turkeys-mutated")) {
+                player.setTurkeysMutated(builder.fromJson(reader.get("turkeys-mutated"), boolean[].class));
+            }
             if (reader.has("gods-coffer")) {
                 player.getGodsCoffer().clear();
                 for (Item item : builder.fromJson(reader.get("gods-coffer").getAsJsonArray(), Item[].class)) {

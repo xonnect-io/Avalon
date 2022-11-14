@@ -180,6 +180,10 @@ public boolean setSlayerBoss;
 
     @Getter
     @Setter
+    private boolean[] turkeysMutated = new boolean[6];
+
+    @Getter
+    @Setter
     private RaidDifficulty lastDifficulty;
 
     @Getter

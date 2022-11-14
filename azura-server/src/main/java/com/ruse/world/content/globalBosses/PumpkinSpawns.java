@@ -102,7 +102,7 @@ public class PumpkinSpawns {
             if (p == null)
                 continue;
             p.setSoulInPouch(0);
-            if (p.getLocation() == Locations.Location.HWEEN) {
+            if (p.getLocation() == Locations.Location.EVENT) {
                 p.sendMessage("You have been moved to the middle to collect pumpkins!");
                 p.moveTo(new Position(2910, 4704, 0));
                 loadEggs(p);

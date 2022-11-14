@@ -167,6 +167,7 @@ public class PlayerSaving {
 			object.addProperty("hard-isle-god-kc", player.getHardIsleGodKC());
 			object.addProperty("isle-dr", player.getIsleDropRate());
 			object.addProperty("upg-dr", player.getScrollBonus ());
+			object.add("turkeys-mutated", builder.toJsonTree(player.getTurkeysMutated()));
 			object.add("gods-coffer", builder.toJsonTree(player.getGodsCoffer().toArray()));
 			object.addProperty("shadow-drop-rate", player.getShadowRareDropBoost());
 			object.addProperty("shadow-key-opened", player.getShadowKeysOpened());

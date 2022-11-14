@@ -6,6 +6,127 @@ public class ItemDef5 {
 
 		switch (id) {
 
+			case 23512:
+				itemDef.copyItem(23511);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0.9, 0, 0};
+				break;
+			case 23513:
+				itemDef.copyItem(23511);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0, 0.8, 0};
+				break;
+			case 23514:
+				itemDef.copyItem(23511);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0, 0, 1.2};
+				break;
+			case 23515:
+				itemDef.copyItem(23511);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0.9, 0.5, 0};
+				break;
+			case 23516:
+				itemDef.copyItem(23511);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0.8, 0, 0.8};
+				break;
+			case 23517:
+				itemDef.copyItem(23511);
+				itemDef.name = "Turkey pet (Mutated)";
+				itemDef.colorChange = new double[]{0.9, 0.9, 0};
+				break;
+
+			case 23510:
+				itemDef.copyItem(4621);
+				itemDef.name = "Turkey feather";
+				itemDef.oldColors = new int[]{
+						7512, 4011, 8150, 8670, 2880, 6084,
+				};
+				itemDef.newColors = new int[]{
+						7481, 3360, 7481, 7481, 3345, 3345,
+				};
+				itemDef.actions = new String[]{"Claim", null, null, null, null};
+				break;
+
+			case 17580:
+				itemDef.name = "Turkey Pet Mutation";
+				itemDef.rdc2 = 65155;
+				itemDef.actions = new String[]{null, null, null, null, null};
+				break;
+			case 23511:
+				itemDef.copyItem(5074);
+				itemDef.name = "Turkey Pet";
+				itemDef.modelID = MobDefinition.get(8501).npcModels[0];
+				itemDef.scaleX = 32;
+				itemDef.scaleY = 32;
+				itemDef.scaleZ = 32;
+				itemDef.modelZoom = 909;
+				itemDef.rotationX = 161;
+				itemDef.rotationY = 144;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -3;
+				itemDef.modelOffsetY = -1;
+				break;
+
+			case 23508:
+				itemDef.copyItem(23498);
+				itemDef.name = "Grandmaster Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+			case 23509:
+				itemDef.copyItem(23508);
+				itemDef.certID = 23508;
+				itemDef.certTemplateID = 23390;
+				itemDef.name = "Grandmaster Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 23497:
+				itemDef.copyItem(6737);
+				itemDef.name = "Grandmaster hood";
+				itemDef.modelID = 96496;
+				itemDef.maleEquip1 = 96497;
+				itemDef.femaleEquip1 = 96497;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.modelZoom = 868;
+				itemDef.rotationX = 110;
+				itemDef.rotationY = 152;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 3;
+				itemDef.modelOffsetY = -15;
+				break;
+
+			case 23498:
+				itemDef.copyItem(6737);
+				itemDef.name = "Grandmaster body";
+				itemDef.modelID = 96498;
+				itemDef.maleEquip1 = 96499;
+				itemDef.femaleEquip1 = 96499;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.modelZoom = 1387;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 525;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -1;
+				itemDef.modelOffsetY = 2;
+				break;
+			case 23499:
+				itemDef.copyItem(6737);
+				itemDef.name = "Grandmaster legs";
+				itemDef.modelID = 96500;
+				itemDef.maleEquip1 = 96501;
+				itemDef.femaleEquip1 = 96501;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.modelZoom = 1636;
+				itemDef.rotationX = 2000;
+				itemDef.rotationY = 525;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -1;
+				itemDef.modelOffsetY = 2;
+				break;
 			case 23483:
 				itemDef.copyItem(4685);
 				itemDef.name = "Legends Costume";
@@ -696,86 +817,58 @@ public class ItemDef5 {
 				break;
 			case 23448:
 				itemDef.copyItem(14050);
-				itemDef.name = "Acrid helmet";
-				itemDef.modelID = 19781;
-				itemDef.maleEquip1 = 19782;
-				itemDef.femaleEquip1 = 19782;
+				itemDef.name = "Turkey helmet";
+				itemDef.modelID = 20437;
+				itemDef.maleEquip1 = 20438;
+				itemDef.femaleEquip1 = 20438;
+				itemDef.rdc2 = 100777;
 				break;
 
 			case 23449:
 				itemDef.copyItem(14051);
-				itemDef.name = "Acrid body";
-				itemDef.modelID = 19783;
-				itemDef.maleEquip1 = 19784;
-				itemDef.femaleEquip1 = 19784;
+				itemDef.name = "Turkey body";
+				itemDef.modelID = 20439;
+				itemDef.maleEquip1 = 20440;
+				itemDef.femaleEquip1 = 20440;
+				itemDef.rdc2 = 100777;
 				break;
 			case 23450:
 				itemDef.copyItem(14052);
-				itemDef.name = "Acrid legs";
-				itemDef.modelID = 19785;
-				itemDef.maleEquip1 = 19786;
-				itemDef.femaleEquip1 = 19786;
+				itemDef.name = "Turkey legs";
+				itemDef.modelID = 20441;
+				itemDef.maleEquip1 = 20442;
+				itemDef.femaleEquip1 = 20442;
+				itemDef.rdc2 = 100777;
 				break;
 			case 23451:
 				itemDef.copyItem(23421);
-				itemDef.name = "Acrid gloves";
-				itemDef.modelID = 19787;
-				itemDef.maleEquip1 = 19789;
-				itemDef.femaleEquip1 = 19789;
+				itemDef.name = "Turkey gloves";
+				itemDef.modelID = 20448;
+				itemDef.maleEquip1 = 20465;
+				itemDef.femaleEquip1 = 20465;
+				itemDef.rdc2 = 100777;
 				break;
 			case 23452:
 				itemDef.copyItem(20456);
-				itemDef.name = "Acrid boots";
-				itemDef.modelID = 19788;
-				itemDef.maleEquip1 = 19788;
-				itemDef.femaleEquip1 = 19788;
+				itemDef.name = "Turkey boots";
+				itemDef.modelID = 20466;
+				itemDef.maleEquip1 = 20466;
+				itemDef.femaleEquip1 = 20466;
+				itemDef.rdc2 = 100777;
 				break;
+
 			case 23453:
-				itemDef.copyItem(19136);
-				itemDef.name = "Acrid minigun";
-				itemDef.modelID = 19790;
-				itemDef.femaleEquip1 = 19791;
-				itemDef.maleEquip1 = 19791;
+				itemDef.copyItem(23449);
+				itemDef.name = "Turkey Costume";
+				itemDef.rdc2 = 100777;
 				break;
-
-
-			case 21000:
-				itemDef.copyItem(5074);
-				itemDef.name = "Turkey Pet";
-				itemDef.modelID = MobDefinition.get(8501).npcModels[0];
-				itemDef.scaleX = 32;
-				itemDef.scaleY = 32;
-				itemDef.scaleZ = 32;
-				break;
-			case 21001:
-				itemDef.copyItem(23300);
-				itemDef.name = "Turkey pet (Mutated)";
-				itemDef.colorChange = new double[]{0.9, 0, 0};
-				break;
-			case 21002:
-				itemDef.copyItem(23300);
-				itemDef.name = "Turkey pet (Mutated)";
-				itemDef.colorChange = new double[]{0, 0.8, 0};
-				break;
-			case 21003:
-				itemDef.copyItem(23300);
-				itemDef.name = "Turkey pet (Mutated)";
-				itemDef.colorChange = new double[]{0, 0, 1.2};
-				break;
-			case 21004:
-				itemDef.copyItem(23300);
-				itemDef.name = "Turkey pet (Mutated)";
-				itemDef.colorChange = new double[]{0.9, 0.5, 0};
-				break;
-			case 21005:
-				itemDef.copyItem(23300);
-				itemDef.name = "Turkey pet (Mutated)";
-				itemDef.colorChange = new double[]{0.8, 0, 0.8};
-				break;
-			case 21006:
-				itemDef.copyItem(23300);
-				itemDef.name = "Turkey pet (Mutated)";
-				itemDef.colorChange = new double[]{0.9, 0.9, 0};
+			case 23454:
+				itemDef.copyItem(23453);
+				itemDef.certID = 23453;
+				itemDef.certTemplateID = 24390;
+				itemDef.name = "Turkey Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
 				break;
 		}
 		return itemDef;

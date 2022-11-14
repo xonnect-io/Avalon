@@ -302,10 +302,9 @@ public class World {
         NightmareBoss.execute();
         KeepersOfLight.sequence();
         FantasyZone.initialize();
+       // HolidayBossEvent.initialize();
         Bot.updatePlayers();
         TriviaSystem.tick();
-        //PennywiseSpawn.initialize();
-        //PumpkinSpawns.initialize();
         VotingStreak.sequence();
         TravellingMerchant.sequence();
         CharacterBackup.sequence();

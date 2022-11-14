@@ -111,8 +111,7 @@ public class CommandPacketListener implements PacketListener {
             player.membershipInterfaceHandler.openBenefitTab ();
         }
 
-        if (command[0].equalsIgnoreCase("starter")
-                || command[0].equalsIgnoreCase("start")) {
+        if (command[0].equalsIgnoreCase("startertasks")) {
             player.getStarterTasks().openInterface();
         }
         //Start of Teleports
@@ -170,16 +169,6 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");
         }
-     /*   if (command[0].equalsIgnoreCase("hween")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            Position pos = new Position(2910, 4699);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Halloween Event!");
-        }*/
         if (command[0].equalsIgnoreCase("supreme")) {
             if (!player.getSupreme()) {
                 player.getPacketSender().sendMessage("You are not supreme enough to do this.");
@@ -269,6 +258,17 @@ public class CommandPacketListener implements PacketListener {
             player.getSeasonPass().openInterface();
         }
 
+     /*   if (command[0].equalsIgnoreCase("event")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(2910, 4699);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+        }*/
+
         if (command[0].equalsIgnoreCase("globals")) {
             player.getPacketSender().sendMessage("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft() + " Steals left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft() + " kills left.");
@@ -282,6 +282,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft() + " tokens left");
             player.getPacketSender().sendMessage((FantasyZone.gameActive == false
                     ? "@red@<shad=1>Fantasy Realm: @yel@" + FantasyZone.getTimeLeft() : "@red@<shad=1> Fantasy Realm : @yel@Open"));
+          //  player.getPacketSender().sendMessage("@red@<shad=1>Thanksgiving turkey: @yel@" + HolidayBossEvent.getTimeLeft());
 
         }
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
@@ -870,11 +871,11 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendEnterInputPrompt("Enter the pin that you want to set$pin");
             }
         }
-       if (command[0].equalsIgnoreCase("dropparty") || command[0].equalsIgnoreCase("party")
+    /*   if (command[0].equalsIgnoreCase("dropparty") || command[0].equalsIgnoreCase("party")
                 || command[0].equalsIgnoreCase("event")) {
             TeleportHandler.teleportPlayer(player, new Position(1696, 4265, 0), player.getSpellbook().getTeleportType());
             player.sendMessage("Trolling an event can result in you not being able to participate in events.");
-        }
+        }*/
 
         if (command[0].equalsIgnoreCase("afkcount")) {
             player.sendMessage("@blu@Current AFK Thieving count: @red@" + AfkSystem.thievedCount);
@@ -1934,8 +1935,8 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equals("rfantasy")) {
             FantasyZone.spawn();
         }
-        if (command[0].equalsIgnoreCase("hweengift")) {
-            VdayGifting.givePresent();
+        if (command[0].equals("efantasy")) {
+            FantasyZone.gameTicks = 51;
         }
         if (command[0].equalsIgnoreCase("partychest")) {
             PartyChest.startDropParty(player, Integer.parseInt(command[1]), Boolean.parseBoolean(command[2]));
@@ -1956,8 +1957,8 @@ public class CommandPacketListener implements PacketListener {
             TravellingMerchant.dayInYear += 1;
             TravellingMerchant.resetItems();
         }
-        if (command[0].equalsIgnoreCase("hweenspawn")) {
-            PennywiseSpawn.spawn();
+        if (command[0].equalsIgnoreCase("eventspawn")) {
+            HolidayBossEvent.spawn();
         }
         if (command[0].equals("trav1")) {
             TravellingMerchant.dayInYear += 1;

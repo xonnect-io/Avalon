@@ -229,9 +229,9 @@ public class NPCDeathTask extends Task {
                             killer.getPointsHandler().incrementMIDNIGHTKILLCount(1);
                         }
 
-                        if (npc.getId() == PennywiseSpawn.NPC_ID) {
-                            PennywiseSpawn.bossAlive = false;
-                            PennywiseSpawn.handleDrop(npc);
+                        if (npc.getId() == HolidayBossEvent.NPC_ID) {
+                            HolidayBossEvent.bossAlive = false;
+                            HolidayBossEvent.handleDrop(npc);
                         }
 
                         if (npc.getId() == 9813) {

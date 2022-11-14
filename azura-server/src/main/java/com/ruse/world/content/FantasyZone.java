@@ -19,7 +19,7 @@ public class FantasyZone {
 
     public static boolean gameActive = true;
     public static long massMessageTimer = System.currentTimeMillis();
-    public static long INTERVAL = TimeUnit.MINUTES.toMillis(1800);//180
+    public static long INTERVAL = TimeUnit.MINUTES.toMillis(180);//180
     public static int gameTicks = 6000;
 
     public static String getTimeLeft() {

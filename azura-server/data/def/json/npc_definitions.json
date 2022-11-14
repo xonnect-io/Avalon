@@ -80577,6 +80577,28 @@
     "defenceMage": 0
   },
   {
+    "id": 8499,
+    "name": "Thanksgiving Turkey",
+    "examine": "It's a Turkey.",
+    "combat": 99,
+    "size": 4,
+    "attackable": true,
+    "aggressive": true,
+    "retreats": false,
+    "poisonous": false,
+    "respawn": -1,
+    "maxHit": 750,
+    "hitpoints": 150000000,
+    "attackSpeed": 3,
+    "attackAnim": 11000,
+    "defenceAnim": 10999,
+    "deathAnim": 11001,
+    "attackBonus": 800,
+    "defenceMelee": 10,
+    "defenceRange": 10,
+    "defenceMage": 10
+  },
+  {
     "id": 3643,
     "name": "Tolna",
     "examine": "Where did his boot go?",

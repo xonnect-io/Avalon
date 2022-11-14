@@ -15,15 +15,15 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 
-public class PennywiseSpawn extends NPC {
+public class HolidayBossEvent extends NPC {
 
     private static long massMessageTimer = 0;
 
     public static boolean bossAlive = false;
-    public static int NPC_ID = 492;
+    public static int NPC_ID = 8499;
     public static long INTERVAL = TimeUnit.MINUTES.toMillis(45);
 
-    public PennywiseSpawn(Position position) {
+    public HolidayBossEvent(Position position) {
         super(NPC_ID, position);
     }
 
@@ -43,19 +43,19 @@ public class PennywiseSpawn extends NPC {
 
     public static void spawn() {
         if (bossAlive) {
-            World.sendBroadcastMessage("Spirit of Scorpius has appeared ::hween");
-            GameSettings.broadcastMessage = "Spirit of Scorpius has appeared ::hween";
+            World.sendBroadcastMessage("Thanksgiving Turkey has appeared ::event");
+            GameSettings.broadcastMessage = "Thanksgiving Turkey has appeared ::event";
             GameSettings.broadcastTime = 100;
             return;
         }
-        PennywiseSpawn instance = new PennywiseSpawn(new Position(2909, 4707, 0));
+        HolidayBossEvent instance = new HolidayBossEvent (new Position(2909, 4707, 0));
         World.register(instance);
         bossAlive = true;
 
-        String message = "Spirit of Scorpius has appeared ::hween";
-        World.sendMessage("<col=d9570a>[Spirit of Scorpius]<shad=1> <col=c38e0e>Spirit of Scorpius has appeared @bla@::hween" );
-        World.sendBroadcastMessage("Spirit of Scorpius has appeared ::hween");
-        GameSettings.broadcastMessage = "Spirit of Scorpius has appeared ::hween";
+        String message = "Thanksgiving Turkey has appeared ::event";
+        World.sendMessage("<col=d9570a>[Thanksgiving Turkey]<shad=1> <col=c38e0e>Thanksgiving Turkey has appeared @bla@::event" );
+        World.sendBroadcastMessage("Thanksgiving Turkey has appeared ::event");
+        GameSettings.broadcastMessage = "Thanksgiving Turkey has appeared ::event";
         GameSettings.broadcastTime = 100;
         for (Player players : World.getPlayers()) {
             if (players == null) {
@@ -69,7 +69,7 @@ public class PennywiseSpawn extends NPC {
 
     public static void handleDrop(NPC npc) {
         bossAlive = false;
-        PumpkinSpawns.spawn();
+        //PumpkinSpawns.spawn();
         if (npc.getCombatBuilder().getDamageMap().size() == 0) {
             return;
         }

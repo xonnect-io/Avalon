@@ -1930,13 +1930,21 @@ public class Shop extends ItemContainer {
                 }
             } else if (shop == HWEEN_STORE) {
                     switch (item) {
-                        case 4564:
-                        case 14084:
-                        case 1973:
-                            return new Object[]{250, "Halloween tokens"};
-
+                        case 15289:
+                        case 15358:
+                        case 15359:
+                        case 20488:
+                            return new Object[]{20, "Turkey feathers"};
+                        case 10946:
+                            return new Object[]{30, "Turkey feathers"};
+                        case 6769:
+                            return new Object[]{150, "Turkey feathers"};
+                        case 10942:
+                            return new Object[]{300, "Turkey feathers"};
                         case 23428:
-                            return new Object[]{2500, "Halloween tokens"};
+                            return new Object[]{100, "Turkey feathers"};
+                        case 23511:
+                            return new Object[]{2000, "Turkey feathers"};
                     }
             } else if (shop == PEST_CONTROL) {
                 switch (item) {
@@ -2523,6 +2531,9 @@ public class Shop extends ItemContainer {
                     case 21221:
                     case 21222:
                     case 21223:
+                    case 23499:
+                    case 23498:
+                    case 23497:
                         return new Object[] { 1500, "Slayer points" };
                 }
             } else if (shop == BARROWS_STORE) {

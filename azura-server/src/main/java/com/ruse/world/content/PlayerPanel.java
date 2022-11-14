@@ -51,8 +51,11 @@ public class PlayerPanel {
                 "Vozzath: @whi@" + GuardianSpawnSystem.getLeft()  + " @whi@tickets left",
                 "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
                 (FantasyZone.gameActive == false
-                        ? "Fantasy Realm: @whi@" + FantasyZone.getTimeLeft() : "Fantasy Realm : @whi@Open"),
-
+                        ? "Fantasy Realm: @whi@" + FantasyZone.getTimeLeft() : "Fantasy Realm: @whi@Open"),
+                "",
+               /* (HolidayBossEvent.bossAlive == false
+                        ? "Thanksgiving Turkey: @whi@" + HolidayBossEvent.getTimeLeft() : "Thanksgiving Turkey: @whi@Alive ::event"),
+*/
         };
 
         for (int i = 0; i < Messages.length; i++) {
