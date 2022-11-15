@@ -33,7 +33,7 @@ public class FantasyZone {
     public static void initialize() {
         if ((System.currentTimeMillis() - massMessageTimer >= (INTERVAL))) {
             spawn();
-            INTERVAL = TimeUnit.MINUTES.toMillis(1800);//180
+            INTERVAL = TimeUnit.MINUTES.toMillis(180);//180
         }
         if (gameActive)
             processGame();
@@ -200,8 +200,8 @@ public class FantasyZone {
                 if (player.getEquipment().contains(23834)) {
                     boost += 1.2D;
                 }else {
-                    for (int i = 23729; i <= 23734; i++) {
-                        if (player.getEquipment().contains(i)) {
+                    for (int i = 14050; i <= 14055; i++) {
+                        if (player.getEquipment().contains(i) || player.getEquipment().contains(18333)) {
                             boost += 0.2D;
                         }
                     }

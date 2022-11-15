@@ -141,6 +141,8 @@ public class MaxUpgradesInterface {
         private Item[] requirements;
 
         public int getSuccessRate() {
+            if (successRate > 100)
+                successRate = 100;
             return successRate;
         }
     }
@@ -170,7 +172,9 @@ public class MaxUpgradesInterface {
                 player.getPacketSender().resetItemsOnInterface(30840, 17);
                 player.getPacketSender().sendCombinerItemsOnInterface(30840, data.requirements);
                 player.getPacketSender().sendItemOnInterface(30836, data.reward.getId(), 0, data.reward.getAmount());
-                player.getPacketSender().sendString(77454, "Success rate: @whi@" + (data.getSuccessRate() == 100 ? "@gre@ " :  data.getSuccessRate() <= 99 ? "@red@ " : "@whi@ ")  + data.getSuccessRate() + "%" );
+                player.getPacketSender().sendString(77454, "Success rate: @whi@" + (getBoost (data.getSuccessRate()) == 100 ? "@gre@ " :
+                        getBoost (data.getSuccessRate()) <= 99 ? "@red@ " : "@whi@ ")  + (getBoost (data.getSuccessRate()) > 100 ? "@gre@100%" :
+                        Misc.formatNumber ((long) getBoost (data.getSuccessRate())) + "%" ));
                 break;
             }
         }
@@ -180,30 +184,31 @@ public class MaxUpgradesInterface {
     public double getBoost(double chance){
         double percentBoost = 0D;
         if(player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
-            percentBoost += 15;
+            percentBoost += 50;
         } else if(player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT) {
-            percentBoost += 10;
+            percentBoost += 40;
         } else if(player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT) {
-            percentBoost += 7;
+            percentBoost += 30;
         } else if(player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT) {
-            percentBoost += 5;
+            percentBoost += 20;
+        } else if(player.getAmountDonated() >= Store.EMERALD_DONATION_AMOUNT) {
+            percentBoost += 10;
         }
 
-        // creator set:
-        if (player.getEquipment().contains(23127))
-            percentBoost += 2;
-        if (player.getEquipment().contains(23128))
-            percentBoost += 2;
-        if (player.getEquipment().contains(23129))
-            percentBoost += 2;
-        if (player.getEquipment().contains(23130))
-            percentBoost += 1;
-        if (player.getEquipment().contains(23131))
-            percentBoost += 1;
-        if (player.getEquipment().contains(23132))
-            percentBoost += 1;
-        if (player.getEquipment().contains(23133))
-            percentBoost += 1;
+        if (player.getScrollBonus() == 1)
+            percentBoost +=  20;
+
+        if (player.getScrollBonus() == 2)
+            percentBoost +=  40;
+
+        if (player.getScrollBonus() == 3)
+            percentBoost +=  60;
+
+        if (player.getScrollBonus() == 4)
+            percentBoost +=  80;
+
+        if (player.getScrollBonus() == 5)
+            percentBoost +=  100;
 
         double multiplier = 1 + (percentBoost / 100D);
 
@@ -219,10 +224,16 @@ public class MaxUpgradesInterface {
         }
 
         for (CustomCombinerData data : VALUES) {
-            boolean random =  Misc.getRandomDouble(99) < getBoost(data.getSuccessRate() + player.getScrollBonus());
+            boolean random =  Misc.getRandomDouble(99) < getBoost(data.getSuccessRate());
             if (data.reward.getId() == selectedItem.getId()) {
                 if (player.getInventory().containsAll(data.requirements) && player.getInventory().containsAll(data.upgradedItem)) {
                     if (random == true) {
+                        if (player.getScrollBonus () > 0) {
+                            player.setScrollBonus (0);
+                            player.sendMessage("Your bonus upgrade % has been consumed.");
+                            player.getPacketSender().sendString(77454, "Success rate: @whi@" + (getBoost (data.getSuccessRate()) == 100 ? "@gre@ " :  getBoost (data.getSuccessRate()) <= 99 ? "@red@ " : "@whi@ ")  + Misc.formatNumber ((long) getBoost (data.getSuccessRate())) + "%" );
+
+                        }
                         player.getInventory().delete(data.upgradedItem);
                         player.getInventory().deleteItemSet(data.requirements);
                         player.getInventory().add(data.reward);
@@ -232,6 +243,8 @@ public class MaxUpgradesInterface {
                         player.getInventory().delete(data.upgradedItem);
                         player.getInventory().deleteItemSet(data.requirements);
                         player.sendMessage("@red@You have failed your upgrade.");
+                        if (player.getScrollBonus () > 0) {
+                        }
                     }
                     } else {
                     player.sendMessage("@red@You don't have the required items for this invention.");

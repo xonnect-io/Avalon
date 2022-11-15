@@ -6,6 +6,22 @@ public class ItemDef5 {
 
 		switch (id) {
 
+			case 22166:
+				itemDef.name = "Chance scroll";
+				itemDef.modelID = 2774;
+				itemDef.maleEquip1 = -1;
+				itemDef.femaleEquip1 = -1;
+				itemDef.modelZoom = 1000;
+				itemDef.rotationY = 255;
+				itemDef.rotationX = 1719;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 50;
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				itemDef.oldColors = new int[]{5440, 5452, 1938, 5427,};
+				itemDef.newColors = new int[]{25823, 26638, 25823, 27823,};
+				break;
+
 			case 23512:
 				itemDef.copyItem(23511);
 				itemDef.name = "Turkey pet (Mutated)";

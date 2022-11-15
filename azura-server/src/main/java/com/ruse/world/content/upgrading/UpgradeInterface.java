@@ -343,7 +343,7 @@ public class UpgradeInterface {
 
         player.getPacketSender().sendItemOnInterface(62210, upgrade.getReward());
         player.getPacketSender().sendString(62231, "Tokens req: @whi@" + Misc.formatNumber(upgrade.getCost()));
-        player.getPacketSender().sendString(62234, "Success rate: @whi@" + upgrade.getSuccessRate() + "%");
+        player.getPacketSender().sendString(62234, "Success rate: @whi@" + Misc.format(upgrade.getSuccessRate()) + "%");
 
     }
 

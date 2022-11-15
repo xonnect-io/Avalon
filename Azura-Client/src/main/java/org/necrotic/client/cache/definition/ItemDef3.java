@@ -3847,7 +3847,7 @@ public class ItemDef3 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.oldColors = new int[]{52};
-				itemDef.newColors = new int[]{91};
+				itemDef.newColors = new int[]{98};
 				break;
 				
 			case 14051:
@@ -3864,7 +3864,7 @@ public class ItemDef3 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.oldColors = new int[]{52};
-				itemDef.newColors = new int[]{91};
+				itemDef.newColors = new int[]{98};
 				break;
 				
 			case 14052:
@@ -3881,7 +3881,7 @@ public class ItemDef3 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.oldColors = new int[]{52};
-				itemDef.newColors = new int[]{91};
+				itemDef.newColors = new int[]{98};
 				break;
 				
 			case 14053:

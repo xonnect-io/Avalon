@@ -249,6 +249,11 @@ public class Store implements Runnable {
                     case 1085:
                         player.getInventory().add(23552, quantity);
                         break;
+
+                    case 1088:
+                        player.getInventory().add(22166, quantity);
+                        break;
+
                     default:
                         player.sendMessage("No donation was found under your name.");
                         return;

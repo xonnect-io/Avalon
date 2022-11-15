@@ -302,7 +302,7 @@ public class ItemActionPacketListener implements PacketListener {
             case 23553:
                 player.getInventory().delete (23553, 1);
                 player.getPacketSender().sendMessage("You use your Tier Skip Token and are given 10 Season pass xp");
-                player.getSeasonPass ().addExperience (10);
+                player.getSeasonPass ().setTier (player.getSeasonPass ().getTier () + 1);
                 player.getSeasonPass().openInterface();
                 break;
             case 19806:
@@ -663,6 +663,17 @@ public class ItemActionPacketListener implements PacketListener {
                     World.sendMessage("@blu@<img=1463>[News]<img=1463><col=ff0000>" + player.getUsername() + " has just unlocked Crimson boss!");
                 }
                 break;
+
+            case 22166:
+                if (player.getScrollBonus () >= 5) {
+                        player.sendMessage("@red@You already have maxed out your next upgrade bonus!");
+                        return;
+                    }
+                player.getInventory().delete(22166, 1);
+                    player.setScrollBonus(player.getScrollBonus () + 1);
+                player.sendMessage("@blu@Your next upgrade chances were increased " + Misc.formatNumber((long) (player.getScrollBonus () * 20)) + "%");
+                break;
+
             case 1973:
                 if (player.getDoubleDRTimer() > 0) {
                     player.sendMessage("You already have a double DR scroll active.");
