@@ -300,9 +300,10 @@ public class World {
         NarakuBoss.spawn();
         //VdayGifting.initialize();
         NightmareBoss.execute();
+        TurkeySpawns.initialize();
         KeepersOfLight.sequence();
         FantasyZone.initialize();
-       // HolidayBossEvent.initialize();
+        HolidayBossEvent.initialize();
         Bot.updatePlayers();
         TriviaSystem.tick();
         VotingStreak.sequence();

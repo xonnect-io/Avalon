@@ -23,6 +23,7 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.discordbot.DiscordIntegration;
+import com.ruse.world.content.globalBosses.TurkeySpawns;
 import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupConfig;
 import com.ruse.world.content.groupironman.GroupManager;
@@ -219,6 +220,14 @@ public class NPCOptionPacketListener implements PacketListener {
                         ShopManager.getShops().get(123).open(player);
                         player.getPacketSender().sendString(3903,
                                 "Spend your Global tickets on items");
+                        break;
+
+                    case 8504:
+                    case 8505:
+                    case 8506:
+                    case 8508:
+                    case 8510:
+                        TurkeySpawns.findTurkey(npc, player);
                         break;
                     case 3643:
                         ShopManager.getShops().get(550).open(player);

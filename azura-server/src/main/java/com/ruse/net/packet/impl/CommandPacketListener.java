@@ -257,8 +257,10 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("seasonpass")) {
             player.getSeasonPass().openInterface();
         }
-
-     /*   if (command[0].equalsIgnoreCase("event")) {
+        if (command[0].equalsIgnoreCase("hiddenturkeyloc")) {
+            player.sendMessage(TurkeySpawns.getCurrent().getPosition().toString());
+        }
+        if (command[0].equalsIgnoreCase("event")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -267,7 +269,7 @@ public class CommandPacketListener implements PacketListener {
             Position pos = new Position(2910, 4699);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
-        }*/
+        }
 
         if (command[0].equalsIgnoreCase("globals")) {
             player.getPacketSender().sendMessage("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft() + " Steals left.");
@@ -282,7 +284,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft() + " tokens left");
             player.getPacketSender().sendMessage((FantasyZone.gameActive == false
                     ? "@red@<shad=1>Fantasy Realm: @yel@" + FantasyZone.getTimeLeft() : "@red@<shad=1> Fantasy Realm : @yel@Open"));
-          //  player.getPacketSender().sendMessage("@red@<shad=1>Thanksgiving turkey: @yel@" + HolidayBossEvent.getTimeLeft());
+            player.getPacketSender().sendMessage("@red@<shad=1>Thanksgiving turkey: @yel@" + HolidayBossEvent.getTimeLeft());
 
         }
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
