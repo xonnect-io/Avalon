@@ -914,11 +914,24 @@ public class CustomDropUtils {
                 percentBoost = 0;
             }
         }
-        if (npc == 3830 || npc == 3779 || npc == 187 || npc == 8013 || npc == 9017 || npc == 3305
-                || npc == 4972 || npc == 587 || npc == 9318 || npc == 9319 || npc == 9129) {
+        if (npc == 9129 || //slayer champion
+                npc == 9312 || //Nephilim Warrior
+                npc == 9319 || //Zenyte Golem
+                npc == 587 || //Ironman boss
+                npc == 9318 || //Onyx Panther
+                npc == 3830 || //Vozzath
+                npc == 4972 || //Dragon king
+                npc == 3305 || //Naraku
+                npc == 9017 || //Nightmare Boss
+                npc == 8013 || //Vote Boss
+                npc == 3779|| //Terrorstep
+                npc == 187 ||//Hellraiser
+                npc == 8499 //Hellraiser
+         ) {
             percentBoost = 0;
             System.out.println("0 Droprate on globals");
         }
+
         if (npc == TreasureHunter.NPC_1 || npc == TreasureHunter.NPC_2
                 || npc == TreasureHunter.NPC_3 || npc  == TreasureHunter.NPC_4) {
             Familiar playerFamiliar = player.getSummoning().getFamiliar();

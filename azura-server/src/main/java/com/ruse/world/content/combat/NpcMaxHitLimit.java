@@ -1,5 +1,6 @@
 package com.ruse.world.content.combat;
 
+import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.world.entity.impl.npc.NPC;
 
 public class NpcMaxHitLimit {
@@ -19,11 +20,10 @@ public class NpcMaxHitLimit {
             case 8013: //Vote Boss
             case 3779: //Terrorstep
             case 187://Hellraiser
-                maxLimit = 2_500_000;
+            case 8499://Thanksgiving Turkey
+                maxLimit = (NpcDefinition.forId(npc.getId()).getHitpoints() / 100) * 2;
                 break;
-            case 1:
-                maxLimit = 80000;
-                break;
+
             default:
                 return damage;
         }

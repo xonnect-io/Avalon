@@ -1944,6 +1944,7 @@ public class Shop extends ItemContainer {
                         case 23428:
                             return new Object[]{100, "Turkey feathers"};
                         case 23511:
+                        case 23454:
                             return new Object[]{2000, "Turkey feathers"};
                     }
             } else if (shop == PEST_CONTROL) {
