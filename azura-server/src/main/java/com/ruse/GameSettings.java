@@ -133,6 +133,7 @@ public class GameSettings {
     /**
      * The default position
      */
+    public static final Position NEW_CORDS = new Position(2784, 4065, 0);
     public static final Position DEFAULT_POSITION = new Position(2929, 4116, 0);
     public static final Position PYRAMID_LOBBY = new Position(3488, 9243, 0);
     public static final Position STARTER = new Position(3034, 4121, 1);
