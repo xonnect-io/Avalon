@@ -8,7 +8,6 @@ import org.necrotic.client.cache.definition.ItemDefinition;
 import org.necrotic.client.cache.definition.MobDefinition;
 import org.necrotic.client.entity.player.Player;
 import org.necrotic.client.graphics.Sprite;
-import org.necrotic.client.graphics.SpriteLoader;
 import org.necrotic.client.graphics.fonts.RSFontSystem;
 import org.necrotic.client.graphics.fonts.TextClass;
 import org.necrotic.client.graphics.fonts.TextDrawingArea;
@@ -29,9 +28,6 @@ public class RSInterface {
 	 */
 	public Sprite spriteClicked;
 
-	public static void setSpriteClicked(int id, int spriteClickedId) {
-		interfaceCache[id].spriteClicked = SpriteLoader.sprites[spriteClickedId];
-	}
 	public static void addSpriteHDLoader(int childId, int spriteId) {
 		RSInterface rsi = RSInterface.interfaceCache[childId] = new RSInterface();
 		rsi.id = childId;
