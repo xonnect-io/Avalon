@@ -315,6 +315,7 @@ public class PestControl {
 
 					StarterTasks.doProgress(p, StarterTasks.StarterTask.PEST_CONTROL);
 
+					p.getDailyTaskManager().submitProgressToIdentifier(23, 1);
 					p.getPacketSender()
 							.sendMessage("The portals were successfully closed. You've been rewarded for your effort.");
 					p.getPacketSender().sendMessage("You've received "+points+" Commendations and "+Misc.insertCommasToNumber(tokens)+" Upgrade tokens.");

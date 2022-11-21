@@ -35,12 +35,15 @@ public class PyramidOutbreak {
 			player.getRegionInstance().destruct();
 		player.restart();
 		player.getMinigameAttributes().getPyramidAttributes().setEntered(false);
+
+
 	}
 
 	private final static void spawn(Player player, int wave, int level) {
 		if (wave == 10) {
 			leave(player);
 			Box box = BoxLoot.getLoot(loot);
+			player.getDailyTaskManager().submitProgressToIdentifier(15, 1);
 			player.getPacketSender().sendMessage("You successfully stopped the purge!");
 			return;
 		}

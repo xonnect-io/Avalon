@@ -27,6 +27,7 @@ import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.range.CombatRangedAmmo.RangedWeaponData;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
+import com.ruse.world.content.combat.strategy.impl.Dragonkin;
 import com.ruse.world.content.combat.strategy.impl.Nex;
 import com.ruse.world.content.combat.strategy.impl.Scorpia;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
@@ -1550,6 +1551,14 @@ public final class CombatFactory {
                     return false;
                 }
             }
+            else if (npc.getId() == 9885) { //
+                if  (((Player) entity).getPointsHandler().getBorkKC () <= 74999) {
+                    player.getPacketSender().sendMessage("You need 75,000 Bork kills. You currently have @red@"
+                            + player.getPointsHandler().getBorkKC () + "@bla@ kills.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
             else if (npc.getId() == 823) { // Voting
                 if (((Player) entity).getPointsHandler().getMG3Count() <= 24) {
                     ((Player) entity).getPacketSender()
@@ -1579,6 +1588,14 @@ public final class CombatFactory {
                             .sendMessage("Players need to reach a total of 40 votes. We're currently at @red@" + doMotivote.getVoteCount() + " @bla@votes.");
                     ((Player) entity).getPacketSender()
                             .sendMessage("Everyone should @red@::vote @bla@ to contribute towards Vote Boss.");
+                    entity.getCombatBuilder().reset(true);
+                    return false;
+                }
+            }
+            else if (npc.getId() == 9899) { // Dragonkin
+                if (Dragonkin.minions_dead == false && Dragonkin.minions_spawned == true) {
+                    ((Player) entity).getPacketSender()
+                            .sendMessage("@red@You need to defeat the Dragonkin's Minions first!");
                     entity.getCombatBuilder().reset(true);
                     return false;
                 }
@@ -2058,6 +2075,10 @@ public final class CombatFactory {
                 attacker.sendMessage("The beast seems to not be affected by your current Combat Type.");
                 container.allHits(context -> {
                         context.setAccurate(false);
+                });
+            } else if (Dragonkin.minions_dead == false && Dragonkin.minions_spawned == true && npc.getId () == 9899) {
+                container.allHits(context -> {
+                    context.setAccurate(false);
                 });
             } else if((npc.getId() == 9024 && container.getCombatType() == ((Kiljaeden)npc).avoiding)
             || (npc.getId() == 9814 && container.getCombatType() == ((Heimdall)npc).avoiding)

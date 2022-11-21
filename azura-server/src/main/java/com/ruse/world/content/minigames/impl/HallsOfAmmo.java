@@ -130,6 +130,7 @@ public class HallsOfAmmo {
                 player.getInventory().add(box.getId(), boxAmount);
                 MINIGAMES.log(player, CollectionLog.ISLES_OF_AVALON, new Item(box.getId()));
                 player.getAchievementTracker().progress(AchievementData.CLEAR_THE_ISLES, 1);
+                player.getDailyTaskManager().submitProgressToIdentifier(22, 1);
                 player.getPointsHandler().incrementIslesKC(1);
                 player.sendMessage("You received x" + boxAmount + " " + ItemDefinition.forId(box.getId()).getName());
 

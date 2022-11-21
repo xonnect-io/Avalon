@@ -12,11 +12,8 @@ import com.ruse.net.packet.Packet;
 import com.ruse.net.packet.PacketListener;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
-import com.ruse.world.content.AutoCastSpell;
-import com.ruse.world.content.BonusManager;
-import com.ruse.world.content.PlayerLogs;
+import com.ruse.world.content.*;
 import com.ruse.world.content.PlayerPunishment.Jail;
-import com.ruse.world.content.Sounds;
 import com.ruse.world.content.Sounds.Sound;
 import com.ruse.world.content.combat.magic.Autocasting;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
@@ -447,6 +444,10 @@ public class EquipPacketListener implements PacketListener {
                         player.getInventory().refreshItems();
                         player.getUpdateFlag().flag(Flag.APPEARANCE);
                         Sounds.sendSound(player, Sound.EQUIP_ITEM);
+                        if (player.getEquipment().contains(19886) && player.getEquipment().contains(1486)){
+                            player.getDailyTaskManager().submitProgressToIdentifier(13, 1);
+                        }
+
                     }
                 }
                 break;

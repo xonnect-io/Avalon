@@ -34,6 +34,7 @@ public class petReturn implements Runnable {
 								+ ItemDefinition.forId(BossPet.values()[i+ 1].itemId).getName() + " to your bank.");
 						daCount++;
 					}
+
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -799,8 +799,51 @@ public class Misc {
 
     public static boolean isWeekend() {
         Calendar c = Calendar.getInstance(TimeZone.getTimeZone("America/New_York"));
-        if (c.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY || c.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
+        if (c.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
                 || c.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public static boolean isMonday() {
+        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("America/New_York"));
+        if (c.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public static boolean isTuesday() {
+        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("America/New_York"));
+        if (c.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public static boolean isWednesday() {
+        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("America/New_York"));
+        if (c.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isThursday() {
+        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("America/New_York"));
+        if (c.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isFriday() {
+        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("America/New_York"));
+        if (c.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) {
             return true;
         }
         return false;

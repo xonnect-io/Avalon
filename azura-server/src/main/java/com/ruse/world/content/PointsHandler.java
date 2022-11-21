@@ -100,6 +100,7 @@ public class PointsHandler {
 	private int treasureHunter;
 	private int suffering;
 	private int necromancer;
+	private int telos;
 	private int zombieRaidKC;
 	private int unknownCompleted;
 	private int totalprestiges;
@@ -937,6 +938,10 @@ private int pengRate;
 	public void incrementNecromancerKC(int amt) {
 		this.necromancer += amt;
 	}
+
+	public void incrementTelosKC(int amt) {
+		this.telos += amt;
+	}
 	public int getZombieRaidKC() {
 		return zombieRaidKC;
 	}
@@ -951,6 +956,10 @@ private int pengRate;
 	}
 	public int getNecromancerKC() {
 		return necromancer;
+	}
+
+	public int getTelosKC() {
+		return telos;
 	}
 	public int getQuestOneDreamKC() {
 		return questOneDreamKC;
@@ -983,6 +992,12 @@ private int pengRate;
 			this.necromancer += points;
 		else
 			this.necromancer = points;
+	}
+	public void setTelosKC(int points, boolean add) {
+		if (add)
+			this.telos += points;
+		else
+			this.telos = points;
 	}
 	public void setIslesKC(int points, boolean add) {
 		if (add)

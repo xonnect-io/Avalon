@@ -8,6 +8,7 @@ import org.necrotic.client.cache.definition.ItemDefinition;
 import org.necrotic.client.cache.definition.MobDefinition;
 import org.necrotic.client.entity.player.Player;
 import org.necrotic.client.graphics.Sprite;
+import org.necrotic.client.graphics.SpriteLoader;
 import org.necrotic.client.graphics.fonts.RSFontSystem;
 import org.necrotic.client.graphics.fonts.TextClass;
 import org.necrotic.client.graphics.fonts.TextDrawingArea;
@@ -19,6 +20,52 @@ import org.necrotic.client.world.Model;
 
 public class RSInterface {
 
+	/**
+	 * True to set the id to be clicked.
+	 */
+	public boolean isClicked;
+	/**
+	 * The clicked version sprite.
+	 */
+	public Sprite spriteClicked;
+
+	public static void setSpriteClicked(int id, int spriteClickedId) {
+		interfaceCache[id].spriteClicked = SpriteLoader.sprites[spriteClickedId];
+	}
+	public static void addSpriteHDLoader(int childId, int spriteId) {
+		RSInterface rsi = RSInterface.interfaceCache[childId] = new RSInterface();
+		rsi.id = childId;
+		rsi.parentID = childId;
+		rsi.type = 5;
+		rsi.advancedSprite = true;
+		rsi.atActionType = 0;
+		rsi.contentType = 0;
+		rsi.enabledSprite = Client.spritesMap.get(spriteId);
+		rsi.disabledSprite = Client.spritesMap.get(spriteId);
+		rsi.width = rsi.enabledSprite.myWidth;
+		rsi.height = rsi.disabledSprite.myHeight - 2;
+	}
+	public static void addHoverButtonLatest(int buttonId1, int buttonId2, int buttonId3, int spriteId1, int spriteId2,
+											int buttonWidth, int buttonHeight, String buttonHoverText) {
+		addHoverButtonWSpriteLoader(buttonId1, spriteId1, buttonWidth, buttonHeight, buttonHoverText, -1, buttonId2, 1);
+		addHoveredImageWSpriteLoader(buttonId2, spriteId2, buttonWidth, buttonHeight, buttonId3);
+	}
+
+	public static void addHoverButtonComplete(int interfaceId, int child, int x, int y, int normalSprite,
+											  int hoverSprite, int buttonWidth, int buttonHeight, String buttonHoverText, RSInterface interfaces,
+											  boolean add) {
+		if (add) {
+			RSInterface.addHoverButtonLatest(interfaceId, interfaceId + 1, interfaceId + 2, normalSprite, hoverSprite,
+					buttonWidth, buttonHeight, buttonHoverText);
+		}
+		RSInterface.setBounds(interfaceId, x, y, child, interfaces);
+		RSInterface.setBounds(interfaceId + 1, x, y, child + 1, interfaces);
+	}
+	public int spriteLoadingBarPercentage = -1;
+
+	public static void setSpriteLoadingBarPercentage(int interfaceId, int percentage) {
+		RSInterface.interfaceCache[interfaceId].spriteLoadingBarPercentage = percentage;
+	}
 	private static void perkOverlays(TextDrawingArea[] tda) {
 		int STARTING_POINT = 42400;
 		RSInterface main = addInterface(STARTING_POINT);
@@ -6850,6 +6897,7 @@ public class RSInterface {
 			prestigeInterface(textDrawingAreas);
 			magicianTier1Unlock(textDrawingAreas);
 			magicianTier2Unlock(textDrawingAreas);
+			Event_chest.eventChestInterface(textDrawingAreas);
 			magicianTier3Unlock(textDrawingAreas);
 			effectInterface2(textDrawingAreas);
 			effectInterface3(textDrawingAreas);

@@ -37,6 +37,7 @@ import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.Dueling.DuelRule;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.portal.portal;
+import com.ruse.world.content.raids.elders.TelosInterfaces;
 import com.ruse.world.content.raids.shadows.NecromancerInterfaces;
 import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.skill.impl.agility.Agility;
@@ -397,21 +398,12 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                 }
                                 break;
+                            case 28719:
+                                TelosInterfaces.openInterface(player);
+                                break;
+
                             case 13405:
-                                NecromancerInterfaces.openStartScreen (player);
-                                /*if (player.getLocation() == Location.DARKNESS_LOBBY) {
-                                    CurseHandler.deactivateAll(player);
-                                    if (player.getShadowRaidsParty() != null) {
-                                        if (player.getShadowRaidsParty().getOwner().equals(player)) {
-                                            player.setDialogueActionId(13054);
-                                            DialogueManager.start(player, 13054);
-                                        } else {
-                                            player.sendMessage("Only the party leader can start the Raid.");
-                                        }
-                                    } else {
-                                        player.sendMessage("You must be in a party to start the Raid.");
-                                    }
-                                }*/
+                                NecromancerInterfaces.openStartScreen(player);
                                 break;
                             case 10251:
                                 if (player.getPointsHandler ().getZombieRaidKC () < 100) {
@@ -431,6 +423,9 @@ public class ObjectActionPacketListener implements PacketListener {
                                         player.sendMessage ("You must be in a party to start the Raid.");
                                     }
                                 }
+                                break;
+                            case 2004:
+                                TelosInterfaces.openCofferRewards(player);
                                 break;
                             case 399:
                             case 52299:

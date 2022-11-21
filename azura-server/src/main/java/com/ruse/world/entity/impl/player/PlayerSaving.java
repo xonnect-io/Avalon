@@ -125,6 +125,17 @@ public class PlayerSaving {
 			object.addProperty("Skilling-points", new Integer(player.getPointsHandler().getSkillingPoints()));
 			object.addProperty("prestige-points", new Integer(player.getPointsHandler().getPrestigePoints()));
 			object.addProperty("achievement-points", new Integer(player.getPointsHandler().getAchievementPoints()));
+			object.add("daily-task-slots", builder.toJsonTree(player.getDailyTaskManager().getTaskSlots()));
+			object.add("achievements", player.getAchievementTracker().jsonSave());
+			object.addProperty("achievements-daily", player.getAchievements().getDailyAchievementsDate());
+			object.add("achievements-completion",
+					builder.toJsonTree(player.getAchievementAttributes().getCompletion()));
+			object.add("achievements-progress", builder.toJsonTree(player.getAchievementAttributes().getProgress()));
+			object.add("achievements-points", builder.toJsonTree(player.getAchievements().getPoints()));
+			object.add("achievements-amount", builder.toJsonTree(player.getAchievements().getAmountRemaining()));
+			object.add("achievements-completed", builder.toJsonTree(player.getAchievements().getCompleted()));
+			object.addProperty("achievements-daily", player.getAchievements().getDailyAchievementsDate());
+			object.addProperty("daily-tasks-completed", player.getDailyTasksCompleted());
 			object.addProperty("dung-tokens", new Integer(player.getPointsHandler().getDungeoneeringTokens()));
 			object.addProperty("commendations", new Integer(player.getPointsHandler().getCommendations()));
 			object.addProperty("loyalty-points", new Integer(player.getPointsHandler().getLoyaltyPoints()));
@@ -162,13 +173,24 @@ public class PlayerSaving {
 			object.addProperty("isle-easy-timer", player.getIsleEasyTimer());
 			object.addProperty("isle-med-timer", player.getIsleMedTimer());
 			object.addProperty("isle-hard-timer", player.getIsleHardTimer());
+			object.addProperty("elder-easy-timer", player.getElderEasyTimer());
+			object.addProperty("elder-med-timer", player.getElderMedTimer());
+			object.addProperty("elder-hard-timer", player.getElderHardTimer());
 			object.addProperty("easy-isle-god-kc", player.getEasyIsleGodKC());
 			object.addProperty("med-isle-god-kc", player.getMedIsleGodKC());
 			object.addProperty("hard-isle-god-kc", player.getHardIsleGodKC());
+
+			object.addProperty("easy-elder-god-kc", player.getEasyElderGodKC());
+			object.addProperty("med-elder-god-kc", player.getMedElderGodKC());
+			object.addProperty("hard-elder-god-kc", player.getHardElderGodKC());
+
 			object.addProperty("isle-dr", player.getIsleDropRate());
+			object.addProperty("elder-dr", player.getElderDropRate());
 			object.addProperty("upg-dr", player.getScrollBonus ());
+
 			object.add("turkeys-mutated", builder.toJsonTree(player.getTurkeysMutated()));
 			object.add("gods-coffer", builder.toJsonTree(player.getGodsCoffer().toArray()));
+			object.add("telos-coffer", builder.toJsonTree(player.getTelosCoffer().toArray()));
 			object.addProperty("shadow-drop-rate", player.getShadowRareDropBoost());
 			object.addProperty("shadow-key-opened", player.getShadowKeysOpened());
 			object.addProperty("lastInstanceNpc", player.lastInstanceNpc);
@@ -227,6 +249,7 @@ public class PlayerSaving {
 			object.addProperty("gender", player.getAppearance().getGender().name());
 			object.addProperty("spell-book", player.getSpellbook().name());
 			object.addProperty("prayer-book", player.getPrayerbook().name());
+
 			object.addProperty("running", new Boolean(player.isRunning()));
 			object.addProperty("run-energy", new Integer(player.getRunEnergy()));
 			object.addProperty("music", new Boolean(player.musicActive()));
@@ -464,7 +487,7 @@ public class PlayerSaving {
 			object.add("favorite-teleports", builder.toJsonTree(player.getFavoriteTeleports()));
 
 			object.add("obtained-pets", builder.toJsonTree(player.getObtainedPets()));
-			object.add("achievements", player.getAchievementTracker().jsonSave());
+
 			writer.write(builder.toJson(object));
 			writer.close();
 

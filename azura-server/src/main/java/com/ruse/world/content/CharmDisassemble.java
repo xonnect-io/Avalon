@@ -18,7 +18,17 @@ public class CharmDisassemble {
 	static int token = 23321;
 
 	public enum CharmData {
-		SUFFERING_CHARM(23403, new Item[]{new Item(token, 200)}, 35500, anim);
+		SUFFERING_CHARM(23403, new Item[]{new Item(token, 200)}, 35500, anim),
+		MYSTIC_HELM(23303, new Item[]{new Item(token, 200)}, 35500, anim),
+		MYSTIC_BODY(23304, new Item[]{new Item(token, 200)}, 35500, anim),
+		MYSTIC_LEGS(23305, new Item[]{new Item(token, 200)}, 35500, anim),
+		HELLISH_HELM(23306, new Item[]{new Item(token, 200)}, 35500, anim),
+		HELLISH_BODY(23307, new Item[]{new Item(token, 200)}, 35500, anim),
+		HELLISH_LEGS(23308, new Item[]{new Item(token, 200)}, 35500, anim),
+		MIDNIGHT_HELM(23309, new Item[]{new Item(token, 200)}, 35500, anim),
+		MIDNIGHT_BODY(23310, new Item[]{new Item(token, 200)}, 35500, anim),
+		MIDNIGHT_LEGS(23311, new Item[]{new Item(token, 200)}, 35500, anim)
+		;
 
 		CharmData(int id, Item[] rewards, int experience, int animation) {
 			this.id = id;

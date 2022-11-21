@@ -98,6 +98,7 @@ public class MysteryBoxOpener {
 		player.getInventory().delete(boxId, 1);
 		player.getInventory().add(reward, 1);
 		BOXES.log(player, boxId, new Item(reward));
+		player.getDailyTaskManager().submitProgressToIdentifier(5, 1);
 	}
 
 	public void openAll(int boxId) {
@@ -135,6 +136,7 @@ public class MysteryBoxOpener {
 
 		player.getInventory().delete(boxId, amount);
 
+		player.getDailyTaskManager().submitProgressToIdentifier(5, amount);
 		boolean bank = amount <= player.getInventory().getFreeSlots();
 		rewards.forEach((key, value) -> {
 			if (bank) {

@@ -405,6 +405,11 @@ public class Maxhits {
             if (player.getWarriorMaster() == true) {
                 base *= 1.2;
             }
+
+            if (Misc.isWednesday()) {
+                base *= 1.05;
+            }
+
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.RAICHU_PET.npcId) {
@@ -799,6 +804,9 @@ public class Maxhits {
             if (player.getArcherMaster() == true) {
                 maxHit *= 1.2;
             }
+            if (Misc.isTuesday()) {
+                maxHit *= 1.05;
+            }
             for (Costumes costume : Costumes.values()) {
                 if (player.getEquipment().contains(costume.getItemId()))
                     maxHit += costume.getDamageBoost();
@@ -1134,6 +1142,10 @@ public class Maxhits {
             }
             if (player.getMagicianMaster() == true) {
                 maxHit *= 1.2;
+            }
+
+            if (Misc.isMonday ()) {
+                maxHit *= 1.05;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {

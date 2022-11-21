@@ -27,6 +27,7 @@ import com.ruse.world.content.grandexchange.GrandExchangeOffer;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.Dueling.DuelRule;
 import com.ruse.world.content.minigames.impl.YesNoDialogue;
+import com.ruse.world.content.raids.elders.TelosInterfaces;
 import com.ruse.world.content.raids.shadows.NecromancerInterfaces;
 import com.ruse.world.content.skill.impl.crafting.Jewelry;
 import com.ruse.world.content.skill.impl.smithing.EquipmentMaking;
@@ -54,9 +55,14 @@ public class ItemContainerActionPacketListener implements PacketListener {
 			player.getPacketSender()
 					.sendMessage("firstAction itemContainer. IF: " + interfaceId + " slot: " + slot + ", id: " + id);
 		}
-		if (interfaceId >= 13079 && interfaceId <= 13200){
+
+		if (interfaceId >= 13079 && interfaceId <= 13200 && player.getLocation() == Location.DARKNESS_LOBBY){
 			NecromancerInterfaces.clickCofferItem(player, interfaceId, id);
+		} else
+		if (interfaceId >= 13079 && interfaceId <= 13200 && player.getLocation() == Location.TELOS_LOBBY){
+			TelosInterfaces.viewCofferItems(player, interfaceId, id);
 		}
+
 		switch (interfaceId) {
 			case 31510:
 				player.getEventBossManager().removeNpcDropReward(id, 1);

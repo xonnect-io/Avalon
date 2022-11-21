@@ -128,6 +128,8 @@ public class RaidsParty {
             DialogueManager.start(p, new LegendsRaidsPartyInvitation(getOwner(), p));
         }else if (p.getLocation() == Locations.Location.DARKNESS_LOBBY || p.getLocation() == Locations.Location.SHADOWS_OF_DARKNESS) {
             DialogueManager.start(p, new NecromancerRaidsPartyInvitation (getOwner(), p));
+        }else if (p.getLocation() == Locations.Location.TELOS_LOBBY || p.getLocation() == Locations.Location.TELOS) {
+            DialogueManager.start(p, new NecromancerRaidsPartyInvitation (getOwner(), p));
         }
         getOwner().getPacketSender().sendMessage("An invitation has been sent to " + p.getUsername() + ".");
     }

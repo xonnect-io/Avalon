@@ -5,7 +5,338 @@ public class ItemDef5 {
 	public static ItemDefinition newIDS(ItemDefinition itemDef, int id) {
 
 		switch (id) {
-
+			case 23652:
+				itemDef.copyItem(7478);
+				itemDef.modelZoom = 432;
+				itemDef.rotationX = 254;
+				itemDef.rotationY = 415;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 3;
+				break;
+			case 23685:
+				itemDef.copyItem(5074);
+				itemDef.name = "Santa Pet";
+				itemDef.modelID = MobDefinition.get(9400).npcModels[0];
+				itemDef.modelZoom = 972 * 4;
+				itemDef.rotationX = 84;
+				itemDef.rotationY = 135;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -3;
+				break;
+			case 23686:
+				itemDef.copyItem(5074);
+				itemDef.name = "Evil Santa Pet";
+				itemDef.modelZoom = 972 * 4;
+				itemDef.rotationX = 84;
+				itemDef.rotationY = 135;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -3;
+				itemDef.modelID = MobDefinition.get(9400).npcModels[0];
+				itemDef.oldColors = new int[]{666, 655, 671, 675, 670, 673, 680, 660};
+				itemDef.newColors = new int[]{4, 8, 12, 0, 11, 7, 16, 10};
+				break;
+			case 11316:
+				itemDef.copyItem(5074);
+				itemDef.modelZoom = 972 * 5;
+				itemDef.name = "Double vote pet";
+				itemDef.rotationX = 84;
+				itemDef.rotationY = 135;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -3;
+				itemDef.modelID = 18539;
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 23663:
+				itemDef.copyItem(5074);
+				itemDef.modelZoom = 1070 * 5;
+				itemDef.name = "Nightmare pet";
+				itemDef.rotationX = 84;
+				itemDef.rotationY = 135;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -10;
+				itemDef.modelOffsetY = 25;
+				itemDef.modelID = 14959;
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 23664:
+				itemDef.copyItem(23663);
+				itemDef.name = "Nightmare Transformer";
+				break;
+			case 23665:
+				itemDef.copyItem(23664);
+				itemDef.certID = 23664;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Nightmare Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+			case 23667:
+				itemDef.copyItem(5074);
+				itemDef.name = "Dragon king pet";
+				itemDef.modelZoom = 5300;
+				itemDef.rotationY = 520;
+				itemDef.rotationX = 750;
+				itemDef.modelOffsetX = 15;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = -25;
+				itemDef.modelID = 15079;
+				itemDef.scaleX = 70;
+				itemDef.scaleY = 70;
+				itemDef.scaleZ = 70;
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 23668:
+				itemDef.copyItem(23667);
+				itemDef.name = "Dragon king Transformer";
+				break;
+			case 23669:
+				itemDef.copyItem(23668);
+				itemDef.certID = 23668;
+				itemDef.scaleX = 100;
+				itemDef.scaleY = 100;
+				itemDef.scaleZ = 100;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Dragon king Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+			case 23670:
+				itemDef.copyItem(5074);
+				itemDef.name = "Vozzath pet";
+				itemDef.modelZoom = 972 * 5;
+				itemDef.rotationX = 84;
+				itemDef.rotationY = 135;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -3;
+				itemDef.modelID = 19688;
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 23671:
+				itemDef.copyItem(23670);
+				itemDef.name = "Vozzath Transformer";
+				break;
+			case 23672:
+				itemDef.copyItem(23671);
+				itemDef.certID = 23671;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Vozzath Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+			case 23673:
+				itemDef.copyItem(5074);
+				itemDef.name = "Zenyte Golem pet";
+				itemDef.modelZoom = 5000;
+				itemDef.rotationX = 84;
+				itemDef.rotationY = 135;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -3;
+				itemDef.modelID = 20540;
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 23674:
+				itemDef.copyItem(23673);
+				itemDef.name = "Zenyte Golem Transformer";
+				break;
+			case 23675:
+				itemDef.copyItem(23674);
+				itemDef.certID = 23674;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Zenyte Golem Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+			case 23655:
+				itemDef.copyItem(23685);
+				itemDef.name = "Santa Transformer";
+				break;
+			case 23651:
+				itemDef.copyItem(23686);
+				itemDef.name = "Evil Santa Transformer";
+				itemDef.oldColors = new int[]{666, 655, 671, 675, 670, 673, 680, 660};
+				itemDef.newColors = new int[]{4, 8, 12, 0, 11, 7, 16, 10};
+				break;
+			case 23661:
+				itemDef.copyItem(11316);
+				itemDef.name = "Vote boss Transformer";
+				break;
+			case 23662:
+				itemDef.copyItem(23661);
+				itemDef.certID = 23661;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Vote boss Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+			case 23653:
+				itemDef.copyItem(23655);
+				itemDef.certID = 23655;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Santa Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+			case 23654:
+				itemDef.copyItem(23651);
+				itemDef.certID = 23651;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Evil Santa Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				itemDef.oldColors = new int[]{666, 655, 671, 675, 670, 673, 680, 660};
+				itemDef.newColors = new int[]{4, 8, 12, 0, 11, 7, 16, 10};
+				break;
+			case 23528:
+				itemDef.copyItem(6737);
+				itemDef.name = "Elf hat";
+				itemDef.modelID = 20528;
+				itemDef.maleEquip1 = 20529;
+				itemDef.femaleEquip1 = 20529;
+				itemDef.maleWieldY = 5;
+				itemDef.modelZoom = 681;
+				itemDef.rotationX = 203;
+				itemDef.rotationY = 228;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -6;
+				break;
+			case 23529:
+				itemDef.copyItem(6737);
+				itemDef.name = "Elf body";
+				itemDef.modelID = 20530;
+				itemDef.maleEquip1 = 20531;
+				itemDef.femaleEquip1 = 20531;
+				itemDef.maleWieldY = 5;
+				itemDef.modelZoom = 1283;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 525;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 1;
+				break;
+			case 23530:
+				itemDef.modelZoom = 1802;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 525;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 3;
+				itemDef.modelOffsetY = 7;
+				itemDef.copyItem(6737);
+				itemDef.name = "Elf legs";
+				itemDef.modelID = 20532;
+				itemDef.maleEquip1 = 20533;
+				itemDef.femaleEquip1 = 20533;
+				itemDef.maleWieldY = 5;
+				break;
+			case 23531:
+				itemDef.copyItem(6737);
+				itemDef.name = "Elf boots";
+				itemDef.modelID = 20536;
+				itemDef.maleEquip1 = 20536;
+				itemDef.femaleEquip1 = 20536;
+				itemDef.maleWieldY = 5;
+				itemDef.modelZoom = 743;
+				itemDef.rotationX = 203;
+				itemDef.rotationY = 152;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = -13;
+				break;
+			case 23532:
+				itemDef.modelZoom = 494;
+				itemDef.rotationX = 1703;
+				itemDef.rotationY = 152;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -1;
+				itemDef.modelOffsetY = 90;
+				itemDef.copyItem(6737);
+				itemDef.name = "Elf gloves";
+				itemDef.modelID = 20534;
+				itemDef.maleEquip1 = 20535;
+				itemDef.femaleEquip1 = 20535;
+				break;
+			case 23527:
+				itemDef.copyItem(5074);
+				itemDef.name = "Nihil Offspring";
+				itemDef.modelID = 62717;
+				itemDef.modelZoom = 4000;
+				itemDef.colorChange = new double[]{0.2, 0.5, 1.0};
+				break;
+			case 23522: //Nihil's head
+				itemDef.name = "Nihil head";
+				itemDef.modelID = 65232;
+				itemDef.maleEquip1 = 65232;
+				itemDef.femaleEquip1 = 65232;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Destroy"};
+				itemDef.stackable = false;
+				itemDef.modelZoom = 702;
+				itemDef.rotationX = 1915;
+				itemDef.rotationY = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = 80;
+				itemDef.oldColors = new int[] {60, };
+				itemDef.newColors = new int[] {91, };
+				break;
+			case 23523: //Nihil's body
+				itemDef.name = "Nihil body";
+				itemDef.modelID = 65234;
+				itemDef.maleEquip1 = 65234;
+				itemDef.femaleEquip1 = 65234;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Destroy"};
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1470;
+				itemDef.rotationX = 2;
+				itemDef.rotationY = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = 51;
+				itemDef.oldColors = new int[] {60, };
+				itemDef.newColors = new int[] {91, };
+				break;
+			case 23524: //Nihil's legs
+				itemDef.name = "Nihil legs";
+				itemDef.modelID = 65236;
+				itemDef.maleEquip1 = 65236;
+				itemDef.femaleEquip1 = 65236;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Destroy"};
+				itemDef.stackable = false;
+				itemDef.modelZoom = 1885;
+				itemDef.rotationX = 2;
+				itemDef.rotationY = 0;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 4;
+				itemDef.oldColors = new int[] {60, };
+				itemDef.newColors = new int[] {91, }; //62
+				break;
+			case 23525:
+				itemDef.name = "Nihil boots";
+				itemDef.modelOffsetX = ItemDefinition.get(20119).modelOffsetX;
+				itemDef.modelOffsetY = ItemDefinition.get(20119).modelOffsetY;
+				itemDef.modelID = 100003;
+				itemDef.maleEquip1 = 100003;
+				itemDef.femaleEquip1 = 100003;
+				itemDef.modelZoom = ItemDefinition.get(20119).modelZoom;
+				itemDef.rotationY = ItemDefinition.get(20119).rotationY;
+				itemDef.rotationX = ItemDefinition.get(20119).rotationX;
+				itemDef.actions = ItemDefinition.get(20119).actions;
+				itemDef.stackable = false;
+				itemDef.colorChange = new double[]{0.1, 0.1, 3.1};
+				break;
+			case 23526:
+				itemDef.name = "Nihil gloves";
+				itemDef.modelID = 100004;
+				itemDef.maleEquip1 = 100004;
+				itemDef.femaleEquip1 = 100004;
+				itemDef.rotationX = 1045;
+				itemDef.rotationY = 826;
+				itemDef.modelZoom = 1648;
+				itemDef.modelOffsetX = 7;
+				itemDef.modelOffsetY = 25;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Destroy"};
+				itemDef.stackable = false;
+				itemDef.colorChange = new double[]{0.1, 0.1, 3.1};
+				break;
 			case 22166:
 				itemDef.name = "Chance scroll";
 				itemDef.modelID = 2774;
@@ -21,7 +352,6 @@ public class ItemDef5 {
 				itemDef.oldColors = new int[]{5440, 5452, 1938, 5427,};
 				itemDef.newColors = new int[]{25823, 26638, 25823, 27823,};
 				break;
-
 			case 23512:
 				itemDef.copyItem(23511);
 				itemDef.name = "Turkey pet (Mutated)";
@@ -52,7 +382,6 @@ public class ItemDef5 {
 				itemDef.name = "Turkey pet (Mutated)";
 				itemDef.colorChange = new double[]{0.9, 0.9, 0};
 				break;
-
 			case 23510:
 				itemDef.copyItem(4621);
 				itemDef.name = "Turkey feather";
@@ -64,7 +393,6 @@ public class ItemDef5 {
 				};
 				itemDef.actions = new String[]{"Claim", null, null, null, null};
 				break;
-
 			case 17580:
 				itemDef.name = "Turkey Pet Mutation";
 				itemDef.rdc2 = 65155;
@@ -84,7 +412,6 @@ public class ItemDef5 {
 				itemDef.modelOffsetX = -3;
 				itemDef.modelOffsetY = -1;
 				break;
-
 			case 23508:
 				itemDef.copyItem(23498);
 				itemDef.name = "Grandmaster Costume";
@@ -99,7 +426,6 @@ public class ItemDef5 {
 				itemDef.stackable = false;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
-
 			case 23497:
 				itemDef.copyItem(6737);
 				itemDef.name = "Grandmaster hood";
@@ -114,7 +440,6 @@ public class ItemDef5 {
 				itemDef.modelOffsetX = 3;
 				itemDef.modelOffsetY = -15;
 				break;
-
 			case 23498:
 				itemDef.copyItem(6737);
 				itemDef.name = "Grandmaster body";
@@ -147,45 +472,39 @@ public class ItemDef5 {
 				itemDef.copyItem(4685);
 				itemDef.name = "Legends Costume";
 				break;
-
 			case 23484:
 				itemDef.copyItem(23483);
 				itemDef.certID = 23483;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Legends Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
-
 			case 23481:
 				itemDef.copyItem(23260);
 				itemDef.name = "Reaper Costume";
 				itemDef.rdc2 = 37664;
 				break;
-
 			case 23482:
 				itemDef.copyItem(23481);
 				itemDef.certID = 23481;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Reaper Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
-
 			case 23403:
 				itemDef.copyItem(23477);
 				itemDef.certID = 23477;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Lucifer Costume";
-				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, null};
 				itemDef.stackable = false;
 				break;
-
 			case 23477:
 				itemDef.copyItem(23810);
 				itemDef.name = "Lucifer Costume";
 				break;
-
 			case 23809:
 				itemDef.copyItem(14050);
 				itemDef.name = "Lucifer helmet";
@@ -193,7 +512,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 100000;
 				itemDef.femaleEquip1 = 100000;
 				break;
-
 			case 23810:
 				itemDef.copyItem(14051);
 				itemDef.name = "Lucifer body";
@@ -213,7 +531,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 100002;
 				itemDef.femaleEquip1 = 100002;
 				break;
-
 			case 23812:
 				itemDef.copyItem(14602);
 				itemDef.name = "Lucifer gloves";
@@ -230,21 +547,18 @@ public class ItemDef5 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
-
 			case 23478:
 				itemDef.copyItem(23815);
 				itemDef.name = "Divine Costume";
 				break;
-
 			case 23395:
 				itemDef.copyItem(23478);
 				itemDef.certID = 23478;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Divine Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
-
 			case 23814:
 				itemDef.copyItem(14050);
 				itemDef.name = "Divine helmet";
@@ -252,7 +566,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 100290;
 				itemDef.femaleEquip1 = 100290;
 				break;
-
 			case 23815:
 				itemDef.copyItem(14051);
 				itemDef.name = "Divine body";
@@ -272,7 +585,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 100292;
 				itemDef.femaleEquip1 = 100292;
 				break;
-
 			case 23817:
 				itemDef.copyItem(14602);
 				itemDef.name = "Divine gloves";
@@ -289,21 +601,18 @@ public class ItemDef5 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
-
 			case 23479:
 				itemDef.copyItem(23820);
 				itemDef.name = "Kismet Costume";
 				break;
-
 			case 23384:
 				itemDef.copyItem(23479);
 				itemDef.certID = 23479;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Kismet Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
-
 			case 23819:
 				itemDef.copyItem(14050);
 				itemDef.name = "Kismet helmet";
@@ -311,7 +620,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20356;
 				itemDef.femaleEquip1 = 20356;
 				break;
-
 			case 23820:
 				itemDef.copyItem(14051);
 				itemDef.name = "Kismet body";
@@ -331,7 +639,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20431;
 				itemDef.femaleEquip1 = 20431;
 				break;
-
 			case 23822:
 				itemDef.copyItem(14602);
 				itemDef.name = "Kismet gloves";
@@ -348,22 +655,18 @@ public class ItemDef5 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
-
-
 			case 23480:
 				itemDef.copyItem(23825);
 				itemDef.name = "Lucky Costume";
 				break;
-
 			case 23385:
 				itemDef.copyItem(23480);
 				itemDef.certID = 23480;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Lucky Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
-
 			case 23824:
 				itemDef.copyItem(14050);
 				itemDef.name = "Lucky helmet";
@@ -371,7 +674,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20432;
 				itemDef.femaleEquip1 = 20432;
 				break;
-
 			case 23825:
 				itemDef.copyItem(14051);
 				itemDef.name = "Lucky body";
@@ -391,7 +693,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20434;
 				itemDef.femaleEquip1 = 20434;
 				break;
-
 			case 23827:
 				itemDef.copyItem(14602);
 				itemDef.name = "Lucky gloves";
@@ -408,22 +709,18 @@ public class ItemDef5 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
-
-
 			case 23390:
 				itemDef.copyItem(23473);
 				itemDef.certID = 23473;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Omega Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
-
 			case 23473:
 				itemDef.copyItem(23795);
 				itemDef.name = "Omega Costume";
 				break;
-
 			case 23794:
 				itemDef.copyItem(14050);
 				itemDef.name = "Omega helmet";
@@ -431,7 +728,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20128;
 				itemDef.femaleEquip1 = 20128;
 				break;
-
 			case 23795:
 				itemDef.copyItem(14051);
 				itemDef.name = "Omega body";
@@ -451,7 +747,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20227;
 				itemDef.femaleEquip1 = 20227;
 				break;
-
 			case 23797:
 				itemDef.copyItem(14602);
 				itemDef.name = "Omega gloves";
@@ -468,22 +763,18 @@ public class ItemDef5 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
-
-
 			case 7677:
 				itemDef.copyItem(23476);
 				itemDef.certID = 23476;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Unknown Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
-
 			case 23476:
 				itemDef.copyItem(23805);
 				itemDef.name = "Unknown Costume";
 				break;
-
 			case 23804:
 				itemDef.copyItem(14050);
 				itemDef.name = "Unknown helmet";
@@ -491,7 +782,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20297;
 				itemDef.femaleEquip1 = 20297;
 				break;
-
 			case 23805:
 				itemDef.copyItem(14051);
 				itemDef.name = "Unknown body";
@@ -511,7 +801,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20300;
 				itemDef.femaleEquip1 = 20300;
 				break;
-
 			case 23807:
 				itemDef.copyItem(14602);
 				itemDef.name = "Unknown gloves";
@@ -528,17 +817,13 @@ public class ItemDef5 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
-
-
-
 			case 23550:
 				itemDef.copyItem(23800);
 				itemDef.certID = 23800;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Necrotic Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
-
 			case 23799:
 				itemDef.copyItem(14050);
 				itemDef.name = "Necromancer helmet";
@@ -546,7 +831,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20107;
 				itemDef.femaleEquip1 = 20107;
 				break;
-
 			case 23800:
 				itemDef.copyItem(14051);
 				itemDef.name = "Necrotic Costume";
@@ -554,7 +838,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20115;
 				itemDef.femaleEquip1 = 20115;
 				break;
-
 			case 23801:
 				itemDef.copyItem(14052);
 				itemDef.name = "Necromancer legs";
@@ -562,7 +845,6 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20116;
 				itemDef.femaleEquip1 = 20116;
 				break;
-
 			case 23802:
 				itemDef.copyItem(14602);
 				itemDef.name = "Necromancer gloves";
@@ -584,8 +866,6 @@ public class ItemDef5 {
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
-
-
 			case 23785:
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.name = "Sanguine bow";
@@ -652,7 +932,6 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 19876;
 				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
-
 			case 23790:
 				itemDef.copyItem(14051);
 				itemDef.name = "Sanguine body";
@@ -669,7 +948,6 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 19902;
 				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
-
 			case 23792:
 				itemDef.copyItem(14602);
 				itemDef.name = "Sanguine gloves";
@@ -693,7 +971,6 @@ public class ItemDef5 {
 				itemDef.stackable = false;
 				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
-
 			case 9650:
 				itemDef.name = "Sanguine Seed";
 				itemDef.actions = new String[]{"Combine", null, null, null, null};
@@ -703,13 +980,7 @@ public class ItemDef5 {
 				itemDef.modelOffsetY = 8;
 				itemDef.colorChange = new double[]{1.5, 0.1, 0.1};
 				break;
-
 			case 3062: //Costume Box
-				itemDef.stackable = false;
-				break;
-
-			case 24390: //Costume Box
-				itemDef.copyItem(3062);
 				itemDef.stackable = false;
 				itemDef.name = "Costume Box";
 				itemDef.modelZoom = 2695;
@@ -720,17 +991,17 @@ public class ItemDef5 {
 				itemDef.modelOffsetY = -93;
 				itemDef.actions = new String[]{null, null, null, null, null};
 				break;
-			case 24391:
+			case 23518:
 				itemDef.modelID = 15177;
 				itemDef.maleEquip1 = 15177;
 				itemDef.femaleEquip1 = 15177;
 				break;
-			case 24392:
+			case 23519:
 				itemDef.modelID = 15178;
 				itemDef.maleEquip1 = 15178;
 				itemDef.femaleEquip1 = 15178;
 				break;
-			case 24393:
+			case 23520:
 				itemDef.modelID = 15188;
 				itemDef.maleEquip1 = 15188;
 				itemDef.femaleEquip1 = 15188;
@@ -742,7 +1013,7 @@ public class ItemDef5 {
 			case 23462:
 				itemDef.copyItem(23461);
 				itemDef.certID = 23461;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Hanto Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
@@ -754,7 +1025,7 @@ public class ItemDef5 {
 			case 23464:
 				itemDef.copyItem(23463);
 				itemDef.certID = 23463;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Raditz Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
@@ -766,7 +1037,7 @@ public class ItemDef5 {
 			case 23466:
 				itemDef.copyItem(23465);
 				itemDef.certID = 23465;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Goku Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
@@ -778,7 +1049,7 @@ public class ItemDef5 {
 			case 23468:
 				itemDef.copyItem(23467);
 				itemDef.certID = 23467;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Inuyasha Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
@@ -790,7 +1061,7 @@ public class ItemDef5 {
 			case 23470:
 				itemDef.copyItem(23469);
 				itemDef.certID = 23469;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Fallen Angel Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
@@ -802,19 +1073,19 @@ public class ItemDef5 {
 			case 23472:
 				itemDef.copyItem(23471);
 				itemDef.certID = 23471;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Garfield Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
-			case 24394:
+			case 23521:
 				itemDef.copyItem(23282);
 				itemDef.name = "Vozzath Costume";
 				break;
 			case 23458:
-				itemDef.copyItem(24394);
-				itemDef.certID = 24394;
-				itemDef.certTemplateID = 24390;
+				itemDef.copyItem(23521);
+				itemDef.certID = 23521;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Vozzath Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
@@ -826,7 +1097,7 @@ public class ItemDef5 {
 			case 23460:
 				itemDef.copyItem(23459);
 				itemDef.certID = 23459;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Nephilim Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
@@ -839,7 +1110,6 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 20438;
 				itemDef.rdc2 = 100777;
 				break;
-
 			case 23449:
 				itemDef.copyItem(14051);
 				itemDef.name = "Turkey body";
@@ -872,7 +1142,6 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 20466;
 				itemDef.rdc2 = 100777;
 				break;
-
 			case 23453:
 				itemDef.copyItem(23449);
 				itemDef.name = "Turkey Costume";
@@ -881,8 +1150,23 @@ public class ItemDef5 {
 			case 23454:
 				itemDef.copyItem(23453);
 				itemDef.certID = 23453;
-				itemDef.certTemplateID = 24390;
+				itemDef.certTemplateID = 3062;
 				itemDef.name = "Turkey Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.stackable = false;
+				break;
+
+			case 23455:
+				itemDef.copyItem(14051);
+				itemDef.name = "Dragon Rider Costume";
+				itemDef.oldColors = new int[]{52};
+				itemDef.newColors = new int[]{98};
+				break;
+			case 23456:
+				itemDef.copyItem(23455);
+				itemDef.certID = 23455;
+				itemDef.certTemplateID = 3062;
+				itemDef.name = "Dragon Rider Costume";
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;

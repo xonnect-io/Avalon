@@ -164,6 +164,9 @@ public class Summoning {
 						+ player.getSkillManager ().getMaxLevel (Skill.SUMMONING));
 				player.getPacketSender ().sendString (0, "[SUMMOtrue");
 				player.getPacketSender ().sendString (54043, "");
+		player.getDailyTaskManager().submitProgressToIdentifier(9, 1);
+		if (bossPet == BossPet.RAICHU_PET || bossPet == BossPet.VOTE_PET|| bossPet == BossPet.HELLRAISER)
+			player.getDailyTaskManager().submitProgressToIdentifier(21, 1);
 				player.getPacketSender ().sendNpcOnInterface (54021, bossPet.npcId, bossPet.getZoom ()); // 60 = invisable head to remove it
 			}
 

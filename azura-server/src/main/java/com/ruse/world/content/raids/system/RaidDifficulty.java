@@ -15,6 +15,15 @@ RaidDifficulty {
     ),
     ADVANCED("Hard",
             new RaidRequirement(30_000, 250)
+    ),
+    EASY1("Easy",
+                 new RaidRequirement(500)
+    ),
+    INTERMEDIATE1("Medium",
+                         new RaidRequirement(2500, 100)
+    ),
+    ADVANCED1("Hard",
+                     new RaidRequirement(5000, 250)
     );
 
     @Getter
@@ -22,5 +31,9 @@ RaidDifficulty {
 
     @Getter
     private RaidRequirement godsRequirement;
+
+
+
+
 
 }

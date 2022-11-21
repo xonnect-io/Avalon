@@ -18,6 +18,7 @@ import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.afk.AFKBossDrops;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.bossEvents.BossEventHandler;
+import com.ruse.world.content.combat.strategy.impl.Dragonkin;
 import com.ruse.world.content.combat.strategy.impl.Exoden;
 import com.ruse.world.content.combat.strategy.impl.KalphiteQueen;
 import com.ruse.world.content.combat.strategy.impl.Nex;
@@ -131,6 +132,10 @@ public class NPCDeathTask extends Task {
                     if (npc.getId() == 13447) {
                         Nex.handleDeath();
                     }
+
+                    if (npc.getId() == 9897) {
+                        Dragonkin.handleDeath();
+                    }
                     break;
                 case 0:
 //                    if(npc.getId() == 8013){
@@ -201,13 +206,49 @@ public class NPCDeathTask extends Task {
                         if (npc.getId() == SkeletalHorror.NPC_ID) {
                             SkeletalHorror.wyrmAlive = false;
                         }
-
-                        /** PARSE DROPS **/
-                        if (npc.getId() == 3830) {
-                            GuardianBossDrop.handleDropReward(npc);
-                            GuardianSpawnSystem.highTierCount = 0;
-                            World.setGuardianActive(false);
+                        if (npc.getId() == 1614 ||
+                                npc.getId() ==  603 ||
+                                npc.getId() ==  12843||
+                                npc.getId() ==  53 ||
+                                npc.getId() ==  8018 ||
+                                npc.getId() ==  13635 ||
+                                npc.getId() ==  8008 ||
+                                npc.getId() ==  3308 ||
+                                npc.getId() ==  3117 ||
+                                npc.getId() ==  201 ||
+                                npc.getId() ==  202 ||
+                                npc.getId() ==  203 ||
+                                npc.getId() ==  8010 ||
+                                npc.getId() ==  9807 ||
+                                npc.getId() ==  7134){
+                            killer.getDailyTaskManager().submitProgressToIdentifier(0, 1);
                         }
+                        if (npc.getId() == 449 || npc.getId() == 452) {
+                            killer.getDailyTaskManager().submitProgressToIdentifier(19, 1);
+                        }
+                        if (npc.getId() == 9012 || npc.getId() == 9011) {
+                            killer.getDailyTaskManager().submitProgressToIdentifier(26, 1);
+                        }
+
+                        if (npc.getId() == 9767) {
+                            killer.getDailyTaskManager().submitProgressToIdentifier(37, 1);
+                        }
+
+                        if (npc.getId() == 1244) {
+                            killer.getDailyTaskManager().submitProgressToIdentifier(38, 1);
+                        }
+
+                        if (npc.getId() == 205) {
+                            killer.getDailyTaskManager().submitProgressToIdentifier(17, 1);
+                        }
+
+                        if (npc.getId() == 440) {
+                            killer.getDailyTaskManager().submitProgressToIdentifier(3, 1);
+                        }
+                        if (npc.getId() == 4540) {
+                            killer.getDailyTaskManager().submitProgressToIdentifier(29, 1);
+                        }
+                        /** PARSE DROPS **/
                         if (npc.getId() == 823) { //unknown Boss room
                             UnknownBossDrop.handleDrop(npc);
                             killer.unknownZone.refreshInterface();
@@ -295,20 +336,45 @@ public class NPCDeathTask extends Task {
                         if (killer.getLocation() == Location.ZENYTE_ZONE) {
                             killer.getInventory().add(23209, 1);
                         }
-                        /** PARSE DROPS **/
 
-                        if (npc.getId() == 8013) {// resets the vote count to 0 on votizo
-                            setVoteCount(doMotivote.getVoteCount());
-                            VoteBossDrop.handleDrop(npc);
-                            World.sendMessage("<shad=f9f6f6>Vote boss has been slain...");
-                            if (System.currentTimeMillis() + 86400000 > killer.lastVoteTime) {
-                                killer.sendMessage("You received Double rewards because you voted in the last 12hrs!");
-                            }
+                        if (npc.getId() == 8013) {
+                            setVoteCount (doMotivote.getVoteCount());
+                            VoteBossDrop.handleDrop (npc);
+                        }
 
+                        if (npc.getId() == 8013 && killer.isVoteBossTransform() && NPCDrops.Misc1 == true) {
+                            killer.sendMessage ("You received Double rewards from your transformation effect!");
+                        }
+                        if (npc.getId() == 4972 && killer.isDragonKingTransform() && NPCDrops.Misc1 == true) {
+                            killer.sendMessage ("You received Double rewards from your transformation effect!");
+                        }
+                        if (npc.getId() == 9319 && killer.isGolemTransform() && NPCDrops.Misc1 == true) {
+                            killer.sendMessage ("You received Double rewards from your transformation effect!");
+                        }
+                        if (npc.getId() == 3830 && killer.isVozzathTransform() && NPCDrops.Misc1 == true) {
+                            killer.sendMessage ("You received Double rewards from your transformation effect!");
+                        }
+                        if (npc.getId() == 9017 && killer.isNightmareTransform() && NPCDrops.Misc1 == true) {
+                            killer.sendMessage ("You received Double rewards from your transformation effect!");
+                        }
+
+                        if (npc.getId() == 3830) {
+                            GuardianBossDrop.handleDropReward(npc);
+                            GuardianSpawnSystem.highTierCount = 0;
+                            World.setGuardianActive(false);
+                        }
+
+                        if (npc.getId() == 9017) {
+                            NightmareBoss.handleDrop(npc);
                         }
                         if (npc.getId() == 4972) {
-                            DragonKingBoss.handleDrop(npc);
+                            DragonKingBoss.handleDrop (npc);
+
                         }
+                        if (npc.getId() == 9319) {
+                            ZenyteGolemBoss.handleDrop(npc);
+                        }
+
                         if (npc.getId() == 9128 && killer.getQuestTwoStep6() == false) {
                             killer.setQuestTwoStep6(true);
                             killer.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Defeat the Evil cook");
@@ -319,12 +385,6 @@ public class NPCDeathTask extends Task {
                         }
                         if (npc.getId() == 9318) {
                             OnyxPantherBoss.handleDrop(npc);
-                        }
-                        if (npc.getId() == 9319) {
-                            ZenyteGolemBoss.handleDrop(npc);
-                        }
-                        if (npc.getId() == 9017) {
-                            NightmareBoss.handleDrop(npc);
                         }
                         if (npc.getId() == 3305) {
                             NarakuBoss.handleDrop(npc);

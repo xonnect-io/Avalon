@@ -246,7 +246,196 @@ public class ItemActionPacketListener implements PacketListener {
 
 
         switch (itemId) {
+            case 23653:
+                if (player.isSantaTransform()) {
+                    player.getPacketSender().sendMessage("You are no longer santa clause.");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into santa clause.");
+                    player.setSantaTransform (true);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(9877);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
+            case 23654:
+                if (player.isEvilSantaTransform()) {
+                    player.getPacketSender().sendMessage("You are no longer Evil santa clause.");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into Evil santa clause.");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(true);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(9878);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
+            case 23662:
+                if (player.isVoteBossTransform()) {
+                    player.getPacketSender().sendMessage("You are no longer the Vote boss.");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into the Vote boss.");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(true);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(9879);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
+            case 23665:
+                if (player.isNightmareTransform()) {
+                    player.getPacketSender().sendMessage("You are no longer the Nightmare boss.");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into the Nightmare boss.");
+                    player.setEvilSantaTransform(false);
+                    player.setSantaTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setNightmareTransform(true);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(9880);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
+            case 23669:
+                if (player.isDragonKingTransform()) {
+                    player.getPacketSender().sendMessage("You are no longer the Dragon King boss.");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into the Dragon King boss.");
+                    player.setEvilSantaTransform(false);
+                    player.setSantaTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setDragonKingTransform(true);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(9881);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
 
+            case 23672:
+                if (player.isVozzathTransform ()) {
+                    player.getPacketSender().sendMessage("You are no longer the Vozzath boss.");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform(false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into the Vozzath boss.");
+                    player.setEvilSantaTransform(false);
+                    player.setSantaTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (true);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(9882);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
+            case 23675:
+                if (player.isGolemTransform()) {
+                    player.getPacketSender().sendMessage("You are no longer the Zenyte Golem boss.");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform(false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into the Zenyte Golem boss.");
+                    player.setEvilSantaTransform(false);
+                    player.setSantaTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(true);
+                    player.newStance();
+                    player.setNpcTransformationId(9883);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
             case 9650:
                 if (player.getInventory().getAmount(9650) >= 10) {
                     player.getInventory().delete(9650, 10);
@@ -309,6 +498,8 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getHweenEvent ().openInterface(player.getInventory().getAmount(19806));
                 break;
             case 1561:
+
+                // player.getPacketSender().sendMessage("hi");
                 if (!player.getClickDelay().elapsed(10000)) {
                     player.getPacketSender().sendMessage("Please wait 10 seconds before doing that.");
                     return;
@@ -317,6 +508,10 @@ public class ItemActionPacketListener implements PacketListener {
                 int invSpace = player.getInventory().getFreeSlots();
                 int daCount = 0;
                 for (int i = 0; i < BossPets.BossPet.values().length; i++) {
+                    // // System.out.println("daCount < invSpace "+(boolean) (daCount < invSpace));
+                    // // System.out.println("getBossPet("+i+"),
+                    // "+ItemDefinition.forId(BossPet.values()[i].itemId).getName()+" =
+                    // "+player.getBossPet(i));
                     if (daCount < invSpace && player.getBossPet(i)) {
                         player.getInventory().add(BossPets.BossPet.values()[i].itemId, 1);
                         player.getPacketSender().sendMessage("Returned your "
@@ -329,6 +524,7 @@ public class ItemActionPacketListener implements PacketListener {
                         daCount++;
                     }
                 }
+                player.getDailyTaskManager().submitProgressToIdentifier(8, 1);
                 player.getClickDelay().reset();
                 break;
             case 5733:
@@ -902,6 +1098,7 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 15328:
+                player.getDailyTaskManager().submitProgressToIdentifier(20, 1);
                 if (!drinkInfinityRage(player, slot, 15328))
                     return;
                 player.getPacketSender().sendInterfaceRemoval();
@@ -922,9 +1119,11 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 15330:
-                if (!drinkSuperOverload(player, slot, 15330))
-                    return;
+                player.getDailyTaskManager().submitProgressToIdentifier(20, 1);
 
+                if (!drinkSuperOverload(player, slot, 15330))
+
+                    return;
                 player.getPacketSender().sendInterfaceRemoval();
                 player.getCombatBuilder().incrementAttackTimer(1).cooldown(false);
                 player.getCombatBuilder().setDistanceSession(null);
@@ -939,36 +1138,32 @@ public class ItemActionPacketListener implements PacketListener {
                     Consumables.overloadIncrease(player, Skill.RANGED, 0.38);
                     Consumables.overloadIncrease(player, Skill.MAGIC, 0.38);
                 }
-                if (player.getOverloadPotionTimer() > 1) {
-                    player.getPacketSender().sendEffectTimerSeconds(12000000, EffectTimer.INFINITE_SUPER_OVERLOAD);
-                }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
 
             case 23225:
+                player.getDailyTaskManager().submitProgressToIdentifier(20, 1);
                 if (!drinkInfinityRage(player, slot, 23225))
                     return;
-
                 player.getPacketSender().sendInterfaceRemoval();
                 player.getCombatBuilder().incrementAttackTimer(1).cooldown(false);
                 player.getCombatBuilder().setDistanceSession(null);
                 player.setCastSpell(null);
                 player.getFoodTimer().reset();
                 player.getPotionTimer().reset();
-                player.setOverloadPotionTimer(55555555);
+                player.setOverloadPotionTimer(100000);
                 if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
-                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 2000);
-                    player.getSkillManager().setCurrentLevel(Skill.ATTACK, 200);
-                    player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 200);
-                    player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 200);
-                    player.getSkillManager().setCurrentLevel(Skill.RANGED, 200);
-                    player.getSkillManager().setCurrentLevel(Skill.MAGIC, 200);
-                    player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 1200);
+                    Consumables.overloadIncrease(player, Skill.ATTACK, 0.67);
+                    Consumables.overloadIncrease(player, Skill.STRENGTH, 0.67);
+                    Consumables.overloadIncrease(player, Skill.DEFENCE, 0.67);
+                    Consumables.overloadIncrease(player, Skill.RANGED, 0.67);
+                    Consumables.overloadIncrease(player, Skill.MAGIC, 0.67);
                 }
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
 
             case 23242:
+                player.getDailyTaskManager().submitProgressToIdentifier(20, 1);
                 if (!drinkOwnerPot(player, slot, 23242))
                     return;
                 player.getPacketSender().sendInterfaceRemoval();
@@ -977,17 +1172,14 @@ public class ItemActionPacketListener implements PacketListener {
                 player.setCastSpell(null);
                 player.getFoodTimer().reset();
                 player.getPotionTimer().reset();
-                player.setOverloadPotionTimer(55555555);
+                player.setOverloadPotionTimer(100000);
                 if (player.getOverloadPotionTimer() > 0) { // Prevents decreasing stats
-                    player.getSkillManager().setCurrentLevel(Skill.PRAYER, 2400);
-                    player.getSkillManager().setCurrentLevel(Skill.ATTACK, 240);
-                    player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 240);
-                    player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 240);
-                    player.getSkillManager().setCurrentLevel(Skill.RANGED, 240);
-                    player.getSkillManager().setCurrentLevel(Skill.MAGIC, 240);
-                    player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 2400);
+                    Consumables.overloadIncrease(player, Skill.ATTACK, 1);
+                    Consumables.overloadIncrease(player, Skill.STRENGTH, 1);
+                    Consumables.overloadIncrease(player, Skill.DEFENCE, 1);
+                    Consumables.overloadIncrease(player, Skill.RANGED, 1);
+                    Consumables.overloadIncrease(player, Skill.MAGIC, 1);
                 }
-
                 Sounds.sendSound(player, Sound.DRINK_POTION);
                 break;
 
@@ -1431,6 +1623,7 @@ public class ItemActionPacketListener implements PacketListener {
                 int minutesDR = 5 * amt;
                  int minutesDMG = 5 * amt;
 
+                player.getDailyTaskManager().submitProgressToIdentifier(1, amt);
                 player.getInventory().delete(23020, amt);
                 player.getSeasonPass().addExperience (amt * 3);
                 player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, 5_000 * amt);
@@ -1963,6 +2156,9 @@ public class ItemActionPacketListener implements PacketListener {
                 }
                 break;
 
+
+
+
             case 1712: // glory start
             case 1710:
             case 1708:
@@ -2220,6 +2416,8 @@ public class ItemActionPacketListener implements PacketListener {
                     return;
                 }
 
+
+                player.getDailyTaskManager().submitProgressToIdentifier(12, 1);
                 player.getInstanceManager().createInstance(player.lastInstanceNpc, RegionInstance.RegionInstanceType.INSTANCE);
                 break;
             case 8851:
@@ -2237,6 +2435,15 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getNephilimDissolving().handleDialogue(itemId);
                 break;
             case 23403:
+            case 23303:
+            case 23304:
+            case 23305:
+            case 23306:
+            case 23307:
+            case 23308:
+            case 23309:
+            case 23310:
+            case 23311:
                 player.getCharmDissolving().handleDialogue(itemId);
                 break;
 
@@ -2523,6 +2730,7 @@ public class ItemActionPacketListener implements PacketListener {
                 int minutesDR = 5 * amt;
                 int minutesDMG = 5 * amt;
 
+                player.getDailyTaskManager().submitProgressToIdentifier(1, amt);
                 player.getInventory().delete(23020, amt);
                 player.getSeasonPass().addExperience (amt * 3);
                 player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, 5_000  * amt);

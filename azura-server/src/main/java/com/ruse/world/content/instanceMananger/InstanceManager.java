@@ -89,6 +89,10 @@ public class InstanceManager {
             player.sendMessage("You need to be at least a level 3 Archer to do this.");
             return;
         }
+        if (npcId == 9885 && player.getPointsHandler ().getBorkKC () < 75000) {
+            player.sendMessage("You need to be at least 75,000 Bork kills to instance Ice Nihil");
+            return;
+        }
         if (player.getInventory().contains(ticketID) && player.getInventory().contains(12855, getCost())) {
             player.getInventory().delete(ticketID, 1);
             player.getInventory().delete(12855, getCost());
@@ -162,6 +166,8 @@ public class InstanceManager {
         player.getPA().sendMessage("You have instanced yourself " + player.getCurrentInstanceAmount() + " "
                 + player.getCurrentInstanceNpcName());
         player.getPA().sendInterfaceRemoval();
+
+        player.getDailyTaskManager().submitProgressToIdentifier(12, 1);
     }
 
     public void death(Player player, NPC npc, String NpcName) {

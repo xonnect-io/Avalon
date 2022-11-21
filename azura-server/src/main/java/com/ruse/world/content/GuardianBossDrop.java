@@ -1,4 +1,5 @@
 package com.ruse.world.content;
+
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.CombatBuilder;
@@ -45,7 +46,6 @@ public class GuardianBossDrop {
 			Player killer = entry.getKey();
 
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
-
 			KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
 			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
 			StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);

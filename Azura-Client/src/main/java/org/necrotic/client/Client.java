@@ -74,6 +74,7 @@ public class Client extends GameRenderer {
     public static final int CACHE_INDEX_COUNT = 6;
     public static final int[] anIntArray1204 = {9104, 10275, 7595, 3610, 7975, 8526, 918, 38802, 24466, 10145, 58654, 5027, 1457, 16565, 34991, 25486};
 
+    public List<Integer> christmasItems = new ArrayList<>();
     public static final int[][] anIntArrayArray1003 = {{6798, 107, 10283, 16, 4797, 7744, 5799, 4634, 33697, 22433, 2983, 54193}, {8741, 12, 64030, 43162, 7735, 8404, 1701, 38430, 24094, 10153, 56621, 4783, 1341, 16578, 35003, 25239}, {25238, 8742, 12, 64030, 43162, 7735, 8404, 1701, 38430, 24094, 10153, 56621, 4783, 1341, 16578, 35003}, {4626, 11146, 6439, 12, 4758, 10270}, {4550, 20165, 43678, 16895, 28416, 12231, 947, 60359, 32433}};// skins
     public final static int[] tabInterfaceIDs = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
     public static final String validUserPassChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"\243$%^&*()-_=+[{]};:'@#~,<.>/?\\| ";
@@ -4154,7 +4155,44 @@ public class Client extends GameRenderer {
     public boolean isInResizeable() {
 		return GameFrame.getScreenMode() == ScreenMode.RESIZABLE;//Configuration.clientSize == 1;
 	}
-    
+    /*
+     * Used for storing all the clicked interfaces set to true. So when a new
+     * clicked interface is changed to true, the ones stored here can be reset.
+     */
+    private static ArrayList<String> interfaceClickedList = new ArrayList<String>();
+
+    /*
+     * Have a specific interface button to have the clicked sprite.
+     *
+     * @param interfaceId
+     *
+     * @param clicked
+     *
+     * @param linkedButtons TODO
+     */
+    public static void setInterfaceClicked(int parentInterfaceId, int interfaceId, boolean clicked,
+                                           boolean linkedButtons) {
+        if (linkedButtons) {
+            for (int index = 0; index < interfaceClickedList.size(); index++) {
+                String[] parse = interfaceClickedList.get(index).split(" ");
+                int parentIdParse = Integer.parseInt(parse[0]);
+                int interfaceIdParse = Integer.parseInt(parse[1]);
+                if (parentInterfaceId == parentIdParse) {
+                    if (RSInterface.interfaceCache[interfaceIdParse] == null) {
+                        continue;
+                    }
+                    RSInterface.interfaceCache[interfaceIdParse].isClicked = false;
+                    interfaceClickedList.remove(index);
+                    break;
+                }
+            }
+        }
+        RSInterface.interfaceCache[interfaceId].isClicked = clicked;
+        if (clicked) {
+            interfaceClickedList.add(parentInterfaceId + " " + interfaceId);
+        }
+    }
+
     private void checkSize() {
     	if (isInResizeable()) {
 			if (Configuration.clientWidth != (isWebclient() ? getGameComponent().getWidth() : gameFrame.getFrameWidth())) {
@@ -7990,6 +8028,13 @@ public class Client extends GameRenderer {
                                         }
                                     }
 
+                                    if (childInterface.id >= 55617 && childInterface.id <= 55651) {
+                                        //System.out.println(j9);
+                                        if (christmasItems.contains(j9)) {
+                                            itemOpacity = 70;
+                                        }
+                                    }
+
                                     Sprite selectedItem;
 
                                     if (childInterface.id == 30375 && itemCollected(childInterface.inv[i3] - 1)) {
@@ -8078,10 +8123,13 @@ public class Client extends GameRenderer {
                                                 }
                                                 else if (itemOpacity == 256) {
                                                     selectedItem.drawSprite(k5, j6);
+
                                                 } else {
                                                     selectedItem.drawSpriteWithOpacity(k5, j6, itemOpacity);
                                                 }
                                             }
+
+
                                         }
 
                                         if (selectedItem.maxWidth == 33 || childInterface.invStackSizes[i3] > 1 || (openInterfaceID == 5292 && childInterface.invStackSizes[i3] == 0)) {
@@ -8370,10 +8418,27 @@ public class Client extends GameRenderer {
                         }
                     }
 
+                    int origTopX = DrawingArea.topX;
+                    int origTopY = DrawingArea.topY;
+                    int origBottomX = DrawingArea.bottomX;
+                    int origBottomY = DrawingArea.clipBottom;
+
                     if (spellSelected == 1 && childInterface.id == spellID && spellID != 0 && sprite != null) {
                         sprite.drawSprite(childX, childY, 0xffffff);
                     } else {
                         if (sprite != null) {
+                            if (childInterface.spriteLoadingBarPercentage >= 0
+                                    && childInterface.spriteLoadingBarPercentage <= 99) {
+                                int spriteEnd = childX + sprite.myWidth;
+                                int max = origBottomX - spriteEnd;
+                                max = origBottomX - max;
+                                int length = (int) (((double) sprite.myWidth / 100.0)
+                                        * (double) childInterface.spriteLoadingBarPercentage);
+                                DrawingArea.setDrawingArea(origBottomY, origTopX,
+                                        max - (sprite.myWidth - length), origTopY);
+                                sprite.drawSpriteTEST(childX, childY);
+                                DrawingArea.setDrawingArea(origBottomY, origTopX, origBottomX, origTopY);
+                            }
                             if (childInterface.advancedSprite) {
                                 sprite.drawAdvancedSprite(childX, childY);
                             } else {
@@ -15566,7 +15631,9 @@ public class Client extends GameRenderer {
                         pktType = -1;
                         return true;
                     }
-                    if (s.equals(":spinCasket")) {
+
+
+                if (s.equals(":spinCasket")) {
                         casketOpening.setSpinClick(true);
                         pktType = -1;
                         return true;
@@ -15622,6 +15689,7 @@ public class Client extends GameRenderer {
                         if (!flag2 && s21.length() >= 2) {
                             pushMessage("wishes to gamble with you. Click here to accept the invitation.", 21, s21);
                         }
+
                     } else if (s.endsWith(":raidreq:")) {
                         String s3 = s.substring(0, s.indexOf(":"));
                         long l17 = TextClass.longForName(s3);
@@ -15668,9 +15736,30 @@ public class Client extends GameRenderer {
 
                         }
                         if (!flag3 && anInt1251 == 0) {
-                            pushMessage("wishes to duel with you.", 8, s4);
+                            pushMessage ("wishes to duel with you.", 8, s4);
                         }
-                    } else if (s.endsWith(":chalreq:")) {
+                    } else if (s.startsWith(":packet:")) {
+                        s = s.replace(":packet:", "");
+                        String split[] = s.split(" ");
+                        if (s.startsWith("spriteloadingpercentage")) {
+                            int interfaceId11 = Integer.parseInt(split[1]);
+                            int percentage = Integer.parseInt(split[2]);
+                            RSInterface.interfaceCache[interfaceId11].spriteLoadingBarPercentage = percentage;
+                        } else if (s.startsWith("setclicked")) {
+                            String[] args = s.split(" ");
+                            int parentInterfaceId = Integer.parseInt(args[1]);
+                            int interfaceId2 = Integer.parseInt(args[2]);
+                            boolean state1 = Boolean.parseBoolean(args[3]);
+                            setInterfaceClicked(parentInterfaceId, interfaceId2, state1, true);
+                        } else if (s.startsWith("addChristmasItems")) {
+                            String[] args = s.split(" ");
+                            int id1 = Integer.parseInt(args[1]);
+                            if(!christmasItems.contains(id1))
+                                christmasItems.add(id1);
+                        } else if (s.startsWith("clearChristmasItems")) {
+                            christmasItems.clear ();
+                        }
+            } else if (s.endsWith(":chalreq:")) {
                         String s5 = s.substring(0, s.indexOf(":"));
                         long l19 = TextClass.longForName(s5);
                         boolean flag4 = false;

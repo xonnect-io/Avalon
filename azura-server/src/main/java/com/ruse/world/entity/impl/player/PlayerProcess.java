@@ -127,7 +127,11 @@ public class PlayerProcess {
 			player.setPrayerbook(Prayerbook.NORMAL);
 			player.getPacketSender().sendTabInterface(GameSettings.PRAYER_TAB, player.getPrayerbook().getInterfaceId());
 		}*/
-
+		if (player.getAchievements().getDailyAchievementsDate() != player.getAchievements().getTodayDate()) {
+			player.getDailyTaskManager().refresh();
+			player.getAchievements().setDailyTaskDate(player.getAchievements().getTodayDate());
+//            Achievements.resetDailys(player);
+		}
 		if (player.getSeasonPassPlaytime().elapsed(60000 * 60)) {//1 hr
 			int x = player.getPosition().getX();
 			int y = player.getPosition().getY();

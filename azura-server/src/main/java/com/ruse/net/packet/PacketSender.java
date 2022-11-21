@@ -74,7 +74,19 @@ public class PacketSender {
         PacketBuilder out = new PacketBuilder(224);
         player.getSession().queueMessage(out);
     }
+    public void setSpriteLoadingPercentage(int interfaceId, int percentage) {
+        sendMessage(":packet:spriteloadingpercentage " + interfaceId + " " + percentage);
+    }
+    public void setInterfaceClicked(int parentInterfaceId, int interfaceId, boolean clicked) {
+        sendMessage(":packet:setclicked " + parentInterfaceId + " " + interfaceId + " " + clicked);
+    }
+    public void addChristmasList(int itemId) {
+        sendMessage(":packet:addChristmasItems " + itemId);
+    }
 
+    public void clearChristmasList() {
+        sendMessage(":packet:clearChristmasItems");
+    }
 
     public void updateProgressBar(int interfaceId, int progress) {
         PacketBuilder out = new PacketBuilder(203);
@@ -855,7 +867,30 @@ public class PacketSender {
         player.getSession().queueMessage(out);
         return this;
     }
-
+    public PacketSender sendInterfaceItems(int interfaceId, List<Item> items) {
+        PacketBuilder out = new PacketBuilder(53, PacketType.SHORT);
+        out.putInt(interfaceId);
+        out.putShort(items.size());
+        int current = 0;
+        for (Item item : items) {
+            if (item.getAmount() > 254) {
+                out.put((byte) 255);
+                out.putInt(item.getAmount(), ByteOrder.INVERSE_MIDDLE);
+            } else {
+                out.put(item.getAmount());
+            }
+            out.putShort(item.getId() + 1, ValueType.A, ByteOrder.LITTLE);
+            current++;
+        }
+        if (current < 27) {
+            for (int i = current; i < 28; i++) {
+                out.put(1);
+                out.putShort(-1, ValueType.A, ByteOrder.LITTLE);
+            }
+        }
+        player.getSession().queueMessage(out);
+        return this;
+    }
     public PacketSender sendInterfaceItems(int interfaceId, CopyOnWriteArrayList<Item> items) {
         PacketBuilder out = new PacketBuilder(53, PacketType.SHORT);
         out.putInt(interfaceId);

@@ -1,6 +1,7 @@
 package com.ruse.world.content.minigames;
 
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
+import com.ruse.world.content.raids.elders.TelosRaidParty;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
 import com.ruse.world.content.raids.shadows.NecromancerRaidParty;
 import com.ruse.world.content.raids.system.RaidsParty;
@@ -30,6 +31,7 @@ public class MinigameAttributes {
 	private final SODAttributes sodAttributes = new SODAttributes();
 
 	private final ShadowAttributes shadowAttributes = new ShadowAttributes();
+	private final TelosAttributes telosAttributes = new TelosAttributes();
 
 	public class SODAttributes {
 		private RaidsParty party;
@@ -144,7 +146,61 @@ public class MinigameAttributes {
 		}
 	}
 
+	public class TelosAttributes {
+		private TelosRaidParty party;
+		private TelosRaidParty invitation;
+		private long lastInvitation;
+		private int points;
+		private int deaths;
 
+		public TelosRaidParty getParty() {
+			return party;
+		}
+
+		public void setParty(TelosRaidParty raidsParty) {
+			this.party = raidsParty;
+		}
+
+		public long getLastInvitation() {
+			return lastInvitation;
+		}
+
+		public void setLastInvitation(long lastInvitation) {
+			this.lastInvitation = lastInvitation;
+		}
+
+		public TelosRaidParty getPartyInvitation() {
+			return invitation;
+		}
+
+		public void setPartyInvitation(TelosRaidParty partyInvitation) {
+			this.invitation = partyInvitation;
+		}
+
+		public void incrementDamageDealt(int damage) {
+			this.points += damage;
+		}
+
+		public void setDamageDealt(int damage) {
+			this.points = damage;
+		}
+
+		public int getDamageDealt() {
+			return this.points;
+		}
+
+		public void setDeaths(int deaths) {
+			this.deaths = deaths;
+		}
+
+		public void incrementDeaths() {
+			this.deaths++;
+		}
+
+		public int getDeaths() {
+			return deaths;
+		}
+	}
 
 	public class ShadowAttributes {
 		private NecromancerRaidParty party;
@@ -642,6 +698,10 @@ public class MinigameAttributes {
 	}
 	public ShadowAttributes getShadowAttributes() {
 		return shadowAttributes;
+	}
+
+	public TelosAttributes getTelosAttributes() {
+		return telosAttributes;
 	}
 	public SODAttributes getSODAttributes() {
 		return sodAttributes;

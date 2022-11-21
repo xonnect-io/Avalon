@@ -121,9 +121,11 @@ public class CombatStrategies {
 		STRATEGIES.put(5362, dragonStrategy);
 		STRATEGIES.put(5363, dragonStrategy);
 		Aviansie aviansieStrategy = new Aviansie();
+		com.ruse.world.content.combat.strategy.impl.DrakeCombatStrategy drake = new com.ruse.world.content.combat.strategy.impl.DrakeCombatStrategy ();
 		STRATEGIES.put(6246, aviansieStrategy);
 		STRATEGIES.put(6230, aviansieStrategy);
 		STRATEGIES.put(6231, aviansieStrategy);
+		STRATEGIES.put(9884, drake);
 		KalphiteQueen kalphiteQueenStrategy = new KalphiteQueen();
 		STRATEGIES.put(1158, kalphiteQueenStrategy);
 		STRATEGIES.put(1160, kalphiteQueenStrategy);
@@ -155,6 +157,8 @@ public class CombatStrategies {
 		STRATEGIES.put(9837, new LuciferCombatScript());
 		STRATEGIES.put(4540, new BandosAvatar());
 		STRATEGIES.put(8013, new VotingBoss());
+		STRATEGIES.put(9899, new Dragonkin());
+		STRATEGIES.put(9993, new Tokhaar());
 		STRATEGIES.put(3779, new Terrorstep());
 		STRATEGIES.put(6430, new CrystalQueen());
 		STRATEGIES.put(585, new Veigar());

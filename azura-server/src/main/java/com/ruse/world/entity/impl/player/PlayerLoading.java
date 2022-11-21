@@ -19,6 +19,7 @@ import com.ruse.world.content.LoyaltyProgramme.LoyaltyTitles;
 import com.ruse.world.content.collectionlog.CollectionEntry;
 import com.ruse.world.content.combat.magic.CombatSpells;
 import com.ruse.world.content.combat.weapon.FightType;
+import com.ruse.world.content.dailyTasksNew.DailyTaskSlot;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.content.dailytasks_new.TaskChallenge;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
@@ -626,8 +627,22 @@ public class PlayerLoading {
             if (reader.has("isle-hard-timer")) {
                 player.setIsleHardTimer(reader.get("isle-hard-timer").getAsLong());
             }
+
+            if (reader.has("elder-easy-timer")) {
+                player.setElderEasyTimer(reader.get("elder-easy-timer").getAsLong());
+            }
+            if (reader.has("elder-med-timer")) {
+                player.setElderMedTimer(reader.get("elder-med-timer").getAsLong());
+            }
+            if (reader.has("elder-hard-timer")) {
+                player.setElderHardTimer(reader.get("elder-hard-timer").getAsLong());
+            }
             if (reader.has("isle-dr")) {
                 player.setIsleDropRate(reader.get("isle-dr").getAsDouble());
+            }
+
+            if (reader.has("elder-dr")) {
+                player.setElderDropRate(reader.get("elder-dr").getAsDouble());
             }
             if (reader.has("starter-task-amount")) {
                 int[] amountRemaining = builder.fromJson(reader.get("starter-task-amount").getAsJsonArray(),
@@ -657,6 +672,12 @@ public class PlayerLoading {
                     player.getGodsCoffer().add(item);
                 }
             }
+            if (reader.has("telos-coffer")) {
+                player.getTelosCoffer().clear();
+                for (Item item : builder.fromJson(reader.get("telos-coffer").getAsJsonArray(), Item[].class)) {
+                    player.getTelosCoffer().add(item);
+                }
+            }
             if (reader.has("easy-isle-god-kc")) {
                 player.setEasyIsleGodKC(reader.get("easy-isle-god-kc").getAsInt());
             }
@@ -665,6 +686,15 @@ public class PlayerLoading {
             }
             if (reader.has("hard-isle-god-kc")) {
                 player.setHardIsleGodKC(reader.get("hard-isle-god-kc").getAsInt());
+            }
+            if (reader.has("easy-elder-god-kc")) {
+                player.setEasyElderGodKC(reader.get("easy-elder-god-kc").getAsInt());
+            }
+            if (reader.has("med-elder-god-kc")) {
+                player.setMedElderGodKC(reader.get("med-elder-god-kc").getAsInt());
+            }
+            if (reader.has("hard-elder-god-kc")) {
+                player.setHardElderGodKC(reader.get("hard-elder-god-kc").getAsInt());
             }
             if (reader.has("necromancer-kc")) {
                 player.getPointsHandler().setNecromancerKC(reader.get("necromancer-kc").getAsInt(), false);
@@ -1245,8 +1275,31 @@ public class PlayerLoading {
                         builder.fromJson(reader.get("loyalty-titles").getAsJsonArray(), boolean[].class));
             }
 
+            if (reader.has("daily-tasks-completed")) {
+                player.setDailyTasksCompleted(reader.get("daily-tasks-completed").getAsInt());
+            }
 
+            if (reader.has("daily-task-slots")) {
+                player.getDailyTaskManager().setTaskSlots(builder.fromJson(reader.get("daily-task-slots").getAsJsonArray(), DailyTaskSlot[][].class));
+            }
 
+            if (reader.has("achievements-points")) {
+                int points = reader.get("achievements-points").getAsInt();
+                player.getAchievements().setPoints(points);
+            }
+            if (reader.has("achievements-amount")) {
+                int[][] amountRemaining = builder.fromJson(reader.get("achievements-amount").getAsJsonArray(),
+                        int[][].class);
+                player.getAchievements().setAmountRemaining(amountRemaining);
+            }
+            if (reader.has("achievements-completed")) {
+                boolean[][] completed = builder.fromJson(reader.get("achievements-completed").getAsJsonArray(),
+                        boolean[][].class);
+                player.getAchievements().setCompleted(completed);
+            }
+            if (reader.has("achievements-daily")) {
+                player.getAchievements().setDailyTaskDate(reader.get("achievements-daily").getAsLong());
+            }
             if (reader.has("yellhexcolor")) {
                 player.setYellHex(reader.get("yellhexcolor").getAsString());
             }

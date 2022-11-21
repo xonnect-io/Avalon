@@ -15,6 +15,8 @@ import com.ruse.world.content.events.PartyChest;
 import com.ruse.world.content.minigames.impl.*;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.progressionzone.ProgressionZone;
+import com.ruse.world.content.raids.elders.ElderGodsData;
+import com.ruse.world.content.raids.elders.TelosRaid;
 import com.ruse.world.content.raids.legends.Legends;
 import com.ruse.world.content.raids.shadows.NecromancerRaid;
 import com.ruse.world.content.raids.shadows.ShadowData;
@@ -362,6 +364,176 @@ public class Locations {
 				}
 			}
 		},
+		TELOS(new int[]{3345, 3375}, new int[]{4042, 4070}, true, false, true, false, true, false) {
+			@Override
+			public void logout(Player player) {
+
+				if (player.getRegionInstance() != null
+						&& player.getRegionInstance().equals(RegionInstanceType.TELOS)) {
+					player.getRegionInstance().destruct();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.TELOS, player.getPosition().getZ(), player));
+
+				}
+				if (player.getRegionInstance() != null)
+					player.getRegionInstance().destruct();
+
+				if (player.getTelosRaidsParty () != null) {
+					player.getTelosRaidsParty().remove(player, true);
+				}
+
+				player.moveTo(ElderGodsData.LOBBY);
+
+				if (player.getTelosRaidsParty() != null)
+					player.getTelosRaidsParty().getPlayers()
+							.remove(player);
+
+				player.getMovementQueue().setLockMovement(false);
+				player.getPacketSender().sendCameraNeutrality();
+
+			}
+
+			@Override
+			public void leave(Player player) {
+
+				player.getPacketSender().sendCameraNeutrality();
+				if (player.getRegionInstance() != null
+						&& player.getRegionInstance().equals(RegionInstanceType.TELOS)) {
+					player.getRegionInstance().destruct();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.TELOS, player.getPosition().getZ(), player));
+				}
+
+				if (player.getTelosRaidsParty() != null) {
+					if (player.getTelosRaidsParty().getOwner().equals(player)) {
+						World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.TELOS, player.getIndex() * 4, player));
+					}
+				}
+				player.moveTo(ElderGodsData.LOBBY);
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public void login(Player player) {
+				player.getPacketSender().sendCameraNeutrality();
+				if (player.getRegionInstance() != null
+						&& player.getRegionInstance().equals(RegionInstanceType.TELOS)) {
+					player.getRegionInstance().destruct();
+					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.TELOS, player.getPosition().getZ(), player));
+				}
+
+				if (player.getTelosRaidsParty() != null) {
+					if (player.getTelosRaidsParty().getOwner().equals(player)) {
+						World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.TELOS, player.getIndex() * 4, player));
+					}
+				}
+
+				if (player.getTelosRaidsParty() != null)
+					player.getTelosRaidsParty().remove(player, true);
+
+				if (player.getTelosRaidsParty() != null)
+					player.getTelosRaidsParty().getPlayers()
+							.remove(player);
+
+				player.moveTo(ElderGodsData.LOBBY);
+
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public boolean canTeleport(Player player) {
+				player.sendMessage("You cannot teleport while fighting Telos!");
+				return false;
+			}
+
+			@Override
+			public void enter(Player player) {
+				CurseHandler.deactivateAll(player);
+				PrayerHandler.deactivateAll(player);
+				player.setRegionInstance(new RegionInstance(player, RegionInstance.RegionInstanceType.TELOS));
+				player.getPacketSender().sendInteractionOption("null", 2, true);
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				if (player.getTelosRaidsParty () != null) {
+					TelosRaid.handleDeath(player.getTelosRaidsParty(),
+							player);
+				}
+				player.getPacketSender().sendCameraNeutrality();
+				player.setInsideRaids(false);
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public void process(Player player) {
+				if (player.getTelosRaidsParty() != null)
+					player.getTelosRaidsParty().refreshInterface();
+			}
+
+		},
+
+		TELOS_LOBBY(new int[]{3667, 3690}, new int[]{3082, 3104}, true, false, true, false, true, false) {
+			@Override
+			public void leave(Player player) {
+				player.getPacketSender().sendCameraNeutrality();
+
+				if (player.getTelosRaidsParty() != null)
+					player.getTelosRaidsParty().remove(player, true);
+
+				if (player.getTelosRaidsParty() != null)
+					player.getTelosRaidsParty().getPlayers()
+							.remove(player);
+
+				player.getMovementQueue().setLockMovement(false);
+			}
+
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.INVITE)
+					player.getPacketSender().sendInteractionOption("Invite", 2, false);
+
+				if (player.getTelosRaidsParty() != null)
+					player.getTelosRaidsParty().refreshInterface();
+				else {
+					int id = 111716;
+					for (int i = 111716; i < 111737; i++) {
+						player.getPacketSender().sendString(id++, "---");
+						player.getPacketSender().sendString(id++, "--");
+						player.getPacketSender().sendString(id++, "-");
+					}
+					player.getPacketSender().sendString(111709, "Create");
+					player.getPacketSender().sendString(111702, "Elder Gods Party: @whi@0");
+
+					player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 111700);
+					player.getPacketSender().sendConfig(6000, 4);
+					player.getPacketSender().sendTab(GameSettings.QUESTS_TAB);
+				}
+
+			}
+
+			@Override
+			public void login(Player player) {
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.INVITE)
+					player.getPacketSender().sendInteractionOption("Invite", 2, false);
+			}
+
+			@Override
+			public void process(Player player) {
+				if (player.getTelosRaidsParty() != null)
+					player.getTelosRaidsParty().refreshInterface();
+				else{
+					int id = 111716;
+					for (int i = 111716; i < 111737; i++) {
+						player.getPacketSender().sendString(id++, "---");
+						player.getPacketSender().sendString(id++, "--");
+						player.getPacketSender().sendString(id++, "-");
+					}
+					player.getPacketSender().sendString(111709, "Create");
+					player.getPacketSender().sendString(111702, "Elder Gods Party: @whi@0");
+				}
+			}
+		},
+
+
 		SEASONPASS_ZONE(new int[] { 2880, 2940}, new int[] { 2640, 2690},
 				true, true, true, false, false, true) {},
 		NEPHILIM(new int[] { 2137, 2153}, new int[] { 3291, 3308},
@@ -2651,7 +2823,9 @@ for (Item item : player.getInventory().getItems()) {
 				|| (prev == Location.SOD_LOBBY && newLocation == Location.SOD)
 						|| (prev == Location.SOD && newLocation == Location.SOD_LOBBY)
 						|| (prev == Location.DARKNESS_LOBBY && newLocation == Location.SHADOWS_OF_DARKNESS)
-						|| (prev == Location.SHADOWS_OF_DARKNESS && newLocation == Location.DARKNESS_LOBBY)) {
+						|| (prev == Location.SHADOWS_OF_DARKNESS && newLocation == Location.DARKNESS_LOBBY)
+						|| (prev == Location.TELOS_LOBBY && newLocation == Location.TELOS)
+						|| (prev == Location.TELOS && newLocation == Location.TELOS_LOBBY)) {
 
 				} else {
 					prev.leave(((Player) gc));

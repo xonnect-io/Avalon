@@ -100,6 +100,8 @@ public class PlayerHandler {
         player.getInventory().refreshItems();
         player.getEquipment().refreshItems();
 
+        player.getEventChestHandler().loadEventChest(player);
+        player.getEventChestHandler().generateRewards(player);
         if (player.getHasPin() == true && !player.getSavedIp().equalsIgnoreCase(player.getHostAddress())) {
             player.setPlayerLocked(true);
         }
@@ -255,9 +257,24 @@ public class PlayerHandler {
             player.setSalt(BCrypt.gensalt(GameSettings.BCRYPT_ROUNDS));
         }
 
+        if (Misc.isMonday ())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 5% Magic Damage");
+        if (Misc.isTuesday ())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 5% Range Damage");
+        if (Misc.isWednesday ())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 5% Melee Damage");
+        if (Misc.isThursday())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 10% Double Drop Rate");
+        if (Misc.isFriday())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 10% Double Drop Rate");
         if (Misc.isWeekend()) {
             player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
-                    + "] Double EXP has been activated. It stacks with Vote scrolls, Enjoy!");
+                    + "] @blu@Daily Benefits: Double Experience");
         }
 
         if (Wildywyrm.wyrmAlive) {
@@ -568,6 +585,7 @@ public class PlayerHandler {
                     player.getRegionInstance().onLogout(player);
                 }
 
+                player.getEventChestHandler().saveEventChest(player);
                 MapInstance instance = player.getMapInstance();
                 if (instance != null) {
                     instance.fireOnLogout(player);
@@ -586,6 +604,7 @@ public class PlayerHandler {
                 StaffList.updateGlobalInterface();
                 Hunter.handleLogout(player);
                 Locations.logout(player);
+                player.getEventChestHandler().saveEventChest(player);
                 player.getSummoning().unsummon(false, false);
                 player.getFarming().save();
                 player.getPlayerOwnedShopManager().unhookShop();

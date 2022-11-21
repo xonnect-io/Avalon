@@ -228,6 +228,7 @@ public class MaxUpgradesInterface {
             if (data.reward.getId() == selectedItem.getId()) {
                 if (player.getInventory().containsAll(data.requirements) && player.getInventory().containsAll(data.upgradedItem)) {
                     if (random == true) {
+                        player.getDailyTaskManager().submitProgressToIdentifier(32, 1);
                         if (player.getScrollBonus () > 0) {
                             player.setScrollBonus (0);
                             player.sendMessage("Your bonus upgrade % has been consumed.");

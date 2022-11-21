@@ -967,6 +967,9 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 19421;
 				itemDef.femaleEquip1 = 19421;
 				itemDef.rdc2 = 421788;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 23304:
@@ -977,6 +980,9 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 19423;
 				itemDef.femaleEquip1 = 19423;
 				itemDef.rdc2 = 421788;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 23305:
@@ -987,6 +993,9 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 19425;
 				itemDef.femaleEquip1 = 19425;
 				itemDef.rdc2 = 421788;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 23312:
@@ -1027,6 +1036,9 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 19435;
 				itemDef.femaleEquip1 = 19435;
 				itemDef.rdc2 = 421788;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 23310:
@@ -1039,6 +1051,9 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 19441;
 				itemDef.femaleEquip1 = 19441;
 				itemDef.rdc2 = 421788;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 23311:
@@ -1050,6 +1065,9 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 19444;
 				itemDef.femaleEquip1 = 19444;
 				itemDef.rdc2 = 421788;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 
@@ -1061,6 +1079,9 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 19427;
 				itemDef.femaleEquip1 = 19427;
 				itemDef.rdc2 = 421788;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 23307:
@@ -1071,6 +1092,9 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 19429;
 				itemDef.femaleEquip1 = 19429;
 				itemDef.rdc2 = 421788;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 			case 23308:
@@ -1082,6 +1106,9 @@ public class ItemDef3 {
 				itemDef.maleEquip1 = 19433;
 				itemDef.femaleEquip1 = 19433;
 				itemDef.rdc2 = 421788;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[2] = "<col=C3C0B2>Dissolve";
 				break;
 
 

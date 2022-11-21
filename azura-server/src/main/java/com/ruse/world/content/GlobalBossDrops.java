@@ -49,6 +49,10 @@ public class GlobalBossDrops {
 
 			StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
 			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
+			if (npc.getId() == 9319) {
+				killer.getDailyTaskManager().submitProgressToIdentifier(41, 1);
+			}
+			killer.getDailyTaskManager().submitProgressToIdentifier(16, 1);
 			KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
 			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
 			NPCDrops.handleDrops(killer, npc);

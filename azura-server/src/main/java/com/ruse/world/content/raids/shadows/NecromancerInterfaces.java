@@ -9,6 +9,7 @@ import com.ruse.world.entity.impl.player.Player;
 public class NecromancerInterfaces {
 
     public static void openStartScreen(Player player) {
+        player.getPacketSender().sendString(144002, "Necromancer Interface");
         NecromancerRaidParty party = player.getShadowRaidsParty();
         if (party == null || !party.getOwner().equals(player)) {
             player.sendMessage("You must be the leader of your party to do this.");
@@ -33,6 +34,7 @@ public class NecromancerInterfaces {
 
     public static void openCoffer(Player player) {
 
+        player.getPacketSender().sendString(144102, "Necromancer Coffer");
         int length = player.getGodsCoffer().size() >= 40 ? player.getGodsCoffer().size() : 40;
 
         for (int i = 0; i < length; i++) {
@@ -104,6 +106,7 @@ public class NecromancerInterfaces {
 
 
     public static void openRewards(Player player, Box[] loot) {
+        player.getPacketSender().sendString(144502, "Necromancer Rewards");
         int length = loot.length >= 40 ? loot.length : 40;
         int interID = 144551;
 

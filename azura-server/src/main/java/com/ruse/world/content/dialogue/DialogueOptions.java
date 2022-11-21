@@ -23,6 +23,7 @@ import com.ruse.world.content.dialogue.impl.Mandrith;
 import com.ruse.world.content.dialogue.impl.Tutorial;
 import com.ruse.world.content.dissolving.NephilimDisassemble;
 import com.ruse.world.content.dissolving.OwnerDisassemble;
+import com.ruse.world.content.event_chest.EventChestInterface;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.*;
@@ -1973,7 +1974,7 @@ public class DialogueOptions {
                     break;
                 case 67:
                     player.getPacketSender().sendInterfaceRemoval();
-                    if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY
+                    if (player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY || player.getLocation() == Location.TELOS_LOBBY
                             && player.getMinigameAttributes().getZombieAttributes().getPartyInvitation() != null
                             && player.getMinigameAttributes().getZombieAttributes().getPartyInvitation()
                             .getOwner() != null) {
@@ -2046,6 +2047,9 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+                case 81115:
+                EventChestInterface.openInterface(player);
+                break;
                 case 12111:
                     LotteryEvent.purchaseTicket(player);
                     break;
@@ -2255,7 +2259,10 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
-
+                case 81115:
+                    TeleportHandler.teleportPlayer(player, new Position(2441, 3090),
+                            TeleportType.NORMAL);
+                    break;
                 case 12111:
                     LotteryEvent.getCurrentPot(player);
                     break;
@@ -2478,6 +2485,7 @@ public class DialogueOptions {
                     LotteryEvent.whenwinnersdrawn(player);
                     break;
                 case 8821:
+                case 81115:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
 

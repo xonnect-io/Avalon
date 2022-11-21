@@ -61,6 +61,35 @@ public final class MobDefinition {
 
 		switch (id) {
 
+			case 9886:
+				definition.setDefault();
+				definition.npcModels = new int[]{62717};
+				definition.name = "Nihil Offspring";
+				definition.combatLevel = 0;
+				definition.standAnimation = 6320;
+				definition.walkAnimation = 6319;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.colorChange = new double[]{0.2, 0.5, 1.0};
+				break;
+			case 9885:
+				definition.setDefault();
+				definition.npcModels = new int[]{62717};
+				definition.name = "Ice Nihil";
+				definition.combatLevel = 0;
+				definition.standAnimation = 6320;
+				definition.walkAnimation = 6319;
+				definition.actions = new String[] {null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 2;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.colorChange = new double[]{0.2, 0.5, 1.0};
+				break;
+
 			case 3373:
 				definition.npcModels[0] = 6775;
 				definition.npcModels[5] = 65334;//cape
@@ -3756,7 +3785,14 @@ public final class MobDefinition {
 				definition.scaleY = 100;
 				definition.npcSizeInSquares = 1;
 				break;
-
+			case 6142:
+			case 6143:
+			case 6144:
+			case 6145:
+				definition.npcSizeInSquares = 2;
+				definition.scaleXZ = 140;
+				definition.scaleY = 140;
+				break;
 			case 225:
 				definition.npcModels = new int[]{19542};
 				definition.name = "Bork pet";
@@ -7490,13 +7526,157 @@ public final class MobDefinition {
 				definition.rdc2 = 9090;
 				break;
 
+			case 9877:
+				definition.setDefault();
+				definition.name = "Santa Claus";
+				definition.npcModels = MobDefinition.get(9400).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =MobDefinition.get(9400).standAnimation;
+				definition.walkAnimation = MobDefinition.get(9400).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 100;
+				definition.scaleY = 110;
+				break;
+			case 9878:
+				definition.setDefault();
+				definition.name = "Evil Santa Claus";
+				definition.npcModels = MobDefinition.get(9400).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =MobDefinition.get(9400).standAnimation;
+				definition.walkAnimation = MobDefinition.get(9400).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 100;
+				definition.scaleY = 110;
+				definition.name = "Evil Santa Claus";
+				definition.originalModelColours = new int[]{666, 655, 671, 675, 670, 673, 680, 660 };
+				definition.changedModelColours = new int[]{4, 8, 12, 0, 11, 7, 16, 10};
+				break;
+			case 9879:
+				definition.name = "<shad=f9f6f6>Vote Boss<shad=-1>";
+				MobDefinition votingboss2 = MobDefinition.get(2292);
+				definition.description = "GWD.".getBytes();
+				definition.npcModels = new int[]{18539};
+				definition.combatLevel = votingboss2.combatLevel;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 2;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				break;
+			case 9880:
+				definition.name = "Nightmare Boss";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares = 2;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 90;
+				definition.scaleY = 90;
+				definition.npcModels = new int[1];
+				definition.npcModels[0] = 14959;
+				definition.drawYellowDotOnMap = true;
+				break;
+			case 9881:
+				definition.npcModels = new int[]{15079};
+				definition.name = "Dragon king";
+				definition.combatLevel = 320;
+				//definition.rdc2 = 2592952;
+				definition.scaleXZ = 50;
+				definition.scaleY = 50;
+				definition.npcSizeInSquares = 3;
+				break;
+			case 9882:
+				definition.setDefault();
+				definition.npcModels = new int[]{19688};
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.combatLevel = 0;
+				definition.name = "Vozzath";
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.npcSizeInSquares = 2;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				break;
+			case 9883:
+				definition.name = "Zenyte Golem";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
+				definition.npcModels = new int[1];
+				definition.npcModels[0] = 100027;
+				definition.drawYellowDotOnMap = true;
+				break;
+			case 9993:
+				definition.walkAnimation = 1660;
+				definition.standAnimation = 11973;
+				definition.npcModels = new int[]{20551};
+				definition.name = "Tokhaar";
+				definition.combatLevel = 1337;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[5];
+				definition.actions[1] = "Attack";
+				definition.scaleY = 125;
+				definition.scaleXZ = 125;
+				definition.npcSizeInSquares = 2;
+				break;
+			case 9897:
+				MobDefinition elizard = MobDefinition.get(1); //#37b33a
+				definition.name = "Dragonkin minion";
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = elizard.standAnimation;
+				definition.walkAnimation = elizard.walkAnimation;
+				definition.npcModels = new int[]{20557};
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.actions = new String[5];
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.actions[0] = null;
+				break;
+			case 9899:
+				MobDefinition elizard2 = MobDefinition.get(1); //#37b33a
+				definition.name = "Dragonkin";
+				definition.npcSizeInSquares = 3;
+				definition.standAnimation = elizard2.standAnimation;
+				definition.walkAnimation = elizard2.walkAnimation;
+				definition.npcModels = new int[]{20557};
+				definition.scaleXZ = 220;
+				definition.scaleY = 220;
+				definition.actions = new String[5];
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.actions[0] = null;
+				break;
+			case 9884:
+				MobDefinition Telos = MobDefinition.get(1);
+				definition.name = "Telos";
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = Telos.standAnimation;
+				definition.walkAnimation = Telos.walkAnimation;
+				definition.npcModels = new int[]{20544};
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.actions = new String[5];
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.actions[0] = null;
+				break;
 			case 1743:
 				MobDefinition b17343 = get(9488);
 				definition.name = "Hyndra";
 				definition.combatLevel = 40;
-				definition.scaleXZ = 200;
-				definition.scaleY = 200;
-				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 300;
+				definition.scaleY = 300;
+				definition.npcSizeInSquares = 5;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.description = b17343.description;
 				definition.drawYellowDotOnMap = true;
@@ -7504,7 +7684,7 @@ public final class MobDefinition {
 				definition.standAnimation = b17343.standAnimation;
 				definition.walkAnimation = b17343.walkAnimation;
 				definition.degreesToTurn = 32;
-				definition.rdc2 = 23733;
+				definition.colorChange = new double[]{1.0, 0.5, 0.1};
 				break;
 			case 1744:
 				MobDefinition b6935 = get(6800);
@@ -7553,7 +7733,7 @@ public final class MobDefinition {
 				definition.standAnimation = b17376.standAnimation;
 				definition.walkAnimation = b17376.walkAnimation;
 				definition.degreesToTurn = 32;
-				definition.rdc2 = 36323;
+				definition.colorChange = new double[]{0.3, 0.8, 1.0};
 				break;
 			case 6326:
 				definition.name = "Skeleton fremennik";

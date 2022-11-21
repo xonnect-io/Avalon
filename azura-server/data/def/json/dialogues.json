@@ -1,5 +1,15 @@
 [
     {
+        "id": 81115,
+        "type": "OPTION",
+        "lines": 3,
+        "line1": "Open Event Chest",
+        "line2": "Teleport to Christmas Event",
+        "line3": "Cancel",
+        "next": -1,
+        "npcId": -1
+    },
+    {
         "id": 8005,
         "type": "OPTION",
         "lines": 3,

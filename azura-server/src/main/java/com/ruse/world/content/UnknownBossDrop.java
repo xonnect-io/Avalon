@@ -51,6 +51,7 @@ public class UnknownBossDrop {
 			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
 			StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
 			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
+			killer.getDailyTaskManager().submitProgressToIdentifier(11, 1);
 			NPCDrops.handleDrops(killer, npc);
 			killer.unknownZone.refreshInterface();
 			iterator.remove();

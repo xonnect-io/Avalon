@@ -283,6 +283,22 @@ public class TeleportInterfaceHandler {
 			return;
 		}
 
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.ICE_NIHIL.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.getPointsHandler().getBorkKC() <= 74999){
+				player.getPacketSender().sendMessage("You need 75,000 Bork kill Count. You currently have @red@"
+						+ player.getPointsHandler().getBorkKC() + "@bla@ kills.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.LORD_TELEPORT.getNpcId()) {
 			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
 				player.sendMessage("Your rank nullifies the teleport requirements.");

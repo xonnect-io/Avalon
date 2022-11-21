@@ -15,9 +15,9 @@ public enum Costumes {
     HANTO_SET(23462, 2, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{11763,11764, 11765, 11766, 11767}),
     RADITZ_SET(23464, 2, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
-            new int[]{9481,9482, 9483, 24391, 24392}),
+            new int[]{9481,9482, 9483, 23518, 23519}),
     GOKU_SET(23466, 3, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
-            new int[]{9478,9479, 9480, 24393, 16265}),
+            new int[]{9478,9479, 9480, 23520, 16265}),
     INUYASHA_SET(23468, 3, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{5068,5069, 5070, 5071, 5072}),
     FALLEN_ANGEL_SET(23470, 5, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
@@ -47,6 +47,9 @@ public enum Costumes {
             new int[]{23259,23260, 23261, 23262, 23263}),
     NECROMANCER(23550, 15, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{23799,23800, 23801, 23802, 23803}),
+
+    DRAGON_RIDER(23456, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
+            new int[]{14050,14051, 14052, 14053, 14054}),
     ;
     private int itemId;
     private double damageBoost;

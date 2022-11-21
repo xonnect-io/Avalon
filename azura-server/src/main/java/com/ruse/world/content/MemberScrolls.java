@@ -599,6 +599,7 @@ public class MemberScrolls {
 			player.getPointsHandler().setDonatorPoints(funds, true);
 			player.getPacketSender().sendMessage("Your account has gained funds worth $" + (funds)
 					+ ". Your total is now at $" + player.getAmountDonated() + ".");
+			player.getDailyTaskManager().submitProgressToIdentifier(27, funds);
 			checkForRankUpdate(player);
 			PlayerPanel.refreshPanel(player);
 		}

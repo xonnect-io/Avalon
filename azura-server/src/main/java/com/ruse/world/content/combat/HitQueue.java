@@ -133,7 +133,13 @@ public class HitQueue {
 						} else if (p.getLocation() == Location.DUNGEONEERING) {
 							p.getMinigameAttributes().getDungeoneeringAttributes().incrementDamageDealt(damage);
 						}
+
+						if (damage >= 2500000 ){
+							p.getDailyTaskManager().submitProgressToIdentifier(42, 1);
+						}
+
 						/** ACHIEVEMENTS **/
+						p.getDailyTaskManager().submitProgressToIdentifier(6, damage);
 						if (container.getCombatType() == CombatType.MELEE) {
 							p.getAchievementTracker().progress(
 									com.ruse.world.content.achievements.AchievementData.DEAL_100K_MELEE_DAMAGE, damage);

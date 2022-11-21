@@ -130,10 +130,20 @@ public class GameSettings {
      */
     public static final int ENGINE_PROCESSING_CYCLE_RATE = 600;
     public static final int GAME_PROCESSING_CYCLE_RATE = 600;
+
+
+    /**
+     * The OSRS gfx id offset.
+     */
+    public static final int OSRS_GFX_OFFSET = 2964;
+
     /**
      * The default position
      */
     public static final Position NEW_CORDS = new Position(2784, 4065, 0);
+    public static final Position TELOS = new Position(3350, 4053, 0);
+    public static final Position TELOS_LOBBY = new Position(3671, 3093, 0);
+    public static final Position CHRISTMAS_MAP = new Position(2528, 2656, 0);
     public static final Position DEFAULT_POSITION = new Position(2929, 4116, 0);
     public static final Position PYRAMID_LOBBY = new Position(3488, 9243, 0);
     public static final Position STARTER = new Position(3034, 4121, 1);

@@ -125,7 +125,8 @@ public class CurseHandler {
 			return;
 		}
 
-		if (curse == CurseData.SOUL_SPLIT && player.getLocation() == Location.SHADOWS_OF_DARKNESS) {
+		if (curse == CurseData.SOUL_SPLIT && player.getLocation() == Location.SHADOWS_OF_DARKNESS ||
+				player.getLocation() == Location.TELOS) {
 			player.getPacketSender().sendMessage("You cannot use soulsplit here.");
 			CurseHandler.deactivateAll(player);
 			PrayerHandler.deactivateAll(player);

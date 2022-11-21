@@ -29,6 +29,7 @@ public enum InstanceData {
 	IPOTANE(8010, "Ipotane", 1300),
 	VINDICTA(9807, "Vindicta", 2000),
 	BORK(7134, "Bork", 3200),
+	NIHIL(9885, "Ice Nihil", 1850),
 	HANTO( 250, "Hanto", 1300),
 	RADITZ(449, "Raditz", 1300),
 	GOKU(452, "Goku", 1300),
@@ -36,9 +37,8 @@ public enum InstanceData {
 	ENRAGED_GUARDIAN(2949, "Enraged Guardian", 1500),
 	ELEMENTAL_GUARDIAN(505, "Elemental Guardian", 3500),
 	INNUYASHA(185, "Inuyasha", 1300),
-
-
 	TOLOROKOTH(6430, "Tolrokoth", 2000),
+
 	FACELESS_MAGICIAN(9116, "Faceless Magician", 1100),
 	LOTUS_MAGICIAN(9117, "Lotus Magician", 1100),
 	SHADOW_MAGICIAN(9118, "Shadow Magician", 1100),

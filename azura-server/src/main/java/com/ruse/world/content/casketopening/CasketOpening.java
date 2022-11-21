@@ -307,6 +307,18 @@ public class CasketOpening {
         }
         BOXES.log(player, getCurrentCasket().getItemID(), new Item(SlotPrize.getId()));
 
+        if (currentCasket == Caskets.SERAPHIC_CASE
+                || currentCasket == Caskets.MONEY_CASE
+                || currentCasket == Caskets.ETHEREAL_CASE)
+            player.getDailyTaskManager().submitProgressToIdentifier(39, 1);
+
+        if (currentCasket == Caskets.SUMMER || currentCasket == Caskets.AUTUMN)
+            player.getDailyTaskManager().submitProgressToIdentifier(43, 1);
+
+        if (currentCasket.ordinal() <= 4)
+            player.getDailyTaskManager().submitProgressToIdentifier(28, 1);
+
+        player.getDailyTaskManager().submitProgressToIdentifier(5, 1);
         player.getInventory().add(SlotPrize.getId(), SlotPrize.getAmount());
         int amount = SlotPrize.getAmount();
         if (announce) {

@@ -25,6 +25,11 @@ public class MainDissolving {
 		BORK_LEGS(17598, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
 		BORK_BOOTS(19776, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
 		BORK_GAUNTLENTS(23099, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
+		NIHIL_HELMET(23522, new Item[]{new Item(UPG_TOKEN, 125_000)}, 820_000, anim),
+		NIHIL_BODY(23523, new Item[]{new Item(UPG_TOKEN, 125_000)}, 820_000, anim),
+		NIHIL_LEGS(23524, new Item[]{new Item(UPG_TOKEN, 125_000)}, 820_000, anim),
+		NIHIL_BOOTS(23525, new Item[]{new Item(UPG_TOKEN, 125_000)}, 820_000, anim),
+		NIHIL_GAUNTLENTS(23526, new Item[]{new Item(UPG_TOKEN, 125_000)}, 820_000, anim),
 		PURIFIER_STAFF(8089, new Item[]{new Item(UPG_TOKEN, 125_000)}, 900_000, anim),
 		JUDICATOR_BOW(8088, new Item[]{new Item(UPG_TOKEN, 125_000)}, 900_000, anim),
 		DRAGON_LANCE(8087, new Item[]{new Item(UPG_TOKEN, 125_000)}, 900_000, anim),
@@ -546,6 +551,7 @@ public class MainDissolving {
 				player.getInventory().addItemSet(data.getRewards());
 				player.getSkillManager().addExperience(Skill.INVENTION, data.getExperience());
 				player.performAnimation(new Animation(data.getAnimation()));
+				player.getDailyTaskManager().submitProgressToIdentifier(4, data.getRewards()[0].getAmount());
 				player.getPacketSender().sendMessage("You dissolved " + ItemDefinition.forId(id).getName() +" for " + Misc.insertCommasToNumber(data.getRewards()[0].getAmount()) +" Upgrade Tokens" );
 				break;
 			}

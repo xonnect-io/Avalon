@@ -101,6 +101,7 @@ public class ServerPerks {
         updateInterface(player);
 
 
+        player.getDailyTaskManager().submitProgressToIdentifier(25, amount);
         player.setServerPerksContributions(player.getServerPerksContributions() + amount);
 
 

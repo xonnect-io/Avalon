@@ -182,6 +182,7 @@ public class Slayer {
             if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER)) {
                 player.getSeasonPass().addExperience (4);
 
+                player.getDailyTaskManager().submitProgressToIdentifier(18, 1);
                 Cases.grantCasket(player, 10);
 
 
@@ -221,6 +222,7 @@ public class Slayer {
                 pointsReceived = 15;
                 player.getSeasonPass().addExperience(2);
                 Cases.grantCasket(player, 20);
+                player.getDailyTaskManager().submitProgressToIdentifier(2, 1);
                 break;
             case HARD_SLAYER:
                 pointsReceived = 25;

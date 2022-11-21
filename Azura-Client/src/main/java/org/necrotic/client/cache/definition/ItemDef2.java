@@ -4960,6 +4960,9 @@ public class ItemDef2 {
 				itemDef.stackable = false;
 				
 				break;
+			case 7461:
+				itemDef.name = "Inuyasha gloves";
+				break;
 			case 13029:
 				itemDef.name = "Grinch gloves";
 				itemdefyogipic = ItemDefinition.get(7461);

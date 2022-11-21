@@ -22,6 +22,112 @@ public class CustomInterfaces extends RSInterface {
 	}
 
 
+	private static void dailyTaskInterface() {
+		RSInterface main = addInterface(143000);
+		addSpriteLoader(143001, 1815);
+		addText(143002, "Avalon's Daily Tasks", tda, 2, 0xff981f, true, true);
+
+
+		int childId = 143007;
+		String text = "Easy";
+		for (int i = 0; i < 5; i++) {
+			addHoverButtonWSpriteLoader(childId++, 1816, 87, 25, "Select", -1, childId, 1);
+			addHoveredImageWSpriteLoader(childId++, 1817, 87, 25, childId++);
+			switch (i) {
+				case 1:
+					text = "Medium";
+					break;
+				case 2:
+					text = "Hard";
+					break;
+				case 3:
+					text = "Elite";
+					break;
+				case 4:
+					text = "Master";
+					break;
+			}
+			addText(childId++, text, tda, 1, 0xff981f, true, true);
+		}
+
+		for (int i = 0; i < 5; i++) {
+			addHoverButtonWSpriteLoader(childId++, 1822, 142, 40, "Select", -1, childId, 1);
+			addHoveredImageWSpriteLoader(childId++, 1823, 142, 40, childId++);
+			addText(childId++, "Task Number "+(i+1), tda, 0, 0xff981f, true, true);
+		}
+
+
+		addText(143064, "", tda, 0, 0xff981f, false, true);
+		addText(143066, "00d 00h 00m", tda, 0, 0xffffff, false, true);
+
+		addText(143067, "Short Task Description Here", tda, 2, 0xff981f, true, true);
+		addText(143068, "Task Completion: 0/2000", tda, 0, 0xffffff, true, true);
+
+		addText(143070, "Rewards upon completion:", tda, 0, 0xff981f, false, true);
+
+		addHoverButtonWSpriteLoader(143071, 1820, 35, 25, "Claim Rewards", -1, 143072, 1);
+		addHoveredImageWSpriteLoader(143072, 1821, 35, 25, 143073);
+
+		addHoverButtonWSpriteLoader(143074, 1818, 35, 25, "Teleport", -1, 143075, 1);
+		addHoveredImageWSpriteLoader(143075, 1819, 35, 25, 143076);
+
+		addText(143077, "Misc. Information", tda, 2, 0xff981f, true, true);
+		addText(143078, "Suggested Combat:", tda, 0, 0xff981f, true, true);
+		addText(143079, "@gre@Combat Lvl 126", tda, 0, 0xff981f, true, true);
+		addText(143080, "Location:", tda, 0, 0xff981f, true, true);
+		addText(143081, "@gre@Safe Area", tda, 0, 0xff981f, true, true);
+		addText(143082, "Teleport", tda, 2, 0xff981f, true, true);
+
+		addToItemGroup(143083, 4, 2, 4, 4, true, new String[] { null, null, null, null, null });
+
+
+		main.totalChildren(50);
+		main.child(0, 143001, 17, 14);
+		main.child(1, 143002, 256, 25);
+		childId = 143007;
+		int frame = 2;
+		int x = 24;
+		int y = 55;
+		for (int i = 0; i < 5; i ++) {
+			main.child(frame++, childId++, x, y);
+			main.child(frame++, childId++, x, y);
+			childId++;
+			main.child(frame++, childId++, x+43, y+5);
+			x+=94;
+		}
+
+		x = 31;
+		y = 85;
+		for (int i = 0; i < 5; i++) {
+			main.child(frame++, childId++, x, y);
+			main.child(frame++, childId++, x, y);
+			childId++;
+			main.child(frame++, childId++, x+71, y+10);
+			y+= 43;
+		}
+		main.child(frame++, 143064, 202, 90);
+		main.child(frame++, 143066, 42, 28);
+		main.child(frame++, 143067, 329, 90);
+		main.child(frame++, 143068, 329, 126);
+		main.child(frame++, 143070, 202, 157);
+		main.child(frame++, 143071, 291, 266);
+		main.child(frame++, 143072, 291, 266);
+		main.child(frame++, 143074, 390, 266);
+		main.child(frame++, 143075, 390, 266);
+		main.child(frame++, 143077, 408, 158);
+		main.child(frame++, 143078, 408, 178);
+		main.child(frame++, 143079, 408, 190);
+		main.child(frame++, 143080, 408, 212);
+		main.child(frame++, 143081, 408, 222);
+		main.child(frame++, 143082, 408, 246);
+		main.child(frame++, 149002, 468, 24);
+		main.child(frame++, 149003, 468, 24);
+		main.child(frame++, 143083, 182, 177);
+
+
+	}
+
+
 	public static void instanceManager() {
 		int interID = 35000;
 		RSInterface tab = addInterface(interID);
@@ -965,158 +1071,6 @@ public class CustomInterfaces extends RSInterface {
 		tab.child(15, 16569, 207, 257);
 		tab.child(16, 16570, 317, 257);
 		tab.child(17, 16571, 378, 73 - 13);
-	}
-
-	private static void DailyTaskInterface(TextDrawingArea[] tda) {
-		RSInterface tab = RSInterface.addInterface(39330);
-		RSInterface scrollTableft = RSInterface.addInterface(39370);
-		RSInterface scrollTabright = RSInterface.addInterface(39360);
-		RSInterface scrollTabmiddle = RSInterface.addInterface(39430);
-
-		int xOffset = 4;
-		int yOffset = -8;
-
-		RSInterface.addSprite(39331, 1278);
-		RSInterface.addText(39332, "Daily Money Making Activities", tda, 2, ClientConstants.GOLD, true, true);
-		RSInterface.addText(39333, "", tda, 2, ClientConstants.YELLOW, true, true);
-
-		RSInterface.addText(39334, "Activities", tda, 2, 0xFF9900, true, true);
-		RSInterface.addText(39335, "Activity Name", tda, 2, 0xFF9900, true, true);
-		RSInterface.addText(39336, "Task Information", tda, 2, 0xFF9900, true, true);
-		RSInterface.addText(39337, "Fill up the bar for rewards", tda, 2, 0xFF9900, true, true);
-
-
-		RSInterface.addButton1(39338, 1279, 1280, "Easy");
-		RSInterface.addButton1(39339, 1279, 1280, "Medium");
-		RSInterface.addButton1(39340, 1279, 1280, "Hard");
-
-
-		RSInterface.addText(39341, "Kill 250 Cows", tda, 2, ClientConstants.YELLOW, true, true);
-		RSInterface.addText(39342, "", tda, 2, ClientConstants.YELLOW, true, true);
-
-		RSInterface.addText(39343, "Easy", tda, 2, 0xFF9900, true, true);
-		RSInterface.addText(39344, "Medium", tda, 2, 0xFF9900, true, true);
-		RSInterface.addText(39345, "Hard", tda, 2, 0xFF9900, true, true);
-
-
-		RSInterface.addButton1(39346, 1281, 1282, "Teleport");
-		RSInterface.addButton1(39347, 1283, 1284, "Select Task");
-
-		// RSInterface.addToItemGroup(39361, 0, 8, 8, 5, 5, false, null, null, null, true, true);
-		RSInterface.itemGroup(39361, 1, 1, 1, 1);
-
-
-		RSInterface.addText(39348, "Teleport", tda, 2, 0xFF9900, true, true);
-		RSInterface.addText(39349, "Task", tda, 2, 0xFF9900, true, true);
-
-
-		RSInterface.addText(39350, "Information", tda, 2, 0xFF9900, true, true);
-
-		//	RSInterface.modelViewer(39351, 1, 23889, 1500);
-		RSInterface.drawNpcOnInterface(39351, 100, 1500);
-		RSInterface.addText(39352, "Progress:", tda, 2, ClientConstants.YELLOW, true, true);
-
-		RSInterface.addButton1(39353, 1285, 1286, "View Information");
-
-		//39333
-		RSInterface.addHoverButton(39354, 1016, 16, 16, "Close", 250, 39355, 3);
-		RSInterface.addHoveredButton(39355, 1017, 16, 16, 39356);
-
-
-		RSInterface.setChildren(28, tab);
-		tab.child(0, 39331, 7, 10);
-		tab.child(1, 39332, 270, 21);
-		tab.child(2, 39333, 480, 22);
-
-		tab.child(3, 39334, 96, 76);
-		tab.child(4, 39335, 226, 76);
-		tab.child(5, 39336, 249, 196);
-		tab.child(6, 39337, 278, 257);
-
-		tab.child(7, 39338, 14, 47);
-		tab.child(8, 39339, 95, 47);
-		tab.child(9, 39340, 176, 47);
-
-
-		tab.child(10, 39341, 329, 215);
-		tab.child(11, 39342, 365, 199);
-
-		tab.child(12, 39343, 51, 52);
-		tab.child(13, 39344, 134, 52);
-		tab.child(14, 39345, 215, 52);
-
-		tab.child(15, 39346, 405, 90);
-		tab.child(16, 39347, 405, 135);
-
-		tab.child(17, 39370, 4 + xOffset, 99 + yOffset);
-		tab.child(18, 39360, 150, 273);
-
-		tab.child(19, 39348, 462, 100);
-		tab.child(20, 39349, 452, 145);
-		tab.child(21, 39350, 343, 76);
-		tab.child(22, 39430, 290, 91);
-		tab.child(23, 39351, 150, 70);
-		tab.child(24, 39352, 324, 235);
-		tab.child(25, 39353, 463, 22);
-		tab.child(26, 39354, 480, 22);
-		tab.child(27, 39355, 480, 22);
-
-
-		//Scoll bar size, witdh and scrolling size.
-		scrollTableft.width = 140;
-		scrollTableft.height = 227;
-		scrollTableft.scrollMax = 450;
-
-		//Scroll bar size, width and scrolling size.
-		scrollTabright.width = 334;
-		scrollTabright.height = 45;
-		scrollTabright.scrollMax = 200;
-
-
-		//Scroll bar size, width and scrolling size.
-		scrollTabmiddle.width = 86;
-		scrollTabmiddle.height = 100;
-		scrollTabmiddle.scrollMax = 200;
-
-
-		int npcList = 50;
-		int y = 1;
-
-		for (int i = 0; i < npcList; i++) {
-			RSInterface.addText(39371 + i, "", tda, 1, ClientConstants.ORANGE, false, false, ClientConstants.WHITE, "Select", 150);
-			//	addClickableText(39371 + i, "", "Select", tda, 2, 0xeb981f, false, true, 632);
-
-		}
-
-		RSInterface.setChildren(npcList, scrollTableft);
-
-		for (int i = 0; i < npcList; i++) {
-			scrollTableft.child(i, 39371 + i, 30, y);
-			y += 15;
-		}
-
-
-		RSInterface.setChildren(1, scrollTabright);
-
-		scrollTabright.child(0, 39361, 25, 8);
-
-
-		int text = 50;
-		int y1 = 1;
-
-		for (int i = 0; i < text; i++) {
-			RSInterface.addText(39431 + i, "", tda, 1, ClientConstants.ORANGE, false, false, ClientConstants.WHITE, "Select", 150);
-			//addClickableText(39431 + i, "", "Select", tda, 2, 0xeb981f, false, true, 632);
-
-		}
-
-		RSInterface.setChildren(text, scrollTabmiddle);
-
-		for (int i = 0; i < text; i++) {
-			scrollTabmiddle.child(i, 39431 + i, 3, y1);
-			y1 += 15;
-		}
-
 	}
 
 	public static void SlayerDuo(TextDrawingArea[] tda) {
@@ -7700,130 +7654,6 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		}
 	}
 
-	static void teleportInterface() {
-		int interID = 122000;
-		RSInterface tab = addInterface(interID);
-		int id = interID + 1;
-		int c = 0;
-		int x = 15;
-		int y = 25;
-		tab.totalChildren(21);
-
-		addSpriteLoader(id, 1583);
-		tab.child(c++, id++, 0 + x, 0 + y);
-
-		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
-		tab.child(c++, id++, 455 + x, 9 + y);
-		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
-		tab.child(c++, id++, 455 + x, 9 + y);
-		id++;
-
-		addConfigButtonWSpriteLoader(id, interID, 1584, 1585, 91, 20, "Select", 0, 5, 2877);
-		tab.child(c++, id++, 11 + x, 38 + y);
-		addConfigButtonWSpriteLoader(id, interID, 1584, 1585, 91, 20, "Select", 1, 5, 2877);
-		tab.child(c++, id++, 103 + x, 38 + y);
-		addConfigButtonWSpriteLoader(id, interID, 1584, 1585, 91, 20, "Select", 2, 5, 2877);
-		tab.child(c++, id++, 195 + x, 38 + y);
-		addConfigButtonWSpriteLoader(id, interID, 1584, 1585, 91, 20, "Select", 3, 5, 2877);
-		tab.child(c++, id++, 287 + x, 38 + y);
-		addConfigButtonWSpriteLoader(id, interID, 1584, 1585, 91, 20, "Select", 4, 5, 2877);
-		tab.child(c++, id++, 379 + x, 38 + y);
-		addText(id, "", tda, 0, ColorConstants.ORANGE, true, true);
-		tab.child(c++, id++, 433 + x, 42 + y);
-
-		addText(id, "Monsters", tda, 0, ColorConstants.ORANGE, true, true);
-		tab.child(c++, id++, 56 + x, 42 + y);
-		addText(id, "Bosses", tda, 0, ColorConstants.ORANGE, true, true);
-		tab.child(c++, id++, 148 + x, 42 + y);
-		addText(id, "Minigames", tda, 0, ColorConstants.ORANGE, true, true);
-		tab.child(c++, id++, 240 + x, 42 + y);
-		addText(id, "Dungeons", tda, 0, ColorConstants.ORANGE, true, true);
-		tab.child(c++, id++, 332 + x, 42 + y);
-		addText(id, "Globals", tda, 0, ColorConstants.ORANGE, true, true);
-		tab.child(c++, id++, 424 + x, 42 + y);
-		addText(id, "", tda, 0, ColorConstants.ORANGE, true, true);
-		tab.child(c++, id++, 433 + x, 42 + y);
-
-		hoverButton(id, 1536, 1537, "Teleport", 0, 0xff8624, "Teleport");
-		tab.child(c++, id++, 186 + x, 255 + y);
-		hoverButton(id, 1536, 1537, "Previous", 0, 0xff8624, "Previous");
-		tab.child(c++, id++, 266 + x, 255 + y);
-
-		tab.child(c++, 122050, 165 + x, 113 + y);
-		tab.child(c++, 122060, 165 + x, 64 + y);
-		tab.child(c++, 122300, 12 + x, 81 + y);
-		tab.child(c++, 122200, 368 + x, 81 + y);
-
-
-		interID = 122050;
-		RSInterface npc = addInterface(interID);
-		npc.totalChildren(1);
-		npc.width = 196 - 16;
-		npc.height = 136;
-		npc.scrollMax = 136;
-		y = 0;
-		c = 0;
-		id = interID + 1;
-		x = 0;
-		addNpc(id, 50);
-		npc.child(c++, id++, 30 + x, 25 + y);
-
-		interID = 122060;
-		RSInterface drops = addInterface(interID);
-		drops.totalChildren(1);
-		drops.width = 196 - 16;
-		drops.height = 42;
-		drops.scrollMax = 42;
-		y = 0;
-		c = 0;
-		id = interID + 1;
-		x = 0;
-		addToItemGroup(35500, 5, 25, 2, 3, false, new String[]{null, null, null, null, null});
-		drops.child(c++, 35500, 5 + x, 5 + y);
-
-		interID = 122200;
-		RSInterface favs = addInterface(interID);
-		favs.totalChildren(30);
-		favs.width = 101;
-		favs.height = 200;
-		favs.scrollMax = 200;
-		y = 0;
-		c = 0;
-		id = interID + 1;
-		x = 0;
-		for (int i = 0; i < 10; i++) {
-			addSpriteLoader(id, 1588 + (i % 2));
-			favs.child(c++, id++, 0 + x, 0 + y);
-			addClickableText(id, "Favorite", "Select", tda, 0, 0xFF8900, false, true, 85);
-			favs.child(c++, id++, 2, y + 4);
-			hoverButton(id, 1592, 1592, "Remove");
-			favs.child(c++, id++, 90 + x, 5 + y);
-			y += 20;
-		}
-
-		interID = 122300;
-		RSInterface scroll = addInterface(interID);
-		scroll.totalChildren(300);
-		scroll.width = 146 - 16;
-		scroll.height = 200;
-		scroll.scrollMax = 500;
-		y = 0;
-		c = 0;
-		id = interID + 1;
-		x = 0;
-		for (int i = 0; i < 100; i++) {
-			addSpriteLoader(id, 1586 + (i % 2));
-			scroll.child(c++, id++, 0 + x, 0 + y);
-			addClickableText(id, "Monster", "Select", tda, 1, 0xFF8900, false, true, 110);
-			scroll.child(c++, id++, 3, y + 3);
-			addConfigButtonWSpriteLoader(id, interID, 1590, 1591, 15, 14, "Favorite", 0, 4, 5340 + i);
-			scroll.child(c++, id++, 113 + x, 3 + y);
-			y += 20;
-		}
-
-	}
-
-
 	public void loadCustoms() {
 		seasonalPass(tda);
 		raids();
@@ -7908,7 +7738,6 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		playerOwnedShopInterface3(tda);
 		SlayerDuo(tda);
 		instanceManager();
-		DailyTaskInterface(tda);
 		WellOfGoodWill(tda);
 		DailyMboxes(tda);
 		commands(tda);
@@ -7937,11 +7766,11 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		godsCoffer();
 		godsRewards();
 		godsInterface ();
-		teleportInterface();
 		cardPacks();
 		cardPacksRewards();
 		minigameInterface();
 		starterTasksInterface();
+		dailyTaskInterface();
 		vodOverlay(tda);
 	}
 

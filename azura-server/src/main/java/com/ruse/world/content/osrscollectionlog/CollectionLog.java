@@ -49,6 +49,7 @@ public class CollectionLog {
 
     public static final int BORK = 7134;
 
+    public static final int NIHIL = 9885;
 
 
     public static final int HANTO = 250;

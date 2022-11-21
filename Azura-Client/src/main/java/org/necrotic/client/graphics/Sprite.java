@@ -19,6 +19,49 @@ import java.net.URL;
 
 public class Sprite extends DrawingArea {
 
+	public void drawSpriteTEST(int i, int k)
+	{
+		i += drawOffsetX;
+		k += drawOffsetY;
+		int l = i + k * DrawingArea.width;
+		int i1 = 0;
+		int j1 = myHeight;
+		int k1 = myWidth;
+		int l1 = DrawingArea.width - k1;
+		int i2 = 0;
+		if (k < DrawingArea.topX)
+		{
+			int j2 = DrawingArea.topX - k;
+			j1 -= j2;
+			k = DrawingArea.topX;
+			i1 += j2 * k1;
+			l += j2 * DrawingArea.width;
+		}
+		if (k + j1 > DrawingArea.clipBottom)
+			j1 -= (k + j1) - DrawingArea.clipBottom;
+		if (i < DrawingArea.topY)
+		{
+			int k2 = DrawingArea.topY - i;
+			k1 -= k2;
+			i = DrawingArea.topY;
+			i1 += k2;
+			l += k2;
+			i2 += k2;
+			l1 += k2;
+		}
+		if (i + k1 > DrawingArea.bottomX)
+		{
+			int l2 = (i + k1) - DrawingArea.bottomX;
+			k1 -= l2;
+			i2 += l2;
+			l1 += l2;
+		}
+		if (!(k1 <= 0 || j1 <= 0))
+		{
+			block_copy_trans(DrawingArea.raster, myPixels, i1, l, k1, j1, l1, i2);
+		}
+	}
+
 	public Sprite(int width, int height, int offsetX, int offsetY, int[] pixels) { // Sprite
 		myWidth = maxWidth = width;
 		myHeight = maxHeight = height;

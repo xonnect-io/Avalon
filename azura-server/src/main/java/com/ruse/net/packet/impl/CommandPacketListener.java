@@ -43,9 +43,11 @@ import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.dailyTask.DailyTaskHandler;
+import com.ruse.world.content.dailyTasksNew.DailyTaskDifficulty;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dissolving.MainDissolving;
+import com.ruse.world.content.event_chest.EventChestInterface;
 import com.ruse.world.content.events.PartyChest;
 import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
@@ -249,7 +251,31 @@ public class CommandPacketListener implements PacketListener {
             DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve all dissolveable items for " +player.howmuchdissolveamt + " Tokens", "Nevermind", 6668));
 
         }
-
+        if (command[0].equalsIgnoreCase("daily")
+                || command[0].equalsIgnoreCase("dailytasks")) {
+            player.getDailyTaskManager().open();
+        }
+        if (command[0].equalsIgnoreCase("23521daily")) {
+            player.getDailyTaskManager().refresh();
+        }
+        if (command[0].equalsIgnoreCase("rd")) {
+            player.getDailyTaskManager().refresh();
+        }
+        if (command[0].equalsIgnoreCase("refreshdailyeasy")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.EASY);
+        }
+        if (command[0].equalsIgnoreCase("refreshdailymedium")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.MEDIUM);
+        }
+        if (command[0].equalsIgnoreCase("refreshdailyhard")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.HARD);
+        }
+        if (command[0].equalsIgnoreCase("refreshdailyelite")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.ELITE);
+        }
+        if (command[0].equalsIgnoreCase("refreshdailymaster")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.MASTER);
+        }
         if (command[0].equalsIgnoreCase("dritems") || command[0].equalsIgnoreCase("bisdr")) {
             BestDRItemsInterface.openInterface(player, 0);
         }
@@ -1227,12 +1253,12 @@ public class CommandPacketListener implements PacketListener {
                 for (Player players : World.getPlayers()) {
                     if (players != null) {
                         if (players.getRights().isStaff()) {
-                            TeleportHandler.teleportPlayer(players, new Position(2007, 4439), TeleportType.NORMAL);
+                            TeleportHandler.teleportPlayer(players, new Position(3104, 4131), TeleportType.NORMAL);
                         }
                     }
                 }
             } else {
-                TeleportHandler.teleportPlayer(player, new Position(2007, 4439), TeleportType.NORMAL);
+                TeleportHandler.teleportPlayer(player, new Position(3104, 4131), TeleportType.NORMAL);
             }
         }
         if (command[0].equalsIgnoreCase("movehome")) {
@@ -1926,6 +1952,14 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("grantm")) {
             player.getSeasonPass().grantMembership();
+        }
+
+        if (command[0].equalsIgnoreCase("xmasevent")) {
+            player.setDialogueActionId(81115);
+            DialogueManager.start(player, 81115);
+        }
+        if (command[0].equalsIgnoreCase("prevxmas")) {
+            EventChestInterface.openInterface(player);
         }
         if (command[0].equalsIgnoreCase("addxp")) {
             player.getSeasonPass().addExperience(Integer.parseInt(command[1]));

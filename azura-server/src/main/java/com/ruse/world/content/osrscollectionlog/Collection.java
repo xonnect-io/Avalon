@@ -93,6 +93,9 @@ public enum Collection {
             new Item(23381),new Item(10947),new Item(17594),new Item(17596),new Item(17598),
             new Item(23099),new Item(19776),new Item(15289),new Item(20488),new Item(10025)),
 
+    NIHIL(Player.NIHIL_KILLED, LogType.ZONES, "Nihil", new int[] {CollectionLog.NIHIL}, Player.NIHIL_LOG_CLAIMED, new Item[] { new Item(20488,50) },
+            new Item(23527),new Item(10947),new Item(23522),new Item(23523),new Item(23524),
+            new Item(23525),new Item(23526),new Item(15289),new Item(20488),new Item(10025)),
 
     //Bosses
     HANTO(Player.HANTO_KILLED, LogType.BOSSES, "Hanto Warrior", new int[] {CollectionLog.HANTO}, Player.HANTO_LOG_CLAIMED, new Item[] { new Item(10946,15) },

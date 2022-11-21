@@ -1,19 +1,17 @@
 package com.ruse.world.content.aoe;
 
-import java.util.Iterator;
-
 import com.ruse.model.CombatIcon;
 import com.ruse.model.Hit;
 import com.ruse.model.Hitmask;
 import com.ruse.model.Locations;
-import com.ruse.util.Misc;
 import com.ruse.util.RandomUtility;
 import com.ruse.world.clip.region.RegionClipping;
-import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.combat.Maxhits;
 import com.ruse.world.entity.impl.Character;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.Iterator;
 
 import static com.ruse.world.content.combat.CombatFactory.npcsDeathDartDontWork;
 import static com.ruse.world.content.combat.CombatType.RANGED;
@@ -56,7 +54,8 @@ public class AOEHandler {
 
 				if (next.isNpc()) {
 					NPC n = (NPC) next;
-					if (!n.getDefinition().isAttackable() || n.isSummoningNpc()) {
+					if (!n.getDefinition().isAttackable() || n.isSummoningNpc()
+							|| n.getId() == 9897|| n.getId() == 9899) {
 						continue;
 					}
 				} else {

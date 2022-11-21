@@ -2502,7 +2502,7 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 19614;
-				itemDef.modelZoom = 400;
+				itemDef.modelZoom = 450;
 				itemDef.modelOffsetY = 0;
 				break;
 			case 19114:
@@ -2511,7 +2511,7 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 19617;
-				itemDef.modelZoom = 400;
+				itemDef.modelZoom = 450;
 				itemDef.modelOffsetY = 0;
 				break;
 
@@ -2521,7 +2521,7 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 19615;
-				itemDef.modelZoom = 400;
+				itemDef.modelZoom = 450;
 				itemDef.modelOffsetY = 0;
 				break;
 			case 19115:
@@ -2530,7 +2530,7 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 19618;
-				itemDef.modelZoom = 400;
+				itemDef.modelZoom = 450;
 				itemDef.modelOffsetY = 0;
 				break;
 			case 19116:
@@ -2539,7 +2539,7 @@ public final class ItemDefinition {
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
 				itemDef.modelID = 19616;
-				itemDef.modelZoom = 400;
+				itemDef.modelZoom = 450;
 				itemDef.modelOffsetY = 0;
 				break;
 

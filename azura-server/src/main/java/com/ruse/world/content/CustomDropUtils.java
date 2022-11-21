@@ -4,6 +4,7 @@ import com.ruse.GameSettings;
 import com.ruse.model.GameMode;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.container.impl.Equipment;
+import com.ruse.util.Misc;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.minigames.impl.TreasureHunter;
 import com.ruse.world.content.serverperks.ServerPerks;
@@ -961,6 +962,10 @@ public class CustomDropUtils {
             percentBoost *= 1.2;
         }
 
+        if (Misc.isFriday()) {
+            percentBoost += 10;
+        }
+
         if (!player.isInsideRaids()) {
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
@@ -1178,9 +1183,6 @@ public class CustomDropUtils {
             percentBoost += 10;
         }
 
-        if (npc == 8013 && System.currentTimeMillis() + 43200000 > player.lastVoteTime) {
-            percentBoost = +100;
-        }
         if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.DOUBLE_DROPS) {
             percentBoost = +100;
         }
@@ -1195,6 +1197,9 @@ public class CustomDropUtils {
             percentBoost += 7;
         }
 
+        if (Misc.isThursday()) {
+            percentBoost += 10;
+        }
 
         if (npc == player.getSlayer().getSlayerTask().getNpcId()) {
             if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23071) {

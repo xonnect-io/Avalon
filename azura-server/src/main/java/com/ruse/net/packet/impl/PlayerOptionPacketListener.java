@@ -126,6 +126,18 @@ public class PlayerOptionPacketListener implements PacketListener {
 			}
 			return;
 		}
+		if (player.getLocation() == Location.TELOS_LOBBY) {
+			player.setEntityInteraction(attacked);
+			if (attacked.getIndex() != player.getIndex()) {
+				if (player.getTelosRaidsParty () != null && player.getTelosRaidsParty().getOwner().equals(player)) {
+					player.sendMessage("Sent invite to " + attacked.getUsername());
+					player.getTelosRaidsParty().invite(attacked);
+				} else {
+					player.sendMessage("You must be the leader of a party to do this.");
+				}
+			}
+			return;
+		}
 		if (player.getLocation() == Location.DUEL_ARENA && player.getDueling().duelingStatus == 0) {
 			player.getDueling().challengePlayer(attacked);
 			return;

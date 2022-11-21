@@ -337,6 +337,7 @@ public class NecromancerRaid {
                         NecromancerLoot.handleLoot(member, party.getDifficulty());
                     }
 
+                    member.getDailyTaskManager().submitProgressToIdentifier(35, 1);
                     member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     member.getPointsHandler().incrementNecromancerKC(1);
                 }

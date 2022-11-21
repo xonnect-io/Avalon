@@ -6679,18 +6679,7 @@ public class ItemDef4 {
 				itemDef.groundActions = new String[]{null, null, "Take", null, null};
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
-			case 11316:
-				ItemDefinition votingpoting = ItemDefinition.get(12479);
-				itemDef.modelID = 18539;
-				itemDef.modelOffsetX = votingpoting.modelOffsetX;
-				//itemDef.modelOffsetX = itemDef211.modelOffsetX;
-				itemDef.modelOffsetY = votingpoting.modelOffsetY;
-				itemDef.modelZoom = 5550;
-				itemDef.groundActions = new String[]{null, null, "Take", null, null};
-				itemDef.name = "Double vote pet";
-				itemDef.groundActions = new String[]{null, null, "Take", null, null};
-				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
-				break;
+
 			case 2098:
 				itemDef.name = "Skilling ticket";
 				itemDef.rdc2 = 12511;

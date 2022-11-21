@@ -197,7 +197,7 @@ public class FantasyZone {
                 amount *= 1.1;
 
                 double boost = 1D;
-                if (player.getEquipment().contains(23834)) {
+                if (player.getEquipment().contains(23456)) {
                     boost += 1.2D;
                 }else {
                     for (int i = 14050; i <= 14055; i++) {
@@ -206,10 +206,10 @@ public class FantasyZone {
                         }
                     }
                 }
-                amount *= boost;
+                amount *= boost * 2;
 
-                if (amount <= 1)
-                    amount = 1;
+                if (amount <= 2)
+                    amount = 2;
 
                 System.out.println("amount: " + amount);
 
@@ -218,6 +218,8 @@ public class FantasyZone {
 
                 player.getInventory().delete(FantasyItems.getItemId(), player.getInventory().getAmount(FantasyItems.getItemId()));
                 player.getInventory().add(23273, (int) amount);
+
+                player.getDailyTaskManager().submitProgressToIdentifier(46, (int) amount);
             }
         }
     }

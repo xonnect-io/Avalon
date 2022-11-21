@@ -390,6 +390,19 @@ public final class ObjectDefinition {
 			definition.name = "Necromancer Coffer";
 			definition.actions = new String[]{"Access", null, null, null, null};
 		}
+
+		if (definition.type == 2004) {
+			definition.name = "Telos Coffer";
+			definition.objectModelIDs = new int[]{20545};
+			definition.modelSizeH = 60;
+			definition.modelSizeY = 60;
+			definition.modelSizeX = 60;
+			definition.actions = new String[]{"Access", null, null, null, null};
+		}
+		if (definition.type == 28719) {
+			definition.name = "God Obelisk";
+			definition.actions = new String[]{"Interact", null, null, null, null};
+		}
 		if (definition.type == 13634) {
 			definition.name = "Portal";
 			definition.modelSizeH = 200;

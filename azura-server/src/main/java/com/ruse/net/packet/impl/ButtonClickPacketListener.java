@@ -37,6 +37,7 @@ import com.ruse.world.content.combat.weapon.FightType;
 import com.ruse.world.content.dailyTask.DailyTaskInterface;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.DialogueOptions;
+import com.ruse.world.content.event_chest.EventChestButtons;
 import com.ruse.world.content.events.EventManager;
 import com.ruse.world.content.goldenscratch.ScratchCard;
 import com.ruse.world.content.grandexchange.GrandExchange;
@@ -50,11 +51,14 @@ import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.osrscollectionlog.CollectionLogButtons;
 import com.ruse.world.content.polling.PollCreation;
 import com.ruse.world.content.polling.PollManager;
+import com.ruse.world.content.raids.elders.TelosLoot;
+import com.ruse.world.content.raids.elders.TelosRaid;
+import com.ruse.world.content.raids.elders.TelosRaidParty;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
 import com.ruse.world.content.raids.shadows.NecromancerLoot;
+import com.ruse.world.content.raids.shadows.NecromancerRaid;
 import com.ruse.world.content.raids.shadows.NecromancerRaidParty;
 import com.ruse.world.content.raids.shadows.ShadowRewards;
-import com.ruse.world.content.raids.shadows.NecromancerRaid;
 import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.rewardsList.RewardsHandler;
@@ -87,6 +91,7 @@ import java.util.List;
 
 import static com.ruse.model.Skill.*;
 import static com.ruse.world.content.osrscollectionlog.LogType.MONSTERS;
+import static com.ruse.world.content.raids.elders.TelosInterfaces.*;
 import static com.ruse.world.content.raids.shadows.NecromancerInterfaces.*;
 
 /**
@@ -155,7 +160,9 @@ public class ButtonClickPacketListener implements PacketListener {
         if (player.getAchievementInterface() != null && player.getAchievementInterface().handleButton(id)) {
             return;
         }
-
+        if(EventChestButtons.handleButton(player, id)) {
+            return;
+        }
         if (player.getUpgradeInterface().handleButton(id)) {
             return;
         }
@@ -924,7 +931,19 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("<shad=1>@or2@You must be 99+ Slayer to do Legend Raids.");
                     return;
                 }
-                if (player.getLocation() == Location.DARKNESS_LOBBY) {
+                if (player.getLocation() == Location.TELOS_LOBBY) {
+                    if (player.getTelosRaidsParty () != null) {
+                        if (player.getTelosRaidsParty ().getOwner () != player) {
+                            player.getPacketSender ().sendMessage ("Only the party leader can invite other players.");
+                        } else {
+                            player.setInputHandling (new InviteRaidsPlayer ());
+                            player.getPacketSender ().sendEnterInputPrompt ("Invite Player");
+                        }
+                    } else {
+                        if (player.getLocation () == Location.TELOS_LOBBY)
+                            new TelosRaidParty (player).create ();
+                    }
+                }else if (player.getLocation() == Location.DARKNESS_LOBBY) {
                     if (player.getShadowRaidsParty() != null) {
                         if (player.getShadowRaidsParty().getOwner() != player) {
                             player.getPacketSender().sendMessage("Only the party leader can invite other players.");
@@ -967,8 +986,9 @@ public class ButtonClickPacketListener implements PacketListener {
 
             case 111706:
                 if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.SOD ||
-                        player.getLocation() == Location.SHADOWS_OF_DARKNESS || player.getLocation() == Location.ZOMBIE_LOBBY ||
-                        player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY) {
+                        player.getLocation() == Location.TELOS || player.getLocation() == Location.SHADOWS_OF_DARKNESS ||
+                        player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY ||
+                        player.getLocation() == Location.DARKNESS_LOBBY || player.getLocation() == Location.TELOS_LOBBY) {
                     if (player.getRaidsParty() != null) {
                         player.getRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
@@ -977,6 +997,9 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.sendMessage("You left your Raids party.");
                     } else if (player.getShadowRaidsParty() != null) {
                         player.getShadowRaidsParty().remove(player, true);
+                        player.sendMessage("You left your Raids party.");
+                    } else if (player.getTelosRaidsParty() != null) {
+                        player.getTelosRaidsParty().remove(player, true);
                         player.sendMessage("You left your Raids party.");
                     }
                 } else {
@@ -1007,8 +1030,9 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111746:
             case 111749:
                 if (player.getLocation() == Location.ZOMBIE || player.getLocation() == Location.SOD ||
-                        player.getLocation() == Location.SHADOWS_OF_DARKNESS || player.getLocation() == Location.ZOMBIE_LOBBY ||
-                        player.getLocation() == Location.SOD_LOBBY || player.getLocation() == Location.DARKNESS_LOBBY) {
+                        player.getLocation() == Location.TELOS || player.getLocation() == Location.SHADOWS_OF_DARKNESS ||
+                        player.getLocation() == Location.ZOMBIE_LOBBY || player.getLocation() == Location.SOD_LOBBY ||
+                        player.getLocation() == Location.DARKNESS_LOBBY || player.getLocation() == Location.TELOS_LOBBY) {
                     if (player.getRaidsParty() != null) {
                         if (player.equals(player.getRaidsParty().getOwner())) {
                             if (player.getRaidsParty().getPlayers()
@@ -1886,43 +1910,86 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 144006:
-                player.getShadowRaidsParty().setDifficulty(RaidDifficulty.EASY);
-                openStartScreen(player);
+                if (player.getLocation () == Location.DARKNESS_LOBBY) {
+                    player.getShadowRaidsParty ().setDifficulty (RaidDifficulty.EASY);
+                    openStartScreen(player);
+                } else if (player.getLocation () == Location.TELOS_LOBBY) {
+                    player.getTelosRaidsParty ().setDifficulty(RaidDifficulty.EASY1);
+                    openInterface(player);
+                }
                 break;
             case 144008:
-                player.getShadowRaidsParty().setDifficulty(RaidDifficulty.INTERMEDIATE);
-                openStartScreen(player);
+                if (player.getLocation () == Location.DARKNESS_LOBBY) {
+                    player.getShadowRaidsParty().setDifficulty(RaidDifficulty.INTERMEDIATE);
+                    openStartScreen(player);
+                } else  if (player.getLocation () == Location.TELOS_LOBBY) {
+                    player.getTelosRaidsParty ().setDifficulty(RaidDifficulty.INTERMEDIATE1);
+                    openInterface(player);
+                }
                 break;
             case 144010:
-                player.getShadowRaidsParty().setDifficulty(RaidDifficulty.ADVANCED);
-                openStartScreen(player);
+                if (player.getLocation () == Location.DARKNESS_LOBBY) {
+                    player.getShadowRaidsParty().setDifficulty(RaidDifficulty.ADVANCED);
+                    openStartScreen(player);
+                } else if (player.getLocation () == Location.TELOS_LOBBY) {
+                    player.getTelosRaidsParty ().setDifficulty(RaidDifficulty.ADVANCED1);
+                    openInterface(player);
+                }
                 break;
             case 144019:
-                NecromancerRaid.start(player.getShadowRaidsParty());
+                if (player.getLocation() == Location.DARKNESS_LOBBY)
+                    NecromancerRaid.start(player.getShadowRaidsParty ());
+                    else if (player.getLocation () == Location.TELOS_LOBBY)
+                    TelosRaid.start (player.getTelosRaidsParty());
                 break;
 
             case 144506:
-                openCoffer(player);
+                if (player.getLocation () == Location.DARKNESS_LOBBY) {
+                    openCoffer (player);
+                } else if (player.getLocation () == Location.TELOS_LOBBY) {
+                    openCofferRewards(player);
+                }
                 break;
             case 144108:
             case 144510:
-                openRewards(player, NecromancerLoot.EASY);
-                player.getPacketSender().sendConfig(4512, 0);
+                if (player.getLocation () == Location.DARKNESS_LOBBY) {
+                    openRewards (player, NecromancerLoot.EASY);
+                    player.getPacketSender ().sendConfig (4512, 0);
+                } else if (player.getLocation () == Location.TELOS_LOBBY) {
+                    viewRewards (player, TelosLoot.EASY);
+                    player.getPacketSender ().sendConfig (4512, 0);
+                }
                 break;
             case 144512:
-                openRewards(player, NecromancerLoot.MEDIUM);
-                player.getPacketSender().sendConfig(4512, 1);
+                if (player.getLocation () == Location.DARKNESS_LOBBY) {
+                    openRewards (player, NecromancerLoot.MEDIUM);
+                    player.getPacketSender ().sendConfig (4512, 1);
+                } else if (player.getLocation () == Location.TELOS_LOBBY) {
+                    viewRewards (player, TelosLoot.MEDIUM);
+                    player.getPacketSender ().sendConfig (4512, 1);
+                }
                 break;
             case 144514:
-                openRewards(player, NecromancerLoot.HARD);
-                player.getPacketSender().sendConfig(4512, 2);
+                if (player.getLocation () == Location.DARKNESS_LOBBY) {
+                    openRewards (player, NecromancerLoot.HARD);
+                    player.getPacketSender ().sendConfig (4512, 2);
+                } else if (player.getLocation () == Location.TELOS_LOBBY) {
+                    viewRewards (player, TelosLoot.HARD);
+                player.getPacketSender ().sendConfig (4512, 2);
+            }
                 break;
             case 144110:
+                if (player.getLocation () == Location.DARKNESS_LOBBY)
                 takeCoffer(player);
+                else if (player.getLocation () == Location.TELOS_LOBBY)
+                    takeCofferRewards(player);
                 break;
             case 144111:
+                if (player.getLocation () == Location.DARKNESS_LOBBY)
                 bankCoffer(player);
-                break;
+                else if (player.getLocation () == Location.TELOS_LOBBY)
+                    bankCofferRewards(player);
+                    break;
             case 27014:
             case 27015:
             case 27016:
@@ -2329,6 +2396,9 @@ public class ButtonClickPacketListener implements PacketListener {
         if (ServerPerks.getInstance().handleButton(player, id)) {
             return true;
         }
+
+        if (player.getDailyTaskManager().handleButton(id))
+            return true;
 
         if (player.getHweenEvent().handleButton(id)) {
             return true;

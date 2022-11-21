@@ -53,6 +53,7 @@ public class NPCDrops {
 
     private static Map<Integer, NPCDrops> dropControllers = new HashMap<Integer, NPCDrops>();
 
+    public static boolean Misc1 = (Misc.getRandom (2) == 1);
     private int[] npcIds;
 
     private NpcDropItem[] drops;
@@ -220,7 +221,7 @@ public class NPCDrops {
             }
     public static void dropInstanceToken(Player player, Position pos, NPC npc) {
         int reward = 4278;
-        int rand = Misc.getRandom(60);
+        int rand = Misc.getRandom(50);
         if (rand == 1) {
             if (player.dropMessageToggle)
             player.getPacketSender().sendMessage("X1 Instance token has been sent to your inventory.");
@@ -245,9 +246,6 @@ public class NPCDrops {
             return;
 
         final Position npcPos = npc.getPosition().copy();
-        /*if (npc.getDefinition().getCombatLevel() >= 70 && player.getLocation() != Location.GRAVEYARD) {
-            dropClue(player, npcPos, npc);
-        }*/
         dropPetFragment(player,npcPos,npc);
         dropInstanceToken(player,npcPos,npc);
         HashMap<Double, ArrayList<NpcDropItem>> dropRates = new HashMap<>();
@@ -289,35 +287,14 @@ public class NPCDrops {
         }
         if (!finalDropList.isEmpty()) {
             sendDrop(player, npc);
-            //System.out.println("here drop");
         }
 
-        if (npc.getId() == VaultOfWar.AVATAR_ID
-                && (player.getLocation() == Location.VAULT_OF_WAR || player.getLocation() == Location.DIAMOND_ZONE)) {
-
-            Item toDrop = VaultOfWar.replaceDrop(player, npc);
-            if (toDrop != null) {
-
-                if (toDrop.getId() >= 23099 && toDrop.getId() <= 23102) {//t gloves
-                    if (player.lastTGloveIndex >= 3) {
-                        player.lastTGloveIndex = 3;
-                        player.sendMessage("You've gotten the final gloves already.");
-                    } else {
-                        player.lastTGloveIndex += 1;
-                        if (player.lastTGloveIndex >= 3) {
-                            player.sendMessage("You are now hunting for the @blu@Combat gloves.");
-                        } else {
-                            int newId = VaultOfWar.T_GLOVES[player.lastTGloveIndex + 1];
-                            player.sendMessage("You are now hunting for: @blu@" + ItemDefinition.forId(newId).getName() + ".");
-                        }
-                    }
-                }
-                NPCDrops.NpcDropItem newItem = new  NPCDrops.NpcDropItem(toDrop.getId(), new int[] {1}, 0);
-                finalDropList.add(newItem);
-
-                sendDrop(player, npc);
+        if (npc.getId() == 8013) {
+            if (player.lastVoteTime >= System.currentTimeMillis() - 86400000) {
+                player.sendMessage("You received Double rewards because you voted in the last 12 hours!");
             }
         }
+
 
     }
 
@@ -405,6 +382,38 @@ public class NPCDrops {
                     }
                 }
             }
+
+            if (npc.getId() == 8013) {
+                if (player.lastVoteTime >= System.currentTimeMillis() - 86400000) {
+                    item.setAmount(item.getAmount() * 2);
+                }
+            }
+
+            if (npc.getId() == 8013 && player.isVoteBossTransform() && Misc1 == true) {
+                item.setAmount(item.getAmount() * 2);
+            }
+            if (npc.getId() == 4972 && player.isDragonKingTransform() && Misc1 == true) {
+                item.setAmount(item.getAmount() * 2);
+            }
+            if (npc.getId() == 9319 && player.isGolemTransform() && Misc1 == true) {
+                item.setAmount(item.getAmount() * 2);
+            }
+            if (npc.getId() == 3830 && player.isVozzathTransform() && Misc1 == true) {
+                item.setAmount(item.getAmount() * 2);
+            }
+            if (npc.getId() == 9017 && player.isNightmareTransform() && Misc1 == true) {
+                item.setAmount(item.getAmount() * 2);
+            }
+
+            if (npc.getId() == 9839 && drop.isAnnounce() || drop.getChance() >= 2000) {
+                player.getDailyTaskManager().submitProgressToIdentifier(30, 1);
+            }
+            if (npc.getId() == 9813 && drop.isAnnounce() || drop.getChance() >= 2000) {
+                player.getDailyTaskManager().submitProgressToIdentifier(36, 1);
+            }
+            if (npc.getId() == 4677 && drop.isAnnounce() || drop.getChance() >= 2000) {
+                player.getDailyTaskManager().submitProgressToIdentifier(48, 1);
+            }
             int kills = KillsTracker.getTotalKillsForNpc(npc.getId(), player);
             if (drop.isAnnounce() || drop.getChance() >= 2000 && item.getId() != 12855 && item.getId() != 10025 && item.getId() != 5022
             || npc.getId() == 8013 && drop.getChance() >= 20||
@@ -421,6 +430,7 @@ public class NPCDrops {
                 String itemName = item.getDefinition().getName();
                 String itemMessage = "x" + amount + " " + itemName;
                 String npcName = Misc.formatText(npc.getDefinition().getName());
+                player.getDailyTaskManager().submitProgressToIdentifier(40, 1);
                 String message = "<img=5><shad><col=ff4f4f>[</col>@cya@DROP<col=ff4f4f>]</col>@cya@ " + player.getUsername()
                         + " has received <col=ff4f4f>" + itemMessage + "@cya@ from <col=ff4f4f>" + npcName + "@cya@ -" + "<col=ff4f4f> KC: " + kills;
                 World.sendMessage(message);

@@ -118,7 +118,40 @@ public final class WeaponAnimations {
 			playerStandIndex = 808;
 			playerWalkIndex = 819;
 			playerRunIndex = 824;
+		}else if (player.isSantaTransform() || player.isEvilSantaTransform()) {
+			playerStandIndex = 11046;
+			playerWalkIndex = 11047;
+			playerRunIndex = 11047;
+			playerTurnIndex = 11046;
+			playerTurn180Index = 11046;
+			playerTurn90CWIndex = 11046;
+			playerTurn90CCWIndex = 11046;
+		}else if (player.isNightmareTransform() || player.isVoteBossTransform()|| player.isVozzathTransform()) {
+			playerStandIndex = 15069;
+			playerWalkIndex = 15070;
+			playerRunIndex = 15073;
+			playerTurnIndex = 11046;
+			playerTurn180Index = -1;
+			playerTurn90CWIndex = -1;
+			playerTurn90CCWIndex = -1;
+		} else if (player.isDragonKingTransform()) {
+			playerStandIndex = 5021;
+			playerWalkIndex = 5022;
+			playerRunIndex = 5022;
+			playerTurnIndex = 11046;
+			playerTurn180Index = -1;
+			playerTurn90CWIndex = -1;
+			playerTurn90CCWIndex = -1;
+		} else if (player.isGolemTransform()) {
+			playerStandIndex = 808;
+			playerWalkIndex = 819;
+			playerRunIndex = 819;
+			playerTurnIndex = 11046;
+			playerTurn180Index = -1;
+			playerTurn90CWIndex = -1;
+			playerTurn90CCWIndex = -1;
 		}
+
 		switch (item.getId()) {
 		case 18353: // maul chaotic
 		case 16425:

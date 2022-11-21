@@ -28,8 +28,10 @@ import com.ruse.world.content.*;
 import com.ruse.world.content.DropLog.DropLogEntry;
 import com.ruse.world.content.KillsTracker.KillsEntry;
 import com.ruse.world.content.LoyaltyProgramme.LoyaltyTitles;
+import com.ruse.world.content.achievements.AchievementHandler;
 import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.achievements.AchievementTracker;
+import com.ruse.world.content.achievements.AchievementsOLD;
 import com.ruse.world.content.bis.BestItems;
 import com.ruse.world.content.bossEvents.BossEventData;
 import com.ruse.world.content.cardPacks.CardPack;
@@ -52,6 +54,7 @@ import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.combat.weapon.FightType;
 import com.ruse.world.content.dailyTask.DailyTaskData;
 import com.ruse.world.content.dailyTask.DailyTaskDifficulty;
+import com.ruse.world.content.dailyTasksNew.DailyTaskManager;
 import com.ruse.world.content.dailytasks_new.DailyTask;
 import com.ruse.world.content.dailytasks_new.TaskChallenge;
 import com.ruse.world.content.dialogue.Dialogue;
@@ -59,6 +62,7 @@ import com.ruse.world.content.dissolving.MainDissolving;
 import com.ruse.world.content.dissolving.NephilimDisassemble;
 import com.ruse.world.content.dissolving.OwnerDisassemble;
 import com.ruse.world.content.dissolving.SupremeDissolving;
+import com.ruse.world.content.event_chest.EventChestHandler;
 import com.ruse.world.content.eventboss.EventBossManager;
 import com.ruse.world.content.gamblinginterface.GamblingInterface;
 import com.ruse.world.content.grandexchange.GrandExchangeSlot;
@@ -76,6 +80,7 @@ import com.ruse.world.content.osrscollectionlog.LogType;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.properscratchcard.Scratchcard;
 import com.ruse.world.content.quests.QuestInterfaceHandler;
+import com.ruse.world.content.raids.elders.TelosRaidParty;
 import com.ruse.world.content.raids.legends.LegendsRaidParty;
 import com.ruse.world.content.raids.shadows.NecromancerRaidParty;
 import com.ruse.world.content.raids.system.RaidDifficulty;
@@ -128,7 +133,7 @@ public class Player extends Character {
             SUFFERING_COMPLETED,NECROMANCER_COMPLETED,DEMON_GODDESS_KILLED,ENERGY_SKELETONS_KILLED,TUROTH_KILLED,
             FALLEN_WARRIOR_KILLED,CAVE_DRONE_KILLED,CAVE_MUTANT_KILLED,CAVE_SNAIL_KILLED
     ,LORDS_KILLED,SHADOW_KILLED,GOLEM_KILLED,SHETANI_KILLED,RIPPER_KILLED,AVATAR_KILLED,WYVERNS_KILLED,
-            ONI_KILLED,SHENRON_KILLED,SUBZERO_KILLED,ZEUS_KILLED,IPOTANE_KILLED,VINDICTA_KILLED,BEAST_KILLED
+            ONI_KILLED,SHENRON_KILLED,SUBZERO_KILLED,ZEUS_KILLED,IPOTANE_KILLED,VINDICTA_KILLED,BEAST_KILLED,NIHIL_KILLED
             ,RADITZ_KILLED,GOKU_KILLED,BOTANIC_KILLED,ENRAGED_GUARDIAN_KILLED,ELEMENTAL_GUARDIAN_KILLED,
             INYUASHA_KILLED,TOLROKOTH_KILLED,DEITY_DEMON_KILLED,MUTATED_HOUND_KILLED,VALDIS_KILLED,COLLOSAL_AVATAR_KILLED,
             INFERNAL_DEMON_KILLED,FALLEN_ANGEL_KILLED,MIDNIGHT_GOBLIN_KILLED,BLOOD_DEMON_KILLED,UNKNOWN_MINIGAMES_COMPLETED,
@@ -139,7 +144,7 @@ public class Player extends Character {
             ;
     public static boolean MYSTERY_BOX_LOG_CLAIMED,PVM_BOX_LOG_CLAIMED,PVM_BOX_T2_LOG_CLAIMED,SUPER_BOX_LOG_CLAIMED,
             EXTREME_BOX_LOG_CLAIMED,GRAND_BOX_LOG_CLAIMED,OP_BOX_LOG_CLAIMED,VOTE_BOX_LOG_CLAIMED,PROGRESSIVE_BOX_LOG_CLAIMED,
-            SLAYER_BOX_LOG_CLAIMED,SLAYER_BOXU_LOG_CLAIMED,DRAGON_BALL_BOX_LOG_CLAIMED,RAID_BOX_LOG_CLAIMED,
+            SLAYER_BOX_LOG_CLAIMED,SLAYER_BOXU_LOG_CLAIMED,DRAGON_BALL_BOX_LOG_CLAIMED,RAID_BOX_LOG_CLAIMED,NIHIL_LOG_CLAIMED,
             LAUNCH_BOX_LOG_CLAIMED,AZURE_CASKET_LOG_CLAIMED,ELITE_CASKET_LOG_CLAIMED,EXCLUSIVE_CASKET_LOG_CLAIMED,LEGENDARY_CASKET_LOG_CLAIMED,SUPREME_CASKET_LOG_CLAIMED,
             ARACHNES_LOG_CLAIMED,DUSTCLAW_LOG_CLAIMED,HANTO_LOG_CLAIMED, SUFFERING_LOG_CLAIMED,NECROMANCER_LOG_CLAIMED,
             DEMON_GODDESS_LOG_CLAIMED, ENERGY_SKELETONS_LOG_CLAIMED, TUROTH_LOG_CLAIMED,
@@ -173,7 +178,23 @@ public boolean setSlayerBoss;
     }
     public LogType logtype;
     public boolean idleEventUsed;
+    private AchievementHandler achievementHandler;
 
+    public AchievementHandler getAchievements() {
+        if (achievementHandler == null)
+            achievementHandler = new AchievementHandler(this);
+        return achievementHandler;
+    }
+    @Getter
+    private final DailyTaskManager dailyTaskManager = new DailyTaskManager(this);
+
+    public AchievementsOLD.AchievementAttributes getAchievementAttributes() {
+        return achievementAttributes;
+    }
+
+    @Setter
+    @Getter
+    private int dailyTasksCompleted;
 
     @Getter
     private HweenEvent hweenEvent = new HweenEvent (this);
@@ -189,6 +210,10 @@ public boolean setSlayerBoss;
     @Getter
     @Setter
     private int easyIsleGodKC,medIsleGodKC,hardIsleGodKC;
+
+    @Getter
+    @Setter
+    private int easyElderGodKC,medElderGodKC,hardElderGodKC;
     @Setter
     @Getter
     private long serverPerksContributions;
@@ -472,8 +497,21 @@ public int howmuchdissolveamt = 0;
 
     @Getter
     @Setter
+    private long elderEasyTimer;
+    @Getter
+    @Setter
+    private long elderMedTimer;
+    @Getter
+    @Setter
+    private long elderHardTimer;
+
+    @Getter
+    @Setter
     private double isleDropRate;
 
+    @Getter
+    @Setter
+    private double elderDropRate;
 
     @Getter
     @Setter
@@ -482,6 +520,8 @@ public int howmuchdissolveamt = 0;
     @Getter
     private ArrayList<Item> godsCoffer = new ArrayList<>();
 
+    @Getter
+    private ArrayList<Item> telosCoffer = new ArrayList<>();
 
     @Getter
     @Setter
@@ -613,10 +653,40 @@ public int howmuchdissolveamt = 0;
     private boolean unlockedseasonpass;
     private boolean unlockedMembership;
     private boolean unlockedCosmetic;
+    private EventChestHandler eventChestHandler = new EventChestHandler();
+    @Getter
+    @Setter
+    private boolean santaTransform;
+
+    @Getter
+    @Setter
+    private boolean evilSantaTransform;
+
+    @Getter
+    @Setter
+    private boolean voteBossTransform;
+
+    @Getter
+    @Setter
+    private boolean nightmareTransform;
+    @Getter
+    @Setter
+    private boolean dragonKingTransform;
+
+    @Getter
+    @Setter
+    private boolean vozzathTransform;
+    @Getter
+    @Setter
+    private boolean golemTransform;
+    public EventChestHandler getEventChestHandler() {
+        return eventChestHandler;
+    }
     private final PlayerKillingAttributes playerKillingAttributes = new PlayerKillingAttributes(this);
     private final MinigameAttributes minigameAttributes = new MinigameAttributes();
     private final BankPinAttributes bankPinAttributes = new BankPinAttributes();
     private final BankSearchAttributes bankSearchAttributes = new BankSearchAttributes();
+    private final AchievementsOLD.AchievementAttributes achievementAttributes = new AchievementsOLD.AchievementAttributes ();
     private final BonusManager bonusManager = new BonusManager();
     private final PointsHandler pointsHandler = new PointsHandler(this);
     public final UnknownZone unknownZone = new UnknownZone(this);
@@ -752,12 +822,15 @@ public int howmuchdissolveamt = 0;
     private boolean enteredZombieRaids;
     private int zombieRaidsKC;
     private int islesKC;
+    private int telosKC;
     private boolean enteredSODRaids;
     private boolean enteredShadowRaids;
+    private boolean enteredTelosRaids;
     private int sodRaidsKC;
     private RaidsParty raidsParty;
     private LegendsRaidParty zombieRaidsParty;
     private NecromancerRaidParty shadowRaidsParty;
+    private TelosRaidParty telosRaidsParty;
     private boolean insideRaids;
     private int afkTree;
     private int afkSapphire;
@@ -1110,6 +1183,15 @@ public int howmuchdissolveamt = 0;
         this.enteredShadowRaids = enteredShadowRaids;
     }
 
+
+    public boolean isEnteredTelosRaids() {
+        return enteredTelosRaids;
+    }
+
+    public void setEnteredTelosRaids(boolean enteredTelosRaids) {
+        this.enteredTelosRaids = enteredTelosRaids;
+    }
+
     public boolean isEnteredSODRaids() {
         return enteredSODRaids;
     }
@@ -1140,6 +1222,14 @@ public int howmuchdissolveamt = 0;
 
     public void setShadowRaidsParty(NecromancerRaidParty shadowRaidsParty) {
         this.shadowRaidsParty = shadowRaidsParty;
+    }
+
+    public TelosRaidParty getTelosRaidsParty() {
+        return telosRaidsParty;
+    }
+
+    public void setTelosRaidParty(TelosRaidParty telosRaidsParty) {
+        this.telosRaidsParty = telosRaidsParty;
     }
 
     public int getAfkTree() {

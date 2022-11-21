@@ -1161,6 +1161,11 @@ public class Shop extends ItemContainer {
                     if (id == PEST_CONTROL) {
                         MINIGAMES.log(player, CollectionLog.PEST_CONTROL, new Item(item.getId()));
                     }
+                    if (id == TRAVELLING_MERCHANT) {
+                        player.getDailyTaskManager().submitProgressToIdentifier(7, 1);
+                    }
+
+
                     playerCurrencyAmount -= value;
                     break;
                 } else {

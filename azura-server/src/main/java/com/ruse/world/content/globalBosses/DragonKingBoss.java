@@ -61,7 +61,6 @@ public class DragonKingBoss {
         for (Iterator<Map.Entry<Player, Integer>> iterator = result.iterator(); iterator.hasNext(); ) {
             Map.Entry<Player, Integer> entry = iterator.next();
             Player killer = entry.getKey();
-
             killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
             DailyTask.GLOBAL_BOSSES.tryProgress(killer);
             if(killer.getQuestTwoStarted() == true && killer.getQuestTwoStep2() == false) {

@@ -4,7 +4,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.ruse.engine.GameEngine;
 import com.ruse.engine.task.TaskManager;
-import com.ruse.engine.task.impl.LotteryTask;
 import com.ruse.engine.task.impl.ServerTimeUpdateTask;
 import com.ruse.model.container.impl.Shop.ShopManager;
 import com.ruse.model.definitions.ItemDefinition;
@@ -125,7 +124,6 @@ public final class GameLoader {
 		serviceLoader.execute(ServerPerks.getInstance()::load);
 		if (!GameSettings.LOCALHOST)
 			serviceLoader.execute(Bot::init);
-		TaskManager.submit(new LotteryTask());
 	}
 
 	public GameEngine getEngine() {

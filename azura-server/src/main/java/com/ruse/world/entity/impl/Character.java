@@ -472,6 +472,18 @@ public abstract class Character extends Entity {
             }
         }
         setAnimation(animation);
+
+		if (this.isPlayer()) {
+			Player player=  (Player)this;
+			if (player.isSantaTransform() || player.isEvilSantaTransform()) {
+				player.getPacketSender().sendMessage("You are no longer santa clause.");
+				player.setSantaTransform(false);
+				player.setEvilSantaTransform(false);
+				player.setNpcTransformationId(-1);
+				player.newStance();
+				return;
+			}
+		}
 	}
 
 	@Override
