@@ -97,6 +97,7 @@ public class MaxUpgradesInterface {
 
         REAPER_SET(100,new Item(23259,-1),new Item(23482, 1),new Item(23259, 1),new Item(23260, 1),new Item(23261, 1),new Item(23262, 1),new Item(23263, 1)),
         DIVINE_SET(100,new Item(23384,-1),new Item(23395, 1),new Item(23384, 1),new Item(23385, 1),new Item(12855, 25000000)),
+        DRAGON_RIDER_SET(100,new Item(14050,-1),new Item(23456, 1),new Item(14050, 1),new Item(14051, 1),new Item(14052, 1),new Item(14053, 1),new Item(14054, 1),new Item(14055, 1),new Item(12855, 5000000)),
 
 
         EMBERKEEN_BOOTS(100,new Item(9687,-1),new Item(23296, 1),new Item(9687, 1),new Item(22103, 1),new Item(12855, 25_000_000)),

@@ -4954,7 +4954,7 @@ public class RSInterface {
 		RSInterface scroll = addInterface(STARTING_POINT + 20);
 		scroll.width = 289;
 		scroll.height = 215;
-		scroll.scrollMax = 580;
+		scroll.scrollMax = 600;
 
 		scroll.totalChildren(1);
 		scroll.child(0, STARTING_POINT + 21, 40, 5);
