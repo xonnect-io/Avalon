@@ -611,8 +611,8 @@ public final class ItemDefinition {
 			case 12855:
 				itemDef.copyItem(7478);
 				itemDef.name = "@yel@Upgrade Tokens";
-				itemDef.modelID = 19538;
-				itemDef.modelZoom = 1000;
+				itemDef.modelID = 20568;
+				itemDef.modelZoom = 1500;
 				itemDef.actions = new String[]{"Activate", null, "Exchange", "Exchange X", "Destroy"};
 				//#427743 #242323
 				break;

@@ -1253,7 +1253,7 @@ public class CommandPacketListener implements PacketListener {
                 for (Player players : World.getPlayers()) {
                     if (players != null) {
                         if (players.getRights().isStaff()) {
-                            TeleportHandler.teleportPlayer(players, new Position(3104, 4131), TeleportType.NORMAL);
+                            TeleportHandler.teleportPlayer(players, new Position(3168, 4125), TeleportType.NORMAL);
                         }
                     }
                 }

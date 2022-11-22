@@ -4,6 +4,7 @@ package com.ruse.world.content.combat.strategy.impl;
 import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.model.*;
+import com.ruse.util.Misc;
 import com.ruse.world.content.combat.CombatContainer;
 import com.ruse.world.content.combat.CombatType;
 import com.ruse.world.content.combat.prayer.CurseHandler;
@@ -81,13 +82,13 @@ public class Tokhaar implements CombatStrategy {
 
     private void tileAttack(Player player, NPC npc, Position chosenTile) {
         npc.forceChat("You will fall from my powers!");
-        new Projectile (npc, player, 481, 45, 3, 85, 45, 0).sendProjectile();
+        new Projectile (npc, player, 1650, 45, 3, 85, 45, 0).sendProjectile();
         TaskManager.submit(new Task(3, false) {
             @Override
             protected void execute() {
                 if (player.getPosition().equals(chosenTile)) {
-                    player.performGraphic(new Graphic (1621));
-                    player.dealDamage(new Hit (330, Hitmask.RED, CombatIcon.MELEE));
+                    player.performGraphic(new Graphic (1629));
+                    player.dealDamage(new Hit (Misc.getRandom (100,500), Hitmask.RED, CombatIcon.MELEE));
                     System.out.println("Tile was " + player.getPosition() + " | " + chosenTile);
                 }
                 stop();

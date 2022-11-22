@@ -282,6 +282,18 @@ public class PlayerLoading {
             if (reader.has("slayer-rate")) {
                 player.getPointsHandler().setSlayerRate(reader.get("slayer-rate").getAsInt());
             }
+            if (reader.has("easy-task-kc")) {
+                player.getSlayer().setEasyTaskKC(reader.get("easy-task-kc").getAsInt());
+            }
+            if (reader.has("med-task-kc")) {
+                player.getSlayer().setMedTaskKC(reader.get("med-task-kc").getAsInt());
+            }
+            if (reader.has("hard-task-kc")) {
+                player.getSlayer().setHardTaskKC(reader.get("hard-task-kc").getAsInt());
+            }
+            if (reader.has("boss-task-kc")) {
+                player.getSlayer().setBossTaskKC(reader.get("boss-task-kc").getAsInt());
+            }
             if (reader.has("claimed-first")) {
                 player.claimedFirst = reader.get("claimed-first").getAsBoolean();
             }

@@ -237,6 +237,10 @@ public class PlayerSaving {
 			object.add("bosspets", builder.toJsonTree(player.getBossPetsAll()));
 			object.addProperty("quest-points", new Integer(player.getPointsHandler().getQuestPoints()));
 			object.addProperty("slayer-points", new Integer(player.getPointsHandler().getSlayerPoints()));
+			object.addProperty("easy-task-kc", player.getSlayer().getEasyTaskKC());
+			object.addProperty("med-task-kc", player.getSlayer().getMedTaskKC());
+			object.addProperty("hard-task-kc", player.getSlayer().getHardTaskKC());
+			object.addProperty("boss-task-kc", player.getSlayer().getBossTaskKC());
 			object.addProperty("pk-points", new Integer(player.getPointsHandler().getPkPoints()));
 			object.addProperty("player-kills", new Integer(player.getPlayerKillingAttributes().getPlayerKills()));
 			object.addProperty("player-killstreak",

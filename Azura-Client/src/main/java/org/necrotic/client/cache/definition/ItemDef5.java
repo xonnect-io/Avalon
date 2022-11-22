@@ -5,6 +5,80 @@ public class ItemDef5 {
 	public static ItemDefinition newIDS(ItemDefinition itemDef, int id) {
 
 		switch (id) {
+
+			case 23357:
+				itemDef.copyItem(12608);
+				itemDef.name = "Christmas Aura";
+				itemDef.modelID = 20558;
+				itemDef.femaleEquip1 = 20558;
+				itemDef.maleEquip1 = 20558;
+				itemDef.modelZoom = 3900;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 217;
+				itemDef.rotationZ = 9;
+				itemDef.modelOffsetX = -3;
+				itemDef.modelOffsetY = 23;
+				break;
+
+			case 23358:
+				itemDef.copyItem(4407);
+				itemDef.name = "Winter Cloak";
+				itemDef.modelID = 20559;
+				itemDef.maleEquip1 = 20559;
+				itemDef.femaleEquip1 = 20559;
+				itemDef.actions = new String[5];
+				itemDef.actions[1] = "Wear";
+				itemDef.actions[4] = "Drop";
+				itemDef.modelZoom = 3500;
+				itemDef.rotationX = 1070;
+				itemDef.rotationY = 9;
+				itemDef.rotationZ = 130;
+				itemDef.modelOffsetX = -26;
+				itemDef.modelOffsetY = -15;
+				break;
+			case 23359:
+				itemDef.copyItem(6737);
+				itemDef.name = "Reindeer Ring";
+				itemDef.modelID = 20560;
+				itemDef.maleEquip1 = -1;
+				itemDef.femaleEquip1 = -1;
+				itemDef.modelZoom = 1122;
+				itemDef.rotationX = 1122;
+				itemDef.rotationY = 322;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+			case 23360:
+				itemDef.copyItem(6737);
+				itemDef.name = "Santa's Maul";
+				itemDef.modelID = 20580;
+				itemDef.maleEquip1 = 20580;
+				itemDef.femaleEquip1 = 20580;
+				itemDef.modelZoom = 3200;
+				itemDef.rotationX = 1226;
+				itemDef.rotationY = 322;
+				itemDef.rotationZ = 1643;
+				itemDef.modelOffsetX = 26;
+				itemDef.modelOffsetY = -252;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 23361:
+				itemDef.copyItem(6737);
+				itemDef.name = "Santa's Blaster";
+				itemDef.modelID = 20581;
+				itemDef.maleEquip1 = 20581;
+				itemDef.femaleEquip1 = 20581;
+				itemDef.modelZoom = 1104;
+				itemDef.rotationX = 322;
+				itemDef.rotationY = 1591;
+				itemDef.rotationZ = 530;
+				itemDef.modelOffsetX = 43;
+				itemDef.modelOffsetY = -61;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
 			case 23652:
 				itemDef.copyItem(7478);
 				itemDef.modelZoom = 432;
@@ -47,7 +121,7 @@ public class ItemDef5 {
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetX = 0;
 				itemDef.modelOffsetY = -3;
-				itemDef.modelID = 18539;
+				itemDef.modelID = 20565;
 				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
 				break;
 			case 23663:
@@ -214,13 +288,13 @@ public class ItemDef5 {
 				itemDef.modelOffsetY = 1;
 				break;
 			case 23530:
-				itemDef.modelZoom = 1802;
+				itemDef.copyItem(6737);
+				itemDef.modelZoom = 1302;
 				itemDef.rotationX = 0;
 				itemDef.rotationY = 525;
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetX = 3;
 				itemDef.modelOffsetY = 7;
-				itemDef.copyItem(6737);
 				itemDef.name = "Elf legs";
 				itemDef.modelID = 20532;
 				itemDef.maleEquip1 = 20533;

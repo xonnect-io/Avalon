@@ -1079,7 +1079,7 @@ public class ItemDef4 {
 				itemDef.modelZoom = 2000;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.oldColors = new int[]{55};
-				itemDef.newColors = new int[]{131};
+				itemDef.newColors = new int[]{52};
 				break;
 
 			case 23241:

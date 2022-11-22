@@ -93,6 +93,7 @@ public final class MobDefinition {
 			case 3373:
 				definition.npcModels[0] = 6775;
 				definition.npcModels[5] = 65334;//cape
+				definition.actions = new String[]{"Talk-to" ,null, null, null, null};
 				break;
 				
 			case 289:
@@ -946,7 +947,7 @@ public final class MobDefinition {
 				definition.combatLevel = 162;
 				definition.standAnimation = poke2.standAnimation;
 				definition.walkAnimation = poke2.walkAnimation;
-				definition.npcModels = new int[]{16836};
+				definition.npcModels = new int[]{20567};
 				definition.name = "Elemental Guardian";
 				//definition.rdc2 = 2592952;
 				definition.scaleXZ = 100;
@@ -3446,14 +3447,13 @@ public final class MobDefinition {
 				definition.name = "<col=f8ac00>Double vote pet";
 				MobDefinition darkath = MobDefinition.get(2292);
 				definition.description = "GWD.".getBytes();
-				definition.npcModels = new int[]{18539};
+				definition.npcModels = new int[]{20565};
 				definition.combatLevel = darkath.combatLevel;
 				definition.standAnimation = darkath.standAnimation;
 				definition.walkAnimation = darkath.walkAnimation;
 				definition.actions = new String[5];
 				definition.actions[0] = null;
 				definition.drawYellowDotOnMap = false;
-				definition.rdc2 = 6233;
 				definition.npcSizeInSquares = 1;
 				definition.scaleXZ = 15;
 				definition.scaleY = 15;
@@ -3525,10 +3525,10 @@ public final class MobDefinition {
 				definition.scaleXZ = 120;
 				definition.scaleY = 120;
 				definition.npcModels = new int[1];
-				definition.npcModels[0] = 14951;
+				definition.npcModels[0] = 20563;
 				definition.drawYellowDotOnMap = true;
-
 				break;
+
 			case 9016:
 				definition.name = "Avalon The Great pet";
 				MobDefinition ironPet = MobDefinition.get(2292);
@@ -4495,7 +4495,7 @@ public final class MobDefinition {
 			case 2342:
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.name = "Botanic Guardian";
-				definition.npcModels = new int[]{16838};
+				definition.npcModels = new int[]{20566};
 				MobDefinition Herbal11 = get(1);
 				definition.combatLevel = 300;
 				definition.scaleXZ = 100;
@@ -5086,7 +5086,7 @@ public final class MobDefinition {
 				definition.name = "<shad=f9f6f6>Vote Boss<shad=-1>";
 				MobDefinition votingbosser = MobDefinition.get(2292);
 				definition.description = "GWD.".getBytes();
-				definition.npcModels = new int[]{18539};
+				definition.npcModels = new int[]{20565};
 				definition.combatLevel = votingbosser.combatLevel;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
@@ -6291,8 +6291,12 @@ public final class MobDefinition {
 				definition.name = "Master miner";
 				break;
 			case 961:
+				definition.npcModels = new int[1];
+				definition.npcModels[0] = 20562;
 				definition.actions = new String[]{null, null, "Buy Consumables", "Restore Stats", "Buy Food"};
 				definition.name = "Healer";
+				definition.scaleY = 56;
+				definition.scaleXZ = 60;
 				break;
 			case 705:
 				MobDefinition shop3 = MobDefinition.get(14010);
@@ -7619,7 +7623,7 @@ public final class MobDefinition {
 				definition.walkAnimation = 1660;
 				definition.standAnimation = 11973;
 				definition.npcModels = new int[]{20551};
-				definition.name = "Tokhaar";
+				definition.name = "TokHaar-Hok";
 				definition.combatLevel = 1337;
 				definition.degreesToTurn = 32;
 				definition.actions = new String[5];
