@@ -25,6 +25,7 @@ import com.ruse.world.content.discordbot.Bot;
 import com.ruse.world.content.discordbot.DiscordIntegration;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
 import com.ruse.world.content.groupironman.GroupManager;
+import com.ruse.world.content.leaderboards.Leaderboard;
 import com.ruse.world.content.polling.PollManager;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.seasonpass.PassRewards;
@@ -98,6 +99,7 @@ public final class GameLoader {
 
 		serviceLoader.execute(ItemDefinition::init);
 
+		serviceLoader.execute(Leaderboard::init);
 		serviceLoader.execute(DiscordIntegration::loadConnectedAccounts);
 		serviceLoader.execute(DiscordIntegration::discordPoint);
 		serviceLoader.execute(Lottery::init);

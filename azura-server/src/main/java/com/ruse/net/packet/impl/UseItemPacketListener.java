@@ -1047,7 +1047,7 @@ public class UseItemPacketListener implements PacketListener {
                         player.getPacketSender().sendMessage("This player already has a Slayer task.");
                         return;
                     }
-                    if (duoPartner.getSlayer().getSlayerMaster() != player.getSlayer().getSlayerMaster()) {
+                    if (duoPartner.getSlayer().getTaskType () != player.getSlayer().getTaskType()) {
                         player.getPacketSender().sendMessage("You do not have the same Slayer master as that player.");
                         return;
                     }

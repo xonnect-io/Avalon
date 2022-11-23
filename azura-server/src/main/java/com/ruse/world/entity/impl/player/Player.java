@@ -69,6 +69,7 @@ import com.ruse.world.content.grandexchange.GrandExchangeSlot;
 import com.ruse.world.content.groupironman.IronmanGroup;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceMananger.InstanceManager;
+import com.ruse.world.content.leaderboards.LeaderboardManager;
 import com.ruse.world.content.membership.MembershipInterfaceHandler;
 import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.MinigameAttributes;
@@ -94,6 +95,7 @@ import com.ruse.world.content.skill.impl.construction.Portal;
 import com.ruse.world.content.skill.impl.construction.Room;
 import com.ruse.world.content.skill.impl.farming.Farming;
 import com.ruse.world.content.skill.impl.slayer.Slayer;
+import com.ruse.world.content.skill.impl.slayer.SlayerFavourites;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Pouch;
 import com.ruse.world.content.skill.impl.summoning.Summoning;
@@ -162,7 +164,6 @@ public class Player extends Character {
             PYRAMID_OUTBREAK_LOG_CLAIMED
             ;
     private final CollectionLog collectionLog2 = new CollectionLog(this);
-public boolean setSlayerBoss;
     public Object incrementMiniLuciferkillcount;
 
     public CollectionLog getCollectionLog2() {
@@ -191,6 +192,16 @@ public boolean setSlayerBoss;
     public AchievementsOLD.AchievementAttributes getAchievementAttributes() {
         return achievementAttributes;
     }
+
+    @Getter
+    private final SlayerFavourites slayerFavourites = new SlayerFavourites(this);
+
+    @Getter
+    @Setter
+    private boolean canKillSlayerBoss = false;
+
+    @Getter
+    private final LeaderboardManager leaderboardManager = new LeaderboardManager(this);
 
     @Setter
     @Getter
@@ -908,8 +919,8 @@ public int howmuchdissolveamt = 0;
     private DungeoneeringIronEquipment dungeoneeringIronEquipment = new DungeoneeringIronEquipment(this);
     private final PriceChecker priceChecker = new PriceChecker(this);
     private final Trading trading = new Trading(this);
+    private Slayer slayer = new Slayer(this);
     private final Dueling dueling = new Dueling(this);
-    private final Slayer slayer = new Slayer(this);
     private final Farming farming = new Farming(this);
     private final Summoning summoning = new Summoning(this);
     private final Bank[] bankTabs = new Bank[9];
@@ -2058,6 +2069,17 @@ public int howmuchdissolveamt = 0;
         return session;
     }
 
+    public int getSlayerSprees() {
+        return totalsprees;
+    }
+
+    public Slayer getSlayer() {
+        return slayer;
+    }
+    public void incrementSlayerSprees(int totalsprees) {
+        this.totalsprees += totalsprees;
+    }
+
     public Inventory getInventory() {
     	if (this instanceof MiniPlayer)
 			return getMiniPlayerOwner().getInventory();
@@ -2565,19 +2587,6 @@ End new teleport
      */
 
 
-    /*
-    Start Double Slayer XP
-     */
-    private boolean doubleSlayerXP;
-    public void setDoubleSlayerXP(boolean doubleSlayerXP) {
-        this.doubleSlayerXP = doubleSlayerXP;
-    }
-    public boolean getDoubleSlayerXP() {
-        return doubleSlayerXP;
-    }
-    /*
-    End Double Slayer XP
-     */
 
 
     /*
@@ -3513,13 +3522,6 @@ End new teleport
         this.totalprestiges += totalprestiges;
     }
 
-    public int getSlayerSprees() {
-        return totalsprees;
-    }
-
-    public void incrementSlayerSprees(int totalsprees) {
-        this.totalsprees += totalsprees;
-    }
 
     public long getTotalPlayTime() {
         return totalPlayTime;
@@ -4061,9 +4063,6 @@ End new teleport
         this.resetPosition = resetPosition;
     }
 
-    public Slayer getSlayer() {
-        return slayer;
-    }
 
     public ClueScrollTask getCurrentClue() {
         return currentClue;
@@ -4760,9 +4759,6 @@ End new teleport
     @Setter
     private String potionUsed = "Super Ovl";
 
-    @Getter
-    @Setter
-    private boolean canKillSlayerBoss = false;
 
     @Getter
     @Setter

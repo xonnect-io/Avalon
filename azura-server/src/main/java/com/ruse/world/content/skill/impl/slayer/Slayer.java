@@ -1,9 +1,6 @@
 package com.ruse.world.content.skill.impl.slayer;
 
-import com.ruse.model.Item;
-import com.ruse.model.Locations;
-import com.ruse.model.Position;
-import com.ruse.model.Skill;
+import com.ruse.model.*;
 import com.ruse.model.container.impl.Shop.ShopManager;
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
@@ -14,13 +11,17 @@ import com.ruse.world.content.NpcRequirements;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.dialogue.DialogueManager;
-import com.ruse.world.content.globalBosses.SlayerBossSystem;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.summoning.Familiar;
 import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.content.transportation.TeleportHandler;
+import com.ruse.world.content.weightedRandom.WeightedSystem;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.ArrayList;
 
 public class Slayer {
 
@@ -31,11 +32,50 @@ public class Slayer {
     }
 
     private SlayerTasks slayerTask = SlayerTasks.NO_TASK, lastTask = SlayerTasks.NO_TASK;
-    private SlayerMaster slayerMaster = SlayerMaster.EASY_SLAYER;
+    private TaskType taskType = TaskType.EASY;
     private int amountToSlay, taskStreak;
     private String duoPartner, duoInvitation;
 
+    @Getter
+    @Setter
+    private int easyTaskKC = 0;
+    @Getter
+    @Setter
+    private int medTaskKC = 0;
+    @Getter
+    @Setter
+    private int hardTaskKC = 0;
+    @Getter
+    @Setter
+    private int bossTaskKC = 0;
+
+
+    public static int medSlayerReq = 5;
+    public static int hardSlayerReq = 10;
+    public static int bossSlayerReq = 25;
+
     public void assignTask() {
+
+        if (easyTaskKC < Slayer.medSlayerReq
+                && taskType == TaskType.MEDIUM) {
+            DialogueManager.sendStatement(player, "You need to complete " + Slayer.medSlayerReq + " easy slayer tasks to do this. (" +
+                    easyTaskKC + "/" + medSlayerReq + ")");
+            return;
+        }
+        if (medTaskKC < Slayer.hardSlayerReq
+                && taskType == TaskType.HARD) {
+            DialogueManager.sendStatement(player, "You need to complete " + Slayer.hardSlayerReq + " medium slayer tasks to do this. (" +
+                    medTaskKC + "/" + hardSlayerReq + ")");
+            return;
+        }
+        if (hardTaskKC < Slayer.bossSlayerReq
+                && taskType == TaskType.BOSS_SLAYER) {
+            DialogueManager.sendStatement(player, "You need to complete " + Slayer.bossSlayerReq + " hard slayer tasks to do this. (" +
+                    hardTaskKC + "/" + bossSlayerReq + ")");
+            return;
+        }
+
+
         boolean hasTask = getSlayerTask() != SlayerTasks.NO_TASK && player.getSlayer().getLastTask() != getSlayerTask();
         boolean duoSlayer = duoPartner != null;
         if (duoSlayer && !player.getSlayer().assignDuoSlayerTask())
@@ -45,65 +85,97 @@ public class Slayer {
             return;
         }
 
-        SlayerTaskData taskData = SlayerTasks.getNewTaskData(slayerMaster);
-        int slayerTaskAmount = taskData.getSlayerTaskAmount();
-        SlayerTasks taskToSet = taskData.getTask();
-        if(duoSlayer) {
-            slayerTaskAmount *= 2;
-        }
+        ArrayList<SlayerTasks> tasks = SlayerTasks.forId(player, taskType);
 
-        if (taskToSet == SlayerTasks.RAMMERNAUT && !player.isUnlockedRammernaut()) {
-            System.out.println ("Hitting here");
-            assignTask();
-            return;
+        slayerTasksWeightedSystem.clear();
+        for (SlayerTasks task : tasks) {
+            if (player.getSlayerFavourites().isFavourite(task.getNpcId()))
+                slayerTasksWeightedSystem.add(1.25, task);
+            else
+                slayerTasksWeightedSystem.add(1, task);
         }
+        SlayerTasks taskToSet = slayerTasksWeightedSystem.next();
+        int slayerTaskAmount = taskToSet.getMin() + Misc.getRandom(taskToSet.getMax() - taskToSet.getMin());
 
         if (taskToSet == player.getSlayer().getLastTask() || NpcDefinition.forId(taskToSet.getNpcId())
-                .getSlayerLevel() > player.getSkillManager().getMaxLevel(Skill.SLAYER)) {
+                .getSlayerLevel() > player.getSkillManager().getMaxLevel(Skill.SLAYER) || player.getSlayerFavourites().isBlocked(taskType.getNpcId())) {
             assignTask();
             return;
         }
-        for (NpcRequirements req : NpcRequirements.values()) {
-            if (taskToSet.getNpcId() == req.getNpcId()) {
-                if (req.getKillCount() > 0) {
-                    if (player.getPointsHandler().getNPCKILLCount() < req.getKillCount()) {
-                        assignTask();
-                        return;
-                    }
-                } else {
-                    int total = KillsTracker.getTotalKillsForNpc(req.getRequireNpcId(), player);
-                    if (total < req.getAmountRequired()) {
-                        assignTask();
-                        return;
-                    }
-                }
-                break;
-
+        if (duoSlayer){
+            if (!hasRequirements(player, taskToSet) || !hasRequirements( World.getPlayerByName(duoPartner), taskToSet)){
+               assignTask();
+                return;
+           }
+        }else{
+            if (!hasRequirements(player, taskToSet)){
+                assignTask();
+                return;
             }
         }
 
         player.getPacketSender().sendInterfaceRemoval();
         this.amountToSlay = slayerTaskAmount;
         this.slayerTask = taskToSet;
-        DialogueManager.start(player, SlayerDialogues.receivedTask(player, getSlayerMaster(), getSlayerTask()));
+        DialogueManager.start(player, SlayerDialogues.receivedTask(player, getTaskType(), getSlayerTask()));
         PlayerPanel.refreshPanel(player);
         if (duoSlayer) {
             Player duo = World.getPlayerByName(duoPartner);
             duo.getSlayer().setSlayerTask(taskToSet);
             duo.getSlayer().setAmountToSlay(slayerTaskAmount);
             duo.getPacketSender().sendInterfaceRemoval();
-            DialogueManager.start(duo, SlayerDialogues.receivedTask(duo, slayerMaster, taskToSet));
+            DialogueManager.start(duo, SlayerDialogues.receivedTask(duo, taskType, taskToSet));
             PlayerPanel.refreshPanel(duo);
         }
     }
 
-    public void resetSlayerTask() {
+    public WeightedSystem<SlayerTasks> slayerTasksWeightedSystem = new WeightedSystem<>();
+
+    public static boolean hasRequirements(Player p, SlayerTasks taskToSet) {
+        for (NpcRequirements req : NpcRequirements.values()) {
+            if (taskToSet.getNpcId() == req.getNpcId()) {
+                if (req.getKillCount() > 0) {
+                    if (KillsTracker.getTotalKills(p) < req.getKillCount() && KillsTracker.getTotalKills(p )< req.getKillCount()) {
+                        return false;
+                    }
+                } else {
+                    int total = KillsTracker.getTotalKillsForNpc(req.getRequireNpcId(), p);
+                    if (total < req.getAmountRequired()) {
+                        return false;
+                    }
+                }
+                break;
+            }
+        }
+        if (taskToSet == SlayerTasks.RAMMERNAUT && !p.isUnlockedRammernaut()) {
+            return false;
+        }
+        /*
+        if (taskToSet == SlayerTasks.FALLEN_ANGEL && !p.isUnlockedLucifers()) {
+            return false;
+        }
+        if (taskToSet == SlayerTasks.MIDNIGHT_GOBLIN && !p.isUnlockedDarkSupreme()) {
+            return false;
+        }*/
+        return true;
+    }
+        public void resetSlayerTask() {
         SlayerTasks task = getSlayerTask();
-        if (task == SlayerTasks.NO_TASK)
-            return;
-        if (!player.getInventory().contains(12855,25000)) {
-            player.getPacketSender().sendMessage("You must have at-least 25000 Upgrade tokens in order to skip a task.");
-            return;
+            if (task == SlayerTasks.NO_TASK) {
+                player.sendMessage("You do not currently have a slayer task!");
+                return;
+            }
+        if (getTaskType() == TaskType.BOSS_SLAYER) {
+            if (player.getInventory().getAmount(12855) < 25000) {
+                player.getPacketSender().sendMessage("You must have 25,000 Upgrade Tokens to reset a task.");
+                return;
+            }
+        } else {
+            if (player.getPointsHandler().getSlayerPoints() < 5
+                    && player.getSkillManager().getCurrentLevel(Skill.SLAYER) > 20) {
+                player.getPacketSender().sendMessage("You must have 5 Slayer Points, or level 20 Slayer to reset a task.");
+                return;
+            }
         }
         this.slayerTask = SlayerTasks.NO_TASK;
         this.amountToSlay = 0;
@@ -112,8 +184,15 @@ public class Slayer {
         } else {
             this.taskStreak = 0;
         }
-        player.getInventory().delete(12855,25000);
-
+        if (getTaskType() == TaskType.BOSS_SLAYER) {
+            player.getInventory().delete(12855, 25000);
+        } else {
+            if (player.getSkillManager().getCurrentLevel(Skill.SLAYER) == 1) {
+                player.getPacketSender().sendMessage("At level 1 Slayer, you can reset your task for free.");
+            } else {
+                player.getPointsHandler().setSlayerPoints(player.getPointsHandler().getSlayerPoints() - 5, false);
+            }
+        }
         PlayerPanel.refreshPanel(player);
         Player duo = duoPartner == null ? null : World.getPlayerByName(duoPartner);
         if (duo != null) {
@@ -124,7 +203,7 @@ public class Slayer {
             }
             duo.getSlayer().setSlayerTask(SlayerTasks.NO_TASK).setAmountToSlay(0);
             duo.getPacketSender()
-                    .sendMessage("Your partner reset your team's Slayer task.");
+                    .sendMessage("Your partner exchanged 5 Slayer points to reset your team's Slayer task.");
             PlayerPanel.refreshPanel(duo);
             player.getPacketSender().sendMessage("You've successfully reset your team's Slayer task.");
         } else {
@@ -136,12 +215,29 @@ public class Slayer {
         if (slayerTask != SlayerTasks.NO_TASK) {
             if (slayerTask.getNpcId() == npc.getId()) {
                 handleSlayerTaskDeath(true);
-                if (Misc.getRandom(250) == 0) {
-                    player.sendMessage("You received a Slayer Crate!");
-                    player.getInventory().add(7120, 1);
-                }
+                if (player.getSlayer().getTaskType().equals(TaskType.BOSS_SLAYER)) {
+                    long hp = npc.getDefinition().getHitpoints();
 
-                // custom tickets here?
+                    double green = (double) hp / 1_000_000;
+                    if (green >= 4)
+                        green = 4;
+
+                    if (Misc.getRandomDouble() <= green / 100) {
+                        player.sendMessage("@cya@You received a Slayer Crate (u) for killing your boss slayer task!");
+                        player.getInventory().add(22123, 1);
+                    }
+                } else {
+                    int chance = 200;
+                    if (slayerTask.getTaskType() == TaskType.MEDIUM) {
+                        chance = 100;
+                    } else if (slayerTask.getTaskType() == TaskType.HARD) {
+                        chance = 50;
+                    }
+                    if (Misc.getRandom(chance) <= 0) {
+                        player.sendMessage("@cya@You received a Slayer Box for killing your slayer task monster!");
+                        player.getInventory().add(7120, 1);
+                    }
+                }
                 if (duoPartner != null) {
                     Player duo = World.getPlayerByName(duoPartner);
                     if (duo != null) {
@@ -179,11 +275,12 @@ public class Slayer {
             slayerTask = SlayerTasks.NO_TASK;
             amountToSlay = 0;
 
-            if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER)) {
-                player.getSeasonPass().addExperience (4);
-
+            if (player.getSlayer().getTaskType().equals(TaskType.BOSS_SLAYER)) {
                 player.getDailyTaskManager().submitProgressToIdentifier(18, 1);
-                Cases.grantCasket(player, 10);
+                //player.getAchievementTracker().progress(AchievementData.BOSS_SLAYER, 1);
+                player.getSeasonPass().addExperience(4);
+
+                    Cases.grantCasket(player, 10);
 
 
                 if (player.getSlayer().getTaskStreak() % 10 == 0) {
@@ -195,8 +292,10 @@ public class Slayer {
                 } else {
                     player.getInventory().add(9000, ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS ? 30 : 15);
                 }
+                setBossTaskKC(getBossTaskKC() + 1);
+
             } else {
-                givePoints(player.getSlayer().getLastTask().getTaskMaster());
+                givePoints(player.getSlayer().getLastTask().getTaskType());
             }
         }
 
@@ -208,24 +307,26 @@ public class Slayer {
     }
 
     @SuppressWarnings("incomplete-switch")
-    public void givePoints(SlayerMaster master) {
+    public void givePoints(TaskType master) {
         int pointsReceived = 10;
         switch (master) {
-            case EASY_SLAYER:
+            case EASY:
                 pointsReceived = 10;
-                player.getSeasonPass().addExperience (1);
+                setEasyTaskKC(getEasyTaskKC() + 1);
+                player.getSeasonPass().addExperience(1);
                 Cases.grantCasket(player, 25);
-                System.out.println("TEST EASY: " +pointsReceived);
                 StarterTasks.doProgress(player, StarterTasks.StarterTask.EASY_TASKS);
                 break;
-            case MEDIUM_SLAYER:
+            case MEDIUM:
                 pointsReceived = 15;
+                setMedTaskKC(getMedTaskKC() + 1);
                 player.getSeasonPass().addExperience(2);
                 Cases.grantCasket(player, 20);
                 player.getDailyTaskManager().submitProgressToIdentifier(2, 1);
                 break;
-            case HARD_SLAYER:
+            case HARD:
                 pointsReceived = 25;
+                setHardTaskKC(getHardTaskKC() + 1);
                 player.getSeasonPass().addExperience(3);
                 Cases.grantCasket(player, 15);
                 break;
@@ -233,20 +334,18 @@ public class Slayer {
         Familiar playerFamiliar = player.getSummoning().getFamiliar();
 
         if (playerFamiliar != null && playerFamiliar.getSummonNpc() != null) {
-            if (playerFamiliar.getSummonNpc().getId() == 22030)
-                pointsReceived = (int)((double)pointsReceived*1.5d);
+           if (playerFamiliar.getSummonNpc().getId() == 22030)
+               pointsReceived = (int)((double)pointsReceived*1.5d);
         }
         int per5 = pointsReceived * 2;
         int per10 = pointsReceived * 3;
 
 
-        player.getPacketSender().sendMessage("You have completed your Slayer task");
+        if(ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.SLAYER_POINTS) {
+            pointsReceived *= 2;
+        }
 
-        SlayerBossSystem.slayerTasks++;
-
-        SlayerBossSystem.spawnBoss();
-        SlayerBossSystem.callBoss();
-        if (player.getSlayer().getTaskStreak() % 10 == 0) {
+            if (player.getSlayer().getTaskStreak() % 10 == 0) {
             player.getPointsHandler().setSlayerPoints(per10, true);
             player.getPacketSender().sendMessage("You received " + per5 + " Slayer points.");
         } else if (player.getSlayer().getTaskStreak() % 5 == 0) {
@@ -256,6 +355,7 @@ public class Slayer {
             player.getPointsHandler().setSlayerPoints(pointsReceived, true);
             player.getPacketSender().sendMessage("You received " + pointsReceived + " Slayer points.");
         }
+
         PlayerPanel.refreshPanel(player);
     }
 
@@ -280,7 +380,7 @@ public class Slayer {
             player.getPacketSender().sendMessage("Your partner already has a Slayer task, head-ass.");
             return false;
         }
-        if (partner.getSlayer().getSlayerMaster() != player.getSlayer().getSlayerMaster()) {
+        if (partner.getSlayer().getTaskType() != player.getSlayer().getTaskType()) {
             player.getPacketSender().sendMessage("You and your partner need to have the same Slayer master.");
             return false;
         }
@@ -304,7 +404,7 @@ public class Slayer {
             resetDuo(p, null);
             return false;
         }
-        if (partner.getSlayer().getSlayerMaster() != p.getSlayer().getSlayerMaster()) {
+        if (partner.getSlayer().getTaskType() != p.getSlayer().getTaskType()) {
             resetDuo(p, partner);
             return false;
         }
@@ -371,6 +471,7 @@ public class Slayer {
                 task.getTaskPosition().getZ());
         if (!TeleportHandler.checkReqs(player, slayerTaskPos))
             return;
+        //player.getProgressionManager().getProgressionTask(7).incrementProgress(0, 1);
         TeleportHandler.teleportPlayer(player, slayerTaskPos, player.getSpellbook().getTeleportType());
     }
 
@@ -386,6 +487,7 @@ public class Slayer {
                 task.getTaskPosition().getZ());
         if (!TeleportHandler.checkReqs(player, slayerTaskPos))
             return;
+        //player.getProgressionManager().getProgressionTask(7).incrementProgress(0, 1);
         TeleportHandler.teleportPlayer(player, slayerTaskPos, player.getSpellbook().getTeleportType());
         Item slayerRing = new Item(itemId);
         player.getInventory().delete(slayerRing);
@@ -445,25 +547,49 @@ public class Slayer {
         return this;
     }
 
-    public SlayerMaster getSlayerMaster() {
-        return slayerMaster;
+    public TaskType getTaskType() {
+        return taskType;
     }
 
-
-    public void setSlayerMaster(SlayerMaster master) {
-        this.slayerMaster = master;
+    public void setTaskType(TaskType master) {
+        this.taskType = master;
     }
 
     public void setDuoInvitation(String player) {
         this.duoInvitation = player;
     }
 
-    // TODO remove points related stuff
     public static boolean handleRewardsInterface(Player player, int button) {
         if (player.getInterfaceId() == 36000) {
             switch (button) {
                 case -29534:
                     player.getPacketSender().sendInterfaceRemoval();
+                    break;
+                case -29522:
+                    if (player.getPointsHandler().getSlayerPoints() < 10) {
+                        player.getPacketSender().sendMessage("You do not have 10 Slayer points.");
+                        return true;
+                    }
+                    PlayerPanel.refreshPanel(player);
+                    player.getPointsHandler().setSlayerPoints(-10, true);
+                    int num = 10000 / Difficulty.getDifficultyModifier(player, Skill.SLAYER);
+                    player.getSkillManager().addExperience(Skill.SLAYER, num);
+                    player.getPacketSender().sendMessage("You've bought " + Misc.format(Misc.applyBonusExp(10000, player))
+                            + " Slayer XP for 10 Slayer points.");
+                    break;
+                case -29519:
+                    if (player.getPointsHandler().getSlayerPoints() < 300) {
+                        player.getPacketSender().sendMessage("You do not have 300 Slayer points.");
+                        return true;
+                    }
+                    if (player.getSlayer().doubleSlayerXP) {
+                        player.getPacketSender().sendMessage("You already have Double Slayer Points.");
+                        return true;
+                    }
+                    player.getPointsHandler().setSlayerPoints(-300, true);
+                    player.getSlayer().doubleSlayerXP = true;
+                    PlayerPanel.refreshPanel(player);
+                    player.getPacketSender().sendMessage("You will now permanently receive double Slayer experience.");
                     break;
                 case -29531:
                     ShopManager.getShops().get(47).open(player);

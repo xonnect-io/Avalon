@@ -1262,12 +1262,13 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
 
             case 14819:
-                if (player.getDoubleSlayerXP() == true) {
+                if (player.getSlayer().doubleSlayerXP) {
                     player.getPacketSender().sendMessage("You already have Double Slayer Points.");
                     return;
                 }
                 player.getInventory().delete(14819, 1);
-                player.setDoubleSlayerXP(true);
+                // player.getPointsHandler().setSlayerPoints(-300, true);
+                player.getSlayer().doubleSlayerXP = true;
                 PlayerPanel.refreshPanel(player);
                 player.getPacketSender().sendMessage("You will now permanently receive double Slayer experience.");
                 break;
@@ -2777,7 +2778,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage(player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK
                         ? ("You do not have a Slayer task.")
                         : ("You're assigned to kill "
-                        + player.getSlayer().getSlayerTask().getName()
+                        + player.getSlayer().getSlayerTask().name()
                         + "s, only " + player.getSlayer().getAmountToSlay() + " more to go."));
                 break;
             case 15262:

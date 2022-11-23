@@ -17,6 +17,8 @@ import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.old_dungeoneering.UltimateIronmanHandler;
+import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
+import com.ruse.world.content.skill.impl.slayer.TaskType;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Familiar;
 import com.ruse.world.entity.impl.player.Player;
@@ -587,6 +589,13 @@ public class SkillManager {
             PlayerPanel.refreshPanel(player);
         } else {
             player.getInventory().delete(13663, 1);
+        }
+
+
+
+        if (skill == Skill.SLAYER) {
+            player.getSlayer().setSlayerTask(SlayerTasks.NO_TASK).setAmountToSlay(0);
+            player.getSlayer().setTaskType(TaskType.EASY);
         }
         setCurrentLevel(skill, skill == Skill.PRAYER ? 10 : skill == Skill.CONSTITUTION ? 100 : 1)
                 .setMaxLevel(skill, skill == Skill.PRAYER ? 10 : skill == Skill.CONSTITUTION ? 100 : 1)

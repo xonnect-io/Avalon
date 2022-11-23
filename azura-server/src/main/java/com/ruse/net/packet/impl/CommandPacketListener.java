@@ -53,6 +53,7 @@ import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.holidayevents.easter2017;
+import com.ruse.world.content.leaderboards.Leaderboard;
 import com.ruse.world.content.minigames.impl.DissolveAllDialogue;
 import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
@@ -115,6 +116,9 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("startertasks")) {
             player.getStarterTasks().openInterface();
+        }
+        if (command[0].equalsIgnoreCase("slayerfavourites")) {
+            player.getSlayerFavourites().open();
         }
         //Start of Teleports
         if (command[0].equalsIgnoreCase("home")) {
@@ -3671,6 +3675,7 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("saveall")) {
             World.savePlayers();
+            Leaderboard.save();
             player.getPacketSender().sendMessage("Saved all players.");
         }
 

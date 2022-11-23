@@ -26,16 +26,16 @@ public class LeaderboardManager {
      * @return
      */
     public boolean handleButton(final int buttonId) {
-        if (buttonId >= 154005 && buttonId <= 154007) {
-            int index = (buttonId - 154005) / 2;
+        if (buttonId >= 139005 && buttonId <= 139007) {
+            int index = (buttonId - 139005) / 2;
             if (index < LeaderboardData.LeaderboardType.values().length) {
                 leaderboardType = LeaderboardData.LeaderboardType.values()[index];
                 leaderboardViewing = LeaderboardData.getItems(leaderboardType).get(0);
                 openInterface();
             }
             return true;
-        } else if (buttonId >= 154151 && buttonId <= 154190) {
-            int index = buttonId - 154151;
+        } else if (buttonId >= 139151 && buttonId <= 139190) {
+            int index = buttonId - 139151;
             if (index < viewingBoards.size()) {
                 leaderboardViewing = viewingBoards.get(index);
                 setupList();
@@ -52,7 +52,7 @@ public class LeaderboardManager {
     public void openInterface() {
         setupList();
         loadInfo();
-        player.getPacketSender().sendInterface(154000);
+        player.getPacketSender().sendInterface(139000);
     }
 
 
@@ -70,7 +70,7 @@ public class LeaderboardManager {
         viewingBoards = LeaderboardData.getItems(leaderboardType);
 
         int length = viewingBoards.size();
-        int id = 154151;
+        int id = 139151;
 
         int scroll = (length * 18);
         if (scroll <= 195)
@@ -86,7 +86,7 @@ public class LeaderboardManager {
         }
 
         player.getPacketSender().sendConfig(4511, leaderboardType.ordinal());
-        player.getPacketSender().setScrollBar(154100, scroll);
+        player.getPacketSender().setScrollBar(139100, scroll);
     }
 
 
@@ -98,13 +98,13 @@ public class LeaderboardManager {
             if (Leaderboard.DATA.get(leaderboardViewing).containsKey(player.getUsername())) {
                 long entry = Leaderboard.DATA.get(leaderboardViewing).get(player.getUsername());
                 if (leaderboardViewing == LeaderboardData.DONATED)
-                    player.getPacketSender().sendString(154014, "Personal: $" + Misc.insertCommasToNumber(entry));
+                    player.getPacketSender().sendString(139014, "Personal: $" + Misc.insertCommasToNumber(entry));
                 else if (leaderboardViewing == LeaderboardData.TIME_PLAYED)
-                    player.getPacketSender().sendString(154014, "Personal: " + Misc.getHoursPlayed(entry));
+                    player.getPacketSender().sendString(139014, "Personal: " + Misc.getHoursPlayed(entry));
                 else
-                    player.getPacketSender().sendString(154014, "Personal: " + Misc.insertCommasToNumber(entry));
+                    player.getPacketSender().sendString(139014, "Personal: " + Misc.insertCommasToNumber(entry));
             }else{
-                player.getPacketSender().sendString(154014, "Personal: " + 0);
+                player.getPacketSender().sendString(139014, "Personal: " + 0);
             }
 
 
@@ -116,14 +116,14 @@ public class LeaderboardManager {
                 if (index >= 50) {
                     break;
                 }
-                player.getPacketSender().sendString(154551 + (index * 3), "#" + (index + 1));
+                player.getPacketSender().sendString(139551 + (index * 3), "#" + (index + 1));
                 if (leaderboardViewing == LeaderboardData.DONATED)
-                    player.getPacketSender().sendString(154552 + (index * 3), "$" + Misc.insertCommasToNumber(entryValue));
+                    player.getPacketSender().sendString(139552 + (index * 3), "$" + Misc.insertCommasToNumber(entryValue));
                 else if (leaderboardViewing == LeaderboardData.TIME_PLAYED)
-                    player.getPacketSender().sendString(154552 + (index * 3), "" + Misc.getHoursPlayed(entryValue));
+                    player.getPacketSender().sendString(139552 + (index * 3), "" + Misc.getHoursPlayed(entryValue));
                 else
-                    player.getPacketSender().sendString(154552 + (index * 3), "" + Misc.insertCommasToNumber(entryValue));
-                player.getPacketSender().sendString(154553 + (index * 3), user);
+                    player.getPacketSender().sendString(139552 + (index * 3), "" + Misc.insertCommasToNumber(entryValue));
+                player.getPacketSender().sendString(139553 + (index * 3), user);
                 index++;
 
                 iterator.remove();
@@ -132,9 +132,9 @@ public class LeaderboardManager {
         if (index < 50) {
             int remaining = 50 - index;
             for (int i = 0; i < remaining; i++) {
-                player.getPacketSender().sendString(154551 + (index * 3), "");
-                player.getPacketSender().sendString(154552 + (index * 3), "");
-                player.getPacketSender().sendString(154553 + (index * 3), "");
+                player.getPacketSender().sendString(139551 + (index * 3), "");
+                player.getPacketSender().sendString(139552 + (index * 3), "");
+                player.getPacketSender().sendString(139553 + (index * 3), "");
                 index++;
             }
         }
@@ -160,16 +160,16 @@ public class LeaderboardManager {
 
         Leaderboard.DATA.get(LeaderboardData.DONATED).put(player.getUsername(), (long) player.getAmountDonated());
 
-        Leaderboard.DATA.get(LeaderboardData.COLLECTION_LOGS_COMPLETED).put(player.getUsername(), (long) player.getCollectionLog2 ().sumTotalObtained ());
+        Leaderboard.DATA.get(LeaderboardData.COLLECTION_LOGS_COMPLETED).put(player.getUsername(), (long) player.getCollectionLog2 ().totalAmountToCollect ());
 
         Leaderboard.DATA.get(LeaderboardData.DAILY_TASKS_COMPLETED).put(player.getUsername(), (long) player.getDailyTasksCompleted());
 /*
         Leaderboard.DATA.get(LeaderboardData.TITLES_UNLOCKED).put(player.getUsername(), (long) player.getTitlesManager().getObtainedTitles().size());
-
+*/
         Leaderboard.DATA.get(LeaderboardData.EASY_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getEasyTaskKC());
         Leaderboard.DATA.get(LeaderboardData.MED_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getMedTaskKC());
         Leaderboard.DATA.get(LeaderboardData.HARD_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getHardTaskKC());
-        Leaderboard.DATA.get(LeaderboardData.BOSS_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getBossTaskKC());*/
+        Leaderboard.DATA.get(LeaderboardData.BOSS_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getBossTaskKC());
         Leaderboard.DATA.get(LeaderboardData.SANCTUM_OF_DEATH).put(player.getUsername(), (long) player.getPointsHandler ().getSufferingKC ());
 
 

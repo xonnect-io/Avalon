@@ -1570,7 +1570,7 @@ public class CustomInterfaces extends RSInterface {
 		c = 0;
 		x = -5;
 		y = 3;
-		info.totalChildren(26);
+		info.totalChildren(29);
 
 		addText(id, "Main", tda, 2, 0xFF981F, true, true);
 		info.child(c++, id++, 85 + x, 0 + y);
@@ -1587,7 +1587,7 @@ public class CustomInterfaces extends RSInterface {
 		info.child(c++, id++, 85 + x, 0 + y);
 		y += 20;
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 8; i++) {
 			addText(id, "", tda, 0, 0xFF981F, false, true);
 			info.child(c++, id++, 10 + x, 0 + y);
 			y += 17;
@@ -1615,6 +1615,117 @@ public class CustomInterfaces extends RSInterface {
 		}
 
 	}
+
+	public static void leaderboardInterface() {
+		int interID = 139000;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 40;
+		int y = 25;
+		tab.totalChildren(15);
+
+		addSpriteLoader(id, 1844);
+		tab.child(c++, id++, 0 + x, 0 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 412 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 412 + x, 3 + y);
+		id++;
+
+		String[] tabs = new String[]{"Main", "Monsters"};
+
+		for (int i = 0; i < tabs.length; i++) {
+			addConfigButtonWSpriteLoader(id, interID, 1506, 1507, 79, 20, tabs[i], i, 5, 4511);
+			tab.child(c++, id++, 9 + x, 24 + y);
+			addText(id, tabs[i], 0xFFA500, false, true, 100, tda, 1);
+			tab.child(c++, id++, 14 + x, 27 + y);
+			x += 79;
+		}
+		x = 40;
+
+		addText(id, "Avalon's Leaderboard", tda, 2, 16750643, true, true);
+		tab.child(c++, id++, 228 + x, 4 + y);
+
+		addText(id, "Sections", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 87 + x, 58 + y);
+
+		addText(id, "Rank", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 192 + x, 58 + y);
+
+		addText(id, "Value", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 256 + x, 58 + y);
+
+		addText(id, "Username", tda, 2, 0xFF981F, true, true);
+		tab.child(c++, id++, 351 + x, 58 + y);
+
+
+		addTextRight(id, "Personal: ", tda, 1, 0xFF981F, true);
+		tab.child(c++, id++, 420 + x, 25 + y);
+
+
+		tab.child(c++, 139100, 12 + x, 76 + y);
+		tab.child(c++, 139500, 170 + x, 77 + y);
+
+		interID = 139100;
+		RSInterface scroll = addInterface(interID);
+		scroll.width = 150 - 16;
+		scroll.height = 194;
+		scroll.scrollMax = 500;
+		scroll.totalChildren(150);
+		id = interID + 1;
+		c = 0;
+		x = 0;
+		y = 0;
+
+
+		for (int i = 0; i < 50; i++) {
+			addSpriteLoader(id, 1846);
+			scroll.child(c++, id++, 0 + x, 0 + y);
+			y += 36;
+		}
+		y = 0;
+
+		for (int i = 0; i < 100; i++) {
+			teleportText(id, "Test", "Select", fonts, 0, 0xFF9900, false, true, 169, 17);
+			scroll.child(c++, id++, 2 + x, 3 + y);
+			y += 18;
+		}
+
+
+
+		interID = 139500;
+		RSInterface list = addTabInterface(interID);
+		list.totalChildren(350);
+		list.width = 252 - 16;
+		list.height = 193;
+		list.scrollMax = 1650;
+		id = interID + 1;
+		y = 0;
+		c = 0;
+		int j;
+		for (j = 0; j < 50; j++) {
+			addSpriteLoader(id, 1845);
+			list.child(c++, id++, 0, 0 + y);
+			y += 66;
+		}
+		y = 10;
+		for (j = 0; j < 100; j++) {
+			addText(id, "#" + (j + 1), 16751360, true, true, 100, fonts, 1);
+			list.child(c++, id++, 20, y);
+			addText(id, "1,000", 16751360, true, true, 100, fonts, 1);
+			list.child(c++, id++, 85, y);
+			addText(id, "Test", 16751360, true, true, 100, fonts, 1);
+			list.child(c++, id++, 180, y);
+			y += 33;
+		}
+
+
+
+
+	}
+
 
 	public static void panelInterface() {
 		int interID = 111000;
@@ -2875,7 +2986,89 @@ public class CustomInterfaces extends RSInterface {
 			skill.child(frame, hovers[i], buttonCoords[i][0], buttonCoords[i][1]); frame++;
 		}
 	}
+	public static void slayerFavourites() {
+		RSInterface main = addInterface(142500);
+		addSpriteLoader(142501, 1835);
+		addText(142502, "Favourite Slayer Tasks", tda, 2, 16750643, true, true);
 
+		addHoverButtonWSpriteLoader(142503, 1016, 16, 16, "Close Window", 0, 142504, 3);
+		addHoveredImageWSpriteLoader(142504, 1017, 16, 16, 142505);
+
+		String[] categories = new String[] {"Easy", "Medium", "Hard", "Boss Slayer"};
+		for (int i = 0; i < 4; i++)
+			hoverButton(142506+i, 1836, 1837, "Select Category", 0, 16750643, categories[i]);
+
+		addText(142510, "Favourites", tda, 0, 16750643, true, true);
+
+		addText(142511, "Blocked", tda, 0, 16750643, true, true);
+
+		addText(142512, "Task List", tda, 0, 16750643, true, true);
+
+		addText(142513, "You are more\\nlikely to get a\\nslayer task if it\\nis in your favourites!\\nYou can have up to\\n4 favourites at once.", tda, 0, 16750643, true, true);
+
+		addText(142514, "If you have blocked\\na task, you will not\\nreceive it at all.\\nYou can have up to\\n4 blocked tasks at\\nonce.", tda, 0, 16750643, true, true);
+
+		int child = 142515;
+		for (int i = 0; i < 4; i++) {
+			addText(child++, "Empty Slot", tda, 0, 16750643, false, true);
+			hoverButton(child++, 1838, 1839, "Remove Favourite", 0, 16750643, "");
+		}
+
+		for (int i = 0; i < 4; i++) {
+			addText(child++, "Empty Slot", tda, 0, 16750643, false, true);
+			hoverButton(child++, 1838, 1839, "Remove Blocked Task", 0, 16750643, "");
+		}
+
+		RSInterface taskList = addInterface(142550);
+		taskList.width = 142;
+		taskList.height = 188;
+		taskList.scrollMax = 400;
+		taskList.totalChildren(80);
+		addSpriteLoader(142551, 1842);
+		addSpriteLoader(142552, 1843);
+		child = 142555;
+		int frame = 0;
+		int y = 0;
+		for (int i = 0; i < 20; i++) {
+			taskList.child(frame++, (i % 2 == 0 ? 142551 : 142552), 0, y);
+			addText(child++, "Task Slot", tda, 0, 16750643, false, true);
+			taskList.child(frame++, child-1, 4, y+4);
+			hoverButton(child++, 1840, 1840, "Favourite Task", 0, 16750643, "");
+			taskList.child(frame++, child-1, 110, y+4);
+			hoverButton(child++, 1841, 1841, "Block Task", 0, 16750643, "");
+			taskList.child(frame++, child-1, 127, y+4);
+			y+= 20;
+		}
+
+		main.totalChildren(30);
+		main.child(0, 142501, 17, 24);
+		main.child(1, 142502, 256, 34);
+		main.child(2, 142503, 468, 33);
+		main.child(3, 142504, 468, 33);
+		for (int i = 0; i < 4; i++)
+			main.child(4+i, 142506+i, 28+(i*114)+(i > 1 ? 2 : 0), 64);
+		main.child(8, 142510, 99, 95);
+		main.child(9, 142511, 246, 95);
+		main.child(10, 142512, 402, 95);
+		main.child(11, 142513, 99, 213);
+		main.child(12, 142514, 246, 214);
+		y = 111;
+		frame = 13;
+		child = 142515;
+		for (int i = 0; i < 4; i++) {
+			main.child(frame++, child++, 35, y+4);
+			main.child(frame++, child++, 147, y);
+			y+= 20;
+		}
+		y= 111;
+		for (int i = 0; i < 4; i++) {
+			main.child(frame++, child++, 182, y+4);
+			main.child(frame++, child++, 294, y);
+			y+= 20;
+		}
+		main.child(29, 142550, 324, 111);
+
+	}
 	/*
 	 * Quest tab [PLAYER PANEL]
 	 */
@@ -7772,6 +7965,8 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		starterTasksInterface();
 		dailyTaskInterface();
 		vodOverlay(tda);
+		slayerFavourites();
+		leaderboardInterface();
 	}
 
 }

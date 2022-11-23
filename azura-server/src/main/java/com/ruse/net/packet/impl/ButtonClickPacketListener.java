@@ -72,7 +72,6 @@ import com.ruse.world.content.skill.impl.fletching.Fletching;
 import com.ruse.world.content.skill.impl.herblore.ingredientsBook;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
 import com.ruse.world.content.skill.impl.old_dungeoneering.ItemBinding;
-import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.skill.impl.smithing.SmithingData;
 import com.ruse.world.content.skill.impl.summoning.PouchMaking;
 import com.ruse.world.content.skill.impl.summoning.SummoningTab;
@@ -122,6 +121,9 @@ public class ButtonClickPacketListener implements PacketListener {
             id -= 65536;
         }
 
+        if (player.getLeaderboardManager().handleButton(id)) {
+            return;
+        }
         if (player.getRights().isDeveloperOnly()) {
             player.getPacketSender().sendMessage("Clicked button: " + id);
         }
@@ -773,10 +775,6 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, farmingPos, TeleportType.NORMAL);
                 break;
 
-            case 12162:
-                Position slayerPos = new Position(2935, 4101, 0);
-                TeleportHandler.teleportPlayer(player, slayerPos, TeleportType.NORMAL);
-                break;
 
             case 8672:
                 Position rcPos = new Position(2806, 2582, 0);
@@ -1510,6 +1508,14 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendInterfaceRemoval();
                 break;
 
+            case 12162:
+                DialogueManager.start(player, 212);
+                player.setDialogueActionId(100000);
+                // TeleportHandler.teleportPlayer(player, new Position(3674, 2966),
+                // TeleportType.NORMAL);
+                // player.getPacketSender().sendMessage("Get a task from a Slayer Master here.
+                // (Slayer tower is now in Dungeon teleports)");
+                break;
             case 1036:
                 EnergyHandler.rest(player);
                 break;
@@ -2397,6 +2403,8 @@ public class ButtonClickPacketListener implements PacketListener {
             return true;
         }
 
+        if (player.getSlayerFavourites().handleButton(id))
+            return true;
         if (player.getDailyTaskManager().handleButton(id))
             return true;
 
@@ -2510,9 +2518,6 @@ public class ButtonClickPacketListener implements PacketListener {
             return true;
         }
         if (player.getLocation() == Location.DUEL_ARENA && Dueling.handleDuelingButtons(player, id)) {
-            return true;
-        }
-        if (Slayer.handleRewardsInterface(player, id)) {
             return true;
         }
         if (ExperienceLamps.handleButton(player, id)) {

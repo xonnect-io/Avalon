@@ -1,5 +1,6 @@
 package com.ruse.world.content.skill.impl.slayer;
 
+import com.ruse.util.Misc;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dialogue.DialogueExpression;
 import com.ruse.world.content.dialogue.DialogueManager;
@@ -21,12 +22,12 @@ public class SlayerDialogues {
 
 			@Override
 			public int npcId() {
-				return 925;
+				return player.getSlayer().getTaskType().getNpcId();
 			}
 
 			@Override
 			public DialogueExpression animation() {
-				return DialogueExpression.NO_EXPRESSION;
+				return DialogueExpression.TALK_SWING;
 			}
 
 			@Override
@@ -50,7 +51,7 @@ public class SlayerDialogues {
 
 					@Override
 					public int npcId() {
-						return player.getSlayer().getSlayerMaster().getNpcId();
+						return -1;
 					}
 
 					@Override
@@ -61,7 +62,6 @@ public class SlayerDialogues {
 					@Override
 					public String[] dialogue() {
 						return new String[] { "What's my current assignment?", "I'd like to reset my Slayer Task",
-								"How many points do I currently receive per task?",
 								player.getSlayer().getDuoPartner() != null ? "I'd like to reset my duo team"
 										: "Nothing, thanks"
 
@@ -105,7 +105,6 @@ public class SlayerDialogues {
 			public String[] dialogue() {
 				boolean inDuo = player.getSlayer().getDuoPartner() != null;
 				return new String[] { "I'd like a Slayer task", "I'd like to view your Slayer rewards",
-						"I'd like to view your stock of Slayer items",
 						inDuo ? "I'd like to reset my duo team" : "Nothing, thanks" };
 			}
 
@@ -116,13 +115,13 @@ public class SlayerDialogues {
 		};
 	}
 
-	public static Dialogue receivedTask(final Player player, final SlayerMaster master, final SlayerTasks task) {
+	public static Dialogue receivedTask(final Player player, final TaskType master, final SlayerTasks task) {
 		return new Dialogue() {
 			final int amountToKill = player.getSlayer().getAmountToSlay();
 
 			@Override
 			public DialogueType type() {
-				return DialogueType.STATEMENT;
+				return DialogueType.NPC_STATEMENT;
 			}
 
 			@Override
@@ -139,16 +138,19 @@ public class SlayerDialogues {
 			public String[] dialogue() {
 				boolean duoSlayer = player.getSlayer().getDuoPartner() != null;
 				String you = duoSlayer ? "You and your partner" : "You";
+				final String s = task.toString().toLowerCase().replaceAll("_", " ");
 				String line1 = "You have been assigned to kill " + amountToKill + " "
-						+ task.getName() + "s.";
+						+ Misc.formatText(s) + "s.";
 				String line2 = "";
 				if (duoSlayer) {
-					 line1 = "You have been assigned to kill " + amountToKill + " "
-							+ task.getName() + "s.";
+					line1 = "" + you + " have been assigned to kill";
+					line2 = "" + amountToKill + " "
+							+ Misc.formatText(s) + "s.";
 				}
 				if (player.getSlayer().getLastTask() != SlayerTasks.NO_TASK) {
-					line1 = "Your new assignment is to kill " + amountToKill + " "
-							+ task.getName() + "s.";
+					line1 = "" + you + " are doing great! Your new";
+					line2 = "assignment is to kill " + amountToKill + " "
+							+ Misc.formatText(s) + "s.";
 				}
 				return new String[] { "" + line1 + "", "" + line2 + "" };
 			}
@@ -181,7 +183,6 @@ public class SlayerDialogues {
 					public String[] dialogue() {
 						boolean inDuo = player.getSlayer().getDuoPartner() != null;
 						return new String[] { "What's my current assignment?", "I'd like to reset my Slayer Task",
-								"How many points do I currently receive per task?",
 								inDuo ? "I'd like to reset my duo team" : "Nothing, thanks"
 
 						};
@@ -197,13 +198,13 @@ public class SlayerDialogues {
 	}
 
 	public static Dialogue findAssignment(final Player player) {
-		final SlayerMaster master = player.getSlayer().getSlayerMaster();
+		final TaskType master = player.getSlayer().getTaskType();
 		final SlayerTasks task = player.getSlayer().getSlayerTask();
 
 		return new Dialogue() {
 			@Override
 			public DialogueType type() {
-				return DialogueType.STATEMENT;
+				return DialogueType.NPC_STATEMENT;
 			}
 
 			@Override
@@ -223,7 +224,7 @@ public class SlayerDialogues {
 					l = task.getNpcLocation();
 				return new String[] {
 						"Your current task is to kill " + (player.getSlayer().getAmountToSlay()) + " "
-								+ task.getName() + "s.",
+								+ Misc.formatText(task.toString().toLowerCase().replaceAll("_", " ")) + "s.",
 						"" + l + "" };
 			}
 
@@ -235,11 +236,11 @@ public class SlayerDialogues {
 	}
 
 	public static Dialogue resetTaskDialogue(final Player player) {
-		final SlayerMaster master = player.getSlayer().getSlayerMaster();
+		final TaskType master = player.getSlayer().getTaskType();
 		return new Dialogue() {
 			@Override
 			public DialogueType type() {
-				return DialogueType.STATEMENT;
+				return DialogueType.NPC_STATEMENT;
 			}
 
 			@Override
@@ -254,7 +255,8 @@ public class SlayerDialogues {
 
 			@Override
 			public String[] dialogue() {
-				return new String[] {"It currently costs 25k Upgrade tokens to reset a task",
+				return new String[] {master == TaskType.BOSS_SLAYER ? "It currently costs 25k Upgrade Tokens to reset a task." :
+						"It currently costs 5 Slayer points to reset a task.",
 						"You will also lose your current Task Streak.", "Are you sure you wish to continue?" };
 			}
 
@@ -297,12 +299,12 @@ public class SlayerDialogues {
 		return new Dialogue() {
 			@Override
 			public DialogueType type() {
-				return DialogueType.STATEMENT;
+				return DialogueType.NPC_STATEMENT;
 			}
 
 			@Override
 			public int npcId() {
-				return player.getSlayer().getSlayerMaster().getNpcId();
+				return player.getSlayer().getTaskType().getNpcId();
 			}
 
 			@Override
@@ -323,32 +325,6 @@ public class SlayerDialogues {
 				return new String[] { "You currently receive " + pointsReceived + " points per task,",
 						"" + per5 + " bonus points per 5 task-streak and",
 						"" + per10 + " bonus points per 10 task-streak." };
-			}
-
-			@Override
-			public void specialAction() {
-				player.setDialogueActionId(9906);
-			}
-
-		};
-	}
-
-	public static Dialogue chooseDifficulty(final Player player) {
-		return new Dialogue() {
-			@Override
-			public DialogueType type() {
-				return DialogueType.OPTION;
-			}
-
-			@Override
-			public DialogueExpression animation() {
-				return DialogueExpression.NORMAL;
-			}
-
-			@Override
-			public String[] dialogue() {
-				return new String[] { "Easy", "Medium","Hard",
-				};
 			}
 
 			@Override

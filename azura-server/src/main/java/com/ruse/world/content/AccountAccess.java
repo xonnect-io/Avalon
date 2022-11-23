@@ -4,6 +4,8 @@ import com.google.gson.*;
 import com.ruse.model.Item;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.world.content.leaderboards.Leaderboard;
+import com.ruse.world.content.leaderboards.LeaderboardData;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.io.File;
@@ -288,6 +290,71 @@ public class AccountAccess {
 						money += item.getAmount();
 				}
 			}
+
+			if (reader.has("kills")) {
+				KillsTracker.KillsEntry[] kills = builder.fromJson(reader.get("kills").getAsJsonArray(), KillsTracker.KillsEntry[].class);
+				int total = 0;
+				for (KillsTracker.KillsEntry kill : kills) {
+					if (kill != null) {
+						total += kill.getRunningTotal();
+						if (LeaderboardData.forNpcId(kill.getNpcId()) != null) {
+							Leaderboard.DATA.get(LeaderboardData.forNpcId(kill.getNpcId())).put(name, (long) kill.getAmount());
+						}
+					}
+				}
+				Leaderboard.DATA.get(LeaderboardData.NPC_KILLCOUNT).put(name, (long) total);
+			}
+
+			if (reader.has("total-play-time-ms")) {
+				long total = reader.get("total-play-time-ms").getAsLong();
+				if (total >= 1_000_000_000_000L)
+					total = 0;
+				Leaderboard.DATA.get(LeaderboardData.TIME_PLAYED).put(name, total);
+			}
+			if (reader.has("donated")) {
+				Leaderboard.DATA.get(LeaderboardData.DONATED).put(name, (long) reader.get("donated").getAsInt());
+			}
+
+		/*	if (reader.has("collection-log")) {
+				CollectionLogManager.LogProgress[] logs = builder.fromJson(reader.get("collection-log").getAsJsonArray(), CollectionLogManager.LogProgress[].class);
+				int total = 0;
+				for (CollectionLogManager.LogProgress log : logs) {
+					if (log != null) {
+						if (log.getName().equalsIgnoreCase("TREASURE_HUNTER")) {
+							Leaderboard.DATA.get(LeaderboardData.TREASURE_HUNTER).put(name, (long) log.getCompleted());
+						}
+						if (CollectionLogs.forName(log.getName()) != null)
+							if (log.getObtainedItems().size()
+									== CollectionLogs.forName(log.getName()).getUniqueItems().size()) {
+								total++;
+							}
+					}
+				}
+				Leaderboard.DATA.get(LeaderboardData.COLLECTION_LOGS_COMPLETED).put(name, (long) total);
+			}
+*/
+
+		/*	if (reader.has("unlocked-titles")) {
+				Titles titles[] = builder.fromJson(reader.get("unlocked-titles").getAsJsonArray(), Titles[].class);
+				Leaderboard.DATA.get(LeaderboardData.TITLES_UNLOCKED).put(name, (long) titles.length);
+			}*/
+
+			if (reader.has("easy-task-kc")) {
+				Leaderboard.DATA.get(LeaderboardData.EASY_SLAYER_TASKS).put(name, (long) reader.get("easy-task-kc").getAsInt());
+			}
+			if (reader.has("med-task-kc")) {
+				Leaderboard.DATA.get(LeaderboardData.MED_SLAYER_TASKS).put(name, (long) reader.get("med-task-kc").getAsInt());
+			}
+			if (reader.has("hard-task-kc")) {
+				Leaderboard.DATA.get(LeaderboardData.HARD_SLAYER_TASKS).put(name, (long) reader.get("hard-task-kc").getAsInt());
+			}
+			if (reader.has("boss-task-kc")) {
+				Leaderboard.DATA.get(LeaderboardData.BOSS_SLAYER_TASKS).put(name, (long) reader.get("boss-task-kc").getAsInt());
+			}
+			if (reader.has("suffering-kc")) {
+				Leaderboard.DATA.get(LeaderboardData.SANCTUM_OF_DEATH).put(name, (long) reader.get("suffering-kc").getAsInt());
+			}
+
 			return money;
 			
 		} catch(Exception e) {

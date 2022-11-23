@@ -114,6 +114,7 @@ public class PlayerHandler {
         // Skills
         player.getSummoning().login();
         player.getFarming().load();
+        player.getLeaderboardManager().updateData();
         //player.getBestItems().fillDefinitions();
         Slayer.checkDuoSlayer(player, true);
         for (Skill skill : Skill.values()) {
@@ -603,6 +604,7 @@ public class PlayerHandler {
                 StaffList.logout(player);
                 StaffList.updateGlobalInterface();
                 Hunter.handleLogout(player);
+                player.getLeaderboardManager().updateData();
                 Locations.logout(player);
                 player.getEventChestHandler().saveEventChest(player);
                 player.getSummoning().unsummon(false, false);

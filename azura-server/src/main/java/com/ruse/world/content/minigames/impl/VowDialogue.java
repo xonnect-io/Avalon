@@ -1,13 +1,8 @@
 package com.ruse.world.content.minigames.impl;
 
-import com.ruse.model.definitions.NpcDefinition;
-import com.ruse.util.Misc;
 import com.ruse.world.content.dialogue.Dialogue;
 import com.ruse.world.content.dialogue.DialogueExpression;
-import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.DialogueType;
-import com.ruse.world.content.skill.impl.slayer.SlayerMaster;
-import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
 import com.ruse.world.entity.impl.player.Player;
 
 public class VowDialogue extends Dialogue {

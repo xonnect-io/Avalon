@@ -68,7 +68,6 @@ public class PlayerSaving {
 			object.addProperty("current-boss-amount", player.getCurrentBossTaskAmount());
 			object.addProperty("global-rate", player.getPointsHandler().getGlobalRate());
 			object.addProperty("peng-rate", player.getPointsHandler().getPengRate());
-			object.addProperty("slayer-rate", player.getPointsHandler().getSlayerRate());
 			object.addProperty("has-completed-boss-task", player.isHasPlayerCompletedBossTask());
 			object.addProperty("current-daily-task-id", player.getCurrentDailyTask());
 			object.addProperty("current-daily-task-amount", player.getCurrentDailyTaskAmount());
@@ -142,7 +141,23 @@ public class PlayerSaving {
 			object.addProperty("godmodetime", player.getGodModeTimer());
 			object.addProperty("voting-points", new Integer(player.getPointsHandler().getVotingPoints()));
 			object.addProperty("total-prestiges", new Integer(player.getPointsHandler().getTotalPrestiges()));
+			object.addProperty("slayer-rate", player.getPointsHandler().getSlayerRate());
 			object.addProperty("slayer-spree", new Integer(player.getPointsHandler().getSlayerSpree()));
+			object.addProperty("slayer-points", new Integer(player.getPointsHandler().getSlayerPoints()));
+			object.addProperty("slayer-master1", player.getSlayer().getTaskType().name());
+			object.addProperty("slayer-task1", player.getSlayer().getSlayerTask().name());
+			object.addProperty("prev-slayer-task1", player.getSlayer().getLastTask().name());
+			object.addProperty("task-amount1", player.getSlayer().getAmountToSlay());
+			object.addProperty("task-streak", player.getSlayer().getTaskStreak());
+			object.addProperty("duo-partner",
+					player.getSlayer().getDuoPartner() == null ? "null" : player.getSlayer().getDuoPartner());
+			object.addProperty("double-slay-xp", player.getSlayer().doubleSlayerXP);
+			object.addProperty("easy-task-kc", player.getSlayer().getEasyTaskKC());
+			object.addProperty("med-task-kc", player.getSlayer().getMedTaskKC());
+			object.addProperty("hard-task-kc", player.getSlayer().getHardTaskKC());
+			object.addProperty("boss-task-kc", player.getSlayer().getBossTaskKC());
+			object.add("slayer-fav", builder.toJsonTree(player.getSlayerFavourites().getFavouriteNpcIds()));
+			object.add("slayer-blocked", builder.toJsonTree(player.getSlayerFavourites().getBlockedNpcIds()));
 			object.addProperty("minigame1-killcount", new Integer(player.getPointsHandler().getMG1Count()));
 			object.addProperty("minigame2-killcount", new Integer(player.getPointsHandler().getMG2Count()));
 			object.addProperty("minigame3-killcount", new Integer(player.getPointsHandler().getMG3Count()));
@@ -234,13 +249,9 @@ public class PlayerSaving {
 			object.add("unlocked-treat", builder.toJsonTree(player.getHweenEvent ().getUnlockedTreat()));
 			object.addProperty("unlocked-crown", player.getHweenEvent ().getUnlockedCrown());
 
+
 			object.add("bosspets", builder.toJsonTree(player.getBossPetsAll()));
 			object.addProperty("quest-points", new Integer(player.getPointsHandler().getQuestPoints()));
-			object.addProperty("slayer-points", new Integer(player.getPointsHandler().getSlayerPoints()));
-			object.addProperty("easy-task-kc", player.getSlayer().getEasyTaskKC());
-			object.addProperty("med-task-kc", player.getSlayer().getMedTaskKC());
-			object.addProperty("hard-task-kc", player.getSlayer().getHardTaskKC());
-			object.addProperty("boss-task-kc", player.getSlayer().getBossTaskKC());
 			object.addProperty("pk-points", new Integer(player.getPointsHandler().getPkPoints()));
 			object.addProperty("player-kills", new Integer(player.getPlayerKillingAttributes().getPlayerKills()));
 			object.addProperty("player-killstreak",
@@ -303,14 +314,6 @@ public class PlayerSaving {
 			object.addProperty("autocast-spell",
 					player.getAutocastSpell() != null ? player.getAutocastSpell().spellId() : -1);
 			object.addProperty("dfs-charges", player.getDfsCharges());
-			object.addProperty("slayer-master", player.getSlayer().getSlayerMaster().name());
-			object.addProperty("slayer-task", player.getSlayer().getSlayerTask().name());
-			object.addProperty("prev-slayer-task", player.getSlayer().getLastTask().name());
-			object.addProperty("task-amount", player.getSlayer().getAmountToSlay());
-			object.addProperty("task-streak", player.getSlayer().getTaskStreak());
-			object.addProperty("duo-partner",
-					player.getSlayer().getDuoPartner() == null ? "null" : player.getSlayer().getDuoPartner());
-			object.addProperty("double-slay-xp", player.getSlayer().doubleSlayerXP);
 			object.addProperty("recoil-deg", new Integer(player.getRecoilCharges()));
 			object.addProperty("starter-deg", new Integer(player.getStarterCharges()));
 			object.addProperty("blowpipe-deg", new Integer(player.getBlowpipeCharges()));
@@ -464,7 +467,6 @@ public class PlayerSaving {
 			object.addProperty("magic2-unlocked", player.getMagicGuildTier2());
 			object.addProperty("magic3-unlocked", player.getMagicGuildTier3());
 			object.addProperty("magic-master", player.getMagicianMaster());
-			object.addProperty("double-slayer-xp", player.getDoubleSlayerXP());
 			object.addProperty("warrior1-unlocked", player.getWarriorGuildTier1());
 			object.addProperty("warrior2-unlocked", player.getWarriorGuildTier2());
 			object.addProperty("warrior3-unlocked", player.getWarriorGuildTier3());

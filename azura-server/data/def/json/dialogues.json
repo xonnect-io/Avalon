@@ -1,5 +1,25 @@
 [
     {
+        "id": 19999,
+        "type": "OPTION",
+        "lines": 2,
+        "line1": "Slayer Favoriting and Blocking",
+        "line2": "Slayer Master",
+        "next": -1,
+        "npcId": -1
+    },
+    {
+        "id": 8010,
+        "type": "OPTION",
+        "lines": 4,
+        "line1": "Easy Task",
+        "line2": "Medium Task",
+        "line3": "Hard Task",
+        "line4": "Cancel",
+        "next": -1,
+        "npcId": -1
+    },
+    {
         "id": 81115,
         "type": "OPTION",
         "lines": 3,
@@ -2184,7 +2204,7 @@
         "type": "OPTION",
         "lines": 2,
         "line1": "Teleport to Slayer Masters.",
-        "line2": "Open Kill Tracker.",
+        "line2": "Open Slayer Favourites",
         "next": -1,
         "npcId": -1
     },

@@ -27,8 +27,8 @@ import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.groupironman.IronmanGroup;
 import com.ruse.world.content.osrscollectionlog.Collection;
 import com.ruse.world.content.skill.SkillManager.Skills;
-import com.ruse.world.content.skill.impl.slayer.SlayerMaster;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
+import com.ruse.world.content.skill.impl.slayer.TaskType;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -261,9 +261,6 @@ public class PlayerLoading {
             if (reader.has("magic-master")) {
                 player.setMagicianMaster(reader.get("magic-master").getAsBoolean());
             }
-            if (reader.has("double-slayer-xp")) {
-                player.setDoubleSlayerXP(reader.get("double-slayer-xp").getAsBoolean());
-            }
             if (reader.has("celestial-member")) {
                 player.setCelestial(reader.get("celestial-member").getAsBoolean());
             }
@@ -279,21 +276,8 @@ public class PlayerLoading {
             if (reader.has("dark-supreme")) {
                 player.setDarkSupreme(reader.get("dark-supreme").getAsBoolean());
             }
-            if (reader.has("slayer-rate")) {
-                player.getPointsHandler().setSlayerRate(reader.get("slayer-rate").getAsInt());
-            }
-            if (reader.has("easy-task-kc")) {
-                player.getSlayer().setEasyTaskKC(reader.get("easy-task-kc").getAsInt());
-            }
-            if (reader.has("med-task-kc")) {
-                player.getSlayer().setMedTaskKC(reader.get("med-task-kc").getAsInt());
-            }
-            if (reader.has("hard-task-kc")) {
-                player.getSlayer().setHardTaskKC(reader.get("hard-task-kc").getAsInt());
-            }
-            if (reader.has("boss-task-kc")) {
-                player.getSlayer().setBossTaskKC(reader.get("boss-task-kc").getAsInt());
-            }
+
+
             if (reader.has("claimed-first")) {
                 player.claimedFirst = reader.get("claimed-first").getAsBoolean();
             }
@@ -794,9 +778,6 @@ public class PlayerLoading {
             if (reader.has("minigame3-killcount")) {
                 player.getPointsHandler().setMG3Count(reader.get("minigame3-killcount").getAsInt(), false);
             }
-            if (reader.has("slayer-spree")) {
-                player.getPointsHandler().setSlayerSpree(reader.get("slayer-spree").getAsInt(), false);
-            }
             if (reader.has("event-points")) {
                 player.getPointsHandler().setEventPoints(reader.get("event-points").getAsInt(), false);
             }
@@ -807,8 +788,66 @@ public class PlayerLoading {
                 player.getPointsHandler().setSHILLINGRate(reader.get("shilling-rate").getAsInt(), false);
             }
 
+            if (reader.has("slayer-rate")) {
+                player.getPointsHandler().setSlayerRate(reader.get("slayer-rate").getAsInt());
+            }
+
+            if (reader.has("slayer-spree")) {
+                player.getPointsHandler().setSlayerSpree(reader.get("slayer-spree").getAsInt(), false);
+            }
+
             if (reader.has("slayer-points")) {
                 player.getPointsHandler().setSlayerPoints(reader.get("slayer-points").getAsInt(), false);
+            }
+
+            if (reader.has("slayer-master1")) {
+                player.getSlayer().setTaskType(TaskType.valueOf(reader.get("slayer-master1").getAsString()));
+            }
+
+            if (reader.has("slayer-task1")) {
+                player.getSlayer().setSlayerTask(SlayerTasks.valueOf(reader.get("slayer-task1").getAsString()));
+            }
+
+
+            if (reader.has("easy-task-kc")) {
+                player.getSlayer().setEasyTaskKC(reader.get("easy-task-kc").getAsInt());
+            }
+            if (reader.has("med-task-kc")) {
+                player.getSlayer().setMedTaskKC(reader.get("med-task-kc").getAsInt());
+            }
+            if (reader.has("hard-task-kc")) {
+                player.getSlayer().setHardTaskKC(reader.get("hard-task-kc").getAsInt());
+            }
+            if (reader.has("boss-task-kc")) {
+                player.getSlayer().setBossTaskKC(reader.get("boss-task-kc").getAsInt());
+            }
+
+            if (reader.has("prev-slayer-task1")) {
+                player.getSlayer().setLastTask(SlayerTasks.valueOf(reader.get("prev-slayer-task1").getAsString()));
+            }
+
+            if (reader.has("task-amount1")) {
+                player.getSlayer().setAmountToSlay(reader.get("task-amount1").getAsInt());
+            }
+
+            if (reader.has("task-streak")) {
+                player.getSlayer().setTaskStreak(reader.get("task-streak").getAsInt());
+            }
+
+            if (reader.has("duo-partner")) {
+                String partner = reader.get("duo-partner").getAsString();
+                player.getSlayer().setDuoPartner(partner.equals("null") ? null : partner);
+            }
+
+            if (reader.has("double-slay-xp")) {
+                player.getSlayer().doubleSlayerXP = reader.get("double-slay-xp").getAsBoolean();
+            }
+
+            if (reader.has("slayer-fav")) {
+                player.getSlayerFavourites().setFavouriteNpcIds(builder.fromJson(reader.get("slayer-fav").getAsJsonArray(), int[].class));
+            }
+            if (reader.has("slayer-blocked")) {
+                player.getSlayerFavourites().setBlockedNpcIds(builder.fromJson(reader.get("slayer-blocked").getAsJsonArray(), int[].class));
             }
 
             if (reader.has("quest-points")) {
@@ -976,14 +1015,6 @@ public class PlayerLoading {
                 DropLog.submit(player, builder.fromJson(reader.get("drops").getAsJsonArray(), DropLogEntry[].class));
             }
 
-            if (reader.has("slayer-master")) {
-                player.getSlayer().setSlayerMaster(SlayerMaster.valueOf(reader.get("slayer-master").getAsString()));
-            }
-
-            if (reader.has("slayer-task")) {
-                player.getSlayer().setSlayerTask(SlayerTasks.valueOf(reader.get("slayer-task").getAsString()));
-            }
-
             if (reader.has("lastlogin"))
                 player.lastLogin = (reader.get("lastlogin").getAsLong());
             if (reader.has("lastdailyclaim"))
@@ -1015,27 +1046,6 @@ public class PlayerLoading {
 
             if (reader.has("hasvotedtoday"))
                 player.hasVotedToday = (reader.get("hasvotedtoday").getAsBoolean());
-
-            if (reader.has("prev-slayer-task")) {
-                player.getSlayer().setLastTask(SlayerTasks.valueOf(reader.get("prev-slayer-task").getAsString()));
-            }
-
-            if (reader.has("task-amount")) {
-                player.getSlayer().setAmountToSlay(reader.get("task-amount").getAsInt());
-            }
-
-            if (reader.has("task-streak")) {
-                player.getSlayer().setTaskStreak(reader.get("task-streak").getAsInt());
-            }
-
-            if (reader.has("duo-partner")) {
-                String partner = reader.get("duo-partner").getAsString();
-                player.getSlayer().setDuoPartner(partner.equals("null") ? null : partner);
-            }
-
-            if (reader.has("double-slay-xp")) {
-                player.getSlayer().doubleSlayerXP = reader.get("double-slay-xp").getAsBoolean();
-            }
 
             if (reader.has("recoil-deg")) {
                 player.setRecoilCharges(reader.get("recoil-deg").getAsInt());

@@ -29,7 +29,6 @@ import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.old_dungeoneering.Dungeoneering;
-import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
 import com.ruse.world.entity.impl.mini.MiniPlayer;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -478,16 +477,6 @@ public class NPCDeathTask extends Task {
                             killer.getPacketSender().sendMessage("<img=832>You completed a quest objective: @blu@Fight off the Daganoth Army");
                         }
 
-                        if (killer.getCurrentClue().getCurrentTask() != SlayerTasks.NO_TASK) {
-                            if (killer.getCurrentClue().getAmountToSlay() > 0) {
-                                int newV = killer.getCurrentClue().getAmountToSlay() - 1;
-                                killer.getCurrentClue().setAmountToSlay(newV);
-                                if (newV == 0) {
-                                    killer.sendMessage("You have completed your clue task! Read the clue again to claim your prize!");
-                                }
-
-                            }
-                        }
 
                         /** BOSS EVENT **/
                         new BossEventHandler().death(killer, npc, npc.getDefinition().getName());

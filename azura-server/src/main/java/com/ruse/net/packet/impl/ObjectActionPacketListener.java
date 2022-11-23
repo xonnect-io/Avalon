@@ -2104,8 +2104,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                 Stalls.stealFromStall (player, gameObject, 90, 250, new Item (ItemDefinition.COIN_ID, 3000 + Misc.getRandom (7000)), "You stole some coins.");
                                 break;
                             case 30205:
-                                player.setDialogueActionId (11);
-                                DialogueManager.start (player, 20);
+                                player.getLeaderboardManager().openInterface();
                                 break;
                             case 28716:
                                 if (!player.busy ()) {

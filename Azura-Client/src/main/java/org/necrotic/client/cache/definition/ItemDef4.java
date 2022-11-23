@@ -4244,7 +4244,7 @@ public class ItemDef4 {
 				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
 				itemDef.oldColors = new int[1]; // same here
 				itemDef.oldColors[0] = 62; // the texture that it currently has
-				itemDef.newColors[0] = 132; // the new texture u want it to have
+				itemDef.newColors[0] = 131; // the new texture u want it to have
 				itemDef.stackable = false;
 				break;
 			case 5095:

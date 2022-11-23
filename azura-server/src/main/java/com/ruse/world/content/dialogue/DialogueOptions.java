@@ -182,9 +182,7 @@ public class DialogueOptions {
                     TeleportHandler.teleportPlayer(player, new Position(2855, 3543),
                             player.getSpellbook().getTeleportType());
                     break;
-                case 29:
-                    SlayerMaster.changeSlayerMaster(player, SlayerMaster.EASY_SLAYER);
-                    break;
+
                 case 36:
                     TeleportHandler.teleportPlayer(player, new Position(2871, 5318, 2),
                             player.getSpellbook().getTeleportType());
@@ -372,10 +370,6 @@ public class DialogueOptions {
                     TeleportHandler.teleportPlayer(player, new Position(2663 + Misc.getRandom(1), 2651 + Misc.getRandom(1)),
                             player.getSpellbook().getTeleportType());
                     break;
-                case 29:
-                    SlayerMaster.changeSlayerMaster(player, SlayerMaster.MEDIUM_SLAYER);
-                    // System.out.println("CALLED");
-                    break;
                 case 30:
                     player.getPacketSender().sendString(36030,
                             "Current Points:   " + player.getPointsHandler().getSlayerPoints());
@@ -554,9 +548,6 @@ public class DialogueOptions {
                 case 15:
                     TeleportHandler.teleportPlayer(player, new Position(3368 + Misc.getRandom(5), 3267 + Misc.getRandom(3)),
                             player.getSpellbook().getTeleportType());
-                    break;
-                case 29:
-                    SlayerMaster.changeSlayerMaster(player, SlayerMaster.HARD_SLAYER);
                     break;
                 case 36:
                     player.setDialogueActionId(37);
@@ -915,6 +906,10 @@ public class DialogueOptions {
             // System.out.println("ID: " + id);
             switch (player.getDialogueActionId()) {
 
+                case 8010:
+                    TaskType.changeSlayerMaster(player, TaskType.EASY);
+                    player.getSlayer().assignTask();
+                    break;
                 case 8023:
                     DialogueManager.start(player, 8024);
                     break;
@@ -1002,6 +997,10 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
+                case 8010:
+                    TaskType.changeSlayerMaster(player, TaskType.MEDIUM);
+                    player.getSlayer().assignTask();
+                    break;
                 case 8023:
                     DialogueManager.start(player, 8025);
                     break;
@@ -1062,19 +1061,6 @@ public class DialogueOptions {
                 case 27:
                     ClanChatManager.clanChatSetupInterface(player, true);
                     break;
-                case 28:
-                    if (player.getSlayer().getSlayerMaster().getPosition() != null) {
-                        TeleportHandler.teleportPlayer(player,
-                                new Position(player.getSlayer().getSlayerMaster().getPosition().getX(),
-                                        player.getSlayer().getSlayerMaster().getPosition().getY(),
-                                        player.getSlayer().getSlayerMaster().getPosition().getZ()),
-                                player.getSpellbook().getTeleportType());
-                        if (player.getSkillManager().getCurrentLevel(Skill.SLAYER) <= 50)
-                            player.getPacketSender().sendMessage("")
-                                    .sendMessage("You can train Slayer with a friend by using a Slayer gem on them.")
-                                    .sendMessage("Slayer gems can be bought from all Slayer masters.");
-                    }
-                    break;
                 case 31:
                     DialogueManager.start(player, SlayerDialogues.resetTaskDialogue(player));
                     break;
@@ -1108,6 +1094,11 @@ public class DialogueOptions {
             }
         } else if (id == THIRD_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
+
+                case 8010:
+                    TaskType.changeSlayerMaster(player, TaskType.HARD);
+                    player.getSlayer().assignTask();
+                    break;
                 case 8023:
                     DialogueManager.start(player, 8026);
                     break;
@@ -1228,6 +1219,7 @@ public class DialogueOptions {
         } else if (id == FOURTH_OPTION_OF_FOUR) {
             switch (player.getDialogueActionId()) {
                 case 8221:
+                case 8010:
                 case 8023:
                 case 8:
                 case 9:
@@ -1270,8 +1262,9 @@ public class DialogueOptions {
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
 
-                case 10000:
-                    player.getPlayerOwnedShopManager().handleStore((int)player.getPosInfo()[0],(int)player.getPosInfo()[1],(int)player.getPosInfo()[2],player.getPosInfo()[3]);
+                case 100000:
+                    player.getPacketSender().sendInterfaceRemoval();
+                    TeleportHandler.teleportPlayer(player, new Position(2935, 4101), TeleportType.NORMAL);
                     break;
 
 /*
@@ -1648,10 +1641,6 @@ public class DialogueOptions {
                         World.sendMessage("<img=5> " + player.getUsername() + " has just completed the Easter event!");
                     }
                     break;
-                case 100000:
-                    player.getPacketSender().sendInterfaceRemoval();
-                    TeleportHandler.teleportPlayer(player, new Position(2665, 4020), TeleportType.NORMAL);
-                    break;
                 case 210:
                     if (player.getInventory().contains(22051)) {
                         player.getPacketSender().sendInterfaceRemoval();
@@ -1956,7 +1945,9 @@ public class DialogueOptions {
                 case 4622:
                     DialogueManager.start(player, TheOmegaDialogues.PubDecline(player));
                     break;
-
+                case 100000:
+                    player.getSlayerFavourites().open();
+                    break;
                 case 8631:
                     DialogueManager.start(player, BloodRunsDeepDialogues.questBloodRunsDeepKingRoald3(player));
                     break;
@@ -2009,10 +2000,6 @@ public class DialogueOptions {
                     player.getPacketSender().sendInterfaceRemoval();
                     ShopManager.getShops().get(28).open(player);
                     break;
-                case 100000:
-                    player.getPacketSender().sendInterfaceRemoval();
-                    KillsTracker.open(player);
-                    break;
                 case 171:
                     // player.getPacketSender().sendMessage("denied santa");
                     player.getPacketSender().sendInterfaceRemoval();
@@ -2047,6 +2034,17 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+                case 30:
+                    if (player.getSlayer().getTaskType().equals(TaskType.BOSS_SLAYER)){
+                        player.getSlayer().assignTask();
+                    }else {
+                        DialogueManager.start(player, 8010);
+                        player.setDialogueActionId(8010);
+                    }
+                    break;
+                case 31:
+                    DialogueManager.start(player, SlayerDialogues.findAssignment(player));
+                    break;
                 case 81115:
                 EventChestInterface.openInterface(player);
                 break;
@@ -2077,30 +2075,7 @@ public class DialogueOptions {
                     player.getInventory().add(14019, 1);
                     player.getPacketSender().sendMessage("You've purchased a Max cape.");
                     break;
-                case 9906:
-                    if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER)
-                            && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                        SlayerMaster.changeSlayerMaster(player, SlayerMaster.EASY_SLAYER);
-                    }
-                    if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER)) {
-                        player.getSlayer().assignTask();
-                    return;
-            } else {
-                        SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                        String yourMastersName = "";
-                        String thisMasterName = "";
-                        int reqSlayer = 0;
-                        if (yourMaster != null) {
-                            yourMastersName = yourMaster.getSlayerMasterName();
-                        }
-                        if (player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                            DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName + ".");
-                            return;
-                        } else if (!player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)){
-                            DialogueManager.sendStatement(player, "You currently have an " + yourMastersName + ", complete it first!");
-                        }
-                    }
-                    break;
+
                 case 9905:
                     player.skillingTask = true;
                     DailyTasks.checkTask(player);
@@ -2114,11 +2089,6 @@ public class DialogueOptions {
                     player.getPacketSender()
                             .sendMessage("<img=5> To do Social slayer, simply use your Slayer gem on another player.");
                     break;
-                case 30:
-                    player.getSlayer().assignTask();
-                    // System.out.println("TAsk assigned: - Master: " + player.getSlayer().getSlayerMaster().toString());
-                    break;
-
                 case 196:
                     for (int index = 0; index < JewelryTeleports.values().length; index++) {
                         if (index == JewelryTeleports.jewelIndex(player.getStrippedJewelryName())
@@ -2259,6 +2229,9 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+                case 31:
+                    DialogueManager.start(player, SlayerDialogues.resetTaskDialogue(player));
+                    break;
                 case 81115:
                     TeleportHandler.teleportPlayer(player, new Position(2441, 3090),
                             TeleportType.NORMAL);
@@ -2273,30 +2246,6 @@ public class DialogueOptions {
                     player.prestigeInterface.openPrestigeInterface();
                     break;
 
-                case 9906:
-                    if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER)
-                            && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                        SlayerMaster.changeSlayerMaster(player, SlayerMaster.MEDIUM_SLAYER);
-                    }
-                    if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER)) {
-                        player.getSlayer().assignTask();
-                        return;
-                    }  else {
-                        SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                        String yourMastersName = "";
-                        String thisMasterName = "";
-                        int reqSlayer = 0;
-                        if(yourMaster != null) {
-                            yourMastersName = yourMaster.getSlayerMasterName();
-                        }
-                        if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                            DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
-                            return;
-                        } else if (!player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)){
-                            DialogueManager.sendStatement(player, "You currently have an " + yourMastersName + ", complete it first!");
-                        }
-                    }
-                    break;
                 case 9905:
                     player.skillingTask = false;
                     DailyTasks.checkTask(player);
@@ -2310,7 +2259,7 @@ public class DialogueOptions {
                     }
                     break;
                 case 30:
-                    ShopManager.getShops().get(40).open(player);
+                    ShopManager.getShops().get(471).open(player);
                     break;
                 case 196:
                     for (int index = 0; index < JewelryTeleports.values().length; index++) {
@@ -2488,32 +2437,6 @@ public class DialogueOptions {
                 case 81115:
                     player.getPacketSender().sendInterfaceRemoval();
                     break;
-
-                case 9906:
-                case 9085:
-                    if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER)
-                            && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                        SlayerMaster.changeSlayerMaster(player, SlayerMaster.HARD_SLAYER);
-                    }
-                    if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER)) {
-                        player.getSlayer().assignTask();
-                        return;
-                    }  else {
-                        SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                        String yourMastersName = "";
-                        String thisMasterName = "";
-                        int reqSlayer = 0;
-                        if(yourMaster != null) {
-                            yourMastersName = yourMaster.getSlayerMasterName();
-                        }
-                        if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                            DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
-                            return;
-                        } else if (!player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)){
-                            DialogueManager.sendStatement(player, "You currently have an " + yourMastersName + ", complete it first!");
-                        }
-                    }
-                    break;
                 case 9905:
                 case 9902:
                 case 30:
@@ -2533,6 +2456,7 @@ public class DialogueOptions {
                 case 61:
                 case 62:
                 case 63:
+                case 31:
                 case 64:
                 case 69:
                 case 70:

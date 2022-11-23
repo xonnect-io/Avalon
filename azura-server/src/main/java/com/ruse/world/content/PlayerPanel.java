@@ -83,15 +83,27 @@ public class PlayerPanel {
 
                 //
                 "Slayer Information",
-                "Master: @whi@" + Misc
-                        .formatText(player.getSlayer().getSlayerMaster().toString().toLowerCase().replaceAll("_", " ")),
+                "Slayer Points: @whi@" + player.getPointsHandler().getSlayerPoints(),
+
+                "Task Type: @whi@" + (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK ? "N/A" : Misc
+                        .formatText(player.getSlayer().getTaskType().toString().toLowerCase().replaceAll("_", " ")))
+                ,
                 (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK
-                        ? "Task: @whi@" + player.getSlayer().getSlayerTask().getName()
-                        : "Task: @whi@" + player.getSlayer().getSlayerTask().getName()
+                        ? "Task: @whi@" + Misc.formatText(
+                        player.getSlayer().getSlayerTask().toString().toLowerCase().replaceAll("_", " "))
+                        : "Task: @whi@" + Misc.formatText(
+                        player.getSlayer().getSlayerTask().toString().toLowerCase().replaceAll("_", " "))
                         + "s"),
-                "Amount: @whi@" + player.getSlayer().getAmountToSlay(),
-                "Streak: @whi@" + player.getSlayer().getTaskStreak(),
-                "Slayer Multiplier: @whi@ " + player.getPointsHandler().getSlayerRate() + "%",
+
+                "Task Amount: @whi@" + player.getSlayer().getAmountToSlay(),
+                "Task Streak: @whi@" + player.getSlayer().getTaskStreak(),
+
+
+                (player.getSlayer().getDuoPartner() != null
+                        ? "Duo Partner: @whi@" + player.getSlayer().getDuoPartner()
+                        : "Duo Partner: @whi@N/A"),
+                "Slayer Spree: @whi@" + player.getPointsHandler().getSlayerSpree(),
+                "Slayer Multiplier: @whi@" + player.getPointsHandler().getSlayerRate() + "%",
                 // (player.getSlayer().getDuoPartner() != null
                 //        ? "Duo Partner: @whi@" + player.getSlayer().getDuoPartner()
                 //      : "Duo Partner: @whi@N/A"),

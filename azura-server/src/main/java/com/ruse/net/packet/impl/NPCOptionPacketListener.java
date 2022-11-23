@@ -46,8 +46,8 @@ import com.ruse.world.content.skill.impl.old_dungeoneering.UltimateIronmanHandle
 import com.ruse.world.content.skill.impl.runecrafting.DesoSpan;
 import com.ruse.world.content.skill.impl.slayer.BossSlayerDialogues;
 import com.ruse.world.content.skill.impl.slayer.SlayerDialogues;
-import com.ruse.world.content.skill.impl.slayer.SlayerMaster;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
+import com.ruse.world.content.skill.impl.slayer.TaskType;
 import com.ruse.world.content.skill.impl.summoning.BossPets;
 import com.ruse.world.content.skill.impl.summoning.Summoning;
 import com.ruse.world.content.skill.impl.summoning.SummoningData;
@@ -110,7 +110,26 @@ public class NPCOptionPacketListener implements PacketListener {
                         DialogueManager.start(player, 1311);
                         player.setDialogueActionId(568);
                         break;
+                    case 9000:
+                        if (!player.getSlayer().getTaskType().equals(TaskType.BOSS_SLAYER)
+                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
+                            TaskType.changeSlayerMaster(player, TaskType.BOSS_SLAYER);
+                        }
+                        if (!player.getSlayer().getTaskType().equals(TaskType.BOSS_SLAYER))
+                            DialogueManager.sendStatement(player, "You do not have a boss slayer task.");
+                        else
+                            DialogueManager.start(player, BossSlayerDialogues.dialogue(player));
 
+                        break;
+                    case 925:
+                       /* if (player.getSlayer().getTaskType().equals(TaskType.BOSS_SLAYER)
+                                && !player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
+                            DialogueManager.sendStatement(player, "You currently have an assignment with another master.");
+                        }else{*/
+                        DialogueManager.start(player, SlayerDialogues.dialogue(player));
+                        // }
+
+                        break;
 /*
                     case 432:
                         player.getPacketSender().sendInterfaceReset();
@@ -244,33 +263,6 @@ public class NPCOptionPacketListener implements PacketListener {
                             }
                         } else {
                             player.sendMessage("You must be a group ironman to do this.");
-                        }
-                        break;
-                    case 9000://first click
-                        if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER)
-                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.BOSS_SLAYER);
-                        }
-                        if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER))
-                            DialogueManager.start(player, BossSlayerDialogues.dialogue(player));
-                        else {
-                            SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                            SlayerMaster thisMaster = SlayerMaster.forNpcId(npc.getId());
-                            String yourMastersName = "";
-                            String thisMasterName = "";
-                            int reqSlayer = 0;
-                            if (yourMaster != null) {
-                                yourMastersName = yourMaster.getSlayerMasterName();
-                            }
-                            if (thisMaster != null) {
-                                reqSlayer = thisMaster.getSlayerReq();
-                                thisMasterName = thisMaster.getSlayerMasterName();
-                            }
-                            if (player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName + ".");
-                            } else {
-                                DialogueManager.sendStatement(player, "You currently have an assignment with " + yourMastersName);
-                            }
                         }
                         break;
                     case PlayerOwnedShopManager.NPC_ID:
@@ -566,9 +558,6 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 8705:
                         EnergyHandler.rest(player);
                         break;
-                    case 925:
-                        DialogueManager.start(player, SlayerDialogues.dialogue(player));
-                        break;
                     case 534:
                         ShopManager.getShops().get(78).open(player);
                         break;
@@ -613,87 +602,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         }
                         // DialogueManager.start(player, ExplorerJack.getDialogue(player));
                         break;
-                    case 1597:
-                        if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER)
-                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.EASY_SLAYER);
-                        }
-                        if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER))
-                            DialogueManager.start(player, SlayerDialogues.dialogue(player));
-                        else {
-                            SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                            SlayerMaster thisMaster = SlayerMaster.forNpcId(npc.getId());
-                            String yourMastersName = "";
-                            String thisMasterName = "";
-                            int reqSlayer = 0;
-                            if(yourMaster != null) {
-                                yourMastersName = yourMaster.getSlayerMasterName();
-                            }
-                            if(thisMaster != null) {
-                                reqSlayer = thisMaster.getSlayerReq();
-                                thisMasterName = thisMaster.getSlayerMasterName();
-                            }
-                            if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
-                            } else {
-                                DialogueManager.sendStatement(player, "You currently have an assignment with " + yourMastersName);
-                            }
-                        }
-                        break;
-                    case 8275:
-                        if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER)
-                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.MEDIUM_SLAYER);
-                        }
-                        if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER))
-                            DialogueManager.start(player, SlayerDialogues.dialogue(player));
-                        else {
-                            SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                            SlayerMaster thisMaster = SlayerMaster.forNpcId(npc.getId());
-                            String yourMastersName = "";
-                            String thisMasterName = "";
-                            int reqSlayer = 0;
-                            if(yourMaster != null) {
-                                yourMastersName = yourMaster.getSlayerMasterName();
-                            }
-                            if(thisMaster != null) {
-                                reqSlayer = thisMaster.getSlayerReq();
-                                thisMasterName = thisMaster.getSlayerMasterName();
-                            }
-                            if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
-                            } else {
-                                DialogueManager.sendStatement(player, "You currently have an assignment with " + yourMastersName);
-                            }
-                        }
-                        break;
-                    case 9085:
-                        if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER)
-                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.HARD_SLAYER);
-                        }
-                        if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER))
-                            DialogueManager.start(player, SlayerDialogues.dialogue(player));
-                        else {
-                            SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                            SlayerMaster thisMaster = SlayerMaster.forNpcId(npc.getId());
-                            String yourMastersName = "";
-                            String thisMasterName = "";
-                            int reqSlayer = 0;
-                            if(yourMaster != null) {
-                                yourMastersName = yourMaster.getSlayerMasterName();
-                            }
-                            if(thisMaster != null) {
-                                reqSlayer = thisMaster.getSlayerReq();
-                                thisMasterName = thisMaster.getSlayerMasterName();
-                            }
-                            if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
-                            } else {
-                                DialogueManager.sendStatement(player, "You currently have an assignment with " + yourMastersName);
-                            }
-                        }
-                        break;
+
                     case 437:
                         DialogueManager.start(player, 99);
                         player.setDialogueActionId(58);
@@ -1098,7 +1007,37 @@ public class NPCOptionPacketListener implements PacketListener {
                 }
                 // if ()
                 switch (npc.getId()) {
+                    case 925:
+                        if (player.getSlayer().getTaskType() == null) {
+                            TaskType.changeSlayerMaster(player, TaskType.EASY);
+                        }
+                        if (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK){
+                            DialogueManager.start(player, 8010);
+                            player.setDialogueActionId(8010);
+                        }
+                        else {
+                            DialogueManager.start(player, SlayerDialogues.findAssignment(player));
+                        }
+                        break;
+                    case 9000:
 
+                        if (!player.getSlayer().getTaskType().equals(TaskType.BOSS_SLAYER)
+                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
+                            TaskType.changeSlayerMaster(player, TaskType.BOSS_SLAYER);
+                        }
+                        if (player.getSlayer().getTaskType().equals(TaskType.BOSS_SLAYER)) {
+
+                            TaskType.changeSlayerMaster(player, TaskType.BOSS_SLAYER);
+                            if (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK)
+                                player.getSlayer().assignTask();
+
+                            else
+                                DialogueManager.start(player, SlayerDialogues.findAssignment(player));
+                        } else
+                            DialogueManager.sendStatement(player, "You already have a slayer task.");
+
+
+                        break;
 
                     case 9222:
                         PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.TRAVELLING_MERCHANT);
@@ -1114,10 +1053,6 @@ public class NPCOptionPacketListener implements PacketListener {
 
                     case 568:
                         ShopManager.getShops().get(207).open(player);
-                    case 925:
-                        player.setDialogueActionId(9906);
-                        DialogueManager.start(player, 9906);
-                        break;
 
                     case 845:
                         DialogueManager.start(player, SlayerDialogues.findAssignment(player));
@@ -1225,142 +1160,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         ;
                         ShopManager.getShops().get(90).open(player);
                         break;
-                    case 1597:
-                        if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER)
-                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.EASY_SLAYER);
-                        }
-                        if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.EASY_SLAYER)) {
 
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.EASY_SLAYER);
-                            if (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK)
-                                player.getSlayer().assignTask();
-
-                            else
-                                DialogueManager.start(player, SlayerDialogues.findAssignment(player));
-                        } else {
-                            SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                            SlayerMaster thisMaster = SlayerMaster.forNpcId(npc.getId());
-                            String yourMastersName = "";
-                            String thisMasterName = "";
-                            int reqSlayer = 0;
-                            if(yourMaster != null) {
-                                yourMastersName = yourMaster.getSlayerMasterName();
-                            }
-                            if(thisMaster != null) {
-                                reqSlayer = thisMaster.getSlayerReq();
-                                thisMasterName = thisMaster.getSlayerMasterName();
-                            }
-                            if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
-                            } else {
-                                DialogueManager.sendStatement(player, "You currently have an assignment with " + yourMastersName);
-                            }
-                        }
-                        break;
-                    case 8275:
-                        if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER)
-                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.MEDIUM_SLAYER);
-                        }
-                        if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.MEDIUM_SLAYER)) {
-
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.MEDIUM_SLAYER);
-                            if (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK)
-                                player.getSlayer().assignTask();
-
-                            else
-                                DialogueManager.start(player, SlayerDialogues.findAssignment(player));
-                        } else {
-                            SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                            SlayerMaster thisMaster = SlayerMaster.forNpcId(npc.getId());
-                            String yourMastersName = "";
-                            String thisMasterName = "";
-                            int reqSlayer = 0;
-                            if(yourMaster != null) {
-                                yourMastersName = yourMaster.getSlayerMasterName();
-                            }
-                            if(thisMaster != null) {
-                                reqSlayer = thisMaster.getSlayerReq();
-                                thisMasterName = thisMaster.getSlayerMasterName();
-                            }
-                            if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
-                            } else {
-                                DialogueManager.sendStatement(player, "You currently have an assignment with " + yourMastersName);
-                            }
-                        }
-                        break;
-                    case 9085:
-                        if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER)
-                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.HARD_SLAYER);
-                        }
-                        if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.HARD_SLAYER)) {
-
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.HARD_SLAYER);
-                            if (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK)
-                                player.getSlayer().assignTask();
-
-                            else
-                                DialogueManager.start(player, SlayerDialogues.findAssignment(player));
-                        } else {
-                            SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                            SlayerMaster thisMaster = SlayerMaster.forNpcId(npc.getId());
-                            String yourMastersName = "";
-                            String thisMasterName = "";
-                            int reqSlayer = 0;
-                            if(yourMaster != null) {
-                                yourMastersName = yourMaster.getSlayerMasterName();
-                            }
-                            if(thisMaster != null) {
-                                reqSlayer = thisMaster.getSlayerReq();
-                                thisMasterName = thisMaster.getSlayerMasterName();
-                            }
-                            if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
-                            } else {
-                                DialogueManager.sendStatement(player, "You currently have an assignment with " + yourMastersName);
-                            }
-                        }
-
-
-                        break;
-                    case 9000://second click
-
-                        if (!player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER)
-                                && player.getSlayer().getSlayerTask().equals(SlayerTasks.NO_TASK)) {
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.BOSS_SLAYER);
-                        }
-                        if (player.getSlayer().getSlayerMaster().equals(SlayerMaster.BOSS_SLAYER)) {
-
-                            SlayerMaster.changeSlayerMaster(player, SlayerMaster.BOSS_SLAYER);
-                            if (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK)
-                                player.getSlayer().assignTask();
-
-                            else
-                                DialogueManager.start(player, BossSlayerDialogues.findAssignment(player));
-                        } else {
-                            SlayerMaster yourMaster = player.getSlayer().getSlayerMaster();
-                            SlayerMaster thisMaster = SlayerMaster.forNpcId(npc.getId());
-                            String yourMastersName = "";
-                            String thisMasterName = "";
-                            int reqSlayer = 0;
-                            if(yourMaster != null) {
-                                yourMastersName = yourMaster.getSlayerMasterName();
-                            }
-                            if(thisMaster != null) {
-                                reqSlayer = thisMaster.getSlayerReq();
-                                thisMasterName = thisMaster.getSlayerMasterName();
-                            }
-                            if(player.getSkillManager().getCurrentLevel(Skill.SLAYER) < reqSlayer) {
-                                DialogueManager.sendStatement(player, "You need " + reqSlayer + " Slayer to use " + thisMasterName  + ".");
-                            } else {
-                                DialogueManager.sendStatement(player, "You currently have an assignment with " + yourMastersName);
-                            }
-                        }
-
-                        break;
                     case 8591:
                         if (!player.getMinigameAttributes().getNomadAttributes().hasFinishedPart(1)) {
                             player.getPacketSender()

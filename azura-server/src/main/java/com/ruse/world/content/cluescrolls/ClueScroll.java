@@ -1,6 +1,5 @@
 package com.ruse.world.content.cluescrolls;
 
-import com.ruse.model.container.impl.Bank;
 import com.ruse.model.definitions.NpcDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.content.skill.impl.slayer.SlayerTasks;
@@ -49,7 +48,6 @@ public enum ClueScroll {
     public static boolean readClue(Player player, ClueScroll type) {
 
         if (player.getCurrentClue().getCurrentTask() == SlayerTasks.NO_TASK) {
-            player.getCurrentClue().assignTask(type);
 
             int id = player.getCurrentClue().getCurrentTask().getNpcId();
             NpcDefinition def = NpcDefinition.forId(id);

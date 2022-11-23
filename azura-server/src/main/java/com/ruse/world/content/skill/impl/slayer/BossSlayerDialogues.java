@@ -22,7 +22,7 @@ public class BossSlayerDialogues {
 
 			@Override
 			public int npcId() {
-				return player.getSlayer().getSlayerMaster().getNpcId();
+				return player.getSlayer().getTaskType().getNpcId();
 			}
 
 			@Override
@@ -62,7 +62,6 @@ public class BossSlayerDialogues {
 					@Override
 					public String[] dialogue() {
 						return new String[] { "What's my current assignment?", "I'd like to reset my Slayer Task",
-								"How many points do I currently receive per task?",
 								player.getSlayer().getDuoPartner() != null ? "I'd like to reset my duo team"
 										: "Nothing, thanks"
 
@@ -116,7 +115,7 @@ public class BossSlayerDialogues {
 		};
 	}
 
-	public static Dialogue receivedTask(final Player player, final SlayerMaster master, final SlayerTasks task) {
+	public static Dialogue receivedTask(final Player player, final TaskType master, final SlayerTasks task) {
 		return new Dialogue() {
 			final int amountToKill = player.getSlayer().getAmountToSlay();
 
@@ -140,17 +139,17 @@ public class BossSlayerDialogues {
 				boolean duoSlayer = player.getSlayer().getDuoPartner() != null;
 				String you = duoSlayer ? "You and your partner" : "You";
 				String line1 = "You have been assigned to kill " + amountToKill + " "
-						+ task.getName() + "s.";
+						+ Misc.formatText(task.toString().toLowerCase().replaceAll("_", " ")) + "s.";
 				String line2 = "";
 				if (duoSlayer) {
 					line1 = "" + you + " have been assigned to kill";
 					line2 = "" + amountToKill + " "
-							+ task.getName() + "s.";
+							+ Misc.formatText(task.toString().toLowerCase().replaceAll("_", " ")) + "s.";
 				}
 				if (player.getSlayer().getLastTask() != SlayerTasks.NO_TASK) {
 					line1 = "" + you + " are doing great! Your new";
 					line2 = "assignment is to kill " + amountToKill + " "
-							+ task.getName() + "s.";
+							+ Misc.formatText(task.toString().toLowerCase().replaceAll("_", " ")) + "s.";
 				}
 				return new String[] { "" + line1 + "", "" + line2 + "" };
 			}
@@ -199,7 +198,7 @@ public class BossSlayerDialogues {
 	}
 
 	public static Dialogue findAssignment(final Player player) {
-		final SlayerMaster master = player.getSlayer().getSlayerMaster();
+		final TaskType master = player.getSlayer().getTaskType();
 		final SlayerTasks task = player.getSlayer().getSlayerTask();
 
 		return new Dialogue() {
@@ -225,7 +224,7 @@ public class BossSlayerDialogues {
 					l = task.getNpcLocation();
 				return new String[] {
 						"Your current task is to kill " + (player.getSlayer().getAmountToSlay()) + " "
-								+ task.getName() + "s.",
+								+ Misc.formatText(task.toString().toLowerCase().replaceAll("_", " ")) + "s.",
 						"" + l + "" };
 			}
 
@@ -246,7 +245,7 @@ public class BossSlayerDialogues {
 
 			@Override
 			public int npcId() {
-				return player.getSlayer().getSlayerMaster().getNpcId();
+				return player.getSlayer().getTaskType().getNpcId();
 			}
 
 			@Override

@@ -35,6 +35,7 @@ public class Misc {
     /**
      * Random instance, used to generate pseudo-random primitive types.
      */
+    public static final SecureRandom SECURE_RANDOM = new SecureRandom();
     public static final Random RANDOM = new Random(System.currentTimeMillis());
     public static final int HALF_A_DAY_IN_MILLIS = 43200000;
     private static final String[] BLOCKED_WORDS = new String[]{".com", ".net", ".org", "<img", "@cr", "<img=",

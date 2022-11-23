@@ -3284,7 +3284,7 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.oldColors = new int[]{59};
-				itemDef.newColors = new int[]{134};
+				itemDef.newColors = new int[]{131};
 				//	itemDef.rdc2 = 2353627;
 				
 				break;
@@ -3303,7 +3303,7 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.oldColors = new int[]{59};
-				itemDef.newColors = new int[]{134};
+				itemDef.newColors = new int[]{131};
 				
 				//	itemDef.rdc2 = 2353627;
 				break;
@@ -3323,7 +3323,7 @@ public class ItemDef2 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				itemDef.stackable = false;
 				itemDef.oldColors = new int[]{59};
-				itemDef.newColors = new int[]{134};
+				itemDef.newColors = new int[]{131};
 				
 				//	itemDef.rdc2 = 2353627;
 				break;
