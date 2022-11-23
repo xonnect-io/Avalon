@@ -200,6 +200,26 @@ public class Player extends Character {
     @Setter
     private boolean canKillSlayerBoss = false;
 
+    private ClanChat currentClanChat;
+
+    public ClanChat getCurrentClanChat() {
+        return currentClanChat;
+    }
+
+    public Player setCurrentClanChat(ClanChat clanChat) {
+        this.currentClanChat = clanChat;
+        return this;
+    }
+
+    public String getClanChatName() {
+        return clanChatName;
+    }
+
+    public Player setClanChatName(String clanChatName) {
+        this.clanChatName = clanChatName;
+        return this;
+    }
+
     @Getter
     private final LeaderboardManager leaderboardManager = new LeaderboardManager(this);
 
@@ -933,7 +953,6 @@ public int howmuchdissolveamt = 0;
     private Prayerbook prayerbook = Prayerbook.NORMAL;
     private MagicSpellbook spellbook = MagicSpellbook.NORMAL;
     private LoyaltyTitles loyaltyTitle = LoyaltyTitles.NONE;
-    private ClanChat currentClanChat;
     private Input inputHandling;
     private WalkToTask walkToTask;
     private Shop shop;
@@ -3239,23 +3258,6 @@ End new teleport
         this.clientExitTaskActive = clientExitTaskActive;
     }
 
-    public ClanChat getCurrentClanChat() {
-        return currentClanChat;
-    }
-
-    public Player setCurrentClanChat(ClanChat clanChat) {
-        this.currentClanChat = clanChat;
-        return this;
-    }
-
-    public String getClanChatName() {
-        return clanChatName;
-    }
-
-    public Player setClanChatName(String clanChatName) {
-        this.clanChatName = clanChatName;
-        return this;
-    }
 
     public String getYellHex() {
         return yellHex;

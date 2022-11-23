@@ -307,9 +307,9 @@ public class PlayerHandler {
                 player.sendMessage("@red@If you lose it relog to re-obtain!");
             }
         }
-        //ClanChatManager.handleLogin(player);
+        ClanChatManager.clanPlayerCount[3] += 1;
         ClanChatManager.resetInterface(player);
-        ClanChatManager.join(player, "help");
+        ClanChatManager.join(player, "help");;
 
         player.getPacketSender().updateSpecialAttackOrb().sendIronmanMode(player.getGameMode().ordinal());
         player.getClickDelay().reset();
@@ -611,7 +611,8 @@ public class PlayerHandler {
                 player.getFarming().save();
                 player.getPlayerOwnedShopManager().unhookShop();
                 BountyHunter.handleLogout(player);
-                ClanChatManager.leave(player, false);
+                ClanChatManager.leave(player, false, true);
+                ClanChatManager.logout(player);
                 player.getRelations().updateLists(false);
                 PlayersOnlineInterface.remove(player);
                 TaskManager.cancelTasks(player.getCombatBuilder());

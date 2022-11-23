@@ -1,15 +1,14 @@
 package com.ruse.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.ruse.net.packet.impl.ChatPacketListener;
 import com.ruse.util.NameUtils;
 import com.ruse.world.World;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.PlayerPunishment;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 //import com.sun.xml.internal.ws.util.StringUtils;
 
 /**

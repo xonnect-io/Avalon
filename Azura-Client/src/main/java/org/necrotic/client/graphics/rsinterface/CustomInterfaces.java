@@ -4202,6 +4202,7 @@ public class CustomInterfaces extends RSInterface {
 		setBounds(17000, 479, 17, 18, rsinterface);
 	}
 
+
 	private void clanChatTabInterface() {
 		RSInterface tab = addInterface(29328);
 		addHoverButtonWSpriteLoader(29329, 698, 18, 18, "Join Clan", -1, 29330, 1);
@@ -4210,36 +4211,53 @@ public class CustomInterfaces extends RSInterface {
 		addHoveredImageWSpriteLoader(29333, 701, 18, 18, 29334);
 		addHoverButtonWSpriteLoader(29335, 702, 18, 18, "Settings", -1, 29336, 1);
 		addHoveredImageWSpriteLoader(29336, 703, 18, 18, 29337);
-		addButtonWSpriteLoader(29455, 20, "Toggle Lootshare");
-		addButtonWSpriteLoader(29456, 51, "View players online.");
-		addText(29338, "Clan Chat", 0xff9b00, true, true, tda[1]);
-		addText(29340, "Talking in: @whi@Not in chat", 0xff9b00, false, true, tda[0]);
-		addText(29454, "Lootshare: @gre@On", 0xff9b00, false, true, 52, tda, 0);
-		addText(29450, "Owner: None", 0xff9b00, false, true, tda[0]);
-		addSpriteLoader(29339, 705);
-		tab.totalChildren(16);
-		tab.child(0, 16126, 0, 236);
-		tab.child(1, 16126, 0, 62);
-		tab.child(2, 29339, 0, 62);
-		tab.child(3, 29343, 0, 62);
-		tab.child(4, 29329, 8, 239);
-		tab.child(5, 29330, 8, 239);
-		tab.child(6, 29332, 25, 239);
-		tab.child(7, 29333, 25, 239);
-		tab.child(8, 29335, 42, 239);
-		tab.child(9, 29336, 42, 239);
-		tab.child(10, 29338, 95, 1);
-		tab.child(11, 29340, 10, 15);
-		tab.child(12, 29450, 10, 41);
-		tab.child(13, 29454, 10, 28);
-		tab.child(14, 29455, 150, 23);
-		tab.child(15, 29456, 110, 23);
+
+		addText(29340, "Talking in: @whi@Not in chat", 0xff9b00, true, true, tda[0]);
+
+		addSpriteLoader(29339, 1847);
+		tab.totalChildren(18);
+		int c = 0;
+
+		tab.child(c++, 29339, 0, 0);
+
+		tab.child(c++, 29343, 8, 95);
+
+		tab.child(c++, 29329, 9, 244);
+		tab.child(c++, 29330, 9, 244);
+		tab.child(c++, 29332, 27, 244);
+		tab.child(c++, 29333, 27, 244);
+		tab.child(c++, 29335, 45, 244);
+		tab.child(c++, 29336, 45, 244);
+
+		tab.child(c++, 29340, 95, 80);
+
+		addTextRight(29849, "Clan Size: (1/600)", tda, 0, 0xFF981F, true);
+		tab.child(c++, 29849, 210, 246);
+
+		int id = 29850;
+		int y = 8;
+		String[] titles = new String[]{"Help", "Market", "Discussion", "No CC/Other"};
+		for (int i = 0; i < 4; i++) {
+
+			if (i == 3)
+				addText(id, titles[i], tda, 0, 0xFF9900, false, true);
+			else
+				teleportText(id, titles[i], "Enter Clan", fonts, 0, 0xFF9900, false, true, 172, 17);
+
+			tab.child(c++, id++, 11, y);
+
+			addTextRight(id, "0 ppl", tda, 0, 0xFF981F, true);
+			tab.child(c++, id++, 179, y);
+			y += 16;
+		}
+
+
 		rebuildClanChatList(false, "", false);
 	}
 
 	public void rebuildClanChatList(boolean clickable, String ignore, boolean owner) {
 		/* Text area */
-		for (int i = 29344; i <= 29444; i++) {
+		for (int i = 29344; i < 29844; i++) {
 			if (clickable && RSInterface.interfaceCache[i].message.length() > 0) {
 				addClanChatListTextWithOptions(i, RSInterface.interfaceCache[i].message, ignore, owner, tda, 0, 0xffffff, 200, 11);
 			} else {
@@ -4247,18 +4265,19 @@ public class CustomInterfaces extends RSInterface {
 			}
 		}
 		RSInterface list = addInterface(29343);
-		list.totalChildren(100);
-		for (int id = 29344, i = 0; id <= 29443 && i <= 99; id++, i++) {
+		list.totalChildren(500);
+		for (int id = 29344, i = 0; id <= 29843 && i <= 499; id++, i++) {
 			list.child(id - 29344, id, 5, -1);
-			for (int id2 = 29344, i2 = 1; id2 <= 29443 && i2 <= 99; id2++, i2++) {
-				list.childY[0] = 2;
+			for (int id2 = 29344, i2 = 1; id2 <= 29843 && i2 <= 499; id2++, i2++) {
+				list.childY[0] = 4;
 				list.childY[i2] = list.childY[i2 - 1] + 14;
 			}
 		}
-		list.height = 174;
-		list.width = 174;
+		list.height = 146;
+		list.width = 173 - 16;
 		list.scrollMax = 1405;
 	}
+
 	public static void collectionLog(TextDrawingArea[] advancedFonts) {
 		RSInterface tab = addInterface(61000);
 		addSprite(61001, 1731);

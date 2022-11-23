@@ -121,6 +121,8 @@ public class ButtonClickPacketListener implements PacketListener {
             id -= 65536;
         }
 
+        ClanChatManager.buttonClick(player, id);
+
         if (player.getLeaderboardManager().handleButton(id)) {
             return;
         }
@@ -2044,7 +2046,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("You are not in a clanchat channel.");
                     return;
                 }
-                ClanChatManager.leave(player, false);
+                ClanChatManager.leave(player, false, true);
                 player.setClanChatName(null);
                 break;
             case 29329:

@@ -9,6 +9,7 @@ import com.ruse.model.RegionInstance.RegionInstanceType;
 import com.ruse.model.Skill;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.content.PlayerPunishment;
+import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.combat.pvp.BountyHunter;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.impl.construction.House;
@@ -93,6 +94,7 @@ public class PlayerProcess {
 		if (!player.isInActive()) {
 			if (loyaltyTick >= 6) {
 				player.getPointsHandler().incrementLoyaltyPoints(1 + rank_amount);
+				ClanChatManager.updateClans(player);
 				PlayerPanel.refreshPanel(player);
 				loyaltyTick = 0;
 			}
