@@ -41,6 +41,8 @@ public enum SlayerTasks {
     CAVE_SNAIL(TaskType.HARD, 6792, "Dungeon teleports", 100,200, new Position(2080, 5533)),
     CAVE_MUTANT(TaskType.HARD, 6798, "Dungeon teleports", 100,200, new Position(2080, 5533)),
 
+    FALLEN_WARRIOR(TaskType.HARD, 9011, "Fallen Warrior's can be found by using the Teleport interface.", 200,300,
+            new Position(3421, 4777, 0)),
 
     // Easy bosses xp =  half the npcs health
     HANTO(TaskType.BOSS_SLAYER, 250, "Hanto warrior can be found by using the Teleport interface.", 200,300,
@@ -65,6 +67,10 @@ public enum SlayerTasks {
     DEMONS_OF_DEITY(TaskType.BOSS_SLAYER, 440, "Demons of Deity can be found by using the Teleport interface.", 200,300,
             new Position(2842, 9387, 0)),
     MUTATED_HOUND(TaskType.BOSS_SLAYER, 9839, "Mutated hounds can be found by using the Teleport interface.", 200,300,
+            new Position(3421, 4777, 0)),
+    FALLEN_ANGEL(TaskType.BOSS_SLAYER, 9012, "Fallen Angel's can be found by using the Teleport interface.", 200,300,
+            new Position(3421, 4777, 0)),
+    MIDNIGHT_GOBLIN(TaskType.BOSS_SLAYER, 9837, "Midnight goblin's can be found by using the Teleport interface.", 200,300,
             new Position(3421, 4777, 0)),
     PLUTONIC_DEMON(TaskType.BOSS_SLAYER, 12810, "Plutonic demons can be found by using the Teleport interface.", 200,300,
             new Position(2728, 4505, 0)),

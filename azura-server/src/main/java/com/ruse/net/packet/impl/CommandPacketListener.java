@@ -1965,6 +1965,17 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("prevxmas")) {
             EventChestInterface.openInterface(player);
         }
+        if (command[0].equalsIgnoreCase("xevent")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(2528, 2656);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+        }
+
         if (command[0].equalsIgnoreCase("addxp")) {
             player.getSeasonPass().addExperience(Integer.parseInt(command[1]));
         }

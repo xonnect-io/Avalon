@@ -6,6 +6,7 @@ import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.PlayerLogs;
+import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.sql.*;
@@ -253,7 +254,9 @@ public class Store implements Runnable {
                     case 1088:
                         player.getInventory().add(22166, quantity);
                         break;
-
+                    case 1089:
+                        player.getInventory().add(23362, quantity);
+                        break;
                     default:
                         player.sendMessage("No donation was found under your name.");
                         return;
@@ -269,10 +272,13 @@ public class Store implements Runnable {
                 }
                 player.incrementAmountDonated((int) amount);
                 player.setAmountDonatedToday((int)amount);
+                checkForRankUpdate(player);
+                PlayerPanel.refreshPanel(player);
                 player.getInventory().add(23174, (int) amount);
                 player.sendMessage("Thanks for donating!");
                 player.sendMessage("You are rewarded " + (int) amount + " Nephilim Tokens!");
-                player.sendMessage("Your total amount donated was increased by " + (int) amount + ". your new total is: " + player.getAmountDonated());
+                player.getPacketSender().sendMessage("Your account has gained funds worth $" + (int) amount
+                        + ". Your total is now at $" + player.getAmountDonated() + ".");
 
                 if (GameSettings.ELITE_DONO_DEAL && amount >= 50) {
                     player.getInventory().add(3578, 1);

@@ -310,9 +310,9 @@ public enum Collection {
     UNKNOWN_MINIGAME(Player.UNKNOWN_MINIGAMES_COMPLETED, LogType.MINIGAMES, "Unknown Crypt", new int[] {CollectionLog.UNKNOWN_MINIGAME}, Player.UNKNOWN_MINIGAMES_LOG_CLAIMED, new Item[] { new Item(10946, 3) },
             new Item(15289), new Item(19115), new Item(15288), new Item(7677),
             new Item(10946), new Item(6769)),
-    ISLES_OF_AVALON(Player.ISLES_OF_AVALON_COMPLETED, LogType.MINIGAMES, "Isles of Avalon", new int[] {CollectionLog.ISLES_OF_AVALON}, Player.ISLES_OF_AVALON_LOG_CLAIMED, new Item[] { new Item(6769, 1) },
+   /* ISLES_OF_AVALON(Player.ISLES_OF_AVALON_COMPLETED, LogType.MINIGAMES, "Isles of Avalon", new int[] {CollectionLog.ISLES_OF_AVALON}, Player.ISLES_OF_AVALON_LOG_CLAIMED, new Item[] { new Item(6769, 1) },
             new Item(23165), new Item(23166), new Item(23167), new Item(23168), new Item(23169),
-            new Item(23170), new Item(23092), new Item(23093), new Item(23094)),
+            new Item(23170), new Item(23092), new Item(23093), new Item(23094)),*/
     TREASURE_HUNTER(Player.TREASURE_HUNTER_COMPLETED, LogType.MINIGAMES, "Treasure Hunter", new int[] {CollectionLog.TREASURE_HUNTER}, Player.TREASURE_HUNTER_LOG_CLAIMED, new Item[] { new Item(10942, 3) },
             new Item(12855), new Item(5022), new Item(15290), new Item(10025), new Item(7956),
             new Item(19114), new Item(19115), new Item(20488), new Item(23044), new Item(6769),

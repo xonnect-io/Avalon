@@ -233,6 +233,7 @@ public class PlayerHandler {
         if (!MembershipManager.didMonthEnd()) {
             player.getMembershipManager().reset();
         }
+
         if (player.getLocation() != Locations.Location.PROGRESSION_ZONES) {
             player.getPacketSender().sendWalkableInterface(112000, false);
         }
@@ -438,6 +439,18 @@ public class PlayerHandler {
             }
         }
 
+
+        if (player.getPrayerbook() == Prayerbook.HOLY) {
+            player.getPacketSender().sendMessage("You sense a surge of purity flow through your body!");
+            player.setPrayerbook(Prayerbook.NORMAL);
+            player.getPacketSender().sendTabInterface(GameSettings.PRAYER_TAB,
+                    player.getPrayerbook().getInterfaceId());
+            CurseHandler.deactivateAll(player);
+            PrayerHandler.deactivateAll(player);
+            CurseHandler.startDrain(player);
+            PrayerHandler.startDrain(player);
+            player.switchedPrayerBooks = true;
+        }
 
         player.initGodMode();
 

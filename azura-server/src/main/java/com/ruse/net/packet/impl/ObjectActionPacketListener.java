@@ -2222,11 +2222,11 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.setPrayerbook(Prayerbook.CURSES);
                                     CurseHandler.deactivateAll(player);
                                     PrayerHandler.deactivateAll(player);
-                                } else if (player.getPrayerbook() == Prayerbook.CURSES) {
+                               /* } else if (player.getPrayerbook() == Prayerbook.CURSES) {
                                     player.getPacketSender().sendMessage("You sense a surge of holiness flow through your body!");
                                     player.setPrayerbook(Prayerbook.HOLY);
                                     CurseHandler.deactivateAll(player);
-                                    PrayerHandler.deactivateAll(player);
+                                    PrayerHandler.deactivateAll(player);*/
                                 } else {
                                     player.getPacketSender()
                                             .sendMessage("You sense a surge of purity flow through your body!");
@@ -2578,11 +2578,11 @@ public class ObjectActionPacketListener implements PacketListener {
                                     player.setPrayerbook(Prayerbook.CURSES);
                                     CurseHandler.deactivateAll(player);
                                     PrayerHandler.deactivateAll(player);
-                                } else if (player.getPrayerbook() == Prayerbook.CURSES) {
+                               /* } else if (player.getPrayerbook() == Prayerbook.CURSES) {
                                     player.getPacketSender().sendMessage("You sense a surge of holiness flow through your body!");
                                     player.setPrayerbook(Prayerbook.HOLY);
                                     CurseHandler.deactivateAll(player);
-                                    PrayerHandler.deactivateAll(player);
+                                    PrayerHandler.deactivateAll(player);*/
                                 } else {
                                     player.getPacketSender()
                                             .sendMessage("You sense a surge of purity flow through your body!");

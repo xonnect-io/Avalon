@@ -52,6 +52,9 @@ public class UnknownBossDrop {
 			StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
 			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
 			killer.getDailyTaskManager().submitProgressToIdentifier(11, 1);
+
+			killer.getAchievementTracker().progress(AchievementData.CLEAR_THE_ISLES, 1);
+			killer.getDailyTaskManager().submitProgressToIdentifier(22, 1);
 			NPCDrops.handleDrops(killer, npc);
 			killer.unknownZone.refreshInterface();
 			iterator.remove();

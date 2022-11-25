@@ -36,7 +36,7 @@ public enum DailyTask {
         DEFEAT_250_DBZ_BOSSES(19,"Defeat 250 \\nDBZ Bosses", new Item[] {new Item(19114, 10)}, 250, DailyTaskDifficulty.MEDIUM),
         SIP_FROM_AN_INFINITE_OVERLOAD_POT_OR_STRONGER(20,"Sip from an Infinite \\nOverload Pot or Stronger", new Item[] {new Item(5022, 10000)}, 1, DailyTaskDifficulty.MEDIUM),
         SUMMON_A_VOTE_GOKU_OR_RAICHU_PET(21,"Summon a Vote, Goku \\nor Raichu Pet", new Item[] {new Item(19114, 5)}, 1, DailyTaskDifficulty.MEDIUM),
-        COMPLETE_5_HALLS_OF_AMMO_RUNS(22,"Complete 5 \\nIsles of Avalon Runs", new Item[] {new Item(19114, 10)}, 5, DailyTaskDifficulty.MEDIUM,  new Position(2195, 5037)),
+        COMPLETE_5_HALLS_OF_AMMO_RUNS(22,"Complete 5 \\nUnknown Crypt Runs", new Item[] {new Item(19114, 10)}, 5, DailyTaskDifficulty.MEDIUM,  new Position(2195, 5037)),
         WIN_A_GAME_OF_PEST_CONTROL(23,"Win a Game of \\nPest Control", new Item[] {new Item(10946, 1)}, 1, DailyTaskDifficulty.MEDIUM, new Position(2657, 2639)),
 
 

@@ -61,7 +61,7 @@ public class EventChestInterface {
 						+ (player.getEventChestHandler().getTierType() == TierType.TIER_1
 								? player.getEventChestHandler().MAX_ROLLS_TIER_1
 								: player.getEventChestHandler().MAX_ROLLS_TIER_2)
-						+ " rolls @or1@("
+						+ " opened @or1@("
 						+ (player.getEventChestHandler().getTierType() == TierType.TIER_1
 								? player.getEventChestHandler().TIMES_ROLLED_TIER_1
 								: player.getEventChestHandler().TIMES_ROLLED_TIER_2)

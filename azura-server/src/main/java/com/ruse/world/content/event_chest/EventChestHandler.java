@@ -214,7 +214,7 @@ public class EventChestHandler {
 				if (luck >= 95) {
 					World.sendMessage("<img=661>@red@ " + player.getUsername() + " just received @gre@<shad=1>x"
 							+ amount + " " + ItemDefinition.forId(reward.getId()).getName()
-							+ "</shad>@red@ from the Event chest! <img=661>");
+							+ "</shad>@red@ from a Christmas box! <img=661>");
 				}
 			}
 		} else if (player.getEventChestHandler().getTierType() == TierType.TIER_2) {
@@ -272,7 +272,7 @@ public class EventChestHandler {
 									&& t.getSecondGoldReward().getAmount() <= 0
 									&& t.getThirdGoldReward().getAmount() <= 0
 									&& Arrays.stream(t.getRegularRewards()).allMatch(z -> z.getAmount() <= 0))) {
-						player.sendMessage("@red@You managed to claim all the rewards, The Event chest has reset");
+						player.sendMessage("@red@You managed to claim all the rewards, The Christmas Box has reset");
 						player.getEventChestHandler().TIER_1_REWARDS.clear();
 						player.getEventChestHandler().TIER_2_REWARDS.clear();
 						TIMES_ROLLED_TIER_1 = 0;
@@ -291,7 +291,7 @@ public class EventChestHandler {
 					if (luck >= 95) {
 						World.sendMessage("<img=661> @red@" + player.getUsername() + " just received @gre@<shad=1>x"
 								+ amount + " " + ItemDefinition.forId(reward.getId()).getName()
-								+ "</shad>@red@ from the Event chest! <img=661>");
+								+ "</shad>@red@ from a Christmas Box! <img=661>");
 					}
 				}
 			}
@@ -330,7 +330,7 @@ public class EventChestHandler {
     		try {
     			file.getParentFile().mkdirs();
     		} catch (SecurityException e) {
-    			System.out.println("Unable to create directory for event chest system!!");
+    			System.out.println("Unable to create directory for christmas box system!!");
     		}
     	}
     	
@@ -356,7 +356,7 @@ public class EventChestHandler {
     		
     		writer.write(builder.toJson(object));
     		writer.close();
-    		System.out.println("Saved "+ player.getUsername() + " event chest!");
+    		System.out.println("Saved "+ player.getUsername() + " Christmas box!");
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
@@ -412,7 +412,7 @@ public class EventChestHandler {
                 player.getEventChestHandler().TIER_2_REWARDS.addAll(collection);
 			}
     		
-    		System.out.println("Loaded "+ player.getUsername() + " event chest!");
+    		System.out.println("Loaded "+ player.getUsername() + " Christmas box!");
     	} catch (Exception e) {
     		e.printStackTrace();
     	}

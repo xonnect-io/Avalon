@@ -25,7 +25,7 @@ public enum DailyTask {
             "Isles of Avalon",
             5, 5,
             "",
-            "Unlock %d isles of avalon chests.", TaskTimeType.DAILY, false),
+            "Unlock %d unknown crypt bosses.", TaskTimeType.DAILY, false),
     KEEPERS_OF_LIGHT(
             "Keepers of Light",
             5, 5,

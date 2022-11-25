@@ -2586,7 +2586,7 @@ public class Shop extends ItemContainer {
                     case 1486: // Creeper cape
                         return new Object[] { 15, "Donation Points @bla@- <shad=1>@red@Infinite Soulsplit effect" };
                     case 15355: // 1H DR Scroll
-                    case 15356: // 1H DDR Scroll
+                    case 15356: // 1H 1.5X Scroll
                     case 15357: // 1H DMG Scroll
                         return new Object[] { 3, "Donation Points @bla@- <shad=1>@red@60 minutes of power" };
                     case 8087: //dragon rider lance

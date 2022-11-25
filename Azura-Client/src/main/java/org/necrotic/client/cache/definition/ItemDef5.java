@@ -79,6 +79,17 @@ public class ItemDef5 {
 				itemDef.modelOffsetY = -61;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
+			case 23362:
+				itemDef.copyItem(290);
+				itemDef.modelID = 20583;
+				itemDef.name = "Christmas Box";
+				itemDef.modelZoom = 1180;
+				itemDef.rotationX = 67;
+				itemDef.rotationY = 152;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -14;
+				break;
 			case 23652:
 				itemDef.copyItem(7478);
 				itemDef.modelZoom = 432;

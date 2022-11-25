@@ -24,6 +24,7 @@ import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.impl.NephilimTokenExchange;
+import com.ruse.world.content.event_chest.EventChestInterface;
 import com.ruse.world.content.holidayevents.easter2017;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
@@ -246,6 +247,11 @@ public class ItemActionPacketListener implements PacketListener {
 
 
         switch (itemId) {
+            
+            case 23362:
+                EventChestInterface.openInterface(player);
+                break;
+
             case 23653:
                 if (player.isSantaTransform()) {
                     player.getPacketSender().sendMessage("You are no longer santa clause.");
@@ -822,7 +828,7 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
             case 15356:
                 if (player.getDoubleDDRTimer() > 0) {
-                    player.sendMessage("You already have a double DDR scroll active.");
+                    player.sendMessage("You already have a 1.5X DDR scroll active.");
                     return;
                 }
                 player.getInventory().delete(15356, 1);
@@ -831,7 +837,7 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
             case 4564:
                 if (player.getDoubleDDRTimer() > 0) {
-                    player.sendMessage("You already have a double DDR scroll active.");
+                    player.sendMessage("You already have a 1.5X DDR scroll active.");
                     return;
                 }
                 player.getInventory().delete(4564, 1);

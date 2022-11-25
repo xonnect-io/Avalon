@@ -55439,7 +55439,7 @@ name: Double DR Scroll (1 Hour)
 finish
 
 Item Id: 15356
-name: Double DDR Scroll (1 Hour)
+name: 1.5X DDR Scroll (1 Hour)
 finish
 
 Item Id: 15357

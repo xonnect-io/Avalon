@@ -1216,7 +1216,7 @@ public class CustomDropUtils {
         }
 
         if (player.getDoubleDDRTimer() > 0) {
-            percentBoost += 100;
+            percentBoost *= 1.5;
         }
 
         /**

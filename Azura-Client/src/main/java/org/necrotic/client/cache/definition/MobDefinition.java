@@ -2289,28 +2289,7 @@ public final class MobDefinition {
 			case 3580:
 				definition.combatLevel = 80;
 				break;
-			case 286:
-				definition.npcModels = new int[]{23905};
-				definition.name = "Mutant KFC";
-				definition.actions = new String[5];
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.combatLevel = 666;
-				definition.standAnimation = 5386;
-				definition.walkAnimation = 5385;
-				definition.scaleXZ = 600;
-				definition.scaleY = 600;
-				definition.npcSizeInSquares = 3;
-				break;
-			case 285:
-				definition.npcModels = new int[]{23905};
-				definition.name = "Chicken Nugget";
-				definition.actions = new String[5];
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.combatLevel = 80;
-				definition.standAnimation = 5386;
-				definition.walkAnimation = 5385;
-				definition.npcSizeInSquares = 1;
-				break;
+
 			case 2891:
 				definition.name = "Whirpool";
 				definition.description = "You do not want to fall in there!".getBytes();
@@ -2526,40 +2505,6 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 4;
 				break;
 
-			case 2010:
-				definition.name = "Bellator";
-				definition.description = "Still dedicated to Adam".getBytes();
-				definition.combatLevel = 440;
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[7];
-				definition.npcModels[0] = 62738; //torvahelm
-				definition.npcModels[1] = 62746; //torvaplate
-				definition.npcModels[2] = 62743; //torvalegs
-				definition.npcModels[3] = 65300; //maxcape
-				definition.npcModels[4] = 13319; //bgloves
-				definition.npcModels[5] = 27738; //dboots
-				definition.npcModels[6] = 13999; //memeclaws
-				definition.standAnimation = 808;
-				definition.walkAnimation = 819;
-				break;
-
-			case 199:
-				definition.name = "Sagittariis";
-				definition.description = "Still dedicated to Twinky".getBytes();
-				definition.combatLevel = 440;
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[7];
-				definition.npcModels[0] = 62739; //pern mask
-				definition.npcModels[1] = 62744; //pern body
-				definition.npcModels[2] = 62741; //pern legs
-				definition.npcModels[3] = 65300; //max
-				definition.npcModels[4] = 13319; //bgloves
-				definition.npcModels[5] = 53309; //glaivens
-				definition.npcModels[6] = 62750; //bow
-				definition.standAnimation = 808;
-				definition.walkAnimation = 819;
-				definition.rdc2 = 25252;
-				break;
 
 			case 198:
 				definition.name = "Master Warrior";
@@ -3392,57 +3337,22 @@ public final class MobDefinition {
 				definition.actions = new String[5];
 				definition.actions[0] = "Talk-to";
 				break;
-			case 1898:
-				definition.name = "Slayer Drako Pet";
-				MobDefinition spryi21 = MobDefinition.get(53);
-				definition.description = "GWD.".getBytes();
-				definition.npcModels = new int[]{64290};
 
-				definition.standAnimation = spryi21.standAnimation;
-				definition.walkAnimation = spryi21.walkAnimation;
-				definition.scaleXZ = 90;
-				definition.scaleY = 90;
-				definition.actions = new String[5];
-				definition.drawYellowDotOnMap = false;
-				definition.actions[0] = null;
-				definition.rdc2 = 252525;
-				definition.combatLevel = 0;
-				definition.actions = new String[5];
-				definition.actions[0] = "Talk-to";
-				break;
 			case 3309:
 				definition.npcModels = new int[]{64100};
 				definition.name = "<col=f8ac00>double afk pet";
 				MobDefinition doubldon = MobDefinition.get(2292);
 				definition.description = "GWD.".getBytes();
-				//definition.npcModels = new int[] {64067};
 				definition.combatLevel = doubldon.combatLevel;
 				definition.standAnimation = doubldon.standAnimation;
 				definition.walkAnimation = doubldon.walkAnimation;
 				definition.scaleXZ = 20;
 				definition.drawYellowDotOnMap = false;
-
 				definition.scaleY = 20;
 				definition.actions = new String[5];
 				definition.actions[0] = null;
-
 				break;
-			case 189:
-				definition.name = "@red@King Dan";
-				MobDefinition grinch = MobDefinition.get(186);
-				definition.description = "GWD.".getBytes();
-				definition.combatLevel = grinch.combatLevel;
-				definition.standAnimation = 7531;
-				definition.walkAnimation = grinch.walkAnimation;
-				definition.npcModels = grinch.npcModels;
-				definition.drawYellowDotOnMap = true;
-				definition.scaleXZ = 200;
-				definition.scaleY = 200;
-				definition.actions = new String[5];
 
-				definition.combatLevel = 0;
-
-				break;
 			case 8802:
 				definition.name = "<col=f8ac00>Double vote pet";
 				MobDefinition darkath = MobDefinition.get(2292);
@@ -5693,17 +5603,32 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, null, null, null, null};
 				break;
-			case 9896:
+			case 10005:
 				definition.setDefault();
-				definition.npcModels = new int[]{19707};
+				definition.npcModels = new int[]{20593,20594,20595,20596,20605};
 				definition.standAnimation =  MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
 				definition.actions = MobDefinition.get(1).actions;
 				definition.combatLevel = 0;
-				definition.name = "Dreamfoot";
-				definition.scaleXZ = 140;
-				definition.scaleY = 140;
-				definition.npcSizeInSquares = 2;
+				definition.name = "Krampus";
+				definition.scaleXZ = 330;
+				definition.scaleY = 330;
+				definition.npcSizeInSquares = 4;
+				definition.headIcon = -1;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				break;
+			case 10002:
+				definition.setDefault();
+					definition.npcModels = new int[]{20611};
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.actions = MobDefinition.get(1).actions;
+				definition.combatLevel = 0;
+				definition.name = "Christmas Bear";
+				definition.scaleXZ = 110;
+				definition.scaleY = 110;
+				definition.npcSizeInSquares = 1;
+				definition.headIcon = -1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
 			case 9891://2880 4096
@@ -6476,9 +6401,7 @@ public final class MobDefinition {
 				definition.combatLevel = 0;
 				definition.description = "A miniature General Graardor!".getBytes();
 				break;
-			case 3688:
-				definition.name = "Brandon Jr.";
-				break;
+
 			case 3398:// stop before 5902
 				definition.varBitChild = -1;
 				definition.name = "Penance Pet";
@@ -6528,11 +6451,7 @@ public final class MobDefinition {
 
 				definition.actions = new String[]{"Open-Halloween Event", "Event-points", null, null, null};
 				break;
-			case 6750:
-				definition.name = "Pet Insurance Agent";
-				definition.actions = new String[5];
-				definition.actions[0] = null;
-				break;
+
 			case 6325:
 				definition.name = "Superior Abyssal Demon";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -6547,9 +6466,7 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				definition.description = "A denizen of the Abyss!".getBytes();
 				break;
-			case 3975:
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				break;
+
 			case 6335:
 				definition.name = "Zamorakian Mage";
 				definition.description = "stuff".getBytes();

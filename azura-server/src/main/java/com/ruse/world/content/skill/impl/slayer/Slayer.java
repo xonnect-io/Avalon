@@ -150,13 +150,15 @@ public class Slayer {
         if (taskToSet == SlayerTasks.RAMMERNAUT && !p.isUnlockedRammernaut()) {
             return false;
         }
-        /*
-        if (taskToSet == SlayerTasks.FALLEN_ANGEL && !p.isUnlockedLucifers()) {
+        if (taskToSet == SlayerTasks.FALLEN_WARRIOR && !p.isUnlockedLucifers()) {
+            return false;
+        }
+        if (taskToSet == SlayerTasks.FALLEN_ANGEL && p.getPointsHandler().getMiniLuciferkillcount() < 5_000) {
             return false;
         }
         if (taskToSet == SlayerTasks.MIDNIGHT_GOBLIN && !p.isUnlockedDarkSupreme()) {
             return false;
-        }*/
+        }
         return true;
     }
         public void resetSlayerTask() {

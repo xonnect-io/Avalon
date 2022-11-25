@@ -1,6 +1,8 @@
 package com.ruse.world.content.event_chest;
 
 
+import com.ruse.GameSettings;
+import com.ruse.util.Misc;
 import com.ruse.world.entity.impl.player.Player;
 
 public class EventChestButtons {
@@ -12,8 +14,9 @@ public class EventChestButtons {
 			player.getPacketSender().removeInterface();
 			return true;
 			
-		case -9935: // Event Guide
-			
+		case -9935: // Store button
+			player.getPacketSender().sendString(1, GameSettings.StoreUrl);
+			player.getPacketSender().sendMessage("Attempting to open the store");
 			return true;
 			
 		case -9942: // Roll
@@ -22,6 +25,7 @@ public class EventChestButtons {
 			
 		case -9950: // Select Tier 1
 			if(player.getEventChestHandler().getServerTierSelected() != TierType.TIER_1) {
+				player.getPacketSender().sendMessage ("Tier "+ Misc.capitalizeString ("i") + " is currently locked, complete your current Tier.");
 				return true;
 			}
 			
@@ -34,6 +38,7 @@ public class EventChestButtons {
 			
 		case -9946: // Select Tier 2
 			if(player.getEventChestHandler().getServerTierSelected() != TierType.TIER_2) {
+				player.getPacketSender().sendMessage ("Tier "+ Misc.capitalizeString ("ii") + " is currently locked, complete your current Tier.");
 				return true;
 			}
 			

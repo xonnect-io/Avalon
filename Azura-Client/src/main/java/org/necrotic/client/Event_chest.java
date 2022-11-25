@@ -34,7 +34,7 @@ public class Event_chest {
         interfaceId += 2;
         children++;
         RSInterface.addHoverButtonComplete(interfaceId, children, 18, 27,
-        		1826, 1826, 100, 21, "Event Chest Tier I", Inteface, true);
+        		1826, 1826, 100, 21, "Christmas Box Tier I", Inteface, true);
         //RSInterface.setSpriteClicked(interfaceId, 1825);
         Client.setInterfaceClicked(55580, interfaceId, true, true);
         
@@ -46,9 +46,8 @@ public class Event_chest {
         interfaceId++;
         children++;
 
-        System.out.println("FDSANIONGDIOSNIO " + interfaceId);
         RSInterface.addHoverButtonComplete(interfaceId, children, 118, 27,
-                1826, 1826, 100, 21, "Event Chest Tier II", Inteface, true);
+                1826, 1826, 100, 21, "Christmas Box Tier II", Inteface, true);
         //RSInterface.setSpriteClicked(interfaceId, 1825);
         
         interfaceId += 3;
@@ -73,8 +72,8 @@ public class Event_chest {
         
         interfaceId++;
         children++;
-        RSInterface.addText(interfaceId, "Roll", tda, 1, 0xffb000, false, true);
-        RSInterface.setBounds(interfaceId, 204, 252, children, Inteface);
+        RSInterface.addText(interfaceId, "Open", tda, 1, 0xffb000, false, true);
+        RSInterface.setBounds(interfaceId, 200, 252, children, Inteface);
         
         interfaceId++;
         children++;
@@ -83,12 +82,12 @@ public class Event_chest {
         
         interfaceId++;
         children++;
-        RSInterface.addText(interfaceId, "Roll all of the items in\\nthe tier for a prize!", tda, 0, 0xffb000, false, true);
+        RSInterface.addText(interfaceId, "Open all of the items in\\nthe tier for a prize!", tda, 0, 0xffb000, false, true);
         RSInterface.setBounds(interfaceId, 67, 256, children, Inteface);
         
         interfaceId++;
         children++;
-        RSInterface.addHoverButtonWSpriteLoader(interfaceId, 1832, 120, 34, "Event Chest Tier II", -1, interfaceId + 1, 1);
+        RSInterface.addHoverButtonWSpriteLoader(interfaceId, 1832, 120, 34, "View Online Store", -1, interfaceId + 1, 1);
         RSInterface.setBounds(interfaceId, 24, 282, children, Inteface);
         
         interfaceId++;
@@ -98,12 +97,12 @@ public class Event_chest {
         
         interfaceId += 2;
         children++;
-        RSInterface.addText(interfaceId, "@yel@Event Guide", tda, 1, 0xffb000, true, true);
+        RSInterface.addText(interfaceId, "@yel@Purchase Boxes", tda, 1, 0xffb000, true, true);
         RSInterface.setBounds(interfaceId, 85, 291, children, Inteface);
         
         interfaceId++;
         children++;
-        RSInterface.addText(interfaceId, "@yel@0 / 22 rolls @or1@(0 / 222,000 tokens)", tda, 0, 0xffb000, true, true);
+        RSInterface.addText(interfaceId, "@yel@0 / 22 Opened @or1@(0 / 222,000 tokens)", tda, 0, 0xffb000, true, true);
         RSInterface.setBounds(interfaceId, 331, 306, children, Inteface);
         
         interfaceId++;

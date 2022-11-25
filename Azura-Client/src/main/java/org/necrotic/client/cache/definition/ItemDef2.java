@@ -4600,19 +4600,7 @@ public class ItemDef2 {
 				itemDef.newColors[0] = 70; //
 				itemDef.stackable = false;
 				break;
-			case 19112:
-				itemDef.name = "Collector Donation";
-				itemDef.actions = new String[5];
-				itemDef.actions[0] = "Open";
-				itemdefyogipic = ItemDefinition.get(290);
-				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic.modelZoom;
-				itemDef.modelID = itemdefyogipic.modelID;
-				itemDef.rotationY = itemdefyogipic.rotationY;
-				itemDef.rotationX = itemdefyogipic.rotationX;
-				itemDef.rdc2 = 259252;
-				break;
+
 			case 7956:
 				itemDef.copyItem(290);
 				itemDef.name = "PvM Crate";

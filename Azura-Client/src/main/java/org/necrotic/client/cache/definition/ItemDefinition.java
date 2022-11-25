@@ -552,6 +552,9 @@ public final class ItemDefinition {
 				itemDef.newColors = new int[]{5409, 920, 914, 929, 10452, 10293};
 				itemDef.oldColors = new int[]{943, 3866, 914, 3866, 943, 943};
 				break;
+			case 10501:
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
 			case 15378:
 				itemDef.name = "Supreme appendage";
 				break;
@@ -2448,7 +2451,7 @@ public final class ItemDefinition {
 				break;
 
 			case 15356:
-				itemDef.name = "@gre@<shad=0>Double DDR Scroll (1 Hour)<shad-1>";
+				itemDef.name = "@gre@<shad=0>1.5X DDR Scroll (1 Hour)<shad-1>";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Activate";
 				itemDef.rdc2 = 348132;

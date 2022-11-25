@@ -345,7 +345,7 @@ public enum AchievementData {
             new Item[] {new Item(23239, 1),new Item(15288, 4)},
             new LoyaltyPointReward(25000),new SlayerPointReward(500)
     ),
-    CLEAR_THE_ISLES(79, AchievementType.EXPERT, 500, "Clear the Isles", "Clear the Isles of Avalon 500 times",
+    CLEAR_THE_ISLES(79, AchievementType.EXPERT, 500, "Clear the Crypt", "Clear the Unknown crypt 500 times",
             new Item[] {new Item(23086, 3),new Item(10946, 3)},
             new LoyaltyPointReward(25000)
     ),
