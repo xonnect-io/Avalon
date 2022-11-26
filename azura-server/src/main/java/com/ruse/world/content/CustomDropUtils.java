@@ -490,6 +490,16 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23063)) { //Nephilim sword
             percentBoost += 40;
         }
+        if (player.getEquipment().contains(23363)) { //Nephilim staff (u)
+            percentBoost += 60;
+        }
+        if (player.getEquipment().contains(23365)) { //Nephilim sword (u)
+            percentBoost += 60;
+        }
+
+        if (player.getEquipment().contains(23364)) { //Nephilim bow (u)
+            percentBoost += 60;
+        }
         if (player.getEquipment().contains(23061)) { //Nephilim bow
             percentBoost += 40;
         }

@@ -1128,6 +1128,26 @@ public class Locations {
 				//   EggSpawns.loadEggs(player);
 			}
 		},
+		EVENT2(new int[]{2500, 2550}, new int[]{2625, 2675},
+				true, true, true, false, false, true) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPosition().getZ() % 4 == 0) {
+					for (Player p : World.getPlayers()) {
+						if (p == null)
+							continue;
+						if (!player.equals(p) && player.getHostAddress().equals(p.getHostAddress())) {
+							if (p.getLocation().equals(EVENT)) {
+								player.getPacketSender().sendMessage("You already have an account at the Holliday Event.");
+								player.moveTo(GameSettings.DEFAULT_POSITION);
+								return;
+							}
+						}
+					}
+				}
+				//   EggSpawns.loadEggs(player);
+			}
+		},
 		// 3340 3351
 		// 3364 3333
 		GALVEKMULTI(new int[] { 3340, 3364 }, new int[] { 3333, 3351 }, true, true, true, false, false, false) {

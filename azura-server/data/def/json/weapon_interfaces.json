@@ -45,11 +45,6 @@
     "interface": "DART"
   },
   {
-    "hash": 10501,
-    "item-id": 10501,
-    "interface": "SNOWBALL"
-  },
-  {
     "hash": 3093,
     "item-id": 3093,
     "interface": "DART"
@@ -250,6 +245,11 @@
     "interface": "SCIMITAR"
   },
   {
+    "hash": 23365,
+    "item-id": 23365,
+    "interface": "SCIMITAR"
+  },
+  {
     "hash": 15870,
     "item-id": 15870,
     "interface": "SCIMITAR"
@@ -355,9 +355,19 @@
     "interface": "SHORTBOW"
   },
   {
+    "hash": 23363,
+    "item-id": 23363,
+    "interface": "SHORTBOW"
+  },
+  {
     "hash": 22379,
     "item-id": 22379,
     "interface": "SHORTBOW"
+  },
+  {
+    "hash": 23364,
+    "item-id": 23364,
+    "interface": "STAFF"
   },
     {
     "hash": 17011,

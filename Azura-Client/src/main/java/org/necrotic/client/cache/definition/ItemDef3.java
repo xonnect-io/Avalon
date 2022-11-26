@@ -432,41 +432,6 @@ public class ItemDef3 {
 				itemDef.femaleEquip1 = 19668;
 				itemDef.rotationY = 265;
 				break;
-			case 23372:
-				itemDef.copyItem(4894);
-				itemDef.name = "Blood warrior platebody";
-				itemDef.rdc2 = 37664;
-				itemDef.modelID = 19521;
-				itemDef.maleEquip1 = 19521;
-				itemDef.femaleEquip1 = 19521;
-				break;
-				
-			case 23373:
-				itemDef.copyItem(4900);
-				itemDef.name = "Blood warrior platelegs";
-				itemDef.rdc2 = 37664;
-				itemDef.modelID = 19522;
-				itemDef.maleEquip1 = 19522;
-				itemDef.femaleEquip1 = 19522;
-				break;
-
-			case 23374:
-				itemDef.copyItem(20456);
-				itemDef.name = "Blood warrior boots";
-				itemDef.rdc2 = 37664;
-				itemDef.modelID = 19518;
-				itemDef.maleEquip1 = 19518;
-				itemDef.femaleEquip1 = 19518;
-				break;
-
-			case 23375:
-				itemDef.copyItem(20460);
-				itemDef.name = "Blood warrior gloves";
-				itemDef.rdc2 = 37664;
-				itemDef.modelID = 19519;
-				itemDef.maleEquip1 = 19519;
-				itemDef.femaleEquip1 = 19519;
-				break;
 
 			case 23396:
 				itemDef.copyItem(4882);

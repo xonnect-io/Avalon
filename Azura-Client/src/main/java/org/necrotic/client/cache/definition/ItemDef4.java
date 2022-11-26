@@ -3329,52 +3329,56 @@ public class ItemDef4 {
 
 			case 23760:
 				itemDef.name = "Crimson boots";
-				itemDef.modelID = 19780;
-				itemDef.maleEquip1 = 19780;
-				itemDef.femaleEquip1 = 19780;
-				itemDef.modelZoom = 750;
-				itemDef.rotationX = 50;
-				itemDef.rotationY = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.modelOffsetX = 1;
+				itemDef.modelID = 20836;
+				itemDef.maleEquip1 = 20836;
+				itemDef.femaleEquip1 = 20836;
+				itemDef.modelZoom = 1122;
+				itemDef.rotationX = 252;
+				itemDef.rotationY = 200;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 23296:
 				itemDef.name = "Frostlight boots";
-				itemDef.modelID = 19764;
-				itemDef.maleEquip1 = 19764;
-				itemDef.femaleEquip1 = 19764;
-				itemDef.modelZoom = 750;
-				itemDef.rotationX = 50;
-				itemDef.rotationY = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.modelOffsetX = 1;
+				itemDef.modelID = 20815;
+				itemDef.maleEquip1 = 20815;
+				itemDef.femaleEquip1 = 20815;
+				itemDef.modelZoom = 1122;
+				itemDef.rotationX = 252;
+				itemDef.rotationY = 200;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 
 			case 23297:
 				itemDef.name = "Elderbone boots";
-				itemDef.modelID = 19765;
-				itemDef.maleEquip1 = 19765;
-				itemDef.femaleEquip1 = 19765;
-				itemDef.modelZoom = 750;
-				itemDef.rotationX = 50;
-				itemDef.rotationY = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.modelOffsetX = 1;
+				itemDef.modelID = 20817;
+				itemDef.maleEquip1 = 20817;
+				itemDef.femaleEquip1 = 20817;
+				itemDef.modelZoom = 1122;
+				itemDef.rotationX = 252;
+				itemDef.rotationY = 200;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 23298:
 				itemDef.name = "Hailfire boots";
-				itemDef.modelID = 19779;
-				itemDef.maleEquip1 = 19779;
-				itemDef.femaleEquip1 = 19779;
-				itemDef.modelZoom = 750;
-				itemDef.rotationX = 50;
-				itemDef.rotationY = 0;
-				itemDef.modelOffsetY = 0;
-				itemDef.modelOffsetX = 1;
+				itemDef.modelID = 20819;
+				itemDef.maleEquip1 = 20819;
+				itemDef.femaleEquip1 = 20819;
+				itemDef.modelZoom = 1122;
+				itemDef.rotationX = 252;
+				itemDef.rotationY = 200;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetY = -15;
+				itemDef.modelOffsetX = 0;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
 			case 1468:

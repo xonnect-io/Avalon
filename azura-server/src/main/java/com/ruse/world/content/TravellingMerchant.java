@@ -29,6 +29,7 @@ public class TravellingMerchant {
             new Item(23411, 5),//200k
             new Item(23412, 5),//200k
             new Item(23812, 5),//200k
+            new Item(23486, 1),//200k
     };
 
     public static int getPrice(int itemID) {
@@ -50,6 +51,8 @@ public class TravellingMerchant {
                 return 500000;
             case 18649:
                 return 100000;
+            case 23486:
+                return 25000000;
             case 23755:
                 return 250000000;
             case 23759:

@@ -247,7 +247,16 @@ public class ItemActionPacketListener implements PacketListener {
 
 
         switch (itemId) {
-            
+            case 23488:
+                if (player.getInventory().getAmount(23488) >= 1000) {
+                    player.getInventory().delete(23488, 1000);
+                    player.getInventory().add(23362, 1);
+                    player.sendMessage("You created a Christmas box!");
+                    World.sendMessage("<img=862><col=146b3a>[Christmas]<img=862> <col=1c3c0d>" + player.getUsername() + "<col=bb2528> created a <col=1c3c0d>Christmas box");
+                } else {
+                    player.sendMessage("You need at least 1000 Christmas tokens to do this.");
+                }
+                break;
             case 23362:
                 EventChestInterface.openInterface(player);
                 break;
@@ -1495,7 +1504,7 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(6850, 5);
                 player.getInventory().add(6849, 5);
                 player.getInventory().add(8212, 300);
-                player.getInventory().add(8213, 50);
+                player.getInventory().add(23488, 50);
                 player.getPacketSender().sendMessage("<shad=0>@red@Enjoy your Christmas pack!");
                 World.sendMessage("<img=17>@blu@[Christmas Pack]<img=17>@red@ " + player.getUsername()
                         + " Has just opened a Christmas ingredient pack! ");

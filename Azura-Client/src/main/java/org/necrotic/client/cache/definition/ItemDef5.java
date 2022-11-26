@@ -6,6 +6,145 @@ public class ItemDef5 {
 
 		switch (id) {
 
+
+			case 23364:
+				itemDef.copyItem(4708);
+				itemDef.name = "Nephilim Staff (u)";
+				itemDef.modelZoom = 2287;
+				itemDef.rotationX = 2026;
+				itemDef.rotationY = 635;
+				itemDef.rotationZ = 26;
+				itemDef.modelOffsetX = 9;
+				itemDef.modelOffsetY = 10;
+				itemDef.modelID = 18532;
+				itemDef.maleEquip1 = 18531;
+				itemDef.femaleEquip1 = 18531;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				itemDef.colorChange = new double[]{0.2, 1.0, 1.2};
+				break;
+
+			case 23363:
+				itemDef.copyItem(4714);
+				itemDef.name = "Nephilim bow (u)";
+				itemDef.modelZoom = 2096;
+				itemDef.rotationX = 1139;
+				itemDef.rotationY = 339;
+				itemDef.rotationZ = 25;
+				itemDef.modelOffsetX = 25;
+				itemDef.modelOffsetY = 30;
+				itemDef.modelID = 18530;
+				itemDef.maleEquip1 = 18529;
+				itemDef.femaleEquip1 = 18529;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				itemDef.colorChange = new double[]{0.2, 1.0, 1.2};
+				break;
+
+			case 23365:
+				itemDef.copyItem(4712);
+				itemDef.name = "Nephilim Sword (u)";
+				itemDef.modelZoom = 1700;
+				itemDef.modelID = 18533;
+				itemDef.maleEquip1 = 18534;
+				itemDef.femaleEquip1 = 18534;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				itemDef.colorChange = new double[]{0.2, 1.0, 1.2};
+				break;
+
+			case 23366:
+				itemDef.copyItem(9650);
+				itemDef.name = "Ancient Sigil";
+				itemDef.modelID = 20612;
+				itemDef.modelOffsetY = -20;
+				itemDef.modelZoom = 720;
+				//itemDef.colorChange = new double[]{0.1, 0.5, 0.1};
+				break;
+
+			case 23486:
+				itemDef.name = "Faceted Diamond";
+				itemDef.modelID = 20613;
+				itemDef.modelZoom = 635;
+				itemDef.rotationY = 217;
+				itemDef.rotationX = 217;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 0;
+				break;
+
+			case 23368:
+				itemDef.copyItem(14050);
+				itemDef.name = "Justiciar helmet";
+				itemDef.modelID = 20620;
+				itemDef.maleEquip1 = 20640;
+				itemDef.femaleEquip1 = 20640;
+				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
+				break;
+			case 23369:
+				itemDef.copyItem(8324);
+				itemDef.name = "Justiciar body";
+				itemDef.modelID = 20625;
+				itemDef.maleEquip1 = 20641;
+				itemDef.femaleEquip1 = 20641;
+				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
+				break;
+			case 23370:
+				itemDef.copyItem(14052);
+				itemDef.name = "Justiciar legs";
+				itemDef.modelID = 20626;
+				itemDef.maleEquip1 = 20642;
+				itemDef.femaleEquip1 = 20642;
+				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
+				break;
+
+			case 23371:
+				itemDef.copyItem(14050);
+				itemDef.name = "Justiciar coif";
+				itemDef.modelID = 20648;
+				itemDef.maleEquip1 = 20649;
+				itemDef.femaleEquip1 = 20649;
+				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
+				break;
+			case 23372:
+				itemDef.copyItem(8324);
+				itemDef.name = "Justiciar body";
+				itemDef.modelID = 20690;
+				itemDef.maleEquip1 = 20691;
+				itemDef.femaleEquip1 = 20691;
+				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
+				break;
+			case 23373:
+				itemDef.copyItem(14052);
+				itemDef.name = "Justiciar legs";
+				itemDef.modelID = 20724;
+				itemDef.maleEquip1 = 20716;
+				itemDef.femaleEquip1 = 20716;
+				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
+				break;
+
+			case 23374:
+				itemDef.copyItem(14050);
+				itemDef.name = "Justiciar hood";
+				itemDef.modelID = 20733;
+				itemDef.maleEquip1 = 20734;
+				itemDef.femaleEquip1 = 20734;
+				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
+				break;
+			case 23375:
+				itemDef.copyItem(8324);
+				itemDef.name = "Justiciar robetop";
+				itemDef.modelID = 20811;
+				itemDef.maleEquip1 = 20812;
+				itemDef.femaleEquip1 = 20812;
+				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
+				break;
+			case 23485:
+				itemDef.copyItem(14052);
+				itemDef.name = "Justiciar robe bottoms";
+				itemDef.modelID = 20813;
+				itemDef.maleEquip1 = 20814;
+				itemDef.femaleEquip1 = 20814;
+				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
+				break;
+
 			case 23357:
 				itemDef.copyItem(12608);
 				itemDef.name = "Christmas Aura";
@@ -327,13 +466,13 @@ public class ItemDef5 {
 				itemDef.modelOffsetY = -13;
 				break;
 			case 23532:
+				itemDef.copyItem(6737);
 				itemDef.modelZoom = 494;
 				itemDef.rotationX = 1703;
 				itemDef.rotationY = 152;
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetX = -1;
 				itemDef.modelOffsetY = 90;
-				itemDef.copyItem(6737);
 				itemDef.name = "Elf gloves";
 				itemDef.modelID = 20534;
 				itemDef.maleEquip1 = 20535;
@@ -1103,6 +1242,26 @@ public class ItemDef5 {
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				itemDef.stackable = false;
 				break;
+
+			case 23487:
+				itemDef.copyItem(8213);
+				itemDef.name = "Christmas Token";
+				break;
+
+			case 23488:
+				itemDef.copyItem(23487);
+				itemDef.certID = 23487;
+				itemDef.certTemplateID = 1436;
+				itemDef.name = "Christmas Token";
+				itemDef.actions = new String[]{"Claim", null, null, null, null};
+				itemDef.stackable = false;
+				itemDef.scaleX = 115;
+				itemDef.scaleY = 115;
+				itemDef.scaleZ = 115;
+				itemDef.colorChange = new double[]{0.2, 1.1, 0.2};
+				break;
+
+
 			case 23463:
 				itemDef.copyItem(9482);
 				itemDef.name = "Raditz Costume";

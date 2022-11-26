@@ -1,6 +1,28 @@
 
 [
   {
+    "id": 10002,
+    "name": "Polar bear",
+    "examine": "It's a Polar bear.",
+    "combat": 225,
+    "size": 1,
+    "attackable": true,
+    "aggressive": false,
+    "retreats": false,
+    "poisonous": false,
+    "respawn": 10,
+    "maxHit": 200,
+    "hitpoints": 250000,
+    "attackSpeed": 4,
+    "attackAnim": 711,
+    "defenceAnim": 1834,
+    "deathAnim": 836,
+    "attackBonus": 9,
+    "defenceMelee": 9,
+    "defenceRange": 9,
+    "defenceMage": 0
+  },
+  {
     "id": 9885,
     "name": "Ice nihil",
     "examine": "A boss.",

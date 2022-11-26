@@ -1957,6 +1957,16 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("grantm")) {
             player.getSeasonPass().grantMembership();
         }
+        if (command[0].equalsIgnoreCase ("resetsanta")) {
+        player.sendMessage("@red@You managed to claim all the rewards, The Christmas Box has reset");
+        player.getEventChestHandler().TIER_1_REWARDS.clear();
+        player.getEventChestHandler().TIER_2_REWARDS.clear();
+        player.getEventChestHandler().TIMES_ROLLED_TIER_1 = 0;
+        player.getEventChestHandler().TIMES_ROLLED_TIER_2 = 0;
+        player.getEventChestHandler().generateRewards(player);
+        player.getPacketSender().clearChristmasList();
+        player.getPacketSender().removeInterface();
+        }
 
         if (command[0].equalsIgnoreCase("xmasevent")) {
             player.setDialogueActionId(81115);

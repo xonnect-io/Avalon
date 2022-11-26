@@ -1271,19 +1271,20 @@ public class ItemDef2 {
 			case 8213:
 				itemDef.name = "Christmas token";
 				itemDef.stackable = true;
-				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
 				def = ItemDefinition.get(1050);
 				itemDef.modelID = def.modelID;
 				itemDef.maleEquip1 = def.maleEquip1;
 				itemDef.femaleEquip1 = def.femaleEquip1;
-				itemDef.modelOffsetX = 2;
-				itemDef.modelOffsetY = 1;
+				itemDef.modelOffsetX = 5;
+				itemDef.modelOffsetY = -3;
 				itemDef.modelZoom = 600;
 				//itemDef.actions = itemDef211.actions;
 				itemDef.rotationY = 20;
 				itemDef.rotationX = 900;
 				//itemDef.rdc2 = 743;
 				break;
+
 			case 6183:
 				itemDef.name = "Halloween Box (@bla@Discontinued@or1@)";
 				itemDef.rdc2 = 32535;
