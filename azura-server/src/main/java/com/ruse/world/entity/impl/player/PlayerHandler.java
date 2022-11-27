@@ -41,7 +41,6 @@ import com.ruse.world.content.skeletalhorror.SkeletalHorror;
 import com.ruse.world.content.skill.impl.hunter.Hunter;
 import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.startertasks.StarterTasks;
-import com.ruse.world.content.transportation.TeleportHandler;
 import com.ruse.world.entity.impl.GlobalItemSpawner;
 import com.ruse.world.entity.impl.mini.MiniPlayer;
 import com.ruse.world.instance.MapInstance;
@@ -54,7 +53,6 @@ public class PlayerHandler {
 
     public static void handleLogin(Player player) {
         World.playerMap().put(player.getLongUsername(), player);
-
 
         // Register the player
         System.out.println("[World] Registering player - [username, host] : [" + player.getUsername() + ", "
@@ -227,9 +225,7 @@ public class PlayerHandler {
         // Others
         Lottery.onLogin(player);
         Locations.login(player);
-//        if(PassRewards.didSeasonEnd()){
-//            player.getSeasonPass().reset();
-//        }
+
         if (!MembershipManager.didMonthEnd()) {
             player.getMembershipManager().reset();
         }
@@ -251,32 +247,10 @@ public class PlayerHandler {
             player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Jewelry Goodiebag!");
         if (GameSettings.OWNER_CAPE_DONO_DEAL == true)
             player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Cape Goodiebag!");
-        if (GameSettings.B2GO == true)
-            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Buy 2 of the same item and get 1 free!");
         if (GameSettings.AUTUMN_DEAL == true)
             player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x5 Autumn boxes!");
         if (GameSettings.BCRYPT_HASH_PASSWORDS && Misc.needsNewSalt(player.getSalt())) {
             player.setSalt(BCrypt.gensalt(GameSettings.BCRYPT_ROUNDS));
-        }
-
-        if (Misc.isMonday ())
-            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
-                    + "] @blu@Daily Benefits: 5% Magic Damage");
-        if (Misc.isTuesday ())
-            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
-                    + "] @blu@Daily Benefits: 5% Range Damage");
-        if (Misc.isWednesday ())
-            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
-                    + "] @blu@Daily Benefits: 5% Melee Damage");
-        if (Misc.isThursday())
-            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
-                    + "] @blu@Daily Benefits: 10% Double Drop Rate");
-        if (Misc.isFriday())
-            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
-                    + "] @blu@Daily Benefits: 10% Double Drop Rate");
-        if (Misc.isWeekend()) {
-            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
-                    + "] @blu@Daily Benefits: Double Experience");
         }
 
         if (Wildywyrm.wyrmAlive) {
@@ -298,8 +272,6 @@ public class PlayerHandler {
             StartScreen.open(player);
             player.setPlayerLocked(true);
             player.getKillsTracker().add(new KillsEntry(1265, 0, false));
-            // player.setPlayerLocked(true).setDialogueActionId(45);
-            // DialogueManager.start(player, 81);
         } else {
             //Give currency pouch to UIM
             if (!player.getInventory().contains(22108) && player.getGameMode().equals(GameMode.ULTIMATE_IRONMAN)) {
@@ -314,8 +286,6 @@ public class PlayerHandler {
 
         player.getPacketSender().updateSpecialAttackOrb().sendIronmanMode(player.getGameMode().ordinal());
         player.getClickDelay().reset();
-        //System.out.println("Reset click delay");
-        //System.out.println("PLAYER RIGHTS: " + player.getRights());
         if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() < Store.SAPPHIRE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5> Helper " + player.getUsername() + " has just logged in."));
          else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT && player.getAmountDonated() < Store.EMERALD_DONATION_AMOUNT)
@@ -422,7 +392,25 @@ public class PlayerHandler {
                 && player.getPlayerOwnedShopManager().getMyShop().getEarnings() > 0) {
             player.sendMessage("<col=FF0000>You have unclaimed earnings in your player owned shop!");
         }
-
+        if (Misc.isMonday ())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 5% Magic Damage");
+        if (Misc.isTuesday ())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 5% Range Damage");
+        if (Misc.isWednesday ())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 5% Melee Damage");
+        if (Misc.isThursday())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 10% Double Drop Rate");
+        if (Misc.isFriday())
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: 10% Double Drop Rate");
+        if (Misc.isWeekend()) {
+            player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
+                    + "] @blu@Daily Benefits: Double Experience");
+        }
         player.getVotingStreak().login();
         DiscordIntegration.setIntegration(player);
 
@@ -456,39 +444,20 @@ public class PlayerHandler {
 
         PlayerLogs.log(player.getUsername(),
                 "Login. ip: " + player.getHostAddress() + ", mac: " + player.getMac() + ", uuid: " + player.getSerialNumber());
-        /*
-         * if(player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) == 0){
-         * player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 1);
-         * World.deregister(player); // System.out.println(player.getUsername()
-         * +" logged in from a bad session. They have 0 HP and are nulled. Set them to 1 and kicked them."
-         * ); // TODO this may cause dupes. removed temp. }
-         */
-        if (player.isInDung()) {
-            // System.out.println(player.getUsername() + " logged in from a bad dungeoneering session.");
-            PlayerLogs.log(player.getUsername(), " logged in from a bad dungeoneering session. Inv/equipment wiped.");
-            player.getInventory().resetItems().refreshItems();
-            player.getEquipment().resetItems().refreshItems();
-            if (player.getLocation() == Location.DUNGEONEERING) {
-                // player.moveTo(GameSettings.DEFAULT_POSITION.copy());
-                TeleportHandler.teleportPlayer(player,
-                        new Position(2524 + Misc.getRandom(10), 2595 + Misc.getRandom(6)),
-                        player.getSpellbook().getTeleportType());
 
-            }
-            player.getPacketSender().sendMessage("Your Dungeon has been disbanded.");
-            player.setInDung(false);
-        }
         if (player.getLocation() == Location.PYRAMID) {
             PlayerLogs.log(player.getUsername(), "logged in inside the Pyramid arena, moved their ass out.");
             player.moveTo(GameSettings.DEFAULT_POSITION);
             player.getPacketSender().sendMessage("You logged off inside the Pyramid arena. You were moved home.");
         }
+
         if (player.getPosition().getX() == 3004 && player.getPosition().getY() >= 3938
                 && player.getPosition().getY() <= 3949) {
             PlayerLogs.log(player.getUsername(), player.getUsername() + " was stuck in the obstacle pipe in the Wild.");
             player.moveTo(new Position(3006, player.getPosition().getY(), player.getPosition().getZ()));
             player.getPacketSender().sendMessage("You logged off inside the obstacle pipe, moved out.");
         }
+
         if (player.getCurrentInstanceNpcName() != null) {
             player.moveTo(new Position(2529, 2595, 0));
             player.getPacketSender()
@@ -497,15 +466,13 @@ public class PlayerHandler {
 
 
         GlobalItemSpawner.spawnGlobalGroundItems(player);
-        player.unlockPkTitles();
-        // player.getPacketSender().sendString(39160, "@or2@Players online: @or2@[
-        // @yel@"+(int)(World.getPlayers().size())+"@or2@ ]"); Handled by
-        // PlayerPanel.java
-        player.getPacketSender().sendString(57003, "Players:  @gre@" + (17 + World.getPlayers().size()));
+        player.unlockPkTitles();;
 
         if (GameSettings.B2GO) {
             player.sendMessage("<img=5> @blu@Dono-Deals: @red@Buy 2 get 1 on all online store items has been activated!");
         }
+
+        player.getSeasonPass().handleLogin();
 
         if (player.getCurrentInstanceNpcName() != null) {
             player.moveTo(GameSettings.HOME_CORDS);
@@ -513,14 +480,6 @@ public class PlayerHandler {
                     .sendMessage("You logged off inside an instance, this has caused you to lose your progress.");
         }
 
-        int AMOUNTS = player.getInventory().getAmount(621);
-
-        if (player.getInventory().contains(621)) {
-            player.getInventory().add(9000, AMOUNTS);
-            player.getInventory().delete(621, AMOUNTS);
-            player.getPacketSender()
-                    .sendMessage("Your light tickets were automatically exchanged for boss slayer tickets.");
-        }
         if (player instanceof MiniPlayer) {
             MiniPlayer miniPlayer = (MiniPlayer) player;
             TaskManager.submit(new Task(2) {

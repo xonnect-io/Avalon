@@ -166,6 +166,8 @@ public class SeasonPass {
             xp = 0;
             player.setunlockedseasonpass(false);
             currentSeason = SEASON;
+            player.getMembershipManager().reset();
+            player.getMembershipManager().reset();
         }
         if (this.tier <= 0)
             this.tier = 1;
