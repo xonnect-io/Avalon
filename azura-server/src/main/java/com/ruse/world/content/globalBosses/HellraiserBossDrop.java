@@ -46,11 +46,11 @@ public class HellraiserBossDrop {
 			Map.Entry<Player, Integer> entry = iterator.next();
 			Player killer = entry.getKey();
 
+			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
+			StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
 			KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
 			KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
-			StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
 			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
-			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 			NPCDrops.handleDrops(killer, npc);
 			iterator.remove();
 		}

@@ -1531,15 +1531,15 @@ public class DialogueOptions {
 
                     player.setGroupInvitationId(-1);
                     break;
-               /* case 6969:
+                case 6969:
                     if (player.getInventory().contains(19000)) {
                         int amount = player.getInventory().getAmount(19000);
                         player.getInventory().delete(19000, amount);
-                        player.getInventory().add(ItemDefinition.MILL_ID, amount * 100);
+                        player.getInventory().add(ItemDefinition.UPGRADE_TOKEN_ID, amount * 100);
                         player.sendMessage("You exchanged x" + amount + " Pet fragements for " + (amount * 100) + " Upgrade tokens.");
                     }
                     player.getPacketSender().sendInterfaceRemoval();
-                    break;*/
+                    break;
                 case 9923:
                     PetUpgrading.upgrade(player);
                     break;

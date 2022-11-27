@@ -29,6 +29,9 @@ public class GlobalItemSpawner {
         nullCheckAndSpawn(player, new Item(7546, 1), new Position(2888, 4122, 0));
         nullCheckAndSpawn(player, new Item(3727, 1), new Position(2888, 4123, 0));
         nullCheckAndSpawn(player, new Item(4682, 1), new Position(2940, 4127, 0));
+        nullCheckAndSpawn(player, new Item(4682, 1), new Position(2802, 4063, 0));//holy symbol
+        nullCheckAndSpawn(player, new Item(7546, 1), new Position(2765, 4061, 0));//rancid flour
+        nullCheckAndSpawn(player, new Item(3727, 1), new Position(2764, 4061, 0));//empty bucket
         nullCheckAndSpawn(player, new Item(558, 1), new Position(3206, 3208, 0));
         nullCheckAndSpawn(player, new Item(7509, 1), ROCKCAKE_POSITION);
         timer = System.currentTimeMillis();

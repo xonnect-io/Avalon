@@ -70,7 +70,7 @@ public class ItemDef5 {
 				itemDef.modelOffsetY = 0;
 				break;
 
-			case 23368:
+			case 22200:
 				itemDef.copyItem(14050);
 				itemDef.name = "Justiciar helmet";
 				itemDef.modelID = 20620;
@@ -78,7 +78,7 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 20640;
 				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
 				break;
-			case 23369:
+			case 22201:
 				itemDef.copyItem(8324);
 				itemDef.name = "Justiciar body";
 				itemDef.modelID = 20625;
@@ -86,7 +86,7 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 20641;
 				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
 				break;
-			case 23370:
+			case 22202:
 				itemDef.copyItem(14052);
 				itemDef.name = "Justiciar legs";
 				itemDef.modelID = 20626;
@@ -95,7 +95,7 @@ public class ItemDef5 {
 				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
 				break;
 
-			case 23371:
+			case 22203:
 				itemDef.copyItem(14050);
 				itemDef.name = "Justiciar coif";
 				itemDef.modelID = 20648;
@@ -103,7 +103,7 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 20649;
 				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
 				break;
-			case 23372:
+			case 22204:
 				itemDef.copyItem(8324);
 				itemDef.name = "Justiciar body";
 				itemDef.modelID = 20690;
@@ -111,7 +111,7 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 20691;
 				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
 				break;
-			case 23373:
+			case 22205:
 				itemDef.copyItem(14052);
 				itemDef.name = "Justiciar legs";
 				itemDef.modelID = 20724;
@@ -120,7 +120,7 @@ public class ItemDef5 {
 				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
 				break;
 
-			case 23374:
+			case 22206:
 				itemDef.copyItem(14050);
 				itemDef.name = "Justiciar hood";
 				itemDef.modelID = 20733;
@@ -128,7 +128,7 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 20734;
 				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
 				break;
-			case 23375:
+			case 22207:
 				itemDef.copyItem(8324);
 				itemDef.name = "Justiciar robetop";
 				itemDef.modelID = 20811;
@@ -136,7 +136,7 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 20812;
 				itemDef.colorChange = new double[]{0.2, 1.1, 1.0};
 				break;
-			case 23485:
+			case 22208:
 				itemDef.copyItem(14052);
 				itemDef.name = "Justiciar robe bottoms";
 				itemDef.modelID = 20813;
@@ -240,14 +240,14 @@ public class ItemDef5 {
 				break;
 			case 23685:
 				itemDef.copyItem(5074);
-				itemDef.name = "Santa Pet";
-				itemDef.modelID = MobDefinition.get(9400).npcModels[0];
-				itemDef.modelZoom = 972 * 4;
+				itemDef.name = "Krampus Pet";
+				itemDef.modelID = MobDefinition.get(10005).npcModels[4];
+				itemDef.modelZoom = 802 * 2;
 				itemDef.rotationX = 84;
 				itemDef.rotationY = 135;
 				itemDef.rotationZ = 0;
 				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = -3;
+				itemDef.modelOffsetY = 145;
 				break;
 			case 23686:
 				itemDef.copyItem(5074);
@@ -478,6 +478,73 @@ public class ItemDef5 {
 				itemDef.maleEquip1 = 20535;
 				itemDef.femaleEquip1 = 20535;
 				break;
+			case 17747:
+				itemDef.copyItem(6737);
+				itemDef.name = "Krampus head";
+				itemDef.modelID = 20605;
+				itemDef.maleEquip1 = 20605;
+				itemDef.femaleEquip1 = 20605;
+				itemDef.maleWieldY = 5;
+				itemDef.modelZoom = 681;
+				itemDef.rotationX = 203;
+				itemDef.rotationY = 228;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -6;
+				break;
+			case 17748:
+				itemDef.copyItem(6737);
+				itemDef.name = "Krampus body";
+				itemDef.modelID = 20593;
+				itemDef.maleEquip1 = 20593;
+				itemDef.femaleEquip1 = 20593;
+				itemDef.modelZoom = 1680;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 45;
+				itemDef.modelOffsetX = 0;
+				break;
+			case 17749:
+				itemDef.copyItem(6737);
+				itemDef.modelZoom = 1302;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 525;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 3;
+				itemDef.modelOffsetY = 7;
+				itemDef.name = "Krampus legs";
+				itemDef.modelID = 20594;
+				itemDef.maleEquip1 = 20594;
+				itemDef.femaleEquip1 = 20594;
+				itemDef.maleWieldY = 5;
+				break;
+			case 17750:
+				itemDef.copyItem(6737);
+				itemDef.name = "Krampus boots";
+				itemDef.modelID = 20596;
+				itemDef.maleEquip1 = 20596;
+				itemDef.femaleEquip1 = 20596;
+				itemDef.maleWieldY = 5;
+				itemDef.modelZoom = 743;
+				itemDef.rotationX = 203;
+				itemDef.rotationY = 152;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 2;
+				itemDef.modelOffsetY = -13;
+				break;
+			case 17751:
+				itemDef.copyItem(6737);
+				itemDef.modelZoom = 494;
+				itemDef.rotationX = 1703;
+				itemDef.rotationY = 152;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -1;
+				itemDef.modelOffsetY = 90;
+				itemDef.name = "Krampus gloves";
+				itemDef.modelID = 20595;
+				itemDef.maleEquip1 = 20595;
+				itemDef.femaleEquip1 = 20595;
+				break;
 			case 23527:
 				itemDef.copyItem(5074);
 				itemDef.name = "Nihil Offspring";
@@ -650,6 +717,37 @@ public class ItemDef5 {
 				itemDef.stackable = false;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
+
+			case 17777:
+				itemDef.copyItem(17748);
+				itemDef.name = "Krampus Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 17778:
+				itemDef.copyItem(17777);
+				itemDef.certID = 17777;
+				itemDef.certTemplateID = 23390;
+				itemDef.name = "Krampus Costume";
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 17745:
+				itemDef.copyItem(23529);
+				itemDef.name = "Elf Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 17746:
+				itemDef.copyItem(17745);
+				itemDef.certID = 17745;
+				itemDef.certTemplateID = 23390;
+				itemDef.name = "Elf Costume";
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
 			case 23497:
 				itemDef.copyItem(6737);
 				itemDef.name = "Grandmaster hood";

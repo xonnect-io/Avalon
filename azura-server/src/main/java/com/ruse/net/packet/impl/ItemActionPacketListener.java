@@ -1250,9 +1250,16 @@ public class ItemActionPacketListener implements PacketListener {
             case 22219:
                 player.getInventory().delete(22219, 1).add(5022, 10000);
                 break;
+            case 22211:
+                player.getInventory().delete(22211, 1).add(5022, 50000);
+                break;
             case 15288:
                 player.getInventory().delete(15288, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 100000);
                 break;
+            case 22209:
+                player.getInventory().delete(22209, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 250000);
+                break;
+
             case 15289:
                 player.getInventory().delete(15289, 1).add(ItemDefinition.UPGRADE_TOKEN_ID, 25_000);
                 break;
@@ -2524,6 +2531,10 @@ public class ItemActionPacketListener implements PacketListener {
                 int amount5 = player.getInventory().getAmount(itemId);
                 player.getInventory().delete(22219, amount5).add(5022, 10_000 * amount5);
                 break;
+            case 22211:
+                int amount555 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(22211, amount555).add(5022, 50_000 * amount555);
+                break;
             case 21220:
                 int amount6 = player.getInventory().getAmount(itemId);
                 player.getInventory().delete(21220, amount6).add(5022, 1_000 * amount6);
@@ -2545,6 +2556,10 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().delete(15288, amount10).add(12855, 100_000 * amount10);
                 break;
 
+            case 22209:
+                final int amount1102 = player.getInventory().getAmount(itemId);
+                player.getInventory().delete(22209, amount1102).add(12855, 250_000 * amount1102);
+                break;
             case 23014:
             case 23015:
             case 23016:

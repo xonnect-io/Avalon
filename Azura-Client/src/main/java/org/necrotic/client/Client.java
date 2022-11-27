@@ -19319,7 +19319,10 @@ if(response == 32){
                             spritesMap.get(1566).drawSprite(spriteDrawX - 8, spriteDrawY - 26);
 
                         }
+                        if (entityDef.id == 9015) {
+                            spritesMap.get(1509).drawSprite(spriteDrawX - 8, spriteDrawY - 26);
 
+                        }
                         if (entityDef.id == 3306) {
                             spritesMap.get(876).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
 

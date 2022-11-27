@@ -46,7 +46,6 @@ public class GlobalBossDrops {
 			Player killer = entry.getKey();
 
 			DailyTask.GLOBAL_BOSSES.tryProgress(killer);
-
 			StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
 			killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
 			if (npc.getId() == 9319) {

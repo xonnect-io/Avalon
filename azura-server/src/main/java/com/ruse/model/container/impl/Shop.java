@@ -1921,7 +1921,7 @@ public class Shop extends ItemContainer {
                     case 23261://add
                     case 23262://add
                     case 23263://add
-                        return new Object[] { 5000, "Boss Slayer tickets" };
+                        return new Object[] { 3500, "Boss Slayer tickets" };
                     case 15330:
                         return new Object[] { 2000, "Boss Slayer tickets" };
                 }

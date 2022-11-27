@@ -327,7 +327,7 @@ public class DefaultRangedCombatStrategy implements CombatStrategy {
 		// Determine which slot we are decrementing ammo from.
 		int slot = player.getWeapon() == WeaponInterface.SHORTBOW || player.getWeapon() == WeaponInterface.LONGBOW
 				|| player.getWeapon() == WeaponInterface.CROSSBOW || player.getWeapon() == WeaponInterface.BLOWPIPE
-				|| player.getWeapon() == WeaponInterface.BSOAT || player.getWeapon() == WeaponInterface.ARMADYLXBOW
+				|| player.getWeapon() == WeaponInterface.BSOAT ||  player.getWeapon() == WeaponInterface.SNOW ||player.getWeapon() == WeaponInterface.ARMADYLXBOW
 						? Equipment.AMMUNITION_SLOT
 						: Equipment.WEAPON_SLOT;
 

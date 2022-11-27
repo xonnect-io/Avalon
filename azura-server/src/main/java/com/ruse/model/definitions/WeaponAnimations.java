@@ -599,10 +599,6 @@ public final class WeaponAnimations {
 			return 11974;
 		case 15486:
 		case 15502:
-		case 22209:
-		case 22211:
-		case 22207:
-		case 22213:
 		case 21005:
 		case 21010:
 		case 14004:

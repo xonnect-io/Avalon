@@ -9,6 +9,7 @@ import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.CombatBuilder;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.dailytasks_new.DailyTask;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -61,6 +62,7 @@ public class IronmanBoss {
             Map.Entry<Player, Integer> entry = iterator.next();
             Player killer = entry.getKey();
 
+            StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
             killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
             DailyTask.GLOBAL_BOSSES.tryProgress(killer);
 

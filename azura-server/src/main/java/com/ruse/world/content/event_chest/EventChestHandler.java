@@ -42,11 +42,11 @@ public class EventChestHandler {
 
 	public int TIMES_ROLLED_TIER_1 = 0;
 
-	public int MAX_ROLLS_TIER_1 = 24;
+	public int MAX_ROLLS_TIER_1 = 57;
 
 	public int TIMES_ROLLED_TIER_2 = 0;
 
-	public int MAX_ROLLS_TIER_2 = 24;
+	public int MAX_ROLLS_TIER_2 = 41;
 
 	public void generateRewards(Player player) {
 		if (player.getEventChestHandler().TIER_1_REWARDS.isEmpty()) {
@@ -65,13 +65,12 @@ public class EventChestHandler {
 					RewardsEnum.TIER_1.getRegularRewards()[3].copy(), RewardsEnum.TIER_1.getRegularRewards()[4].copy(),
 					RewardsEnum.TIER_1.getRegularRewards()[5].copy(), RewardsEnum.TIER_1.getRegularRewards()[6].copy(),
 					RewardsEnum.TIER_1.getRegularRewards()[7].copy(), RewardsEnum.TIER_1.getRegularRewards()[8].copy(),
-					RewardsEnum.TIER_1.getRegularRewards()[9].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[10].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[11].copy(), RewardsEnum.TIER_1.getRegularRewards()[12].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[13].copy(), RewardsEnum.TIER_1.getRegularRewards()[14].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[15].copy(),// RewardsEnum.TIER_1.getRegularRewards()[16].copy(),
-					// RewardsEnum.TIER_1.getRegularRewards()[17].copy(),RewardsEnum.TIER_1.getRegularRewards()[18].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[19].copy(), RewardsEnum.TIER_1.getRegularRewards()[20].copy()
+					RewardsEnum.TIER_1.getRegularRewards()[9].copy(), RewardsEnum.TIER_1.getRegularRewards()[10].copy(),
+					RewardsEnum.TIER_1.getRegularRewards()[11].copy(), RewardsEnum.TIER_1.getRegularRewards()[12].copy(),
+					RewardsEnum.TIER_1.getRegularRewards()[13].copy(), RewardsEnum.TIER_1.getRegularRewards()[14].copy(),
+					RewardsEnum.TIER_1.getRegularRewards()[15].copy(), RewardsEnum.TIER_1.getRegularRewards()[16].copy(),
+					 RewardsEnum.TIER_1.getRegularRewards()[17].copy(),RewardsEnum.TIER_1.getRegularRewards()[18].copy(),
+					RewardsEnum.TIER_1.getRegularRewards()[19].copy(), RewardsEnum.TIER_1.getRegularRewards()[20].copy()
 					 };
 
 			ChestRewards list = new ChestRewards(firstGoldReward_Tier1.copy(), secondGoldReward_Tier1.copy(),
@@ -89,18 +88,18 @@ public class EventChestHandler {
 
 			TIER_2_PRIZE = Configuration.TIER_PRIZES[Misc.random(Configuration.TIER_PRIZES.length - 1)];
 
-			coppyz = new Item[] { RewardsEnum.TIER_1.getRegularRewards()[0].copy(),
-					RewardsEnum.TIER_1.getRegularRewards()[1].copy(), RewardsEnum.TIER_1.getRegularRewards()[2].copy(),
-					RewardsEnum.TIER_1.getRegularRewards()[3].copy(), RewardsEnum.TIER_1.getRegularRewards()[4].copy(),
-					RewardsEnum.TIER_1.getRegularRewards()[5].copy(), RewardsEnum.TIER_1.getRegularRewards()[6].copy(),
-					RewardsEnum.TIER_1.getRegularRewards()[7].copy(), RewardsEnum.TIER_1.getRegularRewards()[8].copy(),
-					RewardsEnum.TIER_1.getRegularRewards()[9].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[10].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[11].copy(), RewardsEnum.TIER_1.getRegularRewards()[12].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[13].copy(), RewardsEnum.TIER_1.getRegularRewards()[14].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[15].copy(),// RewardsEnum.TIER_1.getRegularRewards()[16].copy(),
-					// RewardsEnum.TIER_1.getRegularRewards()[17].copy(),RewardsEnum.TIER_1.getRegularRewards()[18].copy(),
-					//RewardsEnum.TIER_1.getRegularRewards()[19].copy(), RewardsEnum.TIER_1.getRegularRewards()[20].copy()
+			coppyz = new Item[] { RewardsEnum.TIER_2.getRegularRewards()[0].copy(),
+					RewardsEnum.TIER_2.getRegularRewards()[1].copy(), RewardsEnum.TIER_2.getRegularRewards()[2].copy(),
+					RewardsEnum.TIER_2.getRegularRewards()[3].copy(), RewardsEnum.TIER_2.getRegularRewards()[4].copy(),
+					RewardsEnum.TIER_2.getRegularRewards()[5].copy(), RewardsEnum.TIER_2.getRegularRewards()[6].copy(),
+					RewardsEnum.TIER_2.getRegularRewards()[7].copy(), RewardsEnum.TIER_2.getRegularRewards()[8].copy(),
+					RewardsEnum.TIER_2.getRegularRewards()[9].copy(),
+					RewardsEnum.TIER_2.getRegularRewards()[10].copy(),RewardsEnum.TIER_2.getRegularRewards()[11].copy(),
+					RewardsEnum.TIER_2.getRegularRewards()[12].copy(), RewardsEnum.TIER_2.getRegularRewards()[13].copy(),
+					 RewardsEnum.TIER_2.getRegularRewards()[14].copy(),
+					//RewardsEnum.TIER_2.getRegularRewards()[15].copy(),// RewardsEnum.TIER_2.getRegularRewards()[16].copy(),
+					// RewardsEnum.TIER_2.getRegularRewards()[17].copy(),RewardsEnum.TIER_2.getRegularRewards()[18].copy(),
+					//RewardsEnum.TIER_2.getRegularRewards()[19].copy(), RewardsEnum.TIER_2.getRegularRewards()[20].copy()
 			};
 
 			list = new ChestRewards(firstGoldReward_Tier1.copy(), secondGoldReward_Tier1.copy(),
@@ -126,12 +125,22 @@ public class EventChestHandler {
 			return;
 		}
 
-		if (!player.getInventory().contains(Configuration.CURRENCY_TO_SPEND.getId(),
-				Configuration.CURRENCY_TO_SPEND.getAmount())) {
-			player.sendMessage("You need at least "
-					+ Misc.insertCommasToNumber("" + Configuration.CURRENCY_TO_SPEND.getAmount()) + " "
-					+ ItemDefinition.forId(Configuration.CURRENCY_TO_SPEND.getId()).getName() + " to roll!");
-			return;
+		if (player.getEventChestHandler().getTierType() == TierType.TIER_1) {
+			if (!player.getInventory ().contains (Configuration.CURRENCY_TO_SPEND.getId (),
+					Configuration.CURRENCY_TO_SPEND.getAmount ())) {
+				player.sendMessage ("You need at least "
+						+ Misc.insertCommasToNumber ("" + Configuration.CURRENCY_TO_SPEND.getAmount ()) + " "
+						+ ItemDefinition.forId (Configuration.CURRENCY_TO_SPEND.getId ()).getName () + " to claim your reward!");
+				return;
+			}
+		} else if (player.getEventChestHandler().getTierType() == TierType.TIER_2) {
+			if (!player.getInventory ().contains (Configuration.CURRENCY_TO_SPEND.getId (),
+					Configuration.CURRENCY_TO_SPEND.getAmount ())) {
+				player.sendMessage ("You need at least "
+						+ Misc.insertCommasToNumber ("" + Configuration.CURRENCY_TO_SPEND.getAmount () + 1) + " "
+						+ ItemDefinition.forId (Configuration.CURRENCY_TO_SPEND.getId ()).getName () + " to claim your reward!");
+				return;
+			}
 		}
 
 		boolean cats = false;
@@ -195,7 +204,10 @@ public class EventChestHandler {
 						.allMatch(t -> t.getFirstGoldReward().getAmount() <= 0
 								&& t.getSecondGoldReward().getAmount() <= 0 && t.getThirdGoldReward().getAmount() <= 0
 								&& Arrays.stream(t.getRegularRewards()).allMatch(z -> z.getAmount() <= 0))) {
-					World.sendMessage("@red@Christmass Tree just passed to tier 2!");
+					player.sendMessage("@red@Congratulations, You have advanced to Tier 2");
+					World.sendMessage("<img=17>" + "@red@[News] @blu@" + player.getUsername()+ "@red@ advanced to @blu@Tier 2 @red@of the Christmas box <img=17>");
+
+					player.getInventory().add(TIER_1_PRIZE);
 
 					player.getEventChestHandler().setServerTierSelected(TierType.TIER_2);
 
@@ -212,9 +224,9 @@ public class EventChestHandler {
 				player.getPacketSender().sendItemOnInterface(55611, reward.getId(), amount);
 
 				if (luck >= 95) {
-					World.sendMessage("<img=661>@red@ " + player.getUsername() + " just received @gre@<shad=1>x"
+					World.sendMessage("<img=17>@red@ " + player.getUsername() + " just received @gre@<shad=1>x"
 							+ amount + " " + ItemDefinition.forId(reward.getId()).getName()
-							+ "</shad>@red@ from a Christmas box! <img=661>");
+							+ "</shad>@red@ from a Christmas box! <img=17>");
 				}
 			}
 		} else if (player.getEventChestHandler().getTierType() == TierType.TIER_2) {
@@ -272,7 +284,9 @@ public class EventChestHandler {
 									&& t.getSecondGoldReward().getAmount() <= 0
 									&& t.getThirdGoldReward().getAmount() <= 0
 									&& Arrays.stream(t.getRegularRewards()).allMatch(z -> z.getAmount() <= 0))) {
-						player.sendMessage("@red@You managed to claim all the rewards, The Christmas Box has reset");
+						player.sendMessage("@red@Congratulations, You successfully claimed all the rewards from the Christmas Box!");
+						World.sendMessage("<img=17>" + "@red@[News] @blu@" + player.getUsername()+ "@red@ has completed Tier 2 of the Christmas box! <img=17>");
+						player.getInventory().add(TIER_2_PRIZE);
 						player.getEventChestHandler().TIER_1_REWARDS.clear();
 						player.getEventChestHandler().TIER_2_REWARDS.clear();
 						TIMES_ROLLED_TIER_1 = 0;
@@ -282,16 +296,20 @@ public class EventChestHandler {
 						player.getPacketSender().clearChristmasList();
 						player.getPacketSender().removeInterface();
 						player.setInterfaceId(0);
-
+						player.getPacketSender().setInterfaceClicked(55580, 55586, true);
+						player.getEventChestHandler().setTierType(TierType.TIER_1);
+						EventChestInterface.resetRewards(player);
+						EventChestInterface.sendRewardsToInterface(player);
+						EventChestInterface.sendTierPrize(player);
 					}
 
 					player.getPacketSender().sendString(55612, "");
 					player.getPacketSender().sendItemOnInterface(55611, reward.getId(), amount);
 
 					if (luck >= 95) {
-						World.sendMessage("<img=661> @red@" + player.getUsername() + " just received @gre@<shad=1>x"
+						World.sendMessage("<img=17> @red@" + player.getUsername() + " just received @gre@<shad=1>x"
 								+ amount + " " + ItemDefinition.forId(reward.getId()).getName()
-								+ "</shad>@red@ from a Christmas Box! <img=661>");
+								+ "</shad>@red@ from a Christmas Box! <img=17>");
 					}
 				}
 			}

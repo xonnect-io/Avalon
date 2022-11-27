@@ -2141,6 +2141,8 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.setFightType(FightType.BLOWPIPE_ACCURATE);
                 } else if (player.getWeapon() == WeaponInterface.BSOAT) {
                     player.setFightType(FightType.BSOAT_ACCURATE);
+                } else if (player.getWeapon() == WeaponInterface.SNOW) {
+                    player.setFightType(FightType.SNOW_ACCURATE);
                 } else if (player.getWeapon() == WeaponInterface.ARMADYLXBOW) {
                     player.setFightType(FightType.ARMADYLXBOW_ACCURATE);
                 }
@@ -2159,6 +2161,8 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.setFightType(FightType.BLOWPIPE_RAPID);
                 } else if (player.getWeapon() == WeaponInterface.BSOAT) {
                     player.setFightType(FightType.BSOAT_RAPID);
+                } else if (player.getWeapon() == WeaponInterface.SNOW) {
+                    player.setFightType(FightType.SNOW_RAPID);
                 } else if (player.getWeapon() == WeaponInterface.ARMADYLXBOW) {
                     player.setFightType(FightType.ARMADYLXBOW_RAPID);
                 }
@@ -2174,6 +2178,8 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.setFightType(FightType.BLOWPIPE_LONGRANGE);
                 } else if (player.getWeapon() == WeaponInterface.BSOAT) {
                     player.setFightType(FightType.BSOAT_LONGRANGE);
+                } else if (player.getWeapon() == WeaponInterface.SNOW) {
+                    player.setFightType(FightType.SNOW_LONGRANGE);
                 } else if (player.getWeapon() == WeaponInterface.ARMADYLXBOW) {
                     player.setFightType(FightType.ARMADYLXBOW_LONGRANGE);
                 }

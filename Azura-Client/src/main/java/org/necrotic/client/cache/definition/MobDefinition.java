@@ -2113,6 +2113,7 @@ public final class MobDefinition {
 				break;
 
 			case 1541:
+				definition.name = "Spirit";
 				definition.actions = new String[]{"Talk-to", null, null, null, null};
 				break;
 			case 5861:
@@ -5617,6 +5618,21 @@ public final class MobDefinition {
 				definition.headIcon = -1;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				break;
+
+			case 12006:
+				definition.setDefault();
+				definition.npcModels = new int[]{20593,20594,20595,20596,20605};
+				definition.standAnimation =  MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.actions = MobDefinition.get(1).actions;
+				definition.combatLevel = 0;
+				definition.name = "Krampus pet";
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
+				definition.npcSizeInSquares = 1;
+				definition.headIcon = -1;
+				definition.actions = new String[]{null, null, null, null, null};
+				break;
 			case 10002:
 				definition.setDefault();
 					definition.npcModels = new int[]{20611};
@@ -5802,7 +5818,7 @@ public final class MobDefinition {
 				break;
 
 			case 9128:
-				definition.copy(278);
+				definition.copy(942);
 				definition.drawYellowDotOnMap = true;
 				definition.scaleXZ = 200;
 				definition.scaleY = 200;
@@ -7457,8 +7473,8 @@ public final class MobDefinition {
 				definition.actions = new String[] {null, null, null, null, null};
 				definition.drawYellowDotOnMap = true;
 				definition.npcSizeInSquares = 1;
-				definition.scaleXZ = 100;
-				definition.scaleY = 110;
+				definition.scaleXZ = 60;
+				definition.scaleY = 60;
 				break;
 			case 9878:
 				definition.setDefault();

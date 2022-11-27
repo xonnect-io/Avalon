@@ -107,6 +107,11 @@ public enum FightType {
 	DART_LONGRANGE(929, 43, 2, BonusManager.ATTACK_RANGE, FightStyle.DEFENSIVE),
 	JAVELIN_ACCURATE(929, 43, 0, BonusManager.ATTACK_RANGE, FightStyle.ACCURATE),
 	JAVELIN_RAPID(929, 43, 2, BonusManager.ATTACK_RANGE, FightStyle.AGGRESSIVE),
+
+
+	SNOW_ACCURATE(4230, 43, 0, BonusManager.ATTACK_RANGE, FightStyle.ACCURATE),
+	SNOW_RAPID(4230, 43, 1, BonusManager.ATTACK_RANGE, FightStyle.AGGRESSIVE),
+	SNOW_LONGRANGE(4230, 43, 2, BonusManager.ATTACK_RANGE, FightStyle.DEFENSIVE),
 	JAVELIN_LONGRANGE(929, 43, 3, BonusManager.ATTACK_RANGE, FightStyle.DEFENSIVE);
 
 	/** The animation this fight type holds. */

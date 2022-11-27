@@ -327,7 +327,7 @@ public class CurseHandler {
 						|| player.getEquipment().get(Equipment.AURA_SLOT).getId() == 12608 || player.getEquipment().get(Equipment.AURA_SLOT).getId() == 22105
 						||player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 22109|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20591
 						|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20400 || player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23270
-						|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23268) {
+						|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23268 || player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23358) {
 					drain = 0;
 				}
 				//if (drain <= 0 && !player.checkItem(Equipment.CAPE_SLOT, 19748)) {

@@ -27,7 +27,7 @@ public class TheOmegaDialogues {
 
             @Override
             public int npcId() {
-                return 278;
+                return 942;
             }
 
             @Override
@@ -58,7 +58,7 @@ public class TheOmegaDialogues {
 
                     @Override
                     public int npcId() {
-                        return 278;
+                        return 942;
                     }
 
                     @Override
@@ -481,7 +481,7 @@ public class TheOmegaDialogues {
 
                     @Override
                     public int npcId() {
-                        return 278;
+                        return 942;
                     }
 
                     @Override
@@ -514,7 +514,7 @@ public class TheOmegaDialogues {
 
                             @Override
                             public int npcId() {
-                                return 278;
+                                return 942;
                             }
 
                             @Override
@@ -546,7 +546,7 @@ public class TheOmegaDialogues {
 
                                     @Override
                                     public int npcId() {
-                                        return 278;
+                                        return 942;
                                     }
 
                                     @Override
@@ -578,7 +578,7 @@ public class TheOmegaDialogues {
 
                                             @Override
                                             public int npcId() {
-                                                return 278;
+                                                return 942;
                                             }
 
                                             @Override
@@ -619,7 +619,7 @@ public class TheOmegaDialogues {
 
             @Override
             public int npcId() {
-                return 278;
+                return 942;
             }
 
             @Override
@@ -683,7 +683,7 @@ public class TheOmegaDialogues {
 
             @Override
             public int npcId() {
-                return 278;
+                return 942;
             }
 
             @Override
@@ -748,7 +748,7 @@ public class TheOmegaDialogues {
 
             @Override
             public int npcId() {
-                return 278;
+                return 942;
             }
 
             @Override
@@ -810,7 +810,7 @@ public class TheOmegaDialogues {
 
             @Override
             public int npcId() {
-                return 278;
+                return 942;
             }
 
             @Override
@@ -900,7 +900,7 @@ public class TheOmegaDialogues {
 
                     @Override
                     public int npcId() {
-                        return 278;
+                        return 942;
                     }
 
                     @Override
@@ -1231,7 +1231,7 @@ public class TheOmegaDialogues {
 
                     @Override
                     public int npcId() {
-                        return 278;
+                        return 942;
                     }
 
                     @Override
@@ -1264,7 +1264,7 @@ public class TheOmegaDialogues {
 
                             @Override
                             public int npcId() {
-                                return 278;
+                                return 942;
                             }
 
                             @Override
@@ -1295,7 +1295,7 @@ public class TheOmegaDialogues {
 
                                     @Override
                                     public int npcId() {
-                                        return 278;
+                                        return 942;
                                     }
 
                                     @Override

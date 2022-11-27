@@ -9,6 +9,7 @@ import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.CombatBuilder;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.dailytasks_new.DailyTask;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.GlobalItemSpawner;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
@@ -63,6 +64,7 @@ public class DragonKingBoss {
             Player killer = entry.getKey();
             killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
             DailyTask.GLOBAL_BOSSES.tryProgress(killer);
+            StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
             if(killer.getQuestTwoStarted() == true && killer.getQuestTwoStep2() == false) {
                 if (killer.getEquipment().contains(1580)) {
                     killer.getInventory().add(10537, 1);

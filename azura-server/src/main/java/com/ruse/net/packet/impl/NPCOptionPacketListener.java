@@ -776,7 +776,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 8405:
                         ShopManager.getShops().get(99).open(player);
                         break;
-                    case 278:
+                    case 942:
                         if (player.getQuestTwoStarted() == false) {
                             DialogueManager.start(player, TheOmegaDialogues.Intro(player));
                             return;

@@ -5,9 +5,11 @@ import com.ruse.model.Position;
 import com.ruse.model.definitions.NPCDrops;
 import com.ruse.world.World;
 import com.ruse.world.content.KillsTracker;
+import com.ruse.world.content.achievements.AchievementData;
 import com.ruse.world.content.combat.CombatBuilder;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.dailytasks_new.DailyTask;
+import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
@@ -100,8 +102,9 @@ public class HolidayBossEvent extends NPC {
             Map.Entry<Player, Integer> entry = iterator.next();
             Player killer = entry.getKey();
 
+            StarterTasks.doProgress(killer, StarterTasks.StarterTask.KILL_GLOBALS);
             DailyTask.GLOBAL_BOSSES.tryProgress(killer);
-
+            killer.getAchievementTracker().progress(AchievementData.KILL_5K_GLOBALS, 1);
             KillsTracker.submitById(killer, npc.getId(), true, npc.getDefinition().boss);
             KillsTracker.submitById(killer, npc.getId(), false, npc.getDefinition().boss);
             NPCDrops.handleDrops(killer, npc);

@@ -1268,6 +1268,34 @@ public class ItemDef2 {
 				itemDef.rotationX = def.rotationX;
 				itemDef.rdc2 = 223613;
 				break;
+			case 22209:
+				itemDef.name = "Upgrade Token pack (250k)";
+				itemDef.stackable = false;
+				itemDef.actions = new String[] { "Open", null, "Open-all", null, "Drop" };
+				def = ItemDefinition.get(15262);
+				itemDef.modelID = def.modelID;
+				itemDef.maleEquip1 = def.maleEquip1;
+				itemDef.femaleEquip1 = def.femaleEquip1;
+				itemDef.modelOffsetX = def.modelOffsetX;
+				itemDef.modelOffsetY = def.modelOffsetY;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = def.rotationY;
+				itemDef.rotationX = def.rotationX;
+				itemDef.rdc2 = 214153;
+				break;
+			case 22211:
+				itemDef.name = "PVM ticket pack (50k)";
+				itemDef.stackable = false;
+				itemDef.actions = new String[] { "Open", null, "Open-all", null, "Drop" };
+				ItemDefinition itemdefyogipic1111 = ItemDefinition.get(15262);
+				itemDef.modelID = itemdefyogipic1111.modelID;
+				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
+				itemDef.rotationY = itemdefyogipic1111.rotationY;
+				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				itemDef.modelZoom = 2000;
+				itemDef.colorChange = new double[]{0.6, 0.5, 0.1};
+				break;
 			case 8213:
 				itemDef.name = "Christmas token";
 				itemDef.stackable = true;
@@ -5236,13 +5264,13 @@ public class ItemDef2 {
 				itemDef.name = "PVM ticket pack (10k)";
 				itemDef.stackable = false;
 				itemDef.actions = new String[] { "Open", null, "Open-all", null, "Drop" };
-				ItemDefinition itemdefyogipic1111 = ItemDefinition.get(15262);
-				itemDef.modelID = itemdefyogipic1111.modelID;
-				itemDef.modelOffsetX = itemdefyogipic1111.modelOffsetX;
-				itemDef.modelOffsetY = itemdefyogipic1111.modelOffsetY;
-				itemDef.modelZoom = itemdefyogipic1111.modelZoom;
-				itemDef.rotationY = itemdefyogipic1111.rotationY;
-				itemDef.rotationX = itemdefyogipic1111.rotationX;
+				ItemDefinition itemdefyogipic11112 = ItemDefinition.get(15262);
+				itemDef.modelID = ItemDefinition.get(15262).modelID;
+				itemDef.modelOffsetX = ItemDefinition.get(15262).modelOffsetX;
+				itemDef.modelOffsetY = ItemDefinition.get(15262).modelOffsetY;
+				itemDef.modelZoom = ItemDefinition.get(15262).modelZoom;
+				itemDef.rotationY = ItemDefinition.get(15262).rotationY;
+				itemDef.rotationX = ItemDefinition.get(15262).rotationX;
 				itemDef.modelZoom = 2000;
 				itemDef.colorChange = new double[]{0.6, 0.1, 0.1};
 				break;

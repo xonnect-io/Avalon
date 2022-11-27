@@ -72,6 +72,9 @@ public class CombatRangedAmmo {
 						AmmunitionData.RUNE_ARROW, AmmunitionData.BROAD_ARROW, AmmunitionData.DRAGON_ARROW,
 						AmmunitionData.ZULRAH_SCALES, AmmunitionData.HAND_CANNON_SHOT },
 				RangedWeaponType.BSOAT),
+		SNOW(new int[] { 23361 },
+				new AmmunitionData[] { AmmunitionData.SNOW },
+				RangedWeaponType.SNOW),
 		ARMADYL_CROSSBOW(new int[] { 22034, 18799, 18358, 23066 },
 				new AmmunitionData[] { AmmunitionData.BRONZE_BOLT, AmmunitionData.OPAL_BOLT, AmmunitionData.IRON_BOLT,
 						AmmunitionData.JADE_BOLT, AmmunitionData.STEEL_BOLT, AmmunitionData.PEARL_BOLT,
@@ -344,6 +347,8 @@ public class CombatRangedAmmo {
 		RUNE_DART(new int[] { 811 }, -1, 231, 4, 33, 20, 20, 28),
 		DRAGON_DART(new int[] { 11230 }, -1, 226, 4, 33, 115, 20, 28),
 		DEATH_TOUCH(new int[] { 22006 }, -1, 226, 4, 33, 115, 20, 28),
+		SNOW(new int[] { 10501 }, -1, 1282, 4, 33, 115, 20, 28),
+
 		;
 
 		;
@@ -413,7 +418,8 @@ public class CombatRangedAmmo {
 		THROW(4, 3), DARK_BOW(5, 5),
 		HAND_CANNON(5, 4),
 		BLOWPIPE(4, 3),
-		BSOAT(8, 1);
+		BSOAT(8, 1),
+		SNOW(8, 1);
 
 		RangedWeaponType(int distanceRequired, int attackDelay) {
 			this.distanceRequired = distanceRequired;

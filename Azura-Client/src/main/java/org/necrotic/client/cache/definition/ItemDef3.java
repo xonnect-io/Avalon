@@ -389,14 +389,6 @@ public class ItemDef3 {
 				itemDef.name = "Autumn Coronet";
 				itemDef.rdc2 = 59664;
 				break;
-			case 23371:
-				itemDef.copyItem(4882);
-				itemDef.name = "Blood warrior helm";
-				itemDef.rdc2 = 37664;
-				itemDef.modelID = 19520;
-				itemDef.maleEquip1 = 19520;
-				itemDef.femaleEquip1 = 19520;
-				break;
 
 			case 23439:
 				itemDef.copyItem(4882);

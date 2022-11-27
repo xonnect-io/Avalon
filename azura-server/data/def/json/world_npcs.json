@@ -1,5 +1,173 @@
 [
   {
+    "npc-id": 28,
+    "face": "EAST",
+    "position": { "x": 2778, "y": 4080, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 4601,
+    "face": "EAST",
+    "position": { "x": 2778, "y": 4082, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 3089,
+    "face": "EAST",
+    "position": { "x": 2778, "y": 4084, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9222,
+    "face": "SOUTH",
+    "position": { "x": 2778, "y": 4086, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 5838,
+    "face": "SOUTH",
+    "position": { "x": 2780, "y": 4086, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 5604,
+    "face": "SOUTH",
+    "position": { "x": 2782, "y": 4086, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 241,
+    "face": "SOUTH",
+    "position": { "x": 2784, "y": 4086, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 4285,
+    "face": "SOUTH",
+    "position": { "x": 2786, "y": 4086, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 802,
+    "face": "SOUTH",
+    "position": { "x": 2788, "y": 4086, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 3373,
+    "face": "SOUTH",
+    "position": { "x": 2790, "y": 4086, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9015,
+    "face": "WEST",
+    "position": { "x": 2789, "y": 4063, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 1921,
+    "face": "SOUTH",
+    "position": { "x": 2766, "y": 4070, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 942,
+    "face": "SOUTH",
+    "position": { "x": 2764, "y": 4060, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 925,
+    "face": "NORTH",
+    "position": { "x": 2785, "y": 4052, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 9000,
+    "face": "NORTH",
+    "position": { "x": 2783, "y": 4052, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 1821,
+    "face": "NORTH",
+    "position": { "x": 2791, "y": 4053, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 2899,
+    "face": "NORTH",
+    "position": { "x": 2804, "y": 4065, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 1541,
+    "face": "EAST",
+    "position": { "x": 2798, "y": 4069, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 6040,
+    "face": "EAST",
+    "position": { "x": 2779, "y": 4063, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 961,
+    "face": "WEST",
+    "position": { "x": 2790, "y": 4084, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 2676,
+    "face": "WEST",
+    "position": { "x": 2790, "y": 4082, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 4651,
+    "face": "WEST",
+    "position": { "x": 2790, "y": 4080, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 741,
+    "face": "SOUTH",
+    "position": { "x": 2782, "y": 4070, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
+    "npc-id": 2538,
+    "face": "SOUTH",
+    "position": { "x": 2786, "y": 4070, "z": 0 },
+    "walking-policy": {"coordinate": false,"radius": 1
+    }
+  },
+  {
     "npc-id": 10002,
     "face": "WEST",
     "position": { "x": 2542, "y": 2662, "z": 4 },

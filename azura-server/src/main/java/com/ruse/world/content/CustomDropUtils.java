@@ -61,6 +61,12 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23454)) { //Turkey Costume
             percentBoost += 25;
         }
+        if (player.getEquipment().contains(17746)) { //Elf Costume
+            percentBoost += 25;
+        }
+        if (player.getEquipment().contains(17778)) { //Krampus Costume
+            percentBoost += 30;
+        }
         if (player.getEquipment().contains(23403)) { //Kismet Costume
             percentBoost += 25;
         }
@@ -219,6 +225,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(18818)) { //Collecter ring III
             percentBoost += 30;
         }
+        if (player.getEquipment().contains(23359)) { //Reindeer Ring
+            percentBoost += 25;
+        }
         if (player.getEquipment().contains(20093)) { //Cursed ring
             percentBoost += 20;
         }
@@ -356,6 +365,9 @@ public class CustomDropUtils {
         Capes slot
          */
         if (player.getEquipment().contains(23268)) { //Cloak of Summer
+            percentBoost += 50;
+        }
+        if (player.getEquipment().contains(23358)) { //Cloak of Winter
             percentBoost += 50;
         }
         if (player.getEquipment().contains(23424)) {//Diyos cape
@@ -792,6 +804,10 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(22380)) { //Bright spooky aura
             percentBoost += 25;
         }
+
+        if (player.getEquipment().contains(23357)) { //Christmas aura
+            percentBoost += 25;
+        }
         if (player.getEquipment().contains(22374)) { //Chucky Doll
             percentBoost += 25;
         }
@@ -803,6 +819,10 @@ public class CustomDropUtils {
         }
         if (player.getEquipment().contains(22379)) { //Hween bow
             percentBoost += 30;
+        }
+
+        if (player.getEquipment().contains(23361)) { //Santa's Blaster
+            percentBoost += 25;
         }
         if (player.getEquipment().contains(23440)) {//Purple Pennywise mask
             percentBoost += 20;
@@ -1083,6 +1103,10 @@ public class CustomDropUtils {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY.npcId) {
                 percentBoost += 60;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.KRAMPUS_PET.npcId) {
+                percentBoost += 75;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY1.npcId) {
