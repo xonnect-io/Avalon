@@ -57,17 +57,17 @@ public class BestItems {
 			add(22076);
 			add(21604);
 			add(17694);
-			add(17694);
-			add(17694);
-			add(17694);
-			add(17694);
-			add(17694);
-			add(17694);
-			add(17694);
-			add(17694);
-			add(17694);
 
-			
+
+
+
+			add(23357); //christmas items
+			add(23360); //christmas items
+			add(23361); //christmas items
+			add(23359); //christmas items
+			add(23358); //christmas items
+
+
 			add(17694);
 			add(17696);
 			add(21603);

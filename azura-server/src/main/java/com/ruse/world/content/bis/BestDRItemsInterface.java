@@ -22,6 +22,12 @@ public class BestDRItemsInterface {
             add(23423); //add custom items ids here
             add(23424); //add custom items ids here
 
+            add(23357); //christmas items
+            add(23360); //christmas items
+            add(23361); //christmas items
+            add(23359); //christmas items
+            add(23358); //christmas items
+
             add(15870);
             add(15872);
             add(15874);

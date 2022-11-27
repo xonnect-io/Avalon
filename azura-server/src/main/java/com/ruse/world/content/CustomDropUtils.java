@@ -801,7 +801,7 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(22376)) { //Festival boots
             percentBoost += 25;
         }
-        if (player.getEquipment().contains(22380)) { //Bright spooky aura
+        if (player.getEquipment().contains(22380)) { //Halloween aura
             percentBoost += 25;
         }
 

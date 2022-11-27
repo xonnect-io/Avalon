@@ -67,6 +67,11 @@ public class BestItemsInterface {
             add(14051);
             add(14050);
 
+            add(23357); //christmas items
+            add(23360); //christmas items
+            add(23361); //christmas items
+            add(23359); //christmas items
+            add(23358); //christmas items
 
             add(17700);//Wrath Hammer Offhand
             add(18881);//Supreme Boots

@@ -411,10 +411,16 @@ public class ItemDef2 {
 				break;
 			case 22380:
 				itemDef.copyItem(12608);
-				itemDef.name = "Bright Spooky Aura";
-				itemDef.modelID = 19756;
-				itemDef.femaleEquip1 = 19756;
-				itemDef.maleEquip1 = 19756;
+				itemDef.name = "Spooky Aura";
+				itemDef.modelID = 19755;
+				itemDef.femaleEquip1 = 19755;
+				itemDef.maleEquip1 = 19755;
+				itemDef.modelZoom = 3900;
+				itemDef.rotationX = 0;
+				itemDef.rotationY = 217;
+				itemDef.rotationZ = 9;
+				itemDef.modelOffsetX = -3;
+				itemDef.modelOffsetY = 23;
 				break;
 			case 22375:
 				itemDef21 = ItemDefinition.get(18953);

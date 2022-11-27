@@ -46,7 +46,11 @@ public class BestDRItems {
 			add(11308);
 			add(11303);
 
-
+			add(23357); //christmas items
+			add(23360); //christmas items
+			add(23361); //christmas items
+			add(23359); //christmas items
+			add(23358); //christmas items
 
 
 			add(5424);
