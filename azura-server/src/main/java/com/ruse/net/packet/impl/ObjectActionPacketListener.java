@@ -2383,7 +2383,22 @@ public class ObjectActionPacketListener implements PacketListener {
                                 CurseHandler.startDrain(player);
                                 PrayerHandler.startDrain(player);
                                 break;
-
+                                case -24329:
+                                if (player.getInventory().contains(TreasureHunter.MASTER_KEY.getId())) {
+                                    int amountDone = 0;
+                                    for (int i = 0; i < player.getInventory().getAmount(TreasureHunter.MASTER_KEY.getId()); i++) {
+                                        if (player.getInventory().getFreeSlots() == 0) {
+                                            player.sendMessage("Create more space in your inventory before continuing.");
+                                            break;
+                                        }
+                                        amountDone++;
+                                        TreasureHunter.handleRewards(player);
+                                    }
+                                    player.getInventory().delete(TreasureHunter.MASTER_KEY.getId(), amountDone);
+                                } else {
+                                    player.sendMessage("You don't have the Master Key.");
+                                }
+                                break;
                             case 27306:
                                 if (player.getGuardianBonus() < 1) {
                                     player.getPacketSender()
@@ -3051,6 +3066,7 @@ public class ObjectActionPacketListener implements PacketListener {
                     return;
                 }
                 switch (id) {
+
                     case 26945:
                         player.setDialogueActionId(1002);
                         DialogueManager.start(player, 216);

@@ -514,7 +514,7 @@ public final class ObjectDefinition {
 			definition.modelSizeX = 200;
 			definition.objectModelIDs = new int[]{100236};
 			definition.name = "Treasure Hunter Chest";
-			definition.actions = new String[]{"Open", null, null, null, null};
+			definition.actions = new String[]{"Open", "Open-all", null, null, null};
 		}
 
 		if (definition.type == 13192) {

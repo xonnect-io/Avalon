@@ -821,6 +821,9 @@ public class CustomDropUtils {
             percentBoost += 30;
         }
 
+        if (player.getEquipment().contains(23360)) { //Santa's Maul
+            percentBoost += 25;
+        }
         if (player.getEquipment().contains(23361)) { //Santa's Blaster
             percentBoost += 25;
         }

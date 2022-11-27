@@ -120,7 +120,7 @@ public class MaxUpgradesInterface {
         CELESTIAL_BODY(100,new Item(23444, 1),new Item(23313, 1),new Item(23316, 1),new Item(23319, 1),new Item(22950, 1),new Item(23273, 25_000)),
         CELESTIAL_LEGS(100,new Item(23445, 1),new Item(23314, 1),new Item(23317, 1),new Item(23320, 1),new Item(22950, 1),new Item(23273, 25_000)),
         CELESTIAL_ATTACHMENT(100,new Item(22950, 1),new Item(10949, 10),new Item(22112, 10),new Item(23239, 10),new Item(23273, 25_000)),
-        ELF_OUTFIT(100,new Item(17746, 1),new Item(23528, 1),new Item(23529, 1),new Item(23530, 1),new Item(23531, 1),new Item(23532, 1),new Item(23488, 2500)),
+        //ELF_OUTFIT(100,new Item(17746, 1),new Item(23528, 1),new Item(23529, 1),new Item(23530, 1),new Item(23531, 1),new Item(23532, 1),new Item(23488, 2500)),
 
 
 
