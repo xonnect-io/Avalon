@@ -707,6 +707,10 @@ public class PlayerLoading {
             if (reader.has("seasonpass-tier")) {
                 player.getSeasonPass().setTier(reader.get("seasonpass-tier").getAsInt());
             }
+
+            if (reader.has("seasonpass-season")) {
+                player.getSeasonPass().setCurrentSeason(reader.get("seasonpass-season").getAsInt());
+            }
             if (reader.has("stream-count")) {
                 player.getPointsHandler().setStreamCount(reader.get("stream-count").getAsInt(), false);
             }
@@ -714,6 +718,7 @@ public class PlayerLoading {
                 player.set500kcforseasonpass(reader.get("seasonpass-kc").getAsInt());
 
             }
+
             if (reader.has("pumpkins-collected")) {
                 player.setSoulInPouch(reader.get("pumpkins-collected").getAsInt());
 

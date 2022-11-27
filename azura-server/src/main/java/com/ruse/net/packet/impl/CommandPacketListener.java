@@ -1934,7 +1934,6 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("loadsp")) {
             PassRewards.init();
-
             for (Player p : World.getPlayers()) {
                 if (p != null)
                     p.getSeasonPass().handleLogin();
