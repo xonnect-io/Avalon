@@ -97,7 +97,7 @@ public class LeaderboardManager {
 
             if (Leaderboard.DATA.get(leaderboardViewing).containsKey(player.getUsername())) {
                 long entry = Leaderboard.DATA.get(leaderboardViewing).get(player.getUsername());
-                if (leaderboardViewing == LeaderboardData.DONATED)
+                if (leaderboardViewing == LeaderboardData.DONATED || leaderboardViewing == LeaderboardData.DONATIONS)
                     player.getPacketSender().sendString(139014, "Personal: $" + Misc.insertCommasToNumber(entry));
                 else if (leaderboardViewing == LeaderboardData.TIME_PLAYED)
                     player.getPacketSender().sendString(139014, "Personal: " + Misc.getHoursPlayed(entry));
@@ -117,7 +117,7 @@ public class LeaderboardManager {
                     break;
                 }
                 player.getPacketSender().sendString(139551 + (index * 3), "#" + (index + 1));
-                if (leaderboardViewing == LeaderboardData.DONATED)
+                if (leaderboardViewing == LeaderboardData.DONATED || leaderboardViewing == LeaderboardData.DONATIONS)
                     player.getPacketSender().sendString(139552 + (index * 3), "$" + Misc.insertCommasToNumber(entryValue));
                 else if (leaderboardViewing == LeaderboardData.TIME_PLAYED)
                     player.getPacketSender().sendString(139552 + (index * 3), "" + Misc.getHoursPlayed(entryValue));
@@ -166,7 +166,7 @@ public class LeaderboardManager {
 /*
         Leaderboard.DATA.get(LeaderboardData.TITLES_UNLOCKED).put(player.getUsername(), (long) player.getTitlesManager().getObtainedTitles().size());
 */
-        Leaderboard.DATA.get(LeaderboardData.DONATED).put(player.getUsername(), (long) player.getMonthlyDonationCount());
+        Leaderboard.DATA.get(LeaderboardData.DONATIONS).put(player.getUsername(), (long) player.getMonthlyDonationCount());
         Leaderboard.DATA.get(LeaderboardData.VOTES).put(player.getUsername(), (long) player.getMonthlyVoteCount ());
         Leaderboard.DATA.get(LeaderboardData.EASY_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getEasyTaskKC());
         Leaderboard.DATA.get(LeaderboardData.MED_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getMedTaskKC());
