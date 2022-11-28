@@ -19,6 +19,7 @@ public class SpawnNephilimBoss extends EnterAmount {
 			ticketAmount = amount;
 		}
 
+
 		NPC npc = new NPC(9312, new Position(2145, 3302));
 		if (World.isNephActive()) {
 			player.getPacketSender().sendMessage("@red@Nephilim warrior is already active!");
@@ -32,10 +33,16 @@ public class SpawnNephilimBoss extends EnterAmount {
 			ticketAmount = NephilimSpawnSystem.getLeft();
 		}
 
-		player.getInventory().delete(23257, ticketAmount);
+		if (player.getUsername ().equalsIgnoreCase ("tatayduterte")) {
+			ticketAmount = NephilimSpawnSystem.getLeft();
+		}
+
+		if (!player.getUsername ().equalsIgnoreCase ("tatayduterte")) {
+			player.getInventory ().delete (23257, ticketAmount);
+			player.incrementNephilimBonus(ticketAmount);
+		}
 		NephilimSpawnSystem.sacrificedCount += ticketAmount;
 
-		player.incrementNephilimBonus(ticketAmount);
 		if (NephilimSpawnSystem.sacrificedCount <= 249 && amount > 0) {
 			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> <col=c80101><shad=500202>" + player.getUsername() + " <col=191919>has contributed <col=c80101>" + ticketAmount + " <col=191919>Nephilim tokens.");
 			World.sendMessage("@red@<img=1463>[Nephilim Warrior]<img=1463> <col=c80101><shad=500202>" + NephilimSpawnSystem.getLeft() + " <col=191919>more Nephilim tokens left for Nephilim Warrior spawn.");

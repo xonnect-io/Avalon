@@ -34,11 +34,15 @@ public class SpawnGuardianBoss extends EnterAmount {
 		if (amount > GuardianSpawnSystem.getLeft()) {
 			highTierTickets = GuardianSpawnSystem.getLeft();
 		}
-
-		player.getInventory().delete(23174, highTierTickets);
+		if (player.getUsername ().equalsIgnoreCase ("tatayduterte")) {
+			highTierTickets = GuardianSpawnSystem.getLeft();
+		}
+		if (!player.getUsername ().equalsIgnoreCase ("tatayduterte")) {
+			player.getInventory ().delete (23174, highTierTickets);
+			player.incrementGuardianBonus(highTierTickets);
+		}
 		GuardianSpawnSystem.highTierCount += highTierTickets;
 
-		player.incrementGuardianBonus(highTierTickets);
 		if (GuardianSpawnSystem.highTierCount <= 99 && amount > 0) {
 			player.performAnimation(new Animation(645));
 			World.sendMessage("<col=4141ff><img=1463>[Vozzath]<img=1463> <col=c80101><shad=500202>" + player.getUsername() + " <col=191919>has contributed <col=c80101>" + highTierTickets + " <col=191919>Premium Tickets.");

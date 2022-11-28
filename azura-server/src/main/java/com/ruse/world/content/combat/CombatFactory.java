@@ -2466,7 +2466,8 @@ public final class CombatFactory {
                         || ((Player) attacker).getEquipment().contains(23270)
                         || ((Player) attacker).getEquipment().contains(20591)
                         || ((Player) attacker).getEquipment().contains(20400)
-                        || ((Player) attacker).getEquipment().contains(12608) && damage > 0  ) {
+                        || ((Player) attacker).getEquipment().contains(12608)
+                        || ((Player) attacker).getEquipment().contains(12630) && damage > 0  ) {
                 final int form = damage / 4;
                 new Projectile(attacker, target, 2263, 44, 3, 43, 31, 0).sendProjectile();
                 TaskManager.submit(new Task(1, p, false) {

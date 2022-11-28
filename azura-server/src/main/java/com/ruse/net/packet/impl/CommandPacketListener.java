@@ -1648,7 +1648,14 @@ public class CommandPacketListener implements PacketListener {
 
     private static void administratorCommands(final Player player, String[] command, String wholeCommand) {
 
+        if (command[0].equalsIgnoreCase("addv")) {
+            int amt = Integer.parseInt(command[1]);
+            doMotivote.setVoteCount(doMotivote.getVoteCount() + amt);
+            if (doMotivote.getVoteCount() >= 40) {
+                VoteBossDrop.handleSpawn();
+            }
 
+        }
 
         if (command[0].equalsIgnoreCase("checkbank")) {
             Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
@@ -3177,15 +3184,7 @@ public class CommandPacketListener implements PacketListener {
         }
 
 
-        if (command[0].equalsIgnoreCase("addv")) {
-            int amt = Integer.parseInt(command[1]);
-            doMotivote.setVoteCount(doMotivote.getVoteCount() + amt);
 
-            if (doMotivote.getVoteCount() >= 40) {
-                VoteBossDrop.handleSpawn();
-            }
-
-        }
 
         if (command[0].equalsIgnoreCase("gm")) {
             String plrName = wholeCommand
