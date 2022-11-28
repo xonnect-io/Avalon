@@ -272,6 +272,8 @@ public class Store implements Runnable {
                 player.setAmountDonatedToday((int)amount);
                 checkForRankUpdate(player);
                 PlayerPanel.refreshPanel(player);
+
+                player.setMonthlyDonationCount(player.getMonthlyDonationCount () + (int)amount);
                 player.getInventory().add(23257, (int) amount);
                 player.sendMessage("Thanks for donating!");
                 player.sendMessage("You are rewarded " + (int) amount + " Nephilim Tokens!");

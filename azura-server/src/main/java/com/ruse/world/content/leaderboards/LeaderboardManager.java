@@ -166,6 +166,8 @@ public class LeaderboardManager {
 /*
         Leaderboard.DATA.get(LeaderboardData.TITLES_UNLOCKED).put(player.getUsername(), (long) player.getTitlesManager().getObtainedTitles().size());
 */
+        Leaderboard.DATA.get(LeaderboardData.DONATED).put(player.getUsername(), (long) player.getMonthlyDonationCount());
+        Leaderboard.DATA.get(LeaderboardData.VOTES).put(player.getUsername(), (long) player.getMonthlyVoteCount ());
         Leaderboard.DATA.get(LeaderboardData.EASY_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getEasyTaskKC());
         Leaderboard.DATA.get(LeaderboardData.MED_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getMedTaskKC());
         Leaderboard.DATA.get(LeaderboardData.HARD_SLAYER_TASKS).put(player.getUsername(), (long) player.getSlayer().getHardTaskKC());

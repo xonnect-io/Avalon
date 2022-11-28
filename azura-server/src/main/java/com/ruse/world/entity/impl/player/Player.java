@@ -4764,6 +4764,14 @@ End new teleport
 
     @Getter
     @Setter
+    private int monthlyVoteCount;
+
+    @Getter
+    @Setter
+    private int monthlyDonationCount;
+
+    @Getter
+    @Setter
     private int attemptDissolve;
 
     @Getter

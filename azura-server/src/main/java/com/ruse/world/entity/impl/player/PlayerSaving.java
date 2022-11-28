@@ -230,6 +230,8 @@ public class PlayerSaving {
 			object.addProperty("unlockedCosmetic", new Boolean(player.isCosmeticUnlocked()));
 			object.addProperty("mini-lucifer-killcount", player.getPointsHandler().getMiniLuciferkillcount());
 			object.addProperty("lucifer-killcount", player.getPointsHandler().getLuciferkillcount());
+			object.addProperty("monthly-vote-count", player.getMonthlyVoteCount());
+			object.addProperty("monthly-donator-count", player.getMonthlyDonationCount());
 			object.addProperty("celestial-member", new Boolean(player.getCelestial()));
 			object.addProperty("supreme-member", new Boolean(player.getSupreme()));
 			object.addProperty("supreme-charges", player.getSupremeCharges());

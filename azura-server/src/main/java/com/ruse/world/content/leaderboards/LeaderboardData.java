@@ -13,6 +13,8 @@ public enum LeaderboardData {
     NPC_KILLCOUNT(MAIN,  "NPC Killcount"),
     TIME_PLAYED(MAIN, "Time Played"),
     DONATED(MAIN, "Donator Rank"),
+    VOTES(MAIN, "Top Monthly Voters"),
+    DONATIONS(MAIN, "Top Monthly Contributors"),
     COLLECTION_LOGS_COMPLETED(MAIN, "Collection Logs Completed"),
     DAILY_TASKS_COMPLETED(MAIN, "Daily Tasks Completed"),
    // TITLES_UNLOCKED(MAIN, "Titles Unlocked"),

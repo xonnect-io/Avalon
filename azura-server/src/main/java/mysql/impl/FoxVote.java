@@ -120,6 +120,8 @@ public class FoxVote implements Runnable {
 
 					player.setLastVotedDay(day);
 
+					player.setMonthlyVoteCount(player.getMonthlyVoteCount () + 1);
+
 					World.sendMessage("<img=11>" + player.getUsername() + " has voted for " + amount
 							+ " points. ::vote now to support the server.");
 					player.getVotingStreak().vote();

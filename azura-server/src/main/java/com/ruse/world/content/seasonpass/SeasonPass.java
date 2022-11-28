@@ -168,6 +168,8 @@ public class SeasonPass {
             currentSeason = SEASON;
             player.getMembershipManager().reset();
             player.getMembershipManager().reset();
+            player.setMonthlyVoteCount(0);
+            player.setMonthlyDonationCount(0);
         }
         if (this.tier <= 0)
             this.tier = 1;
