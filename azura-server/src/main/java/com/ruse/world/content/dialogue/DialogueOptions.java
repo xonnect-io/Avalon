@@ -1264,7 +1264,9 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
-
+                case 10000:
+                    player.getPlayerOwnedShopManager().handleStore((int)player.getPosInfo()[0],(int)player.getPosInfo()[1],(int)player.getPosInfo()[2],player.getPosInfo()[3]);
+                    break;
                 case 100000:
                     player.getPacketSender().sendInterfaceRemoval();
                     TeleportHandler.teleportPlayer(player, new Position(2935, 4101), TeleportType.NORMAL);
