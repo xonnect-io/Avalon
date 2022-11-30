@@ -59,7 +59,9 @@ import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
+import com.ruse.world.content.raids.elders.TelosLoot;
 import com.ruse.world.content.raids.legends.Legends;
+import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.seasonpass.PassRewards;
 import com.ruse.world.content.serverperks.ServerPerks;
@@ -127,7 +129,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(2929, 4116);
+            Position pos = GameSettings.DEFAULT_POSITION;
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you home!");
         }
@@ -290,13 +292,35 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("hiddenturkeyloc")) {
             player.sendMessage(TurkeySpawns.getCurrent().getPosition().toString());
         }
-        if (command[0].equalsIgnoreCase("event")) {
+    /*    if (command[0].equalsIgnoreCase("event")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
             Position pos = new Position(2910, 4699);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+        }*/
+
+        if (command[0].equalsIgnoreCase("event")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(2528, 2656);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+        }
+
+        if (command[0].equalsIgnoreCase("event2")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(2528, 2656, 4);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
         }
@@ -313,8 +337,8 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("@red@<shad=1>Vozzath @yel@" + GuardianSpawnSystem.getLeft() + " tickets left");
             player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft() + " tokens left");
             player.getPacketSender().sendMessage((FantasyZone.gameActive == false
-                    ? "@red@<shad=1>Fantasy Realm: @yel@" + FantasyZone.getTimeLeft() : "@red@<shad=1> Fantasy Realm : @yel@Open"));
-            player.getPacketSender().sendMessage("@red@<shad=1>Thanksgiving turkey: @yel@" + HolidayBossEvent.getTimeLeft());
+                    ? "@red@<shad=1>Fantasy Realm: @yel@" + FantasyZone.getTimeLeft() : "@red@<shad=1>Fantasy Realm : @yel@Open"));
+            player.getPacketSender().sendMessage("@red@<shad=1>Krampus: @yel@" + HolidayBossEvent.getTimeLeft());
 
         }
         if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
@@ -329,7 +353,6 @@ public class CommandPacketListener implements PacketListener {
                 return;
             }
             Position position = new Position(3109, 5530, 0);
-            player.sendMessage("@blu@Current Hellraiser count: @red@" + HellraiserSystem.npckills);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
 
         }
@@ -485,7 +508,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(2911, 4111, 0);
+            Position position = new Position(2784, 4082, 0);
             TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
         }
 
@@ -1963,6 +1986,10 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("grantm")) {
             player.getSeasonPass().grantMembership();
         }
+        if (command[0].equalsIgnoreCase("tc")) {
+            TelosLoot.handleLoot(player, RaidDifficulty.ADVANCED);
+            player.getPacketSender().sendMessage("Your rewards were added to your Telos Coffer");
+        }
         if (command[0].equalsIgnoreCase ("resetsanta")) {
         player.sendMessage("@red@You managed to claim all the rewards, The Christmas Box has reset");
         player.getEventChestHandler().TIER_1_REWARDS.clear();
@@ -1980,16 +2007,6 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("prevxmas")) {
             EventChestInterface.openInterface(player);
-        }
-        if (command[0].equalsIgnoreCase("xevent")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            Position pos = new Position(2528, 2656);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
         }
 
         if (command[0].equalsIgnoreCase("addxp")) {

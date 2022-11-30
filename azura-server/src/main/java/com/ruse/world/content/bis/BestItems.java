@@ -61,12 +61,20 @@ public class BestItems {
 
 
 
-			add(23357); //christmas items
-			add(23360); //christmas items
-			add(23361); //christmas items
-			add(23359); //christmas items
-			add(23358); //christmas items
-
+			add (13289); //Elidinis' ward
+			add (13293); //Elidinis' ward (f)
+			add (13295); //Elidinis' ward (or)
+			add (13297); //Lightbearer
+			add (13662); //Osmumten's fang
+			add (13664); //Osmumten's fang (or)
+			add (18485); //Tumeken's shadow (charged)
+			add (18487); //Tumeken's shadow (uncharged)
+			add (13273); //Masori Mask
+			add (13274); //Masori Body
+			add (13275); //Masori Chaps
+			add (13841); //Masori Mask (f)
+			add (13842); //Masori Body (f)
+			add (13843); //Masori Chaps (f)
 
 			add(17694);
 			add(17696);
@@ -142,7 +150,7 @@ public class BestItems {
 	}
 	public void open() {
 		definitionIndex = 0;
-		definitions.sort(new sortDR(definitionIndex).reversed());
+		definitions.sort(new sortDefinitions(definitionIndex).reversed());
 		displayBonuses();
 		player.getPA().sendInterface(100000);
 	}
@@ -153,7 +161,7 @@ public class BestItems {
 
 	private void sortDefinitions(int index) {
 		definitionIndex = index;
-		definitions.sort(new sortDR(definitionIndex).reversed());
+		definitions.sort(new sortDefinitions(definitionIndex).reversed());
 
 		for (int i = 0; i < 5; i++) {
 			player.getPacketSender().sendString(100010 + i, (definitionIndex == i ? "@whi@Check " : "Check ") + text[i]);
@@ -166,7 +174,7 @@ public class BestItems {
 		player.getPacketSender().sendString(100024, (definitionIndex == 13 ? "@whi@Check " : "Check ") + text[10]);
 
 	}
-	
+
 	private void displayBonuses() {
 		int bonusRank = 100102;
 		int name = 100103;
@@ -188,18 +196,18 @@ public class BestItems {
 		}
 		return false;
 	}
-	
+
 	private final Player player;
 }
- class sortDefinitions implements Comparator<ItemDefinition> {
-	 private final int bonusIndex;
-	 public sortDefinitions(int bonusIndex) {
-		 this.bonusIndex = bonusIndex;
-	 }
+class sortDefinitions implements Comparator<ItemDefinition> {
+	private final int bonusIndex;
+	public sortDefinitions(int bonusIndex) {
+		this.bonusIndex = bonusIndex;
+	}
 	@Override
 	public int compare(ItemDefinition def, ItemDefinition other) {
-		
+
 		return (int) (def.getBonus()[bonusIndex] - other.getBonus()[bonusIndex]);
 	}
-	
+
 }

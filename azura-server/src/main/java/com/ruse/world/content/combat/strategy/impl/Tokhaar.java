@@ -82,13 +82,13 @@ public class Tokhaar implements CombatStrategy {
 
     private void tileAttack(Player player, NPC npc, Position chosenTile) {
         npc.forceChat("You will fall from my powers!");
-        new Projectile (npc, player, 1650, 45, 3, 85, 45, 0).sendProjectile();
+        player.getPacketSender().sendGlobalGraphic(new Graphic(626), chosenTile);
         TaskManager.submit(new Task(3, false) {
             @Override
             protected void execute() {
                 if (player.getPosition().equals(chosenTile)) {
                     player.performGraphic(new Graphic (1629));
-                    player.dealDamage(new Hit (Misc.getRandom (100,500), Hitmask.RED, CombatIcon.MELEE));
+                    player.dealDamage(new Hit (Misc.getRandom (600,800), Hitmask.RED, CombatIcon.MELEE));
                     System.out.println("Tile was " + player.getPosition() + " | " + chosenTile);
                 }
                 stop();

@@ -22,11 +22,20 @@ public class BestDRItemsInterface {
             add(23423); //add custom items ids here
             add(23424); //add custom items ids here
 
-            add(23357); //christmas items
-            add(23360); //christmas items
-            add(23361); //christmas items
-            add(23359); //christmas items
-            add(23358); //christmas items
+            add (13289); //Elidinis' ward
+            add (13293); //Elidinis' ward (f)
+            add (13295); //Elidinis' ward (or)
+            add (13297); //Lightbearer
+            add (13662); //Osmumten's fang
+            add (13664); //Osmumten's fang (or)
+            add (18485); //Tumeken's shadow (charged)
+            add (18487); //Tumeken's shadow (uncharged)
+            add (13273); //Masori Mask
+            add (13274); //Masori Body
+            add (13275); //Masori Chaps
+            add (13841); //Masori Mask (f)
+            add (13842); //Masori Body (f)
+            add (13843); //Masori Chaps (f)
 
             add(15870);
             add(15872);

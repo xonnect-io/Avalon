@@ -184,11 +184,41 @@ public class ItemDef4 {
 				case 3696:
 				itemDef.name = "Necromancer DR Booster";
 				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				itemDef.modelID = 20852;
+				itemDef.rotationX = 316;
+				itemDef.rotationY = 1472;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelOffsetX = -3;
+				itemDef.rotationZ = 1953;
+				itemDef.modelZoom = 750;
+				itemDef.oldColors = new int[] {1374, 1500, 962, 931, 945, 922};
+				itemDef.newColors = new int[] {-59781, -59760, -59794, -60244, -60120, -59738};
 				break;
+			case 3698:
+				itemDef.name = "Elder DR Booster";
+				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				itemDef.modelID = 20852;
+				itemDef.rotationX = 316;
+				itemDef.rotationY = 1472;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelOffsetX = -3;
+				itemDef.rotationZ = 1953;
+				itemDef.modelZoom = 750;
+				itemDef.oldColors = new int[] {1374, 1500, 962, 931, 945, 922};
+				itemDef.newColors = new int[] {-50244, -50120, -50738, -50781, -50760, -50794};
+				break;
+
 
 			case 18649:
 				itemDef.name = "Suffering Booster";
 				itemDef.actions = new String[]{"Claim", null, null, null, "Drop"};
+				itemDef.modelID = 20852;
+				itemDef.rotationX = 316;
+				itemDef.rotationY = 1472;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelOffsetX = -3;
+				itemDef.rotationZ = 1953;
+				itemDef.modelZoom = 750;
 				break;
 
 			case 23552:
@@ -1286,32 +1316,15 @@ public class ItemDef4 {
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
 			case 22113:
-				itemDef.copyItem(11235);
-				itemDef.name = "Legends Dark Bow";
-				itemDef.modelID = 17416;
-				itemDef.femaleEquip1 = 17460;
-				itemDef.maleEquip1 = 17460;
-				itemDef.modelOffsetX = 15;
-				itemDef.modelOffsetY = -15;
-				itemDef.modelZoom = 3000;
-				itemDef.rotationY = 565;
-				itemDef.rotationX = 0;
-				itemDef.rotationZ = 0;
-				itemDef.rdc2 = 00000001;
+				itemDef.copyItem(5012);
+				itemDef.name = "Dark Twisted bow";
+				itemDef.colorChange = new double[]{0.6, 0.6, 0.6};
 				break;
 				
 			case 22114:
-				itemDef.name = "Legends Dark Staff";
-				itemDef.modelID = 17362;
-				itemDef.maleEquip1 = 17369;
-				itemDef.femaleEquip1 = 17369;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 4;
-				itemDef.modelZoom = 2913;
-				itemDef.rotationY = 565;
-				itemDef.rotationX = 1015;
-				itemDef.rotationZ = 0;
-				itemDef.rdc2 = 00000001;
+				itemDef.copyItem(17011);
+				itemDef.name = "Dark Sanguinesti Staff";
+				itemDef.colorChange = new double[]{0.6, 0.6, 0.6};
 				break;
 				
 			case 22115:
@@ -7782,69 +7795,34 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				break;
 			case 5012:
-				itemDef.copyItem(11235);
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.name = "Legends Bow";
-				itemDef.modelID = 17416;
-				itemDef.femaleEquip1 = 17460;
-				itemDef.maleEquip1 = 17460;
-				itemDef.modelOffsetX = 15;
-				itemDef.modelOffsetY = -15;
-				itemDef.modelZoom = 3000;
-				itemDef.rotationY = 565;
-				itemDef.rotationX = 0;
-				itemDef.rotationZ = 0;
+				itemDef.name = "Legends Twisted Bow";
+				ItemDefinition tbow = ItemDefinition.get(1419);
+				// itemDef.modelID = itemDef2.modelID;
+				itemDef.modelID = 65324;
+				itemDef.femaleEquip1 = 65325;
+				itemDef.maleEquip1 = 65325;
+				itemDef.actions = tbow.actions;
+				itemDef.modelOffsetX = tbow.modelOffsetX;
+				itemDef.modelOffsetY = tbow.modelOffsetY;
+				itemDef.modelZoom = 2000;
+				itemDef.rotationY = tbow.rotationY;
+				itemDef.rotationX = tbow.rotationX;
+				itemDef.stackable = false;
 				break;
 			case 23226:
-				itemDef.copyItem(11235);
-				itemDef.name = "Blood Gun";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 19555;
-				itemDef.femaleEquip1 = 19555;
-				itemDef.maleEquip1 = 19555;
-				itemDef.modelOffsetX = 82;
-				itemDef.modelOffsetY = 105;
-				itemDef.modelZoom = 1017;
-				itemDef.rotationY = 348;
-				itemDef.rotationX = 878;
-				itemDef.rotationZ = 1417;
+				itemDef.copyItem(5012);
+				itemDef.name = "Blood Twisted bow";
+				itemDef.rdc3 = 750;
 				break;
 			case 23227:
-				itemDef.copyItem(22114);
-				itemDef.name = "Blood Staff";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 19556;
-				itemDef.maleEquip1 = 19556;
-				itemDef.femaleEquip1 = 19556;
-				itemDef.modelOffsetX = -113;
-				itemDef.modelOffsetY = -26;
-				itemDef.modelZoom = 2965;
-				itemDef.rotationY = 480;
-				itemDef.rotationX = 1261;
-				itemDef.rotationZ = 200;
+				itemDef.copyItem(17011);
+				itemDef.name = "Blood Sanguinesti Staff";
+				itemDef.rdc2 = 800;
 				break;
 			case 5011:
-				itemDef.copyItem(11235);
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.name = "Legends Light Bow";
-				itemDef.modelID = 17416;
-				itemDef.femaleEquip1 = 17460;
-				itemDef.maleEquip1 = 17460;
-				itemDef.modelOffsetX = 15;
-				itemDef.modelOffsetY = -15;
-				itemDef.modelZoom = 3000;
-				itemDef.rotationY = 565;
-				itemDef.rotationX = 0;
-				itemDef.rotationZ = 0;
-				itemDef.rdc2 = 11000000;
+				itemDef.copyItem(5012);
+				itemDef.name = "Light Twisted bow";
+				itemDef.rdc2 = 888833;
 				break;
 			case 23228:
 				itemDef.copyItem(11235);
@@ -8005,38 +7983,25 @@ public class ItemDef4 {
 
 				break;
 			case 17011:
-				itemDef.copyItem(22114);
-				itemDef.name = "Legends Staff";
+				itemDef.name = "Legends Sanguinesti Staff";
 				itemDef.actions = new String[5];
 				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 17362;
-				itemDef.maleEquip1 = 17369;
-				itemDef.femaleEquip1 = 17369;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 4;
-				itemDef.modelZoom = 2913;
-				itemDef.rotationY = 565;
-				itemDef.rotationX = 1015;
+				itemDef.actions[4] = "Destroy";
+				itemDef.modelID = 99513;
+				itemDef.maleEquip1 = 99506;
+				itemDef.femaleEquip1 = 99506;
+				itemDef.modelZoom = 2238;
+				itemDef.rotationX = 1059;
+				itemDef.rotationY = 525;
 				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -3;
+				itemDef.modelOffsetY = 0;
 				break;
 
 			case 17013:
-				itemDef.copyItem(22114);
-				itemDef.name = "Legends Light Staff";
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop";
-				itemDef.modelID = 17362;
-				itemDef.maleEquip1 = 17369;
-				itemDef.femaleEquip1 = 17369;
-				itemDef.modelOffsetX = 0;
-				itemDef.modelOffsetY = 4;
-				itemDef.modelZoom = 2913;
-				itemDef.rotationY = 565;
-				itemDef.rotationX = 1015;
-				itemDef.rotationZ = 0;
-				itemDef.rdc2 = 11000000;
+				itemDef.copyItem(17011);
+				itemDef.name = "Light Sanguinesti Staff";
+				itemDef.rdc2 = 888833;
 				break;
 			case 8273:
 				itemDef.name = "Legends gloves";

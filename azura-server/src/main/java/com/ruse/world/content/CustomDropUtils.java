@@ -124,15 +124,37 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23443)) { //Fantasy helmet
             percentBoost += 35;
         }
-
         if (player.getEquipment().contains(23444)) { //Fantasy body
             percentBoost += 35;
         }
-
         if (player.getEquipment().contains(23445)) { //Fantasy legs
             percentBoost += 35;
         }
         //End Fantasy set
+
+        //Masori set
+        if (player.getEquipment().contains(13273)) { //Masori helmet
+            percentBoost += 35;
+        }
+        if (player.getEquipment().contains(13274)) { //Masori body
+            percentBoost += 35;
+        }
+        if (player.getEquipment().contains(13275)) { //Masori legs
+            percentBoost += 35;
+        }
+        //End Masori (f) set
+
+        //Masori (f) set
+        if (player.getEquipment().contains(13841)) { //Masori helmet (f)
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(13842)) { //Masori body (f)
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(13843)) { //Masori legs (f)
+            percentBoost += 40;
+        }
+        //End Masori set
 
         if (player.getPointsHandler().getTotalPrestiges() == 1)
             percentBoost += 5;
@@ -212,9 +234,11 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23280)) { //Celestial ring
             percentBoost += 75;
         }
-
         if (player.getEquipment().contains(23234)) { //Owner ring (u)
             percentBoost += 60;
+        }
+        if (player.getEquipment().contains(13297)) { //Lightbearer ring
+            percentBoost += 50;
         }
         if (player.getEquipment().contains(23231)) { //Owner ring
             percentBoost += 50;
@@ -438,6 +462,15 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(22117)) { //Zenyte shield
             percentBoost += 35;
         }
+        if (player.getEquipment().contains(13295)) { //Elidinis' ward (or)
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(13293)) { //Elidinis' ward (f)
+            percentBoost += 35;
+        }
+        if (player.getEquipment().contains(13289)) { //Elidinis' ward
+            percentBoost += 30;
+        }
         if (player.getEquipment().contains(18889)) { //Colossal Spirit shield
             percentBoost += 25;
         }
@@ -463,15 +496,43 @@ public class CustomDropUtils {
          /*
         Weapon slot
          */
+        if (player.getEquipment().contains(15874)) { //Diyos sword
+            percentBoost += 80;
+        }
+        if (player.getEquipment().contains(15870)) { //Diyos sword
+            percentBoost += 80;
+        }
+        if (player.getEquipment().contains(13664)) { //Osmumten's fang (or)
+            percentBoost += 80;
+        }
+        if (player.getEquipment().contains(18485)) { //Tumeken's shadow (charged)
+            percentBoost += 80;
+        }
+        if (player.getEquipment().contains(15872)) { //Diyos bow
+            percentBoost += 80;
+        }
+        if (player.getEquipment().contains(18487)) { //Tumeken's shadow (uncharged)
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(13662)) { //Osmumten's fang
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(23302)) { //Necromancer staff
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(17694)) { //Necromancer hammer
+            percentBoost += 75;
+        }
+        if (player.getEquipment().contains(23228)) { //Necromancer bow
+            percentBoost += 75;
+        }
         if (player.getEquipment().contains(23267)) { //Infernal Bow
             percentBoost += 50;
         }
         if (player.getEquipment().contains(23227)) { //Blood legends sword
             percentBoost += 40;
         }
-        if (player.getEquipment().contains(15874)) { //Diyos sword
-            percentBoost += 80;
-        }
+
         if (player.getEquipment().contains(8136)) { //Blood legends sword
             percentBoost += 40;
         }
@@ -483,21 +544,6 @@ public class CustomDropUtils {
         }
         if (player.getEquipment().contains(23551)) { //Necrotic longsword
             percentBoost += 30;
-        }
-        if (player.getEquipment().contains(15870)) { //Diyos sword
-            percentBoost += 80;
-        }
-        if (player.getEquipment().contains(17694)) { //Necromancer hammer
-            percentBoost += 75;
-        }
-        if (player.getEquipment().contains(23228)) { //Necromancer bow
-            percentBoost += 75;
-        }
-        if (player.getEquipment().contains(15872)) { //Diyos bow
-            percentBoost += 80;
-        }
-        if (player.getEquipment().contains(23302)) { //Necromancer staff
-            percentBoost += 75;
         }
         if (player.getEquipment().contains(23063)) { //Nephilim sword
             percentBoost += 40;

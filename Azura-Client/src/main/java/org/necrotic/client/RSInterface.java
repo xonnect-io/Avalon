@@ -1059,15 +1059,15 @@ public class RSInterface {
 		RSInterface tab = addInterface(interID);
 		int id = interID + 1;
 		int c = 0;
-		int x = 25;
+		int x = 2;
 		int y = 20;
-		tab.totalChildren(24);
-		addSpriteLoader(id, 1425);
+		tab.totalChildren(25);
+		addSpriteLoader(id, 1880);
 		tab.child(c++, id++, 0 + x, 0 + y);
 		addHoverButtonWSpriteLoader(id, 1238, 16, 16, "Close Window", 0, id + 1, 3);
-		tab.child(c++, id++, 440 + x, 3 + y);
+		tab.child(c++, id++, 486 + x, 3 + y);
 		addHoveredImageWSpriteLoader(id, 1239, 16, 16, id + 1);
-		tab.child(c++, id++, 440 + x, 3 + y);
+		tab.child(c++, id++, 486 + x, 3 + y);
 		id++;
 		addText(id, "Highest Bonuses", tda, 2, 16750623, true, true);
 		tab.child(c++, id++, 239 + x, 4 + y);
@@ -1107,6 +1107,7 @@ public class RSInterface {
 		}
 		y = 20;
 		tab.child(c++, 100050, 152 + x, 47 + y);
+		tab.child(c++, 100600, x + 448, y + 24);
 		interID = 100050;
 		RSInterface list = addTabInterface(interID);
 		list.totalChildren(450);
@@ -1133,6 +1134,22 @@ public class RSInterface {
 			dropGroup(id, 1, 1, 1, 1);
 			list.child(c++, id++, 108, y - 6);
 			y += 40;
+		}
+
+		interID = 100600;
+		RSInterface list2 = addTabInterface(interID);
+		list2.totalChildren(13);
+		list2.height = 264;
+		list2.width = 36;
+		list2.scrollMax = 360;
+		id = interID + 1;
+		y = 0;
+		c = 0;
+		int sprite = 1854;
+		for (j = 0; j < 13; j++) {
+			addConfigButtonWSpriteLoader(id++, interID, sprite++, sprite++, 28, 28, "Select Slot", j, 5, 4187);
+			list2.child(c++, id-1, 8, y);
+			y += 30;
 		}
 	}
 
@@ -4926,7 +4943,7 @@ public class RSInterface {
 		main.child(1, STARTING_POINT + 2, 336, 276);
 		main.child(2, STARTING_POINT + 3, 336, 276);
 		main.child(3, STARTING_POINT + 5, 369, 284);
-		main.child(4, STARTING_POINT + 6, 382, 231);
+		main.child(4, STARTING_POINT + 6, 385, 231);
 		main.child(5, STARTING_POINT + 20, 0, 87);
 		main.child(6, STARTING_POINT + 7, 40, 20);
 		main.child(7, STARTING_POINT + 8, 345, 68);
@@ -4954,7 +4971,7 @@ public class RSInterface {
 		RSInterface scroll = addInterface(STARTING_POINT + 20);
 		scroll.width = 289;
 		scroll.height = 215;
-		scroll.scrollMax = 626;
+		scroll.scrollMax = 670;
 
 		scroll.totalChildren(1);
 		scroll.child(0, STARTING_POINT + 21, 40, 5);

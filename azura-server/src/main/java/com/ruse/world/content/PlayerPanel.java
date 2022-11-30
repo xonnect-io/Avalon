@@ -53,7 +53,7 @@ public class PlayerPanel {
                 (FantasyZone.gameActive == false
                         ? "Fantasy Realm: @whi@" + FantasyZone.getTimeLeft() : "Fantasy Realm: @whi@Open"),
                 (HolidayBossEvent.bossAlive == false
-                        ? "Thanksgiving Turkey: @whi@" + HolidayBossEvent.getTimeLeft() : "Thanksgiving Turkey: @whi@Alive ::event"),
+                        ? "Krampus: @whi@" + HolidayBossEvent.getTimeLeft() : "Krampus: @whi@Alive ::event"),
 
         };
 

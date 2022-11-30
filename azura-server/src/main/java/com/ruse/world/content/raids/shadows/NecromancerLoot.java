@@ -31,7 +31,7 @@ public class NecromancerLoot {
         if (reward.isAnnounce()) {
             String message = "@blu@News: @red@" + player.getUsername() + " @blu@has received @red@"
                     + ItemDefinition.forId(reward.getId()).getName() + "@blu@ from the @red@Necromancer"
-                    + "@cya@ - <col=ff4f4f>KC: " + KillsTracker.getTotalKillsForNpc(10000, player);
+                    + "@cya@ - <col=ff4f4f>KC: " + KillsTracker.getTotalKillsForNpc(9894, player);
             World.sendMessage1(message);
         }
 

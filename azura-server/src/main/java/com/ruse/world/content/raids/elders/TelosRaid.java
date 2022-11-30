@@ -140,9 +140,17 @@ public class TelosRaid {
     public static void firstWave(TelosRaidParty party) {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
 
-            NPC npc = new NPC(9899, new Position(3360, 4053, party.getHeight()));
-            npc.setDefaultConstitution((int) ((double) (npc.getConstitution()  * (party.getDifficulty().ordinal() + 1))));
-            npc.setConstitution((int) ((double) (npc.getConstitution()  * (party.getDifficulty().ordinal() + 1))));
+        NPC npc = new NPC(9899, new Position(3360, 4053, party.getHeight()));
+
+        double hp = (npc.getConstitution() + ((party.getPlayers().size() - 1) * npc.getConstitution()));
+        if (party.getDifficulty() == RaidDifficulty.ADVANCED)
+            hp *= 2.5D;
+        /*
+        boss.setConstitution((long) hp);
+        boss.setDefaultConstitution((long) hp);
+        */
+            npc.setDefaultConstitution((int) hp);
+            npc.setConstitution((int) hp);
             npcs.add(npc);
         TaskManager.submit(new Task(5, false) {
 

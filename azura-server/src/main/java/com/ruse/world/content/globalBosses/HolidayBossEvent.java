@@ -22,7 +22,7 @@ public class HolidayBossEvent extends NPC {
     private static long massMessageTimer = 0;
 
     public static boolean bossAlive = false;
-    public static int NPC_ID = 8499;
+    public static int NPC_ID = 10005;
     public static long INTERVAL = TimeUnit.MINUTES.toMillis(45);
 
     public HolidayBossEvent(Position position) {
@@ -45,19 +45,21 @@ public class HolidayBossEvent extends NPC {
 
     public static void spawn() {
         if (bossAlive) {
-            World.sendBroadcastMessage("Thanksgiving Turkey has appeared ::event");
-            GameSettings.broadcastMessage = "Thanksgiving Turkey has appeared ::event";
+            World.sendBroadcastMessage("[Christmas] Krampus has appeared at ::event");
+            GameSettings.broadcastMessage = "[Christmas] Krampus has appeared at ::event";
             GameSettings.broadcastTime = 100;
             return;
         }
-        HolidayBossEvent instance = new HolidayBossEvent (new Position(2909, 4707, 0));
+        HolidayBossEvent instance = new HolidayBossEvent (new Position(2532, 2659, 0));
         World.register(instance);
         bossAlive = true;
 
-        String message = "Thanksgiving Turkey has appeared ::event";
-        World.sendMessage("<col=d9570a>[Thanksgiving Turkey]<shad=1> <col=c38e0e>Thanksgiving Turkey has appeared @bla@::event" );
-        World.sendBroadcastMessage("Thanksgiving Turkey has appeared ::event");
-        GameSettings.broadcastMessage = "Thanksgiving Turkey has appeared ::event";
+        String message = "[Christmas] Krampus has appeared at ::event";
+
+        World.sendMessage("<img=862><col=146b3a>[Christmas]<img=862> <col=bb2528>Krampus has appeared at<col=1c3c0d> ::event");
+
+        World.sendBroadcastMessage("[Christmas] Krampus has appeared at ::event");
+        GameSettings.broadcastMessage = "[Christmas] Krampus has appeared at ::event";
         GameSettings.broadcastTime = 100;
         for (Player players : World.getPlayers()) {
             if (players == null) {

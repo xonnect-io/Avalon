@@ -5604,6 +5604,20 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				definition.actions = new String[]{null, null, null, null, null};
 				break;
+
+			case 11812:
+				definition.name = "Tumeken's Guardian";
+				definition.npcModels = new int[] { 21698,21669 };
+				definition.standAnimation = 9655;
+				definition.npcSizeInSquares = 1;
+				definition.walkAnimation = 9651;
+				definition.actions = new String[] { "Talk-to", null, "Metamorphosis", "Pick-up", null };
+				definition.drawYellowDotOnMap = false;
+				definition.combatLevel = 0;
+				definition.scaleXZ = 65;
+				definition.scaleY = 65;
+				break;
+
 			case 10005:
 				definition.setDefault();
 				definition.npcModels = new int[]{20593,20594,20595,20596,20605};
@@ -5812,7 +5826,7 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				definition.name = "Duke Horacio";
 				definition.combatLevel = MobDefinition.get(2292).combatLevel;
-				definition.standAnimation = MobDefinition.get(2292).standAnimation;
+				definition.standAnimation = 346;
 				definition.walkAnimation = MobDefinition.get(2292).walkAnimation;
 				definition.actions = new String[]{"Talk-to", null, null, null, null};
 				break;

@@ -300,7 +300,8 @@ public class World {
         NarakuBoss.spawn();
         //VdayGifting.initialize();
         NightmareBoss.execute();
-        TurkeySpawns.initialize();
+        SantaGifting.initialize();
+        //TurkeySpawns.initialize();
         KeepersOfLight.sequence();
         FantasyZone.initialize();
         HolidayBossEvent.initialize();

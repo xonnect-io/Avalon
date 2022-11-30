@@ -249,9 +249,9 @@ public class NPCOptionPacketListener implements PacketListener {
                         TurkeySpawns.findTurkey(npc, player);
                         break;
                     case 3643:
-                        ShopManager.getShops().get(550).open(player);
+                       /* ShopManager.getShops().get(550).open(player);
                         player.getPacketSender().sendString(3903,
-                                "Happy Thanksgiving!");
+                                "Happy Thanksgiving!");*/
                         break;
                     case GroupConfig.NPC_ID:
                         if (player.getGameMode() == GameMode.GROUP_IRONMAN) {

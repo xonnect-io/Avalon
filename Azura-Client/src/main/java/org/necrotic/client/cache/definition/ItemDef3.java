@@ -3127,7 +3127,7 @@ public class ItemDef3 {
 				break;
 				
 			case 8001:
-				itemDef.name = "Custom Extreme Crossbow";
+				itemDef.name = "Sir Avalon's crossbow";
 				itemDef.modelID = 64495;
 				itemDef.maleEquip1 = 64496;
 				itemDef.femaleEquip1 = 64496;

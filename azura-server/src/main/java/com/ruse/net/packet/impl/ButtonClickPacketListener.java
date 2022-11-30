@@ -311,7 +311,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     player.getPacketSender().sendMessage("Please unequip all your items first.");
                     return;
                 }
-                if (player.getPointsHandler().getTotalPrestiges() >= 2) {
+                if (player.getPointsHandler().getTotalPrestiges() >= 3) {
                     player.getPacketSender().sendMessage("@red@You already are max prestige. Wait until next season to unlock another.");
                     return;
                 }
@@ -512,7 +512,7 @@ public class ButtonClickPacketListener implements PacketListener {
 
 
             case 8666:
-                Position prayerAlter = new Position(2937, 4129, 0);
+                Position prayerAlter = new Position(2802, 4065, 0);
                 TeleportHandler.teleportPlayer(player, prayerAlter, TeleportType.NORMAL);
                 break;
 

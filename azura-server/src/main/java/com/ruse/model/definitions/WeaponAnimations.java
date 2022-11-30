@@ -78,7 +78,7 @@ public final class WeaponAnimations {
 			playerStandIndex = 0x328;
 			playerWalkIndex = 0x333;
 			playerRunIndex = 824;
-		} else if (weaponName.contains("longsword") || weaponName.contains("scimitar")) {
+		} else if (weaponName.contains("longsword") || weaponName.contains("scimitar")|| weaponId == 13662 || weaponId == 13664 ) {
 			playerStandIndex = 15069;// 12021;
 			playerRunIndex = 15070;// 12023;
 			playerWalkIndex = 15073; // 12024;
@@ -100,7 +100,7 @@ public final class WeaponAnimations {
 			playerStandIndex = 8980;
 			playerRunIndex = 1210;
 			playerWalkIndex = 1146;
-		} else if (weaponName.contains("wand") || weaponName.contains("staff") || weaponName.contains("staff")
+		} else if (weaponName.contains("wand") || weaponName.contains("staff") || weaponName.contains("staff") || weaponName.contains("tumeken")
 				|| weaponName.contains("spear") || item.getId() == 21005 || item.getId() == 21010) {
 			playerStandIndex = 8980;
 			playerRunIndex = 1210;
@@ -386,7 +386,7 @@ public final class WeaponAnimations {
 				return 13048;
 			else if (prop.contains("block"))
 				return 13049;
-		} else if (weaponName.startsWith("staff") || weaponName.endsWith("staff")) {
+		} else if (weaponName.startsWith("staff") || weaponName.endsWith("staff")|| weaponName.endsWith("tumeken")) {
 			// bash = 400
 			return 401;
 		}
@@ -406,7 +406,7 @@ public final class WeaponAnimations {
 			return 12028;
 		}
 		if (weaponName.contains("scimitar") || weaponName.contains("longsword") || weaponName.contains("korasi's")
-				|| weaponName.contains("katana") || weaponName.contains("tempest")) {
+				|| weaponName.contains("katana") || weaponName.contains("tempest") || weaponId == 13662 || weaponId == 13664 ) {
 			if (prop.contains("lunge"))
 				return 15072;
 			
@@ -554,7 +554,7 @@ public final class WeaponAnimations {
 		if (shield.contains("shield"))
 			return 1156;
 		if (weapon.contains("scimitar") || weapon.contains("longsword") || weapon.contains("katana")
-				|| weapon.contains("korasi") || weapon.contains("tempest"))
+				|| weapon.contains("korasi") || weapon.contains("tempest")|| weaponId == 13664 || weaponId == 13662 )
 			return 15074;
 		switch (weaponId) {
 		

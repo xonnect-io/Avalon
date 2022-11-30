@@ -2665,8 +2665,7 @@ public class Client extends GameRenderer {
         }
 
     }
-
-    private void buildAtPlayerMenu(int i, int j, Player player, int k) {
+      private void buildAtPlayerMenu(int i, int j, Player player, int k) {
         if (player == myPlayer) {
             return;
         }
@@ -2677,75 +2676,84 @@ public class Client extends GameRenderer {
 
         String menuTooltip = "";
         String title = "";
+        String endTitle = "";
 
         if (player.loyaltyTitle != null && !player.loyaltyTitle.isEmpty()) {
-            title = "<col=" + Integer.toHexString(player.loyaltyColor) + ">" + player.loyaltyTitle.trim() + "</col> ";
+            if (player.loyaltyTitle.contains("##")) {
+                title = "";
+                endTitle = " " + player.loyaltyTitle.trim().replace("##", "") + "</col>";
+            } else {
+                title = player.loyaltyTitle.trim() + "</col> ";
+                endTitle = "";
+            }
         }
 
         if (player.playerRights == 1) {
             menuTooltip = menuTooltip + "<img=1><col=20B2AA>Mod@whi@ ";
         }
 
-        if (player.playerRights == 2) {
-            menuTooltip = menuTooltip + "<img=2>@yel@Admin@whi@ ";
-        }
+          if (player.playerRights == 2) {
+              menuTooltip = menuTooltip + "<img=2>@yel@Admin@whi@ ";
+          }
 
-        if (player.playerRights == 3) {
-            menuTooltip = menuTooltip + "<img=3> ";
-        }
+          if (player.playerRights == 3) {
+              menuTooltip = menuTooltip + "<img=3> ";
+          }
 
-        if (player.playerRights == 5) {
-            menuTooltip = menuTooltip + "<img=5>@cya@Support@whi@ ";
-        }
+          if (player.playerRights == 5) {
+              menuTooltip = menuTooltip + "<img=5>@cya@Support@whi@ ";
+          }
 
-        if (player.playerRights == 6) {
-            menuTooltip = menuTooltip + "@bla@[<col=c40303>$@bla@]@whi@ ";
-        }
+          if (player.playerRights == 6) {
+              menuTooltip = menuTooltip + "@bla@[<col=c40303>$@bla@]@whi@ ";
+          }
 
-        if (player.playerRights == 7) {
-            menuTooltip = menuTooltip + "@bla@[<col=0023d8>$@bla@]@whi@ ";
-        }
+          if (player.playerRights == 7) {
+              menuTooltip = menuTooltip + "@bla@[<col=0023d8>$@bla@]@whi@ ";
+          }
 
-        if (player.playerRights == 8) {
-            menuTooltip = menuTooltip + "@bla@[<col=1FBA07>$@bla@]@whi@ ";
-        }
+          if (player.playerRights == 8) {
+              menuTooltip = menuTooltip + "@bla@[<col=1FBA07>$@bla@]@whi@ ";
+          }
 
-        if (player.playerRights == 9) {
-            menuTooltip = menuTooltip + "<img=9> ";
-        }
+          if (player.playerRights == 9) {
+              menuTooltip = menuTooltip + "<img=9> ";
+          }
 
-        if (player.playerRights == 10) {
-            menuTooltip = menuTooltip + "<img=10> ";
-        }
+          if (player.playerRights == 10) {
+              menuTooltip = menuTooltip + "<img=10> ";
+          }
 
-        if (player.playerRights == 11) {
-            menuTooltip = menuTooltip + "<col=b40404>Super@whi@ ";
-        }
+          if (player.playerRights == 11) {
+              menuTooltip = menuTooltip + "<col=b40404>Super@whi@ ";
+          }
 
-        if (player.playerRights == 12) {
-            menuTooltip = menuTooltip + "<col=b40404>Extreme@whi@ ";
-        }
+          if (player.playerRights == 12) {
+              menuTooltip = menuTooltip + "<col=b40404>Extreme@whi@ ";
+          }
 
-        if (player.playerRights == 13) {
-            menuTooltip = menuTooltip + "<img=1508><col=20B2AA>Zenyte@whi@ ";
-        }
+          if (player.playerRights == 13) {
+              menuTooltip = menuTooltip + "<img=1508><col=20B2AA>Zenyte@whi@ ";
+          }
 
-        if (player.playerRights == 14) {
-            menuTooltip = menuTooltip + "<img=852><col=20B2AA>Tanzanite@whi@ ";
-        }
+          if (player.playerRights == 14) {
+              menuTooltip = menuTooltip + "<img=852><col=20B2AA>Tanzanite@whi@ ";
+          }
 
-        if (player.playerRights == 18) {
-            menuTooltip = menuTooltip + "<img=856>@or2@Community Manager@whi@ ";
-        }
-        if (player.playerRights == 4) {
-            menuTooltip =  "<img=12>@whi@ ";
+          if (player.playerRights == 18) {
+              menuTooltip = menuTooltip + "<img=856>@or2@Community Manager@whi@ ";
+          }
+          if (player.playerRights == 4) {
+              menuTooltip =  "<img=12>@whi@ ";
 
-        }
+          }
 
         if (player.combatLevel == 0) {
-            menuTooltip = title + player.name + combatDiffColor(myPlayer.combatLevel, player.combatLevel) + " (level-" + player.combatLevel + ")";
+            menuTooltip = title + player.name + endTitle + combatDiffColor(myPlayer.combatLevel, player.combatLevel) + " (level-"
+                    + player.combatLevel + ")";
         } else {
-            menuTooltip += title + player.name + combatDiffColor(myPlayer.combatLevel, player.combatLevel) + " (level-" + player.combatLevel + ")";
+            menuTooltip += title + player.name + endTitle+ combatDiffColor(myPlayer.combatLevel, player.combatLevel) + " (level-"
+                    + player.combatLevel + ")";
         }
 
         if (itemSelected == 1) {
@@ -2827,7 +2835,8 @@ public class Client extends GameRenderer {
         }
     }
 
-    private void buildChatAreaMenu(int yOffset) {
+
+        private void buildChatAreaMenu(int yOffset) {
         if (!isGameFrameVisible() || chatArea.componentHidden()) {
             return;
         }
@@ -17267,7 +17276,7 @@ if(response == 32){
             return false;
         }
         if (loginCode == 800) {
-            loginMessages = new String[]{"You are using an outdated version of the client!", "Download the latest one"};
+            loginMessages = new String[]{"Old client usage detected.", "Download the latest one!"};
             return false;
         }
         if (loginCode == 14) {

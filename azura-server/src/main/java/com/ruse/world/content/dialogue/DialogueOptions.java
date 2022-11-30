@@ -1269,7 +1269,7 @@ public class DialogueOptions {
                     break;
                 case 100000:
                     player.getPacketSender().sendInterfaceRemoval();
-                    TeleportHandler.teleportPlayer(player, new Position(2935, 4101), TeleportType.NORMAL);
+                    TeleportHandler.teleportPlayer(player, new Position(2784, 4054), TeleportType.NORMAL);
                     break;
 
 /*

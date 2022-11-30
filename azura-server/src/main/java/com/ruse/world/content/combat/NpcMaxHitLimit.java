@@ -21,6 +21,7 @@ public class NpcMaxHitLimit {
             case 3779: //Terrorstep
             case 187://Hellraiser
             case 8499://Thanksgiving Turkey
+            case 10005://Krampus
                 maxLimit = (NpcDefinition.forId(npc.getId()).getHitpoints() / 100) * 2;
                 break;
 

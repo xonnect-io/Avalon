@@ -499,6 +499,8 @@ public class NPC extends Character {
         this.defaultConstitution = defaultConstitution;
     }
 
+
+
     public int getTransformationId() {
         return transformationId;
     }

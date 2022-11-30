@@ -301,6 +301,11 @@ public class Store implements Runnable {
                     player.sendMessage("You received x5 Autumn boxes for donating $50+");
                     World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated $50+ and received @red@<shad=1>x5 Autumn boxes!");
                 }
+                if (GameSettings.WINTER_DEAL && amount >= 50) {
+                    player.getInventory().add(23362, 5);
+                    player.sendMessage("You received x5 Christmas boxes for donating $50+");
+                    World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated $50+ and received @red@<shad=1>x5 Christmas boxes!");
+                }
                 if (GameSettings.OWNER_JEWELRY_DONO_DEAL && amount >= 50) {
                     player.getInventory().add(23240, 1);
                     player.sendMessage("You received x1 Owner jewelry Goodiebag for donating $50+");

@@ -1504,7 +1504,7 @@ public class Locations {
 		ARCHERS_GUILD(new int[] { 3333, 3383 }, new int[] { 4682, 4727 }, true, true, true, false, true, true) {
 
 		},
-		HOME_BANK(new int[] { 2880, 2943}, new int[] { 4096, 4135 }, false, true, true, false, true, true) {
+		HOME_BANK(new int[] { 2778, 2790}, new int[] { 4058, 4071 }, false, true, true, false, true, true) {
 			@Override
 			public void enter(Player player) {
 				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()

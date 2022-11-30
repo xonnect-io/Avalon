@@ -615,7 +615,7 @@ public final class ItemDefinition {
 				itemDef.copyItem(7478);
 				itemDef.name = "@yel@Upgrade Tokens";
 				itemDef.modelID = 20568;
-				itemDef.modelZoom = 1500;
+				itemDef.modelZoom = 1550;
 				itemDef.actions = new String[]{"Activate", null, "Exchange", "Exchange X", "Destroy"};
 				//#427743 #242323
 				break;
@@ -2335,8 +2335,8 @@ public final class ItemDefinition {
 				itemDef.copyItem(14277);
 				itemDef.name = "Seraphic potion";
 				itemDef.actions = new String[]{"Drink", null, null, null, "Drop"};
-				itemDef.oldColors = new int[]{683};
-				itemDef.newColors = new int[]{35141};
+				itemDef.modelID = 20851;
+				itemDef.modelZoom = 720;
 				break;
 			case 20421:
 				itemDef.name = "Ethereal urn";
@@ -2358,11 +2358,11 @@ public final class ItemDefinition {
 				break;
 
 			case 4186:
-				itemDef.copyItem(2399);
+				itemDef.copyItem(21201);
 				itemDef.name = "Case key";
 				itemDef.actions = new String[5];
 				itemDef.actions[0] = "Open";
-				itemDef.colorChange = new double[]{2, 2, 5};
+				itemDef.rdc2 = 4710;
 				break;
 
 			case 20489:

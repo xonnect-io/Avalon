@@ -24,20 +24,20 @@ public class TelosLoot {
 
         Box reward = getLoot(player, difficulty == RaidDifficulty.ADVANCED ? HARD :
                 difficulty == RaidDifficulty.INTERMEDIATE ? MEDIUM : EASY);
-        KillsTracker.submitById(player, 9894, true, true);
-        KillsTracker.submitById(player,9894, false, true);
+        KillsTracker.submitById(player, 9884, true, true);
+        KillsTracker.submitById(player, 9884, false, true);
         BOSSES.log(player, CollectionLog.NECROMANCER_KEY, new Item(reward.getId(), reward.getAmount()));
 
         if (reward.isAnnounce()) {
             String message = "@blu@News: @red@" + player.getUsername() + " @blu@has received @red@"
-                    + ItemDefinition.forId(reward.getId()).getName() + "@blu@ from the @red@Necromancer"
-                    + "@cya@ - <col=ff4f4f>KC: " + KillsTracker.getTotalKillsForNpc(10000, player);
+                    + ItemDefinition.forId(reward.getId()).getName() + "@blu@ from the @red@Elder Gods"
+                    + "@cya@ - <col=ff4f4f>KC: " + KillsTracker.getTotalKillsForNpc(9884, player);
             World.sendMessage1(message);
         }
 
         Cases.grantCasket(player, 5);
 
-        addToCoffer(player, new Item(13653 , (difficulty.ordinal() + 1) * 2));
+       // addToCoffer(player, new Item(13653 , (difficulty.ordinal() + 1) * 2));
         addToCoffer(player, new Item(reward.getId(), reward.getAmount()));
 
     }
@@ -65,7 +65,7 @@ public class TelosLoot {
     };
 
     public static Box[] EASY = {
-            new Box(13653, 2, 100),
+          //  new Box(13653, 2, 100),
 
             new Box(12855, 15000, 50),
             new Box(15289, 1, 50),
@@ -89,12 +89,19 @@ public class TelosLoot {
 
             new Box(6769, 1, 0.4, true),
 
-            new Box(23551, 1, 0.2, true),
+            new Box(4186, 1, 0.1333, true),
+
+            new Box(13289, 1, 0.1, true),
+            new Box(13297, 1, 0.1, true),
+            new Box(18493, 1, 0.1, true),
+            new Box(9084, 1, 0.05, true),
+            new Box(9083, 1, 0.013333, true),
+            new Box(22110, 1, 0.01, true),
     };
 
 
     public static Box[] MEDIUM = {
-            new Box(13653, 4, 100),
+           // new Box(13653, 4, 100),
 
             new Box(12855, 40000, 50),
             new Box(15289, 2, 50),
@@ -120,12 +127,26 @@ public class TelosLoot {
 
             new Box(15002, 1, 0.4, true),
 
-            new Box(23550, 1, 0.1, true),
+            new Box(4186, 1, 0.2, true),
+
+            new Box(13289, 1, 0.1333, true),
+            new Box(13297, 1, 0.1333, true),
+            new Box(18493, 1, 0.1333, true),
+
+            new Box(13273, 1, 0.1, true),
+            new Box(13274, 1, 0.1, true),
+            new Box(13275, 1, 0.1, true),
+            new Box(13662, 1, 0.05, true),
+            new Box(18487, 1, 0.05, true),
+
+            new Box(9084, 1, 0.1, true),
+            new Box(9083, 1, 0.02, true),
+            new Box(22110, 1, 0.013333, true),
     };
 
 
     public static Box[] HARD = {
-            new Box(13653, 6, 100),
+           // new Box(13653, 6, 100),
 
             new Box(12855, 75000, 50),
             new Box(15288, 1, 50),
@@ -141,8 +162,8 @@ public class TelosLoot {
 
             new Box(22219, 20, 10),
             new Box(11137, 30, 10),
-            new Box(15358, 2, 10),
-            new Box(15359, 2, 10),
+            new Box(15355, 1, 10),
+            new Box(15357, 1, 10),
             new Box(15356, 1, 10),
 
 
@@ -152,15 +173,25 @@ public class TelosLoot {
 
             new Box(6769, 1, 1, true),
 
-            new Box(17544, 1, 1, true),
-
             new Box(15004, 1, 0.25, true),
+            new Box(4186, 1, 0.5, true),
 
-            new Box(22951, 1, 0.05, true),
-            new Box(22952, 1, 0.05, true),
-            new Box(22953, 1, 0.05, true),
 
-            new Box(22954, 1, 0.02, true),
+
+            new Box(13289, 1, 0.2, true),
+            new Box(13297, 1, 0.2, true),
+            new Box(18493, 1, 0.2, true),
+
+            new Box(13273, 1, 0.1333, true),
+            new Box(13274, 1, 0.1333, true),
+            new Box(13275, 1, 0.1333, true),
+            new Box(13662, 1, 0.06666, true),
+            new Box(18487, 1, 0.06666, true),
+
+            new Box(13597, 1, 0.02, true),
+            new Box(9084, 1, 0.1333, true),
+            new Box(9083, 1, 0.05, true),
+            new Box(22110, 1, 0.02, true),
     };
 
 

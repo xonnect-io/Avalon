@@ -6,6 +6,249 @@ public class ItemDef5 {
 
 		switch (id) {
 
+			case 13289:
+				itemDef.copyItem(22066);
+				itemDef.oldColors = new int[] { 908 };
+				itemDef.newColors = new int[] { -10304 };
+				itemDef.femaleEquip1 = 21509;
+				itemDef.actions = new String[] { null, "Wield", null, null, "Drop" };
+				itemDef.modelID = 21225;
+				itemDef.maleEquip1 = 21515;
+				itemDef.name = "Elidinis' ward";
+				itemDef.modelZoom = 1368;
+				break;
+
+			case 13293:
+				itemDef.copyItem(22066);
+				itemDef.oldColors = new int[] { 908 };
+				itemDef.newColors = new int[] { -10304 };
+				itemDef.femaleEquip1 = 21518;
+				itemDef.actions = new String[] { null, "Wield", null, "Dismantle", "Drop" };
+				itemDef.modelID = 21516;
+				itemDef.maleEquip1 = 21517;
+				itemDef.name = "Elidinis' ward (f)";
+				itemDef.modelZoom = 1368;
+				break;
+
+			case 13295:
+				itemDef.copyItem(22066);
+				itemDef.femaleEquip1 = 21555;
+				itemDef.actions = new String[] { null, "Wield", null, "Dismantle", "Drop" };
+				itemDef.modelID = 21553;
+				itemDef.maleEquip1 = 21554;
+				itemDef.name = "Elidinis' ward (or)";
+				itemDef.modelZoom = 1368;
+				break;
+
+			case 13297:
+				itemDef.copyItem(21069);
+				itemDef.actions = new String[] { null, "Wear", null, null, "Drop" };
+				itemDef.modelID = 21556;
+				itemDef.name = "Lightbearer";
+				itemDef.modelZoom = 830;
+				break;
+
+			case 13299:
+				itemDef.femaleEquip1 = 21639;
+				itemDef.actions = new String[] { null, "Wear", null, null, "Destroy" };
+				itemDef.modelID = 21607;
+				itemDef.maleEquip1 = 21684;
+				itemDef.name = "Mask of rebirth";
+				itemDef.rotationX = 89;
+				itemDef.rotationY = 42;
+				itemDef.modelOffsetY = -7;
+				itemDef.modelZoom = 832;
+				break;
+
+			case 13596:
+				itemDef.copyItem(14019);
+				itemDef.femaleEquip1 = 21696;
+				itemDef.actions = new String[] { null, "Wear", null, "Commune", "Drop" };
+				itemDef.modelID = 21695;
+				itemDef.maleEquip1 = 21697;
+				itemDef.modelOffsetX = -9;
+				itemDef.name = "Masori assembler max cape";
+				itemDef.modelZoom = 1600;
+				break;
+
+
+			case 13597:
+				itemDef.copyItem(18491);
+				itemDef.actions = new String[] { "Inspect", "Attach", null, null, "Drop" };
+				itemDef.modelID = 21700;
+				itemDef.name = "Cursed phalanx";
+				itemDef.modelZoom = 1086;
+				break;
+
+			case 13662:
+				itemDef.femaleEquip1 = 21702;
+				itemDef.actions = new String[] { null, "Wield", null, null, "Drop" };
+				itemDef.modelID = 21701;
+				itemDef.maleEquip1 = 21703;
+				itemDef.name = "Osmumten's fang";
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationY = 1603;
+				itemDef.modelOffsetY = 0;
+				itemDef.rotationZ = 782;
+				itemDef.rotationX = 0;
+				//itemDef.rotationX = 552;
+				itemDef.modelZoom = 1800;
+				break;
+
+			case 13664:
+				itemDef.copyItem(13662);
+				itemDef.femaleEquip1 = 21801;
+				itemDef.modelID = 21733;
+				itemDef.maleEquip1 = 21820;
+				itemDef.name = "Osmumten's fang (or)";
+				break;
+
+			case 18495:
+				itemDef.actions = new String[] { "Attach", "Inspect", null, null, "Drop" };
+				itemDef.modelID = 20852;
+				itemDef.name = "Jewel of the sun";
+				itemDef.rotationX = 316;
+				itemDef.rotationY = 1472;
+				itemDef.modelOffsetY = 1;
+				itemDef.modelOffsetX = -3;
+				itemDef.rotationZ = 1953;
+				itemDef.modelZoom = 750;
+				break;
+
+			case 18489:
+				itemDef.oldColors = new int[] { 74 };
+				itemDef.newColors = new int[] { 9168 };
+				itemDef.actions = new String[] { "Inspect", null, null, null, "Destroy" };
+				itemDef.modelID = 20850;
+				itemDef.isMembers = true;
+				itemDef.name = "Thread of elidinis";
+				itemDef.rotationX = 248;
+				itemDef.modelOffsetX = 2;
+				itemDef.rotationY = 1644;
+				itemDef.modelZoom = 590;
+				break;
+
+			case 18491:
+				itemDef.actions = new String[] { "Open", null, "Revert", "Empty", "Destroy" };
+				itemDef.modelID = 20849;
+				itemDef.name = "Divine rune pouch";
+				itemDef.rotationX = 512;
+				itemDef.modelOffsetX = -13;
+				itemDef.rotationY = 475;
+				itemDef.modelOffsetY = 1;
+				itemDef.rotationZ = 13;
+				itemDef.modelZoom = 850;
+				break;
+
+			case 18493:
+				itemDef.copyItem(11465);
+				itemDef.oldColors = new int[] { 28126, 28482 };
+				itemDef.newColors = new int[] { -3401, 9026 };
+				itemDef.actions = new String[] { "Inspect", "Attach", null, null, "Drop" };
+				itemDef.modelID = 20851;
+				itemDef.name = "Menaphite ornament kit";
+				break;
+
+			case 18485:
+				itemDef.actions = new String[] { null, "Wield", "Charge", null, "Drop" };
+				itemDef.modelID = 20848;
+				itemDef.maleEquip1 = 20845;
+				itemDef.femaleEquip1 = 20846;
+				itemDef.name = "Tumeken's shadow (charged)";
+				itemDef.rotationX = 405;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationY = 1481;
+				itemDef.modelOffsetY = -10;
+				itemDef.rotationZ = 290;
+				itemDef.modelZoom = 1760;
+				break;
+
+			case 18487:
+				itemDef.actions = new String[] { null, "Wield", "Charge", null, "Drop" };
+				itemDef.modelID = 20847;
+				itemDef.maleEquip1 = 20845;
+				itemDef.femaleEquip1 = 20846;
+				itemDef.name = "Tumeken's shadow (uncharged)";
+				itemDef.rotationX = 405;
+				itemDef.modelOffsetX = 0;
+				itemDef.rotationY = 1481;
+				itemDef.modelOffsetY = -10;
+				itemDef.rotationZ = 290;
+				itemDef.modelZoom = 1760;
+				break;
+
+
+			case 13273:
+				itemDef.actions = new String[] { null, "Wear", null, null, "Drop" };
+				itemDef.modelID = 20914;
+				itemDef.maleEquip1 = 20898;
+				itemDef.femaleEquip1 = 20898;
+				itemDef.name = "Masori mask";
+				itemDef.rotationX = 41;
+				itemDef.modelOffsetX = -2;
+				itemDef.rotationY = 102;
+				itemDef.modelOffsetY = -3;
+				itemDef.modelZoom = 1033;
+				itemDef.stackable = false;
+			break;
+
+			case 13274:
+				itemDef.femaleEquip1 = 21137;
+				itemDef.actions = new String[] { null, "Wear", null, null, "Drop" };
+				itemDef.modelID = 20943;
+				itemDef.maleEquip1 = 21138;
+				itemDef.name = "Masori body";
+				itemDef.rotationY = 453;
+				itemDef.modelOffsetY = 11;
+				itemDef.modelZoom = 1240;
+				itemDef.stackable = false;
+				break;
+
+			case 13275:
+				itemDef.copyItem (23320);
+				itemDef.femaleEquip1 = 45269;
+				itemDef.actions = new String[] { null, "Wear", null, null, "Drop" };
+				itemDef.modelID = 21021;
+				itemDef.maleEquip1 = 21033;
+				itemDef.rotationX = 0;
+				itemDef.name = "Masori chaps";
+				itemDef.modelZoom = 1475;
+				itemDef.stackable = false;
+				break;
+
+			case 13841:
+				itemDef.femaleEquip1 = 46451;
+				itemDef.actions = new String[] { null, "Wear", null, null, "Drop" };
+				itemDef.modelID = 21034;
+				itemDef.maleEquip1 = 21044;
+				itemDef.name = "Masori mask (f)";
+				itemDef.rotationX = 41;
+				itemDef.modelOffsetX = -2;
+				itemDef.rotationY = 102;
+				itemDef.modelOffsetY = -3;
+				itemDef.modelZoom = 1033;
+				break;
+
+			case 13842:
+				itemDef.copyItem(13274);
+				itemDef.femaleEquip1 = 45271;
+				itemDef.actions = new String[] { null, "Wear", null, null, "Drop" };
+				itemDef.modelID = 21062;
+				itemDef.maleEquip1 = 21091;
+				itemDef.name = "Masori body (f)";
+				itemDef.modelZoom = 1240;
+				break;
+
+			case 13843:
+				itemDef.copyItem(13275);
+				itemDef.femaleEquip1 = 45268;
+				itemDef.actions = new String[] { null, "Wear", null, null, "Drop" };
+				itemDef.modelID = 21114;
+				itemDef.maleEquip1 = 21120;
+				itemDef.name = "Masori chaps (f)";
+				break;
+
+
 
 			case 23364:
 				itemDef.copyItem(4708);

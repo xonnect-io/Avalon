@@ -4761,6 +4761,9 @@ End new teleport
     @Setter
     private String potionUsed = "Super Ovl";
 
+    @Getter
+    @Setter
+    private ItemDefinition.EquipmentType selectedEquipmentType = ItemDefinition.EquipmentType.FULL_HELMET;
 
     @Getter
     @Setter

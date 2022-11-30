@@ -13,12 +13,13 @@ public class GameSettings {
     public static boolean LOCALHOST = false;
     public static boolean BETA_ACTIVE = false;
     public static boolean BOGO = false;
-    public static boolean B2GO = true;
+    public static boolean B2GO = false;
     public static boolean ELITE_DONO_DEAL = false;
     public static boolean CASE_KEY_DEAL = false;
     public static boolean OWNER_JEWELRY_DONO_DEAL = false;
     public static boolean OWNER_CAPE_DONO_DEAL = false;
     public static boolean AUTUMN_DEAL = false;
+    public static boolean WINTER_DEAL = true;
     /*
      * Bunch of variables for the Global Events
      */
@@ -140,16 +141,17 @@ public class GameSettings {
     /**
      * The default position
      */
-    public static final Position NEW_CORDS = new Position(2784, 4065, 0);
+
     public static final Position TELOS = new Position(3350, 4053, 0);
     public static final Position TELOS_LOBBY = new Position(3671, 3093, 0);
     public static final Position CHRISTMAS_MAP = new Position(2528, 2656, 0);
-    public static final Position DEFAULT_POSITION = new Position(2929, 4116, 0);
+    public static final Position DEFAULT_POSITION = new Position(2784, 4065, 0);
+    public static final Position OLD_HOME = new Position(2929, 4116, 0);
     public static final Position PYRAMID_LOBBY = new Position(3488, 9243, 0);
     public static final Position STARTER = new Position(3034, 4121, 1);
     public static final Position CORP_CORDS = new Position(2900, 4384);
     public static final Position MARKET = new Position(2660, 4044, 0);
-    public static final Position HOME_CORDS = new Position(2929, 4116, 0);
+    public static final Position HOME_CORDS = new Position(2784, 4065, 0);
     public static final Position TRIO_CORDS = new Position(3025, 5231, 0);
     public static final Position KFC_CORDS = new Position(2606, 4774, 4);
     public static final Position CHILL_CORDS = new Position(3816, 2829, 0);

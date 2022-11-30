@@ -2,6 +2,7 @@ package com.ruse.model.definitions;
 
 import com.ruse.GameServer;
 import com.ruse.model.container.impl.Equipment;
+import lombok.Getter;
 
 import java.io.*;
 
@@ -434,8 +435,15 @@ public class ItemDefinition {
         AURA(Equipment.AURA_SLOT), PET(Equipment.PET_SLOT), CHARM(Equipment.CHARM_SLOT)
 
         ;
+        public static EquipmentType forSlot(int slot) {
+            for (EquipmentType type : values()) {
+                if (type.slot == slot)
+                    return type;
+            }
+            return null;
+        }
 
-
+        @Getter
         private int slot;
 
         private EquipmentType(int slot) {

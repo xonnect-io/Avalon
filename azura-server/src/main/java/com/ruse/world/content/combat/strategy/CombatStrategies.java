@@ -1,9 +1,6 @@
 package com.ruse.world.content.combat.strategy;
 
-import com.ruse.world.content.combat.strategy.impl.HellraiserBossCombatScript;
 import com.ruse.world.content.combat.strategy.impl.*;
-import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringBossNpc;
-import com.zaros.world.entity.actor.combat.strategy.impl.dung.DungeoneeringBossCombat;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -121,7 +118,7 @@ public class CombatStrategies {
 		STRATEGIES.put(5362, dragonStrategy);
 		STRATEGIES.put(5363, dragonStrategy);
 		Aviansie aviansieStrategy = new Aviansie();
-		com.ruse.world.content.combat.strategy.impl.DrakeCombatStrategy drake = new com.ruse.world.content.combat.strategy.impl.DrakeCombatStrategy ();
+		TelosCombatStrategy drake = new TelosCombatStrategy ();
 		STRATEGIES.put(6246, aviansieStrategy);
 		STRATEGIES.put(6230, aviansieStrategy);
 		STRATEGIES.put(6231, aviansieStrategy);
@@ -129,10 +126,6 @@ public class CombatStrategies {
 		KalphiteQueen kalphiteQueenStrategy = new KalphiteQueen();
 		STRATEGIES.put(1158, kalphiteQueenStrategy);
 		STRATEGIES.put(1160, kalphiteQueenStrategy);
-		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_NOHEADICON, DungeoneeringBossCombat.INSTANCE);
-		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_MAGE, DungeoneeringBossCombat.INSTANCE);
-		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_RANGE, DungeoneeringBossCombat.INSTANCE);
-		STRATEGIES.put(DungeoneeringBossNpc.Constants.BOSS_PROT_MELEE, DungeoneeringBossCombat.INSTANCE);
 		Revenant revenantStrategy = new Revenant();
 		STRATEGIES.put(13465, revenantStrategy);
 		STRATEGIES.put(13469, revenantStrategy);
@@ -153,7 +146,7 @@ public class CombatStrategies {
 		STRATEGIES.put(2342, new HerbalRogue());
 		STRATEGIES.put(1120,new Vasa());
 		STRATEGIES.put(NazastaroolCombatStrategy.NAZASTAROOL, new NazastaroolCombatStrategy());
-		STRATEGIES.put(DrakeCombatStrategy.DRAKE, new DrakeCombatStrategy());
+		STRATEGIES.put(9884, new TelosCombatStrategy ());
 		STRATEGIES.put(9837, new LuciferCombatScript());
 		STRATEGIES.put(4540, new BandosAvatar());
 		STRATEGIES.put(8013, new VotingBoss());
