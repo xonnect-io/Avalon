@@ -57,10 +57,34 @@ public final class MobDefinition {
 					}
 				}
 			}
+
 		}
 
-		switch (id) {
 
+		switch (id) {
+			case 9890:
+				definition.setDefault();
+				definition.npcModels = MobDefinition.get(3313).npcModels;
+				definition.standAnimation =  MobDefinition.get(3313).standAnimation;
+				definition.walkAnimation = MobDefinition.get(3313).walkAnimation;
+				definition.actions = MobDefinition.get(3313).actions;
+				definition.combatLevel = 0;
+				definition.name = "Prysm";
+				definition.scaleXZ = 125;
+				definition.scaleY = 125;
+				definition.npcSizeInSquares = 2;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.rdc2 = 35734;//892435
+				break;
+			case 3313:
+				definition.name = "Prysm";
+				definition.combatLevel = 324;
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
+				definition.npcSizeInSquares = 3;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.rdc2 = 34734;
+				break;
 			case 9886:
 				definition.setDefault();
 				definition.npcModels = new int[]{62717};
@@ -393,6 +417,37 @@ public final class MobDefinition {
 				definition.scaleXZ = 140;
 				definition.scaleY = 140;
 				definition.drawYellowDotOnMap = true;
+				break;
+
+			case 2270:
+				definition.name = "Rogue Guard";
+				definition.npcModels = new int[]{ItemDefinition.get (10612).maleEquip1,
+				ItemDefinition.get (5553).maleEquip1,ItemDefinition.get (5555).maleEquip1,
+				ItemDefinition.get (5557).maleEquip1,ItemDefinition.get (5559).maleEquip1,346,354,};
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
+			break;
+			case 2274:
+				definition.name = "Armadyl Guard";
+				definition.npcModels = new int[]{ItemDefinition.get (11718).maleEquip1,
+						ItemDefinition.get (11720).maleEquip1,ItemDefinition.get (11722).maleEquip1,
+						ItemDefinition.get (4119).maleEquip1,346,353,};
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
+				break;
+			case 2276:
+				definition.name = "Noobie Guard";
+				definition.npcModels = new int[]{ItemDefinition.get (19900).maleEquip1,
+						ItemDefinition.get (10939).maleEquip1,ItemDefinition.get (10940).maleEquip1,
+						ItemDefinition.get (5557).maleEquip1,346,355};
+				definition.standAnimation = MobDefinition.get(1).standAnimation;
+				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
 				break;
 
 			case 9117:
@@ -3510,14 +3565,6 @@ public final class MobDefinition {
 				definition.actions = new String[]{null, "Attack", null, null, null};
 
 				break;
-			case 3313:
-				definition.name = "Darkrealm Monzter";
-				definition.combatLevel = 324;
-				definition.scaleXZ = 250;
-				definition.scaleY = 250;
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.rdc2 = 34734;
-				break;
 
 			case 3306:
 				definition.name = "Event Organizer";
@@ -5674,21 +5721,6 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 3;
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.rdc2 = 662436;
-				break;
-
-			case 9890:
-				definition.setDefault();
-				definition.npcModels = MobDefinition.get(3313).npcModels;
-				definition.standAnimation =  MobDefinition.get(3313).standAnimation;
-				definition.walkAnimation = MobDefinition.get(3313).walkAnimation;
-				definition.actions = MobDefinition.get(3313).actions;
-				definition.combatLevel = 0;
-				definition.name = "Prysm";
-				definition.scaleXZ = 125;
-				definition.scaleY = 125;
-				definition.npcSizeInSquares = 2;
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.rdc2 = 35734;//892435
 				break;
 
 			case 53:

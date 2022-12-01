@@ -30,8 +30,8 @@ import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.pvp.BountyHunter;
 import com.ruse.world.content.combat.range.DwarfMultiCannon;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
+import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.discordbot.DiscordIntegration;
-import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.Barrows;
 import com.ruse.world.content.minigames.impl.VoidOfDarkness;
 import com.ruse.world.content.progressionzone.ProgressionZone;
@@ -133,6 +133,8 @@ public class PlayerHandler {
             player.setInputHandling(new EnterPinPacketListener());
             player.getPacketSender().sendEnterInputPrompt("Enter your pin to play#confirmstatus");
         } else {
+            player.setDialogueActionId(96765);
+            DialogueManager.start(player, 96765);
             //  // System.out.println("Player: " + player.getUsername() + " Didn't have pin set");
         }
 
@@ -225,10 +227,6 @@ public class PlayerHandler {
         // Others
         Lottery.onLogin(player);
         Locations.login(player);
-
-        if (!MembershipManager.didMonthEnd()) {
-            player.getMembershipManager().reset();
-        }
 
         if (player.getLocation() != Locations.Location.PROGRESSION_ZONES) {
             player.getPacketSender().sendWalkableInterface(112000, false);
@@ -411,6 +409,8 @@ public class PlayerHandler {
             player.getPacketSender().sendMessage("[" + GameSettings.RSPS_NAME
                     + "] @blu@Daily Benefits: Double Experience");
         }
+
+        player.sendMessage("<img=5> @blu@New Update: @red@Season 3, Christmas Event and more @mag@::Update");
         player.getVotingStreak().login();
         DiscordIntegration.setIntegration(player);
 

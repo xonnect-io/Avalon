@@ -44,7 +44,6 @@ import com.ruse.world.content.grandexchange.GrandExchange;
 import com.ruse.world.content.groupironman.GroupManager;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
 import com.ruse.world.content.loyalty_streak.LoyaltyStreakManager;
-import com.ruse.world.content.membership.MembershipManager;
 import com.ruse.world.content.minigames.impl.Dueling;
 import com.ruse.world.content.minigames.impl.PestControl;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
@@ -62,6 +61,7 @@ import com.ruse.world.content.raids.shadows.ShadowRewards;
 import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.raids.system.RaidsParty;
 import com.ruse.world.content.rewardsList.RewardsHandler;
+import com.ruse.world.content.seasonpass.SeasonPass;
 import com.ruse.world.content.serverperks.ServerPerkContributionInput;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skill.ChatboxInterfaceSkillAction;
@@ -86,6 +86,7 @@ import com.ruse.world.entity.impl.player.Player;
 import com.ruse.world.entity.impl.player.StartScreen;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 import static com.ruse.model.Skill.*;
@@ -230,13 +231,17 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 }
                 if (player.getInventory().contains(23392)) {
+
+                    Calendar cal = Calendar.getInstance();
+                    int day = cal.get(Calendar.DAY_OF_YEAR);
+                    int daysLeft = SeasonPass.SEASONEND - day;
                     player.getInventory().delete(23392, 1);
                     player.getPacketSender().removeInterface();
                     player.setUnlockedMembership(true);
                     player.membershipInterfaceHandler.openBenefitTab();
                     player.sendMessage("You have claimed your Monthly Membership");
                     World.sendMessage("@red@<img=832>[News] @blu@" + player.getUsername() +" @red@claimed a Monthly Membership!");
-                    player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
+                    player.sendMessage("The Monthly pass ends in " + daysLeft + " days.");
                 } else {
                     player.sendMessage("You do not have a monthly membership pass.");
                 }
@@ -274,17 +279,20 @@ public class ButtonClickPacketListener implements PacketListener {
 
                 }
                 if (player.getInventory().contains(23393)) {
+                    Calendar cal = Calendar.getInstance();
+                    int day = cal.get(Calendar.DAY_OF_YEAR);
+                    int daysLeft = SeasonPass.SEASONEND - day;
                     player.getInventory().delete(23393, 1);
                     player.getPacketSender().removeInterface();
                     player.setUnlockedCosmetic(true);
-                    player.getInventory().add(23404, 1);
-                    player.getInventory().add(23405, 1);
-                    player.getInventory().add(23406, 1);
-                    player.getInventory().add(23407, 1);
+                    player.getInventory().add(13265, 1);
+                    player.getInventory().add(13267, 1);
+                    player.getInventory().add(13269, 1);
+                    player.getInventory().add(13258, 1);
                     player.membershipInterfaceHandler.openCosmeticTab();
                     player.sendMessage("You have claimed your Monthly Cosmetic Membership");
                     World.sendMessage("@red@<img=832>[News] @blu@" + player.getUsername() +" @red@claimed a Cosmetic Membership!");
-                    player.sendMessage("The Monthly pass ends on " + MembershipManager.theEndDate());
+                    player.sendMessage("The Monthly pass ends in " + daysLeft + " days.");
                 } else {
                     player.sendMessage("You do not have a Monthly Cosmetic pass.");
                 }
@@ -293,6 +301,12 @@ public class ButtonClickPacketListener implements PacketListener {
             case -4928:
             case 28008:
                 player.membershipInterfaceHandler.openCosmeticTab();
+                break;
+            case 117629:
+                player.membershipInterfaceHandler.changeCostumeForward();
+                break;
+            case 117628:
+                player.membershipInterfaceHandler.changeCostumeBackward();
                 break;
             case -4929:
                 player.membershipInterfaceHandler.openBenefitTab();

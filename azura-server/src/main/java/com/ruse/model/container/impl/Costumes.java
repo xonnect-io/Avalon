@@ -51,7 +51,14 @@ public enum Costumes {
             new int[]{23259,23260, 23261, 23262, 23263}),
     NECROMANCER(23550, 15, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{23799,23800, 23801, 23802, 23803}),
-
+    SANTA_COSMETIC(13258, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
+            new int[]{1050,14595, 14602, 14603, 14605}),
+    ROGUE_COSMETIC(13265, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
+            new int[]{10612,5553, 5555, 5556, 5557}),
+    ARMADYL_COSMETIC(13267, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT},
+            new int[]{11718,11720, 11722}),
+    NOOBIE_COSMETIC(13269, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT},
+            new int[]{19900,10939, 10940}),
     DRAGON_RIDER(23456, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{14050,14051, 14052, 14053, 14054}),
     ;

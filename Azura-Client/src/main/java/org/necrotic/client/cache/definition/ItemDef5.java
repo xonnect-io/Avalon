@@ -6,6 +6,66 @@ public class ItemDef5 {
 
 		switch (id) {
 
+			case 13264:
+				itemDef.copyItem(5553);
+				itemDef.name = "Rogue Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 13265:
+				itemDef.copyItem(13264);
+				itemDef.certID = 13264;
+				itemDef.certTemplateID = 23390;
+				itemDef.name = "Rogue Costume";
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 13266:
+				itemDef.copyItem(11720);
+				itemDef.name = "Armadyl Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 13267:
+				itemDef.copyItem(13266);
+				itemDef.certID = 13266;
+				itemDef.certTemplateID = 23390;
+				itemDef.name = "Armadyl Costume";
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 13268:
+				itemDef.copyItem(10939);
+				itemDef.name = "Noobie Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 13269:
+				itemDef.copyItem(13268);
+				itemDef.certID = 13268;
+				itemDef.certTemplateID = 23390;
+				itemDef.name = "Noobie Costume";
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 13257:
+				itemDef.copyItem(14595);
+				itemDef.name = "Santa's Costume";
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+			case 13258:
+				itemDef.copyItem(13257);
+				itemDef.certID = 13257;
+				itemDef.certTemplateID = 23390;
+				itemDef.name = "Santa's Costume";
+				itemDef.stackable = false;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
 			case 13289:
 				itemDef.copyItem(22066);
 				itemDef.oldColors = new int[] { 908 };

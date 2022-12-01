@@ -227,7 +227,7 @@ public class RSInterface {
 		RSInterface widget = addInterface(60600);
 		addSprite(60603, 1746);
 		addText(60604, "Avalon's Cosmetic Program", TDA, 2, 0xFF981F, true, true);
-		addText(60606, "Resets: September, 1st, 2022", TDA, 1, 0xFF981F, false, true);
+		addText(60606, "Membership resets:", TDA, 1, 0xFF981F, false, true);
 		addButton(60607, 1658, 1659, "View Benefits tab");
 		addButton(60608, 1658, 1659, "View Cosmetic tab");
 		addText(60609, "Benefits", TDA, 1, 0xFF981F, false, true);
@@ -240,17 +240,19 @@ public class RSInterface {
 		addText(60616, "of each momth, If you are a ", TDA, 1, 0xFF981F, false, true);
 		addText(60617, "member your status will reset.", TDA, 1, 0xFF981F, false, true);
 		addText(60618, "Cosmetic status:", TDA, 2, 0xFF981F, false, true);
-		addText(60619, "Unlock The outfit to the left", TDA, 1, 0xFF981F, false, true);
-		addText(60620, "and the rewards below.", TDA, 1, 0xFF981F, false, true);
-		RSInterface.drawNpcOnInterface(60622, 9244, 420);
+		addText(60619, "Unlock The costume to the left", TDA, 1, 0xFF981F, false, true);
+		addText(60620, "and the costumes below.", TDA, 1, 0xFF981F, false, true);
+		RSInterface.drawNpcOnInterface(60622, 1552, 320);
 		addToItemGroup(60623, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
 		addToItemGroup(60624, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
 		addToItemGroup(60625, 1, 1, 1, 1, true, new String[] {null, null, null, null, null});
 		addButton(60628, 1660, 1661, "Unlock Membership");
 		addText(60629, "Claim pass", TDA, 2, 0xFF981F, false, true);
 		addText(60630, "Status: @red@F2P", TDA, 0, 0xFF981F, false, true);
+		addButton(117628, 1112, 1112, "View previous Costume");
+		addButton(117629, 1111, 1111, "View Next Costume");
 		addButton1(60605, 1016, 1017, "Close interface");
-		widget.totalChildren(25);
+		widget.totalChildren(27);
 
 		widget.child(0, 60603, 55, 10);
 		widget.child(1, 60604, 255, 14);
@@ -277,6 +279,8 @@ public class RSInterface {
 		widget.child(22, 60628, 266, 276);
 		widget.child(23, 60629, 290, 281); //23
 		widget.child(24, 60630, 77, 283);
+		widget.child(25, 117628, 69, 253); //23
+		widget.child(26, 117629, 203, 253); //23
 		//
 
 	}

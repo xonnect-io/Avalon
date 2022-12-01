@@ -161,6 +161,16 @@
         "npcId": 494
     },
     {
+        "id": 96765,
+        "type": "NPC_STATEMENT",
+        "anim": "NORMAL",
+        "lines": 2,
+        "line1": "Merry Christmas Avalonians!",
+        "line2": "Show your support and vote for a free Christmas Box!",
+        "next": -1,
+        "npcId": 1199
+    },
+    {
         "id": 10,
         "type": "OPTION",
         "lines": 2,

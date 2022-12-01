@@ -1185,6 +1185,10 @@ public class CustomDropUtils {
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY7.npcId) {
                 percentBoost += 70;
             }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.NECROMANCER.npcId) {
+                percentBoost += 100;
+            }
         }
 
         if (player.getInventory().contains(23413)) {
@@ -1298,9 +1302,6 @@ public class CustomDropUtils {
             }
         }
 
-        if (player.getDoubleDDRTimer() > 0) {
-            percentBoost *= 1.5;
-        }
 
         /**
          * Donator Rank bonusses
@@ -1328,6 +1329,9 @@ public class CustomDropUtils {
             percentBoost += 10;
         }
 
+        if (player.getDoubleDDRTimer() > 0) {
+            percentBoost *= 1.5D;
+        }
         return percentBoost;
     }
 }

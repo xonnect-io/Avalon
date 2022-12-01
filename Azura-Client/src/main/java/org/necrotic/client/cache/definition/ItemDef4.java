@@ -15,7 +15,7 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 19669;
 				itemDef.maleWieldY = 3;
 				itemDef.maleWieldZ = 3;
-				itemDef.modelZoom = 340;
+				itemDef.modelZoom = 380;
 				itemDef.modelOffsetY = 0;
 				itemDef.rotationY = 280;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};

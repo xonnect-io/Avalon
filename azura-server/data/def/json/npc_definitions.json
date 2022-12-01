@@ -26794,8 +26794,8 @@
   },
   {
     "id": 1199,
-    "name": "Elf Tracker",
-    "examine": "An elf tracker.",
+    "name": "Santa's Elf",
+    "examine": "An Santa's Elf",
     "combat": 0,
     "size": 1,
     "attackable": false,

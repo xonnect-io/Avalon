@@ -167,6 +167,11 @@ public class Maxhits {
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.NECROMANCER.npcId) {
+                percent += 50;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.KRAMPUS_PET.npcId) {
                 percent += 20;
             }
@@ -482,6 +487,11 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {
                 base *= 1.35D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.NECROMANCER.npcId) {
+                base *= 1.5D;
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
@@ -873,7 +883,11 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {
                 maxHit *= 1.35D;
             }
-
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.NECROMANCER.npcId) {
+                maxHit *= 1.5D;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.KRAMPUS_PET.npcId) {
@@ -1214,6 +1228,11 @@ public class Maxhits {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {
                 maxHit *= 1.35D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
+                    && player.getSummoning().getFamiliar().getSummonNpc()
+                    .getId() == BossPets.BossPet.NECROMANCER.npcId) {
+                maxHit *= 1.5D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
