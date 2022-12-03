@@ -350,7 +350,14 @@ public class PlayerSaving {
 			object.add("collectionlog-data2", builder.toJsonTree(player.getCollectionLog2().collectionLogofkills));
 			object.add("collectionlog-data3", builder.toJsonTree(player.getCollectionLog2().collectionLogofrewards));
 			object.add("holy-prayers-unlocked", builder.toJsonTree(player.getUnlockedHolyPrayers()));
-
+			object.add("unlocked-set1", builder.toJsonTree(player.isUnlockedSet1()));
+			object.add("unlocked-set2", builder.toJsonTree(player.isUnlockedSet2()));
+			object.add("unlocked-set3", builder.toJsonTree(player.isUnlockedSet3()));
+			object.add("unlocked-set4", builder.toJsonTree(player.isUnlockedSet4()));
+			object.add("unlocked-set5", builder.toJsonTree(player.isUnlockedSet5()));
+			object.add("unlocked-set6", builder.toJsonTree(player.isUnlockedSet6()));
+			object.add("unlocked-set7", builder.toJsonTree(player.isUnlockedSet7()));
+			object.add("unlocked-set8", builder.toJsonTree(player.isUnlockedSet8()));
 			object.addProperty("rune-ess", new Integer(player.getStoredRuneEssence()));
 			object.addProperty("pure-ess", new Integer(player.getStoredPureEssence()));
 			object.addProperty("has-bank-pin", new Boolean(player.getBankPinAttributes().hasBankPin()));

@@ -630,9 +630,7 @@ public class ItemActionPacketListener implements PacketListener {
             case 23392:
                 player.membershipInterfaceHandler.openBenefitTab();
                 break;
-            case 23393:
-                player.membershipInterfaceHandler.openCosmeticTab();
-                break;
+                
             case 23177:
                 player.getInventory().delete(23177, 1);
                 player.getInventory().add(23139, 1);

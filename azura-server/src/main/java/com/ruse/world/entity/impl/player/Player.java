@@ -4827,11 +4827,68 @@ End new teleport
 
     @Getter
     @Setter
-    private boolean set1 = false;
+    private boolean set1;
 
     @Getter
     @Setter
-    private boolean set2 = false;
+    private boolean unlockedSet1;
+
+    @Getter
+    @Setter
+    private boolean set2;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet2;
+
+    @Getter
+    @Setter
+    private boolean set3;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet3;
+
+    @Getter
+    @Setter
+    private boolean set4;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet4;
+
+    @Getter
+    @Setter
+    private boolean set5;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet5;
+
+    @Getter
+    @Setter
+    private boolean set6;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet6;
+
+    @Getter
+    @Setter
+    private boolean set7;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet7;
+
+    @Getter
+    @Setter
+    private boolean set8;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet8;
+
 
     public boolean isInMinigame() {
         boolean inMinigameLoc = getLocation() == Locations.Location.KEEPERS_OF_LIGHT_GAME || getLocation() == Locations.Location.VAULT_OF_WAR || getLocation() == Locations.Location.VOID_OF_DARKNESS || getLocation() == Locations.Location.HALLS_OF_VALOR || getLocation() == Locations.Location.TREASURE_HUNTER;

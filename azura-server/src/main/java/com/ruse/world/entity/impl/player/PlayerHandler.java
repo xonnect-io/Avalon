@@ -30,6 +30,7 @@ import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.pvp.BountyHunter;
 import com.ruse.world.content.combat.range.DwarfMultiCannon;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
+import com.ruse.world.content.cosmetic.WardrobeData;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.discordbot.DiscordIntegration;
 import com.ruse.world.content.minigames.impl.Barrows;
@@ -52,216 +53,257 @@ import org.mindrot.jbcrypt.BCrypt;
 public class PlayerHandler {
 
     public static void handleLogin(Player player) {
-        World.playerMap().put(player.getLongUsername(), player);
+        World.playerMap ().put (player.getLongUsername (), player);
 
         // Register the player
-        System.out.println("[World] Registering player - [username, host] : [" + player.getUsername() + ", "
-                + player.getHostAddress() + "]");
+        System.out.println ("[World] Registering player - [username, host] : [" + player.getUsername () + ", "
+                + player.getHostAddress () + "]");
 
-        PlayerLogs.logPlayerLoginWithIP(player.getUsername(), "Login from host " + player.getHostAddress()
-                + ", serial number: " + player.getSerialNumber() + ", mac address:" + player.getMac());
-        PlayerLogs.logPlayerLogin(player.getUsername(), "Login ");
-        player.getControllerManager().login();
-        player.getPlayerOwnedShopManager().hookShop();
-        ConnectionHandler.add(player.getHostAddress());
-        World.addPlayer(player);
-        World.updatePlayersOnline();
-        PlayersOnlineInterface.add(player);
-        player.getSession().setState(SessionState.LOGGED_IN);
+        PlayerLogs.logPlayerLoginWithIP (player.getUsername (), "Login from host " + player.getHostAddress ()
+                + ", serial number: " + player.getSerialNumber () + ", mac address:" + player.getMac ());
+        PlayerLogs.logPlayerLogin (player.getUsername (), "Login ");
+        player.getControllerManager ().login ();
+        player.getPlayerOwnedShopManager ().hookShop ();
+        ConnectionHandler.add (player.getHostAddress ());
+        World.addPlayer (player);
+        World.updatePlayersOnline ();
+        PlayersOnlineInterface.add (player);
+        player.getSession ().setState (SessionState.LOGGED_IN);
 
         // Packets
-        player.getPacketSender().sendDetails();
-        player.loadMap(true);
-        player.getRecordedLogin().reset();
+        player.getPacketSender ().sendDetails ();
+        player.loadMap (true);
+        player.getRecordedLogin ().reset ();
 
         //Mbox spinner
-        player.getNewSpinner().clearMysteryBox();
+        player.getNewSpinner ().clearMysteryBox ();
 
         // Tabs
-        player.getPacketSender().sendTabs();
-        if (player.getWalkableInterfaceId() == 29050) {
-            player.getPacketSender().sendWalkableInterface(29050, false);
+        player.getPacketSender ().sendTabs ();
+        if (player.getWalkableInterfaceId () == 29050) {
+            player.getPacketSender ().sendWalkableInterface (29050, false);
         }
-        ServerPerks.getInstance().updateOverlay(player);
-        player.getPacketSender().sendString(29053, "").sendString(29054, "");
+        ServerPerks.getInstance ().updateOverlay (player);
+        player.getPacketSender ().sendString (29053, "").sendString (29054, "");
 
         for (int i = 0; i < 10; i++) {
-            player.getPacketSender().sendString(29095 + i, "");
+            player.getPacketSender ().sendString (29095 + i, "");
         }
 
         // Setting up the player's item containers..
-        for (int i = 0; i < player.getBanks().length; i++) {
-            if (player.getBank(i) == null) {
-                player.setBank(i, new Bank(player));
+        for (int i = 0; i < player.getBanks ().length; i++) {
+            if (player.getBank (i) == null) {
+                player.setBank (i, new Bank (player));
             }
         }
-        player.getInventory().refreshItems();
-        player.getEquipment().refreshItems();
+        player.getInventory ().refreshItems ();
+        player.getEquipment ().refreshItems ();
 
-        player.getEventChestHandler().loadEventChest(player);
-        player.getEventChestHandler().generateRewards(player);
-        if (player.getHasPin() == true && !player.getSavedIp().equalsIgnoreCase(player.getHostAddress())) {
-            player.setPlayerLocked(true);
+        player.getEventChestHandler ().loadEventChest (player);
+        player.getEventChestHandler ().generateRewards (player);
+        if (player.getHasPin () == true && !player.getSavedIp ().equalsIgnoreCase (player.getHostAddress ())) {
+            player.setPlayerLocked (true);
         }
         // Weapons and equipment..
-        WeaponAnimations.update(player);
-        WeaponInterfaces.assign(player, player.getEquipment().get(Equipment.WEAPON_SLOT));
-        CombatSpecial.updateBar(player);
-        BonusManager.update(player);
+        WeaponAnimations.update (player);
+        WeaponInterfaces.assign (player, player.getEquipment ().get (Equipment.WEAPON_SLOT));
+        CombatSpecial.updateBar (player);
+        BonusManager.update (player);
 
         // Skills
-        player.getSummoning().login();
-        player.getFarming().load();
-        player.getLeaderboardManager().updateData();
+        player.getSummoning ().login ();
+        player.getFarming ().load ();
+        player.getLeaderboardManager ().updateData ();
         //player.getBestItems().fillDefinitions();
-        Slayer.checkDuoSlayer(player, true);
-        for (Skill skill : Skill.values()) {
-            player.getSkillManager().updateSkill(skill);
+        Slayer.checkDuoSlayer (player, true);
+        for (Skill skill : Skill.values ()) {
+            player.getSkillManager ().updateSkill (skill);
         }
 
         // Relations
-        player.getRelations().setPrivateMessageId(1).onLogin(player).updateLists(true);
+        player.getRelations ().setPrivateMessageId (1).onLogin (player).updateLists (true);
 
         // Client configurations
-        player.getPacketSender().sendConfig(172, player.isAutoRetaliate() ? 1 : 0)
-                .sendTotalXp(player.getSkillManager().getTotalGainedExp())
-                .sendConfig(player.getFightType().getParentId(), player.getFightType().getChildId()).sendRunStatus()
-                .sendRunEnergy(player.getRunEnergy()).sendRights().sendString(8135, "" + player.getMoneyInPouch())
-                .sendInteractionOption("Follow", 3, false).sendInteractionOption("Trade With", 4, false);
+        player.getPacketSender ().sendConfig (172, player.isAutoRetaliate () ? 1 : 0)
+                .sendTotalXp (player.getSkillManager ().getTotalGainedExp ())
+                .sendConfig (player.getFightType ().getParentId (), player.getFightType ().getChildId ()).sendRunStatus ()
+                .sendRunEnergy (player.getRunEnergy ()).sendRights ().sendString (8135, "" + player.getMoneyInPouch ())
+                .sendInteractionOption ("Follow", 3, false).sendInteractionOption ("Trade With", 4, false);
 
-        if (player.getHasPin() == true && !player.getSavedIp().equalsIgnoreCase(player.getHostAddress())) {
-            player.setInputHandling(new EnterPinPacketListener());
-            player.getPacketSender().sendEnterInputPrompt("Enter your pin to play#confirmstatus");
+        if (player.getHasPin () == true && !player.getSavedIp ().equalsIgnoreCase (player.getHostAddress ())) {
+            player.setInputHandling (new EnterPinPacketListener ());
+            player.getPacketSender ().sendEnterInputPrompt ("Enter your pin to play#confirmstatus");
         } else {
-            player.setDialogueActionId(96765);
-            DialogueManager.start(player, 96765);
+            player.setDialogueActionId (96765);
+            DialogueManager.start (player, 96765);
             //  // System.out.println("Player: " + player.getUsername() + " Didn't have pin set");
         }
 
-        Autocasting.onLogin(player);
-        PrayerHandler.deactivateAll(player);
-        CurseHandler.deactivateAll(player);
-        BonusManager.sendCurseBonuses(player);
-        Barrows.handleLogin(player);
-        VoidOfDarkness.handleLogin(player);
+        Autocasting.onLogin (player);
+        PrayerHandler.deactivateAll (player);
+        CurseHandler.deactivateAll (player);
+        BonusManager.sendCurseBonuses (player);
+        Barrows.handleLogin (player);
+        VoidOfDarkness.handleLogin (player);
         // Tasks
-        TaskManager.submit(new PlayerSkillsTask(player));
-        TaskManager.submit(new PlayerRegenConstitutionTask(player));
-        TaskManager.submit(new SummoningRegenPlayerConstitutionTask(player));
-        if (player.isPoisoned()) {
-            TaskManager.submit(new CombatPoisonEffect(player));
+        TaskManager.submit (new PlayerSkillsTask (player));
+        TaskManager.submit (new PlayerRegenConstitutionTask (player));
+        TaskManager.submit (new SummoningRegenPlayerConstitutionTask (player));
+        if (player.isPoisoned ()) {
+            TaskManager.submit (new CombatPoisonEffect (player));
         }
-        player.getBonusXp().init();
-        if (player.getPrayerRenewalPotionTimer() > 0) {
-            TaskManager.submit(new PrayerRenewalPotionTask(player));
+        player.getBonusXp ().init ();
+        if (player.getPrayerRenewalPotionTimer () > 0) {
+            TaskManager.submit (new PrayerRenewalPotionTask (player));
         }
-        if (player.getOverloadPotionTimer() > 0) {
-            TaskManager.submit(new OverloadPotionTask(player));
+        if (player.getOverloadPotionTimer () > 0) {
+            TaskManager.submit (new OverloadPotionTask (player));
         }
-        if (player.getTeleblockTimer() > 0) {
-            TaskManager.submit(new CombatTeleblockEffect(player));
+        if (player.getTeleblockTimer () > 0) {
+            TaskManager.submit (new CombatTeleblockEffect (player));
         }
-        if (ProgressionZone.getCurrentZone(player) == ZoneData.Monsters.PHASE_6)
-            StarterTasks.doProgress(player, StarterTasks.StarterTask.COMPLETE_STARTER_ZONE);
+        if (ProgressionZone.getCurrentZone (player) == ZoneData.Monsters.PHASE_6)
+            StarterTasks.doProgress (player, StarterTasks.StarterTask.COMPLETE_STARTER_ZONE);
 
-        if (player.getDoubleDRTimer() > 0) {
-            if (player.getDoubleDRTimer() > 3000) {
-                player.getPacketSender().sendEffectTimerSeconds(player.getDoubleDRTimer() * 60 / 100, EffectTimer.X2_DR_1HR);
+        if (player.getDoubleDRTimer () > 0) {
+            if (player.getDoubleDRTimer () > 3000) {
+                player.getPacketSender ().sendEffectTimerSeconds (player.getDoubleDRTimer () * 60 / 100, EffectTimer.X2_DR_1HR);
             } else {
-                player.getPacketSender().sendEffectTimerSeconds(player.getDoubleDRTimer() * 60 / 100, EffectTimer.X2_DR_30MIN);
+                player.getPacketSender ().sendEffectTimerSeconds (player.getDoubleDRTimer () * 60 / 100, EffectTimer.X2_DR_30MIN);
             }
-            TaskManager.submit(new DoubleDRTask(player));
+            TaskManager.submit (new DoubleDRTask (player));
         }
-        if (player.getDoubleDDRTimer() > 0) {
-            player.getPacketSender().sendEffectTimerSeconds(player.getDoubleDDRTimer() * 60 / 100, EffectTimer.X2_DDR_1HR);
-            TaskManager.submit(new DoubleDDRTask(player));
+        if (player.getDoubleDDRTimer () > 0) {
+            player.getPacketSender ().sendEffectTimerSeconds (player.getDoubleDDRTimer () * 60 / 100, EffectTimer.X2_DDR_1HR);
+            TaskManager.submit (new DoubleDDRTask (player));
         }
-        if (player.getDoubleDMGTimer() > 0) {
-            if (player.getDoubleDMGTimer() > 3000) {
-                player.getPacketSender().sendEffectTimerSeconds(player.getDoubleDMGTimer() * 60 / 100, EffectTimer.X2_DMG_1HR);
+        if (player.getDoubleDMGTimer () > 0) {
+            if (player.getDoubleDMGTimer () > 3000) {
+                player.getPacketSender ().sendEffectTimerSeconds (player.getDoubleDMGTimer () * 60 / 100, EffectTimer.X2_DMG_1HR);
             } else {
-                player.getPacketSender().sendEffectTimerSeconds(player.getDoubleDMGTimer() * 60 / 100, EffectTimer.X2_DMG_30MIN);
+                player.getPacketSender ().sendEffectTimerSeconds (player.getDoubleDMGTimer () * 60 / 100, EffectTimer.X2_DMG_30MIN);
             }
-            TaskManager.submit(new DoubleDMGTask(player));
+            TaskManager.submit (new DoubleDMGTask (player));
         }
 
 
-        player.getDonationDeals().shouldReset();
+        player.getDonationDeals ().shouldReset ();
 
-        if (player.getSkullTimer() > 0) {
-            player.setSkullIcon(1);
-            TaskManager.submit(new CombatSkullEffect(player));
-        }
-
-        if (System.currentTimeMillis() > (player.lastLogin + 86400000)) {
-            player.getDailyRewards().resetData();
+        if (player.getSkullTimer () > 0) {
+            player.setSkullIcon (1);
+            TaskManager.submit (new CombatSkullEffect (player));
         }
 
-        player.getDailyRewards().handleDailyLogin();
+        if (System.currentTimeMillis () > (player.lastLogin + 86400000)) {
+            player.getDailyRewards ().resetData ();
+        }
 
-        player.lastLogin = System.currentTimeMillis();
+        player.getDailyRewards ().handleDailyLogin ();
 
-        player.getDailyRewards().setDataOnLogin();
+        player.lastLogin = System.currentTimeMillis ();
 
-        if (player.getFireImmunity() > 0) {
-            FireImmunityTask.makeImmune(player, player.getFireImmunity(), player.getFireDamageModifier());
+        player.getDailyRewards ().setDataOnLogin ();
+
+        if (player.getFireImmunity () > 0) {
+            FireImmunityTask.makeImmune (player, player.getFireImmunity (), player.getFireDamageModifier ());
         }
-        if (player.getSpecialPercentage() < 100) {
-            TaskManager.submit(new PlayerSpecialAmountTask(player));
+        if (player.getSpecialPercentage () < 100) {
+            TaskManager.submit (new PlayerSpecialAmountTask (player));
         }
-        if (player.hasStaffOfLightEffect()) {
-            TaskManager.submit(new StaffOfLightSpecialAttackTask(player));
+        if (player.hasStaffOfLightEffect ()) {
+            TaskManager.submit (new StaffOfLightSpecialAttackTask (player));
         }
-        if (player.getMinutesBonusExp() >= 0) {
-            TaskManager.submit(new BonusExperienceTask(player));
+        if (player.getMinutesBonusExp () >= 0) {
+            TaskManager.submit (new BonusExperienceTask (player));
         }
-        if (player.getMinutesVotingDR() > 0) {
-            TaskManager.submit(new VotingDRBoostTask(player));
+        if (player.getMinutesVotingDR () > 0) {
+            TaskManager.submit (new VotingDRBoostTask (player));
         }
-        if (player.getMinutesVotingDMG() > 0) {
-            TaskManager.submit(new VotingDMGBoostTask(player));
+        if (player.getMinutesVotingDMG () > 0) {
+            TaskManager.submit (new VotingDMGBoostTask (player));
         }
 
         // Update appearance
 
         // Others
-        Lottery.onLogin(player);
-        Locations.login(player);
+        Lottery.onLogin (player);
+        Locations.login (player);
 
-        if (player.getLocation() != Locations.Location.PROGRESSION_ZONES) {
-            player.getPacketSender().sendWalkableInterface(112000, false);
+        if (player.getLocation () != Locations.Location.PROGRESSION_ZONES) {
+            player.getPacketSender ().sendWalkableInterface (112000, false);
         }
 
-        if (player.getLocation() == Location.KEEPERS_OF_LIGHT_LOBBY || player.getLocation() == Location.KEEPERS_OF_LIGHT_GAME) {
-            player.getPacketSender().sendWalkableInterface(21005, false);
+        if (player.getLocation () == Location.KEEPERS_OF_LIGHT_LOBBY || player.getLocation () == Location.KEEPERS_OF_LIGHT_GAME) {
+            player.getPacketSender ().sendWalkableInterface (21005, false);
         }
 
-        player.getPacketSender().sendMessage("<shad=1>@bla@Welcome to " + GameSettings.RSPS_NAME + "!");
+        player.getPacketSender ().sendMessage ("<shad=1>@bla@Welcome to " + GameSettings.RSPS_NAME + "!");
         if (GameSettings.ELITE_DONO_DEAL == true)
-            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Elite Goodiebag!");
+            player.getPacketSender ().sendMessage ("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Elite Goodiebag!");
         if (GameSettings.CASE_KEY_DEAL == true)
-            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x15 Case keys!");
+            player.getPacketSender ().sendMessage ("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x15 Case keys!");
         if (GameSettings.OWNER_JEWELRY_DONO_DEAL == true)
-            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Jewelry Goodiebag!");
+            player.getPacketSender ().sendMessage ("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Jewelry Goodiebag!");
         if (GameSettings.OWNER_CAPE_DONO_DEAL == true)
-            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Cape Goodiebag!");
+            player.getPacketSender ().sendMessage ("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x1 Owner Cape Goodiebag!");
         if (GameSettings.AUTUMN_DEAL == true)
-            player.getPacketSender().sendMessage("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x5 Autumn boxes!");
-        if (GameSettings.BCRYPT_HASH_PASSWORDS && Misc.needsNewSalt(player.getSalt())) {
-            player.setSalt(BCrypt.gensalt(GameSettings.BCRYPT_ROUNDS));
+            player.getPacketSender ().sendMessage ("<img=832>@blu@Dono-Deal @red@Every 50 Donated you will get @red@<shad=1>x5 Autumn boxes!");
+        if (GameSettings.BCRYPT_HASH_PASSWORDS && Misc.needsNewSalt (player.getSalt ())) {
+            player.setSalt (BCrypt.gensalt (GameSettings.BCRYPT_ROUNDS));
         }
 
         if (Wildywyrm.wyrmAlive) {
-            Wildywyrm.sendHint(player);
+            Wildywyrm.sendHint (player);
         }
         if (SkeletalHorror.wyrmAlive) {
-            SkeletalHorror.sendHint(player);
+            SkeletalHorror.sendHint (player);
         }
-        if (WellOfGoodwill.isActive()) {
-            player.getPacketSender().sendMessage(MessageType.SERVER_ALERT,
+        if (WellOfGoodwill.isActive ()) {
+            player.getPacketSender ().sendMessage (MessageType.SERVER_ALERT,
                     "The Well of Goodwill is granting 30% bonus experience for another "
-                            + WellOfGoodwill.getMinutesRemaining() + " minutes.");
+                            + WellOfGoodwill.getMinutesRemaining () + " minutes.");
         }
+
+        if (player.isUnlockedSet1 ()) {
+            player.setCurrentWardrobe (WardrobeData.COSTUME_2);
+            player.getWardrobeData ().setOutfitUnlocked (true);
+        }
+
+        if (player.isUnlockedSet2 ()) {
+            player.setCurrentWardrobe (WardrobeData.COSTUME_1);
+            player.getWardrobeData ().setOutfitUnlocked (true);
+        }
+
+        if (player.isUnlockedSet3 ()) {
+            player.setCurrentWardrobe (WardrobeData.COSTUME_3);
+            player.getWardrobeData ().setOutfitUnlocked (true);
+        }
+/*
+        if (player.isUnlockedSet4 ()) {
+            player.setCurrentWardrobe (WardrobeData.COSTUME_4);
+            player.getWardrobeData ().setOutfitUnlocked (true);
+        }
+
+        if (player.isUnlockedSet5 ()) {
+            player.setCurrentWardrobe (WardrobeData.COSTUME_5);
+            player.getWardrobeData ().setOutfitUnlocked (true);
+        }
+
+        if (player.isUnlockedSet6 ()) {
+            player.setCurrentWardrobe (WardrobeData.COSTUME_6);
+            player.getWardrobeData ().setOutfitUnlocked (true);
+        }
+
+        if (player.isUnlockedSet7 ()) {
+            player.setCurrentWardrobe (WardrobeData.COSTUME_7);
+            player.getWardrobeData ().setOutfitUnlocked (true);
+        }
+
+        if (player.isUnlockedSet8 ()) {
+            player.setCurrentWardrobe (WardrobeData.COSTUME_8);
+            player.getWardrobeData ().setOutfitUnlocked (true);
+        }
+*/
 
         PlayerPanel.refreshPanel(player);
 

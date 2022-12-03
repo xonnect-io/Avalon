@@ -409,7 +409,30 @@ public class PlayerLoading {
             if (reader.has("current-boss-amount")) {
                 player.setCurrentBossTaskAmount(reader.get("current-boss-amount").getAsInt());
             }
-
+            if (reader.has("unlocked-set1")) {
+                player.setUnlockedSet1 (reader.get("unlocked-set1").getAsBoolean());
+            }
+            if (reader.has("unlocked-set2")) {
+                player.setUnlockedSet2 (reader.get("unlocked-set2").getAsBoolean());
+            }
+            if (reader.has("unlocked-set3")) {
+                player.setUnlockedSet3 (reader.get("unlocked-set3").getAsBoolean());
+            }
+            if (reader.has("unlocked-set4")) {
+                player.setUnlockedSet4 (reader.get("unlocked-set4").getAsBoolean());
+            }
+            if (reader.has("unlocked-set5")) {
+                player.setUnlockedSet5 (reader.get("unlocked-set5").getAsBoolean());
+            }
+            if (reader.has("unlocked-set6")) {
+                player.setUnlockedSet6 (reader.get("unlocked-set6").getAsBoolean());
+            }
+            if (reader.has("unlocked-set7")) {
+                player.setUnlockedSet7 (reader.get("unlocked-set7").getAsBoolean());
+            }
+            if (reader.has("unlocked-set8")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set8").getAsBoolean());
+            }
             if (reader.has("has-completed-boss-task")) {
                 player.setHasPlayerCompletedBossTask(reader.get("has-completed-boss-task").getAsBoolean());
             }

@@ -43,6 +43,103 @@ public enum WardrobeData {
             320,
             false),//zoom
 
+    COSTUME_3(133073, "Shadow Outfit", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+            new int[] {17614, 1}, //helmet
+            new int[] {11195, 1}, //amulet
+            new int[] {17616, 1}, //body
+            new int[] {17618, 1}, //legs
+            new int[] {17622, 1}, //boots
+            new int[] {17606, 1}, //cape
+            new int[] {17624, 1}, //weapon
+            new int[] {-1, 1}, //aura
+            new int[] {-1, 1}, //gloves
+            new int[] {17620, 1}, //shield
+            new int[] {-1, 1}, //ring
+            607, //npcid
+            320,
+            false),//zoom
+/*
+    COSTUME_4(133074, "Fart Sniffer", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+            new int[] {10612, 1}, //helmet
+            new int[] {19335, 1}, //amulet
+            new int[] {5553, 1}, //body
+            new int[] {5555, 1}, //legs
+            new int[] {5557, 1}, //boots
+            new int[] {-1, 1}, //cape
+            new int[] {-1, 1}, //weapon
+            new int[] {-1, 1}, //aura
+            new int[] {5556, 1}, //gloves
+            new int[] {-1, 1}, //shield
+            new int[] {-1, 1}, //ring
+            903, //npcid
+            320,
+            false),//zoom
+
+    COSTUME_5(133075, "Shit eater", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+            new int[] {10612, 1}, //helmet
+            new int[] {19335, 1}, //amulet
+            new int[] {5553, 1}, //body
+            new int[] {5555, 1}, //legs
+            new int[] {5557, 1}, //boots
+            new int[] {-1, 1}, //cape
+            new int[] {-1, 1}, //weapon
+            new int[] {-1, 1}, //aura
+            new int[] {5556, 1}, //gloves
+            new int[] {-1, 1}, //shield
+            new int[] {-1, 1}, //ring
+            904, //npcid
+            320,
+            false),//zoom
+
+    COSTUME_6(133076, "Shit eater", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+            new int[] {10612, 1}, //helmet
+            new int[] {19335, 1}, //amulet
+            new int[] {5553, 1}, //body
+            new int[] {5555, 1}, //legs
+            new int[] {5557, 1}, //boots
+            new int[] {-1, 1}, //cape
+            new int[] {-1, 1}, //weapon
+            new int[] {-1, 1}, //aura
+            new int[] {5556, 1}, //gloves
+            new int[] {-1, 1}, //shield
+            new int[] {-1, 1}, //ring
+            904, //npcid
+            320,
+            false),//zoom
+
+
+    COSTUME_7(133077, "Shit eater", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+            new int[] {10612, 1}, //helmet
+            new int[] {19335, 1}, //amulet
+            new int[] {5553, 1}, //body
+            new int[] {5555, 1}, //legs
+            new int[] {5557, 1}, //boots
+            new int[] {-1, 1}, //cape
+            new int[] {-1, 1}, //weapon
+            new int[] {-1, 1}, //aura
+            new int[] {5556, 1}, //gloves
+            new int[] {-1, 1}, //shield
+            new int[] {-1, 1}, //ring
+            904, //npcid
+            320,
+            false),//zoom
+
+    COSTUME_8(133078, "Shit eater", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+            new int[] {10612, 1}, //helmet
+            new int[] {19335, 1}, //amulet
+            new int[] {5553, 1}, //body
+            new int[] {5555, 1}, //legs
+            new int[] {5557, 1}, //boots
+            new int[] {-1, 1}, //cape
+            new int[] {-1, 1}, //weapon
+            new int[] {-1, 1}, //aura
+            new int[] {5556, 1}, //gloves
+            new int[] {-1, 1}, //shield
+            new int[] {-1, 1}, //ring
+            904, //npcid
+            320,
+            false),//zoom
+*/
     ;
 
 

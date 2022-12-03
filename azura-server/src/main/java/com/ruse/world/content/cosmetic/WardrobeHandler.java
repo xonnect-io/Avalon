@@ -16,9 +16,9 @@ public class WardrobeHandler {
     public final WardrobeData data[] = WardrobeData.values ();
 
     public void open() {
+
         player.getPacketSender ().resetItemsOnInterface (31875 + 10, 10);
         player.getPA ().sendInterface (133000);
-        if (player.getWardrobeData () == null) {
             player.setWardrobeType (WardrobeCategory.FAVORITES);
             sendItemsOnInterface (WardrobeData.COSTUME_1);
             player.setCurrentWardrobe (WardrobeData.COSTUME_1);
@@ -29,13 +29,23 @@ public class WardrobeHandler {
                 player.getPA ().sendString (31886, " Unequip Outfit");
             else if (player.getWardrobeData().getNpcId () == 9244 && player.isSet2())
                 player.getPA ().sendString (31886, " Unequip Outfit");
-
+            else if (player.getWardrobeData().getNpcId () == 902 && player.isSet3())
+                player.getPA ().sendString (31886, " Unequip Outfit");
+            else if (player.getWardrobeData().getNpcId () == 903 && player.isSet4())
+                player.getPA ().sendString (31886, " Unequip Outfit");
+            else if (player.getWardrobeData().getNpcId () == 904 && player.isSet5())
+                player.getPA ().sendString (31886, " Unequip Outfit");
+            else if (player.getWardrobeData().getNpcId () == 905 && player.isSet6())
+                player.getPA ().sendString (31886, " Unequip Outfit");
+            else if (player.getWardrobeData().getNpcId () == 906 && player.isSet7())
+                player.getPA ().sendString (31886, " Unequip Outfit");
+            else if (player.getWardrobeData().getNpcId () == 907 && player.isSet8())
+                player.getPA ().sendString (31886, " Unequip Outfit");
             else
                 player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ? " Equip Outfit" :
                         "" + "Unlock Outfit");
 
             switchData ();
-        }
     }
 
 
@@ -79,6 +89,18 @@ public class WardrobeHandler {
                     if (player.getWardrobeData().getNpcId () == 2270 && player.isSet1())
                         player.getPA ().sendString (31886, " Unequip Outfit");
                     else if (player.getWardrobeData().getNpcId () == 9244 && player.isSet2())
+                        player.getPA ().sendString (31886, " Unequip Outfit");
+                    else if (player.getWardrobeData().getNpcId () == 902 && player.isSet3())
+                        player.getPA ().sendString (31886, " Unequip Outfit");
+                    else if (player.getWardrobeData().getNpcId () == 903 && player.isSet4())
+                        player.getPA ().sendString (31886, " Unequip Outfit");
+                    else if (player.getWardrobeData().getNpcId () == 904 && player.isSet5())
+                        player.getPA ().sendString (31886, " Unequip Outfit");
+                    else if (player.getWardrobeData().getNpcId () == 905 && player.isSet6())
+                        player.getPA ().sendString (31886, " Unequip Outfit");
+                    else if (player.getWardrobeData().getNpcId () == 906 && player.isSet7())
+                        player.getPA ().sendString (31886, " Unequip Outfit");
+                    else if (player.getWardrobeData().getNpcId () == 907 && player.isSet8())
                         player.getPA ().sendString (31886, " Unequip Outfit");
 
                     else

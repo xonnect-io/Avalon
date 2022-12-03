@@ -4957,7 +4957,7 @@ public final class MobDefinition {
 				definition.npcSizeInSquares = 1;
 				break;
 			case 607:
-				definition.name = "<col=E3E3E3>COL Warrior";
+				definition.name = "<col=7d9781>Shadow Warrior";
 				definition.combatLevel = 284;
 				definition.walkAnimation = 1660;
 				definition.standAnimation = 11973;
@@ -4966,7 +4966,7 @@ public final class MobDefinition {
 				definition.npcModels[1] = 55820; //JAW
 				definition.npcModels[2] = 65501; //CHEST
 				definition.npcModels[3] = 65505; //CAPE
-				definition.npcModels[4] = 64082; //ARM
+				definition.npcModels[4] = 64090; //ARM
 				definition.npcModels[5] = 65507; //HAND//shield
 				definition.npcModels[6] = 65510; //WEP
 				definition.npcModels[7] = 65503; //LEG
@@ -4977,7 +4977,6 @@ public final class MobDefinition {
 				definition.actions[2] = null;
 				definition.actions[3] = null;
 				definition.actions[4] = null;
-				definition.rdc2 = 8239113;
 				break;
 
 			case 5002:

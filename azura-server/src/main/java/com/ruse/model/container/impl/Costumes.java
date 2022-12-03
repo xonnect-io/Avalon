@@ -54,16 +54,28 @@ public enum Costumes {
             new int[]{23799,23800, 23801, 23802, 23803}),
     SANTA_COSMETIC(13258, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{1050,14595, 14602, 14603, 14605}),
-    ROGUE_COSMETIC(13265, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.AMULET_SLOT},
-            new int[]{10612,5553, 5555, 5556, 5557, 19335}),
     ARMADYL_COSMETIC(13267, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT},
             new int[]{11718,11720, 11722}),
     NOOBIE_COSMETIC(13269, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT},
             new int[]{19900,10939, 10940}),
     DRAGON_RIDER(23456, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{14050,14051, 14052, 14053, 14054}),
-    SEASON_1_COSMETIC(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
+    COSTUME_1(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{23396,23397, 23398, 23400, 23399}),
+    COSTUME_2(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.AMULET_SLOT},
+            new int[]{10612,5553, 5555, 5556, 5557, 19335}),
+    COSTUME_3(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.CAPE_SLOT, Equipment.FEET_SLOT, Equipment.SHIELD_SLOT, Equipment.AMULET_SLOT},
+            new int[]{17614,17616, 17618, 17606,17622,17620,17624,11195}),
+    COSTUME_4(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.AMULET_SLOT},
+            new int[]{10612,5553, 5555, 5556, 5557, 19335}),
+    COSTUME_5(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.AMULET_SLOT},
+            new int[]{10612,5553, 5555, 5556, 5557, 19335}),
+    COSTUME_6(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.AMULET_SLOT},
+            new int[]{10612,5553, 5555, 5556, 5557, 19335}),
+    COSTUME_7(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.AMULET_SLOT},
+            new int[]{10612,5553, 5555, 5556, 5557, 19335}),
+    COSTUME_8(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.CAPE_SLOT, Equipment.FEET_SLOT, Equipment.SHIELD_SLOT, Equipment.AMULET_SLOT},
+            new int[]{17614,17616, 17618, 17606,17622,17620,17624,11195}),
     ;
     private int itemId;
     private double damageBoost;
@@ -75,9 +87,21 @@ public enum Costumes {
             if (c.getItemId() == id)
                 return c;
             else if (player.isSet1 ()) {
-                return Costumes.ROGUE_COSMETIC;
+                return Costumes.COSTUME_2;
             } else if (player.isSet2 ()) {
-                return Costumes.SEASON_1_COSMETIC;
+                return Costumes.COSTUME_1;
+            } else if (player.isSet3 ()) {
+                return Costumes.COSTUME_3;
+            } else if (player.isSet4 ()) {
+                return Costumes.COSTUME_4;
+            } else if (player.isSet5 ()) {
+                return Costumes.COSTUME_5;
+            } else if (player.isSet6 ()) {
+                return Costumes.COSTUME_6;
+            } else if (player.isSet7 ()) {
+                return Costumes.COSTUME_7;
+            } else if (player.isSet8 ()) {
+                return Costumes.COSTUME_8;
             } else return null;
         }
         return null;
