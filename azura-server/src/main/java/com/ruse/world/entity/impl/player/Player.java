@@ -52,6 +52,9 @@ import com.ruse.world.content.combat.strategy.CombatStrategies;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.combat.weapon.FightType;
+import com.ruse.world.content.cosmetic.WardrobeCategory;
+import com.ruse.world.content.cosmetic.WardrobeData;
+import com.ruse.world.content.cosmetic.WardrobeHandler;
 import com.ruse.world.content.dailyTask.DailyTaskData;
 import com.ruse.world.content.dailyTask.DailyTaskDifficulty;
 import com.ruse.world.content.dailyTasksNew.DailyTaskManager;
@@ -333,6 +336,10 @@ public class Player extends Character {
 
     @Getter
     private final UpgradeInterface upgradeInterface = new UpgradeInterface(this);
+
+
+    @Getter
+    private final WardrobeHandler wardrobeHandler = new WardrobeHandler (this);
 
     @Getter
     private final ArrayList<TeleportInterface.Teleport> favoriteTeleports = new ArrayList<>();
@@ -2659,6 +2666,38 @@ End new teleport
     }
 
 
+    public WardrobeData wardrobeData;
+
+    public WardrobeData getWardrobeData() {
+        return wardrobeData;
+    }
+
+    public void setWardrobeData() {
+        this.wardrobeData = wardrobeData;
+    }
+    public void setWardrobeData(WardrobeData wardrobeData) {
+        this.wardrobeData = wardrobeData;
+    }
+
+    public WardrobeData getCurrentWardrobe() {
+        return wardrobeData;
+    }
+
+    public void setCurrentWardrobe(WardrobeData wardrobeData) {
+        this.wardrobeData = wardrobeData;
+    }
+
+    public WardrobeCategory wardrobeType;
+
+    public WardrobeCategory getWardrobeType() {
+        return wardrobeType;
+    }
+
+    public void setWardrobeType(WardrobeCategory wardrobeType) {
+        this.wardrobeType = wardrobeType;
+    }
+
+
     @Getter
     private VotingStreak votingStreak = new VotingStreak(this);
     /*
@@ -4785,6 +4824,15 @@ End new teleport
     @Setter
     private boolean canChat = true;
 
+
+    @Getter
+    @Setter
+    private boolean set1 = false;
+
+    @Getter
+    @Setter
+    private boolean set2 = false;
+
     public boolean isInMinigame() {
         boolean inMinigameLoc = getLocation() == Locations.Location.KEEPERS_OF_LIGHT_GAME || getLocation() == Locations.Location.VAULT_OF_WAR || getLocation() == Locations.Location.VOID_OF_DARKNESS || getLocation() == Locations.Location.HALLS_OF_VALOR || getLocation() == Locations.Location.TREASURE_HUNTER;
         boolean inMinigameInstance = getMapInstance() instanceof DungeoneeringInstance;
@@ -4826,6 +4874,7 @@ End new teleport
     public AchievementTracker getAchievementTracker() {
         return this.achievementTracker;
     }
+
 
 
 }

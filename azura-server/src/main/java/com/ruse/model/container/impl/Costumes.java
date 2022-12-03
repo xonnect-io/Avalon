@@ -1,5 +1,6 @@
 package com.ruse.model.container.impl;
 
+import com.ruse.world.entity.impl.player.Player;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -53,31 +54,38 @@ public enum Costumes {
             new int[]{23799,23800, 23801, 23802, 23803}),
     SANTA_COSMETIC(13258, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{1050,14595, 14602, 14603, 14605}),
-    ROGUE_COSMETIC(13265, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
-            new int[]{10612,5553, 5555, 5556, 5557}),
+    ROGUE_COSMETIC(13265, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.AMULET_SLOT},
+            new int[]{10612,5553, 5555, 5556, 5557, 19335}),
     ARMADYL_COSMETIC(13267, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT},
             new int[]{11718,11720, 11722}),
     NOOBIE_COSMETIC(13269, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT},
             new int[]{19900,10939, 10940}),
     DRAGON_RIDER(23456, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{14050,14051, 14052, 14053, 14054}),
+    SEASON_1_COSMETIC(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
+            new int[]{23396,23397, 23398, 23400, 23399}),
     ;
     private int itemId;
     private double damageBoost;
     private int[] costumeSlots;
     private int[] costumeItems;
 
-    public static Costumes forID(int id) {
+    public static Costumes forID(int id, Player player) {
         for (Costumes c : Costumes.values()) {
             if (c.getItemId() == id)
                 return c;
+            else if (player.isSet1 ()) {
+                return Costumes.ROGUE_COSMETIC;
+            } else if (player.isSet2 ()) {
+                return Costumes.SEASON_1_COSMETIC;
+            } else return null;
         }
         return null;
     }
 
 
-    public static int getItem(int id, int slot) {
-        Costumes costume = forID(id);
+    public static int getItem(int id, int slot, Player player) {
+        Costumes costume = forID(id, player);
         if (costume == null)
             return -1;
 

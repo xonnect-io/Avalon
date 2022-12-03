@@ -2241,6 +2241,7 @@ public class DialogueOptions {
                     TeleportHandler.teleportPlayer(player, new Position(2441, 3090),
                             TeleportType.NORMAL);
                     break;
+
                 case 12111:
                     LotteryEvent.getCurrentPot(player);
                     break;

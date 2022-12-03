@@ -102,6 +102,7 @@ public class FoxVote implements Runnable {
 					PlayerLogs.logPlayerVotes(player.getUsername(), "Player claimed votes: " + amount + ", IP: " + player.getHostAddress());
 
 					player.getInventory().add(23020, amount);
+					player.getInventory().add(23362, 1);
 					player.getPacketSender().sendMessage("Thank you for voting!");
 
 					player.lastVoteTime = System.currentTimeMillis();
@@ -121,7 +122,6 @@ public class FoxVote implements Runnable {
 					player.setLastVotedDay(day);
 
 					player.setMonthlyVoteCount(player.getMonthlyVoteCount () + 1);
-
 					World.sendMessage("<img=11>" + player.getUsername() + " has voted for " + amount
 							+ " points. ::vote now to support the server.");
 					player.getVotingStreak().vote();

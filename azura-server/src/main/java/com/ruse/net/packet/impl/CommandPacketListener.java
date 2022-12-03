@@ -42,12 +42,12 @@ import com.ruse.world.content.combat.magic.Autocasting;
 import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
+import com.ruse.world.content.cosmetic.WardrobeHandler;
 import com.ruse.world.content.dailyTask.DailyTaskHandler;
 import com.ruse.world.content.dailyTasksNew.DailyTaskDifficulty;
 import com.ruse.world.content.dailytasks_new.DailyTasks;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dissolving.MainDissolving;
-import com.ruse.world.content.event_chest.EventChestInterface;
 import com.ruse.world.content.events.PartyChest;
 import com.ruse.world.content.globalBosses.*;
 import com.ruse.world.content.grandexchange.GrandExchangeOffers;
@@ -60,9 +60,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
 import com.ruse.world.content.raids.elders.TelosLoot;
-import com.ruse.world.content.raids.legends.Legends;
 import com.ruse.world.content.raids.system.RaidDifficulty;
-import com.ruse.world.content.randomevents.LootChest;
 import com.ruse.world.content.seasonpass.PassRewards;
 import com.ruse.world.content.serverperks.ServerPerks;
 import com.ruse.world.content.skeletalhorror.SkeletalHorror;
@@ -70,6 +68,7 @@ import com.ruse.world.content.skill.SkillManager;
 import com.ruse.world.content.skill.impl.construction.Construction;
 import com.ruse.world.content.skill.impl.crafting.Jewelry;
 import com.ruse.world.content.skill.impl.fletching.BoltData;
+import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.skill.impl.summoning.SummoningTab;
 import com.ruse.world.content.teleport.TeleportInterfaceHandler;
 import com.ruse.world.content.transportation.TeleportHandler;
@@ -167,16 +166,6 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Teleporting you to mutated hounds!");
         }
 
-        if (command[0].equalsIgnoreCase("newhome")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            Position pos = new Position(3110, 2990);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you home!");
-        }
         if (command[0].equalsIgnoreCase("supreme")) {
             if (!player.getSupreme()) {
                 player.getPacketSender().sendMessage("You are not supreme enough to do this.");
@@ -261,27 +250,7 @@ public class CommandPacketListener implements PacketListener {
                 || command[0].equalsIgnoreCase("dailytasks")) {
             player.getDailyTaskManager().open();
         }
-        if (command[0].equalsIgnoreCase("23521daily")) {
-            player.getDailyTaskManager().refresh();
-        }
-        if (command[0].equalsIgnoreCase("rd")) {
-            player.getDailyTaskManager().refresh();
-        }
-        if (command[0].equalsIgnoreCase("refreshdailyeasy")) {
-            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.EASY);
-        }
-        if (command[0].equalsIgnoreCase("refreshdailymedium")) {
-            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.MEDIUM);
-        }
-        if (command[0].equalsIgnoreCase("refreshdailyhard")) {
-            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.HARD);
-        }
-        if (command[0].equalsIgnoreCase("refreshdailyelite")) {
-            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.ELITE);
-        }
-        if (command[0].equalsIgnoreCase("refreshdailymaster")) {
-            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.MASTER);
-        }
+
         if (command[0].equalsIgnoreCase("dritems") || command[0].equalsIgnoreCase("bisdr")) {
             BestDRItemsInterface.openInterface(player, 0);
         }
@@ -289,10 +258,13 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("seasonpass")) {
             player.getSeasonPass().openInterface();
         }
+        /*
         if (command[0].equalsIgnoreCase("hiddenturkeyloc")) {
             player.sendMessage(TurkeySpawns.getCurrent().getPosition().toString());
-        }
-    /*    if (command[0].equalsIgnoreCase("event")) {
+        }*/
+
+        /*
+        if (command[0].equalsIgnoreCase("event")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
@@ -301,7 +273,8 @@ public class CommandPacketListener implements PacketListener {
             Position pos = new Position(2910, 4699);
             TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
-        }*/
+        }
+        */
 
         if (command[0].equalsIgnoreCase("event")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
@@ -547,6 +520,11 @@ public class CommandPacketListener implements PacketListener {
         /*    player.getPacketSender().sendInterface(142250);
          */
             new TeleportInterfaceHandler(player).quickOpenZones();
+        }
+
+        if (command[0].equalsIgnoreCase("wardrobe")) {
+            player.getPacketSender().sendInterfaceReset();
+            new WardrobeHandler(player).open();
         }
 
         if (command[0].equalsIgnoreCase("perks")) {
@@ -1782,6 +1760,14 @@ public class CommandPacketListener implements PacketListener {
             player.getEventBossManager().display();
         }
 
+        if (command[0].equalsIgnoreCase("resetduo")) {
+            if (player.getSlayer().getDuoPartner () != null)
+                Slayer.resetDuo (player, World.getPlayerByName (player.getSlayer ().getDuoPartner ()));
+             else
+                player.sendMessage ("<img=5> You do not have a duo partner!");
+
+        }
+
         if (command[0].equalsIgnoreCase("addn")) {
             NPCSpawn spawn = new NPCSpawn(Integer.parseInt(command[1]), Direction.SOUTH, player.getPosition());
             NPC.spawns.add(spawn);
@@ -1986,6 +1972,29 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("grantm")) {
             player.getSeasonPass().grantMembership();
         }
+
+        if (command[0].equalsIgnoreCase("23521daily")) {
+            player.getDailyTaskManager().refresh();
+        }
+        if (command[0].equalsIgnoreCase("rd")) {
+            player.getDailyTaskManager().refresh();
+        }
+        if (command[0].equalsIgnoreCase("refreshdailyeasy")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.EASY);
+        }
+        if (command[0].equalsIgnoreCase("refreshdailymedium")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.MEDIUM);
+        }
+        if (command[0].equalsIgnoreCase("refreshdailyhard")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.HARD);
+        }
+        if (command[0].equalsIgnoreCase("refreshdailyelite")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.ELITE);
+        }
+        if (command[0].equalsIgnoreCase("refreshdailymaster")) {
+            player.getDailyTaskManager().refreshTasks(DailyTaskDifficulty.MASTER);
+        }
+
         if (command[0].equalsIgnoreCase("tc")) {
             TelosLoot.handleLoot(player, RaidDifficulty.ADVANCED);
             player.getPacketSender().sendMessage("Your rewards were added to your Telos Coffer");
@@ -2001,19 +2010,8 @@ public class CommandPacketListener implements PacketListener {
         player.getPacketSender().removeInterface();
         }
 
-        if (command[0].equalsIgnoreCase("xmasevent")) {
-            player.setDialogueActionId(81115);
-            DialogueManager.start(player, 81115);
-        }
-        if (command[0].equalsIgnoreCase("prevxmas")) {
-            EventChestInterface.openInterface(player);
-        }
-
         if (command[0].equalsIgnoreCase("addxp")) {
             player.getSeasonPass().addExperience(Integer.parseInt(command[1]));
-        }
-        if (command[0].equalsIgnoreCase("finishraid")) {
-            Legends.finishRaid(player.getZombieRaidsParty());
         }
 
         if (command[0].equals("rfantasy")) {
@@ -2028,11 +2026,9 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("fakevote")) {
             Calendar cal = Calendar.getInstance();
             int day = cal.get(Calendar.DAY_OF_YEAR);
-
             player.setLastVotedDay(day);
             player.getVotingStreak().vote();
         }
-
         if (command[0].equalsIgnoreCase("setd")) {
             VotingStreak.setDayInYear(VotingStreak.getDayInYear() + 1);
             player.getVotingStreak().openInterface();
@@ -2136,9 +2132,6 @@ public class CommandPacketListener implements PacketListener {
             Misc.listUntradeables();
         }
 
-        if (command[0].equalsIgnoreCase("customtp")) {
-            player.getCustomTeleportInterface().open();
-        }
         if (command[0].equalsIgnoreCase("rule1")) {
             DiscordMessager.test1("");
         }if (command[0].equalsIgnoreCase("rule2")) {
@@ -2644,89 +2637,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("getgfx")) {
             player.getPacketSender().sendMessage("Your last graphic ID is: " + player.getGraphic().getId());
         }
-        if (command[0].equalsIgnoreCase("vengrunes")) {
-            player.setHasVengeance(true);
-            player.getInventory().add(new Item(560, 1000000)).add(new Item(9075, 1000000)).add(new Item(557, 1000000));
-            player.getPacketSender().sendMessage("You cast Vengeance").sendMessage("You get some Vengeance runes.");
-        }
-        if (command[0].equalsIgnoreCase("veng")) {
-            player.setHasVengeance(true);
-            player.performAnimation(new Animation(4410));
-            player.performGraphic(new Graphic(726));
-            player.getPacketSender().sendMessage("You cast Vengeance.");
-        }
-        if (command[0].equalsIgnoreCase("barragerunes") || command[0].equalsIgnoreCase("barrage")) {
-            player.getInventory().add(new Item(565, 1000000)).add(new Item(560, 1000000)).add(new Item(555, 1000000));
-            player.getPacketSender().sendMessage("You get some Ice Barrage runes.");
-        } // arlo testing
 
-        if (command[0].equalsIgnoreCase("startchest") || command[0].equalsIgnoreCase("spawnchest")) {
-            LootChest.despawn(true);
-            player.getPacketSender().sendMessage("Done spawning loot chest shit");
-        }
-
-
-        if (command[0].equalsIgnoreCase("runes")) {
-            for (Item t : ShopManager.getShops().get(0).getItems()) {
-                if (t != null) {
-                    player.getInventory().add(new Item(t.getId(), 200000));
-                }
-            }
-        }
-        if (wholeCommand.equalsIgnoreCase("afk1")) {
-            World.sendMessage("<img=5> <col=FF0000><shad=0>" + player.getUsername()
-                    + ": I am now away, please don't message me; I won't reply.");
-        }
-        if (command[0].equalsIgnoreCase("isduel") || command[0].equalsIgnoreCase("checkduel")) {
-            String player2 = wholeCommand.substring(command[0].length() + 1);
-            Player playerToKick = World.getPlayerByName(player2);
-            if (playerToKick != null) {
-                if (playerToKick.getDueling().duelingStatus == 0) {
-                    player.getPacketSender().sendMessage(playerToKick.getUsername() + " is not dueling.");
-                } else {
-                    if (playerToKick.getDueling().duelingStatus == 1) {
-                        player.getPacketSender()
-                                .sendMessage(playerToKick.getUsername() + " has opened the first duel interface with "
-                                        + playerToKick.getDueling().getDuelOpponent() + ".");
-                    } else {
-                        if (playerToKick.getDueling().duelingStatus == 2) {
-                            player.getPacketSender()
-                                    .sendMessage(playerToKick.getUsername()
-                                            + " has accepted the first screen, and is waiting for "
-                                            + playerToKick.getDueling().getDuelOpponent() + " to confirm.");
-                        } else {
-                            if (playerToKick.getDueling().duelingStatus == 3) {
-                                player.getPacketSender()
-                                        .sendMessage(playerToKick.getUsername() + " and their opponent, "
-                                                + playerToKick.getDueling().getDuelOpponent()
-                                                + " are in the final confirmation screen.");
-                            } else {
-                                if (playerToKick.getDueling().duelingStatus == 4) {
-                                    player.getPacketSender()
-                                            .sendMessage(playerToKick.getUsername()
-                                                    + "  has confirmed the second, and is waiting for their opponent, "
-                                                    + playerToKick.getDueling().getDuelOpponent() + ".");
-                                } else {
-                                    if (playerToKick.getDueling().duelingStatus == 5) {
-                                        player.getPacketSender()
-                                                .sendMessage(playerToKick.getUsername()
-                                                        + " is currently in the arena with their opponent, "
-                                                        + playerToKick.getDueling().getDuelOpponent() + ".");
-                                    } else {
-                                        if (playerToKick.getDueling().duelingStatus == 6) {
-                                            player.getPacketSender().sendMessage(
-                                                    playerToKick.getUsername() + " has just declined a duel request.");
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            } else {
-                player.getPacketSender().sendMessage("Could not find `" + command[1] + "`... Typo/offline?");
-            }
-        }
         if (command[0].equalsIgnoreCase("buff")) {
             String playertarget = wholeCommand.substring(command[0].length() + 1);
             Player player2 = World.getPlayerByName(playertarget);
@@ -2747,7 +2658,7 @@ public class CommandPacketListener implements PacketListener {
             int time = Integer.parseInt(command[1]);
             if (time > 0) {
                 GameServer.setUpdating(true);
-                World.sendStaffMessage("<col=FF0066><img=2> [PUNISHMENTS]<col=6600FF> " + player.getUsername()
+                World.sendStaffMessage("<col=FF0066><img=2> [UPDATE LOG]<col=6600FF> " + player.getUsername()
                         + " just started an update in " + time + " ticks.");
                 // DiscordMessager.sendDebugMessage(player.getUsername()+" has queued an update,
                 // we will be going down in "+time+" seconds.");
@@ -2943,6 +2854,7 @@ public class CommandPacketListener implements PacketListener {
             player2.getPacketSender().sendRights();
             PlayerPanel.refreshPanel(player2);
         }
+
         if (command[0].equalsIgnoreCase("giveadmin")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {

@@ -1858,7 +1858,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                             player.moveTo (new Position (3094, 3480));
                                         } else if (gameObject.getPosition ().getX () == 3209
                                                 && gameObject.getPosition ().getY () == 9616) {
-                                            player.moveTo (new Position (2884, 4121));
+                                            player.moveTo (new Position (2768, 4060));
                                         }
                                         stop ();
                                     }

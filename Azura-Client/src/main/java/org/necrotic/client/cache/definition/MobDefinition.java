@@ -422,7 +422,7 @@ public final class MobDefinition {
 			case 2270:
 				definition.name = "Rogue Guard";
 				definition.npcModels = new int[]{ItemDefinition.get (10612).maleEquip1,
-				ItemDefinition.get (5553).maleEquip1,ItemDefinition.get (5555).maleEquip1,
+				ItemDefinition.get (5553).maleEquip1,ItemDefinition.get (5555).maleEquip1,ItemDefinition.get (19335).maleEquip1,
 				ItemDefinition.get (5557).maleEquip1,ItemDefinition.get (5559).maleEquip1,346,354,};
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
 				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
@@ -449,6 +449,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 130;
 				definition.scaleY = 130;
 				break;
+
 
 			case 9117:
 				definition.name = "Lotus Magician";

@@ -34,6 +34,7 @@ import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
 import com.ruse.world.content.combat.weapon.FightType;
+import com.ruse.world.content.cosmetic.WardrobeHandler;
 import com.ruse.world.content.dailyTask.DailyTaskInterface;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.DialogueOptions;
@@ -111,6 +112,12 @@ public class ButtonClickPacketListener implements PacketListener {
             28307, 28308, 28309, 28310, 28311, 28312, 28313, 28314, 28315, 28316, 28317, 28318, 28319,
             28320, 28321, 28322, 28323, 28324, 28325, 28326, 28327, 28328, 28329, 28330,
             28331, 28332, 28333, 28334, 28335, 28336, 28337, 28338, 28339);
+
+    private static final List<Integer> NEW_WARDROBE_BUTTONS = Arrays.asList(
+            133071, 133072, 133073, 133074, 133075, 133076, 133077, 133078,
+            133079, 133080, 133081, 133082,133083,133084,133085,133086,133087,
+            133088,133089,133090,133091,133092,133093,133094,133095,133096,133097,
+            133098,133099,133100);
     private static final List<Integer> YT_SELECT_BUTTONS = Arrays.asList(
             82461, 82462, 82463, 82464, 82465, 82466, 82467, 82468, 82469, 82470, 82361, 83262, 83263, 83264, 83265, 83266, 83267, 83268, 83269, 83270);
 
@@ -177,6 +184,11 @@ public class ButtonClickPacketListener implements PacketListener {
         if (NEW_TELEPORT_BUTTONS.contains(id)) {
             new TeleportInterfaceHandler(player).button(id);
         }
+
+        if (NEW_WARDROBE_BUTTONS.contains(id)) {
+            new WardrobeHandler (player).button(id);
+        }
+
         if (YT_SELECT_BUTTONS.contains(id)) {
             new YoutubeInterfaceHandler(player).button(id);
         }
@@ -200,6 +212,63 @@ public class ButtonClickPacketListener implements PacketListener {
         new HweenEvent(player).handleButton (id);
 
         switch (id) {
+            case 31886:
+
+                if (player.getWardrobeData ().unlocked) {
+
+                    if (player.getWardrobeData().getNpcId () == 2270 && !player.isSet1()) {
+                        player.setSet1 (true);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet1() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 2270  && player.isSet1()){
+                        player.setSet1 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet1() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+                    } else if (player.getWardrobeData().getNpcId () == 9244 && !player.isSet2()) {
+                        player.setSet2 (true);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet2() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 9244 && player.isSet2()){
+                        player.setSet2 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet2() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+                    }
+
+
+
+
+                    player.updateAppearance();
+                }
+
+                if (!player.getWardrobeData ().unlocked) {
+                    if (player.getInventory().contains (12855, player.getWardrobeData().getCost ())) {
+                        player.getInventory ().delete (12855, player.getWardrobeData ().getCost());
+                        player.getWardrobeData().setOutfitUnlocked(true);
+                        player.getPA ().sendString (player.getWardrobeData ().buttonId, player.getWardrobeData ().getOutfitUnlocked () ? "@gre@"
+                                +  player.getWardrobeData().getName () : "" +  player.getWardrobeData().getName ());
+                        player.getPA ().sendString (133010, player.getWardrobeData ().getOutfitUnlocked () ?
+                                "   @whi@Outfit purchased" : "" + "Costs: " + player.getWardrobeData().getDescription());
+
+                        if (player.getWardrobeData().getNpcId () == 2270 && player.isSet1())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 9244 && player.isSet2())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+
+                        else
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ? " Equip Outfit" :
+                                "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You have Unlocked " + player.getWardrobeData ().getName());
+                    } else
+                        player.getPacketSender ().sendMessage ("You need " + Misc.insertCommasToNumber (player.getWardrobeData().getCost ())
+                                + "Cosmetic Gems to unlock this outfit");
+                }
+                break;
+
             case 75012://3x3
                 player.set4x4(false);
                 player.set3x3(true);
@@ -298,6 +367,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 break;
 
+            case 105011:
+                player.getSeasonPass().information();
+                break;
             case -4928:
             case 28008:
                 player.membershipInterfaceHandler.openCosmeticTab();
@@ -1136,10 +1208,10 @@ public class ButtonClickPacketListener implements PacketListener {
             case 111609:
                 player.getSeasonPass().openInterface();
                 break;
-            case 111425:
+            case 111428:
                 player.questInterface.openQuestOne();
                 break;
-            case 111426:
+            case 111429:
                 player.questInterface.openQuestTwo();
                 break;
             case 111607:

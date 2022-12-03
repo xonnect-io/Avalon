@@ -561,11 +561,16 @@ public class PlayerUpdating {
 			for (int i = 0; i < equipment.capacity(); i++) {
 				equip[i] = equipment.getItems()[i].getId();
 			}
-			int headSlot = Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride() ? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.HEAD_SLOT) : equip[Equipment.HEAD_SLOT];
-			int bodySlot = Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.BODY_SLOT) : equip[Equipment.BODY_SLOT];
-			int legsSlot = Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.LEG_SLOT) : equip[Equipment.LEG_SLOT];
-			int glovesSlot = Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.HANDS_SLOT) : equip[Equipment.HANDS_SLOT];
-			int bootsSlot =Costumes.forID(equip[Equipment.CHARM_SLOT]) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.FEET_SLOT) :  equip[Equipment.FEET_SLOT];
+			int headSlot = Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null && player.isCosmeticOveride() ? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.HEAD_SLOT, player) : equip[Equipment.HEAD_SLOT];
+			int bodySlot = Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.BODY_SLOT, player) : equip[Equipment.BODY_SLOT];
+			int legsSlot = Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null  && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.LEG_SLOT, player) : equip[Equipment.LEG_SLOT];
+			int glovesSlot = Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.HANDS_SLOT, player) : equip[Equipment.HANDS_SLOT];
+			int bootsSlot =Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.FEET_SLOT, player) :  equip[Equipment.FEET_SLOT];
+			int capeSlot =Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.CAPE_SLOT, player) :  equip[Equipment.CAPE_SLOT];
+			int auraSlot =Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.AURA_SLOT, player) :  equip[Equipment.AURA_SLOT];
+			int amuletSlot =Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.AMULET_SLOT, player) :  equip[Equipment.AMULET_SLOT];
+			int weaponSlot =Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.WEAPON_SLOT, player) :  equip[Equipment.WEAPON_SLOT];
+			int shieldSlot =Costumes.forID(equip[Equipment.CHARM_SLOT], player) != null && player.isCosmeticOveride()? Costumes.getItem(equip[Equipment.CHARM_SLOT], Equipment.SHIELD_SLOT, player) :  equip[Equipment.SHIELD_SLOT];
 
 
 			if (headSlot > -1 && ((player.isRenderPlayerEquipment() && !target.equals(player) )|| target.equals(player))) {
@@ -574,24 +579,24 @@ public class PlayerUpdating {
 				properties.put(0);
 			}
 
-			if (equip[Equipment.CAPE_SLOT] > -1) {
-				properties.putShort(0x200 + equip[Equipment.CAPE_SLOT]);
+			if (capeSlot > -1) {
+				properties.putShort(0x200 + capeSlot);
 			} else {
 				properties.put(0);
 			}
 
-			if (equip[Equipment.AURA_SLOT] > -1) {
-				properties.putShort(0x200 + equip[Equipment.AURA_SLOT]);
+			if (auraSlot > -1) {
+				properties.putShort(0x200 + auraSlot);
 			} else {
-				if (equip[Equipment.AMULET_SLOT] > -1) {
-					properties.putShort(0x200 + equip[Equipment.AMULET_SLOT]);
+				if (amuletSlot > -1) {
+					properties.putShort(0x200 + amuletSlot);
 				} else {
 					properties.put(0);
 				}
 			}
 
-			if (equip[Equipment.WEAPON_SLOT] > -1) {
-				properties.putShort(0x200 + equip[Equipment.WEAPON_SLOT]);
+			if (weaponSlot > -1) {
+				properties.putShort(0x200 + weaponSlot);
 			} else {
 				properties.put(0);
 			}
@@ -604,8 +609,8 @@ public class PlayerUpdating {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.CHEST]);
 			}
 
-			if (equip[Equipment.SHIELD_SLOT] > -1) {
-				properties.putShort(0x200 + equip[Equipment.SHIELD_SLOT]);
+			if (shieldSlot > -1) {
+				properties.putShort(0x200 + shieldSlot);
 			} else {
 				properties.put(0);
 			}

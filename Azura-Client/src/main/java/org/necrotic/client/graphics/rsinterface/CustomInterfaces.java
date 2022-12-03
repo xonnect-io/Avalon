@@ -127,6 +127,122 @@ public class CustomInterfaces extends RSInterface {
 
 	}
 
+	public static void costumeSelect() {
+		int interID = 133000;
+		RSInterface tab = addInterface(interID);
+		int id = interID + 1;
+		int c = 0;
+		int x = 16;
+		int y = 12;
+		tab.totalChildren(22);
+
+		addSpriteLoader(id, 1881);
+		tab.child(c++, id++, 0 + x, 0 + y);
+		addText(id, "Cosmetic Wardrobe", tda, 2, 0xff8624, true, true);
+		tab.child(c++, id++, 232 + x, 5 + y);
+
+		addText(id, "Costume", tda, 2, 0xff8624, true, true);
+		tab.child(c++, id++, 75 + x, 29 + y);
+
+		addText(id, "Preview", tda, 2, 0xff8624, true, true);
+		tab.child(c++, id++, 231 + x, 29 + y);
+
+		addText(id, "Equipment", tda, 2, 0xff8624, true, true);
+		tab.child(c++, id++, 387 + x, 29 + y);
+
+		addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+		tab.child(c++, id++, 455 + x, 3 + y);
+		addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+		tab.child(c++, id++, 455 + x, 3 + y);
+		id++;
+
+		RSInterface.drawNpcOnInterface(id, 1719, 600);
+		tab.child(c++, id++, 165 + x, 150 + y);
+
+		addText(id, "Costs: @whi@ 100 Gems", tda, 1, ColorConstants.BRIGHT_YELLOW, true, false);
+		tab.child(c++, id++, 225 + x, 269 + y);
+
+		hoverButton(31886, 1882, 1883, "Unlock Outfit", 2, 0xff8624, "Unlock Outfit");
+		tab.child(c++, 31886, 323 + x, 256 + y);
+
+
+		//HELMET
+		addToItemGroup(31875, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31875, 370 + x, 60 + y);
+		//AMULET
+		addToItemGroup(31876, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31876, 370 + x, 99 + y);
+
+		//BODY
+		addToItemGroup(31877, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31877, 370 + x, 138 + y);
+
+
+		//LEGS
+		addToItemGroup(31878, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31878, 370 + x, 177 + y);
+
+		//BOOTS
+		addToItemGroup(31879, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31879, 370 + x, 217 + y);
+
+		//GLOVES
+		addToItemGroup(31880, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31880, 314 + x, 217 + y);
+
+
+		//RING
+		addToItemGroup(31881, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31881, 427 + x, 217 + y);
+
+		//AURA
+		addToItemGroup(31882, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31882, 314 + x, 177 + y);
+
+		//SHIELD
+		addToItemGroup(31883, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31883, 427 + x, 138 + y);
+
+		//WEAPON
+		addToItemGroup(31884, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31884, 314 + x, 138 + y);
+
+		//CAPE
+		addToItemGroup(31885, 1, 1, 5, 5, true, new String[] {null, null, null, null, null});
+		tab.child(c++, 31885, 330 + x, 99 + y);
+
+
+
+		tab.child(c++, 133070, 13 + x, 48 + y); // x = 29
+
+		interID = 133070;
+		RSInterface list = addInterface(interID);
+		list.width = 160 - 36; //124
+		list.height = 243;
+		list.scrollMax = list.height + 1;
+		id = interID + 1;
+		c = 0;
+		x = 0;
+		y = 0;
+
+		list.totalChildren(200);
+		id = 133171;
+
+
+		for (int i = 0; i < 100; i++) {
+			addSpriteLoader(id, 1781);
+			list.child(c++, id++, 0 + x, 0 + y);
+			y += 36;
+		}
+
+		y = 0;
+		id = 133071;
+		for (int i = 0; i < 100; i++) {
+			teleportText(id, "costume" + c, "Select", fonts, 1, 0xFF9900, false, false, 169, 17);
+			list.child(c++, id++, 5, 2 + y);
+			y += 18;
+		}
+	}
 
 	public static void instanceManager() {
 		int interID = 35000;
@@ -7950,6 +8066,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 		playerOwnedShopInterface3(tda);
 		SlayerDuo(tda);
 		instanceManager();
+		costumeSelect();
 		WellOfGoodWill(tda);
 		DailyMboxes(tda);
 		commands(tda);

@@ -8,16 +8,16 @@ public class ItemDef4 {
 		ItemDefinition finity;
 		switch (id) {
 			case 23230:
-				itemDef.copyItem(6585);
 				itemDef.name = "Owner Amulet";
 				itemDef.modelID = 19670;
 				itemDef.maleEquip1 = 19669;
 				itemDef.femaleEquip1 = 19669;
-				itemDef.maleWieldY = 3;
-				itemDef.maleWieldZ = 3;
-				itemDef.modelZoom = 380;
-				itemDef.modelOffsetY = 0;
-				itemDef.rotationY = 280;
+				itemDef.modelZoom = 473;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 313;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = -1;
+				itemDef.modelOffsetY = -3;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 			case 23231:
@@ -29,12 +29,17 @@ public class ItemDef4 {
 				itemDef.scaleX = 32;
 				itemDef.scaleY = 32;
 				itemDef.scaleZ = 32;
+				itemDef.modelZoom = 515;
+				itemDef.rotationX = 1940;
+				itemDef.rotationY = 508;
+				itemDef.rotationZ = 1927;
+				itemDef.modelOffsetX = -3;
+				itemDef.modelOffsetY = 4;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
 
 			case 23232:
-				itemDef.copyItem(6737);
 				itemDef.name = "Owner Bracelet";
 				itemDef.modelID = 19672;
 				itemDef.maleEquip1 = 19673;
@@ -42,82 +47,63 @@ public class ItemDef4 {
 				itemDef.maleModelScale = 4;
 				itemDef.maleWieldY = 4;
 				itemDef.maleWieldZ = -1;
+				itemDef.modelZoom = 515;
+				itemDef.rotationX = 228;
+				itemDef.rotationY = 389;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 2;
 				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, null};
 				break;
 			case 23233:
-				itemDef.copyItem(6585);
+				itemDef.copyItem(23230);
 				itemDef.name = "Owner Amulet (u)";
 				itemDef.modelID = 19676;
 				itemDef.maleEquip1 = 19675;
 				itemDef.femaleEquip1 = 19675;
-				itemDef.maleWieldY = 3;
-				itemDef.maleWieldZ = 3;
-				itemDef.modelZoom = 340;
-				itemDef.modelOffsetY = 0;
-				itemDef.rotationY = 280;
-				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 			case 23234:
-				itemDef.copyItem(6737);
+				itemDef.copyItem(23231);
 				itemDef.name = "Owner Ring (u)";
 				itemDef.modelID = 19677;
 				itemDef.maleEquip1 = -1;
 				itemDef.femaleEquip1 = -1;
-				itemDef.scaleX = 32;
-				itemDef.scaleY = 32;
-				itemDef.scaleZ = 32;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
 
 			case 23235:
-				itemDef.copyItem(6737);
+				itemDef.copyItem(23232);
 				itemDef.name = "Owner Bracelet (u)";
 				itemDef.modelID = 19678;
 				itemDef.maleEquip1 = 19679;
 				itemDef.femaleEquip1 = 19679;
-				itemDef.maleModelScale = 4;
-				itemDef.maleWieldY = 4;
-				itemDef.maleWieldZ = -1;
-				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
 			case 23293:
-				itemDef.copyItem(6585);
+				itemDef.copyItem(23230);
 				itemDef.name = "<col=89584A>Fantasy Amulet";
 				itemDef.modelID = 19718;
 				itemDef.maleEquip1 = 19719;
-				itemDef.femaleEquip1 = 1975;
-				itemDef.maleWieldY = 3;
-				itemDef.maleWieldZ = 3;
-				itemDef.modelZoom = 340;
-				itemDef.modelOffsetY = 0;
-				itemDef.rotationY = 280;
+				itemDef.femaleEquip1 = 19719;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
 			case 23280:
-				itemDef.copyItem(6737);
+				itemDef.copyItem(23231);
 				itemDef.name = "<col=89584A>Fantasy Ring";
 				itemDef.modelID = 19720;
 				itemDef.maleEquip1 = -1;
 				itemDef.femaleEquip1 = -1;
-				itemDef.scaleX = 32;
-				itemDef.scaleY = 32;
-				itemDef.scaleZ = 32;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
 			case 23292:
-				itemDef.copyItem(6737);
+				itemDef.copyItem(23232);
 				itemDef.name = "<col=89584A>Fantasy Bracelet";
 				itemDef.modelID = 19721;
 				itemDef.maleEquip1 = 19722;
 				itemDef.femaleEquip1 = 19722;
-				itemDef.maleModelScale = 4;
-				itemDef.maleWieldY = 4;
-				itemDef.maleWieldZ = -1;
-				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
 
 
