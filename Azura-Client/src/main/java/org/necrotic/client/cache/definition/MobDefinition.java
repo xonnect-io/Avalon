@@ -4847,27 +4847,80 @@ public final class MobDefinition {
 				definition.npcModels = new int[]{15194,15195,15196,15197,15198,15199};
 				break;
 				
-			case 188:
-				definition.name = "Byakuya (bleach)";
+			case 903:
+				definition.name = "Sephiroth";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.combatLevel = 456;
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
-				definition.scaleXZ = 170;
-				definition.scaleY = 170;
-				definition.npcModels = new int[9];
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
+				definition.npcModels = new int[6];
 				definition.npcModels[0] = 64133; //HEAD
-				definition.npcModels[1] = 0; //JAW
-				definition.npcModels[2] = 64135; //BODY
-				definition.npcModels[3] = 0; //CAPE
-				definition.npcModels[4] = 64130; //GLOVES
-				definition.npcModels[5] = 0; ////shield
-				definition.npcModels[6] = 64140; //WEP
-				definition.npcModels[7] = 64137; //LEG
-				definition.npcModels[8] = 64138; //BOOT
+				definition.npcModels[1] = 64135; //BODY
+				definition.npcModels[2] = 354; //GLOVES
+				definition.npcModels[3] = 64140; //WEP
+				definition.npcModels[4] = 64137; //LEG
+				definition.npcModels[5] = 64138; //BOOT
 				break;
-				
+
+			case 904:
+				definition.name = "Devil";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
+				definition.npcModels = new int[7];
+				definition.npcModels[0] = 21822; //HEAD
+				definition.npcModels[1] = 21846; //BODY
+				definition.npcModels[2] = 21855; //GLOVES
+				definition.npcModels[3] = 21858; //WEP
+				definition.npcModels[4] = 21854; //LEG
+				definition.npcModels[5] = 21856; //BOOT
+				definition.npcModels[6] = 21887; //CAPE
+				break;
+
+			case 905:
+				definition.name = "Samurai";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
+				definition.npcModels = new int[5];
+				definition.npcModels[0] = 21957; //HEAD
+				definition.npcModels[1] = 21962; //BODY
+				definition.npcModels[2] = 353; //GLOVES
+				definition.npcModels[3] = 21972; //LEG
+				definition.npcModels[4] = ItemDefinition.get (1061).maleEquip1; //BOOT
+				break;
+
+
+			case 906:
+				definition.name = "Black Knight";
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.combatLevel = 456;
+				definition.npcSizeInSquares = 1;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
+				definition.scaleXZ = 130;
+				definition.scaleY = 130;
+				definition.npcModels = new int[5];
+				definition.npcModels[0] = 21987; //HEAD
+				definition.npcModels[1] = 21997; //BODY
+				definition.npcModels[2] = 22065; //GLOVES
+				definition.npcModels[3] = 21998; //LEG
+				definition.npcModels[4] = 22005; //BOOT
+				break;
+
+
+
 			case 3006:
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.name = "BabyZilla";
@@ -5162,18 +5215,8 @@ public final class MobDefinition {
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 190;
 				definition.scaleY = 190;
+				break;
 
-				break;
-			case 601:
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.name = "Luke Skywalker";
-				definition.npcModels = new int[]{65152};
-				definition.combatLevel = 785;
-				definition.standAnimation = 808;
-				definition.walkAnimation = 819;
-				definition.scaleXZ = 150;
-				definition.scaleY = 150;
-				break;
 			case 602:
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.name = "Force Priestesses";
@@ -5850,7 +5893,6 @@ public final class MobDefinition {
 				definition.actions = new String[]{"Talk-to", null, null, null, null};
 				break;
 
-
 			case 9127:
 				definition.copy(741);
 				definition.standAnimation = 1386;
@@ -6322,190 +6364,10 @@ public final class MobDefinition {
 				definition.name = "Pvm Ticket Shop";
 				definition.actions = new String[]{"Talk-to", null, null, null, null};
 				break;
-			//LOL
-			case 3390:
-				definition.name = "Prince Black Dragon";
-				definition.scaleY = 30;
-				definition.scaleXZ = 30;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[5];
-				definition.actions[0] = "Talk-to";
-				definition.actions[2] = null;
-				definition.npcModels = new int[4];
-				definition.npcModels[0] = 17414;
-				definition.npcModels[1] = 17415;
-				definition.npcModels[2] = 17429;
-				definition.npcModels[3] = 17422;
-				definition.standAnimation = 90;
-				definition.walkAnimation = 4635;
-				definition.combatLevel = 0;
-				definition.description = "A miniature King Black Dragon!".getBytes();
-				definition.varBitChild = -1;
-				break;
-			case 3391:// stop before 5902
-				definition.varBitChild = -1;
-				definition.name = "Chaos Elemental Jr.";
-				definition.scaleY = 30;
-				definition.scaleXZ = 30;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[5];
-				definition.actions[0] = "Talk-to";
-				definition.actions[2] = null;
-				definition.npcModels = new int[1];
-				definition.npcModels[0] = 11216;
-				definition.standAnimation = 3144;
-				definition.walkAnimation = 3145;
-				definition.combatLevel = 0;
-				definition.description = "A miniature Chaos Elemental!".getBytes();
-				break;
-			case 3392:// stop before 5902
-				definition.varBitChild = -1;
-				definition.name = "Baby Mole";
-				definition.scaleY = 30;
-				definition.scaleXZ = 30;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[5];
-				definition.actions[0] = "Talk-to";
-				definition.actions[2] = null;
-				definition.npcModels = new int[4];
-				definition.npcModels[0] = 12076;
-				definition.npcModels[1] = 12075;
-				definition.npcModels[2] = 12074;
-				definition.npcModels[3] = 12077;
-				definition.standAnimation = 3309;
-				definition.walkAnimation = 3313;
-				definition.combatLevel = 0;
-				definition.description = "A miniature Giant Mole!".getBytes();
-				break;
-			case 3393:// stop before 5902
-				definition.varBitChild = -1;
-				definition.name = "Baby Dagannoth Supreme";
-				definition.scaleY = 40;
-				definition.scaleXZ = 40;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[5];
-				definition.actions[0] = "Talk-to";
-				definition.actions[2] = null;
-				definition.npcModels = new int[2];
-				definition.npcModels[0] = 9941;
-				definition.npcModels[1] = 9943;
-				definition.standAnimation = 2850;
-				definition.walkAnimation = 2849;
-				definition.combatLevel = 0;
-				definition.description = "A miniature Dagannoth Supreme!".getBytes();
-				break;
 
-			case 3394:// stop before 5902
-				definition.varBitChild = -1;
-				definition.name = "Dagannoth Prime Jr.";
-				definition.scaleY = 40;
-				definition.scaleXZ = 40;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[5];
-				definition.actions[0] = "Talk-to";
-				definition.actions[2] = null;
-				definition.npcModels = new int[3];
-				definition.npcModels[0] = 9940;
-				definition.npcModels[1] = 9943;
-				definition.npcModels[2] = 9942;
-				definition.standAnimation = 2850;
-				definition.walkAnimation = 2849;
-				definition.combatLevel = 0;
-				definition.description = "A miniature Dagannoth Prime!".getBytes();
-				break;
-			case 3395:// stop before 5902
-				definition.varBitChild = -1;
-				definition.name = "Baby Dagannoth Rex";
-				definition.scaleY = 40;
-				definition.scaleXZ = 40;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[5];
-				definition.actions[0] = "Talk-to";
-				definition.actions[2] = null;
-				definition.npcModels = new int[1];
-				definition.npcModels[0] = 9941;
-				definition.standAnimation = 2850;
-				definition.walkAnimation = 2849;
-				definition.combatLevel = 0;
-				definition.description = "A miniature Dagannoth Rex!".getBytes();
-				break;
-			case 3396:
-				definition.varBitChild = -1;
-				definition.actions = new String[5];
-				definition.actions[0] = "Talk-to";
-				definition.actions[2] = null;
-				definition.npcModels = new int[2];
-				definition.npcModels[0] = 28003;
-				definition.npcModels[1] = 28004;
-				definition.scaleY = 25;
-				definition.scaleXZ = 25;
-				definition.standAnimation = 6972;
-				definition.walkAnimation = 6973;
-				definition.name = "Kree'arra Jr.";
-				definition.combatLevel = 0;
-				definition.description = "A mini Kree'arra!".getBytes();
-				definition.npcSizeInSquares = 1;
-				break;
-			case 3397:// stop before 5902
-				definition.varBitChild = -1;
-				definition.name = "General Graardor Jr.";
-				definition.scaleY = 30;
-				definition.scaleXZ = 30;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[5];
-				definition.actions[0] = "Talk-to";
-				definition.actions[2] = null;
-				definition.npcModels = new int[2];
-				definition.npcModels[0] = 27785;
-				definition.npcModels[1] = 27789;
-				definition.standAnimation = 7059;
-				definition.walkAnimation = 7058;
-				definition.combatLevel = 0;
-				definition.description = "A miniature General Graardor!".getBytes();
-				break;
 
-			case 3398:// stop before 5902
-				definition.varBitChild = -1;
-				definition.name = "Penance Pet";
-				definition.scaleY = 30;
-				definition.scaleXZ = 30;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[5];
-				//	definition.actions[0] = "Talk-to";
-				definition.actions[2] = null;
-				definition.npcModels = new int[8];
-				definition.npcModels[0] = 20717;
-				definition.npcModels[1] = 20715;
-				definition.npcModels[2] = 20714;
-				definition.npcModels[3] = 20709;
-				definition.npcModels[4] = 20713;
-				definition.npcModels[5] = 20712;
-				definition.npcModels[6] = 20711;
-				definition.npcModels[7] = 20710;
-				definition.standAnimation = 5410;
-				definition.walkAnimation = 5409;
-				definition.combatLevel = 0;
-				definition.description = "A miniature Penance Queen!".getBytes();
-				break;
-			case 3400:// stop before 5902
-				definition.varBitChild = -1;
-				definition.name = "Zilyana Jr.";
-				definition.scaleY = 40;
-				definition.scaleXZ = 40;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[5];
-				definition.actions[0] = null;
 
-				definition.npcModels = new int[4];
-				definition.npcModels[0] = 28057;
-				definition.npcModels[1] = 28071;
-				definition.npcModels[2] = 28078;
-				definition.npcModels[3] = 28056;
-				definition.standAnimation = 6963;
-				definition.walkAnimation = 6962;
-				definition.combatLevel = 0;
-				definition.description = "A miniature Commander Zilyana!".getBytes();
-				break;
+
 			//custom pets go here
 			case 659:
 				definition.scaleY = 180;
@@ -6598,9 +6460,6 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = false;
 				definition.disableRightClick = true;
 				definition.visibilityOrRendering = false;
-				break;
-			case 1597:
-				definition.name = "Vannaka (Easy)";
 				break;
 			case 6332:
 				definition.name = "Lava Titan";
@@ -6835,22 +6694,6 @@ public final class MobDefinition {
 				definition.walkAnimation = slayer6.walkAnimation;
 				definition.degreesToTurn = 32;
 				definition.rdc2 = 267;//236773
-				break;
-			case 1706:
-				MobDefinition slayer7 = get(52);
-				definition.name = "Baby bronze dragon";
-				definition.combatLevel = 40;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
-				definition.npcSizeInSquares = 1;
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.description = slayer7.description;
-				definition.drawYellowDotOnMap = true;
-				definition.npcModels = slayer7.npcModels.clone();
-				definition.standAnimation = slayer7.standAnimation;
-				definition.walkAnimation = slayer7.walkAnimation;
-				definition.degreesToTurn = 32;
-				definition.rdc2 = 90774;
 				break;
 			case 1707:
 				MobDefinition slayer8 = get(4275);

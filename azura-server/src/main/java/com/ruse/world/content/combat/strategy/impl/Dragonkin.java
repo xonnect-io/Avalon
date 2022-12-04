@@ -74,9 +74,9 @@ public class Dragonkin implements CombatStrategy {
 							npc.forceChat("Elder Gods, channel me with your power.");
 						if (ticks == 18 && minions_dead == false && minions_spawned == false){
 							npc.forceChat("I call upon you, minions!");
-								NPC[] babies = new NPC[] { new NPC(MINION_NPCID, new Position (3359 + Misc.getRandom (3),4053+ Misc.getRandom (3), target.getPosition ().getZ())) };
-							NPC[] babies1 = new NPC[] { new NPC(MINION_NPCID, new Position (3359 - Misc.getRandom (3),4053+ Misc.getRandom (3), target.getPosition ().getZ())) };
-							NPC[] babies2 = new NPC[] { new NPC(MINION_NPCID, new Position (3359+ Misc.getRandom (3),4053 - Misc.getRandom (3), target.getPosition ().getZ())) };
+								NPC[] babies = new NPC[] { new NPC(MINION_NPCID, new Position (2922 + Misc.getRandom (5),2927+ Misc.getRandom (5), target.getPosition ().getZ())) };
+							NPC[] babies1 = new NPC[] { new NPC(MINION_NPCID, new Position (2922 - Misc.getRandom (5),2927+ Misc.getRandom (5), target.getPosition ().getZ())) };
+							NPC[] babies2 = new NPC[] { new NPC(MINION_NPCID, new Position (2922+ Misc.getRandom (5),2927 - Misc.getRandom (5), target.getPosition ().getZ())) };
 								minions_spawned = true;
 								for (NPC n : babies) {
 									World.register(n);

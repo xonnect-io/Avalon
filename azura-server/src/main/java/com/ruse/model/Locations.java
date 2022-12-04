@@ -364,7 +364,7 @@ public class Locations {
 				}
 			}
 		},
-		TELOS(new int[]{3345, 3375}, new int[]{4042, 4070}, true, false, true, false, true, false) {
+		TELOS(new int[]{2900, 2987}, new int[]{2910, 2993}, true, false, true, false, true, false) {
 			@Override
 			public void logout(Player player) {
 
@@ -471,7 +471,7 @@ public class Locations {
 
 		},
 
-		TELOS_LOBBY(new int[]{3667, 3690}, new int[]{3082, 3104}, true, false, true, false, true, false) {
+		TELOS_LOBBY(new int[]{3030, 3060}, new int[]{2950, 2987}, true, false, true, false, true, false) {
 			@Override
 			public void leave(Player player) {
 				player.getPacketSender().sendCameraNeutrality();

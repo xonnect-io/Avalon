@@ -358,6 +358,18 @@ public class PlayerSaving {
 			object.add("unlocked-set6", builder.toJsonTree(player.isUnlockedSet6()));
 			object.add("unlocked-set7", builder.toJsonTree(player.isUnlockedSet7()));
 			object.add("unlocked-set8", builder.toJsonTree(player.isUnlockedSet8()));
+			object.add("unlocked-set9", builder.toJsonTree(player.isUnlockedSet9()));
+			object.add("unlocked-set10", builder.toJsonTree(player.isUnlockedSet10()));
+			object.add("unlocked-set11", builder.toJsonTree(player.isUnlockedSet11()));
+			object.add("unlocked-set12", builder.toJsonTree(player.isUnlockedSet12()));
+			object.add("unlocked-set13", builder.toJsonTree(player.isUnlockedSet13()));
+			object.add("unlocked-set14", builder.toJsonTree(player.isUnlockedSet14()));
+			object.add("unlocked-set15", builder.toJsonTree(player.isUnlockedSet15()));
+			object.add("unlocked-set16", builder.toJsonTree(player.isUnlockedSet16()));
+			object.add("unlocked-set17", builder.toJsonTree(player.isUnlockedSet17()));
+			object.add("unlocked-set18", builder.toJsonTree(player.isUnlockedSet18()));
+			object.add("unlocked-set19", builder.toJsonTree(player.isUnlockedSet19()));
+			object.add("unlocked-set20", builder.toJsonTree(player.isUnlockedSet20()));
 			object.addProperty("rune-ess", new Integer(player.getStoredRuneEssence()));
 			object.addProperty("pure-ess", new Integer(player.getStoredPureEssence()));
 			object.addProperty("has-bank-pin", new Boolean(player.getBankPinAttributes().hasBankPin()));

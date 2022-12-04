@@ -398,7 +398,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                 }
                                 break;
-                            case 28719:
+                            case 6483:
                                 TelosInterfaces.openInterface(player);
                                 break;
 

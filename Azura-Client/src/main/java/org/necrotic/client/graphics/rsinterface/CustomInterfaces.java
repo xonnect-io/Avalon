@@ -128,7 +128,7 @@ public class CustomInterfaces extends RSInterface {
 	}
 
 	public static void costumeSelect() {
-		int interID = 133000;
+		int interID = 133700;
 		RSInterface tab = addInterface(interID);
 		int id = interID + 1;
 		int c = 0;
@@ -157,7 +157,7 @@ public class CustomInterfaces extends RSInterface {
 		id++;
 
 		RSInterface.drawNpcOnInterface(id, 1719, 600);
-		tab.child(c++, id++, 165 + x, 150 + y);
+		tab.child(c++, id++, 165 + x, 155 + y);
 
 		addText(id, "Costs: @whi@ 100 Gems", tda, 1, ColorConstants.BRIGHT_YELLOW, true, false);
 		tab.child(c++, id++, 225 + x, 269 + y);

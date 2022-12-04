@@ -39,7 +39,7 @@ public class TelosCombatStrategy implements CombatStrategy {
             return false;
 */
 
-		int random = Misc.random(3);
+		int random = Misc.random(5);
 		if (random == 1) {
 			randomFire(npc, player);
 		} else if (random == 2) {
@@ -57,7 +57,7 @@ public class TelosCombatStrategy implements CombatStrategy {
 
 	@Override
 	public int attackDistance(Character entity) {
-		return 40;
+		return 20;
 	}
 
 	@Override
@@ -65,17 +65,13 @@ public class TelosCombatStrategy implements CombatStrategy {
 		return CombatType.MAGIC;
 	}
 
-	public Position startPosition() {
-		return new Position(1821, 4255, getParty().getHeight());
-	}
-
 	public NecromancerRaidParty getParty() {
 		return getParty();
 	}
 
 	public static Position getRandom(){
-		int x = 3350 + Misc.getRandom(14);
-		int y = 4053 + Misc.getRandom(10);
+		int x = 2925 + Misc.getRandom(37);
+		int y = 2957 + Misc.getRandom(23);
 		if (RegionClipping.getClipping(x, y,0) != 0){
 			return getRandom();
 		}

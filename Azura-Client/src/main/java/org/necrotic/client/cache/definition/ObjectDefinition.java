@@ -392,14 +392,14 @@ public final class ObjectDefinition {
 		}
 
 		if (definition.type == 2004) {
-			definition.name = "Telos Coffer";
+			definition.name = "Elder Gods Coffer";
 			definition.objectModelIDs = new int[]{20545};
-			definition.modelSizeH = 60;
-			definition.modelSizeY = 60;
-			definition.modelSizeX = 60;
+			definition.modelSizeH = 140;
+			definition.modelSizeY = 140;
+			definition.modelSizeX = 140;
 			definition.actions = new String[]{"Access", null, null, null, null};
 		}
-		if (definition.type == 28719) {
+		if (definition.type == 6483) {
 			definition.name = "God Obelisk";
 			definition.actions = new String[]{"Interact", null, null, null, null};
 		}

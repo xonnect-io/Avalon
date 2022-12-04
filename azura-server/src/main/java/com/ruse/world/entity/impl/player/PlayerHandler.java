@@ -278,7 +278,7 @@ public class PlayerHandler {
             player.setCurrentWardrobe (WardrobeData.COSTUME_3);
             player.getWardrobeData ().setOutfitUnlocked (true);
         }
-/*
+
         if (player.isUnlockedSet4 ()) {
             player.setCurrentWardrobe (WardrobeData.COSTUME_4);
             player.getWardrobeData ().setOutfitUnlocked (true);
@@ -298,7 +298,7 @@ public class PlayerHandler {
             player.setCurrentWardrobe (WardrobeData.COSTUME_7);
             player.getWardrobeData ().setOutfitUnlocked (true);
         }
-
+        /*
         if (player.isUnlockedSet8 ()) {
             player.setCurrentWardrobe (WardrobeData.COSTUME_8);
             player.getWardrobeData ().setOutfitUnlocked (true);

@@ -4889,6 +4889,101 @@ End new teleport
     @Setter
     private boolean unlockedSet8;
 
+    @Getter
+    @Setter
+    private boolean set9;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet9;
+
+    @Getter
+    @Setter
+    private boolean set10;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet10;
+
+    @Getter
+    @Setter
+    private boolean set11;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet11;
+
+    @Getter
+    @Setter
+    private boolean set12;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet12;
+
+    @Getter
+    @Setter
+    private boolean set13;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet13;
+
+    @Getter
+    @Setter
+    private boolean set14;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet14;
+
+    @Getter
+    @Setter
+    private boolean set15;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet15;
+
+    @Getter
+    @Setter
+    private boolean set16;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet16;
+
+    @Getter
+    @Setter
+    private boolean set17;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet17;
+
+    @Getter
+    @Setter
+    private boolean set18;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet18;
+
+    @Getter
+    @Setter
+    private boolean set19;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet19;
+
+    @Getter
+    @Setter
+    private boolean set20;
+
+    @Getter
+    @Setter
+    private boolean unlockedSet20;
 
     public boolean isInMinigame() {
         boolean inMinigameLoc = getLocation() == Locations.Location.KEEPERS_OF_LIGHT_GAME || getLocation() == Locations.Location.VAULT_OF_WAR || getLocation() == Locations.Location.VOID_OF_DARKNESS || getLocation() == Locations.Location.HALLS_OF_VALOR || getLocation() == Locations.Location.TREASURE_HUNTER;

@@ -225,6 +225,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet1() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
@@ -237,6 +249,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet1() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
@@ -251,6 +275,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet2() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
@@ -263,6 +299,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet2() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
@@ -277,6 +325,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet3() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
@@ -289,6 +349,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet3() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
@@ -303,6 +375,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet4() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
@@ -315,6 +399,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet4() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
@@ -329,6 +425,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet5() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
@@ -341,6 +449,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet5() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
@@ -355,6 +475,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (true);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet6() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
@@ -367,6 +499,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet6() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
@@ -381,6 +525,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (true);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet7() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
@@ -393,6 +549,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet6 (false);
                         player.setSet7 (false);
                         player.setSet8 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet7() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
@@ -407,6 +575,18 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet5 (false);
                         player.setSet6 (false);
                         player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet8() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
@@ -419,14 +599,622 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.setSet5 (false);
                         player.setSet6 (false);
                         player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
                                 player.isSet8() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
                         player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
 
+                    } else if (player.getWardrobeData().getNpcId () == 908 && !player.isSet9()) {
+                    player.setSet8 (false);
+                    player.setSet1 (false);
+                    player.setSet2 (false);
+                    player.setSet3 (false);
+                    player.setSet4 (false);
+                    player.setSet5 (false);
+                    player.setSet6 (false);
+                    player.setSet7 (false);
+                    player.setSet9 (true);
+                    player.setSet10 (false);
+                    player.setSet11 (false);
+                    player.setSet12 (false);
+                    player.setSet13 (false);
+                    player.setSet14 (false);
+                    player.setSet15 (false);
+                    player.setSet16 (false);
+                    player.setSet17 (false);
+                    player.setSet18 (false);
+                    player.setSet19 (false);
+                    player.setSet20 (false);
+                    player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                            player.isSet9() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                    player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                } else if (player.getWardrobeData().getNpcId () == 908 && player.isSet9()){
+                    player.setSet8 (false);
+                    player.setSet1 (false);
+                    player.setSet2 (false);
+                    player.setSet3 (false);
+                    player.setSet4 (false);
+                    player.setSet5 (false);
+                    player.setSet6 (false);
+                    player.setSet7 (false);
+                    player.setSet9 (false);
+                    player.setSet10 (false);
+                    player.setSet11 (false);
+                    player.setSet12 (false);
+                    player.setSet13 (false);
+                    player.setSet14 (false);
+                    player.setSet15 (false);
+                    player.setSet16 (false);
+                    player.setSet17 (false);
+                    player.setSet18 (false);
+                    player.setSet19 (false);
+                    player.setSet20 (false);
+                    player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                            player.isSet9() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                    player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+
+                    } else if (player.getWardrobeData().getNpcId () == 909 && !player.isSet10()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (true);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet10() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 909 && player.isSet10()){
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet10() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+
+
+                    } else if (player.getWardrobeData().getNpcId () == 910 && !player.isSet11()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (true);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet11() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 909 && player.isSet11()){
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet11() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+
+
+                    } else if (player.getWardrobeData().getNpcId () == 911 && !player.isSet12()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (true);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet12() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 911 && player.isSet12()){
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet12() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+
+                    } else if (player.getWardrobeData().getNpcId () == 912 && !player.isSet13()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (true);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet13() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 912 && player.isSet13()){
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet13() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+
+
+                    } else if (player.getWardrobeData().getNpcId () == 913 && !player.isSet14()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (true);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet14() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 913 && player.isSet14()){
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet14() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+
+
+                    } else if (player.getWardrobeData().getNpcId () == 914 && !player.isSet15()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (true);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet15() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 914 && player.isSet15()){
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet15() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+
+                    } else if (player.getWardrobeData().getNpcId () == 915 && !player.isSet16()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (true);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet16() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 915 && player.isSet16()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet16 () ? "Unequip Outfit" : " Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+                    } else if (player.getWardrobeData().getNpcId () == 916 && !player.isSet17()) {
+                    player.setSet8 (false);
+                    player.setSet1 (false);
+                    player.setSet2 (false);
+                    player.setSet3 (false);
+                    player.setSet4 (false);
+                    player.setSet5 (false);
+                    player.setSet6 (false);
+                    player.setSet7 (false);
+                    player.setSet9 (false);
+                    player.setSet10 (false);
+                    player.setSet11 (false);
+                    player.setSet12 (false);
+                    player.setSet13 (false);
+                    player.setSet14 (false);
+                    player.setSet15 (false);
+                    player.setSet16 (false);
+                    player.setSet17 (true);
+                    player.setSet18 (false);
+                    player.setSet19 (false);
+                    player.setSet20 (false);
+                    player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                            player.isSet17() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                    player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                } else if (player.getWardrobeData().getNpcId () == 916 && player.isSet17()) {
+                    player.setSet8 (false);
+                    player.setSet1 (false);
+                    player.setSet2 (false);
+                    player.setSet3 (false);
+                    player.setSet4 (false);
+                    player.setSet5 (false);
+                    player.setSet6 (false);
+                    player.setSet7 (false);
+                    player.setSet9 (false);
+                    player.setSet10 (false);
+                    player.setSet11 (false);
+                    player.setSet12 (false);
+                    player.setSet13 (false);
+                    player.setSet14 (false);
+                    player.setSet15 (false);
+                    player.setSet16 (false);
+                    player.setSet17 (false);
+                    player.setSet18 (false);
+                    player.setSet19 (false);
+                    player.setSet20 (false);
+                    player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                            player.isSet16 () ? "Unequip Outfit" : " Equip Outfit" : "" + "Unlock Outfit");
+                    player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+                    } else if (player.getWardrobeData().getNpcId () == 917 && !player.isSet18()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (true);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet18() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 917 && player.isSet18()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet18 () ? "Unequip Outfit" : " Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 918 && !player.isSet19()) {
+                    player.setSet8 (false);
+                    player.setSet1 (false);
+                    player.setSet2 (false);
+                    player.setSet3 (false);
+                    player.setSet4 (false);
+                    player.setSet5 (false);
+                    player.setSet6 (false);
+                    player.setSet7 (false);
+                    player.setSet9 (false);
+                    player.setSet10 (false);
+                    player.setSet11 (false);
+                    player.setSet12 (false);
+                    player.setSet13 (false);
+                    player.setSet14 (false);
+                    player.setSet15 (false);
+                    player.setSet16 (false);
+                    player.setSet17 (false);
+                    player.setSet18 (false);
+                    player.setSet19 (true);
+                    player.setSet20 (false);
+                    player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                            player.isSet19() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                    player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                } else if (player.getWardrobeData().getNpcId () == 918 && player.isSet19()) {
+                    player.setSet8 (false);
+                    player.setSet1 (false);
+                    player.setSet2 (false);
+                    player.setSet3 (false);
+                    player.setSet4 (false);
+                    player.setSet5 (false);
+                    player.setSet6 (false);
+                    player.setSet7 (false);
+                    player.setSet9 (false);
+                    player.setSet10 (false);
+                    player.setSet11 (false);
+                    player.setSet12 (false);
+                    player.setSet13 (false);
+                    player.setSet14 (false);
+                    player.setSet15 (false);
+                    player.setSet16 (false);
+                    player.setSet17 (false);
+                    player.setSet18 (false);
+                    player.setSet19 (false);
+                    player.setSet20 (false);
+                    player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                            player.isSet19 () ? "Unequip Outfit" : " Equip Outfit" : "" + "Unlock Outfit");
+                    player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
+                    } else if (player.getWardrobeData().getNpcId () == 918 && !player.isSet19()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (true);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet20() ? "Unequip Outfit" :" Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You equipped your Cosmetic Overrides");
+                    } else if (player.getWardrobeData().getNpcId () == 919 && player.isSet20()) {
+                        player.setSet8 (false);
+                        player.setSet1 (false);
+                        player.setSet2 (false);
+                        player.setSet3 (false);
+                        player.setSet4 (false);
+                        player.setSet5 (false);
+                        player.setSet6 (false);
+                        player.setSet7 (false);
+                        player.setSet9 (false);
+                        player.setSet10 (false);
+                        player.setSet11 (false);
+                        player.setSet12 (false);
+                        player.setSet13 (false);
+                        player.setSet14 (false);
+                        player.setSet15 (false);
+                        player.setSet16 (false);
+                        player.setSet17 (false);
+                        player.setSet18 (false);
+                        player.setSet19 (false);
+                        player.setSet20 (false);
+                        player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ?
+                                player.isSet20 () ? "Unequip Outfit" : " Equip Outfit" : "" + "Unlock Outfit");
+                        player.getPacketSender ().sendMessage ("You unequipped your Cosmetic Overrides");
+
                     }
-
-
-                    player.updateAppearance();
+                        player.updateAppearance();
                 }
 
                 if (!player.getWardrobeData ().unlocked) {
@@ -456,11 +1244,38 @@ public class ButtonClickPacketListener implements PacketListener {
 
                         if (player.getWardrobeData().getNpcId () == 907)
                             player.setUnlockedSet8(true);
+                        if (player.getWardrobeData().getNpcId () == 908)
+                            player.setUnlockedSet9(true);
+                        if (player.getWardrobeData().getNpcId () == 909)
+                            player.setUnlockedSet10(true);
+                        if (player.getWardrobeData().getNpcId () == 910)
+                            player.setUnlockedSet11(true);
+                        if (player.getWardrobeData().getNpcId () == 911)
+                            player.setUnlockedSet12(true);
+                        if (player.getWardrobeData().getNpcId () == 912)
+                            player.setUnlockedSet13(true);
+                        if (player.getWardrobeData().getNpcId () == 913)
+                            player.setUnlockedSet14(true);
+                        if (player.getWardrobeData().getNpcId () == 914)
+                            player.setUnlockedSet15(true);
+                        if (player.getWardrobeData().getNpcId () == 915)
+                            player.setUnlockedSet16(true);
+                        if (player.getWardrobeData().getNpcId () == 916)
+                            player.setUnlockedSet17(true);
+                        if (player.getWardrobeData().getNpcId () == 917)
+                            player.setUnlockedSet18(true);
+                        if (player.getWardrobeData().getNpcId () == 918)
+                            player.setUnlockedSet19(true);
+                        if (player.getWardrobeData().getNpcId () == 919)
+                            player.setUnlockedSet20(true);
+
+
+
 
                         player.getWardrobeData().setOutfitUnlocked(true);
                         player.getPA ().sendString (player.getWardrobeData ().buttonId, player.getWardrobeData ().getOutfitUnlocked () ? "@gre@"
                                 +  player.getWardrobeData().getName () : "" +  player.getWardrobeData().getName ());
-                        player.getPA ().sendString (133010, player.getWardrobeData ().getOutfitUnlocked () ?
+                        player.getPA ().sendString (133710, player.getWardrobeData ().getOutfitUnlocked () ?
                                 "   @whi@Outfit purchased" : "" + "Costs: " + player.getWardrobeData().getDescription());
 
                         if (player.getWardrobeData().getNpcId () == 2270 && player.isSet1())
@@ -478,6 +1293,30 @@ public class ButtonClickPacketListener implements PacketListener {
                         else if (player.getWardrobeData().getNpcId () == 906 && player.isSet7())
                             player.getPA ().sendString (31886, " Unequip Outfit");
                         else if (player.getWardrobeData().getNpcId () == 907 && player.isSet8())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 908 && player.isSet9())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 909 && player.isSet10())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 910 && player.isSet11())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 911 && player.isSet12())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 912 && player.isSet13())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 913 && player.isSet14())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 914 && player.isSet15())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 915 && player.isSet16())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 916 && player.isSet17())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 917 && player.isSet18())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 918 && player.isSet19())
+                            player.getPA ().sendString (31886, " Unequip Outfit");
+                        else if (player.getWardrobeData().getNpcId () == 919 && player.isSet20())
                             player.getPA ().sendString (31886, " Unequip Outfit");
 
                         else

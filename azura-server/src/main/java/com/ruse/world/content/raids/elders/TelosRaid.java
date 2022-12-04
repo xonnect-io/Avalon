@@ -110,7 +110,7 @@ public class TelosRaid {
             member.setRegionInstance(null);
             member.getMovementQueue().reset();
             member.getClickDelay().reset();
-            member.moveTo(new Position(3353, 4052, height));
+            member.moveTo(new Position(2922, 2944, height));
             PrayerHandler.deactivateAll(member);
             CurseHandler.deactivateAll(member);
             TaskManager.submit(new Task(2, false) {
@@ -140,7 +140,7 @@ public class TelosRaid {
     public static void firstWave(TelosRaidParty party) {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
 
-        NPC npc = new NPC(9899, new Position(3360, 4053, party.getHeight()));
+        NPC npc = new NPC(9899, new Position(2922, 2927, party.getHeight()));
 
         double hp = (npc.getConstitution() + ((party.getPlayers().size() - 1) * npc.getConstitution()));
         if (party.getDifficulty() == RaidDifficulty.ADVANCED)
@@ -165,7 +165,7 @@ public class TelosRaid {
     public static void secondWave(TelosRaidParty party) {
         Dragonkin.minions_spawned = false;
         ArrayList<NPC> npcs = new ArrayList<NPC>();
-        NPC npc = new NPC(9993, new Position(3360, 4053, party.getHeight()));
+        NPC npc = new NPC(9993, new Position(2961, 2927, party.getHeight()));
         npc.setDefaultConstitution((int) ((double) (npc.getConstitution()  * (party.getDifficulty().ordinal() + 1))));
         npc.setConstitution((int) ((double) (npc.getConstitution()  * (party.getDifficulty().ordinal() + 1))));
         npcs.add(npc);
@@ -182,7 +182,7 @@ public class TelosRaid {
     public static void thirdWave(TelosRaidParty party) {
         ArrayList<NPC> npcs = new ArrayList<NPC>();
 
-        NPC npc = new NPC(9884, new Position(3360, 4053, party.getHeight()));
+        NPC npc = new NPC(9884, new Position(2943, 2968, party.getHeight()));
         npc.setDefaultConstitution((int) ((double) (npc.getConstitution()  * (party.getDifficulty().ordinal() + 1))));
         npc.setConstitution((int) ((double) (npc.getConstitution()  * (party.getDifficulty().ordinal() + 1))));
         npcs.add(npc);

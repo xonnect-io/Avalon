@@ -712,6 +712,150 @@ public class ItemDef5 {
 				itemDef.oldColors = new int[]{666, 655, 671, 675, 670, 673, 680, 660};
 				itemDef.newColors = new int[]{4, 8, 12, 0, 11, 7, 16, 10};
 				break;
+
+
+
+			case 3067:
+				itemDef.copyItem(14050);
+				itemDef.name = "Devil helmet";
+				itemDef.modelID = 21821;
+				itemDef.maleEquip1 = 21822;
+				itemDef.femaleEquip1 = 21822;
+				break;
+			case 3068:
+				itemDef.copyItem(14051);
+				itemDef.name = "Devil body";
+				itemDef.modelID = 21843;
+				itemDef.maleEquip1 = 21846;
+				itemDef.femaleEquip1 = 21846;
+				break;
+			case 3069:
+				itemDef.copyItem(14052);
+				itemDef.name = "Devil legs";
+				itemDef.modelID = 21847;
+				itemDef.maleEquip1 = 21854;
+				itemDef.femaleEquip1 = 21854;
+				break;
+			case 3070:
+				itemDef.copyItem(14053);
+				itemDef.name = "Devil boots";
+				itemDef.modelID = 21856;
+				itemDef.maleEquip1 = 21856;
+				itemDef.femaleEquip1 = 21856;
+				break;
+			case 3071:
+				itemDef.copyItem(14055);
+				itemDef.name = "Devil gloves";
+				itemDef.modelID = 21855;
+				itemDef.maleEquip1 = 21855;
+				itemDef.femaleEquip1 = 21855;
+				break;
+
+			case 3072:
+				itemDef.copyItem(5011);
+				itemDef.name = "Devil bow";
+				itemDef.modelID = 21857;
+				itemDef.maleEquip1 = 21858;
+				itemDef.femaleEquip1 = 21858;
+				break;
+
+
+
+			case 3073:
+				itemDef.copyItem(17632);
+				itemDef.name = "Devil wings";
+				itemDef.modelID = 21859;
+				itemDef.maleEquip1 = 21887;
+				itemDef.femaleEquip1 = 21887;
+				itemDef.scaleX = 50;
+				itemDef.scaleY = 50;
+				itemDef.scaleZ = 50;
+				break;
+
+
+			case 3074:
+				itemDef.copyItem(14050);
+				itemDef.name = "Samurai helmet";
+				itemDef.modelID = 21952;
+				itemDef.maleEquip1 = 21957;
+				itemDef.femaleEquip1 = 21957;
+				break;
+			case 3075:
+				itemDef.copyItem(14051);
+				itemDef.name = "Samurai body";
+				itemDef.modelID = 21959;
+				itemDef.maleEquip1 = 21962;
+				itemDef.femaleEquip1 = 21962;
+				break;
+			case 3076:
+				itemDef.copyItem(14052);
+				itemDef.name = "Samurai legs";
+				itemDef.modelID = 21963;
+				itemDef.maleEquip1 = 21972;
+				itemDef.femaleEquip1 = 21972;
+				break;
+			case 3077:
+				itemDef.copyItem(5072);
+				itemDef.name = "Zelda boots";
+				itemDef.modelID = 21932;
+				itemDef.maleEquip1 = 21932;
+				itemDef.femaleEquip1 = 21932;
+				break;
+			case 3078:
+				itemDef.copyItem(5071);
+				itemDef.name = "Zelda gloves";
+				itemDef.modelID = 21935;
+				itemDef.maleEquip1 = 21935;
+				itemDef.femaleEquip1 = 21935;
+				break;
+
+			case 3079:
+				itemDef.copyItem(5011);
+				itemDef.name = "Zelda Sword";
+				itemDef.modelID = 21947;
+				itemDef.maleEquip1 = 21951;
+				itemDef.femaleEquip1 = 21951;
+				break;
+
+
+
+			case 3080:
+				itemDef.copyItem(5068);
+				itemDef.name = "Black Knight helmet";
+				itemDef.modelID = 21987;
+				itemDef.maleEquip1 = 21987;
+				itemDef.femaleEquip1 = 21987;
+				break;
+			case 3081:
+				itemDef.copyItem(5069);
+				itemDef.name = "Black Knight body";
+				itemDef.modelID = 21997;
+				itemDef.maleEquip1 = 21997;
+				itemDef.femaleEquip1 = 21997;
+				break;
+			case 3082:
+				itemDef.copyItem(5070);
+				itemDef.name = "Black Knight legs";
+				itemDef.modelID = 21998;
+				itemDef.maleEquip1 = 21998;
+				itemDef.femaleEquip1 = 21998;
+				break;
+			case 3083:
+				itemDef.copyItem(5072);
+				itemDef.name = "Black Knight boots";
+				itemDef.modelID = 22005;
+				itemDef.maleEquip1 = 22005;
+				itemDef.femaleEquip1 = 22005;
+				break;
+			case 3084:
+				itemDef.copyItem(5071);
+				itemDef.name = "Black Knight gloves";
+				itemDef.modelID = 22065;
+				itemDef.maleEquip1 = 22065;
+				itemDef.femaleEquip1 = 22065;
+				break;
+
+
 			case 23528:
 				itemDef.copyItem(6737);
 				itemDef.name = "Elf hat";

@@ -433,6 +433,42 @@ public class PlayerLoading {
             if (reader.has("unlocked-set8")) {
                 player.setUnlockedSet8 (reader.get("unlocked-set8").getAsBoolean());
             }
+            if (reader.has("unlocked-set9")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set9").getAsBoolean());
+            }
+            if (reader.has("unlocked-set10")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set10").getAsBoolean());
+            }
+            if (reader.has("unlocked-set11")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set11").getAsBoolean());
+            }
+            if (reader.has("unlocked-set12")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set12").getAsBoolean());
+            }
+            if (reader.has("unlocked-set13")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set13").getAsBoolean());
+            }
+            if (reader.has("unlocked-set14")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set14").getAsBoolean());
+            }
+            if (reader.has("unlocked-set15")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set15").getAsBoolean());
+            }
+            if (reader.has("unlocked-set16")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set16").getAsBoolean());
+            }
+            if (reader.has("unlocked-set17")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set17").getAsBoolean());
+            }
+            if (reader.has("unlocked-set18")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set18").getAsBoolean());
+            }
+            if (reader.has("unlocked-set19")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set19").getAsBoolean());
+            }
+            if (reader.has("unlocked-set20")) {
+                player.setUnlockedSet8 (reader.get("unlocked-set20").getAsBoolean());
+            }
             if (reader.has("has-completed-boss-task")) {
                 player.setHasPlayerCompletedBossTask(reader.get("has-completed-boss-task").getAsBoolean());
             }
