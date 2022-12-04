@@ -27,7 +27,7 @@ public enum WardrobeData {
             390,
             false),//zoom
 
-    COSTUME_2(133072, "Rogue Bandit", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+    COSTUME_2(133072, "Rogue Bandit", "500 Gems", 500, WardrobeCategory.FAVORITES,
             new int[] {10612, 1}, //helmet
             new int[] {19335, 1}, //amulet
             new int[] {5553, 1}, //body
@@ -43,7 +43,7 @@ public enum WardrobeData {
             320,
             false),//zoom
 
-    COSTUME_3(133073, "Shadow Outfit", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+    COSTUME_3(133073, "Shadow Outfit", "1,000 Gems", 1000, WardrobeCategory.FAVORITES,
             new int[] {17614, 1}, //helmet
             new int[] {11195, 1}, //amulet
             new int[] {17616, 1}, //body
@@ -59,7 +59,7 @@ public enum WardrobeData {
             320,
             false),//zoom
 
-    COSTUME_4(133074, "Sephiroth Outfit", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+    COSTUME_4(133074, "Sephiroth Outfit", "1,000 Gems", 1000, WardrobeCategory.FAVORITES,
             new int[] {13328, 1}, //helmet
             new int[] {-1, 1}, //amulet
             new int[] {13329, 1}, //body
@@ -75,7 +75,7 @@ public enum WardrobeData {
             320,
             false),//zoom
 
-    COSTUME_5(133075, "Devil Outfit", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+    COSTUME_5(133075, "Devil Outfit", "2,500 Gems", 2500, WardrobeCategory.FAVORITES,
             new int[] {3067, 1}, //helmet
             new int[] {-1, 1}, //amulet
             new int[] {3068, 1}, //body
@@ -91,7 +91,7 @@ public enum WardrobeData {
             320,
             false),//zoom
 
-    COSTUME_6(133076, "Samurai Outfit", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+    COSTUME_6(133076, "Samurai Outfit", "750 Gems", 750, WardrobeCategory.FAVORITES,
             new int[] {3074, 1}, //helmet
             new int[] {-1, 1}, //amulet
             new int[] {3075, 1}, //body
@@ -108,7 +108,7 @@ public enum WardrobeData {
             false),//zoom
 
 
-    COSTUME_7(133077, "Black Knight", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
+    COSTUME_7(133077, "Black Knight", "1,500 Gems", 1500, WardrobeCategory.FAVORITES,
             new int[] {10612, 1}, //helmet
             new int[] {19335, 1}, //amulet
             new int[] {5553, 1}, //body

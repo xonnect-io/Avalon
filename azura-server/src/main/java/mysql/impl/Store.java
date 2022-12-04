@@ -236,7 +236,7 @@ public class Store implements Runnable {
                         break;
 
                     case 1082:
-                        player.getInventory().add(23393, quantity);
+                        player.getInventory().add(23393, quantity * 1000);
                         break;
 
                     case 1083:
