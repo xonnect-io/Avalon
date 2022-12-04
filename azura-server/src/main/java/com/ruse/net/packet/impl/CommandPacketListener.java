@@ -59,6 +59,7 @@ import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.minigames.impl.dungeoneering.DungeoneeringParty;
 import com.ruse.world.content.pos.PlayerOwnedShopManager;
 import com.ruse.world.content.progressionzone.ProgressionZone;
+import com.ruse.world.content.raids.elders.ElderGodsData;
 import com.ruse.world.content.raids.elders.TelosLoot;
 import com.ruse.world.content.raids.system.RaidDifficulty;
 import com.ruse.world.content.seasonpass.PassRewards;
@@ -1947,7 +1948,15 @@ public class CommandPacketListener implements PacketListener {
         }        if (command[0].equalsIgnoreCase("spawnnm")) {
             NPC npc = new NPC(9017, new Position(2980, 2776,0));
         }
-
+        if (command[0].equalsIgnoreCase("eldergods") || command[0].equalsIgnoreCase("eg")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            TeleportHandler.teleportPlayer(player, ElderGodsData.LOBBY, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to Elder Gods Minigame");
+        }
         if (command[0].equalsIgnoreCase("loadsp")) {
             PassRewards.init();
             for (Player p : World.getPlayers()) {

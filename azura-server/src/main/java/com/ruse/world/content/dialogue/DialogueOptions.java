@@ -242,7 +242,10 @@ public class DialogueOptions {
                     break;
 
                 case 6762:
-                        player.getShadowRaidsParty().add(player);
+                    if (player.getLocation() == Location.SHADOWS_OF_DARKNESS || player.getLocation() == Location.DARKNESS_LOBBY)
+                        player.getShadowRaidsParty ().add (player);
+                    else if (player.getLocation() == Location.TELOS || player.getLocation() == Location.TELOS_LOBBY)
+                        player.getTelosRaidsParty().add (player);
                     break;
                 case 68:
                     player.getPacketSender().sendInterfaceRemoval();
@@ -1563,11 +1566,16 @@ public class DialogueOptions {
                     break;
                 case 6762:
                     player.getPacketSender().sendInterfaceRemoval();
-                    if (player.getShadowRaidsParty() == null) {
+                    if (player.getShadowRaidsParty() == null && player.getLocation() == Location.SHADOWS_OF_DARKNESS || player.getLocation() == Location.DARKNESS_LOBBY) {
                         if (player.getMinigameAttributes().getShadowAttributes().getPartyInvitation() != null) {
                             player.getMinigameAttributes().getShadowAttributes().getPartyInvitation().add(player);
                         }
                         player.getMinigameAttributes().getShadowAttributes().setPartyInvitation(null);
+                    } else if (player.getTelosRaidsParty () == null && player.getLocation() == Location.TELOS_LOBBY || player.getLocation() == Location.TELOS) {
+                        if (player.getMinigameAttributes().getTelosAttributes().getPartyInvitation() != null) {
+                            player.getMinigameAttributes().getTelosAttributes().getPartyInvitation().add(player);
+                        }
+                        player.getMinigameAttributes().getTelosAttributes ().setPartyInvitation(null);
                     }
                     break;
                 case 71260:

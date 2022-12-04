@@ -1592,14 +1592,6 @@ public final class CombatFactory {
                     return false;
                 }
             }
-            else if (npc.getId() == 9899) { // Dragonkin
-                if (Dragonkin.minions_dead == false && Dragonkin.minions_spawned == true) {
-                    ((Player) entity).getPacketSender()
-                            .sendMessage("@red@You need to defeat the Dragonkin's Minions first!");
-                    entity.getCombatBuilder().reset(true);
-                    return false;
-                }
-            }
             else if (npc.getId() == 9128) { // Evil cook
                 if (player.getQuestTwoStep5() == false) {
                     ((Player) entity).getPacketSender()
