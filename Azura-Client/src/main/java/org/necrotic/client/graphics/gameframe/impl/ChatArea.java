@@ -287,6 +287,10 @@ public class ChatArea extends GameFrame {
 						if (playerRights == 13) { //Zenyte Donator
 							playerRights += 3;
 						}
+
+						if (playerRights == 14) { //Tanzanite Donator
+							playerRights += 3;
+						}
 						if (name != null && name.indexOf("@") == 0) {
 							int substringLength = Client.getClient().getPrefixSubstringLength(name);
 							name = name.substring(substringLength);
@@ -524,6 +528,9 @@ public class ChatArea extends GameFrame {
 					if (client.myRights > 0) {
 						int crown = client.myRights;
 						if (crown == 13) { //Zenyte Donator
+							crown += 3;
+						}
+						if (crown == 14) { //Tanzanite Donator
 							crown += 3;
 						}
 						int yOffset = 0;
