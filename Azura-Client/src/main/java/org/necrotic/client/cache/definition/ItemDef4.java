@@ -78,6 +78,15 @@ public class ItemDef4 {
 				itemDef.modelID = 19678;
 				itemDef.maleEquip1 = 19679;
 				itemDef.femaleEquip1 = 19679;
+				itemDef.maleModelScale = 4;
+				itemDef.maleWieldY = 4;
+				itemDef.maleWieldZ = -1;
+				itemDef.modelZoom = 515;
+				itemDef.rotationX = 228;
+				itemDef.rotationY = 389;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 2;
 				break;
 
 			case 23293:
@@ -104,6 +113,15 @@ public class ItemDef4 {
 				itemDef.modelID = 19721;
 				itemDef.maleEquip1 = 19722;
 				itemDef.femaleEquip1 = 19722;
+				itemDef.maleModelScale = 4;
+				itemDef.maleWieldY = 4;
+				itemDef.maleWieldZ = -1;
+				itemDef.modelZoom = 515;
+				itemDef.rotationX = 228;
+				itemDef.rotationY = 389;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = 2;
 				break;
 
 
