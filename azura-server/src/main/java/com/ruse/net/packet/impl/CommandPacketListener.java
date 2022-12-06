@@ -299,6 +299,28 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
         }
 
+        if (command[0].equalsIgnoreCase("event3")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(2528, 2656, 8);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+        }
+
+        if (command[0].equalsIgnoreCase("event4")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position pos = new Position(2528, 2656, 12);
+            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+        }
+
         if (command[0].equalsIgnoreCase("globals")) {
             player.getPacketSender().sendMessage("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft() + " Steals left.");
             player.getPacketSender().sendMessage("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft() + " kills left.");
