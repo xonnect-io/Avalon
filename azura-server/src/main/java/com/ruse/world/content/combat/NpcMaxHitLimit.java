@@ -25,6 +25,12 @@ public class NpcMaxHitLimit {
                 maxLimit = (NpcDefinition.forId(npc.getId()).getHitpoints() / 100) * 2;
                 break;
 
+            case 9899://Dragonkin
+            case 9993://Beast Tok
+            case 9884://Telos
+                maxLimit = (NpcDefinition.forId(npc.getId()).getHitpoints() / 100) * 5;
+                break;
+
             default:
                 return damage;
         }
