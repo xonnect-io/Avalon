@@ -3084,6 +3084,30 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("donationdeal")) {
             World.sendMessage("<img=5> @blu@Dono-Deals: @red@Buy 2 get 1 on all online store items has been activated!");
         }
+        if (command[0].equalsIgnoreCase("donodeal")) {
+            GameSettings.B2GO = !GameSettings.B2GO;
+            player.sendMessage("B2GO: " + GameSettings.B2GO);
+            if (GameSettings.B2GO)
+                World.sendMessage1("@blu@Dono-deal: @red@Buy 2 get 1 extra on all online store items is currently active!");
+        }
+
+        if (command[0].equalsIgnoreCase("bogo")) {
+            GameSettings.BOGO = !GameSettings.BOGO;
+            player.sendMessage("B2GO: " + GameSettings.BOGO);
+            if (GameSettings.BOGO)
+                World.sendMessage1("@blu@Dono-deal: @red@Buy 1 get 1 additional on online store items is currently active!");
+        }
+
+        if (command[0].equalsIgnoreCase("createdono")) {
+            DonoDeal.createDonoDeal(Integer.parseInt(command[1]), Integer.parseInt(command[2]), Integer.parseInt(command[3]), Integer.parseInt(command[4]));
+        }
+
+        if (command[0].equalsIgnoreCase("adddono")) {
+            DonoDeal.amountClaimed = Integer.parseInt(command[1]);
+        }
+        if (command[0].equalsIgnoreCase("enddono")) {
+            DonoDeal.endDonoDeal();
+        }
         if (command[0].equalsIgnoreCase("ps")) {
             ArrayList<Item> items = new ArrayList<>();
 
