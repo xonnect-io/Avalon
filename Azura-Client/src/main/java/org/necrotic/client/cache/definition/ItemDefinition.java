@@ -552,6 +552,10 @@ public final class ItemDefinition {
 				itemDef.newColors = new int[]{5409, 920, 914, 929, 10452, 10293};
 				itemDef.oldColors = new int[]{943, 3866, 914, 3866, 943, 943};
 				break;
+			case 1050:
+				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", null};
+				break;
+
 			case 10501:
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;

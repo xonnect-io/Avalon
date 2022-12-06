@@ -263,7 +263,7 @@ public class PlayerHandler {
                     "The Well of Goodwill is granting 30% bonus experience for another "
                             + WellOfGoodwill.getMinutesRemaining () + " minutes.");
         }
-
+/*
         if (player.isUnlockedSet1 ()) {
             player.setCurrentWardrobe (WardrobeData.COSTUME_2);
             player.getWardrobeData ().setOutfitUnlocked (true);
@@ -298,7 +298,7 @@ public class PlayerHandler {
             player.setCurrentWardrobe (WardrobeData.COSTUME_7);
             player.getWardrobeData ().setOutfitUnlocked (true);
         }
-        /*
+
         if (player.isUnlockedSet8 ()) {
             player.setCurrentWardrobe (WardrobeData.COSTUME_8);
             player.getWardrobeData ().setOutfitUnlocked (true);

@@ -19,7 +19,9 @@ public class MainDissolving {
 	}
 	static int anim = 11904;
 	static int UPG_TOKEN = 12855;
+	static int CHRISTMAS_TOKEN = 23488;
 	public enum DissolvingData {
+		SANTA_HAT(1050, new Item[]{new Item(CHRISTMAS_TOKEN, 75)}, 5000, anim),
 		BORK_HELMET(17594, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
 		BORK_BODY(17596, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),
 		BORK_LEGS(17598, new Item[]{new Item(UPG_TOKEN, 100_000)}, 780_000, anim),

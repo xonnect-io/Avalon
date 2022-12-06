@@ -878,9 +878,18 @@ public class ItemActionPacketListener implements PacketListener {
                         player.sendMessage("@red@You already have maxed out your next upgrade bonus!");
                         return;
                     }
-                player.getInventory().delete(22166, 1);
-                    player.setScrollBonus(player.getScrollBonus () + 1);
-                player.sendMessage("@blu@Your next upgrade chances were increased " + Misc.formatNumber((long) (player.getScrollBonus () * 20)) + "%");
+                    player.getInventory ().delete (22166, 1);
+                    player.setScrollBonus (player.getScrollBonus () + 1);
+                    if (player.getScrollBonus () == 1)
+                        player.sendMessage ("@blu@Your next upgrade chances will be increased 1.2X the original value");
+                    if (player.getScrollBonus () == 2)
+                        player.sendMessage ("@blu@Your next upgrade chances will be increased 1.4X the original value");
+                    if (player.getScrollBonus () == 3)
+                        player.sendMessage ("@blu@Your next upgrade chances will be increased 1.6X the original value");
+                    if (player.getScrollBonus () == 4)
+                        player.sendMessage ("@blu@Your next upgrade chances will be increased 1.8X the original value");
+                    else if (player.getScrollBonus () == 5)
+                    player.sendMessage ("@blu@Your next upgrade chances will be increased 2X the original value");
                 break;
 
             case 1973:

@@ -391,7 +391,7 @@ public class CardPack {
 
 
             new CardPackReward(10943, 2, LEGENDARY), // $100 Bond
-            new CardPackReward(15328, 1, LEGENDARY), // Rage pot
+            new CardPackReward(23225, 1, LEGENDARY), // Rage pot
             new CardPackReward(23174, 100, LEGENDARY), // High-Tier Ticket
             new CardPackReward(23223, 6, LEGENDARY), // Blood attachments
             new CardPackReward(22110, 1, LEGENDARY), // Owner's Attachment
