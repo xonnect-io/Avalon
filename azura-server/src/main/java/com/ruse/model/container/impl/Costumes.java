@@ -84,26 +84,28 @@ public enum Costumes {
 
     public static Costumes forID(int id, Player player) {
         for (Costumes c : Costumes.values()) {
-            if (c.getItemId() == id)
+
+            if (c.getItemId () == id && c.getItemId () > 0)
                 return c;
-            else if (player.isSet1 ()) {
-                return Costumes.COSTUME_2;
-            } else if (player.isSet2 ()) {
-                return Costumes.COSTUME_1;
-            } else if (player.isSet3 ()) {
-                return Costumes.COSTUME_3;
-            } else if (player.isSet4 ()) {
-                return Costumes.COSTUME_4;
-            } else if (player.isSet5 ()) {
-                return Costumes.COSTUME_5;
-            } else if (player.isSet6 ()) {
-                return Costumes.COSTUME_6;
-            } else if (player.isSet7 ()) {
-                return Costumes.COSTUME_7;
-            } else if (player.isSet8 ()) {
-                return Costumes.COSTUME_8;
-            } else return null;
+
+             if (player.isSet1 ())
+                return c.COSTUME_2;
+            else if (player.isSet2 ())
+                return c.COSTUME_1;
+            else if (player.isSet3 ())
+                return c.COSTUME_3;
+            else if (player.isSet4 ())
+                return c.COSTUME_4;
+            else if (player.isSet5 ())
+                return c.COSTUME_5;
+            else if (player.isSet6 ())
+                return c.COSTUME_6;
+            else if (player.isSet7 ())
+                return c.COSTUME_7;
+            else if (player.isSet8 ())
+                return c.COSTUME_8;
         }
+
         return null;
     }
 
