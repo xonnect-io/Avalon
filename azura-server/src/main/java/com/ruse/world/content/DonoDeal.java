@@ -1,6 +1,7 @@
 package com.ruse.world.content;
 
 import com.ruse.model.Item;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
 
 public class DonoDeal {
@@ -19,6 +20,7 @@ public class DonoDeal {
         reward = new Item(itemId, amount);
 
         World.sendMessage1("@blu@Dono-deal: @red@" + getMessage());
+        DiscordMessager.sendDonationAnnouncement ("***Dono-deal: *** " + getDiscordMessage() +"");
     }
 
     public static String getMessage() {
@@ -29,7 +31,11 @@ public class DonoDeal {
                        :
                  ("</shad> <col=842307>(" +(totalAmount -  amountClaimed) + " left to claim)"));
     }
-
+    public static String getDiscordMessage() {
+        return "Every ***$" + donoAmount + "*** donated you will get ***x" + reward.getAmount() + " " + reward.getDefinition().getName()
+                +"***"+
+                (totalAmount == -5 ? "" : (" - (" +(totalAmount -  amountClaimed) + " left to claim)"));
+    }
     public static void endDonoDeal() {
 
         amountClaimed = 0;
@@ -39,6 +45,7 @@ public class DonoDeal {
         reward = null;
         World.sendMessage1("@blu@Dono-deal: @red@The current donation deal has ended!");
 
+        DiscordMessager.sendDonationAnnouncement2 ("***Dono-deal: *** " + "The current donation deal has ended!" +"");
     }
 
 

@@ -28,6 +28,7 @@ public class DiscordMessager extends JSONObject {
 
 	public static Queue<DiscordObject> discordMessages = new ConcurrentLinkedQueue<>();
 	private static String serverPerks = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
+	private static String donationDeals = "https://discord.com/api/webhooks/1036226947002421269/luLGliLKNtkYDwvXRvzAkRwHZiW8WHn2zgW26wBQ_JCxYTeQOdy4vVc_PoKnyXvzyLl0";
 
 	public static void sendWebhook(String msg, Color color, String webhook) {
 		if (GameSettings.LOCALHOST)
@@ -86,6 +87,73 @@ public class DiscordMessager extends JSONObject {
 	}
 
 
+	public static void sendDonationAnnouncement(String msg) {
+		try {
+			String webhook = donationDeals;
+
+
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+			// client
+
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Avalon - Store") // The title of the embed
+					// element
+					.withURL("https://avalon317.com/store/") // The URL of the embed element
+					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
+					.withDescription(
+							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
+					// description
+					// of
+					// the
+					// embed
+					// object
+					.build(); // Build the embed element
+
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
+					// message
+					 .withEmbed(embed) // Add our embed object
+					.withUsername("Dealer") // Override the username of the bot
+					.build(); // Build the message
+
+			client.sendPayload(message);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void sendDonationAnnouncement2(String msg) {
+		try {
+			String webhook = donationDeals;
+
+
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+			// client
+
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("Avalon - Store") // The title of the embed
+					// element
+					.withURL("https://avalon317.com/store/") // The URL of the embed element
+					.withColor(Color.GREEN) // The color of the embed. You can leave this at null for no color
+					.withDescription(
+							"Remember, you can mute any specific channel by clicking the bell in the top right of Discord.") // The
+					// description
+					// of
+					// the
+					// embed
+					// object
+					.build(); // Build the embed element
+
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg)) // The content of the
+					// message
+					//.withEmbed(embed) // Add our embed object
+					.withUsername("Dealer") // Override the username of the bot
+					.build(); // Build the message
+
+			client.sendPayload(message);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void discordThread() {
 		new Thread(() -> {

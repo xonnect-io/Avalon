@@ -4,7 +4,9 @@ import com.ruse.GameSettings;
 import com.ruse.model.PlayerRights;
 import com.ruse.model.definitions.ItemDefinition;
 import com.ruse.util.Misc;
+import com.ruse.webhooks.discord.DiscordMessager;
 import com.ruse.world.World;
+import com.ruse.world.content.DonoDeal;
 import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.PlayerPanel;
 import com.ruse.world.entity.impl.player.Player;
@@ -18,6 +20,7 @@ public class Store implements Runnable {
     public static final String PASS = "n~7u^D:1";
     public static final String DATABASE = "u189330247_Vote";
 
+    int totalDonated = 0;
     private Player player;
     private Connection conn;
     private Statement stmt;
@@ -41,6 +44,10 @@ public class Store implements Runnable {
         if (player.getRights().isStaff()) {
             return;
         }
+
+
+        int totalDonated = 0;
+
         PlayerRights rights = null;
         if (player.getAmountDonated() >= SAPPHIRE_DONATION_AMOUNT)
             rights = PlayerRights.SAPPHIRE_DONATOR;
@@ -273,6 +280,8 @@ public class Store implements Runnable {
                 checkForRankUpdate(player);
                 PlayerPanel.refreshPanel(player);
 
+                totalDonated += amount;
+
                 player.setMonthlyDonationCount(player.getMonthlyDonationCount () + (int)amount);
                 player.getInventory().add(23257, (int) amount);
                 player.sendMessage("Thanks for donating!");
@@ -314,6 +323,49 @@ public class Store implements Runnable {
 
                 rs.updateInt("claimed", 1);
                 rs.updateRow();
+            }
+
+            if (totalDonated > 0) {
+                if (DonoDeal.reward != null) {
+                    if (totalDonated >= DonoDeal.donoAmount) {
+                        int amount = totalDonated / DonoDeal.donoAmount;
+                        int totalamount = DonoDeal.totalAmount;
+
+                        if (totalamount != -5){
+                            if (amount >= totalamount - DonoDeal.amountClaimed) {
+                                amount = totalamount - DonoDeal.amountClaimed;
+                            }
+                            if (DonoDeal.totalAmount != -5)
+                                DonoDeal.amountClaimed += amount;
+                        }
+
+                        amount *= DonoDeal.reward.getAmount();
+                        player.getInventory().add(DonoDeal.reward.copy().setAmount((int) amount));
+
+
+                        World.sendMessage1("@blu@Dono-deal: @red@" + player.getUsername()
+                                + " donated over $" + DonoDeal.donoAmount
+                                + " and got <shad>x" + amount + " " + DonoDeal.reward.getDefinition().getName()
+                                +
+                                (DonoDeal.totalAmount == -5 ?
+                                        ""
+                                        : "</shad><col=842307> (" + (DonoDeal.totalAmount - DonoDeal.amountClaimed) + " left to claim)"));
+
+                                DiscordMessager.sendDonationAnnouncement2("***Dono-deal: *** " + player.getUsername() + " donated over ***$" + DonoDeal.donoAmount
+                                        + "*** and got ***" + amount + " " + DonoDeal.reward.getDefinition().getName()
+                                        +"***"+
+                                        (DonoDeal.totalAmount == -5 ?
+                                                ""
+                                                : " (" + (DonoDeal.totalAmount - DonoDeal.amountClaimed) + " left to claim)"));
+
+                        if (DonoDeal.totalAmount != -5)
+                            if (DonoDeal.amountClaimed >= DonoDeal.totalAmount)
+                                DonoDeal.endDonoDeal();
+                    }
+
+
+                }
+
             }
             destroy();
         } catch (Exception e) {
