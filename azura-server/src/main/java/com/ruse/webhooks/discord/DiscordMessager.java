@@ -28,7 +28,7 @@ public class DiscordMessager extends JSONObject {
 
 	public static Queue<DiscordObject> discordMessages = new ConcurrentLinkedQueue<>();
 	private static String serverPerks = "https://discord.com/api/webhooks/983470634304675850/v1rdbrXWCpule0_2fKc1AvGt0V3W-VNCBM5aKuk5kOLTkufAtWLKxu4mIxss9Kk-wIZp";
-	private static String donationDeals = "https://discord.com/api/webhooks/1036226947002421269/luLGliLKNtkYDwvXRvzAkRwHZiW8WHn2zgW26wBQ_JCxYTeQOdy4vVc_PoKnyXvzyLl0";
+	private static String donationDeals = "https://discord.com/api/webhooks/1049850496275460237/f_Ae2hgBERrDe2gzFvI5W2Cj_vCsZMWhwp4Ak_Htu6Vor3-yQVhFUNtg-q5RdMiFGL20";
 
 	public static void sendWebhook(String msg, Color color, String webhook) {
 		if (GameSettings.LOCALHOST)
