@@ -129,15 +129,15 @@ public class EventChestHandler {
 			if (!player.getInventory ().contains (Configuration.CURRENCY_TO_SPEND.getId (),
 					Configuration.CURRENCY_TO_SPEND.getAmount ())) {
 				player.sendMessage ("You need at least "
-						+ Misc.insertCommasToNumber ("" + Configuration.CURRENCY_TO_SPEND.getAmount ()) + " "
+						+ ("" + Configuration.CURRENCY_TO_SPEND.getAmount ()) + " "
 						+ ItemDefinition.forId (Configuration.CURRENCY_TO_SPEND.getId ()).getName () + " to claim your reward!");
 				return;
 			}
 		} else if (player.getEventChestHandler().getTierType() == TierType.TIER_2) {
 			if (!player.getInventory ().contains (Configuration.CURRENCY_TO_SPEND.getId (),
-					Configuration.CURRENCY_TO_SPEND.getAmount ())) {
+					Configuration.CURRENCY_TO_SPEND.getAmount () * 2)) {
 				player.sendMessage ("You need at least "
-						+ Misc.insertCommasToNumber ("" + Configuration.CURRENCY_TO_SPEND.getAmount () + 1) + " "
+						+  ("" + Configuration.CURRENCY_TO_SPEND.getAmount ()  * 2) + " "
 						+ ItemDefinition.forId (Configuration.CURRENCY_TO_SPEND.getId ()).getName () + " to claim your reward!");
 				return;
 			}
