@@ -426,7 +426,7 @@ public class NPCDrops {
             npc.getId() == 9319 && drop.getChance() >= 50 ||
             npc.getId() == 9312 && drop.getChance() >= 5 ||
             npc.getId() == 3830 && drop.getChance() >= 5 ||
-            npc.getId() == 10002 && drop.getChance() >= 2500 && itemId != 1050 || itemId != 19000 ||
+            npc.getId() == 10002 && drop.getChance() >= 3000 ||
             npc.getId() == 3305 && drop.getChance() >= 10) {
                 String itemName = item.getDefinition().getName();
                 String itemMessage = "x" + amount + " " + itemName;
