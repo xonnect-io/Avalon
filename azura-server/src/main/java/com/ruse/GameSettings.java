@@ -19,7 +19,7 @@ public class GameSettings {
     public static boolean OWNER_JEWELRY_DONO_DEAL = false;
     public static boolean OWNER_CAPE_DONO_DEAL = false;
     public static boolean AUTUMN_DEAL = false;
-    public static boolean WINTER_DEAL = true;
+    public static boolean WINTER_DEAL = false;
     /*
      * Bunch of variables for the Global Events
      */
