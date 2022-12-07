@@ -22,6 +22,7 @@ import com.ruse.world.content.cluescrolls.ClueScroll;
 import com.ruse.world.content.cluescrolls.ClueScrollReward;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
+import com.ruse.world.content.cosmetic.WardrobeHandler;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.impl.NephilimTokenExchange;
 import com.ruse.world.content.event_chest.EventChestInterface;
@@ -29,6 +30,7 @@ import com.ruse.world.content.holidayevents.easter2017;
 import com.ruse.world.content.instanceMananger.InstanceData;
 import com.ruse.world.content.instanceMananger.InstanceInterfaceHandler;
 import com.ruse.world.content.minigames.impl.DisassembleValue;
+import com.ruse.world.content.seasonpass.SeasonPass;
 import com.ruse.world.content.skill.SkillManager;
 import com.ruse.world.content.skill.impl.herblore.Herblore;
 import com.ruse.world.content.skill.impl.herblore.ingredientsBook;
@@ -53,6 +55,7 @@ import com.ruse.world.content.upgrading.Upgradeables;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.text.NumberFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class ItemActionPacketListener implements PacketListener {
@@ -872,7 +875,22 @@ public class ItemActionPacketListener implements PacketListener {
                     World.sendMessage("@blu@<img=1463>[News]<img=1463><col=ff0000>" + player.getUsername() + " has just unlocked Crimson boss!");
                 }
                 break;
-
+            case 23393:
+                if (player.isCosmeticUnlocked ()) {
+                    player.sendMessage("You already claimed a monthly cosmetic pass, type @red@::wardrobe @bla@to access the outfits!");
+                    return;
+                }
+                Calendar cal = Calendar.getInstance();
+                int day = cal.get(Calendar.DAY_OF_YEAR);
+                int daysLeft = SeasonPass.SEASONEND - day;
+                player.getPacketSender ().sendInterfaceReset ();
+                player.setUnlockedCosmetic(true);
+                new WardrobeHandler (player).open ();
+                player.getInventory().delete(23393, 1);
+                player.sendMessage("You have claimed your Monthly Cosmetic Membership");
+                World.sendMessage("@red@<img=832>[News] @blu@" + player.getUsername() +" @red@claimed a Cosmetic Membership!");
+                player.sendMessage("The Monthly pass ends in " + daysLeft + " days.");
+                break;
             case 22166:
                 if (player.getScrollBonus () >= 5) {
                         player.sendMessage("@red@You already have maxed out your next upgrade bonus!");

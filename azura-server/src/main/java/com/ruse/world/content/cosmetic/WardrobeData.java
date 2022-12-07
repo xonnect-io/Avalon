@@ -25,7 +25,7 @@ public enum WardrobeData {
             new int[] {-1, 1}, //ring
             9244, //npcid
             390,
-            false),//zoom
+            true),//zoom
 
     COSTUME_2(133072, "Rogue Bandit", "500 Gems", 500, WardrobeCategory.FAVORITES,
             new int[] {10612, 1}, //helmet
@@ -41,7 +41,7 @@ public enum WardrobeData {
             new int[] {-1, 1}, //ring
             2270, //npcid
             320,
-            false),//zoom
+            true),//zoom
 
     COSTUME_3(133073, "Shadow Outfit", "1,000 Gems", 1000, WardrobeCategory.FAVORITES,
             new int[] {17614, 1}, //helmet
@@ -57,7 +57,7 @@ public enum WardrobeData {
             new int[] {-1, 1}, //ring
             607, //npcid
             320,
-            false),//zoom
+            true),//zoom
 
     COSTUME_4(133074, "Sephiroth Outfit", "1,000 Gems", 1000, WardrobeCategory.FAVORITES,
             new int[] {13328, 1}, //helmet
@@ -73,7 +73,7 @@ public enum WardrobeData {
             new int[] {-1, 1}, //ring
             903, //npcid
             320,
-            false),//zoom
+            true),//zoom
 
     COSTUME_5(133075, "Devil Outfit", "2,500 Gems", 2500, WardrobeCategory.FAVORITES,
             new int[] {3067, 1}, //helmet
@@ -89,7 +89,7 @@ public enum WardrobeData {
             new int[] {-1, 1}, //ring
             904, //npcid
             320,
-            false),//zoom
+            true),//zoom
 
     COSTUME_6(133076, "Samurai Outfit", "750 Gems", 750, WardrobeCategory.FAVORITES,
             new int[] {3074, 1}, //helmet
@@ -105,7 +105,7 @@ public enum WardrobeData {
             new int[] {-1, 1}, //ring
             905, //npcid
             320,
-            false),//zoom
+            true),//zoom
 
 
     COSTUME_7(133077, "Black Knight", "1,500 Gems", 1500, WardrobeCategory.FAVORITES,
@@ -122,7 +122,7 @@ public enum WardrobeData {
             new int[] {-1, 1}, //ring
             906, //npcid
             320,
-            false),//zoom
+            true),//zoom
 /*
     COSTUME_8(133078, "Shit eater", "5000 Gems", 5000, WardrobeCategory.FAVORITES,
             new int[] {10612, 1}, //helmet

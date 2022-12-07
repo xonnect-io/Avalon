@@ -424,7 +424,7 @@ public class ObjectActionPacketListener implements PacketListener {
                                     }
                                 }
                                 break;
-                            case 2004:
+                            case 27656:
                                 TelosInterfaces.openCofferRewards(player);
                                 break;
                             case 399:

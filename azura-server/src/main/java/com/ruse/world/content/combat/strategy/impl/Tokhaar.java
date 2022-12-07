@@ -81,7 +81,15 @@ public class Tokhaar implements CombatStrategy {
     }
 
     private void tileAttack(Player player, NPC npc, Position chosenTile) {
-        npc.forceChat("You will fall from my powers!");
+       int random = Misc.getRandom (3);
+        if (random == 1)
+        npc.forceChat("You better watch out!");
+        else if (random == 2)
+            npc.forceChat ("You will be crushed");
+        else if (random == 3)
+            npc.forceChat ("My strength is to strong for a little human like you");
+        else
+            npc.forceChat ("The Elder Gods will not be defeated");
         player.getPacketSender().sendGlobalGraphic(new Graphic(626), chosenTile);
         TaskManager.submit(new Task(3, false) {
             @Override

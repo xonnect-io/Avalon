@@ -131,7 +131,7 @@ public class TelosRaid {
         }
         party.setDeathCount(0);
         party.setKills(0);
-        party.sendMessage("You arrive in a place of nature, inside a giant cage.");
+        party.sendMessage("@mag@Welcome to the Elder Gods Raids, The first wave will begin shortly");
         party.setCurrentPhase(1);
         party.setHeight(height);
         party.startElderGods();

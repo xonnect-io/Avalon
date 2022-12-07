@@ -23,8 +23,8 @@ public class WardrobeHandler {
             sendItemsOnInterface (WardrobeData.COSTUME_1);
             player.setCurrentWardrobe (WardrobeData.COSTUME_1);
             player.getPA().sendNpcOnInterface(133709, player.getWardrobeData ().getNpcId(), player.getWardrobeData ().getAdjustedZoom());
-            player.getPA ().sendString (133710, player.getWardrobeData().unlocked == true ? "   @whi@Outfit purchased" : "" + "Costs: " + player.getWardrobeData().getDescription());
 
+        player.getPA ().sendString (133710, "");
             if (player.getWardrobeData().getNpcId () == 2270 && player.isSet1())
                 player.getPA ().sendString (31886, " Unequip Outfit");
             else if (player.getWardrobeData().getNpcId () == 9244 && player.isSet2())
@@ -85,13 +85,6 @@ public class WardrobeHandler {
         }
         for (WardrobeData data : data) {
                 player.getPA ().sendString (count++, data.getName ());
-            player.getPA ().sendString (133071, player.isUnlockedSet1() ? "@gre@" + "Season 1 Outfit" : "Season 1 Outfit");
-            player.getPA ().sendString (133072, player.isUnlockedSet2() ? "@gre@" + "Rogue Bandit" : "Rogue Bandit");
-            player.getPA ().sendString (133073, player.isUnlockedSet3() ? "@gre@" + "Shadow Outfit" : "Shadow Outfit");
-            player.getPA ().sendString (133074, player.isUnlockedSet4() ? "@gre@" + "Sephiroth Outfit" : "Sephiroth Outfit");
-            player.getPA ().sendString (133075, player.isUnlockedSet5() ? "@gre@" + "Devil Outfit" : "Devil Outfit");
-            player.getPA ().sendString (133076, player.isUnlockedSet6() ? "@gre@" + "Samurai Outfit" : "Samurai Outfit");
-            player.getPA ().sendString (133077, player.isUnlockedSet7() ? "@gre@" + "Black Knight" : "Black Knight");
         }
     }
 
@@ -115,7 +108,7 @@ public class WardrobeHandler {
                 if (buttonId == data.getButtonId ()) {
                     player.setCurrentWardrobe (data);
                     sendItemsOnInterface (data);
-                    player.getPA ().sendString (133710, player.getWardrobeData().getOutfitUnlocked () == true ? "   @whi@Outfit purchased" : "" + "Costs: " + player.getWardrobeData().getDescription());
+                    player.getPA ().sendString (133710, "");
 
                     if (player.getWardrobeData().getNpcId () == 2270 && player.isSet1())
                         player.getPA ().sendString (31886, " Unequip Outfit");
@@ -162,7 +155,7 @@ public class WardrobeHandler {
                         player.getPA ().sendString (31886, player.getWardrobeData ().getOutfitUnlocked () ? " Equip Outfit" :
                                 "" + "Unlock Outfit");
 
-                    player.getPA ().sendString (player.getWardrobeData ().buttonId, player.getWardrobeData().getOutfitUnlocked () == true ? "@gre@" + data.getName () : "" + data.getName ());
+                    player.getPA ().sendString (player.getWardrobeData ().buttonId, data.getName ());
                     player.getPA().sendNpcOnInterface(133709, data.getNpcId(), data.getAdjustedZoom());
                     System.err.println ("" + data.getNpcId ());
 

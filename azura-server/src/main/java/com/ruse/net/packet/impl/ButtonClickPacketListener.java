@@ -1275,9 +1275,8 @@ public class ButtonClickPacketListener implements PacketListener {
                         player.getWardrobeData().setOutfitUnlocked(true);
                         player.getPA ().sendString (player.getWardrobeData ().buttonId, player.getWardrobeData ().getOutfitUnlocked () ? "@gre@"
                                 +  player.getWardrobeData().getName () : "" +  player.getWardrobeData().getName ());
-                        player.getPA ().sendString (133710, player.getWardrobeData ().getOutfitUnlocked () ?
-                                "   @whi@Outfit purchased" : "" + "Costs: " + player.getWardrobeData().getDescription());
 
+                        player.getPA ().sendString (133710, "");
                         if (player.getWardrobeData().getNpcId () == 2270 && player.isSet1())
                             player.getPA ().sendString (31886, " Unequip Outfit");
                         else if (player.getWardrobeData().getNpcId () == 9244 && player.isSet2())

@@ -71,7 +71,7 @@ public class Dragonkin implements CombatStrategy {
 							npc.performAnimation(anim3);
 						}
 						if (ticks == 5)
-							npc.forceChat("Elder Gods, channel me with your power.");
+							npc.forceChat ("The Elder Gods will not be defeated");
 						if (ticks == 18 && minions_dead == false && minions_spawned == false){
 							npc.forceChat("I call upon you, minions!");
 								NPC[] babies = new NPC[] { new NPC(MINION_NPCID, new Position (2922 + Misc.getRandom (5),2927+ Misc.getRandom (5), target.getPosition ().getZ())) };
@@ -131,7 +131,7 @@ public class Dragonkin implements CombatStrategy {
 
 	@Override
 	public int attackDistance(Character entity) {
-		return 8;
+		return 5;
 	}
 
 	@Override

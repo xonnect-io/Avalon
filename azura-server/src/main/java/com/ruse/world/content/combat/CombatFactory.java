@@ -27,7 +27,6 @@ import com.ruse.world.content.combat.prayer.CurseHandler;
 import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.range.CombatRangedAmmo.RangedWeaponData;
 import com.ruse.world.content.combat.strategy.CombatStrategy;
-import com.ruse.world.content.combat.strategy.impl.Dragonkin;
 import com.ruse.world.content.combat.strategy.impl.Nex;
 import com.ruse.world.content.combat.strategy.impl.Scorpia;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
@@ -2067,10 +2066,6 @@ public final class CombatFactory {
                 attacker.sendMessage("The beast seems to not be affected by your current Combat Type.");
                 container.allHits(context -> {
                         context.setAccurate(false);
-                });
-            } else if (Dragonkin.minions_dead == false && Dragonkin.minions_spawned == true && npc.getId () == 9899) {
-                container.allHits(context -> {
-                    context.setAccurate(false);
                 });
             } else if((npc.getId() == 9024 && container.getCombatType() == ((Kiljaeden)npc).avoiding)
             || (npc.getId() == 9814 && container.getCombatType() == ((Heimdall)npc).avoiding)

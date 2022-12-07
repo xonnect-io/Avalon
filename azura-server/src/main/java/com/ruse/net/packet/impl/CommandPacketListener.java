@@ -112,130 +112,127 @@ public class CommandPacketListener implements PacketListener {
 
     private static void playerCommands(final Player player, String[] command, String wholeCommand) throws IOException {
 
-        if (command[0].equalsIgnoreCase("members")) {
+        if (command[0].equalsIgnoreCase ("members")) {
             player.membershipInterfaceHandler.openBenefitTab ();
         }
 
-        if (command[0].equalsIgnoreCase("startertasks")) {
-            player.getStarterTasks().openInterface();
+        if (command[0].equalsIgnoreCase ("startertasks")) {
+            player.getStarterTasks ().openInterface ();
         }
-        if (command[0].equalsIgnoreCase("slayerfavourites")) {
-            player.getSlayerFavourites().open();
+        if (command[0].equalsIgnoreCase ("slayerfavourites")) {
+            player.getSlayerFavourites ().open ();
         }
         //Start of Teleports
-        if (command[0].equalsIgnoreCase("home")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("home")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
             Position pos = GameSettings.DEFAULT_POSITION;
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you home!");
+            TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you home!");
         }
 
-        if (command[0].equalsIgnoreCase("hounds1")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("hounds1")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(3421, 4777, 4);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to mutated hounds!");
+            Position pos = new Position (3421, 4777, 4);
+            TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to mutated hounds!");
         }
 
-        if (command[0].equalsIgnoreCase("hounds2")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("hounds2")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(3421, 4777, 8);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to mutated hounds!");
+            Position pos = new Position (3421, 4777, 8);
+            TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to mutated hounds!");
         }
 
-        if (command[0].equalsIgnoreCase("hounds3")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("hounds3")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(3421, 4777, 12);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to mutated hounds!");
+            Position pos = new Position (3421, 4777, 12);
+            TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to mutated hounds!");
         }
 
-        if (command[0].equalsIgnoreCase("supreme")) {
-            if (!player.getSupreme()) {
-                player.getPacketSender().sendMessage("You are not supreme enough to do this.");
+        if (command[0].equalsIgnoreCase ("supreme")) {
+            if (!player.getSupreme ()) {
+                player.getPacketSender ().sendMessage ("You are not supreme enough to do this.");
                 return;
             }
-            Position supremeZone = new Position(1891, 5406);
-            TeleportHandler.teleportPlayer(player, supremeZone, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Supreme Lair");
+            Position supremeZone = new Position (1891, 5406);
+            TeleportHandler.teleportPlayer (player, supremeZone, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the Supreme Lair");
         }
-        if (command[0].equalsIgnoreCase("slayerchampion") || command[0].equalsIgnoreCase("slayerboss")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("slayerchampion") || command[0].equalsIgnoreCase ("slayerboss")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(3488, 4697);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Slayer Champion!");
+            Position pos = new Position (3488, 4697);
+            TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the Slayer Champion!");
         }
 
-        if (command[0].equalsIgnoreCase("Vozzath")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("Vozzath")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            int roll = Misc.getRandom(3);
+            int roll = Misc.getRandom (3);
             if (roll == 0) {
-                Position position = new Position(2656, 3812, 0);
-                TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-                System.out.println("Rolled : 0");
-            }
-            else if (roll == 1) {
-                Position position = new Position(2656, 3794, 0);
-                TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-                System.out.println("Rolled : 1");
-            }
-            else if (roll == 2) {
-                Position position = new Position(2667, 3805, 0);
-                TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-                System.out.println("Rolled : 2");
-            }
-            else {
-                Position position = new Position(2645, 3805, 0);
-                TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-                System.out.println("Rolled : 3");
+                Position position = new Position (2656, 3812, 0);
+                TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
+                System.out.println ("Rolled : 0");
+            } else if (roll == 1) {
+                Position position = new Position (2656, 3794, 0);
+                TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
+                System.out.println ("Rolled : 1");
+            } else if (roll == 2) {
+                Position position = new Position (2667, 3805, 0);
+                TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
+                System.out.println ("Rolled : 2");
+            } else {
+                Position position = new Position (2645, 3805, 0);
+                TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
+                System.out.println ("Rolled : 3");
             }
         }
 
-        if (command[0].equalsIgnoreCase("donodeals")) {
-            player.getDonationDeals().displayReward();
-            player.getDonationDeals().displayTime();
-            player.getPacketSender().sendString(57277, "@yel@$" + player.getAmountDonatedToday());
+        if (command[0].equalsIgnoreCase ("donodeals")) {
+            player.getDonationDeals ().displayReward ();
+            player.getDonationDeals ().displayTime ();
+            player.getPacketSender ().sendString (57277, "@yel@$" + player.getAmountDonatedToday ());
         }
-        if (command[0].equalsIgnoreCase("collectionlog")) {
-            player.getCollectionLog2().open(MONSTERS);
-            player.getPacketSender().sendConfig(1106, 0);
+        if (command[0].equalsIgnoreCase ("collectionlog")) {
+            player.getCollectionLog2 ().open (MONSTERS);
+            player.getPacketSender ().sendConfig (1106, 0);
         }
 
-        if (command[0].equalsIgnoreCase("dissolveall")) {
+        if (command[0].equalsIgnoreCase ("dissolveall")) {
             int price = 0;
             player.howmuchdissolveamt = 0;
 
-            for (int i = 0; i < player.getInventory().capacity(); i++) {
-                for(MainDissolving.DissolvingData data : MainDissolving.DissolvingData.values()) {
-                    if(data.getId() == player.getInventory().get(i).getId()) {
-                        if (player.getInventory().get(i) != null && player.getInventory().get(i).getId() > 0
-                                && player.getInventory().get(i).getId() != 12855) {
-                            player.howmuchdissolveamt +=player.getMainDissolving().handleAllAmount(i);
+            for (int i = 0; i < player.getInventory ().capacity (); i++) {
+                for (MainDissolving.DissolvingData data : MainDissolving.DissolvingData.values ()) {
+                    if (data.getId () == player.getInventory ().get (i).getId ()) {
+                        if (player.getInventory ().get (i) != null && player.getInventory ().get (i).getId () > 0
+                                && player.getInventory ().get (i).getId () != 12855) {
+                            player.howmuchdissolveamt += player.getMainDissolving ().handleAllAmount (i);
                         }
                     }
                 }
@@ -243,21 +240,21 @@ public class CommandPacketListener implements PacketListener {
 
             }
 
-            player.getMainDissolving().amtafterdissolvingall = price;
-            DialogueManager.start(player, new DissolveAllDialogue(player, "Dissolve all dissolveable items for " +player.howmuchdissolveamt + " Tokens", "Nevermind", 6668));
+            player.getMainDissolving ().amtafterdissolvingall = price;
+            DialogueManager.start (player, new DissolveAllDialogue (player, "Dissolve all dissolveable items for " + player.howmuchdissolveamt + " Tokens", "Nevermind", 6668));
 
         }
-        if (command[0].equalsIgnoreCase("daily")
-                || command[0].equalsIgnoreCase("dailytasks")) {
-            player.getDailyTaskManager().open();
+        if (command[0].equalsIgnoreCase ("daily")
+                || command[0].equalsIgnoreCase ("dailytasks")) {
+            player.getDailyTaskManager ().open ();
         }
 
-        if (command[0].equalsIgnoreCase("dritems") || command[0].equalsIgnoreCase("bisdr")) {
-            BestDRItemsInterface.openInterface(player, 0);
+        if (command[0].equalsIgnoreCase ("dritems") || command[0].equalsIgnoreCase ("bisdr")) {
+            BestDRItemsInterface.openInterface (player, 0);
         }
 
-        if (command[0].equalsIgnoreCase("seasonpass")) {
-            player.getSeasonPass().openInterface();
+        if (command[0].equalsIgnoreCase ("seasonpass")) {
+            player.getSeasonPass ().openInterface ();
         }
         /*
         if (command[0].equalsIgnoreCase("hiddenturkeyloc")) {
@@ -277,277 +274,277 @@ public class CommandPacketListener implements PacketListener {
         }
         */
 
-        if (command[0].equalsIgnoreCase("event")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("event")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(2528, 2656);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+            Position pos = new Position (2528, 2656);
+            TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the Holiday Event!");
         }
 
-        if (command[0].equalsIgnoreCase("event2")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("event2")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(2528, 2656, 4);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+            Position pos = new Position (2528, 2656, 4);
+            TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the Holiday Event!");
         }
 
-        if (command[0].equalsIgnoreCase("event3")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("event3")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(2528, 2656, 8);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+            Position pos = new Position (2528, 2656, 8);
+            TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the Holiday Event!");
         }
 
-        if (command[0].equalsIgnoreCase("event4")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("event4")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position pos = new Position(2528, 2656, 12);
-            TeleportHandler.teleportPlayer(player, pos, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
+            Position pos = new Position (2528, 2656, 12);
+            TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the Holiday Event!");
         }
 
-        if (command[0].equalsIgnoreCase("globals")) {
-            player.getPacketSender().sendMessage("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft() + " Steals left.");
-            player.getPacketSender().sendMessage("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft() + " kills left.");
-            player.getPacketSender().sendMessage("@red@<shad=1>Slayer Champion: @yel@" + SlayerBossSystem.getLeft() + " tasks left.");
-            player.getPacketSender().sendMessage("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount() + "/40 please vote!");
-            player.getPacketSender().sendMessage("@red@<shad=1>Dragon King: @yel@" + DragonKingBoss.timeLeft());
-            player.getPacketSender().sendMessage("@red@<shad=1>Nightmare boss: @yel@" + NightmareBoss.timeLeft());
-            player.getPacketSender().sendMessage("@red@<shad=1>Naraku boss: @yel@" + NarakuBoss.timeLeft());
-            player.getPacketSender().sendMessage("@red@<shad=1>Ironman boss: @yel@" + IronmanBoss.timeLeft());
-            player.getPacketSender().sendMessage("@red@<shad=1>Vozzath @yel@" + GuardianSpawnSystem.getLeft() + " tickets left");
-            player.getPacketSender().sendMessage("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft() + " tokens left");
-            player.getPacketSender().sendMessage((FantasyZone.gameActive == false
-                    ? "@red@<shad=1>Fantasy Realm: @yel@" + FantasyZone.getTimeLeft() : "@red@<shad=1>Fantasy Realm : @yel@Open"));
-            player.getPacketSender().sendMessage("@red@<shad=1>Krampus: @yel@" + HolidayBossEvent.getTimeLeft());
+        if (command[0].equalsIgnoreCase ("globals")) {
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft () + " Steals left.");
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft () + " kills left.");
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Slayer Champion: @yel@" + SlayerBossSystem.getLeft () + " tasks left.");
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount () + "/40 please vote!");
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Dragon King: @yel@" + DragonKingBoss.timeLeft ());
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Nightmare boss: @yel@" + NightmareBoss.timeLeft ());
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Naraku boss: @yel@" + NarakuBoss.timeLeft ());
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Ironman boss: @yel@" + IronmanBoss.timeLeft ());
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Vozzath @yel@" + GuardianSpawnSystem.getLeft () + " tickets left");
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft () + " tokens left");
+            player.getPacketSender ().sendMessage ((FantasyZone.gameActive == false
+                    ? "@red@<shad=1>Fantasy Realm: @yel@" + FantasyZone.getTimeLeft () : "@red@<shad=1>Fantasy Realm : @yel@Open"));
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Krampus: @yel@" + HolidayBossEvent.getTimeLeft ());
 
         }
-        if (command[0].equalsIgnoreCase("train") || command[0].equalsIgnoreCase("starter")
-                || command[0].equalsIgnoreCase("start") || command[0].equalsIgnoreCase(
+        if (command[0].equalsIgnoreCase ("train") || command[0].equalsIgnoreCase ("starter")
+                || command[0].equalsIgnoreCase ("start") || command[0].equalsIgnoreCase (
                 "training")) {
-            ProgressionZone.teleport(player);
+            ProgressionZone.teleport (player);
         }
 
-        if (command[0].equalsIgnoreCase("hellraiser")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("hellraiser")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(3109, 5530, 0);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+            Position position = new Position (3109, 5530, 0);
+            TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
 
         }
 
-        if (command[0].equalsIgnoreCase("dk") || command[0].equalsIgnoreCase("dragonking")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("dk") || command[0].equalsIgnoreCase ("dragonking")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            TeleportHandler.teleportPlayer(player, new Position(2139, 5019, 0), player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the dragon kings lair!");
+            TeleportHandler.teleportPlayer (player, new Position (2139, 5019, 0), player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the dragon kings lair!");
         }
 
-        if (command[0].equalsIgnoreCase("tribal") || command[0].equalsIgnoreCase("goblin")
-                || command[0].equalsIgnoreCase("afkboss")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("tribal") || command[0].equalsIgnoreCase ("goblin")
+                || command[0].equalsIgnoreCase ("afkboss")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position[] locations = new Position[]{new Position(2013, 4505, 0)};
-            Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
-            TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the afk boss!");
+            Position[] locations = new Position[]{new Position (2013, 4505, 0)};
+            Position teleportLocation = locations[RandomUtility.exclusiveRandom (0, locations.length)];
+            TeleportHandler.teleportPlayer (player, teleportLocation, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the afk boss!");
         }
 
-        if (command[0].equalsIgnoreCase("ironman") || command[0].equalsIgnoreCase("ironmanboss")
-                || command[0].equalsIgnoreCase("ironboss")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("ironman") || command[0].equalsIgnoreCase ("ironmanboss")
+                || command[0].equalsIgnoreCase ("ironboss")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            if (!player.getRights().isStaff()) {
-                if (!player.getGameMode().isIronman()) {
-                    player.getPacketSender().sendMessage("Only Ironmen can access this boss");
+            if (!player.getRights ().isStaff ()) {
+                if (!player.getGameMode ().isIronman ()) {
+                    player.getPacketSender ().sendMessage ("Only Ironmen can access this boss");
                     return;
                 }
             }
-            Position[] locations = new Position[]{new Position(3808, 2842, 0)};
-            Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
-            TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Ironman boss!");
+            Position[] locations = new Position[]{new Position (3808, 2842, 0)};
+            Position teleportLocation = locations[RandomUtility.exclusiveRandom (0, locations.length)];
+            TeleportHandler.teleportPlayer (player, teleportLocation, player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the Ironman boss!");
         }
 
-        if (command[0].equalsIgnoreCase("upgrade") || command[0].equalsIgnoreCase("upgrades")
-                || command[0].equalsIgnoreCase("upgradeables")) {
-            player.getUpgradeInterface().openInterface(Upgradeables.UpgradeType.TIER_1);
+        if (command[0].equalsIgnoreCase ("upgrade") || command[0].equalsIgnoreCase ("upgrades")
+                || command[0].equalsIgnoreCase ("upgradeables")) {
+            player.getUpgradeInterface ().openInterface (Upgradeables.UpgradeType.TIER_1);
         }
 
-        if (command[0].equalsIgnoreCase("neph") || command[0].equalsIgnoreCase("nephilim")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("neph") || command[0].equalsIgnoreCase ("nephilim")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            TeleportHandler.teleportPlayer(player, new Position(2144, 3294, 0), player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to the Nephilim Warrior");
+            TeleportHandler.teleportPlayer (player, new Position (2144, 3294, 0), player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to the Nephilim Warrior");
         }
 
-        if (command[0].equalsIgnoreCase("naraku") || command[0].equalsIgnoreCase("narak")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("naraku") || command[0].equalsIgnoreCase ("narak")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            TeleportHandler.teleportPlayer(player, new Position(3420, 9563, 0), player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to Naraku Global boss");
+            TeleportHandler.teleportPlayer (player, new Position (3420, 9563, 0), player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to Naraku Global boss");
         }
-        if (command[0].equalsIgnoreCase("dismiss")) {
-            SummoningTab.handleDismiss(player, true);
+        if (command[0].equalsIgnoreCase ("dismiss")) {
+            SummoningTab.handleDismiss (player, true);
         }
-        if (command[0].equalsIgnoreCase("nm") || command[0].equalsIgnoreCase("nightmare")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("nm") || command[0].equalsIgnoreCase ("nightmare")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            TeleportHandler.teleportPlayer(player, new Position(2980, 2771, 0), player.getSpellbook().getTeleportType());
-            player.getPacketSender().sendMessage("Teleporting you to Nightmare!");
+            TeleportHandler.teleportPlayer (player, new Position (2980, 2771, 0), player.getSpellbook ().getTeleportType ());
+            player.getPacketSender ().sendMessage ("Teleporting you to Nightmare!");
         }
 
-        if (command[0].equalsIgnoreCase("gamble") || command[0].equalsIgnoreCase("dice")
-                || command[0].equalsIgnoreCase("dicezone")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-
-            if (player.isGambleBanned()) {
-                player.sendMessage("You are gamble banned and cannot do this.");
+        if (command[0].equalsIgnoreCase ("gamble") || command[0].equalsIgnoreCase ("dice")
+                || command[0].equalsIgnoreCase ("dicezone")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
 
-            if (player.getPointsHandler().getNPCKILLCount() < 50000) {
-                player.sendMessage("You must have at-least 50k NPC killcount to gamble.");
+            if (player.isGambleBanned ()) {
+                player.sendMessage ("You are gamble banned and cannot do this.");
                 return;
             }
 
-            Position position = new Position(2463, 5032, 0);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-            player.getPacketSender().sendMessage("Teleporting you to the Gambling Area!");
+            if (player.getPointsHandler ().getNPCKILLCount () < 50000) {
+                player.sendMessage ("You must have at-least 50k NPC killcount to gamble.");
+                return;
+            }
+
+            Position position = new Position (2463, 5032, 0);
+            TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
+            player.getPacketSender ().sendMessage ("Teleporting you to the Gambling Area!");
         }
 
-        if (command[0].equalsIgnoreCase("iron")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("iron")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            if (!player.getRights().isStaff()) {
-                if (!player.getGameMode().isIronman()) {
-                    player.getPacketSender().sendMessage("Become an ironman!");
+            if (!player.getRights ().isStaff ()) {
+                if (!player.getGameMode ().isIronman ()) {
+                    player.getPacketSender ().sendMessage ("Become an ironman!");
                     return;
                 }
             }
-            Position position = new Position(3811, 2839, 0);
+            Position position = new Position (3811, 2839, 0);
 
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-
-        }
-
-        if (command[0].equalsIgnoreCase("vboss") || command[0].equalsIgnoreCase("voteboss")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
-                return;
-            }
-            Position position = new Position(3428, 4115, 4);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+            TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
 
         }
 
-        if (command[0].equalsIgnoreCase("afk")) {
-
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("vboss") || command[0].equalsIgnoreCase ("voteboss")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(2656, 3981, 0);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
-            player.getPacketSender().sendMessage("<shad=1>@gre@Welcome to the afk area!");
+            Position position = new Position (3428, 4115, 4);
+            TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
 
         }
 
-        if ((command[0].equalsIgnoreCase("shop") && !player.getRights().OwnerDeveloperOnly())
-                || command[0].equalsIgnoreCase("shops")) {
-            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
-                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
-                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+        if (command[0].equalsIgnoreCase ("afk")) {
+
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
                 return;
             }
-            Position position = new Position(2784, 4082, 0);
-            TeleportHandler.teleportPlayer(player, position, TeleportType.NORMAL);
+            Position position = new Position (2656, 3981, 0);
+            TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
+            player.getPacketSender ().sendMessage ("<shad=1>@gre@Welcome to the afk area!");
+
+        }
+
+        if ((command[0].equalsIgnoreCase ("shop") && !player.getRights ().OwnerDeveloperOnly ())
+                || command[0].equalsIgnoreCase ("shops")) {
+            if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
+                    || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
+                player.getPacketSender ().sendMessage ("You cannot do this at the moment.");
+                return;
+            }
+            Position position = new Position (2784, 4082, 0);
+            TeleportHandler.teleportPlayer (player, position, TeleportType.NORMAL);
         }
 
         //Start Of External Links
-        if (wholeCommand.equalsIgnoreCase("donate") || wholeCommand.equalsIgnoreCase("store")) {
-            player.getPacketSender().sendString(1, GameSettings.StoreUrl);
-            player.getPacketSender().sendMessage("Attempting to open the store");
+        if (wholeCommand.equalsIgnoreCase ("donate") || wholeCommand.equalsIgnoreCase ("store")) {
+            player.getPacketSender ().sendString (1, GameSettings.StoreUrl);
+            player.getPacketSender ().sendMessage ("Attempting to open the store");
         }
 
-        if (wholeCommand.equalsIgnoreCase("client") || wholeCommand.equalsIgnoreCase("launcher")) {
-            player.getPacketSender().sendString(1, "Avalon317.com/play");
-            player.getPacketSender().sendMessage("Attempting to download the launcher");
+        if (wholeCommand.equalsIgnoreCase ("client") || wholeCommand.equalsIgnoreCase ("launcher")) {
+            player.getPacketSender ().sendString (1, "Avalon317.com/play");
+            player.getPacketSender ().sendMessage ("Attempting to download the launcher");
         }
-        if (wholeCommand.equalsIgnoreCase("discord") || wholeCommand.equalsIgnoreCase("chat")) {
-            player.getPacketSender().sendString(1, GameSettings.DiscordUrl);
-            player.getPacketSender().sendMessage("Attempting to open our Discord Server");
-        }
-
-        if (wholeCommand.equalsIgnoreCase("forums") || wholeCommand.equalsIgnoreCase("forum")) {
-            player.getPacketSender().sendString(1, GameSettings.ForumUrl);
-            player.getPacketSender().sendMessage("Attempting to open the forums");
-        }
-        if (wholeCommand.equalsIgnoreCase("updates") || wholeCommand.equalsIgnoreCase("whatsnew")) {
-            player.getPacketSender().sendString(1, GameSettings.UpdateUrl);
-            player.getPacketSender().sendMessage("Attempting to open the the update list");
+        if (wholeCommand.equalsIgnoreCase ("discord") || wholeCommand.equalsIgnoreCase ("chat")) {
+            player.getPacketSender ().sendString (1, GameSettings.DiscordUrl);
+            player.getPacketSender ().sendMessage ("Attempting to open our Discord Server");
         }
 
-        if (wholeCommand.equalsIgnoreCase("rule") || wholeCommand.equalsIgnoreCase("rules")) {
-            player.getPacketSender().sendString(1, GameSettings.RuleUrl);
-            player.getPacketSender().sendMessage("Attempting to open the Rules.");
+        if (wholeCommand.equalsIgnoreCase ("forums") || wholeCommand.equalsIgnoreCase ("forum")) {
+            player.getPacketSender ().sendString (1, GameSettings.ForumUrl);
+            player.getPacketSender ().sendMessage ("Attempting to open the forums");
+        }
+        if (wholeCommand.equalsIgnoreCase ("updates") || wholeCommand.equalsIgnoreCase ("whatsnew")) {
+            player.getPacketSender ().sendString (1, GameSettings.UpdateUrl);
+            player.getPacketSender ().sendMessage ("Attempting to open the the update list");
+        }
+
+        if (wholeCommand.equalsIgnoreCase ("rule") || wholeCommand.equalsIgnoreCase ("rules")) {
+            player.getPacketSender ().sendString (1, GameSettings.RuleUrl);
+            player.getPacketSender ().sendMessage ("Attempting to open the Rules.");
         }
         //End of External Links
         //Start of Interfaces
-        if (command[0].equalsIgnoreCase("zones")) {
-            player.getPacketSender().sendInterfaceReset();
-        /*    player.getPacketSender().sendInterface(142250);
-         */
-            new TeleportInterfaceHandler(player).quickOpenZones();
+        if (command[0].equalsIgnoreCase ("zones")) {
+            player.getPacketSender ().sendInterfaceReset ();
+            /*    player.getPacketSender().sendInterface(142250);
+             */
+            new TeleportInterfaceHandler (player).quickOpenZones ();
         }
 
-        if (command[0].equalsIgnoreCase("wardrobe")) {
-            player.getPacketSender().sendInterfaceReset();
-            new WardrobeHandler(player).open();
+        if (command[0].equalsIgnoreCase ("wardrobe") && player.isCosmeticUnlocked ()) {
+            player.getPacketSender ().sendInterfaceReset ();
+            new WardrobeHandler (player).open ();
         }
 
         if (command[0].equalsIgnoreCase("perks")) {
