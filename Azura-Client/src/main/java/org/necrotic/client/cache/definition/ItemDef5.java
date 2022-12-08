@@ -6,6 +6,63 @@ public class ItemDef5 {
 
 		switch (id) {
 
+
+
+			case 14434:
+				itemDef.copyItem(14050);
+				itemDef.name = "Diminished helmet";
+				itemDef.modelID = 22247;
+				itemDef.maleEquip1 = 22108;
+				itemDef.femaleEquip1 = 22108;
+				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
+				break;
+			case 14435:
+				itemDef.copyItem(14051);
+				itemDef.name = "Diminished body";
+				itemDef.modelID = 22268;
+				itemDef.maleEquip1 = 22096;
+				itemDef.femaleEquip1 = 22096;
+				itemDef.modelZoom = 1380;
+				itemDef.rotationX = 50;
+				itemDef.rotationY = 0;
+				itemDef.modelOffsetY = 45;
+				itemDef.modelOffsetX = 0;
+				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
+				break;
+			case 14436:
+				itemDef.copyItem(14052);
+				itemDef.name = "Diminished legs";
+				itemDef.modelID = 22263;
+				itemDef.maleEquip1 = 22067;
+				itemDef.femaleEquip1 = 22067;
+				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
+				break;
+			case 14437:
+				itemDef.copyItem(14602);
+				itemDef.name = "Diminished gloves";
+				itemDef.modelID = 22271;
+				itemDef.maleEquip1 = 22107;
+				itemDef.femaleEquip1 = 22107;
+				itemDef.modelZoom = 1000;
+				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
+				break;
+			case 14438:
+				itemDef.name = "Diminished boots";
+				itemDef.modelID = 22106;
+				itemDef.maleEquip1 = 22106;
+				itemDef.femaleEquip1 = 22106;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.stackable = false;
+				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
+				break;
+
+			case 14439:
+				itemDef.copyItem(14880);
+				itemDef.name = "Diminished emblem";
+				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
+				break;
+
+
 			case 13264:
 				itemDef.copyItem(5553);
 				itemDef.name = "Rogue Costume";

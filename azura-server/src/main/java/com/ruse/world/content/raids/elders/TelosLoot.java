@@ -55,7 +55,7 @@ public class TelosLoot {
     }
 
 
-    public static Box[] NECROMANCER = {
+    public static Box[] TELOS = {
             new Box(23551, 1, 0.2, true),
             new Box(23552, 1, 0.2, true),
             new Box(22951, 1, 0.02, true),
@@ -94,6 +94,7 @@ public class TelosLoot {
             new Box(13289, 1, 0.1, true),
             new Box(13297, 1, 0.1, true),
             new Box(18493, 1, 0.1, true),
+            new Box(23278, 1, 0.05, true),
             new Box(9084, 1, 0.05, true),
             new Box(9083, 1, 0.013333, true),
             new Box(22110, 1, 0.01, true),
@@ -139,6 +140,7 @@ public class TelosLoot {
             new Box(13662, 1, 0.05, true),
             new Box(18487, 1, 0.05, true),
 
+            new Box(23278, 1, 0.06666, true),
             new Box(9084, 1, 0.1, true),
             new Box(9083, 1, 0.02, true),
             new Box(22110, 1, 0.013333, true),
@@ -189,7 +191,7 @@ public class TelosLoot {
             new Box(18487, 1, 0.06666, true),
 
             new Box(13597, 1, 0.02, true),
-            new Box(9084, 1, 0.1333, true),
+            new Box(23278, 1, 0.1, true),
             new Box(9083, 1, 0.05, true),
             new Box(22110, 1, 0.02, true),
     };
