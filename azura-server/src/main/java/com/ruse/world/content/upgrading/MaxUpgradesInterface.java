@@ -122,7 +122,7 @@ public class MaxUpgradesInterface {
         CELESTIAL_ATTACHMENT(100,new Item(22950, 1),new Item(10949, 10),new Item(22112, 10),new Item(23239, 10),new Item(23273, 25_000)),
         ELF_OUTFIT(100,new Item(17746, 1),new Item(23528, 1),new Item(23529, 1),new Item(23530, 1),new Item(23531, 1),new Item(23532, 1),new Item(23488, 2500)),
 
-       /*
+
         ELIDINIS_WARD_F(100,new Item(13293, 1),new Item(13289, 1),new Item(13297, 1),new Item(18889, 1)),
         ELIDINIS_WARD_OR(100,new Item(13295, 1),new Item(13293, 1),new Item(18493, 1),new Item(12855, 15_000_000)),
         MASORI_HELMET(100,new Item(13841, 1),new Item(13273, 1),new Item(23443, 1),new Item(9083, 1),new Item(12855, 15_000_000)),
@@ -130,7 +130,7 @@ public class MaxUpgradesInterface {
         MASORI_CHAPS(100,new Item(13843, 1),new Item(13275, 1),new Item(23445, 1),new Item(9083, 1),new Item(12855, 15_000_000)),
         OSMUMTENS_FANG(100,new Item(13664, 1),new Item(13662, 1),new Item(13597, 1),new Item(12855, 50_000_000)),
         TUMEKENS_SHADOW(100,new Item(18485, 1),new Item(18487, 1),new Item(13597, 1),new Item(12855, 50_000_000)),
-        */
+
 
 
         ;

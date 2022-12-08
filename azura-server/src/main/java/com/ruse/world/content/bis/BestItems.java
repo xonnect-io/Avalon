@@ -61,20 +61,20 @@ public class BestItems {
 
 
 
-			add (13289); //Elidinis' ward
-			add (13293); //Elidinis' ward (f)
-			add (13295); //Elidinis' ward (or)
-			add (13297); //Lightbearer
-			add (13662); //Osmumten's fang
-			add (13664); //Osmumten's fang (or)
-			add (18485); //Tumeken's shadow (charged)
-			add (18487); //Tumeken's shadow (uncharged)
-			add (13273); //Masori Mask
-			add (13274); //Masori Body
-			add (13275); //Masori Chaps
-			add (13841); //Masori Mask (f)
-			add (13842); //Masori Body (f)
-			add (13843); //Masori Chaps (f)
+//			add (13289); //Elidinis' ward
+//			add (13293); //Elidinis' ward (f)
+//			add (13295); //Elidinis' ward (or)
+//			add (13297); //Lightbearer
+//			add (13662); //Osmumten's fang
+//			add (13664); //Osmumten's fang (or)
+//			add (18485); //Tumeken's shadow (charged)
+//			add (18487); //Tumeken's shadow (uncharged)
+//			add (13273); //Masori Mask
+//			add (13274); //Masori Body
+//			add (13275); //Masori Chaps
+//			add (13841); //Masori Mask (f)
+//			add (13842); //Masori Body (f)
+//			add (13843); //Masori Chaps (f)
 
 			add(17694);
 			add(17696);
