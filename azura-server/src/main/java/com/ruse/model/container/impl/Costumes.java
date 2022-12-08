@@ -1,6 +1,5 @@
 package com.ruse.model.container.impl;
 
-import com.ruse.world.entity.impl.player.Player;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -60,58 +59,23 @@ public enum Costumes {
             new int[]{19900,10939, 10940}),
     DRAGON_RIDER(23456, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{14050,14051, 14052, 14053, 14054}),
-    COSTUME_1(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
-            new int[]{23396,23397, 23398, 23400, 23399}),
-    COSTUME_2(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.AMULET_SLOT},
-            new int[]{10612,5553, 5555, 5556, 5557, 19335}),
-    COSTUME_3(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.CAPE_SLOT, Equipment.FEET_SLOT, Equipment.SHIELD_SLOT, Equipment.AMULET_SLOT},
-            new int[]{17614,17616, 17618, 17606,17622,17620,17624,11195}),
-    COSTUME_4(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.WEAPON_SLOT, Equipment.FEET_SLOT},
-            new int[]{13328,13329, 13330, 13333, 13332,}),
-        COSTUME_5(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.WEAPON_SLOT,Equipment.CAPE_SLOT,},
-            new int[]{3067,3068, 3069, 3071, 3070,3072,3073}),
-    COSTUME_6(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT},
-            new int[]{3074,3075, 3076}),
-    COSTUME_7(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT, Equipment.AMULET_SLOT},
-            new int[]{10612,5553, 5555, 5556, 5557, 19335}),
-    COSTUME_8(-1, 0, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.CAPE_SLOT, Equipment.FEET_SLOT, Equipment.SHIELD_SLOT, Equipment.AMULET_SLOT},
-            new int[]{17614,17616, 17618, 17606,17622,17620,17624,11195}),
     ;
     private int itemId;
     private double damageBoost;
     private int[] costumeSlots;
     private int[] costumeItems;
 
-    public static Costumes forID(int id, Player player) {
+    public static Costumes forID(int id) {
         for (Costumes c : Costumes.values()) {
-
-            if (c.getItemId () == id && c.getItemId () > 0)
+            if (c.getItemId() == id)
                 return c;
-
-             if (player.isSet1 ())
-                return c.COSTUME_2;
-            else if (player.isSet2 ())
-                return c.COSTUME_1;
-            else if (player.isSet3 ())
-                return c.COSTUME_3;
-            else if (player.isSet4 ())
-                return c.COSTUME_4;
-            else if (player.isSet5 ())
-                return c.COSTUME_5;
-            else if (player.isSet6 ())
-                return c.COSTUME_6;
-            else if (player.isSet7 ())
-                return c.COSTUME_7;
-            else if (player.isSet8 ())
-                return c.COSTUME_8;
         }
-
         return null;
     }
 
 
-    public static int getItem(int id, int slot, Player player) {
-        Costumes costume = forID(id, player);
+    public static int getItem(int id, int slot) {
+        Costumes costume = forID(id);
         if (costume == null)
             return -1;
 

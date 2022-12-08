@@ -415,7 +415,8 @@ public class NPCDrops {
                 player.getDailyTaskManager().submitProgressToIdentifier(48, 1);
             }
             int kills = KillsTracker.getTotalKillsForNpc(npc.getId(), player);
-            if (drop.isAnnounce() || drop.getChance() >= 2000 && item.getId() != 12855 && item.getId() != 10025 && item.getId() != 5022
+            if (drop.isAnnounce() || drop.getChance() >= 2000 && item.getId() != 12855 && item.getId() != 10025
+                    && item.getId() != 5022 && item.getId() != 1050 && item.getId() != 19000
             || npc.getId() == 8013 && drop.getChance() >= 20||
             npc.getId() == 187 && drop.getChance() >= 100 ||
             npc.getId() == 3779 && drop.getChance() >= 1000||
@@ -426,7 +427,6 @@ public class NPCDrops {
             npc.getId() == 9319 && drop.getChance() >= 50 ||
             npc.getId() == 9312 && drop.getChance() >= 5 ||
             npc.getId() == 3830 && drop.getChance() >= 5 ||
-            npc.getId() == 10002 && drop.getChance() >= 3000 ||
             npc.getId() == 3305 && drop.getChance() >= 10) {
                 String itemName = item.getDefinition().getName();
                 String itemMessage = "x" + amount + " " + itemName;

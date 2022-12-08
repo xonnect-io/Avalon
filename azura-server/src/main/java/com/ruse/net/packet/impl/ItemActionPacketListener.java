@@ -255,7 +255,6 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getInventory().delete(23488, 1000);
                     player.getInventory().add(23362, 1);
                     player.sendMessage("You created a Christmas box!");
-                    World.sendMessage("<img=862><col=146b3a>[Christmas]<img=862> <col=1c3c0d>" + player.getUsername() + "<col=bb2528> created a <col=1c3c0d>Christmas box");
                 } else {
                     player.sendMessage("You need at least 1000 Christmas tokens to do this.");
                 }

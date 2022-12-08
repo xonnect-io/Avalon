@@ -4244,10 +4244,10 @@ public final class ItemDefinition {
 				itemDef.stackable = false;
 				break;
 			case 23393:
-				itemDef.copyItem(1633);
+				itemDef.copyItem(5020);
 				itemDef.rdc3 = 2340503;//666455
 				itemDef.actions = new String[]{ "Claim",null, null, null, "Drop"};
-				itemDef.name = "Cosmetic Gems";
+				itemDef.name = "Monthly Cosmetic Pass";
 				itemDef.stackable = false;
 				break;
 			case 22044:
