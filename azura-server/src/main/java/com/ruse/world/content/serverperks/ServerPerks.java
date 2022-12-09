@@ -33,12 +33,12 @@ public class ServerPerks {
     @Getter
     @AllArgsConstructor
     public enum Perk {
-        DR("x1.5 DR boost", "x1.5 DR", 1524, 60_000_000),// DONE
-        XP("x2 EXP Boost", "x2 EXP", 529, 30_000_000),// DONE
-        DOUBLE_DROPS("Double Drops", "x2 Drops", 1525, 90_000_000),// DONE
-        PEST_CONTROL("x2 PC Points", "x2 PC", 1521, 50_000_000),// DONE
-        SLAYER_POINTS("x1.5 Slayer Points", "x1.5 Slay", 1522, 60_000_000),// DONE
-        RAIDS_LOOT("x2 Raids Loot", "x2 Raids", 1521, 90_000_000),// DONE
+        DR("x1.5 DR boost", "x1.5 DR", 1524, 30_000_000),// DONE
+        XP("x2 EXP Boost", "x2 EXP", 529, 15_000_000),// DONE
+        DOUBLE_DROPS("Double Drops", "x2 Drops", 1525, 45_000_000),// DONE
+        PEST_CONTROL("x2 PC Points", "x2 PC", 1521, 25_000_000),// DONE
+        SLAYER_POINTS("x1.5 Slayer Points", "x1.5 Slay", 1522, 30_000_000),// DONE
+        RAIDS_LOOT("x2 Raids Loot", "x2 Raids", 1521, 45_000_000),// DONE
         ;
 
         private final String name;

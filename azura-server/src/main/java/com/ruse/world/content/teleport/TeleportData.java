@@ -6,6 +6,7 @@ import com.ruse.motivote3.doMotivote;
 import com.ruse.world.content.VoteBossDrop;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.globalBosses.*;
+import com.ruse.world.content.raids.elders.ElderGodsData;
 
 /**
  * The teleport data.
@@ -270,13 +271,13 @@ public enum TeleportData {
 					new int[][] {{17718, 1}, {23385, 1}, {23409, 1}, {-1, 1}, {-1, 1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, 1}, {-1,1},
 							{-1,1}, {-1,1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, -1}, {-1, -1}},515),
 
-/*
+
 	ELDER_GODS(28317, 28317, 28317, 28241, "Elder Gods", 11,
 			"@or1@Health: @whi@100,000,000"," ","",  TeleportCategory.MINIGAMES,
 			ElderGodsData.LOBBY, -1, false, 9884, -1,
 			new int[][] {{13273, 1}, {13274, 1}, {13275, 1}, {13289, 1}, {13297, 1}, {18493,1}, {13662, 1}, {18487, 1}, {13597, 1}, {9084,1},
 					{9083,1}, {22110,1}, {-1,1}, {-1, 1}, {-1, 1}, {-1, -1}, {-1, -1}},1645),
-*/
+
 	/*
 	 * Dungeons
 	 */

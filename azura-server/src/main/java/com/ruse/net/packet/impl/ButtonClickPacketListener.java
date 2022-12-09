@@ -1596,6 +1596,34 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
 
+            case 107242:
+                if (player.getInventory().contains(23409)) {
+                    player.getInventory().delete(23409, 1);
+                    player.getInventory().add(13223, 1);
+                    player.getPA().sendMessage("You have chosen the Forest Archer Pet!");
+                }
+                player.getPacketSender().removeInterface();
+                break;
+
+            case 107245:
+                if (player.getInventory().contains(23409)) {
+                    player.getInventory().delete(23409, 1);
+                    player.getInventory().add(13224, 1);
+                    player.getPA().sendMessage("You have chosen the Chaotic Archer Pet!");
+                }
+                player.getPacketSender().removeInterface();
+                break;
+
+            case 107248:
+                if (player.getInventory().contains(23409)) {
+                    player.getInventory().delete(23409, 1);
+                    player.getInventory().add(13225, 1);
+                    player.getPA().sendMessage("You have chosen the Divine Archer Pet!");
+                }
+                player.getPacketSender().removeInterface();
+                break;
+
+
             case 77142:
                 if (player.getPointsHandler().getBorkKC() < 50000) {
                     player.getPA().sendMessage("You need 50,000 Bork KC before you can sacrifice your Legends Light staff.");

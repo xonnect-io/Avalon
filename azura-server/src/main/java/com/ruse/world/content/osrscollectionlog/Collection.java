@@ -324,12 +324,12 @@ public enum Collection {
             new Item(23303), new Item(23304), new Item(23305), new Item(23306), new Item(23307),
             new Item(23308), new Item(23309), new Item(23310), new Item(23311), new Item(14999),
             new Item(23276), new Item(23403), new Item(15288)),
-/*
+
     ELDER_GODS(Player.SUFFERING_COMPLETED, LogType.MINIGAMES, "Elder Gods", new int[] {CollectionLog.ELDER_GODS}, Player.SUFFERING_LOG_CLAIMED, new Item[] { new Item(13299) },
             new Item(13289), new Item(13297), new Item(18493), new Item(13273), new Item(13274),
             new Item(13275), new Item(13662), new Item(18487), new Item(13597), new Item(23278),
-            new Item(9083), new Item(22110)),*/
-    ;*\
+            new Item(9083), new Item(22110)),
+    ;
 
     private int attributeKey;
     private final LogType logType;

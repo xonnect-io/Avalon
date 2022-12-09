@@ -4705,6 +4705,14 @@ public final class MobDefinition {
 				definition.scaleXZ = 140;
 				definition.scaleY = 140;
 				break;
+			case 1507:
+				definition.copy(1508);
+				definition.name = "Forest archer pet";
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares =1;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
+				break;
 			case 1458:
 				definition.name = "Chaotic archer";
 				definition.npcModels = new int[]{19592};
@@ -4715,6 +4723,15 @@ public final class MobDefinition {
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 120;
 				definition.scaleY = 120;
+				break;
+
+			case 1455:
+				definition.copy(1458);
+				definition.name = "Chaotic archer pet";
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares =1;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
 				break;
 
 			case 1457:
@@ -4728,6 +4745,15 @@ public final class MobDefinition {
 				definition.scaleXZ = 140;
 				definition.scaleY = 140;
 				definition.rdc2 = 34343;
+				break;
+
+			case 1456:
+				definition.copy(1457);
+				definition.name = "Divine archer pet";
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares =1;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
 				break;
 		case 827:
 			definition.name = "Unknown archer";

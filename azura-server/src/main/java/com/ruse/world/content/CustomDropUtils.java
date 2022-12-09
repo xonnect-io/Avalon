@@ -1130,6 +1130,18 @@ public class CustomDropUtils {
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DIVINE_ARCHER.npcId) {
+                percentBoost += 45;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.CHAOTIC_ARCHER.npcId) {
+                percentBoost += 45;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FOREST_ARCHER.npcId) {
+                percentBoost += 45;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BORK_PET.npcId) {
                 percentBoost += 60;
             }

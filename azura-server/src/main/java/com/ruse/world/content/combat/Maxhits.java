@@ -155,6 +155,19 @@ public class Maxhits {
                     .getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {
                 percent += 25;
             }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DIVINE_ARCHER.npcId) {
+                percent += 25;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.CHAOTIC_ARCHER.npcId) {
+                percent += 25;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FOREST_ARCHER.npcId) {
+                percent += 25;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.SPIRIT_OF_SCORPIUS.npcId) {
@@ -476,6 +489,19 @@ public class Maxhits {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {
+                base *= 1.25D;
+            }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DIVINE_ARCHER.npcId) {
+                base *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.CHAOTIC_ARCHER.npcId) {
+                base *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FOREST_ARCHER.npcId) {
                 base *= 1.25D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
@@ -875,6 +901,19 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ELF_WARRIOR.npcId) {
                 maxHit *= 1.25D;
             }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DIVINE_ARCHER.npcId) {
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.CHAOTIC_ARCHER.npcId) {
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FOREST_ARCHER.npcId) {
+                maxHit *= 1.25D;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SPIRIT_OF_SCORPIUS.npcId) {
                 maxHit *= 1.25D;
@@ -1221,6 +1260,19 @@ public class Maxhits {
                 maxHit *= 1.25D;
             }
 
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DIVINE_ARCHER.npcId) {
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.CHAOTIC_ARCHER.npcId) {
+                maxHit *= 1.25D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FOREST_ARCHER.npcId) {
+                maxHit *= 1.25D;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SPIRIT_OF_SCORPIUS.npcId) {
                 maxHit *= 1.25D;

@@ -1763,6 +1763,46 @@ public class RSInterface {
 		main.child(15, 77251, 478, 14);
 	}
 
+
+	private static void archerPetUnlock(TextDrawingArea[] tda) {
+		RSInterface main = addInterface(107230);
+		addSpriteLoader(107231, 1707);
+
+		addText(107232, "Choose an Archerer Pet", tda, 2, 0xff8624, true, true);
+		addText(107233, "You may pick only one pet(They all provide 25% Damage Boost and 45% Drop Rate Boost)", tda, 0, 0xff8624, true, true);
+		addText(107234, "Forest Archer", tda, 2, 0xff8624, true, true);
+		addText(107235, "Chaotic Archer", tda, 2, 0xff8624, true, true);
+		addText(107236, "Divine Archer", tda, 2, 0xff8624, true, true);
+		RSInterface.drawNpcOnInterface(107237, 1508, 350);
+		RSInterface.drawNpcOnInterface(107238, 1458, 300);
+		RSInterface.drawNpcOnInterface(107239, 1457, 350);
+		addHoverButtonWSpriteLoader(107242, 1445, 132, 29, "Choose Forest Archer", -1, 107243, 1);
+		addHoveredImageWSpriteLoader(107243, 1446, 132, 29, 107244);
+		addHoverButtonWSpriteLoader(107245, 1445, 132, 29, "Choose Chaotic Archer", -1, 107246, 1);
+		addHoveredImageWSpriteLoader(107246, 1446, 132, 29, 107247);
+		addHoverButtonWSpriteLoader(107248, 1445, 132, 29, "Choose Divine Archer", -1, 107249, 1);
+		addHoveredImageWSpriteLoader(107249, 1446, 132, 29, 107250);
+		addButtonWSpriteLoader(107251, 714, "Close Window", 16, 16);
+
+		main.totalChildren(16);
+		main.child(0, 107231, 10, 10);
+		main.child(1, 107232, 250, 16);
+		main.child(2, 107233, 250, 38);
+		main.child(3, 107242, 35, 280);
+		main.child(4, 107243, 35, 280);
+		main.child(5, 107245, 190, 280);
+		main.child(6, 107246, 190, 280);
+		main.child(7, 107248, 345, 280);
+		main.child(8, 107249, 345, 280);
+		main.child(9, 107235, 252, 287);
+		main.child(10, 107236, 408, 287);
+		main.child(11, 107234, 100, 287);
+		main.child(12, 107237, 30, 160);
+		main.child(13, 107238, 182, 160);
+		main.child(14, 107239, 342, 160);
+		main.child(15, 107251, 478, 14);
+	}
+
 	private static void warriorPetUnlock(TextDrawingArea[] tda) {
 		RSInterface main = addInterface(80230);
 		addSpriteLoader(80231, 1707);
@@ -1772,9 +1812,9 @@ public class RSInterface {
 		addText(80234, "Lesarkus Warrior", tda, 2, 0xff8624, true, true);
 		addText(80235, "Fatal Warrior", tda, 2, 0xff8624, true, true);
 		addText(80236, "Immortal Warrior", tda, 2, 0xff8624, true, true);
-		RSInterface.drawNpcOnInterface(80237, 277, 350);
-		RSInterface.drawNpcOnInterface(80238, 1914, 350);
-		RSInterface.drawNpcOnInterface(80239, 2359, 350);
+		RSInterface.drawNpcOnInterface(80237, 277, 330);
+		RSInterface.drawNpcOnInterface(80238, 1914, 310);
+		RSInterface.drawNpcOnInterface(80239, 2359, 290);
 		addHoverButtonWSpriteLoader(80242, 1445, 132, 29, "Choose Lesarkus Warrior", -1, 80243, 1);
 		addHoveredImageWSpriteLoader(80243, 1446, 132, 29, 80244);
 		addHoverButtonWSpriteLoader(80245, 1445, 132, 29, "Choose Fatal Warrior", -1, 80246, 1);
@@ -6910,6 +6950,7 @@ public class RSInterface {
 			warriorTier3Unlock(textDrawingAreas);
 			magicianPetUnlock(textDrawingAreas);
 			warriorPetUnlock(textDrawingAreas);
+			archerPetUnlock(textDrawingAreas);
 			questInterface(textDrawingAreas);
 			prestigeInterface(textDrawingAreas);
 			magicianTier1Unlock(textDrawingAreas);

@@ -140700,8 +140700,8 @@
   },
       {
     "id": 9118,
-    "name": "Hellish Sufferer",
-    "examine": "A zone monster.",
+    "name": "Shadow Magician",
+    "examine": "A Shadow Magician",
     "combat": 300,
     "size": 2,
     "attackable": true,
@@ -140716,9 +140716,9 @@
     "defenceAnim": 404,
     "deathAnim": 2304,
     "attackBonus": 400,
-    "defenceMelee": 5,
-    "defenceRange": 5,
-    "defenceMage": 9999999
+    "defenceMelee": 9999999,
+    "defenceRange": 9999999,
+    "defenceMage": 5
   },
     {
     "id": 9007,

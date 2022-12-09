@@ -6,54 +6,67 @@ public class ItemDef5 {
 
 		switch (id) {
 
+			case 13223:
+				itemDef.copyItem(23324);
+				itemDef.modelID = 19593;
+				itemDef.name = "Forest Archer pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
 
+			case 13224:
+				itemDef.copyItem(23324);
+				itemDef.modelID = 19592;
+				itemDef.name = "Chaotic Archer pet";
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
+			case 13225:
+				itemDef.copyItem(23324);
+				itemDef.modelID = 19594;
+				itemDef.name = "Divine Archer pet";
+				itemDef.rdc2 = 34343;
+				itemDef.groundActions = new String[]{null, null, "Take", null, null};
+				itemDef.actions = new String[]{null, null, "Summon", null, "Drop"};
+				break;
 
 			case 14434:
 				itemDef.copyItem(14050);
 				itemDef.name = "Diminished helmet";
-				itemDef.modelID = 22247;
-				itemDef.maleEquip1 = 22108;
-				itemDef.femaleEquip1 = 22108;
-				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
+				itemDef.modelID = 22335;
+				itemDef.maleEquip1 = 22336;
+				itemDef.femaleEquip1 = 22336;
 				break;
 			case 14435:
 				itemDef.copyItem(14051);
 				itemDef.name = "Diminished body";
-				itemDef.modelID = 22268;
-				itemDef.maleEquip1 = 22096;
+				itemDef.modelID = 22321;
+				itemDef.maleEquip1 = 22322;
 				itemDef.femaleEquip1 = 22096;
-				itemDef.modelZoom = 1380;
-				itemDef.rotationX = 50;
-				itemDef.rotationY = 0;
-				itemDef.modelOffsetY = 45;
-				itemDef.modelOffsetX = 0;
-				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
 				break;
 			case 14436:
 				itemDef.copyItem(14052);
 				itemDef.name = "Diminished legs";
-				itemDef.modelID = 22263;
-				itemDef.maleEquip1 = 22067;
-				itemDef.femaleEquip1 = 22067;
-				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
+				itemDef.modelID = 22323;
+				itemDef.maleEquip1 = 22329;
+				itemDef.femaleEquip1 = 22329;
 				break;
 			case 14437:
-				itemDef.copyItem(14602);
-				itemDef.name = "Diminished gloves";
-				itemDef.modelID = 22271;
-				itemDef.maleEquip1 = 22107;
-				itemDef.femaleEquip1 = 22107;
+				itemDef.copyItem(23066);
+				itemDef.name = "Diminished crossbow";
+				itemDef.modelID = 22330;
+				itemDef.maleEquip1 = 22331;
+				itemDef.femaleEquip1 = 22331;
 				itemDef.modelZoom = 1000;
-				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
 				break;
 			case 14438:
-				itemDef.name = "Diminished boots";
-				itemDef.modelID = 22106;
-				itemDef.maleEquip1 = 22106;
-				itemDef.femaleEquip1 = 22106;
+				itemDef.copyItem(11283);
+				itemDef.name = "Diminished dragonfire shield";
+				itemDef.modelID = 22332;
+				itemDef.maleEquip1 = 22334;
+				itemDef.femaleEquip1 = 22334;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				itemDef.colorChange = new double[]{0.5, 0.2, 1.2};
 				break;
 
 			case 14439:
