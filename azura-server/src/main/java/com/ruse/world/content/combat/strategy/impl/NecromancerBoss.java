@@ -39,7 +39,7 @@ public class NecromancerBoss implements CombatStrategy {
             return false;
 */
 
-        int random = Misc.random(3);
+        int random = Misc.random(5);
         if (random == 1) {
             randomFire(npc, player);
         } else if (random == 2) {

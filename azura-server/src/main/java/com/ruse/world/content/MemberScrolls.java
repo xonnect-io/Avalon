@@ -128,31 +128,7 @@ public class MemberScrolls {
 
 			});
 			break;
-		case 10944:
-			if (player.getRights().isStaff()) {
-				player.getPacketSender().sendMessage("As a staff member, you already have member rights.");
-				PlayerLogs.log(player.getUsername(), "Attempted to redeem a " + ItemDefinition.forId(item).getName()
-						+ ", but was a staff member! (Unsuccessful)");
-				break;
-			}
-			if (player.getRights().isMember()) {
-				player.getPacketSender().sendMessage("You are a member, that would be wasteful!");
-				PlayerLogs.log(player.getUsername(), "Attempted to redeem a " + ItemDefinition.forId(item).getName()
-						+ ", but was already a member! (Unsuccessful)");
-				break;
-			} else {
-				PlayerLogs.log(player.getUsername(),
-						"Has just redeemed a " + ItemDefinition.forId(item).getName() + " successfully!");
-				player.getPacketSender().sendMessage("Sending redemption request...");
-				player.getInventory().delete(10944, 1);
-				player.incrementAmountDonated(10);
-				player.incrementAmountDonatedToday(10);
-				player.setRights(PlayerRights.EMERALD_DONATOR);
-				player.getPacketSender().sendMessage("Congratulations! You've upgraded to a member account!");
-				player.getPacketSender().sendRights();
-				PlayerPanel.refreshPanel(player);
-			}
-			break;
+
 		case 19119:
 			if (player.getRights().isStaff()) {
 				player.getPacketSender().sendMessage("As a staff member, you already have member rights.");

@@ -1871,7 +1871,7 @@ public class Locations {
 					 */
 				} else {
 					// player.getPacketSender().sendMessage("Get out of the gas!");
-					player.dealDamage(new Hit(Misc.getRandom(15) * 10, Hitmask.DARK_PURPLE, CombatIcon.CANNON));
+					//player.dealDamage(new Hit(Misc.getRandom(15) * 10, Hitmask.DARK_PURPLE, CombatIcon.CANNON));
 					if (player.getWalkableInterfaceId() != 16152) {
 						player.getPacketSender().sendWalkableInterface(16152, true);
 					}

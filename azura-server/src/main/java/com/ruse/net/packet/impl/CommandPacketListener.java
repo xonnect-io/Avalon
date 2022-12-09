@@ -218,6 +218,8 @@ public class CommandPacketListener implements PacketListener {
             player.getDonationDeals ().displayTime ();
             player.getPacketSender ().sendString (57277, "@yel@$" + player.getAmountDonatedToday ());
         }
+
+
         if (command[0].equalsIgnoreCase ("collectionlog")) {
             player.getCollectionLog2 ().open (MONSTERS);
             player.getPacketSender ().sendConfig (1106, 0);
@@ -1966,6 +1968,13 @@ public class CommandPacketListener implements PacketListener {
             SlayerBossSystem.commandSpawnBoss();
         }        if (command[0].equalsIgnoreCase("spawnnm")) {
             NPC npc = new NPC(9017, new Position(2980, 2776,0));
+        }
+        if (command[0].equalsIgnoreCase ("addmonthly")) {
+            int amount = Integer.parseInt(command[1]);
+            String plrName = wholeCommand.substring(command[0].length() + command[1].length()+ 2);
+            Player target = World.getPlayerByName(plrName);
+            target.setMonthlyDonationCount(target.getMonthlyDonationCount () + amount);
+            player.getPacketSender ().sendMessage ("You successfully added $"+ amount + " to " + target.getUsername() + "'s monthly donations amount");
         }
         if (command[0].equalsIgnoreCase("eldergods") || command[0].equalsIgnoreCase("eg")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
