@@ -76,6 +76,7 @@ public class CollectionLog {
     public static final int PEST_CONTROL = 100003;
     public static final int BARROWS_KEY = 120_000;
     public static final int SUFFERING_KEY = 23370;
+    public static final int ELDER_GODS = 100000001;
     public static final int NECROMANCER_KEY = 23447;
     public static final int MYSTERY_BOX = 6199;
     public static final int PVM_BOX = 7956;
@@ -221,7 +222,14 @@ public class CollectionLog {
             }
         }
     }
+public boolean didwefinishthelog(Collection c){
+    final int totalCollectables = c.totalCollectables();
+    int after = player.getCollectionLog2().totalObtained(c);
+    if(totalCollectables == after)
+        return true;
 
+    return false;
+}
     public void sendInterface(Collection collection) {
 
         for (int i = 0 ; i < 60 ; i++) {
@@ -262,7 +270,10 @@ public class CollectionLog {
         player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Opened: " + "@whi@" + (kills == null ? "0" : kills - 1));
 
         else if(collection.getLogType() == LogType.BOSSES && collection.getName().equalsIgnoreCase("necromancer"))
-            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Killed: " + "@whi@" + (kills == null ? "0" : Misc.insertCommasToNumber(player.getShadowKeysOpened())));
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Killed: " + "@whi@" + Misc.insertCommasToNumber(player.getEasyIsleGodKC () + player .getMedIsleGodKC () + player.getHardIsleGodKC ()));
+
+        else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("elder gods"))
+            player.getPacketSender().sendString(KILLS_STRING, "@lre@ " + " " + "" + "Completed: " + "@whi@" + Misc.insertCommasToNumber(player.getEasyElderGodKC () + player .getMedElderGodKC () + player.getHardElderGodKC ()));
 
 
         else if(collection.getLogType() == LogType.MINIGAMES && collection.getName().equalsIgnoreCase("souls of suffering"))
@@ -306,11 +317,15 @@ public class CollectionLog {
     public void open(LogType logType) {
         final List<Collection> log = Collection.getAsList(logType);
         final int total = log.size();
+
+       // final int obtainables = collection.totalCollectables();
+
+
         for (int index = 0; index < 60; index++) {
             player.getPacketSender().sendString(NAMES_STARTING_LINE + index, "");
         }
         for (int index = 0; index < total; index++) {
-            player.getPacketSender().sendString(NAMES_STARTING_LINE + index, log.get(index).getName());
+            player.getPacketSender().sendString(NAMES_STARTING_LINE + index, didwefinishthelog(log.get(index)) ? "@gre@"+log.get(index).getName()+""  : ""+log.get(index).getName());
         }
         player.setLogtoCheck(log.get(0));
         sendInterface(log.get(0));
