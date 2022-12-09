@@ -453,6 +453,9 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
                 }
                 break;
+            case 10944:
+                player.getMiniPManager ().handleSummoningScroll ();
+                break;
             case 9650:
                 if (player.getInventory().getAmount(9650) >= 10) {
                     player.getInventory().delete(9650, 10);
@@ -561,6 +564,9 @@ public class ItemActionPacketListener implements PacketListener {
                 break;
             case 23386:
                 player.getPacketSender().sendInterface(80230);
+                break;
+            case 23409:
+                player.getPacketSender().sendInterface(107230);
                 break;
             case 9719:
                 player.sendMessage("You must bring this to your slayer master to cancel your task.");

@@ -211,6 +211,7 @@ public class EquipPacketListener implements PacketListener {
                 } else {
                 }
                 break;
+
             case 8834:
             case 8835:
             case 8860:
