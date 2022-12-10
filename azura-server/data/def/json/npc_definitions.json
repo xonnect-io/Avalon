@@ -33658,7 +33658,7 @@
   },
   {
     "id": 1508,
-    "name": "Forest Archer",
+  "name": "Forest Archer",
   "examine": "It's an NPC.",
   "combat": 10,
   "size": 1,

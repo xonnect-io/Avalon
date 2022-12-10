@@ -3,48 +3,54 @@ package org.necrotic.client.cache.definition;
 import java.io.*;
 
 public class FileOperations {
+	private static int totalRead = 0;
+	private static int totalWrite = 0;
+	private static int completeWrite = 0;
 
+	public static byte[] readFile(String fileName) {
+		try (BufferedInputStream input = new BufferedInputStream(new FileInputStream(fileName))) {
+			byte[] data = new byte[(int) new File(fileName).length()];
+			input.read(data);
+			totalRead++;
+			return data;
+		} catch (Exception ex) {
+			return null;
+		}
+	}
 
-	public static final byte[] readFile(String s) {
+	public static void writeFile(String fileName, byte[] data) {
 		try {
-			File file = new File(s);
-			int i = (int) file.length();
-			byte abyte0[] = new byte[i];
-			DataInputStream datainputstream = new DataInputStream(new BufferedInputStream(new FileInputStream(s)));
-			datainputstream.readFully(abyte0, 0, i);
-			datainputstream.close();
-			TotalRead++;
-			return abyte0;
-		} catch (Exception exception) {
-		}
-		return null;
-	}
+			// Create parent directories if needed.
+			File file = new File(fileName);
+			File parent = file.getParentFile();
+			if (parent != null) {
+				parent.mkdirs();
+			}
 
-	public static final void writeFile(String s, byte abyte0[]) {
-		try {
-			(new File((new File(s)).getParent())).mkdirs();
-			FileOutputStream fileoutputstream = new FileOutputStream(s);
-			fileoutputstream.write(abyte0, 0, abyte0.length);
-			fileoutputstream.close();
-			TotalWrite++;
-			CompleteWrite++;
-		} catch (Throwable throwable) {
-			System.out.println((new StringBuilder()).append("Write Error: ").append(s).toString());
+			// Write the data to the file.
+			try (FileOutputStream output = new FileOutputStream(fileName)) {
+				output.write(data);
+				totalWrite++;
+				completeWrite++;
+			}
+		} catch (Throwable ex) {
+			System.out.println("Write Error: " + fileName);
 		}
 	}
 
-	public static boolean FileExists(String file) {
-		File f = new File(file);
-		if (f.exists()) {
-			return true;
-		} else {
-			return false;
-		}
+	public static boolean fileExists(String fileName) {
+		return new File(fileName).exists();
 	}
 
-	public static int TotalRead = 0;
-	public static int TotalWrite = 0;
-	public static int CompleteWrite = 0;
+	public static int getTotalRead() {
+		return totalRead;
+	}
 
+	public static int getTotalWrite() {
+		return totalWrite;
+	}
 
+	public static int getCompleteWrite() {
+		return completeWrite;
+	}
 }

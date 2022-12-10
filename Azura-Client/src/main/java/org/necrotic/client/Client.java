@@ -17382,7 +17382,7 @@ if(response == 32){
             showTwoFactorAuth = true;
             showCaptcha = true;
             loginScreenCursorPos = 0;
-            Varp.getCache()[166].setAnInt709(1);
+            Varp.getCache()[166].setValue(1);
             variousSettings[166] = 1;
             updateConfig(166);
             return;
@@ -19166,7 +19166,7 @@ if(response == 32){
         try {
             int j = 0;
             if (configId < Varp.getCache().length) {
-                j = Varp.getCache()[configId].getAnInt709();
+                j = Varp.getCache()[configId].getValue();
             }
 
             if (j == 0) {
