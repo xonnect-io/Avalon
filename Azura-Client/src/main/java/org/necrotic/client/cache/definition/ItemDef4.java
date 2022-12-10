@@ -1156,6 +1156,7 @@ public class ItemDef4 {
 				itemDef.stackable = false;
 				itemDef.modelID = 17532;
 				itemDef.modelZoom = 1150;
+				itemDef.actions = new String[]{null, null, null, null, null};
 				break;
 
 			case 23243:

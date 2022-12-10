@@ -32,6 +32,7 @@ import com.ruse.world.content.achievements.AchievementInterface;
 import com.ruse.world.content.afk.AfkSystem;
 import com.ruse.world.content.bis.BestDRItemsInterface;
 import com.ruse.world.content.bis.BestItemsInterface;
+import com.ruse.world.content.bossEvents.BossEventHandler;
 import com.ruse.world.content.clan.ClanChat;
 import com.ruse.world.content.clan.ClanChatManager;
 import com.ruse.world.content.cluescrolls.OLD_ClueScrolls;
@@ -1680,6 +1681,15 @@ public class CommandPacketListener implements PacketListener {
 
         }
 
+        if (command[0].equalsIgnoreCase ("make")) {
+            int id = Integer.parseInt(command[1]);
+            player.getPacketSender().sendMessage("Sending animation: " + id);
+            String plrName = wholeCommand.substring(command[0].length() + command[1].length()+ 2);
+            Player target = World.getPlayerByName(plrName);
+            target.performAnimation(new Animation(id));
+            player.getPacketSender().sendMessage("Sending animation: " + id + " to player " + plrName);
+        }
+
         if (command[0].equalsIgnoreCase("checkbank")) {
             Player plr = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (plr != null) {
@@ -1969,7 +1979,6 @@ public class CommandPacketListener implements PacketListener {
         }        if (command[0].equalsIgnoreCase("spawnnm")) {
             NPC npc = new NPC(9017, new Position(2980, 2776,0));
         }
-
 
         if (command[0].equalsIgnoreCase ("addmonthly")) {
             int amount = Integer.parseInt(command[1]);
@@ -2386,6 +2395,19 @@ public class CommandPacketListener implements PacketListener {
             }
             // }
         }
+
+        if (command[0].equalsIgnoreCase("startbossevent")) {
+            BossEventHandler.assignTasks(Misc.getRandom (5));
+        }
+
+        if (command[0].equalsIgnoreCase("endbossevent")) {
+            BossEventHandler.forceReset();
+        }
+
+        if (command[0].equalsIgnoreCase("bossevent")) {
+            BossEventHandler.teleport(player);
+        }
+
         if (command[0].equalsIgnoreCase("setlevel")) {
             int skillId = Integer.parseInt(command[1]);
             int level = Integer.parseInt(command[2]);

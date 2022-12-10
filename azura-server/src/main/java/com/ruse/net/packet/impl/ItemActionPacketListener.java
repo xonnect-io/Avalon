@@ -290,6 +290,14 @@ public class ItemActionPacketListener implements PacketListener {
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
                 }
                 break;
+            case 19624:
+                int[] commonsuper222 = new int[] {8326, 8330, 8323, 8327, 8331, 8324, 8328, 8332, 8325, 22084, 22083, 22092,
+                        10946,6769,15288};
+                int[] uncommonsuper222 = new int[] {18753, 18749, 18631, 18752, 18748, 18637, 18751, 18638, 18623, 18750, 18636,
+                        18629, 4446, 19886, 10942};
+                int[] raresuper222 = new int[] {8253,8087,8088,8089,10947,12608,10934,3578};
+                player.getMysteryBoxOpener().display(15501, "Boss Event Box", commonsuper222, uncommonsuper222, raresuper222);
+                break;
             case 23654:
                 if (player.isEvilSantaTransform()) {
                     player.getPacketSender().sendMessage("You are no longer Evil santa clause.");

@@ -3,8 +3,9 @@ package com.ruse.world.content.bossEvents;
 import com.ruse.world.entity.impl.player.Player;
 
 /**
- * 
- * @author Adam_#6723
+ *
+ * @author Avalon#9598 (AlwaysDreaming.AI@gmail.com)
+ * Offering Development services with tutorials pm me
  *
  */
 

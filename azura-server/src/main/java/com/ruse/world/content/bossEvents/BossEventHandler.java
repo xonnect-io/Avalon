@@ -9,136 +9,165 @@ import com.ruse.world.entity.impl.npc.NPC;
 import com.ruse.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * 
- * @author Adam_#6723
+ *
+ * @author Avalon#9598 (AlwaysDreaming.AI@gmail.com)
+ * Offering Development services with tutorials pm me
  *
  */
 
 public class BossEventHandler {
-
-	public static boolean isEventRunning = false;
-
 	public static ArrayList<String> array = new ArrayList<String>();
+	// Flag to indicate whether an event is currently running
+	static boolean isEventRunning = false;
 
-	public void AssignTasks(int taskNumber) {
-		if (isEventRunning == true) {
+	// List of players who have completed the current boss task
+	private static List<Player> completedPlayers = new ArrayList<> ();
+
+
+
+	/**
+	 * Assigns a boss task to all online players.
+	 *
+	 * @param taskNumber the number of the task to assign
+	 */
+	public static void assignTasks(int taskNumber) {
+		if (isEventRunning) {
 			return;
 		}
-		array.clear();
-		BossEventData data = BossEventData.byId.get(taskNumber);
-		for (Player players : World.getPlayers()) {
-			if (players != null) {
-				if (taskNumber == data.getTaskNumber()) {
-					players.setBossevent(data);
-					players.setCurrentBossTask(data.getNpcid());
-					players.setCurrentBossTaskAmount(data.getEndamount());
-					players.sendMessage("You have been Assigned to kill: " + players.getBossevent().getName()
-							+ " Amount: " + players.getBossevent().getEndamount());
-					players.sendMessage("First one to complete this task will be rewarded handsomely!");
-					players.setHasPlayerCompletedBossTask(false);
+
+		// Clear the list of completed players
+		completedPlayers.clear ();
+
+		BossEventData data = BossEventData.byId.get (taskNumber);
+		for (Player player : World.getPlayers ()) {
+			if (player != null) {
+				if (taskNumber == data.getTaskNumber ()) {
+					player.setBossevent (data);
+					player.setCurrentBossTask (data.getNpcid ());
+					player.setCurrentBossTaskAmount (data.getEndamount ());
+					player.sendMessage ("@blu@<img=832>[Boss Event] You have been assigned to kill: @red@" + player.getBossevent ().getName ()
+							+ " Amount: " + player.getBossevent ().getEndamount ());
+					player.setHasPlayerCompletedBossTask (false);
 					isEventRunning = true;
-				} else {
 				}
 			}
 		}
-		World.sendMessage("@red@ Do ::bossevents to teleport to the task!");
+
+		World.sendMessage ("@red@Do ::bossevent to teleport to the task!");
 	}
 
-	public void Execute() {
-		AssignTasks(Misc.exclusiveRandom(0, 9));
+	/**
+	 * Executes the boss event by assigning a random task to all online players.
+	 */
+	public void execute() {
+		assignTasks (Misc.exclusiveRandom (0, 9));
 	}
 
-	public void forceReset(Player player) {
-		for (Player players : World.getPlayers()) {
-			if (players != null) {
-				resetTasks(players);
+	/**
+	 * Forces a reset of the boss event, clearing the list of completed players and setting the
+	 * event running flag to false.
+	 */
+	public static void forceReset() {
+		for (Player player : World.getPlayers ()) {
+			if (player != null) {
+				resetTasks (player);
 			}
 		}
-		World.sendMessage("<img=13><col=0000ff> " + " The Boss Event has been force resetted.");
-		array.clear();
+
+		World.sendMessage ("<img=13><col=0000ff>The Boss Event has finished!");
+		completedPlayers.clear ();
 		isEventRunning = false;
 	}
 
-	public void teleport(Player player) {
-		if (player.getBossevent() != null) {
-			TeleportHandler.teleportPlayer(
-					player, new Position(player.getBossevent().getPosition().getX(),
-							player.getBossevent().getPosition().getY(), player.getBossevent().getPosition().getZ()),
-					player.getSpellbook().getTeleportType());
-		} else {
-			player.getPA().sendMessage("You do not have a task currently!");
-		}
-	}
 
-	public void death(Player player, NPC npc, String NpcName) {
-		if (isEventRunning == false) {
-			//System.err.println("Event isn't running");
-			return;
-		}
-		if (player.bossevent == null || player.currentBossTask == -1 || player.currentBossTaskAmount == -1) {
-			//System.err.println("No Task Applied");
-			return;
-		}
-		if (player.isHasPlayerCompletedBossTask() == true) {
-			//System.err.println("already completed boss task");
-			return;
-		}
-		if (npc.getId() != player.getCurrentBossTask()) {
-		//	System.err.println("Not killing correct npc");
-			return;
-		}
-		player.setCurrentBossTaskAmount(player.getCurrentBossTaskAmount() - 1);
-		player.getPA().sendMessage("You currently need to kill " + player.getCurrentBossTaskAmount() + " " + NpcName);
-
-		if (player.getCurrentBossTaskAmount() <= 0 && array.size() <= 3
-				&& player.isHasPlayerCompletedBossTask() == false) {
-			player.setHasPlayerCompletedBossTask(true);
-			player.getPA().sendMessage(
-					"You have completed the boss task, check your inventory or bank or the floor for your reward.");
-			array.add(player.getUsername());
-			finish(player);
-			return;
-		}
-	}
-
-	public void resetTasks(Player player) {
-		if (player.bossevent != null || player.currentBossTask != -1 || player.currentBossTaskAmount != -1) {
+	public static void resetTasks(Player player) {
+		if (player.bossevent instanceof BossEventData && player.currentBossTask != -1 && player.currentBossTaskAmount != -1) {
 			player.setCurrentBossTask(-1);
 			player.setCurrentBossTaskAmount(-1);
 			player.setBossevent(null);
 			player.setHasPlayerCompletedBossTask(false);
 			isEventRunning = false;
-
+		}
+	}
+	/**
+	 * Teleports the specified player to their assigned boss task.
+	 *
+	 * @param player the player to teleport
+	 */
+	public static void teleport(Player player) {
+		if (player.getBossevent () != null) {
+			TeleportHandler.teleportPlayer (
+					player, new Position (player.getBossevent ().getPosition ().getX (),
+							player.getBossevent ().getPosition ().getY (), player.getBossevent ().getPosition ().getZ ()),
+					player.getSpellbook ().getTeleportType ());
 		} else {
+			player.getPacketSender ().sendMessage ("You do not have a task currently!");
 		}
 	}
 
-	public void finish(Player player) {
-		if (array.size() == 1) {
-			World.sendMessage("<img=13><col=0000ff> " + player.getUsername()
-					+ " Has just been awared 1st place for completing the Daily Boss Event Task");
+	public void death(Player player, NPC npc, String NpcName) {
+		if (!isEventRunning) {
+			return;
 		}
-		if (array.size() == 2) {
-			World.sendMessage("<img=13><col=0000ff> " + player.getUsername()
-					+ " Has just been awared 2nd place for completing the Daily Boss Event Task");
+
+		if (player.bossevent == null || player.currentBossTask == -1 || player.currentBossTaskAmount == -1) {
+			return;
 		}
-		if (array.size() == 3) {
-			World.sendMessage("<img=13><col=0000ff> " + player.getUsername()
-					+ " Has just been awared 3rd place for completing the Daily Boss Event Task");
+
+		if (player.isHasPlayerCompletedBossTask()) {
+			return;
 		}
-		player.getInventory().add(new Item(player.getBossevent().getRewards(), 1));
+
+		if (npc.getId() != player.getCurrentBossTask()) {
+			return;
+		}
+
+		player.setCurrentBossTaskAmount(player.getCurrentBossTaskAmount() - 1);
+		player.getPA().sendMessage("You currently need to kill " + player.getCurrentBossTaskAmount() + " " + NpcName);
+
+		if (player.getCurrentBossTaskAmount() <= 0 && array.size() <= 3 && !player.isHasPlayerCompletedBossTask()) {
+			player.setHasPlayerCompletedBossTask(true);
+			player.getPA().sendMessage("You have completed the boss task, check your inventory or bank or the floor for your reward.");
+			array.add(player.getUsername());
+			finish(player);
+		}
+	}
+
+	public static void finish(Player player) {
+		switch (array.size()) {
+			case 1:
+				World.sendMessage("<img=13><col=0000ff> " + player.getUsername()
+						+ " Has just been awarded 1st place for completing the Daily Boss Event Task");
+				break;
+			case 2:
+				World.sendMessage("<img=13><col=0000ff> " + player.getUsername()
+						+ " Has just been awarded 2nd place for completing the Daily Boss Event Task");
+				break;
+			case 3:
+				World.sendMessage("<img=13><col=0000ff> " + player.getUsername()
+						+ " Has just been awarded 3rd place for completing the Daily Boss Event Task");
+				break;
+		}
+		player.getInventory().add(new Item (player.getBossevent().getRewards(), 1));
 		player.getPA().sendMessage("You have Received a reward for completing the daily tasks!");
 		if (array.size() == 3) {
+			array.add(player.getUsername());
 			for (Player players : World.getPlayers()) {
 				if (players != null) {
-					resetTasks(players);
+					players.setCurrentBossTask(-1);
+					players.setCurrentBossTaskAmount(-1);
+					players.setBossevent(null);
+					players.setHasPlayerCompletedBossTask(false);
 				}
 			}
 			World.sendMessage(
 					"<img=13><col=0000ff> " + " The Boss Event has just ended, congrats to the first three winners!!");
-			array.clear();
+			array.removeAll(array);
+			isEventRunning = false;
 		}
 	}
+
 }

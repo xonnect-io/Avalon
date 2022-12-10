@@ -479,7 +479,8 @@ public class NPCDeathTask extends Task {
 
 
                         /** BOSS EVENT **/
-                        new BossEventHandler().death(killer, npc, npc.getDefinition().getName());
+                        BossEventHandler handler = new BossEventHandler();
+                        handler.death(killer, npc, npc.getDefinition().getName());
                         killer.getInstanceManager().death(killer, npc, npc.getDefinition().getName());
                         new DailyTaskHandler(killer).death(npc.getDefinition().getName());
 

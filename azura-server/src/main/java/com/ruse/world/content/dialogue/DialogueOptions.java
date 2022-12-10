@@ -1298,6 +1298,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23246, 1)) {
                         player.getInventory().delete(23246, 1);
                         player.getInventory().add(12537, 1);
+                        player.getInventory().add(782, 1);
                         player.getPacketSender().sendInterfaceRemoval();
                     }
                     break;
@@ -1306,6 +1307,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23247, 1)) {
                         player.getInventory().delete(23247, 1);
                         player.getInventory().add(17013, 1);
+                        player.getInventory().add(782, 1);
                         player.getPacketSender().sendInterfaceRemoval();
                     }
                     break;
@@ -1313,6 +1315,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23248, 1)) {
                         player.getInventory().delete(23248, 1);
                         player.getInventory().add(5011, 1);
+                        player.getInventory().add(782, 1);
                         player.getPacketSender().sendInterfaceRemoval();
                     }
                     break;
@@ -1320,6 +1323,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23243, 1)) {
                         player.getInventory().delete(23243, 1);
                         player.getInventory().add(22115, 1);
+                        player.getInventory().add(782, 1);
                         player.getPacketSender().sendInterfaceRemoval();
                     }
                     break;
@@ -1328,6 +1332,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23244, 1)) {
                         player.getInventory().delete(23244, 1);
                         player.getInventory().add(22114, 1);
+                        player.getInventory().add(782, 1);
                         player.getPacketSender().sendInterfaceRemoval();
                     }
                     break;
@@ -1335,6 +1340,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23245, 1)) {
                         player.getInventory().delete(23245, 1);
                         player.getInventory().add(22113, 1);
+                        player.getInventory().add(782, 1);
                         player.getPacketSender().sendInterfaceRemoval();
                     }
                     break;
@@ -1342,6 +1348,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23249, 1)) {
                         player.getInventory().delete(23249, 1);
                         player.getInventory().add(8136, 1);
+                        player.getInventory().add(782, 1);
                         player.getPacketSender().sendInterfaceRemoval();
                     }
                     break;
@@ -1350,6 +1357,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23250, 1)) {
                         player.getInventory().delete(23250, 1);
                         player.getInventory().add(23227, 1);
+                        player.getInventory().add(782, 1);
                         player.getPacketSender().sendInterfaceRemoval();
                     }
                     break;
@@ -1357,6 +1365,7 @@ public class DialogueOptions {
                     if (player.getInventory().contains(23251, 1)) {
                         player.getInventory().delete(23251, 1);
                         player.getInventory().add(23226, 1);
+                        player.getInventory().add(782, 1);
                         player.getPacketSender().sendInterfaceRemoval();
                     }
                     break;

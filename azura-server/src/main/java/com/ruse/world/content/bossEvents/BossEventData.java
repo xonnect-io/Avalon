@@ -1,35 +1,47 @@
 package com.ruse.world.content.bossEvents;
 
+import com.ruse.model.Position;
+import com.ruse.util.Misc;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import com.ruse.model.Position;
-import com.ruse.GameSettings;
-
 /**
- * 
- * @author Adam_#6723
+ *
+ * @author Avalon#9598 (AlwaysDreaming.AI@gmail.com)
+ * Offering Development services with tutorials pm me
  *
  */
 
 public enum BossEventData {
-	FROST_DRAGONS(0, 51, "Frost dragon", 25, 19624, 25, "Frost dragon", 699, 20000, "All", 35,
-			new Position(2957, 3887, 0)),
-	TORMENTED_DEMONS(1, 8349, "Tormented Demon", 15, 19624, 15, "Tormented Demon", 699, 20000, "All", 35,
-			new Position(2717, 9805, 0)),
-	EXPERIMENTS(2, 1677, "Experiment", 40, 19624, 40, "Experiment", 126, 12000, "All", 26, new Position(2097, 4427, 0)),
-	MONEY_GUARDS(3, 1459, "Monkey Guard", 35, 19624, 35, "Monkey Guard", 126, 12000, "All", 26,
-			new Position(2925, 3248, 0)),
-	JUNGLEWORM(4, 9467, "Jungle strykewyrm", 32, 19624, 32, "Jungle strykewyrm", 126, 12000, "All", 26,
-			new Position(2731, 5095, 0)),
-	DESERTWORM(5, 9465, "Desert strykewyrm", 30, 19624, 30, "Desert strykewyrm", 126, 12000, "All", 26,
-			new Position(2731, 5095, 0)),
-	ICESTRKYWORM(6, 9463, "Ice strykewyrm", 25, 19624, 25, "Ice strykewyrm", 126, 12000, "All", 26,
-			new Position(2735, 5081, 0)),
-	DARK_BEAST(7, 2783, "Dark beast", 25, 19624, 25, "Dark beast", 126, 12000, "All", 26, new Position(3176, 5470, 0)),
-	EVENT_BOX(8, 8011, "Event box", 20, 19624, 20, "Event Box", 699, 20000, "All", 35, new Position(3163, 3808, 0)),
-	REV_TARRAGON(9, 6692, "Revenant Tarragon", 20, 19624, 20, "Revenant Tarragon", 126, 12000, "All", 26,
-			new Position(3658, 3495, 0)),;
+
+	HANTO(0, 250, "Hanto Warriors", 40, 19624, 40, "Hanto Warriors", 699, 20000, "All", 35,
+			new Position(2849, 4576, 0)),
+
+	RADITZ(1, 449, "Raditz", 35, 19624, 35, "Raditz", 699, 20000, "All", 35,
+			new Position(2911, 3991, 0)),
+
+	GOKU(2, 452, "Goku", 35, 19624, 35, "Goku", 126, 12000, "All", 26, new Position(3358, 9307, 0)),
+
+	BOTANIC(3, 2342, "Botanic Guardian", 35, 19624, 35, "Botanic Guardian", 126, 12000, "All", 26,
+			new Position(2586, 9449, 0)),
+
+	ENRAGED_GUARDIAN(4, 2949, "Enraged Guardian", 30, 19624, 30, "Enraged Guardian", 126, 12000, "All", 26,
+			new Position(3039, 3995,0)),
+
+	ELEMENTAL_GUARDIAN(5, 505, "Elemental Guardian", 30, 19624, 30, "Elemental Guardian", 126, 12000, "All", 26,
+			new Position(2781, 4576, 0)),
+
+	INYUASHA(6, 185, "Inuyasha", 30, 19624, 30, "Inuyasha", 126, 12000, "All", 26,
+			new Position(2328, 5409, 0)),
+
+	TOLROKOTH(7, 6430, "Tolrokoth", 25, 19624, 25, "Tolrokoth", 126, 12000, "All", 26, new Position(1887, 5468, 0)),
+
+	DEITY_DEMON(8, 440, "Demons of Deity", 20, 19624, 20, "Demons of Deity", 699, 20000, "All", 35, new Position(2842, 9387, 0)),
+
+	MUTATED_HOUND(9, 9839, "Mutated Hound", 20, 19624, 20, "Mutated Hound", 126, 12000, "All", 26,
+			new Position(3421, 4777, 0)),
+	;
 
 	BossEventData(int taskNumber, int npcid, String text, int endamount, int rewards, int amount, String name,
 			int combatLevel, int health, String weakness, int maxhit, Position position) {
@@ -95,7 +107,7 @@ public enum BossEventData {
 	}
 
 	public int getEndamount() {
-		return endamount;
+		return randomAmount;
 	}
 
 	public void setEndamount(int endamount) {
@@ -105,6 +117,8 @@ public enum BossEventData {
 	public String getName() {
 		return name;
 	}
+
+	public int randomAmount = 25 + Misc.getRandom (40);
 
 	public int getNpcid() {
 		return npcid;
