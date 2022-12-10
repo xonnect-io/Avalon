@@ -2,31 +2,48 @@ package org.necrotic.client;
 
 import org.necrotic.client.graphics.DrawingArea;
 
-/**
- * Created by Greg on 24/03/2018.
- */
 public class Fog {
-    private static int begin = 2550;
-    private static int end = 3400;
-    private static int length = end - begin;
 
-    public static void set(int begin, int end) {
-        Fog.begin = begin;
-        Fog.end = end;
-        length = end - begin;
+    // Declare all fields as private, and consider renaming them for clarity
+    private int begin = 2550;
+    private int end = 3400;
+    private int length = end - begin;
+
+    public void setRange(int begin, int end) {
+        // Check that the given range is valid
+        if (begin >= end) {
+            throw new IllegalArgumentException("Invalid fog range: begin must be less than end");
+        }
+
+        // Update the range and length fields
+        this.begin = begin;
+        this.end = end;
+        this.length = end - begin;
     }
 
-    public static void draw(int rgb) {
-        for (int index = 0; index < DrawingArea.raster.length; index++) {
-        	DrawingArea.raster[index] = blend(DrawingArea.raster[index], rgb, (DrawingArea.depthBuffer[index] - begin) / length);
+    public void draw(int rgb) {
+        // Check that the fog color is valid
+        if (rgb < 0 || rgb > 0xffffff) {
+            throw new IllegalArgumentException("Invalid fog color: must be a 24-bit RGB value");
+        }
+
+        // Iterate over the DrawingArea's raster and depth buffer
+        for (int i = 0; i < DrawingArea.raster.length; i++) {
+            DrawingArea.raster[i] = blend(DrawingArea.raster[i], rgb, (DrawingArea.depthBuffer[i] - begin) / length);
         }
     }
 
-    private static int blend(int rgb1, int rgb2, float factor) {
-        if (factor >= 1f) {
+    private int blend(int rgb1, int rgb2, float factor) {
+        // Check that the blending factor is valid
+        if (factor < 0 || factor > 1) {
+            throw new IllegalArgumentException("Invalid blending factor: must be between 0 and 1");
+        }
+
+        // Return the blended color
+        if (factor >= 1) {
             return rgb2;
         }
-        if (factor <= 0f) {
+        if (factor <= 0) {
             return rgb1;
         }
 
@@ -49,4 +66,3 @@ public class Fog {
         return (r << 16) + (g << 8) + b;
     }
 }
-
