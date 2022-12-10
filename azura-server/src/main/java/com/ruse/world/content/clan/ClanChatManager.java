@@ -55,63 +55,58 @@ public class ClanChatManager {
 
     public static void init() {
         try {
-            Misc.createFilesIfNotExist(FILE_DIRECTORY, true);
-            if (new File(FILE_DIRECTORY).listFiles() == null) {
-                // System.out.println("Missing Ethereal.json in ClanChat directory. Exiting.");
-                System.exit(0);
-            }
-            for (File file : (new File(FILE_DIRECTORY)).listFiles()) {
-                if (!file.exists())
-                    continue;
+            // Create the file directory and files if they do not exist
+            Misc.createFilesIfNotExist (FILE_DIRECTORY, true);
 
-                if (file.getName().equalsIgnoreCase("Ethereal.json")) {
-                    file.setReadable(true);
-                    file.setReadOnly();
-                    // System.out.println("Set \"Ethereal.json\" to Read Only. (Anti-corruption)");
+            // Check if the directory is empty
+            File[] files = new File (FILE_DIRECTORY).listFiles ();
+            if (files == null) {
+                System.exit (0);
+            }
+
+            // Loop through each file in the directory
+            for (File file : files) {
+                if (!file.exists ()) {
+                    continue;
                 }
 
-                // Now read the properties from the json parser.
-                try (FileReader fileReader = new FileReader(file)) {
-                    // // System.out.println("1");
-                    JsonParser fileParser = new JsonParser();
-                    // // System.out.println("2");
-                    JsonObject reader = (JsonObject) fileParser.parse(fileReader);
-                    // // System.out.println("3");
-                    if (reader.has("name") && reader.has("owner") && reader.has("index")) {
-                        // // System.out.println("checked ifs");
-                        ClanChat clan = new ClanChat(reader.get("owner").getAsString(),
-                                reader.get("name").getAsString(), reader.get("index").getAsInt());
-                        // // System.out.println("pulled owner, name, and index");
-                        clan.setRankRequirements(ClanChat.RANK_REQUIRED_TO_ENTER,
-                                ClanChatRank.forId(reader.get("rank-required-to-enter").getAsInt()));
-                        // // System.out.println("pulled rank required to enter");
-                        clan.setRankRequirements(ClanChat.RANK_REQUIRED_TO_KICK,
-                                ClanChatRank.forId(reader.get("rank-required-to-kick").getAsInt()));
-                        // // System.out.println("pulled rank required to kick");
-                        clan.setRankRequirements(ClanChat.RANK_REQUIRED_TO_TALK,
-                                ClanChatRank.forId(reader.get("rank-required-to-talk").getAsInt()));
-                        // // System.out.println("pulled rank required to talk");
-                        clan.setRankRequirements(ClanChat.RANK_REQUIRED_TO_VISIT_GUILD,
-                                ClanChatRank.forId(reader.get("rank-required-to-visit-guild").getAsInt()));
-                        // // System.out.println("pulled rank required to visit guild");
-                        clan.setGuild(reader.get("owns-guild").getAsBoolean());
-                        // // System.out.println("Loading clan chats....");
-                        clans[reader.get("index").getAsInt()] = clan;
+                // Set the "Ethereal.json" file to read-only to prevent corruption
+                if (file.getName ().equalsIgnoreCase ("Ethereal.json")) {
+                    file.setReadable (true);
+                    file.setReadOnly ();
+                }
+
+                // Read the properties from the JSON parser
+                try (FileReader fileReader = new FileReader (file)) {
+                    JsonParser fileParser = new JsonParser ();
+                    JsonObject reader = fileParser.parse (fileReader).getAsJsonObject ();
+
+                    // Check if the file has the required properties
+                    if (reader.has ("name") && reader.has ("owner") && reader.has ("index")) {
+                        // Create a new ClanChat object with the name, owner, and index
+                        ClanChat clan = new ClanChat (reader.get ("owner").getAsString (),
+                                reader.get ("name").getAsString (), reader.get ("index").getAsInt ());
+
+                        // Set the rank requirements for the ClanChat
+                        clan.setRankRequirements (ClanChat.RANK_REQUIRED_TO_ENTER,
+                                ClanChatRank.forId (reader.get ("rank-required-to-enter").getAsInt ()));
+                        clan.setRankRequirements (ClanChat.RANK_REQUIRED_TO_KICK,
+                                ClanChatRank.forId (reader.get ("rank-required-to-kick").getAsInt ()));
+                        clan.setRankRequirements (ClanChat.RANK_REQUIRED_TO_TALK,
+                                ClanChatRank.forId (reader.get ("rank-required-to-talk").getAsInt ()));
+                        clan.setRankRequirements (ClanChat.RANK_REQUIRED_TO_VISIT_GUILD,
+                                ClanChatRank.forId (reader.get ("rank-required-to-visit-guild").getAsInt ()));
+
+                        // Set the "owns-guild" property for the ClanChat
+                        clan.setGuild (reader.get ("owns-guild").getAsBoolean ());
+
+                        // Add the ClanChat to the clans array
+                        clans[reader.get ("index").getAsInt ()] = clan;
                     }
                 }
-                // int totalRanks = input.readShort();
-                // for (int i = 0; i < totalRanks; i++) {
-                // clan.getRankedNames().put(input.readUTF(), ClanChatRank.forId(input.read()));
-                // }
-                // int totalBans = input.readShort();
-                // for (int i = 0; i < totalBans; i++) {
-                // clan.addBannedName(input.readUTF());
-                // }
-
             }
         } catch (IOException exception) {
-            exception.printStackTrace();
-            // ystem.out.println("Is this running?");
+            exception.printStackTrace ();
         }
     }
 

@@ -2716,7 +2716,7 @@ public final class ItemDefinition {
 				itemDef.actions[1] = "Wear";
 				break;
 
-			case 23271:// super sayian
+			case 23271:
 				itemDef.copyItem(12608);
 				itemDef.modelID = 19706;
 				itemDef.modelZoom = 1700;
@@ -2729,7 +2729,7 @@ public final class ItemDefinition {
 
 				break;
 				
-			case 23272:// super sayian
+			case 23272:
 				itemDef.copyItem(12855);
 				itemDef.name = "Imbued Symbol";
 				itemDef.modelZoom = 950;
@@ -2737,7 +2737,7 @@ public final class ItemDefinition {
 				itemDef.modelID = 19485;
 				break;
 
-			case 23300:// super sayian
+			case 23300:
 				itemDef.copyItem(12855);
 				itemDef.name = "<col=89584A>Fantasy Symbol";
 				itemDef.modelZoom = 500;

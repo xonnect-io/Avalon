@@ -83,6 +83,11 @@ public class Misc {
 
     private static final SecureRandom RAND = new SecureRandom();
 
+    public static long getHoursPlayedLong(long totalPlayTime) {
+        final long sec = (int) (totalPlayTime / 1000), h = sec / 3600;
+        return h;
+    }
+
     public static String toFormattedHMS(long time) {
         return String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(time),
                 TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time)),

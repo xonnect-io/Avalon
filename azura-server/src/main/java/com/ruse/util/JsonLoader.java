@@ -40,16 +40,19 @@ public abstract class JsonLoader {
 			JsonArray array = (JsonArray) parser.parse(fileReader);
 			Gson builder = new GsonBuilder().create();
 
-			for (int i = 0; i < array.size(); i++) {
-				JsonObject reader = (JsonObject) array.get(i);
-				load(reader, builder);
+			// Use a for-each loop to iterate through the array
+			for (JsonElement element : array) {
+				// Check if the element is a JSON object
+				if (element.isJsonObject()) {
+					// If it is, get the object and call the load() method
+					JsonObject reader = element.getAsJsonObject();
+					load(reader, builder);
+				}
 			}
-
-			fileReader.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return this;
 	}
 }

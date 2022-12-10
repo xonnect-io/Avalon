@@ -1333,12 +1333,12 @@ public class ItemDef5 {
 				itemDef.stackable = false;
 				break;
 			case 23403:
-				itemDef.copyItem(23477);
-				itemDef.certID = 23477;
-				itemDef.certTemplateID = 3062;
-				itemDef.name = "Lucifer Costume";
-				itemDef.actions = new String[]{null, "Wear", "<col=C3C0B2>Dissolve", null, null};
-				itemDef.stackable = false;
+				itemDef.copyItem(12855);
+				itemDef.name = "Suffering charm";
+				itemDef.modelZoom = 950;
+				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
+				itemDef.modelID = 19517;
+				itemDef.rdc2 = 96252;
 				break;
 			case 23477:
 				itemDef.copyItem(23810);
@@ -1655,13 +1655,18 @@ public class ItemDef5 {
 				itemDef.femaleEquip1 = 20354;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
-				break;
-			case 23550:
-				itemDef.copyItem(23800);
-				itemDef.certID = 23800;
-				itemDef.certTemplateID = 3062;
-				itemDef.name = "Necrotic Costume";
-				itemDef.actions = new String[]{null, "Wear", null, null, null};
+
+				case 23550:
+				itemDef.name = "Necromancer Charm";
+				itemDef.modelZoom = 3750;
+				itemDef.rotationX = 687;
+				itemDef.rotationY = 548;
+				itemDef.rotationZ = 0;
+				itemDef.modelOffsetX = 0;
+				itemDef.modelOffsetY = -8;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.modelID = 19732;
+				//itemDef.rdc2 = 99252;
 				break;
 			case 23799:
 				itemDef.copyItem(14050);

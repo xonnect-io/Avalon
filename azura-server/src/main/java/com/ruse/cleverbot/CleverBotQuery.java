@@ -17,14 +17,13 @@
 
 package com.ruse.cleverbot;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.net.URLConnection;
-
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 /**
  * A CleverBot Query
@@ -155,25 +154,19 @@ public class CleverBotQuery {
 	 * @throws IOException exception upon query failure
 	 */
 	public void sendRequest() throws IOException {
-		/* Create & Format URL */
-		URL url = new URL(CleverBotQuery.formatRequest(CleverBotQuery.URL_STRING, this.getAPIKey(), this.getPhrase(),
-				this.getConversationID()));
+		// Create and format the URL
+		URL url = new URL(CleverBotQuery.formatRequest(CleverBotQuery.URL_STRING, this.getAPIKey(), this.getPhrase(), this.getConversationID()));
 
-		/* Open Connection */
-		URLConnection urlConnection = url.openConnection();
+		// Open the connection and read the input
+		try (BufferedReader in = new BufferedReader(new InputStreamReader(url.openConnection().getInputStream()))) {
+			// Parse the input into a JSON object
+			JsonObject jsonObject = new JsonParser().parse(in.readLine()).getAsJsonObject();
 
-		/* Read input */
-		BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-		String inputLine = in.readLine();
-
-		/* Create JSON Object */
-		JsonObject jsonObject = new JsonParser().parse(inputLine).getAsJsonObject(); // convert to JSON
-
-		/* Get params */
-		this.setConversationID(jsonObject.get("cs").getAsString()); // update conversation ID
-		this.setResponse(jsonObject.get("output").getAsString()); // get output
-		this.setRandomNumber(Integer.parseInt(jsonObject.get("random_number").getAsString())); // get output
-		in.close(); // close!
+			// Update the conversation ID and get the response and random number
+			this.setConversationID(jsonObject.get("cs").getAsString());
+			this.setResponse(jsonObject.get("output").getAsString());
+			this.setRandomNumber(Integer.parseInt(jsonObject.get("random_number").getAsString()));
+		}
 	}
 
 	/**
@@ -203,10 +196,15 @@ public class CleverBotQuery {
 	 * @return String object containing properly formatted URL
 	 */
 	private static String formatRequest(String url, String key, String phrase, String conversationID) {
+		// Replace spaces with plus signs and format the phrase
 		String formattedPhrase = phrase.replace(' ', '+');
-		if (conversationID.equals("")) {
+
+		// If the conversation ID is empty, return the URL with just the key and phrase
+		if (conversationID.isEmpty()) {
 			return url + key + "&input=" + formattedPhrase + "&wrapper=Headline22JavaAPI";
-		} else {
+		}
+		// Otherwise, return the URL with the key, phrase, and conversation ID
+		else {
 			return url + key + "&input=" + formattedPhrase + "&wrapper=Headline22JavaAPI" + "&cs=" + conversationID;
 		}
 	}

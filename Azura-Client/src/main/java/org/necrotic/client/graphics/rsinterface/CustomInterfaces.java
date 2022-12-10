@@ -127,6 +127,101 @@ public class CustomInterfaces extends RSInterface {
 
 	}
 
+
+
+	public static void titlesInterface() {
+	int interID = 112000;
+	RSInterface tab = addInterface(interID);
+	int id = interID + 1;
+	int c = 0;
+	int x = 80;
+	int y = 45;
+        tab.totalChildren(21);
+
+	addSpriteLoader(id, 1884);
+        tab.child(c++, id++, 0 + x, 0 + y);
+
+	addHoverButtonWSpriteLoader(id, 1016, 16, 16, "Close Window", 0, id + 1, 3);
+        tab.child(c++, id++, 332 + x, 3 + y);
+	addHoveredImageWSpriteLoader(id, 1017, 16, 16, id + 1);
+        tab.child(c++, id++, 332 + x, 3 + y);
+	id++;
+
+	String[] tabs = new String[]{"Loyalty", "Bosses", "Misc"};
+
+        for (int i = 0; i < tabs.length; i++) {
+		addConfigButtonWSpriteLoader(id, interID, 1885, 1886, 79, 20, tabs[i], i, 5, 4511);
+		tab.child(c++, id++, 9 + x, 26 + y);
+		addText(id, tabs[i], 0xFFA500, false, true, 100, tda, 1);
+		tab.child(c++, id++, 14 + x, 29 + y);
+		x += 79;
+	}
+	x = 80;
+
+	addText(id, "Titles Manager", tda, 2, 16750643, true, true);
+        tab.child(c++, id++, 180 + x, 4 + y);
+
+	teleportText(id, "Reset title", "Select", fonts, 0, 0xFFFF00, false, true, 80, 18);
+        tab.child(c++, id++, 270 + x, 29 + y);
+
+
+	addText(id, "Total: (0/0)", tda, 0, 0xFF981F, false, true);
+        tab.child(c++, id++, 10 + x, 6 + y);
+
+	addText(id, "Titles", tda, 2, 0xFF981F, true, true);
+        tab.child(c++, id++, 95 + x, 60 + y);
+
+	addText(id, "Requirements", tda, 2, 0xFF981F, true, true);
+        tab.child(c++, id++, 266 + x, 64 + y);
+
+	addText(id, "Preview", tda, 2, 0xFF981F, true, true);
+        tab.child(c++, id++, 266 + x, 138 + y);
+
+	hoverButton(id, 1889, 1890, "Select");
+        tab.child(c++, id++, 207 + x, 199 + y);
+
+	addText(id, "Something", tda, 2, 0xFF981F, true, true);
+        tab.child(c++, id++, 266 + x, 206 + y);
+
+	addText(id, "- 100k Blood odin KC", tda, 0, 0xFF981F, false, true);
+        tab.child(c++, id++, 189 + x, 88 + y);
+
+	addText(id, "- Blood Odin Collection Log", tda, 0, 0xFF981F, false, true);
+        tab.child(c++, id++, 189 + x, 106 + y);
+
+	addText(id, "Test the Billionaire", tda, 1, 0xFFffff, true, true);
+        tab.child(c++, id++, 266 + x, 164 + y);
+
+        tab.child(c++, 112100, 12 + x, 78 + y);
+
+	interID = 112100;
+	RSInterface scroll = addInterface(interID);
+	scroll.width = 166 - 16;
+	scroll.height = 154;
+	scroll.scrollMax = 500;
+        scroll.totalChildren(250);
+	id = interID + 1;
+	c = 0;
+	x = 0;
+	y = 0;
+
+
+        for (int i = 0; i < 50; i++) {
+		addSpriteLoader(id, 1887);
+		scroll.child(c++, id++, 0 + x, 0 + y);
+		y += 36;
+	}
+	y = 0;
+
+        for (int i = 0; i < 100; i++) {
+		addSpriteLoader(id, 1888);
+		scroll.child(c++, id++, 1 + x, 2 + y);
+		teleportText(id, "Test title", "Select", fonts, 1, 0xFF9900, false, true, 169, 17);
+		scroll.child(c++, id++, 2 + x, 2 + y);
+		y += 18;
+	}
+}
+
 	public static void costumeSelect() {
 		int interID = 133700;
 		RSInterface tab = addInterface(interID);
@@ -7984,6 +8079,7 @@ newInterface.child(6, 11009, 75+63, 16+6-8);
 
 	public void loadCustoms() {
 		seasonalPass(tda);
+		titlesInterface();
 		raids();
 		panelInterface();
 		TeleportInterfaceNewest(tda);

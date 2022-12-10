@@ -39,68 +39,59 @@ public class AOEHandler {
 		}
 
 		// We passed the checks, so now we do multiple target stuff.
-		Iterator<? extends Character> it = null;
+		Iterator<? extends Character> it;
 		if (attacker.isPlayer() && victim.isPlayer()) {
 			it = ((Player) attacker).getLocalPlayers().iterator();
 		} else if (attacker.isPlayer() && victim.isNpc()) {
 			it = ((Player) attacker).getLocalNpcs().iterator();
 
 			for (Iterator<? extends Character> $it = it; $it.hasNext();) {
-				Character next = $it.next();
+				Character next = $it.next ();
 
-				if (next == null) {
+				if (next == null || next.equals (attacker) || next.equals (victim) || next.getConstitution () <= 0) {
 					continue;
 				}
 
-				if (next.isNpc()) {
+				if (next.isNpc ()) {
 					NPC n = (NPC) next;
-					if (!n.getDefinition().isAttackable() || n.isSummoningNpc()
-							|| n.getId() == 9897|| n.getId() == 9899) {
+					if (!n.getDefinition ().isAttackable () || n.isSummoningNpc () || n.getId () == 9897 || n.getId () == 9899) {
 						continue;
 					}
 				} else {
 					Player p = (Player) next;
-					if (p.getLocation() != Locations.Location.WILDERNESS || !Locations.Location.inMulti(p)) {
+					if (p.getLocation () != Locations.Location.WILDERNESS || !Locations.Location.inMulti (p)) {
 						continue;
 					}
 				}
 
-				if (next.getPosition().isWithinDistance(victim.getPosition(), radius) && !next.equals(attacker)
-						&& !next.equals(victim) && next.getConstitution() > 0) {
-					if (next.isNpc() && next.getConstitution() <= 0 && ((NPC)next).isDying()){
-						continue;
-					}
-					if(!RegionClipping.canProjectileAttack(attacker, next)) {
-						continue;
-					}
-					//if (next.getConstitution() <= 0 && !((NPC)next).isDying()){
-					//	next.setConstitution(((NPC)next).getDefinition().getHitpoints());
-					//}
-					int maxhit = maximumDamage;
-					switch (((Player) attacker).getLastCombatType()) {
-						case MELEE:
-							maxhit = Maxhits.melee(attacker, victim) / RandomUtility.inclusiveRandom(1,5);
-							break;
-						case RANGED:
-							maxhit = Maxhits.ranged(attacker, victim) / RandomUtility.inclusiveRandom(1,5);
-							break;
-						case MAGIC:
-							maxhit = Maxhits.magic(attacker, victim) / RandomUtility.inclusiveRandom(1,5);
-							break;
-					}
-					Player player = (Player) attacker;
-					if (player.getEquipment().contains(22006) && player.getLastCombatType() == RANGED){
-						NPC npc = (NPC) victim;
-						if (!npcsDeathDartDontWork(npc)) {
-							maxhit = victim.getConstitution();
-						} else {
-							player.sendMessage("The Death-touch dart didn't work on this.");
-						}
-					}
-					next.dealDamage(new Hit(maxhit, Hitmask.RED, combatIcon));
-					next.getCombatBuilder().addDamage(attacker, maxhit);
-					next.getCombatBuilder().attack(attacker);
+				if (!next.getPosition ().isWithinDistance (victim.getPosition (), radius) || !RegionClipping.canProjectileAttack (attacker, next)) {
+					continue;
 				}
+
+				int maxhit = maximumDamage;
+				switch (((Player) attacker).getLastCombatType ()) {
+					case MELEE:
+						maxhit = Maxhits.melee (attacker, victim) / RandomUtility.inclusiveRandom (1, 5);
+						break;
+					case RANGED:
+						maxhit = Maxhits.ranged (attacker, victim) / RandomUtility.inclusiveRandom (1, 5);
+						break;
+					case MAGIC:
+						maxhit = Maxhits.magic (attacker, victim) / RandomUtility.inclusiveRandom (1, 5);
+						break;
+				}
+				Player player = (Player) attacker;
+				if (player.getEquipment ().contains (22006) && player.getLastCombatType () == RANGED) {
+					NPC npc = (NPC) victim;
+					if (!npcsDeathDartDontWork (npc)) {
+						maxhit = victim.getConstitution ();
+					} else {
+						player.sendMessage ("The Death-touch dart didn't work on this.");
+					}
+				}
+				next.dealDamage (new Hit (maxhit, Hitmask.RED, combatIcon));
+				next.getCombatBuilder ().addDamage (attacker, maxhit);
+				next.getCombatBuilder ().attack (attacker);
 			}
 		}
 

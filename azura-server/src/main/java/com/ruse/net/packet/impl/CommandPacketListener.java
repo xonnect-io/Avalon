@@ -1963,12 +1963,14 @@ public class CommandPacketListener implements PacketListener {
         }
     }
 
-    private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
+    private static void ownerCommands(final Player player, String[] command, String wholeCommand) throws IOException {
         if (command[0].equalsIgnoreCase("spawnslayerboss")) {
             SlayerBossSystem.commandSpawnBoss();
         }        if (command[0].equalsIgnoreCase("spawnnm")) {
             NPC npc = new NPC(9017, new Position(2980, 2776,0));
         }
+
+
         if (command[0].equalsIgnoreCase ("addmonthly")) {
             int amount = Integer.parseInt(command[1]);
             String plrName = wholeCommand.substring(command[0].length() + command[1].length()+ 2);

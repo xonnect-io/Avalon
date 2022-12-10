@@ -101,21 +101,18 @@ public class SkillManager {
      * @param level The level to get minimum experience for.
      * @return The least amount of experience needed to achieve said level.
      */
+
+
     public static int getExperienceForLevel(int level) {
         if (level <= 120) {
-            return EXP_ARRAY[--level > 119 ? 119 : level];
+            return EXP_ARRAY[level - 1];
         } else {
             int points = 0;
-            int output = 0;
             for (int lvl = 1; lvl <= level; lvl++) {
                 points += Math.floor(lvl + 300.0 * Math.pow(2.0, lvl / 7.0));
-                if (lvl >= level) {
-                    return output;
-                }
-                output = (int) Math.floor(points / 4);
             }
+            return (int) Math.floor(points / 4);
         }
-        return 0;
     }
 
     /**
@@ -126,18 +123,17 @@ public class SkillManager {
      */
     public static int getLevelForExperience(int experience) {
         if (experience <= EXPERIENCE_FOR_120) {
-            for (int j = 119; j >= 0; j--) {
-                if (EXP_ARRAY[j] <= experience) {
-                    return j + 1;
+            for (int j = 0; j < 120; j++) {
+                if (EXP_ARRAY[j] > experience) {
+                    return j;
                 }
             }
         } else {
-            int points = 0, output = 0;
+            int points = 0;
             for (int lvl = 1; lvl <= 120; lvl++) {
                 points += Math.floor(lvl + 300.0 * Math.pow(2.0, lvl / 7.0));
-                output = (int) Math.floor(points / 4);
-                if (output >= experience) {
-                    return lvl;
+                if (Math.floor(points / 4) > experience) {
+                    return lvl - 1;
                 }
             }
         }
@@ -300,6 +296,39 @@ public class SkillManager {
         }
         if (skill.equals(Skill.SLAYER)) {
             experience = experience / 4; // reduced by 3 times.
+        }
+        if (!skill.equals(Skill.ATTACK) || !skill.equals(Skill.RANGED)|| !skill.equals(Skill.MAGIC)
+                || !skill.equals(Skill.CONSTITUTION)|| !skill.equals(Skill.SLAYER)||
+                !skill.equals(Skill.STRENGTH)|| !skill.equals(Skill.DEFENCE)) {
+            if (Misc.getRandom (500) == 1) {
+                player.getInventory ().add (19116, 1);
+                    player.sendMessage("<img=832>@blu@An Sapphire Mystery box has appeared in your inventory while skilling!");
+            }
+            if (Misc.getRandom (1000) == 1) {
+                player.getInventory ().add (19115, 1);
+                player.sendMessage("<img=832>An Emerald Mystery box has appeared in your inventory while skilling!");
+            }
+
+            if (Misc.getRandom (1500) == 1) {
+                player.getInventory ().add (19114, 1);
+                player.sendMessage("<img=832>An Ruby Mystery box has appeared in your inventory while skilling!");
+            }
+            if (Misc.getRandom (2500) == 1) {
+                player.getInventory ().add (20488, 1);
+                player.sendMessage("<img=832>An OP Mystery box has appeared in your inventory while skilling!");
+            }
+            if (Misc.getRandom (3000) == 1) {
+                player.getInventory ().add (20489, 1);
+                player.sendMessage("<img=832>An Launch casket has appeared in your inventory while skilling!");
+            }
+            if (Misc.getRandom (5000) == 1) {
+                player.getInventory ().add (15003, 1);
+                player.sendMessage("<img=832>An Azure casket has appeared in your inventory while skilling!");
+            }
+            if (Misc.getRandom (7500) == 1) {
+                player.getInventory ().add (15002, 1);
+                player.sendMessage("<img=832>An Elite casket has appeared in your inventory while skilling!");
+            }
         }
 
         if (player.getGameMode() == GameMode.VETERAN_MODE) {
@@ -507,7 +536,16 @@ public class SkillManager {
         this.totalGainedExp += experience;
         return this;
     }
-
+    public static boolean maxed(Player p) {
+        for (int i = 0; i < Skill.values().length; i++) {
+            if (i == 21 || i == 24)
+                continue;
+            if (p.getSkillManager().getMaxLevel(i) < (i == 3 || i == 5 ? 990 : 99)) {
+                return false;
+            }
+        }
+        return true;
+    }
     public boolean skillCape(Skill skill) {
         int c = skill.getSkillCapeId();
         int ct = skill.getSkillCapeTrimmedId();

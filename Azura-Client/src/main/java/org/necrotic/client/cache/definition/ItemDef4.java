@@ -5241,7 +5241,7 @@ public class ItemDef4 {
 				itemDef.femaleEquip1 = 65188;
 				// itemDef.rdc2 = 82222;
 				break;
-			case 12608:// super sayian
+			case 12608:
 				itemDef.name = "SS Aura";
 				itemDef.modelID = 65074;
 				itemDef.maleEquip1 = 65074;
@@ -5254,26 +5254,26 @@ public class ItemDef4 {
 				itemDef.newColors = new int[]{51};
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
-			case 12630:// super sayian
+			case 12630:
 				itemDef.copyItem(12608);
 				itemDef.name = "Donators Aura";
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
-			case 12610:// super sayian
+			case 12610:
 				itemDef.name = "SS-BLACK";
 				itemDef.modelID = 65075;
 				itemDef.maleEquip1 = 65075;
 				itemDef.femaleEquip1 = 65075;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
-			case 12612:// super sayian
+			case 12612:
 				itemDef.name = "SS-4";
 				itemDef.modelID = 65076;
 				itemDef.maleEquip1 = 65076;
 				itemDef.femaleEquip1 = 65076;
 				itemDef.actions = new String[]{null, "Wear", null, "<col=C3C0B2>Dissolve", "Drop"};
 				break;
-			case 12614:// super sayian
+			case 12614:
 				itemDef.name = "SS-GOD";
 				itemDef.modelID = 65077;
 				itemDef.maleEquip1 = 65077;
