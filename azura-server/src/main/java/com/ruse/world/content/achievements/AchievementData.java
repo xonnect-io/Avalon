@@ -364,6 +364,11 @@ public enum AchievementData {
     NECROTIC(83, AchievementType.EXPERT, 1000, "Defeat Necromancer", "Defeat the Necromancer",
                     new Item[] {new Item(10942, 1),new Item(23240, 2)},
                     new LoyaltyPointReward(40000),new SlayerPointReward(500)
+
+            ),
+            ELDER_GODS(84, AchievementType.EXPERT, 1000, "Elder Gods Warrior", "Defeat the Elder Gods 1000 times",
+                    new Item[] {new Item(10942, 1),new Item(13594, 1)},
+                    new LoyaltyPointReward(75000),new SlayerPointReward(1000)
     ),
 
 	

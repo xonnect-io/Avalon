@@ -4669,7 +4669,23 @@ public class ItemDef2 {
 				itemDef.rotationX = 100;
 				break;
 
-				
+			case 13594:
+				itemDef.name = "@red@Blood Weapon box";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemdefyogipic = ItemDefinition.get(290);
+				itemDef.modelOffsetX = itemdefyogipic.modelOffsetX;
+				//itemDef.modelOffsetX = itemDef21.modelOffsetX;
+				itemDef.modelOffsetY = itemdefyogipic.modelOffsetY;
+				itemDef.modelZoom = itemdefyogipic.modelZoom;
+				// itemDef.modelID = itemDef2.modelID;
+				itemDef.rotationY = itemdefyogipic.rotationY;
+				itemDef.rotationX = itemdefyogipic.rotationX;
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{52};
+				itemDef.modelID = 65284;
+				break;
+
 			case 19624:
 				itemDef.name = "<col=c497fc>Boss Event Box";
 				itemDef.actions = new String[5];

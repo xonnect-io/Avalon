@@ -1338,7 +1338,7 @@ public class ItemDef5 {
 				itemDef.modelZoom = 950;
 				itemDef.actions = new String[]{null, "Wear", "Disassemble", null, "Drop"};
 				itemDef.modelID = 19517;
-				itemDef.rdc2 = 96252;
+				itemDef.colorChange = new double[]{1.0, 0.1, 0.1};
 				break;
 			case 23477:
 				itemDef.copyItem(23810);

@@ -1064,21 +1064,34 @@ public class TheOmegaDialogues {
 
                     @Override
                     public String[] dialogue() {
-                        String line1 = "Excellent work " + player.getUsername() + ", take this as a reward.";
-                        if (player.getQuestOneStep7() == false) {
-                            if (player.getInventory().getFreeSlots() < 3) {
-                                line1 = "You need at least 3 inventory spaces to claim your reward.";
-                                return new String[]{"" + line1};
+                        String line1 = "";
+                        if (player != null) {
+                            try {
+                                if (player.getQuestOneStep7() == false) {
+                                    if (player.getInventory().getFreeSlots() >= 3) {
+                                        player.getInventory().add(21218, 10);
+                                        player.getInventory().add(19115, 10);
+                                        player.getInventory().add(23390, 1);
+                                        player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your inventory.");
+                                        player.getPointsHandler().setQuestPoints(3, true);
+                                        player.setQuestTwoStep7(true);
+                                        player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@The Omega");
+                                        player.getPacketSender().sendMessage("<img=832> You have been rewarded 3 Quest points");
+                                        line1 = "Excellent work " + player.getUsername() + ", take this as a reward.";
+                                    } else {
+                                        line1 = "You need at least 3 inventory spaces to claim your reward.";
+                                    }
+                                } else {
+                                    line1 = "You have already completed this quest.";
+                                }
+                            } catch (NoSuchMethodError e) {
+                                // Handle the error gracefully by logging it, or by providing a default response
+                                line1 = "An error occurred while trying to complete the quest.";
                             }
-                                player.getInventory().add(21218, 10);
-                                player.getInventory().add(19115, 10);
-                                player.getInventory().add(23390, 1);
-                                player.getPacketSender().sendMessage("<img=832> Your rewards were placed in your inventory.");
-                            player.getPointsHandler().setQuestPoints(3, true);
-                            player.setQuestTwoStep7(true);
-                            player.getPacketSender().sendMessage("<img=832> @blu@Quest Completed: @red@The Omega");
-                            player.getPacketSender().sendMessage("<img=832> You have been rewarded 3 Quest points");
+                        } else {
+                            line1 = "You must be logged in to complete this quest.";
                         }
+
                         return new String[]{"" + line1};
                     }
 

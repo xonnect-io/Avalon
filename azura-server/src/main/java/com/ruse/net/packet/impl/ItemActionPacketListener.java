@@ -2527,43 +2527,43 @@ public class ItemActionPacketListener implements PacketListener {
 
             case 23246:
             DialogueManager.start(player, new DisassembleValue(player,
-                    "Disassemble for x1 Legends Light Blade", "Cancel", 4200));
+                    "Disassemble for x1 Light Scythe of Vitur and x1 Empty crest", "Cancel", 4200));
             break;
             case 23247:
                 DialogueManager.start(player, new DisassembleValue(player,
-                        "Disassemble for x1 Legends Light Staff", "Cancel", 4201));
+                        "Disassemble for x1 Light Sanguessti Staff and x1 Empty crest", "Cancel", 4201));
                 break;
 
             case 23248:
                 DialogueManager.start(player, new DisassembleValue(player,
-                        "Disassemble for x1 Legends Light Bow", "Cancel", 4202));
+                        "Disassemble for x1 Light Twisted Bow and x1 Empty crest", "Cancel", 4202));
                 break;
 
             case 23243:
                 DialogueManager.start(player, new DisassembleValue(player,
-                        "Disassemble for x1 Legends Dark Blade", "Cancel", 4203));
+                        "Disassemble for x1 Dark Scythe of Vitur and x1 Empty crest", "Cancel", 4203));
                 break;
             case 23244:
                 DialogueManager.start(player, new DisassembleValue(player,
-                        "Disassemble for x1 Legends Dark Staff", "Cancel", 4204));
+                        "Disassemble for x1 Dark Sanguessti Staff and x1 Empty crest", "Cancel", 4204));
                 break;
 
             case 23245:
                 DialogueManager.start(player, new DisassembleValue(player,
-                        "Disassemble for x1 Legends Dark Bow", "Cancel", 4205));
+                        "Disassemble for x1 Dark Twisted Bow and x1 Empty crest", "Cancel", 4205));
                 break;
             case 23249:
                 DialogueManager.start(player, new DisassembleValue(player,
-                        "Disassemble for x1 Blood Blade", "Cancel", 4206));
+                        "Disassemble for x1 Blood Scythe of Vitur and x1 Empty crest", "Cancel", 4206));
                 break;
             case 23250:
                 DialogueManager.start(player, new DisassembleValue(player,
-                        "Disassemble for x1 Blood Staff", "Cancel", 4207));
+                        "Disassemble for x1 Blood Sanguessti Staff and x1 Empty crest", "Cancel", 4207));
                 break;
 
             case 23251:
                 DialogueManager.start(player, new DisassembleValue(player,
-                        "Disassemble for x1  Blood Gun", "Cancel", 4208));
+                        "Disassemble for x1  Blood Twisted Bow and x1 Empty crest", "Cancel", 4208));
                 break;
             case 22219:
                 int amount5 = player.getInventory().getAmount(itemId);
