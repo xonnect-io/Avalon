@@ -30,7 +30,6 @@ import com.ruse.world.content.combat.prayer.PrayerHandler;
 import com.ruse.world.content.combat.pvp.BountyHunter;
 import com.ruse.world.content.combat.range.DwarfMultiCannon;
 import com.ruse.world.content.combat.weapon.CombatSpecial;
-import com.ruse.world.content.cosmetic.WardrobeData;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.discordbot.DiscordIntegration;
 import com.ruse.world.content.minigames.impl.Barrows;
@@ -452,7 +451,7 @@ public class PlayerHandler {
                     + "] @blu@Daily Benefits: Double Experience");
         }
 
-        player.sendMessage("<img=5> @blu@New Update: @red@Season 3, Christmas Event and more @mag@::Update");
+        player.sendMessage("<img=5> @blu@New Update: @red@Elder Gods Raids, Global Boss events, and rewards from skilling!");
         player.getVotingStreak().login();
         DiscordIntegration.setIntegration(player);
 

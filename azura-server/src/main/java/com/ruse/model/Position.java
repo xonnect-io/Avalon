@@ -1,7 +1,6 @@
 package com.ruse.model;
 
 import com.ruse.util.Misc;
-import com.ruse.model.Position;
 
 /**
  * Represents a single world tile position.
@@ -424,4 +423,9 @@ public class Position {
     }
 
 
+    public int distance(Position other) {
+        int xDiff = other.getX() - this.getX();
+        int yDiff = other.getY() - this.getY();
+        return (int) Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+    }
 }

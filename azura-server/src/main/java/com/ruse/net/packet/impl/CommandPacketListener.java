@@ -927,11 +927,10 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendEnterInputPrompt("Enter the pin that you want to set$pin");
             }
         }
-    /*   if (command[0].equalsIgnoreCase("dropparty") || command[0].equalsIgnoreCase("party")
-                || command[0].equalsIgnoreCase("event")) {
+       if (command[0].equalsIgnoreCase("dropparty") || command[0].equalsIgnoreCase("party")) {
             TeleportHandler.teleportPlayer(player, new Position(1696, 4265, 0), player.getSpellbook().getTeleportType());
             player.sendMessage("Trolling an event can result in you not being able to participate in events.");
-        }*/
+        }
 
         if (command[0].equalsIgnoreCase("afkcount")) {
             player.sendMessage("@blu@Current AFK Thieving count: @red@" + AfkSystem.thievedCount);
@@ -1001,6 +1000,7 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("players")) {
             int players = World.getPlayers().size() + GameSettings.players;
+            PlayersOnlineInterface.showInterface(player);
             player.getPacketSender().sendMessage(
                     "<shad=1>@or1@There are currently @whi@[ @gre@" + (players) + "@whi@ ] @or1@players online!");
         }

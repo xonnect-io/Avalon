@@ -951,13 +951,13 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		switch (interfaceId) {
 
 			case 31510:
-				player.getEventBossManager().removeNpcDropReward(id, player.getInventory().getAmount(id));
+				player.getEventBossManager ().removeNpcDropReward (id, player.getInventory ().getAmount (id));
 				break;
 			case 2900:
-				player.getPacketSender().sendEnterAmountPrompt("How many would you like to add to the NPC Drops?");
-				player.setInputHandling(new EnterAmount() {
+				player.getPacketSender ().sendEnterAmountPrompt ("How many would you like to add to the NPC Drops?");
+				player.setInputHandling (new EnterAmount () {
 					public void handleAmount(Player player, int amount) {
-						player.getEventBossManager().addNpcDropReward(id, amount, slot);
+						player.getEventBossManager ().addNpcDropReward (id, amount, slot);
 					}
 				});
 				break;
@@ -967,9 +967,9 @@ public class ItemContainerActionPacketListener implements PacketListener {
 			case 1122: // row 4
 			case 1123: // row 5
 				// System.out.println(player.getInterfaceId() + " is interfaceid");
-				if (player.getInterfaceId() == 994) {
-					player.setInputHandling(new EnterAmountToMakeSmithing(id, slot));
-					player.getPacketSender().sendEnterAmountPrompt("How many would you like to smith?");
+				if (player.getInterfaceId () == 994) {
+					player.setInputHandling (new EnterAmountToMakeSmithing (id, slot));
+					player.getPacketSender ().sendEnterAmountPrompt ("How many would you like to smith?");
 				}
 
 				/*
@@ -983,45 +983,46 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				 */
 				break;
 			case Trading.INTERFACE_ID:
-				if (player.getTrading().inTrade()) {
-					player.setInputHandling(new EnterAmountToTrade(id, slot));
-					player.getPacketSender().sendEnterAmountPrompt("How many would you like to trade?");
-				} else if (Dueling.checkDuel(player, 1) || Dueling.checkDuel(player, 2)) {
-					player.setInputHandling(new EnterAmountToStake(id, slot));
-					player.getPacketSender().sendEnterAmountPrompt("How many would you like to stake?");
-				} else if (player.getGambling().inGamble()) {
-					player.setInputHandling(new EnterAmountToGamble(id, slot));
-					player.getPacketSender().sendEnterAmountPrompt("How many would you like to gamble?");
+				if (player.getTrading ().inTrade ()) {
+					player.setInputHandling (new EnterAmountToTrade (id, slot));
+					player.getPacketSender ().sendEnterAmountPrompt ("How many would you like to trade?");
+				} else if (Dueling.checkDuel (player, 1) || Dueling.checkDuel (player, 2)) {
+					player.setInputHandling (new EnterAmountToStake (id, slot));
+					player.getPacketSender ().sendEnterAmountPrompt ("How many would you like to stake?");
+				} else if (player.getGambling ().inGamble ()) {
+					player.setInputHandling (new EnterAmountToGamble (id, slot));
+					player.getPacketSender ().sendEnterAmountPrompt ("How many would you like to gamble?");
 				}
 				break;
 			case -8365:
-				if (player.getGambling().inGamble()) {
-					player.setInputHandling(new EnterAmountToRemoveGamble(id, slot));
-					player.getPacketSender().sendEnterAmountPrompt("How many would you like to remove?");
+				if (player.getGambling ().inGamble ()) {
+					player.setInputHandling (new EnterAmountToRemoveGamble (id, slot));
+					player.getPacketSender ().sendEnterAmountPrompt ("How many would you like to remove?");
 				}
 				break;
 			case Trading.INTERFACE_REMOVAL_ID:
-				if (player.getTrading().inTrade()) {
-					player.setInputHandling(new EnterAmountToRemoveFromTrade(id));
-					player.getPacketSender().sendEnterAmountPrompt("How many would you like to remove?");
+				if (player.getTrading ().inTrade ()) {
+					player.setInputHandling (new EnterAmountToRemoveFromTrade (id));
+					player.getPacketSender ().sendEnterAmountPrompt ("How many would you like to remove?");
 				}
 				break;
 			case Dueling.INTERFACE_REMOVAL_ID:
-				if (Dueling.checkDuel(player, 1) || Dueling.checkDuel(player, 2)) {
-					player.setInputHandling(new EnterAmountToRemoveFromStake(id));
-					player.getPacketSender().sendEnterAmountPrompt("How many would you like to remove?");
+				if (Dueling.checkDuel (player, 1) || Dueling.checkDuel (player, 2)) {
+					player.setInputHandling (new EnterAmountToRemoveFromStake (id));
+					player.getPacketSender ().sendEnterAmountPrompt ("How many would you like to remove?");
 				}
 				break;
 			case Bank.INVENTORY_INTERFACE_ID: // BANK X
 			case 12:
-				if (player.getGameMode() == GameMode.ULTIMATE_IRONMAN) {
+				if (player.getGameMode () == GameMode.ULTIMATE_IRONMAN) {
 					return;
 				}
-				/*
-				 * if(player.isBanking()) { player.setInputHandling(new EnterAmountToBank(id,
-				 * slot)); player.getPacketSender().
-				 * sendEnterAmountPrompt("How many would you like to bank?"); }
-				 */
+
+				if (player.isBanking ()) {
+					player.setInputHandling (new EnterAmountToBank (id, slot));
+					player.getPacketSender ().sendEnterAmountPrompt ("How many would you like to bank?");
+				return;
+		}
 				if (interfaceId == 12) {
 
 					if (player.getInterfaceId() == 146000){

@@ -296,7 +296,7 @@ public class ItemActionPacketListener implements PacketListener {
                 int[] uncommonsuper222 = new int[] {18753, 18749, 18631, 18752, 18748, 18637, 18751, 18638, 18623, 18750, 18636,
                         18629, 4446, 19886, 10942};
                 int[] raresuper222 = new int[] {8253,8087,8088,8089,10947,12608,10934,3578};
-                player.getMysteryBoxOpener().display(15501, "Boss Event Box", commonsuper222, uncommonsuper222, raresuper222);
+                player.getMysteryBoxOpener().display(19624, "Boss Event Box", commonsuper222, uncommonsuper222, raresuper222);
                 break;
             case 23654:
                 if (player.isEvilSantaTransform()) {
@@ -1759,12 +1759,36 @@ public class ItemActionPacketListener implements PacketListener {
                 player.getInventory().add(rewards[rewardPos],
                         (int) ((rewardsAmount[rewardPos] * 0.5) + (Misc.getRandom(rewardsAmount[rewardPos]))));
                 break;
-            case 15387:
-                player.getInventory().delete(15387, 1);
-                rewards = new int[]{1377, 1149, 7158, 3000, 219, 5016, 6293, 6889, 2205, 3051, 269, 329, 3779, 6371, 2442,
-                        347, 247};
-                player.getInventory().add(rewards[Misc.getRandom(rewards.length - 1)], 1);
+
+            case 13594:
+                // Define the reward items and their corresponding amounts
+                int[] bloodItems = {23226, 23227, 8136};
+
+                // Choose a random reward item
+                int bloodPos = Misc.getRandom(bloodItems.length - 1);
+                int rewardItem = bloodItems[bloodPos];
+
+                // Remove the consumed item from the player's inventory
+                player.getInventory().delete(13594, 1);
+
+                // Add the reward item to the player's inventory
+                player.getInventory().add(rewardItem, 1);
                 break;
+
+            case 15387:
+                // Define the possible reward items
+                 int[] rewardsArray = {1377, 1149, 7158, 3000, 219, 5016, 6293, 6889, 2205, 3051, 269, 329, 3779, 6371, 2442, 347, 247};
+
+                // Choose a random reward item
+                int reward = rewardsArray[Misc.getRandom(rewardsArray.length - 1)];
+
+                // Remove the consumed item from the player's inventory
+                player.getInventory().delete(15387, 1);
+
+                // Add the reward item to the player's inventory
+                player.getInventory().add(reward, 1);
+                break;
+
             case 407:
                 player.getInventory().delete(407, 1);
                 if (Misc.getRandom(3) < 3) {

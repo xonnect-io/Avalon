@@ -465,7 +465,10 @@ public class NPCDrops {
 					if ( player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 4446
                                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18818
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
+                                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23258
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 22005
                                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23231
+                                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23359
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23230
                                     || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 23232
                                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23233
@@ -526,6 +529,9 @@ public class NPCDrops {
             if ( player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 4446
                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 18818
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 19886
+                    || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23258
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 22005
+                    || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23359
                     || player.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 23231
                     || player.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 23230
                     || player.getEquipment().getItems()[Equipment.HANDS_SLOT].getId() == 23232
