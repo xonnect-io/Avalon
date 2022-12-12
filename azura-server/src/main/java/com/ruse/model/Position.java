@@ -407,7 +407,9 @@ public class Position {
             return false;
         return Math.abs(position.getX() - this.getX()) <= distance && Math.abs(position.getY() - this.getY()) <= distance;
     }
-
+        public Position translate(Position position, int x, int y) {
+            return new Position(position.getX() + x, position.getY() + y);
+        }
 
     public boolean withinScene(Position sceneCenter) {
         if (!sceneCenter.withinInstance(this)) {
@@ -428,4 +430,5 @@ public class Position {
         int yDiff = other.getY() - this.getY();
         return (int) Math.sqrt(xDiff * xDiff + yDiff * yDiff);
     }
+
 }

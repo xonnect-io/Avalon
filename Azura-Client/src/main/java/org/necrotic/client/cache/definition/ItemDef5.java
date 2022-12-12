@@ -305,7 +305,7 @@ public class ItemDef5 {
 				itemDef.modelOffsetY = -10;
 				itemDef.rotationZ = 290;
 				itemDef.modelZoom = 1760;
-				itemDef.rdc2 = 1;
+				itemDef.rdc2 = 2;
 				break;
 
 

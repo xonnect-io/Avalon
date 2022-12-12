@@ -297,37 +297,31 @@ public class SkillManager {
         if (skill.equals(Skill.SLAYER)) {
             experience = experience / 4; // reduced by 3 times.
         }
-        if (!skill.equals(Skill.ATTACK) || !skill.equals(Skill.RANGED)|| !skill.equals(Skill.MAGIC)
-                || !skill.equals(Skill.CONSTITUTION)|| !skill.equals(Skill.SLAYER)||
-                !skill.equals(Skill.STRENGTH)|| !skill.equals(Skill.DEFENCE)) {
-            if (Misc.getRandom (500) == 1) {
-                player.getInventory ().add (19116, 1);
-                    player.sendMessage("<img=832>@blu@An Sapphire Mystery box has appeared in your inventory while skilling!");
-            }
-            if (Misc.getRandom (1000) == 1) {
-                player.getInventory ().add (19115, 1);
-                player.sendMessage("<img=832>An Emerald Mystery box has appeared in your inventory while skilling!");
-            }
 
-            if (Misc.getRandom (1500) == 1) {
-                player.getInventory ().add (19114, 1);
-                player.sendMessage("<img=832>An Ruby Mystery box has appeared in your inventory while skilling!");
-            }
-            if (Misc.getRandom (2500) == 1) {
-                player.getInventory ().add (20488, 1);
-                player.sendMessage("<img=832>An OP Mystery box has appeared in your inventory while skilling!");
-            }
-            if (Misc.getRandom (3000) == 1) {
-                player.getInventory ().add (20489, 1);
-                player.sendMessage("<img=832>An Launch casket has appeared in your inventory while skilling!");
-            }
-            if (Misc.getRandom (5000) == 1) {
-                player.getInventory ().add (15003, 1);
-                player.sendMessage("<img=832>An Azure casket has appeared in your inventory while skilling!");
-            }
+        if (!skill.equals(Skill.ATTACK) && !skill.equals(Skill.RANGED) && !skill.equals(Skill.MAGIC) &&
+                !skill.equals(Skill.CONSTITUTION) && !skill.equals(Skill.SLAYER) && !skill.equals(Skill.STRENGTH) &&
+                !skill.equals(Skill.DEFENCE)) {
             if (Misc.getRandom (7500) == 1) {
                 player.getInventory ().add (15002, 1);
-                player.sendMessage("<img=832>An Elite casket has appeared in your inventory while skilling!");
+                player.sendMessage ("<img=832>An Elite casket has appeared in your inventory while skilling!");
+            } else if (Misc.getRandom (5000) == 1) {
+                player.getInventory().add(15003, 1);
+                player.sendMessage("<img=832>An Azure casket has appeared in your inventory while skilling!");
+            } else if (Misc.getRandom (3000) == 1) {
+                player.getInventory().add(20489, 1);
+                player.sendMessage("<img=832>An Launch casket has appeared in your inventory while skilling!");
+            } else if (Misc.getRandom (2500) == 1) {
+                player.getInventory().add(20488, 1);
+                player.sendMessage("<img=832>An OP Mystery box has appeared in your inventory while skilling!");
+            } else if (Misc.getRandom (1500) == 1) {
+                player.getInventory().add(19114, 1);
+                player.sendMessage("<img=832>An Ruby Mystery box has appeared in your inventory while skilling!");
+            } else if (Misc.getRandom (1000) == 1) {
+                player.getInventory().add(19115, 1);
+                player.sendMessage("<img=832>An Emerald Mystery box has appeared in your inventory while skilling!");
+            } else if (Misc.getRandom (500) == 1) {
+                player.getInventory().add(19116, 1);
+                player.sendMessage("<img=832>@blu@An Sapphire Mystery box has appeared in your inventory while skilling!");
             }
         }
 
