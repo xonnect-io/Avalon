@@ -1491,51 +1491,51 @@ public class Shop extends ItemContainer {
                 } else if (shop == VOTE_STORE) {
                 switch (item) {
                     case 21218:
-                        return new Object[] { 10, "Vote points" };
+                        return new Object[] { 5, "Vote points" };
                     case 3907:
-                        return new Object[] { 20, "Vote points" };
+                        return new Object[] { 10, "Vote points" };
                         case 10947:
-                        return new Object[] { 25, "Vote points" };
+                        return new Object[] { 15, "Vote points" };
                     case 9083:
-                        return new Object[] { 3000, "Vote points" };
+                        return new Object[] { 1500, "Vote points" };
                     case 3739:
                     case 3738:
                     case 3737:
-                        return new Object[] { 50, "Vote points" };
+                        return new Object[] { 25, "Vote points" };
                     case 8087:
                     case 8088:
                     case 8089:
-                        return new Object[] { 100, "Vote points" };
+                        return new Object[] { 50, "Vote points" };
                     case 20086:
                     case 20087:
                     case 20088:
                     case 20091:
                     case 20090:
                     case 20089:
-                        return new Object[] { 150, "Vote points" };
+                        return new Object[] { 75, "Vote points" };
                     case 19886:
                     case 4446:
-                        return new Object[] { 75, "Vote points" };
+                        return new Object[] { 50, "Vote points" };
                     case 20488:
-                        return new Object[] { 100, "Vote points" };
+                        return new Object[] { 50, "Vote points" };
                     case 11316:
                     case 11319:
-                        return new Object[] { 2500, "Vote points" };
-                    case 11314:
                         return new Object[] { 1250, "Vote points" };
+                    case 11314:
+                        return new Object[] { 750, "Vote points" };
                     case 15004:
-                        return new Object[] { 5000, "Vote points" };
+                        return new Object[] { 2500, "Vote points" };
                     case 15355:
                     case 15356:
                     case 15357:
-                        return new Object[] { 300, "Vote points" };
+                        return new Object[] { 150, "Vote points" };
                     case 15358:
                     case 15359:
-                        return new Object[] { 175, "Vote points" };
+                        return new Object[] { 100, "Vote points" };
                     case 10946:
-                        return new Object[] { 200, "Vote points" };
+                        return new Object[] { 100, "Vote points" };
                     case 15330:
-                        return new Object[] { 1000, "Vote points" };
+                        return new Object[] { 500, "Vote points" };
                 }
 
             } else if (shop == SELL_ITEMS) {

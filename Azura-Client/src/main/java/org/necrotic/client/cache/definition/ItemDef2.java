@@ -3731,7 +3731,7 @@ public class ItemDef2 {
 				break;
 
 			case 2023:
-				itemDef.name = "Lazycat Bones";
+				itemDef.name = "Terror Bones";
 				itemDef.oldColors = new int[]{63};//old
 				itemdefyogipic = ItemDefinition.get(526);
 				itemDef.newColors = new int[]{40};//new
@@ -3741,10 +3741,10 @@ public class ItemDef2 {
 				break;
 
 			case 2025:
-				itemDef.name = "Dragonballz Bones";
+				itemDef.name = "Demon Bones";
 				itemDef.oldColors = new int[]{63};//old
 				itemdefyogipic = ItemDefinition.get(526);
-				itemDef.newColors = new int[]{84};//new
+				itemDef.newColors = new int[]{53};//new
 				itemDef.actions = itemdefyogipic.actions;
 				itemDef.modelID = 65285;
 				itemDef.modelZoom = 1500;
