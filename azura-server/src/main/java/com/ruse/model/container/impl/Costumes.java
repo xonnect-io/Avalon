@@ -6,8 +6,10 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum Costumes {
-
-
+    LUCIFER(23403, 5, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
+            new int[]{23809,23810, 23811, 23812, 23813}),
+    NECROMANCER(23550, 15, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
+            new int[]{23799,23800, 23801, 23802, 23803}),
     AVALON_SET(23458, 10, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},
             new int[]{23281, 23282, 23283, 23284, 23285}),
     NEPHILIM_SET(23460, 10, new int[]{Equipment.HEAD_SLOT, Equipment.BODY_SLOT, Equipment.LEG_SLOT, Equipment.HANDS_SLOT, Equipment.FEET_SLOT},

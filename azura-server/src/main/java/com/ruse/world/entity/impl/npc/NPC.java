@@ -679,4 +679,17 @@ public class NPC extends Character {
     public ObjectArrayList<NPC> getCloseNpcs(int distance) {
         return World.getNearbyNPCs(getPosition(), distance);
     }
+
+    public boolean isAlive() {
+        return this.constitution > 0;
+    }
+
+    private int x;
+    private int y;
+
+    public void setPosition(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
 }
