@@ -442,8 +442,8 @@ public class NPCOptionPacketListener implements PacketListener {
                         if (player.getQuestTwoStep7() == true ) {
                             DialogueManager.start(player, TheOmegaDialogues.GoodDay(player));
                             return;
-                        }
-                        if (player.getQuestTwoStep6() == true ) {
+                        } else
+                        if (player.getQuestTwoStep6() == true) {
                             DialogueManager.start(player, TheOmegaDialogues.QuestComplete(player));
                             return;
                         }

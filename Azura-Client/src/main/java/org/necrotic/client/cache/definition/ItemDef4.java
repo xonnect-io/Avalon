@@ -5585,7 +5585,6 @@ public class ItemDef4 {
 				ItemDefinition itemFury1 = ItemDefinition.get(1635);
 				itemDef.modelOffsetX = itemFury1.modelOffsetX;
 				itemDef.rotationZ = itemFury1.rotationZ;
-				itemDef.modelOffsetY = itemFury1.modelOffsetY;
 				itemDef.modelZoom = itemFury1.modelZoom;
 				itemDef.rotationY = itemFury1.rotationY;
 				itemDef.rotationX = itemFury1.rotationX;
@@ -5594,28 +5593,19 @@ public class ItemDef4 {
 				itemDef.modelID = 64207;
 				itemDef.maleEquip1 = 64208;
 				itemDef.femaleEquip1 = 64208;
-				itemDef.rdc2 = 121584;
+				itemDef.modelOffsetY = 0;
+				itemDef.colorChange = new double[]{1.5, 0.1, 0.1};
 				break;
 
 			case 6737:
-				ItemDefinition itemFury22 = ItemDefinition.get(1635);
-				itemDef.modelOffsetX = itemFury22.modelOffsetX;
-				itemDef.modelOffsetY = itemFury22.modelOffsetY;
-				itemDef.modelZoom = 500;
-				itemDef.rotationY = itemFury22.rotationY;
-				itemDef.rotationX = itemFury22.rotationX;
+				itemDef.copyItem(3909);
 				itemDef.name = "Ring of Gluttony";
 				itemDef.modelID = 64207;
 				itemDef.maleEquip1 = 64208;
 				itemDef.femaleEquip1 = 64208;
-				itemDef.groundActions = new String[5];
-				itemDef.groundActions[2] = "Take";
-				itemDef.stackable = false;
-				itemDef.actions = new String[5];
-				itemDef.actions[1] = "Wear";
-				itemDef.actions[4] = "Drop"; itemDef.actions[3] = "<col=C3C0B2>Dissolve";
 				itemDef.stackable = false;
 				itemDef.rdc2 = 76657; //54440
+				itemDef.modelOffsetY = 0;
 				break;
 
 			case 3905:

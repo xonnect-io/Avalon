@@ -347,27 +347,30 @@ public class UpgradeInterface {
 
     }
 
-    public void openInterface(Upgradeables.UpgradeType type) {
-        player.getPacketSender().sendConfig(5334, type.ordinal());
+        public void openInterface(Upgradeables.UpgradeType type) {
+            player.getPacketSender().sendConfig(5334, type.ordinal());
 
-        selectedUpgrade = null;
 
-        player.getPacketSender().sendItemOnInterface(62210, -1, 1);
-        player.getPacketSender().sendString(62231, "Tokens req: @whi@---");
-        player.getPacketSender().sendString(62234, "Success rate: @whi@---");
+            player.getPacketSender().sendItemOnInterface(62210, -1, 1);
+            player.getPacketSender().sendString(62231, "Tokens req: @whi@---");
+            player.getPacketSender().sendString(62234, "Success rate: @whi@---");
 
-        upgradeablesArrayList = Upgradeables.getForType(type);
-        for (int i = 0; i < 50; i++) {
-            if (upgradeablesArrayList.size() > i) {
-                player.getPacketSender().sendItemOnInterface(62209,
-                        upgradeablesArrayList.get(i).getRequired().getId(), i, upgradeablesArrayList.get(i).getRequired().getAmount());
-            } else {
-                player.getPacketSender().sendItemOnInterface(62209, -1, i, 1);
+            upgradeablesArrayList = Upgradeables.getForType(type);
+            for (int i = 0; i < 50; i++) {
+                if (upgradeablesArrayList.size() > i) {
+                    player.getPacketSender().sendItemOnInterface(62209,
+                            upgradeablesArrayList.get(i).getRequired().getId(), i, upgradeablesArrayList.get(i).getRequired().getAmount());
+                } else {
+                    player.getPacketSender().sendItemOnInterface(62209, -1, i, 1);
+                }
             }
+
+            if (selectedUpgrade != null) {
+                showUpgrade (selectedUpgrade);
+            } else
+            selectedUpgrade = null;
+
+            player.getPacketSender().sendInterface(62200);
+
         }
-
-        player.getPacketSender().sendInterface(62200);
-
     }
-
-}

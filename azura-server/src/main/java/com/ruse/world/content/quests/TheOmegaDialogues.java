@@ -1067,7 +1067,6 @@ public class TheOmegaDialogues {
                         String line1 = "";
                         if (player != null) {
                             try {
-                                if (player.getQuestOneStep7() == false) {
                                     if (player.getInventory().getFreeSlots() >= 3) {
                                         player.getInventory().add(21218, 10);
                                         player.getInventory().add(19115, 10);
@@ -1081,9 +1080,6 @@ public class TheOmegaDialogues {
                                     } else {
                                         line1 = "You need at least 3 inventory spaces to claim your reward.";
                                     }
-                                } else {
-                                    line1 = "You have already completed this quest.";
-                                }
                             } catch (NoSuchMethodError e) {
                                 // Handle the error gracefully by logging it, or by providing a default response
                                 line1 = "An error occurred while trying to complete the quest.";
