@@ -8,7 +8,7 @@ package com.ruse.model;
 
 public enum PlayerInteractingOption {
 
-	NONE, CHALLENGE, ATTACK, INVITE;
+	NONE, CHALLENGE, ATTACK, INVITE, VIEW_SHOP;
 
 	public static PlayerInteractingOption forName(String name) {
 		if (name.toLowerCase().contains("null"))

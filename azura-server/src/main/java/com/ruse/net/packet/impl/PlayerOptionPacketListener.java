@@ -52,8 +52,11 @@ public class PlayerOptionPacketListener implements PacketListener {
 			return;
 		final Player attacked = World.getPlayers().get(index);
 
-
-
+		if (player.getLocation() != Location.ZOMBIE_LOBBY || player.getLocation() != Location.SOD_LOBBY ||
+				player.getLocation() != Location.DARKNESS_LOBBY || player.getLocation() != Location.TELOS_LOBBY){
+			player.getPlayerOwnedShopManager ().openTargetShop(attacked);
+			return;
+		}
 		if (Misc.checkForOwner()) {
 			World.sendOwnerDevMessage(
 					player.getUsername() + " attacked index: " + index + ", target = " + attacked.getUsername());

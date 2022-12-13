@@ -68,6 +68,8 @@ public class Locations {
 
 			@Override
 			public void enter(Player player) {
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender().sendInteractionOption("View POS", 2, false);
 				if (player.getPosition().getZ() % 4 == 0) {
 					for (Player p : World.getPlayers()) {
 						if (p == null)
@@ -109,6 +111,8 @@ public class Locations {
 			}
 			@Override
 			public void enter(Player player) {
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender().sendInteractionOption("View POS", 2, false);
                 if (FantasyZone.gameActive && FantasyZone.gameTicks > 0) {
                     int seconds = (int)((double)FantasyZone.gameTicks*0.6D);
                     player.getPA().sendEffectTimerSeconds(seconds, EffectTimer.FANTASY_ZONE);
@@ -545,6 +549,8 @@ public class Locations {
 			public void enter(Player player) {
 				System.err.println("Called enter");
 				if (player.getNephilimBonus() > 0)
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 				player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getNephilimBonus() + "% @blu@Drop rate bonus your next Nephilim kill");			}
 
 		},
@@ -555,33 +561,57 @@ public class Locations {
 			public void enter(Player player) {
 				System.err.println("Called enter");
 				if (player.getGuardianBonus() > 0)
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 				player.getPacketSender().sendMessage("<img=832>@blu@ You will receive a @red@" + player.getGuardianBonus() + "% @blu@Drop rate bonus your next Vozzath kill");
 			}
 		},
 		VOTE_BOSS(new int[] { 3410, 3440}, new int[] { 4110, 4140},
 				true, true, true, false, false, true) {
-
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+			}
 		},
 		ZENYTE_BOSS(new int[] { 2588, 2598}, new int[] { 2664, 2678},
 				true, true, true, false, false, true) {
-
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+			}
 		},
 
 		SUMMER(new int[] { 2895, 2922}, new int[] { 4690, 4720},
 				true, true, true, false, false, true) {
-
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+			}
 		},
 
 
 		HELLRAISER(new int[] { 3078, 3115}, new int[] { 5520, 5560},
 				true, true, true, false, false, true) {
-
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+			}
 		},
 		LUCIFER(new int[] { 2301, 2367}, new int[] { 3970, 4024},
-				false, true, true, false, false, true) {},
+				false, true, true, false, false, true) {			@Override
+		public void enter(Player player) {
+			if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+				player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+		}},
 		UNKNOWN_MINIGAME(new int[] { 1720, 1790 }, new int[] { 5120, 5220 }, true, true, true, false, false, false){
 			@Override
 			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 				System.err.println("Called enter");
 				player.unknownZone.openInterface();
 				if (player.getPointsHandler().getMG1Count() >= 25 && player.getPointsHandler().getMG2Count() >= 25 &&
@@ -658,7 +688,10 @@ public class Locations {
 			@Override
 			public void enter(Player player) {
 				ProgressionZone.updateInterface(player);
-			}
+					if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+				}
 
 			@Override
 			public void leave(Player player) {
@@ -667,7 +700,14 @@ public class Locations {
 		},
 
 		SLAYER_CHAMPION(new int[] { 3469, 3520}, new int[] { 4688, 4745},
-				true, true, true, false, false, true) {},
+				true, true, true, false, false, true) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+		},
 
 		ZOMBIE(new int[]{2239, 2266}, new int[]{4097, 4130}, true, false, true, false, true, false) {
 			@Override
@@ -951,7 +991,12 @@ public class Locations {
 
 
 		SUPREME_LAIR(new int[]{1872, 1912}, new int[]{5395, 5435}, true, false, true, false, true, false) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 
+			}
 			@Override
 			public void logout(Player player) {
 				player.getPacketSender().sendMessage("You can not log out while in the supreme lair.");
@@ -1026,23 +1071,64 @@ public class Locations {
 		// followingAllowed, boolean cannonAllowed, boolean firemakingAllowed, boolean
 		// aidingAllowed) {
 		FREIZA(new int[] { 2433, 2494 }, new int[] { 2817, 2878 }, false, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		STARTER_BED(new int[] { 2325, 2345 }, new int[] { 4110, 4130}, false, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		// xyyx
 		AOE(new int[] { 2881, 2949 }, new int[] { 2820, 2877 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		CRYSTALQUEEN(new int[] { 2858, 2878 }, new int[] { 9933, 9959 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 
 		// xyyx
 		JOKER_LAND(new int[] { 1798, 1818 }, new int[] { 3201, 3221 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		// xyyx
 		TRANSFORMER(new int[] { 3274, 3311 }, new int[] { 3013, 3036 }, true, true, true, false, false, false) {
-		},
-		MAGEBANK_SAFE(new int[] { 2525, 2550 }, new int[] { 4707, 4727 }, true, true, true, false, false, false) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 
+			}
+			},
+		MAGEBANK_SAFE(new int[] { 2525, 2550 }, new int[] { 4707, 4727 }, true, true, true, false, false, false) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
 		},
 		ZULRAH(new int[] { 3395, 3453 }, new int[] { 2751, 2785 }, false, false, true, false, false, false) {
 
@@ -1101,17 +1187,37 @@ public class Locations {
 
 		// xyyx
 		LORDS(new int[] { 3349, 3379 }, new int[] { 9625, 9654 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		DOOM(new int[] { 2302, 2369 }, new int[] { 5182, 5250 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		// xyyx
 		PENGUINZONE(new int[] { 3027, 3072 }, new int[] { 9533, 9558 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 
 		EVENT(new int[]{2880, 2943}, new int[]{4671, 4735},
 				true, true, true, false, false, true) {
 			@Override
 			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 				if (player.getPosition().getZ() % 4 == 0) {
 					for (Player p : World.getPlayers()) {
 						if (p == null)
@@ -1132,6 +1238,8 @@ public class Locations {
 				true, true, true, false, false, true) {
 			@Override
 			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 				if (player.getPosition().getZ() % 4 == 0) {
 					for (Player p : World.getPlayers()) {
 						if (p == null)
@@ -1153,7 +1261,13 @@ public class Locations {
 		GALVEKMULTI(new int[] { 3340, 3364 }, new int[] { 3333, 3351 }, true, true, true, false, false, false) {
 		},
 		BULWARK(new int[] { 2409, 2439 }, new int[] { 3512, 3532 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		INSTANCE1(new int[]{2628, 2685}, new int[]{4750, 4790}, true, true, true, false, false, false) {
 			@Override
 			public void logout(Player player) {
@@ -1225,25 +1339,85 @@ public class Locations {
 			}
 		},
 		ZONES1(new int[] { 2948, 3007 }, new int[] { 9473, 9510 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		ZONES2(new int[] { 2295, 2410 }, new int[] { 3876, 3906 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		ZONES3(new int[] { 1665, 1725 }, new int[] { 5590, 5611 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		ZONES4(new int[] { 1597, 1662 }, new int[] { 5587, 5621 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		ZONES5(new int[] { 3278, 3334 }, new int[] { 3293, 3325 }, true, true, true, false, false, false) {
-		},//2372, 5113, 2427, 5057
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},//2372, 5113, 2427, 5057
 		SUPREME(new int[] { 2372, 2427 }, new int[] { 5057, 5113 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		ZONES6(new int[] { 3278, 3319 }, new int[] { 3270, 3325 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		ZONES7(new int[] { 2975, 3018 }, new int[] { 3100, 3135 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		SLAYERMULTI(new int[] { 1804, 2388 }, new int[] { 5188, 5274 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		ETERNAL(new int[] { 2063, 2098 }, new int[] { 3221, 3240 }, true, true, true, true, false, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		// Location(int[] x, int[] y, boolean multi, boolean summonAllowed, boolean
 		// followingAllowed, boolean cannonAllowed, boolean firemakingAllowed, boolean
 		// aidingAllowed) {
@@ -1265,6 +1439,9 @@ public class Locations {
 			public void enter(Player player) {
 				if (player.getPointsHandler().getNPCKILLCount() > 5000 && KillsTracker.getTotalKillsForNpc(1023, player) > 500) {
 					player.moveTo(GameSettings.HOME_CORDS);
+						if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+							player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
 					player.sendMessage("This place is for new players with less than 5k npc kills.");
 					return;
 				}
@@ -1273,6 +1450,9 @@ public class Locations {
 		TRAINING_RANGED(new int[] { 2393, 2411 }, new int[] { 2907, 2923 }, true, true, true, false, false, false) {
 			@Override
 			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+				player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
 				if (player.getPointsHandler().getNPCKILLCount() > 5000&& KillsTracker.getTotalKillsForNpc(1233, player) > 500) {
 					player.moveTo(GameSettings.HOME_CORDS);
 					player.sendMessage("This place is for new players with less than 5k npc kills.");
@@ -1283,6 +1463,9 @@ public class Locations {
 		TRAINING_MAGIC(new int[] { 2454, 2472 }, new int[] { 2906, 2922 }, true, true, true, false, false, false) {
 			@Override
 			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
 				if (player.getPointsHandler().getNPCKILLCount()> 5000&& KillsTracker.getTotalKillsForNpc(1234, player) > 500) {
 					player.moveTo(GameSettings.HOME_CORDS);
 					player.sendMessage("This place is for new players with less than 5k npc kills.");
@@ -1293,6 +1476,9 @@ public class Locations {
 		TRAINING_ROCK_CRAB(new int[] { 2688, 2747 }, new int[] { 4719, 4798 }, true, true, true, false, false, false) {
 			@Override
 			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
 				if (player.getPointsHandler().getNPCKILLCount() > 5000&& KillsTracker.getTotalKillsForNpc(1265, player) > 500) {
 					player.moveTo(GameSettings.HOME_CORDS);
 					player.sendMessage("This place is for new players with less than 5k npc kills.");
@@ -1496,13 +1682,28 @@ public class Locations {
 		MEMBER_ZONE(new int[] { 3415, 3435 }, new int[] { 2900, 2926 }, false, true, true, false, false, true) {
 		},
 		MAGICIANS_GUILD(new int[] { 2180, 2230 }, new int[] { 4489, 4535 }, true, true, true, false, true, true) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 
+			}
 		},
 		MELEE_GUILD(new int[] { 1923, 1975 }, new int[] { 4166, 4215 }, true, true, true, false, true, true) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 
+			}
 		},
 		ARCHERS_GUILD(new int[] { 3333, 3383 }, new int[] { 4682, 4727 }, true, true, true, false, true, true) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 
+			}
 		},
 		HOME_BANK(new int[] { 2778, 2790}, new int[] { 4058, 4071 }, false, true, true, false, true, true) {
 			@Override
@@ -1514,6 +1715,10 @@ public class Locations {
 					player.getPacketSender()
 							.sendMessage("As you enter the home area, your health regenerates to full.");
 				}
+
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
+
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
@@ -1521,6 +1726,7 @@ public class Locations {
 					player.getPacketSender().sendMessage("As you enter the home area, the gods restore your prayer.");
 				}
 			}
+
 
 			@Override
 			public void leave(Player player) {
@@ -1547,6 +1753,8 @@ public class Locations {
 						.getMaxLevel(Skill.CONSTITUTION)) {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 					player.getPacketSender()
 							.sendMessage("As you enter the Sapphire Donator Zone, your health regenerates to full.");
 				}
@@ -1566,6 +1774,8 @@ public class Locations {
 						.getMaxLevel(Skill.CONSTITUTION)) {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 					player.getPacketSender()
 							.sendMessage("As you enter the Emerald Donator Zone, your health regenerates to full.");
 				}
@@ -1585,6 +1795,8 @@ public class Locations {
 						.getMaxLevel(Skill.CONSTITUTION)) {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 					player.getPacketSender()
 							.sendMessage("As you enter the Ruby Donator Zone, your health regenerates to full.");
 				}
@@ -1604,6 +1816,8 @@ public class Locations {
 						.getMaxLevel(Skill.CONSTITUTION)) {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 					player.getPacketSender()
 							.sendMessage("As you enter the Diamond Donator Zone, your health regenerates to full.");
 				}
@@ -1623,6 +1837,8 @@ public class Locations {
 						.getMaxLevel(Skill.CONSTITUTION)) {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 					player.getPacketSender()
 							.sendMessage("As you enter the Onyx Donator Zone, your health regenerates to full.");
 				}
@@ -1642,6 +1858,8 @@ public class Locations {
 						.getMaxLevel(Skill.CONSTITUTION)) {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 					player.getPacketSender()
 							.sendMessage("As you enter the Zenyte Donator Zone, your health regenerates to full.");
 				}
@@ -1661,6 +1879,8 @@ public class Locations {
 						.getMaxLevel(Skill.CONSTITUTION)) {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 					player.getPacketSender()
 							.sendMessage("As you enter the Tanzanite Donator Zone, your health regenerates to full.");
 				}
@@ -1687,6 +1907,8 @@ public class Locations {
 						.getMaxLevel(Skill.CONSTITUTION)) {
 					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
 							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 					player.getPacketSender()
 							.sendMessage("As you enter the Member Zone, your health regenerates to full.");
 				}
@@ -1699,16 +1921,46 @@ public class Locations {
 			}
 		},
 		TRIO_ZONE(new int[] { 3008, 3039 }, new int[] { 5216, 5247 }, false, false, false, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		// xyyx
 		GAMBLE(new int[] { 2844, 2867 }, new int[] { 2696, 2720 }, false, true, true, false, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		VARROCK(new int[] { 3167, 3272 }, new int[] { 3263, 3504 }, false, true, true, true, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		NARAKU(new int[] { 3412, 3433 }, new int[] { 9555, 9580 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		SKELETAL(new int[] { 3323, 3357 }, new int[] { 3162, 3188 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 
 
 		VOID_OF_DARKNESS(new int[] { 1925, 1984 }, new int[] { 4999, 5055 }, true, true, true, false, true, true) {
@@ -1782,9 +2034,20 @@ public class Locations {
 
 		},
 		TREASURE_HUNTER(new int[] { 1986, 2045 }, new int[] { 4994, 5052 }, true, true, true, false, false, false) {
-		},
-		GLOBAL_BOSS(new int[] { 2128, 2161 }, new int[] { 5004, 5034 }, true, true, true, false, false, false) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 
+			}
+			},
+		GLOBAL_BOSS(new int[] { 2128, 2161 }, new int[] { 5004, 5034 }, true, true, true, false, false, false) {
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
 		},
 
 		VAULT_OF_WAR(new int[] { 1729, 1791 }, new int[] { 5313, 5375 }, false, true, true, false, false, false) {
@@ -1801,19 +2064,61 @@ public class Locations {
 			}
 		},
 		EZONE(new int[] { 2763, 2812 }, new int[] { 3072, 3123 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		SZONE(new int[] { 1630, 1691 }, new int[] { 5670, 5728 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		SPONSORZONE(new int[] { 2944, 3007 }, new int[] { 2816, 2879 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		HULK2(new int[] { 3295, 3316 }, new int[] { 4970, 4990 }, true, true, true, false, false, false) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		EDGEVILLE(new int[] { 3073, 3134 }, new int[] { 3457, 3518 }, false, true, true, false, false, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		LUMBRIDGE(new int[] { 3175, 3238 }, new int[] { 3179, 3302 }, false, true, true, true, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		KING_BLACK_DRAGON(new int[] { 2251, 2292 }, new int[] { 4673, 4717 }, true, true, true, true, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		SCORPIA(new int[] { 2845, 2864 }, new int[] { 9621, 9649 }, true, true, true, true, true, true) {
 			@Override
 			public boolean handleKilledNPC(Player killer, NPC npc) {
@@ -1822,6 +2127,12 @@ public class Locations {
 					return true;
 				}
 				return false;
+			}
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
 			}
 		},
 		KRAKEN(new int[] { 3672, 3690 }, new int[] { 9875, 9899 }, true, true, true, true, true, true) {
@@ -1833,22 +2144,64 @@ public class Locations {
 				}
 				player.getPacketSender().sendCameraNeutrality();
 			}
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
 		},
 		SLASH_BASH(new int[] { 2504, 2561 }, new int[] { 9401, 9473 }, true, true, true, true, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		BANDOS_AVATAR(new int[] { 2340, 2396 }, new int[] { 4929, 4985 }, true, true, true, true, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		KALPHITE_QUEEN(new int[] { 3464, 3500 }, new int[] { 9478, 9523 }, true, true, true, true, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		PHOENIX(new int[] { 2824, 2862 }, new int[] { 9545, 9594 }, true, true, true, true, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		// BANDIT_CAMP(new int[]{3020, 3150, 3055, 3195}, new int[]{3684, 3711, 2958,
 		// 3003}, true, true, true, true, true, true) {
 		// },
 		ROCK_CRABS(new int[] { 2689, 2727 }, new int[] { 3691, 3730 }, true, true, true, true, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		ARMOURED_ZOMBIES(new int[] { 3077, 3132 }, new int[] { 9657, 9680 }, true, true, true, true, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		CORPOREAL_BEAST(new int[] { 2879, 2962 }, new int[] { 4368, 4413 }, true, true, true, false, true, true) {
 			@Override
 			public void process(Player player) {
@@ -1878,10 +2231,21 @@ public class Locations {
 					// player.setWalkableInterfaceId(16152);
 				}
 			}
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
 
+			}
 		},
 		DAGANNOTH_DUNGEON(new int[] { 2886, 2938 }, new int[] { 4431, 4477 }, true, true, true, false, true, true) {
-		},
+			@Override
+			public void enter(Player player) {
+				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+
+			}
+			},
 		WILDERNESS(new int[] { 2940, 3392, 2986, 3012, 3653, 3720, 3650, 3653, 3150, 3199, 2994, 3041 },
 				new int[] { 3523, 3968, 10338, 10366, 3441, 3538, 3457, 3472, 3796, 3869, 3733, 3790 }, false, true,
 				true, true, true, true) {
@@ -2113,6 +2477,8 @@ for (Item item : player.getInventory().getItems()) {
 			@Override
 			public void enter(Player player) {
 
+				if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+					player.getPacketSender().sendInteractionOption("View POS", 2, false);
 				player.sendMessage("You have entered the Infernal demon lair, proceed at your own risk!");
 			}
 

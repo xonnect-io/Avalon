@@ -219,6 +219,11 @@ public class PlayerOwnedShopManager {
     /**
      * Open the player owned shop management interface.
      */
+    public void open(PlayerOwnedShop shop) {
+        this.current = shop;
+        shop.open(player);
+    }
+
     public void open() {
 
         if (player.getGameMode() == GameMode.IRONMAN || player.getGameMode() == GameMode.ULTIMATE_IRONMAN || player.getGameMode() == GameMode.GROUP_IRONMAN) {
@@ -549,6 +554,22 @@ public class PlayerOwnedShopManager {
             }
         }
 
+    }
+
+    public PlayerOwnedShop getPlayerShop(Player player) {
+        for (PlayerOwnedShop shop : SHOPS) {
+            if (shop.getOwner().equals(player)) {
+                return shop;
+            }
+        }
+        return null;
+    }
+
+    public void openTargetShop(Player target) {
+        PlayerOwnedShop shop = getPlayerShop(target);
+        if (shop != null) {
+            open(shop);
+        }
     }
 
     public void openStore(int index) {
