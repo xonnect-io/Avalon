@@ -3336,7 +3336,56 @@ public class ItemDef4 {
 				itemDef.modelID = 65285;
 				break;
 
-				case 23294:
+			case 3281:
+				itemDef.copyItem(18830);
+				itemDef.name = "Volcanic bones";
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{71};
+				itemDef.modelID = 65285;
+				break;
+
+			case 3282:
+				itemDef.copyItem(18830);
+				itemDef.name = "Leafy bones";
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{68};
+				itemDef.modelID = 65285;
+				break;
+
+			case 3283:
+				itemDef.copyItem(18830);
+				itemDef.name = "Chilling bones";
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{69};
+				itemDef.modelID = 65285;
+				break;
+
+			case 3284:
+				itemDef.copyItem(18830);
+				itemDef.name = "Spider bones";
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{74};
+				itemDef.modelID = 65285;
+				break;
+
+			case 3285:
+				itemDef.copyItem(18830);
+				itemDef.name = "Diabolical bones";
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{71};
+				itemDef.modelID = 65285;
+				break;
+
+			case 3286:
+				itemDef.copyItem(18830);
+				itemDef.name = "Energy bones";
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{56};
+				itemDef.modelID = 65285;
+				break;
+
+
+			case 23294:
 				itemDef.copyItem(18639);
 				itemDef.name = "<col=89584A>Fantasy scales";
 				itemDef.modelID = 18814;
