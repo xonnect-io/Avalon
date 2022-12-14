@@ -33,6 +33,8 @@ public class MemberScrolls {
 			rights = PlayerRights.ZENYTE_DONATOR;
 		if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT)
 			rights = PlayerRights.TANZANITE_DONATOR;
+		if (player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT)
+			rights = PlayerRights.PLATINUM_DONATOR;
 		if (rights != null && rights != player.getRights()) {
 			player.getPacketSender().sendMessage(
 					"You've become a " + Misc.formatText(rights.toString().toLowerCase()) + "! Congratulations!");

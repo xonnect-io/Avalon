@@ -1892,6 +1892,27 @@ public class Locations {
 				}
 			}
 		},
+		PLATINUM_ZONE(new int[] { 2690, 2750 }, new int[] { 4806, 4866 }, false, true, true, false, true, false) {
+
+			@Override
+			public void enter(Player player) {
+				if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager()
+						.getMaxLevel(Skill.CONSTITUTION)) {
+					player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION,
+							player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
+						player.getPacketSender().sendInteractionOption("View POS", 2, false);
+					player.getPacketSender()
+							.sendMessage("As you enter the Tanzanite Donator Zone, your health regenerates to full.");
+				}
+				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
+						.getMaxLevel(Skill.PRAYER)) {
+					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
+							player.getSkillManager().getMaxLevel(Skill.PRAYER));
+					player.getPacketSender().sendMessage("As you enter the Tanzanite Donator Zone, the gods restore your prayer.");
+				}
+			}
+		},
 		NEW_MEMBER_ZONE(new int[] { 2792, 2877 }, new int[] { 3319, 3396 }, false, true, true, false, true, true) {
 			@Override
 			public void process(Player player) {

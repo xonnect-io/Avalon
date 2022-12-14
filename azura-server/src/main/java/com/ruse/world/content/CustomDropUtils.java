@@ -1215,7 +1215,9 @@ public class CustomDropUtils {
         /**
          * Donator Rank bonusses
          */
-        if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+        if (player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+            percentBoost += 125;
+         } else if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT) {
             percentBoost += 100;
         } else if (player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
             percentBoost += 75;
@@ -1317,8 +1319,9 @@ public class CustomDropUtils {
 
         /**
          * Donator Rank bonusses
-         */
-        if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+         */if (player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+            percentBoost += 35;
+        } else if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT ) {
             percentBoost += 30;
         } else if (player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
             percentBoost += 25;

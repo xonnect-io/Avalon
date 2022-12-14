@@ -329,18 +329,20 @@ public class PlayerHandler {
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5> Helper " + player.getUsername() + " has just logged in."));
          else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT && player.getAmountDonated() < Store.EMERALD_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=6> Helper " + player.getUsername() + " has just logged in."));
-        else if(player.getRights()==PlayerRights.HELPER &&player.getAmountDonated()>=Store.EMERALD_DONATION_AMOUNT &&player.getAmountDonated() <Store.RUBY_DONATION_AMOUNT)
+        else if(player.getRights()==PlayerRights.HELPER &&player.getAmountDonated()>=Store.EMERALD_DONATION_AMOUNT &&player.getAmountDonated() < Store.RUBY_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col="+player.getYellHex()+"> <img=5><img=7> Helper " +player.getUsername()+" has just logged in."));
          else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT && player.getAmountDonated() < Store.DIAMOND_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=8> Helper " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() <= Store.ONYX_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() < Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=9> Helper " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=3> Helper " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() <= Store.TANZANITE_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() < Store.TANZANITE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=1508> Helper " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT && player.getAmountDonated() < Store.PLATINUM_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=852> Helper " + player.getUsername() + " has just logged in."));
+        else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT)
+            World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=857> Helper " + player.getUsername() + " has just logged in."));
 
 
         if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() < Store.SAPPHIRE_DONATION_AMOUNT)
@@ -351,14 +353,16 @@ public class PlayerHandler {
             World.sendMessage(("<shad=0><col="+player.getYellHex()+"> <img=1><img=7> Moderator " +player.getUsername()+" has just logged in."));
         else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT && player.getAmountDonated() < Store.DIAMOND_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=8> Moderator " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() <= Store.ONYX_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() < Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=9> Moderator " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=3> Moderator " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() <= Store.TANZANITE_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() < Store.TANZANITE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=1508> Moderator " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT && player.getAmountDonated() < Store.PLATINUM_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=852> Moderator " + player.getUsername() + " has just logged in."));
+        else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT)
+            World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=857> Moderator " + player.getUsername() + " has just logged in."));
 
 
         if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() < Store.SAPPHIRE_DONATION_AMOUNT)
@@ -369,14 +373,16 @@ public class PlayerHandler {
             World.sendMessage(("<shad=0><col="+player.getYellHex()+"> <img=2><img=7> Administrator " +player.getUsername()+" has just logged in."));
          else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT && player.getAmountDonated() < Store.DIAMOND_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=8> Administrator " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() <= Store.ONYX_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() < Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=9> Administrator " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=3> Administrator " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() <= Store.TANZANITE_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() < Store.TANZANITE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=1508> Administrator " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT&& player.getAmountDonated() < Store.PLATINUM_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=852> Administrator " + player.getUsername() + " has just logged in."));
+        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT)
+            World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=857> Administrator " + player.getUsername() + " has just logged in."));
 
 
         if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() < Store.SAPPHIRE_DONATION_AMOUNT)
@@ -387,14 +393,16 @@ public class PlayerHandler {
             World.sendMessage(("<shad=0><col="+player.getYellHex()+"> <img=856><img=7> Community Manager " +player.getUsername()+" has just logged in."));
         else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.RUBY_DONATION_AMOUNT && player.getAmountDonated() < Store.DIAMOND_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=856><img=8> Community Manager " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() <= Store.ONYX_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() < Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=856><img=9> Community Manager " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT && player.getAmountDonated() <= Store.ZENYTE_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT && player.getAmountDonated() < Store.ZENYTE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=856><img=3> Community Manager " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() <= Store.TANZANITE_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() < Store.TANZANITE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=856><img=1508> Community Manager " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT && player.getAmountDonated() < Store.PLATINUM_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=856><img=852> Community Manager " + player.getUsername() + " has just logged in."));
+        else if (player.getRights() == PlayerRights.COMMUNITY_MANAGER && player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT)
+            World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=856><img=857> Community Manager " + player.getUsername() + " has just logged in."));
 
 
         if (player.getRights() == PlayerRights.YOUTUBER && player.getAmountDonated() >= 10000)
@@ -407,6 +415,10 @@ public class PlayerHandler {
 
         if (player.getRights() == PlayerRights.TANZANITE_DONATOR)
             World.sendMessage(("<shad=0>@mag@<img=852> [Tanzanite Donator] "
+                    + player.getUsername() + " has just logged in."));
+
+        if (player.getRights() == PlayerRights.PLATINUM_DONATOR)
+            World.sendMessage(("<shad=0><img=857><col=989794>[Platinum Donator] "
                     + player.getUsername() + " has just logged in."));
 
 

@@ -2314,8 +2314,8 @@ public final class MobDefinition {
 				definition.standAnimation = 5761;
 				break;
 			case 741:
-				definition.name = "<img=19>Donator Store";
-				definition.actions = new String[]{null, null, "@cya@View Donator Shop", null, null, null, null};
+				definition.name = "<img=1891>Donator Store";
+				definition.actions = new String[]{null, null, "View Shop", null, null, null, null};
 				definition.combatLevel = 0;
 				definition.walkAnimation = 1660;
 				definition.standAnimation = 5761;//5316

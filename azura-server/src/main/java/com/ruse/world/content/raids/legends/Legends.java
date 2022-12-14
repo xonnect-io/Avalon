@@ -312,9 +312,13 @@ public class Legends {
                         if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
                             member.getInventory().add(18404, 1);
                         }
-                        if (player.getEquipment().contains(23484) && Misc.getRandom (33) == 3) {
+                        if (player.getEquipment().contains(23484) && Misc.getRandom (100) < 3) {
                             member.getInventory().add(18404, 1);
-                            member.sendMessage("@red@Your Legends Costume doubled your box earned!");
+                            member.sendMessage("@red@Your Legends Costume increased your boxes earned!");
+                        }
+                        if (player.getAmountDonated () > 20000 && Misc.getRandom (100) < 5) {
+                            member.getInventory().add(18404, 1);
+                            member.sendMessage("@red@Your Donator rank increased your boxes earned!");
                         }
                     }
                     party.moveTo(LegendsData.lobbyPosition);

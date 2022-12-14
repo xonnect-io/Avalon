@@ -193,6 +193,10 @@ public class DesolaceFormulas {
             if(plr.getRights() == PlayerRights.OWNER) {
                 maxHit *= 5.5D;
             }
+
+            if(plr.getRights() == PlayerRights.PLATINUM_DONATOR) {
+                maxHit *= 1.85D;
+            }
             if(plr.getRights() == PlayerRights.TANZANITE_DONATOR) {
                 maxHit *= 1.75D;
             }
@@ -774,6 +778,10 @@ public class DesolaceFormulas {
 
         if(p.getRights() == PlayerRights.OWNER) {
             maxHit *= 5.5D;
+        }
+
+        if(p.getRights() == PlayerRights.PLATINUM_DONATOR) {
+            maxHit *= 1.85D;
         }
         if(p.getRights() == PlayerRights.TANZANITE_DONATOR) {
             maxHit *= 1.75D;

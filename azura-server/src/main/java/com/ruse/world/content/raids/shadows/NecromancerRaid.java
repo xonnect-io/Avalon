@@ -324,18 +324,24 @@ public class NecromancerRaid {
                     if (ServerPerks.getInstance().getActivePerk() == ServerPerks.Perk.RAIDS_LOOT) {
                         NecromancerLoot.handleLoot(member, party.getDifficulty());
                     }
-                    int random = Misc.inclusiveRandom(1,100);
-                    if (member.getAmountDonated() >= 25000 && random <= 20
-                            || member.getAmountDonated() >= 10000 && random <= 15
-                            || member.getAmountDonated() >= 5000 && random <= 10
-                            || member.getAmountDonated() >= 1000 && random <= 5) {
+                    int random = Misc.inclusiveRandom(100);
+
+                    if (player.getAmountDonated () > 20000 && random < 5) {
+                        NecromancerLoot.handleLoot(member, party.getDifficulty());
+                        member.sendMessage("You received a second drop as a chance from your donator rank.");
+                    } else if ( member.getAmountDonated() >= 10000 && random <= 3
+                            || member.getAmountDonated() >= 5000 && random <= 2
+                            || member.getAmountDonated() >= 1000 && random <= 1) {
                         member.sendMessage("You received a second drop as a chance from your donator rank.");
                         NecromancerLoot.handleLoot(member, party.getDifficulty());
                     }
+
                     if (member.getEquipment ().contains (23550) && random == 75) {
                         member.sendMessage("You received a second drop as a chance from your Necromancer charm.");
                         NecromancerLoot.handleLoot(member, party.getDifficulty());
                     }
+
+
 
                     member.getDailyTaskManager().submitProgressToIdentifier(35, 1);
                     member.getAchievementTracker().progress(AchievementData.RAIDER, 1);

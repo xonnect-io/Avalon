@@ -2873,6 +2873,19 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
         }
     }
+    private static void platinumCommands(Player player, String[] command, String wholeCommand) {
+        /*if (command[0].equalsIgnoreCase("platinum")) {
+            if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
+                    || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
+                player.getPacketSender().sendMessage("You cannot do this at the moment.");
+                return;
+            }
+            Position[] locations = new Position[]{new Position(2721, 4842, 0)};
+            Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
+            TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
+            player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
+        }*/
+    }
     private static void developerCommands(Player player, String[] command, String wholeCommand) {
 
         if (command[0].equalsIgnoreCase("groupa")) {
@@ -3924,7 +3937,18 @@ public class CommandPacketListener implements PacketListener {
                 player.getInventory().add(OLD_ClueScrolls.values()[i].getClueId(), 1);
             }
         }
-
+        if (command[0].equalsIgnoreCase("giveplat")) {
+            Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            if (player2 == null) {
+                player.getPacketSender().sendMessage("Cannot find that player online..");
+                return;
+            }
+            player2.getPacketSender().sendMessage(player.getUsername() + " promoted you to Platinum donator rank.");
+            player.getPacketSender().sendMessage("Promoted " + player2.getUsername()+ " to Platinum donator rank.");
+            player2.setRights(PlayerRights.PLATINUM_DONATOR);
+            player2.getPacketSender().sendRights();
+            PlayerPanel.refreshPanel(player2);
+        }
         if (command[0].equalsIgnoreCase("givetanzanite")) {
             Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
             if (player2 == null) {
@@ -4179,6 +4203,19 @@ public class CommandPacketListener implements PacketListener {
                     onyxCommands(player, parts, command);
                     zenyteCommands(player, parts, command);
                     tanzaniteCommands(player, parts, command);
+                    break;
+
+                case PLATINUM_DONATOR:_DONATOR:
+                    playerCommands(player, parts, command);
+                    memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    zenyteCommands(player, parts, command);
+                    tanzaniteCommands(player, parts, command);
+                    platinumCommands(player, parts, command);
                     break;
 
                 case SUPPORT:

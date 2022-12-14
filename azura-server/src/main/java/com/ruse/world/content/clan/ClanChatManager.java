@@ -387,6 +387,7 @@ public class ClanChatManager {
                     continue;
                 int img = player.getRights() == PlayerRights.COMMUNITY_MANAGER ? 856 : player.getRights() == PlayerRights.ZENYTE_DONATOR ? 1508
 
+                        : player.getRights() == PlayerRights.PLATINUM_DONATOR ? 857
                         : player.getRights() == PlayerRights.TANZANITE_DONATOR ? 852
                         : player.getRights() == PlayerRights.OWNER ? 4 : player.getRights().ordinal();
                 int ironimg = -1;

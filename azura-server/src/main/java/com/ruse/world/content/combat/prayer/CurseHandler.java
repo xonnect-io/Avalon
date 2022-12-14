@@ -125,11 +125,10 @@ public class CurseHandler {
 			return;
 		}
 
-		if (curse == CurseData.SOUL_SPLIT && player.getLocation() == Location.SHADOWS_OF_DARKNESS ||
-				player.getLocation() == Location.TELOS) {
+		if (curse == CurseData.SOUL_SPLIT && (player.getLocation() == Location.SHADOWS_OF_DARKNESS ||
+				player.getLocation() == Location.TELOS)) {
 			player.getPacketSender().sendMessage("You cannot use soulsplit here.");
-			CurseHandler.deactivateAll(player);
-			PrayerHandler.deactivateAll(player);
+			player.getPacketSender().sendConfig(curse.configId, 0);
 			return;
 		}
 		switch (curse) {
@@ -366,7 +365,10 @@ public class CurseHandler {
 		/**
 		 * Donator Rank Bonusses
 		 */
-		if(player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT ||
+
+		if (player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT) {
+			toRemove *= 75;
+		} else if(player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT ||
 				player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT ||
 				player.getRights().equals(PlayerRights.YOUTUBER)) {
 			toRemove *= 0.80;

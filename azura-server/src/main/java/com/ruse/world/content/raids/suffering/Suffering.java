@@ -299,6 +299,10 @@ public class Suffering {
                         player.getInventory().delete(18649, 1);
                         member.getInventory().add(23370, 1);
                     }
+                    if (player.getAmountDonated () > 20000 && Misc.getRandom (100) < 5) {
+                        member.getInventory().add(23370, 1);
+                        member.sendMessage("@red@Your Donator rank increased your keys earned!");
+                    }
                     member.getAchievementTracker().progress(AchievementData.RAIDER, 1);
                     member.getPointsHandler().incrementSufferingKC(1);
                 }

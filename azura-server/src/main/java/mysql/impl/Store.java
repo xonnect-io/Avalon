@@ -39,6 +39,7 @@ public class Store implements Runnable {
     public static final int ONYX_DONATION_AMOUNT = 1000;
     public static final int ZENYTE_DONATION_AMOUNT = 5000;
     public static final int TANZANITE_DONATION_AMOUNT = 10000;
+    public static final int PLATINUM_DONATION_AMOUNT = 20000;
 
     public static void checkForRankUpdate(Player player) {
         if (player.getRights().isStaff()) {
@@ -63,6 +64,8 @@ public class Store implements Runnable {
             rights = PlayerRights.ZENYTE_DONATOR;
         if (player.getAmountDonated() >= TANZANITE_DONATION_AMOUNT)
             rights = PlayerRights.TANZANITE_DONATOR;
+        if (player.getAmountDonated() >= PLATINUM_DONATION_AMOUNT)
+            rights = PlayerRights.PLATINUM_DONATOR;
         if (rights != null && rights != player.getRights()) {
             player.getPacketSender().sendMessage(//so does the pass up here and shit even matter
                     "You've become a " + Misc.formatText(rights.toString().toLowerCase()) + "! Congratulations!");

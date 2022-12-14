@@ -1,15 +1,15 @@
 package com.ruse.world.content;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import com.ruse.GameSettings;
 import com.ruse.model.GameMode;
 import com.ruse.util.Misc;
 import com.ruse.util.Stopwatch;
 import com.ruse.world.World;
 import com.ruse.world.entity.impl.player.Player;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class PlayersOnlineInterface {
 
@@ -193,6 +193,7 @@ public class PlayersOnlineInterface {
 		case ONYX_DONATOR:
 		case ZENYTE_DONATOR:
 		case TANZANITE_DONATOR:
+			case PLATINUM_DONATOR:
 			value = 12;
 			break;
 

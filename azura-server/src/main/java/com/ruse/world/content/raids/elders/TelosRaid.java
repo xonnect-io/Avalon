@@ -56,7 +56,7 @@ public class TelosRaid {
                 return false;
             }
 
-            if ((!player.getMagicianMaster() && !player.getWarriorMaster () && !player.getArcherMaster ())) {
+            if ((!player.getMagicianMaster() || !player.getWarriorMaster () || !player.getArcherMaster ())) {
                 party.sendMessage(player.getUsername() + " does not have all of the guilds completed to partake in the Elder Gods Raids!");
                 player.sendMessage("@red@You need to have completed all of the guilds to partake in the Elder Gods Raids!");
                 return false;
@@ -364,12 +364,14 @@ public class TelosRaid {
                         TelosLoot.handleLoot(member, party.getDifficulty());
                     }
                     int random = Misc.inclusiveRandom(1,100);
-                    if (member.getAmountDonated() >= 25000 && random <= 20
-                            || member.getAmountDonated() >= 10000 && random <= 15
-                            || member.getAmountDonated() >= 5000 && random <= 10
-                            || member.getAmountDonated() >= 1000 && random <= 5) {
-                        member.sendMessage("You received a second drop as a chance from your donator rank.");
+                    if (player.getAmountDonated () > 20000 && random < 5) {
                         TelosLoot.handleLoot(member, party.getDifficulty());
+                        member.sendMessage("You received a second drop as a chance from your donator rank.");
+                    } else if ( member.getAmountDonated() >= 10000 && random <= 3
+                            || member.getAmountDonated() >= 5000 && random <= 2
+                            || member.getAmountDonated() >= 1000 && random <= 1) {
+                        member.sendMessage("You received a second drop as a chance from your donator rank.");
+                       TelosLoot.handleLoot(member, party.getDifficulty());
                     }
 
                     member.getDailyTaskManager().submitProgressToIdentifier(35, 1);

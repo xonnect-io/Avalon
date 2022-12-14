@@ -657,12 +657,12 @@ public class MapArea extends GameFrame {
 			if (Client.tabID == 14) {
 				Client.spritesMap.get(343).drawSprite(getOffSetX() + (GameFrame.getScreenMode() != ScreenMode.FIXED ? 149 : 225), 0);
 			}
-
+			/*
 			if (client.inSprite(false, Client.spritesMap.get(458), getxPos() + (GameFrame.getScreenMode() != ScreenMode.FIXED ? 128 : 204), 0)) {
 				Client.spritesMap.get(459).drawSprite(getOffSetX() + (GameFrame.getScreenMode() != ScreenMode.FIXED ? 128 : 204), 0);
 			} else {
 				Client.spritesMap.get(458).drawSprite(getOffSetX() + (GameFrame.getScreenMode() != ScreenMode.FIXED ? 128 : 204), 0);
-			}
+			}*/
 
 			DrawingArea.drawPixels(3, 76 + (GameFrame.getScreenMode() != ScreenMode.FIXED ? 4 : 8) + getOffSetY(), 76 + (GameFrame.getScreenMode() != ScreenMode.FIXED ? 9 : 29) + getOffSetX(), 0xffffff, 3);
 

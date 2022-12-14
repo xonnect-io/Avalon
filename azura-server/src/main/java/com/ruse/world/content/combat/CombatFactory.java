@@ -1058,6 +1058,10 @@ public final class CombatFactory {
         if(player.getRights() == PlayerRights.OWNER) {
             maxHit *= 5.5D;
         }
+
+        if(player.getRights() == PlayerRights.PLATINUM_DONATOR) {
+            maxHit *= 1.85D;
+        }
         if(player.getRights() == PlayerRights.TANZANITE_DONATOR) {
             maxHit *= 1.75D;
         }

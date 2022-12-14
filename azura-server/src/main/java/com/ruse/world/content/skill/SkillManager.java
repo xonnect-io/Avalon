@@ -375,8 +375,11 @@ public class SkillManager {
 /**
  * Donator Rank Bonusses
  */
-        if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT ||
-                player.getRights().equals(PlayerRights.YOUTUBER)) {
+
+     if (player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT ||
+             player.getRights().equals(PlayerRights.YOUTUBER)) {
+            experience *= 1.75;
+        } else if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT) {
             experience *= 1.5;
         } else if(player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT) {
             experience *= 1.25;

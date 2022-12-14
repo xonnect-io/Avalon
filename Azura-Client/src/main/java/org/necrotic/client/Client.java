@@ -885,7 +885,7 @@ public class Client extends GameRenderer {
         sound = new int[50];
         anInt1211 = 78;
         promptInput = "";
-        modIcons = new Sprite[19];
+        modIcons = new Sprite[20];
         tabID = 3;
         setInputTaken(false);
         mapImagePixelCutRight = new int[152];
@@ -2688,6 +2688,7 @@ public class Client extends GameRenderer {
             }
         }
 
+
         if (player.playerRights == 1) {
             menuTooltip = menuTooltip + "<img=1><col=20B2AA>Mod@whi@ ";
         }
@@ -2742,6 +2743,10 @@ public class Client extends GameRenderer {
 
           if (player.playerRights == 18) {
               menuTooltip = menuTooltip + "<img=856>@or2@Community Manager@whi@ ";
+          }
+
+          if (player.playerRights == 19) {
+              menuTooltip = menuTooltip + "<img=857><col=989794>Platinum Donator@whi@ ";
           }
           if (player.playerRights == 4) {
               menuTooltip =  "<img=12>@whi@ ";
@@ -4661,12 +4666,94 @@ public class Client extends GameRenderer {
         throw new RuntimeException();
     }
 
+
+    public static String removeColors(String text) {
+    //System.out.println(text);
+    text = replace(text, "@red@", "");
+    text = replace(text, "@gre@", "");
+    text = replace(text, "@blu@", "");
+    text = replace(text, "@yel@", "");
+    text = replace(text, "@cya@", "");
+    text = replace(text, "@mag@", "");
+    text = replace(text, "@whi@", "");
+    text = replace(text, "@lre@", "");
+    text = replace(text, "@dre@", "");
+    text = replace(text, "@bla@", "");
+    text = replace(text, "@or1@", "");
+    text = replace(text, "@or2@", "");
+    text = replace(text, "@pr2@", "");
+    text = replace(text, "@or3@", "");
+    text = replace(text, "@gr1@", "");
+    text = replace(text, "@gr2@", "");
+    text = replace(text, "@gr3@", "");
+    text = replace(text, "@cr1@", "");
+    text = replace(text, "@cr2@", "");
+    text = replace(text, "@cr3@", "");
+    text = replace(text, "@dev@", "");
+    text = replace(text, "@des@", "");
+    text = replace(text, "@vet@", "");
+    text = replace(text, "@don@", "");
+    text = replace(text, "@or2@", "");
+    text = replace(text, "@purp@", "");
+
+    text = replace(text, "@vea@", "");
+    text = replace(text, "@eas@", "");
+    text = replace(text, "@med@", "");
+    text = replace(text, "@har@", "");
+    text = replace(text, "@vha@", "");
+    text = replace(text, "@bl2@", "");
+    text = replace(text, "@gry@", "");
+    text = replace(text, "@pnk@", "");
+    text = replace(text, "@pr3@", "");
+    text = replace(text, "@skb@", "");
+        if (text != null) {
+        while (text.contains("<")) {
+            if (text.contains("<")) {
+                int index = text.indexOf("<");
+                int index1 = text.indexOf(">");
+                text = text.substring(0, index) + text.substring(index1 + 1);
+            }
+        }
+    }
+
+        return text;
+}
+
+    private static String replace(String s, String from, String to) {
+        if (from == "=D" && s.contains("col"))
+            return s;
+        return replaceAllString(s, from, to);
+
+    }
+    public static String replaceAllString(String strOrig, String strFind, String strReplace) {
+        if (strOrig == null) {
+            return null;
+        }
+        StringBuffer sb = new StringBuffer(strOrig);
+        String toReplace = "";
+
+        if (strReplace == null)
+            toReplace = "";
+        else
+            toReplace = strReplace;
+
+        int pos = strOrig.length();
+
+        while (pos > -1) {
+            pos = strOrig.lastIndexOf(strFind, pos);
+            if (pos > -1)
+                sb.replace(pos, pos + strFind.length(), toReplace);
+            pos = pos - strFind.length();
+        }
+
+        return sb.toString();
+    }
     private void determineMenuSize() {
         int width = newBoldFont.getTextWidth("Choose Option");
         for (int index = 0; index < menuActionRow; index++) {
-            int menuWidth = newBoldFont.getTextWidth(menuActionName[index]);
+            int menuWidth = newBoldFont.getTextWidth(removeColors(menuActionName[index]));
             if (menuActionName[index].contains("<img=")) {
-                menuWidth -= 36;
+                menuWidth += 23;
             }
             if (menuPlayerName[index] != null) {
                 menuWidth += newBoldFont.getTextWidth(menuPlayerName[index]);
@@ -4678,6 +4765,7 @@ public class Client extends GameRenderer {
                 width = menuWidth;
             }
         }
+
         width += 8;
         int menHeight = 15 * menuActionRow + 21;
         if (GameFrame.getScreenMode() == ScreenMode.FIXED) {
@@ -4766,7 +4854,8 @@ public class Client extends GameRenderer {
                 menuHeight = 15 * menuActionRow + 22;
             }
         } else {
-            if (super.saveClickX > 0 && super.saveClickY > 0 && super.saveClickX < getScreenWidth() && super.saveClickY < getScreenHeight()) {
+            if (super.saveClickX > 0 && super.saveClickY > 0 && super.saveClickX < getScreenWidth()
+                    && super.saveClickY < getScreenHeight()) {
                 int offsetX = super.saveClickX - 0 - width / 2;
                 if (offsetX + width > getScreenWidth()) {
                     offsetX = getScreenWidth() - width;
@@ -4789,6 +4878,7 @@ public class Client extends GameRenderer {
                 menuHeight = 15 * menuActionRow + 22;
             }
         }
+
     }
 
     public String getMoneyInPouch() {
@@ -9533,6 +9623,7 @@ public class Client extends GameRenderer {
                         rights += 3;
                     }
 
+
                     if (rights != 0) {
                         modIcons[rights].drawTransparentSprite(xOffset, yOffset - 12, 255);
                         xOffset += modIcons[rights].maxWidth + 2;
@@ -9633,6 +9724,16 @@ public class Client extends GameRenderer {
         tabArea.render(this);
     }
 
+    public String getSelectedOptionText() {
+        if (itemSelected == 1 && menuActionRow < 2) {
+            return "Use " + selectedItemName + " with...";
+        } else if (spellSelected == 1 && menuActionRow < 2) {
+            return spellTooltip + "...";
+        } else {
+            return menuActionName[menuActionRow - 1];
+        }
+    }
+
     private void drawTooltip() {
         // XXX: here tooltip
         if (menuActionRow < 2 && itemSelected == 0 && spellSelected == 0) {
@@ -9641,20 +9742,19 @@ public class Client extends GameRenderer {
             }
             return;
         }
-        String tooltip;
-        if (itemSelected == 1 && menuActionRow < 2) {
-            tooltip = "Use " + selectedItemName + " with...";
-        } else if (spellSelected == 1 && menuActionRow < 2) {
-            tooltip = spellTooltip + "...";
-        } else {
-            tooltip = menuActionName[menuActionRow - 1];
-        }
-        if (menuActionRow > 2) {
-            tooltip = tooltip + "@whi@ / " + (menuActionRow - 2) + " more options";
-        }
-        newBoldFont.drawBasicString(tooltip, 4, 15, 0xFFFFFF, 0, true);
-        // chatTextDrawingArea.method390(4, 0xffffff, tooltip, loopCycle / 1000,
-        // 15);
+
+        // Get the text of the currently selected option
+        String optionText = getSelectedOptionText();
+
+        // Calculate the width of the tooltip text based on the length of the option text
+        int tooltipWidth = optionText.length() * 10; // 10 is an arbitrary value, you may need to adjust this based on the font size and other factors
+
+        // Create the tooltip text using the calculated width
+        String tooltipText = "<html><body width='" + tooltipWidth + "px'>" + optionText + "</body></html>";
+
+        // Draw the tooltip text using the calculated width
+        newBoldFont.drawBasicString(tooltipText, 4, 14, 0xFFFFFF, 0, true);
+
         if (Configuration.NEW_CURSORS) {
             detectCursor(menuActionName[menuActionRow - 1]);
         }
@@ -18837,6 +18937,7 @@ if(response == 32){
             modIcons[16] = spritesMap.get(1508);
             modIcons[17] = spritesMap.get(852);
             modIcons[18] = spritesMap.get(856);
+            modIcons[19] = spritesMap.get(857);
 
             multiOverlay = spritesMap.get(1025);
             XPOverlay = spritesMap.get(1025);
@@ -19301,7 +19402,7 @@ if(response == 32){
 
                         }
                         if (entityDef.id == 741) {
-                            spritesMap.get(857).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
+                            spritesMap.get(1891).drawSprite(spriteDrawX - 4, spriteDrawY - 16);
 
                         }
                         if (entityDef.id == 585) {
@@ -19747,6 +19848,9 @@ if(response == 32){
 
         if (player.playerRights == 18) {
             return "<img=856>@or2@Community Manager@whi@ ";
+        }
+        if (player.playerRights == 19) {
+            return "<img=857><col=989794>Platinum Donator@whi@ ";
         }
         return "";
     }

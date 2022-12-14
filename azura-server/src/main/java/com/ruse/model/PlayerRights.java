@@ -31,7 +31,8 @@ public enum PlayerRights {
 	NULL_(-1, "@or2@<shad=0>", 1),
 	NULL_1(-1, "@or2@<shad=0>", 1),
 	NULL_2(-1, "@or2@<shad=0>", 1),
-	COMMUNITY_MANAGER(5, "@or2@<shad=0>", 1);
+	COMMUNITY_MANAGER(5, "@or2@<shad=0>", 1),
+	PLATINUM_DONATOR(10, "@bla@<shad=0>", 1);
 
 	PlayerRights(int yellDelaySeconds, String yellHexColorPrefix,
 			double experienceGainModifier) {

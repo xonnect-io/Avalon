@@ -79,6 +79,8 @@ public class PlayerProcess {
 			rank_amount = 3;
 		if (player.getRights() == PlayerRights.TANZANITE_DONATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 4;
+		if (player.getRights() == PlayerRights.PLATINUM_DONATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
+			rank_amount = 4;
 		if (player.getRights() == PlayerRights.SUPPORT && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
 			rank_amount = 4;
 		if (player.getRights() == PlayerRights.MODERATOR && System.currentTimeMillis() + 86400000 > player.lastVoteTime)
