@@ -119,12 +119,6 @@ public class Maxhits {
                     .getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
                 percent += 30;
             }
-
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc()
-                    .getId() == BossPets.BossPet.NECROMANCER.npcId) {
-                percent += 50;
-            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
@@ -182,6 +176,23 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.NECROMANCER.npcId) {
                 percent += 50;
+            }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.YUGI_MOTO.npcId) {
+                percent += 30;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DARK_MAGICIAN.npcId) {
+                percent += 30;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ARMED_PROTECTOR.npcId) {
+                percent += 30;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
+                percent += 30;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
@@ -458,11 +469,6 @@ public class Maxhits {
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
-                    .getId() == BossPets.BossPet.NECROMANCER.npcId) {
-                base *= 1.50;
-            }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
                 base *= 1.25;
             }
@@ -520,6 +526,22 @@ public class Maxhits {
                 base *= 1.5D;
             }
 
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.YUGI_MOTO.npcId) {
+                base *= 1.3D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DARK_MAGICIAN.npcId) {
+                base *= 1.3D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ARMED_PROTECTOR.npcId) {
+                base *= 1.3D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
+                base *= 1.3D;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.KRAMPUS_PET.npcId) {
@@ -874,10 +896,6 @@ public class Maxhits {
                 maxHit *= 1.30D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.NECROMANCER.npcId) {
-                maxHit *= 1.50D;
-            }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
                 maxHit *= 1.25D;
             }
@@ -926,6 +944,23 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.NECROMANCER.npcId) {
                 maxHit *= 1.5D;
+            }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.YUGI_MOTO.npcId) {
+                maxHit *= 1.3D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DARK_MAGICIAN.npcId) {
+                maxHit *= 1.3D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ARMED_PROTECTOR.npcId) {
+                maxHit *= 1.3D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
+                maxHit *= 1.3D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
@@ -1235,6 +1270,23 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.NECROMANCER.npcId) {
                 maxHit *= 1.50D;
             }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.YUGI_MOTO.npcId) {
+                maxHit *= 1.30D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DARK_MAGICIAN.npcId) {
+                maxHit *= 1.30D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ARMED_PROTECTOR.npcId) {
+                maxHit *= 1.30D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
+                maxHit *= 1.30D;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
                 maxHit *= 1.25D;
@@ -1280,11 +1332,6 @@ public class Maxhits {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {
                 maxHit *= 1.35D;
-            }
-            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
-                    && player.getSummoning().getFamiliar().getSummonNpc()
-                    .getId() == BossPets.BossPet.NECROMANCER.npcId) {
-                maxHit *= 1.5D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()

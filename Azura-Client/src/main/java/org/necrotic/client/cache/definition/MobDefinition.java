@@ -62,6 +62,191 @@ public final class MobDefinition {
 
 
 		switch (id) {
+			case 10034:
+				definition.name = "Yugi Muto";
+				definition.npcModels = new int[]{22340};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 300;
+				definition.scaleY = 300;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 4;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				break;
+			case 10035:
+				definition.name = "Dark Magician";
+				definition.npcModels = new int[]{22345};//22346 for staff
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 3;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				definition.changedModelColours = new int[1]; // same here
+				definition.changedModelColours[0] = 104; // the texture that it currently has
+				definition.originalModelColours[0] = 102; // the new texture u want it to have
+				break;
+			case 10036:
+				definition.name = "Armed Protector Dragon";
+				definition.npcModels = new int[]{22341};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 200;
+				definition.scaleY = 200;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 3;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				break;
+
+			case 10037:
+				definition.name = "Exodia the forgotten one";
+				definition.npcModels = new int[]{22342};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 300;
+				definition.scaleY = 300;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.npcSizeInSquares = 3;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				break;
+
+			case 10038:
+				definition.name = "Yugi Muto";
+				definition.npcModels = new int[]{22340};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				break;
+			case 10039:
+				definition.name = "Dark Magician";
+				definition.npcModels = new int[]{22345};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 50;
+				definition.scaleY = 50;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				definition.changedModelColours = new int[1]; // same here
+				definition.changedModelColours[0] = 104; // the texture that it currently has
+				definition.originalModelColours[0] = 102; // the new texture u want it to have
+				break;
+			case 10040:
+				definition.name = "Armed Protector Dragon";
+				definition.npcModels = new int[]{22341};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				break;
+
+			case 10041:
+				definition.name = "Exodia the forgotten one";
+				definition.npcModels = new int[]{22342};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 80;
+				definition.scaleY = 80;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				break;
+
+			case 10042:
+				definition.name = "Yugi Muto";
+				definition.npcModels = new int[]{22340};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 120;
+				definition.scaleY = 120;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				break;
+			case 10026:
+				definition.name = "Dark Magician";
+				definition.npcModels = new int[]{22345};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 70;
+				definition.scaleY = 70;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				definition.changedModelColours = new int[1]; // same here
+				definition.changedModelColours[0] = 104; // the texture that it currently has
+				definition.originalModelColours[0] = 102; // the new texture u want it to have
+				break;
+			case 10044:
+				definition.name = "Armed Protector Dragon";
+				definition.npcModels = new int[]{22341};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 100;
+				definition.scaleY = 100;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				break;
+
+			case 10045:
+				definition.name = "Exodia the forgotten one";
+				definition.npcModels = new int[]{22342};
+				definition.walkAnimation = 819;
+				definition.standAnimation = 808;
+				definition.scaleXZ = 115;
+				definition.scaleY = 115;
+				definition.maleModelScale = 2;
+				definition.degreesToTurn = 32;
+				definition.actions = new String[]{null, null, null, null, null};
+				definition.npcSizeInSquares = 1;
+				definition.drawYellowDotOnMap = true;
+				definition.headIcon = -1;
+				break;
 			case 9890:
 				definition.setDefault();
 				definition.npcModels = MobDefinition.get(3313).npcModels;
@@ -147,10 +332,7 @@ public final class MobDefinition {
 				definition.combatLevel = 1031;
 				definition.npcSizeInSquares = 3;
 				break;
-			case 3643:
-				definition.name = "@yel@Thanksgiving Shop";
-				definition.actions = new String[]{"Trade",null, null, null, null};
-				break;
+
 			case 4594:
 				definition.npcModels = new int[]{21155};
 				definition.name = "Spirit of Scorpius pet";
@@ -334,6 +516,7 @@ public final class MobDefinition {
 				definition.scaleY = 250;
 				definition.drawYellowDotOnMap = true;
 				break;
+				/*
 			case 9115:
 				definition.name = "Akuji";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -357,20 +540,8 @@ public final class MobDefinition {
 				definition.scaleXZ = 150;
 				definition.scaleY = 150;
 				definition.drawYellowDotOnMap = true;
-				break;
+				break;*/
 
-			case 9245:
-				definition.name = "Vorki";
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{19603};
-				definition.npcSizeInSquares = 2;
-				definition.combatLevel = 200;
-				definition.standAnimation = 8061;
-				definition.walkAnimation = 8061;
-				definition.scaleXZ = 100;
-				definition.scaleY = 100;
-				definition.drawYellowDotOnMap = true;
-				break;
 			case 2359:
 				definition.name = "Immortal Warrior";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -475,32 +646,6 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = true;
 				break;
 
-
-			case 9119:
-				definition.name = "Summer Surfer";
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{19486};
-				definition.npcSizeInSquares = 1;
-				definition.standAnimation = MobDefinition.get(1).standAnimation;
-				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 200;
-				definition.scaleY = 200;
-				definition.drawYellowDotOnMap = true;
-				break;
-
-			case 9120:
-				definition.name = "Summer Surfer Jr.";
-				definition.actions = new String[5];
-				definition.actions[0] = null;
-				definition.npcModels = new int[]{19486};
-				definition.npcSizeInSquares = 1;
-				definition.standAnimation = MobDefinition.get(1).standAnimation;
-				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 40;
-				definition.scaleY = 40;
-				definition.drawYellowDotOnMap = false;
-				break;
-
 			case 9121:
 				definition.name = "Faceless Magician";
 				definition.actions = new String[5];
@@ -532,6 +677,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 250;
 				definition.scaleY = 250;
 				break;
+
 			case 9123:
 				definition.name = "Shadow Magician";
 				definition.actions = new String[5];
@@ -577,20 +723,6 @@ public final class MobDefinition {
 				definition.drawYellowDotOnMap = false;
 				break;
 
-
-
-			case 9007:
-				definition.name = "Dreambody";
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{16427};
-				definition.npcSizeInSquares = 1;
-				definition.combatLevel = 300;
-				definition.standAnimation = MobDefinition.get(1).standAnimation;
-				definition.walkAnimation = MobDefinition.get(1).walkAnimation;
-				definition.scaleXZ = 350;
-				definition.scaleY = 350;
-				definition.drawYellowDotOnMap = true;
-				break;
 				
 			case 12810:
 				definition.npcModels = new int[]{15435};
@@ -617,6 +749,7 @@ public final class MobDefinition {
 				break;
 
 			case 1830:
+				definition.name = "Obsidian Dragon";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.standAnimation = 12248;
 				definition.walkAnimation = 12246;
@@ -624,16 +757,7 @@ public final class MobDefinition {
 				//definition.walkLeftAnimation = 4;
 				//definition.walkRightAnimation = 4;
 				break;
-			case 770:
-			case 771:
-			case 769:
-			case 6960:
-			case 6958:
-			case 6968:
-			case 6964:
-				definition.actions = new String[5];
-				definition.actions[0] = null;
-				break;
+
 			case 271:
 				definition.name = "Scorpian pet";
 				definition.actions = new String[5];
@@ -668,18 +792,6 @@ public final class MobDefinition {
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 120;
 				definition.scaleY = 120;
-				break;
-
-			case 504:
-				definition.name = "Haven Beast (2)";
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{65173};
-				definition.npcSizeInSquares = 5;
-				definition.combatLevel = 0;
-				definition.standAnimation = 10056;
-				definition.walkAnimation = 10055;
-				definition.scaleXZ = 80;
-				definition.scaleY = 80;
 				break;
 
 			case 688:
@@ -727,6 +839,7 @@ public final class MobDefinition {
 				definition.actions = new String[] {"Trade", null, null, null, null};
 				definition.combatLevel = 0;
 				break;
+
 			case 1880:
 				definition.name = "@or2@SOD Daemon";
 				definition.actions = new String[]{null, "Attack", null, null, null};
@@ -747,18 +860,6 @@ public final class MobDefinition {
 				definition.walkAnimation = 819;
 				definition.scaleXZ = 125;
 				definition.scaleY = 125;
-				break;
-
-			case 588:
-				definition.name = "Avalon Minion";
-				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[]{97666};
-				definition.npcSizeInSquares = 2;
-				definition.combatLevel = 0;
-				definition.standAnimation = 11973;
-				definition.walkAnimation = 11975;
-				definition.scaleXZ = 40;
-				definition.scaleY = 40;
 				break;
 
 			case 7553:
@@ -2326,9 +2427,43 @@ public final class MobDefinition {
 				break;
 			case 14:
 				definition.name = "<col=fce38a>Billbag+ store";
-
-
 				break;
+			case 10030:
+				definition.name = "Silverhawk";
+				definition.npcModels = MobDefinition.get(6222).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =   MobDefinition.get(6222).standAnimation;
+				definition.walkAnimation =  MobDefinition.get(6222).walkAnimation;
+				definition.actions = new String[] {null, "Attack", null, null, null};
+				definition.drawYellowDotOnMap = true;
+				definition.npcSizeInSquares = 2;
+				definition.scaleXZ = 90;
+				definition.scaleY = 90;
+				break;
+
+			case 10031:
+				definition.name = "Silverhawk pet";
+				definition.npcModels = MobDefinition.get(6222).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =   MobDefinition.get(6222).standAnimation;
+				definition.walkAnimation =  MobDefinition.get(6222).walkAnimation;
+				definition.actions = new String[] {null, null, null, null, null};
+				definition.drawYellowDotOnMap = false;
+				definition.npcSizeInSquares = 1;
+				definition.scaleXZ = 25;
+				definition.scaleY = 25;
+				break;
+			case 10032:
+				definition.name = "Avianse";
+				definition.npcModels = MobDefinition.get(6246).npcModels;
+				definition.combatLevel = 0;
+				definition.standAnimation =   MobDefinition.get(6246).standAnimation;
+				definition.walkAnimation =  MobDefinition.get(6246).walkAnimation;
+				definition.npcSizeInSquares = 1;
+				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.scaleXZ = definition.scaleY = 55;
+				break;
+
 			case 1837:
 				definition.name = "Ancient Mage";
 				definition.description = "Creepy... yet helpful. Trade your Trio Tokens to him.".getBytes();
@@ -2541,8 +2676,6 @@ public final class MobDefinition {
 				definition.name = "Cave kraken";
 				definition.actions = new String[]{null, "Attack", null, null, null};
 				MobDefinition cave = get(3847);
-				definition.npcModels = new int[1];
-				definition.npcModels[0] = 28233;
 				definition.combatLevel = 127;
 				definition.standAnimation = 3989;
 				definition.walkAnimation = cave.walkAnimation;
@@ -4119,7 +4252,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 100;
 				definition.scaleY = 100;
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.rdc2 = 33132;
+				definition.colorChange = new double[]{0.1, 0.1, 1.2};
 				definition.npcSizeInSquares = 2;
 				break;
 			case 8012:
@@ -6465,73 +6598,7 @@ public final class MobDefinition {
 				definition.scaleXZ = 150;
 				definition.scaleY = 150;
 				break;
-			case 7000:
-				definition.name = "Moss Titan";
-				definition.description = "stuff".getBytes();
-				definition.combatLevel = 0;
-				definition.npcModels = new int[]{30742};
-				definition.actions = new String[]{null, null, null, null, null};
-				definition.degreesToTurn = 32;
-				definition.headIcon = -1;
-				definition.npcSizeInSquares = 2;
-				definition.standAnimation = 7841;
-				definition.walkAnimation = 7838;
-				definition.walkingBackwardsAnimation = -1;
-				definition.walkLeftAnimation = -1;
-				definition.walkRightAnimation = -1;
-				definition.configChild = -1;
-				definition.varBitChild = -1;
-				definition.modelLightning = 25;
-				definition.modelShadowing = 0;
-				definition.drawYellowDotOnMap = false;
-				definition.disableRightClick = true;
-				definition.visibilityOrRendering = false;
-				break;
-			case 6332:
-				definition.name = "Lava Titan";
-				definition.description = "stuff".getBytes();
-				definition.combatLevel = 0;
-				definition.npcModels = new int[]{30481};
-				definition.actions = new String[]{null, null, null, null, null};
-				definition.degreesToTurn = 32;
-				definition.headIcon = -1;
-				definition.npcSizeInSquares = 2;
-				definition.standAnimation = 7978;
-				definition.walkAnimation = 7977;
-				definition.walkingBackwardsAnimation = -1;
-				definition.walkLeftAnimation = -1;
-				definition.walkRightAnimation = -1;
-				definition.configChild = -1;
-				definition.varBitChild = -1;
-				definition.modelLightning = 30;
-				definition.modelShadowing = 150;
-				definition.drawYellowDotOnMap = false;
-				definition.disableRightClick = true;
-				definition.visibilityOrRendering = false;
-				break;
 
-			case 6331:
-				definition.name = "Ice Titan";
-				definition.description = "stuff".getBytes();
-				definition.combatLevel = 0;
-				definition.npcModels = new int[]{30470};
-				definition.actions = new String[]{null, null, null, null, null};
-				definition.degreesToTurn = 32;
-				definition.headIcon = -1;
-				definition.npcSizeInSquares = 2;
-				definition.standAnimation = 8186;
-				definition.walkAnimation = 7847;
-				definition.walkingBackwardsAnimation = -1;
-				definition.walkLeftAnimation = -1;
-				definition.walkRightAnimation = -1;
-				definition.configChild = -1;
-				definition.varBitChild = -1;
-				definition.modelLightning = 35;
-				definition.modelShadowing = 0;
-				definition.drawYellowDotOnMap = false;
-				definition.disableRightClick = true;
-				definition.visibilityOrRendering = false;
-				break;
 			case 6330:
 				definition.name = "Giant Skeleton";
 				definition.description = "stuff".getBytes();

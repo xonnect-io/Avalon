@@ -45,7 +45,7 @@ public class PossibleLootInterface {
     }
 
     public static boolean handleButton(Player player, int buttonID) {
-        if (buttonID >= 101272 && buttonID <= 101342) {
+        if (buttonID >= 101272 && buttonID <= 101348) {
             int index = (buttonID - 101272) / 2;
 
             if (index <= LootData.values().length)
@@ -93,7 +93,9 @@ public class PossibleLootInterface {
         AFK_ONYX("Onyx AFK Rock",-1, Mining.onyx),
         AFK_ZENYTE("Zenyte AFK Rock",-1, Mining.zenyte),
         AFK_TANZANITE("Tanzanite AFK Rock",-1, Mining.tanzanite),
+        AFK_PLATINUM("Platinum AFK Rock",-1, Mining.platinum),
         TRAVELLING_MERCHANT(-1, TravellingMerchant.FIRST_ITEMS, "Travelling Merchant"),
+        PLATINUM_CHEST("Platinum Chest",-1, PlatinumRewards.rewards),
         ;
 
         private int itemId;

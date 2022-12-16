@@ -462,6 +462,9 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(22117)) { //Zenyte shield
             percentBoost += 35;
         }
+        if (player.getEquipment().contains(11425)) { //Duel-disc offhand (platinum)
+            percentBoost += 40;
+        }
         if (player.getEquipment().contains(13295)) { //Elidinis' ward (or)
             percentBoost += 40;
         }
@@ -994,23 +997,6 @@ public class CustomDropUtils {
                 percentBoost = 0;
             }
         }
-        if (npc == 9129 || //slayer champion
-                npc == 9312 || //Nephilim Warrior
-                npc == 9319 || //Zenyte Golem
-                npc == 587 || //Ironman boss
-                npc == 9318 || //Onyx Panther
-                npc == 3830 || //Vozzath
-                npc == 4972 || //Dragon king
-                npc == 3305 || //Naraku
-                npc == 9017 || //Nightmare Boss
-                npc == 8013 || //Vote Boss
-                npc == 3779|| //Terrorstep
-                npc == 187 ||//Hellraiser
-                npc == 8499 //Hellraiser
-         ) {
-            percentBoost = 0;
-            System.out.println("0 Droprate on globals");
-        }
 
         if (npc == TreasureHunter.NPC_1 || npc == TreasureHunter.NPC_2
                 || npc == TreasureHunter.NPC_3 || npc  == TreasureHunter.NPC_4) {
@@ -1201,6 +1187,23 @@ public class CustomDropUtils {
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.NECROMANCER.npcId) {
                 percentBoost += 100;
             }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.YUGI_MOTO.npcId) {
+                percentBoost += 90;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DARK_MAGICIAN.npcId) {
+                percentBoost += 90;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ARMED_PROTECTOR.npcId) {
+                percentBoost += 90;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
+                percentBoost += 90;
+            }
         }
 
         if (player.getInventory().contains(23413)) {
@@ -1215,7 +1218,8 @@ public class CustomDropUtils {
         /**
          * Donator Rank bonusses
          */
-        if (player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT || player.getRights().equals(PlayerRights.YOUTUBER)) {
+        if (player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT
+                || player.getRights().equals(PlayerRights.YOUTUBER)) {
             percentBoost += 125;
          } else if (player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT) {
             percentBoost += 100;
@@ -1231,6 +1235,8 @@ public class CustomDropUtils {
             percentBoost += 15;
         } else if (player.getAmountDonated() >= Store.SAPPHIRE_DONATION_AMOUNT) {
             percentBoost += 5;
+        } else {
+            percentBoost += 0;
         }
 
         if (player.getInventory().contains(4440)) {
@@ -1268,6 +1274,28 @@ public class CustomDropUtils {
         }
         if (PrayerHandler.isActivated(player, PrayerHandler.GNOMES_GREED)) {
             percentBoost += 10;
+        }
+
+        if (npc == 9129 || //slayer champion
+                npc == 9312 || //Nephilim Warrior
+                npc == 9319 || //Zenyte Golem
+                npc == 587 || //Ironman boss
+                npc == 9318 || //Onyx Panther
+                npc == 3830 || //Vozzath
+                npc == 4972 || //Dragon king
+                npc == 3305 || //Naraku
+                npc == 9017 || //Nightmare Boss
+                npc == 8013 || //Vote Boss
+                npc == 3779|| //Terrorstep
+                npc == 187 || //Hellraiser
+                npc == 8499 || //Hellraiser
+                npc == 10034 || //platinum boss (Yugi Muto)
+                npc == 10035 ||//platinum boss (Dark magician)
+                npc == 10036 ||//platinum boss (Armed Protector Dragon)
+                npc == 10037 //platinum boss (Exodia)
+        ) {
+            percentBoost = 0;
+            //System.out.println("0 Drop rate on globals");
         }
 
         return percentBoost;

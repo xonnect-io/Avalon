@@ -126,7 +126,23 @@ public class Mining {
             new Box(6769, 0.005D,true), //$5 BBond
             new Box(10942, 0.005D,true), //$5 BBond
             new Box(23253, 0.001D,true), //Exclusive casket
-            new Box(23209, 1, 3D),  //onyx fragment
+            new Box(10482, 1, 3D),  //onyx fragment
+    };
+
+    public static Box[] platinum = new Box[]{
+            new Box(5022, 8, 30, 100),  //Pvm tickets
+            new Box(5022, 24, 50, 75),  //Pvm tickets
+            new Box(5020, 8, 30, 100),  //Afk tickets
+            new Box(5020, 24, 50, 70),  //Afk tickets
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 8, 30, 100),  //Orbs
+            new Box(ItemDefinition.UPGRADE_TOKEN_ID, 20, 50, 60),  //Orbs
+            new Box(6199, 1, 10, 0.4D),  //mystery box
+            new Box(7956, 1,10, 0.3D),  //PvM crate
+            new Box(20488, 0.05D), //Super mbox
+            new Box(6769, 0.005D,true), //$5 BBond
+            new Box(10942, 0.005D,true), //$5 BBond
+            new Box(23253, 0.001D,true), //Exclusive casket
+            new Box(10481, 1, 3D),  //onyx fragment
     };
 
 
@@ -198,6 +214,9 @@ public class Mining {
                         } else if (tier == 7) {
                             loot = tanzanite;
                             player.setAfkTanzanite(player.getAfkTanzanite() + 1);
+                        } else if (tier == 8) {
+                            loot = platinum;
+                            player.setAfkPlatinum(player.getAfkPlatinum() + 1);
                         }
 
                         Box reward = CasketOpening.getLoot(loot);

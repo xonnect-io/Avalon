@@ -1,5 +1,6 @@
 package com.ruse.net.packet.impl;
 
+import com.ruse.GameSettings;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.engine.task.impl.*;
 import com.ruse.model.*;
@@ -11,6 +12,7 @@ import com.ruse.model.input.ExchangeXUpgradeTokens;
 import com.ruse.net.packet.Packet;
 import com.ruse.net.packet.PacketListener;
 import com.ruse.util.Misc;
+import com.ruse.util.RandomUtility;
 import com.ruse.world.World;
 import com.ruse.world.content.*;
 import com.ruse.world.content.Sounds.Sound;
@@ -250,6 +252,26 @@ public class ItemActionPacketListener implements PacketListener {
 
 
         switch (itemId) {
+            case 23447:
+                if (player.getAmountDonated () > 20000 || player.getRights () == PlayerRights.OWNER) {
+                    player.sendMessage("Teleporting you to the Platinum chest..");
+                    Position[] locations = new Position[]{new Position(2267, 4073, 0)};
+                    Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
+                    TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
+                    player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
+                } else {
+                    player.sendMessage("You need to have reached Platinum rank to visit this zone!");
+                }
+                break;
+            case 10481:
+                if (player.getInventory().getAmount(10481) >= 1000) {
+                    player.getInventory().delete(10481, 1000);
+                    player.getInventory().add(23447, 1);
+                    player.sendMessage("You created a Platinum key!");
+                } else {
+                    player.sendMessage("You need at least 1000 Platinum fragments to do this.");
+                }
+                break;
             case 23488:
                 if (player.getInventory().getAmount(23488) >= 1000) {
                     player.getInventory().delete(23488, 1000);
@@ -273,6 +295,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(-1);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -285,8 +311,155 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(9877);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
+            case 10503:
+                if (player.isYugiTransform()) {
+                    player.getPacketSender().sendMessage("You are no longer Yugi Muto");
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into Yugi Muto.");
+                    player.setYugiTransform(true);
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(10042);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
+            case 10598:
+                if (player.isDarkMagicianTransform ()) {
+                    player.getPacketSender().sendMessage("You are no longer the Dark Magician");
+                    player.setSantaTransform (false);
+                    player.setYugiTransform(false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into Dark Magician.");
+                    player.setDarkMagicianTransform(true);
+                    player.setYugiTransform(false);
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(10026);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
+
+            case 10585:
+                if (player.isProtectorTransform ()) {
+                    player.getPacketSender().sendMessage("You are no longer the Armed Protector Dragon");
+                    player.setSantaTransform (false);
+                    player.setYugiTransform(false);
+                    player.setExodiaTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into Armed Protector Dragon.");
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(true);
+                    player.setExodiaTransform(false);
+                    player.setYugiTransform(false);
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(10044);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                }
+                break;
+            case 10587:
+                if (player.isExodiaTransform ()) {
+                    player.getPacketSender().sendMessage("You are no longer Exodia!");
+                    player.setSantaTransform (false);
+                    player.setExodiaTransform(false);
+                    player.setYugiTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(-1);
+                    player.getUpdateFlag().flag(Flag.APPEARANCE);
+                } else {
+                    player.getPacketSender().sendMessage("You have transformed into Exodia!");
+                    player.setDarkMagicianTransform(false);
+                    player.setExodiaTransform(true);
+                    player.setProtectorTransform(false);
+                    player.setYugiTransform(false);
+                    player.setSantaTransform (false);
+                    player.setEvilSantaTransform(false);
+                    player.setNightmareTransform(false);
+                    player.setVoteBossTransform(false);
+                    player.setDragonKingTransform(false);
+                    player.setVozzathTransform (false);
+                    player.setGolemTransform(false);
+                    player.newStance();
+                    player.setNpcTransformationId(10045);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
                 }
                 break;
@@ -308,6 +481,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(-1);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -320,6 +497,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(9878);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -335,6 +516,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(-1);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -347,6 +532,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(9879);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -362,6 +551,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(-1);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -373,6 +566,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setNightmareTransform(true);
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.setGolemTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(9880);
@@ -389,6 +586,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(-1);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -401,6 +602,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setVozzathTransform (false);
                     player.setDragonKingTransform(true);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(9881);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -417,6 +622,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform(false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(-1);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -429,6 +638,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (true);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(9882);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -444,6 +657,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform(false);
                     player.setGolemTransform(false);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(-1);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -456,6 +673,10 @@ public class ItemActionPacketListener implements PacketListener {
                     player.setDragonKingTransform(false);
                     player.setVozzathTransform (false);
                     player.setGolemTransform(true);
+                    player.setYugiTransform(false);
+                    player.setDarkMagicianTransform(false);
+                    player.setProtectorTransform(false);
+                    player.setExodiaTransform(false);
                     player.newStance();
                     player.setNpcTransformationId(9883);
                     player.getUpdateFlag().flag(Flag.APPEARANCE);

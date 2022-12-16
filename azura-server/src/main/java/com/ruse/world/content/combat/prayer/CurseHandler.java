@@ -322,12 +322,21 @@ public class CurseHandler {
 				if(player.getAmountDonated() >=500) {
 					drain = 0;
 				}
-				if(	player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 22105 || player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 7995
-						|| player.getEquipment().get(Equipment.AURA_SLOT).getId() == 12608 || player.getEquipment().get(Equipment.AURA_SLOT).getId() == 22105
-						|| player.getEquipment().get(Equipment.AURA_SLOT).getId() == 12630
-						||player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 22109|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20591
-						|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20400 || player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23270
-						|| player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23268 || player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23358) {
+				if(	player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 7995 ||
+						player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 22105 ||
+						player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 22109 ||
+						player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20591 ||
+						player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 20400 ||
+						player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23270 ||
+						player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23268 ||
+						player.getEquipment().get(Equipment.CAPE_SLOT).getId() == 23358 ||
+
+						player.getEquipment().get(Equipment.AURA_SLOT).getId() == 22111 ||
+						player.getEquipment().get(Equipment.AURA_SLOT).getId() == 23271 ||
+						player.getEquipment().get(Equipment.AURA_SLOT).getId() == 23241 ||
+						player.getEquipment().get(Equipment.AURA_SLOT).getId() == 22105 ||
+						player.getEquipment().get(Equipment.AURA_SLOT).getId() == 12608 ||
+						player.getEquipment().get(Equipment.AURA_SLOT).getId() == 12630) {
 					drain = 0;
 				}
 				//if (drain <= 0 && !player.checkItem(Equipment.CAPE_SLOT, 19748)) {

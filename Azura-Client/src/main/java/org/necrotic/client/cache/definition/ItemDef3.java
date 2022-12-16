@@ -116,7 +116,7 @@ public class ItemDef3 {
 			itemDef.modelZoom = 300;
 			itemDef.rotationY = itemdefedit.rotationY;
 			itemDef.rotationX = itemdefedit.rotationX;
-			itemDef.rdc2 = 623532;
+			itemDef.colorChange = new double[]{0.1, 1, 1.2};
 			itemDef.actions = new String[]{null, null, null, null, "Drop"};
 			itemDef.stackable = true;
 			break;
@@ -148,10 +148,40 @@ public class ItemDef3 {
 			itemDef.modelZoom = 300;
 			itemDef.rotationY = itemdefedit.rotationY;
 			itemDef.rotationX = itemdefedit.rotationX;
-			itemDef.rdc2 = 38420;
+			itemDef.colorChange = new double[]{1.2, 0.8, 0.1};
 			itemDef.actions = new String[]{null, null, null, null, "Drop"};
 			itemDef.stackable = true;
 			break;
+
+			case 10482:
+				itemDef.name = "Tanzanite fragments";
+				itemdefedit = ItemDefinition.get(9191);
+				itemDef.modelID = itemdefedit.modelID;
+				itemDef.maleEquip1 = itemdefedit.maleEquip1;
+				itemDef.femaleEquip1 = itemdefedit.femaleEquip1;
+				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
+				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
+				itemDef.modelZoom = 300;
+				itemDef.rotationY = itemdefedit.rotationY;
+				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.actions = new String[]{null, null, null, null, "Drop"};
+				itemDef.rdc2 = 38420;
+				break;
+
+			case 10481:
+				itemDef.name = "Platinum fragments";
+				itemdefedit = ItemDefinition.get(9191);
+				itemDef.modelID = itemdefedit.modelID;
+				itemDef.maleEquip1 = itemdefedit.maleEquip1;
+				itemDef.femaleEquip1 = itemdefedit.femaleEquip1;
+				itemDef.modelOffsetX = itemdefedit.modelOffsetX;
+				itemDef.modelOffsetY = itemdefedit.modelOffsetY;
+				itemDef.modelZoom = 300;
+				itemDef.rotationY = itemdefedit.rotationY;
+				itemDef.rotationX = itemdefedit.rotationX;
+				itemDef.actions = new String[]{"Claim", null, null, null, null};
+				itemDef.rdc2 = 623532;
+				break;
 			
 			case 23000:
 				itemDef.copyItem(6585);

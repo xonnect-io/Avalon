@@ -361,6 +361,11 @@ public enum TeleportData {
 			"@or1@Health:@whi@ 2,000,000,000","@or1@To Spawn: @whi@" + SlayerBossSystem.getLeft() + " tasks left","",
 			TeleportCategory.GLOBALS, new Position(3488, 4700, 0), 79, false, 9129, -1,
 			new int[][] {{23229, 1}, {12855, 10000}, {21219, 10},{7120, 5},{22123, 3},{19116, 15},{19115, 10},{19114, 5},{20488, 2},{4446, 1}, {19886, 1}, {15003, 1}, {14999, 1}, {23253, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1200),
+	SILVERHAWK(28319, 28319, 28319, 28243, "Platinum Bosses", 10,
+			"@or1@Health:@whi@ 2,000,000,000","@or1@To Spawn: @whi@" + (PlatinumBosses.bossAlive
+			?  PlatinumBosses.getTimeLeft () : "Alive ::platinum"),"",
+			TeleportCategory.GLOBALS, new Position(2273, 4073, 0), 79, false,10034, -1,
+			new int[][] {{23229, 1}, {12855, 10000}, {21219, 10},{7120, 5},{22123, 3},{19116, 15},{19115, 10},{19114, 5},{20488, 2},{4446, 1}, {19886, 1}, {15003, 1}, {14999, 1}, {23253, 1}, {-1, 1}, {-1, 1}, {-1, 1}},1300),
 
 
 	/*

@@ -386,8 +386,8 @@ public final class CombatFactory {
                 id == 9129 ||  id == 13479 ||id == 9111 || id == 9109 ||
                 id == 8712 || id == 8009 || id == 3830 || id == 187 || id == 3779 ||
                 id == 12239 || id == 7553 || id == 3305 || id == 9017 || id == 4972 ||
-                id == 9020 || id == 9312 || id == 587 || id == 9894
-
+                id == 9020 || id == 9312 || id == 587 || id == 9894 || id == 10034|| id == 10035|| id == 10036|| id == 10037
+                || id == 9899|| id == 9993|| id == 9884
                 ;}
 
     /**
@@ -397,7 +397,8 @@ public final class CombatFactory {
      * @param attacker the attacker who's hit is being calculated for accuracy.
      * @param victim   the victim who's awaiting to either be hit or dealt no
      *                 damage.
-     * @param type     the type of combat being used to deal the hit.
+     * @param type     the type of combat being used to
+     *                 deal the hit.
      * @return true if the hit was successful, or in other words accurate.
      */
     @SuppressWarnings("incomplete-switch")
@@ -1852,7 +1853,12 @@ public final class CombatFactory {
             if (victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13740
                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13742
                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 18889
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13289
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13293
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13295
                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 7554
+                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 11425
                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 15832
                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 15872
                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23228
@@ -1933,7 +1939,12 @@ public final class CombatFactory {
                             if (victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13740
                                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13742
                                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 19810
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 18889
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13289
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13293
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 13295
                                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 7554
+                                    || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 11425
                                     || victim.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 15832
                                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 15872
                                     || victim.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId() == 23228
@@ -2714,6 +2725,42 @@ public final class CombatFactory {
         player.setNephSwordCharges(player.getNephSwordCharges() - 1);
         player.getPacketSender().sendMessage("Your sword has " + player.getNephSwordCharges() + "/20 charges remaining.");
         BonusManager.update(player);
+    }
+    public static void handleDuelDisc(final Player player, final Character target) {
+        if (player == null || target == null || target.getConstitution() <= 0 || player.getConstitution() <= 0)
+            return;
+        if (!player.getLastDfsTimer().elapsed(120000)) {
+            player.getPacketSender().sendMessage("Your duel-disc offhand is not ready yet.");
+            return;
+        }
+        player.getCombatBuilder().cooldown(false);
+        player.setEntityInteraction(target);
+        player.performAnimation(new Animation(6696));
+        player.performGraphic(new Graphic(102));
+        TaskManager.submit(new Task(1, player, false) {
+            int ticks = 0;
+
+            @Override
+            public void execute() {
+                switch (ticks) {
+                    case 3:
+                        new Projectile(player, target, 194, 44, 3, 43, 31, 0).sendProjectile();
+                        break;
+                    case 4:
+                        Hit h = new Hit((Maxhits.ranged (player, target) * 2), Hitmask.RED, CombatIcon.MAGIC);
+                        target.dealDamage(h);
+                        target.performGraphic(new Graphic(190, GraphicHeight.HIGH));
+                        target.getCombatBuilder().addDamage(player, h.getDamage());
+                        target.getLastCombat().reset();
+                        stop();
+                        break;
+                }
+                ticks++;
+            }
+        });
+        player.getLastDfsTimer().reset();
+        BonusManager.update(player);
+        player.setEntityInteraction(target);
     }
     public static void handleDragonFireShield(final Player player, final Character target) {
         if (player == null || target == null || target.getConstitution() <= 0 || player.getConstitution() <= 0)

@@ -214,6 +214,8 @@ public class CustomObjects {
     // NOTE: You must add to the client's customobjects array to make them spawn,
     // this is just clipping!
     private static final int[][] CLIENT_OBJECTS = {
+            {9666, 2266, 4073, 0, 3},
+            {9666, 2280, 4073, 0, 1},
             {14694, 2991, 3904, 0, 0},
             {14694, 2991, 3905, 0, 0},
             {14694, 2991, 3906, 0, 0},

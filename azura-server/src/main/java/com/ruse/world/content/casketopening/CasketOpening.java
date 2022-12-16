@@ -531,6 +531,7 @@ public class CasketOpening {
         RAIDS(18404, Raids1.rewards),
         SUPREME(23253, Supreme.rewards),
         SOSREWARDS(23370, SOSRewards.rewards),
+        PLATINUM(23447, PlatinumRewards.rewards),
         NECROMANCER(23447, ShadowRewards.rare),
         SUMMER_BOX(23322, SummerBox.rewards),
         SLAYER_U(22123, SlayerU.rewards),

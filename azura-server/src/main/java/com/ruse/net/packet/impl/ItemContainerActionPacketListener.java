@@ -607,6 +607,13 @@ public class ItemContainerActionPacketListener implements PacketListener {
 									+ player.getDfsCharges() + "/20 dragon-fire charges.");
 						}
 						break;
+					case 11425:
+							if (player.getCombatBuilder().isAttacking()) {
+								CombatFactory.handleDuelDisc(player, player.getCombatBuilder().getVictim());
+							} else {
+								player.getPacketSender().sendMessage("You can only use this in combat.");
+							}
+						break;
 				}
 				break;
 			case Trading.INTERFACE_ID:

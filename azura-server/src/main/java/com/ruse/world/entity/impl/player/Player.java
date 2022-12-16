@@ -695,6 +695,22 @@ public int howmuchdissolveamt = 0;
     @Getter
     @Setter
     private boolean santaTransform;
+    @Getter
+    @Setter
+    private boolean yugiTransform;
+
+    @Getter
+    @Setter
+    private boolean darkMagicianTransform;
+
+    @Getter
+    @Setter
+    private boolean protectorTransform;
+
+
+    @Getter
+    @Setter
+    private boolean exodiaTransform;
 
     @Getter
     @Setter
@@ -878,6 +894,7 @@ public int howmuchdissolveamt = 0;
     private int afkOnyx;
     private int afkZenyte;
     private int afkTanzanite;
+    private int afkPlatinum;
     @Getter
     @Setter
     private int godModeTimer;
@@ -1340,7 +1357,11 @@ public int howmuchdissolveamt = 0;
         this.afkTanzanite = afkTanzanite;
     }
 
-
+    public int getAfkPlatinum() { return afkPlatinum;
+    }
+    public void setAfkPlatinum(int afkPlatinum) {
+        this.afkPlatinum = afkPlatinum;
+    }
     public GoodieBag getGoodieBag() {
         return goodieBag;
     }
@@ -4986,7 +5007,7 @@ End new teleport
     private boolean unlockedSet20;
 
     public boolean isInMinigame() {
-        boolean inMinigameLoc = getLocation() == Locations.Location.KEEPERS_OF_LIGHT_GAME || getLocation() == Locations.Location.VAULT_OF_WAR || getLocation() == Locations.Location.VOID_OF_DARKNESS || getLocation() == Locations.Location.HALLS_OF_VALOR || getLocation() == Locations.Location.TREASURE_HUNTER;
+        boolean inMinigameLoc = getLocation() == Locations.Location.KEEPERS_OF_LIGHT_GAME || getLocation() == Locations.Location.VAULT_OF_WAR || getLocation() == Locations.Location.HALLS_OF_VALOR || getLocation() == Locations.Location.TREASURE_HUNTER;
         boolean inMinigameInstance = getMapInstance() instanceof DungeoneeringInstance;
         return inMinigameLoc || inMinigameInstance;
     }

@@ -127,7 +127,7 @@ public class ItemDef4 {
 
 			case 23447:
 				itemDef.copyItem(18665);
-				itemDef.name = "Necromancer Key";
+				itemDef.name = "Platinum Key";
 				itemDef.actions = new String[]{"Teleport", null, null, null, null};
 				itemDef.rdc2 = 807999;
 				break;

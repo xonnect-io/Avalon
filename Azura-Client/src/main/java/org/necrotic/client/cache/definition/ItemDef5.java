@@ -6,6 +6,81 @@ public class ItemDef5 {
 
 		switch (id) {
 
+			case 10483:
+				itemDef.copyItem(23511);
+				itemDef.modelID = 22340;
+				itemDef.name = "Yugi Muto pet";
+				break;
+			case 10484:
+				itemDef.copyItem(23511);
+				itemDef.modelID = 22345;
+				itemDef.name = "Dark magician pet";
+				break;
+			case 10485:
+				itemDef.copyItem(23511);
+				itemDef.modelID = 22341;
+				itemDef.name = "Armed protector pet";
+				break;
+			case 10486:
+				itemDef.copyItem(23511);
+				itemDef.modelID = 22342;
+				itemDef.name = "Exodia pet";
+				break;
+
+			case 10502:
+				itemDef.copyItem(10483);
+				itemDef.name = "Yugi Muto Transformer";
+				break;
+			case 10503:
+				itemDef.certID = 10502;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Yugi Muto Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+
+			case 10597:
+				itemDef.copyItem(10484);
+				itemDef.name = "Dark Magician Transformer";
+				break;
+			case 10598:
+				itemDef.certID = 10597;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Dark Magician Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+
+			case 10506:
+				itemDef.copyItem(10485);
+				itemDef.name = "Armed Protector Transformer";
+				break;
+			case 10585:
+				itemDef.certID = 10506;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Armed Protector Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+
+			case 10586:
+				itemDef.copyItem(10486);
+				itemDef.name = "Exodia Transformer";
+				break;
+			case 10587:
+				itemDef.certID = 10486;
+				itemDef.certTemplateID = 23652;
+				itemDef.name = "Exodia Transformer";
+				itemDef.actions = new String[]{"Transform", null, null, null, null};
+				break;
+
+			case 11425:
+				itemDef.copyItem(13742);
+				itemDef.name = "Duel-Disc Offhand";
+				itemDef.modelZoom = 1100;
+				itemDef.modelID = 22339;
+				itemDef.maleEquip1 = 22338;
+				itemDef.femaleEquip1 = 22338;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+
 			case 13223:
 				itemDef.copyItem(23324);
 				itemDef.modelID = 19593;

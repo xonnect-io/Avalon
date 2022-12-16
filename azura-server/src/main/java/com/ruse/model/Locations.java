@@ -1745,7 +1745,7 @@ public class Locations {
 				}
 			}
 		},
-		SAPPHIRE_ZONE(new int[] { 2882, 2938 }, new int[] { 5320, 5380 }, false, true, true, false, true, true) {
+		SAPPHIRE_ZONE(new int[] { 2882, 2938 }, new int[] { 5320, 5380 }, true, true, true, false, true, true) {
 
 			@Override
 			public void enter(Player player) {
@@ -1766,7 +1766,7 @@ public class Locations {
 				}
 			}
 		},
-		EMERALD_ZONE(new int[] { 2580, 2622 }, new int[] { 2760, 2785 }, false, true, true, false, true, false) {
+		EMERALD_ZONE(new int[] { 2580, 2622 }, new int[] { 2760, 2785 }, true, true, true, false, true, false) {
 
 			@Override
 			public void enter(Player player) {
@@ -1808,7 +1808,7 @@ public class Locations {
 				}
 			}
 		},
-		DIAMOND_ZONE(new int[] { 2571, 2619 }, new int[] { 2695, 2746 }, false, true, true, false, true, false) {
+		DIAMOND_ZONE(new int[] { 2571, 2619 }, new int[] { 2695, 2746 }, true, true, true, false, true, false) {
 
 			@Override
 			public void enter(Player player) {
@@ -1829,7 +1829,7 @@ public class Locations {
 				}
 			}
 		},
-		ONYX_ZONE(new int[] { 2493, 2564 }, new int[] { 2625, 2680 }, false, true, true, false, true, false) {
+		ONYX_ZONE(new int[] { 2493, 2564 }, new int[] { 2625, 2680 }, true, true, true, false, true, false) {
 
 			@Override
 			public void enter(Player player) {
@@ -1850,7 +1850,7 @@ public class Locations {
 				}
 			}
 		},
-		ZENYTE_ZONE(new int[] { 2569, 2620 }, new int[] { 2631, 2687 }, false, true, true, false, true, false) {
+		ZENYTE_ZONE(new int[] { 2569, 2620 }, new int[] { 2631, 2687 }, true, true, true, false, true, false) {
 
 			@Override
 			public void enter(Player player) {
@@ -1871,7 +1871,7 @@ public class Locations {
 				}
 			}
 		},
-		TANZANITE_ZONE(new int[] { 2690, 2750 }, new int[] { 4806, 4866 }, false, true, true, false, true, false) {
+		TANZANITE_ZONE(new int[] { 2690, 2750 }, new int[] { 4806, 4866 }, true, true, true, false, true, false) {
 
 			@Override
 			public void enter(Player player) {
@@ -1892,7 +1892,7 @@ public class Locations {
 				}
 			}
 		},
-		PLATINUM_ZONE(new int[] { 2690, 2750 }, new int[] { 4806, 4866 }, false, true, true, false, true, false) {
+		PLATINUM_ZONE(new int[] { 2240, 2310 }, new int[] { 4037, 4099 }, true, true, true, false, true, false) {
 
 			@Override
 			public void enter(Player player) {
@@ -1903,13 +1903,13 @@ public class Locations {
 					if (player.getPlayerInteractingOption() != PlayerInteractingOption.VIEW_SHOP)
 						player.getPacketSender().sendInteractionOption("View POS", 2, false);
 					player.getPacketSender()
-							.sendMessage("As you enter the Tanzanite Donator Zone, your health regenerates to full.");
+							.sendMessage("As you enter the Platinum Donator Zone, your health regenerates to full.");
 				}
 				if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager()
 						.getMaxLevel(Skill.PRAYER)) {
 					player.getSkillManager().setCurrentLevel(Skill.PRAYER,
 							player.getSkillManager().getMaxLevel(Skill.PRAYER));
-					player.getPacketSender().sendMessage("As you enter the Tanzanite Donator Zone, the gods restore your prayer.");
+					player.getPacketSender().sendMessage("As you enter the Platinum Donator Zone, the gods restore your prayer.");
 				}
 			}
 		},
@@ -1982,45 +1982,6 @@ public class Locations {
 
 			}
 			},
-
-
-		VOID_OF_DARKNESS(new int[] { 1925, 1984 }, new int[] { 4999, 5055 }, true, true, true, false, true, true) {
-			@Override
-			public void enter(Player player) {
-				/*VoidOfDarkness.resetBarrows(player);
-				if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.VOID_OF_DARKNESS)) {
-					player.getRegionInstance().destruct();
-					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.VOID_OF_DARKNESS, player.getIndex() * 4));
-				}
-				player.vod.start();*/
-
-				player.getPacketSender().sendWalkableInterface(126500, true);
-			}
-
-			@Override
-			public boolean canTeleport(Player player) {
-				return true;
-			}
-
-			@Override
-			public void leave(Player player) {
-
-				/*if (player.getRegionInstance() != null && player.getRegionInstance().equals(RegionInstance.RegionInstanceType.VOID_OF_DARKNESS)) {
-					player.getRegionInstance().destruct();
-					World.getNpcs().forEach(n -> n.removeInstancedNpcs(Location.VOID_OF_DARKNESS, player.getIndex() * 4));
-				}*/
-				VoidOfDarkness.resetBarrows(player);
-				player.getPacketSender().sendCameraNeutrality();
-				
-				player.getPacketSender().sendWalkableInterface(126500, false);
-				NPC tiedNpc = player.findSpawnedFor(7758);
-				if(tiedNpc != null) {
-					World.deregister(tiedNpc);
-				}
-				VoidOfDarkness.updateInterface(player);
-			}
-
-		},
 
 		HALLS_OF_VALOR(new int[] { 2175, 2239}, new int[] { 4998, 5053 }, true, true, true, false, false, false) {
 			@Override

@@ -427,7 +427,7 @@ public class CustomTeleportInterface {
         SLAYER(ID_START + 4, 1000, 8011, "Events Minigame", "Melee/Magic/Range", "Melee/Range", new Position(2732, 3465, 0), Locations.Location.EXODENLOC, 3),
         PEST_CONTROLL(ID_START + 5, 1000, 131, "Penguin Minigame", "Melee", "Magic/Range", new Position(3039, 9545, 0), Locations.Location.PEST_CONTROL_GAME, 3),
         DICEZONE(ID_START + 6, 2500, 1850, "Dice Zone", "N/A", "N/A", new Position(2623, 4010, 0), Locations.Location.EXODENLOC),
-        VOID_OF_DARKNESS(ID_START + 7, 1000, 9030, "Void of Deception", "Melee/Magic/Range", "Melee/Range",VoidOfDarkness.TELEPORT_AREA, Locations.Location.VOID_OF_DARKNESS, 10);
+        VOID_OF_DARKNESS(ID_START + 7, 1000, 9030, "Void of Deception", "Melee/Magic/Range", "Melee/Range",VoidOfDarkness.TELEPORT_AREA, Locations.Location.EXODENLOC, 10);
         //  BRUTAL_HANK(ID_START + 7, 1000, 8009, "Brutal Hulk", "Magic/Melee", "Range/Magic", new Position(2858, 2710, 0), Locations.Location.EXODENLOC, 13),
         //   FRIEZA(ID_START + 8, 1000, 2132, "Dragonball [Frieza]", "Melee", "Range", new Position(2523, 2703, 0), Locations.Location.EXODENLOC, 13);
 

@@ -323,6 +323,14 @@ public final class ObjectDefinition {
 			definition.name = "AFK Tanzanite"; //#7a37b3
 			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
 		}
+		if (definition.type == 26280) {
+			definition.objectModelIDs = new int[]{22337};
+			definition.modelSizeY = 135;
+			definition.modelSizeX = 135;
+			definition.mapSceneID = 11;
+			definition.name = "AFK Platinum"; //#7a37b3
+			definition.actions = new String[]{"Mine", "Check-rewards", null, null, null};
+		}
 		if (definition.type == 4004 ||definition.type == 27306 ) {
 			definition.castsShadow = false;
 			definition.actions = new String[]{"Sacrifice", "Pray-at", null, null, null};
@@ -366,6 +374,7 @@ public final class ObjectDefinition {
 			definition.actions = new String[5];
 			definition.actions[0] = "Open Perks";
 			definition.objectModelIDs = new int[]{100055};
+			definition.description = "PERKY TITS".getBytes();
 		}
 		
 		if (definition.type == 13291) {
@@ -373,6 +382,7 @@ public final class ObjectDefinition {
 			definition.originalModelColors = new int[]{5055, 5088, 5055};
 			definition.modifiedModelColors = new int[]{51111, 8128, 7093};
 			definition.actions = new String[]{"Search", null, null, null, null};
+			definition.description = "A chest full of loot!".getBytes();
 			definition.offsetX = 0;
 			definition.offsetH = 0;
 			definition.offsetY = 0;
@@ -384,11 +394,25 @@ public final class ObjectDefinition {
 			definition.modelSizeX = 300;
 			definition.actions = new String[]{"Open", null, null, null, null};
 			definition.objectModelIDs = new int[]{19462}; //19458
+			definition.description = "A chest full of suffering".getBytes();
 		}
 
 		if (definition.type == 399) {
 			definition.name = "Necromancer Coffer";
 			definition.actions = new String[]{"Access", null, null, null, null};
+			definition.description = "A coffer of the mighty Necromancer".getBytes();
+		}
+
+
+		if (definition.type == 9666) {
+			definition.name = "Platinum Chest";
+			definition.modelSizeH = 120;
+			definition.modelSizeY = 120;
+			definition.modelSizeX = 120;
+			definition.castsShadow = false;
+			definition.objectModelIDs = new int[]{22347};
+			definition.description = "A chest made of Platinum.".getBytes();
+			definition.actions = new String[]{"Open", "Check rewards", null, null, null};
 		}
 
 		if (definition.type == 27656) {
@@ -397,6 +421,7 @@ public final class ObjectDefinition {
 			definition.modelSizeY = 140;
 			definition.modelSizeX = 140;
 			definition.castsShadow = false;
+			definition.description = "A coffer of the Elder Gods.".getBytes();
 			definition.actions = new String[]{"Access", null, null, null, null};
 		}
 		if (definition.type == 6483) {
@@ -1210,11 +1235,7 @@ public final class ObjectDefinition {
 			definition.interactive = true;
 			definition.actions = new String[5];
 		}
-		if (definition.type == 26280) {
-			definition.interactive = true;
-			definition.actions = new String[5];
-			definition.actions[0] = "Study";
-		}
+
 		if (definition.type == 27339) {
 			definition.interactive = true;
 			definition.name = "Mystical Monolith";

@@ -298,9 +298,11 @@ public class World {
         ZenyteGolemBoss.cycle();
         OnyxPantherBoss.initiateSpawn();
         NarakuBoss.spawn();
+        PlatinumBosses.initialize();
         //VdayGifting.initialize();
         NightmareBoss.execute();
         SantaGifting.initialize();
+        PlatinumGifting.initialize();
         //TurkeySpawns.initialize();
         KeepersOfLight.sequence();
         FantasyZone.initialize();

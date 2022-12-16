@@ -19,6 +19,7 @@ import com.ruse.util.RandomUtility;
 import com.ruse.world.clip.region.RegionClipping;
 import com.ruse.world.content.*;
 import com.ruse.world.content.achievements.AchievementData;
+import com.ruse.world.content.boxes.PlatinumChest;
 import com.ruse.world.content.casketopening.CasketOpening;
 import com.ruse.world.content.combat.magic.Autocasting;
 import com.ruse.world.content.combat.prayer.CurseHandler;
@@ -333,6 +334,12 @@ public class ObjectActionPacketListener implements PacketListener {
                                 else
                                     player.getPacketSender ().sendMessage ("You need to be a Tanzanite Donator to afk this rock. Your current rank is " + player.getRights ());
                                 break;
+                            case 26280:
+                                if (player.getRights () == PlayerRights.PLATINUM_DONATOR ||player.getRights () == PlayerRights.TANZANITE_DONATOR || player.getRights () == PlayerRights.PLATINUM_DONATOR|| player.getRights ().isStaff ())
+                                    Mining.mineAfkRock (player, id, 8);
+                                else
+                                    player.getPacketSender ().sendMessage ("You need to be a Platinum Donator to afk this rock. Your current rank is " + player.getRights ());
+                                break;
                             case 1333:
                                 Woodcutting.chopAFKtree (player, id, 1);
                                 break;
@@ -341,7 +348,9 @@ public class ObjectActionPacketListener implements PacketListener {
                                 TeleportInterface.sendMinigameData (player, TeleportInterface.Minigames.values ()[0]);
                                 TeleportInterface.sendMinigamesTab (player);
                                 break;
-
+                            case 9666:
+                                PlatinumChest.openChest(player);
+                                break;
                             case 3736:
                                 player.moveTo (GameSettings.STARTER);
                                 break;
@@ -2364,7 +2373,9 @@ public class ObjectActionPacketListener implements PacketListener {
                             return;
                         }
                         switch (gameObject.getId()) {
-
+                            case 9666:
+                                PossibleLootInterface.openInterface(player, PossibleLootInterface.LootData.PLATINUM_CHEST);
+                                break;
                             case 409:
                                 if (player.getSkillManager().getMaxLevel(Skill.DEFENCE) < 30) {
                                     player.getPacketSender()

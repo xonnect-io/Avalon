@@ -2874,17 +2874,17 @@ public class CommandPacketListener implements PacketListener {
         }
     }
     private static void platinumCommands(Player player, String[] command, String wholeCommand) {
-        /*if (command[0].equalsIgnoreCase("platinum")) {
+        if (command[0].equalsIgnoreCase("platinum")) {
             if (player.getLocation() != null && player.getLocation() == Location.WILDERNESS
                     || player.getLocation() != null && player.getLocation() == Location.CUSTOM_RAIDS) {
                 player.getPacketSender().sendMessage("You cannot do this at the moment.");
                 return;
             }
-            Position[] locations = new Position[]{new Position(2721, 4842, 0)};
+            Position[] locations = new Position[]{new Position(2273, 4073, 0)};
             Position teleportLocation = locations[RandomUtility.exclusiveRandom(0, locations.length)];
             TeleportHandler.teleportPlayer(player, teleportLocation, player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Thanks for supporting " + GameSettings.RSPS_NAME + "!");
-        }*/
+        }
     }
     private static void developerCommands(Player player, String[] command, String wholeCommand) {
 
@@ -4264,6 +4264,7 @@ public class CommandPacketListener implements PacketListener {
                     onyxCommands(player, parts, command);
                     zenyteCommands(player, parts, command);
                     tanzaniteCommands(player, parts, command);
+                    platinumCommands (player, parts, command);
                     break;
 
 

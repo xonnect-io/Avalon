@@ -172,6 +172,14 @@ public class NPCDeathTask extends Task {
                             }
                         }
 
+
+                        if (npc.getId() == 6799 ||npc.getId() == 6792 ||npc.getId() == 6798
+                                && killer.getLocation() == Location.PLATINUM_ZONE) {
+                            if (Misc.getRandom (100) < 20)
+                                killer.getInventory().add(10481, 1);
+                                //return;
+                            }
+
                         if (killer.getLocation() == Location.CUSTOM_RAIDS) {
                             Dungeoneering.handleNpcDeath(killer, npc);
                         } // fixed, enjoy.
@@ -180,6 +188,11 @@ public class NPCDeathTask extends Task {
                             DailyTask.BOSSES.tryProgress(killer);
                         }
 
+                        if (npc.getId () == 10034 ||npc.getId () == 10035 ||
+                                npc.getId () == 10036 ||npc.getId () == 10037) {
+                            PlatinumBosses.handleDrop(npc);
+                            PlatinumBosses.bossAlive = false;
+                        }
 
                         if (npc.getId() == Wildywyrm.NPC_ID) {
                             Wildywyrm.wyrmAlive = false;

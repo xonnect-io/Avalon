@@ -48,7 +48,7 @@ public class SantaGifting {
                     || player.getInteractingObject().getId() == 22098 || player.getInteractingObject().getId() == 22097
                     || player.getInteractingObject().getId() == 8455 || player.getInteractingObject().getId() == 8456
                     || player.getInteractingObject().getId() == 22768 || player.getInteractingObject().getId() == 22769
-                    || player.getInteractingObject().getId() == 1333)) {
+                    || player.getInteractingObject().getId() == 1333|| player.getInteractingObject().getId() == 26280 )) {
                 player = null;
                 continue;
             }
