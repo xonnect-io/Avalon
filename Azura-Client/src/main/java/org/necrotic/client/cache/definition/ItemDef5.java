@@ -14,19 +14,27 @@ public class ItemDef5 {
 			case 10484:
 				itemDef.copyItem(23511);
 				itemDef.modelID = 22345;
+				itemDef.modelZoom = 1309;
 				itemDef.name = "Dark magician pet";
 				break;
 			case 10485:
 				itemDef.copyItem(23511);
 				itemDef.modelID = 22341;
+				itemDef.modelZoom = 1209;
 				itemDef.name = "Armed protector pet";
 				break;
 			case 10486:
 				itemDef.copyItem(23511);
 				itemDef.modelID = 22342;
+				itemDef.modelZoom = 1109;
 				itemDef.name = "Exodia pet";
 				break;
-
+			case 11426:
+				itemDef.copyItem(23511);
+				itemDef.modelID = 15189;
+				itemDef.modelZoom = 1109;
+				itemDef.name = "Blue-Eyes White Dragon pet";
+				break;
 			case 10502:
 				itemDef.copyItem(10483);
 				itemDef.name = "Yugi Muto Transformer";

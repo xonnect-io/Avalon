@@ -176,6 +176,7 @@ public class PlayerOwnedShopManager {
                             String buyer = splitHistory[3];
 
                             shop.getHistoryItems().add(new PlayerOwnedShop.HistoryItem(id, amount, price, buyer));
+                            System.out.println ("Loaded POS");
                         }
 
                     }

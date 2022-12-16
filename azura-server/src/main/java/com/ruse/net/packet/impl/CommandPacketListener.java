@@ -2291,6 +2291,8 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage(plrName + " must be online to give them stuff!");
             } else {
                 target.getInventory().add(id, amount);
+
+                DiscordMessager.offerItems("***" +player.getUsername()+ "***"  + " Gave ***" + amount  + "x " + ItemDefinition.forId(id).getName() + " ***to ***" + plrName + "."+ "***" + ". Item: ");
                 player.getPacketSender().sendMessage(
                         "Gave " + amount + "x " + ItemDefinition.forId(id).getName() + " to " + plrName + ".");
             }

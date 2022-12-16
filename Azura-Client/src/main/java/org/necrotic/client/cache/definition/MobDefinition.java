@@ -1120,13 +1120,13 @@ public final class MobDefinition {
 				definition.actions = new String[5];
 				definition.actions[0] = null;
 				definition.combatLevel = 0;
-				definition.scaleXZ = 30;
-				definition.scaleY = 30;
+				definition.scaleXZ = 50;
+				definition.scaleY = 50;
 				//definition.rdc2 = 2592952;
 				definition.npcSizeInSquares = 1;
 				definition.drawYellowDotOnMap = false;
-
 				break;
+
 			case 9019:
 				definition.name = "<col=ff00fb>St. Patrick Leprechaun";
 				definition.npcModels = new int[]{98001};

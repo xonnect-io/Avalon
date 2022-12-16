@@ -130,6 +130,7 @@ public class MaxUpgradesInterface {
         MASORI_CHAPS(100,new Item(13843, 1),new Item(13275, 1),new Item(23445, 1),new Item(9083, 1),new Item(12855, 15_000_000)),
         OSMUMTENS_FANG(100,new Item(13664, 1),new Item(13662, 1),new Item(13597, 1),new Item(12855, 50_000_000)),
         TUMEKENS_SHADOW(100,new Item(18485, 1),new Item(18487, 1),new Item(13597, 1),new Item(12855, 50_000_000)),
+        BLUE_EYES_WHITE_DRAGON(100,new Item(11426, 1),new Item(22954, 1),new Item(10483, 1),new Item(10484, 1),new Item(10485, 1),new Item(10486, 1),new Item(19000, 25_000),new Item(12855, 100_000_000)),
 
 
 

@@ -1204,6 +1204,10 @@ public class CustomDropUtils {
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
                 percentBoost += 90;
             }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BEWD.npcId) {
+                percentBoost += 115;
+            }
         }
 
         if (player.getInventory().contains(23413)) {

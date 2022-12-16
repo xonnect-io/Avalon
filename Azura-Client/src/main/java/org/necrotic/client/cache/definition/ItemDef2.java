@@ -562,7 +562,7 @@ public class ItemDef2 {
 				itemDef.copyItem(5074);
 				itemDef.name = "Necromancer Pet";
 				itemDef.modelID = 19731;
-				itemDef.modelZoom = 4000;
+				itemDef.modelZoom = 3700;
 				break;
 			case 13653:
 				itemDef.name = "Death fragments";

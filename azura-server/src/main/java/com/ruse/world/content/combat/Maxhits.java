@@ -194,6 +194,10 @@ public class Maxhits {
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
                 percent += 30;
             }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BEWD.npcId) {
+                percent += 60;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.KRAMPUS_PET.npcId) {
@@ -541,6 +545,11 @@ public class Maxhits {
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
                 base *= 1.3D;
+            }
+
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BEWD.npcId) {
+                base *= 1.6D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
@@ -962,6 +971,10 @@ public class Maxhits {
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
                 maxHit *= 1.3D;
             }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BEWD.npcId) {
+                maxHit *= 1.6D;
+            }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.KRAMPUS_PET.npcId) {
@@ -1243,11 +1256,11 @@ public class Maxhits {
                 maxHit *= 2;
             }
             if (player.getMagicianMaster() == true) {
-                maxHit *= 1.2;
+                maxHit *= 1.2D;
             }
 
             if (Misc.isMonday ()) {
-                maxHit *= 1.05;
+                maxHit *= 1.05D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.RAICHU_PET.npcId) {
@@ -1260,32 +1273,36 @@ public class Maxhits {
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.SUMMER_SURFER.npcId) {
-                maxHit *= 1.20D;
+                maxHit *= 1.2D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BLOOD_DEMON_PET.npcId) {
-                maxHit *= 1.30D;
+                maxHit *= 1.3D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.NECROMANCER.npcId) {
-                maxHit *= 1.50D;
+                maxHit *= 1.5D;
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.YUGI_MOTO.npcId) {
-                maxHit *= 1.30D;
+                maxHit *= 1.3D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.DARK_MAGICIAN.npcId) {
-                maxHit *= 1.30D;
+                maxHit *= 1.3D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.ARMED_PROTECTOR.npcId) {
-                maxHit *= 1.30D;
+                maxHit *= 1.3D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
                     player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EXODIA.npcId) {
-                maxHit *= 1.30D;
+                maxHit *= 1.3D;
+            }
+            if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null &&
+                    player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.BEWD.npcId) {
+                maxHit *= 1.6D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.FACELESS_MAGICIAN.npcId) {
@@ -1333,46 +1350,49 @@ public class Maxhits {
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.EVIL_SCORPIUS.npcId) {
                 maxHit *= 1.35D;
             }
+
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc()
                     .getId() == BossPets.BossPet.KRAMPUS_PET.npcId) {
-                maxHit *= 1.20D;
+                maxHit *= 1.2D;
             }
+
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY.npcId) {
-                maxHit *= 1.10D;
+                maxHit *= 1.1D;
             }
+
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY1.npcId) {
-                maxHit *= 1.20D;
+                maxHit *= 1.2D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY2.npcId) {
-                maxHit *= 1.20D;
+                maxHit *= 1.2D;
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY3.npcId) {
-                maxHit *= 1.20D;
+                maxHit *= 1.2D;
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY4.npcId) {
-                maxHit *= 1.20D;
+                maxHit *= 1.2D;
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY5.npcId) {
-                maxHit *= 1.20D;
+                maxHit *= 1.2D;
             }
 
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY6.npcId) {
-                maxHit *= 1.20D;
+                maxHit *= 1.2D;
             }
             if (player.getSummoning() != null && player.getSummoning().getFamiliar() != null
                     && player.getSummoning().getFamiliar().getSummonNpc().getId() == BossPets.BossPet.TURKEY7.npcId) {
-                maxHit *= 1.20D;
+                maxHit *= 1.2D;
             }
 
 
