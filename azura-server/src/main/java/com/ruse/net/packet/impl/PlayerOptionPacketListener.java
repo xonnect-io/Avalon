@@ -11,6 +11,7 @@ import com.ruse.world.content.PlayerLogs;
 import com.ruse.world.content.combat.CombatFactory;
 import com.ruse.world.content.dialogue.DialogueManager;
 import com.ruse.world.content.dialogue.impl.DungPartyInvitation;
+import com.ruse.world.content.gamblinginterface.GamblingInterface;
 import com.ruse.world.content.minigames.impl.dungeoneering.Dungeoneering;
 import com.ruse.world.content.skill.impl.old_dungeoneering.UltimateIronmanHandler;
 import com.ruse.world.entity.impl.player.Player;
@@ -52,8 +53,16 @@ public class PlayerOptionPacketListener implements PacketListener {
 			return;
 		final Player attacked = World.getPlayers().get(index);
 
+
+		if (player.getLocation() == Location.GAMBLE) {
+			GamblingInterface gamblingInterface = new GamblingInterface(player);
+			gamblingInterface.requestGamble(attacked);
+			return;
+		}
+
 		if (player.getLocation() != Location.ZOMBIE_LOBBY || player.getLocation() != Location.SOD_LOBBY ||
-				player.getLocation() != Location.DARKNESS_LOBBY || player.getLocation() != Location.TELOS_LOBBY){
+				player.getLocation() != Location.DARKNESS_LOBBY || player.getLocation() != Location.TELOS_LOBBY
+				|| player.getLocation() != Location.GAMBLE){
 			player.getPlayerOwnedShopManager ().openTargetShop(attacked);
 			return;
 		}
@@ -61,6 +70,7 @@ public class PlayerOptionPacketListener implements PacketListener {
 			World.sendOwnerDevMessage(
 					player.getUsername() + " attacked index: " + index + ", target = " + attacked.getUsername());
 		}
+
 
 		if (attacked.equals(player)) {
 			player.getMovementQueue().reset();

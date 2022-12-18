@@ -23,7 +23,6 @@ public class CustomObjects {
 
     private static final int DISTANCE_SPAWN = 70; // Spawn if within 70 squares of distance
     private static final CopyOnWriteArrayList<GameObject> CUSTOM_OBJECTS = new CopyOnWriteArrayList<GameObject>();
-    private static final int[] HOME_OBJECTS = {4764, 4772};
 
     public static void init() {
         for (int i = 0; i < CUSTOM_OBJECTS_SPAWNS.length; i++) {

@@ -135,12 +135,16 @@ public class PlayerOwnedShopManager {
     }
 
     public static void loadShops() {
-        loadHistory();
+        // Clear the SHOPS list to remove any previously loaded shops
+        SHOPS.clear();
 
         File[] files = DIRECTORY.listFiles();
+        if (files == null) {
+            System.err.println("Failed to list files in directory: " + DIRECTORY);
+            return;
+        }
 
         for (File file : files) {
-
             Path path = Paths.get(DIRECTORY + File.separator, file.getName());
             PlayerOwnedShop shop = new PlayerOwnedShop();
 
@@ -154,33 +158,26 @@ public class PlayerOwnedShopManager {
                     shop.setEarnings(Long.parseLong(reader.readLine()));
 
                     while ((line = reader.readLine()) != null) {
-
                         String[] split = line.split(" - ");
                         if (split.length == 4) {
-
                             int id = Integer.parseInt(split[0]);
                             int amount = Integer.parseInt(split[1]);
                             long price = Long.parseLong(split[2]);
                             int maxAmount = Integer.parseInt(split[3]);
 
-                                shop.getItems()[offset++] = new ShopItem(id, amount, price, maxAmount);
-
+                            shop.getItems()[offset++] = new ShopItem(id, amount, price, maxAmount);
                         }
 
                         String[] splitHistory = line.split(" _ ");
                         if (splitHistory.length == 4) {
-
                             int id = Integer.parseInt(splitHistory[0]);
                             int amount = Integer.parseInt(splitHistory[1]);
                             long price = Long.parseLong(splitHistory[2]);
                             String buyer = splitHistory[3];
 
                             shop.getHistoryItems().add(new PlayerOwnedShop.HistoryItem(id, amount, price, buyer));
-                            System.out.println ("Loaded POS");
                         }
-
                     }
-
                 } catch (IOException e) {
                     e.printStackTrace();
                     continue;
@@ -189,10 +186,10 @@ public class PlayerOwnedShopManager {
                 SHOPS.add(shop);
             }
         }
-
     }
 
-    public static void saveShops() {
+
+        public static void saveShops() {
         for (PlayerOwnedShop shop : SHOPS) {
             shop.save();
         }

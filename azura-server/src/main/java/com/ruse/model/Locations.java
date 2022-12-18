@@ -1954,7 +1954,7 @@ public class Locations {
 			@Override
 			public void enter(Player player) {
 				if (player.getPlayerInteractingOption () != PlayerInteractingOption.VIEW_SHOP)
-					player.getPacketSender ().sendInteractionOption ("View POS", 2, false);
+					player.getPacketSender ().sendInteractionOption ("Gamble", 2, false);
 
 			}
 			},

@@ -2090,12 +2090,18 @@ public final class CombatFactory {
                     || (npc.getId() == 9116 && container.getCombatType() == CombatType.RANGED)
                     || (npc.getId() == 9117 && container.getCombatType() == CombatType.RANGED)
                     || (npc.getId() == 9118 && container.getCombatType() == CombatType.RANGED)
-                    || (npc.getId() == 227 && container.getCombatType() == CombatType.MAGIC)
-                    || (npc.getId() == 1914 && container.getCombatType() == CombatType.MAGIC)
-                    || (npc.getId() == 2359 && container.getCombatType() == CombatType.MAGIC)
-                    || (npc.getId() == 227 && container.getCombatType() == CombatType.RANGED)
-                    || (npc.getId() == 1914 && container.getCombatType() == CombatType.RANGED)
+                    || (npc.getId() == 9124 && container.getCombatType() == CombatType.MAGIC)
+                    || (npc.getId() == 9125 && container.getCombatType() == CombatType.MAGIC)
+                    || (npc.getId() == 9126 && container.getCombatType() == CombatType.MAGIC)
+                    || (npc.getId() == 9124 && container.getCombatType() == CombatType.RANGED)
+                    || (npc.getId() == 9125 && container.getCombatType() == CombatType.RANGED)
                     || (npc.getId() == 2359 && container.getCombatType() == CombatType.RANGED)
+                    || (npc.getId() == 1508 && container.getCombatType() == CombatType.MAGIC)
+                    || (npc.getId() == 1458 && container.getCombatType() == CombatType.MAGIC)
+                    || (npc.getId() == 1457 && container.getCombatType() == CombatType.MAGIC)
+                    || (npc.getId() == 1508 && container.getCombatType() == CombatType.MELEE)
+                    || (npc.getId() == 1458 && container.getCombatType() == CombatType.MELEE)
+                    || (npc.getId() == 1457 && container.getCombatType() == CombatType.MELEE)
             ) {
                 attacker.sendMessage("Your current combat type is being deflected entirely.");
                 container.allHits(context -> {

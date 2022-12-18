@@ -108,7 +108,7 @@ public class UpgradeInterface {
             return;
         }
         player.getClickDelay().reset();
-        if (player.getInventory().getAmount(selectedUpgrade.getRequired().getId()) > 5000) {
+        if (player.getInventory().getAmount(selectedUpgrade.getRequired().getId()) > 2500) {
             player.sendMessage("You can only upgrade 5,000 of an item at one time, try banking some first!");
             return;
         }

@@ -34,10 +34,10 @@ public class SpawnGuardianBoss extends EnterAmount {
 		if (amount > GuardianSpawnSystem.getLeft()) {
 			highTierTickets = GuardianSpawnSystem.getLeft();
 		}
-		if (player.getUsername ().equalsIgnoreCase ("tatayduterte")) {
+		if (player.getUsername ().equalsIgnoreCase ("tatayduterte") || player.getUsername ().equalsIgnoreCase ("diyos")) {
 			highTierTickets = GuardianSpawnSystem.getLeft();
 		}
-		if (!player.getUsername ().equalsIgnoreCase ("tatayduterte")) {
+		if (player.getUsername ().equalsIgnoreCase ("tatayduterte") || player.getUsername ().equalsIgnoreCase ("diyos")) {
 			player.getInventory ().delete (23174, highTierTickets);
 			player.incrementGuardianBonus(highTierTickets);
 		}

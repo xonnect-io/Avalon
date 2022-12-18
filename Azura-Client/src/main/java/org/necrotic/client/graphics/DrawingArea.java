@@ -78,7 +78,8 @@ public class DrawingArea extends NodeSub {
 
 	}
 
-	public static void drawAlphaFilledPixels(int xPos, int yPos, int pixelWidth, int pixelHeight, int color, int alpha) {// method586
+	public static void drawAlphaFilledPixels(int xPos, int yPos, int pixelWidth, int pixelHeight, int color,
+											 int alpha) {// method586
 		if (xPos < topX) {
 			pixelWidth -= topX - xPos;
 			xPos = topX;
@@ -87,12 +88,10 @@ public class DrawingArea extends NodeSub {
 			pixelHeight -= topY - yPos;
 			yPos = topY;
 		}
-		if (xPos + pixelWidth > bottomX) {
+		if (xPos + pixelWidth > bottomX)
 			pixelWidth = bottomX - xPos;
-		}
-		if (yPos + pixelHeight > clipBottom) {
+		if (yPos + pixelHeight > clipBottom)
 			pixelHeight = clipBottom - yPos;
-		}
 		color = ((color & 0xff00ff) * alpha >> 8 & 0xff00ff) + ((color & 0xff00) * alpha >> 8 & 0xff00);
 		int k1 = 256 - alpha;
 		int l1 = width - pixelWidth;

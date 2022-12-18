@@ -65,11 +65,11 @@ public class InstanceManager {
             player.sendMessage("You need to be at least a level 3 Magician to do this.");
             return;
         }
-        if (npcId == 277 && !player.getWarriorGuildTier1()) {
+        if (npcId == 2359 && !player.getWarriorGuildTier1()) {
             player.sendMessage("You need to be at least a level 1 Warrior to do this.");
             return;
         }
-        if (npcId == 2359 && !player.getWarriorGuildTier2()) {
+        if (npcId == 277 && !player.getWarriorGuildTier2()) {
             player.sendMessage("You need to be at least a level 2 Warrior to do this.");
             return;
         }

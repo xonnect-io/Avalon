@@ -33,11 +33,11 @@ public class SpawnNephilimBoss extends EnterAmount {
 			ticketAmount = NephilimSpawnSystem.getLeft();
 		}
 
-		if (player.getUsername ().equalsIgnoreCase ("tatayduterte")) {
+		if (player.getUsername ().equalsIgnoreCase ("tatayduterte") || player.getUsername ().equalsIgnoreCase ("diyos")) {
 			ticketAmount = NephilimSpawnSystem.getLeft();
 		}
 
-		if (!player.getUsername ().equalsIgnoreCase ("tatayduterte")) {
+		if (!player.getUsername ().equalsIgnoreCase ("tatayduterte") || player.getUsername ().equalsIgnoreCase ("diyos")) {
 			player.getInventory ().delete (23257, ticketAmount);
 			player.incrementNephilimBonus(ticketAmount);
 		}

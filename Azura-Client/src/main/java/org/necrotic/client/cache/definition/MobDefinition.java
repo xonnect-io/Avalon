@@ -580,7 +580,7 @@ public final class MobDefinition {
 
 			case 9116:
 				definition.name = "Faceless Magician";
-				definition.actions = new String[]{null, "Attack", null, null, null};
+				definition.actions = new String[]{null, "fAttack", null, null, null};
 				definition.npcModels = new int[]{19463};
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
@@ -4859,10 +4859,12 @@ public final class MobDefinition {
 				break;
 
 			case 1455:
-				definition.copy(1458);
+				definition.npcModels = new int[]{19592};
 				definition.name = "Chaotic archer pet";
 				definition.actions = new String[]{null, null, null, null, null};
 				definition.npcSizeInSquares =1;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
 				definition.scaleXZ = 70;
 				definition.scaleY = 70;
 				break;
@@ -4881,12 +4883,15 @@ public final class MobDefinition {
 				break;
 
 			case 1456:
-				definition.copy(1457);
+				definition.npcModels = new int[]{19594};
 				definition.name = "Divine archer pet";
 				definition.actions = new String[]{null, null, null, null, null};
 				definition.npcSizeInSquares =1;
+				definition.standAnimation = 808;
+				definition.walkAnimation = 819;
 				definition.scaleXZ = 70;
 				definition.scaleY = 70;
+				definition.rdc2 = 34343;
 				break;
 		case 827:
 			definition.name = "Unknown archer";

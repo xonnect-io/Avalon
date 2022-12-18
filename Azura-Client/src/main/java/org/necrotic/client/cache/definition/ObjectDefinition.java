@@ -2547,28 +2547,28 @@ public final class ObjectDefinition {
 	}
 
 	public Model modelAt(int i, int j, int k, int l, int i1, int j1, int k1) {
-		Model model = getAnimatedModel(i, k1, j);
-		if (model == null) {
-			return null;
-		}
-		if (adjustToTerrain || nonFlatShading) {
-			model = new Model(adjustToTerrain, nonFlatShading, model);
-		}
-		if (adjustToTerrain) {
-			int l1 = (k + l + i1 + j1) / 4;
-			for (int i2 = 0; i2 < model.numberOfVerticeCoordinates; i2++) {
-				int j2 = model.verticesXCoordinate[i2];
-				int k2 = model.verticesZCoordinate[i2];
-				int l2 = k + (l - k) * (j2 + 64) / 128;
-				int i3 = j1 + (i1 - j1) * (j2 + 64) / 128;
-				int j3 = l2 + (i3 - l2) * (k2 + 64) / 128;
-				model.verticesYCoordinate[i2] += j3 - l1;
-			}
-
-			model.method467();
-		}
-		return model;
+	Model model = getAnimatedModel(i, k1, j);
+        if (model == null) {
+		return null;
 	}
+        if (adjustToTerrain || nonFlatShading) {
+		model = new Model(adjustToTerrain, nonFlatShading, model);
+	}
+        if (adjustToTerrain) {
+		int l1 = (k + l + i1 + j1) / 4;
+		for (int i2 = 0; i2 < model.numberOfVerticeCoordinates; i2++) {
+			int j2 = model.verticesXCoordinate[i2];
+			int k2 = model.verticesZCoordinate[i2];
+			int l2 = k + (l - k) * (j2 + 64) / 128;
+			int i3 = j1 + (i1 - j1) * (j2 + 64) / 128;
+			int j3 = l2 + (i3 - l2) * (k2 + 64) / 128;
+			model.verticesYCoordinate[i2] += j3 - l1;
+		}
+
+		model.method467();
+	}
+        return model;
+}
 
 	public boolean method579() {
 		if (objectModelIDs == null) {

@@ -303,22 +303,22 @@ public class SkillManager {
                 !skill.equals(Skill.DEFENCE)) {
             if (Misc.getRandom (7500) == 1) {
                 player.getInventory ().add (15002, 1);
-                player.sendMessage ("<img=832>An Elite casket has appeared in your inventory while skilling!");
+                player.sendMessage ("<img=832>@blu@An Elite casket has appeared in your inventory while skilling!");
             } else if (Misc.getRandom (5000) == 1) {
                 player.getInventory().add(15003, 1);
-                player.sendMessage("<img=832>An Azure casket has appeared in your inventory while skilling!");
+                player.sendMessage("<img=832>@blu@An Azure casket has appeared in your inventory while skilling!");
             } else if (Misc.getRandom (3000) == 1) {
                 player.getInventory().add(20489, 1);
-                player.sendMessage("<img=832>An Launch casket has appeared in your inventory while skilling!");
+                player.sendMessage("<img=832>@blu@An Launch casket has appeared in your inventory while skilling!");
             } else if (Misc.getRandom (2500) == 1) {
                 player.getInventory().add(20488, 1);
-                player.sendMessage("<img=832>An OP Mystery box has appeared in your inventory while skilling!");
+                player.sendMessage("<img=832>@blu@An OP Mystery box has appeared in your inventory while skilling!");
             } else if (Misc.getRandom (1500) == 1) {
                 player.getInventory().add(19114, 1);
-                player.sendMessage("<img=832>An Ruby Mystery box has appeared in your inventory while skilling!");
+                player.sendMessage("<img=832>@blu@An Ruby Mystery box has appeared in your inventory while skilling!");
             } else if (Misc.getRandom (1000) == 1) {
                 player.getInventory().add(19115, 1);
-                player.sendMessage("<img=832>An Emerald Mystery box has appeared in your inventory while skilling!");
+                player.sendMessage("<img=832>@blu@An Emerald Mystery box has appeared in your inventory while skilling!");
             } else if (Misc.getRandom (500) == 1) {
                 player.getInventory().add(19116, 1);
                 player.sendMessage("<img=832>@blu@An Sapphire Mystery box has appeared in your inventory while skilling!");

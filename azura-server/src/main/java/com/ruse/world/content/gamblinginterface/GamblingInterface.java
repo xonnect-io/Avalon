@@ -124,16 +124,16 @@ public class GamblingInterface {
 			player.getPacketSender().sendMessage("Please get closer to request a gamble.");
 			return;
 		}
-	//	if (!inGamble() && player2.getGambling().gambleRequested()
-	//			&& player2.getGambling().getGambleWith() == player.getIndex()) {
-	//		openGamble();
-	//		player2.getGambling().openGamble();
-	//	} else if (!inGamble()) {
-	//		setGambleRequested(true);
-	//		player.getPacketSender().sendMessage("You've sent a gamble request to " + player2.getUsername() + ".");
-	//		player2.getPacketSender().sendMessage(player.getUsername() + ":gamblereq:");
-	//	}
-	//	lastGambleSent = System.currentTimeMillis();
+		if (!inGamble() && player2.getGambling().gambleRequested()
+				&& player2.getGambling().getGambleWith() == player.getIndex()) {
+			openGamble();
+			player2.getGambling().openGamble();
+		} else if (!inGamble()) {
+			setGambleRequested(true);
+			player.getPacketSender().sendMessage("You've sent a gamble request to " + player2.getUsername() + ".");
+			player2.getPacketSender().sendMessage(player.getUsername() + ":gamblereq:");
+		}
+		lastGambleSent = System.currentTimeMillis();
 	}
 
 	public void openGamble() {

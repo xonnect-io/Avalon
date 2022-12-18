@@ -806,6 +806,7 @@ public class Model extends Animable {
 		diagonal3D = anInt1653 + (int) (Math.sqrt(boundingPlaneRadius * boundingPlaneRadius + anInt1651 * anInt1651) + 0.98999999999999999D);
 	}
 
+
 	private void method468(int i) {
 		super.modelHeight = 0;
 		boundingPlaneRadius = 0;

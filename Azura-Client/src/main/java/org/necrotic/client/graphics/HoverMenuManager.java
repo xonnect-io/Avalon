@@ -211,29 +211,33 @@ public class HoverMenuManager {
             return;
         }
 
-        if (GameFrame.getScreenMode() != GameFrame.ScreenMode.FIXED) {
+        Client client = Client.getClient();
 
-            if (Client.getClient().mouseY < Client.getClient().getScreenHeight() - 450
-                    && Client.getClient().mouseX < Client.getClient().getScreenWidth() - 200) {
-                return;
-            }
-            mouseX -= 100;
-            mouseY -= 50;
-        }
+        switch (GameFrame.getScreenMode()) {
+            case FIXED: {
+                if (client.mouseY < 210 || client.mouseX < 561) {
+                    //  return;
+                } else {
+                    mouseX -= 516;
+                    mouseY -= 158;
+                }
+                if (client.mouseX > 600 && client.mouseX < 685) {
+                    mouseX -= 60;
 
-        if (GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED) {
-            if (Client.getClient().mouseY < 210 || Client.getClient().mouseX < 561) {
-                //  return;
-            } else {
-                mouseX -= 516;
-                mouseY -= 158;
+                }
+                if (client.mouseX > 685) {
+                    mouseX -= 80;
+                }
+                break;
             }
-            if (Client.getClient().mouseX > 600 && Client.getClient().mouseX < 685) {
-                mouseX -= 60;
-
-            }
-            if (Client.getClient().mouseX > 685) {
-                mouseX -= 80;
+            default: {
+                if (client.mouseY < client.getScreenHeight() - 450
+                        && client.mouseX < client.getScreenWidth() - 200) {
+                    return;
+                }
+                mouseX -= 100;
+                mouseY -= 50;
+                break;
             }
         }
 
@@ -244,26 +248,23 @@ public class HoverMenuManager {
 
         HoverMenu menu = menus.get(hintId);
         if (menu != null) {
-
             String[] text = split(menu.text).split("<br>");
 
             int height = (text.length * 12) + (menu.items != null ? 40 : 0);
 
             int width = (16 + text[0].length() * 5) + (menu.items != null ? 30 : 0);
 
-
-
-            if (GameFrame.getScreenMode() == GameFrame.ScreenMode.FIXED) {
-                if (drawType() == 1) {
-                    if (width + mouseX > 500) {
-                        mouseX = 500 - width;
+            switch (GameFrame.getScreenMode()) {
+                case FIXED: {
+                    if (drawType() == 1) {
+                        if (width + mouseX > 500) {
+                            mouseX = 500 - width;
+                        }
+                    } else {
+                        mouseX = 293;
+                        mouseY = 235;
                     }
-                } else {
-
-                    mouseX = 293;
-                    mouseY = 235;
-
-
+                    break;
                 }
             }
 
@@ -283,7 +284,7 @@ public class HoverMenuManager {
             if (menu.items != null) {
                 int spriteX = 10;
 
-                if (System.currentTimeMillis() - displayDelay > 300) {
+                if (displayDelay + 250 < System.currentTimeMillis()) {
                     displayDelay = System.currentTimeMillis();
                     displayIndex++;
                     if (displayIndex == menu.items.size()) {

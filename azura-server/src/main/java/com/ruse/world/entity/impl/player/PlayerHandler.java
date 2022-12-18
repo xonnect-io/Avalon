@@ -463,7 +463,7 @@ public class PlayerHandler {
                     + "] @blu@Daily Benefits: Double Experience");
         }
 
-        player.sendMessage("<img=5> @blu@New Update: @red@Elder Gods Raids, Global Boss events, and rewards from skilling!");
+        player.sendMessage("<img=5> @blu@New Update: @red@Platinum Donation rank, New BIS pet, and QoL Changes");
         player.getVotingStreak().login();
         DiscordIntegration.setIntegration(player);
 

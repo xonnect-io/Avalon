@@ -11424,7 +11424,8 @@ public class Client extends GameRenderer {
             int cameraDisplayX = myPlayer.x + cameraOffsetX;
             int cameraDisplayY = myPlayer.y + cameraOffsetY;
 
-            if (currentCameraDisplayX - cameraDisplayX < -500 || currentCameraDisplayX - cameraDisplayX > 500 || currentCameraDisplayY - cameraDisplayY < -500 || currentCameraDisplayY - cameraDisplayY > 500) {
+            if (currentCameraDisplayX - cameraDisplayX < -500 || currentCameraDisplayX - cameraDisplayX > 500
+                    || currentCameraDisplayY - cameraDisplayY < -500 || currentCameraDisplayY - cameraDisplayY > 500) {
                 currentCameraDisplayX = cameraDisplayX;
                 currentCameraDisplayY = cameraDisplayY;
             }
@@ -11527,7 +11528,9 @@ public class Client extends GameRenderer {
                 curveChangeY += (j2 - curveChangeY) / 80;
             }
         } catch (Exception _ex) {
-            Signlink.reportError("glfc_ex " + myPlayer.x + "," + myPlayer.y + "," + currentCameraDisplayX + "," + currentCameraDisplayY + "," + currentRegionX + "," + currentRegionY + "," + regionBaseX + "," + regionBaseY);
+            Signlink.reportError("glfc_ex " + myPlayer.x + "," + myPlayer.y + "," + currentCameraDisplayX + ","
+                    + currentCameraDisplayY + "," + currentRegionX + "," + currentRegionY + "," + regionBaseX + ","
+                    + regionBaseY);
             throw new RuntimeException("eek");
         }
     }
@@ -11680,108 +11683,84 @@ public class Client extends GameRenderer {
     //TODO Camera goes outside the scene for some reason and these variables go over 104 causing client crash
     // They are all wrapped in try catch with a printout commented out.
     private int getRenderHeight() {
-        int j = 3;
+    int j = 3;
         if (yCameraCurve < 310) {
-            int k = xCameraPos >> 7;
-            int l = yCameraPos >> 7;
-            int i1 = myPlayer.x >> 7;
-            int j1 = myPlayer.y >> 7;
-            try {
+        int k = xCameraPos >> 7;
+        int l = yCameraPos >> 7;
+        int i1 = myPlayer.x >> 7;
+        int j1 = myPlayer.y >> 7;
+        if ((tileFlags[plane][k][l] & 4) != 0) {
+            j = plane;
+        }
+        int k1;
+        if (i1 > k) {
+            k1 = i1 - k;
+        } else {
+            k1 = k - i1;
+        }
+        int l1;
+        if (j1 > l) {
+            l1 = j1 - l;
+        } else {
+            l1 = l - j1;
+        }
+        if (k1 > l1) {
+            int i2 = l1 * 0x10000 / k1;
+            int k2 = 32768;
+            while (k != i1) {
+                if (k < i1) {
+                    k++;
+                } else if (k > i1) {
+                    k--;
+                }
                 if ((tileFlags[plane][k][l] & 4) != 0) {
                     j = plane;
                 }
-            } catch (ArrayIndexOutOfBoundsException e) {
-                //System.err.println(plane + ", " + k + ", " + l);
-            }
-            int k1;
-            if (i1 > k) {
-                k1 = i1 - k;
-            } else {
-                k1 = k - i1;
-            }
-            int l1;
-            if (j1 > l) {
-                l1 = j1 - l;
-            } else {
-                l1 = l - j1;
-            }
-            if (k1 > l1) {
-                int i2 = l1 * 0x10000 / k1;
-                int k2 = 32768;
-                while (k != i1) {
-                    if (k < i1) {
-                        k++;
-                    } else if (k > i1) {
-                        k--;
-                    }
-                    try {
-                        if ((tileFlags[plane][k][l] & 4) != 0) {
-                            j = plane;
-                        }
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        //System.err.println(plane + ", " + k + ", " + l);
-                    }
-                    k2 += i2;
-                    if (k2 >= 0x10000) {
-                        k2 -= 0x10000;
-                        if (l < j1) {
-                            l++;
-                        } else if (l > j1) {
-                            l--;
-                        }
-                        try {
-                            if ((tileFlags[plane][k][l] & 4) != 0) {
-                                j = plane;
-                            }
-                        } catch (ArrayIndexOutOfBoundsException e) {
-                            //System.err.println(plane + ", " + k + ", " + l);
-                        }
-                    }
-                }
-            } else {
-                int j2 = k1 * 0x10000 / l1;
-                int l2 = 32768;
-                while (l != j1) {
+                k2 += i2;
+                if (k2 >= 0x10000) {
+                    k2 -= 0x10000;
                     if (l < j1) {
                         l++;
                     } else if (l > j1) {
                         l--;
                     }
-                    try {
-                        if ((tileFlags[plane][k][l] & 4) != 0) {
-                            j = plane;
-                        }
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        //System.err.println(plane + ", " + k + ", " + l);
+                    if ((tileFlags[plane][k][l] & 4) != 0) {
+                        j = plane;
                     }
-                    l2 += j2;
-                    if (l2 >= 0x10000) {
-                        l2 -= 0x10000;
-                        if (k < i1) {
-                            k++;
-                        } else if (k > i1) {
-                            k--;
-                        }
-                        try {
-                            if ((tileFlags[plane][k][l] & 4) != 0) {
-                                j = plane;
-                            }
-                        } catch (ArrayIndexOutOfBoundsException e) {
-                            //System.err.println(plane + ", " + k + ", " + l);
-                        }
+                }
+            }
+        } else {
+            int j2 = k1 * 0x10000 / l1;
+            int l2 = 32768;
+            while (l != j1) {
+                if (l < j1) {
+                    l++;
+                } else if (l > j1) {
+                    l--;
+                }
+                if ((tileFlags[plane][k][l] & 4) != 0) {
+                    j = plane;
+                }
+                l2 += j2;
+                if (l2 >= 0x10000) {
+                    l2 -= 0x10000;
+                    if (k < i1) {
+                        k++;
+                    } else if (k > i1) {
+                        k--;
+                    }
+                    if ((tileFlags[plane][k][l] & 4) != 0) {
+                        j = plane;
                     }
                 }
             }
         }
-        try {
-            if ((tileFlags[plane][myPlayer.x >> 7][myPlayer.y >> 7] & 4) != 0) {
-                j = plane;
-            }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            //System.err.println(plane + ", " + (myPlayer.x >> 7) + ", " + (myPlayer.y >> 7));
-        }
-        return j;
     }
+        if ((tileFlags[plane][myPlayer.x >> 7][myPlayer.y >> 7] & 4) != 0) {
+        j = plane;
+    }
+        return j;
+}
 
     private int getHighestPlane() {
         int j = method42(plane, yCameraPos, xCameraPos);
@@ -12395,11 +12374,11 @@ public class Client extends GameRenderer {
     private void render() {
         renderCycle++;
         int j = 0;
-        int cameraX = xCameraPos;
-        int cameraZ = zCameraPos;
-        int cameraY = yCameraPos;
-        int yCurve = yCameraCurve;
-        int xCurve = xCameraCurve;
+        int l = xCameraPos;
+        int i1 = zCameraPos;
+        int j1 = yCameraPos;
+        int k1 = yCameraCurve;
+        int l1 = xCameraCurve;
 
         if (loggedIn) {
             processPlayerAdditions(true);
@@ -12410,14 +12389,14 @@ public class Client extends GameRenderer {
             processAnimableObjects();
 
             if (!oriented) {
-                int roll = cameraRotationZ;
+                int i = cameraRotationZ;
 
-                if (curveChangeY / 256 > roll) {
-                    roll = curveChangeY / 256;
+                if (curveChangeY / 256 > i) {
+                    i = curveChangeY / 256;
                 }
 
-                if (aBooleanArray876[4] && cameraAntibanCurveYOffsets[4] + 128 > roll) {
-                    roll = cameraAntibanCurveYOffsets[4] + 128;
+                if (aBooleanArray876[4] && cameraAntibanCurveYOffsets[4] + 128 > i) {
+                    i = cameraAntibanCurveYOffsets[4] + 128;
                 }
 
                 if (Configuration.TOGGLE_FOV) {
@@ -12425,16 +12404,14 @@ public class Client extends GameRenderer {
                 } else {
                     viewDistance = 9;
                 }
-                int orientation = cameraRotation + viewRotationOffset & 0x7ff;
-                int zoom = roll + (Configuration.TOGGLE_FOV ? 1200 : 650) - getScreenHeight() / 400;
+                int k = cameraRotation + viewRotationOffset & 0x7ff;
+                int zoom = i + (Configuration.TOGGLE_FOV ? 1200 : 650) - getScreenHeight() / 400;
                 zoom += clientZoom;
                 setCameraPos(
-                		GameFrame.getScreenMode() == ScreenMode.FIXED ? 600 + roll * 3 
-                				+ clientZoom : getScreenWidth() >= 1024 ? zoom : 450 
-                						+ roll * 3 + clientZoom, roll, 
-                						currentCameraDisplayX, 
-                						method42(plane, myPlayer.y, myPlayer.x) - 50, 
-                						orientation, currentCameraDisplayY);
+                        GameFrame.getScreenMode() == ScreenMode.FIXED ? 600 + i * 3 + clientZoom
+                                : getScreenWidth() >= 1024 ? zoom : 450 + i * 3 + clientZoom,
+                        i, currentCameraDisplayX, method42(plane, myPlayer.y, myPlayer.x) - 50, k,
+                        currentCameraDisplayY);
             }
 
             if (!oriented) {
@@ -12454,13 +12431,7 @@ public class Client extends GameRenderer {
         if (loggedIn) {
             scene.render(xCameraPos, yCameraPos, xCameraCurve, zCameraPos, j, yCameraCurve);
             scene.clearObj5Cache();
-            //if (Configuration.PARTICLES_ENABLED) {
-             //   renderParticles();
-            //}
 
-            /*if (Configuration.DEPTH_BUFFER && Configuration.FOG_ENABLED) {
-                Fog.draw(0xC8C0A8);
-            }*/
             if (Configuration.FOG_ENABLED) {
                 Rasterizer.drawFog(0xc8c0a8, 2800, 3300);
             } else {
@@ -12468,7 +12439,6 @@ public class Client extends GameRenderer {
 
             }
 
-        
         }
 
         updateEntities();
@@ -12476,8 +12446,8 @@ public class Client extends GameRenderer {
         drawHeadIcon();
 
         // method37(k2, 1);
-        if (!isLowDetail())
-        animateTextures();
+        if ( Configuration.PARTICLES_ENABLED )
+            animateTextures();
         // drawModIcon(myPlayer);
 
         if (GameFrame.getScreenMode() != ScreenMode.FIXED && loggedIn) {
@@ -12493,9 +12463,9 @@ public class Client extends GameRenderer {
             drawConsole();
         }
 
-       /* if (loggedIn && Configuration.MONEY_POUCH_ENABLED) {
+        if (loggedIn && Configuration.MONEY_POUCH_ENABLED) {
             mapArea.displayMoneyPouch(this);
-        }*/
+        }
 
         if (PlayerHandler.showXP && loggedIn) {
             mapArea.displayXPCounter(this);
@@ -12505,11 +12475,11 @@ public class Client extends GameRenderer {
             if (!resizing) {
                 gameScreenIP.drawGraphics(canvas.getGraphics(), gameScreenDrawX, gameScreenDrawY);
             }
-            xCameraPos = cameraX;
-            zCameraPos = cameraZ;
-            yCameraPos = cameraY;
-            yCameraCurve = yCurve;
-            xCameraCurve = xCurve;
+            xCameraPos = l;
+            zCameraPos = i1;
+            yCameraPos = j1;
+            yCameraCurve = k1;
+            xCameraCurve = l1;
         }
     }
 
