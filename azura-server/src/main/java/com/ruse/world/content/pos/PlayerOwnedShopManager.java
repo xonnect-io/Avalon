@@ -137,7 +137,7 @@ public class PlayerOwnedShopManager {
     public static void loadShops() {
         // Clear the SHOPS list to remove any previously loaded shops
         SHOPS.clear();
-
+        loadHistory();
         File[] files = DIRECTORY.listFiles();
         if (files == null) {
             System.err.println("Failed to list files in directory: " + DIRECTORY);

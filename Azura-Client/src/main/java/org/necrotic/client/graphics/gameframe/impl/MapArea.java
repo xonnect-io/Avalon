@@ -256,60 +256,46 @@ public class MapArea extends GameFrame {
 		final boolean fixed = GameFrame.getScreenMode() == ScreenMode.FIXED;
 		int x = fixed ? 404 : Client.clientWidth - 318;
 		int y = fixed ? 0 : -36;
-		int currentIndex = 0;
-		int offsetY = 0;
-		int stop = 70;
 		Client.spritesMap.get(346).drawSprite(x, fixed ? 50 : 48 + y);
 		client.normalText.drawRegularText(true, x + 3, 0xffffff, "XP:", (fixed ? 63 : 61) + y);
-		String str = df.format(PlayerHandler.totalXP);
-		int width = client.normalText.getTextWidth(str);
+		String xpString = df.format(PlayerHandler.totalXP);
 		if (PlayerHandler.totalXP >= 0 && PlayerHandler.totalXP < 1000000000) {
-			client.normalText.drawRegularText(true, x + 99 - width, 0xffffff, str, (fixed ? 63 : 61) + y);
+			client.normalText.drawRegularText(true, x + 99 - client.normalText.getTextWidth(xpString), 0xffffff, xpString, (fixed ? 63 : 61) + y);
 		} else {
 			client.normalText.drawRegularText(true, x + 99 - client.normalText.getTextWidth("Lots!"), 0xFF0000, "Lots!", (fixed ? 63 : 61) + y);
 		}
-
-		if (!PlayerHandler.gains.isEmpty()) {
-			Iterator<XPGain> it = PlayerHandler.gains.iterator();
-
-			while (it.hasNext()) {
-				XPGain gain = it.next();
-
-				if (gain.getY() < stop) {
-					if (gain.getY() <= 10) {
-						gain.increaseAlpha();
-					}
-
-					if (gain.getY() >= stop - 10) {
-						gain.decreaseAlpha();
-					}
-
-					gain.increaseY();
-				} else if (gain.getY() == stop) {
-					it.remove();
+		int offsetY = 0;
+		int stop = 70;
+		int currentIndex = 0;
+		Iterator<XPGain> it = PlayerHandler.gains.iterator();
+		while (it.hasNext()) {
+			XPGain gain = it.next();
+			if (gain.getY() < stop) {
+				if (gain.getY() <= 10) {
+					gain.increaseAlpha();
 				}
-
-				int spriteId = gain.getSkill() + 498;
-
-				if (gain.getSkill() == 23) {
-					spriteId = 393;
-				} else if (gain.getSkill() == 24) {
-					spriteId = 521;
+				if (gain.getY() >= stop - 10) {
+					gain.decreaseAlpha();
 				}
-
-				Sprite sprite = Client.spritesMap.get(spriteId);
-
-				if (PlayerHandler.gains.size() > 1) {
-					offsetY = (fixed ? 0 : -20) + currentIndex * 28;
-				}
-
-				if (gain.getY() < stop) {
-					sprite.drawSprite(x + 15 - sprite.myWidth / 2, gain.getY() + offsetY + 66 - sprite.myHeight / 2, gain.getAlpha());
-					client.newSmallFont.drawBasicString("<trans=" + gain.getAlpha() + ">+" + format.format(gain.getXP()) + "xp", x + 30, gain.getY() + offsetY + 70, 0xCC6600, 0, false);
-				}
-
-				currentIndex++;
+				gain.increaseY();
+			} else if (gain.getY() == stop) {
+				it.remove();
 			}
+			int spriteId = gain.getSkill() + 498;
+			if (gain.getSkill() == 23) {
+				spriteId = 393;
+			} else if (gain.getSkill() == 24) {
+				spriteId = 521;
+			}
+			Sprite sprite = Client.spritesMap.get(spriteId);
+			if (PlayerHandler.gains.size() > 1) {
+				offsetY = (fixed ? 0 : -20) + currentIndex * 28;
+			}
+			if (gain.getY() < stop) {
+				sprite.drawSprite(x + 15 - sprite.myWidth / 2, gain.getY() + offsetY + 66 - sprite.myHeight / 2, gain.getAlpha());
+				client.newSmallFont.drawBasicString("<trans=" + gain.getAlpha() + ">+" + format.format(gain.getXP()) + "xp", x + 30, gain.getY() + offsetY + 70, 0xCC6600, 0, false);
+			}
+			currentIndex++;
 		}
 	}
 
@@ -549,10 +535,17 @@ public class MapArea extends GameFrame {
 					if (Client.myPlayer.team != 0 && player.team != 0 && Client.myPlayer.team == player.team) {
 						isInTeam = true;
 					}
+					boolean isOwner = false;
+					if (player.getRights () == 4) {
+						isOwner = true;
+
+					}
 					if (isInFriends) {
 						client.markMinimap(client.mapDotFriend, x, y);
 					} else if (isInClan) {
 						client.markMinimap(client.mapDotClan, x, y);
+					} else if (isOwner) {
+						client.markMinimap(client.mapDotOwner, x, y);
 					} else if (isInTeam) {
 						client.markMinimap(client.mapDotTeam, x, y);
 					} else {

@@ -409,6 +409,7 @@ public class Client extends GameRenderer {
     public Sprite mapDotNPC;
     public Sprite mapDotPlayer;
     public Sprite mapDotTeam;
+    public Sprite mapDotOwner;
     public Sprite mapFlag;
     public Sprite mapMarker;
     public int[] menuActionID;
@@ -4313,6 +4314,7 @@ public class Client extends GameRenderer {
         mapDotPlayer = null;
         mapDotFriend = null;
         mapDotTeam = null;
+        mapDotOwner = null;
         mapDotClan = null;
         alertBack = null;
         alertBorder = null;
@@ -18839,6 +18841,7 @@ if(response == 32){
             mapDotFriend = new Sprite(mediaArchive, "mapdots", 3);
             mapDotTeam = new Sprite(mediaArchive, "mapdots", 4);
             mapDotTeam = new Sprite(mediaArchive, "mapdots", 4);
+            mapDotOwner = new Sprite(mediaArchive, "mapdots", 5);
             alertBack = new Sprite("alertback");
             alertBorder = new Sprite("alertborder");
             alertBorderH = new Sprite("alertborderh");
@@ -18890,6 +18893,7 @@ if(response == 32){
              * icon
              */
             mapDotClan = spritesMap.get(398);
+            mapDotOwner = spritesMap.get(831);
             vengBar = spritesMap.get(297);
 
             for (int j3 = 0; j3 < 12; j3++) {

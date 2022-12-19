@@ -580,7 +580,7 @@ public final class MobDefinition {
 
 			case 9116:
 				definition.name = "Faceless Magician";
-				definition.actions = new String[]{null, "fAttack", null, null, null};
+				definition.actions = new String[]{null, "Attack", null, null, null};
 				definition.npcModels = new int[]{19463};
 				definition.npcSizeInSquares = 1;
 				definition.standAnimation = MobDefinition.get(1).standAnimation;
