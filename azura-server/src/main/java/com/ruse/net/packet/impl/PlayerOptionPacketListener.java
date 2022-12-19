@@ -63,7 +63,10 @@ public class PlayerOptionPacketListener implements PacketListener {
 		if (player.getLocation() != Location.ZOMBIE_LOBBY || player.getLocation() != Location.SOD_LOBBY ||
 				player.getLocation() != Location.DARKNESS_LOBBY || player.getLocation() != Location.TELOS_LOBBY
 				|| player.getLocation() != Location.GAMBLE){
+			if (attacked.getPlayerOwnedShopManager ().getMyShop ().size () > 0)
 			player.getPlayerOwnedShopManager ().openTargetShop(attacked);
+			else
+				player.getPacketSender ().sendMessage ("This player does not have any items for sale");
 			return;
 		}
 		if (Misc.checkForOwner()) {

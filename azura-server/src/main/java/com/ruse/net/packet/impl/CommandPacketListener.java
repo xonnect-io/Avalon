@@ -322,7 +322,7 @@ public class CommandPacketListener implements PacketListener {
         }
 
         if (command[0].equalsIgnoreCase ("globals")) {
-            player.getPacketSender ().sendMessage ("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft () + " Steals left.");
+            player.getPacketSender ().sendMessage ("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft () + " rocks left.");
             player.getPacketSender ().sendMessage ("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft () + " kills left.");
             player.getPacketSender ().sendMessage ("@red@<shad=1>Slayer Champion: @yel@" + SlayerBossSystem.getLeft () + " tasks left.");
             player.getPacketSender ().sendMessage ("@red@<shad=1>Vote Boss: @yel@" + doMotivote.getVoteCount () + "/40 please vote!");
@@ -2230,6 +2230,8 @@ public class CommandPacketListener implements PacketListener {
             DiscordMessager.dono6("");
         }if (command[0].equalsIgnoreCase("dbenefits7")) {
             DiscordMessager.dono7("");
+        }if (command[0].equalsIgnoreCase("dbenefits8")) {
+            DiscordMessager.dono8("");
         }
 
         if (command[0].equalsIgnoreCase("resetny")) {
@@ -4231,6 +4233,14 @@ public class CommandPacketListener implements PacketListener {
                     youtuberCommands(player, parts, command);
                     playerCommands(player, parts, command);
                     memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    zenyteCommands(player, parts, command);
+                    tanzaniteCommands(player, parts, command);
+                    platinumCommands (player, parts, command);
                     break;
 
                 case MODERATOR:
@@ -4238,6 +4248,14 @@ public class CommandPacketListener implements PacketListener {
                     memberCommands(player, parts, command);
                     moderatorCommands(player, parts, command);
                     supportCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    zenyteCommands(player, parts, command);
+                    tanzaniteCommands(player, parts, command);
+                    platinumCommands (player, parts, command);
                     break;
 
                 case ADMINISTRATOR:
@@ -4247,6 +4265,14 @@ public class CommandPacketListener implements PacketListener {
                     moderatorCommands(player, parts, command);
                     administratorCommands(player, parts, command);
                     memberCommands(player, parts, command);
+                    sapphireCommands(player, parts, command);
+                    emeraldCommands(player, parts, command);
+                    rubyCommands(player, parts, command);
+                    diamondCommands(player, parts, command);
+                    onyxCommands(player, parts, command);
+                    zenyteCommands(player, parts, command);
+                    tanzaniteCommands(player, parts, command);
+                    platinumCommands (player, parts, command);
                     break;
 
                 case OWNER:

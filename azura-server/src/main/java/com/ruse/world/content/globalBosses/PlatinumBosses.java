@@ -24,7 +24,7 @@ public class PlatinumBosses extends NPC {
 
     public static boolean bossAlive = false;
     public static List<Integer> NPC_IDS = Arrays.asList(10034, 10035, 10036,10037);
-    public static long INTERVAL = TimeUnit.MINUTES.toMillis(15);
+    public static long INTERVAL = TimeUnit.MINUTES.toMillis(180);
 
     public PlatinumBosses(int id, Position position) {
         super(id, position);

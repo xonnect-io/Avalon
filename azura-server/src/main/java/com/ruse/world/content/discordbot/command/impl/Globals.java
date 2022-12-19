@@ -25,7 +25,7 @@ public class Globals extends ListenerAdapter {
         int players = GameSettings.players + World.getPlayers().size ();
         eb.setTitle("Globals");
         eb.addField("**Vote boss:** ", VoteBossDrop.currentSpawn == null  ? "" + doMotivote.getVoteCount() + "/40" : "Alive", true);
-        eb.addField("**AFK Boss:** ", ""+ AfkSystem.getLeft() + " steals left", true);
+        eb.addField("**AFK Boss:** ", ""+ AfkSystem.getLeft() + " rocks left", true);
         eb.addField("**Hellraiser:** ", ""+ HellraiserSystem.getLeft() + "  kills left", true);
         eb.addField("**Slayer Champion:** ", ""+ SlayerBossSystem.getLeft() + "  tasks left", true);
         eb.addField("**Dragon King:** ", DragonKingBoss.currentBoss == null  ? "" + DragonKingBoss.timeLeft() + "" : "Alive", true);

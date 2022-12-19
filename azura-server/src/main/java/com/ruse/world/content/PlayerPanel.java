@@ -34,7 +34,7 @@ public class PlayerPanel {
                 "Bonus Skill: @whi@" + StringUtils.capitalizeFirst(DoubleXPSkillEvent.currentSkill.toString()),
                 //
                 "Globals",
-                "Terrorstep: @whi@" + AfkSystem.getLeft() + " @whi@Steals left.",
+                "Terrorstep: @whi@" + AfkSystem.getLeft() + " @whi@rocks left.",
                 "Hellraiser: @whi@" + HellraiserSystem.getLeft() + " @whi@kills left.",
                 "Slayer Champion: @whi@" + SlayerBossSystem.getLeft() + " @whi@tasks left.",
                 (VoteBossDrop.currentSpawn == null

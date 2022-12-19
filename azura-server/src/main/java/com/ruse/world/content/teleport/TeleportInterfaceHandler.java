@@ -215,6 +215,17 @@ public class TeleportInterfaceHandler {
 				player.sendMessage("You need to be an Zenyte Donator to go here.");
 			return;
 		}
+		if (player.getCurrentTeleport().getNpcId() == 10034) {
+			if (player.getRights() == PlayerRights.OWNER)
+				player.sendMessage("Being an Owner nullifies the teleport requirements.");
+			if (player.getRights() == PlayerRights.OWNER || player.getAmountDonated() >= 20000|| player.getRights() == PlayerRights.YOUTUBER) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			}
+			else
+				player.sendMessage("You need to be an Platinum Donator to go here.");
+			return;
+		}
 		if (player.getCurrentTeleport().getNpcId() == 9116) {
 
 			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {

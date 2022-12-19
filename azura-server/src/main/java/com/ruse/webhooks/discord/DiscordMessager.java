@@ -784,7 +784,7 @@ public class DiscordMessager extends JSONObject {
 					//.withURL("http://Avalon317.com")
 					.withColor(Color.BLUE)
 					.withTitle("Sapphire Donator | [:dollar: 10]") // The title of the embed element
-					.withDescription("5% Bonus Drop rate\n 5% Damage Boost\n ::sapphire - Teleports you to Sapphire donator zone\nAccess to ::yell chat\n Access to ::afk")
+					.withDescription("5% Bonus Drop rate\n 5% DDR rate\n 5% Damage Boost\n ::sapphire - Teleports you to Sapphire donator zone\nAccess to ::yell chat\n Access to ::afk")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
@@ -810,7 +810,7 @@ public class DiscordMessager extends JSONObject {
 					//.withURL("http://Avalon317.com")
 					.withColor(Color.green)
 					.withTitle("Emerald Donator | [:dollar: 50]") // The title of the embed element
-					.withDescription("15% Bonus Drop rate\n 10% Damage Boost\n ::emerald - teleports you to Emerald donator zone\n Access to ::pos outside of home\n Access to ::setyellhex\n Access to ::bank\n All benefits from previous rank")
+					.withDescription("15% Bonus Drop rate\n 7% DDR rate\n 10% Damage Boost\n ::emerald - teleports you to Emerald donator zone\n Access to ::pos outside of home\n Access to ::setyellhex\n Access to ::bank\n All benefits from previous rank")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
@@ -836,7 +836,7 @@ public class DiscordMessager extends JSONObject {
 					//.withURL("http://Avalon317.com")
 					.withColor(Color.red)
 					.withTitle("Ruby Donator | [:dollar: 250]") // The title of the embed element
-					.withDescription("20% Bonus Drop rate\n 15% Damage Boost\n ::ruby - teleports you to ruby donator zone\n All the benefits from previous ranks")
+					.withDescription("20% Bonus Drop rate\n 10% DDR rate\n 15% Damage Boost\n ::ruby - teleports you to ruby donator zone\n All the benefits from previous ranks")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
@@ -862,7 +862,7 @@ public class DiscordMessager extends JSONObject {
 					//.withURL("http://Avalon317.com")
 					.withColor(Color.cyan)
 					.withTitle("Diamond Donator | [:dollar: 500]") // The title of the embed element
-					.withDescription("30% Bonus Drop rate\n 25% Damage Boost\n ::diamond/::diamond 2 - teleports you to diamond donator zone\n Unlimited prayer\n 10% bonus skilling experience\n All the benefits from previous ranks")
+					.withDescription("30% Bonus Drop rate\n 15% DDR rate\n 25% Damage Boost\n ::diamond/::diamond 2 - teleports you to diamond donator zone\n Unlimited prayer\n 10% bonus skilling experience\n All the benefits from previous ranks")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
@@ -888,7 +888,7 @@ public class DiscordMessager extends JSONObject {
 					//.withURL("http://Avalon317.com")
 					.withColor(Color.black)
 					.withTitle("Onyx Donator | [:dollar: 1000]") // The title of the embed element
-					.withDescription("45% Bonus Drop rate\n 35% Damage Boost\n 20% bonus skilling experience\n Access to ::onyx donator zone\n ::onyx includes the Onyx Global Boss\n All benefits of previous ranks")
+					.withDescription("45% Bonus Drop rate\n 20% DDR rate\n 35% Damage Boost\n 20% bonus skilling experience\n Access to ::onyx donator zone\n ::onyx includes the Onyx Global Boss\n All benefits of previous ranks")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
@@ -914,7 +914,7 @@ public class DiscordMessager extends JSONObject {
 					//.withURL("http://Avalon317.com")
 					.withColor(Color.orange)
 					.withTitle("Zenyte Donator | [:dollar: 5000]") // The title of the embed element
-					.withDescription("75% Bonus Drop rate\n 50% Damage Boost\n 30% bonus skilling experience\n Access to ::zenyte donator zone\n ::zenyte includes the Zenyte Global Boss\n 10% Chance of double Isles of Avalon loot\n All benefits of previous ranks")
+					.withDescription("75% Bonus Drop rate\n 25% DDR rate\n 50% Damage Boost\n 30% bonus skilling experience\n Access to ::zenyte donator zone\n ::zenyte includes the Zenyte Global Boss\n 10% Chance of double Isles of Avalon loot\n All benefits of previous ranks")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
@@ -940,7 +940,33 @@ public class DiscordMessager extends JSONObject {
 					//.withURL("http://Avalon317.com")
 					.withColor(Color.magenta)
 					.withTitle("Tanzanite Donator | [:dollar: 10000]") // The title of the embed element
-					.withDescription("100% Bonus Drop rate\n 75% Damage Boost\n 50% bonus skilling experience\n Access to ::tanzanite donator zone\n ::tanzanite includes the Tanzanite Global Boss\n 15% Chance of double Isles of Avalon loot\n All benefits of previous ranks")
+					.withDescription("100% Bonus Drop rate\n 30% DDR rate\n 75% Damage Boost\n 50% bonus skilling experience\n Access to ::tanzanite donator zone\n ::tanzanite includes the Tanzanite Global Boss\n 15% Chance of double Isles of Avalon loot\n All benefits of previous ranks")
+					.build();
+
+			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
+					.withEmbed(embed)
+					.withUsername("Donator Benefits")
+					.build();
+
+			client.sendPayload(message);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void dono8(String msg) {
+		try {
+
+			String webhook = "https://discord.com/api/webhooks/985917713656447017/T2Uge8KQDO43IUO6BNUDAmHNyCxXAlEEghB33KpZ6t2l_7PLTsfEioTIyfPE-10wliLn";
+			WebhookClient client = new WebhookClientBuilder().withURI(new URI(webhook)).build(); // Create the webhook
+			// client
+
+			DiscordEmbed embed = new DiscordEmbed.Builder().withTitle("")
+					//.withURL("http://Avalon317.com")
+					.withColor(Color.LIGHT_GRAY)
+					.withTitle("Platinum Donator | [:dollar: 20000]") // The title of the embed element
+					.withDescription("125% Bonus Drop rate\n 35% DDR rate\n 85% Damage Boost\n 75% bonus skilling experience\n Access to ::platinum donator zone\n ::platinum includes 4 Global Bosses\n 5% Chance to roll twice on raids rewards\n All benefits of previous ranks")
 					.build();
 
 			DiscordMessage message = new DiscordMessage.Builder(Misc.stripIngameFormat(msg))
