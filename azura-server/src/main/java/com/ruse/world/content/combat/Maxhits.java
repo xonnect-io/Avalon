@@ -36,11 +36,27 @@ public class Maxhits {
                 && player.getEquipment().contains(23445)) {
             maxHit *= 1.2;
         }
+        //Diminisher armor set
+        if (player.getEquipment().contains(10823) && player.getEquipment().contains(10824)
+                && player.getEquipment().contains(10825)) {
+            maxHit *= 1.3;
+        }
 
+        //Masori armor set
+        if (player.getEquipment().contains(13273) && player.getEquipment().contains(13274)
+                && player.getEquipment().contains(13275)) {
+            maxHit *= 1.4;
+        }
+
+        //Masori armor set (f)
+        if (player.getEquipment().contains(13841) && player.getEquipment().contains(13842)
+                && player.getEquipment().contains(13843)) {
+            maxHit *= 1.5;
+        }
         //Diyos Custom armor set
         if (player.getEquipment().contains(23418) && player.getEquipment().contains(23419)
                 && player.getEquipment().contains(23420)) {
-            maxHit *= 1.25;
+            maxHit *= 1.5;
         }
         if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 22373
                 || player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 23627

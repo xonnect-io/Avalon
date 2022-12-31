@@ -246,6 +246,8 @@ public class PlayerSaving {
 			object.addProperty("sacrificed-owner", player.isSacrificedFantasyItem());
 			object.addProperty("fantasy", player.isFantasy());
 
+			object.addProperty("diminisher", player.isDiminisher());
+
 			object.addProperty("hween-trick", player.getHweenEvent ().getTrick());
 			object.addProperty("hween-treat", player.getHweenEvent ().getTreat());
 			object.add("unlocked-trick", builder.toJsonTree(player.getHweenEvent ().getUnlockedTrick()));

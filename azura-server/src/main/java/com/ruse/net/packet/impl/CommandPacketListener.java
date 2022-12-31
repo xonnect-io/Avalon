@@ -276,7 +276,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Teleporting you to the Holiday Event!");
         }
         */
-
+/*
         if (command[0].equalsIgnoreCase ("event")) {
             if (player.getLocation () != null && player.getLocation () == Location.WILDERNESS
                     || player.getLocation () != null && player.getLocation () == Location.CUSTOM_RAIDS) {
@@ -320,7 +320,7 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer (player, pos, player.getSpellbook ().getTeleportType ());
             player.getPacketSender ().sendMessage ("Teleporting you to the Holiday Event!");
         }
-
+*/
         if (command[0].equalsIgnoreCase ("globals")) {
             player.getPacketSender ().sendMessage ("@red@<shad=1>Terrorstep: @yel@" + AfkSystem.getLeft () + " rocks left.");
             player.getPacketSender ().sendMessage ("@red@<shad=1>Hellraiser: @yel@" + HellraiserSystem.getLeft () + " kills left.");
@@ -334,7 +334,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender ().sendMessage ("@red@<shad=1>Nephilim @yel@" + NephilimSpawnSystem.getLeft () + " tokens left");
             player.getPacketSender ().sendMessage ((FantasyZone.gameActive == false
                     ? "@red@<shad=1>Fantasy Realm: @yel@" + FantasyZone.getTimeLeft () : "@red@<shad=1>Fantasy Realm : @yel@Open"));
-            player.getPacketSender ().sendMessage ("@red@<shad=1>Krampus: @yel@" + HolidayBossEvent.getTimeLeft ());
+           // player.getPacketSender ().sendMessage ("@red@<shad=1>Krampus: @yel@" + HolidayBossEvent.getTimeLeft ());
 
         }
         if (command[0].equalsIgnoreCase ("train") || command[0].equalsIgnoreCase ("starter")
@@ -2085,9 +2085,11 @@ public class CommandPacketListener implements PacketListener {
             TravellingMerchant.dayInYear += 1;
             TravellingMerchant.resetItems();
         }
-        if (command[0].equalsIgnoreCase("eventspawn")) {
+
+     /*   if (command[0].equalsIgnoreCase("eventspawn")) {
             HolidayBossEvent.spawn();
-        }
+        }*/
+
         if (command[0].equals("trav1")) {
             TravellingMerchant.dayInYear += 1;
             //World.sendNewsMessage("The Traveling merchant restocked his shop with new items!");

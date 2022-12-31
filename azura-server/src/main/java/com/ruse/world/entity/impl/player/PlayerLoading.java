@@ -715,6 +715,9 @@ public class PlayerLoading {
             if (reader.has("fantasy")) {
                 player.setFantasy(reader.get("fantasy").getAsBoolean());
             }
+            if (reader.has("diminisher")) {
+                player.setDiminisher(reader.get("diminisher").getAsBoolean());
+            }
             if (reader.has("upg-dr")) {
                 player.setScrollBonus(reader.get("upg-dr").getAsDouble());
             }

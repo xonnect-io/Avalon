@@ -163,12 +163,12 @@
     {
         "id": 96765,
         "type": "NPC_STATEMENT",
-        "anim": "NORMAL",
+        "anim": "LISTEN_LAUGH",
         "lines": 2,
-        "line1": "Merry Christmas Avalonians!",
-        "line2": "Show your support and vote for a free Christmas Box!",
+        "line1": "Happy New Year Avalonians!",
+        "line2": "Currently voting gives a 1/2 chance at a free Celebration box!",
         "next": -1,
-        "npcId": 1199
+        "npcId": 1
     },
     {
         "id": 10,

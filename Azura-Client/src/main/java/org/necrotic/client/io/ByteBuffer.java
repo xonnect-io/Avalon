@@ -211,6 +211,7 @@ public final class ByteBuffer extends NodeSub {
 		return ((buffer[position - 1] & 0xFF) << 8) + (buffer[position - 2] - 128 & 0xFF);
 	}
 
+
 	public byte getSignedByte() {
 		return buffer[position++];
 	}

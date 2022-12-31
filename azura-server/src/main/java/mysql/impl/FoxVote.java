@@ -2,6 +2,7 @@ package mysql.impl; // dont forget to change packaging ^-^
 
 import com.ruse.GameSettings;
 import com.ruse.motivote3.doMotivote;
+import com.ruse.util.Misc;
 import com.ruse.world.World;
 import com.ruse.world.content.Cases;
 import com.ruse.world.content.PlayerLogs;
@@ -102,9 +103,13 @@ public class FoxVote implements Runnable {
 					PlayerLogs.logPlayerVotes(player.getUsername(), "Player claimed votes: " + amount + ", IP: " + player.getHostAddress());
 
 					player.getInventory().add(23020, amount);
-					player.getInventory().add(23362, 1);
-					player.getPacketSender().sendMessage("Thank you for voting!");
 
+					player.getPacketSender().sendMessage("Thank you for voting!");
+					int rollAccuracy = Misc.getRandom (100);
+					if (rollAccuracy <= 50) {
+						player.getInventory ().add (10792, 1);
+						player.getPacketSender().sendMessage("You were rewarded a Celebration box for voting!");
+					}
 					player.lastVoteTime = System.currentTimeMillis();
 					player.getAchievementTracker().progress(AchievementData.SUPPORT_AVALON, 1);
 					player.getAchievementTracker().progress(AchievementData.SUPPORTER, 1);

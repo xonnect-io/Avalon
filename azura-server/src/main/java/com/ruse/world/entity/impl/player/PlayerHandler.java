@@ -2,7 +2,6 @@ package com.ruse.world.entity.impl.player;
 
 import com.ruse.GameServer;
 import com.ruse.GameSettings;
-import com.ruse.engine.task.Task;
 import com.ruse.engine.task.TaskManager;
 import com.ruse.engine.task.impl.*;
 import com.ruse.model.*;
@@ -42,7 +41,6 @@ import com.ruse.world.content.skill.impl.hunter.Hunter;
 import com.ruse.world.content.skill.impl.slayer.Slayer;
 import com.ruse.world.content.startertasks.StarterTasks;
 import com.ruse.world.entity.impl.GlobalItemSpawner;
-import com.ruse.world.entity.impl.mini.MiniPlayer;
 import com.ruse.world.instance.MapInstance;
 import mysql.impl.Store;
 import org.mindrot.jbcrypt.BCrypt;
@@ -335,7 +333,7 @@ public class PlayerHandler {
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=8> Helper " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() < Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=9> Helper " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT && player.getAmountDonated() < Store.ZENYTE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=3> Helper " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.HELPER && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() < Store.TANZANITE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=5><img=1508> Helper " + player.getUsername() + " has just logged in."));
@@ -355,7 +353,7 @@ public class PlayerHandler {
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=8> Moderator " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() < Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=9> Moderator " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT && player.getAmountDonated() < Store.ZENYTE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=3> Moderator " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.MODERATOR && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() < Store.TANZANITE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=1><img=1508> Moderator " + player.getUsername() + " has just logged in."));
@@ -375,11 +373,11 @@ public class PlayerHandler {
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=8> Administrator " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.DIAMOND_DONATION_AMOUNT && player.getAmountDonated() < Store.ONYX_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=9> Administrator " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.ONYX_DONATION_AMOUNT && player.getAmountDonated() < Store.ZENYTE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=3> Administrator " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.ZENYTE_DONATION_AMOUNT && player.getAmountDonated() < Store.TANZANITE_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=1508> Administrator " + player.getUsername() + " has just logged in."));
-        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT&& player.getAmountDonated() < Store.PLATINUM_DONATION_AMOUNT)
+        else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.TANZANITE_DONATION_AMOUNT && player.getAmountDonated() < Store.PLATINUM_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=852> Administrator " + player.getUsername() + " has just logged in."));
         else if (player.getRights() == PlayerRights.ADMINISTRATOR && player.getAmountDonated() >= Store.PLATINUM_DONATION_AMOUNT)
             World.sendMessage(("<shad=0><col=" + player.getYellHex() + "> <img=2><img=857> Administrator " + player.getUsername() + " has just logged in."));
@@ -533,17 +531,6 @@ public class PlayerHandler {
                     .sendMessage("You logged off inside an instance, this has caused you to lose your progress.");
         }
 
-        if (player instanceof MiniPlayer) {
-            MiniPlayer miniPlayer = (MiniPlayer) player;
-            TaskManager.submit(new Task(2) {
-                @Override
-                protected void execute() {
-                    miniPlayer.moveTo(miniPlayer.getMiniPlayerOwner().getPosition().copy());
-                    miniPlayer.getMiniPlayerOwner().getMiniPManager().followOwner();
-                    stop();
-                }
-            });
-        }
 
     }
 
@@ -650,9 +637,6 @@ public class PlayerHandler {
                     player.getMinigameAttributes().getDungeoneeringAttributes().getParty().remove(player, false, true);
                 }
 
-                if (player.isHasMiniPlayer()) {
-                    player.getMiniPManager().pickupMiniPlayer();
-                }
 
                 if (!player.isMiniPlayer()) {
                     session.setState(SessionState.LOGGED_OUT);

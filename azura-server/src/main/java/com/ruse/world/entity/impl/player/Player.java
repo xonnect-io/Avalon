@@ -2092,6 +2092,11 @@ public int howmuchdissolveamt = 0;
     @Setter
     private boolean fantasy;
 
+
+    @Getter
+    @Setter
+    private boolean diminisher;
+
     @Getter
     @Setter
     private boolean sacrificedFantasyItem;

@@ -2726,20 +2726,17 @@ public final class MobDefinition {
 				break;
 
 			case 200:
-				definition.name = "Venefica";
+				definition.name = "The Diminisher";
 				definition.description = "Thanks for the memories.".getBytes();
 				definition.combatLevel = 439;
 				definition.actions = new String[]{null, "Attack", null, null, null};
-				definition.npcModels = new int[7];
-				definition.npcModels[0] = 62736;
-				definition.npcModels[1] = 62748;
-				definition.npcModels[2] = 62742;
-				definition.npcModels[3] = 65300;
-				definition.npcModels[4] = 13319;
-				definition.npcModels[5] = 53330;
-				definition.npcModels[6] = 53577;
+				definition.npcModels = new int[]{22349};
 				definition.standAnimation = 808;
 				definition.walkAnimation = 819;
+				definition.originalModelColours = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				definition.changedModelColours = new int[1]; // same here
+				definition.changedModelColours = new int[]{52};
+				definition.originalModelColours = new int[]{111};
 				break;
 
 			case 457:

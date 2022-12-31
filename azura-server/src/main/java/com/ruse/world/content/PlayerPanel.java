@@ -52,9 +52,10 @@ public class PlayerPanel {
                 "Nephilim: @whi@" + NephilimSpawnSystem.getLeft()  + " @whi@tokens left",
                 (FantasyZone.gameActive == false
                         ? "Fantasy Realm: @whi@" + FantasyZone.getTimeLeft() : "Fantasy Realm: @whi@Open"),
-                (HolidayBossEvent.bossAlive == false
+              /*  (HolidayBossEvent.bossAlive == false
                         ? "Krampus: @whi@" + HolidayBossEvent.getTimeLeft() : "Krampus: @whi@Alive ::event"),
-
+*/
+                "",
         };
 
         for (int i = 0; i < Messages.length; i++) {

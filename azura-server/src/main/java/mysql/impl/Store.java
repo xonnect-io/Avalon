@@ -250,7 +250,7 @@ public class Store implements Runnable {
                         break;
 
                     case 1083:
-                        player.getInventory().add(23362, quantity);
+                        player.getInventory().add(10792, quantity);
                         break;
 
                     case 1084:
@@ -314,7 +314,7 @@ public class Store implements Runnable {
                     World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated $50+ and received @red@<shad=1>x5 Autumn boxes!");
                 }
                 if (GameSettings.WINTER_DEAL && amount >= 50) {
-                    player.getInventory().add(23362, 5);
+                    player.getInventory().add(10792, 5);
                     player.sendMessage("You received x5 Christmas boxes for donating $50+");
                     World.sendMessage( "@red@<shad=1>" + player.getUsername() + "@or2@ Donated $50+ and received @red@<shad=1>x5 Christmas boxes!");
                 }

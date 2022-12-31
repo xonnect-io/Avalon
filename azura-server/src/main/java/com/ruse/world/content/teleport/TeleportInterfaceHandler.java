@@ -487,6 +487,31 @@ public class TeleportInterfaceHandler {
 			return;
 		}
 
+
+		if (player.getCurrentTeleport().getNpcId() == TeleportData.CORP.getNpcId()) {
+			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
+				player.sendMessage("Your rank nullifies the teleport requirements.");
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (player.isDiminisher ()) {
+				TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+						player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+				return;
+			} else if (!player.isDiminisher () && !player.getInventory ().contains (23759, 1000) && !player.getInventory().contains (12855, 25000000)) {
+				player.getPacketSender().sendMessage("You need to sacrifice 1,000 Crimson flakes and 25M Upgrade tokens");
+				return;
+			}
+			else if (!player.isDiminisher () && player.getInventory ().contains (23759, 1000) && player.getInventory().contains (12855, 25000000)) {
+				player.getInventory().delete (23759, 1000);
+				player.getInventory().delete (12855, 25000000);
+				player.setDiminisher(true);
+			}
+			TeleportHandler.teleportPlayer(player, new Position(player.getCurrentTeleport().getPosition().getX(),
+					player.getCurrentTeleport().getPosition().getY(), player.getCurrentTeleport().getPosition().getZ()), TeleportType.NORMAL);
+			return;
+		}
+
 		if (player.getCurrentTeleport().getNpcId() == TeleportData.IPOTANE.getNpcId()) {
 			if (player.getRights() == PlayerRights.OWNER || player.getRights() == PlayerRights.YOUTUBER) {
 				player.sendMessage("Your rank nullifies the teleport requirements.");

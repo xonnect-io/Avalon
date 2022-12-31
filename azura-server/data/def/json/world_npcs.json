@@ -750,7 +750,7 @@
   {
     "npc-id": 1821,
     "face": "NORTH",
-    "position": { "x": 2791, "y": 4053, "z": 0 },
+    "position": { "x": 2790, "y": 4054, "z": 0 },
     "walking-policy": {"coordinate": false,"radius": 1
     }
   },
@@ -24275,7 +24275,7 @@
     }
   },
   {
-    "npc-id": 8133,
+    "npc-id": 200,
     "face": "WEST",
     "position": {
       "x": 2902,

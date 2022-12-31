@@ -279,6 +279,7 @@ public class World {
             if (player == null || amount >= GameSettings.LOGOUT_THRESHOLD)
                 break;
             if (PlayerHandler.handleLogout(player, false)) {
+
                 $it.remove();
                 amount++;
             }
@@ -301,12 +302,12 @@ public class World {
         PlatinumBosses.initialize();
         //VdayGifting.initialize();
         NightmareBoss.execute();
-        SantaGifting.initialize();
+        //SantaGifting.initialize();
         PlatinumGifting.initialize();
         //TurkeySpawns.initialize();
         KeepersOfLight.sequence();
         FantasyZone.initialize();
-        HolidayBossEvent.initialize();
+       // HolidayBossEvent.initialize();
         Bot.updatePlayers();
         TriviaSystem.tick();
         VotingStreak.sequence();

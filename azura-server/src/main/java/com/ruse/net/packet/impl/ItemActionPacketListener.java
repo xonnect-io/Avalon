@@ -272,7 +272,7 @@ public class ItemActionPacketListener implements PacketListener {
                     player.sendMessage("You need at least 1000 Platinum fragments to do this.");
                 }
                 break;
-            case 23488:
+           /* case 23488:
                 if (player.getInventory().getAmount(23488) >= 1000) {
                     player.getInventory().delete(23488, 1000);
                     player.getInventory().add(23362, 1);
@@ -280,11 +280,46 @@ public class ItemActionPacketListener implements PacketListener {
                 } else {
                     player.sendMessage("You need at least 1000 Christmas tokens to do this.");
                 }
-                break;
+                break;*/
             case 23362:
                 EventChestInterface.openInterface(player);
                 break;
-
+            case 10792:
+                int randomchance = Misc.getRandom (100);
+                String message = "";
+                if (randomchance <= 10)
+                    message = "This year may be your year, don't give up!";
+                else if (randomchance <= 20)
+                    message = "Remember to always be kind to others!";
+                else if (randomchance <= 30)
+                    message = "Don't forget to set goals for yourself!";
+                else if (randomchance <= 40)
+                    message = "Take time to appreciate the little things in life.";
+                else if (randomchance <= 50)
+                    message = "It's okay to take breaks and rest when you need to.";
+                else if (randomchance <= 60)
+                    message = "Remember to always stay true to yourself!";
+                else if (randomchance <= 70)
+                    message = "Don't be afraid to ask for help when you need it.";
+                else if (randomchance <= 80)
+                    message = "Remember to always be thankful for the things you have!";
+                else if (randomchance <= 90)
+                    message = "Don't be afraid to try new things!";
+                else if (randomchance <= 100)
+                    message = "Remember to always be yourself!";
+                player.performAnimation(new Animation(866));
+                player.performGraphic(new Graphic(312));
+                player.forceChat("Happy New Years! " + message);
+                player.getInventory().delete(10792, 1);
+                int[] NYrewards = {23020,10946,10946,23229,23229,23257,23257,21218,21218,20488,19116,19115,19114,4186,15288,15289,15290,11137,11137,11137,10947};
+                int[] NYrewardsAmount = {2,1,2,1,2,1,2,1,2,1,4,3,2,1,1,2,3,4,3,5,1};
+                int NYrewardPos = Misc.getRandom(NYrewards.length - 1);
+                int NYrewardPos2 = Misc.getRandom(NYrewards.length - 1);
+                player.getInventory().add(NYrewards[NYrewardPos],
+                        (int) ((NYrewardsAmount[NYrewardPos] * 1) + (Misc.getRandom(NYrewardsAmount[NYrewardPos]))));
+                player.getInventory().add(NYrewards[NYrewardPos2],
+                        (int) ((NYrewardsAmount[NYrewardPos2] * 1)));
+                break;
             case 23653:
                 if (player.isSantaTransform()) {
                     player.getPacketSender().sendMessage("You are no longer santa clause.");
@@ -704,6 +739,7 @@ public class ItemActionPacketListener implements PacketListener {
                     player.sendMessage("You need at least 9 free inventory spaces to do this.");
                 }
                 break;
+
             case 3696:
                 if (player.getInventory().contains(3696)) {
                     if (player.getIsleDropRate() >= 100){

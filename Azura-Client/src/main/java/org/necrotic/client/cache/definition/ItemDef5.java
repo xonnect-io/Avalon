@@ -675,6 +675,16 @@ public class ItemDef5 {
 				itemDef.modelOffsetY = -61;
 				itemDef.actions = new String[]{null, "Wear", null, null, null};
 				break;
+			case 10792:
+				itemDef.copyItem(290);
+				itemDef.name = "Celebration Box";
+				itemDef.actions = new String[5];
+				itemDef.actions[0] = "Open";
+				itemDef.oldColors = new int[]{63};
+				itemDef.newColors = new int[]{40};
+				itemDef.modelID = 65284;
+				break;
+
 			case 23362:
 				itemDef.copyItem(290);
 				itemDef.modelID = 20583;

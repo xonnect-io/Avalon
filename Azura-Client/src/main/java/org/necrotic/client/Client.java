@@ -16165,6 +16165,9 @@ public class Client extends GameRenderer {
                         RSInterface.interfaceCache[i6].mediaID = k18;
                         RSInterface.interfaceCache[i6].modelRotationY = itemDef.rotationY;
                         RSInterface.interfaceCache[i6].modelRotationX = itemDef.rotationX;
+                        RSInterface.interfaceCache[i6].yOffset = 0;
+                        if (k18 == 23570 )
+                            RSInterface.interfaceCache[i6].yOffset = -14;
                         RSInterface.interfaceCache[i6].modelZoom = itemDef.modelZoom * 100 / i13;
                         pktType = -1;
                         return true;

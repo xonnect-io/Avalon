@@ -132,27 +132,40 @@ public class CustomDropUtils {
         }
         //End Fantasy set
 
+        //Diminisher set
+        if (player.getEquipment().contains(10823)) { //Diminisher helmet
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(10824)) { //Diminisher body
+            percentBoost += 40;
+        }
+        if (player.getEquipment().contains(10825)) { //Diminisher legs
+            percentBoost += 40;
+        }
+        //End Diminisher set
+
+
         //Masori set
         if (player.getEquipment().contains(13273)) { //Masori helmet
-            percentBoost += 35;
+            percentBoost += 40;
         }
         if (player.getEquipment().contains(13274)) { //Masori body
-            percentBoost += 35;
+            percentBoost += 40;
         }
         if (player.getEquipment().contains(13275)) { //Masori legs
-            percentBoost += 35;
+            percentBoost += 40;
         }
         //End Masori (f) set
 
         //Masori (f) set
         if (player.getEquipment().contains(13841)) { //Masori helmet (f)
-            percentBoost += 40;
+            percentBoost += 45;
         }
         if (player.getEquipment().contains(13842)) { //Masori body (f)
-            percentBoost += 40;
+            percentBoost += 45;
         }
         if (player.getEquipment().contains(13843)) { //Masori legs (f)
-            percentBoost += 40;
+            percentBoost += 45;
         }
         //End Masori set
 
