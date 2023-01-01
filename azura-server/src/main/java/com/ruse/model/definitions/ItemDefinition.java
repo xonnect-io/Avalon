@@ -80,7 +80,7 @@ public class ItemDefinition {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.contains("inish")) {
+                if (line.contains("finish")) {
                     definitions[definition.id] = definition;
                     continue;
                 }
@@ -155,7 +155,7 @@ public class ItemDefinition {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.contains("inish")) {
+                if (line.contains("finish")) {
                     definitions[definition.id] = definition;
                     continue;
                 }

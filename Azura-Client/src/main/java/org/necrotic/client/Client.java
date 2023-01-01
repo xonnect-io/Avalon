@@ -12437,6 +12437,7 @@ public class Client extends GameRenderer {
             if (Configuration.FOG_ENABLED) {
                 Rasterizer.drawFog(0xc8c0a8, 2800, 3300);
             } else {
+
                 Rasterizer.drawFog(0xc8c0a8, 7700, 7700);
 
             }

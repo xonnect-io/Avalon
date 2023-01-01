@@ -5015,12 +5015,12 @@ public class RSInterface {
 		RSInterface scroll = addInterface(STARTING_POINT + 20);
 		scroll.width = 289;
 		scroll.height = 215;
-		scroll.scrollMax = 710;
+		scroll.scrollMax = 755;
 
 		scroll.totalChildren(1);
 		scroll.child(0, STARTING_POINT + 21, 40, 5);
 
-		addToItemGroup(STARTING_POINT + 21, 6, 17, 10, 10, true, new String[]{"Select", null, null, null, null});
+		addToItemGroup(STARTING_POINT + 21, 6, 18, 10, 10, true, new String[]{"Select", null, null, null, null});
 	}
     
 

@@ -183,7 +183,7 @@ class ConfigPanel extends PluginPanel
 			if (cid.getType() == boolean.class)
 			{
 				JCheckBox checkbox = new JCheckBox();
-				checkbox.setBackground(ColorScheme.LIGHT_GRAY_COLOR);
+				checkbox.setBackground(ColorScheme.DARK_GRAY_COLOR);
 				checkbox.setSelected(Boolean.parseBoolean(configManager.getConfiguration(cd.getGroup().value(), cid.getItem().keyName())));
 				checkbox.addActionListener(ae -> changeConfiguration(checkbox, cd, cid));
 

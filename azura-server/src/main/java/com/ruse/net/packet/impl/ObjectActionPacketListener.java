@@ -230,7 +230,9 @@ public class ObjectActionPacketListener implements PacketListener {
                             case 4388:
                                 FantasyZone.FantasyPortal(player);
                                 break;
-
+                            case 363:
+                                DiminishedChest.openChest (player);
+                                break;
                             case 13623:
                                 player.moveTo (GameSettings.DEFAULT_POSITION.copy ());
                                 break;

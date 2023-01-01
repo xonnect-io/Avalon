@@ -133,13 +133,13 @@ public class CustomDropUtils {
         //End Fantasy set
 
         //Diminisher set
-        if (player.getEquipment().contains(10823)) { //Diminisher helmet
+        if (player.getEquipment().contains(10823)) { //Diminished helmet
             percentBoost += 40;
         }
-        if (player.getEquipment().contains(10824)) { //Diminisher body
+        if (player.getEquipment().contains(10824)) { //Diminished body
             percentBoost += 40;
         }
-        if (player.getEquipment().contains(10825)) { //Diminisher legs
+        if (player.getEquipment().contains(10825)) { //Diminished legs
             percentBoost += 40;
         }
         //End Diminisher set
@@ -195,7 +195,11 @@ public class CustomDropUtils {
          /*
         Aura slot
          */
-        if (player.getEquipment().contains(23271)) { //Celestial Aura
+
+        if (player.getEquipment().contains(10828)) { //Diminished Aura
+            percentBoost += 65;
+        }
+        if (player.getEquipment().contains(23271)) { //fantasy Aura
             percentBoost += 60;
         }
         if (player.getEquipment().contains(23241)) { //Owner's Aura (u)
@@ -244,7 +248,12 @@ public class CustomDropUtils {
          /*
         Ring slot
          */
-        if (player.getEquipment().contains(23280)) { //Celestial ring
+
+        if (player.getEquipment().contains(10827)) { //Diminished ring
+            percentBoost += 80;
+        }
+
+        if (player.getEquipment().contains(23280)) { //fantasy ring
             percentBoost += 75;
         }
         if (player.getEquipment().contains(23234)) { //Owner ring (u)
@@ -294,6 +303,9 @@ public class CustomDropUtils {
             percentBoost += 50;
         }
         if (player.getEquipment().contains(23760)) { //Crimson boots
+            percentBoost += 50;
+        }
+        if (player.getEquipment().contains(10793)) { //Diminished boots
             percentBoost += 50;
         }
         if (player.getEquipment().contains(23296)) { //Avalon boots
@@ -348,7 +360,10 @@ public class CustomDropUtils {
             percentBoost += 75;
         }
 
-        if (player.getEquipment().contains(23292)) { //Celestial bracelet
+        if (player.getEquipment().contains(10795)) { //Diminished gloves
+            percentBoost += 80;
+        }
+        if (player.getEquipment().contains(23292)) { //fantasy bracelet
             percentBoost += 75;
         }
         if (player.getEquipment().contains(23235)) { //Owner bracelet (u)
@@ -410,7 +425,12 @@ public class CustomDropUtils {
         if (player.getEquipment().contains(23424)) {//Diyos cape
             percentBoost += 80;
         }
-        if (player.getEquipment().contains(23270)) { //Celestial cape
+
+        if (player.getEquipment().contains(10826)) { //Diminished cape
+            percentBoost += 80;
+        }
+
+        if (player.getEquipment().contains(23270)) { //fantasy cape
             percentBoost += 75;
         }
         if (player.getEquipment().contains(22109)) { //Owner cape (u)
@@ -441,7 +461,11 @@ public class CustomDropUtils {
          /*
         Amulet slot
          */
-        if (player.getEquipment().contains(23293)) { //Celestial amulet
+
+        if (player.getEquipment().contains(10829)) { //Diminished Amulet
+            percentBoost += 80;
+        }
+        if (player.getEquipment().contains(23293)) { //fantasy amulet
             percentBoost += 75;
         }
         if (player.getEquipment().contains(23233)) { //Owner amulet (u)
@@ -1309,7 +1333,8 @@ public class CustomDropUtils {
                 npc == 10034 || //platinum boss (Yugi Muto)
                 npc == 10035 ||//platinum boss (Dark magician)
                 npc == 10036 ||//platinum boss (Armed Protector Dragon)
-                npc == 10037 //platinum boss (Exodia)
+                npc == 10037 || //platinum boss (Exodia)
+                npc == 200     //The Diminisher
         ) {
             percentBoost = 0;
             //System.out.println("0 Drop rate on globals");

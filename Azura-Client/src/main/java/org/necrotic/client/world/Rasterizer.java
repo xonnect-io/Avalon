@@ -1052,6 +1052,7 @@ public final class Rasterizer extends DrawingArea {
 	            }
 	        }
 	        if (x1 < x2) {
+
 	            offset += x1;
 	            depth += depth_slope * (float) x1;
 	            if (alpha == 0) {
@@ -1072,7 +1073,10 @@ public final class Rasterizer extends DrawingArea {
 	                //Transparent objects; glass, water, flames
 	                final int a1 = alpha;
 	                final int a2 = 256 - alpha;
-	                int rgb;
+					int r = 0; // Set red color component to 0
+					int g = 0; // Set green color component to 0
+					int b = 0; // Set blue color component to 0
+					int rgb;
 	                int dst;
 	                while (--n >= 0) {
 	                    if (!saveDepth || depth <= DrawingArea.depthBuffer[offset]) {

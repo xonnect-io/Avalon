@@ -461,7 +461,7 @@ public class PlayerHandler {
                     + "] @blu@Daily Benefits: Double Experience");
         }
 
-        player.sendMessage("<img=5> @blu@New Update: @red@Platinum Donation rank, New BIS pet, and QoL Changes");
+        player.sendMessage("<img=5> @blu@New Update: @red@Season 4, The Diminisher multi-boss, Celebration box & More!");
         player.getVotingStreak().login();
         DiscordIntegration.setIntegration(player);
 

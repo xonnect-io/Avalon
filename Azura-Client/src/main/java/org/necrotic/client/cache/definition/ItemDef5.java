@@ -115,28 +115,28 @@ public class ItemDef5 {
 
 			case 14434:
 				itemDef.copyItem(14050);
-				itemDef.name = "Diminished helmet";
+				itemDef.name = "Black Dragon helmet";
 				itemDef.modelID = 22335;
 				itemDef.maleEquip1 = 22336;
 				itemDef.femaleEquip1 = 22336;
 				break;
 			case 14435:
 				itemDef.copyItem(14051);
-				itemDef.name = "Diminished body";
+				itemDef.name = "Black Dragon body";
 				itemDef.modelID = 22321;
 				itemDef.maleEquip1 = 22322;
 				itemDef.femaleEquip1 = 22096;
 				break;
 			case 14436:
 				itemDef.copyItem(14052);
-				itemDef.name = "Diminished legs";
+				itemDef.name = "Black Dragon legs";
 				itemDef.modelID = 22323;
 				itemDef.maleEquip1 = 22329;
 				itemDef.femaleEquip1 = 22329;
 				break;
 			case 14437:
 				itemDef.copyItem(23066);
-				itemDef.name = "Diminished crossbow";
+				itemDef.name = "Black Dragon crossbow";
 				itemDef.modelID = 22330;
 				itemDef.maleEquip1 = 22331;
 				itemDef.femaleEquip1 = 22331;
@@ -144,14 +144,156 @@ public class ItemDef5 {
 				break;
 			case 14438:
 				itemDef.copyItem(11283);
-				itemDef.name = "Diminished dragonfire shield";
+				itemDef.name = "Black Dragonfire shield";
 				itemDef.modelID = 22332;
 				itemDef.maleEquip1 = 22334;
 				itemDef.femaleEquip1 = 22334;
 				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
 				itemDef.stackable = false;
 				break;
+			case 10793:
+				itemDef.copyItem(3791);
+				itemDef.name = "Diminished Boots";
+				itemDef.modelID = 65226;
+				itemDef.maleEquip1 = 65226;
+				itemDef.femaleEquip1 = 65226;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 60; // the texture that it currently has
+				itemDef.newColors[0] = 52; // the new texture u want it to have
+				itemDef.stackable = false;
+				break;
 
+			case 10795:
+				itemDef.copyItem(7671);
+				itemDef.name = "Diminished gloves";
+				itemDef.modelID = 65360;
+				itemDef.femaleEquip1 = 65361;
+				itemDef.maleEquip1 = 65361;
+				itemDef.actions = itemDef.actions;
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				break;
+
+
+			case 10823:
+				itemDef.copyItem(5068);
+				itemDef.name = "Diminished helmet";
+				itemDef.modelID = 22355;
+				itemDef.maleEquip1 = 22355;
+				itemDef.modelZoom = 700;
+				itemDef.femaleEquip1 = 22355;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 101; // the texture that it currently has
+				itemDef.newColors[0] = 52; // the new texture u want it to have
+				itemDef.modelOffsetY = 80;
+				break;
+
+			case 10824:
+				itemDef.copyItem(5069);
+				itemDef.name = "Diminished body";
+				itemDef.modelID = 22356;
+				itemDef.maleEquip1 = 22356;
+				itemDef.femaleEquip1 = 22356;
+				itemDef.modelZoom = 1480;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 101; // the texture that it currently has
+				itemDef.newColors[0] = 52; // the new texture u want it to have
+				break;
+
+			case 10825:
+				itemDef.copyItem(5070);
+				itemDef.name = "Diminished legs";
+				itemDef.modelID = 22357;
+				itemDef.maleEquip1 = 22357;
+				itemDef.femaleEquip1 = 22357;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 101; // the texture that it currently has
+				itemDef.newColors[0] = 52; // the new texture u want it to have
+				break;
+
+			case 10826:
+				itemDef.copyItem(23270);
+				itemDef.modelID = 22360;
+				itemDef.name = "Diminished Wings";
+				itemDef.description = "A cape worn by those who've achieved greatness.".getBytes();
+				itemDef.maleEquip1 = 22360;
+				itemDef.femaleEquip1 = 22360;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 101; // the texture that it currently has
+				itemDef.newColors[0] = 52; // the new texture u want it to have
+				itemDef.modelOffsetY = 0;
+				itemDef.rotationY = 0;
+				break;
+
+			case 10827:
+				itemDef.copyItem(23092);
+				itemDef.name = "Diminished Ring";
+				itemDef.modelID = 22361;
+				itemDef.maleEquip1 = -1;
+				itemDef.femaleEquip1 = -1;
+				itemDef.modelZoom = 1050;
+				itemDef.rotationX = 870;
+				itemDef.rotationY = 410;
+				itemDef.modelOffsetX = -7;
+				itemDef.modelOffsetY = 15;
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 114; // the texture that it currently has
+				itemDef.newColors[0] = 52; // the new texture u want it to have
+				break;
+
+			case 10828:
+				itemDef.copyItem(23271);
+				itemDef.modelID = 19706;
+				itemDef.modelZoom = 1700;
+				itemDef.maleEquip1 = 19706;
+				itemDef.femaleEquip1 = 19706;
+				itemDef.modelOffsetX = -15;
+				itemDef.modelOffsetY = 60;
+				itemDef.name = "Diminished Aura";
+				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 98; // the texture that it currently has
+				itemDef.newColors[0] = 52; // the new texture u want it to have
+				break;
+
+			case 10829:
+				itemDef.copyItem(5068);
+				itemDef.name = "Diminished Amulet";
+				itemDef.modelID = 22362;
+				itemDef.maleEquip1 = 22362;
+				itemDef.modelZoom = 450;
+				itemDef.femaleEquip1 = 22362;
+				itemDef.modelOffsetY = 75;
+				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
+				itemDef.oldColors = new int[1]; // same here
+				itemDef.oldColors[0] = 119; // the texture that it currently has
+				itemDef.newColors[0] = 52; // the new texture u want it to have
+				itemDef.actions = new String[]{null, "Wear", null, null, null};
+				break;
+
+
+			case 10830:
+				itemDef.copyItem(18665);
+				itemDef.name = "Diminished Key";
+				itemDef.actions = new String[]{"Teleport", null, null, null, null};
+				itemDef.rdc2 = 807999;
+				break;
+
+
+			case 16465:
+				itemDef.copyItem(23552);
+				itemDef.name = "Diminished shards";
+				itemDef.modelZoom = 1696;
+				itemDef.modelID = 22359;
+				break;
 			case 14439:
 				itemDef.copyItem(14880);
 				itemDef.name = "Diminished emblem";

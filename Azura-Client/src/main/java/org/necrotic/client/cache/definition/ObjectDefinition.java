@@ -397,6 +397,25 @@ public final class ObjectDefinition {
 			definition.description = "A chest full of suffering".getBytes();
 		}
 
+
+		if (definition.type == 363) {
+			definition.name = "Diminished Chest";
+			definition.modelSizeH = 100;
+			definition.modelSizeY = 100;
+			definition.modelSizeX = 100;
+			definition.actions = new String[]{"Open", null, null, null, null};
+			definition.objectModelIDs = new int[]{22365}; //19458
+			definition.description = "A chest that will end up diminishing your wealth!".getBytes();
+			definition.modifiedModelColors = new int[2];
+			definition.originalModelColors = new int[2];
+
+			definition.modifiedModelColors[0] = 106;
+			definition.originalModelColors[0] = 52;
+
+			definition.modifiedModelColors[1] = 112;
+			definition.originalModelColors[1] = 118;
+		}
+
 		if (definition.type == 399) {
 			definition.name = "Necromancer Coffer";
 			definition.actions = new String[]{"Access", null, null, null, null};

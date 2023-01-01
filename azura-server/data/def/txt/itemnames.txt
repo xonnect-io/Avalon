@@ -39031,7 +39031,7 @@ name: Cured yak-hide
 finish
 
 Item Id: 10822
-name: Yak-hide armour
+name: Diminisher shards
 finish
 
 Item Id: 10823

@@ -1054,75 +1054,7 @@ public class ItemDef4 {
 				itemDef.newColors[0] = 93; // the new texture u want it to have
 				itemDef.stackable = false;
 				break;
-			case 10793:
-				itemDef.copyItem(3791);
-				itemDef.name = "Diminisher Boots";
-				itemDef.modelID = 65226;
-				itemDef.maleEquip1 = 65226;
-				itemDef.femaleEquip1 = 65226;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				itemDef.newColors = new int[1]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.oldColors = new int[1]; // same here
-				itemDef.oldColors[0] = 60; // the texture that it currently has
-				itemDef.newColors[0] = 52; // the new texture u want it to have
-				itemDef.stackable = false;
-				break;
 
-			case 10795:
-				itemDef.copyItem(7671);
-				itemDef.name = "Diminisher gloves";
-				itemDef.modelID = 65360;
-				itemDef.femaleEquip1 = 65361;
-				itemDef.maleEquip1 = 65361;
-				itemDef.actions = itemDef.actions;
-				itemDef.actions = new String[]{null, "Wear", null, null, "Drop"};
-				break;
-
-
-			case 10823:
-				itemDef.copyItem(14050);
-				itemDef.name = "Diminisher helmet";
-				itemDef.modelID = 19758;
-				itemDef.maleEquip1 = 19759;
-				itemDef.femaleEquip1 = 19759;
-				itemDef.newColors = new int[2]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.oldColors = new int[2]; // same here
-				itemDef.oldColors[0] = 98; // the texture that it currently has
-				itemDef.newColors[0] = 126; // the new texture u want it to have
-
-				itemDef.oldColors[1] = 56; // the texture that it currently has
-				itemDef.newColors[1] = 52; // the new texture u want it to have
-				break;
-
-			case 10824:
-				itemDef.copyItem(14051);
-				itemDef.name = "Diminisher body";
-				itemDef.modelID = 19760;
-				itemDef.maleEquip1 = 19761;
-				itemDef.femaleEquip1 = 19761;
-				itemDef.newColors = new int[2]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.oldColors = new int[2]; // same here
-				itemDef.oldColors[0] = 98; // the texture that it currently has
-				itemDef.newColors[0] = 126; // the new texture u want it to have
-
-				itemDef.oldColors[1] = 56; // the texture that it currently has
-				itemDef.newColors[1] = 52; // the new texture u want it to have
-				break;
-
-			case 10825:
-				itemDef.copyItem(14052);
-				itemDef.name = "Diminisher legs";
-				itemDef.modelID = 19762;
-				itemDef.maleEquip1 = 19763;
-				itemDef.femaleEquip1 = 19763;
-				itemDef.newColors = new int[2]; // if only 1 texture is modified this has to be 1, if 2 then 2 etc
-				itemDef.oldColors = new int[2]; // same here
-				itemDef.oldColors[0] = 98; // the texture that it currently has
-				itemDef.newColors[0] = 52; // the new texture u want it to have
-
-				itemDef.oldColors[1] = 56; // the texture that it currently has
-				itemDef.newColors[1] = 126; // the new texture u want it to have
-				break;
 
 			case 19810:
 				itemDef.copyItem(10666);
@@ -1358,6 +1290,7 @@ public class ItemDef4 {
 				itemDef.modelOffsetY = itemDef21.modelOffsetY;
 				itemDef.modelZoom = itemDef21.modelZoom;
 				itemDef.modelID = itemDef21.modelID;
+				System.out.println ("Model id:"+ itemDef21.modelID);
 				itemDef.rotationY = itemDef21.rotationY;
 				itemDef.rotationX = itemDef21.rotationX;
 				itemDef.actions = itemDef21.actions;

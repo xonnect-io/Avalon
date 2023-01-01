@@ -133,7 +133,15 @@ public class MaxUpgradesInterface {
         BLUE_EYES_WHITE_DRAGON(100,new Item(11426, 1),new Item(22954, 1),new Item(10483, 1),new Item(10484, 1),new Item(10485, 1),new Item(10486, 1),new Item(19000, 25_000),new Item(12855, 100_000_000)),
 
 
-
+        DIMINISHED_HELMET(100,new Item(10823, 1),new Item(23443, 1),new Item(16465, 7500),new Item(12855, 25_000_000)),
+        DIMINISHED_PLATEBODY(100,new Item(10824, 1),new Item(23444, 1),new Item(16465, 10000),new Item(12855, 50_000_000)),
+        DIMINISHED_PLATELEGS(100,new Item(10825, 1),new Item(23445, 1),new Item(16465, 10000),new Item(12855, 50_000_000)),
+        DIMINISHED_AMULET(100,new Item(10829, 1),new Item(23293, 1),new Item(16465, 10000),new Item(12855, 50_000_000)),
+        DIMINISHED_RING(100,new Item(10827, 1),new Item(23280, 1),new Item(16465, 10000),new Item(12855, 50_000_000)),
+        DIMINISHED_GLOVES(100,new Item(10795, 1),new Item(23292, 1),new Item(16465, 10000),new Item(12855, 50_000_000)),
+        DIMINISHED_BOOTS(100,new Item(10793, 1),new Item(23760, 1),new Item(16465, 7500),new Item(12855, 25_000_000)),
+        DIMINISHED_AURA(100,new Item(10828, 1),new Item(23271, 1),new Item(16465, 7500),new Item(12855, 25_000_000)),
+        DIMINISHED_WINGS(100,new Item(10826, 1),new Item(23270, 1),new Item(16465, 15000),new Item(12855, 100_000_000)),
         ;
         CustomCombinerData(int successRate, Item reward, Item... requirements) { // Upgrade item, chance, requirements
             this.successRate = successRate;

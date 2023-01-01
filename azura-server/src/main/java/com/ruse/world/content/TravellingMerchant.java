@@ -30,10 +30,13 @@ public class TravellingMerchant {
             new Item(23412, 5),//200k
             new Item(23812, 5),//200k
             new Item(23486, 1),//200k
+            new Item(16465, 250),//200k
     };
 
     public static int getPrice(int itemID) {
         switch (itemID){
+            case 16465:
+                return 20000;
             case 23776:
             case 23782:
                 return 200000;

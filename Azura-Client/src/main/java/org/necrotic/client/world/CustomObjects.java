@@ -25,6 +25,7 @@ public class CustomObjects {
 
 	public static final int[][] CUSTOM_OBJECTS = {
 
+			{363, 2782, 4060, 0, 2},
 			{9666, 2266, 4073, 0, 3},
 			{9666, 2280, 4073, 0, 1},
 			{14694, 2991, 3904, 0, 0},

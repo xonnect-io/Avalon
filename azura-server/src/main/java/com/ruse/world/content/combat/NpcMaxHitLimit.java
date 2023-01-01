@@ -24,7 +24,9 @@ public class NpcMaxHitLimit {
             case 10005://Krampus
                 maxLimit = (NpcDefinition.forId(npc.getId()).getHitpoints() / 100) * 2;
                 break;
-
+            case 200: // the diminisher
+                maxLimit = (NpcDefinition.forId(npc.getId()).getHitpoints() / 100) * 7;
+                break;
             case 9899://Dragonkin
             case 9993://Beast Tok
             case 9884://Telos
